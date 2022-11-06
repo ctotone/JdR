@@ -6,7 +6,7 @@
 }
 
 .charsheet {
-  min-width: 850px;
+  min-width: 890px;
   max-width: 950px;
 }
 .charsheet button:before {
@@ -27,6 +27,18 @@
   margin: 0.2em !important;
   padding: 0.1em !important;
 }
+
+.charsheet button[type=roll1], .charsheet button[type=action] {
+  background: #c8dad0;
+  border-bottom: 0.01em solid #666;
+  border-bottom-right-radius: 0.01em;
+  border-color: #b3b3b3;
+  border-radius: 0.25em;
+  border-right: 0.02em solid #333333;
+  border-style: outset;
+  margin: 0.2em !important;
+  padding: 0.1em !important;
+}
 .charsheet button[type=action] {
   background: #d9d9d9;
 }
@@ -37,7 +49,16 @@
 .charsheet button[type=roll] {
   background: #c8dad0;
 }
+
+.charsheet button[type=roll1] {
+  background: #c8dad0;
+}
 .charsheet button[type=roll]:focus, .charsheet button[type=roll]:hover, .charsheet button[type=roll]:active {
+  background-color: #06562b;
+  color: whitesmoke;
+}
+
+.charsheet button[type=roll1]:focus, .charsheet button[type=roll1]:hover, .charsheet button[type=roll1]:active {
   background-color: #06562b;
   color: whitesmoke;
 }
@@ -77,7 +98,7 @@
   text-align: center;
 }
 .charsheet input[type=text1], .charsheet input[type=number1] {
-    background: #000a0673;
+    background: #05704594;
     border: none;
     border-radius: 0em;
     color: white;
@@ -666,6 +687,10 @@ div.sheet-npc div.sheet-section-body input[type=text] {
   text-align: left;
   margin-left: 1%;
 }
+div.sheet-npc div.sheet-section-body input[type=text1] {
+  text-align: left;
+  margin-left: 1%;
+}
 div.sheet-npc div.sheet-section-body textarea {
   grid-column: 1/13;
   min-height: 4em;
@@ -714,6 +739,11 @@ div.sheet-npc div.sheet-section-body div.sheet-sanloss input[type=text] {
   width: 5em;
   text-align: center;
 }
+div.sheet-npc div.sheet-section-body div.sheet-sanloss input[type=text1] {
+  height: 100%;
+  width: 5em;
+  text-align: center;
+}
 div.sheet-npc div.sheet-section-body div.sheet-sanloss select {
   height: 100%;
   width: 8em;
@@ -753,6 +783,9 @@ div.sheet-npc div.sheet-section-body div.sheet-attacks {
   margin-left: 2%;
 }
 div.sheet-npc div.sheet-section-body div.sheet-attacks input[type=text][name=attr_damage] {
+  text-align: center;
+}
+div.sheet-npc div.sheet-section-body div.sheet-attacks input[type=text1][name=attr_damage] {
   text-align: center;
 }
 div.sheet-npc div.sheet-section-body div.sheet-attacks div.sheet-section-weapons,
@@ -874,6 +907,9 @@ div.sheet-pc h1 {
 div.sheet-pc input[type=text], div.sheet-pc input[type=number] {
   width: 100%;
 }
+div.sheet-pc input[type=text1], div.sheet-pc input[type=number1] {
+  width: 100%;
+}
 div.sheet-pc div.sheet-section-header {
   background-color: black;
   grid-area: 1/1/1/1;
@@ -956,6 +992,9 @@ div.sheet-pc div.sheet-personal-data div.sheet-section:nth-of-type(3) label:nth-
 div.sheet-pc div.sheet-personal-data input[type=text] {
   text-align: left;
 }
+div.sheet-pc div.sheet-personal-data input[type=text1] {
+  text-align: left;
+}
 div.sheet-pc div.sheet-statistical-data {
   grid-area: 2/1/2/1;
 }
@@ -966,7 +1005,15 @@ div.sheet-pc div.sheet-statistical-data button[type=roll],
 div.sheet-pc div.sheet-statistical-data div.sheet-derived-attr {
   font-size: 1em;
 }
+div.sheet-pc div.sheet-statistical-data button[type=roll1],
+div.sheet-pc div.sheet-statistical-data div.sheet-derived-attr {
+  font-size: 1em;
+}
 div.sheet-pc div.sheet-statistical-data button[type=roll] span,
+div.sheet-pc div.sheet-statistical-data div.sheet-derived-attr span {
+  font-size: 0.8em;
+}
+div.sheet-pc div.sheet-statistical-data button[type=roll1] span,
 div.sheet-pc div.sheet-statistical-data div.sheet-derived-attr span {
   font-size: 0.8em;
 }
@@ -979,6 +1026,9 @@ div.sheet-pc div.sheet-statistical-data div.sheet-section-stats {
   grid-template-columns: 9em 0.155em 2fr 0.155em 1fr 0.155em 14em;
 }
 div.sheet-pc div.sheet-statistical-data div.sheet-section-stats button[type=roll] {
+  text-align: left;
+}
+div.sheet-pc div.sheet-statistical-data div.sheet-section-stats button[type=roll1] {
   text-align: left;
 }
 div.sheet-pc div.sheet-statistical-data div.sheet-section-stats div.sheet-horz-line {
@@ -995,6 +1045,9 @@ div.sheet-pc div.sheet-statistical-data div.sheet-section-derived div.sheet-sect
   grid-template-columns: 12em 0.155em 1fr 0.155em 1fr;
 }
 div.sheet-pc div.sheet-statistical-data div.sheet-section-derived div.sheet-section button[type=roll] {
+  text-align: left;
+}
+div.sheet-pc div.sheet-statistical-data div.sheet-section-derived div.sheet-section button[type=roll1] {
   text-align: left;
 }
 div.sheet-pc div.sheet-statistical-data div.sheet-section-derived div.sheet-section div.sheet-horz-line {
@@ -1030,6 +1083,9 @@ div.sheet-pc div.sheet-pyschological-data textarea {
   min-height: 11.5em;
 }
 div.sheet-pc div.sheet-pyschological-data div.sheet-section-bonds input[type=text] {
+  text-align: center;
+}
+div.sheet-pc div.sheet-pyschological-data div.sheet-section-bonds input[type=text1] {
   text-align: center;
 }
 div.sheet-pc div.sheet-pyschological-data div.sheet-section-bonds div.sheet-max-height {
@@ -1090,7 +1146,13 @@ div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-se
 div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-section-skill-col button.sheet-dicefontd10[type=roll] {
   text-align: center;
 }
+div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-section-skill-col button.sheet-dicefontd10[type=roll1] {
+  text-align: center;
+}
 div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-section-skill-col input[type=number] {
+  height: 100%;
+}
+div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-section-skill-col input[type=number1] {
   height: 100%;
 }
 div.sheet-pc div.sheet-applicable-skill-sets div.sheet-section-body div.sheet-section-skill-col input[type=checkbox] {
@@ -1172,7 +1234,13 @@ div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-section-19 {
 div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-section-19 input[type=text][name=attr_special_training] {
   text-align: left;
 }
+div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-section-19 input[type=text1][name=attr_special_training] {
+  text-align: left;
+}
 div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-section-19 input[type=text][name=attr_skill_or_stat_used] {
+  text-align: center;
+}
+div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-section-19 input[type=text1][name=attr_skill_or_stat_used] {
   text-align: center;
 }
 div.sheet-pc div.sheet-remarks div.sheet-section-body div.sheet-repeating-container .repcontrol .repcontrol_add {
@@ -1242,8 +1310,16 @@ input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type=number1]::-webkit-outer-spin-button,
+input[type=number1]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number1] {
   -moz-appearance: textfield;
 }
 
