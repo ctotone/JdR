@@ -321,56 +321,72 @@
     <div class="section-header">
       <h1 data-i18n="statistical data" data-i18n-title="statistical data" title="statistical data">statistical data</h1>
     </div>
-    <!--STATISTICS-->
+   <!--STATISTICS-->
     <div class="grid section-body">
       <div class="grid section-stats">
         <h2 class="aligned-left" data-i18n="8. statistics" data-i18n-title="8. statistics" title="8. statistics">8. statistics</h2>
         <div class="vert-line"></div>
-        <h2 class="center" data-i18n="score" data-i18n-title="score">score</h2>
+        <h2 class="center" data-i18n="score" title="Il s'agit de la valeur de la statistique, elle comprise entre 0 et 20. Pour donner un ordre d'idée, une valeur comprise entre 9 et 12 est considéré comme commun.">score</h2>
         <div class="vert-line"></div>
-        <h2 class="center" data-i18n="×5" data-i18n-title="×5">×5</h2>
+        <h2 class="center" data-i18n="×5" title="La même valeur de statistique que précédement mais multipliée par 5 de manière à avoir un score compris entre 0 et 100.">×5</h2>
         <div class="vert-line"></div>
-        <h2 class="aligned-left" data-i18n="distinguishing features" data-i18n-title="">distinguishing features</h2>
+		<h2 class="center" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés.">Mod.</h2>
+        <div class="vert-line"></div>
+        <h2 class="aligned-left" data-i18n="distinguishing features" title="Une statistique inférieure à 9 ou supérieure à 12 est peu commun. Notez un mot ou deux pour décrire des statistiques en dehors de la moyenne. Ceux-ci aident à donner de la personnalité à votre agent.">distinguishing features</h2>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="strength" data-i18n-title="strength roll" title="strength roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{strength}}} {{subheader=@{strength}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{strength_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{strength}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+		<button name="strength" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{strength}}} {{subheader=[[@{modFORPJ}+@{strength}]]}} {{dice=[[1d100]]}} {{stat=[[@{modFORPJ}/5+@{strength_score}]]}} {{score=[[@{modFORPJ}+@{strength}]]}}">
+		<!-- with modifier <button name="strength" data-i18n-title="strength roll" title="strength roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{strength}}} {{subheader=@{modFORPJ}+@{strength}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{modFORPJ}+@{strength_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{modFORPJ}+@{strength}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">-->
           <h3 class="aligned-left" data-i18n="strength">strength</h3><span class="para" data-i18n="STR">STR</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="strength score" title="strength score">
-          <input min="0" name="attr_strength_score" placeholder="-" title="@{strength_score}" type="number" value=" "/>
+          <input min="0" name="attr_strength_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_strength" title="@{strength}"></span>
+        <div class="vert-line">
+		</div><span class="center" name="attr_strength" title=""></span>
+		 <div class="vert-line"></div>
+        <label >
+          <input min="0" name="attr_modFORPJ" placeholder="-" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="strength distinguishing features" title="strength distinguishing features">
-          <input data-i18n-placeholder="distinguishing features" name="attr_strength_features" placeholder="distinguishing features" title="@{strength_features}" type="text"/>
+          <input data-i18n-placeholder="distinguishing features" name="attr_strength_features" placeholder="distinguishing features" title="" type="text"/>
         </label>
         <input name="attr_strength" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="constitution" data-i18n-title="constitution roll" title="constitution roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{constitution}}} {{subheader=@{constitution}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{constitution_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{constitution}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+         <button name="constitution" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{constitution}}} {{subheader=[[@{modCONPJ}+@{constitution}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCONPJ}/5+@{constitution_score}]]}} {{score=[[@{modCONPJ}+@{constitution}]]}}">
           <h3 class="aligned-left" data-i18n="constitution">constitution</h3><span class="para" data-i18n="CON">CON</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution score" title="constitution score">
-          <input min="0" name="attr_constitution_score" placeholder="-" title="@{constitution_score}" type="number" value=" "/>
+          <input min="0" name="attr_constitution_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_constitution" title="@{constitution}"></span>
+        <div class="vert-line"></div><span class="center" name="attr_constitution" title=""></span>
+        <div class="vert-line"></div>
+		 <label >
+          <input min="0" name="attr_modCONPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution distinguishing features" title="constitution distinguishing features">
-          <input data-i18n-placeholder="distinguishing features" name="attr_constitution_features" placeholder="distinguishing features" title="@{constitution_features}" type="text"/>
+          <input data-i18n-placeholder="distinguishing features" name="attr_constitution_features" placeholder="distinguishing features" title="" type="text"/>
         </label>
         <input name="attr_constitution" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="dexterity" data-i18n-title="dexterity roll" title="dexterity roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{dexterity}}} {{subheader=@{dexterity}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{dexterity_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{dexterity}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+        <button name="dexterity" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{dexterity}}} {{subheader=[[@{modDEXPJ}+@{dexterity}]]}} {{dice=[[1d100]]}}  {{stat=[[@{modDEXPJ}/5+@{dexterity_score}]]}} {{score=[[@{modDEXPJ}+@{dexterity}]]}}">
           <h3 class="aligned-left" data-i18n="dexterity">dexterity</h3><span class="para" data-i18n="DEX">DEX</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity score" title="dexterity score">
-          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="-" title="@{dexterity_score}" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_dexterity" title="@{dexterity}"></span>
+        <div class="vert-line"></div><span class="center" name="attr_dexterity" title=""></span>
+        <div class="vert-line"></div>
+		 <label >
+          <input min="0" name="attr_modDEXPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity distinguishing features" title="dexterity distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_dexterity_features" placeholder="distinguishing features" title="@{dexterity_features}" type="text"/>
@@ -378,14 +394,18 @@
         <input name="attr_dexterity" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="intelligence" data-i18n-title="intelligence roll" title="intelligence roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{intelligence}}} {{subheader=@{intelligence}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{intelligence_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{intelligence}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+        <button name="intelligence" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{intelligence}}} {{subheader=[[@{modINTPJ}+@{intelligence}]]}} {{dice=[[1d100]]}} {{stat=[[@{modINTPJ}/5+@{intelligence_score}]]}} {{score=[[@{modINTPJ}+@{intelligence}]]}}">
           <h3 class="aligned-left" data-i18n="intelligence">intelligence</h3><span class="para" data-i18n="INT">INT</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence score" title="intelligence score">
-          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="-" title="@{intelligence_score}" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_intelligence" title="@{intelligence}"></span>
+        <div class="vert-line"></div><span class="center" name="attr_intelligence" title=""></span>
+        <div class="vert-line"></div>
+		 <label >
+          <input min="0" name="attr_modINTPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence distinguishing features" title="intelligence distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_intelligence_features" placeholder="distinguishing features" title="@{intelligence_features}" type="text"/>
@@ -393,14 +413,18 @@
         <input name="attr_intelligence" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="power" data-i18n-title="power roll" title="power roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{power}}} {{subheader=@{power}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{power_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{power}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+        <button name="power" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{power}}} {{subheader=[[@{modPOUPJ}+@{power}]]}} {{dice=[[1d100]]}} {{stat=[[@{modPOUPJ}/5+@{power_score}]]}} {{score=[[@{modPOUPJ}+@{power}]]}}">
           <h3 class="aligned-left" data-i18n="power">power</h3><span class="para" data-i18n="POW">POW</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="power score" title="power score">
-          <input min="0" name="attr_power_score" placeholder="-" title="@{power_score}" type="number" value=" "/>
+          <input min="0" name="attr_power_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_power" title="@{power}"></span>
+        <div class="vert-line"></div><span class="center" name="attr_power" title=""></span>
+        <div class="vert-line"></div>
+		 <label >
+          <input min="0" name="attr_modPOUPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="power distinguishing features" title="power distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_power_features" placeholder="distinguishing features" title="@{power_features}" type="text"/>
@@ -408,14 +432,18 @@
         <input name="attr_power" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="charisma" data-i18n-title="charisma roll" title="charisma roll" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{charisma}}} {{subheader=@{charisma}}} {{dice=[[1d100]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{stat=[[@{charisma_score}+round(?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}/10)]]}} {{score=[[@{charisma}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}">
+        <button name="charisma" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{charisma}}} {{subheader=[[@{modCARPJ}+@{charisma}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCARPJ}/5+@{charisma}]]}} {{score=[[@{modCARPJ}+@{charisma}]]}}">
           <h3 class="aligned-left" data-i18n="charisma">charisma</h3><span class="para" data-i18n="CHA">CHA</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma score" title="charisma score">
-          <input data-i18n-placeholder="-" min="0" name="attr_charisma_score" placeholder="-" title="@{charisma_score}" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_charisma_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_charisma" title="@{charisma}"></span>
+        <div class="vert-line"></div><span class="center" name="attr_charisma" title=""></span>
+        <div class="vert-line"></div>
+		 <label >
+          <input min="0" name="attr_modCARPJ" placeholder="-" title="Ce modificateur est exprimé en %. Il est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+        </label>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma distinguishing features" title="charisma distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_charisma_features" placeholder="distinguishing features" title="@{charisma_features}" type="text"/>
@@ -487,7 +515,7 @@
       <!--PHYSICAL DESCRIPTION-->
       <div class="grid section-physical">
         <h2 class="aligned-left">9. Description physique</h2>
-        <textarea name="attr_physical_description" placeholder=" " title="@{physical_description}"></textarea>
+        <textarea name="attr_physical_description" placeholder=" " title=""></textarea>
       </div>
     </div>
   </div>
@@ -573,23 +601,21 @@
 	  
 	  <div class="grid section-skill-col">
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
-        <label class="styled-checkbox" data-i18n-title="coche_echec" title="bureaucracy fail checkbox">
+       <label class="styled-checkbox" data-i18n-title="coche_echec" title="bureaucracy fail checkbox">
           <input name="attr_bureaucracy_fail" data-i18n-title="coche_echec" title="@{bureaucracy_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="bureaucracy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{bureaucracy}}} {{subheader=@{bureaucracy}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{bureaucracy}+?{Modificateur|Aucun,0|+100%,100|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
-          <h3 data-i18n="bureaucracy" title="Teeeest">bureaucracy</h3><span data-i18n="(10%)">(10%)</span>
+        <button data-i18n-title="rollinfo" name="bureaucracy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{bureaucracy}}} {{subheader=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{rating=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="bureaucracy" title="bureaucracy">bureaucracy</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="bureaucracy rank" title="bureaucracy rank">
-          <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name=""attr_bureaucracy" title="@{bureaucracy}" placeholder="0" type="number" value="10"/>
+          <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_bureaucracy" title="@{bureaucracy}" placeholder="0" type="number" value="10"/>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_bureaucracyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_bureaucracyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
-
-		
-                <div class="horz-line"></div>
+        <div class="horz-line"></div>
 <!-- Test ligne en dessous 	
         <label type="checkbox"/>
         </label>
@@ -605,7 +631,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="art fail checkbox">
           <input name="attr_art_fail" data-i18n-title="coche_echec" title="@{art_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="art" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{art}}} {{subheader=@{art}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{art}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="art" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{art}}} {{subheader=[[@{artPJ}+@{art}]]}} {{rating=[[@{artPJ}+@{art}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="art" title="art">art</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -614,7 +640,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_artPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <label class="custom-label" data-i18n-title="art name" title="art name">
           <textarea data-i18n-placeholder="skill name" name="attr_art_name" placeholder="skill name" title="@{art_name}" value=""></textarea>
@@ -624,7 +650,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="surgery fail checkbox">
           <input name="attr_surgery_fail" data-i18n-title="coche_echec" title="@{surgery_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="surgery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{surgery}}} {{subheader=@{surgery}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{surgery}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="surgery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{surgery}}} {{subheader=[[@{surgeryPJ}+@{surgery}]]}} {{rating=[[@{surgeryPJ}+@{surgery}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="surgery" title="surgery">surgery</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -632,14 +658,14 @@
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_surgery" title="@{surgery}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_surgeryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_surgeryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="accounting fail checkbox">
           <input name="attr_accounting_fail" data-i18n-title="coche_echec" title="@{accounting_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="accounting" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{accounting}}} {{subheader=@{accounting}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{accounting}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="accounting" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{accounting}}} {{subheader=[[@{accountingPJ}+@{accounting}]]}} {{rating=[[@{accountingPJ}+@{accounting}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="accounting" title="accounting">accounting</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -647,14 +673,14 @@
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_accounting" title="@{accounting}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_accountingPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_accountingPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="criminology fail checkbox">
           <input name="attr_criminology_fail" data-i18n-title="coche_echec" title="@{criminology_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="criminology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{criminology}}} {{subheader=@{criminology}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{criminology}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="criminology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{criminology}}} {{subheader=[[@{criminologyPJ}+@{criminology}]]}} {{rating=[[@{criminologyPJ}+@{criminology}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="criminology" title="criminology">criminology</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -662,14 +688,14 @@
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_criminology" title="@{criminology}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_criminologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_criminologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="disguise fail checkbox">
           <input name="attr_disguise_fail" data-i18n-title="coche_echec" title="@{disguise_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="disguise" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{disguise}}} {{subheader=@{disguise}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{disguise}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="disguise" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{disguise}}} {{subheader=[[@{disguisePJ}+@{disguise}]]}} {{rating=[[@{disguisePJ}+@{disguise}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="disguise" title="disguise">disguise</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -677,14 +703,14 @@
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_disguise" title="@{disguise}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_disguisePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_disguisePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="demolitions fail checkbox">
           <input name="attr_demolitions_fail" data-i18n-title="coche_echec" title="@{demolitions_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="demolitions" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{demolitions}}} {{subheader=@{demolitions}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{demolitions}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="demolitions" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{demolitions}}} {{subheader=[[@{demolitionsPJ}+@{demolitions}]]}} {{rating=[[@{demolitionsPJ}+@{demolitions}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="demolitions" title="demolitions">demolitions</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -692,14 +718,14 @@
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_demolitions" title="@{demolitions}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_demolitionsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_demolitionsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="military science fail checkbox">
           <input name="attr_military_science_fail" data-i18n-title="coche_echec" title="@{military_science_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="military science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{military science}}} {{subheader=@{military_science}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{military_science}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="military_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{military_science}}} {{subheader=[[@{military_sciencePJ}+@{military_science}]]}} {{rating=[[@{military_sciencePJ}+@{military_science}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="military science" title="military science">military science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -708,7 +734,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_military_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_military_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <label class="custom-label" data-i18n-title="military science name" title="military science name">
           <textarea data-i18n-placeholder="skill name" name="attr_military_science_name" placeholder="skill name" title="@{military_science_name}" value=""></textarea>
@@ -718,7 +744,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="history fail checkbox">
           <input name="attr_history_fail" data-i18n-title="coche_echec" title="@{history_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="history" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{history}}} {{subheader=@{history}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{history}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="history" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{history}}} {{subheader=[[@{historyPJ}+@{history}]]}} {{rating=[[@{historyPJ}+@{history}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="history" title="history">history</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -727,14 +753,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_historyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_historyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="HUMINT fail checkbox">
           <input name="attr_humint_fail" data-i18n-title="coche_echec" title="@{humint_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="humint" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{HUMINT}}} {{subheader=@{humint}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{humint}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="HUMINT" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{HUMINT}}} {{subheader=[[@{HUMINTPJ}+@{HUMINT}]]}} {{rating=[[@{HUMINTPJ}+@{HUMINT}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="HUMINT" title="HUMINT">HUMINT</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -743,14 +769,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_humintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_humintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="computer science fail checkbox">
           <input name="attr_computer_science_fail" data-i18n-title="coche_echec" title="@{computer_science_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="computer science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{computer science}}} {{subheader=@{computer_science}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{computer_science}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="computer_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{computer_science}}} {{subheader=[[@{computer_sciencePJ}+@{computer_science}]]}} {{rating=[[@{computer_sciencePJ}+@{computer_science}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="computer science" title="computer science">computer science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -759,14 +785,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_computer_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_computer_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="law fail checkbox">
           <input name="attr_law_fail" title="@{law_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="law" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{law}}} {{subheader=@{law}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{law}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="law" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{law}}} {{subheader=[[@{lawPJ}+@{law}]]}} {{rating=[[@{lawPJ}+@{law}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="law" title="law">law</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -775,14 +801,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_lawPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_lawPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="occult fail checkbox">
           <input name="attr_occult_fail" data-i18n-title="coche_echec" title="@{occult_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="occult" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{occult}}} {{subheader=@{occult}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{occult}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="occult" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{occult}}} {{subheader=[[@{occultPJ}+@{occult}]]}} {{rating=[[@{occultPJ}+@{occult}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="occult" title="occult">occult</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -791,7 +817,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_occultPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_occultPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->		
@@ -805,14 +831,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unnaturalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_unnaturalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="persuade fail checkbox">
           <input name="attr_persuade_fail" data-i18n-title="coche_echec" title="@{persuade_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="persuade" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{persuade}}} {{subheader=@{persuade}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{persuade}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="persuade" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{persuade}}} {{subheader=[[@{persuadePJ}+@{persuade}]]}} {{rating=[[@{persuadePJ}+@{persuade}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="persuade" title="persuade">persuade</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -821,14 +847,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_persuadePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_persuadePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="pharmacy fail checkbox">
           <input name="attr_pharmacy_fail" data-i18n-title="coche_echec" title="@{pharmacy_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="pharmacy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pharmacy}}} {{subheader=@{pharmacy}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{pharmacy}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="pharmacy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pharmacy}}} {{subheader=[[@{pharmacyPJ}+@{pharmacy}]]}} {{rating=[[@{pharmacyPJ}+@{pharmacy}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="pharmacy" title="pharmacy">pharmacy</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -837,7 +863,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pharmacyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_pharmacyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 	</div>
@@ -852,7 +878,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="first aid fail checkbox">
           <input name="attr_first_aid_fail" data-i18n-title="coche_echec" title="@{first_aid_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="first aid" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{first aid}}} {{subheader=@{first_aid}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{first_aid}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="first_aid" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{first_aid}}} {{subheader=[[@{first_aidPJ}+@{first_aid}]]}} {{rating=[[@{first_aidPJ}+@{first_aid}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="first aid" title="first aid">first aid</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -861,14 +887,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_first_aidPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_first_aidPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="psychotherapy fail checkbox">
           <input name="attr_psychotherapy_fail" data-i18n-title="coche_echec" title="@{psychotherapy_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="psychotherapy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{psychotherapy}}} {{subheader=@{psychotherapy}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{psychotherapy}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="psychotherapy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{psychotherapy}}} {{subheader=[[@{psychotherapyPJ}+@{psychotherapy}]]}} {{rating=[[@{psychotherapyPJ}+@{psychotherapy}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="psychotherapy" title="psychotherapy">psychotherapy</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -877,14 +903,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_psychotherapyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_psychotherapyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="search fail checkbox">
           <input name="attr_search_fail" data-i18n-title="coche_echec" title="@{search_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="search" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{search}}} {{subheader=@{search}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{search}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="search" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{search}}} {{subheader=[[@{searchPJ}+@{search}]]}} {{rating=[[@{searchPJ}+@{search}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="search" title="search">search</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -893,14 +919,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_searchPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_searchPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="SIGINT fail checkbox">
           <input name="attr_sigint_fail" data-i18n-title="coche_echec" title="@{sigint_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="sigint" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{SIGINT}}} {{subheader=@{sigint}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{sigint}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="sigint" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{sigint}}} {{subheader=[[@{sigintPJ}+@{sigint}]]}} {{rating=[[@{sigintPJ}+@{sigint}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="SIGINT" title="SIGINT">SIGINT</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -909,14 +935,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sigintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_sigintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="alertness fail checkbox">
           <input name="attr_alertness_fail" data-i18n-title="coche_echec" title="@{alertness_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="alertness" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{alertness}}} {{subheader=@{alertness}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{alertness}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="bureaucracy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{bureaucracy}}} {{subheader=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{rating=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="alertness" title="alertness">alertness</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -925,14 +951,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_alertnessPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_alertnessPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="anthropology fail checkbox">
           <input name="attr_anthropology_fail" data-i18n-title="coche_echec" title="@{anthropology_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="anthropology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{anthropology}}} {{subheader=@{anthropology}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{anthropology}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="anthropology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{anthropology}}} {{subheader=[[@{anthropologyPJ}+@{anthropology}]]}} {{rating=[[@{anthropologyPJ}+@{anthropology}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="anthropology" title="anthropology">anthropology</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -941,14 +967,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_anthropologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_anthropologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="archeology fail checkbox">
           <input name="attr_archeology_fail" data-i18n-title="coche_echec" title="@{archeology_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="archeology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{archeology}}} {{subheader=@{archeology}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{archeology}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="archeology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{archeology}}} {{subheader=[[@{archeologyPJ}+@{archeology}]]}} {{rating=[[@{archeologyPJ}+@{archeology}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="archeology" title="archeology">archeology</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -957,14 +983,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_archeologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_archeologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="firearms fail checkbox">
           <input name="attr_firearms_fail" data-i18n-title="coche_echec" title="@{firearms_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="firearms" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{firearms}}} {{subheader=@{firearms}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{firearms}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="firearms" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{firearms}}} {{subheader=[[@{firearmsPJ}+@{firearms}]]}} {{rating=[[@{firearmsPJ}+@{firearms}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="firearms" title="firearms">firearms</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -973,14 +999,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_firearmsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_firearmsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="melee weapons fail checkbox">
           <input name="attr_melee_weapons_fail" data-i18n-title="coche_echec" title="@{melee_weapons_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="melee weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{melee weapons}}} {{subheader=@{melee_weapons}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{melee_weapons}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="melee_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{melee_weapons}}} {{subheader=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{rating=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="melee weapons" title="melee weapons">melee weapons</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
@@ -989,14 +1015,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_melee_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_melee_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		 
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="heavy weapons fail checkbox">
           <input name="attr_heavy_weapons_fail" data-i18n-title="coche_echec" title="@{heavy_weapons_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="heavy weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy weapons}}} {{subheader=@{heavy_weapons}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{heavy_weapons}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="heavy_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy_weapons}}} {{subheader=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{rating=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="heavy weapons" title="heavy weapons">heavy weapons</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1005,14 +1031,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_heavy_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="artillery fail checkbox">
           <input name="attr_artillery_fail" data-i18n-title="coche_echec" title="@{artillery_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="artillery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{artillery}}} {{subheader=@{artillery}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{artillery}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="artillery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{artillery}}} {{subheader=[[@{artilleryPJ}+@{artillery}]]}} {{rating=[[@{artilleryPJ}+@{artillery}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="artillery" title="artillery">artillery</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1021,14 +1047,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artilleryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_artilleryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="craft fail checkbox">
           <input name="attr_craft_fail" data-i18n-title="coche_echec" title="@{craft_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="craft" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{craft}}} {{subheader=@{craft}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{craft}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="craft" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{craft}}} {{subheader=[[@{craftPJ}+@{craft}]]}} {{rating=[[@{craftPJ}+@{craft}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="craft" title="craft">craft</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1037,7 +1063,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_craftPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_craftPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <label class="custom-label" data-i18n-title="craft name" title="craft name">
           <textarea data-i18n-placeholder="skill name" name="attr_craft_name" placeholder="skill name" title="@{craft_name}" value=""></textarea>
@@ -1047,7 +1073,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="athletics fail checkbox">
           <input name="attr_athletics_fail" data-i18n-title="coche_echec" title="@{athletics_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="athletics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{athletics}}} {{subheader=@{athletics}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{athletics}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+      <button data-i18n-title="rollinfo" name="athletics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{athletics}}} {{subheader=[[@{athleticsPJ}+@{athletics}]]}} {{rating=[[@{athleticsPJ}+@{athletics}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="athletics" title="athletics">athletics</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1056,14 +1082,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_athleticsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_athleticsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="drive fail checkbox">
           <input name="attr_drive_fail" data-i18n-title="coche_echec" title="@{drive_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="drive" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{drive}}} {{subheader=@{drive}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{drive}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="drive" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{drive}}} {{subheader=[[@{drivePJ}+@{drive}]]}} {{rating=[[@{drivePJ}+@{drive}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="drive" title="drive">drive</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1072,14 +1098,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_drivePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_drivePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="unarmed combat fail checkbox">
           <input name="attr_unarmed_combat_fail" data-i18n-title="coche_echec" title="@{unarmed_combat_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="unarmed combat" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unarmed combat}}} {{subheader=@{unarmed_combat}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{unarmed_combat}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="unarmed_combat" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unarmed_combat}}} {{subheader=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{rating=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="unarmed combat" title="unarmed combat">unarmed combat</h3><span data-i18n="(40%)">(40%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1088,7 +1114,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unarmed_combatPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_unarmed_combatPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
 		<label class="custom-label" data-i18n-title="pilot name" title="pilot name">
           <textarea data-i18n-placeholder="specialisation" name="attr_unarmed_spec" placeholder="specialisation" title="@{spec}" value=""></textarea>
@@ -1098,7 +1124,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="stealth fail checkbox">
           <input name="attr_stealth_fail" data-i18n-title="coche_echec" title="@{stealth_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="stealth" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{stealth}}} {{subheader=@{stealth}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{stealth}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="stealth" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{stealth}}} {{subheader=[[@{stealthPJ}+@{stealth}]]}} {{rating=[[@{stealthPJ}+@{stealth}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="stealth" title="stealth">stealth</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1107,7 +1133,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_stealthPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_stealthPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 </div>
@@ -1121,7 +1147,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="ride fail checkbox">
           <input name="attr_ride_fail" data-i18n-title="coche_echec" title="@{ride_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="ride" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{ride}}} {{subheader=@{ride}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{ride}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="ride" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{ride}}} {{subheader=[[@{ridePJ}+@{ride}]]}} {{rating=[[@{ridePJ}+@{ride}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="ride" title="ride">ride</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1130,14 +1156,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_ridePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_ridePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="dodge fail checkbox">
           <input name="attr_dodge_fail" data-i18n-title="coche_echec" title="@{dodge_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="dodge" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{dodge}}} {{subheader=@{dodge}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{dodge}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="dodge" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{dodge}}} {{subheader=[[@{dodgePJ}+@{dodge}]]}} {{rating=[[@{dodgePJ}+@{dodge}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="dodge" title="dodge">dodge</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1146,14 +1172,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_dodgePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_dodgePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="heavy machinery fail checkbox">
           <input name="attr_heavy_machinery_fail" data-i18n-title="coche_echec" title="@{heavy_machinery_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="heavy machinery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy machinery}}} {{subheader=@{heavy_machinery}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{heavy_machinery}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="heavy_machinery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy_machinery}}} {{subheader=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{rating=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="heavy machinery" title="heavy machinery">heavy machinery</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1162,14 +1188,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_machineryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_heavy_machineryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="medicine fail checkbox">
           <input name="attr_medicine_fail" data-i18n-title="coche_echec" title="@{medicine_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="medicine" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{medicine}}} {{subheader=@{medicine}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{medicine}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+         <button data-i18n-title="rollinfo" name="medecine" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{medecine}}} {{subheader=[[@{medecinePJ}+@{medecine}]]}} {{rating=[[@{medecinePJ}+@{medecine}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="medicine" title="medicine">medicine</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1178,14 +1204,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_medicinePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_medicinePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="forensics fail checkbox">
           <input name="attr_forensics_fail" data-i18n-title="coche_echec" title="@{forensics_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="forensics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{forensics}}} {{subheader=@{forensics}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{forensics}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="forensics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{forensics}}} {{subheader=[[@{forensicsPJ}+@{forensics}]]}} {{rating=[[@{forensicsPJ}+@{forensics}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="forensics" title="forensics">forensics</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1194,14 +1220,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_forensicsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_forensicsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="swim fail checkbox">
           <input name="attr_swim_fail" data-i18n-title="coche_echec" title="@{swim_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="swim" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{swim}}} {{subheader=@{swim}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{swim}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="swim" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{swim}}} {{subheader=[[@{swimPJ}+@{swim}]]}} {{rating=[[@{swimPJ}+@{swim}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="swim" title="swim">swim</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1210,14 +1236,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_swimPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_swimPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="navigate fail checkbox">
           <input name="attr_navigate_fail" data-i18n-title="coche_echec" title="@{navigate_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="navigate" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{navigate}}} {{subheader=@{navigate}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{navigate}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="navigate" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{navigate}}} {{subheader=[[@{navigatePJ}+@{navigate}]]}} {{rating=[[@{navigatePJ}+@{navigate}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="navigate" title="navigate">navigate</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1226,14 +1252,14 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_navigatePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_navigatePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="pilot fail checkbox">
           <input name="attr_pilot_fail" data-i18n-title="coche_echec" title="@{pilot_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="pilot" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pilot}}} {{subheader=@{pilot}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{pilot}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="pilot" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pilot}}} {{subheader=[[@{pilotPJ}+@{pilot}]]}} {{rating=[[@{pilotPJ}+@{pilot}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="pilot" title="pilot">pilot</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1242,7 +1268,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pilotPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_pilotPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <label class="custom-label" data-i18n-title="pilot name" title="pilot name">
           <textarea data-i18n-placeholder="skill name" name="attr_pilot_name" placeholder="skill name" title="@{pilot_name}" value=""></textarea>
@@ -1252,7 +1278,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="science fail checkbox">
           <input name="attr_science_fail" data-i18n-title="coche_echec" title="@{science_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{science}}} {{subheader=@{science}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{science}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{science}}} {{subheader=[[@{sciencePJ}+@{science}]]}} {{rating=[[@{sciencePJ}+@{science}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="science" title="science">science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1261,7 +1287,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <label class="custom-label" data-i18n-title="science name" title="science name">
           <textarea data-i18n-placeholder="skill name" name="attr_science_name" placeholder="skill name" title="@{science_name}" value=""></textarea>
@@ -1271,7 +1297,7 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="survival fail checkbox">
           <input name="attr_survival_fail" data-i18n-title="coche_echec" title="@{survival_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="survival" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{survival}}} {{subheader=@{survival}}} {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{rating=[[@{survival}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+       <button data-i18n-title="rollinfo" name="survival" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{survival}}} {{subheader=[[@{survivalPJ}+@{survival}]]}} {{rating=[[@{survivalPJ}+@{survival}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="survival" title="survival">survival</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
@@ -1280,7 +1306,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_survivalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number1" value=" "/>
+         <input name="attr_survivalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
         
@@ -3619,6 +3645,7 @@ _additionalskills=[];
 			setAttributes({[`${attr}`]: score * 5}, true);
 		});
 	});
+	
 
 	// === HIT POINTS
 	// First time player set you
