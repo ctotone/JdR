@@ -330,7 +330,7 @@
         <div class="vert-line"></div>
         <h2 class="center" data-i18n="×5" title="La même valeur de statistique que précédement mais multipliée par 5 de manière à avoir un score compris entre 0 et 100.">×5</h2>
         <div class="vert-line"></div>
-		<h2 class="center" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés.">Mod.</h2>
+		<h2 class="center" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de statistique entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés.">Mod.</h2>
         <div class="vert-line"></div>
         <h2 class="aligned-left" data-i18n="distinguishing features" title="Une statistique inférieure à 9 ou supérieure à 12 est peu commun. Notez un mot ou deux pour décrire des statistiques en dehors de la moyenne. Ceux-ci aident à donner de la personnalité à votre agent.">distinguishing features</h2>
         <div class="horz-line"></div>
@@ -341,13 +341,13 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="strength score" title="strength score">
-          <input min="0" name="attr_strength_score" placeholder="-" title="" type="number" value=" "/>
+          <input min="0" name="attr_strength_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line">
 		</div><span class="center" name="attr_strength" title=""></span>
 		 <div class="vert-line"></div>
         <label >
-          <input min="0" name="attr_modFORPJ" placeholder="-" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input name="attr_modFORPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="strength distinguishing features" title="strength distinguishing features">
@@ -361,12 +361,12 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution score" title="constitution score">
-          <input min="0" name="attr_constitution_score" placeholder="-" title="" type="number" value=" "/>
+          <input min="0" name="attr_constitution_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_constitution" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modCONPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+          <input min="0" name="attr_modCONPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution distinguishing features" title="constitution distinguishing features">
@@ -385,7 +385,7 @@
         <div class="vert-line"></div><span class="center" name="attr_dexterity" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modDEXPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+          <input min="0" name="attr_modDEXPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity distinguishing features" title="dexterity distinguishing features">
@@ -404,7 +404,7 @@
         <div class="vert-line"></div><span class="center" name="attr_intelligence" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modINTPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+          <input min="0" name="attr_modINTPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence distinguishing features" title="intelligence distinguishing features">
@@ -423,7 +423,7 @@
         <div class="vert-line"></div><span class="center" name="attr_power" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modPOUPJ" placeholder="-" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+          <input min="0" name="attr_modPOUPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="power distinguishing features" title="power distinguishing features">
@@ -442,7 +442,7 @@
         <div class="vert-line"></div><span class="center" name="attr_charisma" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modCARPJ" placeholder="-" title="Ce modificateur est exprimé en %. Il est calculé par le MJ en fonction de la différence de valeur de stat. entre votre personnage et son hôte. Il est automatiquement appliquer lors du jet de dés." type="number" value=" "/>
+          <input min="0" name="attr_modCARPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma distinguishing features" title="charisma distinguishing features">
@@ -554,7 +554,25 @@
       </div>
       <div class="grid section-incidents">
         <div class="grid section border-bottom">
-          <h2 class="aligned-left" data-i18n="13. incidents of san loss without going insane" data-i18n-title="13. incidents of san loss without going insane">13. incidents of san loss without going insane</h2>
+          <h2 class="aligned-left" data-i18n="13. incidents of san loss without going insane" title="A chaque fois que vous perdez de la SAN sans atteindre de palier
+entrainant l'apparition d'une folie ou d'une perte de points de liens,
+vous pouvez cocher une case Violence ou Impuissance selon le type de 
+perte de SAN.
+
+Cependant, si une perte de SAN entraine l'apparition d'une folie ou 
+la perte de points d'un lien, vous devez éffacer chaque case cochée
+dans le type en question (si jamais vous n'êtes pas déja adapté)
+
+Être adapté à la violence signifie que l'empathie de votre Agent 
+souffre lorsqu'il en vient à considérer la violence comme un outil 
+de plus à manier. 
+Il ou elle perd définitivement 1D6 CHA et le même montant dans chacun 
+de ses Liens.
+
+Être adapté à l'impuissance signifie que la motivation personnelle de 
+votre agent souffre lorsqu'il se retire du monde qui l'entoure. Dès 
+que votre agent s'adapte à l'impuissance, il ou elle perd définitivement 
+1D6 POU.">13. incidents of san loss without going insane</h2>
         </div>
         <div class="grid section incidents-body">
           <h3 class="center" data-i18n="violence" data-i18n-title="violenceinfo" title="violenceinfo">violence</h3>
@@ -605,7 +623,13 @@
           <input name="attr_bureaucracy_fail" data-i18n-title="coche_echec" title="@{bureaucracy_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="bureaucracy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{bureaucracy}}} {{subheader=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{rating=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="bureaucracy" title="bureaucracy">bureaucracy</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="bureaucracy" title="Manipuler les règles et les personnalités qui gouvernent 
+une organisation. 
+
+Utilisez-le pour localiser et emprunter des fournitures, 
+convaincre un fonctionnaire de fournir des informations 
+ou des ressources, d'obtenir des informations d'identification 
+pour accéder à une zone réglementée.">bureaucracy</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="bureaucracy rank" title="bureaucracy rank">
@@ -613,7 +637,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_bureaucracyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_bureaucracyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- Test ligne en dessous 	
@@ -632,7 +656,19 @@
           <input name="attr_art_fail" data-i18n-title="coche_echec" title="@{art_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="art" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{art}}} {{subheader=[[@{artPJ}+@{art}]]}} {{rating=[[@{artPJ}+@{art}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="art" title="art">art</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="art" title="Savoir créer ou interpréter une œuvre qui chavire 
+émotions et opinions. 
+
+Il englobe également la connaissance des techniques 
+et des tendances dans votre domaine, et la capacité 
+à distinguer le vrai travail d'un créateur particulier 
+d'un faux.
+
+N'importe qui peut dessiner un croquis approximatif; 
+la compétence Art reflète connaissance, pratique et talent. 
+Chaque type d'art est une spécialisation distincte : 
+Jeu d'acteur, écriture créative, danse, flûte, Guitare, 
+Peinture, Poésie, Scénarisation, Sculpture, Chant, etc...">art</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="art rank" title="art rank">
@@ -640,25 +676,28 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_artPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
-        <label class="custom-label" data-i18n-title="art name" title="art name">
-          <textarea data-i18n-placeholder="skill name" name="attr_art_name" placeholder="skill name" title="@{art_name}" value=""></textarea>
-        </label>
+       
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="surgery fail checkbox">
           <input name="attr_surgery_fail" data-i18n-title="coche_echec" title="@{surgery_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="surgery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{surgery}}} {{subheader=[[@{surgeryPJ}+@{surgery}]]}} {{rating=[[@{surgeryPJ}+@{surgery}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="surgery" title="surgery">surgery</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="surgery" title="Le traitement d'une blessure ou d'une anomalie par des 
+moyens chirurgicaux. 
+
+En comparaison, les premiers secours maintiennent un 
+patient en vie jusqu'à ce que la chirurgie soit possible 
+et que la médecine assure une récupération à long terme.">surgery</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="surgery rank" title="surgery rank">
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_surgery" title="@{surgery}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_surgeryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_surgeryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -666,14 +705,18 @@
           <input name="attr_accounting_fail" data-i18n-title="coche_echec" title="@{accounting_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="accounting" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{accounting}}} {{subheader=[[@{accountingPJ}+@{accounting}]]}} {{rating=[[@{accountingPJ}+@{accounting}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="accounting" title="accounting">accounting</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="accounting" title="L'étude de la finance et des affaires. 
+
+Utilisez-le pour trouver des anomalies grace aux dossiers 
+financiers pour les, telles qu'un compte bancaire caché 
+ou un blanchiment d'argent.">accounting</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="accounting rank" title="accounting rank">
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_accounting" title="@{accounting}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_accountingPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_accountingPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -681,14 +724,20 @@
           <input name="attr_criminology_fail" data-i18n-title="coche_echec" title="@{criminology_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="criminology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{criminology}}} {{subheader=[[@{criminologyPJ}+@{criminology}]]}} {{rating=[[@{criminologyPJ}+@{criminology}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="criminology" title="criminology">criminology</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="criminology" title="Connaissance des comportements criminels et complotistes.
+		  
+Utilisez-le pour identifier et prédire les comportements 
+criminels, déduire les relations entre les membres d'un 
+complot, analyser l'activité criminelle, examiner les 
+déclarations des témoins, ou savoir à qui parler dans 
+la clandestinité criminelle.">criminology</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="criminology rank" title="criminology rank">
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_criminology" title="@{criminology}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_criminologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_criminologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -696,14 +745,15 @@
           <input name="attr_disguise_fail" data-i18n-title="coche_echec" title="@{disguise_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="disguise" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{disguise}}} {{subheader=[[@{disguisePJ}+@{disguise}]]}} {{rating=[[@{disguisePJ}+@{disguise}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="disguise" title="disguise">disguise</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="disguise" title="Modifiez l'apparence, la voix, la posture, le corps de votre agent, 
+le langage et les manières d'éviter d'être reconnus sans attirer l'attention.">disguise</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="disguise rank" title="disguise rank">
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_disguise" title="@{disguise}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_disguisePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_disguisePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -711,22 +761,40 @@
           <input name="attr_demolitions_fail" data-i18n-title="coche_echec" title="@{demolitions_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="demolitions" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{demolitions}}} {{subheader=[[@{demolitionsPJ}+@{demolitions}]]}} {{rating=[[@{demolitionsPJ}+@{demolitions}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="demolitions" title="demolitions">demolitions</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="demolitions" title="Manipulation sûre des explosifs en cas de crise. 
+
+Utilisez-le pour désarmer une bombe, utiliser une charge 
+pour détruire une cible à distance, fabriquer un explosif 
+à partir des fournitures ou matériel stocker, ou analyser 
+une explosion pour déterminer exactement ce l'a causé. 
+
+L'échec lors de la manipulation d'une bombe signifie que 
+vous avez besoin de plus de temps.  
+
+S'il s'agit d'un moment de crise qui nécessite un lancé de 
+dés, un échec critique signifie une explosion accidentelle.">demolitions</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="demolitions rank" title="demolitions rank">
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_demolitions" title="@{demolitions}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_demolitionsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_demolitionsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="military science fail checkbox">
           <input name="attr_military_science_fail" data-i18n-title="coche_echec" title="@{military_science_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="military_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{military_science}}} {{subheader=[[@{military_sciencePJ}+@{military_science}]]}} {{rating=[[@{military_sciencePJ}+@{military_science}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="military science" title="military science">military science</h3><span data-i18n="(0%)">(0%)</span>
+        <button data-i18n-title="rollinfo" name="military_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{military science}}} {{subheader=[[@{military_sciencePJ}+@{military_science}]]}} {{rating=[[@{military_sciencePJ}+@{military_science}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="military science" title="Connaissance de la culture, des techniques et des réglementations militaires.
+
+Utilisez-le pour identifier les menaces sur un champ de bataille, trouver
+portées précises, reconnaître les faiblesses d'une fortification,
+déduire le niveau d'entraînement d'un soldat ou d'une unité, reconstituer
+les événements d'une bataille, ou déployer des forces avantageusement
+en combat. Chaque type de science militaire est sa propre compétence.
+Les types habituels sont Terre, Air et Mer.">military science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="military science rank" title="military science rank">
@@ -734,18 +802,24 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_military_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_military_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
-        <label class="custom-label" data-i18n-title="military science name" title="military science name">
-          <textarea data-i18n-placeholder="skill name" name="attr_military_science_name" placeholder="skill name" title="@{military_science_name}" value=""></textarea>
-        </label>
+        
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="history fail checkbox">
           <input name="attr_history_fail" data-i18n-title="coche_echec" title="@{history_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="history" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{history}}} {{subheader=[[@{historyPJ}+@{history}]]}} {{rating=[[@{historyPJ}+@{history}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="history" title="history">history</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="history" title="Découvrir des faits et des théories sur l'antiquité humaine.
+
+Utilisez-le pour mémoriser ou trouver un fait clé sur le
+passé lointain, reconnaître une référence obscure ou peigner
+une base de données ou une bibliothèque pour des informations 
+que personne sans votre éducation profonde pourrait trouver. 
+Alors que l'anthropologie concerne les cultures vivantes et 
+l'archéologie étudie le sens des reliques antiques, l'Histoire 
+est un vaste étude de l'humanité.">history</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="history rank" title="history rank">
@@ -753,7 +827,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_historyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_historyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -761,7 +835,25 @@
           <input name="attr_humint_fail" data-i18n-title="coche_echec" title="@{humint_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="HUMINT" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{HUMINT}}} {{subheader=[[@{HUMINTPJ}+@{HUMINT}]]}} {{rating=[[@{HUMINTPJ}+@{HUMINT}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="HUMINT" title="HUMINT">HUMINT</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="HUMINT" title="Intelligence humaine. 
+
+Cela permet d'obtenir des informations sur un sujet 
+- en particulier les informations que le sujet aurait
+plutôt dissimuler - par l'observation, la conversation,
+ou l'examen des modèles de comportement et des relations.
+
+Utilisez HUMINT pour reconnaître les signes de malhonnêteté
+les indices verbaux et le langage corporel, jauger l'attitude 
+et intentions, cultiver des sources d'information sur un
+sujet, déterminer ce qu'il faudrait pour obtenir un sujet
+coopérer ou reconnaître des indices sur ce qu'est un sujet
+veut dissimuler. HUMINT peut remarquer des signes de troubles 
+mentaux maladie, mais la psychothérapie serait nécessaire pour 
+diagnostiquer et traiter une maladie spécifique. Si votre agent 
+a également Criminologie, HUMINT peut être utilisé pour établir 
+un profil psychologique pour aider à trouver un sujet. 
+Un sujet qui essaie délibérément de tromper votre agent peut 
+tenter une Test de persuasion pour s'opposer à l'HUMINT de votre agent">HUMINT</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="HUMINT rank" title="HUMINT rank">
@@ -769,15 +861,24 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_humintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_humintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="computer science fail checkbox">
           <input name="attr_computer_science_fail" data-i18n-title="coche_echec" title="@{computer_science_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="computer_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{computer_science}}} {{subheader=[[@{computer_sciencePJ}+@{computer_science}]]}} {{rating=[[@{computer_sciencePJ}+@{computer_science}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="computer science" title="computer science">computer science</h3><span data-i18n="(0%)">(0%)</span>
+        <button data-i18n-title="rollinfo" name="computer_science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{computer science}}} {{subheader=[[@{computer_sciencePJ}+@{computer_science}]]}} {{rating=[[@{computer_sciencePJ}+@{computer_science}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="computer science" title="Connaissance approfondie des ordinateurs, des systèmes 
+informatiques, et les programmes qui les exécutent. 
+
+Profitez-en pour récupérer les données effacées ou 
+cryptées, protégez les documents, pirater un ordinateur, 
+cloner la carte SIM d'un téléphone, identifier les défauts 
+d'unsystème de sécurité, se faire passer pour des utilisateurs 
+ou falsifier des données. 
+Ceci est souvent complété par des compétences artisanales comme 
+électricien et Microélectronique.">computer science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="computer science rank" title="computer science rank">
@@ -785,7 +886,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_computer_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_computer_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -793,7 +894,14 @@
           <input name="attr_law_fail" title="@{law_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="law" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{law}}} {{subheader=[[@{lawPJ}+@{law}]]}} {{rating=[[@{lawPJ}+@{law}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="law" title="law">law</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="law" title="Utiliser les lois et les tribunaux à l'avantage de votre agent. 
+		  
+Utilisation pour obtenir le chemin de votre agent devant le tribunal, pour 
+déterminer les procédures correctes de traitement des preuves dans une poursuite 
+ou une affaire civile (et comment les saper), pour faire sortir votre agent des 
+ennuis juridiques, ou pour minimiser les risques juridiques. 
+La compétence Loi s'applique à votre Pays d'origine,l'utiliser avec un autre 
+pays nécessite une formation spéciale (voir page 30)">law</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="law rank" title="law rank">
@@ -801,7 +909,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_lawPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_lawPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -809,7 +917,17 @@
           <input name="attr_occult_fail" data-i18n-title="coche_echec" title="@{occult_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="occult" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{occult}}} {{subheader=[[@{occultPJ}+@{occult}]]}} {{rating=[[@{occultPJ}+@{occult}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="occult" title="occult">occult</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="occult" title="L'étude du surnaturel au sens de traditions humaines, y compris 
+des choses comme les théories du complot, la science marginale 
+et la cryptozoologie. 
+
+Utilisez Occulte pour examiner et déduire 
+l'intention d'un rituel, ou pour identifier des traditions occultes,
+des groupes, des grimoires, des outils, des symboles ou légendes. 
+
+Occultisme ne peut jamais dire à un agent ce qui est
+vraiment contre nature et ce qui n'est que superstition ou
+mythologie. C'est le domaine de la compétence Paranaturel.">occult</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="occult rank" title="occult rank">
@@ -817,13 +935,23 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_occultPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_occultPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->		
 		<label></label>
         <button data-i18n-title="rollinfo" name="unnatural" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unnatural}}} {{subheader=@{unnatural}}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="unnatural" title="unnatural">unnatural</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="unnatural" title="Connaissance des fondamentaux, hallucinante secrets de l'univers. 
+
+Utilisez-le pour vous souvenir, reconnaître ou rechercher des 
+faits sur les choses humaines considérer comme non naturel. 
+Cela va bien au-delà de l'occulte, parce que la compétence 
+Paranatuel représente des choses qui sont réels. 
+Utilisez-le pour passer au crible les parties les plus sombres de
+mythe et folklore et reconnaître lequel est vrai.
+
+Chaque point obtenu en Paranaturel retire 1 pont à votre Santé
+Mentale maximum.">unnatural</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="unnatural rank" title="unnatural rank">
@@ -831,7 +959,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unnaturalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_unnaturalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -839,7 +967,19 @@
           <input name="attr_persuade_fail" data-i18n-title="coche_echec" title="@{persuade_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="persuade" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{persuade}}} {{subheader=[[@{persuadePJ}+@{persuade}]]}} {{rating=[[@{persuadePJ}+@{persuade}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="persuade" title="persuade">persuade</h3><span data-i18n="(20%)">(20%)</span>
+          <h3 data-i18n="persuade" title="Changer la décision ou le désir profond d'un autre. 
+		  
+Utilisation Persuader d'obtenir le chemin de votre agent 
+lorsque le sujet est si têtu, ce que votre agent veut est 
+si précieux, ou la tromperie est si flagrante que le 
+Charisme ne suffit pas.
+Avec Persuasion, votre agent pourrait convaincre un témoin
+que ce qu'elle a vu était anodin et non contre nature,
+parler à un détective pour qu'il vous aide à dissimuler des preuves
+le plus grand bien, ou tirer des renseignements utiles d'un
+sujet involontaire. Cette compétence permet également à votre agent de
+résister à la persuasion et à l'interrogation lors de jets de Persuasion 
+opposés (voir TESTS OPPOSÉS page 45).">persuade</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="persuade rank" title="persuade rank">
@@ -847,7 +987,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_persuadePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_persuadePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -855,7 +995,16 @@
           <input name="attr_pharmacy_fail" data-i18n-title="coche_echec" title="@{pharmacy_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="pharmacy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pharmacy}}} {{subheader=[[@{pharmacyPJ}+@{pharmacy}]]}} {{rating=[[@{pharmacyPJ}+@{pharmacy}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="pharmacy" title="pharmacy">pharmacy</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="pharmacy" title="Connaissance des médicaments, de leurs ingrédients et de leur création,
+à leurs effets, usages et mésusages. 
+
+Utilisez-le pour identifier et produire des médicaments et des antidotes, 
+ainsi que des poisons.
+L'identification d'un médicament nécessite au moins 20% de compétence. 
+Préparer un médicament particulièrement puissant en toute sécurité, comme
+celui avec effets psychoactifs, nécessite au moins 40% de compétence ou un
+jet de dés réussi. .
+(POISON ET MALADIE page 60)">pharmacy</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="pharmacy rank" title="pharmacy rank">
@@ -863,7 +1012,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pharmacyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_pharmacyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 	</div>
@@ -878,8 +1027,14 @@
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="first aid fail checkbox">
           <input name="attr_first_aid_fail" data-i18n-title="coche_echec" title="@{first_aid_fail}" type="checkbox"/>
         </label>
-       <button data-i18n-title="rollinfo" name="first_aid" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{first_aid}}} {{subheader=[[@{first_aidPJ}+@{first_aid}]]}} {{rating=[[@{first_aidPJ}+@{first_aid}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="first aid" title="first aid">first aid</h3><span data-i18n="(10%)">(10%)</span>
+       <button data-i18n-title="rollinfo" name="first_aid" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{first aid}}} {{subheader=[[@{first_aidPJ}+@{first_aid}]]}} {{rating=[[@{first_aidPJ}+@{first_aid}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="first aid" title="Le traitement initial et la stabilisation des blessures.
+
+Utilisez-le pour aider un personnage à récupérer des points 
+de vie perdus. 
+Par comparaison, la chirurgie corrige une plaie grave et
+La médecine assure une récupération à long terme. 
+(Voir GUÉRISON page 55)">first aid</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="first aid rank" title="first aid rank">
@@ -887,7 +1042,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_first_aidPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_first_aidPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -895,7 +1050,14 @@
           <input name="attr_psychotherapy_fail" data-i18n-title="coche_echec" title="@{psychotherapy_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="psychotherapy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{psychotherapy}}} {{subheader=[[@{psychotherapyPJ}+@{psychotherapy}]]}} {{rating=[[@{psychotherapyPJ}+@{psychotherapy}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="psychotherapy" title="psychotherapy">psychotherapy</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="psychotherapy" title="Le diagnostic et le traitement de la maladie mentale. 
+
+Utilise le pour identifier un trouble mental, aider un 
+patient à se rétablir, parler à quelqu'un lorsqu'un trouble
+commence à prendre forme et traiter la maladie mentale à long 
+terme. Vous ne pouvez pas utiliser la psychothérapie sur vous-même. 
+Utiliser la psychothérapie pour aider quelqu'un qui a été exposé à
+des forces non naturelles pourraient coûter du SAN au thérapeute...">psychotherapy</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="psychotherapy rank" title="psychotherapy rank">
@@ -903,7 +1065,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_psychotherapyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_psychotherapyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -911,7 +1073,15 @@
           <input name="attr_search_fail" data-i18n-title="coche_echec" title="@{search_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="search" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{search}}} {{subheader=[[@{searchPJ}+@{search}]]}} {{rating=[[@{searchPJ}+@{search}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="search" title="search">search</h3><span data-i18n="(20%)">(20%)</span>
+          <h3 data-i18n="search" title="Trouver des choses qui sont cachées ou obscurcies à la vue. 
+
+La recherche d'une scène peut ne pas nécessiter la compétence
+de recherche, uniquement du temps et des efforts, ou un niveau 
+suffisamment élevé en INT.
+
+Utiliser la recherche pour trouver un objet qui était caché
+avec la compétence Discrétion, ou est autrement si bien caché
+ou déguisé qu'il a besoin d'un expert. ">search</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="search rank" title="search rank">
@@ -919,15 +1089,22 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_searchPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_searchPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="SIGINT fail checkbox">
           <input name="attr_sigint_fail" data-i18n-title="coche_echec" title="@{sigint_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="sigint" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{sigint}}} {{subheader=[[@{sigintPJ}+@{sigint}]]}} {{rating=[[@{sigintPJ}+@{sigint}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="SIGINT" title="SIGINT">SIGINT</h3><span data-i18n="(0%)">(0%)</span>
+        <button data-i18n-title="rollinfo" name="sigint" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{SIGINT}}} {{subheader=[[@{sigintPJ}+@{sigint}]]}} {{rating=[[@{sigintPJ}+@{sigint}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="SIGINT" title="Intelligence des signaux. 
+
+Il englobe le chiffrement, le renseignement sur les communications, 
+le renseignement électronique, la surveillance des communications 
+radio et numériques et la création et décryptage de codes. 
+Il est souvent utilisé en conjonction avec l'informatique pour le piratage, 
+et avec Artisanat (électricien) pour l'installation de bogues et d'écoutes 
+téléphoniques.">SIGINT</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="SIGINT rank" title="SIGINT rank">
@@ -935,15 +1112,20 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sigintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_sigintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="alertness fail checkbox">
           <input name="attr_alertness_fail" data-i18n-title="coche_echec" title="@{alertness_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="bureaucracy" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{bureaucracy}}} {{subheader=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{rating=[[@{bureaucracyPJ}+@{bureaucracy}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="alertness" title="alertness">alertness</h3><span data-i18n="(20%)">(20%)</span>
+        <button data-i18n-title="rollinfo" name="alertness" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{alertness}}} {{subheader=[[@{alertnessPJ}+@{alertness}]]}} {{rating=[[@{alertnessPJ}+@{alertness}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="alertness" title="La vigilance détecte le danger. 
+
+Utilisez-le pour entendre un bruit léger, comprendre le 
+marmonnement de l'autre côté d'un mur, repérer un pistolet 
+caché sous une veste, ou pour debusquer quelqu'un s'étant 
+caché ou tentant d'être discret.">alertness</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="alertness rank" title="alertness rank">
@@ -951,7 +1133,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_alertnessPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_alertnessPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -959,7 +1141,15 @@
           <input name="attr_anthropology_fail" data-i18n-title="coche_echec" title="@{anthropology_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="anthropology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{anthropology}}} {{subheader=[[@{anthropologyPJ}+@{anthropology}]]}} {{rating=[[@{anthropologyPJ}+@{anthropology}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="anthropology" title="anthropology">anthropology</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="anthropology" title="L'étude des cultures humaines vivantes. 
+
+Utilisez-le pour comprendre la morale, les croyances 
+religieuses, les coutumes et les mœurs, et pour identifier 
+(mais pas traduire) les langues obscures.
+Alors que l'Histoire traite du passé lointain et que 
+l'Archéologie étudie les vestiges physiques, l'Anthropologie 
+concerne les comportements des cultures vivantes et leurs 
+relations avec l'autre et le passé.">anthropology</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="anthropology rank" title="anthropology rank">
@@ -967,7 +1157,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_anthropologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_anthropologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -975,7 +1165,15 @@
           <input name="attr_archeology_fail" data-i18n-title="coche_echec" title="@{archeology_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="archeology" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{archeology}}} {{subheader=[[@{archeologyPJ}+@{archeology}]]}} {{rating=[[@{archeologyPJ}+@{archeology}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="archeology" title="archeology">archeology</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="archeology" title="L'étude des vestiges physiques des cultures humaines.
+
+Utilisez-le pour analyser le mode de vie d'un peuple de ruines,
+pour déterminer l'âge d'un artefact, pour dire à un véritable 
+artefact d'un faux, et d'identifier (mais pas de traduire) les
+langues humaines. 
+Où en est l'anthropologie les cultures vivantes et l'Histoire est 
+une large étude du passé, L'archéologie discerne le sens des
+vestiges de peuples morts depuis longtemps.">archeology</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="archeology rank" title="archeology rank">
@@ -983,7 +1181,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_archeologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_archeologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -991,7 +1189,11 @@
           <input name="attr_firearms_fail" data-i18n-title="coche_echec" title="@{firearms_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="firearms" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{firearms}}} {{subheader=[[@{firearmsPJ}+@{firearms}]]}} {{rating=[[@{firearmsPJ}+@{firearms}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="firearms" title="firearms">firearms</h3><span data-i18n="(20%)">(20%)</span>
+          <h3 data-i18n="firearms" title="Tir sûr et précis avec des armes légères au combat.
+
+Utilisez-le pour atteindre une cible malgré l'adrénaline,
+la panique et choc de violence interférant avec la coordination 
+œil-main.">firearms</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="firearms rank" title="firearms rank">
@@ -999,15 +1201,18 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_firearmsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_firearmsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="melee weapons fail checkbox">
           <input name="attr_melee_weapons_fail" data-i18n-title="coche_echec" title="@{melee_weapons_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="melee_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{melee_weapons}}} {{subheader=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{rating=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="melee weapons" title="melee weapons">melee weapons</h3><span data-i18n="(30%)">(30%)</span>
+        <button data-i18n-title="rollinfo" name="melee_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{melee weapons}}} {{subheader=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{rating=[[@{melee_weaponsPJ}+@{melee_weapons}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="melee weapons" title="Utilisation mortelle d'armes de mêlée au combat. 
+
+Utilisez-le pour blesser ou tuer un adversaire avec un couteau, 
+une hache, un gourdin ou une autre arme.">melee weapons</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="melee weapons rank" title="melee weapons rank">
@@ -1015,15 +1220,19 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_melee_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_melee_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		 
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="heavy weapons fail checkbox">
           <input name="attr_heavy_weapons_fail" data-i18n-title="coche_echec" title="@{heavy_weapons_fail}" type="checkbox"/>
         </label>
-        <button data-i18n-title="rollinfo" name="heavy_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy_weapons}}} {{subheader=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{rating=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="heavy weapons" title="heavy weapons">heavy weapons</h3><span data-i18n="(0%)">(0%)</span>
+        <button data-i18n-title="rollinfo" name="heavy_weapons" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy weapons}}} {{subheader=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{rating=[[@{heavy_weaponsPJ}+@{heavy_weapons}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="heavy weapons" title="Utilisation sûre et précise des munitions lourdes portatives 
+telles que les mitrailleuses et les lance-roquettes. 
+
+Utilisation Armes lourdes pour supprimer les ennemis ou détruire un
+véhicule au combat.">heavy weapons</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="heavy weapons rank" title="heavy weapons rank">
@@ -1031,7 +1240,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_heavy_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1039,7 +1248,10 @@
           <input name="attr_artillery_fail" data-i18n-title="coche_echec" title="@{artillery_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="artillery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{artillery}}} {{subheader=[[@{artilleryPJ}+@{artillery}]]}} {{rating=[[@{artilleryPJ}+@{artillery}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="artillery" title="artillery">artillery</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="artillery" title="Utilisation sûre et précise des mortiers, missiles, obusiers,
+canons de chars et autres pièces d'artillerie lourde. 
+
+Utilisez-le pour détruire des troupes ou une cible difficile au combat.">artillery</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="artillery rank" title="artillery rank">
@@ -1047,7 +1259,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artilleryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_artilleryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1055,7 +1267,23 @@
           <input name="attr_craft_fail" data-i18n-title="coche_echec" title="@{craft_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="craft" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{craft}}} {{subheader=[[@{craftPJ}+@{craft}]]}} {{rating=[[@{craftPJ}+@{craft}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="craft" title="craft">craft</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="craft" title="Fabrication et réparation d'outils et de structures sophistiqués. 
+Un travail que la plupart des gens pourraient comprendre ne nécessite 
+pas la compétence Artisanat, seulement un test INT ou DEX.
+
+Choisissez une spécialisation pour Artisanat :
+
+Artisanat Électricien - pour recâbler une maison, câbler un véhicule
+pressé, appuyez sur un téléphone ou une ligne de données, ou repérez 
+des signes de sabotage électrique.
+Artisanat Mécanicien - pour truquer une machine ou faire fonctionner 
+un moteur cassé ou pour saboter.
+Artisanat Serrurier - pour ouvrir une serrure sans clé.
+Artisanat Armurier - pour réparer une arme à feu. 
+
+Exemple de spécialisation:
+Architecte,Charpentier, Électricien, Armurier, Serrurier, Mécanicien, 
+Microélectronique, Plombier, etc.">craft</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="craft rank" title="craft rank">
@@ -1063,10 +1291,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_craftPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
-        </label>
-        <label class="custom-label" data-i18n-title="craft name" title="craft name">
-          <textarea data-i18n-placeholder="skill name" name="attr_craft_name" placeholder="skill name" title="@{craft_name}" value=""></textarea>
+         <input name="attr_craftPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1074,7 +1299,17 @@
           <input name="attr_athletics_fail" data-i18n-title="coche_echec" title="@{athletics_fail}" type="checkbox"/>
         </label>
       <button data-i18n-title="rollinfo" name="athletics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{athletics}}} {{subheader=[[@{athleticsPJ}+@{athletics}]]}} {{rating=[[@{athleticsPJ}+@{athletics}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="athletics" title="athletics">athletics</h3><span data-i18n="(30%)">(30%)</span>
+          <h3 data-i18n="athletics" title="l'Athlétisme englobe toute activité physique telle que courir,
+sauter, grimper ou lancer.
+
+Utilisez Athlétisme pour :
+» Dépasser quelqu'un à la course(voir ÉPREUVES OPPOSÉES à la page 45).
+» Sauter un trou intimidant.
+» Escalader dans un moment de crise.
+» Atterrissez en toute sécurité dans une chute pouvant atteindre trois mètres.
+» Frappez une cible avec un couteau lancé ou mettre une grenade exactement 
+sur la cible.
+» Attrapez quelque chose sans avertissement, comme intercepter une grenade lancée.">athletics</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="athletics rank" title="athletics rank">
@@ -1082,7 +1317,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_athleticsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_athleticsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1090,7 +1325,15 @@
           <input name="attr_drive_fail" data-i18n-title="coche_echec" title="@{drive_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="drive" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{drive}}} {{subheader=[[@{drivePJ}+@{drive}]]}} {{rating=[[@{drivePJ}+@{drive}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="drive" title="drive">drive</h3><span data-i18n="(20%)">(20%)</span>
+          <h3 data-i18n="drive" title="Manipuler une automobile ou une moto en toute sécurité 
+dans un moment de crise. 
+
+Sauf indication contraire du gestionnaire, chaque agent
+a un permis de conduire et peut conduire une voiture en 
+toute sécurité dans des conditions normales. 
+
+Utilisez cette compétence en cas de conduite d'un véhicule
+à grande vitesse ou sur un terrain dangereux.">drive</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="drive rank" title="drive rank">
@@ -1098,15 +1341,23 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_drivePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_drivePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="unarmed combat fail checkbox">
           <input name="attr_unarmed_combat_fail" data-i18n-title="coche_echec" title="@{unarmed_combat_fail}" type="checkbox"/>
         </label>
-       <button data-i18n-title="rollinfo" name="unarmed_combat" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unarmed_combat}}} {{subheader=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{rating=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="unarmed combat" title="unarmed combat">unarmed combat</h3><span data-i18n="(40%)">(40%)</span>
+       <button data-i18n-title="rollinfo" name="unarmed_combat" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unarmed combat}}} {{subheader=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{rating=[[@{unarmed_combatPJ}+@{unarmed_combat}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="unarmed combat" title="Auto défense. 
+Un combat entre combattants non entraînés implique 
+souvent plus de bousculades et de cris que de véritable
+violence. 
+
+Utilisez le combat à mains nues pour blesser ou tuer 
+un adversaire à mains nues (ou pieds, coudes, dents ou tête).
+
+Vous pouvez ajouter une spécialisation si vous le souhaitez.">unarmed combat</h3><span data-i18n="(40%)">(40%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="unarmed combat rank" title="unarmed combat rank">
@@ -1114,18 +1365,23 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unarmed_combatPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_unarmed_combatPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
-		<label class="custom-label" data-i18n-title="pilot name" title="pilot name">
-          <textarea data-i18n-placeholder="specialisation" name="attr_unarmed_spec" placeholder="specialisation" title="@{spec}" value=""></textarea>
-        </label>
+		
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="stealth fail checkbox">
           <input name="attr_stealth_fail" data-i18n-title="coche_echec" title="@{stealth_fail}" type="checkbox"/>
         </label>
          <button data-i18n-title="rollinfo" name="stealth" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{stealth}}} {{subheader=[[@{stealthPJ}+@{stealth}]]}} {{rating=[[@{stealthPJ}+@{stealth}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="stealth" title="stealth">stealth</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="stealth" title="Dissimuler votre présence ou vos activités. 
+
+Utilisez-le pour cacher un pistolet, camoufler une position, 
+dissimuler un micro, laisser une enveloppe à un point mort inaperçu, 
+se déplacer silencieusement, suivre sans être vu, ou se fondre dans 
+une foule. 
+Un agent tentant de se camoufler peut être détecté uniquement par une 
+Vigilance ou une Recherche adverse (voir TESTS OPPOSÉS à la page 45)">stealth</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="stealth rank" title="stealth rank">
@@ -1133,7 +1389,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_stealthPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_stealthPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 </div>
@@ -1148,7 +1404,11 @@
           <input name="attr_ride_fail" data-i18n-title="coche_echec" title="@{ride_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="ride" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{ride}}} {{subheader=[[@{ridePJ}+@{ride}]]}} {{rating=[[@{ridePJ}+@{ride}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="ride" title="ride">ride</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="ride" title="Manipuler, dresser et monter un animal—chevaux, ânes, chameaux, peu importe. 
+Les montures exotiques peuvent nécessiter formation spéciale (voir page 30). 
+
+Utilisez-le pour rester en sécurité sur un animal durant un moment de crise 
+et pour assurer la sécurité des animaux d'équitation, calme et en bonne santé.">ride</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="ride rank" title="ride rank">
@@ -1156,7 +1416,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_ridePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_ridePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1164,7 +1424,13 @@
           <input name="attr_dodge_fail" data-i18n-title="coche_echec" title="@{dodge_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="dodge" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{dodge}}} {{subheader=[[@{dodgePJ}+@{dodge}]]}} {{rating=[[@{dodgePJ}+@{dodge}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="dodge" title="dodge">dodge</h3><span data-i18n="(30%)">(30%)</span>
+          <h3 data-i18n="dodge" title="Éviter le danger grâce à l'instinct et aux réflexes. 
+
+Utilisation
+Esquivez pour éviter une attaque. 
+Contre les armes à feu et les explosifs, l'esquive n'est 
+utile que pour se mettre à couvert.
+(voir ESQUIVER LES ATTAQUES À DISTANCE page 54).">dodge</h3><span data-i18n="(30%)">(30%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="dodge rank" title="dodge rank">
@@ -1172,15 +1438,17 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_dodgePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_dodgePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="heavy machinery fail checkbox">
           <input name="attr_heavy_machinery_fail" data-i18n-title="coche_echec" title="@{heavy_machinery_fail}" type="checkbox"/>
         </label>
-         <button data-i18n-title="rollinfo" name="heavy_machinery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy_machinery}}} {{subheader=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{rating=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="heavy machinery" title="heavy machinery">heavy machinery</h3><span data-i18n="(10%)">(10%)</span>
+         <button data-i18n-title="rollinfo" name="heavy_machinery" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{heavy machinery}}} {{subheader=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{rating=[[@{heavy_machineryPJ}+@{heavy_machinery}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="heavy machinery" title="Fonctionnement en toute sécurité d'un tracteur, d'une grue, 
+d'un bulldozer, d'un réservoir, camion lourd ou autre grosse 
+machine en cas de crise.">heavy machinery</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="heavy machinery rank" title="heavy machinery rank">
@@ -1188,15 +1456,25 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_machineryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_heavy_machineryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="medicine fail checkbox">
           <input name="attr_medicine_fail" data-i18n-title="coche_echec" title="@{medicine_fail}" type="checkbox"/>
         </label>
-         <button data-i18n-title="rollinfo" name="medecine" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{medecine}}} {{subheader=[[@{medecinePJ}+@{medecine}]]}} {{rating=[[@{medecinePJ}+@{medecine}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="medicine" title="medicine">medicine</h3><span data-i18n="(0%)">(0%)</span>
+         <button data-i18n-title="rollinfo" name="medicine" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{medicine}}} {{subheader=[[@{medicinePJ}+@{medicine}]]}} {{rating=[[@{medicinePJ}+@{medicine}]]}} {{dice=[[1d100]]}}">
+          <h3 data-i18n="medicine" title="L'étude et le traitement des blessures et des maladies. 
+
+Utilisez-le pour diagnostiquer la cause d'une blessure, d'une maladie 
+ou d'un empoisonnement, identifier des anomalies telles que des toxines 
+ou des maladies, identifier la cause et l'heure approximative du décès, 
+identifier le type d'arme utilisée pour tuer une victime, identifier un
+dernier repas de la personne décédée, ou prescrire un traitement à long 
+terme. 
+En comparaison, les premiers secours maintiennent un patient en vie
+jusqu'à ce que la chirurgie soit possible et que la chirurgie corrige une grave
+plaie. (Voir GUÉRISON à la page 55)">medicine</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="medicine rank" title="medicine rank">
@@ -1204,7 +1482,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_medicinePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_medicinePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1212,7 +1490,15 @@
           <input name="attr_forensics_fail" data-i18n-title="coche_echec" title="@{forensics_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="forensics" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{forensics}}} {{subheader=[[@{forensicsPJ}+@{forensics}]]}} {{rating=[[@{forensicsPJ}+@{forensics}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="forensics" title="forensics">forensics</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="forensics" title="Recueillir des informations détaillées et des preuves à l'aide 
+d'équipement médico-légal. 
+
+Utilisez-le pour enregistrer des données biométriques, déterminer 
+les détails d'une arme utilisée ou de l'accélérateur qui a déclenché 
+un incendie, discerner des indices cruciaux qu'un chercheur ordinaire 
+ne reconnaîtrait pas, nettoyer une scène de preuves incriminantes, 
+ou recueillir, analyser et comparer des empreintes digitales et des 
+échantillons d'ADN.">forensics</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="forensics rank" title="forensics rank">
@@ -1220,7 +1506,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_forensicsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_forensicsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1228,7 +1514,12 @@
           <input name="attr_swim_fail" data-i18n-title="coche_echec" title="@{swim_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="swim" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{swim}}} {{subheader=[[@{swimPJ}+@{swim}]]}} {{rating=[[@{swimPJ}+@{swim}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="swim" title="swim">swim</h3><span data-i18n="(20%)">(20%)</span>
+          <h3 data-i18n="swim" title="La plupart des agents savent nager pour leur loisir. 
+
+Utiliser la compétence Natation dans une crise dangereuse : 
+parcourir une longue distance dans le clapot del'eau, 
+empêcher un ami de se noyer ou se rendre à un bateau avant 
+que la chose tentaculaire en dessous ne vous attrape.">swim</h3><span data-i18n="(20%)">(20%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="swim rank" title="swim rank">
@@ -1236,7 +1527,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_swimPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_swimPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1244,7 +1535,8 @@
           <input name="attr_navigate_fail" data-i18n-title="coche_echec" title="@{navigate_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="navigate" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{navigate}}} {{subheader=[[@{navigatePJ}+@{navigate}]]}} {{rating=[[@{navigatePJ}+@{navigate}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="navigate" title="navigate">navigate</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="navigate" title="Trouvez votre chemin rapidement avec des cartes, des graphiques 
+et des tableaux, des courses d'orientation, des instruments etc...">navigate</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="navigate rank" title="navigate rank">
@@ -1252,7 +1544,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_navigatePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_navigatePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1260,7 +1552,15 @@
           <input name="attr_pilot_fail" data-i18n-title="coche_echec" title="@{pilot_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="pilot" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{pilot}}} {{subheader=[[@{pilotPJ}+@{pilot}]]}} {{rating=[[@{pilotPJ}+@{pilot}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="pilot" title="pilot">pilot</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="pilot" title="Pilotage, navigation et capitainerie sur l'eau, véhicules aéroportés 
+ou aérospatiaux. 
+
+Utilisez-le pour garder un navire en toute sécurité en cas de crise, 
+par exemple lors d'une tempête ou d'un poursuite dangereuse. 
+
+Chaque type de navire est une compétence distincte :
+Avion, Drone, Hélicoptère, Petit Bateau, Navire, Espace
+Navette, etc.">pilot</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="pilot rank" title="pilot rank">
@@ -1268,18 +1568,25 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pilotPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_pilotPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
-        <label class="custom-label" data-i18n-title="pilot name" title="pilot name">
-          <textarea data-i18n-placeholder="skill name" name="attr_pilot_name" placeholder="skill name" title="@{pilot_name}" value=""></textarea>
-        </label>
+       
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="science fail checkbox">
           <input name="attr_science_fail" data-i18n-title="coche_echec" title="@{science_fail}" type="checkbox"/>
         </label>
         <button data-i18n-title="rollinfo" name="science" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{science}}} {{subheader=[[@{sciencePJ}+@{science}]]}} {{rating=[[@{sciencePJ}+@{science}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="science" title="science">science</h3><span data-i18n="(0%)">(0%)</span>
+          <h3 data-i18n="science" title="L'étude approfondie des processus du monde. 
+C'est plus qu'une scolarité ordinaire; n'importe qui peut tenter un
+Test INT pour se souvenir de quelque chose de sa classe de sciences. 
+
+La science est utilisée pour trouver un aperçu clé sur la façon dont 
+l'univers fonctionne - ou du moins, le façon dont il est censé fonctionner. 
+
+Chaque science est une science distincte
+compétence : Astronomie, Biologie, Botanique, Chimie, Ingénierie, Génétique, 
+Géologie, Mathématiques, Météorologie, Physique, Planétologie, Zoologie, etc.">science</h3><span data-i18n="(0%)">(0%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="science rank" title="science rank">
@@ -1287,18 +1594,23 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
-        <label class="custom-label" data-i18n-title="science name" title="science name">
-          <textarea data-i18n-placeholder="skill name" name="attr_science_name" placeholder="skill name" title="@{science_name}" value=""></textarea>
-        </label>
+      
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
         <label class="styled-checkbox" data-i18n-title="coche_echec" title="survival fail checkbox">
           <input name="attr_survival_fail" data-i18n-title="coche_echec" title="@{survival_fail}" type="checkbox"/>
         </label>
        <button data-i18n-title="rollinfo" name="survival" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{survival}}} {{subheader=[[@{survivalPJ}+@{survival}]]}} {{rating=[[@{survivalPJ}+@{survival}]]}} {{dice=[[1d100]]}}">
-          <h3 data-i18n="survival" title="survival">survival</h3><span data-i18n="(10%)">(10%)</span>
+          <h3 data-i18n="survival" title="Connaissance du monde naturel. 
+
+Utilisez-le pour trouver des pistes et sentiers, 
+planifier une expédition, prédire la météo, 
+reconnaître quand la faune ou la flore sont inhabituelles, 
+utiliser l'environnement pour recueillir d'autres 
+informations, ou trouver de la nourriture, de l'eau,
+et abri.">survival</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="survival rank" title="survival rank">
@@ -1306,7 +1618,7 @@
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_survivalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de score de compétence entre votre personnage et son hôte. Si un modificateur est noté, vous devrez l'appliquer lors du lancer de cette compétence." placeholder="0" type="number" value=" "/>
+         <input name="attr_survivalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
         
