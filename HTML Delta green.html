@@ -501,6 +501,31 @@
           </label>
           <input name="attr_breaking_point_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
+		   <div class="derived-attr nbsp">
+            <h3 class="aligned-left" data-i18n="bonusimpact" title="Le bonus d'impact est en rapport avec la FORCE 
+et s'applique lors d'une attaque au corps à corps
+
+Force entre 4 ou moins : -2 d'Impact
+Force entre 5 et 8 : -1 d'Impact
+Force entre 9 et 12 : 0 d'Impact
+Force entre 13 et 16 : +1 d'Impact
+Force entre 17 et plus : -2 d'Impact
+">Bonus d'Impact</h3>
+          </div>
+          <div class="vert-line"></div><span class="center" name="" title=""></span>
+          <div class="vert-line"></div>
+          <label data-i18n-title="breaking point" title="breaking point">
+            <input name="attr_impact" placeholder="-" title="Le bonus d'impact est en rapport avec la FORCE 
+et s'applique lors d'une attaque au corps à corps
+
+Force entre 4 ou moins : -2 d'Impact
+Force entre 5 et 8 : -1 d'Impact
+Force entre 9 et 12 : 0 d'Impact
+Force entre 13 et 16 : +1 d'Impact
+Force entre 17 et plus : -2 d'Impact
+" type="number" value=" "/>
+          </label>
+          <div class="horz-line"></div>
           <!--without modifier button(name=val type='roll' value=`@{gm_toggle} &{template:rolls} {{header=^{${val}}}} {{subheader=@{${attrName}}}} {{rating=[[@{${attrName}}]]}} {{dice=[[1d100]]}}`)-->
           <button name="Luck" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{Luck}}} {{subheader=@{luck}}} {{rating=[[@{luck}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
             <h3 class="aligned-left" data-i18n="luck" data-i18n-title="luk1">luck</h3>
@@ -1687,6 +1712,8 @@ et abri.">survival</h3><span data-i18n="(10%)">(10%)</span>
       </div>
       <div class="section-directions center border-bottom"><span data-i18n="Body armor reduces the damage of all attacks except Called Shots and successful Lethality rolls.">Body armor reduces the damage of all attacks except Called Shots and successful Lethality rolls.</span></div>
       <div class="grid section-weapons border-bottom">
+	    <h2></h2>
+		<div class="vert-line"></div>
         <h2 data-i18n="16. weapons" data-i18n-title="16. weapons" title="16. weapons">16. weapons</h2>
         <div class="vert-line"></div>
         <h2 data-i18n="skill %" data-i18n-title="skill %" title="skill %">skill %</h2>
@@ -1702,13 +1729,19 @@ et abri.">survival</h3><span data-i18n="(10%)">(10%)</span>
         <h2 data-i18n="kill radius" data-i18n-title="kill radius" title="kill radius">kill radius</h2>
         <div class="vert-line"></div>
         <h2 data-i18n="ammo" data-i18n-title="ammo" title="ammo">ammo</h2>
-        <div class="vert-line"></div>
+        
       </div>
       <div class="repeating-container border-bottom">
         <fieldset class="repeating_weapons">
           <div class="grid section-weapons border-bottom">
             <!--without modifier - const weaponRollValue = `@{gm_toggle} &{template:rolls} {{header=@{weapons}}} {{subheader=@{skill_percent}}} {{rating=[[@{skill_percent}]]}} {{dice=[[1d100]]}} {{hasdamage=[[@{hasdamage}]]}} {{damage=^{damage} [@{damage}](~repeating_weapons_damage)}}  {{damage_critical=^{damage (×2)} [@{damage}](~repeating_weapons_damage_critical)}} {{haslethality=[[@{haslethality}]]}} {{lethality=^{lethality} [@{lethality_percent}%](~repeating_weapons_lethality)}} {{lethality_critical=^{lethality (×2)} [@{lethality_percent}%](~repeating_weapons_lethality_critical)}} {{AP=[[@{armor_piercing}+0]]}}`; -->
-            <label data-i18n-title="weapons input" title="weapons input">
+             <button class="dicefontd10" name="weapon" type="roll" title="weapon roll" value="@{gm_toggle} &amp;{template:rolls} {{header=@{weapons}}} {{subheader=@{skill_percent}}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{rating=[[@{skill_percent}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{dice=[[1d100]]}} {{hasdamage=[[@{hasdamage}]]}} {{damage=^{damage} [@{damage}](~repeating_weapons_damage)}}  {{damage_critical=^{damage (×2)} [@{damage}](~repeating_weapons_damage_critical)}} {{haslethality=[[@{haslethality}]]}} {{lethality=^{lethality} [@{lethality_percent}%](~repeating_weapons_lethality)}} {{lethality_critical=^{lethality (×2)} [@{lethality_percent}%](~repeating_weapons_lethality_critical)}} {{AP=[[@{armor_piercing}+0]]}}">k</button>
+            <button class="none" name="roll_damage" type="roll" value="@{gm_toggle} &amp;{template:damage} {{header=@{weapons}}} {{subheader=@{damage}}} {{damage=[[@{damage}]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
+            <button class="none" name="roll_lethality" type="roll" value="@{gm_toggle} &amp;{template:lethality} {{header=@{weapons}}} {{subheader=@{lethality_percent}}}{{lethality_rating=[[@{lethality_percent}]]}} {{lethality=[[1d100]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
+            <button class="none" name="roll_damage_critical" type="roll" value="@{gm_toggle} &amp;{template:damage} {{header=@{weapons}}} {{subheader=@{damage}}} {{damage=[[(@{damage})*2]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
+            <button class="none" name="roll_lethality_critical" type="roll" value="@{gm_toggle} &amp;{template:lethality_critical} {{header=@{weapons}}} {{subheader=@{lethality_percent}}} {{lethality_rating=[[@{lethality_percent}*2]]}} {{lethality=[[1d100]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
+			<div class="vert-line"></div>
+			<label data-i18n-title="weapons input" title="weapons input">
               <input data-i18n-placeholder="weapons" name="attr_weapons" placeholder="weapons" title="@{repeating_weapons_${x}_weapons}" type="text" value=""/>
             </label>
             <div class="vert-line"></div>
@@ -1741,12 +1774,8 @@ et abri.">survival</h3><span data-i18n="(10%)">(10%)</span>
             <label data-i18n-title="ammo input" title="ammo input">
               <input data-i18n-placeholder="ammo" name="attr_ammo" placeholder="ammo" title="@{repeating_weapons_${x}_ammo}" type="number" value=""/>
             </label>
-            <div class="vert-line"></div>
-            <button class="dicefontd10" name="weapon" type="roll" title="weapon roll" value="@{gm_toggle} &amp;{template:rolls} {{header=@{weapons}}} {{subheader=@{skill_percent}}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{rating=[[@{skill_percent}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{dice=[[1d100]]}} {{hasdamage=[[@{hasdamage}]]}} {{damage=^{damage} [@{damage}](~repeating_weapons_damage)}}  {{damage_critical=^{damage (×2)} [@{damage}](~repeating_weapons_damage_critical)}} {{haslethality=[[@{haslethality}]]}} {{lethality=^{lethality} [@{lethality_percent}%](~repeating_weapons_lethality)}} {{lethality_critical=^{lethality (×2)} [@{lethality_percent}%](~repeating_weapons_lethality_critical)}} {{AP=[[@{armor_piercing}+0]]}}">k</button>
-            <button class="none" name="roll_damage" type="roll" value="@{gm_toggle} &amp;{template:damage} {{header=@{weapons}}} {{subheader=@{damage}}} {{damage=[[@{damage}]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
-            <button class="none" name="roll_lethality" type="roll" value="@{gm_toggle} &amp;{template:lethality} {{header=@{weapons}}} {{subheader=@{lethality_percent}}}{{lethality_rating=[[@{lethality_percent}]]}} {{lethality=[[1d100]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
-            <button class="none" name="roll_damage_critical" type="roll" value="@{gm_toggle} &amp;{template:damage} {{header=@{weapons}}} {{subheader=@{damage}}} {{damage=[[(@{damage})*2]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
-            <button class="none" name="roll_lethality_critical" type="roll" value="@{gm_toggle} &amp;{template:lethality_critical} {{header=@{weapons}}} {{subheader=@{lethality_percent}}} {{lethality_rating=[[@{lethality_percent}*2]]}} {{lethality=[[1d100]]}} {{AP=[[@{armor_piercing}+0]]}}"></button>
+            
+           
           </div>
         </fieldset>
       </div>
@@ -4048,6 +4077,7 @@ _additionalskills=[];
 		});
 	});
 	
+	
 	// === SAN LOSS Button
 	arrays['_sanity_loss'].forEach(attr => {
 		on(`change:${attr}`, (eventinfo) => {
@@ -4333,4 +4363,5 @@ on("clicked:levelup", () =>{
     });
     //console.dir(update);
 });
+// 
 </script>
