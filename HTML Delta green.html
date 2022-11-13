@@ -341,10 +341,10 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="strength score" title="strength score">
-          <input min="0" name="attr_strength_score" placeholder="0" title="" type="number" value=" "/>
+          <input min="0" name="attr_strength_score" placeholder="-" title="" type="number" value=" "/>
         </label>
         <div class="vert-line">
-		</div><span class="center" name="attr_strength" title=""></span>
+		</div><span class="center" name="attr_strength" placeholder="0" title=""></span>
 		 <div class="vert-line"></div>
         <label >
           <input name="attr_modFORPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
@@ -353,7 +353,7 @@
         <label data-i18n-title="strength distinguishing features" title="strength distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_strength_features" placeholder="distinguishing features" title="" type="text"/>
         </label>
-        <input name="attr_strength" type="hidden" value=" "/>
+        <input name="attr_strength" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
          <button name="constitution" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{constitution}}} {{subheader=[[@{modCONPJ}+@{constitution}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCONPJ}/5+@{constitution_score}]]}} {{score=[[@{modCONPJ}+@{constitution}]]}}">
@@ -361,9 +361,10 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution score" title="constitution score">
-          <input min="0" name="attr_constitution_score" placeholder="0" title="" type="number" value=" "/>
+          <input min="0" name="attr_constitution_score" placeholder="-" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_constitution" title=""></span>
+        <div class="vert-line">
+		</div><span class="center" name="attr_constitution" title=""></span>
         <div class="vert-line"></div>
 		 <label >
           <input min="0" name="attr_modCONPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
@@ -380,12 +381,12 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity score" title="dexterity score">
-          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="0" title="" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="-" title="" type="number" value=""/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_dexterity" title=""></span>
+        <div class="vert-line"></div><span class="center" name="attr_dexterity" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modDEXPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input min="0" name="attr_modDEXPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=""/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity distinguishing features" title="dexterity distinguishing features">
@@ -399,12 +400,12 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence score" title="intelligence score">
-          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="0" title="" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="-" title="" type="number" value=""/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_intelligence" title=""></span>
+        <div class="vert-line"></div><span class="center" name="attr_intelligence" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modINTPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input min="0" name="attr_modINTPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=""/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence distinguishing features" title="intelligence distinguishing features">
@@ -418,7 +419,7 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="power score" title="power score">
-          <input min="0" name="attr_power_score" placeholder="0" title="" type="number" value=" "/>
+          <input min="0" name="attr_power_score" placeholder="-" title="" type="number" value=""/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_power" title=""></span>
         <div class="vert-line"></div>
@@ -432,14 +433,14 @@
         <input name="attr_power" type="hidden" value="0"/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
-        <button name="charisma" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{charisma}}} {{subheader=[[@{modCARPJ}+@{charisma}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCARPJ}/5+@{charisma}]]}} {{score=[[@{modCARPJ}+@{charisma}]]}}">
+        <button name="charisma" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{charisma}}} {{subheader=[[@{modCARPJ}+@{charisma}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCARPJ}/5+@{charisma_score}]]}} {{score=[[@{modCARPJ}+@{charisma}]]}}">
           <h3 class="aligned-left" data-i18n="charisma">charisma</h3><span class="para" data-i18n="CHA">CHA</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma score" title="charisma score">
           <input data-i18n-placeholder="-" min="0" name="attr_charisma_score" placeholder="0" title="" type="number" value=" "/>
         </label>
-        <div class="vert-line"></div><span class="center" name="attr_charisma" title=""></span>
+        <div class="vert-line"></div><span class="center" name="attr_charisma" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
           <input min="0" name="attr_modCARPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
@@ -481,15 +482,17 @@
           <input name="attr_willpower_points_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
           <!--without modifier button(name=val type='roll' value=`@{gm_toggle} &{template:rolls} {{header=^{${val}}}} {{subheader=@{${attrName}}}} {{rating=[[@{${attrName}}]]}} {{dice=[[1d100]]}}`)-->
-          <button name="SAN" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{SAN}}} {{subheader=@{sanity_points}}} {{rating=[[@{sanity_points}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{dice=[[1d100]]}}">
-            <h3 class="aligned-left" data-i18n="sanity points" data-i18n-title="cliksan">sanity points</h3><span class="para" data-i18n="SAN">SAN</span>
-          </button>
-          <div class="vert-line"></div><span class="center" name="attr_sanity_points_max" title="La Santé Mentale maximum est égale à 99 moins la compétence Paranaturel.
+		   <div class="derived-attr nbsp">
+            <h3 class="aligned-left" data-i18n="sanity points" title="Santé mentale
+Utilisez la macro pour effectuer votre Jet de Santé mentale.">sanity points</h3><span class="para" data-i18n="SAN">SAN</span>
+          </div>
+		  <div class="vert-line"></div><span class="center" name="attr_sanity_points_max" title="La Santé Mentale maximum est égale à 99 moins la compétence Paranaturel.
 		  LA Santé Mentale de départ est égale à Pouvoir x5."></span>
           <div class="vert-line"></div>
-          <label data-i18n-title="sanity points" title="sanity points">
-            <input name="attr_sanity_points" placeholder="-" title="Santé Mentale actuelle" type="number" value=" "/>
-          </label>
+          <span class="center" name="attr_sanity_points" title="Santé Mentale initial lors de la création de votre Personnage.
+Vous ne connaitrez plus jamais le score précis de votre Santé mentale.
+Et oui... Le MJ va jouer avec vos nerfs..."></span>
+		  
           <input name="attr_sanity_points_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
           <div class="derived-attr nbsp">
@@ -498,7 +501,10 @@
           <div class="vert-line"></div><span class="center" name="attr_breaking_point_max" title="Points de rupture maximum."></span>
           <div class="vert-line"></div>
           <label data-i18n-title="breaking point" title="breaking point">
-            <input name="attr_breaking_point" placeholder="-" title="Le point de rupture actuel, réinitialisé lorsque la santé mentale actuelle tombe à cette valeur ou en dessous. Le point de rupture de départ est SAN - POU." type="number" value=" "/>
+            <input name="attr_breaking_point" placeholder="-" title="Le point de rupture actuel.
+Lorsque la Santé Mentale tombe en dessous du score de point de rupture,
+votre personnage obtient un trouble mental permanent. Le score de point
+de rupture est recalculé (SAN - POU)" type="number" value=" "/>
           </label>
           <input name="attr_breaking_point_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
@@ -979,7 +985,7 @@ mythologie. C'est le domaine de la compétence Paranaturel.">occult</h3><span da
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->		
 		<label></label>
-        <button data-i18n-title="rollinfo" name="unnatural" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unnatural}}} {{subheader=@{unnatural}}} {{dice=[[1d100]]}}">
+        <button data-i18n-title="rollinfo" name="unnatural" title="rollinfo" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{unnatural}}} {{subheader=[[@{unnaturalPJ}+@{unnatural}]]}} {{dice=[[1d100]]}}">
           <h3 data-i18n="unnatural" title="Connaissance des fondamentaux, hallucinante secrets de l'univers. 
 
 Utilisez-le pour vous souvenir, reconnaître ou rechercher des 
@@ -4084,6 +4090,8 @@ _additionalskills=[];
 					let update = { 
 						willpower_points: calculatedWillPower,
 						sanity_points: calculatedSanity,
+						SM: calculatedSanity,
+						SM_max: calculatedSanity,
 						breaking_point: calculatedBreakingPoint,
 						breaking_point_max: calculatedBreakingPoint,
 						initial_san:zero
@@ -4223,6 +4231,7 @@ _additionalskills=[];
 		update['version']=codeversion;
 		update['luck']=50;
 		update['luck_max']=50;
+		update['SM']=0;
 		console.log(`%c update`, 'color: green; font-weight:bold');
 		console.info(update);
 		setAttrs(update, //Update attributes
