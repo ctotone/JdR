@@ -353,7 +353,7 @@
         <label data-i18n-title="strength distinguishing features" title="strength distinguishing features">
           <input data-i18n-placeholder="distinguishing features" name="attr_strength_features" placeholder="distinguishing features" title="" type="text"/>
         </label>
-        <input name="attr_strength" type="hidden" value="0"/>
+        <input name="attr_strength" type="hidden" value=" "/>
         <div class="horz-line"></div>
         <!--without modifier - const statRollValue = `@{gm_toggle} &{template:stats} {{header=^{${key}}}} {{subheader=@{${key}}}} {{dice=[[1d100]]}} {{stat=[[@{${key+'_score'}}]]}} {{score=[[@{${key}}]]}}`;-->
          <button name="constitution" data-i18n-title="rollinfoSTAT" title="rollinfoSTAT" type="roll" value="@{gm_toggle} &{template:stats} {{header=^{constitution}}} {{subheader=[[@{modCONPJ}+@{constitution}]]}} {{dice=[[1d100]]}} {{stat=[[@{modCONPJ}/5+@{constitution_score}]]}} {{score=[[@{modCONPJ}+@{constitution}]]}}">
@@ -380,7 +380,7 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity score" title="dexterity score">
-          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="-" title="" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_dexterity_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_dexterity" title=""></span>
         <div class="vert-line"></div>
@@ -399,7 +399,7 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence score" title="intelligence score">
-          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="-" title="" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_intelligence_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_intelligence" title=""></span>
         <div class="vert-line"></div>
@@ -418,7 +418,7 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="power score" title="power score">
-          <input min="0" name="attr_power_score" placeholder="-" title="" type="number" value=" "/>
+          <input min="0" name="attr_power_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_power" title=""></span>
         <div class="vert-line"></div>
@@ -437,7 +437,7 @@
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma score" title="charisma score">
-          <input data-i18n-placeholder="-" min="0" name="attr_charisma_score" placeholder="-" title="" type="number" value=" "/>
+          <input data-i18n-placeholder="-" min="0" name="attr_charisma_score" placeholder="0" title="" type="number" value=" "/>
         </label>
         <div class="vert-line"></div><span class="center" name="attr_charisma" title=""></span>
         <div class="vert-line"></div>
@@ -484,7 +484,8 @@
           <button name="SAN" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{SAN}}} {{subheader=@{sanity_points}}} {{rating=[[@{sanity_points}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}} {{dice=[[1d100]]}}">
             <h3 class="aligned-left" data-i18n="sanity points" data-i18n-title="cliksan">sanity points</h3><span class="para" data-i18n="SAN">SAN</span>
           </button>
-          <div class="vert-line"></div><span class="center" name="attr_sanity_points_max" title="La Santé Mentale maximum est égale à 99 moins la compétence Paranaturel."></span>
+          <div class="vert-line"></div><span class="center" name="attr_sanity_points_max" title="La Santé Mentale maximum est égale à 99 moins la compétence Paranaturel.
+		  LA Santé Mentale de départ est égale à Pouvoir x5."></span>
           <div class="vert-line"></div>
           <label data-i18n-title="sanity points" title="sanity points">
             <input name="attr_sanity_points" placeholder="-" title="Santé Mentale actuelle" type="number" value=" "/>
