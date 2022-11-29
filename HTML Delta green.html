@@ -1,6 +1,7 @@
 
 <input name="attr_version" type="hidden" value="1.05"/>
 <!-- SKILL FOR UNNATURAL-->
+<!-- Token stamp couleur FFF000 -->
 <input name="attr_initial_san" type="hidden" value="1"/>
 <input name="attr_initial_con" type="hidden" value="1"/>
 <input name="attr_initial_str" type="hidden" value="1"/>
@@ -60,7 +61,7 @@
   <label class="switch" data-i18-titlen="whisper rolls to gm" title="whisper rolls to gm">
     <input class="whisper-toggle" name="attr_gm_toggle" type="checkbox" value="/w gm"/><span class="slider"></span>
   </label>
-  <!-- LOGO--><img alt="Delta Green" src="https://cdn-126.anonfiles.com/Ncj8o5G6y0/4baf4657-1667774897/max.jpg"/>
+  <!-- LOGO--><img alt="Delta Green" src="https://i.goopics.net/h9halz.jpg"/>
   <!-- CHARACTER SHEETS--><span data-i18n="Sheet Type">Sheet Type</span>
   <select name="attr_sheet_type">
     <optgroup label="Sheet Type">
@@ -330,7 +331,7 @@
         <div class="vert-line"></div>
         <h2 class="center" data-i18n="×5" title="La même valeur de statistique que précédement mais multipliée par 5 de manière à avoir un score compris entre 0 et 100.">×5</h2>
         <div class="vert-line"></div>
-		<h2 class="center" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de statistique entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés.">Mod.</h2>
+		<h2 class="center" data-i18n-title="infoMODstat" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de statistique entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés.">Mod.</h2>
         <div class="vert-line"></div>
         <h2 class="aligned-left" data-i18n="distinguishing features" title="Une statistique inférieure à 9 ou supérieure à 12 est peu commun. Notez un mot ou deux pour décrire des statistiques en dehors de la moyenne. Ceux-ci aident à donner de la personnalité à votre agent.">distinguishing features</h2>
         <div class="horz-line"></div>
@@ -347,7 +348,7 @@
 		</div><span class="center" name="attr_strength" placeholder="0" title=""></span>
 		 <div class="vert-line"></div>
         <label >
-          <input name="attr_modFORPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input name="attr_modFORPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="strength distinguishing features" title="strength distinguishing features">
@@ -367,7 +368,7 @@
 		</div><span class="center" name="attr_constitution" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modCONPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input min="0" name="attr_modCONPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="constitution distinguishing features" title="constitution distinguishing features">
@@ -386,7 +387,7 @@
         <div class="vert-line"></div><span class="center" name="attr_dexterity" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modDEXPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=""/>
+          <input min="0" name="attr_modDEXPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=""/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="dexterity distinguishing features" title="dexterity distinguishing features">
@@ -405,7 +406,7 @@
         <div class="vert-line"></div><span class="center" name="attr_intelligence" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modINTPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=""/>
+          <input min="0" name="attr_modINTPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=""/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="intelligence distinguishing features" title="intelligence distinguishing features">
@@ -424,7 +425,7 @@
         <div class="vert-line"></div><span class="center" name="attr_power" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modPOUPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input min="0" name="attr_modPOUPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="power distinguishing features" title="power distinguishing features">
@@ -443,7 +444,7 @@
         <div class="vert-line"></div><span class="center" name="attr_charisma" placeholder="0" title=""></span>
         <div class="vert-line"></div>
 		 <label >
-          <input min="0" name="attr_modCARPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="number" value=" "/>
+          <input min="0" name="attr_modCARPJ" placeholder="0" title="Ne pas modifier ce score, il est calculé par le MJ." type="text" value=" "/>
         </label>
         <div class="vert-line"></div>
         <label data-i18n-title="charisma distinguishing features" title="charisma distinguishing features">
@@ -674,7 +675,7 @@ une organisation.
 Utilisez-le pour localiser et emprunter des fournitures, 
 convaincre un fonctionnaire de fournir des informations 
 ou des ressources, d'obtenir des informations d'identification 
-pour accéder à une zone réglementée.">bureaucracy</h3><span data-i18n="(0%)">(0%)</span>
+pour accéder à une zone réglementée.">bureaucracy</h3><span data-i18n="(10%)">(10%)</span>
         </button>
         <div class="vert-line"></div>
         <label data-i18n-title="bureaucracy rank" title="bureaucracy rank">
@@ -682,7 +683,7 @@ pour accéder à une zone réglementée.">bureaucracy</h3><span data-i18n="(0%)"
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_bureaucracyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_bureaucracyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- Test ligne en dessous 	
@@ -721,7 +722,7 @@ Peinture, Poésie, Scénarisation, Sculpture, Chant, etc...">art</h3><span data-
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_artPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
        
         <div class="horz-line"></div>
@@ -742,7 +743,7 @@ et que la médecine assure une récupération à long terme.">surgery</h3><span 
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_surgery" title="@{surgery}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_surgeryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_surgeryPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -761,7 +762,7 @@ ou un blanchiment d'argent.">accounting</h3><span data-i18n="(10%)">(10%)</span>
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_accounting" title="@{accounting}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_accountingPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_accountingPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -782,7 +783,7 @@ la clandestinité criminelle.">criminology</h3><span data-i18n="(10%)">(10%)</sp
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_criminology" title="@{criminology}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_criminologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_criminologyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -798,7 +799,7 @@ le langage et les manières d'éviter d'être reconnus sans attirer l'attention.
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_disguise" title="@{disguise}" placeholder="0" type="number" value="10"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_disguisePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_disguisePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -824,7 +825,7 @@ dés, un échec critique signifie une explosion accidentelle.">demolitions</h3><
           <input data-i18n-placeholder="0" data-i18n-title="scorePJ" name="attr_demolitions" title="@{demolitions}" placeholder="0" type="number" value="0"/>
         </label><div class="vert-line"></div>
 		<label>
-         <input name="attr_demolitionsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_demolitionsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -847,7 +848,7 @@ Les types habituels sont Terre, Air et Mer.">military science</h3><span data-i18
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_military_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_military_sciencePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         
         <div class="horz-line"></div>
@@ -872,7 +873,7 @@ est un vaste étude de l'humanité.">history</h3><span data-i18n="(10%)">(10%)</
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_historyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_historyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -906,7 +907,7 @@ tenter une Test de persuasion pour s'opposer à l'HUMINT de votre agent">HUMINT<
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_humintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_humintPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -931,7 +932,7 @@ Ceci est souvent complété par des compétences artisanales comme
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_computer_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_computer_sciencePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -954,7 +955,7 @@ pays nécessite une formation spéciale (voir page 30)">law</h3><span data-i18n=
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_lawPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_lawPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -980,7 +981,7 @@ mythologie. C'est le domaine de la compétence Paranormal.">occult</h3><span dat
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_occultPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_occultPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->		
@@ -1004,7 +1005,7 @@ Mentale maximum.">unnatural</h3><span data-i18n="(0%)">(0%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unnaturalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_unnaturalPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1032,7 +1033,7 @@ opposés (voir TESTS OPPOSÉS page 45).">persuade</h3><span data-i18n="(20%)">(2
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_persuadePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_persuadePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1057,7 +1058,7 @@ jet de dés réussi. .
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pharmacyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_pharmacyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		
 	</div>
@@ -1087,7 +1088,7 @@ La médecine assure une récupération à long terme.
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_first_aidPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_first_aidPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1110,7 +1111,7 @@ des forces non naturelles pourraient coûter du SAN au thérapeute...">psychothe
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_psychotherapyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_psychotherapyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1134,7 +1135,7 @@ ou déguisé qu'il a besoin d'un expert. ">search</h3><span data-i18n="(20%)">(2
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_searchPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_searchPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1157,7 +1158,7 @@ téléphoniques.">SIGINT</h3><span data-i18n="(0%)">(0%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sigintPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_sigintPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1178,7 +1179,7 @@ caché ou tentant d'être discret.">alertness</h3><span data-i18n="(20%)">(20%)<
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_alertnessPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_alertnessPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	
  
@@ -1211,7 +1212,7 @@ relations avec l'autre et le passé.">anthropology</h3><span data-i18n="(0%)">(0
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_anthropologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_anthropologyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1235,7 +1236,7 @@ vestiges de peuples morts depuis longtemps.">archeology</h3><span data-i18n="(0%
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_archeologyPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_archeologyPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1255,7 +1256,7 @@ la panique et choc de violence interférant avec la coordination
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_firearmsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_firearmsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>	  
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1274,7 +1275,7 @@ une hache, un gourdin ou une autre arme.">melee weapons</h3><span data-i18n="(30
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_melee_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_melee_weaponsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>		 
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1294,7 +1295,7 @@ véhicule au combat.">heavy weapons</h3><span data-i18n="(0%)">(0%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_weaponsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_heavy_weaponsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1313,7 +1314,7 @@ Utilisez-le pour détruire des troupes ou une cible difficile au combat.">artill
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_artilleryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_artilleryPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1345,7 +1346,7 @@ Microélectronique, Plombier, etc.">craft</h3><span data-i18n="(0%)">(0%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_craftPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_craftPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1371,7 +1372,7 @@ sur la cible.
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_athleticsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_athleticsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1395,7 +1396,7 @@ Utilisez cette compétence en cas de conduite d'un véhicule
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_drivePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_drivePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1419,7 +1420,7 @@ Vous pouvez ajouter une spécialisation si vous le souhaitez.">unarmed combat</h
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_unarmed_combatPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_unarmed_combatPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
 		
         <div class="horz-line"></div>
@@ -1443,7 +1444,7 @@ Vigilance ou une Recherche adverse (voir TESTS OPPOSÉS à la page 45)">stealth<
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_stealthPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_stealthPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 </div>
@@ -1470,7 +1471,7 @@ et pour assurer la sécurité des animaux d'équitation, calme et en bonne sant�
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_ridePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_ridePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1492,7 +1493,7 @@ utile que pour se mettre à couvert.
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_dodgePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_dodgePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1510,7 +1511,7 @@ machine en cas de crise.">heavy machinery</h3><span data-i18n="(10%)">(10%)</spa
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_heavy_machineryPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_heavy_machineryPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1536,7 +1537,7 @@ plaie. (Voir GUÉRISON à la page 55)">medicine</h3><span data-i18n="(0%)">(0%)<
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_medicinePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_medicinePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1560,7 +1561,7 @@ ou recueillir, analyser et comparer des empreintes digitales et des
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_forensicsPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_forensicsPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1581,7 +1582,7 @@ que la chose tentaculaire en dessous ne vous attrape.">swim</h3><span data-i18n=
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_swimPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_swimPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>        
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1598,7 +1599,7 @@ et des tableaux, des courses d'orientation, des instruments etc...">navigate</h3
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_navigatePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_navigatePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
 <!-- without modifier - const skillRollValue = `@{gm_toggle} &{template:rolls} {{header=^{${caps}}}} {{subheader=@{${attr}}}} {{rating=[[@{${attr}}]]}}  {{dice=[[1d100]]}}`;-->
@@ -1622,7 +1623,7 @@ Navette, etc.">pilot</h3><span data-i18n="(0%)">(0%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_pilotPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_pilotPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
        
         <div class="horz-line"></div>
@@ -1648,7 +1649,7 @@ Géologie, Mathématiques, Météorologie, Physique, Planétologie, Zoologie, et
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_sciencePJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_sciencePJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
       
         <div class="horz-line"></div>
@@ -1672,7 +1673,7 @@ et abri.">survival</h3><span data-i18n="(10%)">(10%)</span>
         </label>
 		<div class="vert-line"></div>
 		<label>
-         <input name="attr_survivalPJ" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
+         <input name="attr_survivalPJ" data-i18n-title="infoMODcomp" title="Ce modificateur est calculé par le MJ en fonction de la différence de valeur de compétence entre votre personnage et son hôte. Il est automatiquement appliqué lors du jet de dés." placeholder="0" type="number" value=" "/>
         </label>
         <div class="horz-line"></div>
         
