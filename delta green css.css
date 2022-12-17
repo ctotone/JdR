@@ -1352,12 +1352,7 @@ span.titre_comp {
 }
 /* Roll template custom */
 /* Smaller margins - remove these if you want the huge default left margin */
-.sheet-rolltemplate-custom {
-  margin-left: -37px;
-}
-.withoutavatars .sheet-rolltemplate-custom {
-  margin-left: -7px;
-}
+
 
 .sheet-rolltemplate-custom .sheet-container {
   border: 1px solid;
@@ -1378,10 +1373,16 @@ span.titre_comp {
   border-top-right-radius: 0.3em;
 }
 .sheet-rolltemplate-custom .sheet-title {
-  font-size:1.5em;
+  font-size:1.6em;
+   color: whitesmoke;
+  font-variant: small-caps;
+  text-align: center;
+    border-bottom: 2px solid #4d4d4d;
+  padding: 2%;
 }
 .sheet-rolltemplate-custom .sheet-subtitle {
-  font-size:.9em;
+  font-size:1.1em;
+  text-align: center;
 }
 
 /* example colors */
@@ -1412,6 +1413,13 @@ span.titre_comp {
 .sheet-rolltemplate-custom .sheet-container.sheet-color-DG {
   --header-bg-color: #2F4F4F;
   --header-text-color: #fff;
+}
+.sheet-rolltemplate-custom .sheet-container.inlinerollresult {
+  background-color: transparent;
+  border: none;
+  font-weight: unset;
+  font-size: unset;
+  padding: unset;
 }
 
 /* Allprops part */
