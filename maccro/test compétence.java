@@ -16,8 +16,8 @@ Charisme,&{template:stats&#125; {{header=Charisme&#125;&#125; {{subheader=[[@{se
 |
 Chance,&{template:rolls&#125; {{header=Chance&#125;&#125; {{subheader=@{selected|luck}&#125;&#125; {{rating=@{selected|luck}&#125;&#125; {{dice=[[1d100]]&#125;&#125;,
 |
-Santé mentale,&{template:rolls&#125; {{header=Jet de Santé mentale&#125;&#125;  {{dice=[[1d100]]&#125;&#125;
-/em rappelle toi que Réussite et Échec critique existent sur les tests de Santé mentale ..., 
+Santé mentale,&{template:rolls&#125; {{header=Santé mentale&#125;&#125; {{subheader=@{selected|sanity_points}&#125;&#125;  {{rating=@{selected|sanity_points}&#125;&#125; {{dice=[[1d100]]&#125;&#125;
+/w gm rappelle toi que Réussite et Échec critique existent sur les tests de Santé mentale ...,
 |
 --------- COMPÉTENCES ----,
 |
