@@ -483,16 +483,14 @@
           <input name="attr_willpower_points_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
           <!--without modifier button(name=val type='roll' value=`@{gm_toggle} &{template:rolls} {{header=^{${val}}}} {{subheader=@{${attrName}}}} {{rating=[[@{${attrName}}]]}} {{dice=[[1d100]]}}`)-->
-		   <div class="derived-attr nbsp">
-            <h3 class="aligned-left" data-i18n="sanity points" title="Santé mentale
-Utilisez la macro pour effectuer votre Jet de Santé mentale.">sanity points</h3><span class="para" data-i18n="SAN">SAN</span>
-          </div>
+		   <button name="Santé mentale" title="Cliquez pour effectuer un jet de santé mentale" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=Santé mentale}} {{subheader=@{sanity_points}}} {{rating=@{sanity_points}}} {{dice=[[1d100]]}}">
+		   <h3 class="aligned-left" data-i18n="sanity points" title="Santé mentale">sanity points</h3><span class="para" data-i18n="SAN">SAN</span>
+			</button>
+		   
 		  <div class="vert-line"></div><span class="center" name="attr_sanity_points_max" title="La Santé Mentale maximum est égale à 99 moins la compétence Paranormal.
-		  LA Santé Mentale de départ est égale à Pouvoir x5."></span>
+		  La Santé Mentale de départ est égale à Pouvoir x5."></span>
           <div class="vert-line"></div>
-          <span class="center" name="attr_sanity_points" title="Santé Mentale initial lors de la création de votre Personnage.
-Vous ne connaitrez plus jamais le score précis de votre Santé mentale.
-Et oui... Le MJ va jouer avec vos nerfs..."></span>
+          <span class="center" name="attr_sanity_points" title="Santé Mentale actuelle"></span>
 		  
           <input name="attr_sanity_points_max" type="hidden" value="0"/>
           <div class="horz-line"></div>
@@ -535,7 +533,7 @@ Force entre 17 et plus : -2 d'Impact
           </label>
           <div class="horz-line"></div>
           <!--without modifier button(name=val type='roll' value=`@{gm_toggle} &{template:rolls} {{header=^{${val}}}} {{subheader=@{${attrName}}}} {{rating=[[@{${attrName}}]]}} {{dice=[[1d100]]}}`)-->
-          <button name="Luck" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{Luck}}} {{subheader=@{luck}}} {{rating=[[@{luck}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
+          <button name="Luck" title="Cliquez pour tester votre chance" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{Luck}}} {{subheader=@{luck}}} {{rating=[[@{luck}+?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{modifier=[[?{Modificateur|Aucun,0|+10%,10|+20%,20|+40%,40|-10%,-10|-20%,-20|-40%,-40|custom (%),?{custom (%)}}]]}}  {{dice=[[1d100]]}}">
             <h3 class="aligned-left" data-i18n="luck" data-i18n-title="luk1">luck</h3>
           </button>
           <div class="vert-line"></div><span class="center" name="attr_luck_max" title="50% de réussite"></span>
