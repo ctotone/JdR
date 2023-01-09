@@ -2,7 +2,7 @@
 ,|
 --------- STATISTIQUES ----,
 |
-Force ,/w gm &{template:stats&#125; {{header=Force&#125;&#125; {{subheader=[[@{selected|modFORPJ}+@{selected|strength}]]&#125;&#125; {{dice=[[1d100]]&#125;&#125; {{stat=[[@{selected|modFORPJ}/5+@{selected|strength_score}]]&#125;&#125; {{score=[[@{selected|modFORPJ}+@{selected|strength}]]&#125;&#125;
+Force ,/w gm &{template:stats&#125; {{header=Force&#125;&#125; {{subheader=[[@{selected|modFORPJ}+@{selected|strength}]]&#125;&#125; {{dice=[[1d100]]&#125;&#125; {{stat=[[@{selected|modFORPJ}/5+@{selected|strength_score}]]&#125;&#125; {{score=[[@{selected|modFORPJ}+@{selected|strength}]]&#125;&#125;,
 |
 Constitution,/w gm &{template:stats&#125; {{header=Constitution&#125;&#125; {{subheader=[[@{selected|modCONPJ}+@{selected|constitution}]]&#125;&#125; {{dice=[[1d100]]&#125;&#125; {{stat=[[@{selected|modCONPJ}/5+@{selected|constitution_score}]]&#125;&#125; {{score=[[@{selected|modCONPJ}+@{selected|constitution}]]&#125;&#125;,
 |
@@ -16,8 +16,8 @@ Charisme,/w gm &{template:stats&#125; {{header=Charisme&#125;&#125; {{subheader=
 |
 Chance,/w gm &{template:rolls&#125; {{header=Chance&#125;&#125; {{subheader=@{selected|luck}&#125;&#125; {{rating=@{selected|luck}&#125;&#125; {{dice=[[1d100]]&#125;&#125;,
 |
-Santé mentale,/w gm &{template:rolls&#125; {{header=Jet de Santé mentale&#125;&#125;  {{dice=[[1d100]]&#125;&#125;
-/em rappelle toi que Réussite et Échec critique existent sur les tests de Santé mentale ..., 
+Santé mentale,/w gm &{template:rolls&#125; {{header=Santé mentale&#125;&#125; {{subheader=@{selected|sanity_points}&#125;&#125;  {{rating=@{selected|sanity_points}&#125;&#125; {{dice=[[1d100]]&#125;&#125;
+/w gm rappelle toi que Réussite et Échec critique existent sur les tests de Santé mentale ...,
 |
 --------- COMPÉTENCES ----,
 |
