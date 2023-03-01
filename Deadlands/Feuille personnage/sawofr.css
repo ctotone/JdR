@@ -14,13 +14,14 @@
 }
 .sheet-rolltemplate-sawo div.sheet-titre{
     background-color: #5a3a0de0;
-    color : #FBFCFC;
-    font-size: 20px;
-    font-family: Helvetica Neue;
-    font-variant: small-caps;
-    font-weight: bolder;
-    padding: 8px;
+	color: #000;
+	font-size: 22px;
+	font-family: Helvetica Neue;
+	font-variant: small-caps;
+	font-weight: bolder;
+	padding: 8px;
 	border-radius: 0px 7px 0px 0px;
+	background-image: url("https://i.imgur.com/En3q3oN.png");
 }
 .sheet-rolltemplate-sawo div.sheet-ligne{
     background-color:#06060614;
@@ -442,6 +443,7 @@ input{
 }
 input[type="text"]{
     text-align: left;
+	background-color: #f7f3f2e8;
 }
 input[type="text"].sheet-compspe{
     width: 126px;
@@ -462,18 +464,20 @@ input[type="text"].sheet-compspeatt{
 input[type="text"].sheet-charname{
     text-align:center;
     font-size:1.1em;
-    font-weight: bolder;
+    font-weight: ;
     width:100%;
 }
 input[type="number"]{
-    text-align: right;
+    text-align: center;
+	background-color: #f7f3f2e8;
 }
 input[type="number"]:disabled,
 input[type="number"]:read-only,
 input[type="text"]:read-only
 {
-    background-color: white;
+    background-color: #f7f3f2e8;
     -moz-appearance: textfield;
+	text-align:center;
 }
 input[type="number"]:disabled::-webkit-inner-spin-button,
 input[type="number"]:disabled::-webkit-outer-spin-button,
@@ -498,10 +502,12 @@ textarea{
     border: none;
 }
 textarea.sheet-textdesc{
-    font-family: 'Verdana', serif;
-    font-size: 0.9em;
-    height: 22px;
-    resize: none;
+	font-family: 'Helvetica Neue', serif;
+	font-size: 1.1em;
+	height: 22px;
+	resize: none;
+	background-color: #f7f3f2e8;
+	padding-left: 5px;
 }
 input[type="checkbox"]:checked ~ textarea.sheet-textdesc{
     height: 140px;
@@ -513,7 +519,7 @@ select{
     margin: 0px 0px 0px 0px;
     max-height: 18px;
     line-height: 18px;
-    background-color: #F6F1EC;
+    background-color: #f7f3f2e8;
     color: black;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -526,6 +532,7 @@ option{
 select.sheet-selde{
     width: 30px;
     text-align: center;
+	background-color: #f7f3f2e8;
 }
 select.sheet-attcomptext{
     font-weight: normal;
@@ -754,7 +761,7 @@ div.sheet-main{
     border: 1px solid #888888;
 }
 input[type=radio].sheet-chkSheetDead:checked ~ div.sheet-main{
-    background: linear-gradient(#85582A,#C39657,#F0DAAD,#C39657,#85582A);
+    background-image: url("https://i.imgur.com/JfSWJyr.jpeg");
 }
 input[type=radio].sheet-chkSheetLankh:checked ~ div.sheet-main{
     background: linear-gradient(#472D0F,#735C32,#AD9E77,#735C32,#472D0F);
@@ -845,11 +852,14 @@ input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main div.sheet-redtitle3
     color: #7B7A5B;
 }
 div.sheet-colblock{
-    background-color: white;
     margin-top: 0px;
-    margin-bottom: 5px;
-    padding: 1px 5px 5px 5px;
+	margin-bottom: 5px;
+	padding: 1px 5px 5px 5px;
 	border-radius: 10px 10px 10px 10px;
+	background-image: url("https://i.imgur.com/zRSY255.jpeg");
+	border-style: solid;
+	border-width: 1px;
+	border-color: #732c10e8;
 }
 div.sheet-input{
     text-align:left;
