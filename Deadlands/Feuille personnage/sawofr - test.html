@@ -942,7 +942,7 @@ ou que l’on rencontre une créature effroyable.">Tripes</button>
                                 <button type="roll"
                                     name="Btrel-Competence"
                                     class="btRolrel"
-                                    value="&{template:sawo} {{etat=[[@{templateetat}]]}} {{name=@{comp_nom}}} {{perso=@{character_name_court}}} {{secoue=[[@{secoue}]]}} {{relances=[[ { floor(({ 1d@{comp_de}!![@{comp_nom}],@{joker_de}!![@{text_joker}]}kh1 + (@{comp_bonus})[@{text_bonus}] - @{malusblessures}[@{text_blessures}] - @{malusfatigue}[@{text_fatigue}] + @{rollmodquery}) /4), 0d0 }kh1 - 1 ]]}} {{blessures=[[@{blessures}]]}} {{fatigue=[[@{fatigue}]]}}"
+                                    value="&{template:sawo} {{etat=[[@{templateetat}]]}} {{name=@{comp_nom}}} {{perso=@{character_name_court}}} {{secoue=[[@{secoue}]]}} {{relances=[[  { floor( ( { { 1d@{comp_de}!![@{comp_nom}],@{joker_de}!![@{text_joker}]}kh1 + (@{comp_bonus})[@{text_bonus}] - @{malusblessures}[@{text_blessures}] - @{malusfatigue}[@{text_fatigue}] + @{rollmodquery}) / @{rolldiffquery} ), 0d0 }kh1 - 1 ]]}} {{blessures=[[@{blessures}]]}} {{fatigue=[[@{fatigue}]]}}"
                                     >&nbsp;</button>
                                 <button type="roll"
                                     name="Btjet-Competence"
