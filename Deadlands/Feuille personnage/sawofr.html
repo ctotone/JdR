@@ -3,7 +3,7 @@
     <!-- TABS -->
     <input type="radio" name="attr_chkvie" value="0" class="onglmain" data-i18n-title="feuille" title="Feuille" checked /><span data-i18n="feuille">Feuille</span>
     <input type="radio" name="attr_chkvie" value="1" class="onglconfig" title="Configuration" /><span data-i18n="configuration">Configuration</span>
-    <span style="display:inline-block;width:150px;text-align: center;color: #888888;font-size: 0.9em;">v3.3 spécial Harpie vorace !! </span>
+    <span style="display:inline-block;width:150px;text-align: center;color: #888888;font-size: 0.9em;">Spécial Harpie vorace !! </span>
     <!-- Styling -->
     <input type="radio" name="attr_sheetDead" value="0" class="chkSheetSaWo"  />  <!-- Savage Worlds -->
     <input type="radio" name="attr_sheetDead" value="1" class="chkSheetDead" checked /> <!-- Deadlands -->
@@ -231,7 +231,7 @@ Le score est par défaut de 1D4 -2.">Non entraîné</button>
                                 class="btRolbrut"
                                 value="/em @{character_name_court} @{text_jet-de} @{arcane_nom}&#010;/roll @{RollArcane}"
                                 >&nbsp;</button>
-                            <input type="text" class="compspe" name="attr_arcane_nom" data-i18n-placeholder="arcane" placeholder="Arcane" value="" data-i18n-title="arcane-skill-name" title="Nom de la compétence d'Arcanes" />
+                            <input type="text" class="compspe1" name="attr_arcane_nom" data-i18n-placeholder="arcane" placeholder="Arcane" value="" data-i18n-title="arcane-skill-name" title="Nom de la compétence d'Arcanes" />
                             <SELECT class="attcomptext"  name="attr_arcane_attr">
                                 <OPTION value="agilite" data-i18n="(agi)">(AGI)</OPTION>
                                 <OPTION value="ame" data-i18n="(ame-u)">(ÂME)</OPTION>
@@ -326,7 +326,7 @@ terrestres courants.">Conduite</button>
                                 data-i18n-title="connaissance"
                                 title="Connaissance"
                                 >&nbsp;</button>
-                            <input type="text" class="compspe" name="attr_connaissance_nom" data-i18n-placeholder="connaissance" placeholder="Connaissance" value="" data-i18n-title="connaissance-skill-name" title="Nom de la compétence de Connaissances" />
+                            <input type="text" class="compspe1" name="attr_connaissance_nom" data-i18n-placeholder="connaissance" placeholder="Connaissance" value="" data-i18n-title="connaissance-skill-name" title="Nom de la compétence de Connaissances" />
                             <div class="attcomptext" data-i18n="int-u">INT</div>
                             <SELECT name="attr_connaissance_de" class="selde">
                                 <OPTION value="4" SELECTED data-i18n="d4">&nbsp;d4</OPTION>
@@ -954,7 +954,7 @@ ou que l’on rencontre une créature effroyable.">Tripes</button>
                                     class="btRolbrut"
                                     value="/em @{character_name_court} @{text_jet-de} @{comp_nom}&#010;/roll { 1d@{comp_de}!![@{comp_nom}],@{joker_de}!![@{text_joker}]}kh1 + (@{comp_bonus})[@{text_bonus}] - @{malusblessures}[@{text_blessures}] - @{malusfatigue}[@{text_fatigue}] + @{rollmodquery}"
                                     >&nbsp;</button>
-                                <input type="text" class="compspe" name="attr_comp_nom" data-i18n-placeholder="competence" placeholder="Compétence" />
+                                <input type="text" class="compspe1" name="attr_comp_nom" data-i18n-placeholder="competence" placeholder="Compétence" />
                                 <SELECT class="attcomptext"  name="attr_comp_att">
                                     <OPTION value="agilite" SELECTED data-i18n="(agi-u)">(AGI)</OPTION>
                                     <OPTION value="ame" data-i18n="(ame-u)">(ÂME)</OPTION>
@@ -1017,13 +1017,21 @@ ou que l’on rencontre une créature effroyable.">Tripes</button>
                 <div class="redtitle1 disp" data-i18n="carac">CARAC. DÉRIVÉES</div>
                 <input type="checkbox" name="attr_dispDerivees" class="dispchk" data-i18n-title="show-hide-content" title="Afficher/masquer le contenu" checked /><span class="dispchk">E</span>
                 <div class="dispchk">
-                    <div class="input">
+            <div>
+                <div class="redtitle3" style="width: 90px;" ></div>
+                <div class="redtitle3" style="width: 50px;" data-i18n="t_base">Base</div>
+                <div class="redtitle3" style="width: 50px;" data-i18n="t_bonus">Bonus</div>
+                <div class="redtitle3" style="width: 20px;" data-i18n="t_total">Total</div>
+            </div>
+			
+			<div class="input">
                         <div class="comptext" data-i18n="allure" title="L’Allure représente la rapidité de déplacement du 
-personnage dans un round de combat standard. 
-La distance en mètres est le double de l'Allure."">ALLURE</div>
+personnage dans un round de combat standard.
+Les blessures en cours diminuent l'allure.
+Le score calculé à la fin est indiqué en mètres."">ALLURE</div>
                         <input type="number" name="attr_allure_base" value="6" data-i18n-title="base-allure" title="Valeur d'allure de base" />
-                        +<input type="number" name="attr_allure_bonus" value="0" data-i18n-title="bonus-allure" title="Bonus d'allure"/>
-                        =<input type="number" name="attr_allure" value="[[@{allure_base}+(@{allure_bonus})-@{blessures}]]" data-i18n-title="total-allure" title="allure totale" disabled />
+                        + <input type="number" name="attr_allure_bonus" value="0" data-i18n-title="bonus-allure" title="Bonus d'allure"/>
+                        = <input type="number" name="attr_allure" value="[[(@{allure_base}+(@{allure_bonus})-@{blessures})*2]]" data-i18n-title="total-allure" title="allure totale" disabled />
                     </div>
                     <div class="input">
                         <div class="comptext" data-i18n="charisme" title="Le Charisme réunit l’apparence, les manières et l’effet
@@ -1033,23 +1041,27 @@ Les jets de Persuasion et de Réseaux sont modifiés par le
 Charisme qui sert également au Marshal à déterminer la
 réaction des personnages non-joueurs envers ton héros.">CHARISME</div>
                         <input type="number" name="attr_charisme_base" value="0" data-i18n-title="base-charisme" title="Valeur de charisme de base" />
-                        +<input type="number" name="attr_charisme_bonus" value="0" data-i18n-title="bonus-charisme" title="Bonus de charisme"/>
-                        =<input type="number" name="attr_charisme" value="0" data-i18n-title="total-charisme" title="Charisme total" readonly />
+                        + <input type="number" name="attr_charisme_bonus" value="0" data-i18n-title="bonus-charisme" title="Bonus de charisme"/>
+                        = <input type="number" name="attr_charisme" value="0" data-i18n-title="total-charisme" title="Charisme total" disabled />
                     </div>
                     <div class="input">
                         <div class="comptext" data-i18n="parade" title="La Parade représente la Difficulté des attaques de
 corps à corps dont ton personnage est la cible.
 Elle est calculée automatiquement.">PARADE</div>
-                        <input type="number" name="attr_parade_base" value="3" data-i18n-title="base-parade" title="Valeur de parade de base" readonly />
-                        +<input type="number" name="attr_parade_bonus" value="0" data-i18n-title="bonus-parade" title="Bonus de parade"/>
-                        =<input type="number" name="attr_parade" value="3" data-i18n-title="total-parade" title="Parade totale" readonly />
+                        <input type="number" name="attr_parade_base" value="3" data-i18n-title="base-parade" title="Valeur de parade de base" disabled />
+                        + <input type="number" name="attr_parade_bonus" value="0" data-i18n-title="bonus-parade" title="Bonus de parade"/>
+                        = <input type="number" name="attr_parade" value="3" data-i18n-title="total-parade" title="Parade totale" disabled />
                     </div>
                     <div class="input">
                         <div class="comptext" data-i18n="resistance-u" title="La Résistance indique le seuil de souffrance du héros,
 sa capacité à encaisser les coups. ">RÉSISTANCE</div>
-                        <input type="number" name="attr_resistance_base" value="4" data-i18n-title="base-resistance" title="Valeur de Résistance de base" readonly />
-                        +<input type="number" name="attr_resistance_bonus" value="0" data-i18n-title="bonus-resistance" title="Armure (torse) et autres bonus de vigueur"/>
-                        =<input type="number" name="attr_resistance" value="4" data-i18n-title="total-resistance" title="Résistance totale" readonly />
+                        <input type="number" name="attr_resistance_base" value="4" data-i18n-title="base-resistance" title="Valeur de Résistance de base" disabled />
+                        + <input type="number" name="attr_resistance_bonus" value="0" data-i18n-title="bonus-resistance" title="Bonus de vigueur" disabled />
+                        = <input type="number" name="attr_resistance" value="4" data-i18n-title="total-resistance" title="Résistance totale" disabled />
+                    </div>
+					<div class="input">
+                        <div class="comptext" data-i18n="Armure" title="Le bonus d'armure que vous apporte vos éventuelles protections.">ARMURE</div>
+                        <input type="number" name="attr_armure" value="0" data-i18n-title="Armure_info" title="La valeur d'armure de votre éventuelle protection" />
                     </div>
                     <div class="input SheetDead">
                         <div class="comptext" data-i18n="trempe" title="La Trempe est une Caractéristique dérivée propre à
@@ -1057,13 +1069,13 @@ l’univers de Deadlands. Tu bénéficies d’1 point de Trempe
 pour chaque Rang (1 pour Novice, 2 pour Aguerri etc.). On
 te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                         <input type="number" name="attr_trempe_base" value="0" data-i18n-title="base-trempe" title="Valeur de Trempe de base (Rang)" />
-                        +<input type="number" name="attr_trempe_bonus" value="0" data-i18n-title="bonus-trempe" title="Bonus de Trempe"/>
-                        =<input type="number" name="attr_trempe" value="[[@{trempe_base}+(@{trempe_bonus})]]" data-i18n-title="total-trempe" title="Trempe totale" disabled />
+                        + <input type="number" name="attr_trempe_bonus" value="0" data-i18n-title="bonus-trempe" title="Bonus de Trempe"/>
+                        = <input type="number" name="attr_trempe" value="[[@{trempe_base}+(@{trempe_bonus})]]" data-i18n-title="total-trempe" title="Trempe totale" disabled />
                     </div>
                     <div class="input">
                         <div class="comptext" data-i18n="pts">Pts POUVOIR</div>
                         <input type="number" name="attr_pointspouvoir" value="0" data-i18n-title="pp-current" title="Points de Pouvoir courants" />
-                        /
+                        / 
                         <input type="number" name="attr_pointspouvoir_max" value="0" data-i18n-title="pp-max" title="Points de Pouvoir maximum"/>
                     </div>
                 </div>
@@ -1123,6 +1135,11 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     <div class="input">
                         <input type="checkbox" name="attr_signedisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
                         <textarea name="attr_signe" class="textdesc" style="width: 246px;" data-i18n-placeholder="signes" placeholder="Signes particuliers" data-i18n-title="signes" title="Signes particuliers"></textarea>
+                    </div>
+					<div class="blacktext1" data-i18n="pire_cauchemard">Ton pire cauchemard: </div>
+					 <div class="input">
+                        <input type="checkbox" name="attr_signedisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
+                        <textarea name="attr_cauchemard" class="textdesc" style="width: 246px;" data-i18n-placeholder="pire_cauchemard" placeholder="Ton pire cauchemard" data-i18n-title="pire_cauchemard" title="Ton pire cauchemard"></textarea>
                     </div>
                 </div>
             </div>
@@ -1187,13 +1204,13 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
         </div> <!-- ** END COL3 ** -->
         <div class="colblock"> <!-- ** WEAPONS ** -->
             <div>
-                <div class="redtitle1 disp" style="margin-left: 0px;width: 150px;" data-i18n="armes">ARMES</div>
+                <div class="redtitle1 disp" style="margin-left: 0px;width: 170px;" data-i18n="armes">ARMES</div>
                 <div class="redtitle3" style="width: 60px;" data-i18n="compet">Compét.</div>
                 <div class="redtitle3" style="width: 145px;" data-i18n="degats">Dégâts</div>
-                <div class="redtitle3" style="width: 98px;" data-i18n="portee">Portée</div>
+                <div class="redtitle3" style="width: 65px;" data-i18n="portee">Portée</div>
                 <div class="redtitle3" style="width: 35px;" data-i18n="cdt">CdT</div>
                 <div class="redtitle3" style="width: 80px;" data-i18n="munitions">Munitions</div>
-                <div class="redtitle3" style="width: 35px;" data-i18n="pa">PA</div>
+                <div class="redtitle3" style="width: 50px;" data-i18n="pa">PA</div>
                 <div class="redtitle3" style="width: 150px;" data-i18n="notes">Notes</div>
             </div>
             <div class="input"> <!-- ARME FIXE 1 -->
@@ -1219,7 +1236,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     title="Attaque"
                     >&nbsp;</button>
                 <input type="text" class="compspe"  name="attr_arme1_nom" data-i18n-placeholder="weapon1-name" placeholder="Nom de l'arme n°1"/>
-                <SELECT name="attr_arme1_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competence" title="Compétence">
+                <SELECT name="attr_arme1_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competencearme" title="Compétence utilisée pour cette arme.">
                     <OPTION value="0" SELECTED data-i18n="choisir"> - Choisir une compétence :</OPTION>
                     <OPTION value="Combat" data-i18n="combat">Combat</OPTION>
                     <OPTION value="Lancer" data-i18n="lancer">Lancer</OPTION>
@@ -1230,7 +1247,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                 <input type="hidden" name="attr_arme1_comp_jet" value="0" />
                 <input type="hidden" name="attr_arme1_comp_brut" value="0" />
                 <SELECT name="attr_arme1_dgt_force" style="width:35px;" data-i18n-title="apply-str-dmg" title="Application de la Force aux dégâts (Combat et Lancer)">
-                    <OPTION value="@{RollBastForce}" SELECTED data-i18n="force-u">FORCE</OPTION>
+                    <OPTION value="@{RollBastForce}" SELECTED data-i18n="force-u">FOR</OPTION>
                     <OPTION value="0d4">_</OPTION>
                 </SELECT>+<input name="attr_arme1_dgt_nbde" style="width:30px;" type="number" value="1" min="0" title="Nombre de dés de dégâts" />
                 <SELECT name="attr_arme1_dgt_de" class="selde" title="Dé de dégâts">
@@ -1240,7 +1257,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     <OPTION value="10" data-i18n="d10">d10</OPTION>
                     <OPTION value="12" data-i18n="d12">d12</OPTION>
                 </SELECT>+<input name="attr_arme1_dgt_bonus" style="width:30px;margin-right:3px;" type="number" value="0" title="Bonus aux dégâts" />
-                <input name="attr_arme1_portee" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
+                <input name="attr_arme1_portee" type="text" style="width:65px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
                 <input name="attr_arme1_cdt" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="cadence-tir" title="Cadence de Tir" />
                 <input name="attr_arme1_mun" type="number" style="width:40px;" value="0" min="0" data-i18n-title="amunition-cur" title="Munitions courantes" />/<input name="attr_arme1_mun_max" type="number" style="width:40px;margin-right:3px;" value="0" min="0" data-i18n-title="amunition-max" title="Munitions maximum" />
                 <input name="attr_arme1_pa" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="armor-pen" title="Pénétration d'Armure" />
@@ -1270,7 +1287,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     title="Attaque"
                     >&nbsp;</button>
                 <input type="text" class="compspe"  name="attr_arme2_nom" data-i18n-placeholder="weapon2-name" placeholder="Nom de l'arme n°2"/>
-                <SELECT name="attr_arme2_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competence" title="Compétence">
+                <SELECT name="attr_arme2_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competencearme" title="Compétence">
                     <OPTION value="0" SELECTED data-i18n="choisir"> - Choisir une compétence :</OPTION>
                     <OPTION value="Combat" data-i18n="combat">
                     <OPTION value="Lancer" data-i18n="lancer">Lancer</OPTION>
@@ -1291,7 +1308,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     <OPTION value="10" data-i18n="d10">d10</OPTION>
                     <OPTION value="12" data-i18n="d12">d12</OPTION>
                 </SELECT>+<input name="attr_arme2_dgt_bonus" style="width:30px;margin-right:3px;" type="number" value="0" title="Bonus aux dégâts" />
-                <input name="attr_arme2_portee" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
+                <input name="attr_arme2_portee" type="text" style="width:65px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
                 <input name="attr_arme2_cdt" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="cadence-tir" title="Cadence de Tir" />
                 <input name="attr_arme2_mun" type="number" style="width:40px;" value="0" min="0" data-i18n-title="amunition-cur" title="Munitions courantes" />/<input name="attr_arme2_mun_max" type="number" style="width:40px;margin-right:3px;" value="0" min="0" data-i18n-title="amunition-max" title="Munitions maximum" />
                 <input name="attr_arme2_pa" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="armor-pen" title="Pénétration d'Armure" />
@@ -1321,7 +1338,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     title="Attaque"
                     >&nbsp;</button>
                 <input type="text" class="compspe"  name="attr_arme3_nom" data-i18n-placeholder="weapon3-name" placeholder="Nom de l'arme n°3" />
-                <SELECT name="attr_arme3_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competence" title="Compétence">
+                <SELECT name="attr_arme3_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competencearme" title="Compétence">
                     <OPTION value="0" SELECTED data-i18n="choisir"> - Choisir une compétence :</OPTION>
                     <OPTION value="Combat" data-i18n="combat">
                     <OPTION value="Lancer" data-i18n="lancer">Lancer</OPTION>
@@ -1342,7 +1359,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     <OPTION value="10" data-i18n="d10">d10</OPTION>
                     <OPTION value="12" data-i18n="d12">d12</OPTION>
                 </SELECT>+<input name="attr_arme3_dgt_bonus" style="width:30px;margin-right:3px;" type="number" value="0" title="Bonus aux dégâts" />
-                <input name="attr_arme3_portee" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
+                <input name="attr_arme3_portee" type="text" style="width:65px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
                 <input name="attr_arme3_cdt" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="cadence-tir" title="Cadence de Tir" />
                 <input name="attr_arme3_mun" type="number" style="width:40px;" value="0" min="0" data-i18n-title="amunition-cur" title="Munitions courantes" />/<input name="attr_arme3_mun_max" type="number" style="width:40px;margin-right:3px;" value="0" min="0" data-i18n-title="amunition-max" title="Munitions maximum" />
                 <input name="attr_arme3_pa" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="armor-pen" title="Pénétration d'Armure" />
@@ -1373,7 +1390,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                         title="Attaque"
                         >&nbsp;</button>
                     <input type="text" class="compspe"  name="attr_armeD_nom" data-i18n-placeholder="weapon-name" placeholder="Nom de l'arme" title="Nom de l'arme" />
-                    <SELECT name="attr_armeD_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competence" title="Compétence">
+                    <SELECT name="attr_armeD_comp" style="width: 55px;margin-left:3px;margin-right:3px;" data-i18n-title="competencearme" title="Compétence">
                         <OPTION value="0" SELECTED data-i18n="choisir"> - Choisir une compétence :</OPTION>
                         <OPTION value="Combat" data-i18n="combat">
                         <OPTION value="Lancer" data-i18n="lancer">Lancer</OPTION>
@@ -1394,7 +1411,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                         <OPTION value="10" data-i18n="d10">d10</OPTION>
                         <OPTION value="12" data-i18n="d12">d12</OPTION>
                     </SELECT>+<input name="attr_armeD_dgt_bonus" style="width:30px;margin-right:3px;" type="number" value="0" title="Bonus aux dégâts" />
-                    <input name="attr_armeD_portee" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
+                    <input name="attr_armeD_portee" type="text" style="width:65px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
                     <input name="attr_armeD_cdt" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="cadence-tir" title="Cadence de Tir" />
                     <input name="attr_armeD_mun" type="number" style="width:40px;" value="0" min="0" data-i18n-title="amunition-cur" title="Munitions courantes" />/<input name="attr_armeD_mun_max" type="number" style="width:40px;margin-right:3px;" value="0" min="0" data-i18n-title="amunition-max" title="Munitions maximum" />
                     <input name="attr_armeD_pa" type="number" style="width:30px;margin-right:3px;" value="0" min="0" data-i18n-title="armor-pen" title="Pénétration d'Armure" />
@@ -1405,11 +1422,11 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
         </div> <!-- ** END WEAPONS ** -->
         <div class="colblock"> <!-- ** POWERS ** -->
             <div>
-                <div class="redtitle1 disp" style="margin-left: 0px;width: 220px;" data-i18n="pouvoirs">POUVOIRS</div>
+                <div class="redtitle1 disp" style="margin-left: 0px;width: 210px;" data-i18n="pouvoirs">POUVOIRS</div>
                 <div class="redtitle3" style="width: 35px;" data-i18n="rang">Rang</div>
-                <div class="redtitle3" style="width: 26px;" data-i18n="pp">PP</div>
-                <div class="redtitle3" style="width: 100px;" data-i18n="portee">Portée</div>
-                <div class="redtitle3" style="width: 100px;" data-i18n="duree">Durée</div>
+                <div class="redtitle3" style="width: 32px;" data-i18n="pp">PP</div>
+                <div class="redtitle3" style="width: 65px;" data-i18n="portee">Portée</div>
+                <div class="redtitle3" style="width: 140px;" data-i18n="duree">Durée</div>
                 <div class="redtitle3" style="width: 200px;" data-i18n="effects">Effets</div>
             </div>
              <fieldset class="repeating_pouvoirs">
@@ -1418,18 +1435,18 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                         value="&{template:sawo} {{name=@{pouv_nom}}} {{perso=@{character_name_court}}} {{pouvoir=1}} {{pp=@{pouv_pp}}} {{portee=@{pouv_portee}}} {{duree=@{pouv_duree}}} {{description=@{pouv_effets}}}"
                     ></button>
                     <input type="text" name="attr_pouv_nom" style="width: 200px;font-weight:bold;" data-i18n-placeholder="power-name" placeholder="Nom du pouvoir" />
-                    <SELECT name="attr_pouv_rang" style="width: 30px;margin-left:3px;margin-right:3px;" data-i18n-title="power-rank" title="Rang d'accès à ce pouvoir">
+                    <SELECT name="attr_pouv_rang" style="width: 17px;margin-left:3px;margin-right:3px;" data-i18n-title="power-rank" title="Rang d'accès à ce pouvoir">
                         <OPTION value="N" SELECTED data-i18n="novice">N - Novice</OPTION>
                         <OPTION value="A" data-i18n="aguerri">A - Aguerri</OPTION>
                         <OPTION value="V" data-i18n="veteran">V - Vétéran</OPTION>
                         <OPTION value="H" data-i18n="heroique">H - Héroïque</OPTION>
                         <OPTION value="L" data-i18n="legendaire">L - Légendaire</OPTION>
                     </SELECT>
-                    <input name="attr_pouv_pp" type="number" style="width:30px;" value="0" min="0" title="Coût en Points de Pouvoir" />
-                    <input name="attr_pouv_portee" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
-                    <input name="attr_pouv_duree" type="text" style="width:100px;margin-right:3px;" data-i18n-placeholder="duree" placeholder="Durée" />
+                    <input name="attr_pouv_pp" type="number" style="width:45px;" value="0" min="0" title="Coût en Points de Pouvoir" />
+                    <input name="attr_pouv_portee" type="text" style="width:65px;margin-right:3px;" data-i18n-placeholder="portee" placeholder="Portée" />
+                    <input name="attr_pouv_duree" type="text" style="width:120px;margin-right:3px;" data-i18n-placeholder="duree" placeholder="Durée" />
                     <input type="checkbox" name="attr_pouvoirdisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
-                    <textarea name="attr_pouv_effets" class="textdesc" style="width: 300px;" data-i18n-placeholder="effects" placeholder="Effets"></textarea>
+                    <textarea name="attr_pouv_effets" class="textdesc" style="width: 315px;" data-i18n-placeholder="effects" placeholder="Effets"></textarea>
                 </div> <!-- FIN POUVOIR DYNAMIQUE -->
             </fieldset>
        </div> <!-- ** END POWERS ** -->
@@ -2172,11 +2189,11 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
         });
     });
     // Résistance
-    on("change:vigueur_de change:vigueur_bonus change:resistance_bonus", function() {
-        getAttrs(["vigueur_de","vigueur_bonus","resistance_bonus"], function(values) {
+    on("change:vigueur_de change:vigueur_bonus change:resistance_bonus change:armure", function() {
+        getAttrs(["vigueur_de","vigueur_bonus","resistance_bonus", "armure"], function(values) {
             setAttrs({
                 resistance_base: 2 + Math.floor( (parseInt(values.vigueur_de) + parseInt(values.vigueur_bonus)) / 2),
-                resistance: parseInt(values.resistance_bonus) + 2 + Math.floor( (parseInt(values.vigueur_de) + parseInt(values.vigueur_bonus)) / 2)
+                resistance: parseInt(values.resistance_bonus) + parseInt(values.armure) + 2 + Math.floor( (parseInt(values.vigueur_de) + parseInt(values.vigueur_bonus)) / 2)
             });
         });
     });
