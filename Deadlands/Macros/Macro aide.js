@@ -7,13 +7,10 @@ Jetons,
 	Annuler un échec critique
 => MJ pioche un jeton&#125;&#125;{{Bleu=Comme rouge mais pas de pioche du MJ&#125;&#125;
 ,|
-Secoué,
+Etre Secoué,
 	&{template:custom&#125;{{title=Secoue&#125;&#125;{{=Les personnages Secoués sont choqués&#44; distraits ou momentanément ébranlés. Ils ne sont pas sonnés ou incapables de réagir&#44; mais suffisamment affectés pour avoir besoin de reprendre leurs esprits.&#125;&#125;{{Ame=En cas d’échec&#44; il demeure Secoué. Il ne peut faire que des actions gratuites (voir p. 109) 
-
 	En cas de succès&#44; il n’est plus Secoué&#44; mais ne peut là encore faire que des actions gratuites.
-
 	En cas de Relance&#44; le personnage récupère immédiatement et peut agir normalement ce round. 
-
 	Utiliser un Jeton : un joueur peut également utiliser un Jeton n’importe quand pour annuler un état Secoué. Si c’est pendant son propre tour&#44; il peut agir immédiatement comme s’il avait obtenu une relance sur son jet d’Âme.&#125;&#125;
 ,|
 État critique,
@@ -45,10 +42,8 @@ Actions,
 	&{template:custom&#125;{{title=Actions&#125;&#125;{{=Les personnages peuvent se deplacer et faire une action sans pénalité.
 	On peut faire son action au milieu de son déplacement&#44; avant ou aprés.
 	Les actions sont par exemple dégainer&#44; utiliser un pouvoir&#44; utiliser une compétence de tir ou de combat&#44; une ruse&#44; une épreuve de volonte&#44; etc...&#125;&#125;{{Multiple=Il est possible de faire plus d'une action dans le round (Action multiple) mais avec un malus de -2 par action supplémentaire. Malus qui s'applique à TOUTES les actions du round&#44; même l'action "classique".
-
 	IMPORTANT
 	Un joueur dans le même round ne peut pas :
-
 	- Tirer plus de coup que la cadence de tir de son arme.
 	- Attaquer deux fois avec la même arme.
 	- Intimider deux personnes.
@@ -82,10 +77,8 @@ Dés qu'un duelliste pense qu'il a une bonne main&#44; il crie "TIR".&#125;&#125
 
 VITESSE : Dégainer et tirer un seul coup de feu dans la même action avec malus de -2.
 PRÉCISION : Pas de malus mais si l'autre a choisi la vitesse&#44; espérons que ça ne touche pas !
-
 Les duelliste abattent maintenant leurs cartes !&#125;&#125;{{IV=On effectue les jets de tir dans l'ordre de qui tire en premier avec les éventuels malus de l'étape 1 et 2.
 Si ça touche&#44; on détermine les dégâts à savoir : dégats de l'arme + 1D6 supplémentaire pour chaque rang de supériorité de sa main (p.161)
 Si un personnage a choisi la précision (et qu'il est toujours en vie)&#44; c'est à son tour de tirer.&#125;&#125;{{V=Si les duellistes sont toujours debout&#44; un combat classique avec initiative commence.&#125;&#125;
 
 }
-
