@@ -1,14 +1,14 @@
 ?{Choix de l'aide|
 ,|
 Jetons,
-	&{template:custom&#125;{{title=Les jetons&#125;&#125;{{Blanc=Jet d'encaissement (p.111)
+	/w gm &{template:custom&#125;{{title=Les jetons&#125;&#125;{{Blanc=Jet d'encaissement (p.111)
 	Relancer un jet de trait
 	Récupérer immédiatement d'un état secoué&#125;&#125;{{Rouge=Ajouter 1D6 au résultat
 	Annuler un échec critique
 => MJ pioche un jeton&#125;&#125;{{Bleu=Comme rouge mais pas de pioche du MJ&#125;&#125;
 ,|
 Secoué,
-	&{template:custom&#125;{{title=Secoue&#125;&#125;{{=Les personnages Secoués sont choqués&#44; distraits ou momentanément ébranlés. Ils ne sont pas sonnés ou incapables de réagir&#44; mais suffisamment affectés pour avoir besoin de reprendre leurs esprits.&#125;&#125;{{Ame=En cas d’échec&#44; il demeure Secoué. Il ne peut faire que des actions gratuites (voir p. 109) 
+	/w gm &{template:custom&#125;{{title=Secoue&#125;&#125;{{=Les personnages Secoués sont choqués&#44; distraits ou momentanément ébranlés. Ils ne sont pas sonnés ou incapables de réagir&#44; mais suffisamment affectés pour avoir besoin de reprendre leurs esprits.&#125;&#125;{{Ame=En cas d’échec&#44; il demeure Secoué. Il ne peut faire que des actions gratuites (voir p. 109) 
 
 	En cas de succès&#44; il n’est plus Secoué&#44; mais ne peut là encore faire que des actions gratuites.
 
@@ -17,23 +17,23 @@ Secoué,
 	Utiliser un Jeton : un joueur peut également utiliser un Jeton n’importe quand pour annuler un état Secoué. Si c’est pendant son propre tour&#44; il peut agir immédiatement comme s’il avait obtenu une relance sur son jet d’Âme.&#125;&#125;
 ,|
 État critique,
-	&{template:custom&#125;{{title=État critique&#125;&#125;{{=Un Joker est dans un État critique et sombre dans l’inconscience lorsqu’il subit plus de trois blessures (après Encaissement). Il est hors de combat jusqu’à ce qu’il reçoive des soins&#44; il ne reçoit plus de cartes d’initiative.&#125;&#125;{{Jet=Un héros dans un État critique doit faire immédiatement un jet de Vigueur&#44; en incluant les modificateurs de blessure. Ce jet ne compte pas comme une action.&#125;&#125;{{1 ou moins=Le héros est mort&#44; et rien ne peut plus le sauver. Si l’attaque délivrait des dégâts non létaux&#44; l’échec est transformé en succès et le héros est inconscient pour 2d6 heures.&#125;&#125;{{Échec=Tirez sur la Table des blessures (p.111). La blessure est permanente&#44; et le héros est victime d’une hémorragie (voir ci-dessous).&#125;&#125;{{Succès=Tirez sur la table des blessures. Les effets disparaîtront lorsque toutes les blessures auront été soignées.&#125;&#125;{{Relance=Tirez sur la Table des blessures. Les effets disparaitront au bout de 24 heures&#44; ou lorsque toutes les blessures auront été soignées.&#125;&#125;{{Hémorragie= Au début de chaque round&#44; avant que les cartes d’action ne soient distribuées&#44; le personnage doit faire un jet de Vigueur (sans oublier les modificateurs dus aux blessures)&#125;&#125;{{Echec=Le personnage meurt d’hémorragie. Dans le cas de dégâts non létaux&#44; il est inconscient pour 1d6 heures.&#125;&#125;{{Réussite=Le personnage devra refaire un jet le round suivant&#44;&#125;&#125;{{Avec relance=l’hémorragie est endiguée&#44; et la vie du personnage n’est plus en danger. Il n’aura plus à faire de jet.&#125;&#125;{{Aide=D’autres personnages peuvent tenter de stopper une hémorragie en réussissant un jet de Soins. En cas de succès&#44;l’hémorragie est endiguée et plus aucun jet n’est nécessaire.&#125;&#125;
+	/w gm &{template:custom&#125;{{title=État critique&#125;&#125;{{=Un Joker est dans un État critique et sombre dans l’inconscience lorsqu’il subit plus de trois blessures (après Encaissement). Il est hors de combat jusqu’à ce qu’il reçoive des soins&#44; il ne reçoit plus de cartes d’initiative.&#125;&#125;{{Jet=Un héros dans un État critique doit faire immédiatement un jet de Vigueur&#44; en incluant les modificateurs de blessure. Ce jet ne compte pas comme une action.&#125;&#125;{{1 ou moins=Le héros est mort&#44; et rien ne peut plus le sauver. Si l’attaque délivrait des dégâts non létaux&#44; l’échec est transformé en succès et le héros est inconscient pour 2d6 heures.&#125;&#125;{{Échec=Tirez sur la Table des blessures (p.111). La blessure est permanente&#44; et le héros est victime d’une hémorragie (voir ci-dessous).&#125;&#125;{{Succès=Tirez sur la table des blessures. Les effets disparaîtront lorsque toutes les blessures auront été soignées.&#125;&#125;{{Relance=Tirez sur la Table des blessures. Les effets disparaitront au bout de 24 heures&#44; ou lorsque toutes les blessures auront été soignées.&#125;&#125;{{Hémorragie= Au début de chaque round&#44; avant que les cartes d’action ne soient distribuées&#44; le personnage doit faire un jet de Vigueur (sans oublier les modificateurs dus aux blessures)&#125;&#125;{{Echec=Le personnage meurt d’hémorragie. Dans le cas de dégâts non létaux&#44; il est inconscient pour 1d6 heures.&#125;&#125;{{Réussite=Le personnage devra refaire un jet le round suivant&#44;&#125;&#125;{{Avec relance=l’hémorragie est endiguée&#44; et la vie du personnage n’est plus en danger. Il n’aura plus à faire de jet.&#125;&#125;{{Aide=D’autres personnages peuvent tenter de stopper une hémorragie en réussissant un jet de Soins. En cas de succès&#44;l’hémorragie est endiguée et plus aucun jet n’est nécessaire.&#125;&#125;
 ,|
 Jet encaissement,
-	&{template:custom&#125;{{title=Jet d'Encaissement&#125;&#125;{{=Un personnage peut utiliser un Jeton pour faire un jet d’encaissement juste après avoir subi une blessure. 
+	/w gm &{template:custom&#125;{{title=Jet d'Encaissement&#125;&#125;{{=Un personnage peut utiliser un Jeton pour faire un jet d’encaissement juste après avoir subi une blessure. 
 	Dans ce cas&#44; le personnage fait un jet de Vigueur. 
 	Un succès et chaque Relance permet de réduire de 1 le nombre de blessures subies lors de l’attaque.
 
 	Toutefois&#44; si suite à ce jet&#44; il reste des blessures&#44; le personnage demeure Secoué. Les modificateurs aux blessures ne prennent pas en compte les éventuelles blessures en cours lors du jet d’encaissement.&#125;&#125;
 |
 Guérison,
-	&{template:custom&#125;{{title=Guérison&#125;&#125;{{=La Compétence Soins peut être utilisée pour traiter toute blessure de moins d’une heure.&#125;&#125;{{Succés=Annule une blessure&#125;&#125;{{Relance=Annule une seconde blessure.
+	/w gm &{template:custom&#125;{{title=Guérison&#125;&#125;{{=La Compétence Soins peut être utilisée pour traiter toute blessure de moins d’une heure.&#125;&#125;{{Succés=Annule une blessure&#125;&#125;{{Relance=Annule une seconde blessure.
 	Les relances supplémentaires ne soignent pas plus de blessure.&#125;&#125;{{Malus=Le malus de blessure du patient s'applique au jet de Soin.&#125;&#125;{{Guérison=Au-delà d’une heure après le moment où les blessures ont été causées&#44; seuls la guérison naturelle et le pouvoir de Grande guérison fonctionneront.&#125;&#125;{{État critique=Le soigneur doit tout d’abord réussir un premier jet de Soins pour stabiliser l’état du patient&#44; avant de pouvoir tenter un second jet pour éliminer des blessures.&#125;&#125;
 ,|
 ------ COMBAT ------,
 |
 Initiative,
-	&{template:custom&#125;{{title=Initiative&#125;&#125;{{=Chaque Joker (PJ et PNJ important) reçoit une carte. Tous les Alliés sous le contrôle du joueur agiront également en même temps.
+	/w gm &{template:custom&#125;{{title=Initiative&#125;&#125;{{=Chaque Joker (PJ et PNJ important) reçoit une carte. Tous les Alliés sous le contrôle du joueur agiront également en même temps.
 	Chaque type de PNJ reçoit une carte.&#125;&#125;{{Décompte=As au 2 
 	Pique-Coeur-Carreau-Trèfle&#125;&#125;{{Jocker=Lorsque tu tires un joker&#44; tu peux agir quand bon te semble durant le round&#44; avec la possibilité d’interrompre l’action de quelqu’un d’autre. 
 	Tous tes jets de Traits et de dégâts se font avec un bonus de 2 !
@@ -86,6 +86,11 @@ PRÉCISION : Pas de malus mais si l'autre a choisi la vitesse&#44; espérons que
 Les duelliste abattent maintenant leurs cartes !&#125;&#125;{{IV=On effectue les jets de tir dans l'ordre de qui tire en premier avec les éventuels malus de l'étape 1 et 2.
 Si ça touche&#44; on détermine les dégâts à savoir : dégats de l'arme + 1D6 supplémentaire pour chaque rang de supériorité de sa main (p.161)
 Si un personnage a choisi la précision (et qu'il est toujours en vie)&#44; c'est à son tour de tirer.&#125;&#125;{{V=Si les duellistes sont toujours debout&#44; un combat classique avec initiative commence.&#125;&#125;
+|
+Jet Coopératif,
+&{template:custom&#125;{{title=Jet Coopératif&#125;&#125;{{=Les personnages peuvent s'entraider dans une tâche. Si au moins deux personnages agissent de concert sur une même tache (et que le Marshal décide qu’il est possible de s’y pencher à plusieurs)&#44; le personnage principal fait un jet&#44; avec un bonus de +1 pour chaque Succès et chaque Relance obtenu par chacun des autres participants à l’action. 
+Le bonus maximum possible est de +4&#44; sauf pour les jets de Force. 
+Un personnage ne peut pas participer à un jet coopératif s’il ne possède pas la Compétence adéquate.&#125;&#125;
 
 }
 

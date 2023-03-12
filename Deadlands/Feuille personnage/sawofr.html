@@ -1483,7 +1483,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
              <fieldset class="repeating_pouvoirs">
                 <div class="input"> <!-- POUVOIR DYNAMIQUE -->
                     <button type="roll" class="btDesc"
-                        value="&{template:sawo} {{name=@{pouv_nom}}} {{perso=@{character_name_court}}} {{pouvoir=1}} {{pp=@{pouv_pp}}} {{portee=@{pouv_portee}}} {{duree=@{pouv_duree}}} {{description=@{pouv_effets}}}"
+                        value="&{template:sawo} {{name=@{pouv_nom}}} {{perso=@{character_name_court}}} {{pouvoir=1}} {{pp=@{pouv_pp}}} {{portee=@{pouv_portee}}} {{duree=@{pouv_duree}}} {{niveaupouv=@{pouv_rang}}} {{description=@{pouv_effets}}}"
                     ></button>
                     <input type="text" name="attr_pouv_nom" style="width: 200px;font-weight:bold;" data-i18n-placeholder="power-name" placeholder="Nom du pouvoir" />
                     <SELECT name="attr_pouv_rang" style="width: 17px;margin-left:3px;margin-right:3px;" data-i18n-title="power-rank" title="Rang d'accès à ce pouvoir">
@@ -1968,9 +1968,10 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
             {{/degats}}
         {{/jet}}
         {{#pouvoir}}
-            <div class="jetdesc">{{pp}} <span data-i18n="pp">PP</span></div>
-            <div class="jetdesc"><span data-i18n="portee">Portée</span> {{portee}}</div>
-            <div class="jetdesc"><span data-i18n="duree">Durée</span> {{duree}}</div>
+            <div class="jetdesc"><span data-i18n="coutpp">Coût :</span> {{pp}} <span data-i18n="pp">PP</span></div>
+			<div class="jetdesc"><span data-i18n="niveaupouv">Niveau :</span> {{niveaupouv}}</div>
+            <div class="jetdesc"><span data-i18n="portee">Portée :</span> {{portee}}</div>
+            <div class="jetdesc"><span data-i18n="duree">Durée :</span> {{duree}}</div>
             <div class="jetdesc">{{description}}</div>
         {{/pouvoir}}
     </div>
