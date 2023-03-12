@@ -7,13 +7,16 @@ Jetons,
 	Annuler un échec critique
 => MJ pioche un jeton&#125;&#125;{{Bleu=Comme rouge mais pas de pioche du MJ&#125;&#125;
 ,|
+<<<<<<< HEAD
 Secoué,
 	/w gm &{template:custom&#125;{{title=Secoue&#125;&#125;{{=Les personnages Secoués sont choqués&#44; distraits ou momentanément ébranlés. Ils ne sont pas sonnés ou incapables de réagir&#44; mais suffisamment affectés pour avoir besoin de reprendre leurs esprits.&#125;&#125;{{Ame=En cas d’échec&#44; il demeure Secoué. Il ne peut faire que des actions gratuites (voir p. 109) 
 
+=======
+Etre Secoué,
+	&{template:custom&#125;{{title=Secoue&#125;&#125;{{=Les personnages Secoués sont choqués&#44; distraits ou momentanément ébranlés. Ils ne sont pas sonnés ou incapables de réagir&#44; mais suffisamment affectés pour avoir besoin de reprendre leurs esprits.&#125;&#125;{{Ame=En cas d’échec&#44; il demeure Secoué. Il ne peut faire que des actions gratuites (voir p. 109) 
+>>>>>>> 07f765ddb5e14e900ee68be057ccc6567409cc42
 	En cas de succès&#44; il n’est plus Secoué&#44; mais ne peut là encore faire que des actions gratuites.
-
 	En cas de Relance&#44; le personnage récupère immédiatement et peut agir normalement ce round. 
-
 	Utiliser un Jeton : un joueur peut également utiliser un Jeton n’importe quand pour annuler un état Secoué. Si c’est pendant son propre tour&#44; il peut agir immédiatement comme s’il avait obtenu une relance sur son jet d’Âme.&#125;&#125;
 ,|
 État critique,
@@ -45,10 +48,8 @@ Actions,
 	&{template:custom&#125;{{title=Actions&#125;&#125;{{=Les personnages peuvent se deplacer et faire une action sans pénalité.
 	On peut faire son action au milieu de son déplacement&#44; avant ou aprés.
 	Les actions sont par exemple dégainer&#44; utiliser un pouvoir&#44; utiliser une compétence de tir ou de combat&#44; une ruse&#44; une épreuve de volonte&#44; etc...&#125;&#125;{{Multiple=Il est possible de faire plus d'une action dans le round (Action multiple) mais avec un malus de -2 par action supplémentaire. Malus qui s'applique à TOUTES les actions du round&#44; même l'action "classique".
-
 	IMPORTANT
 	Un joueur dans le même round ne peut pas :
-
 	- Tirer plus de coup que la cadence de tir de son arme.
 	- Attaquer deux fois avec la même arme.
 	- Intimider deux personnes.
@@ -61,17 +62,17 @@ Tirer en rafale nécessite une CdT de 3 et octroie un bonus de +2 au jet de Tir 
 Attention&#44; le dé Joker ne peut être utilisé que pour 1 seul tir.&#125;&#125;{{Viser=Un joueur qui passe 1 round entier à viser bénéficie d'un bonus de +2 à son prochain jet. Viser plus longtemps n'apporte rien de plus.&#125;&#125;{{Rompre=Le personnage qui tente de quitter un combat au corps à corps offre une attaque gratuite aux adversaires adjacents.&#125;&#125;
 |
 Épreuve Volonté,
-	&{template:custom&#125;{{title=Épreuves de volonté&#125;&#125;{{=Intimidation et Sarcasme permettent à un personnage d’initier des Épreuves de volonté.
-	Sarcasme contre Intellect
-	Intimidation contre Ame&#125;&#125;{{Succès=L’attaquant aura un bonus de 2 lors de sa prochaine action contre le défenseur au cours de ce combat. &#125;&#125;{{Relance=Le défenseur est également Secoué.&#125;&#125;{{Défense=Sarcasme contre Intellect
-	Intimidation contre Âme&#125;&#125;
+&{template:custom&#125;{{title=Épreuves de volonté&#125;&#125;{{=Intimidation et Sarcasme permettent à un personnage d’initier des Épreuves de volonté.
+Sarcasme contre Intellect
+Intimidation contre Ame&#125;&#125;{{Succès=L’attaquant aura un bonus de 2 lors de sa prochaine action contre le défenseur au cours de ce combat. &#125;&#125;{{Relance=Le défenseur est également Secoué.&#125;&#125;{{Défense=Sarcasme contre Intellect
+Intimidation contre Âme&#125;&#125;
 |
 Ruse,
-	&{template:custom&#125;{{title=Ruses&#125;&#125;{{=Une Ruse nécessite UNE Action et une seule. L’important&#44; c’est la description de la manœuvre&#44; et non ses aspects techniques. Le bon sens reste le meilleur conseiller.&#125;&#125;{{Dégâts=Les ruses ne font jamais de dégâts&#44; le seul but est de distraire l'adversaire. Par exemple&#44; tenter d’entailler le front d’un adversaire pour que le sang lui coule sur les yeux est une Ruse. 
-	Quoi qu'il en soit l'entaille sera légère et n'entrainera aucune blessure au sens propre.&#125;&#125;{{Echec=La ruse échoue.&#125;&#125;{{Réussite=-2 à la Parade&#125;&#125;{{Relance=-2 à la Parade 
-	État secoué&#125;&#125;{{Pénalité=Excepté les malus de fatigue et de blessure&#44; les ruses ne souffrent d'aucune pénalité. 
-	Même si la ruse semble compliquée&#44; tu vas nous expliquer comment tu veux t'y prendre. La difficulté reste toujours à 4&#44; avec le trait ou la compétence la plus adaptée.
-	Après si tu échoues... Il y a peut être des conséquences !!&#125;&#125;{{desc=Exemples de ruses disponible dans l'aide de jeu&#125;&#125;
+&{template:custom&#125;{{title=Ruses&#125;&#125;{{=Une Ruse nécessite UNE Action et une seule. L’important&#44; c’est la description de la manœuvre&#44; et non ses aspects techniques. Le bon sens reste le meilleur conseiller.&#125;&#125;{{Dégâts=Les ruses ne font jamais de dégâts&#44; le seul but est de distraire l'adversaire. Par exemple&#44; tenter d’entailler le front d’un adversaire pour que le sang lui coule sur les yeux est une Ruse. 
+Quoi qu'il en soit l'entaille sera légère et n'entrainera aucune blessure au sens propre.&#125;&#125;{{Echec=La ruse échoue.&#125;&#125;{{Réussite=-2 à la Parade&#125;&#125;{{Relance=-2 à la Parade 
+État secoué&#125;&#125;{{Pénalité=Excepté les malus de fatigue et de blessure&#44; les ruses ne souffrent d'aucune pénalité. 
+Même si la ruse semble compliquée&#44; tu vas nous expliquer comment tu veux t'y prendre. La difficulté reste toujours à 4&#44; avec le trait ou la compétence la plus adaptée.
+Après si tu échoues... Il y a peut être des conséquences !!&#125;&#125;{{desc=Exemples de ruses disponible dans l'aide de jeu&#125;&#125;
 |
 Duel,
 &{template:custom&#125;{{title=Duel&#125;&#125;{{=Chaque duelliste reçoit 2 cartes.&#125;&#125;{{I=Confrontation où les duellistes font chacun un Jet de Sarcasme ou Intimidation en opposition avec la compétence de l'autre.
@@ -82,7 +83,6 @@ Dés qu'un duelliste pense qu'il a une bonne main&#44; il crie "TIR".&#125;&#125
 
 VITESSE : Dégainer et tirer un seul coup de feu dans la même action avec malus de -2.
 PRÉCISION : Pas de malus mais si l'autre a choisi la vitesse&#44; espérons que ça ne touche pas !
-
 Les duelliste abattent maintenant leurs cartes !&#125;&#125;{{IV=On effectue les jets de tir dans l'ordre de qui tire en premier avec les éventuels malus de l'étape 1 et 2.
 Si ça touche&#44; on détermine les dégâts à savoir : dégats de l'arme + 1D6 supplémentaire pour chaque rang de supériorité de sa main (p.161)
 Si un personnage a choisi la précision (et qu'il est toujours en vie)&#44; c'est à son tour de tirer.&#125;&#125;{{V=Si les duellistes sont toujours debout&#44; un combat classique avec initiative commence.&#125;&#125;
@@ -93,4 +93,3 @@ Le bonus maximum possible est de +4&#44; sauf pour les jets de Force.
 Un personnage ne peut pas participer à un jet coopératif s’il ne possède pas la Compétence adéquate.&#125;&#125;
 
 }
-

@@ -88,4 +88,5 @@ Survie (1D@{selected|survie_de} + @{selected|survie_bonus}),
 |
 Tripes (1D@{selected|tripes_de} + @{selected|tripes_bonus}),
 /w gm &{template:sawo&#125; {{etat=[[@{selected|templateetat}]]&#125;&#125; {{name=@{selected|text_tripes}&#125;&#125; {{perso=@{selected|character_name_court}&#125;&#125; {{secoue=[[@{selected|secoue}]]&#125;&#125; {{jet=[[{1D@{selected|tripes_de}!!&#44;@{selected|joker_de}!![@{selected|text_joker}]&#125;kh1 + @{selected|tripes_bonus}[@{selected|text_bonus}] - @{selected|malusblessures}[@{selected|text_blessures}] - @{selected|malusfatigue}[@{selected|text_fatigue}]]]&#125;&#125; {{blessures=[[@{selected|blessures}]]&#125;&#125; {{fatigue=[[@{selected|fatigue}]]&#125;&#125;
+
 }
