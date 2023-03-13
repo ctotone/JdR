@@ -1,7 +1,6 @@
 ?{Choix de l'aide|
 ,|
-Jetons,
-	/w gm &{template:custom&#125;{{title=Les jetons&#125;&#125;{{Blanc=Jet d'encaissement (p.111)
+Jetons,/w gm &{template:custom&#125;{{title=Les jetons&#125;&#125;{{=En début de partie&#44; chaque joueur reçoit 3 jetons et le Marshal autant que de joueurs autour de la table. Au cours de la partie&#44; des jetons pourront être donnés à un joueur ayant fait quelque chose de particulièrement malin&#44; trouver un indice vital&#44; fait avancer l'histoire&#44; pris une décision pas facile mais raccord à son RP ou tout simplement lors d'une action ayant bien fait rire la table !!&#125;&#125;  {{Blanc=Jet d'encaissement (p.111)
 	Relancer un jet de trait
 	Récupérer immédiatement d'un état secoué&#125;&#125;{{Rouge=Ajouter 1D6 au résultat
 	Annuler un échec critique
