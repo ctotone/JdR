@@ -1,4 +1,4 @@
-?{Choix de la compétence|
+?{Choix du son|
 ,|
 ---- Combat ----,
 |
