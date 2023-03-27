@@ -1,5 +1,13 @@
 ?{Choix du son|
 ,|
+---- Wayne ----,
+|
+Grelot,
+!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Grelot
+|
+Grelot Cheval,
+!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Grelot cheval
+|
 --- Ménagerie ---,
 Grognement léger,!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Grogne léger
 |
@@ -17,7 +25,7 @@ Vol Corbeau n°1,!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Envol corbeau 1
 |
 Vol Corbeau n°2,!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Envol corbeau 2
 |
---- Animeaux ---,
+--- Animaux ---,
 |
 Hénissement n°1,!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Cheval hénnissement
 |
