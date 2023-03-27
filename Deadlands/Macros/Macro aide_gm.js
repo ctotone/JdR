@@ -86,6 +86,10 @@ Si un personnage a choisi la précision (et qu'il est toujours en vie)&#44; c'es
 Jet Coopératif,/w gm &{template:custom&#125;{{title=Jet Coopératif&#125;&#125;{{=Les personnages peuvent s'entraider dans une tâche. Si au moins deux personnages agissent de concert sur une même tache (et que le Marshal décide qu’il est possible de s’y pencher à plusieurs)&#44; le personnage principal fait un jet&#44; avec un bonus de +1 pour chaque Succès et chaque Relance obtenu par chacun des autres participants à l’action. 
 Le bonus maximum possible est de +4&#44; sauf pour les jets de Force. 
 Un personnage ne peut pas participer à un jet coopératif s’il ne possède pas la Compétence adéquate.&#125;&#125;
+,|
+------ CLASSE ------,
+|
+Élu,/w gm &{template:custom&#125;{{title=Élu&#125;&#125;{{I=En cas d'échec à un jet de Foi pour lancer un sort&#44; l'Élu prend un niveau de fatigue.&#125;&#125;{{II=En cas de 1 sur le dé de Foi (qu'importe le résultat du dé Joker)&#44; les prières sont ignorées et l'Élu perd 1D4 en Foi jusqu'à ce qu'il réussisse à accomplir un miracle avec succés.&#125;&#125;{{III=Si le dés de Foi tombe en dessous du D4&#44; il ne peut plus accomplir de miracle et doit trouver une manière de chasser ses doutes (pg. 158).&#125;&#125;{{IV=À l’instar de l’expiation d’un péché mortel&#44; cela prend habituellement la forme d’une quête spirituelle visant à remettre l’élu sur le chemin de la foi&#44; comme par exemple accomplir un acte véritablement altruiste&#44; convertir une tribu de païens ou montrer du courage en défendant la foi. Le Marshal n’a pas à te dire ce qui est nécessaire. Il appartient à la brebis égarée de retrouver la foi et ce n’est qu’à partir de ce moment-là qu’elle pourra de nouveau accomplir des miracles&#125;&#125;
 
 }
 
