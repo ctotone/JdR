@@ -55,6 +55,9 @@ Actions,
 	- Lancer deux pouvoirs.&#125;&#125;{{Dégainer=Cela prend 1 round&#44; mais si le joueur veut attaquer de suite&#44; il subit le malus de -2 pour Action Multiple.&#125;&#125;{{Gratuit=Les actions mineures qui n'impactent pas le cours du combat sont gratuites.&#125;&#125;{{Dé joker=Le joueur ne lance qu'un seul jet Joker par action (En cas d'action multiple&#44; un dé joker lors de chaque action).
 	Par exemple tirer plusieurs balles dans un tour&#44; le joueur n'utilisera le dé joker que pour un seul tir.&#125;&#125;
 |
+Portée des armes,
+Portée des armes : http://journal.roll20.net/handout/-NT4-gn87jGf1E5McO0A
+,|
 Dégâts,
 &{template:custom&#125;{{title=Dégâts&#125;&#125;{{Aucun=L’attaque&#44; bien qu’ayant touché&#44; n’a pas blessé la cible (jet de dégâts trop faible par rapport à la résistance de la cible)&#125;&#125;{{0 relance=La cible de l’attaque est Secouée. (aucun changement si déjà secouée)
 Cela signifie qu’elle est choquée&#44; distraite ou ébranlée. 
