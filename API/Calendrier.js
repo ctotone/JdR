@@ -16,7 +16,7 @@ var Calendar = Calendar || (function() {
     'use strict';
     
     var version = '6.2.0',
-        handoutName = 'Events Log',
+        handoutName = 'Faits marquants calendrier',
     
     setDefaults = function() {
         state.Calendar = {
@@ -1472,7 +1472,7 @@ var Calendar = Calendar || (function() {
         
         switch(timetype) {
             case 'General':
-                timeselect = '?{Time?|Matin (Aube)|Début de matinée|Fin de matinée|Midi|Aprés-midi|Début d\'aprés-midi|Début de soirée|Fin de soirée|Minuit|Milieu de la nuit}';
+                timeselect = '?{Time?|Matin (Aube)|Début de matinée|Fin de matinée|Midi|Après-midi|Début d\'aprés-midi|Début de soirée|Fin de soirée|Minuit|Milieu de la nuit}';
                 break;
             case '24 Hour':
                 timeselect = '?{Hour|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24},?{Minute|00,:00|15,:15|30,:30|45,:45}';
