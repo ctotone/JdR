@@ -1455,9 +1455,9 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 		<div class="interface">
 			<!-- <div class="title"><h1>interface.exe</h1></div> -->
 			<div class="title"><h1><button type="roll" value="&{template:roleability} {{critroll=[[@{Total_Interface}+10+1d10]]}} {{failroll=[[@{Total_Interface}+1-1d10]]}} {{rollname=Interface}}  {{roll=[[@{Total_Interface}+1d10]]}}">interface.exe</button></h1></div>
-			<div class="rank"><h6>rank</h6> <input type=number name="attr_rankInterface" value="0"></div>
-			<div class="netactions"><h3>total-net-actions: <span name='attr_totalNetActions'></span></h3></div>
-			<div class="speed"><h6>speed</h6> <input type="number" name="attr_netrunSpeed"></div>
+			<div class="rank"><h6>rang</h6> <input type=number name="attr_rankInterface" value="0"></div>
+			<div class="netactions"><h3>nbr_actions_virtuelles: <span name='attr_totalNetActions'></span></h3></div>
+			<div class="speed"><h6>vitesse</h6> <input type="number" name="attr_netrunSpeed"></div>
 			<div class="general"><h6>general-slots</h6>
 				<div><input type=text spellcheck=false name="attr_slots_all"></div>
 			</div>
@@ -1469,8 +1469,8 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 			</div>
 			<div class="netnav">
 				<div class="nav">
-					<div><button type="action" name="act_nbi" >NBI-PROGRAMS</button></div>
-					<div><button type="action" name="act_blackice" >BLACK-ICE</button></div>
+					<div><button type="action" name="act_nbi" >PROGRAMMES</button></div>
+					<div><button type="action" name="act_blackice" >GLACE</button></div>
 					<div><button type="action" name="act_hardware" >HARDWARE</button></div>
 				</div>
 			</div>
@@ -1486,58 +1486,58 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 					<div class="bg-black-2 skill-total">total</div>
 				</div>
 				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Scanner" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Scanner}+10+1d10]]}} {{failroll=[[@{Total_Scanner}+1-1d10]]}} {{rollname=scanner}}  {{roll=[[@{Total_Scanner}+1d10]]}}">scanner</button></div>
+					<div class="bg-white skill-name"><button name="roll_Scanner" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Scanner}+10+1d10]]}} {{failroll=[[@{Total_Scanner}+1-1d10]]}} {{rollname=scanner}}  {{roll=[[@{Total_Scanner}+1d10]]}}">analyse</button></div>
 					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
 					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Scanner" value="0"  /></div>
 					<div class="bg-white skill-total"><input type="number" name="attr_Total_Scanner" value="@{rankInterface}+@{Misc_Scanner}" disabled="true" /></div>
 				</div>
 				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Backdoor" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Backdoor}+10+1d10]]}} {{failroll=[[@{Total_Backdoor}+1-1d10]]}} {{rollname=backdoor}}  {{roll=[[@{Total_Backdoor}+1d10]]}}">backdoor</button></div>
-					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
-					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Backdoor" value="0"  /></div>
-					<div class="bg-white skill-total"><input type="number" name="attr_Total_Backdoor" value="@{rankInterface}+@{Misc_Backdoor}" disabled="true" /></div>
-				</div>
-				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Cloak" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Cloak}+10+1d10]]}} {{failroll=[[@{Total_Cloak}+1-1d10]]}} {{rollname=cloak}}  {{roll=[[@{Total_Cloak}+1d10]]}}">cloak</button></div>
-					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
-					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Cloak" value="0"  /></div>
-					<div class="bg-white skill-total"><input type="number" name="attr_Total_Cloak" value="@{rankInterface}+@{Misc_Cloak}" disabled="true" /></div>
-				</div>
-				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Control" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Control}+10+1d10]]}} {{failroll=[[@{Total_Control}+1-1d10]]}} {{rollname=control}}  {{roll=[[@{Total_Control}+1d10]]}}">control</button></div>
-					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
-					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Control" value="0"  /></div>
-					<div class="bg-white skill-total"><input type="number" name="attr_Total_Control" value="@{rankInterface}+@{Misc_Control}" disabled="true" /></div>
-				</div>
-				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Eye-Dee" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Eye-Dee}+10+1d10]]}} {{failroll=[[@{Total_Eye-Dee}+1-1d10]]}} {{rollname=eye-dee}}  {{roll=[[@{Total_Eye-Dee}+1d10]]}}">eye-dee</button></div>
-					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
-					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Eye-Dee" value="0"  /></div>
-					<div class="bg-white skill-total"><input type="number" name="attr_Total_Eye-Dee" value="@{rankInterface}+@{Misc_Eye-Dee}" disabled="true" /></div>
-				</div>
-				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Pathfinder" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Pathfinder}+10+1d10]]}} {{failroll=[[@{Total_Pathfinder}+1-1d10]]}} {{rollname=pathfinder}}  {{roll=[[@{Total_Pathfinder}+1d10]]}}">pathfinder</button></div>
+					<div class="bg-white skill-name"><button name="roll_Pathfinder" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Pathfinder}+10+1d10]]}} {{failroll=[[@{Total_Pathfinder}+1-1d10]]}} {{rollname=pathfinder}}  {{roll=[[@{Total_Pathfinder}+1d10]]}}">cartographie</button></div>
 					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
 					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Pathfinder" value="0"  /></div>
 					<div class="bg-white skill-total"><input type="number" name="attr_Total_Pathfinder" value="@{rankInterface}+@{Misc_Pathfinder}" disabled="true" /></div>
 				</div>
 				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Slide" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Slide}+10+1d10]]}} {{failroll=[[@{Total_Slide}+1-1d10]]}} {{rollname=slide}}  {{roll=[[@{Total_Slide}+1d10]]}}">slide</button></div>
+					<div class="bg-white skill-name"><button name="roll_Control" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Control}+10+1d10]]}} {{failroll=[[@{Total_Control}+1-1d10]]}} {{rollname=control}}  {{roll=[[@{Total_Control}+1d10]]}}">contrôle</button></div>
+					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
+					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Control" value="0"  /></div>
+					<div class="bg-white skill-total"><input type="number" name="attr_Total_Control" value="@{rankInterface}+@{Misc_Control}" disabled="true" /></div>
+				</div>
+				<div class="flex-table">
+					<div class="bg-white skill-name"><button name="roll_Zap" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Zap}+10+1d10]]}} {{failroll=[[@{Total_Zap}+1-1d10]]}} {{rollname=zap}}  {{roll=[[@{Total_Zap}+1d10]]}}">élimination</button></div>
+					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
+					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Zap" value="0"  /></div>
+					<div class="bg-white skill-total"><input type="number" name="attr_Total_Zap" value="@{rankInterface}+@{Misc_Zap}" disabled="true" /></div>
+				</div>
+				<div class="flex-table">
+					<div class="bg-white skill-name"><button name="roll_Slide" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Slide}+10+1d10]]}} {{failroll=[[@{Total_Slide}+1-1d10]]}} {{rollname=slide}}  {{roll=[[@{Total_Slide}+1d10]]}}">glissement</button></div>
 					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
 					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Slide" value="0"  /></div>
 					<div class="bg-white skill-total"><input type="number" name="attr_Total_Slide" value="@{rankInterface}+@{Misc_Slide}" disabled="true" /></div>
+				</div>
+				<div class="flex-table">
+					<div class="bg-white skill-name"><button name="roll_Cloak" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Cloak}+10+1d10]]}} {{failroll=[[@{Total_Cloak}+1-1d10]]}} {{rollname=cloak}}  {{roll=[[@{Total_Cloak}+1d10]]}}">masquage</button></div>
+					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
+					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Cloak" value="0"  /></div>
+					<div class="bg-white skill-total"><input type="number" name="attr_Total_Cloak" value="@{rankInterface}+@{Misc_Cloak}" disabled="true" /></div>
+				</div>
+				<div class="flex-table">
+					<div class="bg-white skill-name"><button name="roll_Backdoor" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Backdoor}+10+1d10]]}} {{failroll=[[@{Total_Backdoor}+1-1d10]]}} {{rollname=backdoor}}  {{roll=[[@{Total_Backdoor}+1d10]]}}">porte dérobée</button></div>
+					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
+					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Backdoor" value="0"  /></div>
+					<div class="bg-white skill-total"><input type="number" name="attr_Total_Backdoor" value="@{rankInterface}+@{Misc_Backdoor}" disabled="true" /></div>
+				</div>
+				<div class="flex-table">
+					<div class="bg-white skill-name"><button name="roll_Eye-Dee" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Eye-Dee}+10+1d10]]}} {{failroll=[[@{Total_Eye-Dee}+1-1d10]]}} {{rollname=eye-dee}}  {{roll=[[@{Total_Eye-Dee}+1d10]]}}">recherche</button></div>
+					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
+					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Eye-Dee" value="0"  /></div>
+					<div class="bg-white skill-total"><input type="number" name="attr_Total_Eye-Dee" value="@{rankInterface}+@{Misc_Eye-Dee}" disabled="true" /></div>
 				</div>
 				<div class="flex-table">
 					<div class="bg-white skill-name"><button name="roll_Virus" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Virus}+10+1d10]]}} {{failroll=[[@{Total_Virus}+1-1d10]]}} {{rollname=virus}}  {{roll=[[@{Total_Virus}+1d10]]}}">virus</button></div>
 					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
 					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Virus" value="0"  /></div>
 					<div class="bg-white skill-total"><input type="number" name="attr_Total_Virus" value="@{rankInterface}+@{Misc_Virus}" disabled="true" /></div>
-				</div>
-				<div class="flex-table">
-					<div class="bg-white skill-name"><button name="roll_Zap" type="roll" class="txt-btn" value="&{template:interface} {{critroll=[[@{Total_Zap}+10+1d10]]}} {{failroll=[[@{Total_Zap}+1-1d10]]}} {{rollname=zap}}  {{roll=[[@{Total_Zap}+1d10]]}}">zap</button></div>
-					<div class="bg-white skill-base"><input type="number" name="attr_rankInterface" value="0"  /></div>
-					<div class="bg-white skill-mod"><input type="number" name="attr_Misc_Zap" value="0"  /></div>
-					<div class="bg-white skill-total"><input type="number" name="attr_Total_Zap" value="@{rankInterface}+@{Misc_Zap}" disabled="true" /></div>
 				</div>
 			</div>
 		</div>
@@ -1546,13 +1546,13 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 
 		<div class="nbiprogram">
 			<div class="flex-table">
-				<div class="bg-yellow max-width">/usr/bin/non-blackICE-programs/booster_defender</div>
-				<div class="bg-black program-name">name</div>
-				<div class="bg-black program-class">class</div>
+				<div class="bg-yellow max-width">/usr/bin/non-blackICE-programs/soutien_défense</div>
+				<div class="bg-black program-name">nom</div>
+				<div class="bg-black program-class">classe</div>
 				<div class="bg-black program-atk">ATK</div>
 				<div class="bg-black program-def">DEF</div>
 				<div class="bg-black program-rez">REZ</div>
-				<div class="bg-black program-effect">effect</div>
+				<div class="bg-black program-effect">effet</div>
 			</div>
 
 			<fieldset class="repeating_nbi">
@@ -1560,22 +1560,22 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 					<div class="bg-black-item program-name">
 						<select name="attr_programname">
 							<option value="" disabled selected>load_program</option>
-							<option value="eraser">eraser</option>
-							<option value="see ya">see ya</option>
+							<option value="effaceur">effaceur</option>
+							<option value="loupe">loupe</option>
 							<option value="speedy gonzalez">speedy gonzalez</option>
-							<option value="worm">worm</option>
-							<option value="armor">armor</option>
-							<option value="flak">flak</option>
-							<option value="shield">shield</option>
+							<option value="ver">ver</option>
+							<option value="armure">armure</option>
+							<option value="bouclier">bouclier</option>
+							<option value="tir_barrage">tir de barrage</option>
 						</select>
 					</div>
 					<div class="bg-black-item program-class">
 						<select name="attr_programclass">
 							<option value="" disabled selected>load_class</option>
-							<option value="booster">booster</option>
-							<option value="defender">defender</option>
-							<option value="anti-program">anti-program-attacker</option>
-							<option value="anti-personnel">anti-personnel-attacker</option>
+							<option value="booster">soutien</option>
+							<option value="defender">défense</option>
+							<option value="anti-program">anti-program-attaque</option>
+							<option value="anti-personnel">anti-personnel-attaque</option>
 						</select>
 					</div>
 					<div class="bg-black-item program-atk">
@@ -1600,13 +1600,13 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 
 			<div class="flex-table">
 				<div class="bg-yellow max-width">/usr/bin/non-blackICE-programs/anti-program_personnel</div>
-				<div class="bg-black anti-program-name">name</div>
-				<div class="bg-black anti-program-class">class</div>
+				<div class="bg-black anti-program-name">nom</div>
+				<div class="bg-black anti-program-class">classe</div>
 				<div class="bg-black anti-program-atk">ATK</div>
 				<div class="bg-black anti-program-def">DEF</div>
 				<div class="bg-black anti-program-rez">REZ</div>
 				<div class="bg-black anti-program-run">run</div>
-				<div class="bg-black anti-program-effect">effect</div>
+				<div class="bg-black anti-program-effect">effet</div>
 			</div>
 
 			<fieldset class="repeating_anti">
@@ -1615,14 +1615,14 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 					<div class="bg-black-item anti-program-name">
 						<select name="attr_programname">
 							<option value="" disabled selected>load_program</option>
-							<option value="banhammer">banhammer</option>
-							<option value="sword">sword</option>
-							<option value="deckkrash">deckkrash</option>
-							<option value="hellbolt">hellbolt</option>
-							<option value="nervescrub">nervescrub</option>
-							<option value="poison flatline">poison flatline</option>
+							<option value="bannissement">bannissement</option>
+							<option value="sabre">sabre</option>
+							<option value="consoleKRASH">consoleKRASH</option>
+							<option value="feubeu">feubeu</option>
+							<option value="éclairs">hélice d'éclairs</option>
+							<option value="laser">laser corrosif</option>
 							<option value="superglue">superglue</option>
-							<option value="vrizzbolt">vrizzbolt</option>
+							<option value="taser">taser</option>
 						</select>
 					</div>
 					<div class="bg-black-item anti-program-class">
@@ -1655,15 +1655,15 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 		<div class="blackice">		
 			<div class="flex-table">
 				<div class="bg-yellow max-width">/usr/bin/blackICE-programs/</div>
-				<div class="bg-black bi-name">name</div>
-				<div class="bg-black bi-class">class</div>
+				<div class="bg-black bi-name">nom</div>
+				<div class="bg-black bi-class">classe</div>
 				<div class="bg-black bi-per">PER</div>
 				<div class="bg-black bi-sod">SPD</div>
 				<div class="bg-black bi-atk">ATK</div>
 				<div class="bg-black bi-def">DEF</div>
 				<div class="bg-black bi-rez">REZ</div>
 				<div class="bg-black bi-run">run</div>
-				<div class="bg-black bi-effect">effect</div>
+				<div class="bg-black bi-effect">effet</div>
 			</div>
 
 			<fieldset class="repeating_blackice">
@@ -1672,18 +1672,18 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 					<div class="bg-black-item bi-name">
 						<select name="attr_biname">
 							<option value="" disabled selected>load_program</option>
-							<option value="asp">asp</option>
-							<option value="giant">giant</option>
-							<option value="hellhound">hellhound</option>
+							<option value="cerbère">cerbère</option>
+							<option value="cobra">cobra</option>
+							<option value="corbeau">corbeau</option>
+							<option value="feu_follet">feu follet</option>
 							<option value="kraken">kraken</option>
 							<option value="liche">liche</option>
-							<option value="raven">raven</option>
+							<option value="putois">putois</option>
 							<option value="scorpion">scorpion</option>
-							<option value="skunk">skunk</option>
-							<option value="wisp">wisp</option>
+							<option value="titan">titan</option>
 							<option value="dragon">dragon</option>
-							<option value="killer">killer</option>
-							<option value="sabertooth">sabertooth</option>
+							<option value="tigre">tigre</option>
+							<option value="tueur">tueur</option>
 						</select>
 					</div>
 					<div class="bg-black-item bi-class">
@@ -2876,33 +2876,33 @@ d’Interface." name="roll_InterfaceCheck" type="roll" class="txt-btn" value="&{
 	// Creating a list of Program Names and details
 	
 	const progdeets = {
-		"eraser": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Increases all Cloak Checks you make by +2 as long as this Program remains Rezzed.", ability: "Misc_Cloak", bonus: 2},
-		"see ya": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Increases all Pathfinder Checks you make by +2 as long as this Program remains Rezzed.", ability: "Misc_Pathfinder", bonus: 2},
-		"speedy gonzalez": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Increases your Speed by +2 as long as this Program remains Rezzed.", ability: "netrunSpeed", bonus: 2},
-		"worm": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Increases all Backdoor Checks you make by +2 as long as this Program remains Rezzed.", ability: "Misc_Backdoor", bonus: 2},
-		"armor": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Lowers all brain damage you would receive by 4, as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.", ability: "", bonus: 0},
-		"flak": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Reduces the ATK of all Non-Black ICE Attacker Programs run against you to 0 as long as this Program remains Rezzed. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.", ability: "", bonus: 0},
-		"shield": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Stops the first successful Non-Black ICE Program Effect from dealing brain damage.  After stopping this damage, the Shield Derezzes itself. Only 1 copy of this Program can be running at a time. Each copy of this Program can only be used once per Netrun.", ability: "", bonus: 0},
-		"banhammer": {class: "anti-program", atk: 1, def: 0, rez: 0, effect: "Does 3d6 REZ to a Non-Black ICE Program, or 2d6 REZ to a Black ICE Program.", programresult: "Non-Black ICE: [[3d6]] REZ \n Black ICE: [[2d6]] REZ"},
-		"sword": {class: "anti-program", atk: 1, def: 0, rez: 0, effect: "Does 3d6 REZ to a Black ICE Program, or 2d6 REZ to a Non-Black ICE Program.", programresult: "Non-Black ICE: [[2d6]] REZ \n Black ICE: [[3d6]] REZ"},
-		"deckkrash": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "Enemy Netrunner is forcibly and unsafely Jacked Out of the Architecture, suffering the effect of all Rezzed enemy Black ICE they've encountered in the Architecture as they leave.", programresult: "Enemy Netrunner\nforcibly Jacked Out"},
-		"hellbolt": {class: "anti-personnel", atk: 2, def: 0, rez: 0, effect: "Does 2d6 Damage directly to the enemy Netrunner's brain.  Unless insulated, their Cyberdeck catches fire along with their clothing. Until they spend a Meat Action to put themselves out, they take 2 damage to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.", programresult: "[[2d6]] damage to enemy\nNetrunner's brain and\npotentially on fire."},
-		"nervescrub": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "Enemy Netrunner's INT, REF, and DEX are each lowered by 1d6 for the next hour (minimum 1). The effects are largely psychosomatic and leave no permanent effects.", programresult: "-[[1d6]] to Netrunner's INT, REF,\nand DEX for the next hour\nto a minimum of 1."},
-		"poison flatline": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "Destroys a single Non-Black ICE Program installed on the Netrunner target's Cyberdeck at random.", programresult: "Destroys one random \n Non-Black ICE Program."},
-		"superglue": {class: "anti-personnel", atk: 2, def: 0, rez: 0, effect: "Enemy Netrunner cannot progress deeper into the Architecture or Jack Out safely for 1d6 Rounds (enemy Netrunner can still perform an unsafe Jack Out, though). Each copy of this Program can only be used once per Netrun.", programresult: "Enemy Netrunner cannot\nprogress or Jack Out\nsafely for [[1d6]] rounds."},
-		"vrizzbolt": {class: "anti-personnel", atk: 1, def: 0, rez: 0, effect: "Does 1d6 Damage direct to a Netrunner's brain and lowers the amount of total NET Actions the Netrunner can accomplish on their next Turn by 1 (minimum 2).", programresult: "[[1d6]] damage to Netrunner's\nbrain and lowers NET Actions on\nnext Turn by 1 (min 2)."},
-		"asp": {class: "anti-personnel", per: 4, spd: 6, atk: 2, def: 2, rez: 15, effect: "Destroys a single Program installed on the enemy Netrunner's Cyberdeck at random.", programresult: "Destroys one \n random Program."},
-		"giant": {class: "anti-personnel", per: 2, spd: 2, atk: 8, def: 4, rez: 25, effect: "Does 3d6 damage direct to an enemy Netrunner's brain.  The Netrunner is forcibly and unsafely Jacked Out of their current Netrun. They suffer the effect of all Rezzed enemy Black ICE they've encountered in the Architecture as they leave, including the Giant.", programresult: "[[3d6]] damage to Netrunner's brain\nand Netrunner is unsafely Jacked\nOut, suffering Rezzed enemy\nBlack ICE including Giant."},
-		"hellhound": {class: "anti-personnel", per: 6, spd: 6, atk: 6, def: 2, rez: 20, effect: "Does 2d6 damage direct to an enemy Netrunner's brain. Unless insulated, their Cyberdeck catches fire along with their clothing. Until they spend a Meat Action to put themselves out, they take 2 damage to their HP whenever they end their Turn. Multiple instances of this effect cannot stack.", programresult: "[[2d6]] damage to enemy\nNetrunner's brain and\npotentially on fire."},
-		"kraken": {class: "anti-personnel", per: 6, spd: 2, atk: 8, def: 4, rez: 30, effect: "Does 3d6 damage direct to an enemy Netrunner's brain. Until the end of the Netrunner's next Turn, the Netrunner cannot progress deeper into the Architecture or Jack Out safely (The Netrunner can still perform an unsafe Jack Out).", programresult: "[[3d6]] damage to Netrunner's brain\nand Netrunner cannot progress\nor Jack Out safely until\nend of next Turn."},
-		"liche": {class: "anti-personnel", per: 8, spd: 2, atk: 6, def: 2, rez: 25, effect: "Enemy Netrunner's INT, REF, and DEX are each lowered by 1d6 for the next hour (minimum 1). The effects are largely psychosomatic and leave no permanent effects.", programresult: "-[[1d6]] to Netrunner's INT, REF,\nand DEX for the next hour\nto a minimum of 1."},
-		"raven": {class: "anti-personnel", per: 6, spd: 4, atk: 4, def: 2, rez: 15, effect: "Derezzes a single Defender Program the enemy Netrunner has Rezzed at random, then deals 1d6 damage direct to the Netrunner's brain.", programresult: "Derezzes random Defender Program, then [[1d6]] damage to Netrunner's brain."},
-		"scorpion": {class: "anti-personnel", per: 2, spd: 6, atk: 2, def: 2, rez: 15, effect: "Enemy Netrunner's MOVE is lowered by 1d6 for the next hour (minimum 1). The effects are largely psychosomatic and leave no permanent effects.", programresult: "-[[1d6]] to Netrunner's MOVE\nfor the next hour."},
-		"skunk": {class: "anti-personnel", per: 2, spd: 4, atk: 4, def: 2, rez: 10, effect: "Until this program is Derezzed, an enemy Netrunner hit by this Effect makes all Slide Checks at a -2. Each Skunk Black ICE can only effect a single Netrunner at a time, but the effects of multiple Skunks can stack.", programresult: "-2 to Slide for each Skunk\nthat hits Netrunner."},
-		"wisp": {class: "anti-personnel", per: 4, spd: 4, atk: 4, def: 2, rez: 15, effect: "Does 1d6 Damage direct to a Netrunner's brain and lowers the amount of total NET Actions the Netrunner can accomplish on their next Turn by 1 (minimum 2).", programresult: "[[1d6]] damage to Netrunner's\nbrain and lowers NET Actions on\nnext Turn by 1 (min 2)."},
-		"dragon": {class: "anti-program", per: 6, spd: 4, atk: 6, def: 6, rez: 30, effect: "Does 6d6 damage to a Program. If this damage would be enough to Desrezz the Program, it is instead Destroyed.", programresult: "[[6d6]] damage to a Program to either Derezz or Destroy."},
-		"killer": {class: "anti-program", per: 4, spd: 8, atk: 6, def: 2, rez: 20, effect: "Does 4d6 damage to a Program. If this damage would be enough to Desrezz the Program, it is instead Destroyed.", programresult: "[[4d6]] damage to a Program to either Derezz or Destroy."},
-		"killer": {class: "anti-program", per: 8, spd: 6, atk: 6, def: 2, rez: 25, effect: "Does 8d6 damage to a Program. If this damage would be enough to Desrezz the Program, it is instead Destroyed.", programresult: "[[8d6]] damage to a Program to either Derezz or Destroy."}
+		"effaceur": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Vous donne un bonus de +2 sur tous vos jets de Masquage tant que le programme est rezzé.", ability: "Misc_Cloak", bonus: 2},
+		"loupe": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Vous donne un bonus de +2 sur tous vos jets de Cartographie tant que le programme est rezzé.", ability: "Misc_Pathfinder", bonus: 2},
+		"speedy gonzalez": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Augmente votre Vitesse de +2 tant que le programme est rezzé.", ability: "netrunSpeed", bonus: 2},
+		"ver": {class: "booster", atk: 0, def: 0, rez: 7, effect: "Vous donne un bonus de +2 sur tous vos jets de Porte dérobée tant que le programme est rezzé.", ability: "Misc_Backdoor", bonus: 2},
+		"armure": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Réduit de 4 tous les dégâts au cerveau que vous devriez subir tant que le programme est rezzé. Vous ne pouvez exécuter qu’une seule copie de ce programme à la fois. Chaque copie de ce programme ne peut être utilisée qu’une fois par Netrun.", ability: "", bonus: 0},
+		"tir_barrage": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Fait tomber à 0 l’ATT de tous les programmes offensifs qui ne sont pas des GLACE exécutés contre vous tant que le programme est rezzé. Vous ne pouvez exécuter qu’une seule copie de ce programme à la fois. Chaque copie de ce programme ne peut être utilisée qu’une fois par Netrun.", ability: "", bonus: 0},
+		"bouclier": {class: "defender", atk: 0, def: 0, rez: 7, effect: "Empêche le premier effet réussi d’un programme qui n’est pas un GLACE d’infliger des dégâts au cerveau. Après avoir arrêté les dégâts, le Bouclier se dérezze. Vous ne pouvez exécuter qu’une seule  copie de ce programme à la fois. Chaque copie de ce programme ne peut être utilisée qu’une fois par Netrun.", ability: "", bonus: 0},
+		"bannissement": {class: "anti-program", atk: 1, def: 0, rez: 0, effect: "Inflige 2d6 points de dégâts aux GLACE et 3d6 aux autres programmes.", programresult: "Non-GLACE: [[3d6]] REZ \n GLACE: [[2d6]] REZ"},
+		"sabre": {class: "anti-program", atk: 1, def: 0, rez: 0, effect: "Inflige 3d6 points de dégâts aux GLACE et 2d6 aux autres programmes.", programresult: "Non-GLACE: [[2d6]] REZ \n GLACE: [[3d6]] REZ"},
+		"consoleKRASH": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "Le Netrunner ennemi est déconnecté de l’architecture de force et non de manière sûre. Il subit l’effet de tous les GLACE ennemis rezzés qu’il a rencontrés dans l’architecture quand il la quitte.", programresult: "Le Netrunner ennemi\nest déconnecté de force"},
+		"feubeu": {class: "anti-personnel", atk: 2, def: 0, rez: 0, effect: "Inflige 2d6 points de dégâts directement au cerveau du Netrunner ennemi. Si sa cyberconsole n’est pas dotée d’un câblage isolé, elle prend feu. Les vêtements de l’infortunée victime s’enflamment également. Jusqu’à ce qu’il passe une action réelle à éteindre les flammes, le Netrunner subit 2 points de dégâts sur ses PS chaque fois qu’il termine son tour. Si cet effet se déclenche plusieurs fois, il ne se cumule pas.", programresult: "[[2d6]] dégats au\ncerveau du Netrunner et\npossiblement en feu."},
+		"taser": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "L’INT, les RÉF et la DEX du Netrunner ennemi sont chacune réduites d’1d6 (mais restent de 1 minimum) pendant 1 heure. Les effets sont principalement psychosomatiques et ne laissent donc pas de séquelles permanentes.", programresult: "-[[1d6]] à l'INT, REF et DEX \ndu Netrunner pour 1h."},
+		"laser": {class: "anti-personnel", atk: 0, def: 0, rez: 0, effect: "Détruit un programme qui n’est pas un GLACE installé sur la cyberconsole du Netrunner ciblé. Le programme est choisi au hasard.", programresult: "Détruit un programme au hasard \nnon GLACE."},
+		"superglue": {class: "anti-personnel", atk: 2, def: 0, rez: 0, effect: "Le Netrunner ennemi ne peut plus ni progresser davantage au sein de l’architecture ni se déconnecter de manière sûre pendant 1d6 rounds (mais il peut toujours se déconnecter de manière dangereuse). Chaque copie de ce programme ne peut être utilisée qu’une fois par Netrun.", programresult: "Le Netrunner ennemi ne peut \nplus progresser ou se déconnecter \nde manière sûre durant [[1d6]] tours."},
+		"éclairs": {class: "anti-personnel", atk: 1, def: 0, rez: 0, effect: "Inflige 1d6 points de dégâts directement au cerveau d’un Netrunner et réduit la quantité totale d’actions virtuelles qu’il peut accomplir lors de son prochain tour de 1 (mais il lui reste deux actions virtuelles minimum).", programresult: "[[1d6]] dégats au cerveau \ndu Netrunner et réduit de 1 \n ses actions virtuelles au prochain tour (min 2)."},
+		"cobra": {class: "anti-personnel", per: 4, spd: 6, atk: 2, def: 2, rez: 15, effect: "Détruit un programme installé sur la cyberconsole du Netrunner ciblé. Le programme est choisi au hasard.", programresult: "Détruit un programme au hasard."},
+		"titan": {class: "anti-personnel", per: 2, spd: 2, atk: 8, def: 4, rez: 25, effect: "Inflige 3d6 points de dégâts directement au cerveau du Netrunner ennemi. Le Netrunner est déconnecté de force de sa Netrun actuelle, sans la moindre précaution. Il subit l’effet de tous les GLACE ennemis rezzés qu’il a rencontrés dans l’architecture (mais pas celui du Titan, qui vient d’avoir lieu) quand il la quitte.", programresult: "[[3d6]] dégats au cerveau du Netrunner \net le force à se deconnecter.\nIl subit l’effet de tous les GLACE\nrezzés qu’il a rencontrés."},
+		"cerbère": {class: "anti-personnel", per: 6, spd: 6, atk: 6, def: 2, rez: 20, effect: "Inflige 2d6 points de dégâts directement au cerveau du Netrunner. Si sa cyberconsole n’est pas dotée d’un câblage isolé, elle prend feu. Les vêtements de l’infortunée victime s’enflamment également. Jusqu’à ce qu’il passe une action réelle à éteindre les flammes, le Netrunner subit 2 points de dégâts sur ses PS chaque fois qu’il termine son tour. Si cet effet se déclenche plusieurs fois, il ne se cumule pas.", programresult: "[[2d6]] dégats au\ncerveau du Netrunner et\npossiblement en feu."},
+		"kraken": {class: "anti-personnel", per: 6, spd: 2, atk: 8, def: 4, rez: 30, effect: "Inflige 3d6 points de dégâts directement au cerveau du Netrunner. Le Netrunner ennemi ne peut plus ni progresser davantage au sein de l’architecture ni se déconnecter de manière sûre jusqu'à la fin de son tour (mais il peut toujours se déconnecter de manière dangereuse).", programresult: "[[3d6]] dégats au\ncerveau du Netrunner et ne peut \nplus progresser ou se déconnecter de manière sûre\njusqu'à la fin de son tour."},
+		"liche": {class: "anti-personnel", per: 8, spd: 2, atk: 6, def: 2, rez: 25, effect: "L’INT, les RÉF et la DEX du Netrunner ennemi sont chacune réduites d’1d6 (mais restent de 1 minimum) pendant 1 heure. Les effets sont principalement psychosomatiques et ne laissent donc pas de séquelles permanentes.", programresult: "-[[1d6]] à l'INT, REF et DEX \ndu Netrunner pour 1h."},
+		"corbeau": {class: "anti-personnel", per: 6, spd: 4, atk: 4, def: 2, rez: 15, effect: "Dérezze un programme défensif que le Netrunner ennemi a rezzé (choisi au hasard), puis inflige 1d6 points de dégâts directement au cerveau du Netrunner.", programresult: "Dérezze un programme défensif que le Netrunner ennemi a rezzé (choisi au hasard), puis inflige [[1d6]] points de dégâts directement au cerveau du Netrunner."},
+		"scorpion": {class: "anti-personnel", per: 2, spd: 6, atk: 2, def: 2, rez: 15, effect: "Le MOUV du Netrunner ennemi est réduit d’1d6 (mais reste de 1 minimum) pendant 1 heure. Les effets sont principalement psychosomatiques, ils ne laissent donc pas de séquelles permanentes", programresult: "Le MOUV du Netrunner ennemi est réduit de -[[1d6]] (mais reste de 1 minimum) pendant 1 heure. Les effets sont principalement psychosomatiques, ils ne laissent donc pas de séquelles permanentes."},
+		"putois": {class: "anti-personnel", per: 2, spd: 4, atk: 4, def: 2, rez: 10, effect: "Jusqu’à ce que ce programme soit dérezzé, un Netrunner ennemi touché par son effet subit un malus de –2 sur tous ses jets de Glissement. Chaque GLACE de type Putois ne peut appliquer son effet qu’à un seul Netrunner à la fois, mais les effets de plusieurs Putois peuvent se cumuler.", programresult: "Jusqu’à ce que ce programme soit dérezzé, un Netrunner ennemi touché par son effet subit un malus de –2 sur tous ses jets de Glissement. Chaque GLACE de type Putois ne peut appliquer son effet qu’à un seul Netrunner à la fois, mais les effets de plusieurs Putois peuvent se cumuler."},
+		"feu_follet": {class: "anti-personnel", per: 4, spd: 4, atk: 4, def: 2, rez: 15, effect: "Inflige 1d6 points de dégâts directement au cerveau du Netrunner ennemi et réduit la quantité totale d’actions virtuelles qu’il peut accomplir lors de son prochain tour de 1 (mais il lui reste deux actions virtuelles minimum).", programresult: "Inflige [[1d6]] points de dégâts directement au cerveau du Netrunner ennemi et réduit la quantité totale d’actions virtuelles qu’il peut accomplir lors de son prochain tour de 1 (mais il lui reste deux actions virtuelles minimum)."},
+		"dragon": {class: "anti-program", per: 6, spd: 4, atk: 6, def: 6, rez: 30, effect: "Inflige 6d6 points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place.", programresult: "Inflige [[6d6]] points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place."},
+		"tueur": {class: "anti-program", per: 4, spd: 8, atk: 6, def: 2, rez: 20, effect: "Inflige 4d6 points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place.", programresult: "Inflige [[4d6]] points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place."},
+		"tigre": {class: "anti-program", per: 8, spd: 6, atk: 6, def: 2, rez: 25, effect: "Inflige 8d6 points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place.", programresult: "Inflige [[8d6]] points de dégâts à un programme. Si cela suffit théoriquement à dérezzer le programme, il est détruit à la place."}
 	};
 
 	// Creating list of Interface Abilities that can be boosted by programs
