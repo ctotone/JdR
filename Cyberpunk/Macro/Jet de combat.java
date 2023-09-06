@@ -3,7 +3,7 @@
 Arme de mélée (@{selected|total_melee}), &{template:skill&#125; {{critroll=[[@{selected|total_melee}+10+1d10]]&#125;&#125; {{failroll=[[@{selected|total_melee}+1-1d10]]&#125;&#125; {{rollname=Arme de mélée
 @{selected|character_name}&#125;&#125;  {{roll=[[@{selected|total_melee}+1d10]]&#125;&#125;
 !roll20AM --audio&#44;play&#44;nomenu&#124;FX - Coup de poing
-&{template:custom&#125;{{title=&#125;&#125;{{ = SD : Esquive de la cible&#125;&#125;{{Dégâts arme de mêlée=  &#125;&#125;{{ Légère = [1D6](! #1D6)&#125;&#125;{{Intermédiaire = [2D6](! #2D6)&#125;&#125;{{Lourde = [3D6](! #3D6)&#125;&#125;{{Trés lourde = [4D6](! #4D6)&#125;&#125;{{=L'attaque de mêlée ignore la moitié de l'armure de la cible en cas de réussite&#125;&#125;
+&{template:custom&#125;{{title=&#125;&#125;{{SD = Jet d'Esquive de la cible&#125;&#125;{{Dégâts arme de mêlée=  &#125;&#125;{{ Légère = [1D6](! #1D6) (CAD 2)&#125;&#125;{{Intermédiaire = [2D6](! #2D6) (CAD 2)&#125;&#125;{{Lourde = [3D6](! #3D6) (CAD 2)&#125;&#125;{{Trés lourde = [4D6](! #4D6)&#125;&#125;{{=L'attaque de mêlée ignore la moitié de l'armure de la cible en cas de réussite&#125;&#125;
 /emas "Si" le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.
 |
 
