@@ -1,6 +1,7 @@
 
-L'attaque impacte [[1t[Localisation-dégâts]]] de @{target|character_name} 
+&{template:custom}{{title=}}{{color=red}}{{desc=L'attaque impacte [[1t[Localisation-dégâts]]] de sa cible et inflige [[2d6]] dégâts.
 
-et inflige [[1d6]] dégâts.
+**Blessure critique !** si double 6 
+(même si les dégâts sont inférieurs au PA de la cible)
 
-/w gm Armure de @{target|character_name} : Corps @{target|BodySP} | Tête @{target|HeadSP}
+Armure de @{target|character_name} : Corps @{target|BodySP} | Tête @{target|HeadSP}}}
