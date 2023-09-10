@@ -1,0 +1,2 @@
+&{template:custom} {{title=Bonus Solo de Maul}}{{color=noir}}{{Attaque de précision=@{Maul|PrecisionAttack}}}{{Détection de la menace=@{Maul|ThreatDetection}}}{{Déviation des dégâts=@{Maul|DamageDeflection}}}{{Point faible=@{Maul|SpotWeakness}}}{{Réaction d'initiative=@{Maul|InitiativeReaction}}}{{Récupération de fumble=@{Maul|FumbleRecovery}}}
+/w Maul Lien vers l'aide de jeu SOLO  ==> https://drive.google.com/file/d/1dEuK-2nlo14jhJVXuG8eE5XWvwu7PHbC/view
