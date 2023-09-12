@@ -63,12 +63,12 @@ var Measure = Measure || (function() {
 					_.chain(measurements)
 					.reduce(function(m,e){
 						var d=Math.round(page.get('scale_number')*e.distance,2);
-						m.push(""+e.name1+" et "+e.name2+": <b>"+d+" "+page.get('scale_units')+"</b>");
+						m.push(""+e.name1+" et "+e.name2+":</u> <b>"+d+" "+page.get('scale_units')+"</b>");
 						return m;
 					},[])
 					.join('')
 					.tap(function(o){
-						sendChat('',(whisper ? '/w "'+who+'"' : '/direct')+' '+o+'');
+						sendChat('',(whisper ? '/w "'+who+'"' : '/direct')+' <u>Distance entre '+o+'');
 					});
 
 
