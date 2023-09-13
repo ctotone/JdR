@@ -10,7 +10,7 @@
 var TurnMarker = TurnMarker || (function(){
     "use strict";
     
-    var version = '1.3.12',
+    var version = '1.3.15',
         lastUpdate = 1643855734,
         schemaVersion = 1.18,
         active = false,
@@ -51,6 +51,7 @@ var TurnMarker = TurnMarker || (function(){
                 case 'UpdateSchemaVersion':
                     state.TurnMarker.version = schemaVersion;
                     break;
+					
 
                 default:
                     state.TurnMarker = {
@@ -62,11 +63,11 @@ var TurnMarker = TurnMarker || (function(){
                         autoPull: 'none',
                         autoskipHidden: true,
                         tokenName: 'Round',
-                        tokenURL: 'https://s3.amazonaws.com/files.d20.io/images/4095816/086YSl3v0Kz3SlDAu245Vg/thumb.png?1400535580',
-                        playAnimations: false,
-                        rotation: false,
+                        tokenURL: 'https://s3.amazonaws.com/files.d20.io/images/358783504/3FbZaf26kn7U9EyR531b0w/thumb.png?1694593059',
+                        playAnimations: true,
+                        rotation: true,
                         animationSpeed: 5,
-                        scale: 1.7,
+                        scale: 1.1,
                         aura1: {
                             pulse: false,
                             size: 5,
@@ -695,7 +696,7 @@ var TurnMarker = TurnMarker || (function(){
                 }
             }
             
-            var tokenSize=70;
+            var tokenSize=40;
             sendChat(
                 '', 
                 "/direct "+
