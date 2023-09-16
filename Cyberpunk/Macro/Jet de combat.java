@@ -7,7 +7,16 @@ Arme de mélée (@{selected|total_melee}), &{template:skill&#125; {{critroll=[[@
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -21,7 +30,16 @@ Arme lourde : Lance-grenade (@{selected|Total_HeavyArms}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -34,7 +52,16 @@ Arme lourde : Lance roquette (@{selected|Total_HeavyArms}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -45,7 +72,16 @@ Art martial (@{selected|Total_Martial}), &{template:skill&#125; {{critroll=[[@{s
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -59,7 +95,16 @@ Fusil à pompe (@{selected|Total_ShoulderArms}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -73,7 +118,16 @@ Fusil d'assaut (@{selected|Total_ShoulderArms}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -87,7 +141,16 @@ Fusil de précision (@{selected|Total_ShoulderArms}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -101,7 +164,16 @@ Lancer un objet (@{selected|Total_Athletics}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -112,7 +184,16 @@ Mains nues (@{selected|total_brawling}),&{template:skill&#125; {{critroll=[[@{se
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -126,7 +207,16 @@ Pistolet (@{selected|Total_Handgun}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -140,7 +230,16 @@ Pistolet Mitrailleur (@{selected|Total_Handgun}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -154,7 +253,16 @@ Tir auto. : Fusil d'assaut  (@{selected|Total_Autofire}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 |
 
@@ -168,6 +276,15 @@ Tir auto. : Pist. Mitrailleur  (@{selected|Total_Autofire}),
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
---PA de @{target|second|Character_name}&#124;Corps @{target|second|BodySP} Tête @{target|second|HeadSP}
+--format&#124;cyber
+--orowbg&#124;#FFFFFF
+--orowtx&#124;#000000
+--erowbg&#124;#FFFFFF
+--erowtx&#124;#000000
+--bodyfontsize&#124;12px
+--border&#124;1px solid #f00
+--@{target|second|Character_name}&#124;
+--PA :&#124;Corps (@{target|second|BodySP}) Tête (@{target|second|HeadSP})
+--HP :&#124;@{target|second|HP}
 &#125;&#125;
 }
