@@ -19,6 +19,23 @@ Corps à corps,
 &{template:custom&#125;{{title=Le corps à corps englobe les armes de mélée et le combat à mains nues .&#125;&#125;{{color=noir&#125;&#125;{{SD de l'attaque=Il s'agit du résultat du jet d'Esquive de la cible.&#125;&#125;{{&nbsp;=&#125;&#125;{{Armes de mêlée=Ignore la moitié de l'armure de la cible en cas de réussite de l'attaque.&#125;&#125;{{Arme de mêlée légère=Couteau&#44; tomahawk.&#125;&#125;{{Arme de mêlée inter.=Batte&#44; pied de biche&#44; machette.&#125;&#125;{{Arme de mêlée lourde=Tuyau de plomb&#44; épée&#44; batte à pointes.&#125;&#125;{{Arme de mêlée très lourde=Tronçonneuse&#44; masse&#44; pales d'hélicoptère&#44; naginata.&#125;&#125;{{&nbsp;&nbsp;=&#125;&#125;{{Combat à mains nues=N'ignore pas la moitié de l'armure de la cible en cas de réussite de l'attaque.&#125;&#125;{{Agripper=Jet de **Bagarre** opposé. Cela permet d'étrangler ou projetter au sol.&#125;&#125;{{Étrangler=Vous infliger vos dégâts de COR et l'armure est ignorée. 3 round d'étranglement rend la cible inconsciente.&#125;&#125;{{Lancer au sol=Vous infliger vos dégâts de COR et l'armure est ignorée.&#125;&#125;
 ,|
 --->(GM),/w gm &{template:custom&#125;{{title=Le corps à corps englobe les armes de mélée et le combat à mains nues .&#125;&#125;{{color=noir&#125;&#125;{{SD de l'attaque=Il s'agit du résultat du jet d'Esquive de la cible.&#125;&#125;{{&nbsp;=&#125;&#125;{{Armes de mêlée=Ignore la moitié de l'armure de la cible en cas de réussite de l'attaque.&#125;&#125;{{Arme de mêlée légère=Couteau&#44; tomahawk.&#125;&#125;{{Arme de mêlée inter.=Batte&#44; pied de biche&#44; machette.&#125;&#125;{{Arme de mêlée lourde=Tuyau de plomb&#44; épée&#44; batte à pointes.&#125;&#125;{{Arme de mêlée très lourde=Tronçonneuse&#44; masse&#44; pales d'hélicoptère&#44; naginata.&#125;&#125;{{&nbsp;&nbsp;=&#125;&#125;{{Combat à mains nues=N'ignore pas la moitié de l'armure de la cible en cas de réussite de l'attaque.&#125;&#125;{{Agripper=Jet de **Bagarre** opposé. Cela permet d'étrangler ou projetter au sol.&#125;&#125;{{Étrangler=Vous infliger vos dégâts de COR et l'armure est ignorée. 3 round d'étranglement rend la cible inconsciente.&#125;&#125;{{Lancer au sol=Vous infliger vos dégâts de COR et l'armure est ignorée.&#125;&#125;
+,|
+Poison&#44; noyade&#44; etc...,
+&{template:custom&#125;{{title=Dégâts&#125;&#125;{{color=noir&#125;&#125;{{Electrocution=Inflige 6D6 de dégâts chaque tour&#44; l'armure est prise en compte.&#125;&#125;{{Feu=- Intensité faible (2PS)
+- Intensité Forte (4PS)
+- Intensité Mortelle (6PS)
+
+L'armure n'est pas prise en compte.&#125;&#125;{{Chute libre=Inflige 2D6 de dégats par tranche de 10m&#44; l'armure est prise en compte.
+
+Test Athlésme SD15 et en cas d'échec Blessure critique jambe.&#125;&#125;{{Poison et drogues=Info page 181 &#125;&#125;
+,|
+--->(GM),/w gm &{template:custom&#125;{{title=Dégâts&#125;&#125;{{color=noir&#125;&#125;{{Electrocution=Inflige 6D6 de dégâts chaque tour&#44; l'armure est prise en compte.&#125;&#125;{{Feu=- Intensité faible (2PS)
+- Intensité Forte (4PS)
+- Intensité Mortelle (6PS)
+
+L'armure n'est pas prise en compte.&#125;&#125;{{Chute libre=Inflige 2D6 de dégats par tranche de 10m&#44; l'armure est prise en compte.
+
+Test Athlésme SD15 et en cas d'échec Blessure critique jambe.&#125;&#125;{{Poison et drogues=Info page 181 &#125;&#125;
 ,
 
 }
