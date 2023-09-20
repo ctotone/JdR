@@ -68,7 +68,7 @@ Arme lourde : Lance roquette (@{selected|Total_HeavyArms}),
 Art martial (@{selected|Total_Martial}), &{template:skill&#125; {{critroll=[[@{selected|Total_Martial}+10+1d10]]&#125;&#125; {{failroll=[[@{selected|Total_Martial}+1-1d10]]&#125;&#125; {{rollname=Art martial
 @{selected|character_name}&#125;&#125;  {{roll=[[@{selected|Total_Martial}+1d10]]&#125;&#125;
 !roll20AM --audio&#44;play&#44;nomenu&#124;FX - Coup de poing
-&{template:custom&#125;{{title=&#125;&#125;{{color=red&#125;&#125;{{SD = Jet d'Esquive de la cible&#125;&#125;{{desc=L'attaque de mêlée ignore la moitié de l'armure de la cible en cas de réussite&#125;&#125;{{Dégâts  =  basés sur COR de l'attaquant  &#125;&#125;{{COR de @{selected|character_name} = [[@{selected|Body}]] &#125;&#125;{{4 ou moins = [1D6](! #1D6)&#125;&#125;{{5 ou 6 = [2D6](! #2D6)&#125;&#125;{{7 à 10 = [3D6](! #3D6)&#125;&#125;{{11 ou plus = [4D6](! #4D6)&#125;&#125;
+&{template:custom&#125;{{title=&#125;&#125;{{color=red&#125;&#125;{{SD = Jet d'Esquive de la cible&#125;&#125;{{Dégâts  =  basés sur COR de l'attaquant  &#125;&#125;{{COR de @{selected|character_name} = [[@{selected|Body}]] &#125;&#125;{{4 ou moins = [1D6](! #1D6)&#125;&#125;{{5 ou 6 = [2D6](! #2D6)&#125;&#125;{{7 à 10 = [3D6](! #3D6)&#125;&#125;{{11 ou plus = [4D6](! #4D6)&#125;&#125;{{desc=Les dégâts prennent en compte l'armure de la cible.&#125;&#125;
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
@@ -180,7 +180,7 @@ Lancer un objet (@{selected|Total_Athletics}),
 Mains nues (@{selected|total_brawling}),&{template:skill&#125; {{critroll=[[@{selected|total_brawling}+10+1d10]]&#125;&#125; {{failroll=[[@{selected|total_brawling}+1-1d10]]&#125;&#125; {{rollname=Mains nues
 @{selected|character_name}&#125;&#125;  {{roll=[[@{selected|total_brawling}+1d10]]&#125;&#125;
 !roll20AM --audio&#44;play&#44;nomenu&#124;FX - Coup de poing
-&{template:custom&#125;{{title=&#125;&#125;{{color=red&#125;&#125;{{SD = Esquive de la cible&#125;&#125;{{desc=L'attaque de mêlée ignore la moitié de l'armure de la cible en cas de réussite&#125;&#125;{{Dégâts  =  basés sur COR de l'attaquant  &#125;&#125;{{COR de @{selected|character_name} = [[@{selected|Body}]] &#125;&#125;{{4 ou moins = [1D6](! #1D6)&#125;&#125;{{5 ou 6 = [2D6](! #2D6)&#125;&#125;{{7 à 10 = [3D6](! #3D6)&#125;&#125;{{11 ou plus = [4D6](! #4D6)&#125;&#125;
+&{template:custom&#125;{{title=&#125;&#125;{{color=red&#125;&#125;{{SD = Esquive de la cible&#125;&#125;{{Dégâts  =  basés sur COR de l'attaquant  &#125;&#125;{{COR de @{selected|character_name} = [[@{selected|Body}]] &#125;&#125;{{4 ou moins = [1D6](! #1D6)&#125;&#125;{{5 ou 6 = [2D6](! #2D6)&#125;&#125;{{7 à 10 = [3D6](! #3D6)&#125;&#125;{{11 ou plus = [4D6](! #4D6)&#125;&#125;{{desc=Les dégâts prennent en compte l'armure de la cible.&#125;&#125;
 &{template:custom&#125;{{title=&#125;&#125;{{color=noir&#125;&#125;{{desc=Si le jet dépasse le SD x2&#44; l'attaque touche un point faible de la cible. Les dégâts sont doublés (aprés réduction de l'armure). En cas de coup critique à la tête&#44; les dégâts sont triplés.&#125;&#125;
 !power {{
 --whisper&#124;GM
