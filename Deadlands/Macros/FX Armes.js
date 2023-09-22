@@ -10,6 +10,8 @@ Pistolet n°3,!roll20AM --audio&#44;play&#44;nomenu&#124;GUN-Pistolet2
 |
 Pistolet n°4,!roll20AM --audio&#44;play&#44;nomenu&#124;GUN-Pistolet3
 |
+Explosion,!roll20AM --audio&#44;play&#44;nomenu&#124;FX - Explosion
+|
 Fusil à pompe,!roll20AM --audio&#44;play&#44;nomenu&#124;GUN-Pompe
 |
 Arme de chasse,!roll20AM --audio&#44;play&#44;nomenu&#124;GUN - Sniper
