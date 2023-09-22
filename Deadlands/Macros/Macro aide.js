@@ -40,7 +40,7 @@ Initiative,
 	On mélange les cartes au tour suivant.&#125;&#125;{{Retenir= Tu peux choisir de ne pas agir tout de suite&#44; on dit alors que tu es « En attente ». 
 	Tu peux agir plus tard et même au round suivant (tu ne reçois pas de carte au round suivant).
 	Tu peux interrompre l'action de quelqu'un en réussissant un jet opposé d'agilité.&#125;&#125;
-|
+,|
 Actions,
 &{template:custom&#125;{{title=Actions&#125;&#125;{{=Les personnages peuvent se deplacer et faire une action sans pénalité.
 	On peut faire son action au milieu de son déplacement&#44; avant ou aprés.
@@ -54,10 +54,13 @@ Actions,
 	- Intimider deux personnes.
 	- Lancer deux pouvoirs.&#125;&#125;{{Dégainer=Cela prend 1 round&#44; mais si le joueur veut attaquer de suite&#44; il subit le malus de -2 pour Action Multiple.&#125;&#125;{{Gratuit=Les actions mineures qui n'impactent pas le cours du combat sont gratuites.&#125;&#125;{{Dé joker=Le joueur ne lance qu'un seul jet Joker par action (En cas d'action multiple&#44; un dé joker lors de chaque action).
 	Par exemple tirer plusieurs balles dans un tour&#44; le joueur n'utilisera le dé joker que pour un seul tir.&#125;&#125;
-|
+,|
 Portée des armes,
 Portée des armes : http://journal.roll20.net/handout/-NT4-gn87jGf1E5McO0A
 ,|
+Gabarit,
+&{template:custom&#125;{{title=Gabarit&#125;&#125;{{Petit=Cercle de 4m de diametre.&#125;&#125;{{Moyen=8m de diametre.&#125;&#125;{{Grand=12m de diametre.&#125;&#125;,
+|
 Dégâts,
 &{template:custom&#125;{{title=Dégâts&#125;&#125;{{Aucun=L’attaque&#44; bien qu’ayant touché&#44; n’a pas blessé la cible (jet de dégâts trop faible par rapport à la résistance de la cible)&#125;&#125;{{0 relance=La cible de l’attaque est Secouée. (aucun changement si déjà secouée)
 Cela signifie qu’elle est choquée&#44; distraite ou ébranlée. 
@@ -100,13 +103,22 @@ Si un personnage a choisi la précision (et qu'il est toujours en vie)&#44; c'es
 |
 Jet Coopératif,
 &{template:custom&#125;{{title=Jet Coopératif&#125;&#125;{{=Les personnages peuvent s'entraider dans une tâche. Si au moins deux personnages agissent de concert sur une même tache (et que le Marshal décide qu’il est possible de s’y pencher à plusieurs)&#44; le personnage principal fait un jet&#44; avec un bonus de +1 pour chaque Succès et chaque Relance obtenu par chacun des autres participants à l’action. 
+
 Le bonus maximum possible est de +4&#44; sauf pour les jets de Force. 
+
 Un personnage ne peut pas participer à un jet coopératif s’il ne possède pas la Compétence adéquate.&#125;&#125;
-,|
+|
 ------ CLASSE ------,
 |
 Élu,
 &{template:custom&#125;{{title=Élu&#125;&#125;{{I=En cas d'échec à un jet de Foi pour lancer un sort&#44; l'Élu prend un niveau de fatigue.&#125;&#125;{{II=En cas de 1 sur le dé de Foi (qu'importe le résultat du dé Joker)&#44; les prières sont ignorées et l'Élu perd 1D4 en Foi jusqu'à ce qu'il réussisse à accomplir un miracle avec succés.&#125;&#125;{{III=Si le dés de Foi tombe en dessous du D4&#44; il ne peut plus accomplir de miracle et doit trouver une manière de chasser ses doutes (pg. 158).&#125;&#125;{{IV=À l’instar de l’expiation d’un péché mortel&#44; cela prend habituellement la forme d’une quête spirituelle visant à remettre l’élu sur le chemin de la foi&#44; comme par exemple accomplir un acte véritablement altruiste&#44; convertir une tribu de païens ou montrer du courage en défendant la foi. Le Marshal n’a pas à te dire ce qui est nécessaire. Il appartient à la brebis égarée de retrouver la foi et ce n’est qu’à partir de ce moment-là qu’elle pourra de nouveau accomplir des miracles&#125;&#125;
-
+|
+Savant fou,
+&{template:custom&#125;{{title=Savant fou&#125;&#125;{{=En cas de 1 sur un jet pour un gadget (qu'importe le resultat du dés Joker)&#44; l'objet explose ou se casse en infligeant 2D6 de dégâts dans un gabarit moyen (8m)&#125;&#125;
+|
+Sort Explosion,
+&{template:custom&#125;{{title=Explosion&#125;&#125;{{2PP=2D6 de dégâts de zone de la taille d'un Gabarit moyen (8m).&#125;&#125;{{4PP=3D6 de dégâts ou zone de Grand Gabarit (12m).&#125;&#125;{{6PP=3D6 de dégâts et Grand Gabarit (12m)&#125;&#125;{{desc=Les relances sur les dés n'ajoutent pas de dégâts supplémentaires&#125;&#125;
+|
+Sort Invisibilité,
+&{template:custom&#125;{{title=Invisibilité&#125;&#125;{{Succés au jet=Le personnage est transparent mais sa silouhette est visible. Il est possible de le détecter en ayant une raison de se douter de sa présence et en réussissant un jet de Perception avec un malus de -4.&#125;&#125;{{Relance au jet=Le personnage est totalement invisible et la pénalité passe à -6.&#125;&#125;{{Multi-cibles=Le personnage peut affecter jusqu'à 5 cibles en dépensant 5PP par cible.&#125;&#125;{{desc=Le pouvoir affecte les objets qu'il transporte.&#125;&#125;
 }
-
