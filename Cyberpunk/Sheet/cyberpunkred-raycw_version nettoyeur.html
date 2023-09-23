@@ -2889,7 +2889,7 @@ l'endroit où tu te trouves." name="roll_ImprovisationCheck" type="roll" class="
 				const WILL = parseInt(values.Willpower)||0;
 				const BODY = parseInt(values.Body)||0;
 
-				var maxhp = 10 + 5 * Math.ceil((WILL+BODY)/2);
+				var maxhp = 10 + WILL + BODY;
 
 				setAttrs({
 					"hp_max" : maxhp
