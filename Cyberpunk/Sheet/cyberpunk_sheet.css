@@ -74,7 +74,7 @@ select {
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 2rem;
+  height: 20px !important;
 }
 
 .sheet-main {
@@ -637,6 +637,14 @@ select {
   background: white;
   color: #0f0f0f;
   font-weight: bold;
+  margin-bottom: 4px;
+  padding: 2px 4px;
+  font-size: 13px !important;
+}
+
+.sheet-bg-red1 {
+  background: #fcb9b9;
+  color: #0f0f0f;
   margin-bottom: 4px;
   padding: 2px 4px;
   font-size: 13px !important;
@@ -1217,7 +1225,7 @@ input.sheet-toggle:not([value="1"]) ~ button.sheet-toggle > span.sheet-checked {
 
 .sheet-hp textarea{
   width:96%;
-  height:90px;
+  height:134px;
   resize: none;
   border: none;
 }
