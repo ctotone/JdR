@@ -2544,7 +2544,10 @@ l'endroit où tu te trouves." name="roll_ImprovisationCheck" type="roll" class="
 	<div class="sheet-template-container normal">
 		{{#rollLess() roll deathsave}}
 		<div class="sheet-template-header"><span>{{roll}}</span></div>
-		<div class="sheet-template-row" data-i18n="alive_for_now"><span style="color:#2ccd27"><p>You're alive... for now.<p></p></span></p></div>
+		<div class="sheet-template-row" data-i18n="alive_for_now"><span style="color:#2ccd27"><p>alive_for_now<p></p></span></p></div>
+		<div class="sheet-template-row" data-i18n="alive_for_now1"><span style="color:#2ccd27"><p>alive_for_now1<p></p></span></p></div>
+		<div class="sheet-template-row" data-i18n="alive_for_now2"><span style="color:#2ccd27"><p>alive_for_now2<p></p></span></p></div>
+		<div class="sheet-template-row" ><span><p></span></p></div>
 		<div class="sheet-template-row" data-i18n="death_penality"><span style="color:#2ccd27"><p>+1 death penality.<p></p></span></p></div>
 		{{/rollLess() roll deathsave}}
 		{{#^rollLess() roll deathsave}}
