@@ -10,6 +10,11 @@
 [TOKEN PREPA PNJ](! #*GMPrepapnjmaccro)
 }}
 
+
+
+/w gm &{template:custom} {{title=@{selected|character_name}}} {{color=red}}{{&nbsp;=@{selected|repeating_weapons_$0_Weaponname} (@{selected|repeating_weapons_$0_Weapontype}) &{noerror}}}{{&nbsp;&nbsp;=@{selected|repeating_weapons_$1_Weaponname} (@{selected|repeating_weapons_$1_Weapontype}) &{noerror}}}{{&nbsp;&nbsp;&nbsp;=@{selected|repeating_weapons_$2_Weaponname} (@{selected|repeating_weapons_$2_Weapontype}) &{noerror}}}{{&nbsp;&nbsp;&nbsp;&nbsp;=@{selected|repeating_weapons_$3_Weaponname} (@{selected|repeating_weapons_$3_Weapontype}) &{noerror}}}
+/w gm &{template:custom} {{title=@{selected|character_name}}} {{color=red}}{{1=sssss}}
+
 /w gm &{template:default} {{name=}}{{=**Balle perdue**
 [Balle 1](!roll20AM --audio,play,nomenu|FX - Balle qui passe 1) | [Balle 2](!roll20AM --audio,play,nomenu|FX - Balle qui passe 2) | [Balle 3](!roll20AM --audio,play,nomenu|FX - Balle qui passe 3)
 **Tir**
