@@ -20,7 +20,7 @@ L'armure n'est pas prise en compte.&#125;&#125;{{Chute libre=Inflige 2D6 de dég
 
 Test Athlésme SD15 et en cas d'échec Blessure critique jambe.&#125;&#125;{{Poison et drogues=Info page 181 &#125;&#125;
 ,|
-Manoeuvres de véhicule,/w gm &{template:custom&#125;{{title=Manoeuvres&#125;&#125;{{color=noir&#125;&#125;{{Embardée=SD13&#125;&#125;{{Virage brutal=SD13&#125;&#125;{{Arrêt d'urgence=SD13&#125;&#125;{{Virage à 180=SD17&#125;&#125;{{Saut=SD17&#125;&#125;{{Atterissage 
+Manoeuvres de véhicule,/w gm &{template:custom&#125;{{title=Manoeuvres&#125;&#125;{{color=noir&#125;&#125;{{Écart=SD9&#125;&#125;{{Embardée=SD13&#125;&#125;{{Virage brutal=SD13&#125;&#125;{{Arrêt d'urgence=SD13&#125;&#125;{{Virage à 180=SD17&#125;&#125;{{Saut=SD17&#125;&#125;{{Atterissage 
 (aéronef)=SD13&#125;&#125;{{Acrobatie 
 (aéronef)=SD17&#125;&#125;{{Charger=Il est possible de charger avec le véhicule pour infliger 6D6 de dégâts à la cible ET à votre véhicule.&#125;&#125;
 ,|
@@ -51,7 +51,7 @@ Actions de combat,
 &{template:custom&#125;{{title=Actions de combat&#125;&#125;{{color=noir&#125;&#125;{{Action de mouvement=Se déplacer de votre MOUV x 2 maximum chaque tour.&#125;&#125;{{Agripper=Agripper un adversaire et le retenir ou s'emparer d'un objet qu'il tient.&#125;&#125;{{Attaquer=Attaquer avec une arme à distance ou de mêlée.&#125;&#125;{{Courir=Effectuer une action de mouvement supplémentaire.&#125;&#125;{{Démarrer un véhicule=Démarrer un véhicule.&#125;&#125;{{Lancer=Projeter au sol un adversaire agrippé ou lancer un objet.&#125;&#125;{{Monter dans un véhicule=Monter dans un véhicule.&#125;&#125;{{Retarder son action=Retarder son action pour la réaliser plus tard après avoir annoncé le declencheur au MJ.&#125;&#125;{{Se relever=Se relever quand on est au sol.&#125;&#125;{{Stabiliser=Stabiliser une cible pour entammer le processus de guerison naturelle.&#125;&#125;{{Actions virtuelles=Netrunner&#125;&#125;{{Utiliser une compétence=Utiliser une compétence pour accomplir une tâche rapide.&#125;&#125;{{Utiliser un objet=Utiliser un objet sans recourir à une compétence&#125;&#125;
 ,|
 Manoeuvres de véhicule,
-&{template:custom&#125;{{title=Manoeuvres&#125;&#125;{{color=noir&#125;&#125;{{Embardée=SD13&#125;&#125;{{Virage brutal=SD13&#125;&#125;{{Arrêt d'urgence=SD13&#125;&#125;{{Virage à 180=SD17&#125;&#125;{{Saut=SD17&#125;&#125;{{Atterissage 
+&{template:custom&#125;{{title=Manoeuvres&#125;&#125;{{color=noir&#125;&#125;{{Écart=SD9&#125;&#125;{{Embardée=SD13&#125;&#125;{{Virage brutal=SD13&#125;&#125;{{Arrêt d'urgence=SD13&#125;&#125;{{Virage à 180=SD17&#125;&#125;{{Saut=SD17&#125;&#125;{{Atterissage 
 (aéronef)=SD13&#125;&#125;{{Acrobatie 
 (aéronef)=SD17&#125;&#125;{{Charger=Il est possible de charger avec le véhicule pour infliger 6D6 de dégâts à la cible ET à votre véhicule.&#125;&#125;
 ,

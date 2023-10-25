@@ -21,9 +21,27 @@ Jet encaissement,/w gm &{template:custom&#125;{{title=Jet d'Encaissement&#125;&#
 	Un succès et chaque Relance permet de réduire de 1 le nombre de blessures subies lors de l’attaque.
 
 	Toutefois&#44; si suite à ce jet&#44; il reste des blessures&#44; le personnage demeure Secoué. Les modificateurs aux blessures ne prennent pas en compte les éventuelles blessures en cours lors du jet d’encaissement.&#125;&#125;
-|
+,|
 Guérison,/w gm &{template:custom&#125;{{title=Guérison&#125;&#125;{{=La Compétence Soins peut être utilisée pour traiter toute blessure de moins d’une heure.&#125;&#125;{{Succés=Annule une blessure&#125;&#125;{{Relance=Annule une seconde blessure.
 	Les relances supplémentaires ne soignent pas plus de blessure.&#125;&#125;{{Malus=Le malus de blessure du patient s'applique au jet de Soin.&#125;&#125;{{Guérison=Au-delà d’une heure après le moment où les blessures ont été causées&#44; seuls la guérison naturelle et le pouvoir de Grande guérison fonctionneront.&#125;&#125;{{État critique=Le soigneur doit tout d’abord réussir un premier jet de Soins pour stabiliser l’état du patient&#44; avant de pouvoir tenter un second jet pour éliminer des blessures.&#125;&#125;
+,|
+Froid,/w gm &{template:custom&#125;{{title=Froid&#125;&#125;{{=Progresser des heures sous la neige ou évoluer dans un vent glacial peuvent déshydrater et épuiser un personnage tout autant qu’un désert brûlant. 
+Pour chaque période de 4 heures passées sous une température de 0 °C un personnage doit faire un jet de Vigueur. Un échec provoque un niveau de fatigue. 
+On rajoute un malus de -1 par 10 °C en dessous de 0 avec un malus maximum de -3.
+
+Le jet suppose que le personnage est correctement équipé.
+Si ce n’est pas le cas il subit un malus de -2 au jet de Vigueur. 
+De l’équipement spécialisé octroie un bonus de +2 et +4 pour de l’équipement avancé (combinaison alimentée en roche fantôme) voire plus en fonction de l’univers.
+
+Récupération : de la chaleur et un abri permettent de récupérer d’un niveau de fatigue en 30 minutes.
+Effet d’État critique : un jet de Vigueur par heure. En cas d’échec le personnage meurt.&#125;&#125;
+,|
+Bleus et bosses,/w gm &{template:custom&#125;{{title=Bleus et bosses&#125;&#125;{{=Les personnages qui encaissent des blessures mineures mais gênantes comme être traîné par un cheval - glisser le long d’une pente ou courir dans les ténèbres dans une caverne naturelle peuvent subir de la fatigue à la place de blessure normales.
+Le Marshal autorisera en général un jet de Vigueur pour éviter les dégâts quand il se trouvera dans une telle situation. En cas d’échec le personnage subit un niveau de fatigue à cause des égratignures et des contusions. Le Marshal peut dans certains cas permettre à des personnages agiles de faire un jet d’Agilité pour éviter ces dégâts. 
+La fatigue obtenue de cette manière peut conduire à un état Épuisé mais pas à un État critique.
+
+Récupération : un niveau de fatigue issu de Bleus et de Bosses disparaît automatiquement après 24 heures.
+Effet d’État critique : Aucun. une victime ne peut pas passer dans un État critique à cause de Bleus et de bosses.&#125;&#125;
 ,|
 ------ COMBAT ------,
 |
