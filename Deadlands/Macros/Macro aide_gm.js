@@ -43,6 +43,110 @@ La fatigue obtenue de cette manière peut conduire à un état Épuisé mais pas
 Récupération : un niveau de fatigue issu de Bleus et de Bosses disparaît automatiquement après 24 heures.
 Effet d’État critique : Aucun. une victime ne peut pas passer dans un État critique à cause de Bleus et de bosses.&#125;&#125;
 ,|
+Jet de Tripes,/w gm &{template:custom&#125;{{title=Jet de Tripes&#125;&#125;{{=Si un personnage rencontre une scène de nature horrible&#44; comme une découverte d’une scène de crime ou d’un secret innommable et qu'il échoue à son jet de Tripes&#44; il est Secoué et doit réussir un jet de Vigueur sous peine d’être victime de nausées ou d’un traumatisme mental. 
+
+En cas d’échec&#44; il prend un niveau de fatigue. 
+
+Sur un 1 sur le dé de Tripes (peu importe le dé Joker) il doit faire un jet sur la Table de Terreur.&#125;&#125;
+,|
+Terreur,/w gm &{template:custom&#125;{{title=Terreur&#125;&#125;{{=Certaines créatures&#44; tout comme des scènes horribles&#44; peuvent ébranler la résolution du plus endurci des personnages et le forcer à faire un test de Terreur (un jet de Tripes).
+
+Avec un succès&#44; le personnage parvient à maîtriser sa peur. 
+
+En cas d’échec&#44; lancer un D20 en ajoutant le score de Terreur de la créature puis laisser le MJ vous décrire ce qui arrive...&#125;&#125;
+,|
+Tableau de Terreur,/w gm &{template:custom&#125;{{title=Tableau de Terreur&#125;&#125;{{=1-4 Décharge d’adrénaline : 
+Le héros réagit instinctivement en combattant sa peur. Il gagne un bonus de +2 aux jets de Traits et de dégâts lors de sa prochaine action.
+
+5-8 Secoué : 
+Le personnage est Secoué.
+
+9-12 Paniqué : 
+Le personnage panique et se déplace immédiatement de son Allure plus son dé de course. Il est également Secoué.
+
+13-16 Phobie mineure : 
+Le personnage gagne le Handicap Phobie (Mineur) en association avec le traumatisme.
+
+17-18 Phobie majeure : 
+Le personnage gagne le Handicap Phobie (Majeur) en association avec le traumatisme.
+
+19-20 Marque de la Terreur : 
+Le personnage est Secoué et souffre également d’une altération physique au niveau cosmétique : une mèche blanche dans les cheveux&#44;  ses yeux clignent constamment&#44;  etc. Son Charisme est réduit de 1.
+
+21+ Attaque cardiaque : 
+Le héros est tellement terrifié qu’il fait une attaque. Il passe dans un État critique et doit réussir un jet de Vigueur à -2. En cas de succès&#44;  il est Secoué et ne peut pas récupérer avant 1d4 Rounds. En cas d’échec&#44;  il meurt en 2d6 Rounds. Un jet de Soins à -4 peut sauver la vie de la victime&#44;  mais il reste dans un État critique.&#125;&#125;
+,|
+Scènes dramatiques,/w gm &{template:custom&#125;{{title=Scènes dramatiques&#125;&#125;{{=Les héros sont souvent confrontés à des situations désespérées&#44;  comme désamorcer une bombe ou crocheter une serrure avec une limite de temps&#44;  signifiant souvent la mort.
+Le système qui suit permet de simuler ces événements&#44;  et permet de rajouter un peu de tension à des scènes qui&#44;  dans le cas contraire&#44;  se résumeraient à un simple jet de Compétence.
+
+Pour commencer&#44;  détermine la Compétence à utiliser :
+par exemple&#44;  on utilisera Connaissance (Explosifs) pour désamorcer une bombe&#44;  Connaissance (Occultisme) pour mener à bien un rituel&#44;  etc...
+Une scène dramatique classique dure cinq « actions »&#44; et nécessite autant de succès.
+
+
+PROCEDURE
+Lors de chaque action&#44;  le héros tire une carte d’action (même s’il n’est pas en combat)&#44; et agit au moment de cette carte. 
+Les Atouts comme Vif ou Tête froide fonctionnent normalement.
+Si le personnage réussit un total de cinq succès avec le Trait sélectionné par le Marshal avant que le temps imparti soit écoulé&#44;  il a atteint son but. 
+Le mieux est de comptabiliser les succès avec des jetons&#44;  afin de suivre la progression d’un round à l’autre. 
+
+Chaque succès et chaque Relance sur le jet permet de gagner un jeton.
+
+Si le temps arrive à son terme sans que les cinq succès aient été atteints&#44;  la bombe explose&#44;  le rituel échoue&#44;  etc.
+Quoi qu’il en soit&#44;  l’action échoue. Le Marshal peut décider qu’il est possible de retenter l’action&#44;  mais dans la mesure où il s’agissait d’une scène dramatique&#44;  quelque chose de très mauvais a dû se passer suite à l’échec. 
+Quoi qu’il en soit&#44;  un nouvel essai devrait nécessiter de repartir de zéro.
+
+
+COMPLICATIONS
+Si la carte d’action du personnage est un trèfle&#44;  quelque chose se passe mal. Le jet de cette action subit un malus de -2 (en plus des autres modificateurs). 
+En cas d’échec&#44;  le pire résultat pour l’action survient : la cible s’échappe&#44;  la bombe explose&#44;  etc...&#125;&#125;
+,|
+Poursuite,/w gm &{template:custom&#125;{{title=Poursuite&#125;&#125;{{=MISE EN PLACE
+Pour débuter une poursuite&#44; on commence par déterminer la longueur de la poursuite (généralement 5 round).
+À la fin du dernier round de poursuite&#44; on considère que les participants poursuivis qui n’ont pas été capturés d’une manière ou d’une autre se sont échappés.
+
+
+CARTES DE POURSUITE
+Inutile de distribuer à chacun une carte d’action : chaque participant à la poursuite fait un jet de Trait correspondant au type de poursuite :
+Agilité : à pied.
+Conduite : véhicule terrestre.
+Équitation : animal monté.
+Navigation : en bateau&#44; sous-marin.
+Pilotage : véhicule volant.
+
+Des bonus/malus seront attribués selon la situation.
+
+Les participants tirent ensuite une carte d’action pour chaque succès et Relance obtenu sur le jet de Trait&#44; et en conservent une&#44; en général la plus haute&#44; qui lui servira de carte d’action. Cette carte détermine à la fois leur initiative et leur faculté à se sortir des pièges de la poursuite.
+Les personnages qui échouent sur leur jet de Trait restent dans la course&#44; mais ne disposent pas de carte d’action pour le round.
+
+
+ATTAQUES
+Les attaques ont lieu au moment de la carte d’action du pilote d’un véhicule&#44; mais étant donné que les distances sont abstraites&#44; la valeur de la carte d’action définit la portée à utiliser lors du jet d'attaque (voir Tableau de Poursuite).
+
+Le personnage ne peut attaquer qu'une cible qui est PLUS BAS dans l'ordre d'initiative. En effet une cible avec une carte d'initiative supérieure a simplement été bien meilleure dans ses manœuvres et s’est placée hors de portée pour ce round.
+
+
+COMPLICATIONS
+Si la carte d’action d’un participant à la poursuite est un trèfle&#44; ce dernier doit faire face à une complication&#44; comme indiqué dans le Tableau de Poursuite.
+Un personnage ayant réussi un jet de Trait suffisamment haut pour avoir plusieurs cartes peut tout à fait ne pas choisir sa meilleure carte pour éviter une complication.
+Après avoir résolu la complication&#44; le personnage peut faire son action normalement – à condition qu’il ait survécu&#44; bien entendu.&#125;&#125;
+,|
+Tableau de Poursuite,/w gm &{template:custom&#125;{{title=Tableau de Poursuite&#125;&#125;{{=2
+PORTÉE : Hors de portée. L’ennemi est hors de portée&#44; ou la ligne de mire est bloquée. Aucune attaque n’est possible.
+TRÊFLE : Désastre - Le conducteur doit faire un jet de Trait à -4. En cas d’échec&#44; c’est la catastrophe : le véhicule a heurté un objet solide à vitesse maximale&#44; le coureur a glissé dans un ravin&#44; le chariot à vapeur explose ou s’arrête. Quoi qu’il en soit&#44; la poursuite est finie pour lui.
+
+3-10 
+PORTÉE : Portée longue
+TRÊFLE : Obstacle majeur - Un objet est dans la trajectoire du véhicule ou du personnage. Le personnage doit faire un jet de Trait à -2 pour l’éviter&#44; ou subir les dégâts appropriés comme s’il était à la moitié de la vitesse maximale&#44; ou un niveau de fatigue de Bleus et bosses s’il est à pied.
+
+Valet - Dame 
+PORTÉE : Portée moyenne
+TRÊFLE : Obstacle mineur - Un objet est dans la trajectoire du véhicule ou du personnage. Le personnage doit faire un jet de Trait pour l’éviter&#44; ou subir les dégâts appropriés comme s’il était à la moitié de la vitesse maximale&#44; ou un niveau de fatigue de Bleus et bosses s’il est à pied.
+
+Roi - AS - Joker
+PORTÉE : Portée courte et les attaques au contact sont possibles.
+TRÊFLE : Distraction - Quelque chose bloque la vision ou la ligne de mire du personnage. Il ne peut pas attaquer ce round.&#125;&#125;
+,|
 ------ COMBAT ------,
 |
 Initiative,/w gm &{template:custom&#125;{{title=Initiative&#125;&#125;{{=Chaque Joker (PJ et PNJ important) reçoit une carte. Tous les Alliés sous le contrôle du joueur agiront également en même temps.
