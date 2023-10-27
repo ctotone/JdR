@@ -137,6 +137,19 @@ Roi - AS - Joker
 PORTÉE : Portée courte et les attaques au contact sont possibles.
 TRÊFLE : Distraction - Quelque chose bloque la vision ou la ligne de mire du personnage. Il ne peut pas attaquer ce round.&#125;&#125;
 ,|
+Conflits sociaux,
+&{template:custom&#125;{{title=Conflits sociaux&#125;&#125;{{=Toute adversité ne se gère pas automatiquement les armes à la main. Un orateur passionné peut ébranler des nations entières.
+
+PRINCIPE
+L’épreuve est divisée en trois rounds de conversation&#44; chacun étant focalisé sur un point précis (ou plusieurs points très proches et reliés entre eux).
+Chaque round&#44; le personnage met en avant ses arguments (en jouant son rôle)&#44; et fait un jet de Persuasion (ou un jet de Persuasion opposé dans le cas d’un duel d’orateurs). 
+Un orateur accumule des jetons pour chaque succès et Relance sur ces jets.
+
+À la fin du troisième round de l’épreuve&#44; le camp avec le plus grand nombre de jetons remporte l’échange. Plus grande est la différence de jetons accumulés&#44; plus l’assistance est convaincue par l’orateur.
+
+MODIFICATEURS
+Le Marshal devra accorder un bonus de +2 pour des interventions brillantes ou extrêmement convaincantes&#44; et un malus de -2 en cas de faux-pas.&#125;&#125;
+,|
 ------ COMBAT ------,
 |
 Initiative,

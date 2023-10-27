@@ -55,7 +55,7 @@ Avec un succès&#44; le personnage parvient à maîtriser sa peur.
 
 En cas d’échec&#44; lancer un D20 en ajoutant le score de Terreur de la créature puis laisser le MJ vous décrire ce qui arrive...&#125;&#125;
 ,|
-Tableau de Terreur,/w gm &{template:custom&#125;{{title=Tableau de Terreur&#125;&#125;{{=1-4 Décharge d’adrénaline : 
+---Tableau de Terreur,/w gm &{template:custom&#125;{{title=Tableau de Terreur&#125;&#125;{{=1-4 Décharge d’adrénaline : 
 Le héros réagit instinctivement en combattant sa peur. Il gagne un bonus de +2 aux jets de Traits et de dégâts lors de sa prochaine action.
 
 5-8 Secoué : 
@@ -131,7 +131,7 @@ Si la carte d’action d’un participant à la poursuite est un trèfle&#44; ce
 Un personnage ayant réussi un jet de Trait suffisamment haut pour avoir plusieurs cartes peut tout à fait ne pas choisir sa meilleure carte pour éviter une complication.
 Après avoir résolu la complication&#44; le personnage peut faire son action normalement – à condition qu’il ait survécu&#44; bien entendu.&#125;&#125;
 ,|
-Tableau de Poursuite,/w gm &{template:custom&#125;{{title=Tableau de Poursuite&#125;&#125;{{=2
+---Tableau de Poursuite,/w gm &{template:custom&#125;{{title=Tableau de Poursuite&#125;&#125;{{=2
 PORTÉE : Hors de portée. L’ennemi est hors de portée&#44; ou la ligne de mire est bloquée. Aucune attaque n’est possible.
 TRÊFLE : Désastre - Le conducteur doit faire un jet de Trait à -4. En cas d’échec&#44; c’est la catastrophe : le véhicule a heurté un objet solide à vitesse maximale&#44; le coureur a glissé dans un ravin&#44; le chariot à vapeur explose ou s’arrête. Quoi qu’il en soit&#44; la poursuite est finie pour lui.
 
@@ -146,6 +146,39 @@ TRÊFLE : Obstacle mineur - Un objet est dans la trajectoire du véhicule ou du 
 Roi - AS - Joker
 PORTÉE : Portée courte et les attaques au contact sont possibles.
 TRÊFLE : Distraction - Quelque chose bloque la vision ou la ligne de mire du personnage. Il ne peut pas attaquer ce round.&#125;&#125;
+,|
+Conflits sociaux,/w gm &{template:custom&#125;{{title=Conflits sociaux&#125;&#125;{{=Toute adversité ne se gère pas automatiquement les armes à la main. Un orateur passionné peut ébranler des nations entières.
+
+PRINCIPE
+L’épreuve est divisée en trois rounds de conversation&#44; chacun étant focalisé sur un point précis (ou plusieurs points très proches et reliés entre eux).
+Chaque round&#44; le personnage met en avant ses arguments (en jouant son rôle)&#44; et fait un jet de Persuasion (ou un jet de Persuasion opposé dans le cas d’un duel d’orateurs). 
+Un orateur accumule des jetons pour chaque succès et Relance sur ces jets.
+
+À la fin du troisième round de l’épreuve&#44; le camp avec le plus grand nombre de jetons remporte l’échange. Plus grande est la différence de jetons accumulés&#44; plus l’assistance est convaincue par l’orateur.
+
+MODIFICATEURS
+Le Marshal devra accorder un bonus de +2 pour des interventions brillantes ou extrêmement convaincantes&#44; et un malus de -2 en cas de faux-pas.&#125;&#125;
+,|
+---Tableau Conflits sociaux,/w gm &{template:custom&#125;{{title=Tableau Conflits sociaux&#125;&#125;{{=Égalité 
+L’épreuve s’achève sur un statu-quo&#44; et aucune décision n’est prise jusqu’à ce que de nouvelles
+données soient disponibles. Dans le cas d’un procès&#44; la défense l’emporte par manque de
+preuves évidentes.
+
+1-2 
+L’assistance n’est pas réellement convaincue&#44; mais décide qu’il vaut mieux prévenir que guérir.
+Toutefois&#44; l’aide apportée est la plus faible possible. Dans un procès&#44; si la défense l’a emporté&#44; le
+jury conclut à l’acquittement par manque de preuves évidentes&#44; et si l’accusation l’emporte&#44; la
+peine est la plus faible possible encourue pour le crime.
+
+3-4 
+L’assistance est convaincue&#44; et offre l’aide requise&#44; bien qu’elle puisse y mettre des conditions
+ou demander des faveurs en retour. Dans un procès&#44; en cas de victoire de l’accusation&#44; le juge
+prononcera une sentence sévère. Si la défense l’emporte&#44; l’accusé s’en sortira libre&#44; sans aucune
+charge retenue contre lui.
+
+5+ 
+L’assistance n’a pas le moindre doute et apporte plus que l’aide requise. Dans un procès&#44; si
+l’accusation l’emporte&#44; l’accusé écope de la peine maximale.&#125;&#125;
 ,|
 ------ COMBAT ------,
 |
