@@ -1,0 +1,74 @@
+<div>
+
+ <!-- Set up the Tabs -->
+    <input type="radio" class="sheet-tab sheet-tab1" name="attr_core-tab" value="1" title="Cartes" checked="checked"/> 
+    <span class="sheet-tab sheet-tab1" style="line-height: 40px;">Cartes</span>
+	<input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Personnage" /> 
+    <span class="sheet-tab sheet-tab3" style="line-height: 40px;">Personnage</span>
+    <button type="roll" name="roll_d20" value="&{template:quest} {{title=Lancé des D6}} {{subtitle=}} {{Nombre de succés=[[?{Nombre de dés}d6=6]]}}"></button>
+    <!-- End Tab setup -->  
+    
+
+
+    <!-- Carte Tab -->
+    
+	<div class="sheet-section-profile">	
+		<div class="profile-text">
+			<p></p>
+			<p></p>
+			<p></p>
+            <p><input type="checkbox" name="attr_vertu_check"> Vertu</p>
+			<p><input class="role" type="text" name="attr_vertu"></p>
+			<p><input type="checkbox" name="attr_vice_check"> Vice</p>
+			<p><input class="role" type="text" name="attr_vice"></p>
+			<p><input type="checkbox" name="attr_moment_check"> Moment : "Je retrouverai l'espoir lorsque..."</p>
+			<p><textarea class="note1" name="attr_moment"></textarea></p>
+			<p><input type="checkbox" name="attr_extremite_check"> Extrémité : "Quelqu'un t'a vu..."</p>
+			<p><textarea class="note1" name="attr_extremite"></textarea></p>
+        </div>
+    </div>
+	
+	<!-- Personnage Tab -->
+		
+	 <div class="sheet-section-abilities">	
+		<div class="profile-text">
+			<p>Nom : <input class="name-field" type="text" name="attr_character_name"></p>
+			<p>Apparence : <input class="name-field" type="text" name="attr_apparence"></p>
+			<p>Age : <input class="role" type="text" name="attr_age"></p>
+			<p></p>
+			<p>Background</p>
+			<p><textarea class="notes" name="attr_bg"></textarea></p>
+        </div>
+       
+    </div>
+    
+
+<!-- ROLL TEMPLATES -->
+<rolltemplate class="sheet-rolltemplate-ability">
+    <table>
+        <tr><th>{{name}}</th></tr>
+        </tr>
+        <tr>
+            <td><b>AP Cost:</b> {{cost}}</td>
+        </tr>
+        <tr>
+            <td class="desc">{{desc}}</td>        
+        </tr>
+    </table>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-quest">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
