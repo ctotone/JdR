@@ -27,7 +27,8 @@ width: 500px;
 /*this shows the tab content when the appropriate input field is selected*/
 .charsheet input.sheet-tab1:checked ~ div.sheet-section-profile,
 .charsheet input.sheet-tab2:checked ~ div.sheet-section-regle,
-.charsheet input.sheet-tab3:checked ~ div.sheet-section-abilities,{
+.charsheet input.sheet-tab3:checked ~ div.sheet-section-abilities,
+.charsheet input.sheet-tab4:checked ~ div.sheet-section-GM,{
     display: block;
     background-color: #1F1F1F;
 }
@@ -80,7 +81,6 @@ width: 500px;
 }
 
 
-
 /*----------- Card Section -------------*/
 .charsheet .sheet-section-profile{ 
     background-color: #ffffff;
@@ -122,52 +122,11 @@ input[type=number] {
 	background-color: #1F1F1F;
 }
 
-.charsheet input.sheet-pronoun {
-    width: 130px;
-    text-align: center;
-}
-
-.charsheet input.sheet-age {
-    width: 70px;
-}
-
-.charsheet input.sheet-height {
-    width: 140px;
-}
-
 .charsheet input.sheet-role {
     width: 200px;
 	font-size: 18px !important;
 	    color: #e1e1e1;
 	background-color: #1F1F1F;
-}
-
-.charsheet input.sheet-attribute {
-    width: 200px;
-}
-
-.charsheet input.sheet-attribute2 {
-    width: 240px;
-}
-
-.charsheet input.sheet-clothes {
-    width: 210px;
-}
-
-.charsheet input.sheet-background {
-    width: 240px;
-}
-
-.charsheet input.sheet-background2 {
-    width: 410px;
-}
-
-.charsheet input.sheet-ethos {
-    width: 270px;
-}
-
-.charsheet input.sheet-goal {
-    width: 410px;
 }
 
 .charsheet textarea.sheet-notes {
@@ -192,7 +151,6 @@ input[type=number] {
 .charsheet div.sheet-profile-notes {
     padding-top: 15px;
 }
-
 
 
 /*----------- Concept Section -------------*/
@@ -222,50 +180,6 @@ input[type=number] {
     font-size: 17px;
     margin-top: -5px;
     padding-bottom: 2px;
-}
-
-span.sheet-ap {
-    float: right;
-    margin-right: 50px;
-}
-
-span.sheet-hp,
-input.sheet-ap,
-input.sheet-hp{
-    text-align: center;
-}
-
-
-h3.sheet-ability-header {
-    text-align: center; 
-    color: #FFF; 
-    background-color: #2c424e;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 510px;
-}
-
-input.sheet-ability-name {
-    margin-bottom: 10px; 
-    font-size: 18px;
-}
-
-input.sheet-ability-cost {
-    margin-bottom: 10px; 
-    font-size: 18px;
-    width: 75px;
-}
-
-div.repcontrol{
-    width: 510px;
-}
-
-textarea.sheet-ability-description {
-    font-size: 18px;
-    resize: none;
-    width: 575px;
-    height: 90px;
-    resize: none;
 }
 
 
@@ -299,50 +213,33 @@ input[type=number] {
     padding-bottom: 2px;
 }
 
-span.sheet-ap {
-    float: right;
-    margin-right: 50px;
+
+/*----------- GM Section -------------*/
+
+div.sheet-section-GM {
+    padding-top: 30px;
 }
 
-span.sheet-hp,
-input.sheet-ap,
-input.sheet-hp{
-    text-align: center;
+div.sheet-section-GM p{  
+    font-family: 'Shadows Into Light';
+    font-size: 20px;
+	color: #e1e1e1 !important;
+    margin-left: 20px;
+    width: 750px;
 }
 
 
-h3.sheet-ability-header {
-    text-align: center; 
-    color: #FFF; 
-    background-color: #2c424e;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 510px;
+div.sheet-section-GM input[type=text],
+input[type=number] {
+    display: inline-block;
+    margin-right: 5px;
+    box-shadow: none;
+    border: none;
+    -moz-appearance:textfield;
+    font-size: 17px;
+    margin-top: -5px;
+    padding-bottom: 2px;
 }
-
-input.sheet-ability-name {
-    margin-bottom: 10px; 
-    font-size: 18px;
-}
-
-input.sheet-ability-cost {
-    margin-bottom: 10px; 
-    font-size: 18px;
-    width: 75px;
-}
-
-div.repcontrol{
-    width: 510px;
-}
-
-textarea.sheet-ability-description {
-    font-size: 18px;
-    resize: none;
-    width: 575px;
-    height: 90px;
-    resize: none;
-}
-
 
 /*------------------------------------*\
   #ROLL TEMPLATES
