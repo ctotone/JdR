@@ -2,10 +2,12 @@
 
  <!-- Set up the Tabs -->
     <input type="radio" class="sheet-tab sheet-tab1" name="attr_core-tab" value="1" title="Cartes" checked="checked"/> 
-    <span class="sheet-tab sheet-tab1" style="line-height: 40px;">Cartes</span>
+    <span data-i18n="TAB_card" class="sheet-tab sheet-tab1" style="line-height: 40px;">Cartes</span>
 	<input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Personnage" /> 
-    <span class="sheet-tab sheet-tab3" style="line-height: 40px;">Personnage</span>
-    <button type="roll" name="roll_d20" value="&{template:quest} {{title=Lancé des D6}} {{subtitle=}} {{Nombre de succés=[[?{Nombre de dés}d6=6]]}}"></button>
+    <span data-i18n="TAB_concept" class="sheet-tab sheet-tab3" style="line-height: 40px;">Personnage</span>
+<input type="radio" class="sheet-tab sheet-tab2" name="attr_core-tab" value="2" title="Regle" /> 
+    <span data-i18n="TAB_rule" class="sheet-tab sheet-tab2" style="line-height: 40px;">Règles</span>
+    <!-- <button type="roll" name="roll_d20" value="&{template:quest} {{title=Lancé des D6}} {{subtitle=}} {{Nombre de succés=[[?{Nombre de dés}d6=6]]}}"></button> -->
     <!-- End Tab setup -->  
 	
 	
@@ -15,31 +17,48 @@
     <!-- Carte Tab -->
     
 	<div class="sheet-section-profile">	
-	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau.png" width=550px height=auto/>
+	<!-- <img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau.png" width=550px height=auto/> -->
+	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau_dark.png" width=550px height=auto/>
 		<div class="profile-text">
 			<p></p>
-            <p><input type="checkbox" name="attr_vertu_check"> Vertu <input class="role" type="text" name="attr_vertu"></p>
-			<p><input type="checkbox" name="attr_vice_check"> Vice <input class="role" type="text" name="attr_vice"></p>
-			<p><input type="checkbox" name="attr_moment_check"> Moment : "Je retrouverai l'espoir lorsque..."</p>
+            <p><input type="checkbox" name="attr_vertu_check"><span data-i18n="virtue">Virtue : </span><input class="role" type="text" name="attr_vertu"></p>
+			<p><input type="checkbox" name="attr_vice_check"><span data-i18n="vice">Vice : </span><input class="role" type="text" name="attr_vice"></p>
+			<p><input type="checkbox" name="attr_moment_check"><span data-i18n="moment">Moment : "I will find hope..."</span></p>
 			<p><textarea class="note1" name="attr_moment"></textarea></p>
-			<p><input type="checkbox" name="attr_extremite_check"> Extrémité : "Quelqu'un t'a vu..."</p>
+			<p><input type="checkbox" name="attr_extremite_check"><span data-i18n="brink">Brink : "Someone seen you..."</span></p>
 			<p><textarea class="note1" name="attr_extremite"></textarea></p>
         </div>
     </div>
 	
 	<!-- Personnage Tab -->
 	
-	 <div class="sheet-section-abilities">	
-	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau.png" />
+	<div class="sheet-section-abilities">	
+	<!-- <img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau.png" width=550px height=auto/> -->
+	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau_dark.png" width=550px height=auto/>
 		<div class="profile-text">
-		<p></p>
-			<p>Nom : <input class="name-field" type="text" name="attr_character_name"></p>
-			<p>Apparence : <input class="name-field" type="text" name="attr_apparence"></p>
-			<p>Age : <input class="role" type="text" name="attr_age"></p>
 			<p></p>
-			<p>Background</p>
+			<p><span data-i18n="name">Name : </span><input class="name-field" type="text" name="attr_character_name"></p>
+			<p><span data-i18n="look">Look : </span><input class="name-field" type="text" name="attr_apparence"></p>
+			<p><span data-i18n="age">Age : </span><input class="role" type="text" name="attr_age"></p>
+			<p></p>
+			<p><span data-i18n="background">Background</span></p>
 			<p><textarea class="notes" name="attr_bg"></textarea></p>
         </div>
+       
+    </div>
+	
+	<!-- Règles Tab -->
+	
+	<div class="sheet-section-regle">	
+	<!-- <img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau.png" width=550px height=auto/> -->
+	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/Feuille%20personnage/bandeau_dark.png" width=550px height=auto/>
+		<div class="profile-text">
+		<p><span data-i18n="vice_virtue">Vice and Virtue : Once the card is burned, allows you to reroll all 1s.</span></p>
+		<p><span data-i18n="moment_rule">Moment : Burn this card and resolve a conflict roll. If successful, gain your hope dice.</span></p>
+		<p><span data-i18n="brink_rule">Brink : Reroll all the dice. Keep the card in case of success, but on a failure, burn the card and lose your Hope dice.</span></p>
+        </div>
+       
+    </div>
        
     </div>
     
