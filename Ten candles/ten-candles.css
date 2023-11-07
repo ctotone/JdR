@@ -80,6 +80,48 @@ width: 420px;
     border-radius: 4px;
 }
 
+/*----------- Checkbox Section -------------*/
+
+.charsheet input[type="checkbox"] {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    margin: -10px;
+    cursor: url(hand.cur), pointer;
+    z-index: 1;
+}
+
+.charsheet input[type="checkbox"] + span::before {
+    margin-right: 4px;
+    border: solid 1px #a8a8a8;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 0 10px 3px #bdb8b8;
+    background: #f6f6f6;
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+}
+
+.charsheet input[type="checkbox"] + span::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.charsheet input[type="checkbox"]:checked + span::before {
+    content: "✓";
+	background: black;
+	box-shadow: 0px 0px 8px 1px #1F1F1F;
+	
+}
+
+
 /*----------- Dice Button Section -------------*/
 div.sheet-d6{
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
@@ -153,7 +195,6 @@ button[type="roll"].sheet-empty:before{
     width: 750px;
 }
 
-
 input[type=text],
 input[type=number] {
     display: inline-block;
@@ -165,12 +206,14 @@ input[type=number] {
     font-size: 17px;
     margin-top: -5px;
     padding-bottom: 2px;
+	color: #e1e1e1 !important;
+	background-color: #1F1F1F;
 }
 
 .charsheet input.sheet-name {
     width: 250px;
 	font-size: 20px !important;
-	    color: #e1e1e1;
+	color: #e1e1e1;
 	background-color: #1F1F1F;
 }
 
@@ -264,19 +307,6 @@ div.sheet-section-abilities p{
 }
 
 
-input[type=text],
-input[type=number] {
-    display: inline-block;
-    margin-right: 5px;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid #e1e1e147;
-    -moz-appearance:textfield;
-    font-size: 17px;
-    margin-top: -5px;
-    padding-bottom: 2px;
-}
-
 
 /*----------- Rules Section -------------*/
 
@@ -292,20 +322,6 @@ div.sheet-section-regle p{
     line-height: 1.6;
     width: 750px;
 	padding-bottom: 25px;
-}
-
-
-input[type=text],
-input[type=number] {
-    display: inline-block;
-    margin-right: 5px;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid #e1e1e147;
-    -moz-appearance:textfield;
-    font-size: 17px;
-    margin-top: -5px;
-    padding-bottom: 2px;
 }
 
 
