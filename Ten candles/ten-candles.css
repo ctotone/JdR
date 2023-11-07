@@ -246,42 +246,42 @@ input[type=number] {
 \*------------------------------------*/
 
 /* Smaller margins - remove these if you want the huge default left margin */
-.sheet-rolltemplate-quest {
+.sheet-rolltemplate-tencandles {
     margin-left: -37px;
 }
-.withoutavatars .sheet-rolltemplate-quest {
+.withoutavatars .sheet-rolltemplate-tencandles {
     margin-left: -7px;
 }
 
-.sheet-rolltemplate-quest .sheet-container {
-    border: 3px solid var(--quest-blue);
+.sheet-rolltemplate-tencandles .sheet-container {
+    border: 3px solid var(--tencandles-blue);
     border-radius: 3px;
 }
 
 /* Header formatting - title and subtitle */
-.sheet-rolltemplate-quest .sheet-header {
-    background-color: var(--quest-blue);
+.sheet-rolltemplate-tencandles .sheet-header {
+    background-color: var(--tencandles-blue);
     color: white;
     text-align: left;
     text-transform: capitalize;
     padding: 5px;
-    border-bottom: 2px solid var(--quest-blue);
+    border-bottom: 2px solid var(--tencandles-blue);
 }
-.sheet-rolltemplate-quest .sheet-title {
+.sheet-rolltemplate-tencandles .sheet-title {
     font-size:1.2em;
     font-weight: bold;
 }
-.sheet-rolltemplate-quest .sheet-subtitle {
+.sheet-rolltemplate-tencandles .sheet-subtitle {
     font-size:.9em;
 }
 
 
-.sheet-rolltemplate-quest .sheet-container {
-    --quest-blue: #2c424e;
+.sheet-rolltemplate-tencandles .sheet-container {
+    --tencandles-blue: #2c424e;
 }
 
 /* Allprops part */
-.sheet-rolltemplate-quest .sheet-content {
+.sheet-rolltemplate-tencandles .sheet-content {
     display: grid;
     background: #FFF;
     /* Header formatting - modify the column layout below */
@@ -289,25 +289,26 @@ input[type=number] {
     /* Line height to match default roll template */
     line-height:1.4em;
 }
-.sheet-rolltemplate-quest .sheet-content > div {
+.sheet-rolltemplate-tencandles .sheet-content > div {
     padding: 5px;
 }
 
 /* Left column */
-.sheet-rolltemplate-quest .sheet-content .sheet-key {
+.sheet-rolltemplate-tencandles .sheet-content .sheet-key {
     font-weight: bold;
     padding-right: 10px;
     text-align: right;
+	color: #2c424e;
 }
 
 /* Make even-numbered rows grey */
-.sheet-rolltemplate-quest .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-quest .sheet-content :nth-child(4n) {
+.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n) {
     background:#EEE;
 }
 
 /* Wide Description field */
-.sheet-rolltemplate-quest .sheet-desc {
+.sheet-rolltemplate-tencandles .sheet-desc {
     grid-column: span 2;
     padding: 5px;
     text-align: center;

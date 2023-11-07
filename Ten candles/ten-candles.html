@@ -9,6 +9,8 @@
     <span data-i18n="TAB_rule" class="sheet-tab sheet-tab2" style="line-height: 40px;">Rules</span>
 	<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Regle" /> 
     <span data-i18n="TAB_GM" class="sheet-tab sheet-tab4" style="line-height: 40px;">GM</span>
+	<button type="roll" name="roll_d6" value="&{template:tencandles} {{title=Roll}} {{subtitle=}}{{Success=[[?{How many dice ?}d6=6]]}}"></button>
+    
 
 <!-- End Tab setup -->  
 	
@@ -111,7 +113,7 @@
     </table>
 </rolltemplate>
 
-<rolltemplate class="sheet-rolltemplate-quest">
+<rolltemplate class="sheet-rolltemplate-tencandles">
   <div class="sheet-container sheet-color-{{color}}">
     <div class="sheet-header">
       {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
