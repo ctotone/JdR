@@ -1,6 +1,8 @@
-/*----------- Logo -------------*/
 
-img.sheet-logo {
+
+
+/*----------- Logo -------------*/
+img.logo {
 width: 420px;
     height: auto;
     margin-bottom: 50px;
@@ -34,23 +36,23 @@ width: 420px;
     padding-left: 27px;
     padding-bottom: 16px;
 }	
+
 /*----------- Tabs Setup -------------*/
 
 /*this hides the contents of each tab by default*/
-.charsheet div[class^="sheet-section"]{    
+.charsheet div[class^="sheet.section"]{    
     display: none;
 }
 
 /*this shows the tab content when the appropriate input field is selected*/
-.charsheet input.sheet-tab1:checked ~ div.sheet-section-profile,
-.charsheet input.sheet-tab2:checked ~ div.sheet-section-regle,
-.charsheet input.sheet-tab3:checked ~ div.sheet-section-abilities,
-.charsheet input.sheet-tab4:checked ~ div.sheet-section-GM,{
+.charsheet input.sheet-tab1:checked ~ div.section-profile,
+.charsheet input.sheet-tab2:checked ~ div.section-regle,
+.charsheet input.sheet-tab3:checked ~ div.section-abilities,
+.charsheet input.sheet-tab4:checked ~ div.section-GM,{
     display: block;
-    background-color: #1F1F1F;
 }
 
-.charsheet input.sheet-tab99:checked ~ div[class^="sheet-section"]{    
+.charsheet input.sheet-tab99:checked ~ div[class^="section"]{    
     display: block;
 }
 
@@ -160,7 +162,7 @@ input[type="checkbox"].sheet-dispchk2:checked  ~ div.sheet-dispchk2{
 }
 
 /*----------- Dice Button Section -------------*/
-div.sheet-d6{
+div.d6{
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
   background-size: 55px 55px;
   background-repeat: no-repeat;
@@ -168,7 +170,7 @@ div.sheet-d6{
   height: 55px;
 }
 
-div.sheet-dicehope{
+div.dicehope{
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/hope_dice_tencandles.png); 
   background-size: 30px 30px;
   background-repeat: no-repeat;
@@ -176,17 +178,17 @@ div.sheet-dicehope{
   height: 30px;
 }
 
-button[type="roll"].sheet-dicehope:before,
-button[type="roll"].sheet-d6:before{
+button[type="roll"].dicehope:before,
+button[type="roll"].d6:before{
   content: ' ';
 }
 
-button[type="roll"].sheet-dicehope:hover,
-button[type="roll"].sheet-d6:hover{
+button[type="roll"].dicehope:hover,
+button[type="roll"].d6:hover{
   background-position: 0;
 }
 
-button[type="roll"].sheet-d6{
+button[type="roll"].d6{
   background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
   background-size: 50px 50px;
   background-repeat: no-repeat;
@@ -197,7 +199,7 @@ button[type="roll"].sheet-d6{
   margin-left: 5px;
 }
 
-button[type="roll"].sheet-dicehope{
+button[type="roll"].dicehope{
   background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/hope_dice_tencandles.png); 
   background-size: 25px 25px;
   background-repeat: no-repeat;
@@ -208,14 +210,14 @@ button[type="roll"].sheet-dicehope{
   margin-left: 5px;
 }
 
-button[type="roll"].sheet-empty:before{
+button[type="roll"].empty:before{
   content: ' ';
 }
 
 /*----------- Card Section -------------*/
-.charsheet .sheet-section-profile{ 
-    background-color: #ffffff;
-    background-repeat: no-repeat;   
+.charsheet .section-profile{ 
+    /* background-color: #ffffff;
+    background-repeat: no-repeat;    */
 }
 
 .charsheet div.sheet-section-profile{
@@ -244,63 +246,56 @@ input[type=number] {
     margin-top: -5px;
     padding-bottom: 2px;
 	color: #e1e1e1 !important;
-	background-color: #1F1F1F;
 }
 
 .charsheet input.sheet-name {
     width: 250px;
 	font-size: 20px !important;
 	color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-look {
     width: 250px;
 	font-size: 20px !important;
 	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-age {
     width: 80px;
 	font-size: 20px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-virtue {
     width: 280px;
 	font-size: 18px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-vice {
     width: 300px;
 	font-size: 18px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-card {
     width: 200px;
 	font-size: 18px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-card1 {
     width: 345px;
 	font-size: 18px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet input.sheet-card2 {
     width: 400px;
 	font-size: 18px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 }
 
 .charsheet textarea.sheet-notes {
@@ -308,8 +303,7 @@ input[type=number] {
     height: 65px;    
 	line-height: 1.0;
     font-size: 20px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 	border: 1px solid #e1e1e147;
 }
 
@@ -318,8 +312,7 @@ input[type=number] {
     height: 60px;
     line-height: 1.0;
     font-size: 20px !important;
-	    color: #e1e1e1;
-	background-color: #1F1F1F;
+
 
 }
 
@@ -338,7 +331,6 @@ div.sheet-section-abilities {
 div.sheet-section-abilities p{  
     font-family: 'Shadows Into Light';
     font-size: 23px;
-	color: #e1e1e1 !important;
     line-height: 1.6;
     width: 750px;
 }
@@ -355,7 +347,6 @@ div.sheet-section-regle {
 div.sheet-section-regle p{  
     font-family: 'Shadows Into Light';
     font-size: 23px;
-	color: #e1e1e1 !important;
     line-height: 1.6;
     width: 750px;
 	padding-bottom: 25px;
@@ -372,7 +363,6 @@ div.sheet-section-GM {
 div.sheet-section-GM p{  
     font-family: 'Shadows Into Light';
     font-size: 18px;
-	color: #e1e1e1 !important;
     width: 750px;
 }
 
@@ -392,7 +382,6 @@ input[type=number] {
 .charsheet .sheet-title {  
     font-family: 'Shadows Into Light';
     font-size: 30px;
-	color: #e1e1e1 !important;
     line-height: 1.5;
     width: 750px;
 	padding-left: 10px;
@@ -476,3 +465,31 @@ input[type=number] {
     padding: 5px;
     text-align: center;
 }
+
+/*----------- Darkmode -------------*/
+.charsheet{
+	background-color:white;
+	color:black;
+}
+
+body.sheet-darkmode button,
+body.sheet-darkmode input,
+body.sheet-darkmode optgroup,
+body.sheet-darkmode select,
+body.sheet-darkmode textarea,
+body.sheet-darkmode .charsheet {
+	color: #eee
+	
+	background-color: #1e2021;
+}
+body.sheet-darkmode .btn,
+body.sheet-darkmode .btn.btn-default {
+	color: #c8c3bc;
+	text-shadow: rgba(24,26,27,.75) 0px 1px 1px;
+	background-color: #1e2021;
+	background-image: linear-gradient(#181a1b, #26292b);
+	border-color: #3e4446 #3e4446 #43494c;
+	box-shadow: rgba(24,26,27,.2) 0px 1px 0px inset,rgba(0,0,0,.05) 0px 1px 2px
+}
+
+
