@@ -17,6 +17,13 @@ width: 420px;
     text-align: center;
 }
 
+.charsheet .sheet-border{
+border-color: #e1e1e121;
+border-style: solid;
+margin-left: -28px;
+padding-left: 27px;
+padding-top: 15px;
+}	
 /*----------- Tabs Setup -------------*/
 
 /*this hides the contents of each tab by default*/
@@ -80,6 +87,7 @@ width: 420px;
     border-radius: 4px;
 }
 
+
 /*----------- Checkbox Section -------------*/
 
 .charsheet input[type="checkbox"] {
@@ -120,7 +128,26 @@ width: 420px;
 	box-shadow: 0px 0px 8px 1px #1F1F1F;
 	
 }
+/*----------- DISPCHK Section -------------*/
 
+
+div.sheet-dispchk{
+    display: none;
+}
+input[type="checkbox"].sheet-dispchk:checked  ~ div.sheet-dispchk{
+    display: block;
+	margin-top: 20px;
+	margin-left: 50px;
+}
+
+div.sheet-dispchk2{
+    display: none;
+}
+input[type="checkbox"].sheet-dispchk2:checked  ~ div.sheet-dispchk2{
+    display: block;
+	margin-top: 20px;
+	margin-left: 50px;
+}
 
 /*----------- Dice Button Section -------------*/
 div.sheet-d6{
@@ -184,13 +211,13 @@ button[type="roll"].sheet-empty:before{
 .charsheet div.sheet-section-profile{
     padding-top: 30px;
     padding-bottom: 10px;
+	margin-left: 20px;
 }
 
 .charsheet .sheet-section-profile p{  
     font-family: 'Shadows Into Light';
     font-size: 23px;
 	color: #e1e1e1 !important;
-    margin-left: 20px;
     line-height: 1.5;
     width: 750px;
 }
@@ -295,13 +322,13 @@ input[type=number] {
 
 div.sheet-section-abilities {
     padding-top: 30px;
+	margin-left: 20px;
 }
 
 div.sheet-section-abilities p{  
     font-family: 'Shadows Into Light';
     font-size: 23px;
 	color: #e1e1e1 !important;
-    margin-left: 20px;
     line-height: 1.6;
     width: 750px;
 }
@@ -312,13 +339,13 @@ div.sheet-section-abilities p{
 
 div.sheet-section-regle {
     padding-top: 30px;
+	margin-left: 20px;
 }
 
 div.sheet-section-regle p{  
     font-family: 'Shadows Into Light';
     font-size: 23px;
 	color: #e1e1e1 !important;
-    margin-left: 20px;
     line-height: 1.6;
     width: 750px;
 	padding-bottom: 25px;
@@ -329,13 +356,13 @@ div.sheet-section-regle p{
 
 div.sheet-section-GM {
     padding-top: 30px;
+	margin-left: 20px;
 }
 
 div.sheet-section-GM p{  
     font-family: 'Shadows Into Light';
     font-size: 18px;
 	color: #e1e1e1 !important;
-    margin-left: 20px;
     width: 750px;
 }
 
@@ -351,6 +378,15 @@ input[type=number] {
     margin-top: -5px;
     padding-bottom: 2px;
 }
+
+.charsheet .sheet-title {  
+    font-family: 'Shadows Into Light';
+    font-size: 35px;
+	color: #e1e1e1 !important;
+    line-height: 1.5;
+    width: 750px;
+}
+
 
 /*------------------------------------*\
   #ROLL TEMPLATES
