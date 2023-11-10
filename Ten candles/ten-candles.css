@@ -115,8 +115,7 @@ body.sheet-darkmode .charsheet .sheet-tabstoggle[value="1"] ~ span.tab1,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="2"] ~ span.tab2,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="3"] ~ span.tab3,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
-    background: #2c424e;
-    color: white;
+	border:solid;
     
 }
 
@@ -125,7 +124,7 @@ body.sheet-darkmode .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
 .charsheet button.tab_menu2:hover + span.tab2,
 .charsheet button.tab_menu3:hover + span.tab3,
 .charsheet button.tab_menu4:hover + span.tab4{
-      border:solid;   
+    border:solid;    
 }
 
 /*this styles the span with the tab information and slides to the left, so it appears underneath the radio button*/
@@ -133,16 +132,9 @@ body.sheet-darkmode .charsheet button.tab_menu1:hover + span.tab1,
 body.sheet-darkmode .charsheet button.tab_menu2:hover + span.tab2,
 body.sheet-darkmode .charsheet button.tab_menu3:hover + span.tab3,
 body.sheet-darkmode .charsheet button.tab_menu4:hover + span.tab4{
-
-	background: #2c424e;
-    color: white;
+	border:solid;
     border-radius: 4px;
 }
-
-
-
-
-
 
 /*----------- Checkbox Section -------------*/
 
@@ -290,6 +282,70 @@ button[type="roll"].empty:before{
     width: 750px;
 }
 
+/* ----------- Card line-through animation -------------*/
+.charsheet {  
+    --receiver-opacity1: 1;
+	--receiver-opacity1: 2;
+	--receiver-opacity1: 3;
+	--receiver-opacity1: 4;
+	--receiver-deco1: none;
+	--receiver-deco2: none;
+	--receiver-deco3: none;
+	--receiver-deco4: none;
+	--receiver-thickness1: 0px;
+	--receiver-thickness2: 0px;
+	--receiver-thickness3: 0px;
+	--receiver-thickness4: 0px;
+	
+}
+
+.vertu_check[value="on"] ~ *{
+    /* --receiver-deco1: line-through;
+	--receiver-thickness1: 3px; */
+	--receiver-opacity1: 0.3;
+}
+
+.charsheet .receiver-vertu_check{
+    opacity: var( --receiver-opacity1);
+	text-decoration: var(--receiver-deco1);
+	text-decoration-thickness: var(--receiver-thickness1);
+}
+
+.vice_check[value="on"] ~ *{
+/*     --receiver-deco2: line-through;
+	--receiver-thickness2: 3px; */
+	--receiver-opacity2: 0.3;
+}
+
+.charsheet .receiver-vice_check{
+    opacity: var( --receiver-opacity2);
+	text-decoration: var(--receiver-deco2);
+	text-decoration-thickness: var(--receiver-thickness2);
+}
+
+.moment_check[value="on"] ~ *{
+/*     --receiver-deco3: line-through;
+	--receiver-thickness3: 3px; */
+	--receiver-opacity3: 0.3;
+}
+
+.charsheet .receiver-moment_check{
+    opacity: var( --receiver-opacity3);
+	text-decoration: var(--receiver-deco3);
+	text-decoration-thickness: var(--receiver-thickness3);
+}
+
+.extremite_check[value="on"] ~ *{
+/*     --receiver-deco4: line-through;
+	--receiver-thickness4: 3px; */
+	--receiver-opacity4: 0.3;
+}
+
+.charsheet .receiver-extremite_check{
+    opacity: var( --receiver-opacity4);
+	text-decoration: var(--receiver-deco4);
+	text-decoration-thickness: var(--receiver-thickness4);
+}
 
 /*----------- Card Section -------------*/
 
@@ -299,7 +355,6 @@ button[type="roll"].empty:before{
     padding-bottom: 10px;
 	margin-left: 20px;
 }
-
 
 input[type=text],
 input[type=number] {
@@ -364,11 +419,16 @@ body.sheet-darkmode .charsheet textarea.notes {
 .charsheet input.virtue {
     width: 280px;
 	font-size: 18px !important;
+	opacity: var( --receiver-opacity1);
+	/* text-decoration: var(--receiver-deco1);
+	text-decoration-thickness: var(--receiver-thickness1); */
+	
 }
 
 .charsheet input.vice {
     width: 300px;
 	font-size: 18px !important;
+	opacity: var( --receiver-opacity2);
 }
 
 .charsheet input.card {
@@ -379,11 +439,13 @@ body.sheet-darkmode .charsheet textarea.notes {
 .charsheet input.card1 {
     width: 345px;
 	font-size: 18px !important;
+	opacity: var( --receiver-opacity3);
 }
 
 .charsheet input.card2 {
     width: 400px;
 	font-size: 18px !important;
+	opacity: var( --receiver-opacity4);
 }
 
 
@@ -451,39 +513,50 @@ input[type=number] {
   #ROLL TEMPLATES
 \*------------------------------------*/
 
+
 /* Smaller margins - remove these if you want the huge default left margin */
 .sheet-rolltemplate-tencandles {
     margin-left: -37px;
+	
 }
 .withoutavatars .sheet-rolltemplate-tencandles {
     margin-left: -7px;
 }
 
 .sheet-rolltemplate-tencandles .sheet-container {
-    border: 3px solid var(--tencandles-blue);
+    border: 2px solid var(--tencandles-border);
     border-radius: 3px;
 }
 
 /* Header formatting - title and subtitle */
 .sheet-rolltemplate-tencandles .sheet-header {
-    background-color: var(--tencandles-blue);
-    color: white;
-    text-align: left;
-    text-transform: capitalize;
-    padding: 5px;
-    border-bottom: 2px solid var(--tencandles-blue);
+    background-color: var(--tencandles-background-header);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--tencandles-border);
+	font-family: 'Shadows Into Light';
 }
+
 .sheet-rolltemplate-tencandles .sheet-title {
-    font-size:1.2em;
-    font-weight: bold;
+	font-size: 30px;
+	font-weight: bold;
 }
+
 .sheet-rolltemplate-tencandles .sheet-subtitle {
-    font-size:.9em;
+    font-size: 15px;
+	padding-top: 10px;
 }
 
 
 .sheet-rolltemplate-tencandles .sheet-container {
-    --tencandles-blue: #2c424e;
+    --tencandles-background-header: #555;
+	--tencandles-border: #444141;
+	--tencandles-background-header-darkmode: #1e1e1e;
+	--tencandles-border-darkmode: #000;
+	--tencandles-content-background-darkmode: #bb13132e;
+	--tencandles-content-desc-darkmode:red;
 }
 
 /* Allprops part */
@@ -495,6 +568,7 @@ input[type=number] {
     /* Line height to match default roll template */
     line-height:1.4em;
 }
+
 .sheet-rolltemplate-tencandles .sheet-content > div {
     padding: 5px;
 }
@@ -504,7 +578,8 @@ input[type=number] {
     font-weight: bold;
     padding-right: 10px;
     text-align: right;
-	color: #2c424e;
+	font-family: 'Shadows Into Light';
+	font-size: 20px;
 }
 
 /* Make even-numbered rows grey */
@@ -520,6 +595,41 @@ input[type=number] {
     text-align: center;
 }
 
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n) {
+}
+
+.sheet-rolltemplate-tencandles .inlinerollresult {
+	background-color: #b3b3b3;
+	color:#111111c2;
+}
+
+/* Dice result in chatcontainer */
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tencandles .inlinerollresult {
+	border: 2px solid;
+	border-color:red;
+}
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tencandles .inlinerollresult.importantroll {
+	border: 2px solid;
+	border-color:blue;
+}
+	
+/* Only 6 */
+.sheet-rolltemplate-tencandles .inlinerollresult.fullcrit{
+	border: 2px solid;
+	border-color:#01a230;
+}
+
+/* Only 1 */
+.sheet-rolltemplate-tencandles .inlinerollresult.fullfail {
+	border: px solid;
+	border-color:red;
+}
 
 /*------------------------------------*\
   DARK MODE
@@ -540,4 +650,105 @@ body.sheet-darkmode .section-GM button {
 	background-color: #1e2021;
 }
 
+/*------------------------------------*\
+  #ROLL TEMPLATES DARK MODE
+\*------------------------------------*/
 
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tencandles-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tencandles-border-darkmode);
+    border-radius: 3px;
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-header {
+    background-color: var(--tencandles-background-header-darkmode);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--tencandles-border-darkmode);
+	font-family: 'Shadows Into Light';
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-subtitle {
+    font-size: 15px;
+	padding-top: 10px;
+}
+
+
+/* Allprops part */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content {
+    display: grid;
+    background: var(--tencandles-content-background-darkmode);
+	color: #eee;
+    /* Header formatting - modify the column layout below */
+    grid-template-columns: auto auto;
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Shadows Into Light';
+	font-size: 20px;;
+}
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n) {
+    background: var(--tencandles-content-background-darkmode);
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult {
+	background-color: var(--tencandles-background-header-darkmode) !important;
+	color:white;
+}
+
+/* Dice result in chatcontainer */
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult {
+	border: 2px solid;
+	border-color:red;
+}
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult.importantroll {
+	border: 2px solid;
+	border-color:blue;
+}
+	
+/* Only 6 */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit{
+	border: 2px solid;
+	border-color:green;
+}
+
+/* Only 1 */
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:red;
+}
+
+
+/* Wide Description field */
+/* .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-desc {
+    background: var(--tencandles-content-desc-darkmode);
+	grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+} */
