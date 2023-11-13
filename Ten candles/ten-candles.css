@@ -1,9 +1,130 @@
+/*----------- PC / GM button -------------*/
+
+div.card, 
+div.concept,
+div.rule,
+div.gm{
+    display: none;
+	/* border-top:solid 1px; */
+	padding-top: 5px;
+}
+
+div.border-sheet-type {
+	border-bottom:solid 1px;
+}
+
+input[type=radio].onglcard:checked ~ div.card{
+    display: block;
+}
+input[type=radio].onglconcept:checked ~ div.concept{
+    display: block;
+}
+input[type=radio].onglrule:checked ~ div.rule{
+    display: block;
+}
+input[type=radio].onglgm:checked ~ div.gm{
+    display: block;
+}
+
+input[type=radio].onglcard,
+input[type=radio].onglconcept,
+input[type=radio].onglrule,
+input[type=radio].onglgm{
+    margin: 0;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    padding: 0;
+    display: inline-block;
+    opacity: 0;
+    width: 110px;
+    height: 20px;
+    z-index: 2;
+	font-family: 'Shadows Into Light';
+    font-size: 14px;
+	
+}
+input[type=radio].onglcard + span,
+input[type=radio].onglconcept + span,
+input[type=radio].onglrule + span,
+input[type=radio].onglgm + span{
+    color: #33333387;
+    font-size:15px;
+    text-align:center;
+    display: inline-block;
+    width: 110px;
+    height: 20px;
+    margin: 0;
+    margin-left: -110px;
+    margin-right: -5px;
+    padding:0;
+    margin-bottom: -1px;
+    padding-top: 5px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888888;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 16px;
+    z-index: 1;
+	font-family: 'Shadows Into Light';
+    font-size: 14px;
+}
+body.sheet-darkmode input[type=radio].onglcard:checked + span,
+body.sheet-darkmode input[type=radio].onglconcept:checked + span,
+body.sheet-darkmode input[type=radio].onglrule:checked + span,
+body.sheet-darkmode input[type=radio].onglgm:checked + span {
+    font-weight: bold;
+    color: #fff;
+    background-color: #1E2021;
+    border-bottom-width: 0px;
+	font-family: 'Shadows Into Light';
+    font-size:14px;
+}
+
+body.sheet-darkmode input[type=radio].onglcard,
+body.sheet-darkmode input[type=radio].onglconcept,
+body.sheet-darkmode input[type=radio].onglrule,
+body.sheet-darkmode input[type=radio].onglgm{
+    margin: 0;
+    margin-top: -4px;
+    margin-bottom: -4px;
+    padding: 0;
+    display: inline-block;
+    opacity: 0;
+    width: 110px;
+    height: 20px;
+    z-index: 2;
+	font-family: 'Shadows Into Light';
+    font-size: 14px;
+	
+}
+body.sheet-darkmode input[type=radio].onglcard + span,
+body.sheet-darkmode input[type=radio].onglconcept + span,
+body.sheet-darkmode input[type=radio].onglrule + span,
+body.sheet-darkmode input[type=radio].onglgm + span{
+    color: #ffffff5e;
+    background-color: #1E2021;
+    border-color: #888888;
+}
+input[type=radio].onglcard:checked + span,
+input[type=radio].onglconcept:checked + span,
+input[type=radio].onglrule:checked + span,
+input[type=radio].onglgm:checked + span {
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border-bottom-width: 0px;
+	font-family: 'Shadows Into Light';
+    font-size:14px;
+}
+
 /*----------- Logo -------------*/
 
 img.logo {
 	width: 420px;
     height: auto;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 
@@ -20,13 +141,13 @@ img.logo {
 .charsheet .border-character-up{
 	border-color: #717171;
 	border-bottom-style: solid;
-    margin-left: -28px;
+    margin-left: -14px;
     padding-left: 27px;
 }	
 
 body.sheet-darkmode .charsheet .border-character-up{
 border-color: #e1e1e147;
-margin-left: -28px;
+margin-left: -14px;
 padding-left: 27px;
 border-bottom-style: solid;
 }	
@@ -36,7 +157,7 @@ border-bottom-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
-    margin-left: -28px;
+    margin-left: -14px;
     padding-left: 27px;
     padding-bottom: 16px;
 }	
@@ -47,7 +168,7 @@ body.sheet-darkmode .charsheet .border-character{
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
-    margin-left: -28px;
+    margin-left: -14px;
     padding-left: 27px;
     padding-bottom: 16px;
 }	
@@ -80,6 +201,7 @@ body.sheet-darkmode .charsheet .border-character{
     position: relative;
     opacity: 0;
     z-index: 9999;
+	color: #ffffff5e;
 }
 
 
@@ -101,13 +223,33 @@ body.sheet-darkmode .charsheet .border-character{
     position: relative;
     vertical-align: middle;
     margin-left: -101px;/*originally 91px*/
+	color: #0000004f;
+}
+
+body.sheet-darkmode .charsheet span.tab1,
+body.sheet-darkmode .charsheet span.tab2,
+body.sheet-darkmode .charsheet span.tab3,
+body.sheet-darkmode .charsheet span.tab4{
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;    
+    font-weight: bold;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;    
+    position: relative;
+    vertical-align: middle;
+    margin-left: -101px;/*originally 91px*/
+	color: #ffffff3d;
 }
 
 .charsheet .sheet-tabstoggle[value="1"] ~ span.tab1,
 .charsheet .sheet-tabstoggle[value="2"] ~ span.tab2,
 .charsheet .sheet-tabstoggle[value="3"] ~ span.tab3,
 .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
-    border:solid;
+    border:solid 1px;
+	color: black;
     
 }
 
@@ -115,7 +257,8 @@ body.sheet-darkmode .charsheet .sheet-tabstoggle[value="1"] ~ span.tab1,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="2"] ~ span.tab2,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="3"] ~ span.tab3,
 body.sheet-darkmode .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
-	border:solid;
+	border:solid 1px;
+	color: white;
     
 }
 
@@ -124,7 +267,8 @@ body.sheet-darkmode .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
 .charsheet button.tab_menu2:hover + span.tab2,
 .charsheet button.tab_menu3:hover + span.tab3,
 .charsheet button.tab_menu4:hover + span.tab4{
-    border:solid;    
+    border:solid 1px;  
+	color: black;	
 }
 
 /*this styles the span with the tab information and slides to the left, so it appears underneath the radio button*/
@@ -132,8 +276,8 @@ body.sheet-darkmode .charsheet button.tab_menu1:hover + span.tab1,
 body.sheet-darkmode .charsheet button.tab_menu2:hover + span.tab2,
 body.sheet-darkmode .charsheet button.tab_menu3:hover + span.tab3,
 body.sheet-darkmode .charsheet button.tab_menu4:hover + span.tab4{
-	border:solid;
-    border-radius: 4px;
+	border:solid 1px;
+	color: white;
 }
 
 /*----------- Checkbox Section -------------*/
@@ -436,7 +580,7 @@ body.sheet-darkmode .charsheet textarea.notes {
 }
 
 .charsheet input.card {
-    width: 200px;
+    width: 230px;
 	font-size: 18px !important;
 }
 
