@@ -5,8 +5,11 @@ div.concept,
 div.rule,
 div.gm{
     display: none;
-	/* border-top:solid 1px; */
 	padding-top: 5px;
+}
+
+div.rule{
+padding-top:20px
 }
 
 div.border-sheet-type {
@@ -76,7 +79,6 @@ body.sheet-darkmode input[type=radio].onglrule:checked + span,
 body.sheet-darkmode input[type=radio].onglgm:checked + span {
     font-weight: bold;
     color: #fff;
-    background-color: #1E2021;
     border-bottom-width: 0px;
 	font-family: 'Shadows Into Light';
     font-size:14px;
@@ -104,7 +106,6 @@ body.sheet-darkmode input[type=radio].onglconcept + span,
 body.sheet-darkmode input[type=radio].onglrule + span,
 body.sheet-darkmode input[type=radio].onglgm + span{
     color: #ffffff5e;
-    background-color: #1E2021;
     border-color: #888888;
 }
 input[type=radio].onglcard:checked + span,
@@ -113,7 +114,6 @@ input[type=radio].onglrule:checked + span,
 input[type=radio].onglgm:checked + span {
     font-weight: bold;
     color: black;
-    background-color: white;
     border-bottom-width: 0px;
 	font-family: 'Shadows Into Light';
     font-size:14px;
@@ -146,7 +146,7 @@ div.logo {
 	width: 462px;
     height: auto;
     /* margin-bottom: 35px; */
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_official.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo.png);
     background-size: 375px;
     background-repeat: no-repeat;
 }
@@ -155,7 +155,7 @@ body.sheet-darkmode div.logo {
 	width: 462px;
     height: auto;
     /* margin-bottom: 35px; */
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_official_darkmode.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_darkmode.png);
     background-size: 375px;
     background-repeat: no-repeat;
 }
@@ -180,16 +180,18 @@ img.img {
 
 .charsheet .border-character-up{
 	border-color: #717171;
+	border-width: 1px;
 	border-bottom-style: solid;
     margin-left: -14px;
     padding-left: 27px;
 }	
 
 body.sheet-darkmode .charsheet .border-character-up{
-border-color: #e1e1e147;
-margin-left: -14px;
-padding-left: 27px;
-border-bottom-style: solid;
+	border-color: #e1e1e147;
+	margin-left: -14px;
+	padding-left: 27px;
+	border-bottom-style: solid;
+	border-width: 1px;
 }	
 
 .charsheet .border-character{
@@ -197,6 +199,7 @@ border-bottom-style: solid;
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
+	border-width: 1px;
     margin-left: -14px;
     padding-left: 27px;
     padding-bottom: 16px;
@@ -208,6 +211,7 @@ body.sheet-darkmode .charsheet .border-character{
     border-bottom-style: solid;
     border-left-style: solid;
     border-right-style: solid;
+	border-width: 1px;
     margin-left: -14px;
     padding-left: 27px;
     padding-bottom: 16px;
@@ -466,6 +470,13 @@ button[type="roll"].empty:before{
     width: 750px;
 }
 
+.charsheet div.section-profile p,
+.charsheet div.section-abilities p{  
+    line-height: 1.9;
+}
+
+
+
 /* ----------- Card line-through animation -------------*/
 .charsheet {  
     --receiver-opacity1: 1;
@@ -672,6 +683,13 @@ div.section-abilities {
 	height: 350px;
 }
 
+.charsheet div.section-rule{
+    padding-top: 30px;
+    padding-bottom: 10px;
+	margin-left: 20px;
+	height: 350px;
+}
+
 div.section-regle {
     margin-left: 20px;
 	height: 350px;
@@ -680,6 +698,7 @@ div.section-regle {
 div.section-regle p{
     padding-top: 6px;
 	width: 400px;
+	font-size: 22px;
 }
 
 
