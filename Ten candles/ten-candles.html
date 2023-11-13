@@ -1,6 +1,8 @@
 <div class=main>
-	<img class="logo" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_official_dark.png"/>
-	<button type="roll" name="roll_d20" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{^{roll_success}=[[?{Nombre de dés|1}d6=6]]}}" class="d6"></button><br>
+	<div class="logo">
+	<img class="img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_official_dark.png"/><button type="roll" name="roll_d20" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{^{roll_success}=[[?{Nombre de dés|1}d6=6]]}}" class="d6"></button>
+	</div>
+	<br>
 
 <!-- Pc or GM sheet -->
 			<input type="radio" name="attr_sheet-type" value="1" class="onglconcept" checked /><span data-i18n="TAB_concept">Concept</span>
@@ -19,7 +21,7 @@
 		<button type="action" class="tab_menu1" name="act_1" >Cartes</button><span data-i18n="TAB_card" class="tab1" style="line-height: 40px;">Card</span>
 		<button type="action" class="tab_menu2" name="act_2" >Concept</button><span data-i18n="TAB_concept" class="tab2" style="line-height: 40px;">Concept</span>
 		<button type="action" class="tab_menu3" name="act_3" >Règles</button><span data-i18n="TAB_rule" class="tab3" style="line-height: 40px;">Rules</span>
-		<button type="roll" name="roll_d20" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{^{roll_success}=[[?{Nombre de dés|1}d6=6]]}}" class="d6"></button>
+		<button type="roll" name="roll_d20" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{^{roll_success}=[[?{How many dice?|1}d6=6]]}}" class="d6"></button>
 
 
 	<script type="text/worker">
