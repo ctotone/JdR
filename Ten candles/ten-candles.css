@@ -476,6 +476,19 @@ button[type="roll"].empty:before{
     line-height: 1.9;
 }
 
+.charsheet select {
+  font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+	width: auto;
+	margin-right: 18px;
+	margin-left: -16px;
+	font-family: 'Shadows Into Light';
+	padding: 1px;
+	border-radius: 10px 100px / 120px;
+  
+}
+
 
 
 /* ----------- Card line-through animation -------------*/
@@ -619,16 +632,25 @@ body.sheet-darkmode .charsheet textarea.notes {
 }
 
 .charsheet input.virtue {
-    width: 280px;
+    width: 304px;
 	font-size: 18px !important;
 	opacity: var( --receiver-opacity1);
-	/* text-decoration: var(--receiver-deco1);
-	text-decoration-thickness: var(--receiver-thickness1); */
-	
+}
+
+.charsheet input.virtue_rank {
+    width: 20px;
+	font-size: 18px !important;
+	opacity: var( --receiver-opacity1);
 }
 
 .charsheet input.vice {
-    width: 300px;
+    width: 326px;
+	font-size: 18px !important;
+	opacity: var( --receiver-opacity2);
+}
+
+.charsheet input.vice_rank {
+    width: 20px;
 	font-size: 18px !important;
 	opacity: var( --receiver-opacity2);
 }
@@ -639,13 +661,25 @@ body.sheet-darkmode .charsheet textarea.notes {
 }
 
 .charsheet input.card1 {
-    width: 345px;
+    width: 373px;
+	font-size: 18px !important;
+	opacity: var( --receiver-opacity3);
+}
+
+.charsheet input.moment_rank {
+    width: 20px;
 	font-size: 18px !important;
 	opacity: var( --receiver-opacity3);
 }
 
 .charsheet input.card2 {
-    width: 400px;
+    width: 410px;
+	font-size: 18px !important;
+	opacity: var( --receiver-opacity4);
+}
+
+.charsheet input.extremite_rank {
+    width: 20px;
 	font-size: 18px !important;
 	opacity: var( --receiver-opacity4);
 }
