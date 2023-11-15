@@ -142,8 +142,7 @@ body.sheet-darkmode div.main {
 }
 
 .section-gm div.main {
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/black.jpg);
-    background-size: cover;
+	background-size: cover;
     width: 775px;
     padding: 10px;
 }
@@ -152,7 +151,7 @@ div.logo {
 	width: 462px;
     height: auto;
     /* margin-bottom: 35px; */
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo.png);
+    background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/logo.png);
     background-size: 375px;
     background-repeat: no-repeat;
 }
@@ -161,7 +160,7 @@ body.sheet-darkmode div.logo {
 	width: 462px;
     height: auto;
     /* margin-bottom: 35px; */
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_darkmode.png);
+    background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/logo_darkmode.png);
     background-size: 375px;
     background-repeat: no-repeat;
 }
@@ -399,7 +398,7 @@ input[type="checkbox"].dispchk2:checked  ~ div.dispchk2{
 }
 
 div.d6{
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/D6_tencandles.png); 
   background-size: 55px 55px;
   background-repeat: no-repeat;
   width: 55px;
@@ -407,7 +406,7 @@ div.d6{
 }
 
 div.dicehope{
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/hope_dice_tencandles.png); 
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/hope_dice_tencandles.png); 
   background-size: 30px 30px;
   background-repeat: no-repeat;
   width: 30px;
@@ -425,7 +424,7 @@ button[type="roll"].d6:hover{
 }
 
 button[type="roll"].d6{
-  background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
+  background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/D6_tencandles.png); 
   background-size: 50px 50px;
   background-repeat: no-repeat;
   width: 50px;
@@ -436,7 +435,7 @@ button[type="roll"].d6{
 }
 
 button[type="roll"]body.darkmode .d6{
-  background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png); 
+  background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/D6_tencandles.png); 
   background-size: 50px 50px;
   background-repeat: no-repeat;
   width: 50px;
@@ -447,7 +446,7 @@ button[type="roll"]body.darkmode .d6{
 }
 
 button[type="roll"].dicehope{
-  background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/hope_dice_tencandles.png); 
+  background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/hope_dice_tencandles.png); 
   background-size: 25px 25px;
   background-repeat: no-repeat;
   width: 25px;
@@ -785,22 +784,20 @@ body.sheet-darkmode .section-GM button {
 \*------------------------------------*/
 
 
-/* Smaller margins - remove these if you want the huge default left margin */
-.sheet-rolltemplate-tencandles {
-    margin-left: -37px;
-	
-}
-.withoutavatars .sheet-rolltemplate-tencandles {
+.withoutavatars .sheet-rolltemplate-tencandles,
+.withoutavatars .sheet-rolltemplate-tencandles-hope {
     margin-left: -7px;
 }
 
-.sheet-rolltemplate-tencandles .sheet-container {
+.sheet-rolltemplate-tencandles .sheet-container,
+.sheet-rolltemplate-tencandles-hope .sheet-container {
     border: 2px solid var(--tencandles-border);
     border-radius: 3px;
 }
 
 /* Header formatting - title and subtitle */
-.sheet-rolltemplate-tencandles .sheet-header {
+.sheet-rolltemplate-tencandles .sheet-header,
+.sheet-rolltemplate-tencandles-hope .sheet-header { 
     background-color: var(--tencandles-background-header);
 	color: #eee;
 	text-align: left;
@@ -810,28 +807,39 @@ body.sheet-darkmode .section-GM button {
 	font-family: 'Shadows Into Light';
 }
 
-.sheet-rolltemplate-tencandles .sheet-title {
+.sheet-rolltemplate-tencandles .sheet-title,
+.sheet-rolltemplate-tencandles-hope .sheet-title {
 	font-size: 30px;
 	font-weight: bold;
 }
 
-.sheet-rolltemplate-tencandles .sheet-subtitle {
+.sheet-rolltemplate-tencandles .sheet-subtitle,
+.sheet-rolltemplate-tencandles-hope .sheet-subtitle {
     font-size: 15px;
 	padding-top: 10px;
 }
 
 
-.sheet-rolltemplate-tencandles .sheet-container {
+.sheet-rolltemplate-tencandles .sheet-container,
+.sheet-rolltemplate-tencandles-hope .sheet-container{
     --tencandles-background-header: #555;
 	--tencandles-border: #444141;
 	--tencandles-background-header-darkmode: #1e1e1e;
 	--tencandles-border-darkmode: #000;
 	--tencandles-content-background-darkmode: #bb13132e;
 	--tencandles-content-desc-darkmode:red;
+	
+	--tencandles-background-header-hope: #555;
+	--tencandles-border-hope: #444141;
+	--tencandles-background-header-hope-darkmode: #1e1e1e;
+	--tencandles-border-hope-darkmode: #000;
+	--tencandles-content-background-hope-darkmode: #6c0e863d;
+	--tencandles-content-desc-hope-darkmode:#a614ce3d;
 }
 
 /* Allprops part */
-.sheet-rolltemplate-tencandles .sheet-content {
+.sheet-rolltemplate-tencandles .sheet-content,
+.sheet-rolltemplate-tencandles-hope .sheet-content{
     display: grid;
     background: #FFF;
     /* Header formatting - modify the column layout below */
@@ -840,12 +848,16 @@ body.sheet-darkmode .section-GM button {
     line-height:1.4em;
 }
 
-.sheet-rolltemplate-tencandles .sheet-content > div {
+.sheet-rolltemplate-tencandles .sheet-content > div{
+    padding: 5px;
+}
+.sheet-rolltemplate-tencandles-hope .sheet-content > div{
     padding: 5px;
 }
 
 /* Left column */
-.sheet-rolltemplate-tencandles .sheet-content .sheet-key {
+.sheet-rolltemplate-tencandles .sheet-content .sheet-key,
+.sheet-rolltemplate-tencandles-hope .sheet-content .sheet-key{
     font-weight: bold;
     padding-right: 10px;
     text-align: right;
@@ -855,29 +867,27 @@ body.sheet-darkmode .section-GM button {
 
 /* Make even-numbered rows grey */
 .sheet-rolltemplate-tencandles .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n) {
+.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n),
+.sheet-rolltemplate-tencandles-hope .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tencandles-hope .sheet-content :nth-child(4n){
     background:#EEE;
 }
 
 /* Wide Description field */
-.sheet-rolltemplate-tencandles .sheet-desc {
+.sheet-rolltemplate-tencandles .sheet-desc,
+.sheet-rolltemplate-tencandles-hope .sheet-desc{
     grid-column: span 2;
     padding: 5px;
     text-align: center;
 }
 
-/* Make even-numbered rows grey */
-.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-tencandles .sheet-content :nth-child(4n) {
-}
-
-.sheet-rolltemplate-tencandles .inlinerollresult {
+.sheet-rolltemplate-tencandles .inlinerollresult,
+.sheet-rolltemplate-tencandles-hope .inlinerollresult{
 	background-color: #b3b3b3;
 	color:#111111c2;
 }
 
-/* Dice result in chatcontainer */
-
+/* Conflict Dice result in chatcontainer */
 /* No 6 and No 1 */
 .sheet-rolltemplate-tencandles .inlinerollresult {
 	border: 2px solid;
@@ -902,6 +912,16 @@ body.sheet-darkmode .section-GM button {
 	border-color:red;
 }
 
+/* Hope Dice result in chatcontainer */
+/* No color */
+.sheet-rolltemplate-tencandles-hope .inlinerollresult,
+.sheet-rolltemplate-tencandles-hope .inlinerollresult.importantroll,
+.sheet-rolltemplate-tencandles-hope .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tencandles-hope .inlinerollresult.fullfail{
+	border: 2px solid;
+	border-color:#fff00;
+}
+
 /*------------------------------------*\
   DARK MODE
 \*------------------------------------*/
@@ -924,7 +944,7 @@ body.sheet-darkmode .charsheet {
 /*------------------------------------*\
   #ROLL TEMPLATES DARK MODE
 \*------------------------------------*/
-
+AJOUTER HOPE DICE ROLLTEMPLATE
 
 /* Smaller margins - remove these if you want the huge default left margin */
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-container {
@@ -932,8 +952,18 @@ body.sheet-darkmode .charsheet {
     border-radius: 3px;
 }
 
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tencandles-border-hope-darkmode);
+    border-radius: 3px;
+}
+
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-container {
     border: 2px solid var(--tencandles-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tencandles-border-hope-darkmode);
     border-radius: 3px;
 }
 
@@ -948,12 +978,24 @@ body.sheet-darkmode .charsheet {
 	font-family: 'Shadows Into Light';
 }
 
-.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-title {
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-header {
+    background-color: var(--tencandles-background-header-hope-darkmode);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--tencandles-border-hope-darkmode);
+	font-family: 'Shadows Into Light';
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-title,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-title {
 	font-size: 30px;
 	font-weight: bold;
 }
 
-.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-subtitle {
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-subtitle,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-subtitle {
     font-size: 15px;
 	padding-top: 10px;
 }
@@ -970,7 +1012,18 @@ body.sheet-darkmode .charsheet {
     line-height:1.4em;
 }
 
-.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-content{
+    display: grid;
+    background: var(--tencandles-content-background-hope-darkmode);
+	color: #eee;
+    /* Header formatting - modify the column layout below */
+    grid-template-columns: auto auto;
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-content .sheet-key,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
     font-weight: bold;
     padding-right: 10px;
     text-align: right;
@@ -984,7 +1037,13 @@ body.sheet-darkmode .charsheet {
     background: var(--tencandles-content-background-darkmode);
 }
 
-.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult {
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n) {
+    background: var(--tencandles-content-background-hope-darkmode);
+}
+
+.sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .inlinerollresult,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .inlinerollresult {
 	background-color: var(--tencandles-background-header-darkmode) !important;
 	color:white;
 }
@@ -1015,10 +1074,27 @@ body.sheet-darkmode .charsheet {
 	border-color:red;
 }
 
+/* Hope Dice result in chatcontainer */
+/* No color */
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .inlinerollresult,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .inlinerollresult.importantroll,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .inlinerollresult.fullfail{
+	border: 1px solid;
+	border-color:#fff;
+}
+
 
 /* Wide Description field */
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-desc {
     background: var(--tencandles-content-desc-darkmode);
+	grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
+
+.sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-desc {
+    background: var(--tencandles-content-desc-hope-darkmode);
 	grid-column: span 2;
     padding: 5px;
     text-align: center;
