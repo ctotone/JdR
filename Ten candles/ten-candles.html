@@ -29,7 +29,7 @@
 				<p><button type="roll" name="roll_Hope" data-i18n-title="hope_dice" title="Hope Dice" value="&{template:tencandles-hope} {{title=^{roll_hope_dice_title}}}{{^{roll_success}=[[1d6>5]]}}" class="dicehope"></button><input class="card1" type="text" name="attr_moment"></textarea></span><input class="moment_rank" type="text" name="attr_moment_rank"></p>
 				<input type="hidden" class="extremite_check" name="attr_extremite_check" value='0'>
 				<p><input type="checkbox" name="attr_extremite_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-extremite_check" data-i18n="brink">Brink : "Someone seen you..."</span></p>
-				<p><input class="card2" type="text" name="attr_extremite"><input class="extremite_rank" type="text" name="attr_brink_rank" value="4" disabled /></p>
+				<p><input class="card2" type="text" name="attr_extremite"></p>
 			</div>
 		</div>
 	</div>
@@ -119,7 +119,7 @@
   </div>
 </rolltemplate>
 
-<!-- Conflict Dice -->
+<!-- Hope Dice -->
 <rolltemplate class="sheet-rolltemplate-tencandles-hope">
   <div class="sheet-container sheet-color-{{color}}">
     <div class="sheet-header">
