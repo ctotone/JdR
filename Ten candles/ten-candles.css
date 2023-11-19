@@ -796,9 +796,18 @@ body.sheet-darkmode .section-GM button {
 }
 
 /* Header formatting - title and subtitle */
-.sheet-rolltemplate-tencandles .sheet-header,
-.sheet-rolltemplate-tencandles-hope .sheet-header { 
+.sheet-rolltemplate-tencandles .sheet-header { 
     background-color: var(--tencandles-background-header);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--tencandles-border);
+	font-family: 'Shadows Into Light';
+}
+
+.sheet-rolltemplate-tencandles-hope .sheet-header { 
+    background-color: var(--tencandles-background-header-hope);
 	color: #eee;
 	text-align: left;
 	text-transform: capitalize;
@@ -822,14 +831,14 @@ body.sheet-darkmode .section-GM button {
 
 .sheet-rolltemplate-tencandles .sheet-container,
 .sheet-rolltemplate-tencandles-hope .sheet-container{
-    --tencandles-background-header: #555;
+    --tencandles-background-header: #7b0505cf;
 	--tencandles-border: #444141;
 	--tencandles-background-header-darkmode: #1e1e1e;
 	--tencandles-border-darkmode: #000;
 	--tencandles-content-background-darkmode: #bb13132e;
 	--tencandles-content-desc-darkmode:red;
 	
-	--tencandles-background-header-hope: #555;
+	--tencandles-background-header-hope: #68276d;
 	--tencandles-border-hope: #444141;
 	--tencandles-background-header-hope-darkmode: #1e1e1e;
 	--tencandles-border-hope-darkmode: #000;
@@ -883,7 +892,7 @@ body.sheet-darkmode .section-GM button {
 
 .sheet-rolltemplate-tencandles .inlinerollresult,
 .sheet-rolltemplate-tencandles-hope .inlinerollresult{
-	background-color: #b3b3b3;
+	background-color: #b3b3b300;
 	color:#111111c2;
 }
 
