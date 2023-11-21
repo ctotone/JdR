@@ -9,32 +9,51 @@
 	<br>
 
 	<!-- TAB -->
-	<input type="radio" name="attr_sheet-type" value="1" class="onglconcept" checked /><span data-i18n="TAB_concept">Concept</span>
-	<input type="radio" name="attr_sheet-type" value="0" class="onglcard" /><span data-i18n="TAB_card">Card</span>
-	<input type="radio" name="attr_sheet-type" value="2" class="onglrule" /><span data-i18n="TAB_rule">Rules</span>
-	<input type="radio" name="attr_sheet-type" value="3" class="onglgm" /><span data-i18n="TAB_gm">GM Sheet</span>
+	<input type="radio" name="attr_sheet-type" value="1" class="onglcharacter" checked /><span data-i18n="TAB_character">Character</span>
+	<input type="radio" name="attr_sheet-type" value="0" class="onglcapacity" /><span data-i18n="TAB_capacity">Capacity</span>
+	<input type="radio" name="attr_sheet-type" value="2" class="ongloption" /><span data-i18n="TAB_option">Option</span>
+	<!-- <input type="radio" name="attr_sheet-type" value="3" class="onglgm" /><span data-i18n="TAB_gm">GM Sheet</span> -->
 			
 			
-	<!-- Carte Tab -->			
-	<div class="card">
+	<!-- Character Tab -->			
+	<div class="character">
 		<div class="section-profile">
 			<div class="profile-text">
 				<p></p>
-				<input type="hidden" class="vertu_check" name="attr_vertu_check" value='0'>
-				<p><input type="checkbox" name="attr_vertu_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-vertu_check" data-i18n="virtue">Virtue : </span><input class="virtue" type="text" name="attr_vertu"><input class="virtue_rank" type="text" name="attr_vertu_rank"></p>
-				<input type="hidden" class="vice_check" name="attr_vice_check" value='0'>
+				<p><span data-i18n="name">Name</span><input class="virtue" type="text" name="attr_character_name"></p>
+				<p><span data-i18n="profil">Profil</span><input class="virtue" type="text" name="attr_profil"></p>
+				<p><span data-i18n="style">Style</span><input class="virtue" type="text" name="attr_style"></p>
+				<p><span data-i18n="background">Background</span></p>
+				<p><input class="virtue" type="textarea" name="attr_background"></p>
+				<p><span data-i18n="bond">Bond</span></p>
+				<p><input class="virtue" type="textarea" name="attr_bond"></p>
+				<p><span data-i18n="possession">Possession</span></p>
+				<p><input class="virtue" type="text" name="attr_possession1"><input class="virtue" type="text" name="attr_possession2"></p>
+				<p><input class="virtue" type="text" name="attr_possession3"><input class="virtue" type="text" name="attr_possession4"></p>
+				<p><input class="virtue" type="text" name="attr_possession5"><input class="virtue" type="text" name="attr_possession6"></p>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<!-- <input type="hidden" class="vice_check" name="attr_vice_check" value='0'>
 				<p><input type="checkbox" name="attr_vice_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-vice_check" data-i18n="vice">Vice : </span><input class="vice" type="text" name="attr_vice"><input class="vice_rank" type="text" name="attr_vice_rank"></p>
 				<input type="hidden" class="moment_check" name="attr_moment_check" value='0'>
 				<p><input type="checkbox" name="attr_moment_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-moment_check" data-i18n="moment">Moment : "I will find hope..."</p>
 				<p><button type="roll" name="roll_Hope" data-i18n-title="hope_dice" title="Hope Dice" value="&{template:tencandles-hope} {{title=^{roll_hope_dice_title}}}{{hope=[[1d6>5]]}}" class="dicehope"></button><input class="card1" type="text" name="attr_moment"></textarea></span><input class="moment_rank" type="text" name="attr_moment_rank"></p>
 				<input type="hidden" class="extremite_check" name="attr_extremite_check" value='0'>
 				<p><input type="checkbox" name="attr_extremite_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-extremite_check" data-i18n="brink">Brink : "Someone seen you..."</span></p>
-				<p><input class="card2" type="text" name="attr_extremite"></p>
+				<p><input class="card2" type="text" name="attr_extremite"></p> -->
 			</div>
 		</div>
 	</div>
-	<!-- Concept Tab -->
-	<div class="concept">
+	<!-- Capacity Tab -->
+	<div class="capacity">
 		<div class="section-abilities">	
 			<div class="profile-text">
 				<p></p>
@@ -49,8 +68,8 @@
 
 	</div>
 
-	<!-- Rules Tab -->
-	<div class="rule">
+	<!-- Option Tab -->
+	<div class="option">
 		<div class="section-regle">	
 			<div class="profile-text">
 				<p><span data-i18n="vice_virtue">Vice and Virtue : Once the card is burned, allows you to reroll all 1s.</span></p>
