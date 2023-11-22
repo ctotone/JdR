@@ -145,14 +145,14 @@ input[type=radio].onglcharacter:checked ~ div.character{
 input[type=radio].ongloption:checked ~ div.option{
     display: block;
 }
-input[type=radio].onglgm:checked ~ div.gm{
+input[type=radio].onglnotes:checked ~ div.gm{
     display: block;
 } 
 
 input[type=radio].onglcharacter,
 input[type=radio].onglcapacity,
 input[type=radio].ongloption,
-input[type=radio].onglgm{
+input[type=radio].onglnotes{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -169,7 +169,7 @@ input[type=radio].onglgm{
 input[type=radio].onglcharacter + span,
 input[type=radio].onglcapacity + span,
 input[type=radio].ongloption + span,
-input[type=radio].onglgm + span{
+input[type=radio].onglnotes + span{
     color: #333333;
     font-size:15px;
     text-align:center;
@@ -196,7 +196,7 @@ input[type=radio].onglgm + span{
 body.sheet-darkmode input[type=radio].onglcharacter:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity:checked + span,
 body.sheet-darkmode input[type=radio].ongloption:checked + span,
-body.sheet-darkmode input[type=radio].onglgm:checked + span {
+body.sheet-darkmode input[type=radio].onglnotes:checked + span {
     font-weight: bold;
     color: #fff;
     border-bottom-width: 0px;
@@ -207,7 +207,7 @@ body.sheet-darkmode input[type=radio].onglgm:checked + span {
 body.sheet-darkmode input[type=radio].onglcharacter,
 body.sheet-darkmode input[type=radio].onglcapacity,
 body.sheet-darkmode input[type=radio].ongloption,
-body.sheet-darkmode input[type=radio].onglgm{
+body.sheet-darkmode input[type=radio].onglnotes{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -224,14 +224,14 @@ body.sheet-darkmode input[type=radio].onglgm{
 body.sheet-darkmode input[type=radio].onglcharacter + span,
 body.sheet-darkmode input[type=radio].onglcapacity + span,
 body.sheet-darkmode input[type=radio].ongloption + span,
-body.sheet-darkmode input[type=radio].onglgm + span{
+body.sheet-darkmode input[type=radio].onglnotes + span{
     color: #ffffff5e;
     border-color: #888888;
 }
 input[type=radio].onglcharacter:checked + span,
 input[type=radio].onglcapacity:checked + span,
 input[type=radio].ongloption:checked + span,
-input[type=radio].onglgm:checked + span {
+input[type=radio].onglnotes:checked + span {
     font-weight: bold;
     color: black;
     border-bottom-width: 0px;
