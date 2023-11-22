@@ -4,7 +4,7 @@
 <div class=main>
 	<!-- Logo -->
 	<div class="logo">
-		<img class="img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/logo_official_dark.png"/><button type="roll" name="roll_Conflict" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{conflict=[[?{How many dice?|1}d6s=6]]}}" class="d6"></button>
+		<img class="img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dirty-logo.PNG"/><button type="roll" name="roll_Conflict" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{conflict=[[?{How many dice?|1}d6s=6]]}}" class="d6"></button>
 	</div>
 	<br>
 
@@ -12,25 +12,79 @@
 	<input type="radio" name="attr_sheet-type" value="1" class="onglcharacter" checked /><span data-i18n="TAB_character">Character</span>
 	<input type="radio" name="attr_sheet-type" value="0" class="onglcapacity" /><span data-i18n="TAB_capacity">Capacity</span>
 	<input type="radio" name="attr_sheet-type" value="2" class="ongloption" /><span data-i18n="TAB_option">Option</span>
-	<!-- <input type="radio" name="attr_sheet-type" value="3" class="onglgm" /><span data-i18n="TAB_gm">GM Sheet</span> -->
+	<input type="radio" name="attr_sheet-type" value="3" class="onglgm" /><span data-i18n="TAB_gm">GM Sheet</span>
 			
 			
 	<!-- Character Tab -->			
 	<div class="character">
 		<div class="section-profile">
 			<div class="profile-text">
-				<p></p>
-				<p><span data-i18n="name">Name</span><input class="virtue" type="text" name="attr_character_name"></p>
-				<p><span data-i18n="profil">Profil</span><input class="virtue" type="text" name="attr_profil"></p>
-				<p><span data-i18n="style">Style</span><input class="virtue" type="text" name="attr_style"></p>
-				<p><span data-i18n="background">Background</span></p>
-				<p><input class="virtue" type="textarea" name="attr_background"></p>
-				<p><span data-i18n="bond">Bond</span></p>
-				<p><input class="virtue" type="textarea" name="attr_bond"></p>
-				<p><span data-i18n="possession">Possession</span></p>
-				<p><input class="virtue" type="text" name="attr_possession1"><input class="virtue" type="text" name="attr_possession2"></p>
-				<p><input class="virtue" type="text" name="attr_possession3"><input class="virtue" type="text" name="attr_possession4"></p>
-				<p><input class="virtue" type="text" name="attr_possession5"><input class="virtue" type="text" name="attr_possession6"></p>
+				<div class="wrapper">
+					<div class="name">
+						<p><span data-i18n="name">Name</span><input class="simple" type="text" name="attr_character_name"></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="profil">
+						<p><span data-i18n="profil">Profil</span><input class="simple" type="text" name="attr_profil"></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="style">
+						<p><span data-i18n="style">Style</span><input class="simple" type="text" name="attr_style"></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="background">
+						<p><span data-i18n="background">Background</span></p>
+						<p><textarea class="notes" name="attr_background" autocomplete="off" ></textarea></p></div>
+				</div>
+				<div class="wrapper">
+					<div class="bond">
+						<p><span data-i18n="bond">Bond</span></p>
+						<p><textarea class="notes" name="attr_bond"></textarea></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="possession">
+						<p><span data-i18n="possession">Possession</span></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="possession1">
+						<p><input class="semi" type="text" name="attr_possession1"></p>
+						<p><input class="semi" type="text" name="attr_possession2"></p>
+						<p><input class="semi" type="text" name="attr_possession3"></p>
+					</div>
+					<div class="possession2">
+						<p><input class="semi" type="text" name="attr_possession4"></p>
+						<p><input class="semi" type="text" name="attr_possession5"></p>
+						<p><input class="semi" type="text" name="attr_possession6"></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="state_title">
+						<p><span data-i18n="state">State</span></p>
+					</div>
+					<div class="trauma_title">
+						<p><span data-i18n="trauma">Trauma</span></p>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="state">
+						<p><input class="semi" type="text" name="attr_state1"></p>
+						<p><input class="semi" type="text" name="attr_state2"></p>
+						<p><input class="semi" type="text" name="attr_state3"></p>
+					</div>
+					<div class="trauma">
+						<p><input class="semi" type="text" name="attr_trauma1"></p>
+						<p><input class="semi" type="text" name="attr_trauma2"></p>
+						<p><input class="semi" type="text" name="attr_trauma3"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 				
 				
 				
@@ -49,9 +103,7 @@
 				<input type="hidden" class="extremite_check" name="attr_extremite_check" value='0'>
 				<p><input type="checkbox" name="attr_extremite_check" data-i18n-title="burn" title="Check when the card is burned"><span class="receiver-extremite_check" data-i18n="brink">Brink : "Someone seen you..."</span></p>
 				<p><input class="card2" type="text" name="attr_extremite"></p> -->
-			</div>
-		</div>
-	</div>
+
 	<!-- Capacity Tab -->
 	<div class="capacity">
 		<div class="section-abilities">	
