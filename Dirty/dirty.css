@@ -391,6 +391,23 @@ input[type=radio].onglnotes:checked + span {
     cursor: pointer;
 }
 
+body.sheet-darkmode .charsheet button.sheet-profil_reserve,
+body.sheet-darkmode .charsheet button.sheet-beat_reserve,
+body.sheet-darkmode .charsheet button.sheet-endure_reserve,
+body.sheet-darkmode .charsheet button.sheet-cross_reserve,
+body.sheet-darkmode .charsheet button.sheet-know_reserve,
+body.sheet-darkmode .charsheet button.sheet-think_reserve,
+body.sheet-darkmode .charsheet button.sheet-use_reserve,
+body.sheet-darkmode .charsheet button.sheet-influence_reserve,
+body.sheet-darkmode .charsheet button.sheet-sense_reserve,
+body.sheet-darkmode .charsheet button.sheet-feel_reserve,
+body.sheet-darkmode .charsheet button.sheet-injury_reserve,
+body.sheet-darkmode .charsheet button.sheet-balance_reserve,
+body.sheet-darkmode .charsheet button.sheet-link_reserve {
+	border: solid 2px #000000;
+    background-color: #ffffff33;
+}
+
 .charsheet button:hover.sheet-profil_reserve,
 .charsheet button:hover.sheet-beat_reserve,
 .charsheet button:hover.sheet-endure_reserve,
@@ -411,6 +428,23 @@ input[type=radio].onglnotes:checked + span {
     align-items: center;
     background-color: #650000;
     font-size: 20px;
+    transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-profil_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-beat_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-endure_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-cross_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-know_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-think_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-use_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-influence_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-sense_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-feel_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-injury_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-balance_reserve,
+body.sheet-darkmode .charsheet button:hover.sheet-link_reserve {
+	background-color: #810303;
     transition: 0.7s;
 }
 
@@ -436,6 +470,23 @@ input[type=radio].onglnotes:checked + span {
     font-size: 20px;
     color: #e7e5e5;
     font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-profil_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-beat_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-endure_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-cross_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-know_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-think_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-use_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-influence_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-sense_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-feel_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-injury_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-balance_reserve > span,
+body.sheet-darkmode .charsheet button.sheet-link_reserve > span {
+    background-color: #810303;
+    color: #d3d3d3;
 }
 
 /* Hide the "checked" section of the radio if the hidden attribute value is greater than the button value */
@@ -727,10 +778,14 @@ body.sheet-darkmode .charsheet textarea.notes {
 
 body.sheet-darkmode .charsheet input.simple,
 body.sheet-darkmode .charsheet input.semi,
-body.sheet-darkmode .charsheet textarea.notes,
-body.sheet-darkmode .charsheet input.capacity_value {
+body.sheet-darkmode .charsheet textarea.notes {
    color: #ffffffc2;
 }
+
+body.sheet-darkmode .charsheet input.capacity_value {
+   color: #1f1f1fc4;
+}
+
 
 /*----------- Capacity Section -------------*/
 
@@ -753,6 +808,10 @@ body.sheet-darkmode .charsheet input.capacity_value {
     font-size: 20px;
     display: flex;
     width: 160px;
+}
+
+body.sheet-darkmode .title_capacity {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background_darkmode.png);
 }
 
 .header-grid {
