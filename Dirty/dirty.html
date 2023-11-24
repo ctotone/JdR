@@ -92,7 +92,7 @@
 	<div class="capacity">
 		<div class="header-grid"></div>
 			<div class="wrapper_capacity">
-				<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div><div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" ></div>
+				<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div><div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
 					<div class="reserve_rank">
 						<div class="sheet-dots">
 						  <input type="hidden" name="attr_profil_reserve" class="sheet-profil_reserve" value="1" />
@@ -118,7 +118,7 @@
 			
 		<div class="header-grid"></div>
 			<div class="wrapper_capacity">
-				<div class="title_capacity" style="background-image: url('https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/beat_background.png');"><span data-i18n="capacity_beat">BEAT</span></div><div class="value_contener"><input class="capacity_value" type="text" name="attr_beat_value" ></div>
+				<div class="title_capacity" style="background-image: url('https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/beat_background.png');"><span data-i18n="capacity_beat">BEAT</span></div><div class="value_contener"><input class="capacity_value" type="text" name="attr_beat_value" placeholder="0" /></div>
 					<div class="reserve_rank">
 						<div class="sheet-dots">
 						  <input type="hidden" name="attr_beat_reserve" class="sheet-beat_reserve" value="1" />
@@ -388,6 +388,31 @@
 					</div>
 				
 			</div>
+			
+			<div class="header-grid"></div>
+			<div class="wrapper_capacity">
+				<div class="title_capacity" style="background-image: url('https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background.png');"><span data-i18n="capacity_link">LINK</span></div>
+					<div class="reserve_rank">
+						<div class="sheet-dots">
+						  <input type="hidden" name="attr_link_reserve" class="sheet-link_reserve" value="1" />
+						  <button type="action" name="act_link_reserve_1" class="sheet-link_reserve">
+							<span class="sheet-checked">0</span></button>
+						  <button type="action" name="act_link_reserve_2" class="sheet-link_reserve sheet-gt-1">
+							<span class="sheet-checked">1</span></button>
+						  <button type="action" name="act_link_reserve_3" class="sheet-link_reserve sheet-gt-1 sheet-gt-2">
+							<span class="sheet-checked">2</span></button>
+						  <button type="action" name="act_link_reserve_4" class="sheet-link_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3">
+							<span class="sheet-checked">3</span></button>
+						  <button type="action" name="act_link_reserve_5" class="sheet-link_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
+							<span class="sheet-checked">4</span></button>
+						  <button type="action" name="act_link_reserve_6" class="sheet-link_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
+							<span class="sheet-checked">6</span></button>
+						  <button type="action" name="act_link_reserve_7" class="sheet-link_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
+							<span class="sheet-checked">6</span></button>
+						</div>
+					</div>
+				
+			</div>
 	</div>
 	
 	<!-- Notes Tab -->
@@ -573,6 +598,15 @@
     on(`clicked:balance_reserve_${value}`, function() {
       setAttrs({
         "balance_reserve": value
+      });
+    });
+  });
+  
+  const link_reserveValues = ["1","2","3","4","5","6","7"];
+  link_reserveValues.forEach(function(value) {
+    on(`clicked:link_reserve_${value}`, function() {
+      setAttrs({
+        "link_reserve": value
       });
     });
   });
