@@ -934,14 +934,14 @@ input[type=number] {
 }
 
 
+/* DEV INJURY BALANCE */
 
-/* Configure the button styling. This example makes it look like a checkbox. */
 .charsheet button.sheet-injury1,
 .charsheet button.sheet-injury2,
 .charsheet button.sheet-injury3,
-.charsheet button.sheet-injury4,
-.charsheet button.sheet-injury5,
-.charsheet button.sheet-injury6{
+.charsheet button.sheet-balance1,
+.charsheet button.sheet-balance2,
+.charsheet button.sheet-balance3{
 	width: 27px;
     height: 27px;
     border: solid 2px #000000;
@@ -954,19 +954,79 @@ input[type=number] {
     cursor: pointer;
 }
 
+.charsheet button.sheet-injury4,
+.charsheet button.sheet-balance4{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #994a04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 15px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+.charsheet button.sheet-injury5,
+.charsheet button.sheet-balance5{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #994a04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 4px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+.charsheet button.sheet-injury6,
+.charsheet button.sheet-balance6{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #8e0303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 4px;
+	padding: 0px;
+    cursor: pointer;
+	margin-left:15px;
+}
+
 .charsheet button:hover.sheet-injury1,
 .charsheet button:hover.sheet-injury2,
 .charsheet button:hover.sheet-injury3,
+.charsheet button:hover.sheet-balance1,
+.charsheet button:hover.sheet-balance2,
+.charsheet button:hover.sheet-balance3{
+	background-color: #000000;
+    transition: 0.7s;
+}
+
 .charsheet button:hover.sheet-injury4,
 .charsheet button:hover.sheet-injury5,
-.charsheet button:hover.sheet-injury6{
-	background-color: #810303;
+.charsheet button:hover.sheet-balance4,
+.charsheet button:hover.sheet-balance5{
+	background-color: #994a04;
+    transition: 0.7s;
+}
+
+.charsheet button:hover.sheet-injury6,
+.charsheet button:hover.sheet-balance6{
+	background-color: #8e0303;
     transition: 0.7s;
 }
 
 .charsheet button.sheet-injury1 > span,
 .charsheet button.sheet-injury2 > span,
-.charsheet button.sheet-injury3 > span{
+.charsheet button.sheet-injury3 > span,
+.charsheet button.sheet-balance1 > span,
+.charsheet button.sheet-balance2 > span,
+.charsheet button.sheet-balance3 > span{
 	width: 27px;
     height: 27px;
     display: flex;
@@ -979,37 +1039,46 @@ input[type=number] {
 }
 
 .charsheet button.sheet-injury4 > span,
-.charsheet button.sheet-injury5 > span{
+.charsheet button.sheet-injury5 > span,
+.charsheet button.sheet-balance4 > span,
+.charsheet button.sheet-balance5 > span{
 	width: 27px;
     height: 27px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: #994a04;
     font-size: 20px;
     color: #e7e5e5;
     font-weight: bold;
 }
 
-.charsheet button.sheet-injury6 > span{
+.charsheet button.sheet-injury6 > span,
+.charsheet button.sheet-balance6 > span{
 	width: 27px;
     height: 27px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000;
+    background-color: #8e0303;
     font-size: 20px;
     color: #e7e5e5;
     font-weight: bold;
 }
 
-/* Hide the "checked" section of the toggle if the attribute value is not "1". */
+
 .charsheet input.sheet-injury1:not([value="1"]) ~ button.sheet-injury1 > span.sheet-checked1,
 .charsheet input.sheet-injury2:not([value="1"]) ~ button.sheet-injury2 > span.sheet-checked2,
 .charsheet input.sheet-injury3:not([value="1"]) ~ button.sheet-injury3 > span.sheet-checked3,
 .charsheet input.sheet-injury4:not([value="1"]) ~ button.sheet-injury4 > span.sheet-checked4,
 .charsheet input.sheet-injury5:not([value="1"]) ~ button.sheet-injury5 > span.sheet-checked5,
-.charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6{
+.charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6,
+.charsheet input.sheet-balance1:not([value="1"]) ~ button.sheet-balance1 > span.sheet-checked11,
+.charsheet input.sheet-balance2:not([value="1"]) ~ button.sheet-balance2 > span.sheet-checked12,
+.charsheet input.sheet-balance3:not([value="1"]) ~ button.sheet-balance3 > span.sheet-checked13,
+.charsheet input.sheet-balance4:not([value="1"]) ~ button.sheet-balance4 > span.sheet-checked14,
+.charsheet input.sheet-balance5:not([value="1"]) ~ button.sheet-balance5 > span.sheet-checked15,
+.charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16{
   display: none;
 }
 
