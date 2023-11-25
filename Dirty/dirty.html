@@ -364,8 +364,6 @@
 							<input type="hidden" class="sheet-injury6" name="attr_injury6_flag" />
 							<button type="action" name="act_injury6" class="sheet-injury6">
 							<span class="sheet-checked6">6</span></button>
-													
-													
 						</div>
 					</div>
 				
@@ -374,23 +372,24 @@
 				<div class="title_balance"><span data-i18n="capacity_balance">BALANCE</span></div>
 					<div class="reserve_rank">
 						<div class="sheet-dots">
-							  <input type="hidden" name="attr_balance_reserve" class="sheet-balance_reserve" value="1" />
-							  <button type="action" name="act_balance_reserve_1" class="sheet-balance_reserve">
-								<span class="sheet-checked">0</span></button>
-							  <button type="action" name="act_balance_reserve_2" class="sheet-balance_reserve sheet-gt-1">
-								<span class="sheet-checked">1</span></button>
-							  <button type="action" name="act_balance_reserve_3" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2">
-								<span class="sheet-checked">2</span></button>
-							  <button type="action" name="act_balance_reserve_4" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3">
-								<span class="sheet-checked">3</span></button>
-							  <button type="action" name="act_balance_reserve_5" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-								<span class="sheet-checked">4</span></button>
-							  <button type="action" name="act_balance_reserve_6" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-								<span class="sheet-checked">5</span></button>
-							  <button type="action" name="act_balance_reserve_7" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-								<span class="sheet-checked">6</span></button>
-							  <button type="action" name="act_balance_reserve_8" class="sheet-balance_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-								<span class="sheet-checked" style="font-family:Pictos;">Y</span></button>
+						  	<input type="hidden" class="sheet-balance1" name="attr_balance1_flag" />
+							<button type="action" name="act_balance1" class="sheet-balance1">
+							<span class="sheet-checked11">1</span></button>
+							<input type="hidden" class="sheet-balance2" name="attr_balance2_flag" />
+							<button type="action" name="act_balance2" class="sheet-balance2">
+							<span class="sheet-checked12">2</span></button>
+							<input type="hidden" class="sheet-balance3" name="attr_balance3_flag" />
+							<button type="action" name="act_balance3" class="sheet-balance3">
+							<span class="sheet-checked13">3</span></button>
+							<input type="hidden" class="sheet-balance4" name="attr_balance4_flag" />
+							<button type="action" name="act_balance4" class="sheet-balance4">
+							<span class="sheet-checked14">4</span></button>
+							<input type="hidden" class="sheet-balance5" name="attr_balance5_flag" />
+							<button type="action" name="act_balance5" class="sheet-balance5">
+							<span class="sheet-checked15">5</span></button>
+							<input type="hidden" class="sheet-balance6" name="attr_balance6_flag" />
+							<button type="action" name="act_balance6" class="sheet-balance6">
+							<span class="sheet-checked16">6</span></button>
 						</div>
 					</div>
 				
@@ -532,20 +531,7 @@
     });
   });
 
-	const toggleList = ["injury1","injury2","injury3","injury4","injury5","injury6"];
-	toggleList.forEach(function(button) {
-	on(`clicked:${button}`, function() {
-	  const flag = `${button}_flag`;
-	  // Check the current value of the hidden checked.
-	  getAttrs([flag], function(v) {
-		// Update the value of the hidden checked to "1" for checked or "0" for unchecked.
-		setAttrs({
-		  [flag]: v[flag] !== "1" ? "1" : "0"
-		});
-	  });
-	});
-	}); 
-
+	
   const feel_reserveValues = ["1","2","3","4","5","6","7","8"];
   feel_reserveValues.forEach(function(value) {
     on(`clicked:feel_reserve_${value}`, function() {
@@ -556,14 +542,18 @@
   });
 
 
-  const balance_reserveValues = ["1","2","3","4","5","6","7","8"];
-  balance_reserveValues.forEach(function(value) {
-    on(`clicked:balance_reserve_${value}`, function() {
-      setAttrs({
-        "balance_reserve": value
-      });
-    });
-  });
+  const toggleList = ["injury1","injury2","injury3","injury4","injury5","injury6","balance1","balance2","balance3","balance4","balance5","balance6"];
+	toggleList.forEach(function(button) {
+	on(`clicked:${button}`, function() {
+	  const flag = `${button}_flag`;
+	  getAttrs([flag], function(v) {
+		setAttrs({
+		  [flag]: v[flag] !== "1" ? "1" : "0"
+		});
+	  });
+	});
+	}); 
+	
   
   const link_reserveValues = ["1","2","3","4","5","6","7","8"];
   link_reserveValues.forEach(function(value) {
