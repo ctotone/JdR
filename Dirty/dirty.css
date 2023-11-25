@@ -242,6 +242,7 @@ div.capacity{
 	display: none;
 	padding-top: 5px;
 	width: 650px;
+    margin-left: -22px;
 }
 
 div.border-sheet-type {
@@ -365,7 +366,7 @@ input[type=radio].onglnotes:checked + span {
 	color:red;
 }
 
-/* Configure the button styling. This example makes it look like a radio. */
+
 .charsheet button.sheet-profil_reserve,
 .charsheet button.sheet-beat_reserve,
 .charsheet button.sheet-endure_reserve,
@@ -376,8 +377,6 @@ input[type=radio].onglnotes:checked + span {
 .charsheet button.sheet-influence_reserve,
 .charsheet button.sheet-sense_reserve,
 .charsheet button.sheet-feel_reserve,
-.charsheet button.sheet-injury_reserve,
-.charsheet button.sheet-balance_reserve,
 .charsheet button.sheet-link_reserve {
 	width: 27px;
     height: 27px;
@@ -391,6 +390,7 @@ input[type=radio].onglnotes:checked + span {
     cursor: pointer;
 }
 
+
 body.sheet-darkmode .charsheet button.sheet-profil_reserve,
 body.sheet-darkmode .charsheet button.sheet-beat_reserve,
 body.sheet-darkmode .charsheet button.sheet-endure_reserve,
@@ -401,11 +401,99 @@ body.sheet-darkmode .charsheet button.sheet-use_reserve,
 body.sheet-darkmode .charsheet button.sheet-influence_reserve,
 body.sheet-darkmode .charsheet button.sheet-sense_reserve,
 body.sheet-darkmode .charsheet button.sheet-feel_reserve,
-body.sheet-darkmode .charsheet button.sheet-injury_reserve,
-body.sheet-darkmode .charsheet button.sheet-balance_reserve,
 body.sheet-darkmode .charsheet button.sheet-link_reserve {
 	border: solid 2px #000000;
     background-color: #ffffff33;
+}
+
+
+.charsheet button.sheet-injury1,
+.charsheet button.sheet-injury2,
+.charsheet button.sheet-injury3,
+.charsheet button.sheet-balance1,
+.charsheet button.sheet-balance2,
+.charsheet button.sheet-balance3{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 4px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury1,
+body.sheet-darkmode .charsheet button.sheet-injury2,
+body.sheet-darkmode .charsheet button.sheet-injury3,
+body.sheet-darkmode .charsheet button.sheet-balance1,
+body.sheet-darkmode .charsheet button.sheet-balance2,
+body.sheet-darkmode .charsheet button.sheet-balance3{
+	border: solid 2px #000000;
+    background-color: #ffffff33;
+}
+
+.charsheet button.sheet-injury4,
+.charsheet button.sheet-balance4{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #994a04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 15px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury4,
+body.sheet-darkmode .charsheet button.sheet-balance4{
+	border: solid 2px #5b0202;
+    background-color: #ffffff33;
+}
+
+.charsheet button.sheet-injury5,
+.charsheet button.sheet-balance5{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #994a04;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 4px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury5,
+body.sheet-darkmode .charsheet button.sheet-balance5{
+	border: solid 2px #5b0202;
+    background-color: #ffffff33;   
+}
+
+.charsheet button.sheet-injury6,
+.charsheet button.sheet-balance6{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #8e0303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 4px;
+	padding: 0px;
+    cursor: pointer;
+	margin-left:15px;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury6,
+body.sheet-darkmode .charsheet button.sheet-balance6{
+	border: solid 2px #8e0303;
+    background-color: #ffffff33; 
 }
 
 .charsheet button:hover.sheet-profil_reserve,
@@ -418,16 +506,9 @@ body.sheet-darkmode .charsheet button.sheet-link_reserve {
 .charsheet button:hover.sheet-influence_reserve,
 .charsheet button:hover.sheet-sense_reserve,
 .charsheet button:hover.sheet-feel_reserve,
-.charsheet button:hover.sheet-injury_reserve,
 .charsheet button:hover.sheet-balance_reserve,
 .charsheet button:hover.sheet-link_reserve {
-	width: 27px;
-    height: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #650000;
-    font-size: 20px;
+	background-color: #650000;
     transition: 0.7s;
 }
 
@@ -441,11 +522,54 @@ body.sheet-darkmode .charsheet button:hover.sheet-use_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-influence_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-sense_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-feel_reserve,
-body.sheet-darkmode .charsheet button:hover.sheet-injury_reserve,
-body.sheet-darkmode .charsheet button:hover.sheet-balance_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-link_reserve {
 	background-color: #810303;
+}
+
+
+.charsheet button:hover.sheet-injury1,
+.charsheet button:hover.sheet-injury2,
+.charsheet button:hover.sheet-injury3,
+.charsheet button:hover.sheet-balance1,
+.charsheet button:hover.sheet-balance2,
+.charsheet button:hover.sheet-balance3{
+	background-color: #000000;
     transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury1,
+body.sheet-darkmode .charsheet button:hover.sheet-injury2,
+body.sheet-darkmode .charsheet button:hover.sheet-injury3,
+body.sheet-darkmode .charsheet button:hover.sheet-balance1,
+body.sheet-darkmode .charsheet button:hover.sheet-balance2,
+body.sheet-darkmode .charsheet button:hover.sheet-balance3{
+	background-color: #810303;
+}
+
+.charsheet button:hover.sheet-injury4,
+.charsheet button:hover.sheet-injury5,
+.charsheet button:hover.sheet-balance4,
+.charsheet button:hover.sheet-balance5{
+	background-color: #994a04;
+    transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury4,
+body.sheet-darkmode .charsheet button:hover.sheet-injury5,
+body.sheet-darkmode .charsheet button:hover.sheet-balance4,
+body.sheet-darkmode .charsheet button:hover.sheet-balance5{
+	background-color: #5b0202;
+}
+
+.charsheet button:hover.sheet-injury6,
+.charsheet button:hover.sheet-balance6{
+	background-color: #8e0303;
+    transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury6,
+body.sheet-darkmode .charsheet button:hover.sheet-balance6{
+	background-color: #8e0303;
 }
 
 .charsheet button.sheet-profil_reserve > span,
@@ -458,8 +582,6 @@ body.sheet-darkmode .charsheet button:hover.sheet-link_reserve {
 .charsheet button.sheet-influence_reserve > span,
 .charsheet button.sheet-sense_reserve > span,
 .charsheet button.sheet-feel_reserve > span,
-.charsheet button.sheet-injury_reserve > span,
-.charsheet button.sheet-balance_reserve > span,
 .charsheet button.sheet-link_reserve > span {
     width: 27px;
     height: 27px;
@@ -482,11 +604,78 @@ body.sheet-darkmode .charsheet button.sheet-use_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-influence_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-sense_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-feel_reserve > span,
-body.sheet-darkmode .charsheet button.sheet-injury_reserve > span,
-body.sheet-darkmode .charsheet button.sheet-balance_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-link_reserve > span {
     background-color: #810303;
     color: #d3d3d3;
+}
+
+.charsheet button.sheet-injury1 > span,
+.charsheet button.sheet-injury2 > span,
+.charsheet button.sheet-injury3 > span,
+.charsheet button.sheet-balance1 > span,
+.charsheet button.sheet-balance2 > span,
+.charsheet button.sheet-balance3 > span{
+	width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    font-size: 20px;
+    color: #e7e5e5;
+    font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury1 > span,
+body.sheet-darkmode .charsheet button.sheet-injury2 > span,
+body.sheet-darkmode .charsheet button.sheet-injury3 > span,
+body.sheet-darkmode .charsheet button.sheet-balance1 > span,
+body.sheet-darkmode .charsheet button.sheet-balance2 > span,
+body.sheet-darkmode .charsheet button.sheet-balance3 > span{
+	background-color: #810303;
+    color: #e7e5e5;
+}
+
+.charsheet button.sheet-injury4 > span,
+.charsheet button.sheet-injury5 > span,
+.charsheet button.sheet-balance4 > span,
+.charsheet button.sheet-balance5 > span{
+	width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #994a04;
+    font-size: 20px;
+    color: #e7e5e5;
+    font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury4 > span,
+body.sheet-darkmode .charsheet button.sheet-injury5 > span,
+body.sheet-darkmode .charsheet button.sheet-balance4 > span,
+body.sheet-darkmode .charsheet button.sheet-balance5 > span{
+	background-color: #5b0202;
+    color: #e7e5e5;
+}
+
+.charsheet button.sheet-injury6 > span,
+.charsheet button.sheet-balance6 > span{
+	width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8e0303;
+    font-size: 20px;
+    color: #e7e5e5;
+    font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury6 > span,
+body.sheet-darkmode .charsheet button.sheet-balance6 > span{
+	background-color: #8e0303;
+    color: #e7e5e5;
 }
 
 /* Hide the "checked" section of the radio if the hidden attribute value is greater than the button value */
@@ -596,28 +785,7 @@ body.sheet-darkmode .charsheet button.sheet-link_reserve > span {
 .charsheet input.sheet-feel_reserve[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
 
 
-/* INJURY */
-.charsheet input.sheet-injury_reserve[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="4"] ~ button.sheet-gt-4 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="5"] ~ button.sheet-gt-5 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="6"] ~ button.sheet-gt-6 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
-.charsheet input.sheet-injury_reserve[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
-
-
-/* BALANCE */
-.charsheet input.sheet-balance_reserve[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="4"] ~ button.sheet-gt-4 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="5"] ~ button.sheet-gt-5 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="6"] ~ button.sheet-gt-6 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
-.charsheet input.sheet-balance_reserve[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
-
-/* BALANCE */
+/* LINK */
 .charsheet input.sheet-link_reserve[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
 .charsheet input.sheet-link_reserve[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
 .charsheet input.sheet-link_reserve[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
@@ -628,6 +796,21 @@ body.sheet-darkmode .charsheet button.sheet-link_reserve > span {
 .charsheet input.sheet-link_reserve[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
 
 
+/* INJURY AND BALANCE */
+.charsheet input.sheet-injury1:not([value="1"]) ~ button.sheet-injury1 > span.sheet-checked1,
+.charsheet input.sheet-injury2:not([value="1"]) ~ button.sheet-injury2 > span.sheet-checked2,
+.charsheet input.sheet-injury3:not([value="1"]) ~ button.sheet-injury3 > span.sheet-checked3,
+.charsheet input.sheet-injury4:not([value="1"]) ~ button.sheet-injury4 > span.sheet-checked4,
+.charsheet input.sheet-injury5:not([value="1"]) ~ button.sheet-injury5 > span.sheet-checked5,
+.charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6,
+.charsheet input.sheet-balance1:not([value="1"]) ~ button.sheet-balance1 > span.sheet-checked11,
+.charsheet input.sheet-balance2:not([value="1"]) ~ button.sheet-balance2 > span.sheet-checked12,
+.charsheet input.sheet-balance3:not([value="1"]) ~ button.sheet-balance3 > span.sheet-checked13,
+.charsheet input.sheet-balance4:not([value="1"]) ~ button.sheet-balance4 > span.sheet-checked14,
+.charsheet input.sheet-balance5:not([value="1"]) ~ button.sheet-balance5 > span.sheet-checked15,
+.charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16{
+  display: none;
+}
 
 /*------------------------------------*\
   #Character Section
@@ -790,11 +973,41 @@ body.sheet-darkmode .charsheet input.capacity_value {
 /*----------- Capacity Section -------------*/
 
 .wrapper_capacity {
-	display: grid;
-    grid-template-columns: 40px 190px 500px;
-	grid-auto-rows: 40px;
-	padding-top: 10px;
+    display: grid;
+    grid-template-columns: 30px 140px 46px 483px;
+    grid-auto-rows: 40px;
+    padding-top: 10px;
 }
+
+.capacity_type {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+span.capacity_type{    
+	writing-mode: vertical-lr;
+    font-size: 18px;
+    margin-top: 1px;
+    background-color: #a1a09f;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-right: solid;
+    border-width: 2px;
+    border-color: #a09f9e;
+    border-radius: 0px 10px 10px 0px;
+    color: white;
+    line-height: 1.1;
+    height: 135px;
+    text-align: center;
+}
+
+body.sheet-darkmode span.capacity_type{   
+    background-color: #484a4a;
+    border-color: #a3a3a34d;
+    color: #ffffff;
+}
+
+
 .title_capacity {
     grid-column: 2;
     grid-row: 1;
@@ -871,51 +1084,38 @@ body.sheet-darkmode .title_link {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/link_background_dark.png);
 }
 
+.charsheet .value_contener {
+	grid-column: 3;
+	grid-row: 1;
+    padding-top: 4px;
+}
+
+.reserve_rank {
+	grid-column: 4;
+	grid-row: 1;
+}
+
 .header-grid {
 	grid-column: 5;
 	grid-row: 1;
 	padding-top: 15px;
 }
-
-.reserve_rank {
-	grid-column: 3;
-	grid-row: 1;
-}
-
-
-
-.charsheet .value_contener {
-    padding-top: 4px;
-}
-	
 	
 .charsheet input.capacity_value {
-	width: 30px;
+	
+    width: 30px;
     height: 30px;
     font-size: 30px !important;
     border: none;
     border-radius: 30px;
     padding-top: 4px;
-    margin-left: 181px;
+    margin-left: 2px;
     font-family: "Stylish";
     font-weight: bold;
     color: #000000a1;
     text-align: center;
 }
 
-.charsheet input.capacity_value1 {
-	width: 30px;
-    height: 30px;
-    font-size: 20px !important;
-    border: none;
-    border-radius: 30px;
-    padding-top: 8px;
-    margin-left: -307px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: bold;
-    color: #000000a1;
-    text-align: center;
-}
 
 /*----------- Notes Section -------------*/
 
@@ -931,154 +1131,5 @@ input[type=number] {
     padding-bottom: 2px;
 	flex: 1;
 	
-}
-
-
-/* DEV INJURY BALANCE */
-
-.charsheet button.sheet-injury1,
-.charsheet button.sheet-injury2,
-.charsheet button.sheet-injury3,
-.charsheet button.sheet-balance1,
-.charsheet button.sheet-balance2,
-.charsheet button.sheet-balance3{
-	width: 27px;
-    height: 27px;
-    border: solid 2px #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-left: 4px;
-	padding: 0px;
-    cursor: pointer;
-}
-
-.charsheet button.sheet-injury4,
-.charsheet button.sheet-balance4{
-	width: 27px;
-    height: 27px;
-    border: solid 2px #994a04;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-left: 15px;
-	padding: 0px;
-    cursor: pointer;
-}
-
-.charsheet button.sheet-injury5,
-.charsheet button.sheet-balance5{
-	width: 27px;
-    height: 27px;
-    border: solid 2px #994a04;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-left: 4px;
-	padding: 0px;
-    cursor: pointer;
-}
-
-.charsheet button.sheet-injury6,
-.charsheet button.sheet-balance6{
-	width: 27px;
-    height: 27px;
-    border: solid 2px #8e0303;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5px;
-    margin-left: 4px;
-	padding: 0px;
-    cursor: pointer;
-	margin-left:15px;
-}
-
-.charsheet button:hover.sheet-injury1,
-.charsheet button:hover.sheet-injury2,
-.charsheet button:hover.sheet-injury3,
-.charsheet button:hover.sheet-balance1,
-.charsheet button:hover.sheet-balance2,
-.charsheet button:hover.sheet-balance3{
-	background-color: #000000;
-    transition: 0.7s;
-}
-
-.charsheet button:hover.sheet-injury4,
-.charsheet button:hover.sheet-injury5,
-.charsheet button:hover.sheet-balance4,
-.charsheet button:hover.sheet-balance5{
-	background-color: #994a04;
-    transition: 0.7s;
-}
-
-.charsheet button:hover.sheet-injury6,
-.charsheet button:hover.sheet-balance6{
-	background-color: #8e0303;
-    transition: 0.7s;
-}
-
-.charsheet button.sheet-injury1 > span,
-.charsheet button.sheet-injury2 > span,
-.charsheet button.sheet-injury3 > span,
-.charsheet button.sheet-balance1 > span,
-.charsheet button.sheet-balance2 > span,
-.charsheet button.sheet-balance3 > span{
-	width: 27px;
-    height: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    font-size: 20px;
-    color: #e7e5e5;
-    font-weight: bold;
-}
-
-.charsheet button.sheet-injury4 > span,
-.charsheet button.sheet-injury5 > span,
-.charsheet button.sheet-balance4 > span,
-.charsheet button.sheet-balance5 > span{
-	width: 27px;
-    height: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #994a04;
-    font-size: 20px;
-    color: #e7e5e5;
-    font-weight: bold;
-}
-
-.charsheet button.sheet-injury6 > span,
-.charsheet button.sheet-balance6 > span{
-	width: 27px;
-    height: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #8e0303;
-    font-size: 20px;
-    color: #e7e5e5;
-    font-weight: bold;
-}
-
-
-.charsheet input.sheet-injury1:not([value="1"]) ~ button.sheet-injury1 > span.sheet-checked1,
-.charsheet input.sheet-injury2:not([value="1"]) ~ button.sheet-injury2 > span.sheet-checked2,
-.charsheet input.sheet-injury3:not([value="1"]) ~ button.sheet-injury3 > span.sheet-checked3,
-.charsheet input.sheet-injury4:not([value="1"]) ~ button.sheet-injury4 > span.sheet-checked4,
-.charsheet input.sheet-injury5:not([value="1"]) ~ button.sheet-injury5 > span.sheet-checked5,
-.charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6,
-.charsheet input.sheet-balance1:not([value="1"]) ~ button.sheet-balance1 > span.sheet-checked11,
-.charsheet input.sheet-balance2:not([value="1"]) ~ button.sheet-balance2 > span.sheet-checked12,
-.charsheet input.sheet-balance3:not([value="1"]) ~ button.sheet-balance3 > span.sheet-checked13,
-.charsheet input.sheet-balance4:not([value="1"]) ~ button.sheet-balance4 > span.sheet-checked14,
-.charsheet input.sheet-balance5:not([value="1"]) ~ button.sheet-balance5 > span.sheet-checked15,
-.charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16{
-  display: none;
 }
 
