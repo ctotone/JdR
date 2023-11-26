@@ -42,22 +42,20 @@ div.main {
 }
 
 div.logo {
-	width: 385px;
-    height: auto;
-    /* margin-bottom: 35px; */
+	width: 400px;
+    height: 64px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/logo_dirty.PNG);
-    background-size: 385px;
+    background-size: cover;
     background-repeat: no-repeat;
     border: 2px solid;
     border-color: #a3a1a1;
 }
 
 body.sheet-darkmode div.logo {
-	width: 385px;
-    height: auto;
-    /* margin-bottom: 35px; */
+	width: 400px;
+    height: 64px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/logo_dirty.PNG);
-    background-size: 385px;
+    background-size: cover;
     background-repeat: no-repeat;
     border: 2px solid;
     border-color: #c7c7c724;
@@ -88,14 +86,14 @@ img.img {
 }
 
 .charsheet select {
-  font-size: 13px;
+	/* font-size: 13px;
 	font-weight: normal;
 	line-height: 18px;
 	width: auto;
 	margin-right: 18px;
 	margin-left: -16px;
 	padding: 1px;
-	border-radius: 10px 100px / 120px;
+	border-radius: 10px 100px / 120px; */
   
 }
 
@@ -223,13 +221,14 @@ body.sheet-darkmode .charsheet button.tab_menu4:hover + span.tab4{
 }
 
 div.character,
-div.option,
+div.equipment,
 div.notes{
     display: none;
 	padding-top: 5px;
 }
 
-div.character{
+div.character,
+div.equipment{
 	height: 880px;
 }
 
@@ -255,7 +254,7 @@ input[type=radio].onglcapacity:checked ~ div.capacity{
 input[type=radio].onglcharacter:checked ~ div.character{
     display: block;
 }
-input[type=radio].ongloption:checked ~ div.option{
+input[type=radio].onglequipment:checked ~ div.equipment{
     display: block;
 }
 input[type=radio].onglnotes:checked ~ div.notes{
@@ -264,7 +263,7 @@ input[type=radio].onglnotes:checked ~ div.notes{
 
 input[type=radio].onglcharacter,
 input[type=radio].onglcapacity,
-input[type=radio].ongloption,
+input[type=radio].onglequipment,
 input[type=radio].onglnotes{
     margin: 0;
     margin-top: -4px;
@@ -281,7 +280,7 @@ input[type=radio].onglnotes{
 }
 input[type=radio].onglcharacter + span,
 input[type=radio].onglcapacity + span,
-input[type=radio].ongloption + span,
+input[type=radio].onglequipment + span,
 input[type=radio].onglnotes + span{
     color: #333333;
     font-size:15px;
@@ -308,7 +307,7 @@ input[type=radio].onglnotes + span{
 }
 body.sheet-darkmode input[type=radio].onglcharacter:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity:checked + span,
-body.sheet-darkmode input[type=radio].ongloption:checked + span,
+body.sheet-darkmode input[type=radio].onglequipment:checked + span,
 body.sheet-darkmode input[type=radio].onglnotes:checked + span {
     font-weight: bold;
     color: #fff;
@@ -319,7 +318,7 @@ body.sheet-darkmode input[type=radio].onglnotes:checked + span {
 
 body.sheet-darkmode input[type=radio].onglcharacter,
 body.sheet-darkmode input[type=radio].onglcapacity,
-body.sheet-darkmode input[type=radio].ongloption,
+body.sheet-darkmode input[type=radio].onglequipment,
 body.sheet-darkmode input[type=radio].onglnotes{
     margin: 0;
     margin-top: -4px;
@@ -336,14 +335,14 @@ body.sheet-darkmode input[type=radio].onglnotes{
 }
 body.sheet-darkmode input[type=radio].onglcharacter + span,
 body.sheet-darkmode input[type=radio].onglcapacity + span,
-body.sheet-darkmode input[type=radio].ongloption + span,
+body.sheet-darkmode input[type=radio].onglequipment + span,
 body.sheet-darkmode input[type=radio].onglnotes + span{
     color: #ffffff5e;
     border-color: #888888;
 }
 input[type=radio].onglcharacter:checked + span,
 input[type=radio].onglcapacity:checked + span,
-input[type=radio].ongloption:checked + span,
+input[type=radio].onglequipment:checked + span,
 input[type=radio].onglnotes:checked + span {
     font-weight: bold;
     color: black;
@@ -444,7 +443,7 @@ body.sheet-darkmode .charsheet button.sheet-balance3{
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    margin-left: 15px;
+    margin-left: 9px;
 	padding: 0px;
     cursor: pointer;
 }
@@ -484,15 +483,34 @@ body.sheet-darkmode .charsheet button.sheet-balance5{
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    margin-left: 4px;
 	padding: 0px;
     cursor: pointer;
-	margin-left:15px;
+	margin-left:9px;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury6,
 body.sheet-darkmode .charsheet button.sheet-balance6{
 	border: solid 2px #8e0303;
+    background-color: #ffffff33; 
+}
+
+.charsheet button.sheet-injury7,
+.charsheet button.sheet-balance7{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #5d0385;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+	padding: 0px;
+    cursor: pointer;
+	margin-left:28px;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury7,
+body.sheet-darkmode .charsheet button.sheet-balance7{
+	border: solid 2px #5d0385;
     background-color: #ffffff33; 
 }
 
@@ -570,6 +588,17 @@ body.sheet-darkmode .charsheet button:hover.sheet-balance5{
 body.sheet-darkmode .charsheet button:hover.sheet-injury6,
 body.sheet-darkmode .charsheet button:hover.sheet-balance6{
 	background-color: #8e0303;
+}
+
+.charsheet button:hover.sheet-injury7,
+.charsheet button:hover.sheet-balance7{
+	background-color: #5d0385;
+    transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury7,
+body.sheet-darkmode .charsheet button:hover.sheet-balance7{
+	background-color: #5d0385;
 }
 
 .charsheet button.sheet-profil_reserve > span,
@@ -677,6 +706,26 @@ body.sheet-darkmode .charsheet button.sheet-balance6 > span{
 	background-color: #8e0303;
     color: #e7e5e5;
 }
+
+.charsheet button.sheet-injury7 > span,
+.charsheet button.sheet-balance7 > span{
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5d0385;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury7 > span,
+body.sheet-darkmode .charsheet button.sheet-balance7 > span{
+	background-color: #5d0385;
+    color: #e7e5e5;
+}
+
 
 /* Hide the "checked" section of the radio if the hidden attribute value is greater than the button value */
 /* PROFIL DOT */
@@ -803,12 +852,14 @@ body.sheet-darkmode .charsheet button.sheet-balance6 > span{
 .charsheet input.sheet-injury4:not([value="1"]) ~ button.sheet-injury4 > span.sheet-checked4,
 .charsheet input.sheet-injury5:not([value="1"]) ~ button.sheet-injury5 > span.sheet-checked5,
 .charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6,
+.charsheet input.sheet-injury7:not([value="1"]) ~ button.sheet-injury7 > span.sheet-checked7,
 .charsheet input.sheet-balance1:not([value="1"]) ~ button.sheet-balance1 > span.sheet-checked11,
 .charsheet input.sheet-balance2:not([value="1"]) ~ button.sheet-balance2 > span.sheet-checked12,
 .charsheet input.sheet-balance3:not([value="1"]) ~ button.sheet-balance3 > span.sheet-checked13,
 .charsheet input.sheet-balance4:not([value="1"]) ~ button.sheet-balance4 > span.sheet-checked14,
 .charsheet input.sheet-balance5:not([value="1"]) ~ button.sheet-balance5 > span.sheet-checked15,
-.charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16{
+.charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16,
+.charsheet input.sheet-balance7:not([value="1"]) ~ button.sheet-balance7 > span.sheet-checked17{
   display: none;
 }
 
@@ -976,7 +1027,37 @@ body.sheet-darkmode .charsheet input.capacity_value {
     display: grid;
     grid-template-columns: 30px 140px 46px 483px;
     grid-auto-rows: 40px;
-    padding-top: 10px;
+    padding-top: 13px;
+}
+
+.wrapper_info_injury {
+    display: grid;
+    grid-template-columns: 225px 106px 72px 62px;
+    grid-auto-rows: 8px;
+    padding-top: 20px;
+}
+
+.wrapper_info_balance {
+    display: grid;
+    grid-template-columns: 225px 106px 72px 62px;
+    grid-auto-rows: 8px;
+    padding-bottom: 20px;
+}
+
+.wrapper_link {
+    display: grid;
+    grid-template-columns: 100px 500px;
+    grid-auto-rows: 30px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-color: #9b9a9a;
+    border-width: 3px;
+    padding-top: 57px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-right: 529px;
+    margin-bottom: -22px;
+    border-radius: 0px 120px;
 }
 
 .capacity_type {
@@ -1053,21 +1134,6 @@ body.sheet-darkmode span.capacity_type{
     width: 160px;
 }
 
-.title_link {
-    grid-column: 2;
-    grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/link_background.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-top: 6px;
-    padding-left: 18px;
-    color: white;
-    font-family: 'Stylish';
-    font-size: 20px;
-    display: flex;
-    width: 160px;
-}
-
 body.sheet-darkmode .title_capacity {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background_dark.png);
 }
@@ -1098,11 +1164,10 @@ body.sheet-darkmode .title_link {
 .header-grid {
 	grid-column: 5;
 	grid-row: 1;
-	padding-top: 15px;
+	padding-top: 27px;
 }
 	
 .charsheet input.capacity_value {
-	
     width: 30px;
     height: 30px;
     font-size: 30px !important;
@@ -1116,6 +1181,215 @@ body.sheet-darkmode .title_link {
     text-align: center;
 }
 
+.injury_light_info,
+.balance_light_info {
+	grid-column: 2;
+	grid-row: 1;
+    line-height: 0.9;
+}
+
+.injury_serious_info,
+.balance_serious_info {
+	grid-column: 3;
+	grid-row: 1;
+    line-height: 0.9;
+}
+
+.injury_severe_info,
+.balance_severe_info {
+	grid-column: 4;
+	grid-row: 1;	
+    line-height: 0.9;
+}
+
+.injury_agony_info,
+.balance_crisis_info {
+	grid-column: 5;
+	grid-row: 1;	
+    line-height: 0.9;
+}
+
+span.injury_light_info,
+span.injury_serious_info,
+span.injury_severe_info,
+span.injury_light_info2,
+span.injury_severe_info2,
+span.injury_serious_info2,
+span.balance_light_info,
+span.balance_serious_info,
+span.balance_severe_info,
+span.balance_light_info2,
+span.balance_severe_info2,
+span.balance_serious_info2,
+span.balance_crisis_info,
+span.injury_agony_info {
+	color: #a1a09e;
+	font-size : 14px;
+}
+
+
+span.injury_light_info2,
+span.injury_severe_info2,
+span.injury_serious_info2,
+span.balance_light_info2,
+span.balance_severe_info2,
+span.balance_serious_info2 {
+	font-size : 12px;
+}
+
+.title_link {
+    grid-column: 1;
+    grid-row: 1;
+    line-height: 0.9;
+    margin-top: -20px;
+    text-align: center;
+    margin-left: -30px;
+}
+
+span.title_link {
+    font-size: 20px !important;
+    border: none;
+    margin-left: 0px;
+    margin-bottom: 07px;
+    font-family: "Stylish";
+    font-weight: bold;
+    text-align: center;
+	color: #6f6e6e;
+}
+
+.value_link {
+	grid-column: 1;
+	grid-row: 2;
+    line-height: 0.9;
+	margin-top: -20px;
+    text-align: center;
+    margin-left: -30px;
+}
+
+.charsheet input.link_value {
+	
+    width: 30px;
+    height: 30px;
+    font-size: 30px !important;
+    border: none;
+    border-radius: 30px;
+    padding-top: 4px;
+    margin-left: 2px;
+    font-family: "Stylish";
+    font-weight: bold;
+    color: #6f6e6e;
+    text-align: center;
+}
+
+.efficiency_reminder {
+    grid-column: 2;
+    grid-row: 1 / 2;
+    line-height: 0.9;
+    margin-top: -20px;
+    text-align: center;
+    margin-left: -30px;
+	text-align: left;
+}
+
+span.efficiency_reminder {
+    font-size: 12px !important;
+    border: none;
+    margin-left: 25px;
+    font-family: "Stylish";
+    color: #a4a3a2;
+}
+
+/*----------- Equipment Section -------------*/
+
+.wrapper_equipment {
+    display: grid;
+    grid-template-columns: 140px 60px 80px 85px 240px;
+    grid-auto-rows: 30px;
+    grid-gap: 15px;
+    padding-top: 13px;
+    font-family: 'Stylish';
+    text-align: center;
+    font-size: 20px !important;
+    /* border: solid;*/
+}
+
+.weapon1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.weapon2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.weapon3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.weapon4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.weapon5 {
+    grid-column: 5;
+    grid-row: 1;
+}
+
+.charsheet input.weapon_name,
+.charsheet input.weapon_damage,
+.charsheet input.weapon_note {
+   font-family:'Stylish';
+}
+
+.charsheet input.weapon_name {
+    width: 145px;
+    font-size: 16px !important;
+    flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom-style: solid;
+}
+
+.charsheet input.weapon_damage {
+    width: 20px;
+	font-size: 16px !important;
+	flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+	border-bottom-style: solid;
+	border-size: 1px;
+}
+
+.charsheet input.weapon_note {
+	font-size: 16px !important;
+	flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+	border-bottom-style: solid;
+	border-size: 1px;
+}
+
+.charsheet select.weapon_range,
+.charsheet select.weapon_effect {
+    font-size: 16px;
+    font-weight: normal;
+    width: auto;
+    margin-right: 19px;
+    /* margin-left: -16px; */
+    padding: 1px;
+    /* border-radius: 10px 100px / 120px; */
+    background-color: #ffffff00;
+    border-bottom: solid 1px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
 
 /*----------- Notes Section -------------*/
 
