@@ -289,15 +289,15 @@ input[type=radio].onglcapacity + span,
 input[type=radio].onglequipment + span,
 input[type=radio].onglnotes + span{
     color: #333333;
-    font-size:15px;
-    text-align:center;
+    font-size: 15px;
+    text-align: center;
     display: inline-block;
-    width: 110px;
+    width: 120px;
     height: 20px;
     margin: 0;
-    margin-left: -110px;
+    margin-left: -109px;
     margin-right: -5px;
-    padding:0;
+    padding: 0;
     margin-bottom: -1px;
     padding-top: 5px;
     font-size: 0.9em;
@@ -308,18 +308,24 @@ input[type=radio].onglnotes + span{
     border-top-left-radius: 9px;
     border-top-right-radius: 16px;
     z-index: 1;
-	font-family: 'Stylish', serif;
+    font-family: 'Stylish', serif;
     font-size: 14px;
 }
 body.sheet-darkmode input[type=radio].onglcharacter:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment:checked + span,
 body.sheet-darkmode input[type=radio].onglnotes:checked + span {
-    font-weight: bold;
     color: #fff;
-    border-bottom-width: 0px;
-	font-family: 'Stylish', serif;
-    font-size:14px;
+    border: solid;
+    border-top-color: #888888;
+    border-left-color: #888888;
+    border-right-color: #888888;
+    border-bottom-color: #520d0d;
+    border-width: 1px;
+    font-family: 'Stylish', serif;
+    font-size: 14px;
+    background-color: #520d0d;
+}
 }
 
 body.sheet-darkmode input[type=radio].onglcharacter,
@@ -343,18 +349,20 @@ body.sheet-darkmode input[type=radio].onglcharacter + span,
 body.sheet-darkmode input[type=radio].onglcapacity + span,
 body.sheet-darkmode input[type=radio].onglequipment + span,
 body.sheet-darkmode input[type=radio].onglnotes + span{
-    color: #ffffff5e;
+    color: #ffffff;
     border-color: #888888;
 }
 input[type=radio].onglcharacter:checked + span,
 input[type=radio].onglcapacity:checked + span,
 input[type=radio].onglequipment:checked + span,
 input[type=radio].onglnotes:checked + span {
-    font-weight: bold;
     color: black;
-    border-bottom-width: 0px;
-	font-family: 'Stylish', serif;
-    font-size:14px;
+    border-bottom-width: 1px;
+    border-color: black;
+    font-family: 'Stylish', serif;
+    font-size: 14px;
+    background-color: black;
+    color: white;
 }
 
 
@@ -1029,6 +1037,13 @@ body.sheet-darkmode .charsheet input.capacity_value {
 
 /*----------- Capacity Section -------------*/
 
+.wrapper_button_roll {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+    grid-auto-rows: 48px;
+    padding-top: 13px;
+}
+
 .wrapper_capacity {
     display: grid;
     grid-template-columns: 30px 140px 46px 483px;
@@ -1318,11 +1333,12 @@ span.efficiency_reminder {
 .wrapper_weapon_title {
     display: grid;
     grid-template-columns: 140px 80px 115px 100px 220px;
-    grid-auto-rows: 15px;
+    grid-auto-rows: 20px;
     grid-gap: 6px;
     margin-top: 25px;
     font-family: 'Stylish';
     font-size: 16px !important;
+    color: #ffffff;
 }
 
 .wrapper_weapon {
@@ -1356,6 +1372,24 @@ span.efficiency_reminder {
 	border-top: solid 1px;
 	border-left: solid 1px;
 	border-color: #00000073;
+    background-color: #000000;
+}
+
+body.sheet-darkmode  .weapon1_title,
+body.sheet-darkmode  .weapon2_title,
+body.sheet-darkmode  .weapon3_title,
+body.sheet-darkmode  .weapon4_title,
+body.sheet-darkmode  .weapon5_title,
+body.sheet-darkmode  .gear1_title,
+body.sheet-darkmode  .gear2_title,
+body.sheet-darkmode  .gear3_title,
+body.sheet-darkmode  .defense1_title,
+body.sheet-darkmode  .defense2_title,
+body.sheet-darkmode  .defense3_title {
+	border-top: solid 1px;
+	border-left: solid 1px;
+	border-color: #888888;
+    background-color: #6b0000a8;
 }
 
 .weapon1_title {grid-column: 1;}
@@ -1418,6 +1452,14 @@ span.efficiency_reminder {
 	border-bottom-right-radius: 8px;
 }
 
+body.sheet-darkmode .weapon1,
+body.sheet-darkmode .weapon2,
+body.sheet-darkmode .weapon3,
+body.sheet-darkmode .weapon4,
+body.sheet-darkmode .weapon5 {
+	background-color: #622f2f47;	
+}
+
 .charsheet input.weapon_name,
 .charsheet input.weapon_damage,
 .charsheet input.weapon_note,
@@ -1432,7 +1474,10 @@ span.efficiency_reminder {
 
 .charsheet input.weapon_name,
 .charsheet input.gear_name,
-.charsheet input.defense_name{  
+.charsheet input.defense_name,
+body.sheet-darkmode .charsheet input.weapon_name,
+body.sheet-darkmode .charsheet input.gear_name,
+body.sheet-darkmode .charsheet input.defense_name{  
 	width: 140px;
 	font-size: 16px !important;
 	flex: 1;
@@ -1445,8 +1490,8 @@ span.efficiency_reminder {
 	border: none;
 }
 
-.charsheet input.weapon_damage
-{  
+.charsheet input.weapon_damage,
+body.sheet-darkmode .charsheet input.weapon_damage {  
 	width: 30px;
 	font-size: 16px !important;
 	flex: 1;
@@ -1458,8 +1503,9 @@ span.efficiency_reminder {
 }
 
 .charsheet input.gear_quality,
-.charsheet input.defense_quality
-{  
+.charsheet input.defense_quality,
+body.sheet-darkmode .charsheet input.gear_quality,
+body.sheet-darkmode .charsheet input.defense_quality {  
 	width: 80px;
 	font-size: 16px !important;
 	flex: 1;
@@ -1470,7 +1516,8 @@ span.efficiency_reminder {
 	text-align: center;
 }
 
-.charsheet input.weapon_note {
+.charsheet input.weapon_note,
+body.sheet-darkmode .charsheet input.weapon_note {
     width: 210px;
     font-size: 16px !important;
     flex: 1;
@@ -1495,15 +1542,21 @@ span.efficiency_reminder {
     border: none;
 }
 
+body.sheet-darkmode .charsheet select.weapon_range,
+body.sheet-darkmode .charsheet select.weapon_effect {
+	background-color:#342627;
+}
+
 .wrapper_gear_title,
 .wrapper_defense_title{
     display: grid;
     grid-template-columns: 140px 80px 450px;
-    grid-auto-rows: 15px;
+    grid-auto-rows: 20px;
     grid-gap: 6px;
     margin-top: 40px;
     font-family: 'Stylish';
     font-size: 16px !important;
+    color: #ffffff;
 }
 
 .wrapper_gear,
@@ -1549,8 +1602,19 @@ span.efficiency_reminder {
 	border-bottom-right-radius: 8px;
 }
 
+body.sheet-darkmode .gear1,
+body.sheet-darkmode .defense1,
+body.sheet-darkmode .gear2,
+body.sheet-darkmode .defense2,
+body.sheet-darkmode .gear3,
+body.sheet-darkmode .defense3 {
+	background-color:#622f2f47;
+}
+
 .charsheet input.gear_note,
-.charsheet input.defense_note{
+.charsheet input.defense_note,
+body.sheet-darkmode .charsheet input.gear_note,
+body.sheet-darkmode .charsheet input.defense_note{
     width: 450px;
     font-size: 16px !important;
     flex: 1;
@@ -1635,7 +1699,6 @@ button[type="roll"].empty:before{
     background-color: var(--dirty-background-header);
 	color: #eee;
 	text-align: left;
-	text-transform: capitalize;
 	padding: 8px;
 	border-bottom: 2px solid var(--dirty-border);
 	font-family: 'Stylish';
@@ -1654,17 +1717,10 @@ button[type="roll"].empty:before{
 .sheet-rolltemplate-dirty .sheet-container{
     --dirty-background-header: #555;
 	--dirty-border: #444141;
-	--dirty-background-header-darkmode: #1e1e1e;
-	--dirty-border-darkmode: #000;
-	--dirty-content-background-darkmode: #bb13132e;
-	--dirty-content-desc-darkmode:red;
-	
-	--dirty-background-header-hope: #555;
-	--dirty-border-hope: #444141;
-	--dirty-background-header-hope-darkmode: #1e1e1e;
-	--dirty-border-hope-darkmode: #000;
-	--dirty-content-background-hope-darkmode: #6c0e863d;
-	--dirty-content-desc-hope-darkmode:#a614ce3d;
+	--dirty-background-header-darkmode: #520c0c;
+	--dirty-border-darkmode: #000000;
+	--dirty-content-background-darkmode: #342627;
+	--dirty-content-desc-darkmode:#594e4e;
 }
 
 /* Allprops part */
@@ -1725,15 +1781,13 @@ button[type="roll"].empty:before{
     background-color: var(--dirty-background-header-darkmode);
 	color: #eee;
 	text-align: left;
-	text-transform: capitalize;
 	padding: 12px;
 	border-bottom: 2px solid var(--dirty-border-darkmode);
-	font-family: 'Shadows Into Light';
+	font-family: 'Stylish';
 }
 
 .sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-title {
-	font-size: 30px;
-	font-weight: bold;
+	font-size: 20px;
 }
 
 .sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-subtitle {
@@ -1758,40 +1812,16 @@ button[type="roll"].empty:before{
 	font-size: 20px;;
 }
 
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n) {
-    background: var(--dirty-content-background-darkmode);
-}
-
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult {
-	background-color: var(--dirty-background-header-darkmode) !important;
-	color:white;
-}
-
 /* Dice result in chatcontainer */
 
-/* No 6 and No 1 */
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult {
-	border: 2px solid;
-	border-color:black;
-}
-
-/* No 6 and No 1 */
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.importantroll {
-	border: 2px solid;
-	border-color:#dfa900;
-}
-	
-/* Only 6 */
-.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit{
-	border: 2px solid;
-	border-color:green;
-}
-
-/* Only 1 */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult,
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.importantroll,
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.fullfail {
 	border: 2px solid;
-	border-color:red;
+	border-color:black;
+	background-color: black;
+	color: #eee;
 }
 
 /* Wide Description field */
@@ -1845,7 +1875,6 @@ button[type="roll"].empty:before{
     background-color: var(--tension-background-header);
 	color: #eee;
 	text-align: left;
-	text-transform: capitalize;
 	padding: 8px;
 	border-bottom: 2px solid var(--tension-border);
 	font-family: 'Stylish';
@@ -1864,17 +1893,10 @@ button[type="roll"].empty:before{
 .sheet-rolltemplate-tension .sheet-container{
     --tension-background-header: #555;
 	--tension-border: #444141;
-	--tension-background-header-darkmode: #1e1e1e;
-	--tension-border-darkmode: #000;
-	--tension-content-background-darkmode: #bb13132e;
-	--tension-content-desc-darkmode:red;
-	
-	--tension-background-header-hope: #555;
-	--tension-border-hope: #444141;
-	--tension-background-header-hope-darkmode: #1e1e1e;
-	--tension-border-hope-darkmode: #000;
-	--tension-content-background-hope-darkmode: #6c0e863d;
-	--tension-content-desc-hope-darkmode:#a614ce3d;
+	--tension-background-header-darkmode: #520c0c;
+	--tension-border-darkmode: #000000;
+	--tension-content-background-darkmode: #594e4e;
+	--tension-content-desc-darkmode:#594e4e;
 }
 
 /* Allprops part */
@@ -1944,15 +1966,13 @@ button[type="roll"].empty:before{
     background-color: var(--tension-background-header-darkmode);
 	color: #eee;
 	text-align: left;
-	text-transform: capitalize;
 	padding: 12px;
 	border-bottom: 2px solid var(--tension-border-darkmode);
-	font-family: 'Shadows Into Light';
+	font-family: 'Stylish';
 }
 
 .sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-title {
-	font-size: 30px;
-	font-weight: bold;
+	font-size: 20px;
 }
 
 .sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-subtitle {

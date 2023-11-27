@@ -90,6 +90,11 @@
 	<!-- Capacity Tab -->
 	<div class="capacity">
 		<div class="header-grid"></div>
+			<div class="wrapper_button_roll">
+			<div class="title_dice1"><span data-i18n="dice1">Dice1</span></div>
+			<div class="title_dice2"><span data-i18n="dice1">Dice1</span></div>
+			<div class="title_dice3"><span data-i18n="dice1">Dice1</span></div>
+			</div>
 			<div class="wrapper_capacity">
 				<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div>
 				<div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
@@ -473,7 +478,7 @@
 				
 				<div class="wrapper_weapon">
 					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon2_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon2_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{^{roll_success}=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
+					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon2_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
 					<div class="weapon3">
 						<select class="weapon_range" name="attr_weapon2_range">
 						  <option value="0" selected="selected"></option>
@@ -498,7 +503,7 @@
 				
 				<div class="wrapper_weapon">
 					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon3_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon3_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{^{roll_success}=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
+					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon3_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
 					<div class="weapon3">
 						<select class="weapon_range" name="attr_weapon3_range">
 						  <option value="0" selected="selected"></option>
