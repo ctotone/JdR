@@ -1346,29 +1346,101 @@ span.efficiency_reminder {
     font-size: 20px !important;
 }
 
-.weapon1 {
+.weapon_title {
     grid-column: 1;
     grid-row: 1;
+    background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    padding-left: 3px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 140px;
+}
+
+.weapon1_title,
+.weapon2_title,
+.weapon3_title,
+.weapon4_title,
+.weapon5_title {
+    grid-row: 1;
+    /* background-color: #0000000f; */
+    /* margin: 3px; */
+    /* margin-left: -40px; */
+    /* margin-bottom: -3px; */
+    /* padding-left: 3px; */
+    /* border-top-left-radius: 8px; */
+    /* border-bottom-right-radius: 8px; */
+    /* width: 140px; */
+    text-align: center;
+}
+
+.weapon1_title {grid-col: 1;}
+.weapon2_title {grid-col: 2;}
+.weapon3_title {grid-col: 3;}
+.weapon4_title {grid-col: 4;}
+.weapon5_title {grid-col: 5;}
+
+
+.weapon1 {
+    grid-row: 1;
+    background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    padding-left: 3px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 140px;
 }
 
 .weapon2 {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 1;background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    padding-left: 3px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .weapon3 {
     grid-column: 3;
     grid-row: 1;
+    background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 105px;
 }
 
 .weapon4 {
     grid-column: 4;
     grid-row: 1;
+    background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    /* padding-left: 3px; */
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 105px;
 }
 
 .weapon5 {
     grid-column: 5;
     grid-row: 1;
+	background-color: #0000000f;
+    margin: 3px;
+    margin-left: 6px;
+    margin-bottom: -3px;
+    padding-left: 3px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .charsheet input.weapon_name,
@@ -1378,50 +1450,51 @@ span.efficiency_reminder {
 }
 
 .charsheet input.weapon_name {
-    width: 145px;
+    width: 140px;
     font-size: 16px !important;
     flex: 1;
     margin: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    border-bottom-style: solid;
+    /* border-bottom-style: solid; */
+    /* box-sizing: border-box; */
+    /* padding: 5px; */
+    border: none;
 }
 
 .charsheet input.weapon_damage {
     width: 20px;
-	font-size: 16px !important;
-	flex: 1;
-    margin: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-	border-bottom-style: solid;
-	border-size: 1px;
-}
-
-.charsheet input.weapon_note {
     font-size: 16px !important;
     flex: 1;
     margin: 0px;
-    /* padding-left: 5px; */
-    /* padding-right: 5px; */
-    border-bottom-style: solid;
-    border-size: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
+}
+
+.charsheet input.weapon_note {
+    width: 220px;
+    font-size: 16px !important;
+    flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* border-bottom-style: solid; */
+    /* box-sizing: border-box; */
+    /* padding: 5px; */
+    border: none;
 }
 
 .charsheet select.weapon_range,
 .charsheet select.weapon_effect {
-    font-size: 16px;
-    /* font-weight: normal; */
-    width: auto;
-    /* margin-right: 19px; */
-    /* margin-left: -16px; */
-    padding: 0px;
-    /* border-radius: 10px 100px / 120px; */
-    background-color: #ffffff00;
-    border-bottom: solid 1px #0c0c0c;
-    border-top: none;
-    border-right: none;
-    border-left: none;
+	width: auto;
+    font-size: 16px !important;
+	background-color:#ffffff00;
+    flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: none;
 }
 
 /*----------- Notes Section -------------*/
