@@ -1315,165 +1315,163 @@ span.efficiency_reminder {
 
 /*----------- Equipment Section -------------*/
 
-.wrapper_equipment_type {
+.wrapper_weapon_title {
     display: grid;
-    grid-template-columns: 140px 72px 100px 100px 230px;
-    grid-auto-rows: 30px;
-    grid-gap: 13px;
-    padding-top: 20px;
+    grid-template-columns: 140px 80px 115px 100px 220px;
+    grid-auto-rows: 15px;
+    grid-gap: 6px;
+    margin-top: 25px;
     font-family: 'Stylish';
-    font-size: 20px !important;
+    font-size: 16px !important;
 }
 
-.wrapper_equipment_title {
-    display: grid;
-    grid-template-columns: 140px 72px 100px 100px 230px;
-    grid-auto-rows: 30px;
-    grid-gap: 13px;
-    padding-top: 15px;
-    font-family: 'Stylish';
-    font-size: 20px !important;
+.wrapper_weapon {
+	display: grid;
+	grid-template-columns: 140px 80px 115px 100px 220px;
+	grid-auto-rows: 25px;
+	grid-gap: 6px;
+	padding-top: 10px;
+	font-family: 'Stylish';
+	text-align: center;
+	font-size: 20px !important;
 }
 
-.wrapper_equipment {
-    display: grid;
-    grid-template-columns: 140px 72px 100px 100px 230px;
-    grid-auto-rows: 30px;
-    grid-gap: 13px;
-    padding-top: 5px;
-    font-family: 'Stylish';
-    text-align: center;
-    font-size: 20px !important;
-}
-
-.weapon_title {
-    grid-column: 1;
-    grid-row: 1;
-    background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    padding-left: 3px;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    width: 140px;
-}
 
 .weapon1_title,
 .weapon2_title,
 .weapon3_title,
 .weapon4_title,
-.weapon5_title {
-    grid-row: 1;
-    /* background-color: #0000000f; */
-    /* margin: 3px; */
-    /* margin-left: -40px; */
-    /* margin-bottom: -3px; */
-    /* padding-left: 3px; */
-    /* border-top-left-radius: 8px; */
-    /* border-bottom-right-radius: 8px; */
-    /* width: 140px; */
-    text-align: center;
+.weapon5_title,
+.gear1_title,
+.gear2_title,
+.gear3_title,
+.defense1_title,
+.defense2_title,
+.defense3_title {
+	grid-row: 1;
+	padding-left: 4px;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	border-color: #00000073;
 }
 
-.weapon1_title {grid-col: 1;}
-.weapon2_title {grid-col: 2;}
-.weapon3_title {grid-col: 3;}
-.weapon4_title {grid-col: 4;}
-.weapon5_title {grid-col: 5;}
+.weapon1_title {grid-column: 1;}
+.weapon2_title {grid-column: 2;}
+.weapon3_title {grid-column: 3;}
+.weapon4_title {grid-column: 4;}
+.weapon5_title {grid-column: 5;}
+
+.gear1_title {grid-column: 1;}
+.gear2_title {grid-column: 2;}
+.gear3_title {grid-column: 3;}
+
+.defense1_title {grid-column: 1;}
+.defense2_title {grid-column: 2;}
+.defense3_title {grid-column: 3;}
 
 
-.weapon1 {
-    grid-row: 1;
-    background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    padding-left: 3px;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    width: 140px;
+.weapon1 {  
+	grid-column: 1;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .weapon2 {
     grid-column: 2;
-    grid-row: 1;background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    padding-left: 3px;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .weapon3 {
     grid-column: 3;
-    grid-row: 1;
-    background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    width: 105px;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .weapon4 {
     grid-column: 4;
-    grid-row: 1;
-    background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    /* padding-left: 3px; */
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    width: 105px;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .weapon5 {
     grid-column: 5;
-    grid-row: 1;
+	grid-row: 1;
 	background-color: #0000000f;
-    margin: 3px;
-    margin-left: 6px;
-    margin-bottom: -3px;
-    padding-left: 3px;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .charsheet input.weapon_name,
 .charsheet input.weapon_damage,
-.charsheet input.weapon_note {
+.charsheet input.weapon_note,
+.charsheet input.gear_name,
+.charsheet input.gear_quality,
+.charsheet input.gear_note,
+.charsheet input.defense_name,
+.charsheet input.defense_quality,
+.charsheet input.defense_note{
    font-family:'Stylish';
 }
 
-.charsheet input.weapon_name {
-    width: 140px;
-    font-size: 16px !important;
-    flex: 1;
-    margin: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    /* border-bottom-style: solid; */
-    /* box-sizing: border-box; */
-    /* padding: 5px; */
-    border: none;
+.charsheet input.weapon_name,
+.charsheet input.gear_name,
+.charsheet input.defense_name{  
+	width: 140px;
+	font-size: 16px !important;
+	flex: 1;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom-style: solid;
+	box-sizing: border-box;
+	padding: 5px;
+	border: none;
 }
 
-.charsheet input.weapon_damage {
-    width: 20px;
-    font-size: 16px !important;
-    flex: 1;
-    margin: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border: none;
+.charsheet input.weapon_damage
+{  
+	width: 30px;
+	font-size: 16px !important;
+	flex: 1;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	text-align: center;
+}
+
+.charsheet input.gear_quality,
+.charsheet input.defense_quality
+{  
+	width: 80px;
+	font-size: 16px !important;
+	flex: 1;
+	margin: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: none;
+	text-align: center;
 }
 
 .charsheet input.weapon_note {
-    width: 220px;
+    width: 210px;
     font-size: 16px !important;
     flex: 1;
     margin: 0px;
@@ -1497,6 +1495,74 @@ span.efficiency_reminder {
     border: none;
 }
 
+.wrapper_gear_title,
+.wrapper_defense_title{
+    display: grid;
+    grid-template-columns: 140px 80px 450px;
+    grid-auto-rows: 15px;
+    grid-gap: 6px;
+    margin-top: 40px;
+    font-family: 'Stylish';
+    font-size: 16px !important;
+}
+
+.wrapper_gear,
+.wrapper_defense{
+	display: grid;
+	grid-template-columns: 140px 80px 450px;
+	grid-auto-rows: 25px;
+	grid-gap: 6px;
+	padding-top: 10px;
+	font-family: 'Stylish';
+	text-align: center;
+	font-size: 20px !important;
+}
+
+
+.gear1,
+.defense1 {  
+	grid-column: 1;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.gear2,
+.defense2  {
+    grid-column: 2;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.gear3,
+.defense3  {
+    grid-column: 3;
+	grid-row: 1;
+	background-color: #0000000f;
+	margin-bottom: -3px;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.charsheet input.gear_note,
+.charsheet input.defense_note{
+    width: 450px;
+    font-size: 16px !important;
+    flex: 1;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* border-bottom-style: solid; */
+    /* box-sizing: border-box; */
+    /* padding: 5px; */
+    border: none;
+}
+
 /*----------- Notes Section -------------*/
 
 div.section-notes input[type=text],
@@ -1513,3 +1579,444 @@ input[type=number] {
 	
 }
 
+/*----------- Dice Button Section -------------*/
+.ui-dialog .charsheet button[type=roll]::before {
+    content: "";
+}
+
+div.d6{
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/d6_white.png); 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+}
+
+button[type="roll"].d6:before{
+  content: '';
+}
+
+button[type="roll"].d6:hover{
+  background-position: 0;
+}
+
+button[type="roll"].d6{
+  background-image:url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/d6_white.png); 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  border-style: none;
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+button[type="roll"].empty:before{
+  content: ' ';
+}
+
+/*------------------------------------*\
+  #Roll Template
+\*------------------------------------*/
+/* Damage and Terror Dice */
+/*Normal Mode */
+
+.withoutavatars .sheet-rolltemplate-dirty {
+    margin-left: -7px;
+}
+
+.sheet-rolltemplate-dirty .sheet-container {
+    border: 2px solid var(--dirty-border);
+    border-radius: 3px;
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-dirty .sheet-header { 
+    background-color: var(--dirty-background-header);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 8px;
+	border-bottom: 2px solid var(--dirty-border);
+	font-family: 'Stylish';
+}
+
+.sheet-rolltemplate-dirty .sheet-title {
+	font-size: 20px;
+}
+
+.sheet-rolltemplate-dirty .sheet-subtitle {
+    font-size: 15px;
+	padding-top: 10px;
+}
+
+
+.sheet-rolltemplate-dirty .sheet-container{
+    --dirty-background-header: #555;
+	--dirty-border: #444141;
+	--dirty-background-header-darkmode: #1e1e1e;
+	--dirty-border-darkmode: #000;
+	--dirty-content-background-darkmode: #bb13132e;
+	--dirty-content-desc-darkmode:red;
+	
+	--dirty-background-header-hope: #555;
+	--dirty-border-hope: #444141;
+	--dirty-background-header-hope-darkmode: #1e1e1e;
+	--dirty-border-hope-darkmode: #000;
+	--dirty-content-background-hope-darkmode: #6c0e863d;
+	--dirty-content-desc-hope-darkmode:#a614ce3d;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-dirty .sheet-content{
+    display: grid;
+    background: #FFF;
+    /* Header formatting - modify the column layout below */
+    grid-template-columns: auto auto;
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-dirty .sheet-content > div{
+    padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-dirty .sheet-content .sheet-key{
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-dirty .sheet-desc{
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
+
+/* dirty Dice result in chatcontainer */
+.sheet-rolltemplate-dirty .inlinerollresult,
+.sheet-rolltemplate-dirty .inlinerollresult.importantroll,
+.sheet-rolltemplate-dirty .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dirty .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:black;
+	background-color: black;
+	color: #eee;
+}
+
+
+
+/* Dark mode */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--dirty-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--dirty-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-header {
+    background-color: var(--dirty-background-header-darkmode);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--dirty-border-darkmode);
+	font-family: 'Shadows Into Light';
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-subtitle {
+    font-size: 15px;
+	padding-top: 10px;
+}
+
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content {
+    display: grid;
+    background: var(--dirty-content-background-darkmode);
+	color: #eee;
+    grid-template-columns: auto auto;
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;;
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n) {
+    background: var(--dirty-content-background-darkmode);
+}
+
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult {
+	background-color: var(--dirty-background-header-darkmode) !important;
+	color:white;
+}
+
+/* Dice result in chatcontainer */
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult {
+	border: 2px solid;
+	border-color:black;
+}
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.importantroll {
+	border: 2px solid;
+	border-color:#dfa900;
+}
+	
+/* Only 6 */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit{
+	border: 2px solid;
+	border-color:green;
+}
+
+/* Only 1 */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:red;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-desc {
+    background: var(--dirty-content-desc-darkmode);
+	grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Tension Dice */
+/* Damage and Terror Dice */
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier1,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier2,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier3,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier4,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier5,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier6{
+	border: 2px solid;
+	color: #eee;
+	padding: 1px;
+}
+
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier1,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier2{
+	background-color: #b90505;
+	border-color: #b90505;
+}
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier3,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier4{
+	background-color: black;
+	border-color:black;
+}
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier5,
+.sheet-rolltemplate-tension .sheet-content span.sheet-modifier6{
+	background-color: #0a6807;
+	border-color: #0a6807;
+}
+
+.withoutavatars .sheet-rolltemplate-tension {
+    margin-left: -7px;
+}
+
+.sheet-rolltemplate-tension .sheet-container {
+    border: 2px solid var(--tension-border);
+    border-radius: 3px;
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-tension .sheet-header { 
+    background-color: var(--tension-background-header);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 8px;
+	border-bottom: 2px solid var(--tension-border);
+	font-family: 'Stylish';
+}
+
+.sheet-rolltemplate-tension .sheet-title {
+	font-size: 20px;
+}
+
+.sheet-rolltemplate-tension .sheet-subtitle {
+    font-size: 15px;
+	padding-top: 10px;
+}
+
+
+.sheet-rolltemplate-tension .sheet-container{
+    --tension-background-header: #555;
+	--tension-border: #444141;
+	--tension-background-header-darkmode: #1e1e1e;
+	--tension-border-darkmode: #000;
+	--tension-content-background-darkmode: #bb13132e;
+	--tension-content-desc-darkmode:red;
+	
+	--tension-background-header-hope: #555;
+	--tension-border-hope: #444141;
+	--tension-background-header-hope-darkmode: #1e1e1e;
+	--tension-border-hope-darkmode: #000;
+	--tension-content-background-hope-darkmode: #6c0e863d;
+	--tension-content-desc-hope-darkmode:#a614ce3d;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-tension .sheet-content{
+    display: grid;
+    background: #FFF;
+    /* Header formatting - modify the column layout below */
+    grid-template-columns: auto auto;
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-tension .sheet-content > div{
+    padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-tension .sheet-content .sheet-key{
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;
+}
+
+/* Left column */
+.sheet-rolltemplate-tension .sheet-content .sheet-value{
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: left;
+	font-family: 'Stylish';
+	font-size: 20px;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-tension .sheet-desc{
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
+
+/* tension Dice result in chatcontainer */
+.sheet-rolltemplate-tension .inlinerollresult,
+.sheet-rolltemplate-tension .inlinerollresult.importantroll,
+.sheet-rolltemplate-tension .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tension .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:black;
+	background-color: black;
+	color: #eee;
+}
+
+
+
+/* Dark mode */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tension-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--tension-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-header {
+    background-color: var(--tension-background-header-darkmode);
+	color: #eee;
+	text-align: left;
+	text-transform: capitalize;
+	padding: 12px;
+	border-bottom: 2px solid var(--tension-border-darkmode);
+	font-family: 'Shadows Into Light';
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-subtitle {
+    font-size: 15px;
+	padding-top: 10px;
+}
+
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-content {
+    display: grid;
+    background: var(--tension-content-background-darkmode);
+	color: #eee;
+    grid-template-columns: auto auto;
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;;
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-content :nth-child(4n) {
+    background: var(--tension-content-background-darkmode);
+}
+
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .inlinerollresult {
+	background-color: var(--tension-background-header-darkmode) !important;
+	color:white;
+}
+
+/* Dice result in chatcontainer */
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .inlinerollresult {
+	border: 2px solid;
+	border-color:black;
+}
+
+/* No 6 and No 1 */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .inlinerollresult.importantroll {
+	border: 2px solid;
+	border-color:#dfa900;
+}
+	
+/* Only 6 */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit{
+	border: 2px solid;
+	border-color:green;
+}
+
+/* Only 1 */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:red;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-desc {
+    background: var(--tension-content-desc-darkmode);
+	grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
