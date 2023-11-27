@@ -438,165 +438,149 @@
 	<div class="equipment">
 		<div class="section-profile-large">
 			<div class="profile-text">
-				<div class="wrapper_equipment_type">
-					<div class="weapon_title"><span>Armement</span></div>
-				</div>
-				<div class="wrapper_equipment_title">
-					<div class="weapon1_title">Name</div>
-					<div class="weapon2_title">Damage</div>
-					<div class="weapon3_title">Range</div>
-					<div class="weapon4_title">Effect</div>
-					<div class="weapon5_title">Note</div>
+				<!-- WEAPON -->
+				<div class="wrapper_weapon_title">
+					<div class="weapon1_title" data-i18n="weapon">Weapon</div>
+					<div class="weapon2_title" data-i18n="damage">Damage</div>
+					<div class="weapon3_title" data-i18n="range">Range</div>
+					<div class="weapon4_title" data-i18n="effect">Effect</div>
+					<div class="weapon5_title" data-i18n="note">Note</div>
 				</div>
 				
-				<div class="wrapper_equipment">
+				<div class="wrapper_weapon">
 					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon1_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon1_damage"><span>D6</span></div>
+					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon1_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
 					<div class="weapon3">
 						<select class="weapon_range" name="attr_weapon1_range">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Contact</option>
-						  <option value="2">10/20/30m</option>
-						  <option value="3">15/30/60m</option>
-						  <option value="4">20/40/80m</option>
-						  <option value="5">Unlimited</option>
+						  <option value="1" data-i18n="contact">Contact</option>
+						  <option value="2" data-i18n="range1">10/20/30m</option>
+						  <option value="3" data-i18n="range2">15/30/60m</option>
+						  <option value="4" data-i18n="range3">20/40/80m</option>
+						  <option value="5" data-i18n="unlimited">Unlimited</option>
 						</select>
 					</div>
 					<div class="weapon4">
 						<select class="weapon_effect" name="attr_weapon1_effect">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Lethal</option>
-						  <option value="1">Shock</option>
-						  <option value="2">Perforant</option>
+						  <option value="1" data-i18n="lethal">Lethal</option>
+						  <option value="1" data-i18n="shock">Shock</option>
+						  <option value="2" data-i18n="perforant">Perforant</option>
 						</select>
 					</div>
 					<div class="weapon5"><input class="weapon_note" type="text" name="attr_weapon1_note"></div>
 				</div>
 				
-				<div class="wrapper_equipment">
+				<div class="wrapper_weapon">
 					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon2_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon2_damage">D6</div>
+					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon2_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{^{roll_success}=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
 					<div class="weapon3">
 						<select class="weapon_range" name="attr_weapon2_range">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Contact</option>
-						  <option value="2">10/20/30m</option>
-						  <option value="3">15/30/60m</option>
-						  <option value="4">20/40/80m</option>
-						  <option value="5">Unlimited</option>
+						  <option value="1" data-i18n="contact">Contact</option>
+						  <option value="2" data-i18n="range1">10/20/30m</option>
+						  <option value="3" data-i18n="range2">15/30/60m</option>
+						  <option value="4" data-i18n="range3">20/40/80m</option>
+						  <option value="5" data-i18n="unlimited">Unlimited</option>
 						</select>
 					</div>
 					<div class="weapon4">
 						<select class="weapon_effect" name="attr_weapon2_effect">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Lethal</option>
-						  <option value="1">Shock</option>
-						  <option value="2">Perforant</option>
+						  <option value="0" selected="selected"></option>
+						  <option value="1" data-i18n="lethal">Lethal</option>
+						  <option value="1" data-i18n="shock">Shock</option>
+						  <option value="2" data-i18n="perforant">Perforant</option>
 						</select>
 					</div>
 					<div class="weapon5"><input class="weapon_note" type="text" name="attr_weapon2_note"></div>
 				</div>
 				
-				<div class="wrapper_equipment">
+				<div class="wrapper_weapon">
 					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon3_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon3_damage">D6</div>
+					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon3_damage"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{^{roll_success}=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button></div>
 					<div class="weapon3">
 						<select class="weapon_range" name="attr_weapon3_range">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Contact</option>
-						  <option value="2">10/20/30m</option>
-						  <option value="3">15/30/60m</option>
-						  <option value="4">20/40/80m</option>
-						  <option value="5">Unlimited</option>
+						  <option value="1" data-i18n="contact">Contact</option>
+						  <option value="2" data-i18n="range1">10/20/30m</option>
+						  <option value="3" data-i18n="range2">15/30/60m</option>
+						  <option value="4" data-i18n="range3">20/40/80m</option>
+						  <option value="5" data-i18n="unlimited">Unlimited</option>
 						</select>
 					</div>
 					<div class="weapon4">
 						<select class="weapon_effect" name="attr_weapon3_effect">
 						  <option value="0" selected="selected"></option>
-						  <option value="1">Lethal</option>
-						  <option value="1">Shock</option>
-						  <option value="2">Perforant</option>
+						  <option value="1" data-i18n="lethal">Lethal</option>
+						  <option value="1" data-i18n="shock">Shock</option>
+						  <option value="2" data-i18n="perforant">Perforant</option>
 						</select>
 					</div>
 					<div class="weapon5"><input class="weapon_note" type="text" name="attr_weapon3_note"></div>
 				</div>
 				
-				<div class="wrapper_equipment">
-					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon4_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon4_damage">D6</div>
-					<div class="weapon3">
-						<select class="weapon_range" name="attr_weapon4_range">
-						  <option value="0" selected="selected"></option>
-						  <option value="1">Contact</option>
-						  <option value="2">10/20/30m</option>
-						  <option value="3">15/30/60m</option>
-						  <option value="4">20/40/80m</option>
-						  <option value="5">Unlimited</option>
-						</select>
-					</div>
-					<div class="weapon4">
-						<select class="weapon_effect" name="attr_weapon4_effect">
-						  <option value="0" selected="selected"></option>
-						  <option value="1">Lethal</option>
-						  <option value="1">Shock</option>
-						  <option value="2">Perforant</option>
-						</select>
-					</div>
-					<div class="weapon5"><input class="weapon_note" type="text" name="attr_weapon4_note"></div>
+				<!-- GEAR -->
+				<div class="wrapper_gear_title">
+					<div class="gear1_title" data-i18n="gear">Gear</div>
+					<div class="gear2_title" data-i18n="quality">Quality</div>
+					<div class="gear3_title" data-i18n="note">Note</div>
 				</div>
 				
-				<div class="wrapper_equipment">
-					<div class="weapon1"><input class="weapon_name" type="text" name="attr_weapon5_name"></div>
-					<div class="weapon2"><input class="weapon_damage" type="text" name="attr_weapon5_damage">D6</div>
-					<div class="weapon3">
-						<select class="weapon_range" name="attr_weapon5_range">
-						  <option value="0" selected="selected"></option>
-						  <option value="1">Contact</option>
-						  <option value="2">10/20/30m</option>
-						  <option value="3">15/30/60m</option>
-						  <option value="4">20/40/80m</option>
-						  <option value="5">Unlimited</option>
-						</select>
-					</div>
-					<div class="weapon4">
-						<select class="weapon_effect" name="attr_weapon5_effect">
-						  <option value="0" selected="selected"></option>
-						  <option value="1">Lethal</option>
-						  <option value="1">Shock</option>
-						  <option value="2">Perforant</option>
-						</select>
-					</div>
-					<div class="weapon5"><input class="weapon_note" type="text" name="attr_weapon5_note"></div>
+				<div class="wrapper_gear">
+					<div class="gear1"><input class="gear_name" type="text" name="attr_gear1_name"></div>
+					<div class="gear2"><input class="gear_quality" type="text" name="attr_gear1_quality"></div>
+					<div class="gear3"><input class="gear_note" type="text" name="attr_gear1_note"></div>
 				</div>
-			<!-- Armement
-			
-			Nom	- Dommages 
-			Portée
-			Effet
-			Notes
-			
-			
-			
-			
-			Outils
-			
-			Nom
-			Qualité
-			Notes
-			
-			
-			
-			
-			
-			Protection
-			
-			Nom
-			Protection
-			Notes
-			 -->
-			
+				
+				<div class="wrapper_gear">
+					<div class="gear1"><input class="gear_name" type="text" name="attr_gear2_name"></div>
+					<div class="gear2"><input class="gear_quality" type="text" name="attr_gear2_quality"></div>
+					<div class="gear3"><input class="gear_note" type="text" name="attr_gear2_note"></div>
+				</div>
+				
+				<div class="wrapper_gear">
+					<div class="gear1"><input class="gear_name" type="text" name="attr_gear3_name"></div>
+					<div class="gear2"><input class="gear_quality" type="text" name="attr_gear3_quality"></div>
+					<div class="gear3"><input class="gear_note" type="text" name="attr_gear3_note"></div>
+				</div>
+				
+				<!-- DEFENSE -->
+				<div class="wrapper_defense_title">
+					<div class="defense1_title" data-i18n="defense">Defense</div>
+					<div class="defense2_title" data-i18n="quality">Quality</div>
+					<div class="defense3_title" data-i18n="note">Note</div>
+				</div>
+				
+				<div class="wrapper_defense">
+					<div class="defense1"><input class="defense_name" type="text" name="attr_defense1_name"></div>
+					<div class="defense2"><input class="defense_quality" type="text" name="attr_defense1_quality"></div>
+					<div class="defense3"><input class="defense_note" type="text" name="attr_defense1_note"></div>
+				</div>
+				
+				<div class="wrapper_defense">
+					<div class="defense1"><input class="defense_name" type="text" name="attr_defense2_name"></div>
+					<div class="defense2"><input class="defense_quality" type="text" name="attr_defense2_quality"></div>
+					<div class="defense3"><input class="defense_note" type="text" name="attr_defense2_note"></div>
+				</div>
+				
+				<div class="wrapper_defense">
+					<div class="defense1"><input class="defense_name" type="text" name="attr_defense3_name"></div>
+					<div class="defense2"><input class="defense_quality" type="text" name="attr_defense3_quality"></div>
+					<div class="defense3"><input class="defense_note" type="text" name="attr_defense3_note"></div>
+				</div>
+				
 			</div>
 		</div>
+		
+		
+		
+		
+		Effroi <button type="roll" name="roll_Conflict" data-i18n-title="terror_dice" title="Terror Roll" value="&{template:dirty} {{title=^{roll_terror_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="d6"></button>
+		
+		<br>Tension <button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="d6"></button>
+		<br> Lien pour afficher item dans chat?
+		
 	</div>
 	
 	<!-- Notes Tab -->
@@ -736,10 +720,75 @@
     });
   });
   
-
-
-  
 </script>
+
+<!---------------------->			
+<!-- [ROLL TEMPLATES] -->
+<!---------------------->	
+<!-- Damage and Terror Dice -->
+<rolltemplate class="sheet-rolltemplate-dirty">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc}}
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<!-- Tension Dice -->
+<rolltemplate class="sheet-rolltemplate-tension">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 1}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier1">-2</span></div>
+		  {{/rollTotal() tension 1}}
+		{{/allprops() title subtitle desc}}
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 2}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier2">-1</span></div>
+		  {{/rollTotal() tension 2}}
+		{{/allprops() title subtitle desc}}
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 3}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier3">0</span></div>
+		  {{/rollTotal() tension 3}}
+		{{/allprops() title subtitle desc}}
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 4}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier4">0</span></div>
+		  {{/rollTotal() tension 4}}
+		{{/allprops() title subtitle desc}}
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 5}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier5">+1</span></div>
+		  {{/rollTotal() tension 5}}
+		{{/allprops() title subtitle desc}}
+		{{#allprops() title subtitle desc}}
+		  {{#rollTotal() tension 6}}
+		  <div class="sheet-key" data-i18n="roll_mod">Modifier</div>
+		  <div class="sheet-value"><span class="modifier6">+2</span></div>
+		  {{/rollTotal() tension 6}}
+		{{/allprops() title subtitle desc}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
 
 
 
