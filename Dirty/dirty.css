@@ -1039,9 +1039,45 @@ body.sheet-darkmode .charsheet input.capacity_value {
 
 .wrapper_button_roll {
     display: grid;
-    grid-template-columns: 150px 150px 150px 150px 150px;
-    grid-auto-rows: 48px;
-    padding-top: 13px;
+    grid-template-columns: 60px 130px 130px;
+    grid-auto-rows: 33px;
+	grid-gap: 6px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.title_dice1,
+.title_dice2,
+.title_dice3 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dice_button.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-left: 15px;
+    color: white;
+    font-size: 14px;
+    width: 88px;
+}
+
+body.sheet-darkmode .title_dice1,
+body.sheet-darkmode .title_dice2,
+body.sheet-darkmode .title_dice3 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dark_dice_button.png);
+}
+
+.title_dice1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.title_dice2 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.title_dice3 {
+    grid-column: 4;
+    grid-row: 1;
 }
 
 .wrapper_capacity {
