@@ -238,12 +238,21 @@ div.notes{
 	padding-top: 5px;
 }
 
-div.character,
+div.character{
+	padding-left: 7px;
+	padding-top: 31px;
+	height: 750px;
+}
+
 div.equipment{
-	height: 880px;
+	padding-left: 7px;
+	padding-top: 19px;
+	height: 550px;
 }
 
 div.notes{
+	padding-left: 7px;
+	padding-top: 31px;
 	height: 630px;
 }
 
@@ -886,14 +895,52 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
   #Dice TAB
 \*------------------------------------*/
 
-.dice_tab_character {
+.dice_tab1_character {
     grid-column: 5;
-     grid-row: 1;
+    grid-row: 1;
+    margin-top: 38px;
+	margin-left: 10px;
+}
+
+.dice_tab2_character {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 111px;
+	margin-left: 10px;
+}
+
+.dice_tab3_character {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 38px;
+	margin-left: 10px;
 }
 
 .dice_tab_capacity {
     grid-column: 5;
     grid-row: 1;
+	margin-left: 10px;
+}
+
+.dice_tab1_equipment {
+    grid-column: 7;
+    grid-row: 1;
+    margin-top: 51px;
+	margin-left: 11px;
+}
+
+.dice_tab2_equipment {
+    grid-column: 7;
+    grid-row: 1;
+    margin-top: 175px;
+	margin-left: 11px;
+}
+
+.dice_tab3_equipment {
+    grid-column: 7;
+    grid-row: 1;
+    margin-top: 299px;
+	margin-left: 11px;
 }
 
 span.dice_tab{      
@@ -913,7 +960,7 @@ span.dice_tab{
 	line-height: 1.5;
 	height: 135px;
 	text-align: center;
-	width: 40px;
+	width: 30px;
 }
 
 body.sheet-darkmode span.dice_tab{   
@@ -935,7 +982,7 @@ body.sheet-darkmode span.dice_tab{
 
 .wrapper{  
 	display: grid;
-	grid-template-columns: 270px 360px 0px 50px;
+    grid-template-columns: 270px 360px 0px 63px;
 	grid-auto-rows: 30px;
 	padding-top: 13px;
 }
@@ -1044,7 +1091,6 @@ body.sheet-darkmode span.dice_tab{
 .my_note{
   grid-column: 1 / 4;
   grid-row: 1 / 1;
-  padding-top: 20px;
 }
 
 
@@ -1338,7 +1384,20 @@ body.sheet-darkmode .title_balance {
 	grid-row: 1;
 }
 
+.header-grid_capacity_adjust {
+	grid-column: 5;
+	grid-row: 1;
+	padding-top: 27px;
+}
+
 .header-grid {
+	grid-column: 5;
+	grid-row: 1;
+	padding-top: 27px;
+}
+
+
+.header-grid_capacity {
 	grid-column: 5;
 	grid-row: 1;
 	padding-top: 27px;
@@ -1502,7 +1561,7 @@ span.efficiency_reminder {
 
 .wrapper_weapon {
 	display: grid;
-	grid-template-columns: 140px 80px 115px 100px 220px;
+    grid-template-columns: 140px 80px 115px 100px 220px 1px 0px;
 	grid-auto-rows: 25px;
 	grid-gap: 6px;
 	padding-top: 10px;
@@ -1788,6 +1847,17 @@ body.sheet-darkmode .charsheet input.defense_note{
 
 /*----------- Notes Section -------------*/
 
+.wrapper_note {
+  max-width: 600px;
+}
+
+.wrapper_note {  
+	display: grid;
+    grid-template-columns: 270px 330px 0px 48px;
+	grid-auto-rows: 30px;
+	padding-top: 13px;
+}
+
 div.section-notes input[type=text],
 input[type=number] {
     display: inline-block;
@@ -1805,6 +1875,26 @@ input[type=number] {
 /*----------- Dice Button Section -------------*/
 .ui-dialog .charsheet button[type=roll]::before {
     content: "";
+}
+
+button[type="roll"].roll_tab{
+    height: 130px;
+    border-style: none;
+    background-color: #a1a09f;
+    margin-left: -8px !important;
+    margin-top: 0px !important;
+    background-image: none;
+    font-size: 18px !important;
+    color: white;
+    line-height: 1.1;
+}
+
+button[type="roll"].roll_tab:hover{
+    background-color: #ffffff00;
+    border-color: transparent;
+    background-image: none;
+    color: #020202ab;
+    font-weight: bold;
 }
 
 div.d6{
