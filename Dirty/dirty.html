@@ -3,10 +3,9 @@
 <!----------------------->	
 <div class=main>
 	<!-- Logo -->
-	<div class="logo">
-		<!-- <button type="roll" name="roll_Conflict" data-i18n-title="conflict_dice" title="Conflict Dice" value="&{template:tencandles} {{title=^{roll_d6_title}}}{{conflict=[[?{How many dice?|1}d6s=6]]}}" class="d6"></button> -->
+	<!-- <div class="logo">
 	</div>
-	<br>
+	<br> -->
 
 	<!-- TAB -->
 	<input type="radio" name="attr_sheet-type" value="1" class="onglcharacter" checked /><span data-i18n="TAB_character">Character</span>
@@ -21,65 +20,104 @@
 			<div class="profile-text">
 				<div class="wrapper">
 					<div class="name">
-						<p><span data-i18n="name">Name</span><input class="simple" type="text" name="attr_character_name"></p>
+						<span data-i18n="name">Name</span><input class="simple" type="text" name="attr_character_name">
 					</div>
 				</div>
 				<div class="wrapper">
 					<div class="profil">
-						<p><span data-i18n="profil">Profil</span><input class="simple" type="text" name="attr_profil"></p>
+						<span data-i18n="profil">Profil</span><input class="simple" type="text" name="attr_profil">
 					</div>
+					<div class="dice_tab_character"><span class="dice_tab" data-i18n="dice1">TENSION</span></div>
 				</div>
 				<div class="wrapper">
 					<div class="style">
-						<p><span data-i18n="style">Style</span><input class="simple" type="text" name="attr_style"></p>
+						<span data-i18n="style">Style</span><input class="simple" type="text" name="attr_style">
 					</div>
+				</div>
+				<div>
+				<div class="wrapper">
+					<div class="background_title">
+						<span data-i18n="background">Background</span>
+					</div>
+					<div class="dice_tab_character"><span class="dice_tab" data-i18n="dice1">TENSION</span></div>
+				</div>
 				</div>
 				<div class="wrapper">
 					<div class="background">
-						<p><span data-i18n="background">Background</span></p>
-						<p><textarea class="character" name="attr_background" autocomplete="off" ></textarea></p></div>
+						<textarea class="character" name="attr_background" autocomplete="off" ></textarea>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="bond_title">
+						<span data-i18n="bond">Bond</span>
+					</div>
 				</div>
 				<div class="wrapper">
 					<div class="bond">
-						<p><span data-i18n="bond">Bond</span></p>
-						<p><textarea class="character" name="attr_bond"></textarea></p>
+						<textarea class="character" name="attr_bond"></textarea>
 					</div>
 				</div>
 				<div class="wrapper">
 					<div class="possession">
-						<p><span data-i18n="possession">Possession</span></p>
+						<span data-i18n="possession">Possession</span>
+					</div>
+					<div class="dice_tab_character"><span class="dice_tab" data-i18n="dice1">TENSION</span></div>
+				</div>
+				<div class="wrapper">
+					<div class="possession1">
+						<input class="semi" type="text" name="attr_possession1">
+					</div>
+					<div class="possession2">
+						<input class="semi" type="text" name="attr_possession4">
 					</div>
 				</div>
 				<div class="wrapper">
 					<div class="possession1">
-						<p><input class="semi" type="text" name="attr_possession1"></p>
-						<p><input class="semi" type="text" name="attr_possession2"></p>
-						<p><input class="semi" type="text" name="attr_possession3"></p>
+						<input class="semi" type="text" name="attr_possession2">
 					</div>
 					<div class="possession2">
-						<p><input class="semi" type="text" name="attr_possession4"></p>
-						<p><input class="semi" type="text" name="attr_possession5"></p>
-						<p><input class="semi" type="text" name="attr_possession6"></p>
+						<input class="semi" type="text" name="attr_possession5">
 					</div>
 				</div>
 				<div class="wrapper">
+					<div class="possession1">
+						<input class="semi" type="text" name="attr_possession3">
+					</div>
+					<div class="possession2">
+						<input class="semi" type="text" name="attr_possession6">
+					</div>
+				</div>
+					
+				<div class="wrapper">
 					<div class="state_title">
-						<p><span data-i18n="state">State</span></p>
+						<span data-i18n="state">State</span>
 					</div>
 					<div class="trauma_title">
-						<p><span data-i18n="trauma">Trauma</span></p>
+						<span data-i18n="trauma">Trauma</span>
 					</div>
 				</div>
 				<div class="wrapper">
 					<div class="state">
-						<p><input class="semi" type="text" name="attr_state1"></p>
-						<p><input class="semi" type="text" name="attr_state2"></p>
-						<p><input class="semi" type="text" name="attr_state3"></p>
+						<input class="semi" type="text" name="attr_state1">
 					</div>
 					<div class="trauma">
-						<p><input class="semi" type="text" name="attr_trauma1"></p>
-						<p><input class="semi" type="text" name="attr_trauma2"></p>
-						<p><input class="semi" type="text" name="attr_trauma3"></p>
+						<input class="semi" type="text" name="attr_trauma1">
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="state">
+						<input class="semi" type="text" name="attr_state2">
+					</div>
+					<div class="trauma">
+						<input class="semi" type="text" name="attr_trauma2">
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="state">
+						<input class="semi" type="text" name="attr_state3">
+					</div>
+					<div class="trauma">
+						<input class="semi" type="text" name="attr_trauma1">
 					</div>
 				</div>
 			</div>
@@ -89,11 +127,6 @@
 
 	<!-- Capacity Tab -->
 	<div class="capacity">
-			<div class="wrapper_button_roll">
-				<div class="title_dice1"><span class="dice_button" data-i18n="dice1">Dice1</span></div>
-				<div class="title_dice2"><span class="dice_button" data-i18n="dice2">Dice2</span></div>
-				<div class="title_dice3"><span class="dice_button" data-i18n="dice3">Dice3</span> basculer dice comme stature etcc sur coté?</div>
-			</div>
 			<div class="wrapper_capacity">
 				<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div>
 				<div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
@@ -146,6 +179,7 @@
 						<span class="sheet-checked">7</span></button>
 					</div>
 				</div>
+				<div class="dice_tab_capacity"><span class="dice_tab" data-i18n="dice1">TENSION</span></div>
 			</div>
 			
 			<div class="wrapper_capacity">
@@ -225,6 +259,7 @@
 						<span class="sheet-checked">7</span></button>
 					</div>
 				</div>
+				<div class="dice_tab_capacity"><span class="dice_tab" data-i18n="dice2">TERROR</span></div>
 			</div>
 			
 			<div class="wrapper_capacity">
@@ -304,6 +339,7 @@
 						<span class="sheet-checked">7</span></button>
 					</div>
 				</div>
+				<div class="dice_tab_capacity"><span class="dice_tab" data-i18n="dice3">DAMAGE</span></div>
 			</div>
 			
 			<div class="wrapper_capacity">
@@ -593,7 +629,7 @@
 			<div class="profile-text">
 				<div class="wrapper">
 					<div class="my_note">
-						<p><textarea class="notes" name="attr_notes" autocomplete="off" ></textarea></p>
+						<textarea class="notes" name="attr_notes" autocomplete="off" ></textarea>
 					</div>
 				</div>		
 			</div>
