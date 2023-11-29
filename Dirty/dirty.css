@@ -281,10 +281,13 @@ input[type=radio].onglnotes:checked ~ div.notes{
     display: block;
 } 
 
+
 input[type=radio].onglcharacter,
 input[type=radio].onglcapacity,
 input[type=radio].onglequipment,
-input[type=radio].onglnotes{
+input[type=radio].onglnotes,
+button[type="roll"].roll_initiative
+{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -296,8 +299,37 @@ input[type=radio].onglnotes{
     z-index: 2;
 	font-family: 'Stylish', serif;
     font-size: 14px;
-	
 }
+
+button[type="roll"].roll_initiative + span{
+    color: #333333;
+    font-size: 15px;
+    text-align: center;
+    display: inline-block;
+    width: 120px;
+    height: 20px;
+    margin: 0;
+    margin-left: -124px;
+    margin-right: -4px;
+    padding: 0;
+    margin-bottom: -1px;
+    padding-top: 5px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888888;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 16px;
+    z-index: 1;
+    font-family: 'Stylish', serif;
+    font-size: 14px;
+}
+
+body.sheet-darkmode button[type="roll"].roll_initiative + span{
+    color: #ffffff;
+}
+
 input[type=radio].onglcharacter + span,
 input[type=radio].onglcapacity + span,
 input[type=radio].onglequipment + span,
@@ -325,6 +357,8 @@ input[type=radio].onglnotes + span{
     font-family: 'Stylish', serif;
     font-size: 14px;
 }
+
+
 body.sheet-darkmode input[type=radio].onglcharacter:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment:checked + span,
@@ -1968,6 +2002,7 @@ button[type="roll"].empty:before{
 	color: #eee;
 	text-align: left;
 	padding: 8px;
+    padding-bottom: 3px;
 	border-bottom: 2px solid var(--dirty-border);
 	font-family: 'Stylish';
 }
@@ -1977,8 +2012,8 @@ button[type="roll"].empty:before{
 }
 
 .sheet-rolltemplate-dirty .sheet-subtitle {
-    font-size: 15px;
-	padding-top: 10px;
+    font-size: 14px;
+	padding-top: 4px;
 }
 
 
