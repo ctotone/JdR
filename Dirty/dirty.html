@@ -120,37 +120,10 @@
 			</div>
 		</div>
 		
-
+		
 		<!-- Capacity Tab -->
 		<div class="capacity">
 			<div class="header-grid_capacity_adjust"></div>
-				<div class="wrapper_capacity">
-					<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div>
-					<div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
-					<div class="reserve_rank">
-						<div class="sheet-dots">
-						  <input type="hidden" name="attr_profil_reserve" class="sheet-profil_reserve" value="1" />
-						  <button type="action" name="act_profil_reserve_1" class="sheet-profil_reserve">
-							<span class="sheet-checked">0</span></button>
-						  <button type="action" name="act_profil_reserve_2" class="sheet-profil_reserve sheet-gt-1">
-							<span class="sheet-checked">1</span></button>
-						  <button type="action" name="act_profil_reserve_3" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2">
-							<span class="sheet-checked">2</span></button>
-						  <button type="action" name="act_profil_reserve_4" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3">
-							<span class="sheet-checked">3</span></button>
-						  <button type="action" name="act_profil_reserve_5" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-							<span class="sheet-checked">4</span></button>
-						  <button type="action" name="act_profil_reserve_6" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-							<span class="sheet-checked">5</span></button>
-						  <button type="action" name="act_profil_reserve_7" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-							<span class="sheet-checked">6</span></span></button>
-						  <button type="action" name="act_profil_reserve_8" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-							<span class="sheet-checked">7</span></button>
-						</div>
-					</div>
-				</div>
-				
-			<div class="header-grid"></div>
 				<div class="wrapper_capacity">
 					<div class="capacity_type"><span class="capacity_type" data-i18n="stature">STATURE</span></div>
 					<div class="title_capacity"><span data-i18n="capacity_beat">BEAT</span></div>
@@ -391,6 +364,34 @@
 					</div>
 				</div>
 				
+			<div class="header-grid"></div>
+				
+				<div class="wrapper_capacity">
+					<div class="title_capacity"><span data-i18n="capacity_profil">PROFIL</span></div>
+					<div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
+					<div class="reserve_rank">
+						<div class="sheet-dots">
+						  <input type="hidden" name="attr_profil_reserve" class="sheet-profil_reserve" value="1" />
+						  <button type="action" name="act_profil_reserve_1" class="sheet-profil_reserve">
+							<span class="sheet-checked">0</span></button>
+						  <button type="action" name="act_profil_reserve_2" class="sheet-profil_reserve sheet-gt-1">
+							<span class="sheet-checked">1</span></button>
+						  <button type="action" name="act_profil_reserve_3" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2">
+							<span class="sheet-checked">2</span></button>
+						  <button type="action" name="act_profil_reserve_4" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3">
+							<span class="sheet-checked">3</span></button>
+						  <button type="action" name="act_profil_reserve_5" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
+							<span class="sheet-checked">4</span></button>
+						  <button type="action" name="act_profil_reserve_6" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
+							<span class="sheet-checked">5</span></button>
+						  <button type="action" name="act_profil_reserve_7" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
+							<span class="sheet-checked">6</span></span></button>
+						  <button type="action" name="act_profil_reserve_8" class="sheet-profil_reserve sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
+							<span class="sheet-checked">7</span></button>
+						</div>
+					</div>
+				</div>
+				
 				<div class="wrapper_info_injury">
 				<div class="injury_light_info"><span class="injury_light_info" data-i18n="injury_light_info">Light</span><br><span class="injury_light_info2" data-i18n="injury_light_info2">Light info</span></div>
 				<div class="injury_serious_info"><span class="injury_serious_info" data-i18n="injury_serious_info">Serious</span><br><span class="injury_serious_info2" data-i18n="injury_serious_info2">Serious info</span></div>
@@ -619,6 +620,9 @@
 				<div class="my_note">
 					<textarea class="notes" name="attr_notes" autocomplete="off" ></textarea>
 				</div>
+				<div class="dice_tab1_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
+				<div class="dice_tab2_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="terror_dice" title="Terror Roll" value="&{template:dirty} {{title=^{roll_terror_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="roll_tab" data-i18n="dice2">TERROR</button></span></div>
+				<div class="dice_tab3_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="roll_tab" data-i18n="dice3">DAMAGE</button></span></div>
 			</div>		
 		</div>
 			
