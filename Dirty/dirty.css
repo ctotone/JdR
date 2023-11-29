@@ -898,21 +898,21 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 .dice_tab1_character {
     grid-column: 5;
     grid-row: 1;
-    margin-top: 38px;
+    margin-top: -42px;
 	margin-left: 10px;
 }
 
 .dice_tab2_character {
     grid-column: 5;
     grid-row: 1;
-    margin-top: 111px;
+    margin-top: 31px;
 	margin-left: 10px;
 }
 
 .dice_tab3_character {
     grid-column: 5;
     grid-row: 1;
-    margin-top: 38px;
+    margin-top: -42px;
 	margin-left: 10px;
 }
 
@@ -925,22 +925,43 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 .dice_tab1_equipment {
     grid-column: 7;
     grid-row: 1;
-    margin-top: 51px;
+    margin-top: -29px;
 	margin-left: 11px;
 }
 
 .dice_tab2_equipment {
     grid-column: 7;
     grid-row: 1;
-    margin-top: 175px;
+    margin-top: 95px;
 	margin-left: 11px;
 }
 
 .dice_tab3_equipment {
     grid-column: 7;
     grid-row: 1;
-    margin-top: 299px;
+    margin-top: 219px;
 	margin-left: 11px;
+}
+
+.dice_tab1_note {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 1px;
+	margin-left: 10px;
+}
+
+.dice_tab2_note {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 160px;
+	margin-left: 10px;
+}
+
+.dice_tab3_note {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 319px;
+	margin-left: 10px;
 }
 
 span.dice_tab{      
@@ -1093,8 +1114,6 @@ body.sheet-darkmode span.dice_tab{
   grid-row: 1 / 1;
 }
 
-
-
 /*--- Character Section Style ---*/
 
 .charsheet div.section-profile{
@@ -1146,6 +1165,7 @@ input[type=number] {
 
 body.sheet-darkmode .charsheet textarea.character {
     background-color: #622f2f47;
+	color: #cccbcbc2;
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
@@ -1189,7 +1209,7 @@ body.sheet-darkmode .charsheet input.semi {
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: none;
-	color: #ffffffc2;
+	color: #cccbcbc2;
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
@@ -1197,58 +1217,39 @@ body.sheet-darkmode .charsheet textarea.notes {
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: solid 1px grey;
-	color: #ffffffc2;
+	color: #cccbcbc2;
 }
 
 body.sheet-darkmode .charsheet input.capacity_value {
    color: #1f1f1fc4;
 }
 
+.dirty_system {
+    grid-column: 1;
+    grid-row: 1;
+    line-height: 0.9;
+    margin-top: -20px;
+    text-align: center;
+    margin-left: -30px;
+}
+
+span.dirty_system {
+    font-size: 20px !important;
+    border: none;
+    margin-left: 0px;
+    margin-bottom: 07px;
+    font-family: "Stylish";
+    font-weight: bold;
+    text-align: center;
+	color: #6f6e6e;
+}
+
+body.sheet-darkmode span.dirty_system {
+    color: #ebe9e4;
+}
+
 
 /*----------- Capacity Section -------------*/
-
-/* .wrapper_button_roll {
-    display: grid;
-    grid-template-columns: 60px 130px 130px;
-    grid-auto-rows: 33px;
-	grid-gap: 6px;
-    padding-top: 15px;
-    margin-bottom: 15px;
-}
-
-.title_dice1,
-.title_dice2,
-.title_dice3 {
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dice_button.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-top: 6px;
-    padding-left: 15px;
-    color: white;
-    font-size: 14px;
-    width: 88px;
-} 
-
-body.sheet-darkmode .title_dice1,
-body.sheet-darkmode .title_dice2,
-body.sheet-darkmode .title_dice3 {
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dark_dice_button.png);
-}
-
-.title_dice1 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.title_dice2 {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.title_dice3 {
-    grid-column: 4;
-    grid-row: 1;
-}*/
 
 .wrapper_capacity {
     display: grid;
@@ -1853,7 +1854,7 @@ body.sheet-darkmode .charsheet input.defense_note{
 
 .wrapper_note {  
 	display: grid;
-    grid-template-columns: 270px 330px 0px 48px;
+    grid-template-columns: 270px 330px 0px 93px;
 	grid-auto-rows: 30px;
 	padding-top: 13px;
 }
@@ -1881,7 +1882,7 @@ button[type="roll"].roll_tab{
     height: 130px;
     border-style: none;
     background-color: #a1a09f;
-    margin-left: -8px !important;
+    margin-left: 1px !important;
     margin-top: 0px !important;
     background-image: none;
     font-size: 18px !important;
@@ -1894,7 +1895,25 @@ button[type="roll"].roll_tab:hover{
     border-color: transparent;
     background-image: none;
     color: #020202ab;
-    font-weight: bold;
+}
+
+body.sheet-darkmode button[type="roll"].roll_tab{
+    height: 130px;
+    border-style: none;
+    background-color: #484a4a !important;
+    margin-left: 1px !important;
+    margin-top: 0px !important;
+    background-image: none !important;
+    font-size: 18px !important;
+    color: white;
+    line-height: 1.1;
+}
+
+body.sheet-darkmode button[type="roll"].roll_tab:hover{
+    background-color: #ffffff00;
+    border-color: transparent;
+    background-image: none;
+    color: #622f2f;
 }
 
 div.d6{
