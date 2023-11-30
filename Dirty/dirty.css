@@ -639,6 +639,29 @@ body.sheet-darkmode .charsheet button.sheet-balance7{
     background-color: #3b3a3aa6; 
 }
 
+.charsheet button.sheet-injury_bone1,
+.charsheet button.sheet-balance_bone1,
+.charsheet button.sheet-injury_bone2,
+.charsheet button.sheet-balance_bone2{
+	width: 27px;
+    height: 27px;
+    border: solid 2px #8e0303;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+	padding: 0px;
+    cursor: pointer;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury_bone1,
+body.sheet-darkmode .charsheet button.sheet-balance_bone1,
+body.sheet-darkmode .charsheet button.sheet-injury_bone2,
+body.sheet-darkmode .charsheet button.sheet-balance_bone2{
+	border: solid 2px #8e0303;
+    background-color: #3b3a3aa6; 
+}
+
 .charsheet button:hover.sheet-profil_reserve,
 .charsheet button:hover.sheet-beat_reserve,
 .charsheet button:hover.sheet-endure_reserve,
@@ -724,6 +747,26 @@ body.sheet-darkmode .charsheet button:hover.sheet-balance6{
 body.sheet-darkmode .charsheet button:hover.sheet-injury7,
 body.sheet-darkmode .charsheet button:hover.sheet-balance7{
 	background-color: #5d0385;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury7,
+body.sheet-darkmode .charsheet button:hover.sheet-balance7{
+	background-color: #5d0385;
+}
+
+.charsheet button:hover.sheet-injury_bone1,
+.charsheet button:hover.sheet-balance_bone1,
+.charsheet button:hover.sheet-injury_bone2,
+.charsheet button:hover.sheet-balance_bone2{
+	background-color: #8e0303;
+    transition: 0.7s;
+}
+
+body.sheet-darkmode .charsheet button:hover.sheet-injury_bone1,
+body.sheet-darkmode .charsheet button:hover.sheet-balance_bone1,
+body.sheet-darkmode .charsheet button:hover.sheet-injury_bone2,
+body.sheet-darkmode .charsheet button:hover.sheet-balance_bone2{
+	background-color: #8e0303;
 }
 
 .charsheet button.sheet-profil_reserve > span,
@@ -848,6 +891,29 @@ body.sheet-darkmode .charsheet button.sheet-balance6 > span{
 body.sheet-darkmode .charsheet button.sheet-injury7 > span,
 body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 	background-color: #5d0385;
+    color: #e7e5e5;
+}
+
+.charsheet button.sheet-injury_bone1 > span,
+.charsheet button.sheet-balance_bone1 > span,
+.charsheet button.sheet-injury_bone2 > span,
+.charsheet button.sheet-balance_bone2 > span{
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8e0303;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+body.sheet-darkmode .charsheet button.sheet-injury_bone1 > span,
+body.sheet-darkmode .charsheet button.sheet-balance_bone1 > span,
+body.sheet-darkmode .charsheet button.sheet-injury_bone2 > span,
+body.sheet-darkmode .charsheet button.sheet-balance_bone2 > span{
+	background-color: #8e0303;
     color: #e7e5e5;
 }
 
@@ -978,13 +1044,17 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 .charsheet input.sheet-injury5:not([value="1"]) ~ button.sheet-injury5 > span.sheet-checked5,
 .charsheet input.sheet-injury6:not([value="1"]) ~ button.sheet-injury6 > span.sheet-checked6,
 .charsheet input.sheet-injury7:not([value="1"]) ~ button.sheet-injury7 > span.sheet-checked7,
+.charsheet input.sheet-injury_bone1:not([value="1"]) ~ button.sheet-injury_bone1 > span.sheet-checked21,
+.charsheet input.sheet-injury_bone2:not([value="1"]) ~ button.sheet-injury_bone2 > span.sheet-checked22,
 .charsheet input.sheet-balance1:not([value="1"]) ~ button.sheet-balance1 > span.sheet-checked11,
 .charsheet input.sheet-balance2:not([value="1"]) ~ button.sheet-balance2 > span.sheet-checked12,
 .charsheet input.sheet-balance3:not([value="1"]) ~ button.sheet-balance3 > span.sheet-checked13,
 .charsheet input.sheet-balance4:not([value="1"]) ~ button.sheet-balance4 > span.sheet-checked14,
 .charsheet input.sheet-balance5:not([value="1"]) ~ button.sheet-balance5 > span.sheet-checked15,
 .charsheet input.sheet-balance6:not([value="1"]) ~ button.sheet-balance6 > span.sheet-checked16,
-.charsheet input.sheet-balance7:not([value="1"]) ~ button.sheet-balance7 > span.sheet-checked17{
+.charsheet input.sheet-balance7:not([value="1"]) ~ button.sheet-balance7 > span.sheet-checked17,
+.charsheet input.sheet-balance_bone1:not([value="1"]) ~ button.sheet-balance_bone1 > span.sheet-checked23,
+.charsheet input.sheet-balance_bone2:not([value="1"]) ~ button.sheet-balance_bone2 > span.sheet-checked24{
   display: none;
 }
 
@@ -1275,6 +1345,7 @@ input[type=number] {
 	border-bottom-right-radius: 8px;
 	border: none;  
 	margin-top: -10px;
+	resize:none;
 }
 
 .charsheet textarea.notes {
@@ -1286,6 +1357,7 @@ input[type=number] {
 	border-bottom-right-radius: 8px;
 	border: solid 1px #888888;
     padding: 10px;
+	resize:none;
 }
 
 body.sheet-darkmode .charsheet textarea.character {
@@ -1399,6 +1471,14 @@ body.sheet-darkmode span.dirty_system {
 	margin-left: 30px;
 }
 
+.wrapper_capacity_bone2 {
+    display: grid;
+	grid-template-columns: 70px 65px 54px 117px 65px 54px;	
+    grid-auto-rows: 40px;
+    padding-top: 13px;
+	margin-left: 30px;
+}
+
 .wrapper_info_injury {
     display: grid;
     grid-template-columns: 225px 106px 72px 62px;
@@ -1411,6 +1491,22 @@ body.sheet-darkmode span.dirty_system {
     grid-template-columns: 225px 106px 72px 62px;
     grid-auto-rows: 8px;
     padding-bottom: 20px;
+}
+
+.wrapper_info_bone_up {
+    display: grid;
+    grid-template-columns: 48px 108px 57px 180px 55px;
+    grid-auto-rows: 8px;
+    padding-top: 24px;
+    margin-bottom: -5px;
+}
+
+.wrapper_info_bone_down {
+    display: grid;
+    grid-template-columns: 55px 105px 59px 174px 57px;
+    grid-auto-rows: 8px;
+    padding-bottom: 20px;
+    padding-top: 3px;
 }
 
 .wrapper_link {
@@ -1579,6 +1675,14 @@ body.sheet-darkmode .title_balance {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dark_balance_background.png);
 }
 
+body.sheet-darkmode .title_injury_bone {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/bone_injury_background_dark.png);
+}
+
+body.sheet-darkmode .title_balance_bone {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/bone_balance_background_dark.png);
+}
+
 .charsheet .value_contener {
 	grid-column: 3;
 	grid-row: 1;
@@ -1605,6 +1709,26 @@ body.sheet-darkmode .title_balance {
 
 .reserve_rank {
 	grid-column: 4;
+	grid-row: 1;
+}
+
+.injury_dot1 {
+	grid-column: 3;
+	grid-row: 1;
+}
+
+.injury_dot2 {
+	grid-column: 4;
+	grid-row: 1;
+}
+
+.balance_dot1 {
+	grid-column: 6;
+	grid-row: 1;
+}
+
+.balance_dot2 {
+	grid-column: 7;
 	grid-row: 1;
 }
 
@@ -1682,7 +1806,8 @@ span.balance_light_info2,
 span.balance_severe_info2,
 span.balance_serious_info2,
 span.balance_crisis_info,
-span.injury_agony_info {
+span.injury_agony_info
+ {
 	color: #a1a09e;
 	font-size : 14px;
 }
@@ -1694,6 +1819,56 @@ span.balance_light_info2,
 span.balance_severe_info2,
 span.balance_serious_info2 {
 	font-size : 12px;
+}
+
+span.bone_info,
+span.bone_info_2 {
+	color: #a1a09e;
+	font-size : 14px;
+ }
+ 
+span.bone_info_2 {
+	font-size : 11px;
+}
+ 
+.bone_info_up1,
+.bone_info_down1 {
+	grid-column: 3;
+	grid-row: 1;
+    line-height: 0.9;
+}
+
+.bone_info_up2,
+.bone_info_down2 {
+	grid-column: 4;
+	grid-row: 1;
+    line-height: 0.9;
+}
+
+.bone_info_up3,
+.bone_info_down3  {
+	grid-column: 5;
+	grid-row: 1;	
+    line-height: 0.9;
+}
+
+.bone_info_up4,
+.bone_info_down4  {
+	grid-column: 6;
+	grid-row: 1;	
+    line-height: 0.9;
+}
+
+span.bone_info_up1,
+span.bone_info_up2,
+span.bone_info_up3,
+span.bone_info_up4,
+span.bone_info_down1,
+span.bone_info_down2,
+span.bone_info_down3,
+span.bone_info_down4{
+	color: #a1a09e;
+	font-size : 14px;
 }
 
 .title_link {

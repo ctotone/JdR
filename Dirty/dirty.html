@@ -2,9 +2,9 @@
 <!-- [CHARACTER SHEET] -->
 <!----------------------->	
 <!-- Rounded switch -->
-<input type="checkbox" name="attr_bone_version" class="sheet-dispchk" style="visibility: hidden;"checked />
+<input type="checkbox" name="attr_bone_version" class="sheet-dispchk" style="visibility: hidden;">
 <div class="wrapper_switch">
-	<div class="switch_sheet"><label class="switch" data-i18n-title="switch_sheet" title="Switch sheet version" ><input type="checkbox" name="attr_bone_version" class="sheet-dispchk" data-i18n-title="switch_sheet" title="Switch sheet version" checked /><span class="slider round" data-i18n-title="switch_sheet" title="Switch sheet version" ></span></label></div>
+	<div class="switch_sheet"><label class="switch" data-i18n-title="switch_sheet" title="Switch sheet version" ><input type="checkbox" name="attr_bone_version" class="sheet-dispchk" data-i18n-title="switch_sheet" title="Switch sheet version"><span class="slider round" data-i18n-title="switch_sheet" title="Switch sheet version" ></span></label></div>
 </div>
 
 <!--------------------------->
@@ -172,36 +172,59 @@
 					<!-- </div> -->
 				<!-- </div> -->
 				
-				<div class="wrapper_info_injury">
-				<div class="injury_light_info"><span class="injury_light_info" data-i18n="injury_light_info">Light</span><br><span class="injury_light_info2" data-i18n="injury_light_info2">Light info</span></div>
-				<div class="injury_serious_info"><span class="injury_serious_info" data-i18n="injury_serious_info">Serious</span><br><span class="injury_serious_info2" data-i18n="injury_serious_info2">Serious info</span></div>
-				<div class="injury_severe_info"><span class="injury_severe_info" data-i18n="injury_severe_info">Severe</span><br><span class="injury_severe_info2" data-i18n="injury_severe_info2">Severe info</span></div>
-				<div class="injury_agony_info"><span class="injury_agony_info" data-i18n="injury_agony_info">Agony</span></div>
+				<div class="wrapper_info_bone_up">
+				<div class="bone_info_up1"><span class="bone_info_2" data-i18n="injury_light_info2">Light info</span></div>
+				<div class="bone_info_up2"><span class="bone_info_2" data-i18n="injury_severe_info2">Severe info</span></div>
+				<div class="bone_info_up3"><span class="bone_info_2" data-i18n="balance_light_info2">Light info</span></div>
+				<div class="bone_info_up4"><span class="bone_info_2" data-i18n="balance_severe_info2">Severe info</span></div>
 				</div>
-				<div class="wrapper_capacity_bone1">
+				
+				<div class="wrapper_capacity_bone2">
 					<div class="title_injury_bone"></div>
-					<!-- <div class="reserve_rank"> -->
-						<!-- <div class="sheet-dots"> -->
-							<!-- <input type="hidden" class="sheet-balance7" name="attr_balance7_flag" /> -->
-							<!-- <button type="action" name="act_balance7" class="sheet-balance7"> -->
-							<!-- <span class="sheet-checked17" style="font-family: 'Pictos'">*</span></button> -->
-						<!-- </div> -->
-					<!-- </div> -->
-					<div class="title_balance_bone"></div>
+					<div class="injury_dot1">
+						<div class="sheet-dots">
+							<input type="hidden" class="sheet-injury_bone1" name="attr_injury_bone1_flag" />
+							<button type="action" name="act_injury_bone1" class="sheet-injury_bone1">
+							<span class="sheet-checked21" style="font-family: 'Pictos'">&</span></button>
+						</div>
 					</div>
-				<div class="wrapper_info_balance">
-				<div class="balance_light_info"><span class="balance_light_info" data-i18n="balance_light_info">Troubled</span><br><span class="balance_light_info2" data-i18n="balance_light_info2">Light info</span></div>
-				<div class="balance_serious_info"><span class="balance_serious_info" data-i18n="balance_serious_info">Shaken</span><br><span class="balance_serious_info2" data-i18n="balance_serious_info2">Serious info</span></div>
-				<div class="balance_severe_info"><span class="balance_severe_info" data-i18n="balance_severe_info">Devastated</span><br><span class="balance_severe_info2" data-i18n="balance_severe_info2">Severe info</span></div>
-				<div class="balance_crisis_info"><span class="balance_crisis_info" data-i18n="balance_crisis_info">Crisis</span></div>
+					<div class="injury_dot2">
+						<div class="sheet-dots">
+							<input type="hidden" class="sheet-injury_bone2" name="attr_injury_bone2_flag" />
+							<button type="action" name="act_injury_bone2" class="sheet-injury_bone2">
+							<span class="sheet-checked22" style="font-family: 'Pictos'">Y</span></button>
+						</div>
+					</div>
+					<div class="title_balance_bone"></div>
+					<div class="balance_dot1">
+						<div class="sheet-dots">
+							<input type="hidden" class="sheet-balance_bone1" name="attr_balance_bone1_flag" />
+							<button type="action" name="act_balance_bone1" class="sheet-balance_bone1">
+							<span class="sheet-checked23" style="font-family: 'Pictos'">&</span></button>
+						</div>
+					</div>
+					<div class="balance_dot2">
+						<div class="sheet-dots">
+							<input type="hidden" class="sheet-balance_bone2" name="attr_balance_bone2_flag" />
+							<button type="action" name="act_balance_bone2" class="sheet-balance_bone2">
+							<span class="sheet-checked24" style="font-family: 'Pictos'">Y</span></button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="wrapper_info_bone_down">
+				<div class="bone_info_down1"><span class="bone_info" data-i18n="injury_light_info">Troubled</span></div>
+				<div class="bone_info_down2"><span class="bone_info" data-i18n="injury_severe_info">Shaken</span></div>
+				<div class="bone_info_down3"><span class="bone_info" data-i18n="balance_light_info">Devastated</span></div>
+				<div class="bone_info_down4"><span class="bone_info" data-i18n="balance_severe_info">Crisis</span></div>
 				</div>
 				
 				<div class="wrapper_link">
 					<div class="title_link"><span class="title_link" data-i18n="capacity_link">Link</div>
 					<div class="value_link"><input class="link_value" type="text" name="attr_link_value" placeholder="0" /></div>
 					<div class="efficiency_reminder">
-						<span class="efficiency_reminder" data-i18n="efficiency_reminder1">Modify your Efficiency: Ability Reserves (2pts max) . Profile (1pt) + 1pt Reserve</span><br>
-						<span class="efficiency_reminder" data-i18n="efficiency_reminder2">Link Reserve . Tension Dice . Storytelling . Equipment . States</span>
+						<span class="efficiency_reminder" data-i18n="efficiency_bone_reminder1">Modify your Efficiency:Profile (1pt) . Link Reserve</span><br>
+						<span class="efficiency_reminder" data-i18n="efficiency_bone_reminder2">Tension Dice . Storytelling . Equipment . States</span>
 					</div>
 				</div>
 		</div>
@@ -361,7 +384,7 @@
 </div>
 
 <!------------------------------>
-<!-- [TO IN THE FLESH VERSION -->
+<!-- [TO THE FLESH VERSION -->
 <!------------------------------>
 <div class="flesh">
 		<!-- Logo -->
@@ -1090,7 +1113,7 @@
 	  });
 
 
-	  const toggleList = ["injury1","injury2","injury3","injury4","injury5","injury6","injury7","balance1","balance2","balance3","balance4","balance5","balance6","balance7"];
+	  const toggleList = ["injury1","injury2","injury3","injury4","injury5","injury6","injury7","balance1","balance2","balance3","balance4","balance5","balance6","balance7","balance_bone1","balance_bone2","injury_bone1","injury_bone2"];
 		toggleList.forEach(function(button) {
 		on(`clicked:${button}`, function() {
 		  const flag = `${button}_flag`;
