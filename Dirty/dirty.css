@@ -2,11 +2,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
+/*------------------------------------*\
+  #Switch Bone / Flesh
+\*------------------------------------*/
+.wrapper_switch {
+  max-width: 600px;
+}
+
+.wrapper_switch{      
+	display: grid;
+	grid-template-columns: 596px 75px 40px 100px;
+	grid-auto-rows: 16px;
+	margin-top: -24px;
+	padding-bottom: 10px;
+}
+
+.bone_option,
+.sweet_sheet,
+.flesh_option {
+	grid-row: 1;
+	font-size: 20px;
+	line-height: 1.5;
+	display:flex;
+	font-size: 15px;
+}
+
+.bone_option {
+	grid-column: 2;
+	padding: 0;
+	margin-top: -3px;
+}
+
+.switch_sheet {
+	grid-column: 4;
+}
+
+.flesh_option {
+	grid-column: 4; 
+	padding: 0;
+	margin-top: -3px;
+}
+
+/* span.vertical {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+} */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 33px !important;
+  height: 18px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {  
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #a1a09f;
+	-webkit-transition: .4s;
+	transition: .4s;
+	width: 33px;
+	height: 18px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 10px;
+  height: 10px;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+div.sheet-dispchk,
+div.flesh,
+div.bone{
+    display: none;
+}
+input[type="checkbox"].sheet-dispchk:checked ~ div.bone{
+    display: block;
+}
+
+input[type="checkbox"].sheet-dispchk:not(:checked) ~ div.flesh{
+    display: block;
+}
+
 
 /*------------------------------------*\
   #General
 \*------------------------------------*/
-
 
 .charsheet span{
    font-family: 'Stylish';
@@ -26,16 +148,12 @@ body.sheet-darkmode .charsheet {
 }
 
 
-div.main {
+div.bone,
+div.flesh {
 	width: 740px;
 	padding: 10px;
     height: auto;
-}
-
-.section-notes div.main {
-	background-size: cover;
-    width: 740px;
-    padding: 10px;
+	margin-top: -20px;
 }
 
 div.logo {
@@ -140,97 +258,6 @@ body.sheet-darkmode .charsheet {
   #Menu Tabs Setup
 \*------------------------------------*/
 
-/*Configure the tab buttons*/
-.charsheet .sheet-1,
-.charsheet .sheet-2,
-.charsheet .sheet-3,
-.charsheet .sheet-4{
-    display: none;
-}
-
-/* show the selected tab */
-.charsheet .sheet-tabstoggle[value="1"] ~ div.sheet-1,
-.charsheet .sheet-tabstoggle[value="2"] ~ div.sheet-2,
-.charsheet .sheet-tabstoggle[value="3"] ~ div.sheet-3,
-.charsheet .sheet-tabstoggle[value="4"] ~ div.sheet-4  {
-    display: block;
-}
-
-/*this hides the radio button for each tab, makes it 100px wide and 40px tall and makes sure it's above everything else*/
-.charsheet button.tab_menu1,
-.charsheet button.tab_menu2,
-.charsheet button.tab_menu3,
-.charsheet button.tab_menu4 {
-    width: 100px;
-    height: 40px;
-    cursor: pointer;    
-    position: relative;
-    opacity: 0;
-    z-index: 9999;
-	color: #ffffff5e;
-}
-
-
-/*this styles the span with the tab information and slides to the left, so it appears underneath the radio button*/
-.charsheet span.tab1,
-.charsheet span.tab2,
-.charsheet span.tab3,
-.charsheet span.tab4{
-    display: inline-block;
-    text-align: center;
-    font-size: 13px;    
-    font-weight: bold;
-    border-radius: 4px;
-    width: 100px;
-    height: 40px;
-    cursor: pointer;    
-    position: relative;
-    vertical-align: middle;
-    margin-left: -101px;/*originally 91px*/
-	color: #0000004f;
-}
-
-body.sheet-darkmode .charsheet span.tab1,
-body.sheet-darkmode .charsheet span.tab2,
-body.sheet-darkmode .charsheet span.tab3,
-body.sheet-darkmode .charsheet span.tab4{
-    color: #ffffff3d;
-}
-
-.charsheet .sheet-tabstoggle[value="1"] ~ span.tab1,
-.charsheet .sheet-tabstoggle[value="2"] ~ span.tab2,
-.charsheet .sheet-tabstoggle[value="3"] ~ span.tab3,
-.charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
-    border:solid 1px;
-	color: black;
-    
-}
-
-body.sheet-darkmode .charsheet .sheet-tabstoggle[value="1"] ~ span.tab1,
-body.sheet-darkmode .charsheet .sheet-tabstoggle[value="2"] ~ span.tab2,
-body.sheet-darkmode .charsheet .sheet-tabstoggle[value="3"] ~ span.tab3,
-body.sheet-darkmode .charsheet .sheet-tabstoggle[value="4"] ~ span.tab4 {
-	color: white;
-    
-}
-
-/*this styles the span with the tab information and slides to the left, so it appears underneath the radio button*/
-.charsheet button.tab_menu1:hover + span.tab1,
-.charsheet button.tab_menu2:hover + span.tab2,
-.charsheet button.tab_menu3:hover + span.tab3,
-.charsheet button.tab_menu4:hover + span.tab4{
-    border:solid 1px;  
-	color: black;	
-}
-
-/*this styles the span with the tab information and slides to the left, so it appears underneath the radio button*/
-body.sheet-darkmode .charsheet button.tab_menu1:hover + span.tab1,
-body.sheet-darkmode .charsheet button.tab_menu2:hover + span.tab2,
-body.sheet-darkmode .charsheet button.tab_menu3:hover + span.tab3,
-body.sheet-darkmode .charsheet button.tab_menu4:hover + span.tab4{
-	color: white;
-}
-
 div.character,
 div.equipment,
 div.notes{
@@ -247,7 +274,7 @@ div.character{
 div.equipment{
 	padding-left: 7px;
 	padding-top: 19px;
-	height: 550px;
+	height: 630px;
 }
 
 div.notes{
@@ -264,8 +291,37 @@ div.capacity{
     margin-left: -22px;
 }
 
-div.border-sheet-type {
-	border-bottom:solid 1px;
+div.character_bone,
+div.equipment_bone,
+div.notes_bone{
+    display: none;
+	padding-top: 5px;
+}
+
+div.character_bone{
+	padding-left: 7px;
+	padding-top: 31px;
+	height: 750px;
+}
+
+div.equipment_bone{
+	padding-left: 7px;
+	padding-top: 19px;
+	height: 630px;
+}
+
+div.notes_bone{
+	padding-left: 7px;
+	padding-top: 31px;
+	height: 630px;
+}
+
+ 
+div.capacity_bone{
+	display: none;
+	padding-top: 5px;
+	width: 650px;
+    margin-left: -22px;
 }
 
 input[type=radio].onglcapacity:checked ~ div.capacity{
@@ -281,12 +337,28 @@ input[type=radio].onglnotes:checked ~ div.notes{
     display: block;
 } 
 
+input[type=radio].onglcapacity_bone:checked ~ div.capacity_bone{
+    display: block;
+}
+input[type=radio].onglcharacter_bone:checked ~ div.character_bone{
+    display: block;
+}
+input[type=radio].onglequipment_bone:checked ~ div.equipment_bone{
+    display: block;
+}
+input[type=radio].onglnotes_bone:checked ~ div.notes_bone{
+    display: block;
+} 
+
 
 input[type=radio].onglcharacter,
 input[type=radio].onglcapacity,
 input[type=radio].onglequipment,
 input[type=radio].onglnotes,
-button[type="roll"].roll_initiative
+input[type=radio].onglcharacter_bone,
+input[type=radio].onglcapacity_bone,
+input[type=radio].onglequipment_bone,
+input[type=radio].onglnotes_bone
 {
     margin: 0;
     margin-top: -4px;
@@ -301,39 +373,14 @@ button[type="roll"].roll_initiative
     font-size: 14px;
 }
 
-button[type="roll"].roll_initiative + span{
-    color: #333333;
-    font-size: 15px;
-    text-align: center;
-    display: inline-block;
-    width: 120px;
-    height: 20px;
-    margin: 0;
-    margin-left: -124px;
-    margin-right: -4px;
-    padding: 0;
-    margin-bottom: -1px;
-    padding-top: 5px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #888888;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 16px;
-    z-index: 1;
-    font-family: 'Stylish', serif;
-    font-size: 14px;
-}
-
-body.sheet-darkmode button[type="roll"].roll_initiative + span{
-    color: #ffffff;
-}
-
 input[type=radio].onglcharacter + span,
 input[type=radio].onglcapacity + span,
 input[type=radio].onglequipment + span,
-input[type=radio].onglnotes + span{
+input[type=radio].onglnotes + span,
+input[type=radio].onglcharacter_bone + span,
+input[type=radio].onglcapacity_bone + span,
+input[type=radio].onglequipment_bone + span,
+input[type=radio].onglnotes_bone + span{
     color: #333333;
     font-size: 15px;
     text-align: center;
@@ -362,7 +409,11 @@ input[type=radio].onglnotes + span{
 body.sheet-darkmode input[type=radio].onglcharacter:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment:checked + span,
-body.sheet-darkmode input[type=radio].onglnotes:checked + span {
+body.sheet-darkmode input[type=radio].onglnotes:checked + span,
+body.sheet-darkmode input[type=radio].onglcharacter_bone:checked + span,
+body.sheet-darkmode input[type=radio].onglcapacity_bone:checked + span,
+body.sheet-darkmode input[type=radio].onglequipment_bone:checked + span,
+body.sheet-darkmode input[type=radio].onglnotes_bone:checked + span{
     color: #fff;
     border: solid;
     border-top-color: #888888;
@@ -379,7 +430,11 @@ body.sheet-darkmode input[type=radio].onglnotes:checked + span {
 body.sheet-darkmode input[type=radio].onglcharacter,
 body.sheet-darkmode input[type=radio].onglcapacity,
 body.sheet-darkmode input[type=radio].onglequipment,
-body.sheet-darkmode input[type=radio].onglnotes{
+body.sheet-darkmode input[type=radio].onglnotes,
+body.sheet-darkmode input[type=radio].onglcharacter_bone,
+body.sheet-darkmode input[type=radio].onglcapacity_bone,
+body.sheet-darkmode input[type=radio].onglequipment_bone,
+body.sheet-darkmode input[type=radio].onglnotes_bone{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -396,14 +451,22 @@ body.sheet-darkmode input[type=radio].onglnotes{
 body.sheet-darkmode input[type=radio].onglcharacter + span,
 body.sheet-darkmode input[type=radio].onglcapacity + span,
 body.sheet-darkmode input[type=radio].onglequipment + span,
-body.sheet-darkmode input[type=radio].onglnotes + span{
+body.sheet-darkmode input[type=radio].onglnotes + span,
+body.sheet-darkmode input[type=radio].onglcharacter_bone + span,
+body.sheet-darkmode input[type=radio].onglcapacity_bone + span,
+body.sheet-darkmode input[type=radio].onglequipment_bone + span,
+body.sheet-darkmode input[type=radio].onglnotes_bone + span{
     color: #ffffff;
     border-color: #888888;
 }
 input[type=radio].onglcharacter:checked + span,
 input[type=radio].onglcapacity:checked + span,
 input[type=radio].onglequipment:checked + span,
-input[type=radio].onglnotes:checked + span {
+input[type=radio].onglnotes:checked + span,
+input[type=radio].onglcharacter_bone:checked + span,
+input[type=radio].onglcapacity_bone:checked + span,
+input[type=radio].onglequipment_bone:checked + span,
+input[type=radio].onglnotes_bone:checked + span {
     color: black;
     border-bottom-width: 1px;
     border-color: black;
@@ -950,10 +1013,24 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 	margin-left: 10px;
 }
 
+.dice_tab4_character {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: -10px;
+	margin-left: 10px;
+}
+
 .dice_tab_capacity {
     grid-column: 5;
     grid-row: 1;
 	margin-left: 10px;
+}
+
+.dice_tab1_capacity {
+    grid-column: 5;
+    grid-row: 1;
+	margin-left: 10px;
+	margin-top: -25px;
 }
 
 .dice_tab1_equipment {
@@ -977,6 +1054,13 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
 	margin-left: 11px;
 }
 
+.dice_tab4_equipment {
+    grid-column: 7;
+    grid-row: 1;
+    margin-top: 120px;
+	margin-left: -3px;
+}
+
 .dice_tab1_note {
     grid-column: 5;
     grid-row: 1;
@@ -995,6 +1079,13 @@ body.sheet-darkmode .charsheet button.sheet-balance7 > span{
     grid-column: 5;
     grid-row: 1;
     margin-top: 319px;
+	margin-left: 10px;
+}
+
+.dice_tab4_note {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: 480px;
 	margin-left: 10px;
 }
 
@@ -1292,6 +1383,22 @@ body.sheet-darkmode span.dirty_system {
     padding-top: 13px;
 }
 
+.wrapper_capacity_bone {
+    display: grid;
+	grid-template-columns: 140px 46px 140px 46px 140px 46px;	
+    grid-auto-rows: 40px;
+    padding-top: 13px;
+	margin-left: 30px;
+}
+
+.wrapper_capacity_bone1 {
+    display: grid;
+	grid-template-columns: 70px 46px 140px 46px 140px 46px;	
+    grid-auto-rows: 40px;
+    padding-top: 13px;
+	margin-left: 30px;
+}
+
 .wrapper_info_injury {
     display: grid;
     grid-template-columns: 225px 106px 72px 62px;
@@ -1366,6 +1473,40 @@ body.sheet-darkmode span.capacity_type{
     width: 160px;
 }
 
+.title_capacity1,
+.title_capacity2,
+.title_capacity3 {
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-left: 18px;
+    color: white;
+    font-family: 'Stylish';
+    font-size: 20px;
+    display: flex;
+    width: 160px;
+}
+
+.title_capacity1 {
+    grid-column: 1;
+}
+
+.title_capacity2 {
+    grid-column: 3;
+}
+
+.title_capacity3 {
+    grid-column: 5;
+}
+
+body.sheet-darkmode .title_capacity1,
+body.sheet-darkmode .title_capacity2,
+body.sheet-darkmode .title_capacity3{
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dark_profil_background.png);
+}
+
 .title_injury {
     grid-column: 2;
     grid-row: 1;
@@ -1396,6 +1537,36 @@ body.sheet-darkmode span.capacity_type{
     width: 160px;
 }
 
+.title_injury_bone {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/bone_injury_background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-left: 18px;
+    color: white;
+    font-family: 'Stylish';
+    font-size: 20px;
+    display: flex;
+    width: 160px;
+}
+
+.title_balance_bone {
+    grid-column: 5;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/bone_balance_background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-left: 18px;
+    color: white;
+    font-family: 'Stylish';
+    font-size: 20px;
+    display: flex;
+    width: 160px;
+}
+
 body.sheet-darkmode .title_capacity {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dark_profil_background.png);
 }
@@ -1410,6 +1581,24 @@ body.sheet-darkmode .title_balance {
 
 .charsheet .value_contener {
 	grid-column: 3;
+	grid-row: 1;
+    padding-top: 4px;
+}
+
+.charsheet .value_contener1 {
+	grid-column: 2;
+	grid-row: 1;
+    padding-top: 4px;
+}
+
+.charsheet .value_contener2 {
+	grid-column: 4;
+	grid-row: 1;
+    padding-top: 4px;
+}
+
+.charsheet .value_contener3 {
+	grid-column: 6;
 	grid-row: 1;
     padding-top: 4px;
 }
