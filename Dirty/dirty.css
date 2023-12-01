@@ -9,12 +9,12 @@
   max-width: 600px;
 }
 
-.wrapper_switch{      
+.wrapper_switch{    
 	display: grid;
-	grid-template-columns: 596px 75px 40px 100px;
+	grid-template-columns: 583px 130px 0px 100px;
 	grid-auto-rows: 16px;
-	margin-top: -24px;
-	padding-bottom: 10px;
+	margin-top: -46px;
+	padding-bottom: 21px;
 }
 
 .bone_option,
@@ -63,7 +63,7 @@ span.switch {
   height: 0;
 }
 
-.slider {  
+.slider {   
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -73,8 +73,12 @@ span.switch {
 	background-color: #a1a09f;
 	-webkit-transition: .4s;
 	transition: .4s;
-	width: 33px;
-	height: 18px;
+	width: 28px;
+	height: 13px;
+}
+
+body.sheet-darkmode .slider {  
+	background-color: #eee;
 }
 
 .slider:before {
@@ -83,7 +87,7 @@ span.switch {
   height: 26px;
   width: 26px;
   left: 4px;
-  bottom: 4px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -91,18 +95,30 @@ span.switch {
   height: 10px;
 }
 
+body.sheet-darkmode .slider:before {
+   background-color: #1f1f1f;
+}
+
 input:checked + .slider {
   background-color: #000000;
+}
+
+body.sheet-darkmode input:checked + .slider {
+  background-color: #622f2f;
 }
 
 input:focus + .slider {
   box-shadow: 0 0 1px #000000;
 }
 
+body.sheet-darkmode input:focus + .slider {
+  box-shadow: 0 0 1px #622f2f;
+}
+
 input:checked + .slider:before {
-  -webkit-transform: translateX(15px);
-  -ms-transform: translateX(15px);
-  transform: translateX(15px);
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 /* Rounded sliders */
@@ -118,6 +134,7 @@ div.sheet-dispchk,
 div.flesh,
 div.bone{
     display: none;
+	
 }
 input[type="checkbox"].sheet-dispchk:checked ~ div.bone{
     display: block;
@@ -142,6 +159,8 @@ input[type="checkbox"].sheet-dispchk:not(:checked) ~ div.flesh{
 	width: 740px;
     border: 2px solid;
     border-color: #0c0c0c5c;
+	margin-top: 40px;
+	box-shadow: -6px 6px 6px #000000c4;
 }
 
 body.sheet-darkmode .charsheet {
@@ -155,7 +174,7 @@ div.flesh {
 	width: 740px;
 	padding: 10px;
     height: auto;
-	margin-top: -20px;
+	margin-top: -58px;
 }
 
 div.logo {
@@ -244,7 +263,7 @@ body.sheet-darkmode optgroup,
 body.sheet-darkmode select,
 body.sheet-darkmode textarea,
 body.sheet-darkmode .charsheet {
-	color: #eee;
+	color: #eeeeeea1;
 }
 
 .btn:hover {
@@ -270,19 +289,19 @@ div.notes{
 div.character{
 	padding-left: 7px;
 	padding-top: 31px;
-	height: 750px;
+	height: 824px;
 }
 
 div.equipment{
 	padding-left: 7px;
 	padding-top: 19px;
-	height: 630px;
+	height: 836px;
 }
 
 div.notes{
 	padding-left: 7px;
 	padding-top: 31px;
-	height: 630px;
+	height: 824px;
 }
 
  
@@ -291,6 +310,7 @@ div.capacity{
 	padding-top: 5px;
 	width: 650px;
     margin-left: -22px;
+	height: 850px;
 }
 
 div.character_bone,
@@ -303,19 +323,19 @@ div.notes_bone{
 div.character_bone{
 	padding-left: 7px;
 	padding-top: 31px;
-	height: 750px;
+	height: 824px;
 }
 
 div.equipment_bone{
 	padding-left: 7px;
 	padding-top: 19px;
-	height: 630px;
+	height: 836px;
 }
 
 div.notes_bone{
 	padding-left: 7px;
 	padding-top: 31px;
-	height: 630px;
+	height: 824px;
 }
 
  
@@ -405,6 +425,7 @@ input[type=radio].onglnotes_bone + span{
     z-index: 1;
     font-family: 'Stylish', serif;
     font-size: 14px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dirty-background.png);
 }
 
 
@@ -415,17 +436,18 @@ body.sheet-darkmode input[type=radio].onglnotes:checked + span,
 body.sheet-darkmode input[type=radio].onglcharacter_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment_bone:checked + span,
-body.sheet-darkmode input[type=radio].onglnotes_bone:checked + span{
-    color: #fff;
-    border: solid;
-    border-top-color: #888888;
-    border-left-color: #888888;
-    border-right-color: #888888;
-    border-bottom-color: #520d0d;
-    border-width: 1px;
-    font-family: 'Stylish', serif;
-    font-size: 14px;
-    background-color: #520d0d;
+body.sheet-darkmode input[type=radio].onglnotes_bone:checked + span{  
+color: #ffffff9c;
+  border: solid;
+  border-top-color: #48494a;
+  border-left-color: #48494a;
+  border-right-color: #48494a;
+  border-bottom-color: #48494a;
+  border-width: 1px;
+  font-family: 'Stylish', serif;
+  font-size: 14px;
+  background-color: #520d0d;
+  background-image: none;
 }
 }
 
@@ -458,8 +480,9 @@ body.sheet-darkmode input[type=radio].onglcharacter_bone + span,
 body.sheet-darkmode input[type=radio].onglcapacity_bone + span,
 body.sheet-darkmode input[type=radio].onglequipment_bone + span,
 body.sheet-darkmode input[type=radio].onglnotes_bone + span{
-    color: #ffffff;
-    border-color: #888888;
+    color: #ffffff9c;
+    border-color: #48494a;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/dirty-background-black.png);
 }
 input[type=radio].onglcharacter:checked + span,
 input[type=radio].onglcapacity:checked + span,
@@ -476,6 +499,7 @@ input[type=radio].onglnotes_bone:checked + span {
     font-size: 14px;
     background-color: black;
     color: white;
+	background-image: none;
 }
 
 
@@ -514,6 +538,7 @@ input[type=radio].onglnotes_bone:checked + span {
     margin-left: 4px;
 	padding: 0px;
     cursor: pointer;
+	box-shadow: 2px 2px 2px #0006;
 }
 
 
@@ -549,6 +574,7 @@ body.sheet-darkmode .charsheet button.sheet-link_reserve {
     margin-left: 4px;
 	padding: 0px;
     cursor: pointer;
+	box-shadow: 2px 2px 2px #00000094;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury1,
@@ -573,12 +599,14 @@ body.sheet-darkmode .charsheet button.sheet-balance3{
     margin-left: 9px;
 	padding: 0px;
     cursor: pointer;
+	box-shadow: 2px 2px 2px #994a0491;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury4,
 body.sheet-darkmode .charsheet button.sheet-balance4{
 	border: solid 2px #7f1313;
     background-color: #3b3a3aa6;
+	box-shadow: none;
 }
 
 .charsheet button.sheet-injury5,
@@ -593,12 +621,14 @@ body.sheet-darkmode .charsheet button.sheet-balance4{
     margin-left: 4px;
 	padding: 0px;
     cursor: pointer;
+	box-shadow: 2px 2px 2px #994a0491;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury5,
 body.sheet-darkmode .charsheet button.sheet-balance5{
 	border: solid 2px #7f1313;
-    background-color: #3b3a3aa6;   
+    background-color: #3b3a3aa6;
+	box-shadow: none;
 }
 
 .charsheet button.sheet-injury6,
@@ -613,12 +643,14 @@ body.sheet-darkmode .charsheet button.sheet-balance5{
 	padding: 0px;
     cursor: pointer;
 	margin-left:9px;
+	box-shadow: 2px 2px 2px #8e030382;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury6,
 body.sheet-darkmode .charsheet button.sheet-balance6{
 	border: solid 2px #bb0000;
     background-color: #3b3a3aa6; 
+	box-shadow: none;
 }
 
 .charsheet button.sheet-injury7,
@@ -633,12 +665,14 @@ body.sheet-darkmode .charsheet button.sheet-balance6{
 	padding: 0px;
     cursor: pointer;
 	margin-left:28px;
+	box-shadow: 2px 2px 2px #5d03858c;
 }
 
 body.sheet-darkmode .charsheet button.sheet-injury7,
 body.sheet-darkmode .charsheet button.sheet-balance7{
 	border: solid 2px #5d0385;
     background-color: #3b3a3aa6; 
+	box-shadow: none;
 }
 
 .charsheet button.sheet-injury_bone1,
@@ -1179,6 +1213,7 @@ span.dice_tab{
 	height: 135px;
 	text-align: center;
 	width: 30px;
+	box-shadow: -3px 3px 3px #000000b3;
 }
 
 body.sheet-darkmode span.dice_tab{   
@@ -1335,7 +1370,7 @@ input[type=number] {
 
 body.sheet-darkmode input[type=text],
 input[type=number] {
-    border-bottom: 1px solid #e1e1e147;
+    border-bottom: none;
 }
 
 .charsheet textarea.character {
@@ -1348,10 +1383,11 @@ input[type=number] {
 	border: none;  
 	margin-top: -10px;
 	resize:none;
+	box-shadow: 1px 1px 1px #0000005e;
 }
 
 .charsheet textarea.notes {
-	height: 560px;    
+	height: 765px;    
 	line-height: 1.3;
     font-size: 16px !important;
 	background-color: #0000000f;
@@ -1360,16 +1396,19 @@ input[type=number] {
 	border: solid 1px #888888;
     padding: 10px;
 	resize:none;
+	box-shadow: 1px 1px 1px #0000005e;
 }
 
 body.sheet-darkmode .charsheet textarea.character {
-    background-color: #622f2f47;
+    background-color: #8c28285e;
 	color: #cccbcbc2;
+	box-shadow: 2px 2px 2px #cecece21;
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
     border-color: #4b4b4c;
 	background-color: #622f2f47;
+	box-shadow: 2px 2px 2px #cecece21;
 }
 
 .charsheet input.simple,
@@ -1386,6 +1425,7 @@ body.sheet-darkmode .charsheet textarea.notes {
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: none;
+	box-shadow: 1px 1px 1px #0000005e;
 }
 
 .charsheet input.semi {
@@ -1396,6 +1436,7 @@ body.sheet-darkmode .charsheet textarea.notes {
 	border-bottom-right-radius: 8px;
 	border: none;
 	margin-left: 0px;
+	box-shadow: 1px 1px 1px #0000005e;
 }
 
 .charsheet div.profile-notes {
@@ -1404,19 +1445,20 @@ body.sheet-darkmode .charsheet textarea.notes {
 
 body.sheet-darkmode .charsheet input.simple,
 body.sheet-darkmode .charsheet input.semi {
-	background-color: #622f2f47;
+	background-color: #8c28285e;
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: none;
-	color: #cccbcbc2;
+	color: #bfbfbfb3;
+	box-shadow: 2px 2px 2px #cecece21;
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
-	background-color: #622f2f47;
+	background-color: #8c28285e;
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: solid 1px grey;
-	color: #cccbcbc2;
+	color: #bfbfbfb3;
 }
 
 body.sheet-darkmode .charsheet input.capacity_value {
@@ -1547,6 +1589,7 @@ span.capacity_type{
     line-height: 1.1;
     height: 135px;
     text-align: center;
+	box-shadow: 3px 3px 3px #000000b3;
 }
 
 body.sheet-darkmode span.capacity_type{   
@@ -2025,6 +2068,55 @@ body.sheet-darkmode  .defense3_title {
 .defense2_title {grid-column: 2;}
 .defense3_title {grid-column: 3;}
 
+.weapon1_title,
+.weapon2_title,
+.weapon3_title,
+.weapon4_title,
+.weapon5_title,
+.gear1_title,
+.gear2_title,
+.gear3_title,
+.defense1_title,
+.defense2_title,
+.defense3_title,
+.weapon1,
+.weapon2,
+.weapon3,
+.weapon4,
+.weapon5,
+.gear1,
+.defense1,
+.gear2,
+.defense2,
+.gear3,
+.defense3 {
+	box-shadow: 1px 1px 1px #0000005e;
+}
+
+body.sheet-darkmode .weapon1_title,
+body.sheet-darkmode .weapon2_title,
+body.sheet-darkmode .weapon3_title,
+body.sheet-darkmode .weapon4_title,
+body.sheet-darkmode .weapon5_title,
+body.sheet-darkmode .gear1_title,
+body.sheet-darkmode .gear2_title,
+body.sheet-darkmode .gear3_title,
+body.sheet-darkmode .defense1_title,
+body.sheet-darkmode .defense2_title,
+body.sheet-darkmode .defense3_title,
+body.sheet-darkmode .weapon1,
+body.sheet-darkmode .weapon2,
+body.sheet-darkmode .weapon3,
+body.sheet-darkmode .weapon4,
+body.sheet-darkmode .weapon5,
+body.sheet-darkmode .gear1,
+body.sheet-darkmode .defense1,
+body.sheet-darkmode .gear2,
+body.sheet-darkmode .defense2,
+body.sheet-darkmode .gear3,
+body.sheet-darkmode .defense3 {
+	box-shadow: 2px 2px 2px #cecece21;
+}
 
 .weapon1 {  
 	grid-column: 1;
@@ -2076,7 +2168,8 @@ body.sheet-darkmode .weapon2,
 body.sheet-darkmode .weapon3,
 body.sheet-darkmode .weapon4,
 body.sheet-darkmode .weapon5 {
-	background-color: #622f2f47;	
+	background-color: #8c28285e;
+	color: #bfbfbfb3;	
 }
 
 .charsheet input.weapon_name,
@@ -2143,9 +2236,6 @@ body.sheet-darkmode .charsheet input.weapon_note {
     margin: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    /* border-bottom-style: solid; */
-    /* box-sizing: border-box; */
-    /* padding: 5px; */
     border: none;
 }
 
@@ -2163,8 +2253,23 @@ body.sheet-darkmode .charsheet input.weapon_note {
 
 body.sheet-darkmode .charsheet select.weapon_range,
 body.sheet-darkmode .charsheet select.weapon_effect {
-	background-color:#342627;
+	background-color:#511818e8;
+	color: #bfbfbfb3;
 }
+
+body.sheet-darkmode .charsheet input.weapon_name,
+body.sheet-darkmode .charsheet input.weapon_damage,
+body.sheet-darkmode .charsheet input.weapon_note,
+body.sheet-darkmode .charsheet input.defense_name,
+body.sheet-darkmode .charsheet input.defense_quality,
+body.sheet-darkmode .charsheet input.defense_note,
+body.sheet-darkmode .charsheet input.gear_name,
+body.sheet-darkmode .charsheet input.gear_quality,
+body.sheet-darkmode .charsheet input.gear_note {
+	color: #bfbfbfb3;
+}
+
+
 
 .wrapper_gear_title,
 .wrapper_defense_title{
@@ -2227,7 +2332,8 @@ body.sheet-darkmode .gear2,
 body.sheet-darkmode .defense2,
 body.sheet-darkmode .gear3,
 body.sheet-darkmode .defense3 {
-	background-color:#622f2f47;
+	background-color:#8c28285e;
+	color: #bfbfbfb3;
 }
 
 .charsheet input.gear_note,
