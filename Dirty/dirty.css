@@ -104,7 +104,7 @@ input:checked + .slider {
 }
 
 body.sheet-darkmode input:checked + .slider {
-  background-color: #622f2f;
+  background-color: #6d0d15;
 }
 
 input:focus + .slider {
@@ -112,7 +112,7 @@ input:focus + .slider {
 }
 
 body.sheet-darkmode input:focus + .slider {
-  box-shadow: 0 0 1px #622f2f;
+  box-shadow: 0 0 1px #6d0d15;
 }
 
 input:checked + .slider:before {
@@ -452,7 +452,7 @@ color: #ffffff9c;
   border-width: 1px;
   font-family: 'Stylish', serif;
   font-size: 14px;
-  background-color: #520d0d;
+  background-color: #6d0d15;
   background-image: none;
 }
 }
@@ -741,7 +741,7 @@ body.sheet-darkmode .charsheet button:hover.sheet-influence_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-sense_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-feel_reserve,
 body.sheet-darkmode .charsheet button:hover.sheet-link_reserve {
-	background-color: #622f2f;
+	background-color: #6d0d15;
 }
 
 
@@ -761,7 +761,7 @@ body.sheet-darkmode .charsheet button:hover.sheet-injury3,
 body.sheet-darkmode .charsheet button:hover.sheet-balance1,
 body.sheet-darkmode .charsheet button:hover.sheet-balance2,
 body.sheet-darkmode .charsheet button:hover.sheet-balance3{
-	background-color: #622f2f;
+	background-color: #6d0d15;
 }
 
 .charsheet button:hover.sheet-injury4,
@@ -854,7 +854,7 @@ body.sheet-darkmode .charsheet button.sheet-influence_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-sense_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-feel_reserve > span,
 body.sheet-darkmode .charsheet button.sheet-link_reserve > span {
-    background-color: #622f2f;
+    background-color: #6d0d15;
     color: #ffffffdb;
 }
 
@@ -881,7 +881,7 @@ body.sheet-darkmode .charsheet button.sheet-injury3 > span,
 body.sheet-darkmode .charsheet button.sheet-balance1 > span,
 body.sheet-darkmode .charsheet button.sheet-balance2 > span,
 body.sheet-darkmode .charsheet button.sheet-balance3 > span{
-	background-color: #622f2f;
+	background-color: #6d0d15;
     color: #ffffffdb;
 }
 
@@ -1417,14 +1417,14 @@ input[type=number] {
 }
 
 body.sheet-darkmode .charsheet textarea.character {
-    background-color: #8c28285e;
+    background-color: #6d0d154d;
 	color: #cccbcbc2;
 	box-shadow: 2px 2px 2px #cecece21;
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
     border-color: #4b4b4c;
-	background-color: #622f2f47;
+	background-color: #6d0d1547;
 	box-shadow: 2px 2px 2px #cecece21;
 }
 
@@ -1462,7 +1462,7 @@ body.sheet-darkmode .charsheet textarea.notes {
 
 body.sheet-darkmode .charsheet input.simple,
 body.sheet-darkmode .charsheet input.semi {
-	background-color: #8c28285e;
+	background-color: #6d0d154d;
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: none;
@@ -1471,7 +1471,7 @@ body.sheet-darkmode .charsheet input.semi {
 }
 
 body.sheet-darkmode .charsheet textarea.notes {
-	background-color: #8c28285e;
+	background-color: #6d0d1530;
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: solid 1px grey;
@@ -1586,9 +1586,43 @@ body.sheet-darkmode span.dirty_system {
     border-radius: 0px 120px;
 }
 
-body.sheet-darkmode .wrapper_link {
+body.sheet-darkmode .wrapper_xcard {
 	border-color: #4b4e4e;
 }
+
+.wrapper_xcard_character {
+    display: grid;
+    grid-template-columns: 82px 552px 100px;
+    grid-auto-rows: 30px;
+    padding-top: 80px;
+}
+
+body.sheet-darkmode .wrapper_xcard_character {
+	border-color: #4b4e4e;
+}
+
+.wrapper_xcard_equipment {
+    display: grid;
+    grid-template-columns: 82px 552px 100px;
+    grid-auto-rows: 30px;
+    padding-top: 316px;
+}
+
+body.sheet-darkmode .wrapper_xcard_equipment {
+	border-color: #4b4e4e;
+}
+
+.wrapper_xcard_notes {
+    display: grid;
+    grid-template-columns: 82px 552px 100px;
+    grid-auto-rows: 30px;
+    padding-top: 742px;
+}
+
+body.sheet-darkmode .wrapper_xcard_equipment {
+	border-color: #4b4e4e;
+}
+
 
 .capacity_type {
     grid-column: 1;
@@ -2224,11 +2258,15 @@ body.sheet-darkmode .defense3 {
 
 body.sheet-darkmode .weapon1,
 body.sheet-darkmode .weapon2,
-body.sheet-darkmode .weapon3,
-body.sheet-darkmode .weapon4,
 body.sheet-darkmode .weapon5 {
-	background-color: #8c28285e;
+	background-color: #6d0d154d;
 	color: #bfbfbfb3;	
+}
+
+
+body.sheet-darkmode .weapon3
+body.sheet-darkmode .weapon4, {
+	background-color: transparent;
 }
 
 .charsheet input.weapon_name,
@@ -2312,8 +2350,17 @@ body.sheet-darkmode .charsheet input.weapon_note {
 
 body.sheet-darkmode .charsheet select.weapon_range,
 body.sheet-darkmode .charsheet select.weapon_effect {
-	background-color:#511818e8;
-	color: #bfbfbfb3;
+    background-color: #6d0d154d;
+    color: #bfbfbfb3;
+    padding-left: 13px;
+    padding-right: 6px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+body.sheet-darkmode select.weapon_range option,
+body.sheet-darkmode select.weapon_effect option {
+  background-color: #490101;
 }
 
 body.sheet-darkmode .charsheet input.weapon_name,
@@ -2391,7 +2438,7 @@ body.sheet-darkmode .gear2,
 body.sheet-darkmode .defense2,
 body.sheet-darkmode .gear3,
 body.sheet-darkmode .defense3 {
-	background-color:#8c28285e;
+	background-color:#6d0d154d;
 	color: #bfbfbfb3;
 }
 
@@ -2438,7 +2485,7 @@ input[type=number] {
 	
 }
 
-/*----------- Dice Button Section -------------*/
+/*----------- Dice and XCard Button Section -------------*/
 .ui-dialog .charsheet button[type=roll]::before {
     content: "";
 }
@@ -2453,6 +2500,7 @@ button[type="roll"].roll_tab{
     font-size: 18px !important;
     color: #ffffff3b;
     line-height: 1.1;
+	-webkit-box-shadow: none;
 }
 
 button[type="roll"].roll_tab:hover{
@@ -2478,7 +2526,7 @@ body.sheet-darkmode button[type="roll"].roll_tab:hover{
     background-color: #ffffff00;
     border-color: transparent;
     background-image: none;
-    color: #622f2f;
+    color: #6d0d15;
 }
 
 div.d6{
@@ -2506,10 +2554,43 @@ button[type="roll"].d6{
   border-style: none;
   background-color: transparent;
   margin-left: 5px;
+	-webkit-box-shadow: none;
 }
 
 button[type="roll"].empty:before{
   content: ' ';
+}
+
+button[type="roll"].roll_xcard{
+    -webkit-box-shadow: none;
+    border-style: none;
+    background-color: transparent;
+    background-image: none;
+    font-size: 40px;
+    font-family: "Stylish";
+    font-weight: bold;
+    text-align: center;
+    color: #d9d8d6;
+    margin-top: -13px !important;
+    margin-left: 17px !important;
+}
+
+button[type="roll"].roll_xcard:hover{
+    background-color: #ffffff00;
+    border-color: transparent;
+    background-image: none;
+    color: #020202ab;
+}
+
+body.sheet-darkmode button[type="roll"].roll_xcard{
+    color: #2c2e2e;
+}
+
+body.sheet-darkmode button[type="roll"].roll_xcard:hover{
+    background-color: #ffffff00;
+    border-color: transparent;
+    background-image: none;
+    color: #6d0d15;
 }
 
 /*------------------------------------*\
