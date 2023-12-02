@@ -1572,7 +1572,7 @@ body.sheet-darkmode span.dirty_system {
 
 .wrapper_link {
     display: grid;
-    grid-template-columns: 100px 500px;
+    grid-template-columns: 100px 552px 100px;
     grid-auto-rows: 30px;
     border-top-style: solid;
     border-right-style: solid;
@@ -1584,6 +1584,10 @@ body.sheet-darkmode span.dirty_system {
     margin-right: 529px;
     margin-bottom: -22px;
     border-radius: 0px 120px;
+}
+
+body.sheet-darkmode .wrapper_link {
+	border-color: #4b4e4e;
 }
 
 .capacity_type {
@@ -1961,7 +1965,7 @@ span.title_link {
 }
 
 body.sheet-darkmode span.title_link {
-    color: #ffffffbd;
+    color: #a1a09e;
 }
 
 .value_link {
@@ -1994,6 +1998,37 @@ body.sheet-darkmode .charsheet input.link_value {
 
 body.sheet-darkmode .charsheet input.link_value::placeholder{
     color: #b5b5b56b;
+}
+
+.xcard {    
+	grid-column: 3;
+	grid-row: 2;
+	text-align: center;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-color: #6f6e6e38;
+	border-width: 3px;
+	padding-top: 9px;
+	padding-left: 10px;
+	margin-top: -39px;
+	margin-left: 30px;
+	border-radius: 90px 0px 0px 0px;
+}
+
+body.sheet-darkmode .xcard {
+	border-color: #4b4e4e4f;
+}
+
+span.card {
+	font-size: 40px;
+	font-family: "Stylish";
+    font-weight: bold;
+    text-align: center;
+	color: #6f6e6e38;
+}
+
+body.sheet-darkmode span.card {
+    color: #4b4e4e4f;
 }
 
 .efficiency_reminder {
