@@ -269,7 +269,7 @@ body.sheet-darkmode optgroup,
 body.sheet-darkmode select,
 body.sheet-darkmode textarea,
 body.sheet-darkmode .charsheet {
-	color: #eeeeeea1;
+	color: #ffffffb5;
 }
 
 .btn:hover {
@@ -443,7 +443,7 @@ body.sheet-darkmode input[type=radio].onglcharacter_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglnotes_bone:checked + span{  
-color: #ffffff9c;
+ color: #ffffffb5;
   border: solid;
   border-top-color: #48494a;
   border-left-color: #48494a;
@@ -1466,7 +1466,7 @@ body.sheet-darkmode .charsheet input.semi {
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: none;
-	color: #bfbfbfb3;
+	color: #b3b3b3b0;
 	box-shadow: 2px 2px 2px #cecece21;
 }
 
@@ -1475,7 +1475,7 @@ body.sheet-darkmode .charsheet textarea.notes {
 	border-top-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	border: solid 1px grey;
-	color: #bfbfbfb3;
+	color: #b3b3b3b0;
 }
 
 body.sheet-darkmode .charsheet input.capacity_value {
@@ -1586,6 +1586,10 @@ body.sheet-darkmode span.dirty_system {
     border-radius: 0px 120px;
 }
 
+body.sheet-darkmode .wrapper_link {
+    border-color: #414040;
+}
+
 body.sheet-darkmode .wrapper_xcard {
 	border-color: #4b4e4e;
 }
@@ -1664,7 +1668,7 @@ body.sheet-darkmode span.whiteless {
 .title_capacity {
     grid-column: 2;
     grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/capacity_background.png);
     background-size: contain;
     background-repeat: no-repeat;
     padding-top: 6px;
@@ -2040,7 +2044,7 @@ body.sheet-darkmode .charsheet input.link_value::placeholder{
 	text-align: center;
 	border-top-style: solid;
 	border-left-style: solid;
-	border-color: #6f6e6e38;
+	border-color: #d9d8d6;
 	border-width: 3px;
 	padding-top: 9px;
 	padding-left: 10px;
@@ -2050,7 +2054,7 @@ body.sheet-darkmode .charsheet input.link_value::placeholder{
 }
 
 body.sheet-darkmode .xcard {
-	border-color: #4b4e4e4f;
+	border-color: #2c2e2e;
 }
 
 span.card {
@@ -2093,7 +2097,7 @@ span.efficiency_reminder {
     margin-top: 25px;
     font-family: 'Stylish';
     font-size: 16px !important;
-    color: #ffffff;
+    color: #ffffffb5;
 }
 
 .wrapper_weapon {
@@ -2606,6 +2610,7 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-dirty .sheet-container {
     border: 2px solid var(--dirty-border);
     border-radius: 3px;
+    box-shadow: -6px 6px 6px #00000091;
 }
 
 /* Header formatting - title and subtitle */
@@ -2613,8 +2618,8 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
     background-color: var(--dirty-background-header);
 	color: #eee;
 	text-align: left;
-	padding: 8px;
-    padding-bottom: 3px;
+    padding: 8px;
+    padding-bottom: 6px;
 	border-bottom: 2px solid var(--dirty-border);
 	font-family: 'Stylish';
 }
@@ -2632,7 +2637,7 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-dirty .sheet-container{
     --dirty-background-header: #555;
 	--dirty-border: #444141;
-	--dirty-background-header-darkmode: #520c0c;
+	--dirty-background-header-darkmode: #6d0d15;
 	--dirty-border-darkmode: #000000;
 	--dirty-content-background-darkmode: #342627;
 	--dirty-content-desc-darkmode:#594e4e;
@@ -2690,13 +2695,12 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-container {
     border: 2px solid var(--dirty-border-darkmode);
     border-radius: 3px;
+    box-shadow: -6px 6px 6px #0000005c;
 }
 
 .sheet-rolltemplate-dirty.sheet-rolltemplate-darkmode .sheet-header {
     background-color: var(--dirty-background-header-darkmode);
 	color: #eee;
-	text-align: left;
-	padding: 12px;
 	border-bottom: 2px solid var(--dirty-border-darkmode);
 	font-family: 'Stylish';
 }
@@ -2783,6 +2787,7 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-tension .sheet-container {
     border: 2px solid var(--tension-border);
     border-radius: 3px;
+    box-shadow: -6px 6px 6px #00000091;
 }
 
 /* Header formatting - title and subtitle */
@@ -2790,7 +2795,8 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
     background-color: var(--tension-background-header);
 	color: #eee;
 	text-align: left;
-	padding: 8px;
+    padding: 8px;
+    padding-bottom: 6px;
 	border-bottom: 2px solid var(--tension-border);
 	font-family: 'Stylish';
 }
@@ -2808,7 +2814,7 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-tension .sheet-container{
     --tension-background-header: #555;
 	--tension-border: #444141;
-	--tension-background-header-darkmode: #520c0c;
+	--tension-background-header-darkmode: #6d0d15;
 	--tension-border-darkmode: #000000;
 	--tension-content-background-darkmode: #594e4e;
 	--tension-content-desc-darkmode:#594e4e;
@@ -2870,18 +2876,12 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 .sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-container {
     border: 2px solid var(--tension-border-darkmode);
     border-radius: 3px;
-}
-
-.sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-container {
-    border: 2px solid var(--tension-border-darkmode);
-    border-radius: 3px;
+    box-shadow: -6px 6px 6px #0000005c;
 }
 
 .sheet-rolltemplate-tension.sheet-rolltemplate-darkmode .sheet-header {
     background-color: var(--tension-background-header-darkmode);
 	color: #eee;
-	text-align: left;
-	padding: 12px;
 	border-bottom: 2px solid var(--tension-border-darkmode);
 	font-family: 'Stylish';
 }
