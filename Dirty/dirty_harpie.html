@@ -1253,7 +1253,58 @@
 		</div>
 	  </div>
 	</rolltemplate>
-
-
-
-
+	
+	<!-- Classic Roll D100-->
+	<rolltemplate class="sheet-rolltemplate-classic">
+		<div class="sheet-container sheet-color-{{color}}">
+			<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		<div class="sheet-content">
+		  {{#allprops() title subtitle desc color}}
+		  <div class="sheet-key">{{key}}</div>
+		  <div class="sheet-value">{{value}}</div>
+		  {{/allprops() title subtitle desc color}}
+		  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+		</div>
+		</div>
+	</rolltemplate>
+	
+	
+	
+	
+	
+	<!-- <rolltemplate class="sheet-rolltemplate-classic">
+	  <div class="sheet-container sheet-color-{{color}}">
+		<div class="sheet-header">
+		  {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		  {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		<div class="sheet-content">
+			{{#allprops() title subtitle desc}}
+			  <div class="sheet-key">Score de compétence</div>
+			  {{#skill}}<div class="sheet-value"><span class="modifier3">{{skill}}</span></div>{{/skill}}
+			   <div class="sheet-key">Résultat du lancer</div>
+			  {{#result}}<div class="sheet-value"><span class="modifier3">{{result}}</span></div>{{/result}}
+			{{/allprops() title subtitle desc}}
+			
+			{{#allprops() title subtitle desc}}
+			  {{{{#rollGreater() result skill}}
+			  <div class="sheet-desc" >Echec</div>
+			  {{/rollGreater() result skill}}
+			{{/allprops() title subtitle desc}}
+			
+			{{#allprops() title subtitle desc}}
+			  {{{{#^rollGreater() result skill}}
+			  <div class="sheet-desc" >Réussite</div>
+			  {{/^rollGreater() result skill}}
+			{{/allprops() title subtitle desc}}
+			
+		  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+		</div>
+	  </div>
+	</rolltemplate> -->
+	
+	
+	<!-- &{template:classic} {{title=Jet de compétence}}{{skill=[[?{Niveau de compétence?}?{Modificateur?}]]}} {{result=[[1d100]]}} -->

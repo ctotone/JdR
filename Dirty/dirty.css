@@ -3000,3 +3000,154 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
     padding: 5px;
     text-align: center;
 }
+
+/* Classic Roll on D100 */
+/*Normal Mode */
+
+.withoutavatars .sheet-rolltemplate-classic {
+    margin-left: -7px;
+}
+
+.sheet-rolltemplate-classic .sheet-container {
+    border: 2px solid var(--dirty-border);
+    border-radius: 3px;
+    box-shadow: -6px 6px 6px #00000091;
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-classic .sheet-header { 
+    background-color: var(--dirty-background-header);
+	color: #eee;
+	text-align: left;
+    padding: 8px;
+    padding-bottom: 6px;
+	border-bottom: 2px solid var(--dirty-border);
+	font-family: 'Stylish';
+}
+
+.sheet-rolltemplate-classic .sheet-title {
+	font-size: 20px;
+}
+
+.sheet-rolltemplate-classic .sheet-subtitle {
+    font-size: 14px;
+	padding-top: 4px;
+}
+
+
+.sheet-rolltemplate-classic .sheet-container{
+    --dirty-background-header: #555;
+	--dirty-border: #444141;
+	--dirty-background-header-darkmode: #6d0d15;
+	--dirty-border-darkmode: #000000;
+	--dirty-content-background-darkmode: #342627;
+	--dirty-content-desc-darkmode:#594e4e;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-classic .sheet-content{
+    display: grid;
+    background: #FFF;
+    /* Header formatting - modify the column layout below */
+    grid-template-columns: auto auto;
+    /* Line height to match default roll template */
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-classic .sheet-content > div{
+    padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-classic .sheet-content .sheet-key{
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-classic .sheet-desc{
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
+
+/* dirty Dice result in chatcontainer */
+.sheet-rolltemplate-classic .inlinerollresult,
+.sheet-rolltemplate-classic .inlinerollresult.importantroll,
+.sheet-rolltemplate-classic .inlinerollresult.fullcrit,
+.sheet-rolltemplate-classic .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:black;
+	background-color: black;
+	color: #eee;
+}
+
+
+
+/* Dark mode */
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--dirty-border-darkmode);
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-container {
+    border: 2px solid var(--dirty-border-darkmode);
+    border-radius: 3px;
+    box-shadow: -6px 6px 6px #0000005c;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-header {
+    background-color: var(--dirty-background-header-darkmode);
+	color: #eee;
+	border-bottom: 2px solid var(--dirty-border-darkmode);
+	font-family: 'Stylish';
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-title {
+	font-size: 20px;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-subtitle {
+    font-size: 14px;
+	padding-top: 4px;
+}
+
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-content {
+    display: grid;
+    background: var(--dirty-content-background-darkmode);
+	color: #eee;
+    grid-template-columns: auto auto;
+    line-height:1.4em;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+	font-family: 'Stylish';
+	font-size: 20px;;
+}
+
+/* Dice result in chatcontainer */
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .inlinerollresult,
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .inlinerollresult.importantroll,
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .inlinerollresult.fullcrit,
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:black;
+	background-color: black;
+	color: #eee;
+}
+
+/* Wide Description field */
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-desc {
+    background: var(--dirty-content-desc-darkmode);
+	grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+}
