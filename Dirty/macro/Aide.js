@@ -65,15 +65,12 @@ Le résultat d'un dé peut être réduit à 0.&#125;&#125;
 }
 
 
+/* ---------
+MACCRO GM
+--------- */
 
 
 
-
-
-//
-// GM Macro
-//
-                                                                    
 ?{Type d'aide|
 ,|
 Modificateur de défi,/w gm &{template:classic&#125; {{title=Modificateur défi&#125;&#125;{{info=Tension et Modificateur difficulté 
