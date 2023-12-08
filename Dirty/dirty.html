@@ -795,8 +795,8 @@
 			<div class="header-grid"></div>
 				
 				<div class="wrapper_capacity">
-					<div class="title_capacity"><span class="whiteless" data-i18n="capacity_profil">PROFIL</span></div>
-					<div class="value_contener"><input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /></div>
+					<div class="title_profil"><span class="whiteless" data-i18n="capacity_profil">PROFIL</span></div>
+					<div class="value_contener"><!-- <input class="capacity_value" id="profil_value" type="text" name="attr_profil_value" placeholder="0" /> --></div>
 					<div class="reserve_rank">
 						<div class="sheet-dots">
 						  <input type="hidden" name="attr_profil_reserve" class="sheet-profil_reserve" value="1" />
@@ -1254,19 +1254,31 @@
 	  </div>
 	</rolltemplate>
 	
-	<!-- Classic Roll D100-->
+	<!-- Classic Roll D100 with Success / Failure-->
 	<rolltemplate class="sheet-rolltemplate-classic">
-		<div class="sheet-container sheet-color-{{color}}">
-			<div class="sheet-header">
-			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+	  <div class="sheet-container sheet-color-{{color}}">
+		<div class="sheet-header">
+		  {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		  {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
 		</div>
 		<div class="sheet-content">
-		  {{#allprops() title subtitle desc color}}
-		  <div class="sheet-key">{{key}}</div>
-		  <div class="sheet-value">{{value}}</div>
-		  {{/allprops() title subtitle desc color}}
-		  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+			{{#result}}
+			  <div class="sheet-key" data-i18n="score">Score</div>
+			  <div class="sheet-value"><span class="modifier3"> {{skill}}</span></div>
+			   <div class="sheet-key" data-i18n="roll_result">Résultat du lancer</div>
+			  <div class="sheet-value"><span class="modifier3">{{result}}</span></div>
+			{{/result}}
+			
+			
+			  {{#rollGreater() result skill}}
+			  <div class="sheet-failure" data-i18n="success">Echec</div>
+			  {{/rollGreater() result skill}}
+			
+			  {{#^rollGreater() result skill}}
+			  <div class="sheet-success"  data-i18n="failure">Réussite</div>
+			  {{/^rollGreater() result skill}}
 		</div>
-		</div>
+	  </div>
 	</rolltemplate>
+	
+	<!-- &{template:classic} {{title=Jet de compétence}}{{skill=[[?{Niveau de compétence?}?{Bonus/Malus?}]]}} {{result=[[1d100]]}} -->
