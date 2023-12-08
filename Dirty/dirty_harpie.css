@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 /*------------------------------------*\
-  #Switch Bone / Flesh
+  #Switch Bone / Flesh / PC / NPC
 \*------------------------------------*/
 .wrapper_switch {
   max-width: 600px;
@@ -11,7 +11,7 @@
 
 .wrapper_switch{    
 	display: grid;
-	grid-template-columns: 583px 130px 0px 100px;
+	grid-template-columns: 670px 53px 0px 100px;
 	grid-auto-rows: 16px;
 	margin-top: -46px;
 	padding-bottom: 21px;
@@ -130,18 +130,17 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* div.sheet-dispchk,
-div.flesh,
-div.bone,
-div.classic{
+div.sheet-dispchk,
+div.classic,
+div.npc{
     display: none;
 	
-} */
-input[type="checkbox"].sheet-dispchk:checked ~ div.classic{
+}
+input[type="checkbox"].sheet-dispchk:checked ~ div.npc{
     display: block;
 }
 
-input[type="checkbox"].sheet-dispchk:not(:checked) ~ div.flesh{
+input[type="checkbox"].sheet-dispchk:not(:checked) ~ div.classic{
     display: block;
 }
 
@@ -174,7 +173,8 @@ body.sheet-darkmode .charsheet {
 
 div.bone,
 div.flesh,
-div.classic{
+div.classic,
+div.npc{
 	width: 740px;
 	padding: 10px;
     height: auto;
@@ -333,6 +333,7 @@ div.character_bone,
 div.equipment_bone,
 div.notes_bone,
 div.character_classic,
+div.character_npc,
 div.equipment_classic,
 div.notes_classic{
     display: none;
@@ -344,6 +345,12 @@ div.character_classic{
 	padding-left: 7px;
 	padding-top: 31px;
 	height: 970px;
+}
+
+div.character_npc{
+	padding-left: 7px;
+	padding-top: 31px;
+	height: 1100px;
 }
 
 div.equipment_bone,
@@ -407,6 +414,19 @@ input[type=radio].onglnotes_classic:checked ~ div.notes_classic{
     display: block;
 } 
 
+input[type=radio].onglcapacity_npc:checked ~ div.capacity_npc{
+    display: block;
+}
+input[type=radio].onglcharacter_npc:checked ~ div.character_npc{
+    display: block;
+}
+input[type=radio].onglequipment_npc:checked ~ div.equipment_npc{
+    display: block;
+}
+input[type=radio].onglnotes_npc:checked ~ div.notes_npc{
+    display: block;
+} 
+
 
 input[type=radio].onglcharacter,
 input[type=radio].onglcapacity,
@@ -419,7 +439,11 @@ input[type=radio].onglnotes_bone,
 input[type=radio].onglcharacter_classic,
 input[type=radio].onglcapacity_classic,
 input[type=radio].onglequipment_classic,
-input[type=radio].onglnotes_classic
+input[type=radio].onglnotes_classic,
+input[type=radio].onglcharacter_npc,
+input[type=radio].onglcapacity_npc,
+input[type=radio].onglequipment_npc,
+input[type=radio].onglnotes_npc
 {
     margin: 0;
     margin-top: -4px;
@@ -445,7 +469,11 @@ input[type=radio].onglnotes_bone + span,
 input[type=radio].onglcharacter_classic + span,
 input[type=radio].onglcapacity_classic + span,
 input[type=radio].onglequipment_classic + span,
-input[type=radio].onglnotes_classic + span{
+input[type=radio].onglnotes_classic + span,
+input[type=radio].onglcharacter_npc + span,
+input[type=radio].onglcapacity_npc + span,
+input[type=radio].onglequipment_npc + span,
+input[type=radio].onglnotes_npc + span{
     color: #333333;
     font-size: 15px;
     text-align: center;
@@ -484,7 +512,11 @@ body.sheet-darkmode input[type=radio].onglnotes_bone:checked + span,
 body.sheet-darkmode input[type=radio].onglcharacter_classic:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity_classic:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment_classic:checked + span,
-body.sheet-darkmode input[type=radio].onglnotes_classic:checked + span{  
+body.sheet-darkmode input[type=radio].onglnotes_classic:checked + span,
+body.sheet-darkmode input[type=radio].onglcharacter_npc:checked + span,
+body.sheet-darkmode input[type=radio].onglcapacity_npc:checked + span,
+body.sheet-darkmode input[type=radio].onglequipment_npc:checked + span,
+body.sheet-darkmode input[type=radio].onglnotes_npc:checked + span{  
     color: #ffffffd6;
     border: solid;
     border-top-color: #48494a;
@@ -510,7 +542,11 @@ body.sheet-darkmode input[type=radio].onglnotes_bone,
 body.sheet-darkmode input[type=radio].onglcharacter_classic,
 body.sheet-darkmode input[type=radio].onglcapacity_classic,
 body.sheet-darkmode input[type=radio].onglequipment_classic,
-body.sheet-darkmode input[type=radio].onglnotes_classic{
+body.sheet-darkmode input[type=radio].onglnotes_classic,
+body.sheet-darkmode input[type=radio].onglcharacter_npc,
+body.sheet-darkmode input[type=radio].onglcapacity_npc,
+body.sheet-darkmode input[type=radio].onglequipment_npc,
+body.sheet-darkmode input[type=radio].onglnotes_npc{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -535,7 +571,11 @@ body.sheet-darkmode input[type=radio].onglnotes_bone + span,
 body.sheet-darkmode input[type=radio].onglcharacter_classic + span,
 body.sheet-darkmode input[type=radio].onglcapacity_classic + span,
 body.sheet-darkmode input[type=radio].onglequipment_classic + span,
-body.sheet-darkmode input[type=radio].onglnotes_classic + span{
+body.sheet-darkmode input[type=radio].onglnotes_classic + span,
+body.sheet-darkmode input[type=radio].onglcharacter_npc + span,
+body.sheet-darkmode input[type=radio].onglcapacity_npc + span,
+body.sheet-darkmode input[type=radio].onglequipment_npc + span,
+body.sheet-darkmode input[type=radio].onglnotes_npc + span{
     color: #ffffff9c;
     border-color: #48494a;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/background-red1.webp);
@@ -551,7 +591,11 @@ input[type=radio].onglnotes_bone:checked + span,
 input[type=radio].onglcharacter_classic:checked + span,
 input[type=radio].onglcapacity_classic:checked + span,
 input[type=radio].onglequipment_classic:checked + span,
-input[type=radio].onglnotes_classic:checked + span{
+input[type=radio].onglnotes_classic:checked + span,
+input[type=radio].onglcharacter_npc:checked + span,
+input[type=radio].onglcapacity_npc:checked + span,
+input[type=radio].onglequipment_npc:checked + span,
+input[type=radio].onglnotes_npc:checked + span{
     color: black;
     border-bottom-width: 1px;
     border-color: black;
@@ -1196,6 +1240,34 @@ body.sheet-darkmode .charsheet button.sheet-balance_bone2 > span{
 	margin-left: 10px;
 }
 
+.dice_tab1_npc {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: -970px;
+	margin-left: 10px;
+}
+
+.dice_tab2_npc {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: -854px;
+	margin-left: 10px;
+}
+
+.dice_tab3_npc {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: -738px;
+	margin-left: 10px;
+}
+
+.dice_tab4_npc {
+    grid-column: 5;
+    grid-row: 1;
+    margin-top: -620px;
+	margin-left: 10px;
+}
+
 .dice_tab_capacity {
     grid-column: 5;
     grid-row: 1;
@@ -1464,6 +1536,15 @@ body.sheet-darkmode .avatar_img{
   grid-row: 1 / 1;
 }
 
+.title{
+	grid-column: 1 / 3;
+	grid-row: 1;
+	font-size: 20px;
+	line-height: 1.5;
+	display:flex;
+	margin-bottom: -16px;
+}
+
 /*--- Character Section Style ---*/
 
 .charsheet div.section-profile{
@@ -1516,13 +1597,27 @@ input[type=number] {
 	box-shadow: 1px 1px 1px #0000005e;
 }
 
+.charsheet textarea.notes_npc {
+	height: 100px;    
+	line-height: 1.3;
+    font-size: 16px !important;
+	background-color: #0000000f;
+	border-top-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border: solid 1px #888888;
+    padding: 10px;
+	resize:none;
+	box-shadow: 1px 1px 1px #0000005e;
+}
+
 body.sheet-darkmode .charsheet textarea.character {
     background-color: #6d0d154d;
 	color: #cccbcbc2;
 	box-shadow: 2px 2px 2px #cecece21;
 }
 
-body.sheet-darkmode .charsheet textarea.notes {
+body.sheet-darkmode .charsheet textarea.notes,
+body.sheet-darkmode .charsheet textarea.notes_npc{
     border-color: #4b4b4c;
 	background-color: #6d0d1547;
 	box-shadow: 2px 2px 2px #cecece21;
@@ -2591,6 +2686,13 @@ body.sheet-darkmode .charsheet input.defense_note{
 .wrapper_note {  
 	display: grid;
     grid-template-columns: 270px 330px 0px 93px;
+	grid-auto-rows: 30px;
+	padding-top: 13px;
+}
+
+.wrapper_note_npc {  
+	display: grid;
+	grid-template-columns: 660px 0px 0px 0px;
 	grid-auto-rows: 30px;
 	padding-top: 13px;
 }
