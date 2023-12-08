@@ -1727,6 +1727,21 @@ body.sheet-darkmode span.whiteless {
     width: 160px;
 }
 
+.title_profil {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-left: 18px;
+    color: white;
+    font-family: 'Stylish';
+    font-size: 20px;
+    display: flex;
+    width: 160px;
+}
+
 .title_capacity1,
 .title_capacity2,
 .title_capacity3 {
@@ -1823,6 +1838,10 @@ body.sheet-darkmode .title_capacity3{
 
 body.sheet-darkmode .title_capacity {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/capacity_dark.png);
+}
+
+body.sheet-darkmode .title_profil {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dirty/img/profil_dark.png);
 }
 
 body.sheet-darkmode .title_injury {
@@ -3074,6 +3093,28 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
     text-align: center;
 }
 
+.sheet-rolltemplate-classic .sheet-success{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border);
+	margin-top: 5px;
+	background-color: #1f6c36;
+}
+
+.sheet-rolltemplate-classic .sheet-failure{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border);
+	margin-top: 5px;
+	background-color: var(--dirty-background-header-darkmode);
+}
+
 /* dirty Dice result in chatcontainer */
 .sheet-rolltemplate-classic .inlinerollresult,
 .sheet-rolltemplate-classic .inlinerollresult.importantroll,
@@ -3150,4 +3191,28 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 	grid-column: span 2;
     padding: 5px;
     text-align: center;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-success{
+	  grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #01ac01;
+	border-top: 0px;
+	margin-top: 5px;
+	background-color: transparent;
+	margin-bottom: 5px;
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-failure{
+	  grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: red;
+	border-top: 0px;
+	margin-top: 5px;
+	background-color: transparent;
+	margin-bottom: 5px;
 }
