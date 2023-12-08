@@ -259,7 +259,7 @@
 			<div class="dice_tab3_npc"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="roll_tab" data-i18n="dice3">DAMAGE</button></span></div>
 		</div>
 		<div class="wrapper">
-			<div class="dice_tab4_npc"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[@{beat_value}+@{sense_value}+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
+			<div class="dice_tab4_npc"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[(@{beat_value}+@{sense_value})/10+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
 		</div>
 	</div>
 </div>
