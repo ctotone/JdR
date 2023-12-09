@@ -2,10 +2,10 @@
 <!-- [CHARACTER SHEET] -->
 <!----------------------->	
 <!-- Rounded switch -->
-<input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk" style="visibility: hidden;">
-<div class="wrapper_switch">
-	<div class="bone_option"><span class="switch" data-i18n="switch_info_classic">PC - NPC</span></div>
-	<div class="switch_sheet"><label class="switch" data-i18n-title="switch_sheet" title="Switch sheet version" ><input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk" data-i18n-title="switch_sheet" title="Switch sheet version"><span class="slider round" data-i18n-title="switch_sheet" title="Switch sheet version" ></span></label></div>
+<input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk_classic" style="visibility: hidden;">
+<div class="wrapper_switch_classic">
+	<div class="bone_option"><span class="switch_classic" data-i18n="switch_info_classic">PC - NPC</span></div>
+	<div class="switch_sheet"><label class="switch_classic" data-i18n-title="switch_sheet" title="Switch sheet version" ><input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk_classic" data-i18n-title="switch_sheet" title="Switch sheet version"><span class="slider_classic round" data-i18n-title="switch_sheet" title="Switch sheet version" ></span></label></div>
 </div>
 <!---------------------------->
 <!-- [CLASSIC D100 VERSION] -->
@@ -17,8 +17,8 @@
 <div class="npc">
 		<!-- TAB -->
 		<input type="radio" name="attr_sheet-npc-type" value="1" class="onglcharacter_npc" checked /><span data-i18n="TAB_npc">NPC</span>
-		<!-- <input type="radio" name="attr_sheet-npc-type" value="0" class="onglcapacity_npc" /><span data-i18n="TAB_capacity">Capacity</span>
-		<input type="radio" name="attr_sheet-npc-type" value="2" class="onglequipment_npc" /><span data-i18n="TAB_equipment">Equipment</span>
+		<input type="radio" name="attr_sheet-npc-type" value="4" class="onglconfig_npc" /><span data-i18n="TAB_option">OPTIONS</span>
+		<!-- <input type="radio" name="attr_sheet-npc-type" value="2" class="onglequipment_npc" /><span data-i18n="TAB_equipment">Equipment</span>
 		<input type="radio" name="attr_sheet-npc-type" value="3" class="onglnotes_npc" /><span data-i18n="TAB_notes">Notes</span> -->
 		
 				
@@ -278,6 +278,7 @@
 		<input type="radio" name="attr_sheet-classic-type" value="0" class="onglcapacity_classic" /><span data-i18n="TAB_capacity">Capacity</span>
 		<input type="radio" name="attr_sheet-classic-type" value="2" class="onglequipment_classic" /><span data-i18n="TAB_equipment">Equipment</span>
 		<input type="radio" name="attr_sheet-classic-type" value="3" class="onglnotes_classic" /><span data-i18n="TAB_notes">Notes</span>
+		<input type="radio" name="attr_sheet-classic-type" value="4" class="onglconfig_classic" /><span data-i18n="TAB_option">OPTIONS</span>
 		
 				
 				
@@ -295,7 +296,7 @@
 				<div class="profil_title">
 					<span data-i18n="profil">Profil</span>
 				</div>
-				<div class="dice_tab1_character"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
+				<div class="dice_tab1_character"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension-classic} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
 			</div>
 			<div class="wrapper">
 				<div class="profil">
@@ -362,7 +363,7 @@
 				<div class="possession2">
 					<input class="semi" type="text" name="attr_possession6">
 				</div>
-				<div class="dice_tab4_character"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[@{beat_value}+@{sense_value}+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
+				<div class="dice_tab4_character"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[(@{beat_value}+@{sense_value})/10+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
 			</div>
 				
 			<div class="wrapper">
@@ -432,7 +433,7 @@
 							<span class="sheet-checked">7</span></button>
 						</div>
 					</div>
-					<div class="dice_tab_capacity"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
+					<div class="dice_tab_capacity"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension-classic} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
 				</div>
 				
 				<div class="wrapper_capacity">
@@ -877,7 +878,7 @@
 			</div>
 			
 			<div class="wrapper_defense">
-			<div class="dice_tab4_equipment"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[@{beat_value}+@{sense_value}+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span>
+			<div class="dice_tab4_equipment"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[(@{beat_value}+@{sense_value})/10+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span>
 			</div>
 				<div class="defense1"><input class="defense_name" type="text" name="attr_defense1_name"></div>
 				<div class="defense2"><input class="defense_quality" type="text" name="attr_defense1_quality"></div>
@@ -910,7 +911,7 @@
 				<div class="dice_tab1_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="tension_dice" title="Tension Roll" value="&{template:tension} {{title=^{roll_tension_title}}}{{tension=[[1d6]]}}" class="roll_tab" data-i18n="dice1">TENSION</button></span></div>
 				<div class="dice_tab2_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="terror_dice" title="Terror Roll" value="&{template:dirty} {{title=^{roll_terror_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="roll_tab" data-i18n="dice2">TERROR</button></span></div>
 				<div class="dice_tab3_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="damage_dice" title="Damage Dice" value="&{template:dirty} {{title=^{roll_damage_title}}}{{desc=?{Nombre de dés|1,[[1d6]]|2,[[1d6]] [[1d6]]|3,[[1d6]] [[1d6]] [[1d6]]|4,[[1d6]] [[1d6]] [[1d6]] [[1d6]]|5,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]|6,[[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]] [[1d6]]}}}" class="roll_tab" data-i18n="dice3">DAMAGE</button></span></div>
-				<div class="dice_tab4_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[@{beat_value}+@{sense_value}+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
+				<div class="dice_tab4_note"><span class="dice_tab"><button type="roll" name="roll_Conflict" data-i18n-title="initiative_dice" title="Damage Dice" value="&{template:dirty} {{title=@{character_name}}}{{subtitle=^{roll_initiative_title}}}{{desc=[[(@{beat_value}+@{sense_value})/10+1D10 &{tracker}]]}}" class="roll_tab" data-i18n="dice4">INITIATIVE</button></span></div>
 			</div>
 			<div class="wrapper_xcard_notes">
 				<div class="xcard"><span class="card"><button type="roll" name="roll_Conflict" data-i18n-title="xcard_title" title="Terror Roll" value="&{template:dirty} {{title=@{character_name} ^{xcard_send}}}" class="roll_xcard" data-i18n="xcard">X</button></span></div>
@@ -1076,7 +1077,7 @@
 	</rolltemplate>
 
 	<!-- Tension Dice -->
-	<rolltemplate class="sheet-rolltemplate-tension">
+	<rolltemplate class="sheet-rolltemplate-tension-classic">
 	  <div class="sheet-container sheet-color-{{color}}">
 		<div class="sheet-header">
 		  {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
@@ -1142,7 +1143,7 @@
 			{{#rollGreater() result skill}}
 				<!-- Fumble -->
 				{{#rollGreater() result 94}}
-				<div class="sheet-failure" data-i18n="fumble">Fumble</div>
+				<div class="sheet-critical_failure" data-i18n="fumble">Fumble</div>
 				{{/rollGreater() result 94}}
 				<!-- Classic Failure -->
 				{{#^rollGreater() result 94}}
@@ -1165,7 +1166,7 @@
 				{{/^rollGreater() result remarkable}}
 				<!-- Critical Success -->
 				{{#rollLess() result 6}}
-					<div class="sheet-success" data-i18n="critical_success">Critical Succes</div>
+					<div class="sheet-critical_success" data-i18n="critical_success">Critical Succes</div>
 				{{/rollLess() result 6}}
 			{{/^rollGreater() result skill}}
 			{{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
@@ -1173,6 +1174,3 @@
 		</div>
 	  </div>
 	</rolltemplate>
-	
-	<!-- &{template:classic} {{title=Jet de compétence}}{{skill=[[?{Niveau de compétence?}?{Bonus/Malus?}]]}} {{result=[[1d100]]}} -->
-	<!-- &{template:classic} {{title=Modificateur de difficulté}}{{desc=?{Valeur|Trés facile +50|Facile +25|Difficile -25|Trés difficile -50}}}-->

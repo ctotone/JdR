@@ -136,6 +136,7 @@ div.npc{
     display: none;
 	
 }
+
 input[type="checkbox"].sheet-dispchk:checked ~ div.npc{
     display: block;
 }
@@ -1359,8 +1360,8 @@ span.dice_tab{
 }
 
 body.sheet-darkmode span.dice_tab{     
-	background-color: #484a4a;
-	border-color: #484a4a;
+	background-color: #1f1f1f;
+	border-color: #1f1f1f;
 	color: #ffffff;
 	box-shadow: -2px 3px 3px #797979;
 }
@@ -1372,21 +1373,18 @@ body.sheet-darkmode span.dice_tab{
   #Character Section
 \*------------------------------------*/
 /*--- Character Section Grid ---*/
-.avatar_img{    width: 100px;
-  height: 100px;
-  margin-top: -25px;
-  /* box-shadow: inset 6px 6px 6px #00000073; */
-  opacity: 0.9;
-  /* background-image: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Dirty%20System/img/empty_avatar.jpg"); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* border-radius: 50px; */
+.avatar_img{    
+	width: 100px;
+	height: 100px;
+	margin-top: -25px;
+	opacity: 0.9;
+	/* background-image: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Dirty%20System/img/empty_avatar.jpg"); */
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 body.sheet-darkmode .avatar_img{  
 	
-  /* box-shadow: inset 6px 6px 6px #ffffff3b;
-	background-image: url("https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Dirty%20System/img/empty_avatar_dark.jpg"); */
 }
 
 .wrapper_name {
@@ -1848,7 +1846,7 @@ span.capacity_type{
 }
 
 body.sheet-darkmode span.capacity_type{
-	background-color: #484a4a;
+	background-color: #1f1f1f;
 	border: none;
 	color: #ffffffbd;
 	box-shadow: 2px 3px 3px #797979;
@@ -2780,7 +2778,7 @@ button[type="roll"].roll_tab:hover{
 }
 
 body.sheet-darkmode button[type="roll"].roll_tab{
-    background-color: #484a4a !important;
+    background-color: #1f1f1f !important;
     color: #ffffff3b;
 }
 
@@ -3214,6 +3212,10 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
     text-align: center;
 }
 
+
+
+
+
 /* Classic Roll on D100 */
 /*Normal Mode */
 
@@ -3255,6 +3257,10 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 	--dirty-border-darkmode: #000000;
 	--dirty-content-background-darkmode: #342627;
 	--dirty-content-desc-darkmode:#594e4e;
+	--dirty-roll_success: #01430c;
+	--dirty-roll_failure: #6d0d15;
+	--dirty-roll_critical_success: #dbff00;
+	--dirty-roll_critical_failure: #690177;
 }
 
 /* Allprops part */
@@ -3304,6 +3310,17 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 	background-color: #1f6c36;
 }
 
+.sheet-rolltemplate-classic .sheet-critical_success{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #000;
+	border-top: 2px solid var(--dirty-border);
+	margin-top: 5px;
+	background-color: var(--dirty-roll_critical_success);
+}
+
 .sheet-rolltemplate-classic .sheet-failure{
 	grid-column: span 2;
 	text-align: center;
@@ -3313,6 +3330,17 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 	border-top: 2px solid var(--dirty-border);
 	margin-top: 5px;
 	background-color: var(--dirty-background-header-darkmode);
+}
+
+.sheet-rolltemplate-classic .sheet-critical_failure{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border);
+	margin-top: 5px;
+	background-color: var(--dirty-roll_critical_failure);
 }
 
 /* dirty Dice result in chatcontainer */
@@ -3394,25 +3422,45 @@ body.sheet-darkmode button[type="roll"].roll_xcard:hover{
 }
 
 .sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-success{
-	  grid-column: span 2;
+	grid-column: span 2;
 	text-align: center;
 	font-family: 'Stylish';
 	font-size: 25px;
-	color: #01ac01;
-	border-top: 0px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border-darkmode);
 	margin-top: 5px;
-	background-color: transparent;
-	margin-bottom: 5px;
+	background-color: var(--dirty-roll_success);
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-critical_success{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #000;
+	border-top: 2px solid var(--dirty-border-darkmode);
+	margin-top: 5px;
+	background-color: var(--dirty-roll_critical_success);
 }
 
 .sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-failure{
-	  grid-column: span 2;
+	grid-column: span 2;
 	text-align: center;
 	font-family: 'Stylish';
 	font-size: 25px;
-	color: red;
-	border-top: 0px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border-darkmode);
 	margin-top: 5px;
-	background-color: transparent;
-	margin-bottom: 5px;
+	background-color: var(--dirty-roll_failure);
+}
+
+.sheet-rolltemplate-classic.sheet-rolltemplate-darkmode .sheet-critical_failure{
+	grid-column: span 2;
+	text-align: center;
+	font-family: 'Stylish';
+	font-size: 25px;
+	color: #fff;
+	border-top: 2px solid var(--dirty-border-darkmode);
+	margin-top: 5px;
+	background-color: var(--dirty-roll_critical_failure);
 }

@@ -1254,31 +1254,52 @@
 	  </div>
 	</rolltemplate>
 	
-	<!-- Classic Roll D100 with Success / Failure-->
+<!-- Classic Roll D100 with Success / Failure-->
 	<rolltemplate class="sheet-rolltemplate-classic">
 	  <div class="sheet-container sheet-color-{{color}}">
 		<div class="sheet-header">
-		  {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-		  {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
 		</div>
 		<div class="sheet-content">
 			{{#result}}
-			  <div class="sheet-key" data-i18n="score">Score</div>
-			  <div class="sheet-value"><span class="modifier3"> {{skill}}</span></div>
-			   <div class="sheet-key" data-i18n="roll_result">Résultat du lancer</div>
-			  <div class="sheet-value"><span class="modifier3">{{result}}</span></div>
+				<div class="sheet-key" data-i18n="difficulty">Difficulty</div>
+				<div class="sheet-value"><span class="modifier3"> {{skill}}</span></div>
+				<div class="sheet-key" data-i18n="roll_result">Résultat du lancer</div>
+				<div class="sheet-value"><span class="modifier3">{{result}}</span></div>
 			{{/result}}
-			
-			
-			  {{#rollGreater() result skill}}
-			  <div class="sheet-failure" data-i18n="success">Echec</div>
-			  {{/rollGreater() result skill}}
-			
-			  {{#^rollGreater() result skill}}
-			  <div class="sheet-success"  data-i18n="failure">Réussite</div>
-			  {{/^rollGreater() result skill}}
+			<!-- Failure -->
+			{{#rollGreater() result skill}}
+				<!-- Fumble -->
+				{{#rollGreater() result 94}}
+				<div class="sheet-critical_failure" data-i18n="fumble">Fumble</div>
+				{{/rollGreater() result 94}}
+				<!-- Classic Failure -->
+				{{#^rollGreater() result 94}}
+				<div class="sheet-failure" data-i18n="failure">Failure</div>
+				{{/^rollGreater() result 94}}				
+			{{/rollGreater() result skill}}
+			<!-- Success -->
+			{{#^rollGreater() result skill}}
+				<!-- Classic Success -->
+				{{#rollGreater() result remarkable}}
+					{{#^rollLess() result 6}}
+					<div class="sheet-success" data-i18n="success">Success</div>
+					{{/^rollLess() result 6}}
+				{{/rollGreater() result remarkable}}
+				<!-- Remarkable Success -->
+				{{#^rollGreater() result remarkable}}
+					{{#^rollLess() result 6}}
+					<div class="sheet-success" data-i18n="remarkable">Remarkable Succes</div>
+					{{/^rollLess() result 6}}
+				{{/^rollGreater() result remarkable}}
+				<!-- Critical Success -->
+				{{#rollLess() result 6}}
+					<div class="sheet-critical_success" data-i18n="critical_success">Critical Succes</div>
+				{{/rollLess() result 6}}
+			{{/^rollGreater() result skill}}
+			{{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+			{{#info}}<div class="sheet-info">{{info}}</div>{{/info}}			
 		</div>
 	  </div>
 	</rolltemplate>
-	
-	<!-- &{template:classic} {{title=Jet de compétence}}{{skill=[[?{Niveau de compétence?}?{Bonus/Malus?}]]}} {{result=[[1d100]]}} -->
