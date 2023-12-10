@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 /*------------------------------------*\
-  #Switch Bone / Flesh
+  #Switch Bone / Flesh / Classic / 
 \*------------------------------------*/
 .wrapper_switch {
   max-width: 600px;
@@ -252,8 +252,13 @@ input[type="checkbox"].sheet-dispchk_classic:not(:checked) ~ div.classic{
     display: block;
 }
 
+input[type="checkbox"].sheet-dispchk_classic:checked ~ div.npc{
+    display: block;
+}
 
-
+input[type="checkbox"].sheet-dispchk_classic:not(:checked) ~ div.classic{
+    display: block;
+}
 
 /*------------------------------------*\
   #General
@@ -1719,6 +1724,15 @@ body.sheet-darkmode .avatar_img{
 .my_note{
   grid-column: 1 / 4;
   grid-row: 1 / 1;
+}
+
+.title{
+	grid-column: 1 / 3;
+	grid-row: 1;
+	font-size: 20px;
+	line-height: 1.5;
+	display:flex;
+	margin-bottom: -16px;
 }
 
 /*--- Character Section Style ---*/
