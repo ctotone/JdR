@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
@@ -227,38 +226,38 @@ input:checked + .slider_classic:before {
   border-radius: 50%;
 }
 
-div.sheet-dispchk,
-div.sheet-dispchk_classic,
-div.flesh,
-div.bone,
-div.classic,
-div.npc{
-   display: none;
+
+/*Configure the tab buttons*/
+.charsheet .pc_bone,
+.charsheet .npc_bone,
+.charsheet .pc_flesh,
+.charsheet .npc_flesh,
+.charsheet .classic,
+.charsheet .npc {
+    display: none;
 }
 
-input[type="checkbox"].sheet-dispchk:checked ~ div.bone{
+/* show the selected tab */
+.charsheet .sheet-sheettoggle[value="pc_bone"] ~ div.pc_bone,
+.charsheet .sheet-sheettoggle[value="npc_bone"] ~ div.npc_bone,
+.charsheet .sheet-sheettoggle[value="pc_flesh"] ~ div.pc_flesh,
+.charsheet .sheet-sheettoggle[value="npc_flesh"] ~ div.npc_flesh,
+.charsheet .sheet-sheettoggle[value="pc_classic"] ~ div.classic,
+.charsheet .sheet-sheettoggle[value="npc_classic"] ~ div.npc {
     display: block;
 }
 
-input[type="checkbox"].sheet-dispchk:not(:checked) ~ div.flesh{
-    display: block;
+div.sheet_selector {
+	width: auto;
+	margin-left: 550px;
+	margin-top: -65px;
 }
 
-input[type="checkbox"].sheet-dispchk_classic:checked ~ div.npc{
-    display: block;
+.selector {
+	width: auto;
 }
 
-input[type="checkbox"].sheet-dispchk_classic:not(:checked) ~ div.classic{
-    display: block;
-}
 
-input[type="checkbox"].sheet-dispchk_classic:checked ~ div.npc{
-    display: block;
-}
-
-input[type="checkbox"].sheet-dispchk_classic:not(:checked) ~ div.classic{
-    display: block;
-}
 
 /*------------------------------------*\
   #General
@@ -450,7 +449,11 @@ div.notes_bone,
 div.character_classic,
 div.character_npc,
 div.equipment_classic,
-div.notes_classic{
+div.notes_classic,
+div.config,
+div.config_bone,
+div.config_pc,
+div.config_npc{
     display: none;
 	padding-top: 5px;
 }
@@ -503,6 +506,10 @@ input[type=radio].onglnotes:checked ~ div.notes{
     display: block;
 } 
 
+input[type=radio].onglconfig:checked ~ div.config{
+    display: block;
+} 
+
 input[type=radio].onglcapacity_bone:checked ~ div.capacity_bone{
     display: block;
 }
@@ -515,6 +522,10 @@ input[type=radio].onglequipment_bone:checked ~ div.equipment_bone{
 input[type=radio].onglnotes_bone:checked ~ div.notes_bone{
     display: block;
 } 
+
+input[type=radio].onglconfig_bone:checked ~ div.config_bone{
+    display: block;
+}
 
 
 input[type=radio].onglcapacity_classic:checked ~ div.capacity_classic{
@@ -530,6 +541,11 @@ input[type=radio].onglnotes_classic:checked ~ div.notes_classic{
     display: block;
 } 
 
+input[type=radio].onglconfig_classic_pc:checked ~ div.config_pc{
+    display: block;
+} 
+
+
 input[type=radio].onglcapacity_npc:checked ~ div.capacity_npc{
     display: block;
 }
@@ -540,6 +556,10 @@ input[type=radio].onglequipment_npc:checked ~ div.equipment_npc{
     display: block;
 }
 input[type=radio].onglnotes_npc:checked ~ div.notes_npc{
+    display: block;
+} 
+
+input[type=radio].onglconfig_classic_npc:checked ~ div.config_npc{
     display: block;
 } 
 
@@ -575,8 +595,8 @@ input[type=radio].onglnotes_npc
 
 input[type=radio].onglconfig,
 input[type=radio].onglconfig_bone,
-input[type=radio].onglconfig_classic,
-input[type=radio].onglconfig_npc
+input[type=radio].onglconfig_classic_pc,
+input[type=radio].onglconfig_classic_npc
 {
     margin: 0;
     margin-top: -4px;
@@ -635,8 +655,8 @@ input[type=radio].onglnotes_npc + span{
 
 input[type=radio].onglconfig + span,
 input[type=radio].onglconfig_bone + span,
-input[type=radio].onglconfig_classic + span,
-input[type=radio].onglconfig_npc + span{
+input[type=radio].onglconfig_classic_pc + span,
+input[type=radio].onglconfig_classic_npc + span{
     color: #333333;
     font-size: 15px;
     text-align: center;
@@ -678,12 +698,12 @@ body.sheet-darkmode input[type=radio].onglcharacter_classic:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity_classic:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment_classic:checked + span,
 body.sheet-darkmode input[type=radio].onglnotes_classic:checked + span,
-body.sheet-darkmode input[type=radio].onglconfig_classic:checked + span,
+body.sheet-darkmode input[type=radio].onglconfig_classic_pc:checked + span,
 body.sheet-darkmode input[type=radio].onglcharacter_npc:checked + span,
 body.sheet-darkmode input[type=radio].onglcapacity_npc:checked + span,
 body.sheet-darkmode input[type=radio].onglequipment_npc:checked + span,
 body.sheet-darkmode input[type=radio].onglnotes_npc:checked + span,
-body.sheet-darkmode input[type=radio].onglconfig_npc:checked + span{  
+body.sheet-darkmode input[type=radio].onglconfig_classic_npc:checked + span{  
     color: #ffffffd6;
     border: solid;
     border-top-color: #48494a;
@@ -728,8 +748,8 @@ body.sheet-darkmode input[type=radio].onglnotes_npc{
 
 body.sheet-darkmode input[type=radio].onglconfig,
 body.sheet-darkmode input[type=radio].onglconfig_bone,
-body.sheet-darkmode input[type=radio].onglconfig_classic,
-body.sheet-darkmode input[type=radio].onglconfig_npc{
+body.sheet-darkmode input[type=radio].onglconfig_classic_pc,
+body.sheet-darkmode input[type=radio].onglconfig_classic_npc{
     margin: 0;
     margin-top: -4px;
     margin-bottom: -4px;
@@ -758,12 +778,12 @@ body.sheet-darkmode input[type=radio].onglcharacter_classic + span,
 body.sheet-darkmode input[type=radio].onglcapacity_classic + span,
 body.sheet-darkmode input[type=radio].onglequipment_classic + span,
 body.sheet-darkmode input[type=radio].onglnotes_classic + span,
-body.sheet-darkmode input[type=radio].onglconfig_classic + span,
+body.sheet-darkmode input[type=radio].onglconfig_classic_pc + span,
 body.sheet-darkmode input[type=radio].onglcharacter_npc + span,
 body.sheet-darkmode input[type=radio].onglcapacity_npc + span,
 body.sheet-darkmode input[type=radio].onglequipment_npc + span,
 body.sheet-darkmode input[type=radio].onglnotes_npc + span,
-body.sheet-darkmode input[type=radio].onglconfig_npc + span{
+body.sheet-darkmode input[type=radio].onglconfig_classic_npc + span{
     color: #ffffff9c;
     border-color: #48494a;
 	background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Dirty%20System/img/background-red1.webp);
@@ -783,12 +803,12 @@ input[type=radio].onglcharacter_classic:checked + span,
 input[type=radio].onglcapacity_classic:checked + span,
 input[type=radio].onglequipment_classic:checked + span,
 input[type=radio].onglnotes_classic:checked + span,
-input[type=radio].onglconfig_classic:checked + span,
+input[type=radio].onglconfig_classic_pc:checked + span,
 input[type=radio].onglcharacter_npc:checked + span,
 input[type=radio].onglcapacity_npc:checked + span,
 input[type=radio].onglequipment_npc:checked + span,
 input[type=radio].onglnotes_npc:checked + span,
-input[type=radio].onglconfig_npc:checked + span {
+input[type=radio].onglconfig_classic_npc:checked + span {
     color: black;
     border-bottom-width: 1px;
     border-color: black;
