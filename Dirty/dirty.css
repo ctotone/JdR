@@ -4,233 +4,11 @@
 /*------------------------------------*\
   #Switch Bone / Flesh / Classic / 
 \*------------------------------------*/
-.wrapper_switch {
-  max-width: 600px;
-}
-
-.wrapper_switch{    
-	display: grid;
-	grid-template-columns: 583px 130px 0px 100px;
-	grid-auto-rows: 16px;
-	margin-top: -46px;
-	padding-bottom: 21px;
-}
-
-.wrapper_switch_classic {
-  max-width: 600px;
-}
-
-.wrapper_switch_classic{    
-	display: grid;
-	grid-template-columns: 670px 53px 0px 100px;
-	grid-auto-rows: 16px;
-	margin-top: -46px;
-	padding-bottom: 21px;
-}
-
-.bone_option,
-.sweet_sheet,
-.flesh_option {
-	grid-row: 1;
-	font-size: 20px;
-	line-height: 1.5;
-	display:flex;
-	font-size: 15px;
-}
-
-.bone_option {
-	grid-column: 2;
-	padding: 0;
-	margin-top: -3px;
-}
-
-span.switch {
-	font-size : 12px;
-}
-
-span.switch_classic {
-	font-size : 12px;
-}
-
-.switch_sheet {
-	grid-column: 4;
-}
-
-.switch_sheet_classic {
-	grid-column: 4;
-}
-
-.flesh_option {
-	grid-column: 4; 
-	padding: 0;
-	margin-top: -3px;
-}
-
-/* span.vertical {
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-} */
-
-.switch {
-  position: relative;
-  display: inline-block;
-}
-
-.switch_classic {
-  position: relative;
-  display: inline-block;
-}
-
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch_classic input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {   
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #a1a09f;
-	-webkit-transition: .4s;
-	transition: .4s;
-	width: 28px;
-	height: 13px;
-}
-
-body.sheet-darkmode .slider {  
-	background-color: #656666;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  width: 10px;
-  height: 10px;
-}
-
-body.sheet-darkmode .slider:before {
-   background-color: #f9f9f9;
-}
-
-input:checked + .slider {
-  background-color: #000000;
-}
-
-body.sheet-darkmode input:checked + .slider {
-  background-color: #6d0d15;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #000000;
-}
-
-body.sheet-darkmode input:focus + .slider {
-  box-shadow: 0 0 1px #6d0d15;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  transform: translateX(10px);
-}
-
-.slider_classic {   
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #a1a09f;
-	-webkit-transition: .4s;
-	transition: .4s;
-	width: 28px;
-	height: 13px;
-}
-
-body.sheet-darkmode .slider_classic {  
-	background-color: #656666;
-}
-
-.slider_classic:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  width: 10px;
-  height: 10px;
-}
-
-body.sheet-darkmode .slider_classic:before {
-   background-color: #f9f9f9;
-}
-
-input:checked + .slider_classic {
-  background-color: #000000;
-}
-
-body.sheet-darkmode input:checked + .slider_classic {
-  background-color: #6d0d15;
-}
-
-input:focus + .slider_classic {
-  box-shadow: 0 0 1px #000000;
-}
-
-body.sheet-darkmode input:focus + .slider_classic {
-  box-shadow: 0 0 1px #6d0d15;
-}
-
-input:checked + .slider_classic:before {
-  -webkit-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  transform: translateX(10px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.slider_classic.round {
-  border-radius: 34px;
-}
-
-.slider_classic.round:before {
-  border-radius: 50%;
-}
-
 
 /*Configure the tab buttons*/
-.charsheet .pc_bone,
+.charsheet .bone,
 .charsheet .npc_bone,
-.charsheet .pc_flesh,
+.charsheet .flesh,
 .charsheet .npc_flesh,
 .charsheet .classic,
 .charsheet .npc {
@@ -238,10 +16,12 @@ input:checked + .slider_classic:before {
 }
 
 /* show the selected tab */
-.charsheet .sheet-sheettoggle[value="pc_bone"] ~ div.pc_bone,
-.charsheet .sheet-sheettoggle[value="npc_bone"] ~ div.npc_bone,
-.charsheet .sheet-sheettoggle[value="pc_flesh"] ~ div.pc_flesh,
-.charsheet .sheet-sheettoggle[value="npc_flesh"] ~ div.npc_flesh,
+.charsheet .sheet-sheettoggle[value="pc_bone"] ~ div.bone,
+.charsheet .sheet-sheettoggle[value="npc_bone"] ~ div.bone,  						/* REMOVE AFTER NPC CREATION */
+/* .charsheet .sheet-sheettoggle[value="npc_bone"] ~ div.npc_bone, */
+.charsheet .sheet-sheettoggle[value="pc_flesh"] ~ div.flesh,
+.charsheet .sheet-sheettoggle[value="npc_flesh"] ~ div.flesh,  						/* REMOVE AFTER NPC CREATION */
+/* .charsheet .sheet-sheettoggle[value="npc_flesh"] ~ div.npc_flesh, */
 .charsheet .sheet-sheettoggle[value="pc_classic"] ~ div.classic,
 .charsheet .sheet-sheettoggle[value="npc_classic"] ~ div.npc {
     display: block;
@@ -249,12 +29,28 @@ input:checked + .slider_classic:before {
 
 div.sheet_selector {
 	width: auto;
-	margin-left: 550px;
-	margin-top: -65px;
+	margin-left: 559px;
+	margin-top: -15px;
 }
 
 .selector {
-	width: auto;
+    width: auto;
+    font-family: 'Stylish';
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888888;
+    z-index: 1;
+    font-family: 'Stylish', serif;
+    font-size: 12px;
+    box-shadow: -3px 3px 3px #00000073;
+	background-color: #e6e6e6;
+}
+
+body.sheet-darkmode .selector {
+    background-color: #1f1f1f;
+    border-color: #48494a;
+    color: #ffffff;
+    box-shadow: -2px 3px 3px #797979;
 }
 
 
@@ -636,6 +432,7 @@ input[type=radio].onglnotes_npc + span{
     margin: 0;
     margin-left: -109px;
     margin-right: -5px;
+	margin-top: 10px;
     padding: 0;
     margin-bottom: -1px;
     padding-top: 5px;
@@ -1456,28 +1253,28 @@ body.sheet-darkmode .charsheet button.sheet-balance_bone2 > span{
 .dice_tab1_npc {
     grid-column: 5;
     grid-row: 1;
-    margin-top: -974px;
+    margin-top: -970px;
 	margin-left: 10px;
 }
 
 .dice_tab2_npc {
     grid-column: 5;
     grid-row: 1;
-    margin-top: -858px;
+    margin-top: -854px;
 	margin-left: 10px;
 }
 
 .dice_tab3_npc {
     grid-column: 5;
     grid-row: 1;
-    margin-top: -742px;
+    margin-top: -738px;
 	margin-left: 10px;
 }
 
 .dice_tab4_npc {
     grid-column: 5;
     grid-row: 1;
-    margin-top: -624px;
+    margin-top: -620px;
 	margin-left: 10px;
 }
 
