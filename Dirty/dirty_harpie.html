@@ -1,13 +1,8 @@
 <!----------------------->			
 <!-- [CHARACTER SHEET] -->
 <!----------------------->	
-
-<!-- Rounded switch -->
-<input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk_classic" style="visibility: hidden;">
-<div class="wrapper_switch_classic">
-	<div class="bone_option"><span class="switch_classic" data-i18n="switch_info_classic">PC - NPC</span></div>
-	<div class="switch_sheet"><label class="switch_classic" data-i18n-title="switch_sheet" title="Switch sheet version" ><input type="checkbox" name="attr_PNJ_version" class="sheet-dispchk_classic" data-i18n-title="switch_sheet" title="Switch sheet version"><span class="slider_classic round" data-i18n-title="switch_sheet" title="Switch sheet version" ></span></label></div>
-</div>
+<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="pc_classic"  />			
+			
 <!---------------------------->
 <!-- [CLASSIC D100 VERSION] -->
 <!---------------------------->
@@ -18,11 +13,20 @@
 <div class="npc">
 		<!-- TAB -->
 		<input type="radio" name="attr_sheet-npc-type" value="1" class="onglcharacter_npc" checked /><span data-i18n="TAB_npc">NPC</span>
-		<input type="radio" name="attr_sheet-npc-type" value="4" class="onglconfig_npc" /><span data-i18n="TAB_option">OPTIONS</span>
+		<!-- <input type="radio" name="attr_sheet-npc-type" value="4" class="onglconfig_classic_npc" /><span data-i18n="TAB_option">OPTIONS</span> -->
 		<!-- <input type="radio" name="attr_sheet-npc-type" value="2" class="onglequipment_npc" /><span data-i18n="TAB_equipment">Equipment</span>
 		<input type="radio" name="attr_sheet-npc-type" value="3" class="onglnotes_npc" /><span data-i18n="TAB_notes">Notes</span> -->
 		
-				
+	<div class="sheet_selector">
+	<select class="selector" name="attr_sheet_version">
+		<option value="pc_bone">To the bone (PC)</option>
+		<option value="npc_bone">To the bone (NPC)</option>
+		<option value="pc_flesh">In the flesh (PC)</option>
+		<option value="npc_flesh">In the flesh (NPC)</option>
+		<option value="pc_classic">Classic D100 (PC)</option>
+		<option value="npc_classic">Classic D100 (NPC)</option>
+	</select>
+	</div>			
 				
 	<!-- Character Tab -->			
 	<div class="character_npc">
@@ -265,8 +269,17 @@
 	</div>
 	
 	<!-- Option Tab -->
-	<div class="option_classic">
-		
+	<div class="config_npc">
+	
+	<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="pc_classic"  />
+			<div>
+				<!-- <button type="action" name="act_pc_bone" >PC bone</button>
+				<button type="action" name="act_npc_bone" >npc bone</button>
+				<button type="action" name="act_pc_flesh" >pc flesh</button>
+				<button type="action" name="act_npc_flesh" >npc flesh</button> -->
+				<button type="action" name="act_pc_classic" >pc classic</button>
+				<button type="action" name="act_npc_classic" >npc classic</button>
+			</div>		
 	</div>
 </div>
 
@@ -284,9 +297,18 @@
 		<input type="radio" name="attr_sheet-classic-type" value="0" class="onglcapacity_classic" /><span data-i18n="TAB_capacity">Capacity</span>
 		<input type="radio" name="attr_sheet-classic-type" value="2" class="onglequipment_classic" /><span data-i18n="TAB_equipment">Equipment</span>
 		<input type="radio" name="attr_sheet-classic-type" value="3" class="onglnotes_classic" /><span data-i18n="TAB_notes">Notes</span>
-		<input type="radio" name="attr_sheet-classic-type" value="4" class="onglconfig_classic" /><span data-i18n="TAB_option">OPTIONS</span>
+		<!-- <input type="radio" name="attr_sheet-classic-type" value="4" class="onglconfig_classic_pc" /><span data-i18n="TAB_option">OPTIONS</span> -->
 		
-				
+		<div class="sheet_selector">
+		<select name="attr_sheet_version">
+			<option value="pc_bone">To the bone (PC)</option>
+			<option value="npc_bone">To the bone (NPC)</option>
+			<option value="pc_flesh">In the flesh (PC)</option>
+			<option value="npc_flesh">In the flesh (NPC)</option>
+			<option value="pc_classic">Classic D100 (PC)</option>
+			<option value="npc_classic">Classic D100 (NPC)</option>
+		</select>
+		</div>			
 				
 		<!-- Character Tab -->			
 		<div class="character_classic">
@@ -925,9 +947,18 @@
 		</div>
 		
 		<!-- Option Tab -->
-		<div class="option_classic">
-			
-		</div>
+	<div class="config_pc">
+	
+			<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="pc_classic"  />
+			<div>
+				<!-- <button type="action" name="act_pc_bone" >PC bone</button>
+				<button type="action" name="act_npc_bone" >npc bone</button>
+				<button type="action" name="act_pc_flesh" >pc flesh</button>
+				<button type="action" name="act_npc_flesh" >npc flesh</button> -->
+				<button type="action" name="act_pc_classic" >pc classic</button>
+				<button type="action" name="act_npc_classic" >npc classic</button>
+			</div>			
+	</div>
 </div>
 				
 				
@@ -936,6 +967,17 @@
 	<!---------------------->
 
 	<script type="text/worker">
+	
+	  const buttonlist = ["pc_bone","npc_bone","pc_flesh","npc_flesh","pc_classic","npc_classic"];
+				buttonlist.forEach(button => {
+					on(`clicked:${button}`, function() {
+						setAttrs({
+							sheet_version: button
+						});
+					});
+				});
+				
+				
 	  const profil_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  profil_reserveValues.forEach(function(value) {
 		on(`clicked:profil_reserve_${value}`, function() {
