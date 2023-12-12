@@ -1,6 +1,18 @@
+<!-- INDEX -->
+<!-- To the Bone PC version		: line   19 -->
+<!-- To the Bone NPC version	: line  426 -->
+<!-- In the Flesh PC version	: line  700 -->
+<!-- In the Flesh NPC version	: line 1360 -->
+<!-- Classic D100 PC version	: line 1625 -->
+<!-- Classic D100 NPC version	: line 1886 -->
+<!-- SCRIPT						: line 2547 -->
+<!-- Roll Template 				: line 2707 -->
+
+
 <!----------------------->			
 <!-- [CHARACTER SHEET] -->
 <!----------------------->	
+<!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="pc_bone"  />			
 
 
@@ -2532,12 +2544,12 @@
 </div>
 				
 				
-	<!---------------------->			
-	<!------ [SCRIPT] ------>
-	<!---------------------->
+<!---------------------->			
+<!------ [SCRIPT] ------>
+<!---------------------->
 
+<!-- Sheet version selection -->
 	<script type="text/worker">
-	
 	  const buttonlist = ["pc_bone","npc_bone","pc_flesh","npc_flesh","pc_classic","npc_classic"];
 				buttonlist.forEach(button => {
 					on(`clicked:${button}`, function() {
@@ -2546,8 +2558,10 @@
 						});
 					});
 				});
-				
-				
+	</script>
+
+<!-- Reserve value dots -->
+	<script type="text/worker">				
 	  const profil_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  profil_reserveValues.forEach(function(value) {
 		on(`clicked:profil_reserve_${value}`, function() {
@@ -2556,8 +2570,9 @@
 		  });
 		});
 	  });
+	</script>
 
-
+	<script type="text/worker">
 	  const beat_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  beat_reserveValues.forEach(function(value) {
 		on(`clicked:beat_reserve_${value}`, function() {
@@ -2566,7 +2581,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const endure_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  endure_reserveValues.forEach(function(value) {
 		on(`clicked:endure_reserve_${value}`, function() {
@@ -2575,7 +2592,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const cross_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  cross_reserveValues.forEach(function(value) {
 		on(`clicked:cross_reserve_${value}`, function() {
@@ -2584,7 +2603,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const know_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  know_reserveValues.forEach(function(value) {
 		on(`clicked:know_reserve_${value}`, function() {
@@ -2593,7 +2614,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const think_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  think_reserveValues.forEach(function(value) {
 		on(`clicked:think_reserve_${value}`, function() {
@@ -2602,7 +2625,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const use_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  use_reserveValues.forEach(function(value) {
 		on(`clicked:use_reserve_${value}`, function() {
@@ -2611,7 +2636,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const influence_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  influence_reserveValues.forEach(function(value) {
 		on(`clicked:influence_reserve_${value}`, function() {
@@ -2620,7 +2647,9 @@
 		  });
 		});
 	  });
+	</script>
 
+	<script type="text/worker">
 	  const sense_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  sense_reserveValues.forEach(function(value) {
 		on(`clicked:sense_reserve_${value}`, function() {
@@ -2629,8 +2658,9 @@
 		  });
 		});
 	  });
+	</script>
 
-		
+	<script type="text/worker">
 	  const feel_reserveValues = ["1","2","3","4","5","6","7","8"];
 	  feel_reserveValues.forEach(function(value) {
 		on(`clicked:feel_reserve_${value}`, function() {
@@ -2639,8 +2669,10 @@
 		  });
 		});
 	  });
+	</script>
 
-
+<!-- Injury and Balance dots - Flesh and Classic version -->
+	<script type="text/worker">
 	  const toggleList = ["injury1","injury2","injury3","injury4","injury5","injury6","injury7","balance1","balance2","balance3","balance4","balance5","balance6","balance7","balance_bone1","balance_bone2","injury_bone1","injury_bone2"];
 		toggleList.forEach(function(button) {
 		on(`clicked:${button}`, function() {
@@ -2652,17 +2684,10 @@
 		  });
 		});
 		}); 
-		
-	  
-	  const link_reserveValues = ["1","2","3","4","5","6","7","8"];
-	  link_reserveValues.forEach(function(value) {
-		on(`clicked:link_reserve_${value}`, function() {
-		  setAttrs({
-			"link_reserve": value
-		  });
-		});
-	  });
-	  
+	</script>
+
+<!-- Capacity point count -->
+	<script type="text/worker">
 	  const stats = ["beat_value","endure_value","cross_value","know_value","think_value","use_value","influence_value","sense_value","feel_value"];
 		stats.forEach(function(stat) {
 			on(`change:${stat}`, function() {
@@ -2676,8 +2701,7 @@
 					});
 				});
 			});
-	   });
-	  
+	   }); 
 	</script>
 
 	<!---------------------->			
