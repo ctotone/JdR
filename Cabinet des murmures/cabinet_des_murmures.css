@@ -46,7 +46,7 @@ body.sheet-darkmode .charsheet {
 
 .wrapper_cabinet{  
 	display: grid;
-    grid-template-columns: 140px 10px 140px 10px 140px 10px 100px 10px 100px 100px 10px 20px;
+    grid-template-columns: 140px 10px 140px 10px 140px 10px 100px 10px 100px 100px 40px 20px;
 	grid-auto-rows: 30px;
 }
 
@@ -118,14 +118,14 @@ body.sheet-darkmode .charsheet {
 }
 
 .note {
-	grid-column: 1/8;
+	grid-column: 1/6;
 	grid-row: 21;
 	display:flex;
 	font-size: 18px;
 }
 
 .note_data {
-	grid-column: 1/8;
+	grid-column: 1/6;
 	grid-row: 22/34;
 	font-size: 14px;
 }
@@ -158,41 +158,47 @@ body.sheet-darkmode .charsheet {
 }
 
 .graces {
-	grid-column: 9/11;
+	grid-column: 7/11;
 	grid-row: 21;
 	font-size: 18px;
 	display:flex;
     align-items: flex-end;
 }
 .graces_data {
-	grid-column: 9/11;
+	grid-column: 7/11;
 	grid-row: 22/28;
 	font-size: 14px;
 }
 
 .graces {
-	grid-column: 9/11;
+	grid-column: 7/11;
 	grid-row: 21;
 	font-size: 18px;
 	display:flex;
     align-items: flex-end;
 }
+
 .xp_collective_cadre {
-	grid-column: 9/11;
-	grid-row: 30/34;
-	font-size: 14px;
-    border: 1px solid red;
+    grid-column: 7/11;
+    grid-row: 30/34;
+    font-size: 14px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/xp_border.png);
+    background-size: cover;
+    background-size: 310px 120px;
+    background-repeat: no-repeat;
+    padding: 10px;
 }
 
 .xp_collective {
-	grid-column: 9/11;
+	grid-column: 7/11;
 	grid-row: 30;
 	font-size: 18px;
     align-items: flex-end;
+	text-align: center;
 }
 
 .xp_collective_data {
-	grid-column: 9/11;
+	grid-column: 7/11;
 	grid-row: 31/34;
 	font-size: 14px;
 }
