@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+/*------------------------------------*\
+  #General
+\*------------------------------------*/
+
+.charsheet {
+   font-family: 'Old Standard TT', serif;
+}
+
+.cabinet {
+	width:850px;
+    border: 1px solid red;
+	padding: 10px;
+	background-color: grey;
+}
+
+
+
+/*------------------------------------*\
+  DARK MODE BASE
+\*------------------------------------*/
+
+body.sheet-darkmode button,
+body.sheet-darkmode input,
+body.sheet-darkmode optgroup,
+body.sheet-darkmode select,
+body.sheet-darkmode textarea,
+body.sheet-darkmode .charsheet {
+	color: #ffffffb5;
+}
+
+.btn:hover {
+    background-position: unset;
+}
+
+.sheet-darkmode .sheetform {
+	width: 700px;
+    border-color: #c4c5c63b;
+}
+
+
+/*------------------------------------*\
+  Wrapper
+\*------------------------------------*/
+
+.wrapper_cabinet{  
+	display: grid;
+    grid-template-columns: 140px 10px 140px 10px 140px 10px 100px 10px 100px 100px 10px 20px;
+	grid-auto-rows: 30px;
+}
+
+
+.esprit {
+	grid-column: 1/6;
+	grid-row: 1;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+
+.esprit_data {
+	grid-column: 1/6;
+	grid-row: 2/6;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.esprit_border {
+	grid-column: 3/6;
+	grid-row: 1;
+	font-size: 20px;
+	display:flex;
+    border-top: 4px solid blue;
+}
+
+.acquis_collectifs {
+	grid-column: 1/6;
+	grid-row: 6;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+
+.acquis_collectifs_data1 {
+	grid-column: 1;
+	grid-row: 7/12;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.acquis_collectifs_data2 {
+	grid-column: 3;
+	grid-row: 7/12;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.acquis_collectifs_data3 {
+	grid-column: 5;
+	grid-row: 7/12;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.contact {
+	grid-column: 1/6;
+	grid-row: 12;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+
+.contact_data {
+	grid-column: 1/6;
+	grid-row: 13/21;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.note {
+	grid-column: 1/8;
+	grid-row: 21;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.note_data {
+	grid-column: 1/8;
+	grid-row: 22/34;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.description_cabinet {
+	grid-column: 7/11;
+	grid-row: 1;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+.description_cabinet_data {
+	grid-column: 7/11;
+	grid-row: 2/12;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.adversaires {
+	grid-column: 7/11;
+	grid-row: 12;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+.adversaires_data {
+	grid-column: 7/11;
+	grid-row: 13/21;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.graces {
+	grid-column: 9/11;
+	grid-row: 21;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+.graces_data {
+	grid-column: 9/11;
+	grid-row: 22/28;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.graces {
+	grid-column: 9/11;
+	grid-row: 21;
+	font-size: 20px;
+	display:flex;
+    border: 1px solid;
+}
+.xp_collective_cadre {
+	grid-column: 9/11;
+	grid-row: 30/34;
+	font-size: 20px;
+    border: 1px solid red;
+}
+
+.xp_collective {
+	grid-column: 9/11;
+	grid-row: 30;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.xp_collective_data {
+	grid-column: 9/11;
+	grid-row: 31/34;
+	font-size: 20px;
+    border: 1px solid;
+}
+
+.decor_droite {
+	grid-column: 12;
+	grid-row: 10/20;
+	font-size: 20px;
+    border: 1px solid;
+	background-color: black;
+}
+
+.decor_bas {
+	grid-column: 5/8;
+	grid-row: 35;
+	grid-auto-rows: 20px;
+	font-size: 20px;
+    border: 1px solid;
+	background-color: black;
+}
