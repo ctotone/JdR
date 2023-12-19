@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
 
+
+
+/* TEMP */
+/* div.cabinet {display: none;} */
+
+
 /*------------------------------------*\
   #General
 \*------------------------------------*/
@@ -8,9 +14,14 @@
 .charsheet {
    font-family: 'Old Standard TT', serif;
    --blue_cabinet: #435861;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/fond_temp.webp);
+    background-size: cover;
 }
 
-.cabinet {
+
+
+.cabinet,
+.corps {
 	width:825px;
     border: 1px solid var(--blue_cabinet);
 	padding: 10px;
@@ -118,6 +129,7 @@ body.sheet-darkmode .charsheet {
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
+	font-weight: bold;
 }
 
 .contact_data {
@@ -167,6 +179,7 @@ body.sheet-darkmode .charsheet {
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
+	font-weight: bold;
 }
 .adversaires_data {
 	grid-column: 7/11;
@@ -236,7 +249,7 @@ body.sheet-darkmode .charsheet {
 }
 
 /*------------------------------------*\
-  Style Cabinet
+  Style Cabinet / Corps / 
 \*------------------------------------*/
 
 /* input[type=text],
@@ -262,7 +275,16 @@ input[type=number] {
 .charsheet textarea.cab_note,
 .charsheet textarea.cab_desc,
 .charsheet textarea.cab_adversaire,
-.charsheet textarea.cab_grace {    
+.charsheet textarea.cab_grace,
+.charsheet textarea.cor_description,
+.charsheet textarea.cor_attributs,
+.charsheet textarea.cor_equipement,
+.charsheet textarea.cor_sequelles,
+.charsheet textarea.cor_legere,
+.charsheet textarea.cor_grave,
+.charsheet textarea.cor_note,
+.charsheet textarea.cor_sequelles_legere,
+.charsheet textarea.cor_sequelles_grave {    
 	background-color: transparent;
 	font-family: 'Junge', cursive;
 	font-size: 14px;
@@ -270,10 +292,12 @@ input[type=number] {
 	outline: none;
 	resize: none;
 	padding: 7px;
-	box-shadow: 0 0 10px 3px #bdb8b8;
+    box-shadow: 2px 2px 0px 1px #293e47;
 }
 
-.charsheet textarea.cab_esprit {
+.charsheet textarea.cab_esprit,
+.charsheet textarea.cor_description,
+.charsheet textarea.cor_note {
 	width: 420px;
 	height: 90px;
 }
@@ -303,7 +327,8 @@ input[type=number] {
 	height: 200px;
 }
 
-.charsheet textarea.cab_xp {
+.charsheet textarea.cab_xp,
+.charsheet textarea.cor_malus {
 	width: 275px;
 	height: 55px;
 	background-color: transparent;
@@ -316,11 +341,36 @@ input[type=number] {
 	padding: 7px;
 }
 
+.charsheet textarea.cor_equipement {
+    width: 265px;
+    height: 208px;
+}
+
+.charsheet textarea.cor_sequelles_legere,
+.charsheet textarea.cor_sequelles_grave {
+    width: 120px;
+    height: 56px;
+}
+
 .acquis_collectifs_data1 p,
 .acquis_collectifs_data2 p,
-.acquis_collectifs_data3 p {
+.acquis_collectifs_data3 p,
+.attributs_data1 p,
+.attributs_data2 p,
+.attributs_data3 p {
 	border-radius: 0px;
 	border-bottom: 1px solid var(--blue_cabinet);
+}
+
+.attributs_data1 p,
+.attributs_data2 p,
+.attributs_data3 p {
+	font-family: 'Old Standard TT', serif;
+	font-size: 13px;
+	border-radius: 0px;
+	border-bottom: none;
+    margin-top: 7px;
+    margin-bottom: 23px;
 }
 
 .acquis_collectifs_data1 input.data,
@@ -346,7 +396,257 @@ input[type=number] {
 
 .acquis_collectifs_data1 input.bonus,
 .acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus {
+.acquis_collectifs_data3 input.bonus,
+.attributs_bonus1 input.bonus,
+.attributs_bonus2 input.bonus,
+.attributs_bonus3 input.bonus {
 	width: 18px;
 	font-weight: bold;
+}
+
+
+.attributs_bonus1 input.bonus,
+.attributs_bonus2 input.bonus,
+.attributs_bonus3 input.bonus {
+    border-radius: 15px;
+    background-color: transparent;
+    font-family: 'Junge', cursive;
+    font-size: 16px;
+    color: var(--blue_cabinet);
+    outline: none;
+    border: 2px solid;
+    width: 30px;
+    font-weight: bold;
+    text-align: right;
+    margin-left: -13px;
+}
+
+/*------------------------------------*\
+  Wrapper Corps
+\*------------------------------------*/
+
+.wrapper_corps{  
+	display: grid;
+    grid-template-columns: 100px 40px 10px 100px 40px 10px 100px 40px 30px 100px 10px 100px 70px 30px 35px 20px;
+	grid-auto-rows: 30px;
+}
+
+.description {
+	grid-column: 1/9;
+	grid-row: 1;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.description_data {
+	grid-column: 1/9;
+	grid-row: 2/6;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.attributs {
+	grid-column: 1/9;
+	grid-row: 6;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+    white-space: nowrap;
+	font-weight: bold;
+}
+
+.attributs_data1 {
+	grid-column: 1;
+	grid-row: 7/12;
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.attributs_data2 {
+	grid-column: 4;
+	grid-row: 7/12;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.attributs_data3 {
+	grid-column: 7;
+	grid-row: 7/12;
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.attributs_bonus1 {
+	grid-column: 2;
+	grid-row: 7/12;
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.attributs_bonus2 {
+	grid-column: 5;
+	grid-row: 7/12;
+	font-size: 16px;
+	padding-top: 5px;
+}
+
+.attributs_bonus3 {
+	grid-column: 8;
+	grid-row: 7/12;
+	font-size: 14px;
+	padding-top: 5px;
+}
+
+.equipement {
+	grid-column: 1/6;
+	grid-row: 12;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.equipement_data {
+	grid-column: 1/6;
+	grid-row: 13/21;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.sequelles {
+	grid-column: 7/9;
+	grid-row: 12;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.sequelles_legere {
+	grid-column: 7/9;
+	grid-row: 13;
+	font-size: 14px;
+	display:flex;
+    align-items: flex-end;
+}
+
+.sequelles_legere_data {
+	grid-column: 7/9;
+	grid-row: 14/17;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.sequelles_grave {
+	grid-column: 7/9;
+	grid-row: 17;
+	font-size: 14px;
+	display:flex;
+    align-items: flex-end;
+}
+
+.sequelles_grave_data {
+	grid-column: 7/9;
+	grid-row: 18/21;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.arme {
+	grid-column: 1/9;
+	grid-row: 21;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.arme_data {
+	grid-column: 1/9;
+	grid-row: 22/27;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.note_corps {
+	grid-column: 1/9;
+	grid-row: 27;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.note_corps_data {
+	grid-column: 1/9;
+	grid-row: 28/34;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.sante {
+	grid-column: 10/14;
+	grid-row: 1;
+	font-size: 16px;
+	display:flex;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.sante_data {
+	grid-column: 10/14;
+	grid-row: 2/29;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.malus_total_cadre {
+    grid-column: 12;
+    grid-row: 29/33;
+    font-size: 14px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/xp_border.png);
+    background-size: cover;
+    background-size: 310px 120px;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.malus_total {
+	grid-column:12;
+	grid-row: 29;
+	font-size: 16px;
+    align-items: flex-end;
+	text-align: center;
+}
+
+.malus_total_data {
+	grid-column: 12;
+	grid-row: 30/33;
+	font-size: 14px;
+}
+
+.cor_decor_droite {
+	grid-column: 16;
+	grid-row: 10/20;
+	font-size: 20px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_right.PNG);
+	background-size: cover;
+}
+
+.cor_decor_bas {
+	grid-column: 7/11;
+	grid-row: 35;
+	grid-template-rows: 20px;
+	font-size: 20px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
+	background-size: cover;
 }
