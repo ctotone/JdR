@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
 
 /*------------------------------------*\
   #General
@@ -6,7 +7,7 @@
 
 .charsheet {
    font-family: 'Old Standard TT', serif;
-   --blue_cabinet:#435861;
+   --blue_cabinet: #435861;
 }
 
 .cabinet {
@@ -41,12 +42,12 @@ body.sheet-darkmode .charsheet {
 
 
 /*------------------------------------*\
-  Wrapper
+  Wrapper Cabinet
 \*------------------------------------*/
 
 .wrapper_cabinet{  
 	display: grid;
-    grid-template-columns: 130px 10px 130px 10px 130px 40px 100px 10px 100px 100px 30px 20px;
+    grid-template-columns: 140px 10px 140px 10px 140px 30px 100px 10px 100px 100px 35px 20px;
 	grid-auto-rows: 30px;
 }
 
@@ -54,15 +55,18 @@ body.sheet-darkmode .charsheet {
 .esprit {
 	grid-column: 1/6;
 	grid-row: 1;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
+	font-weight: bold;
 }
 
 .esprit_data {
 	grid-column: 1/6;
 	grid-row: 2/6;
 	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .titre_trait{
@@ -80,10 +84,11 @@ body.sheet-darkmode .charsheet {
 .acquis_collectifs {
 	grid-column: 1/6;
 	grid-row: 6;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
     white-space: nowrap;
+	font-weight: bold;
 }
 
 .acquis_collectifs_data1 {
@@ -95,7 +100,7 @@ body.sheet-darkmode .charsheet {
 .acquis_collectifs_data2 {
 	grid-column: 3;
 	grid-row: 7/12;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .acquis_collectifs_data3 {
@@ -107,7 +112,7 @@ body.sheet-darkmode .charsheet {
 .contact {
 	grid-column: 1/6;
 	grid-row: 12;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
 }
@@ -116,39 +121,47 @@ body.sheet-darkmode .charsheet {
 	grid-column: 1/6;
 	grid-row: 13/21;
 	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .note {
 	grid-column: 1/6;
 	grid-row: 21;
 	display:flex;
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .note_data {
 	grid-column: 1/6;
 	grid-row: 22/34;
 	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .description_cabinet {
 	grid-column: 7/11;
 	grid-row: 1;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
     white-space: nowrap;
+	font-weight: bold;
 }
 .description_cabinet_data {
 	grid-column: 7/11;
 	grid-row: 2/12;
 	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .adversaires {
 	grid-column: 7/11;
 	grid-row: 12;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
 }
@@ -156,27 +169,25 @@ body.sheet-darkmode .charsheet {
 	grid-column: 7/11;
 	grid-row: 13/21;
 	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .graces {
 	grid-column: 7/11;
 	grid-row: 21;
-	font-size: 18px;
+	font-size: 16px;
 	display:flex;
     align-items: flex-end;
+	font-weight: bold;
 }
+
 .graces_data {
 	grid-column: 7/11;
 	grid-row: 22/28;
 	font-size: 14px;
-}
-
-.graces {
-	grid-column: 7/11;
-	grid-row: 21;
-	font-size: 18px;
-	display:flex;
-    align-items: flex-end;
+	padding-top: 5px;
+	padding-left: 5px;
 }
 
 .xp_collective_cadre {
@@ -193,7 +204,7 @@ body.sheet-darkmode .charsheet {
 .xp_collective {
 	grid-column: 7/11;
 	grid-row: 30;
-	font-size: 18px;
+	font-size: 16px;
     align-items: flex-end;
 	text-align: center;
 }
@@ -208,13 +219,96 @@ body.sheet-darkmode .charsheet {
 	grid-column: 12;
 	grid-row: 10/20;
 	font-size: 20px;
-	background-color: var(--blue_cabinet);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_right.PNG);
+	background-size: cover;
 }
 
 .decor_bas {
 	grid-column: 5/8;
 	grid-row: 35;
-	grid-auto-rows: 20px;
+	grid-template-rows: 20px;
 	font-size: 20px;
-	background-color: var(--blue_cabinet);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
+	background-size: cover;
+}
+
+/*------------------------------------*\
+  Style Cabinet
+\*------------------------------------*/
+
+input[type=text],
+input[type=number] {
+    display: inline-block;
+    margin-right: 5px;
+	border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #0000004f;
+    -moz-appearance: textfield;
+    margin-top: -5px;
+    padding-bottom: 2px;
+	background-color: transparent;
+	width: 100%;
+	font-family: 'Junge', cursive;
+	font-size: 14px;
+	color: var(--blue_cabinet);
+	outline: none;
+}
+
+.charsheet textarea.cab_esprit,
+.charsheet textarea.cab_contact,
+.charsheet textarea.cab_note,
+.charsheet textarea.cab_desc,
+.charsheet textarea.cab_adversaire,
+.charsheet textarea.cab_grace {    
+	background-color: transparent;
+	font-family: 'Junge', cursive;
+	font-size: 14px;
+	color: var(--blue_cabinet);
+	outline: none;
+	resize: none;
+	padding: 7px;
+	box-shadow: 0 0 10px 3px #bdb8b8;
+}
+
+.charsheet textarea.cab_esprit {
+	width: 420px;
+	height: 90px;
+}
+
+.charsheet textarea.cab_contact {
+	width: 420px;
+	height: 200px;
+}
+
+.charsheet textarea.cab_note {
+	width: 420px;
+	height: 345px;
+}
+
+.charsheet textarea.cab_desc {
+	width: 290px;
+	height: 270px;
+}
+
+.charsheet textarea.cab_adversaire {
+	width: 290px;
+	height: 200px;
+}
+
+.charsheet textarea.cab_grace {
+	width: 290px;
+	height: 200px;
+}
+
+.charsheet textarea.cab_xp {
+	width: 275px;
+	height: 55px;
+	background-color: transparent;
+	font-family: 'Junge', cursive;
+	font-size: 14px;
+	color: var(--blue_cabinet);
+	border: none;
+	outline: none;
+	resize: none;
+	padding: 7px;
 }
