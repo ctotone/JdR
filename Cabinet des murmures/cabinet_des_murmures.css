@@ -95,18 +95,21 @@ body.sheet-darkmode .charsheet {
 	grid-column: 1;
 	grid-row: 7/12;
 	font-size: 14px;
+	padding-top: 5px;
 }
 
 .acquis_collectifs_data2 {
 	grid-column: 3;
 	grid-row: 7/12;
 	font-size: 16px;
+	padding-top: 5px;
 }
 
 .acquis_collectifs_data3 {
 	grid-column: 5;
 	grid-row: 7/12;
 	font-size: 14px;
+	padding-top: 5px;
 }
 
 .contact {
@@ -236,7 +239,7 @@ body.sheet-darkmode .charsheet {
   Style Cabinet
 \*------------------------------------*/
 
-input[type=text],
+/* input[type=text],
 input[type=number] {
     display: inline-block;
     margin-right: 5px;
@@ -252,7 +255,7 @@ input[type=number] {
 	font-size: 14px;
 	color: var(--blue_cabinet);
 	outline: none;
-}
+} */
 
 .charsheet textarea.cab_esprit,
 .charsheet textarea.cab_contact,
@@ -311,4 +314,39 @@ input[type=number] {
 	outline: none;
 	resize: none;
 	padding: 7px;
+}
+
+.acquis_collectifs_data1 p,
+.acquis_collectifs_data2 p,
+.acquis_collectifs_data3 p {
+	border-radius: 0px;
+	border-bottom: 1px solid var(--blue_cabinet);
+}
+
+.acquis_collectifs_data1 input.data,
+.acquis_collectifs_data2 input.data,
+.acquis_collectifs_data3 input.data,
+.acquis_collectifs_data1 input.bonus,
+.acquis_collectifs_data2 input.bonus,
+.acquis_collectifs_data3 input.bonus {
+	border-radius: 0px;
+	background-color: transparent;
+	font-family: 'Junge', cursive;
+	font-size: 14px;
+	color: var(--blue_cabinet);
+	outline: none;
+	border: none;
+}
+
+.acquis_collectifs_data1 input.data,
+.acquis_collectifs_data2 input.data,
+.acquis_collectifs_data3 input.data {
+	width: 105px;
+}
+
+.acquis_collectifs_data1 input.bonus,
+.acquis_collectifs_data2 input.bonus,
+.acquis_collectifs_data3 input.bonus {
+	width: 18px;
+	font-weight: bold;
 }
