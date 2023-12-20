@@ -10,10 +10,6 @@ font-family: 'Libre Bodoni', serif;
 
 
 
-/* TEMP */
-/* div.cabinet {display: none;}
-div.corps {display: none;} */
-
 
 /*------------------------------------*\
   #General
@@ -28,18 +24,15 @@ div.corps {display: none;} */
     color: var(--blue_cabinet);
 }
 
-
-
 .cabinet,
 .corps,
-.esprit {
+.esprit,
+.pnj {
 	width:810px;
     border: 1px solid var(--blue_cabinet);
 	padding: 10px;
 	padding-bottom: 0px;
 }
-
-
 
 /*------------------------------------*\
   DARK MODE BASE
@@ -63,6 +56,60 @@ body.sheet-darkmode .charsheet {
     border-color: #475e66;
 }
 
+/*------------------------------------*\
+  Déroulant type de feuille
+\*------------------------------------*/
+
+div.feuille_pj,
+div.feuille_commune,
+div.feuille_pnj {
+	display: none;
+}
+
+/* show the selected tab */
+.charsheet .sheet-sheettoggle[value="esprit"] ~ div.feuille_pj,
+.charsheet .sheet-sheettoggle[value="cabinet"] ~ div.feuille_commune,
+.charsheet .sheet-sheettoggle[value="pnj"] ~ div.feuille_pnj {
+    display: block;
+}
+
+div.sheet_selector {
+    width: auto;
+    margin-left: 701px;
+	margin-top: -17px;
+}
+
+.selector {
+    width: auto;
+    font-family: 'Libre Bodoni', serif;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff7d;
+    z-index: 1;
+    font-size: 12px;
+    box-shadow: 3px 3px 3px #00000075;
+    background-color: var(--blue_cabinet);
+    color: #ffffffe0;
+}
+
+body.sheet-darkmode .selector {
+}
+
+/*------------------------------------*\
+  #Menu Tabs Setup
+\*------------------------------------*/
+
+.cabinet,
+.corps,
+.arbre {
+	display: none;
+}
+
+input[type=radio].onglcabinet:checked ~ div.cabinet,
+input[type=radio].onglarbre:checked ~ div.arbre,
+input[type=radio].onglcorps:checked ~ div.corps{
+    display: block;
+} 
 
 /*------------------------------------*\
   Wrapper Cabinet
@@ -311,7 +358,7 @@ input[type=number] {
     outline: none;
     resize: none;
     padding: 7px;
-    box-shadow: 2px 2px 0px 1px #293e47;
+    box-shadow: 1px 1px 0px 1px #293e4759;
 }
 
 .charsheet textarea.cab_esprit,

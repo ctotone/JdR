@@ -1,7 +1,31 @@
 
+
+<!-- Hidden value for sheet version -->
+<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="esprit"  />
+
+
 <!------------------>
-<!-- DIV CABINET  -->
+<!-- DIV COMMUNE  -->
 <!------------------>
+<div class="feuille_commune">
+
+<!-- SHEET VERSION OPTION  -->
+		<div class="sheet_selector">
+		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
+			<option value="esprit">Feuille d'Esprit</option>
+			<option value="cabinet">Feuille d'Hôte</option>
+			<option value="pnj">Feuille de PNJ</option>
+		</select>
+		</div>
+		
+<!-- MENU TAB -->
+		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span >Cabinet</span>
+		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span >Corps</span>
+		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span >Arbre</span>
+
+	<!------------------>
+	<!-- DIV CABINET  -->
+	<!------------------>
 	<div class="cabinet">
 		<div class="wrapper_cabinet">
 			<div class="esprit_titre">ESPRITS
@@ -200,10 +224,26 @@
 			<div class="cor_decor_bas"></div>
 		</div>	
 	</div>
+</div>
 
 <!------------------>
-<!-- DIV ESPRIT  -->
+<!-- DIV PJ  -->
 <!------------------>
+<div class="feuille_pj">
+
+<!-- SHEET VERSION OPTION  -->
+		<div class="sheet_selector">
+		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
+			<option value="esprit">Feuille d'Esprit</option>
+			<option value="cabinet">Feuille d'Hôte</option>
+			<option value="pnj">Feuille de PNJ</option>
+		</select>
+		</div>
+
+
+	<!------------------>
+	<!-- DIV ESPRIT  -->
+	<!------------------>
 	<div class="esprit">
 		<div class="wrapper_esprit">
 			<div class="qualite">QUALITÉS ET DÉFAUTS
@@ -212,7 +252,7 @@
 				</div>
 			</div>
 			<div class="qualite_data">
-				<p>image arbre + DOTS</p>
+				<p>INPUT</p>
 			</div>
 			<div class="profil">PROFIL ET CONCEPT
 				<div class="titre_trait">
@@ -339,3 +379,44 @@
 			<div class="esp_decor_bas"></div>
 		</div>
 	</div> 
+</div>
+
+<!------------------>
+<!-- DIV PJ  -->
+<!------------------>
+<div class="feuille_pnj">
+
+<!-- SHEET VERSION OPTION  -->
+		<div class="sheet_selector">
+		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
+			<option value="esprit">Feuille d'Esprit</option>
+			<option value="cabinet">Feuille d'Hôte</option>
+			<option value="pnj">Feuille de PNJ</option>
+		</select>
+		</div>
+
+
+	<!------------------>
+	<!-- DIV PNJ  -->
+	<!------------------>
+	<div class="pnj">
+	bon courage
+	</div>
+</div>
+
+
+<!---------------------->			
+<!------ [SCRIPT] ------>
+<!---------------------->
+
+<!-- Sheet version selection -->
+	<script type="text/worker">
+	  const buttonlist = ["esprit","cabinet","pnj"];
+				buttonlist.forEach(button => {
+					on(`clicked:${button}`, function() {
+						setAttrs({
+							sheet_version: button
+						});
+					});
+				});
+	</script>
