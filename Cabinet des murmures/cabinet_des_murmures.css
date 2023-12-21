@@ -27,12 +27,35 @@ font-family: 'Libre Bodoni', serif;
 
 .cabinet,
 .corps,
+.arbre,
 .esprit,
 .pnj {
 	width:810px;
     border: 1px solid var(--blue_cabinet);
-	padding: 10px;
+	padding-top: 15px;
 	padding-bottom: 0px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.titre_feuille { 
+    color: #ffffffe8;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
+    font-family: 'EB Garamond';
+    text-align: center;
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    margin-left: 6px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    margin-top: -11px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888888;
+    font-size: 18px;
 }
 
 /*------------------------------------*\
@@ -112,6 +135,74 @@ input[type=radio].onglcorps:checked ~ div.corps{
     display: block;
 } 
 
+input[type=radio].onglcabinet {
+    margin-left: 5px;
+}
+
+input[type=radio].onglcabinet,
+input[type=radio].onglarbre,
+input[type=radio].onglcorps,
+input[type=radio].onglesprit {
+    display: inline-block;
+    opacity: 0;
+    width: 110px;
+    height: 40px;
+}
+
+input[type=radio].onglcabinet + span {
+}
+
+
+input[type=radio].onglcabinet + span,
+input[type=radio].onglarbre + span,
+input[type=radio].onglcorps + span,
+input[type=radio].onglesprit + span {
+    text-align: center;
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    margin-left: -109px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    margin-top: -11px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #888888;
+    font-size: 18px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+}
+
+input[type=radio].onglcabinet:checked + span,
+input[type=radio].onglarbre:checked + span,
+input[type=radio].onglcorps:checked + span,
+input[type=radio].onglesprit:checked + span {
+    color: black;
+    border-color: var(--blue_cabinet);
+    font-family: 'EB Garamond';
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    width: 110px;
+    height: 40px;
+    color: #ffffffe8;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
+}
+
+input[type=radio].onglesprit:checked + span {
+    color: black;
+    border-color: var(--blue_cabinet);
+    font-family: 'EB Garamond';
+    font-size: 17px;
+    border-style: solid;
+    border-width: 1px;
+    width: 110px;
+    height: 40px;
+    color: #ffffffe8;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
+	cursor: default;
+}
 /*------------------------------------*\
   Wrapper Cabinet
 \*------------------------------------*/
@@ -420,24 +511,24 @@ input[type=number] {
 }
 
 .charsheet textarea.esp_profil {  
-	width: 415px;
+    width: 98%;
 	height: 75px;
 }
 
 .charsheet textarea.esp_contact,
-.charsheet textarea.esp_adversaire {   
-	width: 145px;
+.charsheet textarea.esp_adversaire {  
+    width: 95%;
 	height: 60px;
 }
 
 .charsheet textarea.esp_routine {  
-	width: 235px;
+    width: 95%;
 	height: 60px;
 }
 
 .charsheet textarea.esp_objet,
-.charsheet textarea.esp_corruption {  
-	width: 415px;
+.charsheet textarea.esp_corruption { 
+    width: 98%;
 	height: 75px;
 }
 
@@ -762,30 +853,29 @@ input[type=number] {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
 	background-size: cover;
 }
-
 /*------------------------------------*\
-  Wrapper Esprit
+  Wrapper Arbre
 \*------------------------------------*/
 
-.wrapper_esprit{  
-	display: grid;
-    grid-template-columns: 100px 0px 100px 0px 100px 30px 140px 10px 90px 20px 10px 20px 10px 20px 10px 110px 30px 20px;
-	grid-auto-rows: 30px;
+.wrapper_arbre{  
+    display: grid;
+    grid-template-columns: 205px 300px 205px;
+    grid-auto-rows: 30px;
 }
 
-.qualite {
-	grid-column: 1/6;
-	grid-row: 1;
-	font-size: 16px;
-	display:flex;	
+.qualite_arbre {
+    grid-column: 1/5;
+    grid-row: 1;
+    font-size: 16px;
+    display: flex;
     white-space: nowrap;
     align-items: flex-end;
-	font-weight: bold;
+    font-weight: bold;
 }
 
-.qualite_data {
-    grid-column: 1/6;
-    grid-row: 2/29;
+.qualite_arbre_data {
+    grid-column: 2;
+    grid-row: 1/60;
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
@@ -795,8 +885,20 @@ input[type=number] {
     background-repeat: no-repeat;
 }
 
+/*------------------------------------*\
+  Wrapper Esprit
+\*------------------------------------*/
+
+.wrapper_esprit{  
+	display: grid;
+    grid-template-columns: 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px 20px;
+	grid-auto-rows: 30px;
+}
+
+
+
 .profil {
-	grid-column: 7/17;
+	grid-column: 1/14;
 	grid-row: 1;
 	font-size: 16px;
 	display:flex;
@@ -806,7 +908,7 @@ input[type=number] {
 }
 
 .profil_data {
-	grid-column: 7/17;
+	grid-column: 1/14;
 	grid-row: 2/6;
 	font-size: 14px;
 	padding-top: 5px;
@@ -814,7 +916,7 @@ input[type=number] {
 }
 
 .aspect {
-	grid-column: 7;
+	grid-column: 1/4;
 	grid-row: 6;
 	font-size: 16px;
 	display:flex;
@@ -823,7 +925,7 @@ input[type=number] {
 }
 
 .aspect_data {
-	grid-column:7;
+	grid-column: 1/4;
 	grid-row: 7/11;
 	font-size: 14px;
 	padding-top: 5px;
@@ -831,7 +933,7 @@ input[type=number] {
 }
 
 .acquis {
-	grid-column: 9/17;
+	grid-column: 5/14;
 	grid-row: 6;
 	font-size: 16px;
 	display:flex;
@@ -841,7 +943,7 @@ input[type=number] {
 }
 
 .acquis_1_data {
-	grid-column: 9/13;
+	grid-column: 5/9;
 	grid-row: 7/11;
 	font-size: 14px;
 	padding-top: 5px;
@@ -849,7 +951,7 @@ input[type=number] {
 }
 
 .acquis_2_data {
-	grid-column: 14/17;
+	grid-column: 10/14;
 	grid-row: 7/11;
 	font-size: 14px;
 	padding-top: 5px;
@@ -857,7 +959,7 @@ input[type=number] {
 }
 
 .perisprit {
-	grid-column: 7/11;
+	grid-column: 1/7;
 	grid-row: 11;
 	font-size: 16px;
 	display:flex;
@@ -866,24 +968,23 @@ input[type=number] {
 }
 
 .perisprit_data {
-	grid-column: 7/11;
-	grid-row: 12/15;
+	grid-column: 1/7;
+	grid-row: 12/14;
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 5px;
 }
 
 .contact_esprit {
-	grid-column: 12/17;
+	grid-column: 8/14;
 	grid-row: 11;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
-	font-weight: bold;
 }
 
 .contact_esprit_data {
-	grid-column: 12/17;
+	grid-column: 8/14;
 	grid-row: 12/15;
 	font-size: 14px;
 	padding-top: 5px;
@@ -891,33 +992,31 @@ input[type=number] {
 }
 
 .routine {
-	grid-column: 7/11;
-	grid-row: 15;
+	grid-column: 1/7;
+	grid-row: 14;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
-	font-weight: bold;
 }
 
 .routine_data {
-	grid-column: 7/11;
-	grid-row: 16/19;
+	grid-column: 1/7;
+	grid-row: 15/19;
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 5px;
 }
 
 .adversaire_esprit {
-	grid-column: 12/17;
+	grid-column: 8/14;
 	grid-row: 15;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
-	font-weight: bold;
 }
 
 .adversaire_esprit_data {
-	grid-column: 12/17;
+	grid-column: 8/14;
 	grid-row: 16/19;
 	font-size: 14px;
 	padding-top: 5px;
@@ -925,7 +1024,7 @@ input[type=number] {
 }
 
 .pouvoir {
-	grid-column: 7/17;
+	grid-column: 1/14;
 	grid-row: 19;
 	font-size: 16px;
 	display:flex;
@@ -934,7 +1033,7 @@ input[type=number] {
 }
 
 .pouvoir_1 {
-	grid-column: 7;
+	grid-column: 1/4;
 	grid-row: 20;
 	font-size: 14px;
 	padding-top: 5px;
@@ -942,7 +1041,7 @@ input[type=number] {
 }
 
 .pouvoir_1_data {
-	grid-column: 7;
+	grid-column: 1/4;
 	grid-row: 21/25;
 	font-size: 14px;
 	padding-top: 5px;
@@ -950,7 +1049,7 @@ input[type=number] {
 }
 
 .pouvoir_2 {
-	grid-column: 9/13;
+	grid-column: 5/10;
 	grid-row: 20;
 	font-size: 14px;
 	padding-top: 5px;
@@ -958,7 +1057,7 @@ input[type=number] {
 }
 
 .pouvoir_2_data {
-	grid-column: 9/13;
+	grid-column: 5/10;
 	grid-row: 21/25;
 	font-size: 14px;
 	padding-top: 5px;
@@ -966,7 +1065,7 @@ input[type=number] {
 }
 
 .pouvoir_3 {
-	grid-column: 14/17;
+	grid-column: 10/14;
 	grid-row: 20;
 	font-size: 14px;
 	padding-top: 5px;
@@ -974,7 +1073,7 @@ input[type=number] {
 }
 
 .pouvoir_3_data {
-	grid-column: 14/17;
+	grid-column: 10/14;
 	grid-row: 21/25;
 	font-size: 14px;
 	padding-top: 5px;
@@ -982,7 +1081,7 @@ input[type=number] {
 }
 
 .objet_esprit {
-	grid-column: 7/15;
+	grid-column: 1/11;
 	grid-row: 25;
 	font-size: 16px;	
 	display:flex;
@@ -992,7 +1091,7 @@ input[type=number] {
 }
 
 .objet_esprit_data {
-	grid-column: 7/15;
+	grid-column: 1/11;
 	grid-row: 26;
 	font-size: 14px;
 	padding-top: 5px;
@@ -1000,7 +1099,7 @@ input[type=number] {
 }
 
 .corruption {
-	grid-column: 7/15;
+	grid-column: 1/11;
 	grid-row: 27;
 	font-size: 16px;
 	display:flex;
@@ -1010,7 +1109,7 @@ input[type=number] {
 }
 
 .corruption_data {
-	grid-column: 7/15;
+	grid-column: 1/11;
 	grid-row: 28;
 	font-size: 14px;
 	padding-top: 5px;
@@ -1018,7 +1117,7 @@ input[type=number] {
 }
 
 .xp_esprit_cadre {
-	grid-column: 16;
+	grid-column: 12/14;
 	grid-row: 25/29;
 	font-size: 14px;
 	padding-top: 5px;
@@ -1026,7 +1125,7 @@ input[type=number] {
 }
 
 .xp_esprit_data {
-	grid-column: 16;
+	grid-column: 12/14;
 	grid-row: 25/29;
 	font-size: 14px;
 	padding-top: 5px;
@@ -1034,7 +1133,7 @@ input[type=number] {
 }
 
 .esp_decor_droite {
-	grid-column: 18;
+	grid-column: 15;
 	grid-row: 10/20;
 	font-size: 20px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_right.PNG);
@@ -1042,7 +1141,7 @@ input[type=number] {
 }
 
 .esp_decor_bas {
-	grid-column: 5/8;
+	grid-column: 5/11;
 	grid-row: 30;
 	grid-template-rows: 20px;
 	font-size: 20px;
