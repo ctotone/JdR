@@ -19,6 +19,7 @@ font-family: 'Libre Bodoni', serif;
     font-family: 'Libre Bodoni', serif;
     --blue_cabinet: #435861;
     --red_cabinet: #772d34;
+	--marron_cabinet: #615045;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
     background-size: contain;
     color: var(--blue_cabinet);
@@ -203,6 +204,130 @@ input[type=radio].onglesprit:checked + span {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
 	cursor: default;
 }
+
+/*------------------------------------*\
+  #Checkbox
+\*------------------------------------*/
+
+/* input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 3px 0;
+    line-height: normal;
+    cursor: pointer;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+} */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: var(--marron_cabinet);
+    width: 10px;
+    height: 10px !important;
+    border: 2px solid currentColor;
+    display: grid;
+    place-content: center;
+    transform: rotate(45deg);
+    margin-top: 15px;
+    margin-left: 3px;
+}
+
+input[type="checkbox"]:checked {
+    appearance: none;
+    background-color: var(--marron_cabinet);
+    margin: 0;
+    font: inherit;
+    color: var(--blue_cabinet);
+    width: 10px;
+    height: 10px !important;
+    border: 2px solid var(--marron_cabinet);
+    display: grid;
+    place-content: center;
+    transform: rotate(45deg);
+    margin-top: 15px;
+    margin-left: 3px;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+
+/*------------------------------------*\
+  #Slider
+\*------------------------------------*/
+
+
+.sante_homme_data,
+.charsheet .sheet-block-switch:checked ~ .sante_femme_data {
+  display: block;
+}
+
+.sante_femme_data,
+.charsheet .sheet-block-switch:checked ~ .sante_homme_data {
+  display: none;
+}
+
+.slider {   
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffffdb;
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 25px;
+    height: 8px;
+    margin-top: 161px;
+    margin-left: 821px;
+}
+
+body.sheet-darkmode .slider {  
+	background-color: #656666;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 0px;
+    background-color: var(--red_cabinet);
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 8px;
+    height: 8px;
+}
+
+input:checked + .slider {
+  background-color: #ffffffdb;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
 /*------------------------------------*\
   Wrapper Cabinet
 \*------------------------------------*/
@@ -292,19 +417,20 @@ input[type=radio].onglesprit:checked + span {
 }
 
 .note {
-	grid-column: 1/6;
-	grid-row: 21;
-	display:flex;
-	font-size: 16px;
-	font-weight: bold;
+    grid-column: 1/6;
+    grid-row: 19;
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 .note_data {
-	grid-column: 1/6;
-	grid-row: 22/34;
-	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 5px;
+    grid-column: 1/6;
+    grid-row: 21;
+    font-size: 14px;
+    margin-top: -15px;
+    padding-left: 5px;
 }
 
 .description_cabinet {
@@ -342,30 +468,32 @@ input[type=radio].onglesprit:checked + span {
 
 .graces {
 	grid-column: 7/11;
-	grid-row: 21;
+	grid-row: 19;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
 	font-weight: bold;
+    margin-top: 38px;
 }
 
 .graces_data {
-	grid-column: 7/11;
-	grid-row: 22/28;
-	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 5px;
+    grid-column: 7/11;
+    grid-row: 20;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-left: 5px;
 }
 
 .xp_collective_cadre {
     grid-column: 7/11;
-    grid-row: 30/34;
+    grid-row: 25/30;
     font-size: 14px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/xp_border.png);
     background-size: cover;
     background-size: 310px 120px;
     background-repeat: no-repeat;
     padding: 10px;
+	margin-top: 15px;
 }
 
 .xp_collective {
@@ -392,235 +520,11 @@ input[type=radio].onglesprit:checked + span {
 
 .decor_bas {
 	grid-column: 5/8;
-	grid-row: 35;
+	grid-row: 30;
 	grid-template-rows: 20px;
 	font-size: 20px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
 	background-size: cover;
-}
-
-/*------------------------------------*\
-  Style Cabinet / Corps / 
-\*------------------------------------*/
-
-/* input[type=text],
-input[type=number] {
-    display: inline-block;
-    margin-right: 5px;
-	border-radius: 0px;
-    border: none;
-    border-bottom: 1px solid #0000004f;
-    -moz-appearance: textfield;
-    margin-top: -5px;
-    padding-bottom: 2px;
-	background-color: transparent;
-	width: 100%;
-	font-family: 'Junge', cursive;
-	font-size: 14px;
-	color: var(--blue_cabinet);
-	outline: none;
-} */
-
-.charsheet textarea.cab_esprit,
-.charsheet textarea.cab_contact,
-.charsheet textarea.cab_note,
-.charsheet textarea.cab_desc,
-.charsheet textarea.cab_adversaire,
-.charsheet textarea.cab_grace,
-.charsheet textarea.cor_description,
-.charsheet textarea.cor_attributs,
-.charsheet textarea.cor_equipement,
-.charsheet textarea.cor_sequelles,
-.charsheet textarea.cor_legere,
-.charsheet textarea.cor_grave,
-.charsheet textarea.cor_note,
-.charsheet textarea.cor_sequelles_legere,
-.charsheet textarea.cor_sequelles_grave,
-.charsheet textarea.esp_profil,
-.charsheet textarea.esp_contact,
-.charsheet textarea.esp_routine,
-.charsheet textarea.esp_adversaire,
-.charsheet textarea.esp_objet,
-.charsheet textarea.esp_corruption,
-.charsheet textarea.esp_xp {  
-    background-color: transparent;
-    font-family: 'IM Fell English, serif';
-    font-size: 18px;
-    color: var(--blue_cabinet);
-    outline: none;
-    resize: none;
-    padding: 7px;
-    box-shadow: 1px 1px 0px 1px #293e4759;
-}
-
-.charsheet textarea.cab_esprit,
-.charsheet textarea.cor_description,
-.charsheet textarea.cor_note {
-	width: 420px;
-	height: 90px;
-}
-
-.charsheet textarea.cab_contact {
-	width: 420px;
-	height: 200px;
-}
-
-.charsheet textarea.cab_note {
-	width: 420px;
-	height: 345px;
-}
-
-.charsheet textarea.cab_desc {
-	width: 290px;
-	height: 270px;
-}
-
-.charsheet textarea.cab_adversaire {
-	width: 290px;
-	height: 200px;
-}
-
-.charsheet textarea.cab_grace {
-	width: 290px;
-	height: 200px;
-}
-
-.charsheet textarea.cab_xp,
-.charsheet textarea.cor_malus {
-	width: 275px;
-	height: 55px;
-	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 16px;
-	color: var(--blue_cabinet);
-	border: none;
-	outline: none;
-	resize: none;
-	padding: 7px;
-}
-
-.charsheet textarea.cor_equipement {
-    width: 265px;
-    height: 208px;
-}
-
-.charsheet textarea.cor_sequelles_legere,
-.charsheet textarea.cor_sequelles_grave {
-    width: 120px;
-    height: 56px;
-}
-
-.charsheet textarea.esp_profil {  
-    width: 98%;
-	height: 75px;
-}
-
-.charsheet textarea.esp_contact,
-.charsheet textarea.esp_adversaire {  
-    width: 95%;
-	height: 60px;
-}
-
-.charsheet textarea.esp_routine {  
-    width: 95%;
-	height: 60px;
-}
-
-.charsheet textarea.esp_objet,
-.charsheet textarea.esp_corruption { 
-    width: 98%;
-	height: 75px;
-}
-
-.charsheet textarea.esp_xp {  
-	width: 100%;
-	height: 95px;
-}
-
-.acquis_collectifs_data1 p,
-.acquis_collectifs_data2 p,
-.acquis_collectifs_data3 p,
-.attributs_data1 p,
-.attributs_data2 p,
-.attributs_data3 p {
-	border-radius: 0px;
-	border-bottom: 1px solid var(--blue_cabinet);
-}
-
-.attributs_data1 p,
-.attributs_data2 p,
-.attributs_data3 p {
-	font-family: 'Old Standard TT', serif;
-	font-size: 13px;
-	border-radius: 0px;
-	border-bottom: none;
-    margin-top: 7px;
-    margin-bottom: 23px;
-}
-
-.acquis_collectifs_data1 input.data,
-.acquis_collectifs_data2 input.data,
-.acquis_collectifs_data3 input.data,
-.acquis_collectifs_data1 input.bonus,
-.acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus {
-	border-radius: 0px;
-	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 16px;
-	color: var(--blue_cabinet);
-	outline: none;
-	border: none;
-}
-
-.acquis_collectifs_data1 input.data,
-.acquis_collectifs_data2 input.data,
-.acquis_collectifs_data3 input.data {
-	width: 105px;
-}
-
-.acquis_collectifs_data1 input.bonus,
-.acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus,
-.attributs_bonus1 input.bonus,
-.attributs_bonus2 input.bonus,
-.attributs_bonus3 input.bonus {
-	width: 18px;
-	font-weight: bold;
-}
-
-
-.attributs_bonus1 input.bonus,
-.attributs_bonus2 input.bonus,
-.attributs_bonus3 input.bonus {
-    border-radius: 15px;
-    background-color: transparent;
-    font-family: 'IM Fell English, serif';
-    font-size: 18px;
-    color: var(--blue_cabinet);
-    outline: none;
-    border: 2px solid;
-    width: 33px;
-    font-weight: bold;
-    text-align: right;
-    margin-left: -14px;
-}
-
-.objet_esprit_data input.data,
-.corruption_data input.data {
-	border-radius: 0px;
-	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 18px;
-	color: var(--blue_cabinet);
-	outline: none;
-	border: none;
-	border-radius: 0px;
-	border-bottom: solid 1px red;
-	border-radius: 0px;
-	border-bottom: solid 1px var(--blue_cabinet);
-	margin-top: -5px;
-	width: 100%;
 }
 
 /*------------------------------------*\
@@ -778,20 +682,22 @@ input[type=number] {
 }
 
 .note_corps {
-	grid-column: 1/9;
+	grid-column: 1/11;
 	grid-row: 27;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
 	font-weight: bold;
+    margin-top: 40px;
 }
 
 .note_corps_data {
-	grid-column: 1/9;
+	grid-column: 1/11;
 	grid-row: 28/34;
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 5px;
+    margin-top: 10px;
 }
 
 .sante {
@@ -803,13 +709,24 @@ input[type=number] {
 	font-weight: bold;
 }
 
-.sante_data {
+.sante_femme_data {
     grid-column: 10/14;
     grid-row: 2/29;
-    margin-top: 30px;
+    margin-top: -10px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_woman.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: 35px 10px;
+}
+
+.sante_homme_data {
+    grid-column: 10/14;
+    grid-row: 2/29;
+    margin-top: -10px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_man.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 55px 15px;
 }
 
 .malus_total_cadre {
@@ -847,7 +764,7 @@ input[type=number] {
 
 .cor_decor_bas {
 	grid-column: 7/11;
-	grid-row: 35;
+	grid-row: 33;
 	grid-template-rows: 20px;
 	font-size: 20px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
@@ -875,7 +792,7 @@ input[type=number] {
 
 .qualite_arbre_data {
     grid-column: 2;
-    grid-row: 1/60;
+    grid-row: 1/20;
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
@@ -1147,4 +1064,445 @@ input[type=number] {
 	font-size: 20px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
 	background-size: cover;
+}
+
+/*------------------------------------*\
+  Wrapper Arme
+\*------------------------------------*/
+
+.wrapper_arme{  
+	display: grid;
+    grid-template-columns: 107px 5px 5px 55px 5px 55px 5px 55px 3px 15px 5px 55px 10px 55px;
+	grid-auto-rows: 30px;
+    font-size: 11px;
+}
+
+.arme_titre_nom {
+	grid-column: 1;
+    color: var(--red_cabinet);
+}
+
+.arme_titre_precision {
+	grid-column: 3/5;
+    color: var(--red_cabinet);
+}
+
+.arme_titre_portee {
+	grid-column: 6;
+    color: var(--red_cabinet);
+}
+
+.arme_titre_degats {
+	grid-column: 8;
+    color: var(--red_cabinet);
+}
+
+.arme_titre_dots {
+	grid-column: 10;
+    color: var(--blue_cabinet);
+    white-space: nowrap;
+    font-size: 10px;
+    margin-top: 14px;
+    margin-left: -35px;
+}
+
+.arme_titre_munition {
+	grid-column: 12;
+    color: var(--red_cabinet);
+}
+
+.arme_titre_cadence {
+	grid-column: 14;
+    color: var(--red_cabinet);
+}
+
+.arme_nom {
+	grid-column: 1;
+}
+
+.arme_plus {
+	grid-column: 3;
+} 
+
+.arme_precision {
+	grid-column: 4;
+}
+
+.arme_portee {
+	grid-column: 6;
+}
+
+.arme_degats {
+	grid-column: 8;
+}
+
+.arme_dots {
+	grid-column: 10;
+}
+
+.arme_munition {
+	grid-column: 12;
+}
+
+.arme_cadence {
+	grid-column: 14;
+}
+
+
+/*------------------------------------*\
+  Style Cabinet / Corps / 
+\*------------------------------------*/
+
+/* input[type=text],
+input[type=number] {
+    display: inline-block;
+    margin-right: 5px;
+	border-radius: 0px;
+    border: none;
+    border-bottom: 1px solid #0000004f;
+    -moz-appearance: textfield;
+    margin-top: -5px;
+    padding-bottom: 2px;
+	background-color: transparent;
+	width: 100%;
+	font-family: 'Junge', cursive;
+	font-size: 14px;
+	color: var(--blue_cabinet);
+	outline: none;
+} */
+
+.charsheet textarea.cab_esprit,
+.charsheet textarea.cab_contact,
+.charsheet textarea.cab_note,
+.charsheet textarea.cab_desc,
+.charsheet textarea.cab_adversaire,
+.charsheet textarea.cab_grace,
+.charsheet textarea.cor_description,
+.charsheet textarea.cor_attributs,
+.charsheet textarea.cor_equipement,
+.charsheet textarea.cor_sequelles,
+.charsheet textarea.cor_legere,
+.charsheet textarea.cor_grave,
+.charsheet textarea.cor_note,
+.charsheet textarea.cor_sequelles_legere,
+.charsheet textarea.cor_sequelles_grave,
+.charsheet textarea.esp_profil,
+.charsheet textarea.esp_contact,
+.charsheet textarea.esp_routine,
+.charsheet textarea.esp_adversaire,
+.charsheet textarea.esp_objet,
+.charsheet textarea.esp_corruption,
+.charsheet textarea.esp_xp {  
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    font-size: 14px;
+    color: var(--blue_cabinet);
+    outline: none;
+    resize: none;
+    padding: 7px;
+    box-shadow: 1px 1px 0px 1px #293e4759;
+}
+
+.charsheet textarea.cab_esprit,
+.charsheet textarea.cor_description {
+	width: 420px;
+	height: 90px;
+}
+
+.charsheet textarea.cor_note {
+	width: 95%;
+	height: 90px;
+}
+
+.charsheet textarea.cab_contact {
+	width: 420px;
+	height: 150px;
+}
+
+.charsheet textarea.cab_note {
+	width: 420px;
+	height: 255px;
+}
+
+.charsheet textarea.cab_desc {
+	width: 290px;
+	height: 270px;
+}
+
+.charsheet textarea.cab_adversaire {
+	width: 290px;
+	height: 150px;
+}
+
+.charsheet textarea.cab_grace {
+	width: 290px;
+	height: 110px;
+}
+
+.charsheet textarea.cab_xp,
+.charsheet textarea.cor_malus {
+	width: 275px;
+	height: 55px;
+	background-color: transparent;
+    font-family: 'IM Fell English, serif';
+	font-size: 16px;
+	color: var(--blue_cabinet);
+	border: none;
+	outline: none;
+	resize: none;
+	padding: 7px;
+}
+
+.charsheet textarea.cor_equipement {
+    width: 265px;
+    height: 208px;
+}
+
+.charsheet textarea.cor_sequelles_legere,
+.charsheet textarea.cor_sequelles_grave {
+    width: 120px;
+    height: 56px;
+}
+
+.charsheet textarea.esp_profil {  
+    width: 98%;
+	height: 90px;
+}
+
+.charsheet textarea.esp_contact,
+.charsheet textarea.esp_adversaire {  
+    width: 95%;
+	height: 55px;
+}
+
+.charsheet textarea.esp_routine {  
+    width: 95%;
+	height: 75px;
+}
+
+.charsheet textarea.esp_objet,
+.charsheet textarea.esp_corruption { 
+    width: 98%;
+	height: 75px;
+}
+
+.charsheet textarea.esp_xp {  
+	width: 100%;
+	height: 95px;
+}
+
+.acquis_collectifs_data1 p,
+.acquis_collectifs_data2 p,
+.acquis_collectifs_data3 p,
+.attributs_data1 p,
+.attributs_data2 p,
+.attributs_data3 p {
+	border-radius: 0px;
+	border-bottom: 1px solid var(--marron_cabinet);
+}
+
+.attributs_data1 p,
+.attributs_data2 p,
+.attributs_data3 p {
+	font-family: 'Old Standard TT', serif;
+	font-size: 13px;
+	border-radius: 0px;
+	border-bottom: none;
+    margin-top: 7px;
+    margin-bottom: 23px;
+}
+
+.acquis_collectifs_data1 input.data,
+.acquis_collectifs_data2 input.data,
+.acquis_collectifs_data3 input.data,
+.acquis_collectifs_data1 input.bonus,
+.acquis_collectifs_data2 input.bonus,
+.acquis_collectifs_data3 input.bonus {
+	border-radius: 0px;
+	background-color: transparent;
+    font-family: 'IM Fell English, serif';
+	font-size: 16px;
+	color: var(--blue_cabinet);
+	outline: none;
+	border: none;
+    padding-bottom: 2px;
+}
+
+.acquis_collectifs_data1 input.data,
+.acquis_collectifs_data2 input.data,
+.acquis_collectifs_data3 input.data {
+	width: 105px;
+}
+
+.acquis_collectifs_data1 input.bonus,
+.acquis_collectifs_data2 input.bonus,
+.acquis_collectifs_data3 input.bonus,
+.attributs_bonus1 input.bonus,
+.attributs_bonus2 input.bonus,
+.attributs_bonus3 input.bonus {
+	width: 18px;
+	font-weight: bold;
+}
+
+
+.attributs_bonus1 input.bonus,
+.attributs_bonus2 input.bonus,
+.attributs_bonus3 input.bonus {
+    border-radius: 30px;
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    font-size: 18px;
+    color: var(--blue_cabinet);
+    outline: none;
+    border: 2px solid;
+    width: 33px;
+    font-weight: bold;
+    text-align: right;
+    margin-left: -14px;
+}
+
+.objet_esprit_data input.data,
+.corruption_data input.data,
+.charsheet input.arme {
+	background-color: transparent;
+    font-family: 'IM Fell English, serif';
+	color: var(--blue_cabinet);
+	outline: none;
+	border: none;
+	border-radius: 0px;
+    border-bottom: solid 1px var(--marron_cabinet);
+	margin-top: -5px;
+	width: 100%;
+    padding-bottom: 2px;
+}
+
+.charsheet input.arme {
+	font-size: 12px;
+}
+
+.sante_femme_data p,
+.sante_homme_data p {
+    margin: 0;
+}
+
+div.titre_tete,
+div.titre_bras_droit,
+div.titre_bras_gauche,
+div.titre_torse,
+div.titre_jambe_droite,
+div.titre_jambe_gauche {
+	font-size : 12px;
+	color: var(--blue_cabinet);
+    font-family: 'IM Fell English, serif';
+}
+
+div.protection_tete,
+div.protection_bras_droit,
+div.protection_bras_gauche,
+div.protection_torse,
+div.protection_jambe_droite,
+div.protection_jambe_gauche {
+    font-size: 12px;
+    color: var(--red_cabinet);
+    font-family: 'IM Fell English, serif';
+    white-space: nowrap;
+}
+
+div.titre_tete {
+    margin-left: 80px;
+    margin-top: 45px;
+}
+
+div.dots_tete {
+    margin-left: 75px;	
+}
+
+div.protection_tete {
+	
+}
+
+div.titre_bras_droit {
+    margin-top: 60px;
+    margin-left: 15px;
+	
+}
+
+div.dots_bras_droit {
+    margin-left: 10px;
+	
+}
+
+div.protection_bras_droit {
+	
+}
+
+div.titre_bras_gauche {
+    margin-top: -20px;
+    margin-left: 220px;
+	
+}
+
+div.dots_bras_gauche {
+    margin-left: 220px;	
+}
+
+div.protection_bras_gauche {
+    margin-left: 210px;	
+}
+
+div.titre_torse {
+    margin-top: 40px;
+    margin-left: 85px;
+}
+
+div.dots_torse {
+    margin-left: 65px;	
+}
+
+div.protection_torse {
+	
+}
+
+div.titre_jambe_droite {
+    margin-top: 120px;
+    margin-left: 25px;	
+}
+
+div.dots_jambe_droite {
+    margin-left: 25px;	
+}
+
+div.protection_jambe_droite {
+	
+}
+
+div.titre_jambe_gauche {
+    margin-top: 10px;
+    margin-left: 195px;	
+}
+
+div.dots_jambe_gauche {
+	margin-left: 195px;		
+}
+
+div.protection_jambe_gauche {
+	margin-left: 185px;	
+}
+
+div.malus_corps {
+	
+}
+
+.charsheet input.protection {
+    font-size: 12px;
+	background-color: transparent;
+    font-family: 'IM Fell English, serif';
+	color: var(--red_cabinet);
+	outline: none;
+	border: none;
+	border-radius: 0px;
+    border-bottom: solid 1px var(--red_cabinet);
+	margin-top: -5px;
+	width: 60px;
+    padding-bottom: 2px;
 }

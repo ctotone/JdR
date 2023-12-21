@@ -1,8 +1,5 @@
-
-
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="esprit"  />
-
 
 <!------------------>
 <!-- DIV COMMUNE  -->
@@ -195,11 +192,56 @@
 				</div>
 			</div>
 			<div class="arme_data">
-				<p>arme 1</p>
-				<p>arme 2</p>
-				<p>arme 3</p>
-				<p>arme 4</p>
-				<p>arme 5</p>
+				<div class="wrapper_arme">
+					<div class="arme_titre_nom">Nom</div>
+					<div class="arme_titre_precision">Précision</div>
+					<div class="arme_titre_portee">Portée</div>
+					<div class="arme_titre_degats">Dégats</div>
+					<div class="arme_titre_dots">+ puissance</div>
+					<div class="arme_titre_munition">Munitions</div>
+					<div class="arme_titre_cadence">Cadence</div>
+				</div>
+				<div class="wrapper_arme">
+					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme1_nom"></p></div>
+					<div class="arme_plus"><p>+</p></div>
+					<div class="arme_precision"><p><input class="arme" type="text" name="attr_arme1_precision"></p></div>
+					<div class="arme_portee"><p><input class="arme" type="text" name="attr_arme1_portée"></p></div>
+					<div class="arme_degats"><p><input class="arme" type="text" name="attr_arme1_degats"></p></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" ></div>
+					<div class="arme_munition"><p><input class="arme" type="text" name="attr_arme1_munition"></p></div>
+					<div class="arme_cadence"><p><input class="arme" type="text" name="attr_arme1_cadence"></p></div>
+				</div>
+				<div class="wrapper_arme">
+					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
+					<div class="arme_plus"><p>+</p></div>
+					<div class="arme_precision"><p><input class="arme" type="text" name="attr_arme2_precision"></p></div>
+					<div class="arme_portee"><p><input class="arme" type="text" name="attr_arme2_portée"></p></div>
+					<div class="arme_degats"><p><input class="arme" type="text" name="attr_arme2_degats"></p></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
+					<div class="arme_munition"><p><input class="arme" type="text" name="attr_arme2_munition"></p></div>
+					<div class="arme_cadence"><p><input class="arme" type="text" name="attr_arme2_cadence"></p></div>
+				</div>
+				<div class="wrapper_arme">
+					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
+					<div class="arme_plus"><p>+</p></div>
+					<div class="arme_precision"><p><input class="arme" type="text" name="attr_arme3_precision"></p></div>
+					<div class="arme_portee"><p><input class="arme" type="text" name="attr_arme3_portée"></p></div>
+					<div class="arme_degats"><p><input class="arme" type="text" name="attr_arme3_degats"></p></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme3_puissance" value="1" ></div>
+					<div class="arme_munition"><p><input class="arme" type="text" name="attr_arme3_munition"></p></div>
+					<div class="arme_cadence"><p><input class="arme" type="text" name="attr_arme3_cadence"></p></div>
+				</div>
+				<div class="wrapper_arme">
+					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme4_nom"></p></div>
+					<div class="arme_plus"><p>+</p></div>
+					<div class="arme_precision"><p><input class="arme" type="text" name="attr_arme4_precision"></p></div>
+					<div class="arme_portee"><p><input class="arme" type="text" name="attr_arme4_portée"></p></div>
+					<div class="arme_degats"><p><input class="arme" type="text" name="attr_arme4_degats"></p></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme4_puissance" value="1" ></div>
+					<div class="arme_munition"><p><input class="arme" type="text" name="attr_arme4_munition"></p></div>
+					<div class="arme_cadence"><p><input class="arme" type="text" name="attr_arme4_cadence"></p></div>
+				</div>
+				
 			</div>
 			<div class="note_corps">NOTES
 				<div class="titre_trait">
@@ -209,13 +251,55 @@
 			<div class="note_corps_data">
 				<p><textarea class="cor_note" name="attr_cor_note" wrap="off" rows="6" spellcheck="false"></textarea></p>
 			</div>
+				<label class="switch">
+					<input type="checkbox" name="attr_block_switch" class="sheet-block-switch" value="1" style=" visibility: hidden;">
+					<span class="slider round"></span>
+				</label>
+				<input type="checkbox" name="attr_block_switch" class="sheet-block-switch" value="1" style=" visibility: hidden;">
 			<div class="sante">SANTÉ
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
-			<div class="sante_data">
-				<p>DOTS</p>
+			<div class="sante_femme_data">
+				<div class="titre_tete">2 : TÊTE</div>
+				<div class="dots_tete">O O O O</div>
+				<div class="protection_tete">Protection <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="titre_bras_droit">3-5 : BRAS DROIT</div>
+				<div class="dots_bras_droit">O O O O O </div>
+				<div class="protection_bras_droit">Protection <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="titre_bras_gauche">6-8 : BRAS GAUCHE</div>
+				<div class="dots_bras_gauche">O O O O O </div>
+				<div class="protection_bras_gauche">Protection <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="titre_torse">9-10 : TORSE</div>
+				<div class="dots_torse">O O O O O O O </div>
+				<div class="protection_torse">Protection <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="titre_jambe_droite">11 : JAMBE DROITE</div>
+				<div class="dots_jambe_droite">O O O O O</div>
+				<div class="protection_jambe_droite">Protection <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="titre_jambe_gauche">12 : JAMBE GAUCHE</div>
+				<div class="dots_jambe_gauche">O O O O O </div>
+				<div class="protection_jambe_gauche">Protection <input class="protection" type="text" name="attr_protection_jambe_gauchee"></div>
+			</div>
+			<div class="sante_homme_data">
+				<div class="titre_tete">2 : TÊTE</div>
+				<div class="dots_tete">O O O O</div>
+				<div class="protection_tete">Protection <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="titre_bras_droit">3-5 : BRAS DROIT</div>
+				<div class="dots_bras_droit">O O O O O </div>
+				<div class="protection_bras_droit">Protection <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="titre_bras_gauche">6-8 : BRAS GAUCHE</div>
+				<div class="dots_bras_gauche">O O O O O </div>
+				<div class="protection_bras_gauche">Protection <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="titre_torse">9-10 : TORSE</div>
+				<div class="dots_torse">O O O O O O O </div>
+				<div class="protection_torse">Protection <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="titre_jambe_droite">11 : JAMBE DROITE</div>
+				<div class="dots_jambe_droite">O O O O O</div>
+				<div class="protection_jambe_droite">Protection <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="titre_jambe_gauche">12 : JAMBE GAUCHE</div>
+				<div class="dots_jambe_gauche">O O O O O </div>
+				<div class="protection_jambe_gauche">Protection <input class="protection" type="text" name="attr_protection_jambe_gauchee"></div>
 			</div>
 			<!-- <div class="malus_total_cadre">
 				<div class="malus_total">MALUS TOTAL</div>
@@ -225,6 +309,7 @@
 			</div> -->
 			<div class="cor_decor_bas"></div>
 		</div>	
+		
 	</div>
 	
 	<!------------------>
@@ -433,3 +518,20 @@
 					});
 				});
 	</script>
+	
+<script type="text/worker">
+  // Register the click handler to all specified buttons.
+  const toggleList = ["show"];
+  toggleList.forEach(function(button) {
+    on(`clicked:${button}`, function() {
+      const flag = `${button}_flag`;
+      // Check the current value of the hidden flag.
+      getAttrs([flag], function(v) {
+        // Update the value of the hidden flag to "1" for checked or "0" for unchecked.
+        setAttrs({
+          [flag]: v[flag] !== "1" ? "1" : "0"
+        });
+      });
+    });
+  });
+</script>
