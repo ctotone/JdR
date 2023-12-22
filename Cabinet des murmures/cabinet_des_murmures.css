@@ -816,7 +816,7 @@ input:checked + .slider:before {
 
 .wrapper_arbre{  
     display: grid;
-    grid-template-columns: 205px 300px 205px;
+    grid-template-columns: 190px 390px 210px;
     grid-auto-rows: 30px;
 }
 
@@ -832,14 +832,16 @@ input:checked + .slider:before {
 
 .qualite_arbre_data {
     grid-column: 2;
-    grid-row: 1/20;
+    grid-row: 1/25;
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
     margin-top: 50px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_arbre_retouche.png);
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;	
+    display: grid;
+    font-family: 'IM Fell English, serif';
 }
 
 /*------------------------------------*\
@@ -1066,6 +1068,7 @@ input:checked + .slider:before {
 	padding-top: 15px;
 	padding-left: 5px;
     white-space: nowrap;
+    width: 90%;
 }
 
 .objet_esprit_data {
@@ -1074,6 +1077,7 @@ input:checked + .slider:before {
 	font-size: 14px;
 	padding-top: 15px;
 	padding-left: 5px;
+    width: 90%;
 }
 
 .corruption {
@@ -1084,6 +1088,7 @@ input:checked + .slider:before {
 	padding-top: 15px;
 	padding-left: 5px;
     white-space: nowrap;
+    width: 90%;
 }
 
 .corruption_data {
@@ -1092,22 +1097,35 @@ input:checked + .slider:before {
 	font-size: 14px;
 	padding-top: 15px;
 	padding-left: 5px;
+    width: 90%;
 }
 
 .xp_esprit_cadre {
-	grid-column: 12/14;
-	grid-row: 25/29;
-	font-size: 14px;
-	padding-top: 15px;
-	padding-left: 5px;
+    grid-column: 11/14;
+    grid-row: 25/29;
+    font-size: 14px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_xp_esprit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: -30px;
+    margin-top: 15px;
+}
+
+.xp_esprit_titre {
+    grid-column: 11/14;
+    grid-row: 25;
+    font-size: 14px;
+    margin-left: -30px;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .xp_esprit_data {
-	grid-column: 12/14;
-	grid-row: 25/29;
+	grid-column: 11/14;
+	grid-row: 27/29;
 	font-size: 14px;
-	padding-top: 15px;
-	padding-left: 5px;
+    margin-left: -30px;
+    margin-top: 15px;
 }
 
 .esp_decor_droite {
@@ -1565,6 +1583,273 @@ input:checked + .slider:before {
 	grid-row: 5;
 }
 
+/*------------------------------------*\
+  Wrapper Arbre_data
+\*------------------------------------*/
+
+.wrapper_arbre_data{  
+	display: grid;
+    grid-template-columns: 130px 130px 130px;
+	grid-auto-rows: 1px;
+}
+
+.courage {
+    grid-column: 2;
+    grid-row: 7;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-top: -8px;
+}
+
+.intellect {
+	grid-column: 1;
+	grid-row: 70;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -10px;
+}
+
+.sensibilite {
+    grid-column: 3;
+    grid-row: 70;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-left: 10px;
+}
+
+.autorite {
+	grid-column: 1;
+	grid-row: 205;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -10px;
+}
+
+.ouverture {
+    grid-column: 3;
+    grid-row: 205;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-left: 10px;
+}
+
+.serenite {
+	grid-column: 2;
+	grid-row: 247;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.savoir {
+	grid-column: 1;
+	grid-row: 341;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -15px;
+}
+
+.charisme {
+	grid-column: 3;
+	grid-row: 341;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: 10px;
+}
+
+.attention {
+	grid-column: 2;
+	grid-row: 383;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.coordination {
+	grid-column: 2;
+	grid-row: 518;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.courage_D {    
+    grid-column: 2;
+    grid-row: 30;
+    position: static;
+    margin-left: 25px;
+}
+
+.intellect_D {
+    grid-column: 1;
+    grid-row: 103;
+    position: static;
+    margin-left: 20px;
+}
+
+.sensibilite_D {
+	grid-column: 3;
+	grid-row: 103;
+	position: static;
+	margin-left: 30px;
+}
+
+.autorite_D {
+    grid-column: 1;
+    grid-row: 240;
+    position: static;
+    margin-left: 20px;
+}
+
+.ouverture_D {
+    grid-column: 3;
+    grid-row: 240;
+    position: static;
+    margin-left: 30px;
+}
+
+.serenite_D {
+	grid-column: 2;
+	grid-row: 280;
+	position: static;
+    margin-left: 25px;
+}
+
+.savoir_D {
+	grid-column: 1;
+	grid-row: 375;
+	position: static;
+    margin-left: 20px;
+}
+
+.charisme_D {
+    grid-column: 3;
+    grid-row: 375;
+    position: static;
+    margin-left: 30px;
+}
+
+.attention_D {
+	grid-column: 2;
+	grid-row: 415;
+	position: static;
+    margin-left: 25px;
+}
+
+.coordination_D {
+	grid-column: 2;
+	grid-row: 552;
+	position: static;
+    margin-left: 25px;
+}
+
+.imprudence {
+    grid-column: 2;
+    grid-row: 104;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.froideur {
+    grid-column: 1;
+    grid-row: 176;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 10px;
+    position: static;
+}
+
+.superstition {
+    grid-column: 3;
+    grid-row: 176;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.intolerance {
+    grid-column: 1;
+    grid-row: 312;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 10px;
+    position: static;
+}
+
+.jalousie {
+    grid-column: 3;
+    grid-row: 312;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.indifference {
+    grid-column: 2;
+    grid-row: 353;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.orgueil {
+    grid-column: 1;
+    grid-row: 448;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.manipulation {
+    grid-column: 3;
+    grid-row: 448;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.manie {
+    grid-column: 2;
+    grid-row: 488;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.avidite {
+	grid-column: 2;
+	grid-row: 626;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+	position: static;
+}
+
 
 /*------------------------------------*\
   Style Cabinet / Corps / 
@@ -1703,9 +1988,17 @@ input[type=number] {
 	height: 75px;
 }
 
-.charsheet textarea.esp_xp {  
-	width: 100%;
-	height: 95px;
+.charsheet textarea.esp_xp { 
+    width: 89%;
+    height: 37px;
+    border: none;
+    box-shadow: none;
+    margin-top: -11px;
+    margin-left: 2px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'IM Fell English, serif';
+    font-size: 17px;
 }
 
 .acquis_collectifs_data1 p,
@@ -2115,5 +2408,31 @@ div.niveau3_p {
     width: 35px;
     font-size: 14px;
     text-align: center;
+}
+
+.qualite_arbre_data input.data {
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    border: none;
+    margin-top: -12px;
+    margin-left: 12px;
+    width: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--blue_cabinet);
+}
+
+.qualite_arbre_data input.data::placeholder {
+  color: #43586187;
+}
+
+span.D_arbre {
+	font-size: 25px;
+	font-weight: bold;
+    color: var(--blue_cabinet);
 }
 
