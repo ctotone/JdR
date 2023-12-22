@@ -9,23 +9,23 @@
 <!-- SHEET VERSION OPTION  -->
 		<div class="sheet_selector">
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
-			<option value="esprit">Feuille d'Esprit</option>
-			<option value="cabinet">Feuille d'Hôte</option>
-			<option value="pnj">Feuille de PNJ</option>
+			<option value="esprit" data-i18n="spirit_sheet">Spirit</option>
+			<option value="cabinet" data-i18n="corpse_sheet">Actor</option>
+			<option value="pnj" data-i18n="npc_sheet">NPC</option>
 		</select>
 		</div>
 		
 <!-- MENU TAB -->
-		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span >Cabinet</span>
-		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span >Corps</span>
-		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span >Arbre</span>
+		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span data-i18n="office">Cabinet</span>
+		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span data-i18n="body">Corps</span>
+		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span>
 
 	<!------------------>
 	<!-- DIV CABINET  -->
 	<!------------------>
 	<div class="cabinet">
 		<div class="wrapper_cabinet">
-			<div class="esprit_titre">ESPRITS
+			<div class="esprit_titre"><span data-i18n="spirits">ESPRITS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -33,7 +33,7 @@
 			<div class="esprit_data">
 				<p><textarea class="cab_esprit" name="attr_cab_esprit" wrap="off" rows="5" spellcheck="false"></textarea></p>
 			</div>
-			<div class="acquis_collectifs">ACQUIS COLLECTIFS 
+			<div class="acquis_collectifs"><span data-i18n="collective_achievement">ACQUIS COLLECTIFS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -56,7 +56,7 @@
 				<p><input class="data" type="text" name="attr_coll3-3"> + <input class="bonus" type="text" name="attr_collbonus3-3"></p>
 				<p><input class="data" type="text" name="attr_coll3-4"> + <input class="bonus" type="text" name="attr_collbonus3-4"></p>
 			</div>
-			<div class="contact">CONTACTS
+			<div class="contact"><span data-i18n="contacts">CONTACTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -64,7 +64,7 @@
 			<div class="contact_data">
 				<p><textarea class="cab_contact" name="attr_cab_contact" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="note">NOTES
+			<div class="note"><span data-i18n="notes">NOTES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -72,7 +72,7 @@
 			<div class="note_data">
 				<p><textarea class="cab_note" name="attr_cab_note" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="description_cabinet">DESCRIPTION DU CABINET
+			<div class="description_cabinet"><span data-i18n="office_description">DESCRIPTION DU CABINET</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -80,7 +80,7 @@
 			<div class="description_cabinet_data">
 				<p><textarea class="cab_desc" name="attr_cab_desc" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="adversaires">ADVERSAIRES
+			<div class="adversaires"><span data-i18n="opponents">ADVERSAIRES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -88,7 +88,7 @@
 			<div class="adversaires_data">
 				<p><textarea class="cab_adversaire" name="attr_cab_adversaire" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="graces">GRÂCES
+			<div class="graces"><span data-i18n="graces">GRÂCES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -97,7 +97,7 @@
 				<p><textarea class="cab_grace" name="attr_cab_grace" wrap="off" spellcheck="false"></textarea></p>
 			</div>
 			<div class="xp_collective_cadre">
-				<div class="xp_collective">EXPÉRIENCE COLLECTIVE</div>
+				<div class="xp_collective"><span data-i18n="collective_experience">EXPÉRIENCE COLLECTIVE</span></div>
 				<div class="xp_collective_data">
 					<p><textarea class="cab_xp" name="attr_cab_xp" wrap="off" spellcheck="false"></textarea></p>
 				</div>
@@ -114,7 +114,7 @@
 <!------------------>
 	<div class="corps">
 		<div class="wrapper_corps">
-			<div class="description">DESCRIPTION
+			<div class="description"><span data-i18n="description">DESCRIPTION</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -122,25 +122,25 @@
 			<div class="description_data">
 				<p><textarea class="cor_description" name="attr_cor_description" wrap="off" rows="5" spellcheck="false"></textarea></p>
 			</div>
-			<div class="attributs">ATTRIBUTS 
+			<div class="attributs"><span data-i18n="attributes">ATTRIBUTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="attributs_data1">
-				<p>ACUITÉ</p>
-				<p>AGILITÉ</p>
-				<p>ANONYMAT</p>
+				<p><span data-i18n="acuity">ACUITÉ</span></p>
+				<p><span data-i18n="agility">AGILITÉ</span></p>
+				<p><span data-i18n="anonymity">ANONYMAT</span></p>
 			</div>
 			<div class="attributs_data2">
-				<p>BEAUTÉ</p>
-				<p>ÉTRANGETÉ</p>
-				<p>HABILETÉ</p>
+				<p><span data-i18n="beauty">BEAUTÉ</span></p>
+				<p><span data-i18n="strangeness">ÉTRANGETÉ</span></p>
+				<p><span data-i18n="skill">HABILETÉ</span></p>
 			</div>
 			<div class="attributs_data3">
-				<p>INNOCENCE</p>
-				<p>PUISSANCE</p>
-				<p>ROBUSTESSE</p>
+				<p><span data-i18n="innocence">INNOCENCE</span></p>
+				<p><span data-i18n="attribute_power">PUISSANCE</span></p>
+				<p><span data-i18n="robustness">ROBUSTESSE</span></p>
 			</div>
 			<div class="attributs_bonus1">
 				<p>+<input class="bonus" type="text" name="attr_acuite_bonus"></p>
@@ -157,7 +157,7 @@
 				<p>+<input class="bonus" type="text" name="attr_puissance_bonus"></p>
 				<p>+<input class="bonus" type="text" name="attr_robustesse_bonus"></p>
 			</div>
-			<div class="equipement">ÉQUIPEMENT
+			<div class="equipement"><span data-i18n="equipment">ÉQUIPEMENT</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -165,12 +165,12 @@
 			<div class="equipement_data">
 				<p><textarea class="cor_equipement" name="attr_cor_equipement" wrap="off" rows="7" spellcheck="false"></textarea></p>
 			</div>
-			<div class="sequelles">SÉQUELLES
+			<div class="sequelles"><span data-i18n="aftermaths">SÉQUELLES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
-			<div class="sequelles_legere">LÉGÈRES
+			<div class="sequelles_legere"><span data-i18n="light">LÉGÈRES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -178,7 +178,7 @@
 			<div class="sequelles_legere_data">
 				<p><textarea class="cor_sequelles_legere" name="attr_sequelles_legere" wrap="off" rows="3" spellcheck="false"></textarea></p>
 			</div>
-			<div class="sequelles_grave">GRAVES
+			<div class="sequelles_grave"><span data-i18n="serious">GRAVES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -186,20 +186,20 @@
 			<div class="sequelles_grave_data">
 				<p><textarea class="cor_sequelles_grave" name="attr_sequelles_grave" wrap="off" rows="3" spellcheck="false"></textarea></p>
 			</div>
-			<div class="arme">ARMES
+			<div class="arme"><span data-i18n="weapon">ARMES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="arme_data">
 				<div class="wrapper_arme">
-					<div class="arme_titre_nom">Nom</div>
-					<div class="arme_titre_precision">Précision</div>
-					<div class="arme_titre_portee">Portée</div>
-					<div class="arme_titre_degats">Dégats</div>
-					<div class="arme_titre_dots">+ puissance</div>
-					<div class="arme_titre_munition">Munitions</div>
-					<div class="arme_titre_cadence">Cadence</div>
+					<div class="arme_titre_nom"><span data-i18n="weapon_name">Nom</span></div>
+					<div class="arme_titre_precision"><span data-i18n="precision">Précision</span></div>
+					<div class="arme_titre_portee"><span data-i18n="scope">Portée</span></div>
+					<div class="arme_titre_degats"><span data-i18n="damage">Dégats</span></div>
+					<div class="arme_titre_dots">+ <span data-i18n="power">puissance</span></div>
+					<div class="arme_titre_munition"><span data-i18n="ammunition">Munitions</span></div>
+					<div class="arme_titre_cadence"><span data-i18n="cadence">Cadence</span></div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme1_nom"></p></div>
@@ -243,7 +243,7 @@
 				</div>
 				
 			</div>
-			<div class="note_corps">NOTES
+			<div class="note_corps"><span data-i18n="notes">NOTES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -256,50 +256,458 @@
 					<span class="slider round"></span>
 				</label>
 				<input type="checkbox" name="attr_block_switch" class="sheet-block-switch" value="1" style=" visibility: hidden;">
-			<div class="sante">SANTÉ
+			<div class="sante"><span data-i18n="health">SANTÉ</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="sante_femme_data">
-				<div class="titre_tete">2 : TÊTE</div>
-				<div class="dots_tete">O O O O</div>
-				<div class="protection_tete">Protection <input class="protection" type="text" name="attr_protection_tete"></div>
-				<div class="titre_bras_droit">3-5 : BRAS DROIT</div>
-				<div class="dots_bras_droit">O O O O O </div>
-				<div class="protection_bras_droit">Protection <input class="protection" type="text" name="attr_protection_bras_droit"></div>
-				<div class="titre_bras_gauche">6-8 : BRAS GAUCHE</div>
-				<div class="dots_bras_gauche">O O O O O </div>
-				<div class="protection_bras_gauche">Protection <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
-				<div class="titre_torse">9-10 : TORSE</div>
-				<div class="dots_torse">O O O O O O O </div>
-				<div class="protection_torse">Protection <input class="protection" type="text" name="attr_protection_torse"></div>
-				<div class="titre_jambe_droite">11 : JAMBE DROITE</div>
-				<div class="dots_jambe_droite">O O O O O</div>
-				<div class="protection_jambe_droite">Protection <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
-				<div class="titre_jambe_gauche">12 : JAMBE GAUCHE</div>
-				<div class="dots_jambe_gauche">O O O O O </div>
-				<div class="protection_jambe_gauche">Protection <input class="protection" type="text" name="attr_protection_jambe_gauchee"></div>
+				<div class="titre_tete">2 : <span data-i18n="head">TÊTE</span></div>
+				<div class="dots_tete">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>	
+				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="titre_bras_droit">3-5 : <span data-i18n="right_arm">BRAS DROIT</span></div>
+				<div class="dots_bras_droit">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="titre_bras_gauche">6-8 : <span data-i18n="left_arm">BRAS GAUCHE</span></div>
+				<div class="dots_bras_gauche">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="titre_torse">9-10 : <span data-i18n="torso">TORSE</span></div>
+				<div class="dots_torse">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_6">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_6" class="sheet-radio sheet-radio-6">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_7">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_7" class="sheet-radio sheet-radio-7">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="titre_jambe_droite">11 : <span data-i18n="right_leg">JAMBE DROITE</span></div>
+				<div class="dots_jambe_droite">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="titre_jambe_gauche">12 : <span data-i18n="left_leg">JAMBE GAUCHE</span></div>
+				<div class="dots_jambe_gauche">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_gauchee"></div>
 			</div>
 			<div class="sante_homme_data">
-				<div class="titre_tete">2 : TÊTE</div>
-				<div class="dots_tete">O O O O</div>
-				<div class="protection_tete">Protection <input class="protection" type="text" name="attr_protection_tete"></div>
-				<div class="titre_bras_droit">3-5 : BRAS DROIT</div>
-				<div class="dots_bras_droit">O O O O O </div>
-				<div class="protection_bras_droit">Protection <input class="protection" type="text" name="attr_protection_bras_droit"></div>
-				<div class="titre_bras_gauche">6-8 : BRAS GAUCHE</div>
-				<div class="dots_bras_gauche">O O O O O </div>
-				<div class="protection_bras_gauche">Protection <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
-				<div class="titre_torse">9-10 : TORSE</div>
-				<div class="dots_torse">O O O O O O O </div>
-				<div class="protection_torse">Protection <input class="protection" type="text" name="attr_protection_torse"></div>
-				<div class="titre_jambe_droite">11 : JAMBE DROITE</div>
-				<div class="dots_jambe_droite">O O O O O</div>
-				<div class="protection_jambe_droite">Protection <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
-				<div class="titre_jambe_gauche">12 : JAMBE GAUCHE</div>
-				<div class="dots_jambe_gauche">O O O O O </div>
-				<div class="protection_jambe_gauche">Protection <input class="protection" type="text" name="attr_protection_jambe_gauche"></div>
+				<div class="titre_tete">2 : <span data-i18n="head">TÊTE</span></div>
+				<div class="dots_tete">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_tete" value="2" />
+							<button type="action" name="act_dot_tete_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>	
+				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="titre_bras_droit">3-5 : <span data-i18n="right_arm">BRAS DROIT</span></div>
+				<div class="dots_bras_droit">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_droit" value="3" />
+							<button type="action" name="act_dot_bras_droit_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="titre_bras_gauche">6-8 : <span data-i18n="left_arm">BRAS GAUCHE</span></div>
+				<div class="dots_bras_gauche">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_bras_gauche" value="3" />
+							<button type="action" name="act_dot_bras_gauche_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="titre_torse">9-10 : <span data-i18n="torso">TORSE</span></div>
+				<div class="dots_torse">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_6">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_6" class="sheet-radio sheet-radio-6">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_7">
+							<input type="hidden" class="sheet-radio" name="attr_dot_torse" value="4" />
+							<button type="action" name="act_dot_torse_7" class="sheet-radio sheet-radio-7">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="titre_jambe_droite">11 : <span data-i18n="right_leg">JAMBE DROITE</span></div>
+				<div class="dots_jambe_droite">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_droite" value="3" />
+							<button type="action" name="act_dot_jambe_droite_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="titre_jambe_gauche">12 : <span data-i18n="left_leg">JAMBE GAUCHE</span></div>
+				<div class="dots_jambe_gauche">
+					<div class="wrapper_corps_boutton">
+						<div class="radio_1">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_1" class="sheet-radio sheet-radio-1">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_2">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_2" class="sheet-radio sheet-radio-2">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_3">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_3" class="sheet-radio sheet-radio-3">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_4">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_4" class="sheet-radio sheet-radio-4">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+						<div class="radio_5">
+							<input type="hidden" class="sheet-radio" name="attr_dot_jambe_gauche" value="3" />
+							<button type="action" name="act_dot_jambe_gauche_5" class="sheet-radio sheet-radio-5">
+							<span class="sheet-checked"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_gauchee"></div>
 			</div>
 			<!-- <div class="malus_total_cadre">
 				<div class="malus_total">MALUS TOTAL</div>
@@ -317,23 +725,23 @@
 	<!------------------>
 	<div class="arbre">
 		<div class="wrapper_arbre">
-			<div class="qualite_arbre">QUALITÉS ET DÉFAUTS
+			<div class="qualite_arbre"><span data-i18n="qualites_and_defects">QUALITÉS ET DÉFAUTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="qualite_arbre_data">
 				<div class="wrapper_arbre_data"</div>
-					<div class="courage">COURAGE</div>
-					<div class="intellect">INTELLECT</div>
-					<div class="sensibilite">SENSIBILITÉ</div>
-					<div class="autorite">AUTORITÉ</div>
-					<div class="ouverture">OUVERTURE</div>
-					<div class="serenite">SÉRÉNITÉ</div>
-					<div class="savoir">SAVOIR</div>
-					<div class="charisme">CHARISME</div>
-					<div class="attention">ATTENTION</div>
-					<div class="coordination">COORDINATION</div>
+					<div class="courage"><span data-i18n="courage">COURAGE</span></div>
+					<div class="intellect"><span data-i18n="intellect">INTELLECT</span></div>
+					<div class="sensibilite"><span data-i18n="sensitivity">SENSIBILITÉ</span></div>
+					<div class="autorite"><span data-i18n="authority">AUTORITÉ</span></div>
+					<div class="ouverture"><span data-i18n="opening">OUVERTURE</span></div>
+					<div class="serenite"><span data-i18n="serenity">SÉRÉNITÉ</span></div>
+					<div class="savoir"><span data-i18n="know">SAVOIR</span></div>
+					<div class="charisme"><span data-i18n="charisma">CHARISME</span></div>
+					<div class="attention"><span data-i18n="attention">ATTENTION</span></div>
+					<div class="coordination"><span data-i18n="coordination">COORDINATION</span></div>
 					<div class="courage_D"><input class="data" type="text" name="attr_D_courage" placeholder="0"><span class="D_arbre">D</span></div>
 					<div class="intellect_D"><input class="data" type="text" name="attr_D_intellect" placeholder="0"><span class="D_arbre">D</span></div>
 					<div class="sensibilite_D"><input class="data" type="text" name="attr_D_sensibilite" placeholder="0"><span class="D_arbre">D</span></div>
@@ -344,16 +752,16 @@
 					<div class="charisme_D"><input class="data" type="text" name="attr_D_charisme" placeholder="0"><span class="D_arbre">D</span></div>
 					<div class="attention_D"><input class="data" type="text" name="attr_D_attention" placeholder="0"><span class="D_arbre">D</span></div>
 					<div class="coordination_D"><input class="data" type="text" name="attr_D_coordination" placeholder="0"><span class="D_arbre">D</span></div>
-					<div class="imprudence">IMPRUDENCE</div>
-					<div class="froideur">FROIDEUR</div>
-					<div class="superstition">SUPERSTITION</div>
-					<div class="intolerance">INTOLÉRANCE</div>
-					<div class="jalousie">JALOUSIE</div>
-					<div class="indifference">INDIFFÉRENCE</div>
-					<div class="orgueil">ORGUEIL</div>
-					<div class="manie">MANIE</div>
-					<div class="manipulation">MANIPULATION</div>
-					<div class="avidite">AVIDITÉ</div>
+					<div class="imprudence"><span data-i18n="imprudence">IMPRUDENCE</span></div>
+					<div class="froideur"><span data-i18n="coldness">FROIDEUR</span></div>
+					<div class="superstition"><span data-i18n="superstition">SUPERSTITION</span></div>
+					<div class="intolerance"><span data-i18n="intolerance">INTOLÉRANCE</span></div>
+					<div class="jalousie"><span data-i18n="jealousy">JALOUSIE</span></div>
+					<div class="indifference"><span data-i18n="indifference">INDIFFÉRENCE</span></div>
+					<div class="orgueil"><span data-i18n="pride">ORGUEIL</span></div>
+					<div class="manie"><span data-i18n="mania">MANIE</span></div>
+					<div class="manipulation"><span data-i18n="rigging">MANIPULATION</span></div>
+					<div class="avidite"><span data-i18n="greed">AVIDITÉ</span></div>
 				</div>
 			</div>
 		</div>
@@ -368,14 +776,14 @@
 <!-- SHEET VERSION OPTION  -->
 		<div class="sheet_selector">
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
-			<option value="esprit">Feuille d'Esprit</option>
-			<option value="cabinet">Feuille d'Hôte</option>
-			<option value="pnj">Feuille de PNJ</option>
+			<option value="esprit" data-i18n="spirit_sheet">Spirit</option>
+			<option value="cabinet" data-i18n="corpse_sheet">Actor</option>
+			<option value="pnj" data-i18n="npc_sheet">NPC</option>
 		</select>
 		</div>
 		
 	<!-- MENU TAB -->
-		<div class="titre_feuille">Esprit</div>
+		<div class="titre_feuille">Esprit</span></div>
 
 
 	<!------------------>
@@ -383,7 +791,7 @@
 	<!------------------>
 	<div class="esprit">
 		<div class="wrapper_esprit">
-			<div class="profil">PROFIL ET CONCEPT
+			<div class="profil"><span data-i18n="profil_and_concept">PROFIL ET CONCEPT</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -391,7 +799,7 @@
 			<div class="profil_data">
 				<p><textarea class="esp_profil" name="attr_esp_profil" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="aspect">ASPECTS
+			<div class="aspect"><span data-i18n="aspects">ASPECTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -399,26 +807,26 @@
 			<div class="aspect_data">
 				<div class="wrapper_aspect">
 					<div class="aspect_nom">
-						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt">(RAISON)</span>
+						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
 					</div>
 					<div class="aspect_bonus">
 						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_nashama_bonus">
 					</div>
 					<div class="aspect_nom">
-						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt">(INTUITION)</span>
+						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
 					</div>
 					<div class="aspect_bonus">
 						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_rouah_bonus">
 					</div>
 					<div class="aspect_nom">
-						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt">(ACTION)</span>
+						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
 					</div>
 					<div class="aspect_bonus">
 						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_nefesh_bonus">
 					</div>
 				</div>
 			</div>
-			<div class="acquis">ACQUIS
+			<div class="acquis"><span data-i18n="learned">ACQUIS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -441,13 +849,61 @@
 				<p><input class="data" type="text" name="attr_acquis11"> + <input class="bonus" type="text" name="attr_acquisbonus11"></p>
 				<p><input class="data" type="text" name="attr_acquis12"> + <input class="bonus" type="text" name="attr_acquisbonus12"></p>
 			</div>
-			<div class="perisprit">PÉRISPRIT
+			<div class="perisprit"><span data-i18n="perispirit">PÉRISPRIT</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="perisprit_data">
 				<div class="wrapper_perisprit">
+					<div class="perisprit1">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_1" class="sheet-radio">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit2">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_2" class="sheet-radio sheet-gt-1">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit3">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit4">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit5">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit6">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit7">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit8">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit9">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<!-- 
+					ON CONSERVE AU CAS OU
+					Ancien dots non interactif
 					<div class="perisprit1"><input type="checkbox" name="attr_perisprit_1" value="1" ></div>
 					<div class="perisprit2"><input type="checkbox" name="attr_perisprit_2" value="1" ></div>
 					<div class="perisprit3"><input type="checkbox" name="attr_perisprit_3" value="1" ></div>
@@ -456,10 +912,10 @@
 					<div class="perisprit6"><input type="checkbox" name="attr_perisprit_6" value="1" ></div>
 					<div class="perisprit7"><input type="checkbox" name="attr_perisprit_7" value="1" ></div>
 					<div class="perisprit8"><input type="checkbox" name="attr_perisprit_8" value="1" ></div>
-					<div class="perisprit9"><input type="checkbox" name="attr_perisprit_9" value="1" ></div>
+					<div class="perisprit9"><input type="checkbox" name="attr_perisprit_9" value="1" ></div> -->
 				</div>
 			</div>
-			<div class="contact_esprit">CONTACTS
+			<div class="contact_esprit"><span data-i18n="spirit_contacts">CONTACTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -467,7 +923,7 @@
 			<div class="contact_esprit_data">
 				<p><textarea class="esp_contact" name="attr_esp_contact" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="routine">ROUTINE
+			<div class="routine"><span data-i18n="routine">ROUTINE</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -475,7 +931,7 @@
 			<div class="routine_data">
 				<p><textarea class="esp_routine" name="attr_esp_routine" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="adversaire_esprit">ADVERSAIRES
+			<div class="adversaire_esprit"><span data-i18n="spirit_opponents">ADVERSAIRES</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -483,14 +939,14 @@
 			<div class="adversaire_esprit_data">
 				<p><textarea class="esp_adversaire" name="attr_esp_adversaire" wrap="off" spellcheck="false"></textarea></p>
 			</div>
-			<div class="pouvoir">POUVOIRS
+			<div class="pouvoir"><span data-i18n="powers">POUVOIRS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="pouvoir_data">
 				<div class="wrapper_pouvoir">
-					<div class="niveau1">NIVEAU 1 :</div>
+					<div class="niveau1"><span data-i18n="level_1">NIVEAU 1 :</span></div>
 					<div class="niveau1_value"><input class="data" type="text" name="attr_pouvoir_lvl_1"></div>
 					<div class="niveau1_data1"><input class="data" type="text" name="attr_data1_lvl_1"></div>
 					<div class="niveau1_data2"><input class="data" type="text" name="attr_data2_lvl_1"></div>
@@ -508,7 +964,7 @@
 					<div class="niveau1_c2"><input type="checkbox" name="attr_niveau1_c2" value="1" ></div>
 					<div class="niveau1_c3"><input type="checkbox" name="attr_niveau1_c3" value="1" ></div>
 					<div class="separateur_1"></div>
-					<div class="niveau2">NIVEAU 2 :</div>
+					<div class="niveau2"><span data-i18n="level_2">NIVEAU 2 :</span></div>
 					<div class="niveau2_value"><input class="data" type="text" name="attr_pouvoir_lvl_2"></div>
 					<div class="niveau2_data1"><input class="data" type="text" name="attr_data1_lvl_2"></div>
 					<div class="niveau2_data2"><input class="data" type="text" name="attr_data2_lvl_2"></div>
@@ -526,7 +982,7 @@
 					<div class="niveau2_c2"><input type="checkbox" name="attr_niveau2_c2" value="1" ></div>
 					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>					
 					<div class="separateur_2"></div>
-					<div class="niveau3">NIVEAU 3 :</div>
+					<div class="niveau3"><span data-i18n="level_3">NIVEAU 3 :</span></div>
 					<div class="niveau3_value"><input class="data" type="text" name="attr_pouvoir_lvl_3"></div>
 					<div class="niveau3_data1"><input class="data" type="text" name="attr_data1_lvl_3"></div>
 					<div class="niveau3_data2"><input class="data" type="text" name="attr_data2_lvl_3"></div>
@@ -545,7 +1001,7 @@
 					<div class="niveau3_c3"><input type="checkbox" name="attr_niveau3_c3" value="1" ></div>
 				</div>
 			</div>			
-			<div class="objet_esprit">OBJETS
+			<div class="objet_esprit"><span data-i18n="items">OBJETS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -553,7 +1009,7 @@
 			<div class="objet_esprit_data">
 				<p><input class="data" type="text" name="attr_esp_objet"></p>
 			</div>
-			<div class="corruption">CORRUPTIONS
+			<div class="corruption"><span data-i18n="corruption">CORRUPTIONS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -562,7 +1018,7 @@
 				<p><input class="data" type="text" name="attr_esp_corruption"></p>
 			</div>
 			<div class="xp_esprit_cadre"></div>
-			<div class="xp_esprit_titre">EXPÉRIENCE</div>
+			<div class="xp_esprit_titre"><span data-i18n="experience">EXPÉRIENCE</span></div>
 			<div class="xp_esprit_data">
 				<p><textarea class="esp_xp" name="attr_esp_xp" wrap="off" spellcheck="false"></textarea></p>
 			</div>
@@ -580,9 +1036,9 @@
 <!-- SHEET VERSION OPTION  -->
 		<div class="sheet_selector">
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
-			<option value="esprit">Feuille d'Esprit</option>
-			<option value="cabinet">Feuille d'Hôte</option>
-			<option value="pnj">Feuille de PNJ</option>
+			<option value="esprit" data-i18n="spirit_sheet">Spirit</option>
+			<option value="cabinet" data-i18n="corpse_sheet">Actor</option>
+			<option value="pnj" data-i18n="npc_sheet">NPC</option>
 		</select>
 		</div>
 
@@ -591,7 +1047,7 @@
 	<!-- DIV PNJ  -->
 	<!------------------>
 	<div class="pnj">
-	bon courage
+	A VENIR
 	</div>
 </div>
 
@@ -624,6 +1080,75 @@
         setAttrs({
           [flag]: v[flag] !== "1" ? "1" : "0"
         });
+      });
+    });
+  });
+</script>
+
+<!-- DOTS du Perisprit -->
+<script type="text/worker">
+	  const perispritValues = ["1","2","3","4","5","6","7","8","9"];
+	  perispritValues.forEach(function(value) {
+		on(`clicked:perisprit_${value}`, function() {
+		  setAttrs({
+			"perisprit": value
+		  });
+		});
+	  });
+	</script>
+	
+<!-- DOTS du corps -->
+<script type="text/worker">
+  const dot_teteRadioValues = ["1","2","3","4","5","6","7"];
+  dot_teteRadioValues.forEach(function(value) {
+    on(`clicked:dot_tete_${value}`, function() {
+      setAttrs({
+        ["dot_tete"]: value
+      });
+    });
+  });
+  
+  const dot_bras_droitRadioValues = ["1","2","3","4","5","6","7"];
+  dot_bras_droitRadioValues.forEach(function(value) {
+    on(`clicked:dot_bras_droit_${value}`, function() {
+      setAttrs({
+        ["dot_bras_droit"]: value
+      });
+    });
+  });
+  
+  const dot_bras_gaucheRadioValues = ["1","2","3","4","5","6","7"];
+  dot_bras_gaucheRadioValues.forEach(function(value) {
+    on(`clicked:dot_bras_gauche_${value}`, function() {
+      setAttrs({
+        ["dot_bras_gauche"]: value
+      });
+    });
+  });
+  
+  const dot_torseRadioValues = ["1","2","3","4","5","6","7"];
+  dot_torseRadioValues.forEach(function(value) {
+    on(`clicked:dot_torse_${value}`, function() {
+      setAttrs({
+        ["dot_torse"]: value
+      });
+    });
+  });
+  
+  const dot_jambe_droiteRadioValues = ["1","2","3","4","5","6","7"];
+  dot_jambe_droiteRadioValues.forEach(function(value) {
+    on(`clicked:dot_jambe_droite_${value}`, function() {
+      setAttrs({
+        ["dot_jambe_droite"]: value
+      });
+    });
+  });
+  
+  const dot_jambe_gaucheRadioValues = ["1","2","3","4","5","6","7"];
+  dot_jambe_gaucheRadioValues.forEach(function(value) {
+    on(`clicked:dot_jambe_gauche_${value}`, function() {
+      setAttrs({
+        ["dot_jambe_gauche"]: value
       });
     });
   });
