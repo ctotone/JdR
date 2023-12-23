@@ -850,6 +850,9 @@
 				<p><input class="data" type="text" name="attr_acquis12"> + <input class="bonus" type="text" name="attr_acquisbonus12"></p>
 			</div>
 			<div class="perisprit"><span data-i18n="perispirit">PÉRISPRIT</span>
+					<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+					<button type="action" name="act_perisprit_1" class="sheet-radio" style="border-radius: 0;width: 30px;border: none;">
+					<span class="sheet-checked" style="background: none;text-align: left;width: 30px;font-size: 10px;">&nbsp;&nbsp;(Reset)&nbsp;</span></button>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
@@ -858,47 +861,47 @@
 				<div class="wrapper_perisprit">
 					<div class="perisprit1">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_1" class="sheet-radio">
+						<button type="action" name="act_perisprit_2" class="sheet-radio sheet-gt-1">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit2">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_2" class="sheet-radio sheet-gt-1">
+						<button type="action" name="act_perisprit_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit3">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
+						<button type="action" name="act_perisprit_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit4">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
+						<button type="action" name="act_perisprit_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit5">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
+						<button type="action" name="act_perisprit_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit6">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
+						<button type="action" name="act_perisprit_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit7">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
+						<button type="action" name="act_perisprit_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit8">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
+						<button type="action" name="act_perisprit_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<div class="perisprit9">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
-						<button type="action" name="act_perisprit_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
+						<button type="action" name="act_perisprit_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
 						<span class="sheet-checked"></span></button>
 					</div>
 					<!-- 
@@ -1087,7 +1090,7 @@
 
 <!-- DOTS du Perisprit -->
 <script type="text/worker">
-	  const perispritValues = ["1","2","3","4","5","6","7","8","9"];
+	  const perispritValues = ["1","2","3","4","5","6","7","8","9","10"];
 	  perispritValues.forEach(function(value) {
 		on(`clicked:perisprit_${value}`, function() {
 		  setAttrs({
