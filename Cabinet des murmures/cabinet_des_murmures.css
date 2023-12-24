@@ -625,7 +625,7 @@ input:checked + .slider:before {
 
 .wrapper_corps{  
 	display: grid;
-    grid-template-columns: 100px 40px 10px 100px 40px 10px 100px 40px 30px 100px 10px 100px 130px 0px 5px 20px;
+    grid-template-columns: 	100px 40px 10px 100px 40px 10px 100px 40px 30px 100px 10px 50px 150px 30px 5px 20px;
 	grid-auto-rows: 30px;
 }
 
@@ -793,7 +793,7 @@ input:checked + .slider:before {
 }
 
 .sante {
-	grid-column: 10/14;
+	grid-column: 10/15;
 	grid-row: 1;
 	font-size: 16px;
 	display:flex;
@@ -802,7 +802,7 @@ input:checked + .slider:before {
 }
 
 .sante_femme_data {
-    grid-column: 10/14;
+    grid-column: 10/15;
     grid-row: 2/29;
     margin-top: -10px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_woman.png);
@@ -812,7 +812,7 @@ input:checked + .slider:before {
 }
 
 .sante_homme_data {
-    grid-column: 10/14;
+    grid-column: 10/15;
     grid-row: 2/29;
     margin-top: -10px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_man.png);
@@ -1970,12 +1970,8 @@ input[type=number] {
 	outline: none;
 } */
 
-span.cabinet_name {
-	margin-left: 45px;
-    font-size: 20px;	
-}
-
-.charsheet input.cabinet_name { */
+.charsheet input.cabinet_name,
+.charsheet input.esprit_name {
     border-color: var(--blue_cabinet);
     font-family: 'EB Garamond';
     font-size: 20px;
@@ -1987,6 +1983,12 @@ span.cabinet_name {
     margin-left: 39px;
     padding-left: 13px;
 }
+
+.charsheet input.esprit_name {
+	margin-left: 200px;
+    margin-top: -3px;
+}
+	
 
 .charsheet textarea.cab_name,
 .charsheet textarea.cab_esprit,
@@ -2029,7 +2031,7 @@ span.cabinet_name {
 }
 
 .charsheet textarea.cor_note {
-	width: 95%;
+	width: 97%;
 	height: 90px;
 }
 
@@ -2339,6 +2341,35 @@ div.malus_corps {
     border-bottom: solid 1px var(--red_cabinet);
 	margin-top: -5px;
 	width: 60px;
+    padding-bottom: 2px;
+}
+
+.malus_cadre {
+    font-size: 14px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_xp_esprit.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.malus_titre {
+	font-size: 14px;
+}
+
+.malus_data {
+	font-size: 14px;
+}
+
+.charsheet input.malus_total {
+    font-size: 12px;
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    color: var(--red_cabinet);
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: solid 1px var(--red_cabinet);
+    margin-top: -5px;
+    width: 60px;
     padding-bottom: 2px;
 }
 
