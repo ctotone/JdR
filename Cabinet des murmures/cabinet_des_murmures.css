@@ -822,28 +822,37 @@ input:checked + .slider:before {
 }
 
 .malus_total_cadre {
-    grid-column: 12;
-    grid-row: 29/33;
+    grid-column: 9/16;
+    grid-row: 22/30;
     font-size: 14px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/xp_border.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_malus_cadre.png);
     background-size: cover;
-    background-size: 310px 120px;
+    background-size: 220px 141px;
     background-repeat: no-repeat;
     padding: 10px;
+    margin-left: 20px;
+    margin-top: 6px;
 }
 
 .malus_total {
-	grid-column:12;
-	grid-row: 29;
-	font-size: 16px;
+    grid-column: 10;
+    grid-row: 23;
+    font-size: 12px;
     align-items: flex-end;
-	text-align: center;
+    text-align: center;
+    padding: 10px;
+    margin-left: 49px;
+    margin-top: 24px;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: bold;
 }
 
 .malus_total_data {
-	grid-column: 12;
-	grid-row: 30/33;
-	font-size: 14px;
+    grid-column: 10;
+    grid-row: 25/33;
+    margin-top: -9px;
+    margin-left: 7px;
 }
 
 .cor_decor_droite {
@@ -2360,16 +2369,16 @@ div.malus_corps {
 }
 
 .charsheet input.malus_total {
-    font-size: 12px;
+    font-size: 25px;
     background-color: transparent;
     font-family: 'IM Fell English, serif';
     color: var(--red_cabinet);
     outline: none;
     border: none;
     border-radius: 0px;
-    border-bottom: solid 1px var(--red_cabinet);
+    /* border-bottom: solid 1px var(--red_cabinet); */
     margin-top: -5px;
-    width: 60px;
+    width: 95px;
     padding-bottom: 2px;
 }
 
