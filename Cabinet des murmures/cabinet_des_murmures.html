@@ -713,12 +713,6 @@
 			<div class="malus_total_cadre"></div>
 			<div class="malus_total"><span data-i18n="total_malus">TOTAL MALUS</span></div>
 			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total"></div>
-			<!-- <div class="malus_total_cadre">
-				<div class="malus_total">MALUS TOTAL</div>
-				<div class="malus_total_data">
-					<p><textarea class="cor_malus" name="attr_cor_malus" wrap="off" spellcheck="false"></textarea></p>
-				</div>
-			</div> -->
 			<div class="cor_decor_bas"></div>
 		</div>	
 		
@@ -787,7 +781,7 @@
 		</div>
 		
 	<!-- MENU TAB -->
-		<div class="titre_feuille">Esprit</span></div>
+		<div class="titre_feuille"><span data-i18n="spirit_title">Esprit</span></div>
 		<input class="esprit_name" type="text" name="attr_character_name">
 
 
@@ -1050,12 +1044,235 @@
 		</select>
 		</div>
 
+<!-- MENU TAB -->
+		<div class="titre_feuille"><span data-i18n="npc_title">PNJ</span></div>
+		<input class="esprit_name" type="text" name="attr_character_name">
 
 	<!------------------>
 	<!-- DIV PNJ  -->
 	<!------------------>
 	<div class="pnj">
-	A VENIR
+		<div class="wrapper_pnj">
+			<div class="pnj_aspect"><span data-i18n="aspects">ASPECTS</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_aspect_data">
+				<div class="wrapper_aspect">
+					<div class="aspect_nom">
+						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
+					</div>
+					<div class="aspect_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_nashama_bonus">
+					</div>
+					<div class="aspect_nom">
+						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
+					</div>
+					<div class="aspect_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_rouah_bonus">
+					</div>
+					<div class="aspect_nom">
+						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
+					</div>
+					<div class="aspect_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_nefesh_bonus">
+					</div>
+				</div>
+			</div>
+			<div class="pnj_acquis"><span data-i18n="learned">LEARNED</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_acquis_data">
+				<p><input class="data" type="text" name="attr_pnj_acquis_1"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_1"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_2"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_2"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_3"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_3"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_4"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_4"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_5"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_5"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_6"> + <input class="bonus" type="text" name="attr_pnj_acquis_bonus_6"></p>
+			</div>
+			<div class="pnj_energie"><span data-i18n="energy">ENERGY</span> 
+				
+					<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+					<button type="action" name="act_energie_1" class="sheet-radio" style="border-radius: 0;width: 30px;height: 30px;border: none;">
+					<span class="sheet-checked" style="background: none;text-align: left;width: 12px;height: 12px;font-size: 10px;margin-top: 2px;margin-left: 9px;background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/reset_perisprit.png);background-size: 12px 12px;background-repeat: no-repeat;/* border: 1px solid red; */border-radius: 0;"></span></button>
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_energie_data">
+				<div class="wrapper_energie_pnj">
+					<div class="energie1">
+						<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+						<button type="action" name="act_energie_2" class="sheet-radio sheet-gt-1">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="energie2">
+						<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+						<button type="action" name="act_energie_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="energie3">
+						<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+						<button type="action" name="act_energie_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="energie4">
+						<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+						<button type="action" name="act_energie_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4" style="border: solid 1px #aba4a4;">
+						<span class="sheet-checked" style="background-color: #aba4a4;"></span></button>
+					</div>
+					<div class="energie5">
+						<input type="hidden" name="attr_energie" class="sheet-radio" value="1" />
+						<button type="action" name="act_energie_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5" style="border: solid 1px #aba4a4;">
+						<span class="sheet-checked" style="background-color: #aba4a4;"></span></button>
+					</div>
+					<div class="perisprit6">&nbsp;</div>
+					<div class="perisprit7">&nbsp;</div>
+					<div class="perisprit8">&nbsp;</div>
+					<div class="perisprit9">&nbsp;</div>
+				</div>
+			</div>
+			<div class="pnj_perisprit"><span data-i18n="perispirit">PERISPIRIT</span>
+					<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+					<button type="action" name="act_perisprit_1" class="sheet-radio" style="border-radius: 0;width: 30px;height: 30px;border: none;">
+					<span class="sheet-checked" style="background: none;text-align: left;width: 12px;height: 12px;font-size: 10px;margin-top: 2px;margin-left: 9px;background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/reset_perisprit.png);background-size: 12px 12px;background-repeat: no-repeat;/* border: 1px solid red; */border-radius: 0;"></span></button>
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_perisprit_data">
+				<div class="wrapper_perisprit_pnj">
+					<div class="perisprit1">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_2" class="sheet-radio sheet-gt-1">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit2">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit3">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit4">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit5">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit6">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit7">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit8">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
+						<span class="sheet-checked"></span></button>
+					</div>
+					<div class="perisprit9">
+						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
+						<button type="action" name="act_perisprit_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
+						<span class="sheet-checked"></span></button>
+					</div>
+				</div>
+			</div>
+			<div class="pnj_routine"><span data-i18n="routine">ROUTINE</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_routine_data">
+				<p><textarea class="pnj_routine" name="attr_pnj_routine" wrap="off" spellcheck="false"></textarea></p>
+			</div>
+			<div class="pnj_pouvoir">
+			</div>
+			<div class="pnj_corruption"><span data-i18n="powers">POWERS</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_pouvoir_data">
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_1">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_1"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_2">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_2"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_3">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_3"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_4">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_4"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_5">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_5"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_6">&nbsp; &nbsp; <input class="bonus" type="text" name="attr_pnj_pouvoir_bonus_6"></p>
+			</div>
+			<div class="pnj_armes"><span data-i18n="weapon">WEAPONS</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_armes_data">
+			</div>
+			<div class="pnj_notes"><span data-i18n="notes">NOTES</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_notes_data">
+				<p><textarea class="pnj_notes" name="attr_pnj_notes" wrap="off" spellcheck="false"></textarea></p>
+			</div>
+			<div class="pnj_attributs"><span data-i18n="attributes">ATTRIBUTES</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_attributs_data">
+				<div class="wrapper_pnj_attributs">
+					<div class="pnj_attributs_col_1">
+						<p><input class="data" type="text" name="attr_pnj_attributs_1"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_1"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_2"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_2"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_3"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_3"></p>
+					</div>
+					<div class="pnj_attributs_col_2">
+						<p><input class="data" type="text" name="attr_pnj_attributs_4"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_4"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_5"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_5"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_6"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_6"></p>
+					</div>
+					<div class="pnj_attributs_col_3">
+						<p><input class="data" type="text" name="attr_pnj_attributs_7"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_7"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_8"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_8"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_9"> + <input class="bonus" type="text" name="attr_pnj_attributs_bonus_9"></p>
+					</div>
+				</div>
+			</div>
+			<div class="pnj_sante"><span data-i18n="health">HEALTH</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_sante_data">
+			</div>
+			<div class="pnj_combat"><span data-i18n="fight">FIGHT</span> 
+				<div class="titre_trait">
+					<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="pnj_combat_data">
+			</div>
+			<div class="pnj_decor_droite">
+			</div>
+			<div class="pnj_decor_bas">
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -1161,3 +1378,15 @@
     });
   });
 </script>
+
+<!-- DOTS Energie PNJ -->
+<script type="text/worker">
+	  const energieValues = ["1","2","3","4","5","6"];
+	  energieValues.forEach(function(value) {
+		on(`clicked:energie_${value}`, function() {
+		  setAttrs({
+			"energie": value
+		  });
+		});
+	  });
+	</script>
