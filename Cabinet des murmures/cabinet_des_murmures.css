@@ -32,7 +32,8 @@ font-family: 'Libre Bodoni', serif;
 .corps,
 .arbre,
 .esprit,
-.pnj {
+.pnj,
+.esprit_qualite {
 	width:810px;
     border: 1px solid var(--blue_cabinet);
 	padding-top: 15px;
@@ -128,38 +129,42 @@ body.sheet-darkmode .selector {
 
 .cabinet,
 .corps,
-.arbre {
+.arbre,
+.esprit,
+.esprit_qualite {
 	display: none;
 }
 
 input[type=radio].onglcabinet:checked ~ div.cabinet,
 input[type=radio].onglarbre:checked ~ div.arbre,
-input[type=radio].onglcorps:checked ~ div.corps{
+input[type=radio].onglcorps:checked ~ div.corps,
+input[type=radio].onglspirit:checked ~ div.esprit,
+input[type=radio].onglquality:checked ~ div.esprit_qualite{
     display: block;
 } 
 
-input[type=radio].onglcabinet {
+input[type=radio].onglcabinet,
+input[type=radio].onglspirit {
     margin-left: 5px;
 }
 
 input[type=radio].onglcabinet,
 input[type=radio].onglarbre,
 input[type=radio].onglcorps,
-input[type=radio].onglesprit {
+input[type=radio].onglspirit,
+input[type=radio].onglquality {
     display: inline-block;
     opacity: 0;
     width: 110px;
     height: 40px;
 }
 
-input[type=radio].onglcabinet + span {
-}
-
-
 input[type=radio].onglcabinet + span,
 input[type=radio].onglarbre + span,
 input[type=radio].onglcorps + span,
-input[type=radio].onglesprit + span {
+input[type=radio].onglesprit + span,
+input[type=radio].onglspirit + span,
+input[type=radio].onglquality + span {
     text-align: center;
     display: inline-block;
     width: 110px;
@@ -175,12 +180,15 @@ input[type=radio].onglesprit + span {
     border-color: #888888;
     font-size: 18px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+	color: var(--blue_cabinet_data);
 }
 
 input[type=radio].onglcabinet:checked + span,
 input[type=radio].onglarbre:checked + span,
 input[type=radio].onglcorps:checked + span,
-input[type=radio].onglesprit:checked + span {
+input[type=radio].onglesprit:checked + span,
+input[type=radio].onglspirit:checked + span,
+input[type=radio].onglquality:checked + span {
     color: black;
     border-color: var(--blue_cabinet);
     font-family: 'EB Garamond';
@@ -2478,23 +2486,27 @@ input:checked + .slider:before {
 }
 
 .pnj_combat_titre_malus {
-	grid-column: 9;
-	grid-row: 5;
-	border: 1px solid red;
+    grid-column: 9;
+    grid-row: 2;
+    white-space: normal;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 32px;
+    line-height: 1;
+    font-weight: bold;
 }
 
 .pnj_combat_cadre_malus {  
-	grid-column: 9;
-	grid-row: 3/7;
-	border: 1px solid red;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_malus_pnj_cadre.png);
-	background-size: cover;
-	background-size: 150px 70px;
-	background-repeat: no-repeat;
-	padding: 10px;
-	margin-left: 9px;
-	margin-top: 6px;
-	z-index: 2;
+    grid-column: 9;
+    grid-row: 3/7;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_malus_cadre_pnj1.png);
+    background-size: contain;
+    background-size: 100px 67px;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin-left: 21px;
+    margin-top: 30px;
 }
 
 
@@ -3431,4 +3443,19 @@ span.pnj_info_combat {
     text-align: center;
     margin-left: -13px;
     box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
+}
+
+.charsheet input.malus_total_pnj {
+    font-size: 30px;
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    color: var(--red_cabinet);
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    width: 60px;
+    margin-left: 11px;
+    font-weight: bold;
+    margin-top: 2px;
+    text-align: center;
 }

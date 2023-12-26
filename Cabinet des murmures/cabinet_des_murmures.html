@@ -783,7 +783,9 @@
 		</div>
 		
 	<!-- MENU TAB -->
-		<div class="titre_feuille"><span data-i18n="spirit_title">Esprit</span></div>
+		<input type="radio" name="attr_tab_spirit" value="1" class="onglspirit" checked /><span data-i18n="spirit">Spirit</span>
+		<input type="radio" name="attr_tab_spirit" value="2" class="onglquality" /><span data-i18n="qualites_tab">QUALITÉS ET DÉFAUTS</span>
+		<!-- <div class="titre_feuille"><span data-i18n="spirit_title">Esprit</span></div> -->
 		<input class="esprit_name" type="text" name="attr_character_name">
 
 
@@ -1029,7 +1031,50 @@
 			<div class="esp_decor_droite"></div>
 			<div class="esp_decor_bas"></div>
 		</div>
-	</div> 
+	</div>
+	<div class="esprit_qualite">
+		<div class="wrapper_arbre">
+			<div class="qualite_arbre"><span data-i18n="qualites_and_defects">QUALITÉS ET DÉFAUTS</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="qualite_arbre_data">
+				<div class="wrapper_arbre_data"</div>
+					<div class="courage"><span data-i18n="courage">COURAGE</span></div>
+					<div class="intellect"><span data-i18n="intellect">INTELLECT</span></div>
+					<div class="sensibilite"><span data-i18n="sensitivity">SENSIBILITÉ</span></div>
+					<div class="autorite"><span data-i18n="authority">AUTORITÉ</span></div>
+					<div class="ouverture"><span data-i18n="opening">OUVERTURE</span></div>
+					<div class="serenite"><span data-i18n="serenity">SÉRÉNITÉ</span></div>
+					<div class="savoir"><span data-i18n="know">SAVOIR</span></div>
+					<div class="charisme"><span data-i18n="charisma">CHARISME</span></div>
+					<div class="attention"><span data-i18n="attention">ATTENTION</span></div>
+					<div class="coordination"><span data-i18n="coordination">COORDINATION</span></div>
+					<div class="courage_D"><input class="data" type="text" name="attr_D_courage" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="intellect_D"><input class="data" type="text" name="attr_D_intellect" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="sensibilite_D"><input class="data" type="text" name="attr_D_sensibilite" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="autorite_D"><input class="data" type="text" name="attr_D_autorite" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="ouverture_D"><input class="data" type="text" name="attr_D_ouverture" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="serenite_D"><input class="data" type="text" name="attr_D_serenite" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="savoir_D"><input class="data" type="text" name="attr_D_savoir" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="charisme_D"><input class="data" type="text" name="attr_D_charisme" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="attention_D"><input class="data" type="text" name="attr_D_attention" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="coordination_D"><input class="data" type="text" name="attr_D_coordination" placeholder="0"><span class="D_arbre">D</span></div>
+					<div class="imprudence"><span data-i18n="imprudence">IMPRUDENCE</span></div>
+					<div class="froideur"><span data-i18n="coldness">FROIDEUR</span></div>
+					<div class="superstition"><span data-i18n="superstition">SUPERSTITION</span></div>
+					<div class="intolerance"><span data-i18n="intolerance">INTOLÉRANCE</span></div>
+					<div class="jalousie"><span data-i18n="jealousy">JALOUSIE</span></div>
+					<div class="indifference"><span data-i18n="indifference">INDIFFÉRENCE</span></div>
+					<div class="orgueil"><span data-i18n="pride">ORGUEIL</span></div>
+					<div class="manie"><span data-i18n="mania">MANIE</span></div>
+					<div class="manipulation"><span data-i18n="rigging">MANIPULATION</span></div>
+					<div class="avidite"><span data-i18n="greed">AVIDITÉ</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!------------------>
@@ -1559,7 +1604,7 @@
 					<div class="pnj_combat_bonus_6"><input class="bonus" type="text" name="attr_defendre_pnj"></div>
 					
 					<div class="pnj_combat_titre_malus"><span data-i18n="total_malus_pnj">TOTAL MALUS</span></div>
-					<div class="pnj_combat_cadre_malus"><input class="malus_total" type="text" name="attr_malus_pnj_total"></div>
+					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="text" name="attr_malus_pnj_total"></div>
 			
 				</div>
 			</div>
