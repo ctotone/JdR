@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=EB+Garamond:ital,wght@0,500;0,700;1,500&family=IM+Fell+English:ital@0;1&family=Junge&family=Libre+Bodoni:ital,wght@0,500;0,700;1,500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 /* 
 font-family: 'Dancing Script', cursive;
 font-family: 'EB Garamond', serif;
 font-family: 'IM Fell English', serif;
 font-family: 'Junge', cursive;
 font-family: 'Libre Bodoni', serif; 
+font-family: 'Parisienne', cursive;
 */
 
 
@@ -429,6 +430,315 @@ input:checked + .slider:before {
 .charsheet input.sheet-radio[value="6"] ~ button.sheet-gt-6 > span.sheet-checked {display: none;}
 .charsheet input.sheet-radio[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
 .charsheet input.sheet-radio[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
+
+/*------------------------------------*\
+  #Radio Arbre de vie
+\*------------------------------------*/
+
+
+input[type=radio].radio_arbre1 {
+    padding: 0;
+    border: solid 1px var(--blue_cabinet);
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=radio].radio_arbre1 > span.sheet-checked{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--blue_cabinet);
+}
+/*------------------------------------*\
+  #Systeme couleur arbre de vie
+\*------------------------------------*/
+
+.charsheet{
+    --courage-background:"none";
+	--intellect-background:"none";
+	--autorite-background:"none";
+	--savoir-background:"none";
+	--sensibilite-background:"none";
+	--ouverture-background:"none";
+	--charisme-background:"none";
+	--attention-background:"none";
+	--coordination-background:"none";
+}
+.controller_courage[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_courage[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_courage[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_courage[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_courage[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_courage[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_courage[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_courage[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_intellect[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_intellect[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_intellect[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_intellect[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_intellect[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_intellect[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_intellect[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_intellect[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_autorite[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_autorite[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_autorite[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_autorite[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_autorite[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_autorite[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_autorite[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_autorite[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_savoir[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_savoir[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_savoir[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_savoir[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_savoir[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_savoir[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_savoir[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_savoir[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_sensibilite[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_sensibilite[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_sensibilite[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_sensibilite[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_sensibilite[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_sensibilite[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_sensibilite[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_sensibilite[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_ouverture[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_ouverture[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_ouverture[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_ouverture[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_ouverture[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_ouverture[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_ouverture[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_ouverture[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_charisme[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_charisme[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_charisme[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_charisme[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_charisme[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_charisme[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_charisme[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_charisme[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_serenite[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_serenite[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_serenite[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_serenite[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_serenite[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_serenite[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_serenite[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_serenite[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_attention[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_attention[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_attention[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_attention[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_attention[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_attention[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_attention[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_attention[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+.controller_coordination[value*="blanc"] ~ *{
+	--courage-background: none;
+}
+.controller_coordination[value*="rouge"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+}
+.controller_coordination[value*="bleu"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+}
+.controller_coordination[value*="jaune"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+}
+.controller_coordination[value*="orange"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+}
+.controller_coordination[value*="violet"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+}
+.controller_coordination[value*="vert"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+}
+.controller_coordination[value*="noir"] ~ *{
+    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+}
+
+
+.control1-label{
+    background-color:var(--control1-bg);
+}
+.control2-label{
+    background-color:var(--control2-bg);
+}
+.control3-label{
+    background-color:var(--control3-bg);
+}
+.control4-label{
+    background-color:var(--control3-bg);
+}
+.control5-label{
+    background-color:var(--control3-bg);
+}
+.control6-label{
+    background-color:var(--control3-bg);
+}
 
 /*------------------------------------*\
   Wrapper Cabinet
@@ -899,18 +1209,34 @@ input:checked + .slider:before {
     font-weight: bold;
 }
 
+.qualite_arbre_esprit {
+    grid-column: 2;
+    grid-row: 1/25;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-top: 20px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi__arbre_sized.png);
+    background-size: contain;
+    background-repeat: no-repeat;	
+    display: grid;
+    font-family: 'IM Fell English, serif';
+	scale: 0.9;
+}
+
 .qualite_arbre_data {
     grid-column: 2;
     grid-row: 1/25;
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
-    margin-top: 50px;
+    margin-top: 80px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi__arbre_sized.png);
     background-size: contain;
     background-repeat: no-repeat;	
     display: grid;
     font-family: 'IM Fell English, serif';
+	scale: 1.1;
 }
 
 /*------------------------------------*\
@@ -1649,7 +1975,334 @@ input:checked + .slider:before {
 }
 
 /*------------------------------------*\
-  Wrapper Arbre_data
+  Wrapper Arbre_esprit
+\*------------------------------------*/
+
+.wrapper_arbre_esprit{  
+	display: grid;
+    grid-template-columns: 130px 130px 130px;
+	grid-auto-rows: 1px;
+}
+
+.arbre_esprit_courage {
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-top: -8px;
+}
+
+.arbre_esprit_intellect {
+	grid-column: 1;
+	grid-row: 66;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -10px;
+}
+
+.arbre_esprit_sensibilite {
+    grid-column: 3;
+    grid-row: 66;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-left: 10px;
+}
+
+.arbre_esprit_autorite {
+	grid-column: 1;
+	grid-row: 201;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -10px;
+}
+
+.arbre_esprit_ouverture {
+    grid-column: 3;
+    grid-row: 201;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    position: static;
+    margin-left: 10px;
+}
+
+.arbre_esprit_serenite {
+	grid-column: 2;
+	grid-row: 243;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.arbre_esprit_savoir {
+	grid-column: 1;
+	grid-row: 337;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: -15px;
+}
+
+.arbre_esprit_charisme {
+	grid-column: 3;
+	grid-row: 337;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+    margin-left: 10px;
+}
+
+.arbre_esprit_attention {
+	grid-column: 2;
+	grid-row: 379;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.arbre_esprit_coordination {
+	grid-column: 2;
+	grid-row: 514;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+	position: static;
+}
+
+.arbre_esprit_courage_D {    
+    grid-column: 2;
+    grid-row: 30;
+    position: static;
+    margin-left: 25px;
+}
+
+.arbre_esprit_intellect_D {
+    grid-column: 1;
+    grid-row: 103;
+    position: static;
+    margin-left: 20px;
+}
+
+.arbre_esprit_sensibilite_D {
+	grid-column: 3;
+	grid-row: 103;
+	position: static;
+	margin-left: 30px;
+}
+
+.arbre_esprit_autorite_D {
+    grid-column: 1;
+    grid-row: 240;
+    position: static;
+    margin-left: 20px;
+}
+
+.arbre_esprit_ouverture_D {
+    grid-column: 3;
+    grid-row: 240;
+    position: static;
+    margin-left: 30px;
+}
+
+.arbre_esprit_serenite_D {
+	grid-column: 2;
+	grid-row: 280;
+	position: static;
+    margin-left: 25px;
+}
+
+.arbre_esprit_savoir_D {
+	grid-column: 1;
+	grid-row: 375;
+	position: static;
+    margin-left: 20px;
+}
+
+.arbre_esprit_charisme_D {
+    grid-column: 3;
+    grid-row: 375;
+    position: static;
+    margin-left: 30px;
+}
+
+.arbre_esprit_attention_D {
+	grid-column: 2;
+	grid-row: 415;
+	position: static;
+    margin-left: 25px;
+}
+
+.arbre_esprit_coordination_D {
+	grid-column: 2;
+	grid-row: 552;
+	position: static;
+    margin-left: 25px;
+}
+
+.arbre_esprit_imprudence {
+    grid-column: 2;
+    grid-row: 104;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_froideur {
+    grid-column: 1;
+    grid-row: 176;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 10px;
+    position: static;
+}
+
+.arbre_esprit_superstition {
+    grid-column: 3;
+    grid-row: 176;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_intolerance {
+    grid-column: 1;
+    grid-row: 312;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 10px;
+    position: static;
+}
+
+.arbre_esprit_jalousie {
+    grid-column: 3;
+    grid-row: 312;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_indifference {
+    grid-column: 2;
+    grid-row: 353;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_orgueil {
+    grid-column: 1;
+    grid-row: 448;
+    text-align: center;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_manipulation {
+    grid-column: 3;
+    grid-row: 448;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_manie {
+    grid-column: 2;
+    grid-row: 488;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+    position: static;
+}
+
+.arbre_esprit_avidite {
+	grid-column: 2;
+	grid-row: 626;
+    text-align: right;
+    color: var(--red_cabinet);
+    font-size: 11px;
+	position: static;
+}
+
+.arbre_esprit_imprudence_input {    
+	grid-column: 2;
+	grid-row: 68;
+	margin-left: 70px;
+}
+
+.arbre_esprit_froideur_input {  
+	grid-column: 1;
+	grid-row: 140;
+	margin-left: 25px;
+}
+
+.arbre_esprit_superstition_input {
+    grid-column: 3;
+    grid-row: 140;
+	margin-left: 77px;
+}
+
+.arbre_esprit_intolerance_input {
+    grid-column: 1;
+    grid-row: 275;
+	margin-left: 25px;
+}
+
+.arbre_esprit_jalousie_input {
+    grid-column: 3;
+    grid-row: 275;
+	margin-left: 77px;
+}
+
+.arbre_esprit_indifference_input {
+    grid-column: 2;
+    grid-row: 317;
+	margin-left: 70px;
+}
+
+.arbre_esprit_orgueil_input {
+    grid-column: 1;
+    grid-row: 411;
+	margin-left: 25px;
+}
+
+.arbre_esprit_manipulation_input {
+    grid-column: 3;
+    grid-row: 411;
+	margin-left: 77px;
+}
+
+.arbre_esprit_manie_input {
+    grid-column: 2;
+    grid-row: 453;
+	margin-left: 70px;
+}
+
+.arbre_esprit_avidite_input {
+	grid-column: 2;
+	grid-row: 590;
+	margin-left: 70px;
+}
+
+/*------------------------------------*\
+  Wrapper Arbre_de_vie
 \*------------------------------------*/
 
 .wrapper_arbre_data{  
@@ -1660,7 +2313,7 @@ input:checked + .slider:before {
 
 .courage {
     grid-column: 2;
-    grid-row: 7;
+    grid-row: 3;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1670,7 +2323,7 @@ input:checked + .slider:before {
 
 .intellect {
 	grid-column: 1;
-	grid-row: 70;
+	grid-row: 66;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1680,7 +2333,7 @@ input:checked + .slider:before {
 
 .sensibilite {
     grid-column: 3;
-    grid-row: 70;
+    grid-row: 66;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1690,7 +2343,7 @@ input:checked + .slider:before {
 
 .autorite {
 	grid-column: 1;
-	grid-row: 205;
+	grid-row: 201;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1700,7 +2353,7 @@ input:checked + .slider:before {
 
 .ouverture {
     grid-column: 3;
-    grid-row: 205;
+    grid-row: 201;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1710,7 +2363,7 @@ input:checked + .slider:before {
 
 .serenite {
 	grid-column: 2;
-	grid-row: 247;
+	grid-row: 243;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1719,7 +2372,7 @@ input:checked + .slider:before {
 
 .savoir {
 	grid-column: 1;
-	grid-row: 341;
+	grid-row: 337;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1729,7 +2382,7 @@ input:checked + .slider:before {
 
 .charisme {
 	grid-column: 3;
-	grid-row: 341;
+	grid-row: 337;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1739,7 +2392,7 @@ input:checked + .slider:before {
 
 .attention {
 	grid-column: 2;
-	grid-row: 383;
+	grid-row: 379;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -1748,81 +2401,101 @@ input:checked + .slider:before {
 
 .coordination {
 	grid-column: 2;
-	grid-row: 518;
+	grid-row: 514;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
 }
 
-.courage_D {    
-    grid-column: 2;
-    grid-row: 30;
-    position: static;
-    margin-left: 25px;
+.courage_D {        
+	grid-column: 2;
+	grid-row: 13/91;
+	background-image: var(--courage-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 28px;
 }
 
 .intellect_D {
     grid-column: 1;
-    grid-row: 103;
-    position: static;
-    margin-left: 20px;
+    grid-row: 84/157;
+	background-image: var(--intellect-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 26px;
 }
 
 .sensibilite_D {
 	grid-column: 3;
-	grid-row: 103;
-	position: static;
-	margin-left: 30px;
+	grid-row: 84/157;
+	background-image: var(--sensibilite-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 36px;
 }
 
 .autorite_D {
     grid-column: 1;
-    grid-row: 240;
-    position: static;
-    margin-left: 20px;
+    grid-row: 220/292;
+	background-image: var(--autorite-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 26px;
 }
 
 .ouverture_D {
     grid-column: 3;
-    grid-row: 240;
-    position: static;
-    margin-left: 30px;
+    grid-row: 220/292;
+	background-image: var(--ouverture-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 36px;
 }
 
 .serenite_D {
 	grid-column: 2;
-	grid-row: 280;
-	position: static;
-    margin-left: 25px;
+	grid-row: 261/333;
+	background-image: var(--serenite-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 28px;
 }
 
 .savoir_D {
 	grid-column: 1;
-	grid-row: 375;
-	position: static;
-    margin-left: 20px;
+	grid-row: 356/428;
+	background-image: var(--savoir-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 26px;
 }
 
 .charisme_D {
     grid-column: 3;
-    grid-row: 375;
-    position: static;
-    margin-left: 30px;
+    grid-row: 356/428;
+	background-image: var(--charisme-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 36px;
 }
 
 .attention_D {
 	grid-column: 2;
-	grid-row: 415;
-	position: static;
-    margin-left: 25px;
+	grid-row: 397/469;
+	background-image: var(--attention-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 28px;
 }
 
 .coordination_D {
 	grid-column: 2;
-	grid-row: 552;
-	position: static;
-    margin-left: 25px;
+	grid-row: 533/605;
+	background-image: var(--coordination-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 28px;
 }
 
 .imprudence {
@@ -1914,6 +2587,109 @@ input:checked + .slider:before {
     font-size: 11px;
 	position: static;
 }
+
+.imprudence_input {    
+	grid-column: 2;
+	grid-row: 68;
+	margin-left: 70px;
+}
+
+.froideur_input {  
+	grid-column: 1;
+	grid-row: 140;
+	margin-left: 25px;
+}
+
+.superstition_input {
+    grid-column: 3;
+    grid-row: 140;
+	margin-left: 77px;
+}
+
+.intolerance_input {
+    grid-column: 1;
+    grid-row: 275;
+	margin-left: 25px;
+}
+
+.jalousie_input {
+    grid-column: 3;
+    grid-row: 275;
+	margin-left: 77px;
+}
+
+.indifference_input {
+    grid-column: 2;
+    grid-row: 317;
+	margin-left: 70px;
+}
+
+.orgueil_input {
+    grid-column: 1;
+    grid-row: 411;
+	margin-left: 25px;
+}
+
+.manipulation_input {
+    grid-column: 3;
+    grid-row: 411;
+	margin-left: 77px;
+}
+
+.manie_input {
+    grid-column: 2;
+    grid-row: 453;
+	margin-left: 70px;
+}
+
+.avidite_input {
+	grid-column: 2;
+	grid-row: 590;
+	margin-left: 70px;
+}
+
+.radio_courage_blanc {
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.radio_courage_rouge {
+	grid-column: 1;
+	grid-row: 10;
+}
+
+.radio_courage_bleu {
+	grid-column: 1;
+	grid-row: 20;
+}
+
+.radio_courage_jaune {
+	grid-column: 1;
+	grid-row: 30;
+}
+
+.radio_courage_orange {
+	grid-column: 1;
+	grid-row: 40;
+}
+
+.radio_courage_vert {
+	grid-column: 1;
+	grid-row: 50;
+}
+
+
+.radio_courage_violet {
+	grid-column: 1;
+	grid-row: 60;
+}
+
+
+.radio_courage_noir {
+	grid-column: 1;
+	grid-row: 70;
+}
+	
 
 /*------------------------------------*\
   Wrapper Bouton Corps
@@ -2548,8 +3324,8 @@ input[type=number] {
 }
 
 .charsheet input.esprit_name {
-	margin-left: 200px;
-    margin-top: -3px;
+	margin-left: 149px;
+    margin-top: -1px;
 }
 	
 
@@ -2577,16 +3353,17 @@ input[type=number] {
 .charsheet textarea.esp_corruption,
 .charsheet textarea.esp_xp,
 .charsheet textarea.pnj_routine,
-.charsheet textarea.pnj_notes {  
-    background-color: transparent;
-    font-family: 'IM Fell English, serif';
-    font-size: 13px;
-    color: var(--blue_cabinet_data);
-    outline: none;
-    resize: none;
-    padding: 7px;
-    box-shadow: 1px 1px 0px 1px #293e4759;
+.charsheet textarea.pnj_notes {    
+	background-color: transparent;
+	font-family: 'Parisienne', cursive;
+	font-size: 20px;
+	color: var(--marron_cabinet);
+	outline: none;
+	resize: none;
+	padding: 5px;
+	box-shadow: 1px 1px 0px 1px #293e4759;
 	font-weight: normal;
+	line-height: 1.1;
 }
 
 
@@ -2603,7 +3380,7 @@ input[type=number] {
 
 .charsheet textarea.cab_contact {
 	width: 420px;
-	height: 150px;
+	height: 155px;
 }
 
 .charsheet textarea.cab_note {
@@ -2618,7 +3395,7 @@ input[type=number] {
 
 .charsheet textarea.cab_adversaire {
 	width: 290px;
-	height: 150px;
+	height: 155px;
 }
 
 .charsheet textarea.cab_grace {
@@ -2627,13 +3404,13 @@ input[type=number] {
 }
 
 .charsheet textarea.cab_xp,
-.charsheet textarea.cor_malus {
+.charsheet textarea.cor_malus {  
 	width: 275px;
 	height: 55px;
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 16px;
-	color: var(--blue_cabinet);
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	color: var(--marron_cabinet);
 	border: none;
 	outline: none;
 	resize: none;
@@ -2648,7 +3425,7 @@ input[type=number] {
 .charsheet textarea.cor_sequelles_legere,
 .charsheet textarea.cor_sequelles_grave {
     width: 120px;
-    height: 56px;
+    height: 66px;
 }
 
 .charsheet textarea.esp_profil {  
@@ -2659,7 +3436,7 @@ input[type=number] {
 .charsheet textarea.esp_contact,
 .charsheet textarea.esp_adversaire {  
     width: 95%;
-	height: 55px;
+	height: 70px;
 }
 
 .charsheet textarea.esp_routine {  
@@ -2682,13 +3459,13 @@ input[type=number] {
     margin-left: 2px;
     text-align: center;
     vertical-align: middle;
-    font-family: 'IM Fell English, serif';
-    font-size: 17px;
+    font-family:  'Dancing Script', cursive;
+    font-size: 20px;
 }
 
 .charsheet textarea.pnj_routine { 
     width: 92%;
-    height: 55px;
+    height: 66px;
 }
 
 .charsheet textarea.pnj_notes { 
@@ -2737,16 +3514,17 @@ input[type=number] {
 .pnj_attributs_col_2 input.data,
 .pnj_attributs_col_3 input.data,
 .pnj_acquis_data input.data,
-.pnj_pouvoir_data input.data{
+.pnj_pouvoir_data input.data{  
 	border-radius: 0px;
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 16px;
-	color: var(--blue_cabinet_data);
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
-    padding-bottom: 2px;
+	padding-bottom: 2px;
 	width: 100px;
+	margin-top: -5px;
 }
 
 .pnj_pouvoir_data input.data {
@@ -2758,19 +3536,18 @@ input[type=number] {
 .pnj_attributs_col_2 input.bonus,
 .pnj_attributs_col_3 input.bonus,
 .pnj_acquis_data input.bonus,
-.pnj_pouvoir_data input.bonus {
+.pnj_pouvoir_data input.bonus {  
 	border: none;
-    border-radius: 0px;
-    background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
-    text-align: center;
-    font-size: 18px;
-    padding-bottom: 0px;
-    width: 27px;
-    font-weight: bold;
-    outline: none;
-    margin-top: -3px;
+	border-radius: 0px;
+	background-color: transparent;
+	font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
+	text-align: center;
+	font-size: 20px;
+	padding-bottom: 0px;
+	width: 27px;
+	font-weight: bold;
+	outline: none;
 }
 
 .pnj_pouvoir_data input.bonus {
@@ -2817,20 +3594,21 @@ input[type=number] {
 .acquis_collectifs_data3 input.bonus {
 	border-radius: 0px;
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	font-size: 14px;
-	color: var(--blue_cabinet_data);
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
-    padding-bottom: 2px;
+	padding-bottom: 2px;
+	margin-top: -5px;
 }
 
 
 .acquis_collectifs_data1 input.bonus,
 .acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus {
-	font-size: 16px;
-	color: var(--blue_cabinet);
+.acquis_collectifs_data3 input.bonus {  
+	font-size: 17px;
+	color: var(--marron_cabinet);
 }
 
 .acquis_collectifs_data1 input.data,
@@ -2853,37 +3631,57 @@ input[type=number] {
 .attributs_bonus1 input.bonus,
 .attributs_bonus2 input.bonus,
 .attributs_bonus3 input.bonus {
-    border-radius: 30px;
-    background-color: transparent;
-    font-family: 'IM Fell English, serif';
-    font-size: 18px;
-    color: var(--blue_cabinet);
-    outline: none;
-    border: 2px solid;
-    width: 33px;
-    font-weight: bold;
-    text-align: right;
-    margin-left: -14px;
+	border-radius: 30px;
+	background-color: transparent;
+	font-family: 'Dancing Script';
+	font-size: 18px;
+	color: var(--blue_cabinet);
+	outline: none;
+	border: 2px solid;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-style: double;
+	width: 29px;
+	height: 29px;
+	font-weight: bold;
+	text-align: right;
+	margin-left: -13px;
+	box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
 }
 
 .objet_esprit_data input.data,
 .corruption_data input.data,
-.charsheet input.arme {
+.charsheet input.arme,
+.charsheet input.arme_center {
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet_data);
+	font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
 	border-radius: 0px;
-    border-bottom: solid 1px var(--marron_cabinet);
-	margin-top: -5px;
+	border-bottom: solid 1px var(--marron_cabinet);
+	margin-top: -10px;
 	width: 100%;
-    padding-bottom: 2px;
+	padding-bottom: 2px;
 	font-weight: normal;
+	font-size: 20px;
 }
 
 .charsheet input.arme {
-	font-size: 12px;
+	font-size: 16px;
+}
+
+.charsheet input.arme_center {
+	text-align: center;
 }
 
 .sante_femme_data p,
@@ -3079,7 +3877,7 @@ span.aspect_nom_plus {
 .aspect_bonus input.bonus {
     border-radius: 30px;
     background-color: transparent;
-    font-family: 'IM Fell English, serif';
+    font-family: 'Dancing Script';
     font-size: 18px;
     color: var(--blue_cabinet);
     outline: none;
@@ -3117,17 +3915,18 @@ span.aspect_nom_plus {
 .acquis_2_data input.bonus,
 .acquis_3_data input.bonus {
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
+    font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
 }
 
 .acquis_1_data input.data,
 .acquis_2_data input.data,
-.acquis_3_data input.data {
+.acquis_3_data input.data {  
 	width: 105px;
-	font-size: 14px;
+	font-size: 20px;
+	margin-top: -5px;
 }
 
 .acquis_1_data input.bonus,
@@ -3171,18 +3970,22 @@ div.niveau3_p {
 
 .niveau1_value input.data,
 .niveau2_value input.data,
-.niveau3_value input.data {
+.niveau3_value input.data {  
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
+	font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
 	border-radius: 0px;
-    border-bottom: solid 1px var(--marron_cabinet);
-    width: 25px;
-    font-weight: bold;
-    font-size: 17px;
-    margin-left: -20px;
+	border-bottom: solid 1px var(--marron_cabinet);
+	width: 25px;
+	font-weight: bold;
+	font-size: 17px;
+	margin-left: -20px;
+	text-align: center;
 }
 
 .niveau1_data1 input.data,
@@ -3195,15 +3998,18 @@ div.niveau3_p {
 .niveau3_data2 input.data,
 .niveau3_data3 input.data {
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
+	font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
 	border-radius: 0px;
-    border-bottom: solid 1px var(--marron_cabinet);
+	border-bottom: solid 1px var(--marron_cabinet);
 	margin-top: -5px;
-    width: 110px;
-    font-size: 14px;
+	width: 110px;
+	font-size: 20px;
 }
 
 .niveau1_s1 input.data,
@@ -3216,15 +4022,15 @@ div.niveau3_p {
 .niveau3_s2 input.data,
 .niveau3_s3 input.data {
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
+    font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
 	border-radius: 0px;
     border-bottom: solid 1px var(--marron_cabinet);
 	margin-top: -5px;
     width: 35px;
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -3238,21 +4044,22 @@ div.niveau3_p {
 .niveau3_p2 input.data,
 .niveau3_p3 input.data {
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
-	color: var(--blue_cabinet);
+    font-family: 'Dancing Script', cursive;
+	color: var(--marron_cabinet);
 	outline: none;
 	border: none;
 	border-radius: 0px;
     border-bottom: solid 1px var(--marron_cabinet);
 	margin-top: -5px;
     width: 35px;
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
 }
 
-.qualite_arbre_data input.data {
+.qualite_arbre_data input.data,
+.qualite_arbre_esprit input.data{
     background-color: transparent;
-    font-family: 'IM Fell English, serif';
+    font-family: 'Dancing Script';
     outline: none;
     border: none;
     border-radius: 0px;
@@ -3266,7 +4073,25 @@ div.niveau3_p {
     color: var(--blue_cabinet_data);
 }
 
-.qualite_arbre_data input.data::placeholder {
+.qualite_arbre_data input.data::placeholder,
+.qualite_arbre_esprit input.data::placeholder{
+  color: #43586187;
+}
+
+.qualite_arbre_data input.data_defaut,
+.qualite_arbre_esprit input.data_defaut{
+	  background-color: transparent;
+	font-family: 'Dancing Script';
+	outline: none;
+	border-radius: 0px;
+	border: none;
+	width: 30px;
+	font-size: 24px;
+	text-align: center;
+	color: var(--blue_cabinet_data);
+}
+
+.qualite_arbre_data input.data_defaut::placeholder {
   color: #43586187;
 }
 
