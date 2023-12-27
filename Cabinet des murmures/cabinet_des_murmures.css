@@ -23,6 +23,13 @@ font-family: 'Parisienne', cursive;
     --red_cabinet: #772d34b3;
 	--marron_cabinet: #615045;
 	--dots_little_cabinet: #000;
+	--bouton_blanc:#ffffff;
+	--bouton_rouge:#ff000040;
+	--bouton_bleu:#0000ff75;
+	--bouton_jaune:#e5f725;
+	--bouton_orange:#ffa5009e;
+	--bouton_vert:#16b52d7a;
+	--bouton_violet:#b01de796;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
     background-size: contain;
     color: var(--blue_cabinet);
@@ -436,25 +443,171 @@ input:checked + .slider:before {
 \*------------------------------------*/
 
 
-input[type=radio].radio_arbre1 {
-    padding: 0;
-    border: solid 1px var(--blue_cabinet);
-    cursor: pointer;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+input[type="radio"] {
+	opacity: 0;
 }
 
-input[type=radio].radio_arbre1 > span.sheet-checked{
-    width: 10px;
-    height: 10px;
+.radio_blanc input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
     border-radius: 50%;
     background: buttontext;
-    background-color: var(--blue_cabinet);
+    background-color: var(--bouton_blanc);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
 }
+
+.radio_blanc input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_blanc);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_rouge input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_rouge);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_rouge input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_rouge);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_bleu input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_bleu);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_bleu input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_bleu);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_jaune input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_jaune);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_jaune input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_jaune);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_orange input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_orange);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_orange input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_orange);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_vert input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_vert);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_vert input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_vert);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+
+.radio_violet input[type="radio"] + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_violet);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+}
+
+.radio_violet input[type="radio"]:checked + label {
+    width: 0px;
+    height: 7px;
+    border-radius: 50%;
+    background: buttontext;
+    background-color: var(--bouton_violet);
+    margin-top: -14px;
+    padding-right: 7px;
+    opacity: 0.5;
+  
+}
+ 
 /*------------------------------------*\
   #Systeme couleur arbre de vie
 \*------------------------------------*/
@@ -496,228 +649,228 @@ input[type=radio].radio_arbre1 > span.sheet-checked{
 }
 
 .controller_intellect[value*="blanc"] ~ *{
-	--courage-background: none;
+	--intellect-background: none;
 }
 .controller_intellect[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_intellect[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_intellect[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_intellect[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_intellect[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_intellect[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_intellect[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_autorite[value*="blanc"] ~ *{
-	--courage-background: none;
+	--autorite-background: none;
 }
 .controller_autorite[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_autorite[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_autorite[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_autorite[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_autorite[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_autorite[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_autorite[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_savoir[value*="blanc"] ~ *{
-	--courage-background: none;
+	--savoir-background: none;
 }
 .controller_savoir[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_savoir[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_savoir[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_savoir[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_savoir[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_savoir[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_savoir[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_sensibilite[value*="blanc"] ~ *{
-	--courage-background: none;
+	--sensibilite-background: none;
 }
 .controller_sensibilite[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_sensibilite[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_sensibilite[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_sensibilite[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_sensibilite[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_sensibilite[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_sensibilite[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_ouverture[value*="blanc"] ~ *{
-	--courage-background: none;
+	--ouverture-background: none;
 }
 .controller_ouverture[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_ouverture[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_ouverture[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_ouverture[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_ouverture[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_ouverture[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_ouverture[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_charisme[value*="blanc"] ~ *{
-	--courage-background: none;
+	--charisme-background: none;
 }
 .controller_charisme[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_charisme[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_charisme[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_charisme[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_charisme[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_charisme[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_charisme[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_serenite[value*="blanc"] ~ *{
-	--courage-background: none;
+	--serenite-background: none;
 }
 .controller_serenite[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_serenite[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_serenite[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_serenite[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_serenite[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_serenite[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_serenite[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_attention[value*="blanc"] ~ *{
-	--courage-background: none;
+	--attention-background: none;
 }
 .controller_attention[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_attention[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_attention[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_attention[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_attention[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_attention[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_attention[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_coordination[value*="blanc"] ~ *{
-	--courage-background: none;
+	--coordination-background: none;
 }
 .controller_coordination[value*="rouge"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_rouge.png);
 }
 .controller_coordination[value*="bleu"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_bleu.png);
 }
 .controller_coordination[value*="jaune"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_jaune.png);
 }
 .controller_coordination[value*="orange"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_orange.png);
 }
 .controller_coordination[value*="violet"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_violet.png);
 }
 .controller_coordination[value*="vert"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
 .controller_coordination[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 
@@ -2423,7 +2576,7 @@ input[type=radio].radio_arbre1 > span.sheet-checked{
 	background-image: var(--intellect-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 26px;
+	margin-left: 25px;
 }
 
 .sensibilite_D {
@@ -2441,7 +2594,7 @@ input[type=radio].radio_arbre1 > span.sheet-checked{
 	background-image: var(--autorite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 26px;
+	margin-left: 25px;
 }
 
 .ouverture_D {
@@ -2468,7 +2621,7 @@ input[type=radio].radio_arbre1 > span.sheet-checked{
 	background-image: var(--savoir-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 26px;
+	margin-left: 25px;
 }
 
 .charisme_D {
@@ -2648,48 +2801,75 @@ input[type=radio].radio_arbre1 > span.sheet-checked{
 	margin-left: 70px;
 }
 
-.radio_courage_blanc {
-	grid-column: 1;
-	grid-row: 3;
+.courage_contener {
+    grid-column: 2;
+    grid-row: 12/85;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.radio_courage_rouge {
-	grid-column: 1;
-	grid-row: 10;
+.intellect_contener {
+    grid-column: 2;
+    grid-row: 80/200;
+    margin-left: -124px;
+    margin-right: 10px;
 }
 
-.radio_courage_bleu {
-	grid-column: 1;
-	grid-row: 20;
+	
+/*------------------------------------*\
+  Wrapper boutons arbre de vie
+\*------------------------------------*/
+
+.wrapper_arbre_bouttons{  
+	display: grid;
+    grid-template-columns: 25px 25px 25px;
+	grid-auto-rows: 1px;
+    margin-top: -3px;
 }
 
-.radio_courage_jaune {
-	grid-column: 1;
-	grid-row: 30;
+.radio_blanc {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: 20px;
 }
 
-.radio_courage_orange {
-	grid-column: 1;
-	grid-row: 40;
+.radio_rouge {
+    grid-column: 1;
+    grid-row: 11;
+    margin-left: 12px;
 }
 
-.radio_courage_vert {
+.radio_bleu {
 	grid-column: 1;
-	grid-row: 50;
+	grid-row: 21;
+    margin-left: 8px;
 }
 
+.radio_jaune {
+	grid-column: 1;
+	grid-row: 31;
+    margin-left: 6px;
+}
 
-.radio_courage_violet {
+.radio_orange {
+	grid-column: 1;
+	grid-row: 41;
+    margin-left: 8px;
+}
+
+.radio_vert {
+	grid-column: 1;
+	grid-row: 51;
+    margin-left: 12px;
+}
+
+.radio_violet {
 	grid-column: 1;
 	grid-row: 60;
+    margin-left: 19px;
 }
 
 
-.radio_courage_noir {
-	grid-column: 1;
-	grid-row: 70;
-}
-	
 
 /*------------------------------------*\
   Wrapper Bouton Corps

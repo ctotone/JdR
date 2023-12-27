@@ -733,6 +733,8 @@
 			<div class="qualite_arbre_data">
 				<div class="wrapper_arbre_data"</div>
 				<input type='hidden' class='controller_courage' name='attr_controller_courage' value='blanc'>
+				<input type='hidden' class='controller_intellect' name='attr_controller_intellect' value='blanc'>
+				<!-- FINIR LES HIDDEN et integrer les autres bouttons - soucis sur intel autorité et savoir-->
 					<div class="courage"><span data-i18n="courage">COURAGE</span></div>
 					<div class="intellect"><span data-i18n="intellect">INTELLECT</span></div>
 					<div class="sensibilite"><span data-i18n="sensitivity">SENSIBILITÉ</span></div>
@@ -744,15 +746,29 @@
 					<div class="attention"><span data-i18n="attention">ATTENTION</span></div>
 					<div class="coordination"><span data-i18n="coordination">COORDINATION</span></div>
 					<div class="courage_D"><input type='hidden' class='controller' name='attr_controller_courage' value='blanc'></div>
-					<div class="radio_courage_blanc"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='blanc' checked></div>
-					<div class="radio_courage_rouge"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='rouge'></div>
-					<div class="radio_courage_bleu"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='bleu'></div>
-					<div class="radio_courage_jaune"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='jaune'></div>
-					<div class="radio_courage_orange"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='orange'></div>
-					<div class="radio_courage_vert"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='vert'></div>
-					<div class="radio_courage_violet"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='violet'></div>
-					<div class="radio_courage_noir"><input type='radio' class="radio_arbre1" name='attr_controller_courage' value='noir'></div>
+					<div class="courage_contener">
+						<div class="wrapper_arbre_bouttons">
+							<div class="radio_blanc"><input type='radio' name='attr_controller_courage' id="blanc" value='blanc'><label for="blanc"></label></div>
+							<div class="radio_rouge"><input type='radio' name='attr_controller_courage' id="rouge" value='rouge'><label for="rouge"></label></div>
+							<div class="radio_bleu"><input type='radio' name='attr_controller_courage' id="bleu" value='bleu'><label for="bleu"></label></div>
+							<div class="radio_jaune"><input type='radio' name='attr_controller_courage' id="jaune" value='jaune'><label for="jaune"></label></div>
+							<div class="radio_orange"><input type='radio' name='attr_controller_courage' id="orange" value='orange'><label for="orange"></label></div>
+							<div class="radio_vert"><input type='radio' name='attr_controller_courage' id="vert" value='vert'><label for="vert"></label></div>
+							<div class="radio_violet"><input type='radio' name='attr_controller_courage' id="violet" value='violet'><label for="violet"></label></div>
+						</div>
+					</div>
 					<div class="intellect_D"><input type='hidden' class='controller' name='attr_controller_intellect' value='blanc'></div>
+					<div class="intellect_contener">
+						<div class="wrapper_arbre_bouttons">
+							<div class="radio_blanc"><input type='radio' name='attr_controller_intellect' id="intel_blanc" value='blanc'><label for="intel_blanc"></label></div>
+							<div class="radio_rouge"><input type='radio' name='attr_controller_intellect' id="intel_rouge" value='rouge'><label for="intel_rouge"></label></div>
+							<div class="radio_bleu"><input type='radio' name='attr_controller_intellect' id="intel_bleu" value='bleu'><label for="intel_bleu"></label></div>
+							<div class="radio_jaune"><input type='radio' name='attr_controller_intellect' id="intel_jaune" value='jaune'><label for="intel_jaune"></label></div>
+							<div class="radio_orange"><input type='radio' name='attr_controller_intellect' id="intel_orange" value='orange'><label for="intel_orange"></label></div>
+							<div class="radio_vert"><input type='radio' name='attr_controller_intellect' id="intel_vert" value='vert'><label for="intel_vert"></label></div>
+							<div class="radio_violet"><input type='radio' name='attr_controller_intellect' id="intel_violet" value='violet'><label for="intel_violet"></label></div>
+						</div>
+					</div>
 					<div class="sensibilite_D"><input type='hidden' class='controller' name='attr_controller_sensibilite' value='blanc'></div>
 					<div class="autorite_D"><input type='hidden' class='controller' name='attr_controller_autorite' value='blanc'></div>
 					<div class="ouverture_D"><input type='hidden' class='controller' name='attr_controller_ouverture' value='blanc'></div>
@@ -773,52 +789,7 @@
 					<div class="avidite"><span data-i18n="greed">AVIDITÉ</span></div>
 				</div>
 			</div>
-		</div>
-		
-		
-<!-- 		
-<input type='hidden' class='controller_courage' name='attr_controller_courage' value='blanc'>
-<div class='container'>
-    <h4>Controllers</h4>
-    <label class='control1-label'><input type='radio' name='attr_controller_courage' value='blanc' checked><span>Blanc</span></label>
-    <label class='control2-label'><input type='radio' name='attr_controller_courage' value='rouge'><span>Rouge</span></label>
-    <label class='control3-label'><input type='radio' name='attr_controller_courage' value='bleu'><span>Bleu</span></label>
-	<label class='control4-label'><input type='radio' name='attr_controller_courage' value='jaune'><span>Jaune</span></label>
-	<label class='control5-label'><input type='radio' name='attr_controller_courage' value='orange'><span>Orange</span></label>
-	<label class='control6-label'><input type='radio' name='attr_controller_courage' value='vert'><span>Vert</span></label>
-	<label class='control7-label'><input type='radio' name='attr_controller_courage' value='violet'><span>Violet</span></label>
-	<label class='control8-label'><input type='radio' name='attr_controller_courage' value='noir'><span>Noir</span></label>
-</div>
-<div class='container'>
-    <h4>Receivers</h4>
-    <span class='receiver_courage'>This text changes based on which option you've chosen</span>
-</div>
-
-<input type='hidden' class='controller_intellect' name='attr_controller_intellect' value='blanc'>
-<div class='container'>
-    <h4>Controllers</h4>
-    <label class='control1-label'><input type='radio' name='attr_controller_intellect' value='blanc' checked><span>Blanc</span></label>
-    <label class='control2-label'><input type='radio' name='attr_controller_intellect' value='rouge'><span>Rouge</span></label>
-    <label class='control3-label'><input type='radio' name='attr_controller_intellect' value='bleu'><span>Bleu</span></label>
-	<label class='control4-label'><input type='radio' name='attr_controller_intellect' value='jaune'><span>Jaune</span></label>
-	<label class='control5-label'><input type='radio' name='attr_controller_intellect' value='orange'><span>Orange</span></label>
-	<label class='control6-label'><input type='radio' name='attr_controller_intellect' value='violet'><span>Violet</span></label>
-	<label class='control7-label'><input type='radio' name='attr_controller_intellect' value='noir'><span>Noir</span></label>
-</div>
-<div class='container'>
-    <h4>Receivers</h4>
-    <span class='receiver_courage'>This text changes based on which option you've chosen</span>
-</div> -->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		</div>	
 	</div>
 </div>
 
