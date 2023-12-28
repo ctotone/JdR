@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=EB+Garamond:ital,wght@0,500;0,700;1,500&family=IM+Fell+English:ital@0;1&family=Junge&family=Libre+Bodoni:ital,wght@0,500;0,700;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
 /* 
 font-family: 'Dancing Script', cursive;
 font-family: 'EB Garamond', serif;
@@ -7,6 +8,7 @@ font-family: 'IM Fell English', serif;
 font-family: 'Junge', cursive;
 font-family: 'Libre Bodoni', serif; 
 font-family: 'Parisienne', cursive;
+font-family: 'Just Me Again Down Here', cursive;
 */
 
 
@@ -18,22 +20,33 @@ font-family: 'Parisienne', cursive;
 
 .charsheet {
     font-family: 'Libre Bodoni', serif;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: contain;
+    color: var(--blue_cabinet);
+	width: 850px;
     --blue_cabinet: #435861;
 	--blue_cabinet_data: #435861e3;
     --red_cabinet: #772d34b3;
 	--marron_cabinet: #615045;
 	--dots_little_cabinet: #000;
+	--bouton_transparent: #ffffff00;
 	--bouton_blanc:#ffffff;
-	--bouton_rouge:#ff000040;
-	--bouton_bleu:#0000ff75;
-	--bouton_jaune:#e5f725;
-	--bouton_orange:#ffa5009e;
-	--bouton_vert:#16b52d7a;
-	--bouton_violet:#b01de796;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
-    background-size: contain;
-    color: var(--blue_cabinet);
-	width: 850px;
+	--bouton_rouge: #bb0404c9;
+	--bouton_bleu: #0303d7bd;
+	--bouton_jaune: #c5d70c;
+	--bouton_orange: #d76f009e;
+	--bouton_vert: #02a619;
+	--bouton_violet: #9001c6;
+	--border_bouton_unchecked: #0202027d;
+	--border_bouton_checked: #0202027d;
+	--defaut_blanc: #fff;
+	--defaut_rouge: #fe0000;
+	--defaut_bleu: #3900ff;
+	--defaut_jaune: #e8fe00;
+	--defaut_orange: #ff9700;
+	--defaut_vert: #16b42c;
+	--defaut_violet: #b01ee8;
+	--border_defaut_color1: #a8595c;
 }
 
 .cabinet,
@@ -48,6 +61,10 @@ font-family: 'Parisienne', cursive;
 	padding-bottom: 0px;
 	padding-right: 10px;
 	padding-left: 10px;
+}
+
+.arbre {
+	height: 790px;
 }
 
 .titre_feuille { 
@@ -68,6 +85,11 @@ font-family: 'Parisienne', cursive;
     border-width: 1px;
     border-color: #888888;
     font-size: 18px;
+}
+
+div.arbre select {  
+	width: auto;
+	margin-left: 10px;
 }
 
 /*------------------------------------*\
@@ -408,11 +430,15 @@ input:checked + .slider:before {
     align-items: center;
 }
 .charsheet button.sheet-radio > span.sheet-checked {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--blue_cabinet);
+	border-radius: 50%;
+	background: buttontext;
+	background-color: buttontext;
+	background-color: transparent;
+	font-size: 30px;
+	transform: rotate(10deg);
+	margin-top: 5px;
+	margin-left: -2px;
+	color: var(--marron_cabinet);
 }
 
 /* Hide the "checked" section of the radio if the attribute value does not match the radio */
@@ -438,6 +464,7 @@ input:checked + .slider:before {
 .charsheet input.sheet-radio[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
 .charsheet input.sheet-radio[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
 
+
 /*------------------------------------*\
   #Radio Arbre de vie
 \*------------------------------------*/
@@ -447,165 +474,86 @@ input[type="radio"] {
 	opacity: 0;
 }
 
-.radio_blanc input[type="radio"] + label {
+.radio_blanc input[type="radio"] + label,
+.radio_rouge input[type="radio"] + label,
+.radio_bleu input[type="radio"] + label,
+.radio_jaune input[type="radio"] + label,
+.radio_orange input[type="radio"] + label,
+.radio_vert input[type="radio"] + label,
+.radio_violet input[type="radio"] + label {
     width: 0px;
-    height: 7px;
-    border-radius: 50%;
+    height: 5px;
     background: buttontext;
-    background-color: var(--bouton_blanc);
     margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
+    padding-right: 5px;
+    opacity: 1;
+	box-shadow: 0px 0px 0px 1px var(--border_bouton_unchecked);
+}
+
+.radio_blanc input[type="radio"]:hover,
+.radio_rouge input[type="radio"]:hover,
+.radio_bleu input[type="radio"]:hover,
+.radio_jaune input[type="radio"]:hover,
+.radio_orange input[type="radio"]:hover,
+.radio_vert input[type="radio"]:hover,
+.radio_violet input[type="radio"]:hover {
+    cursor:default;
+}
+
+.radio_blanc input[type="radio"] + label {
+    background-color: var(--bouton_blanc);  
 }
 
 .radio_blanc input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_blanc);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);  
 }
 
 .radio_rouge input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
     background-color: var(--bouton_rouge);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
 }
 
 .radio_rouge input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_rouge);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
 
 .radio_bleu input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
     background-color: var(--bouton_bleu);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
 }
 
 .radio_bleu input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_bleu);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
 
 .radio_jaune input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
     background-color: var(--bouton_jaune);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
 }
 
 .radio_jaune input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_jaune);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
 
 .radio_orange input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
     background-color: var(--bouton_orange);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
 }
 
 .radio_orange input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_orange);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
 
 .radio_vert input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
     background-color: var(--bouton_vert);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
 }
 
 .radio_vert input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_vert);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
 
 .radio_violet input[type="radio"] + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_violet);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
+   background-color: var(--bouton_violet);
 }
 
 .radio_violet input[type="radio"]:checked + label {
-    width: 0px;
-    height: 7px;
-    border-radius: 50%;
-    background: buttontext;
-    background-color: var(--bouton_violet);
-    margin-top: -14px;
-    padding-right: 7px;
-    opacity: 0.5;
-  
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
  
 /*------------------------------------*\
@@ -644,9 +592,6 @@ input[type="radio"] {
 .controller_courage[value*="vert"] ~ *{
     --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_courage[value*="noir"] ~ *{
-    --courage-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
-}
 
 .controller_intellect[value*="blanc"] ~ *{
 	--intellect-background: none;
@@ -668,9 +613,6 @@ input[type="radio"] {
 }
 .controller_intellect[value*="vert"] ~ *{
     --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
-}
-.controller_intellect[value*="noir"] ~ *{
-    --intellect-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_autorite[value*="blanc"] ~ *{
@@ -694,9 +636,6 @@ input[type="radio"] {
 .controller_autorite[value*="vert"] ~ *{
     --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_autorite[value*="noir"] ~ *{
-    --autorite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
-}
 
 .controller_savoir[value*="blanc"] ~ *{
 	--savoir-background: none;
@@ -718,9 +657,6 @@ input[type="radio"] {
 }
 .controller_savoir[value*="vert"] ~ *{
     --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
-}
-.controller_savoir[value*="noir"] ~ *{
-    --savoir-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_sensibilite[value*="blanc"] ~ *{
@@ -744,9 +680,6 @@ input[type="radio"] {
 .controller_sensibilite[value*="vert"] ~ *{
     --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_sensibilite[value*="noir"] ~ *{
-    --sensibilite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
-}
 
 .controller_ouverture[value*="blanc"] ~ *{
 	--ouverture-background: none;
@@ -768,9 +701,6 @@ input[type="radio"] {
 }
 .controller_ouverture[value*="vert"] ~ *{
     --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
-}
-.controller_ouverture[value*="noir"] ~ *{
-    --ouverture-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_charisme[value*="blanc"] ~ *{
@@ -794,9 +724,6 @@ input[type="radio"] {
 .controller_charisme[value*="vert"] ~ *{
     --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_charisme[value*="noir"] ~ *{
-    --charisme-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
-}
 
 .controller_serenite[value*="blanc"] ~ *{
 	--serenite-background: none;
@@ -818,9 +745,6 @@ input[type="radio"] {
 }
 .controller_serenite[value*="vert"] ~ *{
     --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
-}
-.controller_serenite[value*="noir"] ~ *{
-    --serenite-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
 }
 
 .controller_attention[value*="blanc"] ~ *{
@@ -844,9 +768,6 @@ input[type="radio"] {
 .controller_attention[value*="vert"] ~ *{
     --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_attention[value*="noir"] ~ *{
-    --attention-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
-}
 
 .controller_coordination[value*="blanc"] ~ *{
 	--coordination-background: none;
@@ -869,8 +790,295 @@ input[type="radio"] {
 .controller_coordination[value*="vert"] ~ *{
     --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_vert.png);
 }
-.controller_coordination[value*="noir"] ~ *{
-    --coordination-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/jeton_noir.png);
+
+.controller_defaut_courage[value*="blanc"] ~ *{
+	--courage-defaut-background: var(--defaut_blanc);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="rouge"] ~ *{
+    --courage-defaut-background: var(--defaut_rouge);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="bleu"] ~ *{
+    --courage-defaut-background: var(--defaut_bleu);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="jaune"] ~ *{
+    --courage-defaut-background: var(--defaut_jaune);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="orange"] ~ *{
+    --courage-defaut-background: var(--defaut_orange);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="violet"] ~ *{
+    --courage-defaut-background: var(--defaut_violet);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_courage[value*="vert"] ~ *{
+    --courage-defaut-background: var(--defaut_vert);
+	--border_courage_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_intellect[value*="blanc"] ~ *{
+	--intellect-defaut-background: var(--defaut_blanc);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="rouge"] ~ *{
+    --intellect-defaut-background: var(--defaut_rouge);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="bleu"] ~ *{
+    --intellect-defaut-background: var(--defaut_bleu);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="jaune"] ~ *{
+    --intellect-defaut-background: var(--defaut_jaune);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="orange"] ~ *{
+    --intellect-defaut-background: var(--defaut_orange);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="violet"] ~ *{
+    --intellect-defaut-background: var(--defaut_violet);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_intellect[value*="vert"] ~ *{
+    --intellect-defaut-background: var(--defaut_vert);
+	--border_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_autorite[value*="blanc"] ~ *{
+	--autorite-defaut-background: var(--defaut_blanc);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="rouge"] ~ *{
+    --autorite-defaut-background: var(--defaut_rouge);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="bleu"] ~ *{
+    --autorite-defaut-background: var(--defaut_bleu);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="jaune"] ~ *{
+    --autorite-defaut-background: var(--defaut_jaune);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="orange"] ~ *{
+    --autorite-defaut-background: var(--defaut_orange);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="violet"] ~ *{
+    --autorite-defaut-background: var(--defaut_violet);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_autorite[value*="vert"] ~ *{
+    --autorite-defaut-background: var(--defaut_vert);
+	--border_autorite_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_savoir[value*="blanc"] ~ *{
+	--savoir-defaut-background: var(--defaut_blanc);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="rouge"] ~ *{
+    --savoir-defaut-background: var(--defaut_rouge);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="bleu"] ~ *{
+    --savoir-defaut-background: var(--defaut_bleu);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="jaune"] ~ *{
+    --savoir-defaut-background: var(--defaut_jaune);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="orange"] ~ *{
+    --savoir-defaut-background: var(--defaut_orange);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="violet"] ~ *{
+    --savoir-defaut-background: var(--defaut_violet);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_savoir[value*="vert"] ~ *{
+    --savoir-defaut-background: var(--defaut_vert);
+	--border_savoir_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_sensibilite[value*="blanc"] ~ *{
+	--sensibilite-defaut-background: var(--defaut_blanc);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="rouge"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_rouge);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="bleu"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_bleu);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="jaune"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_jaune);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="orange"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_orange);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="violet"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_violet);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_sensibilite[value*="vert"] ~ *{
+    --sensibilite-defaut-background: var(--defaut_vert);
+	--border_sensibilite_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_ouverture[value*="blanc"] ~ *{
+	--ouverture-defaut-background: var(--defaut_blanc);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="rouge"] ~ *{
+    --ouverture-defaut-background: var(--defaut_rouge);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="bleu"] ~ *{
+    --ouverture-defaut-background: var(--defaut_bleu);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="jaune"] ~ *{
+    --ouverture-defaut-background: var(--defaut_jaune);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="orange"] ~ *{
+    --ouverture-defaut-background: var(--defaut_orange);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="violet"] ~ *{
+    --ouverture-defaut-background: var(--defaut_violet);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_ouverture[value*="vert"] ~ *{
+    --ouverture-defaut-background: var(--defaut_vert);
+	--border_ouverture_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_charisme[value*="blanc"] ~ *{
+	--charisme-defaut-background: var(--defaut_blanc);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="rouge"] ~ *{
+    --charisme-defaut-background: var(--defaut_rouge);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="bleu"] ~ *{
+    --charisme-defaut-background: var(--defaut_bleu);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="jaune"] ~ *{
+    --charisme-defaut-background: var(--defaut_jaune);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="orange"] ~ *{
+    --charisme-defaut-background: var(--defaut_orange);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="violet"] ~ *{
+    --charisme-defaut-background: var(--defaut_violet);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_charisme[value*="vert"] ~ *{
+    --charisme-defaut-background: var(--defaut_vert);
+	--border_charisme_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_serenite[value*="blanc"] ~ *{
+	--serenite-defaut-background: var(--defaut_blanc);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="rouge"] ~ *{
+    --serenite-defaut-background: var(--defaut_rouge);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="bleu"] ~ *{
+    --serenite-defaut-background: var(--defaut_bleu);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="jaune"] ~ *{
+    --serenite-defaut-background: var(--defaut_jaune);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="orange"] ~ *{
+    --serenite-defaut-background: var(--defaut_orange);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="violet"] ~ *{
+    --serenite-defaut-background: var(--defaut_violet);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_serenite[value*="vert"] ~ *{
+    --serenite-defaut-background: var(--defaut_vert);
+	--border_serenite_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_attention[value*="blanc"] ~ *{
+	--attention-defaut-background: var(--defaut_blanc);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="rouge"] ~ *{
+    --attention-defaut-background: var(--defaut_rouge);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="bleu"] ~ *{
+    --attention-defaut-background: var(--defaut_bleu);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="jaune"] ~ *{
+    --attention-defaut-background: var(--defaut_jaune);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="orange"] ~ *{
+    --attention-defaut-background: var(--defaut_orange);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="violet"] ~ *{
+    --attention-defaut-background: var(--defaut_violet);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_attention[value*="vert"] ~ *{
+    --attention-defaut-background: var(--defaut_vert);
+	--border_attention_defaut: 2px solid var(--border_defaut_color1);
+}
+
+.controller_defaut_coordination[value*="blanc"] ~ *{
+	--coordination-defaut-background: var(--defaut_blanc);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="rouge"] ~ *{
+    --coordination-defaut-background: var(--defaut_rouge);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="bleu"] ~ *{
+    --coordination-defaut-background: var(--defaut_bleu);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="jaune"] ~ *{
+    --coordination-defaut-background: var(--defaut_jaune);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="orange"] ~ *{
+    --coordination-defaut-background: var(--defaut_orange);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="violet"] ~ *{
+    --coordination-defaut-background: var(--defaut_violet);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
+}
+.controller_defaut_coordination[value*="vert"] ~ *{
+    --coordination-defaut-background: var(--defaut_vert);
+	--border_coordination_defaut: 2px solid var(--border_defaut_color1);
 }
 
 
@@ -2585,7 +2793,7 @@ input[type="radio"] {
 	background-image: var(--sensibilite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 36px;
+	margin-left: 35px;
 }
 
 .autorite_D {
@@ -2603,7 +2811,7 @@ input[type="radio"] {
 	background-image: var(--ouverture-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 36px;
+	margin-left: 35px;
 }
 
 .serenite_D {
@@ -2630,7 +2838,7 @@ input[type="radio"] {
 	background-image: var(--charisme-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 36px;
+	margin-left: 35px;
 }
 
 .attention_D {
@@ -2651,13 +2859,125 @@ input[type="radio"] {
 	margin-left: 28px;
 }
 
+.courage_defaut {      
+	grid-column: 2;
+	grid-row: 67/110;
+	background: var(--courage-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_courage_defaut);
+	margin-left: 66px;
+}
+
+.intellect_defaut {
+	grid-column: 1;
+	grid-row: 138/200;
+	background: var(--intellect-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_intellect_defaut);
+	margin-left: 21px;
+}
+
+.sensibilite_defaut {
+	grid-column: 3;
+	grid-row: 138/200;
+	background: var(--sensibilite-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_sensibilite_defaut);
+	margin-left: 73px;
+}
+
+.autorite_defaut {
+	grid-column: 1;
+	grid-row: 274/350;
+	background: var(--autorite-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_autorite_defaut);
+	margin-left: 21px;
+}
+
+.ouverture_defaut {
+	grid-column: 3;
+	grid-row: 274/500;
+	background: var(--ouverture-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_ouverture_defaut);
+	margin-left: 73px;
+}
+
+.serenite_defaut {
+	grid-column: 2;
+	grid-row: 315/400;
+	background: var(--serenite-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_serenite_defaut);
+	margin-left: 66px;
+}
+
+.savoir_defaut {
+	grid-column: 1;
+	grid-row: 410/480;
+	background: var(--savoir-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_savoir_defaut);
+	margin-left: 21px;
+}
+
+.charisme_defaut {
+	grid-column: 3;
+	grid-row: 410/480;
+	background: var(--charisme-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_charisme_defaut);
+	margin-left: 73px;
+}
+
+.attention_defaut {
+	grid-column: 2;
+	grid-row: 452/500;
+	background: var(--attention-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_attention_defaut);
+	margin-left: 66px;
+}
+
+.coordination_defaut {
+	grid-column: 2;
+	grid-row: 588/605;
+	background: var(--coordination-defaut-background);
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	border: var(--border_coordination_defaut);
+	margin-left: 66px;
+}
+
 .imprudence {
     grid-column: 2;
     grid-row: 104;
     text-align: center;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .froideur {
@@ -2665,8 +2985,10 @@ input[type="radio"] {
     grid-row: 176;
     text-align: center;
     color: var(--red_cabinet);
-    font-size: 10px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .superstition {
@@ -2674,8 +2996,10 @@ input[type="radio"] {
     grid-row: 176;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .intolerance {
@@ -2683,8 +3007,10 @@ input[type="radio"] {
     grid-row: 312;
     text-align: center;
     color: var(--red_cabinet);
-    font-size: 10px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .jalousie {
@@ -2692,8 +3018,10 @@ input[type="radio"] {
     grid-row: 312;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .indifference {
@@ -2701,8 +3029,10 @@ input[type="radio"] {
     grid-row: 353;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .orgueil {
@@ -2710,8 +3040,10 @@ input[type="radio"] {
     grid-row: 448;
     text-align: center;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .manipulation {
@@ -2719,8 +3051,10 @@ input[type="radio"] {
     grid-row: 448;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .manie {
@@ -2728,8 +3062,10 @@ input[type="radio"] {
     grid-row: 488;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
     position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .avidite {
@@ -2737,8 +3073,10 @@ input[type="radio"] {
 	grid-row: 626;
     text-align: right;
     color: var(--red_cabinet);
-    font-size: 11px;
+    font-size: 15px;
 	position: static;
+	font-family: 'Just Me Again Down Here', cursive;
+	margin-top: -5px;
 }
 
 .imprudence_input {    
@@ -2803,16 +3141,78 @@ input[type="radio"] {
 
 .courage_contener {
     grid-column: 2;
-    grid-row: 12/85;
-    margin-left: 10px;
+    grid-row: 12;
+    margin-left: 9px;
     margin-right: 10px;
 }
 
 .intellect_contener {
     grid-column: 2;
-    grid-row: 80/200;
+    grid-row: 83;
     margin-left: -124px;
     margin-right: 10px;
+}
+
+.sensibilite_contener {  
+  grid-column: 2;
+  grid-row: 83;
+  margin-left: 146px;
+  margin-right: 10px;
+}
+
+.autorite_contener {
+    grid-column: 2;
+    grid-row: 219;
+    margin-left: -124px;
+    margin-right: 10px;
+}
+
+.ouverture_contener {
+    grid-column: 2;
+    grid-row: 219;
+	margin-left: 146px;
+    margin-right: 10px;
+}
+
+.serenite_contener {
+    grid-column: 2;
+    grid-row: 261;
+    margin-left: 9px;
+    margin-right: 10px;
+}
+
+.savoir_contener {
+    grid-column: 2;
+    grid-row: 355;
+    margin-left: -124px;
+    margin-right: 10px;
+}
+
+.charisme_contener {
+    grid-column: 2;
+    grid-row: 355;
+  margin-left: 146px;
+    margin-right: 10px;
+}
+
+.attention_contener {
+    grid-column: 2;
+    grid-row: 398;
+    margin-left: 9px;
+    margin-right: 10px;
+}
+
+.coordination_contener {
+    grid-column: 2;
+    grid-row: 533;
+    margin-left: 9px;
+    margin-right: 10px;
+}
+
+.fin_arbre {
+    grid-column: 2;
+    grid-row: 600;
+	opacity:0;
 }
 
 	
@@ -2823,50 +3223,50 @@ input[type="radio"] {
 .wrapper_arbre_bouttons{  
 	display: grid;
     grid-template-columns: 25px 25px 25px;
-	grid-auto-rows: 1px;
-    margin-top: -3px;
+    margin-top: 25px;
+    margin-left: 8px;
 }
 
 .radio_blanc {
     grid-column: 1;
-    grid-row: 2;
-    margin-left: 20px;
+    grid-row: 4;
+	margin-top: -15px;
 }
 
 .radio_rouge {
     grid-column: 1;
-    grid-row: 11;
-    margin-left: 12px;
+    grid-row: 13;
+	margin-top: -15px;
 }
 
 .radio_bleu {
 	grid-column: 1;
-	grid-row: 21;
-    margin-left: 8px;
+	grid-row: 22;
+	margin-top: -15px;
 }
 
 .radio_jaune {
 	grid-column: 1;
 	grid-row: 31;
-    margin-left: 6px;
+	margin-top: -15px;
 }
 
 .radio_orange {
 	grid-column: 1;
-	grid-row: 41;
-    margin-left: 8px;
+	grid-row: 40;
+	margin-top: -15px;
 }
 
 .radio_vert {
 	grid-column: 1;
-	grid-row: 51;
-    margin-left: 12px;
+	grid-row: 49;
+	margin-top: -15px;
 }
 
 .radio_violet {
 	grid-column: 1;
-	grid-row: 60;
-    margin-left: 19px;
+	grid-row: 58;
+	margin-top: -15px;
 }
 
 
