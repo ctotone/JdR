@@ -714,7 +714,7 @@
 			</div>
 			<div class="malus_total_cadre"></div>
 			<div class="malus_total"><span data-i18n="total_malus">TOTAL MALUS</span></div>
-			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total"></div>
+			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total" readonly /></div>
 			<div class="cor_decor_bas"></div>
 		</div>	
 		
@@ -998,7 +998,7 @@
 							  <option data-i18n="purple" value="violet">Violet</option>
 							</select>
 							<br>
-							<span data-i18n="imprudence_tree">Imprudent:</span><select name="attr_controller_defaut_coordination">
+							<span data-i18n="greed_tree">Avide:</span><select name="attr_controller_defaut_coordination">
 							  <option data-i18n="none" value="blanc">Aucun</option>
 							  <option data-i18n="red" value="rouge">Rouge</option>
 							  <option data-i18n="blue" value="bleu">Bleu</option>
@@ -1109,47 +1109,47 @@
 					<div class="perisprit1">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_2" class="sheet-radio sheet-gt-1">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit2">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit3">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit4">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit5">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit6">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit7">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit8">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<div class="perisprit9">
 						<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 						<button type="action" name="act_perisprit_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
-						<span class="sheet-checked"></span></button>
+						<span class="sheet-checked">/</span></button>
 					</div>
 					<!-- 
 					ON CONSERVE AU CAS OU
@@ -1858,7 +1858,7 @@
 					<div class="pnj_combat_bonus_6"><input class="bonus" type="text" name="attr_defendre_pnj"></div>
 					
 					<div class="pnj_combat_titre_malus"><span data-i18n="total_malus_pnj">TOTAL MALUS</span></div>
-					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="text" name="attr_malus_pnj_total"></div>
+					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="text" name="attr_malus_total" readonly /></div>
 			
 				</div>
 			</div>
@@ -1982,4 +1982,120 @@
 		  });
 		});
 	  });
-	</script>
+</script>
+	
+<!-- Malus -->
+<script type="text/worker">
+on("sheet:opened change:dot_tete", function() {
+    getAttrs(["dot_tete"], function(values) {
+         let dot_tete = parseInt(values["dot_tete"]) || 0;
+            if (dot_tete <= 2 ) stat_mod = "0";
+            else if (dot_tete <= 3) stat_mod = "-1";
+            else if (dot_tete <= 4) stat_mod = "-2";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "tete_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:dot_bras_droit", function() {
+    getAttrs(["dot_bras_droit"], function(values) {
+         let dot_bras_droit = parseInt(values["dot_bras_droit"]) || 0;
+            if (dot_bras_droit <= 3 ) stat_mod = "0";
+            else if (dot_bras_droit <= 4) stat_mod = "-1";
+            else if (dot_bras_droit <= 5) stat_mod = "-2";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "bras_droit_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:dot_bras_gauche", function() {
+    getAttrs(["dot_bras_gauche"], function(values) {
+         let dot_bras_gauche = parseInt(values["dot_bras_gauche"]) || 0;
+            if (dot_bras_gauche <= 3 ) stat_mod = "0";
+            else if (dot_bras_gauche <= 4) stat_mod = "-1";
+            else if (dot_bras_gauche <= 5) stat_mod = "-2";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "bras_gauche_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:dot_torse", function() {
+    getAttrs(["dot_torse"], function(values) {
+         let dot_torse = parseInt(values["dot_torse"]) || 0;
+            if (dot_torse <= 4 ) stat_mod = "0";
+            else if (dot_torse <= 5) stat_mod = "-1";
+            else if (dot_torse <= 6) stat_mod = "-2";
+			else if (dot_torse <= 7) stat_mod = "-3";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "torse_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:dot_jambe_droite", function() {
+    getAttrs(["dot_jambe_droite"], function(values) {
+         let dot_jambe_droite = parseInt(values["dot_jambe_droite"]) || 0;
+            if (dot_jambe_droite <= 3 ) stat_mod = "0";
+            else if (dot_jambe_droite <= 4) stat_mod = "-1";
+            else if (dot_jambe_droite <= 5) stat_mod = "-2";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "jambe_droite_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:dot_jambe_gauche", function() {
+    getAttrs(["dot_jambe_gauche"], function(values) {
+         let dot_jambe_gauche = parseInt(values["dot_jambe_gauche"]) || 0;
+            if (dot_jambe_gauche <= 3 ) stat_mod = "0";
+            else if (dot_jambe_gauche <= 4) stat_mod = "-1";
+            else if (dot_jambe_gauche <= 5) stat_mod = "-2";
+            else stat_mod = "0";
+			
+			setAttrs({
+            "jambe_gauche_malus": stat_mod
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:torse_malus change:jambe_droite_malus change:jambe_gauche_malus", function() {
+    getAttrs(["tete_malus", "bras_droit_malus", "bras_gauche_malus", "torse_malus", "jambe_droite_malus", "jambe_gauche_malus"], function(values) {
+         let tete_malus = parseInt(values.tete_malus) || 0;
+		 let bras_droit_malus = parseInt(values.bras_droit_malus) || 0;
+		 let bras_gauche_malus = parseInt(values.bras_gauche_malus) || 0;
+		 let torse_malus = parseInt(values.torse_malus) || 0;
+		 let jambe_droite_malus = parseInt(values.jambe_droite_malus) || 0;
+		 let jambe_gauche_malus = parseInt(values.jambe_gauche_malus) || 0;
+		 let malus_total = tete_malus + bras_droit_malus + bras_gauche_malus + torse_malus + jambe_droite_malus + jambe_gauche_malus;
+			
+			setAttrs({
+            "malus_total": malus_total
+        });
+    });
+});
+</script>

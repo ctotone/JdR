@@ -106,7 +106,7 @@ body.sheet-darkmode optgroup,
 body.sheet-darkmode select,
 body.sheet-darkmode textarea,
 body.sheet-darkmode .charsheet {
-	color: #ffffffb5;
+	color: var(--blue_cabinet);
 }
 
 .btn:hover {
@@ -155,6 +155,7 @@ div.sheet_selector {
 }
 
 body.sheet-darkmode .selector {
+	color: #ffffffe0;
 }
 
 /*------------------------------------*\
@@ -372,10 +373,6 @@ div.perisprit_data input[type="checkbox"]:focus {
     height: 8px;
     margin-top: 161px;
     margin-left: 821px;
-}
-
-body.sheet-darkmode .slider {  
-	background-color: #656666;
 }
 
 .slider:before {
