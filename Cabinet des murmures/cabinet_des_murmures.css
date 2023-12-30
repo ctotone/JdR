@@ -58,7 +58,9 @@ font-family: 'Shadows Into Light', cursive;
 .arbre,
 .esprit,
 .pnj,
-.esprit_qualite {
+.esprit_qualite,
+.dice,
+.esprit_dice{
 	width:810px;
     border: 1px solid var(--blue_cabinet);
 	padding-top: 15px;
@@ -68,7 +70,7 @@ font-family: 'Shadows Into Light', cursive;
 }
 
 .arbre {
-	height: 790px;
+	height: 1050px;
 }
 
 .titre_feuille { 
@@ -166,7 +168,9 @@ body.sheet-darkmode .selector {
 .corps,
 .arbre,
 .esprit,
-.esprit_qualite {
+.esprit_qualite,
+.dice,
+.esprit_dice{
 	display: none;
 }
 
@@ -174,7 +178,9 @@ input[type=radio].onglcabinet:checked ~ div.cabinet,
 input[type=radio].onglarbre:checked ~ div.arbre,
 input[type=radio].onglcorps:checked ~ div.corps,
 input[type=radio].onglspirit:checked ~ div.esprit,
-input[type=radio].onglquality:checked ~ div.esprit_qualite{
+input[type=radio].onglquality:checked ~ div.esprit_qualite,
+input[type=radio].onglhotedice:checked ~ div.dice,
+input[type=radio].onglespritdice:checked ~ div.esprit_dice{
     display: block;
 } 
 
@@ -187,7 +193,9 @@ input[type=radio].onglcabinet,
 input[type=radio].onglarbre,
 input[type=radio].onglcorps,
 input[type=radio].onglspirit,
-input[type=radio].onglquality {
+input[type=radio].onglquality,
+input[type=radio].onglhotedice,
+input[type=radio].onglespritdice {
     display: inline-block;
     opacity: 0;
     width: 110px;
@@ -199,7 +207,9 @@ input[type=radio].onglarbre + span,
 input[type=radio].onglcorps + span,
 input[type=radio].onglesprit + span,
 input[type=radio].onglspirit + span,
-input[type=radio].onglquality + span {
+input[type=radio].onglquality + span,
+input[type=radio].onglhotedice + span,
+input[type=radio].onglespritdice + span  {
     text-align: center;
     display: inline-block;
     width: 110px;
@@ -223,7 +233,9 @@ input[type=radio].onglarbre:checked + span,
 input[type=radio].onglcorps:checked + span,
 input[type=radio].onglesprit:checked + span,
 input[type=radio].onglspirit:checked + span,
-input[type=radio].onglquality:checked + span {
+input[type=radio].onglquality:checked + span,
+input[type=radio].onglhotedice:checked + span,
+input[type=radio].onglespritdice:checked + span {
     color: black;
     border-color: var(--blue_cabinet);
     font-family: 'EB Garamond';
@@ -235,7 +247,7 @@ input[type=radio].onglquality:checked + span {
     color: #ffffffe8;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
 }
-
+/* 
 input[type=radio].onglesprit:checked + span {
     color: black;
     border-color: var(--blue_cabinet);
@@ -248,7 +260,7 @@ input[type=radio].onglesprit:checked + span {
     color: #ffffffe8;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
 	cursor: default;
-}
+} */
 
 /*------------------------------------*\
   #Checkbox
@@ -2972,7 +2984,7 @@ input[type="radio"] {
 
 .imprudence {
     grid-column: 2;
-    grid-row: 104;
+    grid-row: 108;
     text-align: center;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -2983,7 +2995,7 @@ input[type="radio"] {
 
 .froideur {
     grid-column: 1;
-    grid-row: 176;
+    grid-row: 180;
     text-align: center;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -2994,7 +3006,7 @@ input[type="radio"] {
 
 .superstition {
     grid-column: 3;
-    grid-row: 176;
+    grid-row: 180;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3005,7 +3017,7 @@ input[type="radio"] {
 
 .intolerance {
     grid-column: 1;
-    grid-row: 312;
+    grid-row: 316;
     text-align: center;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3016,7 +3028,7 @@ input[type="radio"] {
 
 .jalousie {
     grid-column: 3;
-    grid-row: 312;
+    grid-row: 316;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3027,7 +3039,7 @@ input[type="radio"] {
 
 .indifference {
     grid-column: 2;
-    grid-row: 353;
+    grid-row: 357;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3038,7 +3050,7 @@ input[type="radio"] {
 
 .orgueil {
     grid-column: 1;
-    grid-row: 448;
+    grid-row: 452;
     text-align: center;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3049,7 +3061,7 @@ input[type="radio"] {
 
 .manipulation {
     grid-column: 3;
-    grid-row: 448;
+    grid-row: 452;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3060,7 +3072,7 @@ input[type="radio"] {
 
 .manie {
     grid-column: 2;
-    grid-row: 488;
+    grid-row: 492;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3071,7 +3083,7 @@ input[type="radio"] {
 
 .avidite {
 	grid-column: 2;
-	grid-row: 626;
+	grid-row: 630;
     text-align: right;
     color: var(--red_cabinet);
     font-size: 15px;
@@ -3210,6 +3222,33 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
+.controle_defaut_titre {
+	grid-column: 1/4;
+	grid-row: 26/31;
+	margin-top: 75px;
+	margin-left: 75px;
+	margin-right: 35px;
+	border: 1px solid var(--blue_cabinet);
+	border-bottom-style: none;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.cadre_controle_defaut {  
+	grid-column: 1/4;
+	grid-row: 28/36;
+	margin-top: 75px;
+	margin-left: 75px;
+	margin-right: 35px;
+	border: 1px solid var(--blue_cabinet);
+	border-top-style: none;
+	border-bottom-style: none;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 .fin_arbre {
     grid-column: 2;
     grid-row: 600;
@@ -3270,7 +3309,137 @@ input[type="radio"] {
 	margin-top: -15px;
 }
 
+/*------------------------------------*\
+  Wrapper Controle défauts
+\*------------------------------------*/
 
+.wrapper_controle_defaut{  
+	display: grid;
+	grid-template-columns: 120px 70px 30px 120px 70px 30px 120px 100px;
+    margin-top: 0px;
+    margin-left: 0px;
+	font-family: 'IM Fell English, serif';
+}
+
+.controle_defaut_data_1-1 {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_1-1 {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.controle_defaut_data_1-2 {
+	grid-column: 4;
+	grid-row: 1;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_1-2 {
+	grid-column: 5;
+	grid-row: 1;
+}
+
+.controle_defaut_data_1-3 {
+	grid-column: 7;
+	grid-row: 1;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_1-3 {
+	grid-column: 8;
+	grid-row: 1;
+}
+
+.controle_defaut_data_2-1 {
+	grid-column: 1;
+	grid-row: 2;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_2-1 {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.controle_defaut_data_2-2 {
+	grid-column: 4;
+	grid-row: 2;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_2-2 {
+	grid-column: 5;
+	grid-row: 2;
+}
+
+.controle_defaut_data_2-3 {
+	grid-column: 7;
+	grid-row: 2;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_2-3 {
+	grid-column: 8;
+	grid-row: 2;
+}
+
+.controle_defaut_data_3-1 {
+	grid-column: 1;
+	grid-row: 3;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_3-1 {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+.controle_defaut_data_3-2 {
+	grid-column: 4;
+	grid-row: 3;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_3-2 {
+	grid-column: 5;
+	grid-row: 3;
+}
+
+.controle_defaut_data_3-3 {
+	grid-column: 7;
+	grid-row: 3;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_3-3 {
+	grid-column: 8;
+	grid-row: 3;
+}
+
+.controle_defaut_data_4-2 {
+	grid-column: 4;
+	grid-row: 4;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.controle_defaut_controler_4-2 {
+	grid-column: 5;
+	grid-row: 4;
+}
 
 /*------------------------------------*\
   Wrapper Bouton Corps
@@ -3865,6 +4034,348 @@ input[type="radio"] {
     margin-left: 21px;
     margin-top: 30px;
 }
+
+/*------------------------------------*\
+  Wrapper boutons arbre de vie
+\*------------------------------------*/
+
+.wrapper_dice_title{  
+	display: grid;
+    grid-template-columns: 200px 200px 200px;
+	grid-template-rows: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.wrapper_dice{  
+	display: grid;
+	grid-template-columns: 270px 10px 270px 10px 270px 10px;
+	grid-template-rows: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+	border: 1px solid var(--blue_cabinet);
+	padding: 10px;
+	padding-top: 10px;
+	padding-top: 5px;
+	font-family: 'IM Fell English, serif';
+}
+
+.action_dice {
+	grid-column: 1/5;
+	font-size: 16px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	font-weight: bold;
+}
+
+/* Section Communiquer*/
+
+.communiquer {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.bluffer {
+    grid-column: 1;
+}
+
+.convaincre {
+    grid-column: 3;
+}
+
+.intimider {
+    grid-column: 5;
+}
+
+.questionner {
+    grid-column: 1;
+}
+
+.seduire {
+    grid-column: 3;
+}
+
+/* Section Percevoir*/
+
+.percevoir  {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.ecouter {
+    grid-column: 1;
+}
+
+.fouiller {
+    grid-column: 3;
+}
+
+.observer {
+    grid-column: 5;
+}
+
+.surveiller {
+    grid-column: 1;
+}
+
+/* Section Agir*/
+.agir {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.equilibre {
+    grid-column: 1;
+}
+
+.creer {
+    grid-column: 3;
+}
+
+.crocheter {
+    grid-column: 5;
+}
+
+.dissimuler {
+    grid-column: 1;
+}
+
+.poches {
+    grid-column: 3;
+}
+
+.forcer {
+    grid-column: 5;
+}
+
+.grimper {
+    grid-column: 1;
+}
+
+.musique {
+    grid-column: 3;
+}
+
+.selancer {
+    grid-column: 5;
+}
+
+.monter {
+    grid-column: 1;
+}
+
+.piloter {
+    grid-column: 3;
+}
+
+.poursuivre {
+    grid-column: 5;
+}
+
+.vehicule {
+    grid-column: 1;
+}
+
+.discret {
+    grid-column: 3;
+}
+
+.spectacle {
+    grid-column: 5;
+}
+
+.virevolter {
+    grid-column: 1;
+}
+
+/* Section Savoir*/
+.savoir_dice {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.analyser {
+    grid-column: 1;
+}
+
+.comprendre {
+    grid-column: 3;
+}
+
+.connaitre {
+    grid-column: 5;
+}
+
+.rechercher {
+    grid-column: 1;
+}
+
+/* Spiritisme */
+.spiritisme  {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.contacter  {
+    grid-column: 1;
+}
+
+/* COMBATTRE */
+.combattre_dice  {
+	grid-column: 1/5;
+	font-size: 16px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+/* Corps à Corps */
+.cac  {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.desarmer  {
+    grid-column: 1;
+}
+
+.frapper  {
+    grid-column: 3;
+}
+
+.immobiliser  {
+    grid-column: 5;
+}
+
+.bagarrer  {
+    grid-column: 1;
+}
+
+/* Distance */
+.distance  {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.lancer  {
+    grid-column: 1;
+}
+
+.tirer  {
+    grid-column: 3;
+}
+
+/* Se défendre */
+.defendre  {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.esquiver  {
+    grid-column: 1;
+}
+
+.parer  {
+    grid-column: 3;
+}
+
+/* Se proteger */
+.proteger   {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.degager  {
+    grid-column: 1;
+}
+
+.abri  {
+    grid-column: 3;
+}
+
+/* Dégâts */
+.degats   {
+	grid-column: 1/3;
+	font-size: 14px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.inconscient  {
+    grid-column: 1;
+}
+
+.mourir  {
+    grid-column: 3;
+}
+
+.soin  {
+    grid-column: 5;
+}
+
+
+
 
 
 /*------------------------------------*\
@@ -4864,4 +5375,29 @@ span.pnj_info_combat {
     font-weight: bold;
     margin-top: 2px;
     text-align: center;
+}
+
+span.configurator_title {
+	font-family: 'IM Fell English, serif';
+	font-weight: bold;
+}
+
+span.configurator_subtitle {  
+	color: var(--red_cabinet);
+	font-size: 12px;
+	font-family: 'IM Fell English, serif';
+	font-style: italic;
+}
+
+span.picto {  
+	font-family: 'Pictos';
+	font-size: 12px;
+	margin-top: -3px;
+	margin-left: 5px;
+	cursor: help;
+}
+
+span.dice_texte {
+	color: var(--red_cabinet);
+	font-size: 12px;
 }
