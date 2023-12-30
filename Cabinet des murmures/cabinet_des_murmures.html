@@ -5,7 +5,7 @@
 <!-- DIV COMMUNE  -->
 <!------------------>
 <div class="feuille_commune">
-
+<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png" />
 <!-- SHEET VERSION OPTION  -->
 		<div class="sheet_selector">
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
@@ -19,6 +19,7 @@
 		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span data-i18n="office">Cabinet</span>
 		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span data-i18n="body">Corps</span>
 		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span>
+		<input type="radio" name="attr_tab_hote" value="4" class="onglhotedice" /><span data-i18n="dice"></span><img src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png" />
 		<input class="cabinet_name" type="text" name="attr_character_name">
 	
 	<!------------------>
@@ -731,7 +732,7 @@
 				</div>
 			</div>
 			<div class="qualite_arbre_data">
-				<div class="wrapper_arbre_data"</div>
+				<div class="wrapper_arbre_data">
 				<input type='hidden' class='controller_courage' name='attr_controller_courage' value='blanc'>
 				<input type='hidden' class='controller_intellect' name='attr_controller_intellect' value='blanc'>
 				<input type='hidden' class='controller_sensibilite' name='attr_controller_sensibilite' value='blanc'>
@@ -904,111 +905,139 @@
 					<div class="manipulation"><span data-i18n="rigging_tree">MANIPULATION</span></div>
 					<div class="avidite"><span data-i18n="greed_tree">AVIDITÉ</span></div>
 				</div>
-			</div>		
-		</div>	
-		
-			
-							<span data-i18n="imprudence_tree">Courage:</span><select name="attr_controller_defaut_courage">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="coldness_tree">Intellect:</span><select name="attr_controller_defaut_intellect">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="superstition_tree">Sensibilité:</span><select name="attr_controller_defaut_sensibilite">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="intolerance_tree">Autorité:</span><select name="attr_controller_defaut_autorite">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="jealousy_tree">Ouverture:</span><select name="attr_controller_defaut_ouverture">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="indifference_tree">Sérénité:</span><select name="attr_controller_defaut_serenite">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="pride_tree">Savoir:</span><select name="attr_controller_defaut_savoir">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="rigging_tree">Charisme:</span><select name="attr_controller_defaut_charisme">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="mania_tree">Attention:</span><select name="attr_controller_defaut_attention">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							<br>
-							<span data-i18n="greed_tree">Avide:</span><select name="attr_controller_defaut_coordination">
-							  <option data-i18n="none" value="blanc">Aucun</option>
-							  <option data-i18n="red" value="rouge">Rouge</option>
-							  <option data-i18n="blue" value="bleu">Bleu</option>
-							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
-							  <option data-i18n="green" value="vert">Vert</option>
-							  <option data-i18n="purple" value="violet">Violet</option>
-							</select>
-							
-			
+			</div>
+			<div class="controle_defaut_titre"><span class="configurator_title" data-i18n="configurator_title">Configuration des sphères de défauts</span><br><span class="configurator_subtitle" data-i18n="configurator_subtitle">Bloquer une sphère en y attribuant la couleur de l'esprit.</span></div>
+			<div class="cadre_controle_defaut">
+				<div class="wrapper_controle_defaut">
+					<div class="controle_defaut_data_1-1"><span data-i18n="coldness_tree">Intellect:</span></div>
+					<div class="controle_defaut_controler_1-1">
+						<select name="attr_controller_defaut_intellect">
+						  <option data-i18n="none" value="blanc">Aucun</option>
+						  <option data-i18n="red" value="rouge">Rouge</option>
+						  <option data-i18n="blue" value="bleu">Bleu</option>
+						  <option data-i18n="yellow" value="jaune">Jaune</option>
+						  <option data-i18n="orange" value="orange">Orange</option>
+						  <option data-i18n="green" value="vert">Vert</option>
+						  <option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_1-2"><span data-i18n="imprudence_tree">Courage:</span></div>
+					<div class="controle_defaut_controler_1-2">
+						<select name="attr_controller_defaut_courage">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_1-3"><span data-i18n="superstition_tree">Sensibilité:</span></div>
+					<div class="controle_defaut_controler_1-3">
+						<select name="attr_controller_defaut_sensibilite">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select></div>
+					<div class="controle_defaut_data_2-1"><span data-i18n="intolerance_tree">Autorité:</span></div>
+					<div class="controle_defaut_controler_2-1">
+						<select name="attr_controller_defaut_autorite">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_2-2"><span data-i18n="indifference_tree">Sérénité:</span></div>
+					<div class="controle_defaut_controler_2-2">
+						<select name="attr_controller_defaut_serenite">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_2-3"><span data-i18n="jealousy_tree">Ouverture:</span></div>
+					<div class="controle_defaut_controler_2-3">
+						<select name="attr_controller_defaut_ouverture">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_3-1"><span data-i18n="pride_tree">Savoir:</span></div>
+					<div class="controle_defaut_controler_3-1">
+						<select name="attr_controller_defaut_savoir">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_3-2"><span data-i18n="mania_tree">Attention:</span></div>
+					<div class="controle_defaut_controler_3-2">
+						<select name="attr_controller_defaut_attention">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_3-3"><span data-i18n="rigging_tree">Charisme:</span></div>
+					<div class="controle_defaut_controler_3-3">
+						<select name="attr_controller_defaut_charisme">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>
+					<div class="controle_defaut_data_4-2"><span data-i18n="greed_tree">Avide:</span></div>
+					<div class="controle_defaut_controler_4-2">
+						<select name="attr_controller_defaut_coordination">
+							<option data-i18n="none" value="blanc">Aucun</option>
+							<option data-i18n="red" value="rouge">Rouge</option>
+							<option data-i18n="blue" value="bleu">Bleu</option>
+							<option data-i18n="yellow" value="jaune">Jaune</option>
+							<option data-i18n="orange" value="orange">Orange</option>
+							<option data-i18n="green" value="vert">Vert</option>
+							<option data-i18n="purple" value="violet">Violet</option>
+						</select>
+					</div>		
+				</div>
+			</div>
+		</div>		
+	</div>
+	
+	<!---------------------->
+	<!-- DIV CORPS DICE  -->
+	<!---------------------->
+	<div class="dice">
+	dice
 	</div>
 </div>
 
@@ -1028,7 +1057,8 @@
 		
 	<!-- MENU TAB -->
 		<input type="radio" name="attr_tab_spirit" value="1" class="onglspirit" checked /><span data-i18n="spirit">Spirit</span>
-		<input type="radio" name="attr_tab_spirit" value="2" class="onglquality" /><span data-i18n="qualites_tab">QUALITÉS ET DÉFAUTS</span>
+		<input type="radio" name="attr_tab_spirit" value="2" class="onglquality" /><span data-i18n="qualites_tab">QUALITÉS ET DÉFAUTS</span>		
+		<input type="radio" name="attr_tab_spirit" value="3" class="onglespritdice" /><span data-i18n="dice"></span><img src="https://raw.githubusercontent.com/ctotone/JdR/main/Ten%20candles/img/D6_tencandles.png" />
 		<!-- <div class="titre_feuille"><span data-i18n="spirit_title">Esprit</span></div> -->
 		<input class="esprit_name" type="text" name="attr_character_name">
 
@@ -1276,6 +1306,9 @@
 			<div class="esp_decor_bas"></div>
 		</div>
 	</div>
+	<!---------------------------->
+	<!-- DIV QUALITE ET DEFAUT  -->
+	<!---------------------------->
 	<div class="esprit_qualite">
 		<div class="wrapper_arbre">
 			<div class="qualite_arbre"><span data-i18n="qualites_and_defects">QUALITÉS ET DÉFAUTS</span>
@@ -1327,6 +1360,122 @@
 					<div class="arbre_esprit_avidite_input"><input class="data_defaut" type="text" name="attr_avidite"></div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<!---------------------->
+	<!-- DIV ESPRIT DICE  -->
+	<!---------------------->
+	<div class="esprit_dice">
+		<div class="wrapper_dice_title">
+			<div class="action_dice">ACTIONS<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div></div>
+		</div>
+		<div class="wrapper_dice">
+			<div class="communiquer">COMMUNIQUER </div>
+			<div class="bluffer">Bluffer +OPPOSITION A AJOUTER<span class="picto" title="test">i</span>
+			<br><span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE) contre NESHAMA</span></div>
+			<div class="convaincre">Convaincre <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="intimider">Intimider  +OPPOSITION A AJOUTER<span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="questionner">Questionner <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="seduire">Séduire  +OPPOSITION A AJOUTER<span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="percevoir">PERCEVOIR</div>
+			<div class="ecouter">Écouter <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="fouiller">Fouiller <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="observer">Observer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="surveiller">Surveiller <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="agir">AGIR </div>
+			<div class="equilibre">Avancer en équilibre <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="creer">Créer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="crocheter">Crocheter une serrure <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="dissimuler">Dissimuler <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="poches">Faire les poches <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="forcer">Forcer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="grimper">Grimper <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="musique">Jouer de la musique <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="selancer">Lancer, s'élancer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="monter">Monter à cheval <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="piloter">Piloter <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="poursuivre">Poursuivre  +A PIED + POURSUIVI +POURSUIVANT<span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="vehicule">Poursuivre à cheval ou en véhicule <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="discret">Se faire discret <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="spectacle">Se produire en spectacle <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="virevolter">Virevolter <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="savoir_dice">SAVOIR </div>
+			<div class="analyser">Analyser <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="comprendre">Comprendre <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="connaitre">Connaitre <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="rechercher">Rechercher <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="spiritisme">SPIRITISME </div>
+			<div class="contacter">Contacter les morts <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+		</div>
+		<div class="wrapper_dice_title">
+			<div class="combattre_dice">COMBATTRE<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
+				</div></div>
+		</div>
+		<div class="wrapper_dice">
+			<div class="cac">ATTAQUER AU CORPS A CORPS </div>
+			<div class="desarmer">Désarmer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="frapper">Frapper <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="immobiliser">Immobiliser <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="bagarrer">Se bagarrer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="distance">ATTAQUER A DISTANCE </div>
+			<div class="lancer">Lancer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="tirer">Tirer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="defendre">SE DEFENDRE </div>
+			<div class="esquiver">Esquiver <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="parer">Parer <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="proteger">SE PROTEGER </div>
+			<div class="degager">Se degager <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="abri">Se mettre à l'abri <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="proteger">LES DÉGÂTS </div>
+			<div class="inconscient">Perdre conscience <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="mourir">Rester en vie <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			<div class="soin">Prodiguer les premiers soins <span class="picto" title="test">i</span>
+			<br><span class="dice_texte">TEXTE</span></div>
+			
 		</div>
 	</div>
 </div>
