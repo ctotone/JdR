@@ -236,9 +236,8 @@ input[type=radio].onglespritdice + span  {
     width: 70px;
     height: 40px;	
     color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_unchk.png);
-	background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_unchecked.png);
+    background-position: bottom 72px right 85px;
 }
 
 input[type=radio].onglcabinet:checked + span,
@@ -264,11 +263,9 @@ input[type=radio].onglespritdice:checked + span {
 input[type=radio].onglhotedice:checked + span,
 input[type=radio].onglespritdice:checked + span {
     width: 70px;
-    height: 40px;
+    height: 40px;	
     color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_checked.png);
 	
 }
 /* 
@@ -4073,7 +4070,7 @@ input[type="radio"] {
 
 .wrapper_dice{  
 	display: grid;
-	grid-template-columns: 270px 10px 270px 10px 270px 10px;
+    grid-template-columns: 60px 20px 300px 40px 120px 20px 250px;
 	grid-template-rows: auto;
 	margin-top: 10px;
 	margin-left: 10px;
@@ -4096,7 +4093,7 @@ input[type="radio"] {
 /* Section Communiquer*/
 
 .communiquer {
-	grid-column: 1/3;
+	grid-column: 1/4;
 	font-size: 14px;
 	display: flex;
 	white-space: nowrap;
@@ -4110,21 +4107,68 @@ input[type="radio"] {
     grid-column: 1;
 }
 
-.convaincre {
+.bluffer_data {
     grid-column: 3;
 }
 
 .intimider {
-    grid-column: 5;
+    grid-column: 1;
+}
+
+.intimider_data {
+    grid-column: 3;
+}
+
+.seduire {
+    grid-column: 1;
+}
+
+.seduire_data {
+    grid-column: 3;
+}
+
+.bluffer_resister {
+    grid-column: 1;
+}
+
+.bluffer_resister_data {
+    grid-column: 3;
+}
+
+.intimider_resister {
+    grid-column: 1;
+}
+
+.intimider_resister_data {
+    grid-column: 3;
+}
+
+
+.seduire_resister {
+    grid-column: 1;
+}
+
+.seduire_resister_data {
+    grid-column: 3;
+}
+
+.convaincre {
+    grid-column: 1;
+}
+
+.convaincre_data {
+    grid-column: 3;
 }
 
 .questionner {
     grid-column: 1;
 }
 
-.seduire {
+.questionner_data {
     grid-column: 3;
 }
+
+
 
 /* Section Percevoir*/
 
