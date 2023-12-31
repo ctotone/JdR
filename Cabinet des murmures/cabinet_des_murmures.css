@@ -4057,7 +4057,7 @@ input[type="radio"] {
 }
 
 /*------------------------------------*\
-  Wrapper boutons arbre de vie
+  Wrapper Dice
 \*------------------------------------*/
 
 .wrapper_dice_title{  
@@ -4068,39 +4068,141 @@ input[type="radio"] {
     margin-left: 0px;
 }
 
-.wrapper_dice{  
+.wrapper_dice_data{  
 	display: grid;
-    grid-template-columns: 60px 20px 300px 40px 120px 20px 250px;
-	grid-template-rows: auto;
-	margin-top: 10px;
-	margin-left: 10px;
-	border: 1px solid var(--blue_cabinet);
-	padding: 10px;
-	padding-top: 10px;
-	padding-top: 5px;
-	font-family: 'IM Fell English, serif';
+    grid-template-columns: 400px 5px 400px;
+	grid-template-rows: 20px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.wrapper_dice_type{  
+	display: grid;
+    grid-template-columns: 150px 10px 223px;
+    grid-template-rows: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 .action_dice {
-	grid-column: 1/5;
+	grid-column: 1/4;
 	font-size: 16px;
 	display: flex;
 	white-space: nowrap;
-	align-items: flex-end;
-	font-weight: bold;
+}
+
+.section_communiquer {
+	grid-column: 1;
+	grid-row: 1/9;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_percevoir {
+	grid-column: 1;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_savoir {
+	grid-column: 1;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_spiritisme {
+	grid-column: 1;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_agir {
+	grid-column: 3;
+    grid-row: 1/12;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_cac {
+	grid-column: 1;
+    grid-row: 1/4;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_distance {
+	grid-column: 1;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_defendre {
+	grid-column: 3;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_proteger {
+	grid-column: 1;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.section_degats {
+	grid-column: 3;
+    grid-row: 1/4;
+	border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 /* Section Communiquer*/
 
 .communiquer {
-	grid-column: 1/4;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .bluffer {
@@ -4108,23 +4210,7 @@ input[type="radio"] {
 }
 
 .bluffer_data {
-    grid-column: 3;
-}
-
-.intimider {
-    grid-column: 1;
-}
-
-.intimider_data {
-    grid-column: 3;
-}
-
-.seduire {
-    grid-column: 1;
-}
-
-.seduire_data {
-    grid-column: 3;
+    grid-column: 3
 }
 
 .bluffer_resister {
@@ -4132,23 +4218,6 @@ input[type="radio"] {
 }
 
 .bluffer_resister_data {
-    grid-column: 3;
-}
-
-.intimider_resister {
-    grid-column: 1;
-}
-
-.intimider_resister_data {
-    grid-column: 3;
-}
-
-
-.seduire_resister {
-    grid-column: 1;
-}
-
-.seduire_resister_data {
     grid-column: 3;
 }
 
@@ -4160,6 +4229,22 @@ input[type="radio"] {
     grid-column: 3;
 }
 
+.intimider_resister {
+    grid-column: 1;
+}
+
+.intimider_resister_data {
+    grid-column: 3;
+}
+
+.intimider {
+    grid-column: 1;
+}
+
+.intimider_data {
+    grid-column: 3;
+}
+
 .questionner {
     grid-column: 1;
 }
@@ -4168,19 +4253,29 @@ input[type="radio"] {
     grid-column: 3;
 }
 
+.seduire {
+    grid-column: 1;
+}
 
+.seduire_data {
+    grid-column: 3;
+}
+
+.seduire_resister {
+    grid-column: 1;
+}
+
+.seduire_resister_data {
+    grid-column: 3;
+}
 
 /* Section Percevoir*/
 
 .percevoir  {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .ecouter {
@@ -4188,103 +4283,39 @@ input[type="radio"] {
 }
 
 .fouiller {
-    grid-column: 3;
+    grid-column: 1;
 }
 
 .observer {
-    grid-column: 5;
+    grid-column: 1;
 }
 
 .surveiller {
     grid-column: 1;
 }
 
-/* Section Agir*/
-.agir {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
-}
-
-.equilibre {
-    grid-column: 1;
-}
-
-.creer {
+.ecouter_data {
     grid-column: 3;
 }
 
-.crocheter {
-    grid-column: 5;
-}
-
-.dissimuler {
-    grid-column: 1;
-}
-
-.poches {
+.fouiller_data {
     grid-column: 3;
 }
 
-.forcer {
-    grid-column: 5;
-}
-
-.grimper {
-    grid-column: 1;
-}
-
-.musique {
+.observer_data {
     grid-column: 3;
 }
 
-.selancer {
-    grid-column: 5;
-}
-
-.monter {
-    grid-column: 1;
-}
-
-.piloter {
+.surveiller_data {
     grid-column: 3;
-}
-
-.poursuivre {
-    grid-column: 5;
-}
-
-.vehicule {
-    grid-column: 1;
-}
-
-.discret {
-    grid-column: 3;
-}
-
-.spectacle {
-    grid-column: 5;
-}
-
-.virevolter {
-    grid-column: 1;
 }
 
 /* Section Savoir*/
 .savoir_dice {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .analyser {
@@ -4292,36 +4323,204 @@ input[type="radio"] {
 }
 
 .comprendre {
-    grid-column: 3;
+    grid-column: 1;
 }
 
 .connaitre {
-    grid-column: 5;
+    grid-column: 1;
 }
 
 .rechercher {
     grid-column: 1;
 }
 
+.analyser_data {
+    grid-column: 3;
+}
+
+.comprendre_data {
+    grid-column: 3;
+}
+
+.connaitre_data {
+    grid-column: 3;
+}
+
+.rechercher_data {
+    grid-column: 3;
+}
+
 /* Spiritisme */
 .spiritisme  {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .contacter  {
     grid-column: 1;
 }
 
+.contacter_data {
+    grid-column: 3;
+}
+
+/* Section Agir*/
+.agir {
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.equilibre {
+    grid-column: 1;
+}
+
+.creer {
+    grid-column: 1;
+}
+
+.crocheter {
+    grid-column: 1;
+}
+
+.dissimuler {
+    grid-column: 1;
+}
+
+.poches {
+    grid-column: 1;
+}
+
+.forcer {
+    grid-column: 1;
+}
+
+.grimper {
+    grid-column: 1;
+}
+
+.musique {
+    grid-column: 1;
+}
+
+.selancer {
+    grid-column: 1;
+}
+
+.monter {
+    grid-column: 1;
+}
+
+.piloter {
+    grid-column: 1;
+}
+
+.poursuivre_pied {
+    grid-column: 1;
+}
+
+.poursuivre_vehicule {
+    grid-column: 1;
+}
+
+.poursuivi_pied {
+    grid-column: 1;
+}
+
+.poursuivi_vehicule {
+    grid-column: 1;
+}
+
+.discret {
+    grid-column: 1;
+}
+
+.spectacle {
+    grid-column: 1;
+}
+
+.virevolter {
+    grid-column: 1;
+}
+
+.equilibre_data {
+    grid-column: 3;
+}
+
+.creer_data {
+    grid-column: 3;
+}
+
+.crocheter_data {
+    grid-column: 3;
+}
+
+.dissimuler_data {
+    grid-column: 3;
+}
+
+.poches_data {
+    grid-column: 3;
+}
+
+.forcer_data {
+    grid-column: 3;
+}
+
+.grimper_data {
+    grid-column: 3;
+}
+
+.musique_data {
+    grid-column: 3;
+}
+
+.selancer_data {
+    grid-column: 3;
+}
+
+.monter_data {
+    grid-column: 3;
+}
+
+.piloter_data {
+    grid-column: 3;
+}
+
+.poursuivre_pied_data {
+    grid-column: 3;
+}
+
+.poursuivre_vehicule_data {
+    grid-column: 3;
+}
+
+.poursuivi_pied_data {
+    grid-column: 3;
+}
+
+.poursuivi_vehicule_data {
+    grid-column: 3;
+}
+
+.discret_data {
+    grid-column: 3;
+}
+
+.spectacle_data {
+    grid-column: 3;
+}
+
+.virevolter_data {
+    grid-column: 3;
+}
+
 /* COMBATTRE */
 .combattre_dice  {
-	grid-column: 1/5;
+	grid-column: 1/4;
 	font-size: 16px;
 	display: flex;
 	white-space: nowrap;
@@ -4332,14 +4531,11 @@ input[type="radio"] {
 
 /* Corps à Corps */
 .cac  {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .desarmer  {
@@ -4347,27 +4543,40 @@ input[type="radio"] {
 }
 
 .frapper  {
-    grid-column: 3;
+    grid-column: 1;
 }
 
 .immobiliser  {
-    grid-column: 5;
+    grid-column: 1;
 }
 
 .bagarrer  {
     grid-column: 1;
 }
 
+.desarmer_data  {
+    grid-column: 3;
+}
+
+.frapper_data  {
+    grid-column: 3;
+}
+
+.immobiliser_data  {
+    grid-column: 3;
+}
+
+.bagarrer_data  {
+    grid-column: 3;
+}
+
 /* Distance */
 .distance  {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .lancer  {
@@ -4375,19 +4584,24 @@ input[type="radio"] {
 }
 
 .tirer  {
+    grid-column: 1;
+}
+
+.lancer_data  {
+    grid-column: 3;
+}
+
+.tirer_data  {
     grid-column: 3;
 }
 
 /* Se défendre */
 .defendre  {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .esquiver  {
@@ -4395,19 +4609,24 @@ input[type="radio"] {
 }
 
 .parer  {
+    grid-column: 1;
+}
+
+.esquiver_data  {
+    grid-column: 3;
+}
+
+.parer_data  {
     grid-column: 3;
 }
 
 /* Se proteger */
 .proteger   {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .degager  {
@@ -4415,19 +4634,24 @@ input[type="radio"] {
 }
 
 .abri  {
+    grid-column: 1;
+}
+
+.degager_data  {
+    grid-column: 3;
+}
+
+.abri_data  {
     grid-column: 3;
 }
 
 /* Dégâts */
 .degats   {
-	grid-column: 1/3;
-	font-size: 14px;
-	display: flex;
-	white-space: nowrap;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	text-decoration: underline;
+    grid-column: 1;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .inconscient  {
@@ -4435,15 +4659,24 @@ input[type="radio"] {
 }
 
 .mourir  {
-    grid-column: 3;
+    grid-column: 1;
 }
 
 .soin  {
-    grid-column: 5;
+    grid-column: 1;
 }
 
+.inconscient_data  {
+    grid-column: 3;
+}
 
+.mourir_data  {
+    grid-column: 3;
+}
 
+.soin_data  {
+    grid-column: 3;
+}
 
 
 /*------------------------------------*\
