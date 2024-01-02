@@ -1,4 +1,44 @@
-<!-- @{test|medium_maccro}|malus_total} -->
+<!-- Fonctionne sans script -->
+<button type="roll" value="&{template:default} {{name=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+
+<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{malus_corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+
+
+
+<button type="action" name="act_roll-button">Roll</button>
+
+<rolltemplate class="sheet-rolltemplate-test">
+    <div class="sheet-template-container">
+        <h1>{{name}}</h1>
+        <div class="sheet-results">
+            <h4>{{qualite_title}} = {{qualite}}</h4>
+			<h4>{{aspect_title}} = {{aspect}}</h4>
+			<h4>{{attribut_title}} = {{attribut}}</h4>
+			<h4>Malus corps= {{malus_corps}}</h4>
+			<h4>Divers = {{divers}}</h4>
+            <h4>Résultat = {{computed::roll}}</h4>
+        </div>
+    </div>
+</rolltemplate>
+
+<script type="text/worker">
+   on('clicked:roll-button', async (event) => {
+         const roll = await startRoll("&{template:test}  {{roll=[[0[resultat]]]}} {{name=Bluffer}} {{qualite_title=Courage}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{medium|innocence_bonus}]]}} {{malus_corps=[[@{medium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="esprit"  />
 
@@ -2069,6 +2109,8 @@
 	</div>
 </div>
 
+ <input type="hidden" name="attr_relRollAME" value="&{template:sawo} {{etat=[[@{templateetat}]]}} {{name=^{ame}}} {{perso=@{character_name_court}}} {{secoue=[[@{secoue}]]}} {{relances=[[ { floor( (@{rollAME}) / @{rolldiffquery} ), 0d0 }kh1 - 1 ]]}} {{blessures=[[@{blessures}]]}} {{fatigue=[[@{fatigue}]]}}" />
+
 
 <!---------------------->			
 <!------ [SCRIPT] ------>
@@ -2296,6 +2338,107 @@ on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_ma
 			
 			setAttrs({
             "malus_total": malus_total
+        });
+    });
+});
+</script>
+
+<!-- Parse D qualité en maccro -->
+<script type="text/worker">
+on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture change:D_serenite change:D_autorite change:D_savoir change:D_attention change:D_charisme change:D_coordination", function() {
+    getAttrs(["D_courage", "D_intellect", "D_sensibilite", "D_ouverture", "D_serenite", "D_autorite", "D_savoir", "D_attention", "D_charisme", "D_coordination"], function(values) {
+         let D_courage = parseInt(values["D_courage"]) || 0;
+			if (D_courage == 1 ) D_courage_roll = "[[1D6]]";
+            else if (D_courage == 2 ) D_courage_roll = "[[1D6]] [[1D6]]";
+            else if (D_courage == 3 ) D_courage_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_courage == 4 ) D_courage_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_courage == 5 ) D_courage_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_courage_roll = "[[1D6]]";
+			
+		 let D_intellect = parseInt(values["D_intellect"]) || 0;
+			if (D_intellect == 1 ) D_intellect_roll = "[[1D6]]";
+            else if (D_intellect == 2 ) D_intellect_roll = "[[1D6]] [[1D6]]";
+            else if (D_intellect == 3 ) D_intellect_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_intellect == 4 ) D_intellect_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_intellect == 5 ) D_intellect_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_intellect_roll = "[[1D6]]";
+			
+		 let D_sensibilite = parseInt(values["D_sensibilite"]) || 0;
+			if (D_sensibilite == 1 ) D_sensibilite_roll = "[[1D6]]";
+            else if (D_sensibilite == 2 ) D_sensibilite_roll = "[[1D6]] [[1D6]]";
+            else if (D_sensibilite == 3 ) D_sensibilite_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_sensibilite == 4 ) D_sensibilite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_sensibilite == 5 ) D_sensibilite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_sensibilite_roll = "[[1D6]]";
+			
+		 let D_ouverture = parseInt(values["D_ouverture"]) || 0;
+			if (D_ouverture == 1 ) D_ouverture_roll = "[[1D6]]";
+            else if (D_ouverture == 2 ) D_ouverture_roll = "[[1D6]] [[1D6]]";
+            else if (D_ouverture == 3 ) D_ouverture_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_ouverture == 4 ) D_ouverture_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_ouverture == 5 ) D_ouverture_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_ouverture_roll = "[[1D6]]";
+			
+		 let D_serenite = parseInt(values["D_serenite"]) || 0;
+			if (D_serenite == 1 ) D_serenite_roll = "[[1D6]]";
+            else if (D_serenite == 2 ) D_serenite_roll = "[[1D6]] [[1D6]]";
+            else if (D_serenite == 3 ) D_serenite_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_serenite == 4 ) D_serenite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_serenite == 5 ) D_serenite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_serenite_roll = "[[1D6]]";
+			
+		 let D_autorite = parseInt(values["D_autorite"]) || 0;
+			if (D_autorite == 1 ) D_autorite_roll = "[[1D6]]";
+            else if (D_autorite == 2 ) D_autorite_roll = "[[1D6]] [[1D6]]";
+            else if (D_autorite == 3 ) D_autorite_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_autorite == 4 ) D_autorite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_autorite == 5 ) D_autorite_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_autorite_roll = "[[1D6]]";
+			
+		 let D_savoir = parseInt(values["D_savoir"]) || 0;
+			if (D_savoir == 1 ) D_savoir_roll = "[[1D6]]";
+            else if (D_savoir == 2 ) D_savoir_roll = "[[1D6]] [[1D6]]";
+            else if (D_savoir == 3 ) D_savoir_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_savoir == 4 ) D_savoir_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_savoir == 5 ) D_savoir_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_savoir_roll = "[[1D6]]";
+			
+		 let D_attention = parseInt(values["D_attention"]) || 0;
+			if (D_attention == 1 ) D_attention_roll = "[[1D6]]";
+            else if (D_attention == 2 ) D_attention_roll = "[[1D6]] [[1D6]]";
+            else if (D_attention == 3 ) D_attention_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_attention == 4 ) D_attention_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_attention == 5 ) D_attention_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_attention_roll = "[[1D6]]";
+			
+		 let D_charisme = parseInt(values["D_charisme"]) || 0;
+			if (D_charisme == 1 ) D_charisme_roll = "[[1D6]]";
+            else if (D_charisme == 2 ) D_charisme_roll = "[[1D6]] [[1D6]]";
+            else if (D_charisme == 3 ) D_charisme_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_charisme == 4 ) D_charisme_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_charisme == 5 ) D_charisme_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_charisme_roll = "[[1D6]]";
+			
+		 let D_coordination = parseInt(values["D_coordination"]) || 0;
+			if (D_coordination == 1 ) D_coordination_roll = "[[1D6]]";
+            else if (D_coordination == 2 ) D_coordination_roll = "[[1D6]] [[1D6]]";
+            else if (D_coordination == 3 ) D_coordination_roll = "[[1D6]] [[1D6]] [[1D6]]";
+            else if (D_coordination == 4 ) D_coordination_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else if (D_coordination == 5 ) D_coordination_roll = "[[1D6]] [[1D6]] [[1D6]] [[1D6]] [[1D6]]";
+            else D_coordination_roll = "[[1D6]]";
+			
+			
+			setAttrs({
+            "D_courage_roll": D_courage_roll,
+			"D_intellect_roll": D_intellect_roll,
+			"D_sensibilite_roll": D_sensibilite_roll,
+			"D_ouverture_roll": D_ouverture_roll,
+			"D_serenite_roll": D_serenite_roll,
+			"D_autorite_roll": D_autorite_roll,
+			"D_savoir_roll": D_savoir_roll,
+			"D_attention_roll": D_attention_roll,
+			"D_charisme_roll": D_charisme_roll,
+			"D_coordination_roll": D_coordination_roll
         });
     });
 });
