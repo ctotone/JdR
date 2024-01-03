@@ -1,7 +1,7 @@
 <!-- Fonctionne sans script -->
 <button type="roll" value="&{template:default} {{name=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
 
-<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{malus_corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{Malus corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
 
 
 
@@ -1415,11 +1415,11 @@
 				<div class="wrapper_dice_type">
 					<div class="communiquer">COMMUNIQUER </div>
 					<div class="bluffer">Bluffer</div>
-					<div class="bluffer_data"><span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)</span></div>
-					<div class="bluffer_resister">Bluffer (Résister)</div>
-					<div class="bluffer_resister_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="bluffer_data"><span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)<!-- <br>contre NESHAMA --></span></div>
+					<div class="bluffer_resister">Déceler un Bluff</div>
+					<div class="bluffer_resister_data"><span class="dice_texte">Intelligence + NESHAMA<!-- <br>contre ROUA'H --></span></div>
 					<div class="convaincre">Convaincre </div>
-					<div class="convaincre_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="convaincre_data"><span class="dice_texte">Charisme + NESHAMA</span></div>
 					<div class="intimider">Intimider</div>
 					<div class="intimider_data"><span class="dice_texte">TEXTE</span></div>
 					<div class="intimider_resister">Intimider  (Résister)</div>
