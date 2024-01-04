@@ -1,36 +1,4 @@
-<!-- Fonctionne sans script -->
-<button type="roll" value="&{template:default} {{name=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
 
-<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{Malus corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
-
-
-
-<button type="action" name="act_roll-button">Roll</button>
-
-<rolltemplate class="sheet-rolltemplate-test">
-    <div class="sheet-template-container">
-        <h1>{{name}}</h1>
-        <div class="sheet-results">
-            <h4>{{qualite_title}} = {{qualite}}</h4>
-			<h4>{{aspect_title}} = {{aspect}}</h4>
-			<h4>{{attribut_title}} = {{attribut}}</h4>
-			<h4>Malus corps= {{malus_corps}}</h4>
-			<h4>Divers = {{divers}}</h4>
-            <h4>Résultat = {{computed::roll}}</h4>
-        </div>
-    </div>
-</rolltemplate>
-
-<script type="text/worker">
-   on('clicked:roll-button', async (event) => {
-         const roll = await startRoll("&{template:test}  {{roll=[[0[resultat]]]}} {{name=Bluffer}} {{qualite_title=Courage}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{medium|innocence_bonus}]]}} {{malus_corps=[[@{medium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
-			
-            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
-			const computeObj = {};
-			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
-    finishRoll(roll.rollId,computeObj);
-  })
-</script>
 
 
 
@@ -1123,10 +1091,10 @@
 			<div class="aspect_data">
 				<div class="wrapper_aspect">
 					<div class="aspect_nom">
-						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
+						<span class="aspect_nom">NESHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_nashama_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="text" name="attr_aspect_neshama_bonus">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
@@ -1405,6 +1373,11 @@
 	<!-- DIV ESPRIT DICE  -->
 	<!---------------------->
 	<div class="esprit_dice">
+	<label class="switch">
+		<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+		<span class="slider round"></span>
+	</label>
+	<button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button><button class="prouesse_roll" type="action" name="act_roll-bluffer">Bluffer</button>
 		<div class="wrapper_dice_title">
 			<div class="action_dice">ACTIONS<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
@@ -1413,97 +1386,95 @@
 		<div class="wrapper_dice_data">
 			<div class="section_communiquer">
 				<div class="wrapper_dice_type">
-					<div class="communiquer">COMMUNIQUER </div>
-					<div class="bluffer">Bluffer</div>
+					<div class="communiquer">COMMUNIQUER</div>
+					<div class="bluffer"><button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button><button class="prouesse_roll" type="action" name="act_roll-bluffer">Bluffer</button></div>
 					<div class="bluffer_data"><span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)<!-- <br>contre NESHAMA --></span></div>
-					<div class="bluffer_resister">Déceler un Bluff</div>
+					<div class="bluffer_resister"><button class="classic_roll" type="action" name="act_roll-deceler-bluff">Déceler un Bluff</button></div>
 					<div class="bluffer_resister_data"><span class="dice_texte">Intelligence + NESHAMA<!-- <br>contre ROUA'H --></span></div>
-					<div class="convaincre">Convaincre </div>
+					<div class="convaincre">Convaincre</div>
 					<div class="convaincre_data"><span class="dice_texte">Charisme + NESHAMA</span></div>
 					<div class="intimider">Intimider</div>
-					<div class="intimider_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="intimider_resister">Intimider  (Résister)</div>
-					<div class="intimider_resister_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="questionner">Questionner </div>
-					<div class="questionner_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="intimider_data"><span class="dice_texte">Autorité + ROUA'H <br>(+ÉTRANGETÉ ou PUISSANCE)<!-- <br>contre NESHAMA --></span></div>
+					<div class="intimider_resister">Intimider (Résister)</div>
+					<div class="intimider_resister_data"><span class="dice_texte">Courage + NESHAMA<!-- <br>contre ROUA'H --></span></div>
+					<div class="questionner">Questionner</div>
+					<div class="questionner_data"><span class="dice_texte">Ouverture + NESHAMA (+INNOCENCE)<!-- <br>contre NESHAMA --></span></div>
 					<div class="seduire">Séduire</div>
-					<div class="seduire_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="seduire_data"><span class="dice_texte">Charisme + NESHAMA ou ROUA'H <br>(+BEAUTÉ)<!-- <br>contre NESHAMA --></span></div>
 					<div class="seduire_resister">Séduire  (Résister)</div>
-					<div class="seduire_resister_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="seduire_resister_data"><span class="dice_texte">Sérénité + NESHAMA<!-- <br>contre ROUA'H --></span></div>
 				</div>
 			</div>
 			<div class="section_percevoir">
 				<div class="wrapper_dice_type">	
 					<div class="percevoir">PERCEVOIR</div>
-					<div class="ecouter">Écouter </div>
-					<div class="ecouter_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="fouiller">Fouiller </div>
-					<div class="fouiller_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="observer">Observer </div>
-					<div class="observer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="ecouter">Écouter <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="ecouter_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span></div>
+					<div class="fouiller">Fouiller</div>
+					<div class="fouiller_data"><span class="dice_texte">Coordination + NEFESH (+ACUITÉ)</span></div>
+					<div class="observer">Observer <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="observer_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span></div>
 					<div class="surveiller">Surveiller </div>
-					<div class="surveiller_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="surveiller_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)<!-- <br>contre ROUA'H --></span></div>
 				</div>
 			</div>
 			<div class="section_savoir">
 				<div class="wrapper_dice_type">	
 					<div class="savoir_dice">SAVOIR </div>
-					<div class="analyser">Analyser </div>
-					<div class="analyser_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="comprendre">Comprendre </div>
-					<div class="comprendre_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="connaitre">Connaitre </div>
-					<div class="connaitre_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="rechercher">Rechercher </div>
-					<div class="rechercher_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="analyser">Analyser <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="analyser_data"><span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span></div>
+					<div class="comprendre">Comprendre <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="comprendre_data"><span class="dice_texte">Intellect + NESHAMA</span></div>
+					<div class="connaitre">Connaitre <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="connaitre_data"><span class="dice_texte">Savoir + NESHAMA</span></div>
+					<div class="rechercher">Rechercher</div>
+					<div class="rechercher_data"><span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span></div>
 				</div>
 			</div>
 			<div class="section_spiritisme">
 				<div class="wrapper_dice_type">	
 					<div class="spiritisme">SPIRITISME </div>
 					<div class="contacter">Contacter les morts </div>
-					<div class="contacter_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="contacter_data"><span class="dice_texte">Ssensibilité + ROUA'H</span></div>
 				</div>
 			</div>
 			<div class="section_agir">
 				<div class="wrapper_dice_type">
 					<div class="agir">AGIR </div>
 					<div class="equilibre">Avancer en équilibre</div>
-					<div class="equilibre_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="equilibre_data"><span class="dice_texte">Sérénité + NEFESH (+AGILITÉ)</span></div>
 					<div class="creer">Créer</div>
-					<div class="creer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="creer_data"><span class="dice_texte">Sensibilté + NEFESH (+HABILETÉ)</span></div>
 					<div class="crocheter">Crocheter une serrure</div>
-					<div class="crocheter_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="crocheter_data"><span class="dice_texte">Coordination + NEFESH (+HABILETÉ)</span></div>
 					<div class="dissimuler">Dissimuler</div>
-					<div class="dissimuler_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="dissimuler_data"><span class="dice_texte">Coordination + NEFESH (+HABILETÉ)</span></div>
 					<div class="poches">Faire les poches</div>
-					<div class="poches_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="poches_data"><span class="dice_texte">Coordination + NEFESH (+HABILETÉ)<!-- <br>contre NEFESH (+ACUITÉ) --></span></div>
 					<div class="forcer">Forcer</div>
-					<div class="forcer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="forcer_data"><span class="dice_texte">Autorité + NEFESH (+PUISSANCE)</span></div>
 					<div class="grimper">Grimper</div>
-					<div class="grimper_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="grimper_data"><span class="dice_texte">Coordination + NEFESH (+AGILITÉ)</span></div>
 					<div class="musique">Jouer de la musique</div>
-					<div class="musique_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="musique_data"><span class="dice_texte">Sensibilité + ROUA'H (+HABILETÉ)</span></div>
 					<div class="selancer">Lancer, s'élancer</div>
-					<div class="selancer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="selancer_data"><span class="dice_texte">Coordination + NEFESH (+PUISSANCE)</span></div>
 					<div class="monter">Monter à cheval</div>
-					<div class="monter_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="monter_data"><span class="dice_texte">Coordination + NEFESH (+AGILITÉ)</span></div>
 					<div class="piloter">Piloter</div>
-					<div class="piloter_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="piloter_data"><span class="dice_texte">Coordination + NEFESH (+HABILETÉ)</span></div>
 					<div class="poursuivre_pied">Poursuivre (à pied)</div>
-					<div class="poursuivre_pied_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="poursuivre_vehicule">Poursuivre <br>(cheval / véhicule)</div>
-					<div class="poursuivre_vehicule_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="poursuivre_pied_data"><span class="dice_texte">Autorité + NEFESH</span></div>
 					<div class="poursuivi_pied">Etre poursuivi (à pied)</div>
-					<div class="poursuivi_pied_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="poursuivi_vehicule">Etre poursuivi <br>(cheval / véhicule)</div>
-					<div class="poursuivi_vehicule_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="poursuivi_pied_data"><span class="dice_texte">Coordination + NEFESH</span></div>
+					<div class="poursuivre_vehicule">Poursuivre <br>(cheval / véhicule)</div>
+					<div class="poursuivre_vehicule_data"><span class="dice_texte"><br>Coordination + NEFESH (+HABILETÉ)<!-- <br>contre NEFESH (+HABILETÉ) --></span></div>
 					<div class="discret">Se faire discret</div>
-					<div class="discret_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="spectacle">Se produire en spectacle</div>
-					<div class="spectacle_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="discret_data"><span class="dice_texte">Sérénité + NEFESH (+ANONYMAT)<!-- <br>contre NEFESH (+ACUITÉ) --></span></div>
+					<div class="spectacle">Se produire <br>en spectacle</div>
+					<div class="spectacle_data"><span class="dice_texte"><br>Charisme + ROUA'H</span></div>
 					<div class="virevolter">Virevolter</div>
-					<div class="virevolter_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="virevolter_data"><span class="dice_texte">Coordination + NEFESH (+AGILITÉ)</span></div>
 				</div>
 			</div>
 		</div>
@@ -1517,52 +1488,52 @@
 			<div class="section_cac">
 				<div class="wrapper_dice_type">
 					<div class="cac">ATTAQUER AU CORPS A CORPS </div>
-					<div class="desarmer">Désarmer </div>
-					<div class="desarmer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="desarmer">Désarmer</div>
+					<div class="desarmer_data"><span class="dice_texte">Autorité / Courage + NEFESH <br>(+HABILETÉ ou PUISSANCE)</span></div>
 					<div class="frapper">Frapper </div>
-					<div class="frapper_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="frapper_data"><span class="dice_texte">Autorité / Courage + NEFESH (+AGILITÉ)</span></div>
 					<div class="immobiliser">Immobiliser </div>
-					<div class="immobiliser_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="immobiliser_data"><span class="dice_texte">Autorité / Courage + NEFESH (+AGILITÉ)</</span></div>
 					<div class="bagarrer">Se bagarrer </div>
-					<div class="bagarrer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="bagarrer_data"><span class="dice_texte">Autorité / Courage + NEFESH (+PUISSANCE)</</span></div>
 				</div>
 			</div>
 			<div class="section_distance">
 				<div class="wrapper_dice_type">
 					<div class="distance">ATTAQUER A DISTANCE </div>
 					<div class="lancer">Lancer </div>
-					<div class="lancer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="lancer_data"><span class="dice_texte">Autorité / Courage + NEFESH (+PUISSANCE)</span></div>
 					<div class="tirer">Tirer </div>
-					<div class="tirer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="tirer_data"><span class="dice_texte">Autorité / Courage + NEFESH (+HABILETÉ)</span></div>
 				</div>
 			</div>
 			<div class="section_defendre">
 				<div class="wrapper_dice_type">
 					<div class="defendre">SE DEFENDRE </div>
 					<div class="esquiver">Esquiver </div>
-					<div class="esquiver_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="esquiver_data"><span class="dice_texte">Autorité / Courage + NEFESH (+AGILITÉ)</span></div>
 					<div class="parer">Parer </div>
-					<div class="parer_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="parer_data"><span class="dice_texte">Autorité / Courage + NEFESH (+AGILITÉ)</span></div>
 				</div>
 			</div>
 			<div class="section_proteger">
 				<div class="wrapper_dice_type">
 					<div class="proteger">SE PROTEGER </div>
 					<div class="degager">Se degager </div>
-					<div class="degager_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="degager_data"><span class="dice_texte">Coordination + NEFESH <br>(+PUISSANCE ou AGILITÉ)</span></div>
 					<div class="abri">Se mettre à l'abri </div>
-					<div class="abri_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="abri_data"><span class="dice_texte">Coordination + NEFESH (+AGILITÉ)</span></div>
 				</div>
 			</div>
 			<div class="section_degats">
 				<div class="wrapper_dice_type">
 					<div class="proteger">LES DÉGÂTS </div>
 					<div class="inconscient">Perdre conscience </div>
-					<div class="inconscient_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="inconscient_data"><span class="dice_texte">Sérénité + NEFESH (+ROBUSTESSE)</span></div>
 					<div class="mourir">Rester en vie </div>
-					<div class="mourir_data"><span class="dice_texte">TEXTE</span></div>
-					<div class="soin">Prodiguer les premiers soins </div>
-					<div class="soin_data"><span class="dice_texte">TEXTE</span></div>
+					<div class="mourir_data"><span class="dice_texte">Sérénité + NEFESH (+ROBUSTESSE)</span></div>
+					<div class="soin">Prodiguer <br>les premiers soins </div>
+					<div class="soin_data"><span class="dice_texte"><br>Savoir + NEFESH (+HABILETÉ)</span></div>
 				</div>
 			</div>
 		</div>
@@ -2109,9 +2080,6 @@
 	</div>
 </div>
 
- <input type="hidden" name="attr_relRollAME" value="&{template:sawo} {{etat=[[@{templateetat}]]}} {{name=^{ame}}} {{perso=@{character_name_court}}} {{secoue=[[@{secoue}]]}} {{relances=[[ { floor( (@{rollAME}) / @{rolldiffquery} ), 0d0 }kh1 - 1 ]]}} {{blessures=[[@{blessures}]]}} {{fatigue=[[@{fatigue}]]}}" />
-
-
 <!---------------------->			
 <!------ [SCRIPT] ------>
 <!---------------------->
@@ -2442,4 +2410,85 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
         });
     });
 });
+</script>
+
+
+<!-- TEMP SAVE -->
+
+<!-- Fonctionne sans script -->
+<!-- 
+Version prouesse avec plusieurs dés affichés
+<button type="roll" value="&{template:classic} {{name=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button> 
+
+Version clasique avec meilleur de dés
+<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{Malus corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+
+
+-->
+
+
+
+
+
+<!-- boutton pour prouesse -->
+<button type="roll" value="&{template:cabinet-prouesse} {{title=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+
+
+
+
+<rolltemplate class="sheet-rolltemplate-cabinet-classic">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{opposition}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+		{{#qualite}}
+		<div class="sheet-key">{{qualite_title}}</div>
+		<div class="sheet-value">{{qualite}}</div>
+		{{/qualite}}
+		{{#aspect}}
+		<div class="sheet-key">{{aspect_title}}</div>
+		<div class="sheet-value">{{aspect}}</div>
+		{{/aspect}}
+		{{#attribut}}
+		<div class="sheet-key">{{attribut_title}}</div>
+		<div class="sheet-value">{{attribut}}</div>
+		{{/attribut}}
+		{{#malus_corps}}
+		<div class="sheet-key">{{malus_corps_title}}</div>
+		<div class="sheet-value">{{malus_corps}}</div>
+		{{/malus_corps}}
+		{{#computed::roll}}
+		<div class="sheet-desc">{{resultat_title}} {{computed::roll}}</div>
+		{{/computed::roll}}
+    </div>
+  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-cabinet-prouesse">
+  <div class="sheet-container">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+     <div class="sheet-content">
+		  {{#allprops() title subtitle desc color}}
+		  <div class="sheet-key">{{key}}</div>
+		  <div class="sheet-value">{{value}}</div>
+		  {{/allprops() title subtitle desc color}}
+		  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+<script type="text/worker">
+   on('clicked:roll-bluffer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=Bluffer}} {{subtitle=@{character_name}}} {{qualite_title=Courage}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{medium|innocence_bonus}]]}} {{malus_corps=[[@{medium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
 </script>

@@ -13,10 +13,8 @@ font-family: 'Shadows Into Light', cursive;
 
 
 
+  /* #General */
 
-/*------------------------------------*\
-  #General
-\*------------------------------------*/
 
 .charsheet {
     font-family: 'Libre Bodoni', serif;
@@ -47,6 +45,7 @@ font-family: 'Shadows Into Light', cursive;
 	--defaut_vert: #16b42c;
 	--defaut_violet: #b01ee8;
 	--border_defaut_color1: #a8595c;
+	--margin_dice: 2px;
 }
 
 .charsheet p{
@@ -101,9 +100,9 @@ div.arbre select {
 img.dice_tab {
 }
 
-/*------------------------------------*\
-  DARK MODE BASE
-\*------------------------------------*/
+
+  /* DARK MODE BASE */
+
 
 body.sheet-darkmode button,
 body.sheet-darkmode input,
@@ -123,9 +122,9 @@ body.sheet-darkmode .charsheet {
     border-color: #475e66;
 }
 
-/*------------------------------------*\
-  Déroulant type de feuille
-\*------------------------------------*/
+
+  /* Déroulant type de feuille */
+
 
 div.feuille_pj,
 div.feuille_commune,
@@ -163,9 +162,9 @@ body.sheet-darkmode .selector {
 	color: #ffffffe0;
 }
 
-/*------------------------------------*\
-  #Menu Tabs Setup
-\*------------------------------------*/
+
+  /* #Menu Tabs Setup */
+
 
 .cabinet,
 .corps,
@@ -283,21 +282,11 @@ input[type=radio].onglesprit:checked + span {
 	cursor: default;
 } */
 
-/*------------------------------------*\
-  #Checkbox
-\*------------------------------------*/
 
-/* input[type="checkbox"] {
-    width: auto;
-    height: auto;
-    padding: 0;
-    margin: 3px 0;
-    line-height: normal;
-    cursor: pointer;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-} */
+
+
+
+  /* #Checkbox */
 
 input[type="checkbox"] {
     -webkit-appearance: none;
@@ -377,9 +366,19 @@ div.perisprit_data input[type="checkbox"]:focus {
 }
 
 
-/*------------------------------------*\
-  #Slider
-\*------------------------------------*/
+
+  /* #Slider */
+
+.charsheet button.classic_roll,
+.charsheet button.prouesse_roll {
+	display: none;
+}
+
+input.sheet-prouesse-switch:not(:checked) ~ button.classic_roll {
+    display: inline-block;
+}
+
+
 
 
 .sante_femme_data,
@@ -441,9 +440,11 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/*------------------------------------*\
-  #Radio Corps
-\*------------------------------------*/
+
+
+
+
+  /* #Radio Corps */
 
 /* Configure a container for the radio buttons. */
 .charsheet .sheet-radios {
@@ -486,9 +487,12 @@ input:checked + .slider:before {
   display: none;
 }
 
-/*------------------------------------*\
-  #Radio Perisprit
-\*------------------------------------*/
+
+
+
+
+  /* #Radio Perisprit */
+  
 .charsheet input.sheet-radio[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
 .charsheet input.sheet-radio[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
 .charsheet input.sheet-radio[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
@@ -499,9 +503,11 @@ input:checked + .slider:before {
 .charsheet input.sheet-radio[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
 
 
-/*------------------------------------*\
-  #Radio Arbre de vie
-\*------------------------------------*/
+
+
+
+
+  /* #Radio Arbre de vie */
 
 
 input[type="radio"] {
@@ -590,9 +596,11 @@ input[type="radio"] {
     box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
  
-/*------------------------------------*\
-  #Systeme couleur arbre de vie
-\*------------------------------------*/
+ 
+ 
+ 
+ 
+  /* #Systeme couleur arbre de vie */
 
 .charsheet{
     --courage-background:"none";
@@ -1135,9 +1143,12 @@ input[type="radio"] {
     background-color:var(--control3-bg);
 }
 
-/*------------------------------------*\
-  Wrapper Cabinet
-\*------------------------------------*/
+
+
+
+
+
+  /* Wrapper Cabinet */
 
 .wrapper_cabinet{  
 	display: grid;
@@ -1334,9 +1345,12 @@ input[type="radio"] {
 	background-size: cover;
 }
 
-/*------------------------------------*\
-  Wrapper Corps
-\*------------------------------------*/
+
+
+
+
+
+  /* Wrapper Corps */
 
 .wrapper_corps{  
 	display: grid;
@@ -1584,9 +1598,12 @@ input[type="radio"] {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
 	background-size: cover;
 }
-/*------------------------------------*\
-  Wrapper Arbre
-\*------------------------------------*/
+
+
+
+
+  /* Wrapper Arbre */
+  
 
 .wrapper_arbre{  
     display: grid;
@@ -1634,9 +1651,13 @@ input[type="radio"] {
 	scale: 1.1;
 }
 
-/*------------------------------------*\
-  Wrapper Esprit
-\*------------------------------------*/
+
+
+
+
+
+  /* Wrapper Esprit */
+  
 
 .wrapper_esprit{  
 	display: grid;
@@ -1930,9 +1951,12 @@ input[type="radio"] {
 	background-size: cover;
 }
 
-/*------------------------------------*\
-  Wrapper Arme
-\*------------------------------------*/
+
+
+
+
+
+  /* Wrapper Arme */
 
 .wrapper_arme{  
 	display: grid;
@@ -2012,9 +2036,12 @@ input[type="radio"] {
 	grid-column: 14;
 }
 
-/*------------------------------------*\
-  Wrapper Aspect
-\*------------------------------------*/
+
+
+
+
+
+  /* Wrapper Aspect */
 
 .wrapper_aspect{  
 	display: grid;
@@ -2030,9 +2057,11 @@ input[type="radio"] {
 	grid-column: 2;
 }
 
-/*------------------------------------*\
-  Wrapper Perisprit
-\*------------------------------------*/
+
+
+
+
+  /* Wrapper Perisprit */
 
 .wrapper_perisprit{  
 	display: grid;
@@ -2078,9 +2107,11 @@ input[type="radio"] {
 }
 
 
-/*------------------------------------*\
-  Wrapper Pouvoir
-\*------------------------------------*/
+
+
+
+  /* Wrapper Pouvoir */
+  
 
 .wrapper_pouvoir{  
 	display: grid;
@@ -2369,9 +2400,11 @@ input[type="radio"] {
 	grid-row: 5;
 }
 
-/*------------------------------------*\
-  Wrapper Arbre_esprit
-\*------------------------------------*/
+
+
+  /* Wrapper Arbre_esprit */
+  
+  
 
 .wrapper_arbre_esprit{  
 	display: grid;
@@ -2696,9 +2729,10 @@ input[type="radio"] {
 	margin-left: 70px;
 }
 
-/*------------------------------------*\
-  Wrapper Arbre_de_vie
-\*------------------------------------*/
+
+
+
+  /* Wrapper Arbre_de_vie */
 
 .wrapper_arbre_data{  
 	display: grid;
@@ -3276,10 +3310,10 @@ input[type="radio"] {
 	opacity:0;
 }
 
-	
-/*------------------------------------*\
-  Wrapper boutons arbre de vie
-\*------------------------------------*/
+
+
+  /* Wrapper boutons arbre de vie */
+  
 
 .wrapper_arbre_bouttons{  
 	display: grid;
@@ -3330,9 +3364,9 @@ input[type="radio"] {
 	margin-top: -15px;
 }
 
-/*------------------------------------*\
-  Wrapper Controle défauts
-\*------------------------------------*/
+
+  /* Wrapper Controle défauts */
+
 
 .wrapper_controle_defaut{  
 	display: grid;
@@ -3462,9 +3496,12 @@ input[type="radio"] {
 	grid-row: 4;
 }
 
-/*------------------------------------*\
-  Wrapper Bouton Corps
-\*------------------------------------*/
+
+
+
+  /* Wrapper Bouton Corps */
+  
+  
 
 .wrapper_corps_boutton{  
 	display: grid;
@@ -3507,9 +3544,10 @@ input[type="radio"] {
     grid-row: 1;
 }
 
-/*------------------------------------*\
-  Wrapper PNJ
-\*------------------------------------*/
+
+
+
+  /* Wrapper PNJ */
 
 .wrapper_pnj{  
 	display: grid;
@@ -3728,9 +3766,9 @@ input[type="radio"] {
 	margin-left: 50px;
 }
 
-/*------------------------------------*\
-  Wrapper PNJ Attributs
-\*------------------------------------*/
+
+
+  /* Wrapper PNJ Attributs */
 
 .wrapper_pnj_attributs{  
 	display: grid;
@@ -3753,9 +3791,9 @@ input[type="radio"] {
     grid-row: 1;
 }
 
-/*------------------------------------*\
-  Wrapper Perisprit PNJ
-\*------------------------------------*/
+
+
+  /* Wrapper Perisprit PNJ */
 
 .wrapper_perisprit_pnj{  
 	display: grid;
@@ -3798,9 +3836,7 @@ input[type="radio"] {
 	grid-column: 9;
 }
 
-/*------------------------------------*\
-  Wrapper Energie PNJ
-\*------------------------------------*/
+  /* Wrapper Energie PNJ */
 
 .wrapper_energie_pnj{  
     display: grid;
@@ -3843,9 +3879,8 @@ input[type="radio"] {
 	grid-column: 9;
 }
 
-/*------------------------------------*\
-  Wrapper Arme PNJ
-\*------------------------------------*/
+
+  /* Wrapper Arme PNJ */
 
 .wrapper_arme_pnj{  
 	display: grid;
@@ -3925,9 +3960,8 @@ input[type="radio"] {
 	grid-column: 14;
 }
 
-/*------------------------------------*\
-  Wrapper PNJ Combat
-\*------------------------------------*/
+
+  /* Wrapper PNJ Combat */
 
 .wrapper_pnj_combat{  
 	display: grid;
@@ -4056,9 +4090,8 @@ input[type="radio"] {
     margin-top: 30px;
 }
 
-/*------------------------------------*\
-  Wrapper Dice
-\*------------------------------------*/
+
+  /* Wrapper Dice */
 
 .wrapper_dice_title{  
 	display: grid;
@@ -4078,7 +4111,7 @@ input[type="radio"] {
 
 .wrapper_dice_type{  
 	display: grid;
-    grid-template-columns: 150px 10px 223px;
+    grid-template-columns: 140px 5px 238px;
     grid-template-rows: 30px;
     margin-top: 0px;
     margin-left: 0px;
@@ -4226,6 +4259,7 @@ input[type="radio"] {
 
 .bluffer {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .bluffer_data {
@@ -4234,6 +4268,7 @@ input[type="radio"] {
 
 .bluffer_resister {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .bluffer_resister_data {
@@ -4242,6 +4277,7 @@ input[type="radio"] {
 
 .convaincre {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .convaincre_data {
@@ -4250,6 +4286,7 @@ input[type="radio"] {
 
 .intimider_resister {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .intimider_resister_data {
@@ -4258,6 +4295,7 @@ input[type="radio"] {
 
 .intimider {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .intimider_data {
@@ -4266,6 +4304,7 @@ input[type="radio"] {
 
 .questionner {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .questionner_data {
@@ -4274,6 +4313,7 @@ input[type="radio"] {
 
 .seduire {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .seduire_data {
@@ -4282,6 +4322,7 @@ input[type="radio"] {
 
 .seduire_resister {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .seduire_resister_data {
@@ -4299,18 +4340,22 @@ input[type="radio"] {
 
 .ecouter {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .fouiller {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .observer {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .surveiller {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .ecouter_data {
@@ -4339,18 +4384,22 @@ input[type="radio"] {
 
 .analyser {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .comprendre {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .connaitre {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .rechercher {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .analyser_data {
@@ -4379,6 +4428,7 @@ input[type="radio"] {
 
 .contacter  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .contacter_data {
@@ -4395,74 +4445,92 @@ input[type="radio"] {
 
 .equilibre {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .creer {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .crocheter {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .dissimuler {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .poches {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .forcer {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .grimper {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .musique {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .selancer {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .monter {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .piloter {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .poursuivre_pied {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .poursuivre_vehicule {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .poursuivi_pied {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .poursuivi_vehicule {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .discret {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .spectacle {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .virevolter {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .equilibre_data {
@@ -4549,18 +4617,22 @@ input[type="radio"] {
 
 .desarmer  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .frapper  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .immobiliser  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .bagarrer  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .desarmer_data  {
@@ -4590,10 +4662,12 @@ input[type="radio"] {
 
 .lancer  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .tirer  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .lancer_data  {
@@ -4615,10 +4689,12 @@ input[type="radio"] {
 
 .esquiver  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .parer  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .esquiver_data  {
@@ -4640,10 +4716,12 @@ input[type="radio"] {
 
 .degager  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .abri  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .degager_data  {
@@ -4665,14 +4743,17 @@ input[type="radio"] {
 
 .inconscient  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .mourir  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .soin  {
     grid-column: 1;
+    margin-bottom: var(--margin_dice);
 }
 
 .inconscient_data  {
@@ -4688,27 +4769,8 @@ input[type="radio"] {
 }
 
 
-/*------------------------------------*\
-  Style Cabinet / Corps / 
-\*------------------------------------*/
+  /* Style Cabinet / Corps /  */
 
-/* input[type=text],
-input[type=number] {
-    display: inline-block;
-    margin-right: 5px;
-	border-radius: 0px;
-    border: none;
-    border-bottom: 1px solid #0000004f;
-    -moz-appearance: textfield;
-    margin-top: -5px;
-    padding-bottom: 2px;
-	background-color: transparent;
-	width: 100%;
-	font-family: 'Junge', cursive;
-	font-size: 14px;
-	color: var(--blue_cabinet);
-	outline: none;
-} */
 
 .charsheet input.cabinet_name,
 .charsheet input.esprit_name {
@@ -5710,4 +5772,173 @@ span.picto {
 span.dice_texte {
 	color: var(--red_cabinet);
 	font-size: 12px;
+}
+
+
+
+  /* Boutton D6 style  */
+
+.charsheet button[type=action].classic_roll::before {
+  content: '';
+}
+
+.charsheet button[type=action].classic_roll {
+    border: none;
+    padding: 0;
+}
+
+.charsheet button[type=action].classic_roll:hover {
+    border: none;
+    padding: 0;
+	color: var(--marron_cabinet);
+    text-decoration: underline;
+}
+
+
+  /* Roll Template */
+
+
+/* Version jet classique  */
+
+.sheet-rolltemplate-cabinet-classic {
+  margin-left: -37px;
+}
+
+.withoutavatars .sheet-rolltemplate-cabinet-classic {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-container {
+  border: 1px solid;
+  border-color: var(--header-bg-color);
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-header {
+  background-color: var(--header-bg-color);
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-cabinet-classic .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-cabinet-classic .sheet-subtitle {
+  font-size:.9em;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-container {
+  --header-bg-color: rgba(112,32,130,1);
+  --header-text-color: #FFF;
+}
+
+
+.sheet-rolltemplate-cabinet-classic .sheet-content {
+  display: grid;
+  background: #FFF;
+  grid-template-columns: auto auto;
+  line-height:1.4em;
+}
+.sheet-rolltemplate-cabinet-classic .sheet-content > div {
+  padding: 5px;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-cabinet-classic .inlinerollresult,
+.sheet-rolltemplate-cabinet-classic .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-classic .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-classic .inlinerollresult.fullfail {
+	border: 2px solid;
+	border-color:black;
+	background-color: black;
+	color: #eee;
+}
+
+/* Version jet prouesse  */
+
+.sheet-rolltemplate-cabinet-prouesse {
+  margin-left: -37px;
+}
+.withoutavatars .sheet-rolltemplate-cabinet-prouesse {
+  margin-left: -7px;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-container {
+  border: 1px solid;
+  border-color: var(--header-bg-color);
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-header {
+  background-color: var(--header-bg-color);
+  text-align: left;
+  color: var(--header-text-color);
+  padding: 5px;
+}
+.sheet-rolltemplate-cabinet-prouesse .sheet-title {
+  font-size:1.1em;
+}
+.sheet-rolltemplate-cabinet-prouesse .sheet-subtitle {
+  font-size:.9em;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-container {
+  --header-bg-color: rgba(112,32,130,1);
+  --header-text-color: #FFF;
+}
+
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-content {
+  display: grid;
+  background: #FFF;
+  grid-template-columns: auto auto;
+  line-height:1.4em;
+}
+.sheet-rolltemplate-cabinet-prouesse .sheet-content > div {
+  padding: 5px;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult,
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullfail {
+
+	background-color: black;
+	color: #eee;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult {
+	border: 2px solid;
+	border-color:black;
 }
