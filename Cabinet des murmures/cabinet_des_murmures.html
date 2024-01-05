@@ -28,7 +28,7 @@
 		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span data-i18n="body">Corps</span>
 		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span>
 		<input type="radio" name="attr_tab_hote" value="4" class="onglhotedice" /><span data-i18n="dice"></span>
-		<input class="cabinet_name" type="text" name="attr_character_name">
+		<input class="cabinet_name" type="text" name="attr_medium_name" placeholder="Nom du Médium">
 	
 	<!------------------>
 	<!-- DIV CABINET  -->
@@ -156,19 +156,19 @@
 				<p><span data-i18n="robustness">ROBUSTESSE</span></p>
 			</div>
 			<div class="attributs_bonus1">
-				<p>+<input class="bonus" type="text" name="attr_acuite_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_agilite_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_anonymat_bonus"></p>
+				<p>+<input class="bonus" type="text" name="attr_acuite_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_agilite_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_anonymat_bonus" value="0"></p>
 			</div>
 			<div class="attributs_bonus2">
-				<p>+<input class="bonus" type="text" name="attr_beaute_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_etrangete_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_habilete_bonus"></p>
+				<p>+<input class="bonus" type="text" name="attr_beaute_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_etrangete_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_habilete_bonus" value="0"></p>
 			</div>
 			<div class="attributs_bonus3">
-				<p>+<input class="bonus" type="text" name="attr_innocence_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_puissance_bonus"></p>
-				<p>+<input class="bonus" type="text" name="attr_robustesse_bonus"></p>
+				<p>+<input class="bonus" type="text" name="attr_innocence_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_puissance_bonus" value="0"></p>
+				<p>+<input class="bonus" type="text" name="attr_robustesse_bonus" value="0"></p>
 			</div>
 			<div class="equipement"><span data-i18n="equipment">ÉQUIPEMENT</span>
 				<div class="titre_trait">
@@ -1371,13 +1371,28 @@
 	</div>
 	<!---------------------->
 	<!-- DIV ESPRIT DICE  -->
-	<!---------------------->
+	<!--------------------->
 	<div class="esprit_dice">
-	<label class="switch">
-		<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
-		<span class="slider round"></span>
-	</label>
-	<button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button><button class="prouesse_roll" type="action" name="act_roll-bluffer">Bluffer</button>
+		<div class="wrapper_dice_slider">
+			<div class="switch_dice_slider">
+				<label class="switch_prouesse">
+					<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+					<span class="slider_prouesse round_prouesse"></span>
+				</label>
+			</div>
+			<div class="switch_dice_slider_data">
+				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+				<span class="classic_roll">Jet classique</span>
+				<span class="prouesse_roll">Jet de Prouesse</span>
+			</div>
+			<div class="switch_dice_picto">
+				<span class="picto" style="cursor: auto; font-size: 16px;">!</span>
+			</div>
+			<div class="switch_dice_info">
+				La feuille de personnage du Médium doit impérativement se nommer <span class="medium_dice">Médium</span> pour que les jets de dés fonctionnent.
+			</div>
+		</div>
+		
 		<div class="wrapper_dice_title">
 			<div class="action_dice">ACTIONS<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
@@ -1387,22 +1402,102 @@
 			<div class="section_communiquer">
 				<div class="wrapper_dice_type">
 					<div class="communiquer">COMMUNIQUER</div>
-					<div class="bluffer"><button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button><button class="prouesse_roll" type="action" name="act_roll-bluffer">Bluffer</button></div>
-					<div class="bluffer_data"><span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)<!-- <br>contre NESHAMA --></span></div>
-					<div class="bluffer_resister"><button class="classic_roll" type="action" name="act_roll-deceler-bluff">Déceler un Bluff</button></div>
-					<div class="bluffer_resister_data"><span class="dice_texte">Intelligence + NESHAMA<!-- <br>contre ROUA'H --></span></div>
-					<div class="convaincre">Convaincre</div>
-					<div class="convaincre_data"><span class="dice_texte">Charisme + NESHAMA</span></div>
-					<div class="intimider">Intimider</div>
-					<div class="intimider_data"><span class="dice_texte">Autorité + ROUA'H <br>(+ÉTRANGETÉ ou PUISSANCE)<!-- <br>contre NESHAMA --></span></div>
-					<div class="intimider_resister">Intimider (Résister)</div>
-					<div class="intimider_resister_data"><span class="dice_texte">Courage + NESHAMA<!-- <br>contre ROUA'H --></span></div>
-					<div class="questionner">Questionner</div>
-					<div class="questionner_data"><span class="dice_texte">Ouverture + NESHAMA (+INNOCENCE)<!-- <br>contre NESHAMA --></span></div>
-					<div class="seduire">Séduire</div>
-					<div class="seduire_data"><span class="dice_texte">Charisme + NESHAMA ou ROUA'H <br>(+BEAUTÉ)<!-- <br>contre NESHAMA --></span></div>
-					<div class="seduire_resister">Séduire  (Résister)</div>
-					<div class="seduire_resister_data"><span class="dice_texte">Sérénité + NESHAMA<!-- <br>contre ROUA'H --></span></div>
+					
+					<div class="bluffer">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer" value="&{template:cabinet-prouesse} {{title=Bluffer}} {{subtitle=(contre NESHAMA)}} {{Sensibilité=@{D_sensibilite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Bluffer</button>
+					</div>
+					<div class="bluffer_data">
+						<span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)<!-- <br>contre NESHAMA --></span>
+					</div>
+					
+					<div class="bluffer_resister">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-deceler-bluff">Déceler un Bluff</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer-resister" value="&{template:cabinet-prouesse} {{title=DÉCELER UN BLUFF}} {{subtitle=(contre ROUA'H)}} {{Intellect=@{D_intellect_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}">Déceler un Bluff</button>
+					</div>
+					<div class="bluffer_resister_data">
+						<span class="dice_texte">Intellect + NESHAMA<!-- <br>contre ROUA'H --></span>
+					</div>
+					
+					<div class="convaincre">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-convaincre">Convaincre</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-convaincre" value="&{template:cabinet-prouesse} {{title=CONVAINCRE}} {{Charisme=@{D_charisme_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Convaincre</button>
+					</div>
+					<div class="convaincre_data">
+						<span class="dice_texte">Charisme + NESHAMA</span>
+					</div>
+					
+					<div class="intimider_etrangete">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-intimider-etrangete">Intimider (Étrang.)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-etrangete" value="&{template:cabinet-prouesse} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{Autorité=@{D_autorite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Étrangeté=[[@{Médium|etrangete_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}">Intimider (Étrang.)</button>
+					</div>
+					<div class="intimider_etrangete_data">
+						<span class="dice_texte">Autorité + ROUA'H (+ÉTRANGETÉ)<!-- <br>contre NESHAMA --></span>
+					</div>
+					
+					<div class="intimider_puissance">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-intimider-puissance">Intimider (Puissance)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-puissance" value="&{template:cabinet-prouesse} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{Autorité=@{D_autorite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Puissance=[[@{Médium|puissance_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Intimider (Puissance)</button>
+					</div>
+					<div class="intimider_puissance_data">
+						<span class="dice_texte">Autorité + ROUA'H (+PUISSANCE)<!-- <br>contre NESHAMA --></span>
+					</div>
+					
+					<div class="intimider_resister">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-intimider-resister">Intimider (Résister)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-resister" value="&{template:cabinet-prouesse} {{title=INTIMIDER (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{Courage=@{D_courage_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Intimider (Résister)</button>
+					</div>
+					<div class="intimider_resister_data">
+						<span class="dice_texte">Courage + NESHAMA<!-- <br>contre ROUA'H --></span>
+					</div>
+					
+					<div class="questionner">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-questionner">Questionner</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-questionner" value="&{template:cabinet-prouesse} {{title=QUESTIONNER}} {{subtitle=(contre NESHAMA)}} {{Ouverture=@{D_ouverture_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}">Questionner</button>
+					</div>
+					<div class="questionner_data">
+						<span class="dice_texte">Ouverture + NESHAMA (+INNOCENCE)<!-- <br>contre NESHAMA --></span>
+					</div>
+						
+					<div class="seduire_neshama">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-seduire-neshama">Séduire (Neshama)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-neshama" value="&{template:cabinet-prouesse} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{Charisme=@{D_charisme_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Beauté=[[@{Médium|beaute_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Séduire (Neshama)</button>
+						<!-- A FAIRE -->
+						
+						
+					</div>
+					<div class="seduire_neshama_data">
+						<span class="dice_texte">Charisme + NESHAMA (+BEAUTÉ)<!-- <br>contre NESHAMA --></span>
+					</div>
+					
+					<div class="seduire_rouah">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-seduire-rouah">Séduire (Roua'h)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-rouah" value="&{template:cabinet-prouesse} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{Charisme=@{D_charisme_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Beauté=[[@{Médium|beaute_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}">Séduire (Roua'h)</button>
+						<!-- A FAIRE -->
+						
+						
+					</div>
+					<div class="seduire_rouah_data">
+						<span class="dice_texte">Charisme + ROUA'H (+BEAUTÉ)<!-- <br>contre NESHAMA --></span>
+					</div>
+					
+					<div class="seduire_resister">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-seduire-resister">Séduire (Résister)</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-resister" value="&{template:cabinet-prouesse} {{title=SÉDUIRE (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{Sérénité=@{D_serenite_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Séduire (Résister)</button>
+					</div>
+					<div class="seduire_resister_data">
+						<span class="dice_texte">Sérénité + NESHAMA<!-- <br>contre ROUA'H --></span>
+					</div>
 				</div>
 			</div>
 			<div class="section_percevoir">
@@ -2412,6 +2507,120 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 });
 </script>
 
+<!-- Script test de compétence -->
+
+<script type="text/worker">
+   on('clicked:roll-bluffer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=BLUFFER}} {{subtitle=(contre ROUA'H}}} {{qualite_title=Sensibilité}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|innocence_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-deceler-bluff', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DÉCELER UN BLUFF}} {{subtitle=(contre ROUA'H}} {{qualite_title=Intellect}} {{aspect_title=NESHAMA}}{{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_intellect}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre ROUA'H)}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-convaincre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONVAINCRE}} {{qualite_title=Charisme}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-etrangete', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Autorité}} {{aspect_title=ROUA'H}} {{attribut_title=Étrangeté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|etrangete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Autorité}} {{aspect_title=ROUA'H}} {{attribut_title=Puissance}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|puissance_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-resister', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{qualite_title=Courage}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-questionner', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=QUESTIONNER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Ouverture}} {{aspect_title=NESHAMA}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_ouverture}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|innocence_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-neshama', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Charisme}} {{aspect_title=NESHAMA}} {{attribut_title=Beauté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|beaute_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-rouah', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Charisme}} {{aspect_title=ROUA'H}} {{attribut_title=Beauté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|beaute_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-resister', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{qualite_title=Sérénité}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_serenite}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+
+
 
 <!-- TEMP SAVE -->
 
@@ -2431,7 +2640,7 @@ Version clasique avec meilleur de dés
 
 
 <!-- boutton pour prouesse -->
-<button type="roll" value="&{template:cabinet-prouesse} {{title=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
+<button type="roll" value="&{template:cabinet-prouesse} {{title=Bluffer}} {{subtitle=(contre NESHAMA)}} {{Courage=@{D_courage_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|innocence_bonus}]]}} {{Divers=[[?{Bonus|0}]]}}" name="roll_prouesse_bluffer"></button>
 
 
 
@@ -2440,7 +2649,7 @@ Version clasique avec meilleur de dés
   <div class="sheet-container">
     <div class="sheet-header">
       {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{opposition}}</div>{{/subtitle}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
     </div>
     <div class="sheet-content">
 		{{#qualite}}
@@ -2459,6 +2668,10 @@ Version clasique avec meilleur de dés
 		<div class="sheet-key">{{malus_corps_title}}</div>
 		<div class="sheet-value">{{malus_corps}}</div>
 		{{/malus_corps}}
+		{{#divers}}
+		<div class="sheet-key">{{divers_title}}</div>
+		<div class="sheet-value">{{divers}}</div>
+		{{/divers}}
 		{{#computed::roll}}
 		<div class="sheet-desc">{{resultat_title}} {{computed::roll}}</div>
 		{{/computed::roll}}
@@ -2481,14 +2694,3 @@ Version clasique avec meilleur de dés
     </div>
   </div>
 </rolltemplate>
-
-<script type="text/worker">
-   on('clicked:roll-bluffer', async (event) => {
-         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=Bluffer}} {{subtitle=@{character_name}}} {{qualite_title=Courage}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{medium|innocence_bonus}]]}} {{malus_corps=[[@{medium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
-			
-            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
-			const computeObj = {};
-			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
-    finishRoll(roll.rollId,computeObj);
-  })
-</script>

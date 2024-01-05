@@ -366,21 +366,8 @@ div.perisprit_data input[type="checkbox"]:focus {
 }
 
 
-
-  /* #Slider */
-
-.charsheet button.classic_roll,
-.charsheet button.prouesse_roll {
-	display: none;
-}
-
-input.sheet-prouesse-switch:not(:checked) ~ button.classic_roll {
-    display: inline-block;
-}
-
-
-
-
+  /* #Slider Corps*/
+  
 .sante_femme_data,
 .charsheet .sheet-block-switch:checked ~ .sante_homme_data {
   display: block;
@@ -440,7 +427,76 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+  
+  /* #Slider Prouesse*/
 
+.charsheet .classic_roll,
+.charsheet .prouesse_roll {
+	display: none;
+}
+
+input.sheet-prouesse-switch:not(:checked) ~ button.classic_roll,
+input.sheet-prouesse-switch:checked ~  button.prouesse_roll,
+input.sheet-prouesse-switch:not(:checked) ~ span.classic_roll,
+input.sheet-prouesse-switch:checked ~  span.prouesse_roll {
+    display: inline-block;
+}
+
+.charsheet input.sheet-prouesse-switch {
+	display: none;
+}
+
+.slider_prouesse { 
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffffdb;
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 35px;
+    height: 17px;
+    margin-top: 158px;
+    margin-left: 58px;
+    border: 1px solid var(--marron_cabinet);
+}
+
+.slider_prouesse:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    top: 1px;
+    bottom: 0px;
+    background-color: var(--blue_cabinet);
+    -webkit-transition: .4s;
+    transition: .4s;
+    width: 15px;
+    height: 15px;
+}
+
+input:checked + .slider_prouesse {
+  
+}
+
+input:checked + .slider_prouesse:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+  background-color: var(--red_cabinet);
+}
+
+/* Rounded sliders */
+.slider_prouesse.round_prouesse {
+  border-radius: 34px;
+}
+
+.slider_prouesse.round_prouesse:before {
+  border-radius: 50%;
+}
 
 
 
@@ -4090,15 +4146,52 @@ input[type="radio"] {
     margin-top: 30px;
 }
 
-
-  /* Wrapper Dice */
-
-.wrapper_dice_title{  
+  /* Wrapper Switch Dice */
+ .wrapper_switch_dice{  
 	display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 50px 200px 200px;
 	grid-template-rows: auto;
     margin-top: 0px;
     margin-left: 0px;
+}
+
+
+  
+  
+  /* Wrapper Dice */
+
+.wrapper_dice_slider{  
+    display: grid;
+    grid-template-columns: 65px 349px 25px 363px;
+    grid-template-rows: auto;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 15px;
+}
+
+.switch_dice_slider {
+	grid-column: 1;
+	grid-row: 1/3;
+}
+
+.switch_dice_slider_data {
+	grid-column: 2;
+	grid-row: 1/3;
+    padding-top: 10px;
+}
+
+.switch_dice_picto {
+	grid-column: 3;
+	grid-row: 1/3;
+    padding-top: 2px;
+}
+
+.switch_dice_info {
+	grid-column: 4;
+	grid-row: 1;
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .wrapper_dice_data{  
@@ -4293,12 +4386,21 @@ input[type="radio"] {
     grid-column: 3;
 }
 
-.intimider {
+.intimider_etrangete {
     grid-column: 1;
     margin-bottom: var(--margin_dice);
 }
 
-.intimider_data {
+.intimider_etrangete_data {
+    grid-column: 3;
+}
+
+.intimider_puissance {
+    grid-column: 1;
+    margin-bottom: var(--margin_dice);
+}
+
+.intimider_puissance_data {
     grid-column: 3;
 }
 
@@ -4311,12 +4413,21 @@ input[type="radio"] {
     grid-column: 3;
 }
 
-.seduire {
+.seduire_neshama {
     grid-column: 1;
     margin-bottom: var(--margin_dice);
 }
 
-.seduire_data {
+.seduire_neshama_data {
+    grid-column: 3;
+}
+
+.seduire_rouah {
+    grid-column: 1;
+    margin-bottom: var(--margin_dice);
+}
+
+.seduire_rouah_data {
     grid-column: 3;
 }
 
@@ -5774,6 +5885,14 @@ span.dice_texte {
 	font-size: 12px;
 }
 
+span.classic_roll {
+	color: var(--blue_cabinet);
+}
+
+span.prouesse_roll {
+	color: var(--red_cabinet);
+}
+
 
 
   /* Boutton D6 style  */
@@ -5785,15 +5904,45 @@ span.dice_texte {
 .charsheet button[type=action].classic_roll {
     border: none;
     padding: 0;
+    background: none;
 }
 
 .charsheet button[type=action].classic_roll:hover {
-    border: none;
-    padding: 0;
-	color: var(--marron_cabinet);
     text-decoration: underline;
 }
 
+  /* Boutton D6 style  */
+
+.charsheet button[type=roll].prouesse_roll::before {
+  content: '';
+}
+
+.charsheet button[type=roll].prouesse_roll {
+    border: none;
+    padding: 0;
+    color: var(--red_cabinet);
+    font-size: 13px;
+    margin: 0;
+    text-shadow: none;
+    border-style: none;
+    transition: none;
+    background: none !important;
+    padding: 0 !important;
+    box-shadow: none;
+    -webkit-appearance: unset;
+    height: 17px;
+    margin-top: -6px;
+}
+
+.charsheet button[type=roll].prouesse_roll:hover {
+    text-decoration: underline;
+}
+
+
+span.medium_dice {
+    color: #ff000094;
+    margin: 2px;
+}
 
   /* Roll Template */
 
@@ -5929,16 +6078,16 @@ span.dice_texte {
   text-align: center;
 }
 
-.sheet-rolltemplate-cabinet-prouesse .inlinerollresult,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullcrit,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullfail {
-
 	background-color: black;
 	color: #eee;
 }
 
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult {
+	background-color: black !important;
+	color: #eee;
 	border: 2px solid;
 	border-color:black;
 }

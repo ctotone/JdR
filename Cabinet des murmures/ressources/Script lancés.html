@@ -1,0 +1,111 @@
+<script type="text/worker">
+   on('clicked:roll-deceler-bluff', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DÉCELER UN BLUFF}} {{subtitle=@{character_name}}} {{qualite_title=Intellect}} {{aspect_title=NESHAMA}}{{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_intellect}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-convaincre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONVAINCRE}} {{qualite_title=Charisme}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-etrangete', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Autorité}} {{aspect_title=ROUA'H}} {{attribut_title=Étrangeté}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|etrangete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Autorité}} {{aspect_title=ROUA'H}} {{attribut_title=Puissance}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|puissance_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-intimider-resister', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INTIMIDER (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{qualite_title=Courage}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-questionner', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=QUESTIONNER}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Ouverture}} {{aspect_title=NESHAMA}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_ouverture}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|innocence_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-neshama', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Charisme}} {{aspect_title=NESHAMA}} {{attribut_title=Beauté}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|beaute_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-rouah', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE}} {{subtitle=(contre NESHAMA)}} {{qualite_title=Charisme}} {{aspect_title=ROUA'H}} {{attribut_title=Beauté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|beaute_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-seduire-resister', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SÉDUIRE (RÉSISTER)}} {{subtitle=(contre ROUA'H)}} {{qualite_title=Sérénité}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_serenite}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+base
+
+<script type="text/worker">
+   on('clicked:roll-****', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=****}} {{subtitle=@{character_name}}} {{qualite_title=Courage}} {{aspect_title=ROUA'H}} {{attribut_title=Innocence}} {{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|innocence_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{opposition=(contre NESHAMA)}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
