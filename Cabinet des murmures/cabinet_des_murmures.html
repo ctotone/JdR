@@ -2622,27 +2622,9 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 
 
-<!-- TEMP SAVE -->
-
-<!-- Fonctionne sans script -->
-<!-- 
-Version prouesse avec plusieurs dés affichés
-<button type="roll" value="&{template:classic} {{name=Test}} {{Courage=@{D_courage_roll}}} {{ROUA'H=@{aspect_rouah_bonus}}} {{Innocence=@{medium|innocence_bonus}}} {{Malus Corps=@{medium|innocence_bonus}}} {{Divers=?{Bonus|0}}}" name="roll_BluffCheck"></button> 
-
-Version clasique avec meilleur de dés
-<button type="roll" value="&{template:default} {{name=Test}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=@{aspect_rouah_bonus}}} {{attribut=@{medium|innocence_bonus}}} {{Malus corps=@{medium|innocence_bonus}}} {{divers=?{Bonus|0}}}" name="roll_BluffCheck"></button>
-
-
--->
-
-
-
-
-
-<!-- boutton pour prouesse -->
-<button type="roll" value="&{template:cabinet-prouesse} {{title=Bluffer}} {{subtitle=(contre NESHAMA)}} {{Courage=@{D_courage_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|innocence_bonus}]]}} {{Divers=[[?{Bonus|0}]]}}" name="roll_prouesse_bluffer"></button>
-
-
+<!----------------------------->			
+<!------ [ROLL TEMPLATE] ------>
+<!----------------------------->
 
 
 <rolltemplate class="sheet-rolltemplate-cabinet-classic">
