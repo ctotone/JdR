@@ -6189,8 +6189,9 @@ span.medium_dice {
     font-family: 'Libre Bodoni', serif;
     border-top: none;
     border-radius: 0px 0px 20px 20px;
-    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png) !important;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/result_frise.png), url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png) !important;
     background-size: cover !important;
+    height: 20px;
 }
 
 /* .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullfail {
@@ -6206,9 +6207,17 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullcrit,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullfail {
-	border: none;
-    background-color: transparent;
-    color: #475e66;
+	border: none !important;
+    background-color: transparent !important;
+    color: #475e66 !important;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullfail {
+	color: #d10505d9 !important;
+}
+
+.sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullcrit {
+	color: green !important;
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer .inlinerollresult,
@@ -6219,3 +6228,5 @@ span.medium_dice {
     font-size: 20px;
 	font-family: "Proxima Nova", ProximaNova-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+
