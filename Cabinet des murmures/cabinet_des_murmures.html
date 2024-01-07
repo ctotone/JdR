@@ -1382,8 +1382,8 @@
 			</div>
 			<div class="switch_dice_slider_data">
 				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
-				<span class="classic_roll">Jet classique</span>
-				<span class="prouesse_roll">Jet de Prouesse</span>
+				<span class="classic_roll">Jet Classique</span>
+				<span class="prouesse_roll">Jet d'Embellie</span>
 			</div>
 			<div class="switch_dice_picto">
 				<span class="picto" style="cursor: auto; font-size: 16px;">!</span>
@@ -1406,7 +1406,7 @@
 					<div class="bluffer">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-bluffer">Bluffer</button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer" value="&{template:cabinet-prouesse} {{title=Bluffer}} {{subtitle=(contre NESHAMA)}} {{Sensibilité=@{D_sensibilite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Bluffer</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer" value="&{template:cabinet-prouesse} {{title=BLUFFER}} {{subtitle=(contre ROUA'H)}} {{Sensibilité=@{D_sensibilite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Innocence=[[@{Médium|innocence_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Bluffer</button>
 					</div>
 					<div class="bluffer_data">
 						<span class="dice_texte">Sensibilité + ROUAH'H (+INNOCENCE)<!-- <br>contre NESHAMA --></span>
@@ -1503,14 +1503,42 @@
 			<div class="section_percevoir">
 				<div class="wrapper_dice_type">	
 					<div class="percevoir">PERCEVOIR</div>
-					<div class="ecouter">Écouter <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
-					<div class="ecouter_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span></div>
-					<div class="fouiller">Fouiller</div>
-					<div class="fouiller_data"><span class="dice_texte">Coordination + NEFESH (+ACUITÉ)</span></div>
-					<div class="observer">Observer <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
-					<div class="observer_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span></div>
-					<div class="surveiller">Surveiller </div>
-					<div class="surveiller_data"><span class="dice_texte">Attention + NEFESH (+ACUITÉ)<!-- <br>contre ROUA'H --></span></div>
+					<div class="ecouter">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-ecouter">Écouter</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-ecouter" value="&{template:cabinet-prouesse} {{title=ÉCOUTER}} {{Attention=@{D_attention_roll}}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-right: 0px;">Écouter</button>
+						<span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span>
+					</div>
+					<div class="ecouter_data">
+						<span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span>
+					</div>
+					
+					<div class="fouiller">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-fouiller">Fouiller</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-fouiller" value="&{template:cabinet-prouesse} {{title=FOUILLER}} {{Coordination=@{D_coordination_roll}}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Fouiller</button>
+					</div>
+					<div class="fouiller_data">
+						<span class="dice_texte">Coordination + NEFESH (+ACUITÉ)</span>
+					</div>
+					
+					<div class="observer">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-observer">Observer</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-observer" value="&{template:cabinet-prouesse} {{title=OBSERVER}} {{Attention=@{D_attention_roll}}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -6px;">Observer</button> 
+						<span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
+					<div class="observer_data">
+						<span class="dice_texte">Attention + NEFESH (+ACUITÉ)</span>
+					</div>
+					
+					<div class="surveiller">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-surveiller">Surveiller</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-surveiller" value="&{template:cabinet-prouesse} {{title=Surveiller}} {{subtitle=(contre ROUA'H)}} {{Attention=@{D_attention_roll}}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Surveiller</button>  
+					</div>
+					<div class="surveiller_data">
+						<span class="dice_texte">Attention + NEFESH (+ACUITÉ)<!-- <br>contre ROUA'H --></span>
+					</div>
 				</div>
 			</div>
 			<div class="section_savoir">
@@ -2619,6 +2647,70 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
   })
 </script>
 
+<script type="text/worker">
+   on('clicked:roll-ecouter', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=ÉCOUTER}} {{qualite_title=Attention}} {{aspect_title=NEFESH}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-fouiller', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=FOUILLER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-observer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=OBSERVER}} {{qualite_title=Attention}} {{aspect_title=NEFESH}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-surveiller', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=SURVEILLER}} {{subtitle=(contre ROUA'H)}} {{qualite_title=Attention}} {{aspect_title=NEFESH}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2628,12 +2720,13 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 
 <rolltemplate class="sheet-rolltemplate-cabinet-classic">
-  <div class="sheet-container">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-    </div>
-    <div class="sheet-content">
+<div class="sheet-container">
+	<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		<div class="type">Jet Classique</div>
+	</div>
+	<div class="sheet-content">
 		{{#qualite}}
 		<div class="sheet-key">{{qualite_title}}</div>
 		<div class="sheet-value">{{qualite}}</div>
@@ -2657,22 +2750,23 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		{{#computed::roll}}
 		<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}}</div>
 		{{/computed::roll}}
-    </div>
-  </div>
+	</div>
+</div>
 </rolltemplate>
 
 <rolltemplate class="sheet-rolltemplate-cabinet-prouesse">
-  <div class="sheet-container">
+ <div class="sheet-container">
     <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		<div class="type">Jet d'Embellie</div>
     </div>
-     <div class="sheet-content">
-		  {{#allprops() title subtitle desc color}}
-		  <div class="sheet-key">{{key}}</div>
-		  <div class="sheet-value">{{value}}</div>
-		  {{/allprops() title subtitle desc color}}
-		  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    <div class="sheet-content">
+		{{#allprops() title subtitle desc color}}
+		<div class="sheet-key">{{key}}</div>
+		<div class="sheet-value">{{value}}</div>
+		{{/allprops() title subtitle desc color}}
+		<div class="sheet-footer"></div>
     </div>
-  </div>
+ </div>
 </rolltemplate>
