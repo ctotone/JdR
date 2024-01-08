@@ -1,5 +1,5 @@
 
-
+<!-- Initiative /r -@{selected|D_autorite} &{tracker} -->
 
 
 
@@ -1544,21 +1544,56 @@
 			<div class="section_savoir">
 				<div class="wrapper_dice_type">	
 					<div class="savoir_dice">SAVOIR </div>
-					<div class="analyser">Analyser <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
-					<div class="analyser_data"><span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span></div>
-					<div class="comprendre">Comprendre <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
-					<div class="comprendre_data"><span class="dice_texte">Intellect + NESHAMA</span></div>
-					<div class="connaitre">Connaitre <span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span></div>
-					<div class="connaitre_data"><span class="dice_texte">Savoir + NESHAMA</span></div>
-					<div class="rechercher">Rechercher</div>
-					<div class="rechercher_data"><span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span></div>
+					<div class="analyser">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-analyser">Analyser</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-analyser" value="&{template:cabinet-prouesse} {{title=ANALYSER}} {{Attention=@{D_attention_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Analyser</button>
+						<span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span>
+					</div>
+					<div class="analyser_data">
+						<span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span>
+					</div>
+					
+					<div class="comprendre">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-comprendre">Comprendre </button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-comprendre" value="&{template:cabinet-prouesse} {{title=COMPRENDRE}} {{Intellect=@{D_intellect_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -6px;">Comprendre </button>
+						<span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span>
+					</div>
+					<div class="comprendre_data">
+						<span class="dice_texte">Intellect + NESHAMA</span>
+					</div>
+					<div class="connaitre">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-connaitre">Connaitre </button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-connaitre" value="&{template:cabinet-prouesse} {{title=CONNAITRE}} {{Savoir=@{D_savoir_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -8px;">Connaitre </button>
+						<span class="picto" title="Votre Esprit n'a pas besoin d'avoir le contrôle pour tenter cette action">j</span>
+					</div>
+					<div class="connaitre_data">
+						<span class="dice_texte">Savoir + NESHAMA</span>
+					</div>
+					
+					<div class="rechercher">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-rechercher">Rechercher</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-rechercher" value="&{template:cabinet-prouesse} {{title=RECHERCHER}} {{Attention=@{D_attention_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{Acuité=[[@{Médium|acuite_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -6px;">Rechercher</button>
+					</div>
+					<div class="rechercher_data">
+						<span class="dice_texte">Attention + NESHAMA (+ACUITÉ)</span>
+					</div>
 				</div>
 			</div>
 			<div class="section_spiritisme">
 				<div class="wrapper_dice_type">	
 					<div class="spiritisme">SPIRITISME </div>
-					<div class="contacter">Contacter les morts </div>
-					<div class="contacter_data"><span class="dice_texte">Ssensibilité + ROUA'H</span></div>
+					<div class="contacter">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spiritisme">Contacter les morts</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spiritisme" value="&{template:cabinet-prouesse} {{title=CONTACTER LES MORTS}} {{Sensibilité=@{D_sensibilite_roll}}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{Malus Corps=[[@{Médium|malus_total}]]}} {{Divers=[[?{Bonus|0}]]}}" style="margin-top: -6px;">Contacter les morts</button>
+					</div>
+					<div class="contacter_data">
+						<span class="dice_texte">Sensibilité + ROUA'H</span>
+					</div>
 				</div>
 			</div>
 			<div class="section_agir">
@@ -2691,9 +2726,60 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
   })
 </script>
 
+<script type="text/worker">
+   on('clicked:roll-analyser', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=ANALYSER}} {{qualite_title=Attention}} {{aspect_title=NESHAMA}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
 
+<script type="text/worker">
+   on('clicked:roll-comprendre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=COMPRENDRE}} {{qualite_title=Intellect}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_intellect}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
 
+<script type="text/worker">
+   on('clicked:roll-connaitre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONNAITRE}} {{qualite_title=Savoir}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_savoir}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
 
+<script type="text/worker">
+   on('clicked:roll-rechercher', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=RECHERCHER}} {{qualite_title=Attention}} {{aspect_title=NESHAMA}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spiritisme', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONTACTER LES MORTS}} {{qualite_title=Sensibilité}} {{aspect_title=ROUA'H}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
 
 
 

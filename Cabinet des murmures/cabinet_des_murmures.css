@@ -5972,7 +5972,7 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-container {
     position: relative;
     margin-bottom: 15px;
-    border-radius: 20px 20px 25px 25px;
+    border-radius: 40px 20px 25px 25px;
     box-shadow: 0px 0px 9px 6px #475e66b0;
 }
 
@@ -5994,7 +5994,7 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-header {
     color: var(--header-text-color);
     padding: 7px;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 40px 20px 0px 0px;
     font-family: "Libre Bodoni", serif;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background.png);
     background-size: cover;
@@ -6020,8 +6020,15 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-container {
     position: relative;
     margin-bottom: 15px;
-    border-radius: 20px 20px 25px 25px;
+    border-radius: 40px 20px 25px 25px;
     box-shadow: 0px 0px 9px 6px #475e66b0;
+}
+
+.sheet-rolltemplate-cabinet-classic .sheet-container {
+  --border-roll-color: #1d2d30;
+  --header-text-color: #FFF;
+  --result-bg-color: #772d34;
+  --header-bg-color: #475e66;
 }
 
 
@@ -6034,7 +6041,7 @@ span.medium_dice {
     background-size: cover;
     color: #475e66;
     border-radius: 0px 0px 25px 25px;
-    border: 3px solid;
+    border: 3px solid var(--border-roll-color);
     border-top: none;
 }
 .sheet-rolltemplate-cabinet-classic .sheet-content > div {
@@ -6049,7 +6056,7 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n) {
-	background: #b38a8c21;
+    background: #6150451c;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-desc {
@@ -6064,7 +6071,7 @@ span.medium_dice {
     border-top: none;
     border-radius: 0px 0px 20px 20px;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png) !important;
-    background-size: cover !important;
+    background-size: 300px 30px !important;
 }
 
 /* .sheet-rolltemplate-cabinet-classic .inlinerollresult.fullfail {
@@ -6108,7 +6115,7 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-prouesse .sheet-container {
     position: relative;
     margin-bottom: 15px;
-    border-radius: 20px 20px 25px 25px;
+    border-radius: 40px 20px 25px 25px;
     box-shadow: 0px 0px 9px 6px #475e66b0;
 }
 
@@ -6130,7 +6137,7 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-prouesse .sheet-header {
     color: var(--header-text-color);
     padding: 7px;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 40px 20px 0px 0px;
     font-family: "Libre Bodoni", serif;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background.png);
     background-size: cover;
@@ -6154,7 +6161,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-container {
-  --border-color: #475e66;
+  --border-roll-color: #1d2d30;
   --header-text-color: #FFF;
   --result-bg-color: #772d34;
   --header-bg-color: #475e66;
@@ -6170,7 +6177,7 @@ span.medium_dice {
     background-size: cover;
     color: #475e66;
     border-radius: 0px 0px 25px 25px;
-    border: 3px solid;
+    border: 3px solid var(--border-roll-color);
     border-top: none;
 }
 .sheet-rolltemplate-cabinet-prouesse .sheet-content > div {
@@ -6185,7 +6192,7 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n) {
-	background: #b38a8c21;
+    background: #6150451c;
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer {
@@ -6199,8 +6206,8 @@ span.medium_dice {
     font-family: 'Libre Bodoni', serif;
     border-top: none;
     border-radius: 0px 0px 20px 20px;
-    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/result_frise.png), url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png) !important;
-    background-size: cover !important;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png) !important;
+    background-size: 300px 30px !important;
     height: 20px;
 }
 

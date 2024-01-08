@@ -141,6 +141,61 @@
   })
 </script>
 
+<script type="text/worker">
+   on('clicked:roll-analyser', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=ANALYSER}} {{qualite_title=Attention}} {{aspect_title=NESHAMA}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-comprendre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=COMPRENDRE}} {{qualite_title=Intellect}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_intellect}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-connaitre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONNAITRE}} {{qualite_title=Savoir}} {{aspect_title=NESHAMA}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_savoir}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-rechercher', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=RECHERCHER}} {{qualite_title=Attention}} {{aspect_title=NESHAMA}} {{attribut_title=Acuité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{attribut=[[@{Médium|acuite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spiritisme', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CONTACTER LES MORTS}} {{qualite_title=Sensibilité}} {{aspect_title=ROUA'H}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
 base
 
 <script type="text/worker">
