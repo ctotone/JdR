@@ -4232,7 +4232,8 @@ input[type="radio"] {
 	grid-column: 1/5;
 	font-size: 16px;
 	display: flex;
-	white-space: nowrap;
+	white-space: nowrap;	
+	margin-top: 30px;
 	font-weight: bold;
 }
 
@@ -4242,8 +4243,7 @@ input[type="radio"] {
 	display: flex;
 	white-space: nowrap;
 	align-items: flex-end;
-	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 30px;
 	font-weight: bold;
 }
 
@@ -4252,6 +4252,18 @@ input[type="radio"] {
     grid-row: 30;
     grid-template-rows: 20px;
     font-size: 20px;
+}
+
+.section_general {
+	grid-column: 1/4;
+	grid-row: 1/9;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px #0000004d;
 }
 
 .section_communiquer {
