@@ -1,4 +1,26 @@
 <script type="text/worker">
+   on('clicked:roll-initiative', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=INITIATIVE}} {{subtitle=du Comédien}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Agilité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|agilite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-discorde', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DISCORDE}} {{subtitle=@{character_name}}} {{qualite_title=Autorité}} {{aspect_title=ROUA'H}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
    on('clicked:roll-deceler-bluff', async (event) => {
          const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DÉCELER UN BLUFF}} {{subtitle=@{character_name}}} {{qualite_title=Intellect}} {{aspect_title=NESHAMA}}{{malus_corps_title=Malus corps}}  {{resultat_title=Résultat}} {{qualite=[[@{D_intellect}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
 			
@@ -195,6 +217,197 @@
     finishRoll(roll.rollId,computeObj);
   })
 </script>
+
+<script type="text/worker">
+   on('clicked:roll-equilibre', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=AVANCER EN ÉQUILIBRE}} {{qualite_title=Sérénité}} {{aspect_title=NEFESH}} {{attribut_title=Agilité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_serenite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|agilite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-creer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CRÉER}} {{qualite_title=Sensibilité}} {{aspect_title=NEFESH}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-crocheter', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=CROCHETER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-dissimuler', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DISSIMULER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-poches', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=FAIRE LES POCHES}} {{subtitle=(contre NEFESH (+ACUITÉ))}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-forcer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=FORCER}} {{qualite_title=Autorité}} {{aspect_title=NEFESH}} {{attribut_title=Puissance}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|puissance_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-grimper', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=GRIMPER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Agilité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|agilite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-musique', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=JOUER DE LA MUSIQUE}} {{qualite_title=Sensibilité}} {{aspect_title=ROUA'H}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-selancer', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=LANCER, S'ÉLANCER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Puissance}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|puissance_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-monter-cheval', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=MONTER À CHEVAL}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Agilité}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|agilite_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-piloter', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=PILOTER}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{attribut_title=Habileté}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|habilete_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-poursuivre-pied', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=POURSUIVRE À PIED}} {{qualite_title=Autorité}} {{aspect_title=NEFESH}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-poursuivi-pied', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=ETRE POURSUIVI À PIED}} {{qualite_title=Coordination}} {{aspect_title=NEFESH}} {{malus_corps_title=Malus corps}} {{divers_title=Divers}} {{resultat_title=Résultat}} {{qualite=[[@{D_coordination}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 base
 
