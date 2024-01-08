@@ -460,29 +460,29 @@ input.sheet-prouesse-switch:checked ~  span.prouesse_title{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ffffffdb;
-    -webkit-transition: .4s;
-    transition: .4s;
-    width: 35px;
+    background-color: #61504500;
+    -webkit-transition: .2s;
+    transition: .2s;
+    width: 30px;
     height: 17px;
-    margin-top: 173px;
-    margin-left: 58px;
-    border: 1px solid var(--marron_cabinet);
+    padding: 2px;
+    margin-top: 158px;
+    margin-left: 56px;
+    border: 1px solid var(--blue_cabinet);
+    box-shadow: 3px 2px 5px #435861ba;
 }
 
 .slider_prouesse:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
     left: 2px;
-    top: 1px;
+    top: 2px;
     bottom: 0px;
     background-color: var(--blue_cabinet);
-    -webkit-transition: .4s;
-    transition: .4s;
-    width: 15px;
-    height: 15px;
+    -webkit-transition: .2s;
+    transition: .2s;
+    width: 17px;
+    height: 17px;
 }
 
 input:checked + .slider_prouesse {
@@ -490,10 +490,10 @@ input:checked + .slider_prouesse {
 }
 
 input:checked + .slider_prouesse:before {
-  -webkit-transform: translateX(16px);
-  -ms-transform: translateX(16px);
-  transform: translateX(16px);
-  background-color: var(--red_cabinet);
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+    background-color: var(--red_cabinet);
 }
 
 /* Rounded sliders */
@@ -4173,18 +4173,18 @@ input[type="radio"] {
     grid-template-rows: auto;
     margin-top: 0px;
     margin-left: 0px;
-    margin-bottom: 15px;
+    margin-bottom: -15px;
 }
 
 .switch_dice_slider {
 	grid-column: 1;
-	grid-row: 1/3;
+	grid-row: 1;
 }
 
 .switch_dice_slider_data {
 	grid-column: 2;
-	grid-row: 1/3;
-    padding-top: 25px;
+	grid-row: 1;
+    padding-top: 12px;
 }
 
 .switch_dice_initiative {
@@ -4228,6 +4228,22 @@ input[type="radio"] {
     margin-left: 0px;
 }
 
+.wrapper_dice_type_general{  
+	display: grid;
+    grid-template-columns: 140px 5px 238px 20px 140px 5px 238px;
+    grid-template-rows: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.wrapper_qualite_dice{  
+	display: grid;
+    grid-template-columns: 140px 5px 238px 20px 140px 5px 238px;
+    grid-template-rows: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
 .action_dice {
 	grid-column: 1/5;
 	font-size: 16px;
@@ -4254,9 +4270,33 @@ input[type="radio"] {
     font-size: 20px;
 }
 
-.section_general {
+.section_initiative {
+	grid-column: 1;
+	grid-row: 1/3;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px #0000004d;
+}
+
+.section_discorde {
+	grid-column: 3;
+	grid-row: 1/3;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px #0000004d;
+}
+
+.section_qualite {
 	grid-column: 1/4;
-	grid-row: 1/9;
+	grid-row: 3/9;
 	border: 1px solid var(--blue_cabinet);
     margin-left: 5px;
     padding-left: 10px;
@@ -4378,6 +4418,30 @@ input[type="radio"] {
 	padding-top: 5px;
     padding-bottom: 10px;
     box-shadow: 2px 2px 5px 0px #0000004d;
+}
+
+/* Section Générale*/
+
+.initiative {
+    grid-column: 1;
+    margin-bottom: var(--margin_dice);
+    padding-top: 10px;
+}
+
+.initiative_data {
+    grid-column: 3;
+    padding-top: 10px;
+}
+
+.discorde {
+    grid-column: 1;
+    margin-bottom: var(--margin_dice);
+    padding-top: 10px;
+}
+
+.discorde_data {
+    grid-column: 3;
+    padding-top: 10px;
 }
 
 /* Section Communiquer*/
@@ -5987,7 +6051,7 @@ span.prouesse_roll {
     padding: 0 !important;
     box-shadow: none;
     -webkit-appearance: unset;
-    height: 17px;
+    height: 18px;
     margin-top: -6px;
 }
 
@@ -6056,7 +6120,7 @@ span.medium_dice {
     text-align: center;
 }
 .sheet-rolltemplate-cabinet-classic .sheet-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 2px;
     color: #ffffffc4;
     text-align: center;
@@ -6199,7 +6263,7 @@ span.medium_dice {
     text-align: center;
 }
 .sheet-rolltemplate-cabinet-prouesse .sheet-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 2px;
     color: #ffffffc4;
     text-align: center;
