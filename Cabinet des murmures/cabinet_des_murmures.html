@@ -1146,12 +1146,12 @@ Puces images
 				<p><input class="data" type="text" name="attr_acquis7"> + <input class="bonus" type="text" name="attr_acquisbonus7"></p>
 				<p><input class="data" type="text" name="attr_acquis8"> + <input class="bonus" type="text" name="attr_acquisbonus8"></p>
 			</div>
-			<div class="acquis_3_data">
+			<!-- <div class="acquis_3_data">
 				<p><input class="data" type="text" name="attr_acquis9"> + <input class="bonus" type="text" name="attr_acquisbonus9"></p>
 				<p><input class="data" type="text" name="attr_acquis10"> + <input class="bonus" type="text" name="attr_acquisbonus10"></p>
 				<p><input class="data" type="text" name="attr_acquis11"> + <input class="bonus" type="text" name="attr_acquisbonus11"></p>
 				<p><input class="data" type="text" name="attr_acquis12"> + <input class="bonus" type="text" name="attr_acquisbonus12"></p>
-			</div>
+			</div> -->
 			<div class="perisprit"><span data-i18n="perispirit">PÉRISPRIT</span>
 					<input type="hidden" name="attr_perisprit" class="sheet-radio" value="1" />
 					<button type="action" name="act_perisprit_1" class="sheet-radio" style="border-radius: 0;width: 30px;height: 30px;border: none;">
@@ -1473,7 +1473,6 @@ Puces images
 			<div class="xp_esprit_data">
 				<p><textarea class="esp_xp" name="attr_esp_xp" spellcheck="false"></textarea></p>
 			</div>
-			<div class="esp_decor_droite"></div>
 			<div class="esp_decor_bas"></div>
 		</div>
 	</div>
@@ -1558,8 +1557,16 @@ Puces images
 		</div>
 		
 		<div class="wrapper_dice_title">
-			<div class="general_dice">GÉNÉRAL <input type="checkbox" class="sheet-general-switch" name="attr_block_general_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><div class="titre_trait">
+			<div class="general_dice">
+				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+				<span class="classic_title">GÉNÉRAL </span>
+				<span class="prouesse_title">GÉNÉRAL </span>
+				<input type="checkbox" class="sheet-general-switch" name="attr_block_general_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><span class="show_red">|</span>
+				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long-red.png" />
 				</div></div>
 		</div>
 		<input type="checkbox" name="attr_block_general_switch" class="sheet-general-switch" value="1" style="display: none;">
@@ -1655,6 +1662,12 @@ Puces images
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=SAVOIR}} {{Savoir=@{D_savoir_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}}">Savoir</button>
 					</div>
 					
+					<div class="sensibilite_dice_roll">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-prouesse} {{title=SENSIBILITÉ}} {{Savoir=[[@{D_sensibilite}D6k1]]}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}}">Sensibilité</button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=SENSIBILITÉ}} {{Savoir=@{D_sensibilite_roll}}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}}">Sensibilité</button>
+					</div>
+					
 					<div class="serenite_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-prouesse} {{title=SÉRÉNITÉ}} {{Sérénite=[[@{D_serenite}D6k1]]}} {{NESHAMA=[[@{aspect_neshama_bonus}]]}} {{ROUA'H=[[@{aspect_rouah_bonus}]]}} {{NEFESH=[[@{aspect_nefesh_bonus}]]}}">Sérénite</button>
@@ -1664,9 +1677,15 @@ Puces images
 			</div>
 		</div>
 		<div class="wrapper_dice_title">
-			<div class="action_dice">ACTIONS<input type="checkbox" class="sheet-agir-switch" name="attr_block_agir_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><div class="titre_trait">
+			<div class="action_dice">
+				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+				<span class="classic_title">ACTIONS</span>
+				<span class="prouesse_title">ACTIONS</span>
+				<input type="checkbox" class="sheet-agir-switch" name="attr_block_agir_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><span class="show_red">|</span>
+				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
-				</div></div>
+				</div>				
+			</div>
 		</div>
 		<input type="checkbox" name="attr_block_agir_switch" class="sheet-agir-switch" value="1" style="display: none;">
 		<div class="wrapper_dice_agir_data">
@@ -2036,7 +2055,12 @@ Puces images
 		</div>
 			
 		<div class="wrapper_dice_title">
-			<div class="combattre_dice">COMBATTRE<input type="checkbox" class="sheet-combattre-switch" name="attr_block_combattre_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><div class="titre_trait">
+			<div class="combattre_dice">
+				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+				<span class="classic_title">COMBATTRE</span>
+				<span class="prouesse_title">COMBATTRE</span>
+				<input type="checkbox" class="sheet-combattre-switch" name="attr_block_combattre_switch" value="1" title="Afficher/masquer le contenu"><span class="show">|</span><span class="show_red">|</span>
+				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
 				</div></div>
 		</div>
