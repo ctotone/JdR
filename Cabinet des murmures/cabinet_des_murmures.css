@@ -5248,6 +5248,17 @@ input[type="radio"] {
 
   /* Style Cabinet / Corps /  */
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
 
 .charsheet input.cabinet_name,
 .charsheet input.esprit_name {
@@ -6015,7 +6026,9 @@ select.liste_pouvoir {
 }
 
 .qualite_arbre_data input.data,
-.qualite_arbre_esprit input.data{
+.qualite_arbre_esprit input.data,
+.qualite_arbre_data input.data[type="number"],
+.qualite_arbre_esprit input.data[type="number"]{
     background-color: transparent;
     font-family: 'Dancing Script';
     outline: none;
