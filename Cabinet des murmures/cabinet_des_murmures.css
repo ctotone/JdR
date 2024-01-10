@@ -1514,21 +1514,21 @@ input[type="radio"] {
 	grid-column: 2;
 	grid-row: 7/12;
 	font-size: 14px;
-	padding-top: 11px;
+	padding-top: 3px;
 }
 
 .attributs_bonus2 {
 	grid-column: 5;
 	grid-row: 7/12;
 	font-size: 16px;
-	padding-top: 11px;
+	padding-top: 3px;
 }
 
 .attributs_bonus3 {
 	grid-column: 8;
 	grid-row: 7/12;
 	font-size: 14px;
-	padding-top: 11px;
+	padding-top: 3px;
 }
 
 .equipement {
@@ -5484,9 +5484,9 @@ input[type=number] {
 	border-bottom: 1px solid var(--marron_cabinet);
 }
 
-.pnj_attributs_col_1 input.bonus,
-.pnj_attributs_col_2 input.bonus,
-.pnj_attributs_col_3 input.bonus,
+.pnj_attributs_col_1 input.bonus[type="number"],
+.pnj_attributs_col_2 input.bonus[type="number"],
+.pnj_attributs_col_3 input.bonus[type="number"],
 .pnj_acquis_data input.bonus,
 .pnj_pouvoir_data input.bonus {  
 	border: none;
@@ -5503,7 +5503,7 @@ input[type=number] {
 	outline: none;
 }
 
-.pnj_pouvoir_data input.bonus {
+.pnj_pouvoir_data input.bonus[type="number"] {
 	border-radius: 0px;
 	border-bottom: 1px solid var(--marron_cabinet);
 }
@@ -5513,8 +5513,8 @@ input[type=number] {
 	width: 200px;
 }
 
-.pnj_acquis_data input.bonus,
-.pnj_pouvoir_data input.bonus {
+.pnj_acquis_data input.bonus[type="number"],
+.pnj_pouvoir_data input.bonus[type="number"] {
 	width: 27px;
     margin-top: -3px;
 }
@@ -5542,9 +5542,9 @@ input[type=number] {
 .acquis_collectifs_data1 input.data,
 .acquis_collectifs_data2 input.data,
 .acquis_collectifs_data3 input.data,
-.acquis_collectifs_data1 input.bonus,
-.acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus {
+.acquis_collectifs_data1 input.bonus[type="number"],
+.acquis_collectifs_data2 input.bonus[type="number"],
+.acquis_collectifs_data3 input.bonus[type="number"] {
 	border-radius: 0px;
 	background-color: transparent;
 	font-family: 'Dancing Script', cursive;
@@ -5557,9 +5557,9 @@ input[type=number] {
 }
 
 
-.acquis_collectifs_data1 input.bonus,
-.acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus {  
+.acquis_collectifs_data1 input.bonus[type="number"],
+.acquis_collectifs_data2 input.bonus[type="number"],
+.acquis_collectifs_data3 input.bonus[type="number"] {  
 	font-size: 17px;
 	color: var(--marron_cabinet);
 }
@@ -5570,21 +5570,21 @@ input[type=number] {
 	width: 105px;
 }
 
-.acquis_collectifs_data1 input.bonus,
-.acquis_collectifs_data2 input.bonus,
-.acquis_collectifs_data3 input.bonus,
-.attributs_bonus1 input.bonus,
-.attributs_bonus2 input.bonus,
-.attributs_bonus3 input.bonus {
+.acquis_collectifs_data1 input.bonus[type="number"],
+.acquis_collectifs_data2 input.bonus[type="number"],
+.acquis_collectifs_data3 input.bonus[type="number"],
+.attributs_bonus1 input.bonus[type="number"],
+.attributs_bonus2 input.bonus[type="number"],
+.attributs_bonus3 input.bonus[type="number"] {
 	width: 18px;
     font-size: 20px;
     margin-top: -5px;
 }
 
 
-.attributs_bonus1 input.bonus,
-.attributs_bonus2 input.bonus,
-.attributs_bonus3 input.bonus {
+.attributs_bonus1 input.bonus[type="number"],
+.attributs_bonus2 input.bonus[type="number"],
+.attributs_bonus3 input.bonus[type="number"] {
 	border-radius: 30px;
 	background-color: transparent;
 	font-family: 'Dancing Script';
@@ -5828,7 +5828,8 @@ span.aspect_nom_plus {
     font-weight: bold;
 }
 
-.aspect_bonus input.bonus {
+.aspect_bonus input.bonus,
+.aspect_bonus input.bonus[type="number"] {
     border-radius: 30px;
     background-color: transparent;
     font-family: 'Dancing Script';
@@ -5837,7 +5838,7 @@ span.aspect_nom_plus {
     outline: none;
     border: 2px solid;
     border-style: double;
-    width: 29px;
+    width: 29px !important;
     height: 29px;
     font-weight: bold;
     text-align: right;
@@ -5883,10 +5884,10 @@ span.aspect_nom_plus {
 	margin-top: -5px;
 }
 
-.acquis_1_data input.bonus,
-.acquis_2_data input.bonus,
-.acquis_3_data input.bonus {
-    width: 25px;
+.acquis_1_data input.bonus[type="number"],
+.acquis_2_data input.bonus[type="number"],
+.acquis_3_data input.bonus[type="number"] {
+    width: 25px !important;
     font-size: 20px;
     margin-top: -5px;
 }
@@ -6218,13 +6219,13 @@ span.pnj_info_combat {
 	font-family: 'IM Fell English, serif';
 }
 
-.pnj_combat_bonus_1 input.bonus,
-.pnj_combat_bonus_2 input.bonus,
-.pnj_combat_bonus_3 input.bonus,
-.pnj_combat_bonus_3 input.bonus,
-.pnj_combat_bonus_4 input.bonus,
-.pnj_combat_bonus_5 input.bonus,
-.pnj_combat_bonus_6 input.bonus{
+.pnj_combat_bonus_1 input.bonus[type="number"],
+.pnj_combat_bonus_2 input.bonus[type="number"],
+.pnj_combat_bonus_3 input.bonus[type="number"],
+.pnj_combat_bonus_3 input.bonus[type="number"],
+.pnj_combat_bonus_4 input.bonus[type="number"],
+.pnj_combat_bonus_5 input.bonus[type="number"],
+.pnj_combat_bonus_6 input.bonus[type="number"]{
     border-radius: 30px;
     background-color: transparent;
     font-family: 'IM Fell English, serif';
@@ -6241,7 +6242,7 @@ span.pnj_info_combat {
     box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
 }
 
-.charsheet input.malus_total_pnj {
+.charsheet input.malus_total_pnj[type="number"] {
     font-size: 30px;
     background-color: transparent;
     font-family: 'IM Fell English, serif';
