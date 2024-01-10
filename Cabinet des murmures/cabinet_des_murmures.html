@@ -12,10 +12,16 @@ Puces images
 -->
 
 
+<!-- template ok
+
+&{template:cabinet-prouesse} {{title=@{Médium|attr_arme1_nom}}} {{Dégâts=[[@{Médium|attr_arme1_degats}]]}} {{Puissance=[[@{Médium|attr_puissance_bonus}]]}}
+
+&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DÉCELER UN BLUFF}} {{localisation_title=Localisation}}{{localisation=[[2D6]]}}
+
+ARMES
 
 
-
-
+template ok -->
 
 
 <!-- Initiative /r -@{selected|D_autorite} &{tracker} -->
@@ -175,19 +181,19 @@ Puces images
 				<p><span data-i18n="robustness">ROBUSTESSE</span></p>
 			</div>
 			<div class="attributs_bonus1">
-				<p>+<input class="bonus" type="number" name="attr_acuite_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_agilite_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_anonymat_bonus" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_acuite_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_agilite_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_anonymat_bonus" min="0" max="3" value="0"></p>
 			</div>
 			<div class="attributs_bonus2">
-				<p>+<input class="bonus" type="number" name="attr_beaute_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_etrangete_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_habilete_bonus" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_beaute_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_etrangete_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_habilete_bonus" min="0" max="3" value="0"></p>
 			</div>
 			<div class="attributs_bonus3">
-				<p>+<input class="bonus" type="number" name="attr_innocence_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_puissance_bonus" value="0"></p>
-				<p>+<input class="bonus" type="number" name="attr_robustesse_bonus" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_innocence_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_puissance_bonus" min="0" max="3" value="0"></p>
+				<p style="margin-bottom: 18px;">+<input class="bonus" type="number" name="attr_robustesse_bonus" min="0" max="3" value="0"></p>
 			</div>
 			<div class="equipement"><span data-i18n="equipment">ÉQUIPEMENT</span>
 				<div class="titre_trait">
@@ -224,7 +230,7 @@ Puces images
 				</div>
 			</div>
 			<div class="arme_data">
-				<div class="wrapper_arme style="margin-bottom: 5px;"">
+				<div class="wrapper_arme_title">
 					<div class="arme_titre_nom"><span data-i18n="weapon_name">Nom</span></div>
 					<div class="arme_titre_precision"><span data-i18n="precision">Précision</span></div>
 					<div class="arme_titre_portee"><span data-i18n="scope">Portée</span></div>
@@ -235,43 +241,47 @@ Puces images
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme1_nom"></p></div>
-					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme1_precision"></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme1_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme1_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme1_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme1_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme1_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme1_munition" min="0" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme1_cadence" min="0" max="5"></p></div>
+					<div class="arme_dice"><p>dice</p></div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
-					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme2_precision"></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme2_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme2_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme2_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme2_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme2_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme2_munition" min="0" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme2_cadence" min="0" max="5"></p></div>
+					<div class="arme_dice"><p>dice</p></div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
-					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme3_precision"></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme3_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme3_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme3_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme3_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme3_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme3_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme3_munition" min="0" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme3_cadence" min="0" max="5"></p></div>
+					<div class="arme_dice"><p>dice</p></div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme_center" type="text" name="attr_arme4_nom"></p></div>
-					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme4_precision"></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme4_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme4_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme4_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme4_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme4_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme4_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme4_munition" min="0" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme4_cadence" min="0" max="5"></p></div>
+					<div class="arme_dice"><p>dice</p></div>
 				</div>
 			</div>
 			<div class="note_corps"><span data-i18n="notes">NOTES</span>
@@ -322,7 +332,7 @@ Puces images
 						</div>
 					</div>
 				</div>	
-				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_tete" min="0" max="9"></div>
 				<div class="titre_bras_droit">3-5 : <span data-i18n="right_arm">BRAS DROIT</span></div>
 				<div class="dots_bras_droit">
 					<div class="wrapper_corps_boutton">
@@ -358,7 +368,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_bras_droit" min="0" max="9"></div>
 				<div class="titre_bras_gauche">6-8 : <span data-i18n="left_arm">BRAS GAUCHE</span></div>
 				<div class="dots_bras_gauche">
 					<div class="wrapper_corps_boutton">
@@ -394,7 +404,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_bras_gauche" min="0" max="9"></div>
 				<div class="titre_torse">9-10 : <span data-i18n="torso">TORSE</span></div>
 				<div class="dots_torse">
 					<div class="wrapper_corps_boutton">
@@ -442,7 +452,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_torse" min="0" max="9"></div>
 				<div class="titre_jambe_droite">11 : <span data-i18n="right_leg">JAMBE DROITE</span></div>
 				<div class="dots_jambe_droite">
 					<div class="wrapper_corps_boutton">
@@ -478,7 +488,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_jambe_droite" min="0" max="9"></div>
 				<div class="titre_jambe_gauche">12 : <span data-i18n="left_leg">JAMBE GAUCHE</span></div>
 				<div class="dots_jambe_gauche">
 					<div class="wrapper_corps_boutton">
@@ -514,7 +524,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_gauche"></div>
+				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_jambe_gauche" min="0" max="9"></div>
 			</div>
 			<div class="sante_homme_data">
 				<div class="titre_tete">2 : <span data-i18n="head">TÊTE</span></div>
@@ -546,7 +556,7 @@ Puces images
 						</div>
 					</div>
 				</div>	
-				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_tete"></div>
+				<div class="protection_tete"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_tete" min="0" max="9"></div>
 				<div class="titre_bras_droit">3-5 : <span data-i18n="right_arm">BRAS DROIT</span></div>
 				<div class="dots_bras_droit">
 					<div class="wrapper_corps_boutton">
@@ -582,7 +592,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_droit"></div>
+				<div class="protection_bras_droit"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_bras_droit" min="0" max="9"></div>
 				<div class="titre_bras_gauche">6-8 : <span data-i18n="left_arm">BRAS GAUCHE</span></div>
 				<div class="dots_bras_gauche">
 					<div class="wrapper_corps_boutton">
@@ -618,7 +628,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="protection_bras_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_bras_gauche" min="0" max="9"></div>
 				<div class="titre_torse">9-10 : <span data-i18n="torso">TORSE</span></div>
 				<div class="dots_torse">
 					<div class="wrapper_corps_boutton">
@@ -666,7 +676,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_torse"></div>
+				<div class="protection_torse"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_torse" min="0" max="9"></div>
 				<div class="titre_jambe_droite">11 : <span data-i18n="right_leg">JAMBE DROITE</span></div>
 				<div class="dots_jambe_droite">
 					<div class="wrapper_corps_boutton">
@@ -702,7 +712,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="protection_jambe_droite"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_jambe_droite" min="0" max="9"></div>
 				<div class="titre_jambe_gauche">12 : <span data-i18n="left_leg">JAMBE GAUCHE</span></div>
 				<div class="dots_jambe_gauche">
 					<div class="wrapper_corps_boutton">
@@ -738,7 +748,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="text" name="attr_protection_jambe_gauche"></div>
+				<div class="protection_jambe_gauche"><span data-i18n="protection">Protection</span> <input class="protection" type="number" name="attr_protection_jambe_gauche" min="0" max="9"></div>
 			</div>
 			<div class="malus_total_cadre"></div>
 			<div class="malus_total"><span data-i18n="total_malus">TOTAL MALUS</span></div>
@@ -1113,19 +1123,19 @@ Puces images
 						<span class="aspect_nom">NESHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_neshama_bonus" value="0">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_neshama_bonus"  min="0" max="3" value="0">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_rouah_bonus" value="0">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_rouah_bonus"  min="0" max="3" value="0">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nefesh_bonus" value="0">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nefesh_bonus"  min="0" max="3" value="0">
 					</div>
 				</div>
 			</div>
@@ -1135,16 +1145,16 @@ Puces images
 				</div>
 			</div>
 			<div class="acquis_1_data">
-				<p><input class="data" type="text" name="attr_acquis1"> + <input class="bonus" type="number" name="attr_acquisbonus1"></p>
-				<p><input class="data" type="text" name="attr_acquis2"> + <input class="bonus" type="number" name="attr_acquisbonus2"></p>
-				<p><input class="data" type="text" name="attr_acquis3"> + <input class="bonus" type="number" name="attr_acquisbonus3"></p>
-				<p><input class="data" type="text" name="attr_acquis4"> + <input class="bonus" type="number" name="attr_acquisbonus4"></p>
+				<p><input class="data" type="text" name="attr_acquis1"> + <input class="bonus" type="number" name="attr_acquisbonus1" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis2"> + <input class="bonus" type="number" name="attr_acquisbonus2" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis3"> + <input class="bonus" type="number" name="attr_acquisbonus3" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis4"> + <input class="bonus" type="number" name="attr_acquisbonus4" min="0" max="3"></p>
 			</div>
 			<div class="acquis_2_data">
-				<p><input class="data" type="text" name="attr_acquis5"> + <input class="bonus" type="number" name="attr_acquisbonus5"></p>
-				<p><input class="data" type="text" name="attr_acquis6"> + <input class="bonus" type="number" name="attr_acquisbonus6"></p>
-				<p><input class="data" type="text" name="attr_acquis7"> + <input class="bonus" type="number" name="attr_acquisbonus7"></p>
-				<p><input class="data" type="text" name="attr_acquis8"> + <input class="bonus" type="number" name="attr_acquisbonus8"></p>
+				<p><input class="data" type="text" name="attr_acquis5"> + <input class="bonus" type="number" name="attr_acquisbonus5" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis6"> + <input class="bonus" type="number" name="attr_acquisbonus6" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis7"> + <input class="bonus" type="number" name="attr_acquisbonus7" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis8"> + <input class="bonus" type="number" name="attr_acquisbonus8" min="0" max="3"></p>
 			</div>
 			<!-- <div class="acquis_3_data">
 				<p><input class="data" type="text" name="attr_acquis9"> + <input class="bonus" type="text" name="attr_acquisbonus9"></p>
@@ -1253,7 +1263,7 @@ Puces images
 			<div class="pouvoir_data">
 				<div class="wrapper_pouvoir">
 					<div class="niveau1"><span data-i18n="level_1">NIVEAU 1 :</span></div>
-					<div class="niveau1_value"><input class="data" type="text" name="attr_pouvoir_lvl_1"></div>
+					<div class="niveau1_value"><input class="data" type="number" name="attr_pouvoir_lvl_1" min="0" max="3"></div>
 					<div class="niveau1_data1">
 						<select class="liste_pouvoir" name="attr_data1_lvl_1">
 							<option value="0" selected="selected"></option>
@@ -1311,16 +1321,16 @@ Puces images
 					<div class="niveau1_s2"><input class="data" type="text" name="attr_niveau1_s2"></div>
 					<div class="niveau1_s3"><input class="data" type="text" name="attr_niveau1_s3"></div>
 					<div class="niveau1_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
-					<div class="niveau1_p1"><input class="data" type="text" name="attr_niveau1_p1"></div>
-					<div class="niveau1_p2"><input class="data" type="text" name="attr_niveau1_p2"></div>
-					<div class="niveau1_p3"><input class="data" type="text" name="attr_niveau1_p3"></div>
+					<div class="niveau1_p1"><input class="data" type="number" name="attr_niveau1_p1"min="0"></div>
+					<div class="niveau1_p2"><input class="data" type="number" name="attr_niveau1_p2"min="0"></div>
+					<div class="niveau1_p3"><input class="data" type="number" name="attr_niveau1_p3"min="0"></div>
 					<div class="niveau1_c"><span class="info" title="Cocher si vous devez avoir le contrôle pour utiliser ce pouvoir">C.</span></div>
 					<div class="niveau1_c1"><input type="checkbox" name="attr_niveau1_c1" value="1" ></div>
 					<div class="niveau1_c2"><input type="checkbox" name="attr_niveau1_c2" value="1" ></div>
 					<div class="niveau1_c3"><input type="checkbox" name="attr_niveau1_c3" value="1" ></div>
 					<div class="separateur_1"></div>
 					<div class="niveau2"><span data-i18n="level_2">NIVEAU 2 :</span></div>
-					<div class="niveau2_value"><input class="data" type="text" name="attr_pouvoir_lvl_2"></div>
+					<div class="niveau2_value"><input class="data" type="number" name="attr_pouvoir_lvl_2" min="0" max="3"></div>
 					<div class="niveau2_data1">
 						<select class="liste_pouvoir" name="attr_data1_lvl_2">
 							<option value="0" selected="selected"></option>
@@ -1377,16 +1387,16 @@ Puces images
 					<div class="niveau2_s2"><input class="data" type="text" name="attr_niveau2_s2"></div>
 					<div class="niveau2_s3"><input class="data" type="text" name="attr_niveau2_s3"></div>
 					<div class="niveau2_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
-					<div class="niveau2_p1"><input class="data" type="text" name="attr_niveau2_p1"></div>
-					<div class="niveau2_p2"><input class="data" type="text" name="attr_niveau2_p2"></div>
-					<div class="niveau2_p3"><input class="data" type="text" name="attr_niveau2_p3"></div>
+					<div class="niveau2_p1"><input class="data" type="number" name="attr_niveau2_p1"min="0"></div>
+					<div class="niveau2_p2"><input class="data" type="number" name="attr_niveau2_p2"min="0"></div>
+					<div class="niveau2_p3"><input class="data" type="number" name="attr_niveau2_p3"min="0"></div>
 					<div class="niveau2_c"><span class="info" title="Cocher si vous devez avoir le contrôle pour utiliser ce pouvoir">C.</span></div>
 					<div class="niveau2_c1"><input type="checkbox" name="attr_niveau2_c1" value="1" ></div>
 					<div class="niveau2_c2"><input type="checkbox" name="attr_niveau2_c2" value="1" ></div>
 					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>					
 					<div class="separateur_2"></div>
 					<div class="niveau3"><span data-i18n="level_3">NIVEAU 3 :</span></div>
-					<div class="niveau3_value"><input class="data" type="text" name="attr_pouvoir_lvl_3"></div>
+					<div class="niveau3_value"><input class="data" type="number" name="attr_pouvoir_lvl_3" min="0" max="3"></div>
 					<div class="niveau3_data1">
 						<select class="liste_pouvoir" name="attr_data1_lvl_3">
 							<option value="0" selected="selected"></option>
@@ -1443,9 +1453,9 @@ Puces images
 					<div class="niveau3_s2"><input class="data" type="text" name="attr_niveau3_s2"></div>
 					<div class="niveau3_s3"><input class="data" type="text" name="attr_niveau3_s3"></div>
 					<div class="niveau3_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
-					<div class="niveau3_p1"><input class="data" type="text" name="attr_niveau3_p1"></div>
-					<div class="niveau3_p2"><input class="data" type="text" name="attr_niveau3_p2"></div>
-					<div class="niveau3_p3"><input class="data" type="text" name="attr_niveau3_p3"></div>
+					<div class="niveau3_p1"><input class="data" type="number" name="attr_niveau3_p1" min="0"></div>
+					<div class="niveau3_p2"><input class="data" type="number" name="attr_niveau3_p2"min="0"></div>
+					<div class="niveau3_p3"><input class="data" type="number" name="attr_niveau3_p3"min="0"></div>
 					<div class="niveau3_c"><span class="info" title="Cocher si vous devez avoir le contrôle pour utiliser ce pouvoir">C.</span></div>
 					<div class="niveau3_c1"><input type="checkbox" name="attr_niveau3_c1" value="1" ></div>
 					<div class="niveau3_c2"><input type="checkbox" name="attr_niveau3_c2" value="1" ></div>
@@ -1498,16 +1508,16 @@ Puces images
 					<div class="arbre_esprit_charisme"><span data-i18n="charisma">CHARISME</span></div>
 					<div class="arbre_esprit_attention"><span data-i18n="attention">ATTENTION</span></div>
 					<div class="arbre_esprit_coordination"><span data-i18n="coordination">COORDINATION</span></div>
-					<div class="arbre_esprit_courage_D"><input class="data" type="number" name="attr_D_courage"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_intellect_D"><input class="data" type="number" name="attr_D_intellect"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_sensibilite_D"><input class="data" type="number" name="attr_D_sensibilite"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_autorite_D"><input class="data" type="number" name="attr_D_autorite"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_ouverture_D"><input class="data" type="number" name="attr_D_ouverture"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_serenite_D"><input class="data" type="number" name="attr_D_serenite"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_savoir_D"><input class="data" type="number" name="attr_D_savoir"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_charisme_D"><input class="data" type="number" name="attr_D_charisme"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_attention_D"><input class="data" type="number" name="attr_D_attention"  value="0"><span class="D_arbre">D</span></div>
-					<div class="arbre_esprit_coordination_D"><input class="data" type="number" name="attr_D_coordination"  value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_courage_D"><input class="data" type="number" name="attr_D_courage" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_intellect_D"><input class="data" type="number" name="attr_D_intellect" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_sensibilite_D"><input class="data" type="number" name="attr_D_sensibilite" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_autorite_D"><input class="data" type="number" name="attr_D_autorite" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_ouverture_D"><input class="data" type="number" name="attr_D_ouverture" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_serenite_D"><input class="data" type="number" name="attr_D_serenite" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_savoir_D"><input class="data" type="number" name="attr_D_savoir" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_charisme_D"><input class="data" type="number" name="attr_D_charisme" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_attention_D"><input class="data" type="number" name="attr_D_attention" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
+					<div class="arbre_esprit_coordination_D"><input class="data" type="number" name="attr_D_coordination" min="0" max="5" value="0"><span class="D_arbre">D</span></div>
 					<div class="arbre_esprit_imprudence"><span data-i18n="imprudence">IMPRUDENCE</span></div>
 					<div class="arbre_esprit_froideur"><span data-i18n="coldness">FROIDEUR</span></div>
 					<div class="arbre_esprit_superstition"><span data-i18n="superstition">SUPERSTITION</span></div>
@@ -1518,16 +1528,16 @@ Puces images
 					<div class="arbre_esprit_manie"><span data-i18n="mania">MANIE</span></div>
 					<div class="arbre_esprit_manipulation"><span data-i18n="rigging">MANIPULATION</span></div>
 					<div class="arbre_esprit_avidite"><span data-i18n="greed">AVIDITÉ</span></div>
-					<div class="arbre_esprit_imprudence_input"><input class="data_defaut" type="number" name="attr_imprudence"></div>
-					<div class="arbre_esprit_froideur_input"><input class="data_defaut" type="number" name="attr_froideur"></div>
-					<div class="arbre_esprit_superstition_input"><input class="data_defaut" type="number" name="attr_superstition"></div>
-					<div class="arbre_esprit_intolerance_input"><input class="data_defaut" type="number" name="attr_intolerance"></div>
-					<div class="arbre_esprit_jalousie_input"><input class="data_defaut" type="number" name="attr_jalousie"></div>
-					<div class="arbre_esprit_indifference_input"><input class="data_defaut" type="number" name="attr_indifference"></div>
-					<div class="arbre_esprit_orgueil_input"><input class="data_defaut" type="number" name="attr_orgueil"></div>
-					<div class="arbre_esprit_manie_input"><input class="data_defaut" type="number" name="attr_"></div>
-					<div class="arbre_esprit_manipulation_input"><input class="data_defaut" type="number" name="attr_manie"></div>
-					<div class="arbre_esprit_avidite_input"><input class="data_defaut" type="number" name="attr_avidite"></div>
+					<div class="arbre_esprit_imprudence_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_imprudence"></div>
+					<div class="arbre_esprit_froideur_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_froideur"></div>
+					<div class="arbre_esprit_superstition_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_superstition"></div>
+					<div class="arbre_esprit_intolerance_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_intolerance"></div>
+					<div class="arbre_esprit_jalousie_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_jalousie"></div>
+					<div class="arbre_esprit_indifference_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_indifference"></div>
+					<div class="arbre_esprit_orgueil_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_orgueil"></div>
+					<div class="arbre_esprit_manie_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_"></div>
+					<div class="arbre_esprit_manipulation_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_manie"></div>
+					<div class="arbre_esprit_avidite_input"><input class="data_defaut" type="number"  min="1" max="5" name="attr_avidite"></div>
 				</div>
 			</div>
 		</div>
@@ -2214,19 +2224,19 @@ Puces images
 						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nashama_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nashama_bonus" min="1" max="9">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_rouah_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_rouah_bonus" min="1" max="9">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
 					</div>
 					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nefesh_bonus">
+						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nefesh_bonus" min="1" max="9">
 					</div>
 				</div>
 			</div>
@@ -2236,12 +2246,12 @@ Puces images
 				</div>
 			</div>
 			<div class="pnj_acquis_data">
-				<p><input class="data" type="text" name="attr_pnj_acquis_1"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_1"></p>
-				<p><input class="data" type="text" name="attr_pnj_acquis_2"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_2"></p>
-				<p><input class="data" type="text" name="attr_pnj_acquis_3"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_3"></p>
-				<p><input class="data" type="text" name="attr_pnj_acquis_4"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_4"></p>
-				<p><input class="data" type="text" name="attr_pnj_acquis_5"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_5"></p>
-				<p><input class="data" type="text" name="attr_pnj_acquis_6"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_6"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_1"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_1" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_2"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_2" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_3"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_3" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_4"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_4" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_5"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_5" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_acquis_6"> + <input class="bonus" type="number" name="attr_pnj_acquis_bonus_6" min="1" max="9"></p>
 			</div>
 			<div class="pnj_energie"><span data-i18n="energy">ENERGY</span> 
 				
@@ -2358,12 +2368,12 @@ Puces images
 				</div>
 			</div>
 			<div class="pnj_pouvoir_data">
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_1">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_1"></p>
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_2">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_2"></p>
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_3">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_3"></p>
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_4">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_4"></p>
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_5">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_5"></p>
-				<p><input class="data" type="text" name="attr_pnj_pouvoir_6">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_6"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_1">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_1" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_2">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_2" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_3">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_3" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_4">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_4" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_5">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_5" min="1" max="9"></p>
+				<p><input class="data" type="text" name="attr_pnj_pouvoir_6">&nbsp; &nbsp; <input class="bonus" type="number" name="attr_pnj_pouvoir_bonus_6" min="1" max="9"></p>
 			</div>
 			<div class="pnj_armes"><span data-i18n="weapon">WEAPONS</span> 
 				<div class="titre_trait">
@@ -2383,32 +2393,32 @@ Puces images
 				<div class="wrapper_arme_pnj">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme1_nom"></p></div>
 					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme1_precision"></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme1_precision" min="1" max="9"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme1_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme1_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme1_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme1_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme1_munition" min="0" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme1_cadence" min="1" max="9"></p></div>
 				</div>
 				<div class="wrapper_arme_pnj">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
 					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme2_precision"></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme2_precision" min="1" max="9"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme2_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme2_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme2_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme2_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme2_munition" min="1" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme2_cadence" min="1" max="9"></p></div>
 				</div>
 				<div class="wrapper_arme_pnj">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
 					<div class="arme_plus"><p>+</p></div>
-					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme2_precision"></p></div>
+					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme2_precision" min="1" max="9"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme2_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme2_degats"></p></div>
 					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
-					<div class="arme_munition"><p><input class="arme_center" type="text" name="attr_arme3_munition"></p></div>
-					<div class="arme_cadence"><p><input class="arme_center" type="text" name="attr_arme3_cadence"></p></div>
+					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme3_munition" min="1" max="30"></p></div>
+					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme3_cadence" min="1" max="9"></p></div>
 				</div>
 			</div>
 			<div class="pnj_notes"><span data-i18n="notes">NOTES</span> 
@@ -2427,19 +2437,19 @@ Puces images
 			<div class="pnj_attributs_data">
 				<div class="wrapper_pnj_attributs">
 					<div class="pnj_attributs_col_1">
-						<p><input class="data" type="text" name="attr_pnj_attributs_1"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_2"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_3"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_1"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_2"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_3"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="1" max="9"></p>
 					</div>
 					<div class="pnj_attributs_col_2">
-						<p><input class="data" type="text" name="attr_pnj_attributs_4"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_5"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_6"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_4"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_5"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_6"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="1" max="9"></p>
 					</div>
 					<div class="pnj_attributs_col_3">
-						<p><input class="data" type="text" name="attr_pnj_attributs_7"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_8"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_9"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_7"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_8"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="1" max="9"></p>
+						<p><input class="data" type="text" name="attr_pnj_attributs_9"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="1" max="9"></p>
 					</div>
 				</div>
 			</div>
@@ -2478,7 +2488,7 @@ Puces images
 						</div>
 					</div>
 				</div>	
-				<div class="protection_tete_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_tete"></div>
+				<div class="protection_tete_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_tete" min="0" max="9"></div>
 				<div class="titre_bras_droit_pnj">3-5 : <span data-i18n="right_arm">BRAS DROIT</span></div>
 				<div class="dots_bras_droit_pnj">
 					<div class="wrapper_corps_boutton">
@@ -2514,7 +2524,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_droit_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_bras_droit"></div>
+				<div class="protection_bras_droit_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_bras_droit" min="0" max="9"></div>
 				<div class="titre_bras_gauche_pnj">6-8 : <span data-i18n="left_arm">BRAS GAUCHE</span></div>
 				<div class="dots_bras_gauche_pnj">
 					<div class="wrapper_corps_boutton">
@@ -2550,7 +2560,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_bras_gauche_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_bras_gauche"></div>
+				<div class="protection_bras_gauche_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_bras_gauche" min="0" max="9"></div>
 				<div class="titre_torse_pnj">9-10 : <span data-i18n="torso">TORSE</span></div>
 				<div class="dots_torse_pnj">
 					<div class="wrapper_corps_boutton">
@@ -2598,7 +2608,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_torse_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_torse"></div>
+				<div class="protection_torse_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_torse" min="0" max="9"></div>
 				<div class="titre_jambe_droite_pnj">11 : <span data-i18n="right_leg">JAMBE DROITE</span></div>
 				<div class="dots_jambe_droite_pnj">
 					<div class="wrapper_corps_boutton">
@@ -2634,7 +2644,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_droite_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_jambe_droite"></div>
+				<div class="protection_jambe_droite_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_jambe_droite" min="0" max="9"></div>
 				<div class="titre_jambe_gauche_pnj">12 : <span data-i18n="left_leg">JAMBE GAUCHE</span></div>
 				<div class="dots_jambe_gauche_pnj">
 					<div class="wrapper_corps_boutton">
@@ -2670,7 +2680,7 @@ Puces images
 						</div>
 					</div>
 				</div>
-				<div class="protection_jambe_gauche_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="text" name="attr_protection_jambe_gauche"></div>
+				<div class="protection_jambe_gauche_pnj"><span data-i18n="protection">Protection</span> <input class="protection_pnj" type="number" name="attr_protection_jambe_gauche" min="0" max="9"></div>
 			</div>
 			<div class="pnj_combat"><span data-i18n="fight">FIGHT</span> 
 				<div class="titre_trait">
@@ -2682,29 +2692,29 @@ Puces images
 					<!-- colonne 1 -->
 					<div class="pnj_combat_titre_1"><span class="pnj_titre_combat" data-i18n="pnj_initiative">INITIATIVE<span></div>
 					<div class="pnj_combat_sous_titre_1"><span class="pnj_info_combat" data-i18n="pnj_initiative_info">NEFESH + AGILITY (+acquis)</span></div>
-					<div class="pnj_combat_bonus_1"><input class="bonus" type="number" name="attr_bonus_initiative"></div>
+					<div class="pnj_combat_bonus_1"><input class="bonus" type="number" name="attr_bonus_initiative" min="0" max="9"></div>
 					<div class="pnj_combat_titre_2"><span class="pnj_titre_combat" data-i18n="pnj_attack">ATTACK</span>
 						<input class="data" type="text" name="attr_pnj_attack_data_1">
 					</div>
 					<div class="pnj_combat_sous_titre_2"><span class="pnj_info_combat" data-i18n="pnj_initiative_info">NEFESH + ATTRIBUT (+ learned)</span></div>
-					<div class="pnj_combat_bonus_2"><input class="bonus" type="number" name="attr_bonus_attack_pnj_1"></div>
+					<div class="pnj_combat_bonus_2"><input class="bonus" type="number" name="attr_bonus_attack_pnj_1" min="0" max="9"></div>
 					<div class="pnj_combat_titre_3"><span class="pnj_titre_combat" data-i18n="pnj_attack">ATTACK</span>
 						<input class="data" type="text" name="attr_pnj_attack_data_2">
 					</div>
 					<div class="pnj_combat_sous_titre_3"><span class="pnj_info_combat" data-i18n="pnj_initiative_info">NEFESH + ATTRIBUT (+ learned)</span></div>
-					<div class="pnj_combat_bonus_3"><input class="bonus" type="number" name="attr_bonus_attack_pnj_2"></div>
+					<div class="pnj_combat_bonus_3"><input class="bonus" type="number" name="attr_bonus_attack_pnj_2" min="0" max="9"></div>
 					<!-- colonne 2 -->
 					<div class="pnj_combat_titre_4"><span class="pnj_titre_combat" data-i18n="pnj_attack">ATTACK</span>
 						<input class="data" type="text" name="attr_pnj_atack_data_3">
 					</div>
 					<div class="pnj_combat_sous_titre_4"><span class="pnj_info_combat" data-i18n="pnj_initiative_info">NEFESH + ATTRIBUT (+ learned)</span></div>
-					<div class="pnj_combat_bonus_4"><input class="bonus" type="number" name="attr_bonus_attack_pnj_3"></div>
+					<div class="pnj_combat_bonus_4"><input class="bonus" type="number" name="attr_bonus_attack_pnj_3" min="0" max="9"></div>
 					<div class="pnj_combat_titre_5"><span class="pnj_titre_combat" data-i18n="pnj_immobilize">IMMOBILIZE<span><input class="data" type="text" name="attr_pnj_combat_data_3"></div>
 					<div class="pnj_combat_sous_titre_5"><span class="pnj_info_combat" data-i18n="pnj_immobilize_info">NEFESH + POWER (+ learned)</span></div>
-					<div class="pnj_combat_bonus_5"><input class="bonus" type="number" name="attr_immobiliser_pnj"></div>
+					<div class="pnj_combat_bonus_5"><input class="bonus" type="number" name="attr_immobiliser_pnj" min="0" max="9"></div>
 					<div class="pnj_combat_titre_6"><span class="pnj_titre_combat" data-i18n="pnj_defend_oneself">DEFEND ONESELF</span></div>
 					<div class="pnj_combat_sous_titre_6"><span class="pnj_info_combat" data-i18n="pnj_defend_oneself_info">NEFESH + AGILITY (+ learned)</span></div>
-					<div class="pnj_combat_bonus_6"><input class="bonus" type="number" name="attr_defendre_pnj"></div>
+					<div class="pnj_combat_bonus_6"><input class="bonus" type="number" name="attr_defendre_pnj" min="0" max="9"></div>
 					
 					<div class="pnj_combat_titre_malus"><span data-i18n="total_malus_pnj">TOTAL MALUS</span></div>
 					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="number" name="attr_malus_total" readonly /></div>
@@ -3467,6 +3477,42 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		<div class="sheet-key">{{divers_title}}</div>
 		<div class="sheet-value">{{divers}}</div>
 		{{/divers}}
+		{{#localisation}}
+		<div class="sheet-key">{{localisation_title}}</div>
+			{{#rollTotal() localisation 2}}
+			<div class="sheet-value" style="font-weight: bold !important;">Tête</div>
+			{{/rollTotal() localisation 2}}
+			{{#rollTotal() localisation 3}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 3}}
+			{{#rollTotal() localisation 4}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 4}}
+			{{#rollTotal() localisation 5}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 5}}
+			{{#rollTotal() localisation 6}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 6}}
+			{{#rollTotal() localisation 7}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 7}}
+			{{#rollTotal() localisation 8}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 8}}
+			{{#rollTotal() localisation 9}}
+			<div class="sheet-value" style="font-weight: bold !important;">Torse</div>
+			{{/rollTotal() localisation 9}}
+			{{#rollTotal() localisation 10}}
+			<div class="sheet-value" style="font-weight: bold !important;">Torse</div>
+			{{/rollTotal() localisation 10}}
+			{{#rollTotal() localisation 11}}
+			<div class="sheet-value" style="font-weight: bold !important;">Jambe droite</div>
+			{{/rollTotal() localisation 11}}
+			{{#rollTotal() localisation 12}}
+			<div class="sheet-value" style="font-weight: bold !important;">Jambe gauche</div>
+			{{/rollTotal() localisation 12}}
+		{{/localisation}}
 		{{#computed::roll}}
 		<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}}</div>
 		{{/computed::roll}}
@@ -3482,10 +3528,46 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		<div class="type">Jet d'Embellie</div>
     </div>
     <div class="sheet-content">
-		{{#allprops() title subtitle desc color}}
+		{{#allprops() title subtitle desc color localisation localisation_title}}
 		<div class="sheet-key">{{key}}</div>
 		<div class="sheet-value">{{value}}</div>
-		{{/allprops() title subtitle desc color}}
+		{{/allprops() title subtitle desc color localisation localisation_title}}
+		{{#localisation}}
+		<div class="sheet-key">{{localisation_title}}</div>
+			{{#rollTotal() localisation 2}}
+			<div class="sheet-value" style="font-weight: bold !important;">Tête</div>
+			{{/rollTotal() localisation 2}}
+			{{#rollTotal() localisation 3}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 3}}
+			{{#rollTotal() localisation 4}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 4}}
+			{{#rollTotal() localisation 5}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras droit</div>
+			{{/rollTotal() localisation 5}}
+			{{#rollTotal() localisation 6}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 6}}
+			{{#rollTotal() localisation 7}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 7}}
+			{{#rollTotal() localisation 8}}
+			<div class="sheet-value" style="font-weight: bold !important;">Bras gauche</div>
+			{{/rollTotal() localisation 8}}
+			{{#rollTotal() localisation 9}}
+			<div class="sheet-value" style="font-weight: bold !important;">Torse</div>
+			{{/rollTotal() localisation 9}}
+			{{#rollTotal() localisation 10}}
+			<div class="sheet-value" style="font-weight: bold !important;">Torse</div>
+			{{/rollTotal() localisation 10}}
+			{{#rollTotal() localisation 11}}
+			<div class="sheet-value" style="font-weight: bold !important;">Jambe droite</div>
+			{{/rollTotal() localisation 11}}
+			{{#rollTotal() localisation 12}}
+			<div class="sheet-value" style="font-weight: bold !important;">Jambe gauche</div>
+			{{/rollTotal() localisation 12}}
+		{{/localisation}}
 		<div class="sheet-footer"><img class="frise_prouesse" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_result_deco.png" style="margin-top:-13px; opacity:0.7;"></div>
     </div>
  </div>
