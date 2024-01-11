@@ -4013,10 +4013,10 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		<div class="type">Jet d'Embellie</div>
     </div>
     <div class="sheet-content">
-		{{#allprops() title subtitle desc color localisation localisation_title}}
+		{{#allprops() title subtitle desc color localisation localisation_title info}}
 		<div class="sheet-key">{{key}}</div>
 		<div class="sheet-value">{{value}}</div>
-		{{/allprops() title subtitle desc color localisation localisation_title}}
+		{{/allprops() title subtitle desc color localisation localisation_title info}}
 		{{#localisation}}
 		<div class="sheet-key">{{localisation_title}}</div>
 			{{#rollTotal() localisation 2}}
@@ -4053,7 +4053,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 			<div class="sheet-value" style="font-weight: bold !important;">Jambe gauche</div>
 			{{/rollTotal() localisation 12}}
 		{{/localisation}}
-		{{#info}}<div class="sheet-info">{{value}}</div>{{/info}}
+		{{#info}}<div class="sheet-info">{{info}}</div>{{/info}}
 		<div class="sheet-footer"><img class="frise_prouesse" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_result_deco.png" style="margin-top:-13px; opacity:0.7;"></div>
     </div>
  </div>
