@@ -1145,16 +1145,16 @@ template ok -->
 				</div>
 			</div>
 			<div class="acquis_1_data">
-				<p><input class="data" type="text" name="attr_acquis1"> + <input class="bonus" type="number" name="attr_acquisbonus1" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis2"> + <input class="bonus" type="number" name="attr_acquisbonus2" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis3"> + <input class="bonus" type="number" name="attr_acquisbonus3" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis4"> + <input class="bonus" type="number" name="attr_acquisbonus4" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis1"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus1" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis2"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus2" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis3"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus3" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis4"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus4" min="0" max="3"></p>
 			</div>
 			<div class="acquis_2_data">
-				<p><input class="data" type="text" name="attr_acquis5"> + <input class="bonus" type="number" name="attr_acquisbonus5" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis6"> + <input class="bonus" type="number" name="attr_acquisbonus6" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis7"> + <input class="bonus" type="number" name="attr_acquisbonus7" min="0" max="3"></p>
-				<p><input class="data" type="text" name="attr_acquis8"> + <input class="bonus" type="number" name="attr_acquisbonus8" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis5"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus5" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis6"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus6" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis7"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus7" min="0" max="3"></p>
+				<p><input class="data" type="text" name="attr_acquis8"><span class="plus_acquis">+</span><input class="bonus" type="number" name="attr_acquisbonus8" min="0" max="3"></p>
 			</div>
 			<!-- <div class="acquis_3_data">
 				<p><input class="data" type="text" name="attr_acquis9"> + <input class="bonus" type="text" name="attr_acquisbonus9"></p>
@@ -1316,10 +1316,6 @@ template ok -->
 							<option value="Tourmente">Tourmente</option>
 						</select>
 					</div>
-					<div class="niveau1_s"><span class="info" title="La sphère à occuper pour utiliser ce pouvoir">S.</span></div>
-					<div class="niveau1_s1"><input class="data" type="text" name="attr_niveau1_s1"></div>
-					<div class="niveau1_s2"><input class="data" type="text" name="attr_niveau1_s2"></div>
-					<div class="niveau1_s3"><input class="data" type="text" name="attr_niveau1_s3"></div>
 					<div class="niveau1_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau1_p1"><input class="data" type="number" name="attr_niveau1_p1"min="0"></div>
 					<div class="niveau1_p2"><input class="data" type="number" name="attr_niveau1_p2"min="0"></div>
@@ -1328,6 +1324,10 @@ template ok -->
 					<div class="niveau1_c1"><input type="checkbox" name="attr_niveau1_c1" value="1" ></div>
 					<div class="niveau1_c2"><input type="checkbox" name="attr_niveau1_c2" value="1" ></div>
 					<div class="niveau1_c3"><input type="checkbox" name="attr_niveau1_c3" value="1" ></div>
+					<div class="niveau1_s"><!-- <span class="info" title="Informations">I.</span> --></div>
+					<div class="niveau1_s1"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau1_s2"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau1_s3"><span class="picto_pouvoir">R</span></div>
 					<div class="separateur_1"></div>
 					<div class="niveau2"><span data-i18n="level_2">NIVEAU 2 :</span></div>
 					<div class="niveau2_value"><input class="data" type="number" name="attr_pouvoir_lvl_2" min="0" max="3"></div>
@@ -1382,10 +1382,6 @@ template ok -->
 							<option value="Rouages">Rouages</option>
 						</select>
 					</div>
-					<div class="niveau2_s"><span class="info" title="La sphère à occuper pour utiliser ce pouvoir">S.</span></div>
-					<div class="niveau2_s1"><input class="data" type="text" name="attr_niveau2_s1"></div>
-					<div class="niveau2_s2"><input class="data" type="text" name="attr_niveau2_s2"></div>
-					<div class="niveau2_s3"><input class="data" type="text" name="attr_niveau2_s3"></div>
 					<div class="niveau2_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau2_p1"><input class="data" type="number" name="attr_niveau2_p1"min="0"></div>
 					<div class="niveau2_p2"><input class="data" type="number" name="attr_niveau2_p2"min="0"></div>
@@ -1393,7 +1389,11 @@ template ok -->
 					<div class="niveau2_c"><span class="info" title="Cocher si vous devez avoir le contrôle pour utiliser ce pouvoir">C.</span></div>
 					<div class="niveau2_c1"><input type="checkbox" name="attr_niveau2_c1" value="1" ></div>
 					<div class="niveau2_c2"><input type="checkbox" name="attr_niveau2_c2" value="1" ></div>
-					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>					
+					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>
+					<div class="niveau2_s"></div>
+					<div class="niveau2_s1"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau2_s2"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau2_s3"><span class="picto_pouvoir">R</span></div>					
 					<div class="separateur_2"></div>
 					<div class="niveau3"><span data-i18n="level_3">NIVEAU 3 :</span></div>
 					<div class="niveau3_value"><input class="data" type="number" name="attr_pouvoir_lvl_3" min="0" max="3"></div>
@@ -1448,10 +1448,6 @@ template ok -->
 							<option value="Ubiquité">Ubiquité</option>
 						</select>
 					</div>
-					<div class="niveau3_s"><span class="info" title="La sphère à occuper pour utiliser ce pouvoir">S.</span></div>
-					<div class="niveau3_s1"><input class="data" type="text" name="attr_niveau3_s1"></div>
-					<div class="niveau3_s2"><input class="data" type="text" name="attr_niveau3_s2"></div>
-					<div class="niveau3_s3"><input class="data" type="text" name="attr_niveau3_s3"></div>
 					<div class="niveau3_p"><span class="info" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau3_p1"><input class="data" type="number" name="attr_niveau3_p1" min="0"></div>
 					<div class="niveau3_p2"><input class="data" type="number" name="attr_niveau3_p2"min="0"></div>
@@ -1460,6 +1456,10 @@ template ok -->
 					<div class="niveau3_c1"><input type="checkbox" name="attr_niveau3_c1" value="1" ></div>
 					<div class="niveau3_c2"><input type="checkbox" name="attr_niveau3_c2" value="1" ></div>
 					<div class="niveau3_c3"><input type="checkbox" name="attr_niveau3_c3" value="1" ></div>
+					<div class="niveau3_s"></div>
+					<div class="niveau3_s1"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau3_s2"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau3_s3"><span class="picto_pouvoir">R</span></div>
 				</div>
 			</div>			
 			<div class="objet_esprit"><span data-i18n="items">OBJETS</span>
@@ -4053,6 +4053,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 			<div class="sheet-value" style="font-weight: bold !important;">Jambe gauche</div>
 			{{/rollTotal() localisation 12}}
 		{{/localisation}}
+		{{#info}}<div class="sheet-info">{{value}}</div>{{/info}}
 		<div class="sheet-footer"><img class="frise_prouesse" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_result_deco.png" style="margin-top:-13px; opacity:0.7;"></div>
     </div>
  </div>
