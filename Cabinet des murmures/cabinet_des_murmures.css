@@ -1515,6 +1515,7 @@ input[type="radio"] {
 	grid-row: 7/12;
 	font-size: 14px;
 	padding-top: 3px;
+	margin-top: 10px;
 }
 
 .attributs_bonus2 {
@@ -1522,6 +1523,7 @@ input[type="radio"] {
 	grid-row: 7/12;
 	font-size: 16px;
 	padding-top: 3px;
+	margin-top: 10px;
 }
 
 .attributs_bonus3 {
@@ -1529,6 +1531,7 @@ input[type="radio"] {
 	grid-row: 7/12;
 	font-size: 14px;
 	padding-top: 3px;
+	margin-top: 10px;
 }
 
 .equipement {
@@ -1590,8 +1593,8 @@ input[type="radio"] {
 }
 
 .arme {
-	grid-column: 1/9;
-	grid-row: 21;
+	grid-column: 1/11;
+	grid-row: 27;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
@@ -1599,16 +1602,16 @@ input[type="radio"] {
 }
 
 .arme_data {
-	grid-column: 1/9;
-	grid-row: 22/27;
+	grid-column: 1/11;
+	grid-row: 28/34;
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 5px;
 }
 
 .note_corps {
-	grid-column: 1/11;
-	grid-row: 27;
+	grid-column: 1/9;
+	grid-row: 21;
 	font-size: 16px;
 	display:flex;
     align-items: flex-end;
@@ -1617,8 +1620,8 @@ input[type="radio"] {
 }
 
 .note_corps_data {
-	grid-column: 1/11;
-	grid-row: 28/34;
+	grid-column: 1/9;
+	grid-row: 22/27;
 	font-size: 14px;
 	padding-top: 5px;
 	padding-left: 5px;
@@ -1656,7 +1659,7 @@ input[type="radio"] {
 
 .malus_total_cadre {
     grid-column: 9/16;
-    grid-row: 22/30;
+    grid-row: 22/28;
     font-size: 14px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_malus_cadre.png);
     background-size: cover;
@@ -1681,7 +1684,7 @@ input[type="radio"] {
 
 .malus_total_data {
     grid-column: 10;
-    grid-row: 25/33;
+    grid-row: 25;
     text-align: center;
     margin-top: -14px;
 }
@@ -1694,10 +1697,9 @@ input[type="radio"] {
 	background-size: cover;
 }
 
-.cor_decor_bas {
+.cor_decor_bas {  
 	grid-column: 7/11;
-	grid-row: 33;
-	grid-template-rows: 20px;
+	grid-row: 35;
 	font-size: 20px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
 	background-size: cover;
@@ -2066,9 +2068,18 @@ input[type="radio"] {
 
 .wrapper_arme{  
 	display: grid;
-    grid-template-columns: 107px 5px 5px 55px 5px 55px 5px 55px 3px 15px 5px 55px 10px 55px;
+    grid-template-columns: 160px 10px 5px 55px 10px 55px 10px 55px 15px 15px 15px 55px 10px 55px 10px 50px;
 	grid-auto-rows: 30px;
     font-size: 11px;
+}
+
+.wrapper_arme_title{  
+	display: grid;
+    grid-template-columns: 160px 10px 5px 55px 10px 55px 10px 55px 15px 15px 15px 55px 10px 55px 10px 50px;
+	grid-auto-rows: 30px;
+    font-size: 11px;
+	margin-bottom: 11px;
+	margin-top: 5px;
 }
 
 .arme_titre_nom {
@@ -4057,7 +4068,7 @@ input[type="radio"] {
     white-space: nowrap;
     font-size: 10px;
     margin-top: 14px;
-    margin-left: -35px;
+    margin-left: -30px;
 }
 
 .arme_titre_munition {
@@ -4092,6 +4103,7 @@ input[type="radio"] {
 
 .arme_dots {
 	grid-column: 10;
+	margin-top: -5px;
 }
 
 .arme_munition {
@@ -4100,6 +4112,10 @@ input[type="radio"] {
 
 .arme_cadence {
 	grid-column: 14;
+}
+
+.arme_dice {
+	grid-column: 16;
 }
 
 
@@ -5556,7 +5572,6 @@ input[type=number] {
 	margin-top: -5px;
 }
 
-
 .acquis_collectifs_data1 input.bonus[type="number"],
 .acquis_collectifs_data2 input.bonus[type="number"],
 .acquis_collectifs_data3 input.bonus[type="number"] {  
@@ -5612,7 +5627,8 @@ input[type=number] {
 .objet_esprit_data input.data,
 .corruption_data input.data,
 .charsheet input.arme,
-.charsheet input.arme_center {
+.charsheet input.arme_center,
+.charsheet input.arme_center[type="number"] {
 	background-color: transparent;
 	font-family: 'Dancing Script', cursive;
 	color: var(--marron_cabinet);
@@ -5638,6 +5654,10 @@ input[type=number] {
 	text-align: center;
 }
 
+span.weapon_plus {
+	margin-left: 6px;
+	font-size: 20px;
+}
 .sante_femme_data p,
 .sante_homme_data p {
     margin: 0;
@@ -5759,19 +5779,23 @@ div.malus_corps {
 	
 }
 
-.charsheet input.protection,
-.charsheet input.protection_pnj{
-    font-size: 12px;
+.charsheet input.protection[type="number"],
+.charsheet input.protection_pnj[type="number"]{  
+	font-size: 15px;
 	background-color: transparent;
-    font-family: 'IM Fell English, serif';
+	font-family: 'IM Fell English, serif';
 	color: var(--red_cabinet);
 	outline: none;
 	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
 	border-radius: 0px;
-    border-bottom: solid 1px var(--red_cabinet);
+	border-bottom: solid 1px var(--red_cabinet);
 	margin-top: -5px;
-	width: 60px;
-    padding-bottom: 2px;
+	width: 30px;
+	padding-bottom: 2px;
+	text-align: center;
 }
 
 .malus_cadre {
@@ -5923,9 +5947,9 @@ div.niveau3_p {
     text-align: center;
 }
 
-.niveau1_value input.data,
-.niveau2_value input.data,
-.niveau3_value input.data {  
+.niveau1_value input.data[type="number"],
+.niveau2_value input.data[type="number"],
+.niveau3_value input.data[type="number"] {  
 	background-color: transparent;
 	color: var(--marron_cabinet);
 	outline: none;
@@ -5988,15 +6012,15 @@ div.niveau3_p {
     text-align: center;
 }
 
-.niveau1_p1 input.data,
-.niveau1_p2 input.data,
-.niveau1_p3 input.data,
-.niveau2_p1 input.data,
-.niveau2_p2 input.data,
-.niveau2_p3 input.data,
-.niveau3_p1 input.data,
-.niveau3_p2 input.data,
-.niveau3_p3 input.data {
+.niveau1_p1 input.data[type="number"],
+.niveau1_p2 input.data[type="number"],
+.niveau1_p3 input.data[type="number"],
+.niveau2_p1 input.data[type="number"],
+.niveau2_p2 input.data[type="number"],
+.niveau2_p3 input.data[type="number"],
+.niveau3_p1 input.data[type="number"],
+.niveau3_p2 input.data[type="number"],
+.niveau3_p3 input.data[type="number"] {
 	background-color: transparent;
 	color: var(--marron_cabinet);
 	outline: none;
@@ -6047,12 +6071,12 @@ select.liste_pouvoir {
 
 .qualite_arbre_data input.data::placeholder,
 .qualite_arbre_esprit input.data::placeholder{
-  color: #43586187;
+	color: #43586187;
 }
 
-.qualite_arbre_data input.data_defaut,
-.qualite_arbre_esprit input.data_defaut{
-	  background-color: transparent;
+.qualite_arbre_data input.data_defaut[type="number"],
+.qualite_arbre_esprit input.data_defaut[type="number"]{
+	background-color: transparent;
 	font-family: 'Dancing Script';
 	outline: none;
 	border-radius: 0px;
@@ -6060,7 +6084,7 @@ select.liste_pouvoir {
 	width: 30px;
 	font-size: 24px;
 	text-align: center;
-	color: var(--blue_cabinet_data);
+	color: var(--red_cabinet);
 }
 
 .qualite_arbre_data input.data_defaut::placeholder {
@@ -6605,3 +6629,5 @@ span.medium_dice {
     font-size: 20px;
 	font-family: "Proxima Nova", ProximaNova-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+
