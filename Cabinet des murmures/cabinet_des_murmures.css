@@ -54,6 +54,11 @@ font-family: 'Great Vibes', cursive;
     font-family: 'Libre Bodoni', serif;
 }
 
+.charsheet input:read-only,
+.charsheet input:-moz-read-only {
+	cursor: default;
+}
+
 .cabinet,
 .corps,
 .arbre,
@@ -469,6 +474,11 @@ input:checked + .slider:before {
 .charsheet .prouesse_title
 {
 	display: none;
+}
+
+
+.pouvoir_data .prouesse_roll {
+	display: inline-block;
 }
 
 input.sheet-prouesse-switch:not(:checked) ~ button.classic_roll,
@@ -6031,7 +6041,16 @@ div.niveau3_p {
 .niveau2_p3 input.data[type="number"],
 .niveau3_p1 input.data[type="number"],
 .niveau3_p2 input.data[type="number"],
-.niveau3_p3 input.data[type="number"] {
+.niveau3_p3 input.data[type="number"],
+.niveau1_p1 input.data,
+.niveau1_p2 input.data,
+.niveau1_p3 input.data,
+.niveau2_p1 input.data,
+.niveau2_p2 input.data,
+.niveau2_p3 input.data,
+.niveau3_p1 input.data,
+.niveau3_p2 input.data,
+.niveau3_p3 input.data{
 	background-color: transparent;
 	color: var(--marron_cabinet);
 	outline: none;
@@ -6325,7 +6344,6 @@ span.picto_pouvoir {
 	font-size: 16px;
 	margin-left: 5px;
 	color: var(--marron_cabinet);
-	cursor: default;
 }
 
 span.show {  
@@ -6435,19 +6453,22 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic,
 .sheet-rolltemplate-cabinet-prouesse,
-.sheet-rolltemplate-cabinet-chance{
+.sheet-rolltemplate-cabinet-chance,
+.sheet-rolltemplate-cabinet-pouvoir{
   margin-left: -20px;
 }
 
 .withoutavatars .sheet-rolltemplate-cabinet-classic,
 .withoutavatars .sheet-rolltemplate-cabinet-prouesse,
-.sheet-rolltemplate-cabinet-chance{
+.sheet-rolltemplate-cabinet-chance,
+.sheet-rolltemplate-cabinet-pouvoir{
   margin-left: -7px;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
-.sheet-rolltemplate-cabinet-chance .sheet-container{
+.sheet-rolltemplate-cabinet-chance .sheet-container,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-container {
     position: relative;
     margin-bottom: 15px;
     border-radius: 40px 20px 25px 25px;
@@ -6456,7 +6477,7 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-type,
 .sheet-rolltemplate-cabinet-prouesse .sheet-type,
-.sheet-rolltemplate-cabinet-chance .sheet-type{
+.sheet-rolltemplate-cabinet-chance .sheet-type {
     position: relative;
     z-index: 1;
     padding: 2px;
@@ -6473,7 +6494,8 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-header,
 .sheet-rolltemplate-cabinet-prouesse .sheet-header,
-.sheet-rolltemplate-cabinet-chance .sheet-header{
+.sheet-rolltemplate-cabinet-chance .sheet-header,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-header{
     color: var(--header-text-color);
     padding: 7px;
     border-radius: 40px 20px 0px 0px;
@@ -6486,7 +6508,8 @@ span.medium_dice {
 }
 .sheet-rolltemplate-cabinet-classic .sheet-title,
 .sheet-rolltemplate-cabinet-prouesse .sheet-title,
-.sheet-rolltemplate-cabinet-chance .sheet-title{
+.sheet-rolltemplate-cabinet-chance .sheet-title,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-title {
     font-size: 18px;
     padding-top: 7px;
     font-weight: bold;
@@ -6496,7 +6519,8 @@ span.medium_dice {
 }
 .sheet-rolltemplate-cabinet-classic .sheet-subtitle,
 .sheet-rolltemplate-cabinet-prouesse .sheet-subtitle,
-.sheet-rolltemplate-cabinet-chance .sheet-subtitle{
+.sheet-rolltemplate-cabinet-chance .sheet-subtitle,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-subtitle{
     font-size: 14px;
     margin-top: 2px;
     color: #ffffffc4;
@@ -6504,14 +6528,15 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
-.sheet-rolltemplate-cabinet-chance .sheet-container {
+.sheet-rolltemplate-cabinet-chance .sheet-container{
     position: relative;
     margin-bottom: 15px;
     border-radius: 40px 20px 25px 25px;
 	box-shadow: 0px 0px 4px 3px #000;
 }
 
-.sheet-rolltemplate-cabinet-prouesse .sheet-container {
+.sheet-rolltemplate-cabinet-prouesse .sheet-container,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-container {
     box-shadow: 0px 0px 4px 3px #000;
 }
 
@@ -6519,7 +6544,8 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
-.sheet-rolltemplate-cabinet-chance .sheet-container{
+.sheet-rolltemplate-cabinet-chance .sheet-container,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-container{
   --border-roll-color: #1d2d30;
   --header-text-color: #FFF;
   --result-bg-color: #772d34;
@@ -6529,7 +6555,8 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-content,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content,
-.sheet-rolltemplate-cabinet-chance .sheet-content {
+.sheet-rolltemplate-cabinet-chance .sheet-content,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content {
     display: grid;
     background: #FFF;
     grid-template-columns: auto auto;
@@ -6544,13 +6571,20 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-content > div,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content > div,
-.sheet-rolltemplate-cabinet-chance .sheet-content > div{
+.sheet-rolltemplate-cabinet-chance .sheet-content > div,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div{
 	padding: 5px;
+}
+
+
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div{
+	font-weight: bold;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content .sheet-key,
-.sheet-rolltemplate-cabinet-chance .sheet-content .sheet-key{
+.sheet-rolltemplate-cabinet-chance .sheet-content .sheet-key,
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content .sheet-key {
 	font-weight: bold;
 	padding-right: 10px;
 	text-align: right;
@@ -6561,7 +6595,9 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n),
 .sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n){
+.sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n),
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content :nth-child(4n){
     background: #6150451c;
 }
 
@@ -6581,14 +6617,16 @@ span.medium_dice {
     background-size: 300px 30px !important;
 }
 
-.sheet-rolltemplate-cabinet-prouesse .sheet-info {
+.sheet-rolltemplate-cabinet-prouesse .sheet-info,
+.sheet-rolltemplate-cabinet-pouvoir  .sheet-info{
 	grid-column: span 2;
     text-align: center;
     padding-top: 12px !important;
     padding-bottom: 9px !important;
 }
 
-.sheet-rolltemplate-cabinet-prouesse .sheet-footer {
+.sheet-rolltemplate-cabinet-prouesse .sheet-footer,
+.sheet-rolltemplate-cabinet-pouvoir  .sheet-footer {
     grid-column: span 2;
     text-align: center;
     padding-top: 12px !important;
