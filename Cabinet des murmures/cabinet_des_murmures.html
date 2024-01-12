@@ -3928,7 +3928,21 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
   })
 </script>
 
+<!-- Script spell -->
 
+<script type="text/worker">
+on("sheet:opened change:data2_lvl_1", function() {
+    getAttrs(["data2_lvl_1"], function(values) {
+			let data2_lvl_1 = values.data2_lvl_1;
+            if (data2_lvl_1 == 'Apnée') info2_lvl_1 = "test info", niveau2_p1 = "1";
+            			
+			setAttrs({
+            "info2_lvl_1": info2_lvl_1,
+			"niveau1_p1" : niveau2_p1
+        });
+    });
+});
+</script>
 
 <!----------------------------->			
 <!------ [ROLL TEMPLATE] ------>
