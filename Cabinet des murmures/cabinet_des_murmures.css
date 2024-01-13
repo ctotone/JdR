@@ -465,8 +465,20 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-  
-  /* #Slider Prouesse*/
+/* modifier en span? */
+
+
+.sheet-weapon_puissance_oui1,
+.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon_puissance_non1 {
+  display: block;
+}
+
+.charsheet .sheet-weapon_puissance_non1,
+.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon_puissance_oui1 {
+  display: none;
+}
+
+
 
 .charsheet .classic_roll,
 .charsheet .prouesse_roll,
@@ -6452,16 +6464,20 @@ span.medium_dice {
 /* Version jet classique  */
 
 .sheet-rolltemplate-cabinet-classic,
-.sheet-rolltemplate-cabinet-prouesse,
-.sheet-rolltemplate-cabinet-chance,
-.sheet-rolltemplate-cabinet-pouvoir{
+.sheet-rolltemplate-cabinet-prouesse{
   margin-left: -20px;
 }
 
-.withoutavatars .sheet-rolltemplate-cabinet-classic,
-.withoutavatars .sheet-rolltemplate-cabinet-prouesse,
-.sheet-rolltemplate-cabinet-chance,
+.sheet-rolltemplate-cabinet-chance{
+  margin-left: 20px;
+}
+
 .sheet-rolltemplate-cabinet-pouvoir{
+  margin-left: -25px;
+}
+
+.withoutavatars .sheet-rolltemplate-cabinet-classic,
+.withoutavatars .sheet-rolltemplate-cabinet-prouesse{
   margin-left: -7px;
 }
 
