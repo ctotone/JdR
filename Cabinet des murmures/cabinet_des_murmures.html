@@ -241,18 +241,20 @@ template ok -->
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme1_nom"></p></div>
-					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px; color: var(--marron_cabinet);"><span class="weapon_plus">+</span></p></div>
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme1_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme1_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme1_degats"></p></div>
-					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" ></div>
+					<div class="arme_dots"><input type="checkbox" class="sheet-arme1_puissance" name="attr_arme1_puissance" value="1" ></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme1_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme1_cadence" min="0" max="5"></p></div>
-					<div class="arme_dice"><p>dice</p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme1_puissance" name="attr_arme1_puissance" value="1" style="display: none;">
+						<p><div class="sheet-weapon_puissance_oui1">oui</div><div class="sheet-weapon_puissance_non1">non</div></p></div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
-					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px; color: var(--marron_cabinet);"><span class="weapon_plus">+</span></p></div>
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme2_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme2_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme2_degats"></p></div>
@@ -263,7 +265,7 @@ template ok -->
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
-					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px; color: var(--marron_cabinet);"><span class="weapon_plus">+</span></p></div>
 					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme3_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme3_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme3_degats"></p></div>
@@ -274,7 +276,7 @@ template ok -->
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme_center" type="text" name="attr_arme4_nom"></p></div>
-					<div class="arme_plus"><p style="margin-top: -2px;"><span class="weapon_plus">+</span></p></div>
+					<div class="arme_plus"><p style="margin-top: -2px; color: var(--marron_cabinet);"><span class="weapon_plus">+</span></p></div>
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme4_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme4_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme4_degats"></p></div>
@@ -1325,15 +1327,15 @@ template ok -->
 					<div class="niveau1_c2"><input type="checkbox" name="attr_niveau1_c2" value="1" ></div>
 					<div class="niveau1_c3"><input type="checkbox" name="attr_niveau1_c3" value="1" ></div>
 					<div class="niveau1_s"><!-- <span class="info" title="Informations">I.</span> --></div>
-					
-					
-					
-					<!-- ajouter attribut nom du spell et oui / non controle dans script pour integrer text dans macro -->
 					<div class="niveau1_s1">
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{info1_lvl_1}}} {{subtitle=Pouvoir de niveau 1}} {{Périsprit=@{niveau1_p1}}} {{Contrôle=@{niveau1_c1}}} {{Sphère=@{sphere1_lvl_1}}} {{info=@{info1_lvl_1}}}"><span class="picto_pouvoir">R</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_1_1}}} {{subtitle=Pouvoir de niveau 1}} {{Périsprit=@{niveau1_p1}}} {{Contrôle=@{affichage1_c1}}} {{Sphère=@{sphere1_lvl_1}}} {{info=@{info1_lvl_1}}}"><span class="picto_pouvoir">R</span></button>
 					</div>
-					<div class="niveau1_s2"><span class="picto_pouvoir">R</span></div>
-					<div class="niveau1_s3"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau1_s2">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_1_2}}} {{subtitle=Pouvoir de niveau 1}} {{Périsprit=@{niveau1_p2}}} {{Contrôle=@{affichage1_c2}}} {{Sphère=@{sphere2_lvl_1}}} {{info=@{info2_lvl_1}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
+					<div class="niveau1_s3">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_1_3}}} {{subtitle=Pouvoir de niveau 1}} {{Périsprit=@{niveau1_p3}}} {{Contrôle=@{affichage1_c3}}} {{Sphère=@{sphere3_lvl_1}}} {{info=@{info3_lvl_1}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
 					<div class="separateur_1"></div>
 					<div class="niveau2"><span data-i18n="level_2">NIVEAU 2 :</span></div>
 					<div class="niveau2_value"><input class="data" type="number" name="attr_pouvoir_lvl_2" min="0" max="3"></div>
@@ -1397,16 +1399,22 @@ template ok -->
 					<div class="niveau2_c2"><input type="checkbox" name="attr_niveau2_c2" value="1" ></div>
 					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>
 					<div class="niveau2_s"></div>
-					<div class="niveau2_s1"><span class="picto_pouvoir">R</span></div>
-					<div class="niveau2_s2"><span class="picto_pouvoir">R</span></div>
-					<div class="niveau2_s3"><span class="picto_pouvoir">R</span></div>					
+					<div class="niveau2_s1">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_2_1}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau2_p1}}} {{Contrôle=@{affichage2_c1}}} {{Sphère=@{sphere1_lvl_2}}} {{info=@{info1_lvl_2}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
+					<div class="niveau2_s2">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_2_2}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau2_p2}}} {{Contrôle=@{affichage2_c2}}} {{Sphère=@{sphere2_lvl_2}}} {{info=@{info2_lvl_2}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
+					<div class="niveau2_s3">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_2_3}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau2_p3}}} {{Contrôle=@{affichage2_c3}}} {{Sphère=@{sphere3_lvl_2}}} {{info=@{info3_lvl_2}}}"><span class="picto_pouvoir">R</span></button>
+					</div>					
 					<div class="separateur_2"></div>
 					<div class="niveau3"><span data-i18n="level_3">NIVEAU 3 :</span></div>
 					<div class="niveau3_value"><input class="data" type="number" name="attr_pouvoir_lvl_3" min="0" max="3"></div>
 					<div class="niveau3_data1">
 						<select class="liste_pouvoir" name="attr_data1_lvl_3">
 							<option value="0" selected="selected"></option>
-							<option value="1">Bouclier ectoplasme</option>
+							<option value="1">Bouclier d'ectoplasme</option>
 							<option value="2">Coupé en deux</option>
 							<option value="3">Cri de la Banshee</option>
 							<option value="4">Dans la pierre</option>
@@ -1423,7 +1431,7 @@ template ok -->
 					<div class="niveau3_data2">
 						<select class="liste_pouvoir" name="attr_data2_lvl_3">
 							<option value="0" selected="selected"></option>
-							<option value="1">Bouclier ectoplasme</option>
+							<option value="1">Bouclier d'ectoplasme</option>
 							<option value="2">Coupé en deux</option>
 							<option value="3">Cri de la Banshee</option>
 							<option value="4">Dans la pierre</option>
@@ -1440,7 +1448,7 @@ template ok -->
 					<div class="niveau3_data3">
 						<select class="liste_pouvoir" name="attr_data3_lvl_3">
 							<option value="0" selected="selected"></option>
-							<option value="1">Bouclier ectoplasme</option>
+							<option value="1">Bouclier d'ectoplasme</option>
 							<option value="2">Coupé en deux</option>
 							<option value="3">Cri de la Banshee</option>
 							<option value="4">Dans la pierre</option>
@@ -1463,9 +1471,15 @@ template ok -->
 					<div class="niveau3_c2"><input type="checkbox" name="attr_niveau3_c2" value="1" ></div>
 					<div class="niveau3_c3"><input type="checkbox" name="attr_niveau3_c3" value="1" ></div>
 					<div class="niveau3_s"></div>
-					<div class="niveau3_s1"><span class="picto_pouvoir">R</span></div>
-					<div class="niveau3_s2"><span class="picto_pouvoir">R</span></div>
-					<div class="niveau3_s3"><span class="picto_pouvoir">R</span></div>
+					<div class="niveau3_s1">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_3_1}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau3_p1}}} {{Contrôle=@{affichage3_c1}}} {{Sphère=@{sphere1_lvl_3}}} {{info=@{info1_lvl_3}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
+					<div class="niveau3_s2">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_3_2}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau3_p2}}} {{Contrôle=@{affichage3_c2}}} {{Sphère=@{sphere2_lvl_3}}} {{info=@{info2_lvl_3}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
+					<div class="niveau3_s3">
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_3_3}}} {{subtitle=Pouvoir de niveau 2}} {{Périsprit=@{niveau3_p3}}} {{Contrôle=@{affichage3_c3}}} {{Sphère=@{sphere3_lvl_3}}} {{info=@{info3_lvl_3}}}"><span class="picto_pouvoir">R</span></button>
+					</div>
 				</div>
 			</div>			
 			<div class="objet_esprit"><span data-i18n="items">OBJETS</span>
@@ -3028,24 +3042,28 @@ on("sheet:opened change:data1_lvl_1", function() {
     getAttrs(["data1_lvl_1"], function(values) {
 			let data1_lvl_1 = parseInt(values["data1_lvl_1"]) || 0;
 			
-			if (data1_lvl_1 == '1') info1_lvl_1 = "1_1", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '2') info1_lvl_1 = "1_2", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Tiferet";
-			else if (data1_lvl_1 == '3') info1_lvl_1 = "1_3", niveau1_p1 = "1", niveau1_c1 ="0", sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '4') info1_lvl_1 = "1_4", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '5') info1_lvl_1 = "1_5", niveau1_p1 = "1", niveau1_c1 ="0", sphere1_lvl_1 ="Binah";
-			else if (data1_lvl_1 == '6') info1_lvl_1 = "1_6", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Geburah";
-			else if (data1_lvl_1 == '7') info1_lvl_1 = "1_7", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Chesed";
-			else if (data1_lvl_1 == '8') info1_lvl_1 = "1_8", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '9') info1_lvl_1 = "1_9", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '10') info1_lvl_1 = "1_10", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Hod";
-			else if (data1_lvl_1 == '11') info1_lvl_1 = "1_11", niveau1_p1 = "1", niveau1_c1 ="0", sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '12') info1_lvl_1 = "1_12", niveau1_p1 = "1", niveau1_c1 ="1", sphere1_lvl_1 ="Chokmah";
-			else info1_lvl_1 = "", niveau1_p1 = "", niveau1_c1 ="0", sphere1_lvl_1 ="";
-						
+			if (data1_lvl_1 == '1') 		nom_pouvoir_1_1 = "Affinité animale",	info1_lvl_1 = "1_1", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '2') 	nom_pouvoir_1_1 = "Apnée",	info1_lvl_1 = "1_2", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Tiferet";
+			else if (data1_lvl_1 == '3') 	nom_pouvoir_1_1 = "Apparence angélique",	info1_lvl_1 = "1_3", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 ="Non", 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '4') 	nom_pouvoir_1_1 = "Bruit",	info1_lvl_1 = "1_4", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '5') 	nom_pouvoir_1_1 = "Esprit de Babel",	info1_lvl_1 = "1_5", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 ="Non", 	sphere1_lvl_1 ="Binah";
+			else if (data1_lvl_1 == '6') 	nom_pouvoir_1_1 = "Effroi animal",	info1_lvl_1 = "1_6", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Geburah";
+			else if (data1_lvl_1 == '7') 	nom_pouvoir_1_1 = "Langue de Babel",	info1_lvl_1 = "1_7", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Chesed";
+			else if (data1_lvl_1 == '8')	nom_pouvoir_1_1 = "Malaise",	info1_lvl_1 = "1_8", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '9') 	nom_pouvoir_1_1 = "Parfum",	info1_lvl_1 = "1_9", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '10') 	nom_pouvoir_1_1 = "Oeil de Babel",	info1_lvl_1 = "1_10", 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Hod";
+			else if (data1_lvl_1 == '11') 	nom_pouvoir_1_1 = "Âme d'un lieu",	info1_lvl_1 = "1_11", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 ="Non", 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '12') 	nom_pouvoir_1_1 = "Tourmente",	info1_lvl_1 = "1_12", 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 ="Oui", 	sphere1_lvl_1 ="Chokmah";
+			else 							nom_pouvoir_1_1 = "",	info1_lvl_1 = "", 		niveau1_p1 = "", 	niveau1_c1 ="0", 	affichage1_c1 ="",		sphere1_lvl_1 ="";
+				
+			var strTranslation = getTranslationByKey('str'); // "Strength"
+			
 			setAttrs({
+			"nom_pouvoir_1_1" : nom_pouvoir_1_1,
 			"info1_lvl_1": info1_lvl_1,
 			"niveau1_p1" : niveau1_p1,
 			"niveau1_c1" : niveau1_c1,
+			"affichage1_c1" : affichage1_c1,
 			"sphere1_lvl_1" : sphere1_lvl_1
         });
     });
@@ -3057,24 +3075,26 @@ on("sheet:opened change:data2_lvl_1", function() {
     getAttrs(["data2_lvl_1"], function(values) {
 			let data2_lvl_1 = parseInt(values["data2_lvl_1"]) || 0;
 			
-			if (data2_lvl_1 == '1') info2_lvl_1 = "2_1", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '2') info2_lvl_1 = "2_2", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Tiferet";
-			else if (data2_lvl_1 == '3') info2_lvl_1 = "2_3", niveau1_p2 = "1", niveau1_c2 ="0", sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '4') info2_lvl_1 = "2_4", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '5') info2_lvl_1 = "2_5", niveau1_p2 = "1", niveau1_c2 ="0", sphere2_lvl_1 ="Binah";
-			else if (data2_lvl_1 == '6') info2_lvl_1 = "2_6", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Geburah";
-			else if (data2_lvl_1 == '7') info2_lvl_1 = "2_7", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Chesed";
-			else if (data2_lvl_1 == '8') info2_lvl_1 = "2_8", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '9') info2_lvl_1 = "2_9", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '10') info2_lvl_1 = "2_10", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Hod";
-			else if (data2_lvl_1 == '11') info2_lvl_1 = "2_11", niveau1_p2 = "1", niveau1_c2 ="0", sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '12') info2_lvl_1 = "2_12", niveau1_p2 = "1", niveau1_c2 ="1", sphere2_lvl_1 ="Chokmah";
-			else info2_lvl_1 = "", niveau1_p2 = "", niveau1_c2 ="0", sphere2_lvl_1 ="";
+			if (data2_lvl_1 == '1') 		nom_pouvoir_1_2 = "Affinité animale",	info2_lvl_1 = "2_1", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '2') 	nom_pouvoir_1_2 = "Apnée",	info2_lvl_1 = "2_2", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Tiferet";
+			else if (data2_lvl_1 == '3') 	nom_pouvoir_1_2 = "Apparence angélique",	info2_lvl_1 = "2_3", 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 ="Non", 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '4')	nom_pouvoir_1_2 = "Bruit",	info2_lvl_1 = "2_4", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '5') 	nom_pouvoir_1_2 = "Esprit de Babel",	info2_lvl_1 = "2_5", 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 ="Non", 	sphere2_lvl_1 ="Binah";
+			else if (data2_lvl_1 == '6') 	nom_pouvoir_1_2 = "Effroi animal",	info2_lvl_1 = "2_6", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Geburah";
+			else if (data2_lvl_1 == '7') 	nom_pouvoir_1_2 = "Langue de Babel",	info2_lvl_1 = "2_7", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Chesed";
+			else if (data2_lvl_1 == '8') 	nom_pouvoir_1_2 = "Malaise",	info2_lvl_1 = "2_8", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '9') 	nom_pouvoir_1_2 = "Parfum",	info2_lvl_1 = "2_9", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '10') 	nom_pouvoir_1_2 = "Oeil de Babel",	info2_lvl_1 = "2_10",	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Hod";
+			else if (data2_lvl_1 == '11') 	nom_pouvoir_1_2 = "Âme d'un lieu",	info2_lvl_1 = "2_11",	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 ="Non", 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '12') 	nom_pouvoir_1_2 = "Tourmente",	info2_lvl_1 = "2_12",	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 ="Oui", 	sphere2_lvl_1 ="Chokmah";
+			else 							nom_pouvoir_1_2 = "",	info2_lvl_1 = "", 		niveau1_p2 = "", 	niveau1_c2 ="0", 	affichage1_c2 ="", 	sphere2_lvl_1 ="";
 			
 			setAttrs({
+			"nom_pouvoir_1_2" : nom_pouvoir_1_2,
 			"info2_lvl_1": info2_lvl_1,
 			"niveau1_p2" : niveau1_p2,
 			"niveau1_c2" : niveau1_c2,
+			"affichage1_c2" : affichage1_c2,
 			"sphere2_lvl_1" : sphere2_lvl_1
         });
     });
@@ -3086,25 +3106,27 @@ on("sheet:opened change:data3_lvl_1", function() {
     getAttrs(["data3_lvl_1"], function(values) {
 			let data3_lvl_1 = parseInt(values["data3_lvl_1"]) || 0;
 			
-			if (data3_lvl_1 == '1') info3_lvl_1 = "3_1", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '2') info3_lvl_1 = "3_2", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Tiferet";
-			else if (data3_lvl_1 == '3') info3_lvl_1 = "3_3", niveau1_p3 = "1", niveau1_c3 ="0", sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '4') info3_lvl_1 = "3_4", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '5') info3_lvl_1 = "3_5", niveau1_p3 = "1", niveau1_c3 ="0", sphere3_lvl_1 ="Binah";
-			else if (data3_lvl_1 == '6') info3_lvl_1 = "3_6", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Geburah";
-			else if (data3_lvl_1 == '7') info3_lvl_1 = "3_7", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Chesed";
-			else if (data3_lvl_1 == '8') info3_lvl_1 = "3_8", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '9') info3_lvl_1 = "3_9", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '10') info3_lvl_1 = "3_10", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Hod";
-			else if (data3_lvl_1 == '11') info3_lvl_1 = "3_11", niveau1_p3 = "1", niveau1_c3 ="0", sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '12') info3_lvl_1 = "3_12", niveau1_p3 = "1", niveau1_c3 ="1", sphere3_lvl_1 ="Chokmah";
-			else info3_lvl_1 = "", niveau1_p3 = "", niveau1_c3 ="0", sphere3_lvl_1 ="";
+			if (data3_lvl_1 == '1') 		nom_pouvoir_1_3 = "Affinité animale",	info3_lvl_1 = "3_1", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '2') 	nom_pouvoir_1_3 = "Apnée",	info3_lvl_1 = "3_2", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Tiferet";
+			else if (data3_lvl_1 == '3') 	nom_pouvoir_1_3 = "Apparence angélique",	info3_lvl_1 = "3_3", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 ="Non", 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '4') 	nom_pouvoir_1_3 = "Bruit",	info3_lvl_1 = "3_4", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '5') 	nom_pouvoir_1_3 = "Esprit de Babel",	info3_lvl_1 = "3_5", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 ="Non", 	sphere3_lvl_1 ="Binah";
+			else if (data3_lvl_1 == '6') 	nom_pouvoir_1_3 = "Effroi animal",	info3_lvl_1 = "3_6", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Geburah";
+			else if (data3_lvl_1 == '7') 	nom_pouvoir_1_3 = "Langue de Babel",	info3_lvl_1 = "3_7", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Chesed";
+			else if (data3_lvl_1 == '8') 	nom_pouvoir_1_3 = "Malaise",	info3_lvl_1 = "3_8", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '9') 	nom_pouvoir_1_3 = "Parfum",	info3_lvl_1 = "3_9", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '10') 	nom_pouvoir_1_3 = "Oeil de Babel",	info3_lvl_1 = "3_10", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Hod";
+			else if (data3_lvl_1 == '11') 	nom_pouvoir_1_3 = "Âme d'un lieu",	info3_lvl_1 = "3_11", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 ="Non", 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '12') 	nom_pouvoir_1_3 = "Tourmente",	info3_lvl_1 = "3_12", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 ="Oui", 	sphere3_lvl_1 ="Chokmah";
+			else 							nom_pouvoir_1_3 = "",	info3_lvl_1 = "", 		niveau1_p3 = "", 	niveau1_c3 ="0", 	affichage1_c3 ="", 	sphere3_lvl_1 ="";
 			
             			
 			setAttrs({
+			"nom_pouvoir_1_3" : nom_pouvoir_1_3,
 			"info3_lvl_1" : info3_lvl_1,
 			"niveau1_p3" : niveau1_p3,
 			"niveau1_c3" : niveau1_c3,
+			"affichage1_c3" : affichage1_c3,
 			"sphere3_lvl_1" : sphere3_lvl_1
         });
     });
@@ -3117,53 +3139,26 @@ on("sheet:opened change:data1_lvl_2", function() {
     getAttrs(["data1_lvl_2"], function(values) {
 			let data1_lvl_2 = parseInt(values["data1_lvl_2"]) || 0;
 			
-			if (data1_lvl_2 == '1') info1_lvl_2 = "1_1", niveau2_p1 = "1", niveau2_c1 ="1", sphere1_lvl_2 ="Netzach"; 
-			else if (data1_lvl_2 == '2') info1_lvl_2 = "1_2", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Kether";
-			else if (data1_lvl_2 == '3') info1_lvl_2 = "1_3", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '4') info1_lvl_2 = "1_4", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '5') info1_lvl_2 = "1_5", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Geburah";
-			else if (data1_lvl_2 == '6') info1_lvl_2 = "1_6", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '7') info1_lvl_2 = "1_7", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '8') info1_lvl_2 = "1_8", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Yesod";
-			else if (data1_lvl_2 == '9') info1_lvl_2 = "1_9", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '10') info1_lvl_2 = "1_10", niveau2_p1 = "1", niveau2_c1 ="0", sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '11') info1_lvl_2 = "1_11", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '12') info1_lvl_2 = "1_12", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Binah";
-			else info1_lvl_2 = "", niveau2_p1 = "", niveau2_c1 ="0", sphere1_lvl_2 ="";
+			if (data1_lvl_2 == '1') 		nom_pouvoir_2_1 = "Chant lancinant",	info1_lvl_2 = "1_1", 	niveau2_p1 = "1", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Netzach"; 
+			else if (data1_lvl_2 == '2') 	nom_pouvoir_2_1 = "Chitine des ténèbres",	info1_lvl_2 = "1_2", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 ="Non", 	sphere1_lvl_2 ="Kether";
+			else if (data1_lvl_2 == '3') 	nom_pouvoir_2_1 = "Dans la boite",	info1_lvl_2 = "1_3", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 ="Non", 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '4') 	nom_pouvoir_2_1 = "D'entre les morts",	info1_lvl_2 = "1_4", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '5') 	nom_pouvoir_2_1 = "Effroi",	info1_lvl_2 = "1_5", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Geburah";
+			else if (data1_lvl_2 == '6') 	nom_pouvoir_2_1 = "Forme décharnée",	info1_lvl_2 = "1_6", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Malkuth";
+			else if (data1_lvl_2 == '7') 	nom_pouvoir_2_1 = "Main à couper",	info1_lvl_2 = "1_7", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '8') 	nom_pouvoir_2_1 = "Mémoire photographique",	info1_lvl_2 = "1_8", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 ="Non", 	sphere1_lvl_2 ="Yesod";
+			else if (data1_lvl_2 == '9') 	nom_pouvoir_2_1 = "Performance",	info1_lvl_2 = "1_9", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 ="Non", 	sphere1_lvl_2 ="Netzach";
+			else if (data1_lvl_2 == '10') 	nom_pouvoir_2_1 = "Poltergeist",	info1_lvl_2 = "1_10", 	niveau2_p1 = "1", 	niveau2_c1 ="0", 	affichage2_c1 ="Non", 	sphere1_lvl_2 ="Malkuth";
+			else if (data1_lvl_2 == '11') 	nom_pouvoir_2_1 = "Regard hypnotique",	info1_lvl_2 = "1_11", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Netzach";
+			else if (data1_lvl_2 == '12') 	nom_pouvoir_2_1 = "Rouages",	info1_lvl_2 = "1_12", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 ="Oui", 	sphere1_lvl_2 ="Binah";
+			else 							nom_pouvoir_2_1 = "",	info1_lvl_2 = "", 		niveau2_p1 = "", 	niveau2_c1 ="0", 	affichage2_c1 ="", 	sphere1_lvl_2 ="";
 						
 			setAttrs({
+			"nom_pouvoir_2_1" : nom_pouvoir_2_1,
 			"info1_lvl_2": info1_lvl_2,
 			"niveau2_p1" : niveau2_p1,
 			"niveau2_c1" : niveau2_c1,
-			"sphere1_lvl_2" : sphere1_lvl_2
-        });
-    });
-});
-</script>
-
-<script type="text/worker">
-on("sheet:opened change:data1_lvl_2", function() {
-    getAttrs(["data1_lvl_2"], function(values) {
-			let data1_lvl_2 = parseInt(values["data1_lvl_2"]) || 0;
-			
-			if (data1_lvl_2 == '1') info1_lvl_2 = "1_1", niveau2_p1 = "1*", niveau2_c1 ="1", sphere1_lvl_2 ="Netzach"; 
-			else if (data1_lvl_2 == '2') info1_lvl_2 = "1_2", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Kether";
-			else if (data1_lvl_2 == '3') info1_lvl_2 = "1_3", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '4') info1_lvl_2 = "1_4", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '5') info1_lvl_2 = "1_5", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Geburah";
-			else if (data1_lvl_2 == '6') info1_lvl_2 = "1_6", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '7') info1_lvl_2 = "1_7", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '8') info1_lvl_2 = "1_8", niveau2_p1 = "2", niveau2_c1 ="0", sphere1_lvl_2 ="Yesod";
-			else if (data1_lvl_2 == '9') info1_lvl_2 = "1_9", niveau2_p1 = "2*", niveau2_c1 ="0", sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '10') info1_lvl_2 = "1_10", niveau2_p1 = "1*", niveau2_c1 ="0", sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '11') info1_lvl_2 = "1_11", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '12') info1_lvl_2 = "1_12", niveau2_p1 = "2", niveau2_c1 ="1", sphere1_lvl_2 ="Binah";
-			else info1_lvl_2 = "", niveau2_p1 = "", niveau2_c1 ="0", sphere1_lvl_2 ="";
-						
-			setAttrs({
-			"info1_lvl_2": info1_lvl_2,
-			"niveau2_p1" : niveau2_p1,
-			"niveau2_c1" : niveau2_c1,
+			"affichage2_c1" : affichage2_c1,
 			"sphere1_lvl_2" : sphere1_lvl_2
         });
     });
@@ -3175,24 +3170,103 @@ on("sheet:opened change:data2_lvl_2", function() {
     getAttrs(["data2_lvl_2"], function(values) {
 			let data2_lvl_2 = parseInt(values["data2_lvl_2"]) || 0;
 			
-			if (data2_lvl_2 == '1') info2_lvl_2 = "1_1", niveau2_p2 = "1*", niveau2_c2 ="1", sphere2_lvl_2 ="Netzach"; 
-			else if (data2_lvl_2 == '2') info2_lvl_2 = "1_2", niveau2_p2 = "2", niveau2_c2 ="0", sphere2_lvl_2 ="Kether";
-			else if (data2_lvl_2 == '3') info2_lvl_2 = "1_3", niveau2_p2 = "2", niveau2_c2 ="0", sphere2_lvl_2 ="Tiferet";
-			else if (data2_lvl_2 == '4') info2_lvl_2 = "1_4", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Tiferet";
-			else if (data2_lvl_2 == '5') info2_lvl_2 = "1_5", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Geburah";
-			else if (data2_lvl_2 == '6') info2_lvl_2 = "1_6", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Malkuth";
-			else if (data2_lvl_2 == '7') info2_lvl_2 = "1_7", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Tiferet";
-			else if (data2_lvl_2 == '8') info2_lvl_2 = "1_8", niveau2_p2 = "2", niveau2_c2 ="0", sphere2_lvl_2 ="Yesod";
-			else if (data2_lvl_2 == '9') info2_lvl_2 = "1_9", niveau2_p2 = "2*", niveau2_c2 ="0", sphere2_lvl_2 ="Netzach";
-			else if (data2_lvl_2 == '10') info2_lvl_2 = "1_10", niveau2_p2 = "1*", niveau2_c2 ="0", sphere2_lvl_2 ="Malkuth";
-			else if (data2_lvl_2 == '11') info2_lvl_2 = "1_11", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Netzach";
-			else if (data2_lvl_2 == '12') info2_lvl_2 = "1_12", niveau2_p2 = "2", niveau2_c2 ="1", sphere2_lvl_2 ="Binah";
-			else info2_lvl_2 = "", niveau2_p2 = "", niveau2_c2 ="0", sphere2_lvl_2 ="";
+			if (data2_lvl_2 == '1') 		nom_pouvoir_2_2 = "Chant lancinant",	
+											info2_lvl_2 = "1_1",	
+											niveau2_p2 = "1*",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui",	
+											sphere2_lvl_2 ="Netzach"; 
+											
+			else if (data2_lvl_2 == '2')	nom_pouvoir_2_2 = "Chitine des ténèbres",	
+											info2_lvl_2 = "1_2",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="Non",	
+											sphere2_lvl_2 ="Kether";
+											
+			else if (data2_lvl_2 == '3')	nom_pouvoir_2_2 = "Dans la boite",	
+											info2_lvl_2 = "1_3",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="Non", 	
+											sphere2_lvl_2 ="Tiferet";
+											
+			else if (data2_lvl_2 == '4')	nom_pouvoir_2_2 = "D'entre les morts",	
+											info2_lvl_2 = "1_4",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Tiferet";
+											
+			else if (data2_lvl_2 == '5')	nom_pouvoir_2_2 = "Effroi",	
+											info2_lvl_2 = "1_5",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Geburah";
+											
+			else if (data2_lvl_2 == '6')	nom_pouvoir_2_2 = "Forme décharnée",	
+											info2_lvl_2 = "1_6",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Malkuth";
+											
+			else if (data2_lvl_2 == '7')	nom_pouvoir_2_2 = "Main à couper",	
+											info2_lvl_2 = "1_7",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Tiferet";
+											
+			else if (data2_lvl_2 == '8')	nom_pouvoir_2_2 = "Mémoire photographique",	
+											info2_lvl_2 = "1_8",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="Non", 	
+											sphere2_lvl_2 ="Yesod";
+											
+			else if (data2_lvl_2 == '9')	nom_pouvoir_2_2 = "Performance",	
+											info2_lvl_2 = "1_9",	
+											niveau2_p2 = "2*",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="Non", 	
+											sphere2_lvl_2 ="Netzach";
+											
+			else if (data2_lvl_2 == '10')	nom_pouvoir_2_2 = "Poltergeist",	
+											info2_lvl_2 = "1_10",	
+											niveau2_p2 = "1*",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="Non", 	
+											sphere2_lvl_2 ="Malkuth";
+											
+			else if (data2_lvl_2 == '11')	nom_pouvoir_2_2 = "Regard hypnotique",	
+											info2_lvl_2 = "1_11",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Netzach";
+											
+			else if (data2_lvl_2 == '12')	nom_pouvoir_2_2 = "Rouages",	
+											info2_lvl_2 = "1_12",	
+											niveau2_p2 = "2",	
+											niveau2_c2 ="1",	
+											affichage2_c2 ="Oui", 	
+											sphere2_lvl_2 ="Binah";
+											
+			else 							nom_pouvoir_2_2 = "",	
+											info2_lvl_2 = "",		
+											niveau2_p2 = "",	
+											niveau2_c2 ="0",	
+											affichage2_c2 ="", 	
+											sphere2_lvl_2 ="";
 						
 			setAttrs({
+			"nom_pouvoir_2_2" : nom_pouvoir_2_2,
 			"info2_lvl_2": info2_lvl_2,
 			"niveau2_p2" : niveau2_p2,
 			"niveau2_c2" : niveau2_c2,
+			"affichage2_c2" : affichage2_c2,
 			"sphere2_lvl_2" : sphere2_lvl_2
         });
     });
@@ -3204,24 +3278,26 @@ on("sheet:opened change:data3_lvl_2", function() {
     getAttrs(["data3_lvl_2"], function(values) {
 			let data3_lvl_2 = parseInt(values["data3_lvl_2"]) || 0;
 			
-			if (data3_lvl_2 == '1') info3_lvl_2 = "1_1", niveau2_p3 = "1*", niveau2_c3 ="1", sphere3_lvl_2 ="Netzach"; 
-			else if (data3_lvl_2 == '2') info3_lvl_2 = "1_2", niveau2_p3 = "2", niveau2_c3 ="0", sphere3_lvl_2 ="Kether";
-			else if (data3_lvl_2 == '3') info3_lvl_2 = "1_3", niveau2_p3 = "2", niveau2_c3 ="0", sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '4') info3_lvl_2 = "1_4", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '5') info3_lvl_2 = "1_5", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Geburah";
-			else if (data3_lvl_2 == '6') info3_lvl_2 = "1_6", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Malkuth";
-			else if (data3_lvl_2 == '7') info3_lvl_2 = "1_7", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '8') info3_lvl_2 = "1_8", niveau2_p3 = "2", niveau2_c3 ="0", sphere3_lvl_2 ="Yesod";
-			else if (data3_lvl_2 == '9') info3_lvl_2 = "1_9", niveau2_p3 = "2*", niveau2_c3 ="0", sphere3_lvl_2 ="Netzach";
-			else if (data3_lvl_2 == '10') info3_lvl_2 = "1_10", niveau2_p3 = "1*", niveau2_c3 ="0", sphere3_lvl_2 ="Malkuth";
-			else if (data3_lvl_2 == '11') info3_lvl_2 = "1_11", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Netzach";
-			else if (data3_lvl_2 == '12') info3_lvl_2 = "1_12", niveau2_p3 = "2", niveau2_c3 ="1", sphere3_lvl_2 ="Binah";
-			else info3_lvl_2 = "", niveau2_p3 = "", niveau2_c3 ="0", sphere3_lvl_2 ="";
+			if (data3_lvl_2 == '1') 		nom_pouvoir_2_3 = "Chant lancinant",	info3_lvl_2 = "1_1", 	niveau2_p3 = "1*", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Netzach"; 
+			else if (data3_lvl_2 == '2') 	nom_pouvoir_2_3 = "Chitine des ténèbres",	info3_lvl_2 = "1_2", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 ="Non", 	sphere3_lvl_2 ="Kether";
+			else if (data3_lvl_2 == '3') 	nom_pouvoir_2_3 = "Dans la boite",	info3_lvl_2 = "1_3", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 ="Non", 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '4') 	nom_pouvoir_2_3 = "D'entre les morts",	info3_lvl_2 = "1_4", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '5') 	nom_pouvoir_2_3 = "Effroi",	info3_lvl_2 = "1_5", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Geburah";
+			else if (data3_lvl_2 == '6') 	nom_pouvoir_2_3 = "Forme décharnée",	info3_lvl_2 = "1_6", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Malkuth";
+			else if (data3_lvl_2 == '7') 	nom_pouvoir_2_3 = "Main à couper",	info3_lvl_2 = "1_7", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '8') 	nom_pouvoir_2_3 = "Mémoire photographique",	info3_lvl_2 = "1_8", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 ="Non", 	sphere3_lvl_2 ="Yesod";
+			else if (data3_lvl_2 == '9') 	nom_pouvoir_2_3 = "Performance",	info3_lvl_2 = "1_9", 	niveau2_p3 = "2*", 	niveau2_c3 ="0",	affichage2_c3 ="Non", 	sphere3_lvl_2 ="Netzach";
+			else if (data3_lvl_2 == '10') 	nom_pouvoir_2_3 = "Poltergeist",	info3_lvl_2 = "1_10", 	niveau2_p3 = "1*", 	niveau2_c3 ="0",	affichage2_c3 ="Non", 	sphere3_lvl_2 ="Malkuth";
+			else if (data3_lvl_2 == '11') 	nom_pouvoir_2_3 = "Regard hypnotique",	info3_lvl_2 = "1_11", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Netzach";
+			else if (data3_lvl_2 == '12') 	nom_pouvoir_2_3 = "Rouages",	info3_lvl_2 = "1_12", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 ="Oui", 	sphere3_lvl_2 ="Binah";
+			else 							nom_pouvoir_2_3 = "",	info3_lvl_2 = "", 		niveau2_p3 = "", 	niveau2_c3 ="0",	affichage2_c3 ="", 	sphere3_lvl_2 ="";
 						
 			setAttrs({
+			"nom_pouvoir_2_3" : nom_pouvoir_2_3,
 			"info3_lvl_2": info3_lvl_2,
 			"niveau2_p3" : niveau2_p3,
 			"niveau2_c3" : niveau2_c3,
+			"affichage2_c3" : affichage2_c3,
 			"sphere3_lvl_2" : sphere3_lvl_2
         });
     });
@@ -3235,24 +3311,26 @@ on("sheet:opened change:data1_lvl_3", function() {
     getAttrs(["data1_lvl_3"], function(values) {
 			let data1_lvl_3 = parseInt(values["data1_lvl_3"]) || 0;
 			
-			if (data1_lvl_3 == '1') info1_lvl_3 = "1_1", niveau3_p1 = "3", niveau3_c1 ="0", sphere1_lvl_3 ="Kether"; 
-			else if (data1_lvl_3 == '2') info1_lvl_3 = "1_2", niveau3_p1 = "3", niveau3_c1 ="1", sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '3') info1_lvl_3 = "1_3", niveau3_p1 = "3", niveau3_c1 ="1", sphere1_lvl_3 ="Geburah";
-			else if (data1_lvl_3 == '4') info1_lvl_3 = "1_4", niveau3_p1 = "3", niveau3_c1 ="0", sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '5') info1_lvl_3 = "1_5", niveau3_p1 = "3", niveau3_c1 ="1", sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '6') info1_lvl_3 = "1_6", niveau3_p1 = "3*", niveau3_c1 ="0", sphere1_lvl_3 ="Geburah";
-			else if (data1_lvl_3 == '7') info1_lvl_3 = "1_7", niveau3_p1 = "3*", niveau3_c1 ="0", sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '8') info1_lvl_3 = "1_8", niveau3_p1 = "3", niveau3_c1 ="1", sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '9') info1_lvl_3 = "1_9", niveau3_p1 = "1*", niveau3_c1 ="1", sphere1_lvl_3 ="Yesod";
-			else if (data1_lvl_3 == '10') info1_lvl_3 = "1_10", niveau3_p1 = "3*", niveau3_c1 ="0", sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '11') info1_lvl_3 = "1_11", niveau3_p1 = "3*", niveau3_c1 ="0", sphere1_lvl_3 ="Chesed";
-			else if (data1_lvl_3 == '12') info1_lvl_3 = "1_12", niveau3_p1 = "3", niveau3_c1 ="0", sphere1_lvl_3 ="Tiferet";
-			else info1_lvl_3 = "", niveau3_p1 = "", niveau3_c1 ="0", sphere1_lvl_3 ="";
+			if (data1_lvl_3 == '1') 		nom_pouvoir_3_1 = "Bouclier d'ectoplasme",	info1_lvl_3 = "1_1", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Kether"; 
+			else if (data1_lvl_3 == '2') 	nom_pouvoir_3_1 = "Coupé en deux",	info1_lvl_3 = "1_2", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 ="Oui", 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '3') 	nom_pouvoir_3_1 = "Cri de la Banshee",	info1_lvl_3 = "1_3", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 ="Oui", 	sphere1_lvl_3 ="Geburah";
+			else if (data1_lvl_3 == '4') 	nom_pouvoir_3_1 = "Dans la pierre",	info1_lvl_3 = "1_4", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '5') 	nom_pouvoir_3_1 = "Évasion",	info1_lvl_3 = "1_5", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 ="Oui", 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '6') 	nom_pouvoir_3_1 = "Force invisible",	info1_lvl_3 = "1_6", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Geburah";
+			else if (data1_lvl_3 == '7') 	nom_pouvoir_3_1 = "Griffe des ténèbres",	info1_lvl_3 = "1_7", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '8') 	nom_pouvoir_3_1 = "Intangibilité",	info1_lvl_3 = "1_8", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 ="Oui", 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '9') 	nom_pouvoir_3_1 = "Lecteur de vie",	info1_lvl_3 = "1_9", 	niveau3_p1 = "1*", 	niveau3_c1 ="1",	affichage3_c1 ="Oui", 	sphere1_lvl_3 ="Yesod";
+			else if (data1_lvl_3 == '10') 	nom_pouvoir_3_1 = "Lévitation",	info1_lvl_3 = "1_10", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '11') 	nom_pouvoir_3_1 = "Télépathie",	info1_lvl_3 = "1_11", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Chesed";
+			else if (data1_lvl_3 == '12') 	nom_pouvoir_3_1 = "",	info1_lvl_3 = "1_12", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 ="Non", 	sphere1_lvl_3 ="Tiferet";
+			else 							nom_pouvoir_3_1 = "",	info1_lvl_3 = "", 		niveau3_p1 = "", 	niveau3_c1 ="0",	affichage3_c1 ="", 	sphere1_lvl_3 ="";
 						
 			setAttrs({
+			"nom_pouvoir_3_1" : nom_pouvoir_3_1,
 			"info1_lvl_3": info1_lvl_3,
 			"niveau3_p1" : niveau3_p1,
 			"niveau3_c1" : niveau3_c1,
+			"affichage3_c1" : affichage3_c1,
 			"sphere1_lvl_3" : sphere1_lvl_3
         });
     });
@@ -3264,24 +3342,26 @@ on("sheet:opened change:data2_lvl_3", function() {
     getAttrs(["data2_lvl_3"], function(values) {
 			let data2_lvl_3 = parseInt(values["data2_lvl_3"]) || 0;
 			
-			if (data2_lvl_3 == '1') info2_lvl_3 = "1_1", niveau3_p2 = "3", niveau3_c2 ="0", sphere2_lvl_3 ="Kether"; 
-			else if (data2_lvl_3 == '2') info2_lvl_3 = "1_2", niveau3_p2 = "3", niveau3_c2 ="1", sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '3') info2_lvl_3 = "1_3", niveau3_p2 = "3", niveau3_c2 ="1", sphere2_lvl_3 ="Geburah";
-			else if (data2_lvl_3 == '4') info2_lvl_3 = "1_4", niveau3_p2 = "3", niveau3_c2 ="0", sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '5') info2_lvl_3 = "1_5", niveau3_p2 = "3", niveau3_c2 ="1", sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '6') info2_lvl_3 = "1_6", niveau3_p2 = "3*", niveau3_c2 ="0", sphere2_lvl_3 ="Geburah";
-			else if (data2_lvl_3 == '7') info2_lvl_3 = "1_7", niveau3_p2 = "3*", niveau3_c2 ="0", sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '8') info2_lvl_3 = "1_8", niveau3_p2 = "3", niveau3_c2 ="1", sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '9') info2_lvl_3 = "1_9", niveau3_p2 = "1*", niveau3_c2 ="1", sphere2_lvl_3 ="Yesod";
-			else if (data2_lvl_3 == '10') info2_lvl_3 = "1_10", niveau3_p2 = "3*", niveau3_c2 ="0", sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '11') info2_lvl_3 = "1_11", niveau3_p2 = "3*", niveau3_c2 ="0", sphere2_lvl_3 ="Chesed";
-			else if (data2_lvl_3 == '12') info2_lvl_3 = "1_12", niveau3_p2 = "3", niveau3_c2 ="0", sphere2_lvl_3 ="Tiferet";
-			else info2_lvl_3 = "", niveau3_p2 = "", niveau3_c2 ="0", sphere2_lvl_3 ="";
+			if (data2_lvl_3 == '1') 		nom_pouvoir_3_2 = "Bouclier d'ectoplasme",	info2_lvl_3 = "1_1", 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Kether"; 
+			else if (data2_lvl_3 == '2') 	nom_pouvoir_3_2 = "Coupé en deux",	info2_lvl_3 = "1_2", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 ="Oui", 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '3') 	nom_pouvoir_3_2 = "Cri de la Banshee",	info2_lvl_3 = "1_3", 	niveau3_p2 = "3",	niveau3_c2 ="1",	affichage3_c2 ="Oui", 	sphere2_lvl_3 ="Geburah";
+			else if (data2_lvl_3 == '4') 	nom_pouvoir_3_2 = "Dans la pierre",	info2_lvl_3 = "1_4", 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '5') 	nom_pouvoir_3_2 = "Évasion",	info2_lvl_3 = "1_5", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 ="Oui", 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '6') 	nom_pouvoir_3_2 = "Force invisible",	info2_lvl_3 = "1_6", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Geburah";
+			else if (data2_lvl_3 == '7')	nom_pouvoir_3_2 = "Griffe des ténèbres",	info2_lvl_3 = "1_7", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '8') 	nom_pouvoir_3_2 = "Intangibilité",	info2_lvl_3 = "1_8", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 ="Oui", 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '9') 	nom_pouvoir_3_2 = "Lecteur de vie",	info2_lvl_3 = "1_9", 	niveau3_p2 = "1*", 	niveau3_c2 ="1",	affichage3_c2 ="Oui", 	sphere2_lvl_3 ="Yesod";
+			else if (data2_lvl_3 == '10') 	nom_pouvoir_3_2 = "Lévitation",	info2_lvl_3 = "1_10", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '11') 	nom_pouvoir_3_2 = "Télépathie",	info2_lvl_3 = "1_11", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Chesed";
+			else if (data2_lvl_3 == '12') 	nom_pouvoir_3_2 = "Ubiquité",	info2_lvl_3 = "1_12", 	niveau3_p2 = "3",	niveau3_c2 ="0",	affichage3_c2 ="Non", 	sphere2_lvl_3 ="Tiferet";
+			else 							nom_pouvoir_3_2 = "",	info2_lvl_3 = "", 		niveau3_p2 = "", 	niveau3_c2 ="0",	affichage3_c2 ="", 	sphere2_lvl_3 ="";
 						
 			setAttrs({
+			"nom_pouvoir_3_2" : nom_pouvoir_3_2,
 			"info2_lvl_3": info2_lvl_3,
 			"niveau3_p2" : niveau3_p2,
 			"niveau3_c2" : niveau3_c2,
+			"affichage3_c2" : affichage3_c2,
 			"sphere2_lvl_3" : sphere2_lvl_3
         });
     });
@@ -3293,24 +3373,26 @@ on("sheet:opened change:data3_lvl_3", function() {
     getAttrs(["data3_lvl_3"], function(values) {
 			let data3_lvl_3 = parseInt(values["data3_lvl_3"]) || 0;
 			
-			if (data3_lvl_3 == '1') info3_lvl_3 = "1_1", niveau3_p3 = "3", niveau3_c3 ="0", sphere3_lvl_3 ="Kether"; 
-			else if (data3_lvl_3 == '2') info3_lvl_3 = "1_2", niveau3_p3 = "3", niveau3_c3 ="1", sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '3') info3_lvl_3 = "1_3", niveau3_p3 = "3", niveau3_c3 ="1", sphere3_lvl_3 ="Geburah";
-			else if (data3_lvl_3 == '4') info3_lvl_3 = "1_4", niveau3_p3 = "3", niveau3_c3 ="0", sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '5') info3_lvl_3 = "1_5", niveau3_p3 = "3", niveau3_c3 ="1", sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '6') info3_lvl_3 = "1_6", niveau3_p3 = "3*", niveau3_c3 ="0", sphere3_lvl_3 ="Geburah";
-			else if (data3_lvl_3 == '7') info3_lvl_3 = "1_7", niveau3_p3 = "3*", niveau3_c3 ="0", sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '8') info3_lvl_3 = "1_8", niveau3_p3 = "3", niveau3_c3 ="1", sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '9') info3_lvl_3 = "1_9", niveau3_p3 = "1*", niveau3_c3 ="1", sphere3_lvl_3 ="Yesod";
-			else if (data3_lvl_3 == '10') info3_lvl_3 = "1_10", niveau3_p3 = "3*", niveau3_c3 ="0", sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '11') info3_lvl_3 = "1_11", niveau3_p3 = "3*", niveau3_c3 ="0", sphere3_lvl_3 ="Chesed";
-			else if (data3_lvl_3 == '12') info3_lvl_3 = "1_12", niveau3_p3 = "3", niveau3_c3 ="0", sphere3_lvl_3 ="Tiferet";
-			else info3_lvl_3 = "", niveau3_p3 = "", niveau3_c3 ="0", sphere3_lvl_3 ="";
+			if (data3_lvl_3 == '1') 		nom_pouvoir_3_3 = "Bouclier d'ectoplasme",	info3_lvl_3 = "1_1", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Kether"; 
+			else if (data3_lvl_3 == '2') 	nom_pouvoir_3_3 = "Coupé en deux",	info3_lvl_3 = "1_2", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 ="Oui", 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '3') 	nom_pouvoir_3_3 = "Cri de la Banshee",	info3_lvl_3 = "1_3", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 ="Oui", 	sphere3_lvl_3 ="Geburah";
+			else if (data3_lvl_3 == '4') 	nom_pouvoir_3_3 = "Dans la pierre",	info3_lvl_3 = "1_4", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '5') 	nom_pouvoir_3_3 = "Évasion",	info3_lvl_3 = "1_5", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 ="Oui", 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '6') 	nom_pouvoir_3_3 = "Force invisible",	info3_lvl_3 = "1_6", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Geburah";
+			else if (data3_lvl_3 == '7') 	nom_pouvoir_3_3 = "Griffe des ténèbres",	info3_lvl_3 = "1_7", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '8') 	nom_pouvoir_3_3 = "Intangibilité",	info3_lvl_3 = "1_8", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 ="Oui", 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '9') 	nom_pouvoir_3_3 = "Lecteur de vie",	info3_lvl_3 = "1_9", 	niveau3_p3 = "1*", 	niveau3_c3 ="1",	affichage3_c3 ="Oui", 	sphere3_lvl_3 ="Yesod";
+			else if (data3_lvl_3 == '10') 	nom_pouvoir_3_3 = "Lévitation",	info3_lvl_3 = "1_10", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '11') 	nom_pouvoir_3_3 = "Télépathie",	info3_lvl_3 = "1_11", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Chesed";
+			else if (data3_lvl_3 == '12') 	nom_pouvoir_3_3 = "Ubiquité",	info3_lvl_3 = "1_12", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 ="Non", 	sphere3_lvl_3 ="Tiferet";
+			else 							nom_pouvoir_3_3 = "",	info3_lvl_3 = "", 		niveau3_p3 = "", 	niveau3_c3 ="0",	affichage3_c3 ="", 	sphere3_lvl_3 ="";
 						
 			setAttrs({
+			"nom_pouvoir_3_3" : nom_pouvoir_3_3,
 			"info3_lvl_3": info3_lvl_3,
 			"niveau3_p3" : niveau3_p3,
 			"niveau3_c3" : niveau3_c3,
+			"affichage3_c3" : affichage3_c3,
 			"sphere3_lvl_3" : sphere3_lvl_3
         });
     });
