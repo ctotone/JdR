@@ -33,7 +33,24 @@ template ok -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- Hidden value for sheet version -->
-<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="esprit"  />
+<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="introduction"  />
+
+
+<!------------------>
+<!--- DIV INTRO  --->
+<!------------------>
+<div class="feuille_introduction">
+
+Blabla info sur medium doit s'appeler Médium<br>
+<br>
+Boutton pour choisir type de feuille Esprit / Médium / PNJ<br>
+==> Possibilité de forcer le character_name en Médium<br><br>
+
+<button type="action" name="act_intro-esprit">Esprit</button>
+<button type="action" name="act_intro-cabinet">Médium</button>
+<button type="action" name="act_intro-pnj">PNJ</button>
+</div>
+
 
 <!------------------>
 <!-- DIV COMMUNE  -->
@@ -45,6 +62,7 @@ template ok -->
 			<option value="esprit" data-i18n="spirit_sheet">Spirit</option>
 			<option value="cabinet" data-i18n="corpse_sheet">Actor</option>
 			<option value="pnj" data-i18n="npc_sheet">NPC</option>
+			<option value="introduction">Introduction</option>
 		</select>
 		</div>
 		
@@ -245,12 +263,18 @@ template ok -->
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme1_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme1_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme1_degats"></p></div>
-					<div class="arme_dots"><input type="checkbox" class="sheet-arme1_puissance" name="attr_arme1_puissance" value="1" ></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" title="Cocher si l'arme possède un bonus de Puissance"></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme1_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme1_cadence" min="0" max="5"></p></div>
 					<div class="arme_dice">
 						<input type="checkbox" class="sheet-arme1_puissance" name="attr_arme1_puissance" value="1" style="display: none;">
-						<p><div class="sheet-weapon_puissance_oui1">oui</div><div class="sheet-weapon_puissance_non1">non</div></p></div>
+						<div class="sheet-weapon1_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_1_puissance"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon1_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_1"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
@@ -258,10 +282,18 @@ template ok -->
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme2_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme2_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme2_degats"></p></div>
-					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" title="Cocher si l'arme possède un bonus de Puissance"></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme2_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme2_cadence" min="0" max="5"></p></div>
-					<div class="arme_dice"><p>dice</p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme2_puissance" name="attr_arme2_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon2_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_2_puissance"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon2_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_2"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 				<div class="wrapper_arme">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
@@ -269,21 +301,37 @@ template ok -->
 					<div class="arme_precision"><p><input class="arme_center" type="text" name="attr_arme3_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme3_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme3_degats"></p></div>
-					<div class="arme_dots"><input type="checkbox" name="attr_arme3_puissance" value="1" ></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme3_puissance" value="1" title="Cocher si l'arme possède un bonus de Puissance"></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme3_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme3_cadence" min="0" max="5"></p></div>
-					<div class="arme_dice"><p>dice</p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme3_puissance" name="attr_arme3_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon3_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_3_puissance"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon3_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_3"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 				<div class="wrapper_arme">
-					<div class="arme_nom"><p><input class="arme_center" type="text" name="attr_arme4_nom"></p></div>
+					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme4_nom"></p></div>
 					<div class="arme_plus"><p style="margin-top: -2px; color: var(--marron_cabinet);"><span class="weapon_plus">+</span></p></div>
 					<div class="arme_precision"><p><input class="arme_center" type="number" name="attr_arme4_precision" min="0" max="5"></p></div>
 					<div class="arme_portee"><p><input class="arme_center" type="text" name="attr_arme4_portée"></p></div>
 					<div class="arme_degats"><p><input class="arme_center" type="text" name="attr_arme4_degats"></p></div>
-					<div class="arme_dots"><input type="checkbox" name="attr_arme4_puissance" value="1" ></div>
+					<div class="arme_dots"><input type="checkbox" name="attr_arme4_puissance" value="1" title="Cocher si l'arme possède un bonus de Puissance"></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme4_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme4_cadence" min="0" max="5"></p></div>
-					<div class="arme_dice"><p>dice</p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme4_puissance" name="attr_arme4_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon4_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_4_puissance"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon4_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_4"><span class="pictod6" title="Lancer les dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 			</div>
 			<div class="note_corps"><span data-i18n="notes">NOTES</span>
@@ -2926,7 +2974,7 @@ template ok -->
 
 <!-- Sheet version selection -->
 	<script type="text/worker">
-	  const buttonlist = ["esprit","cabinet","pnj"];
+	  const buttonlist = ["esprit","cabinet","pnj","introduction"];
 				buttonlist.forEach(button => {
 					on(`clicked:${button}`, function() {
 						setAttrs({
@@ -2935,6 +2983,46 @@ template ok -->
 					});
 				});
 	</script>
+	
+	
+<!-- Boutton page Introduction -->
+<script type="text/worker">
+on('clicked:intro-esprit', function() {
+
+  console.log("Activate button clicked");
+	getAttrs(["sheet_version"], function(values) {
+		setAttrs({
+			sheet_version: "esprit"
+		});
+	});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:intro-cabinet', function() {
+
+  console.log("Activate button clicked");
+	getAttrs(["sheet_version"], function(values) {
+		setAttrs({
+			sheet_version: "cabinet",
+			character_name: "Médium"
+		});
+	});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:intro-pnj', function() {
+
+  console.log("Activate button clicked");
+	getAttrs(["sheet_version"], function(values) {
+		setAttrs({
+			sheet_version: "pnj"
+		});
+	});
+});
+</script>
+	
 	
 <script type="text/worker">
   // Register the click handler to all specified buttons.
@@ -4313,6 +4401,96 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
   })
 </script>
 
+<!-- Dégats des ARMES -->
+
+<script type="text/worker">
+   on('clicked:roll-arme_1_puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme1_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme1_degats}]]}} {{puissance=[[@{puissance_bonus}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_1', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme1_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme1_degats}]]}} {{puissance=Aucun}} ");
+			
+            const {degat_arme} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_2_puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme2_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme2_degats}]]}} {{puissance=[[@{puissance_bonus}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_2', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme2_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme2_degats}]]}} {{puissance=Aucun}} ");
+			
+            const {degat_arme} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_3_puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme3_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme3_degats}]]}} {{puissance=[[@{puissance_bonus}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_3', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme3_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme3_degats}]]}} {{puissance=Aucun}} ");
+			
+            const {degat_arme} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_4_puissance', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme4_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme4_degats}]]}} {{puissance=[[@{puissance_bonus}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_4', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme4_nom}}} {{degat_arme_title=Dégâts de l'arme}} {{resultat_title=Total}} {{puissance_title=Bonus Puissance}} {{degat_arme=[[@{arme4_degats}]]}} {{puissance=Aucun}} ");
+			
+            const {degat_arme} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
 <!----------------------------->			
 <!------ [ROLL TEMPLATE] ------>
 <!----------------------------->
@@ -4491,4 +4669,26 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		<div class="sheet-footer"><img class="frise_prouesse" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_result_deco.png" style="margin-top:-13px; opacity:0.7;"></div>
     </div>
  </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-cabinet-weapon">
+<div class="sheet-container">
+	<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+	</div>
+	<div class="sheet-content">
+		{{#degat_arme}}
+		<div class="sheet-key">{{degat_arme_title}}</div>
+		<div class="sheet-value">{{degat_arme}}</div>
+		{{/degat_arme}}
+		{{#puissance}}
+		<div class="sheet-key">{{puissance_title}}</div>
+		<div class="sheet-value">{{puissance}}</div>
+		{{/puissance}}
+		{{#computed::roll}}
+		<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}}</div>
+		{{/computed::roll}}
+	</div>
+</div>
 </rolltemplate>

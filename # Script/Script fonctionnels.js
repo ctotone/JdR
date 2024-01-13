@@ -52,3 +52,19 @@ const dot_jambe_gaucheValues = ["1","2","3","4","5","6","7"];
 		});
 	  });
 </script>
+
+// Script d'un boutton mettant à jour un attribut
+// HTML ==> <button type="action" name="act_intro-cabinet">Médium</button>
+
+<script type="text/worker">
+   on('clicked:intro-cabinet', function() {
+
+  console.log("Activate button clicked");
+	getAttrs(["sheet_version"], function(values) {
+		setAttrs({
+			sheet_version: "cabinet",
+			character_name: "Médium"
+		});
+	});
+});
+</script>

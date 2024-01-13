@@ -140,14 +140,16 @@ body.sheet-darkmode .charsheet {
 
 div.feuille_pj,
 div.feuille_commune,
-div.feuille_pnj {
+div.feuille_pnj,
+div.feuille_introduction {
 	display: none;
 }
 
 /* show the selected tab */
 .charsheet .sheet-sheettoggle[value="esprit"] ~ div.feuille_pj,
 .charsheet .sheet-sheettoggle[value="cabinet"] ~ div.feuille_commune,
-.charsheet .sheet-sheettoggle[value="pnj"] ~ div.feuille_pnj {
+.charsheet .sheet-sheettoggle[value="pnj"] ~ div.feuille_pnj,
+.charsheet .sheet-sheettoggle[value="introduction"] ~ div.feuille_introduction {
     display: block;
 }
 
@@ -468,14 +470,27 @@ input:checked + .slider:before {
 /* modifier en span? */
 
 
-.sheet-weapon_puissance_oui1,
-.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon_puissance_non1 {
-  display: block;
+.sheet-weapon1_avec_puissance,
+.sheet-weapon2_avec_puissance,
+.sheet-weapon3_avec_puissance,
+.sheet-weapon4_avec_puissance,
+.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon1_sans_puissance,
+.charsheet .sheet-arme2_puissance:checked ~ .sheet-weapon2_sans_puissance,
+.charsheet .sheet-arme3_puissance:checked ~ .sheet-weapon3_sans_puissance,
+.charsheet .sheet-arme4_puissance:checked ~ .sheet-weapon4_sans_puissance {
+	display: none;
 }
 
-.charsheet .sheet-weapon_puissance_non1,
-.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon_puissance_oui1 {
-  display: none;
+.charsheet .sheet-weapon1_sans_puissance,
+.charsheet .sheet-weapon2_sans_puissance,
+.charsheet .sheet-weapon3_sans_puissance,
+.charsheet .sheet-weapon4_sans_puissance,
+.charsheet .sheet-arme1_puissance:checked ~ .sheet-weapon1_avec_puissance,
+.charsheet .sheet-arme2_puissance:checked ~ .sheet-weapon2_avec_puissance,
+.charsheet .sheet-arme3_puissance:checked ~ .sheet-weapon3_avec_puissance,
+.charsheet .sheet-arme4_puissance:checked ~ .sheet-weapon4_avec_puissance {
+	display: block;
+	margin-top: -5px;
 }
 
 
@@ -2145,6 +2160,7 @@ input[type="radio"] {
 
 .arme_nom {
 	grid-column: 1;
+    margin-top: 3px;
 }
 
 .arme_plus {
@@ -4105,6 +4121,7 @@ input[type="radio"] {
 
 .arme_nom {
 	grid-column: 1;
+    margin-top: 3px;
 }
 
 .arme_plus {
@@ -6374,6 +6391,12 @@ span.pictod10 {
 	margin-left: 5px;
 }
 
+span.pictod6 {  
+    font-family: 'dicefontd6';
+    font-size: 20px;
+    color: var(--marron_cabinet);
+}
+
 span.dice_texte {
 	color: var(--red_cabinet);
 	font-size: 12px;
@@ -6406,12 +6429,14 @@ span.info {
   /* Boutton D6 style  */
 
 .charsheet button[type=action].classic_roll::before,
-.charsheet button[type=action].prouesse_roll::before{
+.charsheet button[type=action].prouesse_roll::before,
+.charsheet button[type=action].weapon_roll::before{
   content: '';
 }
 
 .charsheet button[type=action].classic_roll,
-.charsheet button[type=action].prouesse_roll{
+.charsheet button[type=action].prouesse_roll,
+.charsheet button[type=action].weapon_roll {
     border: none;
     padding: 0;
     background: none;
@@ -6425,12 +6450,14 @@ span.info {
   /* Boutton D6 style  */
 
 .charsheet button[type=roll].prouesse_roll::before,
-.charsheet button[type=roll].classic_roll::before{
+.charsheet button[type=roll].classic_roll::before,
+.charsheet button[type=roll].weapon_roll::before{
   content: '';
 }
 
 .charsheet button[type=roll].prouesse_roll,
-.charsheet button[type=roll].classic_roll{
+.charsheet button[type=roll].classic_roll,
+.charsheet button[type=roll].weapon_roll{
     border: none;
     padding: 0;
     color: var(--blue_cabinet);
@@ -6464,7 +6491,8 @@ span.medium_dice {
 /* Version jet classique  */
 
 .sheet-rolltemplate-cabinet-classic,
-.sheet-rolltemplate-cabinet-prouesse{
+.sheet-rolltemplate-cabinet-prouesse,
+.sheet-rolltemplate-cabinet-weapon{
   margin-left: -20px;
 }
 
@@ -6484,7 +6512,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
 .sheet-rolltemplate-cabinet-chance .sheet-container,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-container {
+.sheet-rolltemplate-cabinet-pouvoir .sheet-container,
+.sheet-rolltemplate-cabinet-weapon .sheet-container {
     position: relative;
     margin-bottom: 15px;
     border-radius: 40px 20px 25px 25px;
@@ -6493,7 +6522,8 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-type,
 .sheet-rolltemplate-cabinet-prouesse .sheet-type,
-.sheet-rolltemplate-cabinet-chance .sheet-type {
+.sheet-rolltemplate-cabinet-chance .sheet-type,
+.sheet-rolltemplate-cabinet-weapon .sheet-type {
     position: relative;
     z-index: 1;
     padding: 2px;
@@ -6511,7 +6541,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-header,
 .sheet-rolltemplate-cabinet-prouesse .sheet-header,
 .sheet-rolltemplate-cabinet-chance .sheet-header,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-header{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-header,
+.sheet-rolltemplate-cabinet-weapon .sheet-header {
     color: var(--header-text-color);
     padding: 7px;
     border-radius: 40px 20px 0px 0px;
@@ -6525,7 +6556,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-title,
 .sheet-rolltemplate-cabinet-prouesse .sheet-title,
 .sheet-rolltemplate-cabinet-chance .sheet-title,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-title {
+.sheet-rolltemplate-cabinet-pouvoir .sheet-title,
+.sheet-rolltemplate-cabinet-weapon .sheet-title {
     font-size: 18px;
     padding-top: 7px;
     font-weight: bold;
@@ -6536,7 +6568,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-subtitle,
 .sheet-rolltemplate-cabinet-prouesse .sheet-subtitle,
 .sheet-rolltemplate-cabinet-chance .sheet-subtitle,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-subtitle{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-subtitle,
+.sheet-rolltemplate-cabinet-weapon .sheet-subtitle {
     font-size: 14px;
     margin-top: 2px;
     color: #ffffffc4;
@@ -6544,7 +6577,8 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
-.sheet-rolltemplate-cabinet-chance .sheet-container{
+.sheet-rolltemplate-cabinet-chance .sheet-container,
+.sheet-rolltemplate-cabinet-weapon .sheet-container {
     position: relative;
     margin-bottom: 15px;
     border-radius: 40px 20px 25px 25px;
@@ -6561,7 +6595,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
 .sheet-rolltemplate-cabinet-chance .sheet-container,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-container{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-container,
+.sheet-rolltemplate-cabinet-weapon .sheet-container {
   --border-roll-color: #1d2d30;
   --header-text-color: #FFF;
   --result-bg-color: #772d34;
@@ -6572,7 +6607,8 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-content,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content,
 .sheet-rolltemplate-cabinet-chance .sheet-content,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-content {
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content,
+.sheet-rolltemplate-cabinet-weapon .sheet-content {
     display: grid;
     background: #FFF;
     grid-template-columns: auto auto;
@@ -6588,19 +6624,21 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-content > div,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content > div,
 .sheet-rolltemplate-cabinet-chance .sheet-content > div,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div,
+.sheet-rolltemplate-cabinet-weapon .sheet-content > div {
 	padding: 5px;
 }
 
 
-.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content > div {
 	font-weight: bold;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-chance .sheet-content .sheet-key,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-content .sheet-key {
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content .sheet-key,
+.sheet-rolltemplate-cabinet-weapon .sheet-content .sheet-key {
 	font-weight: bold;
 	padding-right: 10px;
 	text-align: right;
@@ -6613,12 +6651,15 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n),
 .sheet-rolltemplate-cabinet-pouvoir .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-cabinet-pouvoir .sheet-content :nth-child(4n){
+.sheet-rolltemplate-cabinet-pouvoir .sheet-content :nth-child(4n),
+.sheet-rolltemplate-cabinet-weapon .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-cabinet-weapon .sheet-content :nth-child(4n) {
     background: #6150451c;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-desc,
-.sheet-rolltemplate-cabinet-chance .sheet-desc{
+.sheet-rolltemplate-cabinet-chance .sheet-desc,
+.sheet-rolltemplate-cabinet-weapon .sheet-desc {
     grid-column: span 2;
     text-align: center;
     padding-top: 12px !important;
@@ -6634,7 +6675,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-info,
-.sheet-rolltemplate-cabinet-pouvoir  .sheet-info{
+.sheet-rolltemplate-cabinet-pouvoir .sheet-info {
 	grid-column: span 2;
     text-align: center;
     padding-top: 12px !important;
@@ -6642,7 +6683,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer,
-.sheet-rolltemplate-cabinet-pouvoir  .sheet-footer {
+.sheet-rolltemplate-cabinet-pouvoir .sheet-footer {
     grid-column: span 2;
     text-align: center;
     padding-top: 12px !important;
@@ -6679,7 +6720,11 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-chance .inlinerollresult,
 .sheet-rolltemplate-cabinet-chance .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-chance .inlinerollresult.fullcrit,
-.sheet-rolltemplate-cabinet-chance .inlinerollresult.fullfail {
+.sheet-rolltemplate-cabinet-chance .inlinerollresult.fullfail,
+.sheet-rolltemplate-cabinet-weapon .inlinerollresult,
+.sheet-rolltemplate-cabinet-weapon .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-weapon .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-weapon .inlinerollresult.fullfail  {
 	border: none !important;
     background-color: transparent !important;
     color: #475e66 !important;
@@ -6704,7 +6749,11 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-chance .sheet-desc .inlinerollresult,
 .sheet-rolltemplate-cabinet-chance .sheet-desc .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-chance .sheet-desc .inlinerollresult.fullcrit,
-.sheet-rolltemplate-cabinet-chance .sheet-desc .inlinerollresult.fullfail{
+.sheet-rolltemplate-cabinet-chance .sheet-desc .inlinerollresult.fullfail,
+.sheet-rolltemplate-cabinet-weapon .sheet-desc .inlinerollresult,
+.sheet-rolltemplate-cabinet-weapon .sheet-desc .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-weapon .sheet-desc .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-weapon .sheet-desc .inlinerollresult.fullfail{
 	color: #ffffff !important;
     font-size: 20px;
 	font-family: "Proxima Nova", ProximaNova-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

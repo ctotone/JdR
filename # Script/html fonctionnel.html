@@ -1,0 +1,15 @@
+DIV hide en fonction de checkbox
+
+<input type="checkbox" class="sheet-attribut" name="attr_attribut" value="1" style="display: none;">
+<div class="sheet-class_1">**********</div>
+<div class="sheet-class_2">++++++++++</div>
+
+.sheet-class_1,
+.charsheet .sheet-attribut:checked ~ .sheet-class_2 {
+  display: block;
+}
+
+.charsheet .sheet-class_2,
+.charsheet .sheet-attribut:checked ~ .sheet-class_1 {
+  display: none;
+}
