@@ -66,7 +66,8 @@ font-family: 'Great Vibes', cursive;
 .pnj,
 .esprit_qualite,
 .dice,
-.esprit_dice{
+.esprit_dice,
+.intro {
 	width:810px;
     border: 1px solid var(--blue_cabinet);
 	padding-top: 15px;
@@ -76,6 +77,14 @@ font-family: 'Great Vibes', cursive;
 }
 
 .esprit_dice{
+    min-height: 540px;
+    width: 828px;
+    padding-bottom: 10px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: cover;
+}
+
+.intro{
     min-height: 720px;
     padding-bottom: 10px;
 }
@@ -1285,7 +1294,52 @@ input[type="radio"] {
 
 
 
+  /* Wrapper intro */
+  
+.wrapper_intro {  
+	display: grid;
+    grid-template-columns: 110px 210px 210px 210px 110px;
+}
 
+.wrapper_intro_titre {  
+    display: grid;
+    grid-template-columns: 110px 210px 210px 210px 110px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -44px;
+    color: #ffffffe8;
+    margin-bottom: 44px;
+}
+
+.text_intro {
+    grid-column: 2/5;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.boutton_esprit{
+	grid-column: 2;
+}
+
+.boutton_medium{
+	grid-column: 3;
+}
+
+.boutton_pnj{
+	grid-column: 4;
+}
+
+.boutton_esprit_titre{
+	grid-column: 2;
+}
+
+.boutton_medium_titre{
+	grid-column: 3;
+}
+
+.boutton_pnj_titre{
+	grid-column: 4;
+}
 
   /* Wrapper Cabinet */
 
@@ -6352,12 +6406,35 @@ span.configurator_subtitle {
 	font-style: italic;
 }
 
+span.intro_1 {
+    font-weight: bold;
+    text-decoration: underline;
+	
+}
+
+span.gras_souligne {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+span.italic {
+    font-style: italic;
+}
+
 span.picto {  
 	font-family: 'Pictos';
 	font-size: 12px;
 	margin-top: -3px;
 	margin-left: 5px;
 	cursor: help;
+}
+
+span.picto_intro {  
+    font-family: 'Pictos';
+    font-size: 12px;
+    margin-top: -3px;
+    margin-left: -10px;
+    padding-right: 5px;
 }
 
 span.picto_opposition {  
@@ -6425,7 +6502,45 @@ span.info {
 }
 
 
+/* Bouton choix intro */
 
+.charsheet button[type=action].esprit_intro::before,
+.charsheet button[type=action].medium_intro::before,
+.charsheet button[type=action].pnj_intro::before {
+	content: '';
+}
+
+
+.charsheet button[type=action].esprit_intro,
+.charsheet button[type=action].medium_intro,
+.charsheet button[type=action].pnj_intro {
+    width: 190px;
+    height: 260px;
+    border: none;
+    padding: 0;
+	background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    box-shadow: 2px 1px 7px 3px #0000006e;
+}
+
+.charsheet button[type=action].esprit_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/intro_esprit.jpg);
+}
+
+.charsheet button[type=action].medium_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/intro_medium.jpg);
+}
+
+.charsheet button[type=action].pnj_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/intro_pnj.jpg);
+}
+
+.charsheet button[type=action].esprit_intro:hover,
+.charsheet button[type=action].medium_intro:hover,
+.charsheet button[type=action].pnj_intro:hover {
+    box-shadow: 0px 0px 16px 4px black;
+}
   /* Boutton D6 style  */
 
 .charsheet button[type=action].classic_roll::before,
@@ -6478,7 +6593,6 @@ span.info {
 .charsheet button[type=roll].classic_roll:hover{
     text-decoration: underline;
 }
-
 
 span.medium_dice {
     color: #ff000094;
