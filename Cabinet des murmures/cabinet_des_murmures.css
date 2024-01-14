@@ -76,6 +76,10 @@ font-family: 'Great Vibes', cursive;
 	padding-left: 10px;
 }
 
+.esprit_qualite {
+    height: 665px;
+}
+
 .esprit_dice{
     min-height: 540px;
     width: 828px;
@@ -88,6 +92,7 @@ font-family: 'Great Vibes', cursive;
     padding-bottom: 10px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
     background-size: cover;
+    padding-top: 28px;
 }
 
 .arbre {
@@ -167,6 +172,10 @@ div.sheet_selector {
     width: auto;
     margin-left: 701px;
 	margin-top: -17px;
+}
+
+div.sheet_reset_fiche {
+    margin-left: 805px;
 }
 
 .selector {
@@ -440,7 +449,7 @@ input[type="checkbox"].sheet-combattre-switch:hover{
     transition: .4s;
     width: 25px;
     height: 8px;
-    margin-top: 161px;
+    margin-top: 164px;
     margin-left: 821px;
 }
 
@@ -1302,14 +1311,20 @@ input[type="radio"] {
     grid-template-columns: 110px 210px 210px 210px 110px;
 }
 
-.wrapper_intro_titre {  
+.wrapper_intro_bouton {  
+	display: grid;
+    grid-template-columns: 175px 170px 170px 170px 175px;
+}
+
+.wrapper_intro_titre { 
     display: grid;
-    grid-template-columns: 110px 210px 210px 210px 110px;
-    text-align: center;
+    grid-template-columns: 175px 170px 170px 170px 175px;
     font-size: 20px;
-    margin-top: -44px;
+    margin-top: -53px;
+    margin-left: 12px;
     color: #ffffffe8;
     margin-bottom: 17px;
+	padding: 10px;
 }
 
 .text_intro {
@@ -5389,6 +5404,7 @@ input[type=number] {
     margin-left: 20px;
     padding-left: 13px;
 	outline: none;
+    box-shadow: 3px 5px 6px 3px #00000082;
 }
 
 .charsheet input.esprit_name {
@@ -6147,7 +6163,7 @@ div.niveau3_p {
 	border: none;
 	border-radius: 0px;
     border-bottom: solid 1px var(--marron_cabinet);
-	margin-top: 0px;
+	margin-top: 5px;
 	padding-bottom: 0px;
     width: 25px;
     font-size: 20px;
@@ -6415,7 +6431,13 @@ span.configurator_subtitle {
 
 span.intro_titre {
     font-size: 50px;
-    font-family: 'Dancing Script', cursive;	
+    font-family: 'Dancing Script', cursive;
+    border: 2px solid var(--blue_cabinet);
+    padding: 15px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background_name.png);
+    background-size: cover;
+    color: #ffffffdb;
+    box-shadow: -3px -3px 6px 3px #00000082;
 }
 
 span.intro_1 {
@@ -6446,6 +6468,11 @@ span.picto_intro {
     margin-top: -3px;
     margin-left: -10px;
     padding-right: 5px;
+}
+
+span.picto_reset_intro {
+	font-family: 'Pictos';
+    font-size: 28px;
 }
 
 span.picto_opposition {  
@@ -6517,7 +6544,8 @@ span.info {
 
 .charsheet button[type=action].esprit_intro::before,
 .charsheet button[type=action].medium_intro::before,
-.charsheet button[type=action].pnj_intro::before {
+.charsheet button[type=action].pnj_intro::before,
+.charsheet button[type=action].intro_reset::before {
 	content: '';
 }
 
@@ -6525,14 +6553,25 @@ span.info {
 .charsheet button[type=action].esprit_intro,
 .charsheet button[type=action].medium_intro,
 .charsheet button[type=action].pnj_intro {
-    width: 190px;
-    height: 260px;
+    width: 140px;
+    height: 200px;
     border: none;
     padding: 0;
 	background-size: cover;
     background-repeat: no-repeat;
     margin: 10px;
     box-shadow: 2px 1px 7px 3px #0000006e;
+}
+
+.charsheet button[type=action].intro_reset {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #43586147;
+}
+
+.charsheet button[type=action].intro_reset:hover {
+    color: var(--blue_cabinet);
 }
 
 .charsheet button[type=action].esprit_intro {
@@ -6616,6 +6655,7 @@ span.medium_dice {
 /* Version jet classique  */
 
 .sheet-rolltemplate-cabinet-classic,
+.sheet-rolltemplate-cabinet-classic-qualite,
 .sheet-rolltemplate-cabinet-prouesse,
 .sheet-rolltemplate-cabinet-weapon{
   margin-left: -20px;
@@ -6630,11 +6670,13 @@ span.medium_dice {
 }
 
 .withoutavatars .sheet-rolltemplate-cabinet-classic,
+.withoutavatars .sheet-rolltemplate-cabinet-classic-qualite,
 .withoutavatars .sheet-rolltemplate-cabinet-prouesse{
   margin-left: -7px;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
 .sheet-rolltemplate-cabinet-chance .sheet-container,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-container,
@@ -6646,6 +6688,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-type,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-type,
 .sheet-rolltemplate-cabinet-prouesse .sheet-type,
 .sheet-rolltemplate-cabinet-chance .sheet-type,
 .sheet-rolltemplate-cabinet-weapon .sheet-type {
@@ -6664,6 +6707,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-header,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-header,
 .sheet-rolltemplate-cabinet-prouesse .sheet-header,
 .sheet-rolltemplate-cabinet-chance .sheet-header,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-header,
@@ -6679,6 +6723,7 @@ span.medium_dice {
     padding-bottom: 8px;
 }
 .sheet-rolltemplate-cabinet-classic .sheet-title,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-title,
 .sheet-rolltemplate-cabinet-prouesse .sheet-title,
 .sheet-rolltemplate-cabinet-chance .sheet-title,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-title,
@@ -6691,6 +6736,7 @@ span.medium_dice {
     text-align: center;
 }
 .sheet-rolltemplate-cabinet-classic .sheet-subtitle,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-subtitle,
 .sheet-rolltemplate-cabinet-prouesse .sheet-subtitle,
 .sheet-rolltemplate-cabinet-chance .sheet-subtitle,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-subtitle,
@@ -6711,6 +6757,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-container,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-container {
     box-shadow: 0px 0px 4px 3px #000;
 }
@@ -6718,6 +6765,7 @@ span.medium_dice {
 
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-container,
 .sheet-rolltemplate-cabinet-prouesse .sheet-container,
 .sheet-rolltemplate-cabinet-chance .sheet-container,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-container,
@@ -6730,6 +6778,7 @@ span.medium_dice {
 
 
 .sheet-rolltemplate-cabinet-classic .sheet-content,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-content,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content,
 .sheet-rolltemplate-cabinet-chance .sheet-content,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-content,
@@ -6747,6 +6796,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-content > div,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-content > div,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content > div,
 .sheet-rolltemplate-cabinet-chance .sheet-content > div,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-content > div,
@@ -6760,6 +6810,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-content .sheet-key,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-prouesse .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-chance .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-content .sheet-key,
@@ -6771,6 +6822,8 @@ span.medium_dice {
 
 .sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-classic .sheet-content :nth-child(4n),
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-content :nth-child(4n),
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n+3),
 .sheet-rolltemplate-cabinet-prouesse .sheet-content :nth-child(4n),
 .sheet-rolltemplate-cabinet-chance .sheet-content :nth-child(4n+3),
@@ -6800,6 +6853,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-info,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-info,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-info {
 	grid-column: span 2;
     text-align: center;
@@ -6808,6 +6862,7 @@ span.medium_dice {
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-footer,
 .sheet-rolltemplate-cabinet-pouvoir .sheet-footer {
     grid-column: span 2;
     text-align: center;
@@ -6838,6 +6893,10 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-classic .inlinerollresult.fullcrit,
 .sheet-rolltemplate-cabinet-classic .inlinerollresult.fullfail,
+.sheet-rolltemplate-cabinet-classic-qualite .inlinerollresult,
+.sheet-rolltemplate-cabinet-classic-qualite .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-classic-qualite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-classic-qualite .inlinerollresult.fullfail,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-prouesse .inlinerollresult.fullcrit,
@@ -6867,6 +6926,10 @@ span.medium_dice {
 .sheet-rolltemplate-cabinet-classic .sheet-desc .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-classic .sheet-desc .inlinerollresult.fullcrit,
 .sheet-rolltemplate-cabinet-classic .sheet-desc .inlinerollresult.fullfail,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-footer .inlinerollresult,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-footer .inlinerollresult.importantroll,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-footer .inlinerollresult.fullcrit,
+.sheet-rolltemplate-cabinet-classic-qualite .sheet-footer .inlinerollresult.fullfail,
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer .inlinerollresult,
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer .inlinerollresult.importantroll,
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer .inlinerollresult.fullcrit,
