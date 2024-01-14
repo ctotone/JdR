@@ -85,8 +85,9 @@ font-family: 'Great Vibes', cursive;
 }
 
 .intro{
-    min-height: 720px;
     padding-bottom: 10px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: cover;
 }
 
 .arbre {
@@ -1308,7 +1309,7 @@ input[type="radio"] {
     font-size: 20px;
     margin-top: -44px;
     color: #ffffffe8;
-    margin-bottom: 44px;
+    margin-bottom: 17px;
 }
 
 .text_intro {
@@ -5369,6 +5370,12 @@ input[type=number] {
     margin: 0; 
 }
 
+.logo_img {
+	width: 385px;
+    height: auto;
+	opacity:1;
+}
+
 .charsheet input.cabinet_name,
 .charsheet input.esprit_name {
     border-color: var(--blue_cabinet);
@@ -6406,8 +6413,12 @@ span.configurator_subtitle {
 	font-style: italic;
 }
 
+span.intro_titre {
+    font-size: 50px;
+    font-family: 'Dancing Script', cursive;	
+}
+
 span.intro_1 {
-    font-weight: bold;
     text-decoration: underline;
 	
 }
