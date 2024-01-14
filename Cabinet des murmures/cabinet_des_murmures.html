@@ -33,7 +33,7 @@ template ok -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- Hidden value for sheet version -->
-<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="introduction"  />
+<input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="intro"  />
 
 
 <!------------------>
@@ -46,9 +46,9 @@ Blabla info sur medium doit s'appeler Médium<br>
 Boutton pour choisir type de feuille Esprit / Médium / PNJ<br>
 ==> Possibilité de forcer le character_name en Médium<br><br>
 
-<button type="action" name="act_intro-esprit">Esprit</button>
-<button type="action" name="act_intro-cabinet">Médium</button>
-<button type="action" name="act_intro-pnj">PNJ</button>
+<button type="action" class="esprit_intro" name="act_intro-esprit">Esprit</button>
+<button type="action" class="medium_intro"name="act_intro-cabinet">Médium</button>
+<button type="action" class="pnj_intro"name="act_intro-pnj">PNJ</button>
 </div>
 
 
@@ -62,7 +62,7 @@ Boutton pour choisir type de feuille Esprit / Médium / PNJ<br>
 			<option value="esprit" data-i18n="spirit_sheet">Spirit</option>
 			<option value="cabinet" data-i18n="corpse_sheet">Actor</option>
 			<option value="pnj" data-i18n="npc_sheet">NPC</option>
-			<option value="introduction">Introduction</option>
+			<option value="intro">Introduction</option>
 		</select>
 		</div>
 		
