@@ -68,3 +68,20 @@ const dot_jambe_gaucheValues = ["1","2","3","4","5","6","7"];
 	});
 });
 </script>
+
+// Script avec integration du fichier de tad
+
+<script type="text/worker">
+on("sheet:opened change:data", function() {
+    getAttrs(["data"], function(values) {
+			let data = parseInt(values["data"]) || 0;
+			
+			if (data == '1') 	nom_pouvoir = getTranslationByKey('chant_lancinant'); 
+			else 				nom_pouvoir = "";
+						
+			setAttrs({
+			"nom_pouvoir" : nom_pouvoir
+        });
+    });
+});
+</script>
