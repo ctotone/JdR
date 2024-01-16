@@ -11,30 +11,8 @@ Puces images
 
 -->
 
-
-<!-- template ok
-
-&{template:cabinet-prouesse} {{title=@{Médium|attr_arme1_nom}}} {{Dégâts=[[@{Médium|attr_arme1_degats}]]}} {{Puissance=[[@{Médium|attr_puissance_bonus}]]}}
-
-&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=DÉCELER UN BLUFF}} {{localisation_title=Localisation}}{{localisation=[[2D6]]}}
-
-ARMES
-
-
-template ok -->
-
-
-<!-- Initiative /r -@{selected|D_autorite} &{tracker} -->
-
-
-
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-<!-- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="intro"  />
-
 
 <!------------------>
 <!--- DIV INTRO  --->
@@ -46,14 +24,14 @@ template ok -->
 				<!-- <img class="logo_img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/intro_logo.png"/> -->
 				<p style="text-align: center;"><span class="intro_titre">Le Cabinet des Murmures</span></p>
 				<br>
-				<p style="text-align: center; margin-top: 10px; margin-bottom: 12px;"><span class="intro_1">Le Cabinet des Murmures nécessite l'utilisation de deux types de fiches de personnage.</span></p>
+				<p style="text-align: center; margin-top: 10px; margin-bottom: 12px;"><span class="intro_1" data-i18n="intro_1">Le Cabinet des Murmures nécessite l'utilisation de deux types de fiches de personnage.</span></p>
 				<br>
-				<p><span class="picto_intro">]</span><span class="gras_souligne">Une fiche d'Esprit</span> qui est attribuée à chacun des joueurs.</p>
-				<p><span class="picto_intro">]</span><span class="gras_souligne">Une fiche de Cabinet</span> qui est unique. Elle est partagée par tous les joueurs.
-				<br><span class="italic">Cette feuille sera automatiquement renommée "Médium" afin que les boutons de lancé de dés soient fonctionnels.</span></p>
+				<p><span class="picto_intro">]</span><span class="gras_souligne" data-i18n="intro_esprit_1">Une fiche d'Esprit</span> <span data-i18n="intro_esprit_2">qui est attribuée à chacun des joueurs.</p>
+				<p><span class="picto_intro">]</span><span class="gras_souligne" data-i18n="intro_cabinet_1">Une fiche de Cabinet</span> <span data-i18n="intro_cabinet_2">qui est unique. Elle est partagée par tous les joueurs.
+				<br><span class="italic" data-i18n="intro_cabinet_3">Cette feuille sera automatiquement renommée "Médium" afin que les boutons de lancé de dés soient fonctionnels.</span></p>
 				
 				<br>
-				<p style="text-align: center; text-decoration: underline; font-size: 16px; margin-top: 20px; margin-bottom: 15px;">Choisissez le type de fiche que vous souhaitez créer.</p>
+				<p style="text-align: center; text-decoration: underline; font-size: 16px; margin-top: 20px; margin-bottom: 15px;"><span data-i18n="intro_3">Choisissez le type de fiche que vous souhaitez créer.</span></p>
 			</div>
 		</div>
 		
@@ -71,13 +49,13 @@ template ok -->
 		
 		<div class="wrapper_intro_titre">
 			<div class="boutton_esprit_titre">
-				Esprit
+				<span data-i18n="intro_spirit">Esprit</span>
 			</div>
 			<div class="boutton_medium_titre">
-				Cabinet
+				<span data-i18n="intro_cabinet">Cabinet</span>
 			</div>
 			<div class="boutton_pnj_titre">
-				PNJ
+				<span data-i18n="intro_npc">PNJ</span>
 			</div>
 		</div>
 	</div>
@@ -1822,6 +1800,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-bluffer"><span data-i18n="dice_bluffer">Bluffer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer" value="&{template:cabinet-prouesse} {{title=^{BLUFFER}}} {{subtitle=^{vs_rouah}}} {{^{sensitivity_roll}=@{D_sensibilite_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{innocence_roll}=[[@{Médium|innocence_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_bluffer">Bluffer</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
 					</div>
 					<div class="bluffer_data">
 						<span class="dice_texte"><span data-i18n="sensitivity_roll">Sensibilité</span> + ROUAH'H (+ <span data-i18n="innocence">INNOCENCE</span>)<!-- <br>contre NESHAMA --></span>
@@ -1831,6 +1810,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-deceler-bluff"><span data-i18n="dice_deceler_bluff">Déceler un Bluff</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-bluffer-resister" value="&{template:cabinet-prouesse} {{title=^{DECELER_BLUFF}}} {{subtitle=^{vs_rouah}}} {{^{intellect_roll}=@{D_intellect_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_deceler_bluff">Déceler un Bluff</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
 					</div>
 					<div class="bluffer_resister_data">
 						<span class="dice_texte"><span data-i18n="intellect_roll">Intellect</span> + <span data-i18n="neshama">NESHAMA</span><!-- <br>contre ROUA'H --></span>
@@ -1849,6 +1829,8 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-intimider-etrangete"><span data-i18n="dice_intimider_etrange">Intimider (Étrang.)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-etrangete" value="&{template:cabinet-prouesse} {{title=^{INTIMIDER}}} {{subtitle=^{vs_neshama}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{strangeness_roll}=[[@{Médium|etrangete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_intimider_etrange">Intimider (Étrang.)</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
+						
 					</div>
 					<div class="intimider_etrangete_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="rouah">ROUA'H</span> (+ <span data-i18n="strangeness">ÉTRANGETÉ</span>)<!-- <br>contre NESHAMA --></span>
@@ -1858,6 +1840,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-intimider-puissance"><span data-i18n="dice_intimider_puissance">Intimider (Puissance)span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-puissance" value="&{template:cabinet-prouesse} {{title=^{INTIMIDER}}} {{subtitle=^{vs_neshama}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_intimider_puissance">Intimider (Puissance)</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
 					</div>
 					<div class="intimider_puissance_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="rouah">ROUA'H</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- <br>contre NESHAMA --></span>
@@ -1867,6 +1850,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-intimider-resister"><span data-i18n="dice_intimider_resist">Intimider (Résister)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-intimider-resister" value="&{template:cabinet-prouesse} {{title=^{INTIMIDER_RESIST}}} {{subtitle=^{vs_rouah}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_intimider_resist">Intimider (Résister)</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
 					</div>
 					<div class="intimider_resister_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="neshama">NESHAMA</span><!-- <br>contre ROUA'H --></span>
@@ -1876,6 +1860,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-questionner"><span data-i18n="dice_questionner">Questionner</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-questionner" value="&{template:cabinet-prouesse} {{title=^{QUESTIONNER}}} {{subtitle=^{vs_neshama}}} {{^{opening_roll}=@{D_ouverture_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{innocence_roll}=[[@{Médium|innocence_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_questionner">Questionner</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
 					</div>
 					<div class="questionner_data">
 						<span class="dice_texte"><span data-i18n="opening_roll">Ouverture</span> + <span data-i18n="neshama">NESHAMA</span> (+ <span data-i18n="innocence">INNOCENCE</span>)<!-- <br>contre NESHAMA --></span>
@@ -1885,6 +1870,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-seduire-neshama"><span data-i18n="dice_seduire_neshama">Séduire (Neshama)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-neshama" value="&{template:cabinet-prouesse} {{title=^{SEDUIRE}}} {{subtitle=^{vs_neshama}}} {{^{charisma_roll}=@{D_charisme_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{beauty_roll}=[[@{Médium|beaute_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_seduire_neshama">Séduire (Neshama)</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
 					</div>
 					<div class="seduire_neshama_data">
 						<span class="dice_texte"><span data-i18n="charisma_roll">Charisme</span> + <span data-i18n="neshama">NESHAMA</span> (+ <span data-i18n="beauty">BEAUTÉ</span>)<!-- <br>contre NESHAMA --></span>
@@ -1894,6 +1880,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-seduire-rouah"><span data-i18n="dice_seduire_rouah">Séduire (Roua'h)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-rouah" value="&{template:cabinet-prouesse} {{title=^{SEDUIRE}}} {{subtitle=^{vs_neshama}}} {{^{charisma_roll}=@{D_charisme_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{beauty_roll}=[[@{Médium|beaute_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_seduire_rouah">Séduire (Roua'h)</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
 					</div>
 					<div class="seduire_rouah_data">
 						<span class="dice_texte"><span data-i18n="charisma_roll">Charisme</span> + <span data-i18n="rouah">ROUA'H</span> (+ <span data-i18n="beauty">BEAUTÉ</span>)<!-- <br>contre NESHAMA --></span>
@@ -1903,6 +1890,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-seduire-resister"><span data-i18n="dice_seduire_resist">Séduire (Résister)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-seduire-resister" value="&{template:cabinet-prouesse} {{title=^{SEDUIRE_RESIST}}} {{subtitle=^{vs_rouah}}} {{^{serenity_roll}=@{D_serenite_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_seduire_resist">Séduire (Résister)</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
 					</div>
 					<div class="seduire_resister_data">
 						<span class="dice_texte"><span data-i18n="serenity_roll">Sérénité</span> + <span data-i18n="neshama">NESHAMA</span><!-- <br>contre ROUA'H --></span>
@@ -1947,7 +1935,8 @@ template ok -->
 					<div class="surveiller">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-surveiller"><span data-i18n="dice_surveiller">Surveiller</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-surveiller" value="&{template:cabinet-prouesse} {{title=^{SURVEILLER}}} {{subtitle=^{vs_rouah}}} {{^{attention_roll}=@{D_attention_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{acuity_roll}=[[@{Médium|acuite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_surveiller">Surveiller</span></button>  
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-surveiller" value="&{template:cabinet-prouesse} {{title=^{SURVEILLER}}} {{subtitle=^{vs_rouah}}} {{^{attention_roll}=@{D_attention_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{acuity_roll}=[[@{Médium|acuite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_surveiller">Surveiller</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
 					</div>
 					<div class="surveiller_data">
 						<span class="dice_texte"><span data-i18n="attention_roll">Attention</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="acuity">ACUITÉ</span>)<!-- <br>contre ROUA'H --></span>
@@ -2064,6 +2053,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-poches"><span data-i18n="dice_poches">Faire les poches</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-poches" value="&{template:cabinet-prouesse} {{title=^{FAIRE_POCHES}}} {{subtitle=contre NEFESH (+Acuité)}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_poches">Faire les poches</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+ACUITÉ)" data-i18n-title="oppo_NEFESH_acuite">Y</span>
 					</div>
 					<div class="poches_data">
 						<span class="dice_texte"><span data-i18n="coordination_roll">Coordination</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>)<!-- <br>contre NEFESH (+ <span data-i18n="acuity">ACUITÉ</span>) --></span>
@@ -2145,6 +2135,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-poursuivre-vehicule" style="text-align: left;"><span data-i18n="dice_poursuivre">Poursuivre</span><br><span data-i18n="dice_cheval_vehicule">(cheval / véhicule)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-poursuivre-vehicule" value="&{template:cabinet-prouesse} {{title=^{POURSUIVRE_MONTE}}} {{subtitle=^{vs_nefesh_ability}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}" style="text-align: left;"><span data-i18n="dice_poursuivre">Poursuivre</span><br><span data-i18n="dice_cheval_vehicule">(cheval / véhicule)</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+HABILETÉ)" data-i18n-title="oppo_NEFESH_habilete">Y</span>
 					</div>
 					<div class="poursuivre_vehicule_data">
 						<span class="dice_texte"><br><span data-i18n="coordination_roll">Coordination</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>)<!-- <br>contre NEFESH (+ <span data-i18n="skill">HABILETÉ</span>) --></span>
@@ -2154,6 +2145,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-discret"><span data-i18n="dice_faire_discret">Se faire discret</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-discret" value="&{template:cabinet-prouesse} {{title=^{FAIRE_DISCRET}}} {{subtitle=^{vs_nefesh_acuity}}} {{^{coordination_roll}=@{D_serenite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{anonymity_roll}=[[@{Médium|anonymat_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_faire_discret">Se faire discret</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+ACUITÉ)" data-i18n-title="oppo_NEFESH_acuite">Y</span>
 					</div>
 					<div class="discret_data">
 						<span class="dice_texte"><span data-i18n="serenity_roll">Sérénité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="anonymity">ANONYMAT</span>)<!-- <br>contre NEFESH (+ <span data-i18n="acuity">ACUITÉ</span>) --></span>
@@ -2208,6 +2200,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-desarmer-habilete"><span data-i18n="dice_desarmer_habilete">Désarmer (Habileté)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-desarmer-habilete" value="&{template:cabinet-prouesse} {{title=^{DESARMER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_desarmer_habilete">Désarmer (Habileté)</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="desarmer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>) <!-- contre défense --></span>
@@ -2217,6 +2210,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-desarmer-puissance"><span data-i18n="dice_desarmer_puissance">Désarmer (Puissance)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-desarmer-puissance" value="&{template:cabinet-prouesse} {{title=^{DESARMER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_desarmer_puissance">Désarmer (Puissance)</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="desarmer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2226,6 +2220,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-frapper"><span data-i18n="dice_frapper">Frapper</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-frapper" value="&{template:cabinet-prouesse} {{title=^{FRAPPER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_frapper">Frapper</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="frapper_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre défense --></span>
@@ -2235,6 +2230,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-immobiliser"><span data-i18n="dice_immobiliser">Immobiliser</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-immobiliser" value="&{template:cabinet-prouesse} {{title=^{IMMOBILISER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_immobiliser">Immobiliser</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="immobiliser_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre défense --></span>
@@ -2244,6 +2240,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-bagarrer"><span data-i18n="dice_bagarrer">Se bagarrer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-bagarrer" value="&{template:cabinet-prouesse} {{title=^{SE_BAGARRER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_bagarrer">Se bagarrer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="bagarrer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2254,6 +2251,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-desarmer-habilete2"><span data-i18n="dice_desarmer_habilete">Désarmer (Habileté)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-desarmer-habilete2" value="&{template:cabinet-prouesse} {{title=^{DESARMER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_desarmer_habilete">Désarmer (Habileté)</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="desarmer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>)<!-- contre défense --></span>
@@ -2263,6 +2261,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-desarmer-puissance2"><span data-i18n="dice_desarmer_puissance">Désarmer (puissance)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-desarmer-puissance" value="&{template:cabinet-prouesse} {{title=^{DESARMER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_desarmer_puissance">Désarmer (puissance)</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="desarmer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2272,6 +2271,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-frapper2"><span data-i18n="dice_frapper">Frapper</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-frapper2" value="&{template:cabinet-prouesse} {{title=^{FRAPPER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_frapper">Frapper</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="frapper_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre défense --></span>
@@ -2281,6 +2281,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-immobiliser2"><span data-i18n="dice_immobiliser">Immobiliser</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-immobiliser2" value="&{template:cabinet-prouesse} {{title=^{IMMOBILISER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_immobiliser">Immobiliser</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="immobiliser_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre défense --></span>
@@ -2290,6 +2291,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-bagarrer2">Se bagarrer</button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-bagarrer2" value="&{template:cabinet-prouesse} {{title=^{SE_BAGARRER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_bagarrer">Se bagarrer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="bagarrer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2308,6 +2310,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-atk-lancer"><span data-i18n="dice_lancer">Lancer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-atk-lancer" value="&{template:cabinet-prouesse} {{title=^{LANCER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_lancer">Lancer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="lancer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2317,6 +2320,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-tirer"><span data-i18n="dice_tirer">Tirer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-tirer" value="&{template:cabinet-prouesse} {{title=^{TIRER}}} {{subtitle=^{vs_defense}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_tirer">Tirer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="tirer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>)<!-- contre défense --></span>
@@ -2327,6 +2331,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-atk-lancer2"><span data-i18n="dice_lancer">Lancer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-atk-lancer2" value="&{template:cabinet-prouesse} {{title=^{LANCER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_lancer">Lancer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="lancer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre défense --></span>
@@ -2336,6 +2341,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-tirer2"><span data-i18n="dice_tirer">Tirer</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-tirer2" value="&{template:cabinet-prouesse} {{title=^{TIRER}}} {{subtitle=^{vs_defense}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{skill_roll}=[[@{Médium|habilete_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}} {{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span data-i18n="dice_tirer">Tirer</span></button>
+						<span class="opposition" title="Jet en opposition contre la DÉFENSE de la cible." data-i18n-title="oppo_defense">Y</span>
 					</div>
 					<div class="tirer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="skill">HABILETÉ</span>)<!-- contre défense --></span>
@@ -2390,7 +2396,7 @@ template ok -->
 					<div class="esquiver">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-esquiver"><span data-i18n="dice_esquiver">Esquiver</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-esquiver" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_esquiver">Esquiver</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-esquiver" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_esquiver">Esquiver</span></button><span class="opposition" title="Jet en opposition contre l'ATTAQUE de la cible." data-i18n-title="oppo_atk">Y</span>
 					</div>
 					<div class="esquiver_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre attaque --></span>
@@ -2399,7 +2405,7 @@ template ok -->
 					<div class="parer">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-parer"><span data-i18n="dice_parer">Parer</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-parer" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_parer">Parer</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-parer" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_parer">Parer</span></button><span class="opposition" title="Jet en opposition contre l'ATTAQUE de la cible." data-i18n-title="oppo_atk">Y</span>
 					</div>
 					<div class="parer_data">
 						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre attaque --></span>
@@ -2409,7 +2415,7 @@ template ok -->
 					<div class="esquiver">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-esquiver2"><span data-i18n="dice_esquiver">Esquiver</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-esquiver2" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_esquiver">Esquiver</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-esquiver2" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_esquiver">Esquiver</span></button><span class="opposition" title="Jet en opposition contre l'ATTAQUE de la cible." data-i18n-title="oppo_atk">Y</span>
 					</div>
 					<div class="esquiver_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre attaque --></span>
@@ -2418,7 +2424,7 @@ template ok -->
 					<div class="parer">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-parer2"><span data-i18n="dice_parer">Parer</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-parer2" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_parer">Parer</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-parer2" value="&{template:cabinet-prouesse} {{title=^{ESQUIVER}}} {{subtitle=^{vs_attack}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_parer">Parer</span></button><span class="opposition" title="Jet en opposition contre l'ATTAQUE de la cible." data-i18n-title="oppo_atk">Y</span>
 					</div>
 					<div class="parer_data">
 						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre attaque --></span>
@@ -2436,6 +2442,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-se-degager-puissance"><span data-i18n="dice_degager_puissance">Se dégager (Puissance)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-se-degager-puissance" value="&{template:cabinet-prouesse} {{title=^{SE_DEGAGER}}} {{subtitle=^{vs_nefesh_power}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_degager_puissance">Se dégager (Puissance)</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+PUISSANCE)" data-i18n-title="oppo_NEFESH_puissance">Y</span>
 					</div>
 					<div class="degager_data">
 						<span class="dice_texte"><span data-i18n="coordination_roll">Coordination</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)<!-- contre NEFESH (+ <span data-i18n="attribute_power">PUISSANCE</span>) --></span>
@@ -2445,6 +2452,7 @@ template ok -->
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-se-degager-agilite"><span data-i18n="dice_degager_agilite">Se dégager (Agilité)</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-se-degager-agilite" value="&{template:cabinet-prouesse} {{title=^{SE_DEGAGER}}} {{subtitle=^{vs_nefesh_power}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_degager_agilite">Se dégager (Agilité)</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+PUISSANCE)" data-i18n-title="oppo_NEFESH_puissance">Y</span>
 					</div>					
 					<div class="degager_data">
 						<span class="dice_texte"><span data-i18n="coordination_roll">Coordination</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre NEFESH (+ <span data-i18n="attribute_power">PUISSANCE</span>) --></span>
@@ -2453,7 +2461,7 @@ template ok -->
 					<div class="abri">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="action" name="act_roll-abri"><span data-i18n="dice_abri">Se mettre à l'abri</span></button>
-						<button class="prouesse_roll" type="roll" name="roll-prouesse-abri" value="&{template:cabinet-prouesse} {{title=^{ABRIS}}} {{subtitle=^{vs_attack}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_abri">Se mettre à l'abri</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-abri" value="&{template:cabinet-prouesse} {{title=^{ABRIS}}} {{subtitle=^{vs_attack}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{agility_roll}=[[@{Médium|agilite_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="dice_abri">Se mettre à l'abri</span></button><span class="opposition" title="Jet en opposition contre l'ATTAQUE de la cible." data-i18n-title="oppo_atk">Y</span>
 					</div>
 					<div class="abri_data">
 						<span class="dice_texte"><span data-i18n="coordination_roll">Coordination</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="agility">AGILITÉ</span>)<!-- contre Attaque --></span>
@@ -3182,18 +3190,18 @@ on("sheet:opened change:data1_lvl_1", function() {
     getAttrs(["data1_lvl_1"], function(values) {
 			let data1_lvl_1 = parseInt(values["data1_lvl_1"]) || 0;
 			
-			if (data1_lvl_1 == '1') 		nom_pouvoir_1_1 = getTranslationByKey('affinite'),	info1_lvl_1 = "1_1", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '2') 	nom_pouvoir_1_1 = getTranslationByKey('apnee'),	info1_lvl_1 = "1_2", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Tiferet";
-			else if (data1_lvl_1 == '3') 	nom_pouvoir_1_1 = getTranslationByKey('angelique'),	info1_lvl_1 = "1_3", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '4') 	nom_pouvoir_1_1 = getTranslationByKey('bruit'),	info1_lvl_1 = "1_4", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '5') 	nom_pouvoir_1_1 = getTranslationByKey('esprit_babel'),	info1_lvl_1 = "1_5", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Binah";
-			else if (data1_lvl_1 == '6') 	nom_pouvoir_1_1 = getTranslationByKey('effroi_animal'),	info1_lvl_1 = "1_6", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Geburah";
-			else if (data1_lvl_1 == '7') 	nom_pouvoir_1_1 = getTranslationByKey('langue_babel'),	info1_lvl_1 = "1_7", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chesed";
-			else if (data1_lvl_1 == '8')	nom_pouvoir_1_1 = getTranslationByKey('malaise'),	info1_lvl_1 = "1_8", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Netzach";
-			else if (data1_lvl_1 == '9') 	nom_pouvoir_1_1 = getTranslationByKey('parfum'),	info1_lvl_1 = "1_9", 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '10') 	nom_pouvoir_1_1 = getTranslationByKey('oeil_babel'),	info1_lvl_1 = "1_10", 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Hod";
-			else if (data1_lvl_1 == '11') 	nom_pouvoir_1_1 = getTranslationByKey('ame_lieu'),	info1_lvl_1 = "1_11", 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Chokmah";
-			else if (data1_lvl_1 == '12') 	nom_pouvoir_1_1 = getTranslationByKey('tourmente'),	info1_lvl_1 = "1_12", 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
+			if (data1_lvl_1 == '1') 		nom_pouvoir_1_1 = getTranslationByKey('affinite'),	info1_lvl_1 = getTranslationByKey('affinite_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '2') 	nom_pouvoir_1_1 = getTranslationByKey('apnee'),	info1_lvl_1 = getTranslationByKey('apnee_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Tiferet";
+			else if (data1_lvl_1 == '3') 	nom_pouvoir_1_1 = getTranslationByKey('angelique'),	info1_lvl_1 = getTranslationByKey('angelique_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '4') 	nom_pouvoir_1_1 = getTranslationByKey('bruit'),	info1_lvl_1 = getTranslationByKey('bruit_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '5') 	nom_pouvoir_1_1 = getTranslationByKey('esprit_babel'),	info1_lvl_1 = getTranslationByKey('esprit_babel_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Binah";
+			else if (data1_lvl_1 == '6') 	nom_pouvoir_1_1 = getTranslationByKey('effroi_animal'),	info1_lvl_1 = getTranslationByKey('effroi_animal_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Geburah";
+			else if (data1_lvl_1 == '7') 	nom_pouvoir_1_1 = getTranslationByKey('langue_babel'),	info1_lvl_1 = getTranslationByKey('langue_babel_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chesed";
+			else if (data1_lvl_1 == '8')	nom_pouvoir_1_1 = getTranslationByKey('malaise'),	info1_lvl_1 = getTranslationByKey('malaise_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Netzach";
+			else if (data1_lvl_1 == '9') 	nom_pouvoir_1_1 = getTranslationByKey('parfum'),	info1_lvl_1 = getTranslationByKey('parfum_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1", 	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '10') 	nom_pouvoir_1_1 = getTranslationByKey('oeil_babel'),	info1_lvl_1 = getTranslationByKey('oeil_babel_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Hod";
+			else if (data1_lvl_1 == '11') 	nom_pouvoir_1_1 = getTranslationByKey('ame_lieu'),	info1_lvl_1 = getTranslationByKey('ame_lieu_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="0", 	affichage1_c1 = getTranslationByKey('no'), 	sphere1_lvl_1 ="Chokmah";
+			else if (data1_lvl_1 == '12') 	nom_pouvoir_1_1 = getTranslationByKey('tourmente'),	info1_lvl_1 = getTranslationByKey('tourmente_desc'), 	niveau1_p1 = "1", 	niveau1_c1 ="1",	affichage1_c1 = getTranslationByKey('yes'), 	sphere1_lvl_1 ="Chokmah";
 			else 							nom_pouvoir_1_1 = "",	info1_lvl_1 = "", 		niveau1_p1 = "", 	niveau1_c1 ="0", 	affichage1_c1 ="",		sphere1_lvl_1 ="";
 				
 			setAttrs({
@@ -3213,18 +3221,18 @@ on("sheet:opened change:data2_lvl_1", function() {
     getAttrs(["data2_lvl_1"], function(values) {
 			let data2_lvl_1 = parseInt(values["data2_lvl_1"]) || 0;
 			
-			if (data2_lvl_1 == '1') 		nom_pouvoir_1_2 = getTranslationByKey('affinite'),	info2_lvl_1 = "2_1", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '2') 	nom_pouvoir_1_2 = getTranslationByKey('apnee'),	info2_lvl_1 = "2_2", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Tiferet";
-			else if (data2_lvl_1 == '3') 	nom_pouvoir_1_2 = getTranslationByKey('angelique'),	info2_lvl_1 = "2_3", 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '4')	nom_pouvoir_1_2 = getTranslationByKey('bruit'),	info2_lvl_1 = "2_4", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '5') 	nom_pouvoir_1_2 = getTranslationByKey('esprit_babel'),	info2_lvl_1 = "2_5", 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Binah";
-			else if (data2_lvl_1 == '6') 	nom_pouvoir_1_2 = getTranslationByKey('effroi_animal'),	info2_lvl_1 = "2_6", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Geburah";
-			else if (data2_lvl_1 == '7') 	nom_pouvoir_1_2 = getTranslationByKey('langue_babel'),	info2_lvl_1 = "2_7", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chesed";
-			else if (data2_lvl_1 == '8') 	nom_pouvoir_1_2 = getTranslationByKey('malaise'),	info2_lvl_1 = "2_8", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Netzach";
-			else if (data2_lvl_1 == '9') 	nom_pouvoir_1_2 = getTranslationByKey('parfum'),	info2_lvl_1 = "2_9", 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '10') 	nom_pouvoir_1_2 = getTranslationByKey('oeil_babel'),	info2_lvl_1 = "2_10",	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Hod";
-			else if (data2_lvl_1 == '11') 	nom_pouvoir_1_2 = getTranslationByKey('ame_lieu'),	info2_lvl_1 = "2_11",	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Chokmah";
-			else if (data2_lvl_1 == '12') 	nom_pouvoir_1_2 = getTranslationByKey('tourmente'),	info2_lvl_1 = "2_12",	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
+			if (data2_lvl_1 == '1') 		nom_pouvoir_1_2 = getTranslationByKey('affinite'),	info2_lvl_1 = getTranslationByKey('affinite_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '2') 	nom_pouvoir_1_2 = getTranslationByKey('apnee'),	info2_lvl_1 = getTranslationByKey('apnee_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Tiferet";
+			else if (data2_lvl_1 == '3') 	nom_pouvoir_1_2 = getTranslationByKey('angelique'),	info2_lvl_1 = getTranslationByKey('angelique_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '4')	nom_pouvoir_1_2 = getTranslationByKey('bruit'),	info2_lvl_1 = getTranslationByKey('bruit_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '5') 	nom_pouvoir_1_2 = getTranslationByKey('esprit_babel'),	info2_lvl_1 = getTranslationByKey('esprit_babel_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Binah";
+			else if (data2_lvl_1 == '6') 	nom_pouvoir_1_2 = getTranslationByKey('effroi_animal'),	info2_lvl_1 = getTranslationByKey('effroi_animal_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Geburah";
+			else if (data2_lvl_1 == '7') 	nom_pouvoir_1_2 = getTranslationByKey('langue_babel'),	info2_lvl_1 = getTranslationByKey('langue_babel_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chesed";
+			else if (data2_lvl_1 == '8') 	nom_pouvoir_1_2 = getTranslationByKey('malaise'),	info2_lvl_1 = getTranslationByKey('malaise_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Netzach";
+			else if (data2_lvl_1 == '9') 	nom_pouvoir_1_2 = getTranslationByKey('parfum'),	info2_lvl_1 = getTranslationByKey('parfum_desc'), 	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '10') 	nom_pouvoir_1_2 = getTranslationByKey('oeil_babel'),	info2_lvl_1 = getTranslationByKey('oeil_babel_desc'),	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Hod";
+			else if (data2_lvl_1 == '11') 	nom_pouvoir_1_2 = getTranslationByKey('ame_lieu'),	info2_lvl_1 = getTranslationByKey('ame_lieu_desc'),	niveau1_p2 = "1", 	niveau1_c2 ="0", 	affichage1_c2 = getTranslationByKey('no'), 	sphere2_lvl_1 ="Chokmah";
+			else if (data2_lvl_1 == '12') 	nom_pouvoir_1_2 = getTranslationByKey('tourmente'),	info2_lvl_1 = getTranslationByKey('tourmente_desc'),	niveau1_p2 = "1", 	niveau1_c2 ="1", 	affichage1_c2 = getTranslationByKey('yes'), 	sphere2_lvl_1 ="Chokmah";
 			else 							nom_pouvoir_1_2 = "",	info2_lvl_1 = "", 		niveau1_p2 = "", 	niveau1_c2 ="0", 	affichage1_c2 ="", 	sphere2_lvl_1 ="";
 			
 			setAttrs({
@@ -3244,18 +3252,18 @@ on("sheet:opened change:data3_lvl_1", function() {
     getAttrs(["data3_lvl_1"], function(values) {
 			let data3_lvl_1 = parseInt(values["data3_lvl_1"]) || 0;
 			
-			if (data3_lvl_1 == '1') 		nom_pouvoir_1_3 = getTranslationByKey('affinite'),	info3_lvl_1 = "3_1", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '2') 	nom_pouvoir_1_3 = getTranslationByKey('apnee'),	info3_lvl_1 = "3_2", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Tiferet";
-			else if (data3_lvl_1 == '3') 	nom_pouvoir_1_3 = getTranslationByKey('angelique'),	info3_lvl_1 = "3_3", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '4') 	nom_pouvoir_1_3 = getTranslationByKey('bruit'),	info3_lvl_1 = "3_4", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '5') 	nom_pouvoir_1_3 = getTranslationByKey('esprit_babel'),	info3_lvl_1 = "3_5", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Binah";
-			else if (data3_lvl_1 == '6') 	nom_pouvoir_1_3 = getTranslationByKey('effroi_animal'),	info3_lvl_1 = "3_6", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Geburah";
-			else if (data3_lvl_1 == '7') 	nom_pouvoir_1_3 = getTranslationByKey('langue_babel'),	info3_lvl_1 = "3_7", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chesed";
-			else if (data3_lvl_1 == '8') 	nom_pouvoir_1_3 = getTranslationByKey('malaise'),	info3_lvl_1 = "3_8", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Netzach";
-			else if (data3_lvl_1 == '9') 	nom_pouvoir_1_3 = getTranslationByKey('parfum'),	info3_lvl_1 = "3_9", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '10') 	nom_pouvoir_1_3 = getTranslationByKey('oeil_babel'),	info3_lvl_1 = "3_10", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Hod";
-			else if (data3_lvl_1 == '11') 	nom_pouvoir_1_3 = getTranslationByKey('ame_lieu'),	info3_lvl_1 = "3_11", 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Chokmah";
-			else if (data3_lvl_1 == '12') 	nom_pouvoir_1_3 = getTranslationByKey('tourmente'),	info3_lvl_1 = "3_12", 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
+			if (data3_lvl_1 == '1') 		nom_pouvoir_1_3 = getTranslationByKey('affinite'),	info3_lvl_1 = getTranslationByKey('affinite_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '2') 	nom_pouvoir_1_3 = getTranslationByKey('apnee'),	info3_lvl_1 = getTranslationByKey('apnee_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Tiferet";
+			else if (data3_lvl_1 == '3') 	nom_pouvoir_1_3 = getTranslationByKey('angelique'),	info3_lvl_1 = getTranslationByKey('angelique_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '4') 	nom_pouvoir_1_3 = getTranslationByKey('bruit'),	info3_lvl_1 = getTranslationByKey('bruit_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '5') 	nom_pouvoir_1_3 = getTranslationByKey('esprit_babel'),	info3_lvl_1 = getTranslationByKey('esprit_babel_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Binah";
+			else if (data3_lvl_1 == '6') 	nom_pouvoir_1_3 = getTranslationByKey('effroi_animal'),	info3_lvl_1 = getTranslationByKey('effroi_animal_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Geburah";
+			else if (data3_lvl_1 == '7') 	nom_pouvoir_1_3 = getTranslationByKey('langue_babel'),	info3_lvl_1 = getTranslationByKey('langue_babel_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chesed";
+			else if (data3_lvl_1 == '8') 	nom_pouvoir_1_3 = getTranslationByKey('malaise'),	info3_lvl_1 = getTranslationByKey('malaise_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Netzach";
+			else if (data3_lvl_1 == '9') 	nom_pouvoir_1_3 = getTranslationByKey('parfum'),	info3_lvl_1 = getTranslationByKey('parfum_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '10') 	nom_pouvoir_1_3 = getTranslationByKey('oeil_babel'),	info3_lvl_1 = getTranslationByKey('oeil_babel_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Hod";
+			else if (data3_lvl_1 == '11') 	nom_pouvoir_1_3 = getTranslationByKey('ame_lieu'),	info3_lvl_1 = getTranslationByKey('ame_lieu_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="0", 	affichage1_c3 = getTranslationByKey('no'), 	sphere3_lvl_1 ="Chokmah";
+			else if (data3_lvl_1 == '12') 	nom_pouvoir_1_3 = getTranslationByKey('tourmente'),	info3_lvl_1 = getTranslationByKey('tourmente_desc'), 	niveau1_p3 = "1", 	niveau1_c3 ="1", 	affichage1_c3 = getTranslationByKey('yes'), 	sphere3_lvl_1 ="Chokmah";
 			else 							nom_pouvoir_1_3 = "",	info3_lvl_1 = "", 		niveau1_p3 = "", 	niveau1_c3 ="0", 	affichage1_c3 ="", 	sphere3_lvl_1 ="";
 			
             			
@@ -3277,18 +3285,18 @@ on("sheet:opened change:data1_lvl_2", function() {
     getAttrs(["data1_lvl_2"], function(values) {
 			let data1_lvl_2 = parseInt(values["data1_lvl_2"]) || 0;
 			
-			if (data1_lvl_2 == '1') 		nom_pouvoir_2_1 = getTranslationByKey('chant_lancinant'),	info1_lvl_2 = "1_1", 	niveau2_p1 = "1", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Netzach"; 
-			else if (data1_lvl_2 == '2') 	nom_pouvoir_2_1 = getTranslationByKey('chitine'),	info1_lvl_2 = "1_2", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Kether";
-			else if (data1_lvl_2 == '3') 	nom_pouvoir_2_1 = getTranslationByKey('boite'),	info1_lvl_2 = "1_3", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '4') 	nom_pouvoir_2_1 = getTranslationByKey('morts'),	info1_lvl_2 = "1_4", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '5') 	nom_pouvoir_2_1 = getTranslationByKey('effroi'),	info1_lvl_2 = "1_5", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Geburah";
-			else if (data1_lvl_2 == '6') 	nom_pouvoir_2_1 = getTranslationByKey('decharne'),	info1_lvl_2 = "1_6", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '7') 	nom_pouvoir_2_1 = getTranslationByKey('main_couper'),	info1_lvl_2 = "1_7", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Tiferet";
-			else if (data1_lvl_2 == '8') 	nom_pouvoir_2_1 = getTranslationByKey('memoire'),	info1_lvl_2 = "1_8", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Yesod";
-			else if (data1_lvl_2 == '9') 	nom_pouvoir_2_1 = getTranslationByKey('performance'),	info1_lvl_2 = "1_9", 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '10') 	nom_pouvoir_2_1 = getTranslationByKey('poltergeist'),	info1_lvl_2 = "1_10", 	niveau2_p1 = "1", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Malkuth";
-			else if (data1_lvl_2 == '11') 	nom_pouvoir_2_1 = getTranslationByKey('hypno'),	info1_lvl_2 = "1_11", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Netzach";
-			else if (data1_lvl_2 == '12') 	nom_pouvoir_2_1 = getTranslationByKey('rouage'),	info1_lvl_2 = "1_12", 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 =  getTranslationByKey('yes'), 	sphere1_lvl_2 ="Binah";
+			if (data1_lvl_2 == '1') 		nom_pouvoir_2_1 = getTranslationByKey('chant_lancinant'),	info1_lvl_2 = getTranslationByKey('chant_lancinant_desc'), 	niveau2_p1 = "1", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Netzach"; 
+			else if (data1_lvl_2 == '2') 	nom_pouvoir_2_1 = getTranslationByKey('chitine'),	info1_lvl_2 = getTranslationByKey('chitine_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Kether";
+			else if (data1_lvl_2 == '3') 	nom_pouvoir_2_1 = getTranslationByKey('boite'),	info1_lvl_2 = getTranslationByKey('boite_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '4') 	nom_pouvoir_2_1 = getTranslationByKey('morts'),	info1_lvl_2 = getTranslationByKey('morts_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '5') 	nom_pouvoir_2_1 = getTranslationByKey('effroi'),	info1_lvl_2 = getTranslationByKey('effroi_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Geburah";
+			else if (data1_lvl_2 == '6') 	nom_pouvoir_2_1 = getTranslationByKey('decharne'),	info1_lvl_2 = getTranslationByKey('decharne_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Malkuth";
+			else if (data1_lvl_2 == '7') 	nom_pouvoir_2_1 = getTranslationByKey('main_couper'),	info1_lvl_2 = getTranslationByKey('main_couper_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Tiferet";
+			else if (data1_lvl_2 == '8') 	nom_pouvoir_2_1 = getTranslationByKey('memoire'),	info1_lvl_2 = getTranslationByKey('memoire_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Yesod";
+			else if (data1_lvl_2 == '9') 	nom_pouvoir_2_1 = getTranslationByKey('performance'),	info1_lvl_2 = getTranslationByKey('performance_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Netzach";
+			else if (data1_lvl_2 == '10') 	nom_pouvoir_2_1 = getTranslationByKey('poltergeist'),	info1_lvl_2 = getTranslationByKey('poltergeist_desc'), 	niveau2_p1 = "1", 	niveau2_c1 ="0", 	affichage2_c1 = getTranslationByKey('no'), 	sphere1_lvl_2 ="Malkuth";
+			else if (data1_lvl_2 == '11') 	nom_pouvoir_2_1 = getTranslationByKey('hypno'),	info1_lvl_2 = getTranslationByKey('hypno_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 = getTranslationByKey('yes'), 	sphere1_lvl_2 ="Netzach";
+			else if (data1_lvl_2 == '12') 	nom_pouvoir_2_1 = getTranslationByKey('rouage'),	info1_lvl_2 = getTranslationByKey('rouage_desc'), 	niveau2_p1 = "2", 	niveau2_c1 ="1", 	affichage2_c1 =  getTranslationByKey('yes'), 	sphere1_lvl_2 ="Binah";
 			else 							nom_pouvoir_2_1 = "",	info1_lvl_2 = "", 		niveau2_p1 = "", 	niveau2_c1 ="0", 	affichage2_c1 ="", 	sphere1_lvl_2 ="";
 						
 			setAttrs({
@@ -3309,84 +3317,84 @@ on("sheet:opened change:data2_lvl_2", function() {
 			let data2_lvl_2 = parseInt(values["data2_lvl_2"]) || 0;
 			
 			if (data2_lvl_2 == '1') 		nom_pouvoir_2_2 = getTranslationByKey('chant_lancinant'),	
-											info2_lvl_2 = "1_1",	
+											info2_lvl_2 = getTranslationByKey('chant_lancinant_desc'),	
 											niveau2_p2 = "1*",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'),	
 											sphere2_lvl_2 ="Netzach"; 
 											
 			else if (data2_lvl_2 == '2')	nom_pouvoir_2_2 = getTranslationByKey('chitine'),	
-											info2_lvl_2 = "1_2",	
+											info2_lvl_2 = getTranslationByKey('chitine_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="0",	
 											affichage2_c2 = getTranslationByKey('no'),	
 											sphere2_lvl_2 ="Kether";
 											
 			else if (data2_lvl_2 == '3')	nom_pouvoir_2_2 = getTranslationByKey('boite'),	
-											info2_lvl_2 = "1_3",	
+											info2_lvl_2 = getTranslationByKey('boite_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="0",	
 											affichage2_c2 = getTranslationByKey('no'),	
 											sphere2_lvl_2 ="Tiferet";
 											
 			else if (data2_lvl_2 == '4')	nom_pouvoir_2_2 = getTranslationByKey('morts'),
-											info2_lvl_2 = "1_4",	
+											info2_lvl_2 = getTranslationByKey('morts_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'), 	
 											sphere2_lvl_2 ="Tiferet";
 											
 			else if (data2_lvl_2 == '5')	nom_pouvoir_2_2 = getTranslationByKey('effroi'),
-											info2_lvl_2 = "1_5",	
+											info2_lvl_2 = getTranslationByKey('effroi_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'), 	
 											sphere2_lvl_2 ="Geburah";
 											
 			else if (data2_lvl_2 == '6')	nom_pouvoir_2_2 = getTranslationByKey('decharne'),	
-											info2_lvl_2 = "1_6",	
+											info2_lvl_2 = getTranslationByKey('decharne_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'), 	
 											sphere2_lvl_2 ="Malkuth";
 											
 			else if (data2_lvl_2 == '7')	nom_pouvoir_2_2 = getTranslationByKey('main_couper'),	
-											info2_lvl_2 = "1_7",	
+											info2_lvl_2 = getTranslationByKey('main_couper_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'), 	
 											sphere2_lvl_2 ="Tiferet";
 											
 			else if (data2_lvl_2 == '8')	nom_pouvoir_2_2 = getTranslationByKey('memoire'),
-											info2_lvl_2 = "1_8",	
+											info2_lvl_2 = getTranslationByKey('memoire_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="0",	
 											affichage2_c2 = getTranslationByKey('no'),
 											sphere2_lvl_2 ="Yesod";
 											
 			else if (data2_lvl_2 == '9')	nom_pouvoir_2_2 = getTranslationByKey('performance'),	
-											info2_lvl_2 = "1_9",	
+											info2_lvl_2 = getTranslationByKey('performance_desc'),	
 											niveau2_p2 = "2*",	
 											niveau2_c2 ="0",	
 											affichage2_c2 = getTranslationByKey('no'), 	
 											sphere2_lvl_2 ="Netzach";
 											
 			else if (data2_lvl_2 == '10')	nom_pouvoir_2_2 = getTranslationByKey('poltergeist'),	
-											info2_lvl_2 = "1_10",	
+											info2_lvl_2 = getTranslationByKey('poltergeist_desc'),	
 											niveau2_p2 = "1*",	
 											niveau2_c2 ="0",	
 											affichage2_c2 = getTranslationByKey('no'), 	
 											sphere2_lvl_2 ="Malkuth";
 											
 			else if (data2_lvl_2 == '11')	nom_pouvoir_2_2 = getTranslationByKey('hypno'),	
-											info2_lvl_2 = "1_11",	
+											info2_lvl_2 = getTranslationByKey('hypno_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'),	
 											sphere2_lvl_2 ="Netzach";
 											
 			else if (data2_lvl_2 == '12')	nom_pouvoir_2_2 = getTranslationByKey('rouage'),	
-											info2_lvl_2 = "1_12",	
+											info2_lvl_2 = getTranslationByKey('rouage_desc'),	
 											niveau2_p2 = "2",	
 											niveau2_c2 ="1",	
 											affichage2_c2 = getTranslationByKey('yes'), 	
@@ -3416,18 +3424,18 @@ on("sheet:opened change:data3_lvl_2", function() {
     getAttrs(["data3_lvl_2"], function(values) {
 			let data3_lvl_2 = parseInt(values["data3_lvl_2"]) || 0;
 			
-			if (data3_lvl_2 == '1') 		nom_pouvoir_2_3 = getTranslationByKey('chant_lancinant'),	info3_lvl_2 = "1_1", 	niveau2_p3 = "1*", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Netzach"; 
-			else if (data3_lvl_2 == '2') 	nom_pouvoir_2_3 = getTranslationByKey('chitine'),	info3_lvl_2 = "1_2", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Kether";
-			else if (data3_lvl_2 == '3') 	nom_pouvoir_2_3 = getTranslationByKey('boite'),		info3_lvl_2 = "1_3", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '4') 	nom_pouvoir_2_3 = getTranslationByKey('morts'),	info3_lvl_2 = "1_4", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '5') 	nom_pouvoir_2_3 = getTranslationByKey('effroi'),	info3_lvl_2 = "1_5", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Geburah";
-			else if (data3_lvl_2 == '6') 	nom_pouvoir_2_3 = getTranslationByKey('decharne'),	info3_lvl_2 = "1_6", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Malkuth";
-			else if (data3_lvl_2 == '7') 	nom_pouvoir_2_3 = getTranslationByKey('main_couper'),	info3_lvl_2 = "1_7", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Tiferet";
-			else if (data3_lvl_2 == '8') 	nom_pouvoir_2_3 = getTranslationByKey('memoire'),	info3_lvl_2 = "1_8", 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Yesod";
-			else if (data3_lvl_2 == '9') 	nom_pouvoir_2_3 = getTranslationByKey('performance'),	info3_lvl_2 = "1_9", 	niveau2_p3 = "2*", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Netzach";
-			else if (data3_lvl_2 == '10') 	nom_pouvoir_2_3 = getTranslationByKey('poltergeist'),	info3_lvl_2 = "1_10", 	niveau2_p3 = "1*", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Malkuth";
-			else if (data3_lvl_2 == '11') 	nom_pouvoir_2_3 = getTranslationByKey('hypno'),	info3_lvl_2 = "1_11", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Netzach";
-			else if (data3_lvl_2 == '12') 	nom_pouvoir_2_3 = getTranslationByKey('rouage'),	info3_lvl_2 = "1_12", 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Binah";
+			if (data3_lvl_2 == '1') 		nom_pouvoir_2_3 = getTranslationByKey('chant_lancinant'),	info3_lvl_2 = getTranslationByKey('chant_lancinant_desc'), 	niveau2_p3 = "1*", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Netzach"; 
+			else if (data3_lvl_2 == '2') 	nom_pouvoir_2_3 = getTranslationByKey('chitine'),	info3_lvl_2 = getTranslationByKey('chitine_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Kether";
+			else if (data3_lvl_2 == '3') 	nom_pouvoir_2_3 = getTranslationByKey('boite'),		info3_lvl_2 = getTranslationByKey('boite_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '4') 	nom_pouvoir_2_3 = getTranslationByKey('morts'),	info3_lvl_2 = getTranslationByKey('morts_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '5') 	nom_pouvoir_2_3 = getTranslationByKey('effroi'),	info3_lvl_2 = getTranslationByKey('effroi_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Geburah";
+			else if (data3_lvl_2 == '6') 	nom_pouvoir_2_3 = getTranslationByKey('decharne'),	info3_lvl_2 = getTranslationByKey('decharne_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Malkuth";
+			else if (data3_lvl_2 == '7') 	nom_pouvoir_2_3 = getTranslationByKey('main_couper'),	info3_lvl_2 = getTranslationByKey('main_couper_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Tiferet";
+			else if (data3_lvl_2 == '8') 	nom_pouvoir_2_3 = getTranslationByKey('memoire'),	info3_lvl_2 = getTranslationByKey('memoire_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Yesod";
+			else if (data3_lvl_2 == '9') 	nom_pouvoir_2_3 = getTranslationByKey('performance'),	info3_lvl_2 = getTranslationByKey('performance_desc'), 	niveau2_p3 = "2*", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Netzach";
+			else if (data3_lvl_2 == '10') 	nom_pouvoir_2_3 = getTranslationByKey('poltergeist'),	info3_lvl_2 = getTranslationByKey('poltergeist_desc'), 	niveau2_p3 = "1*", 	niveau2_c3 ="0",	affichage2_c3 = getTranslationByKey('no'), 	sphere3_lvl_2 ="Malkuth";
+			else if (data3_lvl_2 == '11') 	nom_pouvoir_2_3 = getTranslationByKey('hypno'),	info3_lvl_2 = getTranslationByKey('hypno_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Netzach";
+			else if (data3_lvl_2 == '12') 	nom_pouvoir_2_3 = getTranslationByKey('rouage'),	info3_lvl_2 = getTranslationByKey('rouage_desc'), 	niveau2_p3 = "2", 	niveau2_c3 ="1",	affichage2_c3 = getTranslationByKey('yes'), 	sphere3_lvl_2 ="Binah";
 			else 							nom_pouvoir_2_3 = "",	info3_lvl_2 = "", 		niveau2_p3 = "", 	niveau2_c3 ="0",	affichage2_c3 ="", 	sphere3_lvl_2 ="";
 						
 			setAttrs({
@@ -3449,18 +3457,18 @@ on("sheet:opened change:data1_lvl_3", function() {
     getAttrs(["data1_lvl_3"], function(values) {
 			let data1_lvl_3 = parseInt(values["data1_lvl_3"]) || 0;
 			
-			if (data1_lvl_3 == '1') 		nom_pouvoir_3_1 = getTranslationByKey('bouclier_ecto'),	info1_lvl_3 = "1_1", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Kether"; 
-			else if (data1_lvl_3 == '2') 	nom_pouvoir_3_1 = getTranslationByKey('coupe_deux'),	info1_lvl_3 = "1_2", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '3') 	nom_pouvoir_3_1 = getTranslationByKey('cri_banshee'),	info1_lvl_3 = "1_3", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Geburah";
-			else if (data1_lvl_3 == '4') 	nom_pouvoir_3_1 = getTranslationByKey('dans_pierre'),	info1_lvl_3 = "1_4", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '5') 	nom_pouvoir_3_1 = getTranslationByKey('evasion'),	info1_lvl_3 = "1_5", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Malkuth";
-			else if (data1_lvl_3 == '6') 	nom_pouvoir_3_1 = getTranslationByKey('force_invisible'),	info1_lvl_3 = "1_6", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Geburah";
-			else if (data1_lvl_3 == '7') 	nom_pouvoir_3_1 = getTranslationByKey('griffe_tenebre'),	info1_lvl_3 = "1_7", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '8') 	nom_pouvoir_3_1 = getTranslationByKey('intangibilite'),	info1_lvl_3 = "1_8", 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '9') 	nom_pouvoir_3_1 = getTranslationByKey('lecteur_vie'),	info1_lvl_3 = "1_9", 	niveau3_p1 = "1*", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Yesod";
-			else if (data1_lvl_3 == '10') 	nom_pouvoir_3_1 = getTranslationByKey('levitation'),	info1_lvl_3 = "1_10", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
-			else if (data1_lvl_3 == '11') 	nom_pouvoir_3_1 = getTranslationByKey('telepathie'),	info1_lvl_3 = "1_11", 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Chesed";
-			else if (data1_lvl_3 == '12') 	nom_pouvoir_3_1 = getTranslationByKey('ubiquite'),	info1_lvl_3 = "1_12", 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
+			if (data1_lvl_3 == '1') 		nom_pouvoir_3_1 = getTranslationByKey('bouclier_ecto'),	info1_lvl_3 = getTranslationByKey('bouclier_ecto_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Kether"; 
+			else if (data1_lvl_3 == '2') 	nom_pouvoir_3_1 = getTranslationByKey('coupe_deux'),	info1_lvl_3 = getTranslationByKey('coupe_deux_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '3') 	nom_pouvoir_3_1 = getTranslationByKey('cri_banshee'),	info1_lvl_3 = getTranslationByKey('cri_banshee_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Geburah";
+			else if (data1_lvl_3 == '4') 	nom_pouvoir_3_1 = getTranslationByKey('dans_pierre'),	info1_lvl_3 = getTranslationByKey('dans_pierre_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '5') 	nom_pouvoir_3_1 = getTranslationByKey('evasion'),	info1_lvl_3 = getTranslationByKey('evasion_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Malkuth";
+			else if (data1_lvl_3 == '6') 	nom_pouvoir_3_1 = getTranslationByKey('force_invisible'),	info1_lvl_3 = getTranslationByKey('force_invisible_desc'), 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Geburah";
+			else if (data1_lvl_3 == '7') 	nom_pouvoir_3_1 = getTranslationByKey('griffe_tenebre'),	info1_lvl_3 = getTranslationByKey('griffe_tenebre_desc'), 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '8') 	nom_pouvoir_3_1 = getTranslationByKey('intangibilite'),	info1_lvl_3 = getTranslationByKey('intangibilite_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '9') 	nom_pouvoir_3_1 = getTranslationByKey('lecteur_vie'),	info1_lvl_3 = getTranslationByKey('lecteur_vie_desc'), 	niveau3_p1 = "1*", 	niveau3_c1 ="1",	affichage3_c1 = getTranslationByKey('yes'), 	sphere1_lvl_3 ="Yesod";
+			else if (data1_lvl_3 == '10') 	nom_pouvoir_3_1 = getTranslationByKey('levitation'),	info1_lvl_3 = getTranslationByKey('levitation_desc'), 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
+			else if (data1_lvl_3 == '11') 	nom_pouvoir_3_1 = getTranslationByKey('telepathie'),	info1_lvl_3 = getTranslationByKey('telepathie_desc'), 	niveau3_p1 = "3*", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Chesed";
+			else if (data1_lvl_3 == '12') 	nom_pouvoir_3_1 = getTranslationByKey('ubiquite'),	info1_lvl_3 = getTranslationByKey('ubiquite_desc'), 	niveau3_p1 = "3", 	niveau3_c1 ="0",	affichage3_c1 = getTranslationByKey('no'), 	sphere1_lvl_3 ="Tiferet";
 			else 							nom_pouvoir_3_1 = "",	info1_lvl_3 = "", 		niveau3_p1 = "", 	niveau3_c1 ="0",	affichage3_c1 ="", 	sphere1_lvl_3 ="";
 						
 			setAttrs({
@@ -3480,18 +3488,18 @@ on("sheet:opened change:data2_lvl_3", function() {
     getAttrs(["data2_lvl_3"], function(values) {
 			let data2_lvl_3 = parseInt(values["data2_lvl_3"]) || 0;
 			
-			if (data2_lvl_3 == '1') 		nom_pouvoir_3_2 = getTranslationByKey('bouclier_ecto'),	info2_lvl_3 = "1_1", 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Kether"; 
-			else if (data2_lvl_3 == '2') 	nom_pouvoir_3_2 = getTranslationByKey('coupe_deux'),	info2_lvl_3 = "1_2", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '3') 	nom_pouvoir_3_2 = getTranslationByKey('cri_banshee'),	info2_lvl_3 = "1_3", 	niveau3_p2 = "3",	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Geburah";
-			else if (data2_lvl_3 == '4') 	nom_pouvoir_3_2 = getTranslationByKey('dans_pierre'),	info2_lvl_3 = "1_4", 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '5') 	nom_pouvoir_3_2 = getTranslationByKey('evasion'),	info2_lvl_3 = "1_5", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Malkuth";
-			else if (data2_lvl_3 == '6') 	nom_pouvoir_3_2 = getTranslationByKey('force_invisible'),	info2_lvl_3 = "1_6", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Geburah";
-			else if (data2_lvl_3 == '7')	nom_pouvoir_3_2 = getTranslationByKey('griffe_tenebre'),	info2_lvl_3 = "1_7", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '8') 	nom_pouvoir_3_2 = getTranslationByKey('intangibilite'),	info2_lvl_3 = "1_8", 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '9') 	nom_pouvoir_3_2 = getTranslationByKey('lecteur_vie'),	info2_lvl_3 = "1_9", 	niveau3_p2 = "1*", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Yesod";
-			else if (data2_lvl_3 == '10') 	nom_pouvoir_3_2 = getTranslationByKey('levitation'),	info2_lvl_3 = "1_10", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
-			else if (data2_lvl_3 == '11') 	nom_pouvoir_3_2 = getTranslationByKey('telepathie'),	info2_lvl_3 = "1_11", 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Chesed";
-			else if (data2_lvl_3 == '12') 	nom_pouvoir_3_2 = getTranslationByKey('ubiquite'),	info2_lvl_3 = "1_12", 	niveau3_p2 = "3",	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
+			if (data2_lvl_3 == '1') 		nom_pouvoir_3_2 = getTranslationByKey('bouclier_ecto'),	info2_lvl_3 = getTranslationByKey('bouclier_ecto_desc'), 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Kether"; 
+			else if (data2_lvl_3 == '2') 	nom_pouvoir_3_2 = getTranslationByKey('coupe_deux'),	info2_lvl_3 = getTranslationByKey('coupe_deux_desc'), 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '3') 	nom_pouvoir_3_2 = getTranslationByKey('cri_banshee'),	info2_lvl_3 = getTranslationByKey('cri_banshee_desc'), 	niveau3_p2 = "3",	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Geburah";
+			else if (data2_lvl_3 == '4') 	nom_pouvoir_3_2 = getTranslationByKey('dans_pierre'),	info2_lvl_3 = getTranslationByKey('dans_pierre_desc'), 	niveau3_p2 = "3", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '5') 	nom_pouvoir_3_2 = getTranslationByKey('evasion'),	info2_lvl_3 = getTranslationByKey('evasion_desc'), 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Malkuth";
+			else if (data2_lvl_3 == '6') 	nom_pouvoir_3_2 = getTranslationByKey('force_invisible'),	info2_lvl_3 = getTranslationByKey('force_invisible_desc'), 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Geburah";
+			else if (data2_lvl_3 == '7')	nom_pouvoir_3_2 = getTranslationByKey('griffe_tenebre'),	info2_lvl_3 = getTranslationByKey('griffe_tenebre_desc'), 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '8') 	nom_pouvoir_3_2 = getTranslationByKey('intangibilite'),	info2_lvl_3 = getTranslationByKey('intangibilite_desc'), 	niveau3_p2 = "3", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '9') 	nom_pouvoir_3_2 = getTranslationByKey('lecteur_vie'),	info2_lvl_3 = getTranslationByKey('lecteur_vie_desc'), 	niveau3_p2 = "1*", 	niveau3_c2 ="1",	affichage3_c2 = getTranslationByKey('yes'), 	sphere2_lvl_3 ="Yesod";
+			else if (data2_lvl_3 == '10') 	nom_pouvoir_3_2 = getTranslationByKey('levitation'),	info2_lvl_3 = getTranslationByKey('levitation_desc'), 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
+			else if (data2_lvl_3 == '11') 	nom_pouvoir_3_2 = getTranslationByKey('telepathie'),	info2_lvl_3 = getTranslationByKey('telepathie_desc'), 	niveau3_p2 = "3*", 	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Chesed";
+			else if (data2_lvl_3 == '12') 	nom_pouvoir_3_2 = getTranslationByKey('ubiquite'),	info2_lvl_3 = getTranslationByKey('ubiquite_desc'), 	niveau3_p2 = "3",	niveau3_c2 ="0",	affichage3_c2 = getTranslationByKey('no'), 	sphere2_lvl_3 ="Tiferet";
 			else 							nom_pouvoir_3_2 = "",	info2_lvl_3 = "", 		niveau3_p2 = "", 	niveau3_c2 ="0",	affichage3_c2 ="", 	sphere2_lvl_3 ="";
 						
 			setAttrs({
@@ -3511,18 +3519,18 @@ on("sheet:opened change:data3_lvl_3", function() {
     getAttrs(["data3_lvl_3"], function(values) {
 			let data3_lvl_3 = parseInt(values["data3_lvl_3"]) || 0;
 			
-			if (data3_lvl_3 == '1') 		nom_pouvoir_3_3 = getTranslationByKey('bouclier_ecto'),	info3_lvl_3 = "1_1", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Kether"; 
-			else if (data3_lvl_3 == '2') 	nom_pouvoir_3_3 = getTranslationByKey('coupe_deux'),	info3_lvl_3 = "1_2", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '3') 	nom_pouvoir_3_3 = getTranslationByKey('cri_banshee'),	info3_lvl_3 = "1_3", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Geburah";
-			else if (data3_lvl_3 == '4') 	nom_pouvoir_3_3 = getTranslationByKey('dans_pierre'),	info3_lvl_3 = "1_4", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '5') 	nom_pouvoir_3_3 = getTranslationByKey('evasion'),	info3_lvl_3 = "1_5", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Malkuth";
-			else if (data3_lvl_3 == '6') 	nom_pouvoir_3_3 = getTranslationByKey('force_invisible'),	info3_lvl_3 = "1_6", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Geburah";
-			else if (data3_lvl_3 == '7') 	nom_pouvoir_3_3 = getTranslationByKey('griffe_tenebre'),	info3_lvl_3 = "1_7", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '8') 	nom_pouvoir_3_3 = getTranslationByKey('intangibilite'),	info3_lvl_3 = "1_8", 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '9') 	nom_pouvoir_3_3 = getTranslationByKey('lecteur_vie'),	info3_lvl_3 = "1_9", 	niveau3_p3 = "1*", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Yesod";
-			else if (data3_lvl_3 == '10') 	nom_pouvoir_3_3 = getTranslationByKey('levitation'),	info3_lvl_3 = "1_10", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
-			else if (data3_lvl_3 == '11') 	nom_pouvoir_3_3 = getTranslationByKey('telepathie'),	info3_lvl_3 = "1_11", 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Chesed";
-			else if (data3_lvl_3 == '12') 	nom_pouvoir_3_3 = getTranslationByKey('ubiquite'),	info3_lvl_3 = "1_12", 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
+			if (data3_lvl_3 == '1') 		nom_pouvoir_3_3 = getTranslationByKey('bouclier_ecto'),	info3_lvl_3 = getTranslationByKey('bouclier_ecto_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Kether"; 
+			else if (data3_lvl_3 == '2') 	nom_pouvoir_3_3 = getTranslationByKey('coupe_deux'),	info3_lvl_3 = getTranslationByKey('coupe_deux_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '3') 	nom_pouvoir_3_3 = getTranslationByKey('cri_banshee'),	info3_lvl_3 = getTranslationByKey('cri_banshee_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Geburah";
+			else if (data3_lvl_3 == '4') 	nom_pouvoir_3_3 = getTranslationByKey('dans_pierre'),	info3_lvl_3 = getTranslationByKey('dans_pierre_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '5') 	nom_pouvoir_3_3 = getTranslationByKey('evasion'),	info3_lvl_3 = getTranslationByKey('evasion_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Malkuth";
+			else if (data3_lvl_3 == '6') 	nom_pouvoir_3_3 = getTranslationByKey('force_invisible'),	info3_lvl_3 = getTranslationByKey('force_invisible_desc'), 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Geburah";
+			else if (data3_lvl_3 == '7') 	nom_pouvoir_3_3 = getTranslationByKey('griffe_tenebre'),	info3_lvl_3 = getTranslationByKey('griffe_tenebre_desc'), 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '8') 	nom_pouvoir_3_3 = getTranslationByKey('intangibilite'),	info3_lvl_3 = getTranslationByKey('intangibilite_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '9') 	nom_pouvoir_3_3 = getTranslationByKey('lecteur_vie'),	info3_lvl_3 = getTranslationByKey('lecteur_vie_desc'), 	niveau3_p3 = "1*", 	niveau3_c3 ="1",	affichage3_c3 = getTranslationByKey('yes'), 	sphere3_lvl_3 ="Yesod";
+			else if (data3_lvl_3 == '10') 	nom_pouvoir_3_3 = getTranslationByKey('levitation'),	info3_lvl_3 = getTranslationByKey('levitation_desc'), 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
+			else if (data3_lvl_3 == '11') 	nom_pouvoir_3_3 = getTranslationByKey('telepathie'),	info3_lvl_3 = getTranslationByKey('telepathie_desc'), 	niveau3_p3 = "3*", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Chesed";
+			else if (data3_lvl_3 == '12') 	nom_pouvoir_3_3 = getTranslationByKey('ubiquite'),	info3_lvl_3 = getTranslationByKey('ubiquite_desc'), 	niveau3_p3 = "3", 	niveau3_c3 ="0",	affichage3_c3 = getTranslationByKey('no'), 	sphere3_lvl_3 ="Tiferet";
 			else 							nom_pouvoir_3_3 = "",	info3_lvl_3 = "", 		niveau3_p3 = "", 	niveau3_c3 ="0",	affichage3_c3 ="", 	sphere3_lvl_3 ="";
 						
 			setAttrs({
