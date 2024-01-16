@@ -4426,7 +4426,7 @@ input[type="radio"] {
 
 .wrapper_dice_general_data{  
 	display: grid;
-    grid-template-columns: 400px 5px 400px;
+    grid-template-columns: 410px 5px 410px;
 	grid-template-rows: 20px;
     margin-top: 0px;
     margin-left: 0px;
@@ -4434,7 +4434,7 @@ input[type="radio"] {
 
 .wrapper_dice_agir_data{  
 	display: grid;
-    grid-template-columns: 400px 5px 400px;
+    grid-template-columns: 410px 5px 410px;
 	grid-template-rows: 20px;
     margin-top: 0px;
     margin-left: 0px;
@@ -4442,7 +4442,7 @@ input[type="radio"] {
 
 .wrapper_dice_combattre_data{  
 	display: grid;
-    grid-template-columns: 400px 5px 400px;
+    grid-template-columns: 410px 5px 410px;
 	grid-template-rows: 20px;
     margin-top: 0px;
     margin-left: 0px;
@@ -4450,7 +4450,7 @@ input[type="radio"] {
 
 .wrapper_dice_type{  
 	display: grid;
-    grid-template-columns: 140px 5px 238px;
+    grid-template-columns: 150px 5px 238px;
     grid-template-rows: 30px;
     margin-top: 0px;
     margin-left: 0px;
@@ -6539,6 +6539,13 @@ span.info {
 	cursor: help;
 }
 
+span.opposition {    
+	font-family: 'Pictos';
+	color: #772d349c;
+	margin-left: 3px;
+	cursor: help;
+}
+
 
 /* Bouton choix intro */
 
@@ -6809,8 +6816,9 @@ span.medium_dice {
 
 
 .sheet-rolltemplate-cabinet-pouvoir .sheet-content > div {
-	font-weight: bold;
+	/* font-weight: bold; */
 }
+
 
 .sheet-rolltemplate-cabinet-classic .sheet-content .sheet-key,
 .sheet-rolltemplate-cabinet-classic-qualite .sheet-content .sheet-key,
@@ -6862,6 +6870,20 @@ span.medium_dice {
     text-align: center;
     padding-top: 12px !important;
     padding-bottom: 9px !important;
+}
+
+.sheet-rolltemplate-cabinet-pouvoir .sheet-info {  grid-column: span 2;
+	text-align: justify;
+	background-color: #ff00001f !important;
+	background-image: url("https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/official_ressource/offi_button_background_result.png") !important;
+	background-size: cover !important;
+	color: #ffffffb5 !important;
+	font-size: 13px;
+	margin-top: 5px;
+	padding-top: 15px !important;
+	padding-bottom: 5px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
 }
 
 .sheet-rolltemplate-cabinet-prouesse .sheet-footer,
