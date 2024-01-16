@@ -20,8 +20,8 @@ font-family: 'Great Vibes', cursive;
 
 .charsheet {
     font-family: 'Libre Bodoni', serif;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
-    background-size: contain;
+    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: contain; */
     color: var(--blue_cabinet);
 	width: 850px;
     --blue_cabinet: #435861;
@@ -48,6 +48,8 @@ font-family: 'Great Vibes', cursive;
 	--defaut_violet: #b01ee8;
 	--border_defaut_color1: #a8595c;
 	--margin_dice: 2px;
+    margin-left: -10px;
+    border-radius: 5px;
 }
 
 .charsheet p{
@@ -68,11 +70,20 @@ font-family: 'Great Vibes', cursive;
 .dice,
 .esprit_dice,
 .intro {
-	width:810px;
+    width: 810px;
     border: 1px solid var(--blue_cabinet);
-	padding-top: 15px;
-	padding-bottom: 0px;
-	padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 6px #00000091;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: contain;
+}
+
+.esprit_dice {	
+	
 	padding-left: 10px;
 }
 
@@ -117,6 +128,8 @@ font-family: 'Great Vibes', cursive;
     border-width: 1px;
     border-color: #888888;
     font-size: 18px;
+    border-radius: 15px 15px 3px 3px;
+    box-shadow: 5px 5px 9px 0px #000000a8;
 }
 
 div.arbre select {  
@@ -258,9 +271,12 @@ input[type=radio].onglespritdice + span  {
     border-style: solid;
     border-width: 1px;
     border-color: #888888;
-    font-size: 18px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
 	color: var(--blue_cabinet_data);
+	font-family: 'EB Garamond';
+    font-size: 18px;
+    border-radius: 15px 15px 3px 3px;
+    box-shadow: 5px 5px 9px 0px #000000a8;
 }
 
 input[type=radio].onglhotedice + span,
@@ -270,6 +286,10 @@ input[type=radio].onglespritdice + span  {
     color: transparent;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_unchecked.png);
     background-position: bottom 72px right 85px;
+	font-family: 'EB Garamond';
+    font-size: 18px;
+    border-radius: 15px 15px 3px 3px;
+    box-shadow: 5px 5px 9px 0px #000000a8;
 }
 
 input[type=radio].onglcabinet:checked + span,
@@ -282,14 +302,16 @@ input[type=radio].onglhotedice:checked + span,
 input[type=radio].onglespritdice:checked + span {
     color: black;
     border-color: var(--blue_cabinet);
-    font-family: 'EB Garamond';
-    font-size: 17px;
     border-style: solid;
     border-width: 1px;
     width: 110px;
     height: 40px;
     color: #ffffffe8;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_background.png);
+	font-family: 'EB Garamond';
+    font-size: 18px;
+    border-radius: 15px 15px 3px 3px;
+    box-shadow: 5px 5px 9px 0px #000000a8;
 }
 
 input[type=radio].onglhotedice:checked + span,
@@ -400,13 +422,15 @@ div.perisprit_data input[type="checkbox"]:focus {
 
 input[type="checkbox"].sheet-general-switch:focus,
 input[type="checkbox"].sheet-agir-switch:focus,
-input[type="checkbox"].sheet-combattre-switch:focus{
+input[type="checkbox"].sheet-combattre-switch:focus,
+input[type="checkbox"].sheet-pouvoir-switch:focus{
   outline: none;
 }
 
 input[type="checkbox"].sheet-general-switch ,
 input[type="checkbox"].sheet-agir-switch,
-input[type="checkbox"].sheet-combattre-switch{   
+input[type="checkbox"].sheet-combattre-switch,
+input[type="checkbox"].sheet-pouvoir-switch{   
 	display: inline-block;
 	opacity: 0;
 	width: 65px;
@@ -419,7 +443,8 @@ input[type="checkbox"].sheet-combattre-switch{
 
 input[type="checkbox"].sheet-general-switch:hover,
 input[type="checkbox"].sheet-agir-switch:hover,
-input[type="checkbox"].sheet-combattre-switch:hover{
+input[type="checkbox"].sheet-combattre-switch:hover,
+input[type="checkbox"].sheet-pouvoir-switch:hover{
     color: black;
     text-decoration: underline;
 }
@@ -449,8 +474,8 @@ input[type="checkbox"].sheet-combattre-switch:hover{
     transition: .4s;
     width: 25px;
     height: 8px;
-    margin-top: 164px;
-    margin-left: 821px;
+    margin-top: 180px;
+    margin-left: 827px;
 }
 
 .slider:before {
@@ -1363,6 +1388,7 @@ input[type="radio"] {
 	display: grid;
     grid-template-columns: 140px 10px 140px 10px 140px 30px 100px 10px 100px 100px 20px 20px;
 	grid-auto-rows: 30px;
+    margin-top: 15px;
 }
 
 
@@ -1567,6 +1593,7 @@ input[type="radio"] {
 	display: grid;
     grid-template-columns: 	100px 40px 10px 100px 40px 10px 100px 40px 30px 100px 10px 50px 150px 30px 5px 20px;
 	grid-auto-rows: 30px;
+    margin-top: 15px;
 }
 
 .description {
@@ -1822,6 +1849,7 @@ input[type="radio"] {
     display: grid;
     grid-template-columns: 190px 390px 210px;
     grid-auto-rows: 30px;
+    margin-top: 15px;
 }
 
 .qualite_arbre {
@@ -1875,7 +1903,8 @@ input[type="radio"] {
 .wrapper_esprit{  
 	display: grid;
     grid-template-columns: 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px 20px;
-	grid-auto-rows: 30px;
+	grid-auto-rows: 30px;	
+    margin-top: 15px;
 }
 
 .profil {
@@ -3538,28 +3567,27 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
+.block_controle {
+    grid-column: 1/4;
+    grid-row: 25/35;
+    margin-top: 75px;
+    margin-left: 75px;
+    margin-right: 35px;
+    border: 1px solid var(--blue_cabinet);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: cover;
+    box-shadow: 0px 0px 13px 3px #00000075;
+	border-radius: 5px;
+	
+}
 .controle_defaut_titre {
-	grid-column: 1/4;
-	grid-row: 26/31;
-	margin-top: 75px;
-	margin-left: 75px;
-	margin-right: 35px;
-	border: 1px solid var(--blue_cabinet);
-	border-bottom-style: none;
 	padding-top: 10px;
 	padding-left: 20px;
 	padding-right: 10px;
 }
 
 .cadre_controle_defaut {  
-	grid-column: 1/4;
-	grid-row: 28/36;
-	margin-top: 75px;
-	margin-left: 75px;
-	margin-right: 35px;
-	border: 1px solid var(--blue_cabinet);
-	border-top-style: none;
-	border-bottom-style: none;
+	margin-top: 10px;
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -4371,7 +4399,8 @@ input[type="radio"] {
 
 .charsheet .sheet-general-switch:checked ~ .wrapper_dice_general_data,
 .charsheet .sheet-agir-switch:checked ~ .wrapper_dice_agir_data,
-.charsheet .sheet-combattre-switch:checked ~ .wrapper_dice_combattre_data{
+.charsheet .sheet-combattre-switch:checked ~ .wrapper_dice_combattre_data,
+.charsheet .sheet-pouvoir-switch:checked ~ .wrapper_dice_pouvoir_data{
   display: none;
 }
 
@@ -4448,6 +4477,14 @@ input[type="radio"] {
     margin-left: 0px;
 }
 
+.wrapper_dice_pouvoir_data{  
+	display: grid;
+    grid-template-columns: 160px 5px 218px 45px 160px 5px 218px;
+	grid-template-rows: 20px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
 .wrapper_dice_type{  
 	display: grid;
     grid-template-columns: 150px 5px 238px;
@@ -4492,6 +4529,16 @@ input[type="radio"] {
 }
 
 .combattre_dice  {
+	grid-column: 1/5;
+	font-size: 16px;
+	display: flex;
+	white-space: nowrap;
+	align-items: flex-end;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.pouvoir_dice  {
 	grid-column: 1/5;
 	font-size: 16px;
 	display: flex;
@@ -4665,6 +4712,21 @@ input[type="radio"] {
     margin-left: 5px;
     margin-top: 10px;
 	padding-top: 5px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px #0000004d;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
+    background-size: cover;
+}
+
+.section_pouvoir {
+    grid-column: 1/9;
+    grid-row: 1/4;
+    border: 1px solid var(--blue_cabinet);
+    padding-left: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
     padding-bottom: 10px;
     box-shadow: 2px 2px 5px 0px #0000004d;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
