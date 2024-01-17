@@ -50,6 +50,7 @@ font-family: 'Great Vibes', cursive;
 	--margin_dice: 2px;
     margin-left: -10px;
     border-radius: 5px;
+	padding-top: 0px !important;
 }
 
 .charsheet p{
@@ -80,6 +81,7 @@ font-family: 'Great Vibes', cursive;
     box-shadow: 0px 5px 10px 6px #00000091;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
     background-size: contain;
+	position: relative;
 }
 
 .esprit_dice {	
@@ -248,6 +250,7 @@ input[type=radio].onglespritdice {
     opacity: 0;
     width: 110px;
     height: 40px;
+	cursor: pointer;
 }
 
 input[type=radio].onglcabinet + span,
@@ -276,7 +279,7 @@ input[type=radio].onglespritdice + span  {
 	font-family: 'EB Garamond';
     font-size: 18px;
     border-radius: 15px 15px 3px 3px;
-    box-shadow: 5px 5px 9px 0px #000000a8;
+	box-shadow: -5px -2px 9px 0px #000000a8;
 }
 
 input[type=radio].onglhotedice + span,
@@ -289,7 +292,7 @@ input[type=radio].onglespritdice + span  {
 	font-family: 'EB Garamond';
     font-size: 18px;
     border-radius: 15px 15px 3px 3px;
-    box-shadow: 5px 5px 9px 0px #000000a8;
+	box-shadow: -5px -2px 9px 0px #000000a8;
 }
 
 input[type=radio].onglcabinet:checked + span,
@@ -311,7 +314,7 @@ input[type=radio].onglespritdice:checked + span {
 	font-family: 'EB Garamond';
     font-size: 18px;
     border-radius: 15px 15px 3px 3px;
-    box-shadow: 5px 5px 9px 0px #000000a8;
+	box-shadow: -3px 0px 9px 0px #000;
 }
 
 input[type=radio].onglhotedice:checked + span,
@@ -462,20 +465,20 @@ input[type="checkbox"].sheet-pouvoir-switch:hover{
   display: none;
 }
 
-.slider {   
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ffffffdb;
-    -webkit-transition: .4s;
-    transition: .4s;
-    width: 25px;
-    height: 8px;
-    margin-top: 180px;
-    margin-left: 827px;
+.slider {     
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ffffffdb;
+	-webkit-transition: .4s;
+	transition: .4s;
+	width: 25px;
+	height: 8px;
+	margin-top: 43px;
+	margin-left: 806px;
 }
 
 .slider:before {
@@ -572,23 +575,23 @@ input.sheet-prouesse-switch:checked ~  div.titre_trait{
 	display: none;
 }
 
-.slider_prouesse { 
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #61504500;
-    -webkit-transition: .2s;
-    transition: .2s;
-    width: 30px;
-    height: 17px;
-    padding: 2px;
-    margin-top: 158px;
-    margin-left: 56px;
-    border: 1px solid var(--blue_cabinet);
-    box-shadow: 3px 2px 5px #435861ba;
+.slider_prouesse {   
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #61504500;
+	-webkit-transition: .2s;
+	transition: .2s;
+	width: 30px;
+	height: 17px;
+	padding: 2px;
+	margin-top: 22px;
+	margin-left: 38px;
+	border: 1px solid var(--blue_cabinet);
+	box-shadow: 3px 2px 5px #435861ba;
 }
 
 .slider_prouesse:before {
@@ -2308,6 +2311,10 @@ input[type="radio"] {
 }
 
 .aspect_bonus {
+	grid-column: 2;
+}
+
+.aspect_bonus_pnj {
 	grid-column: 2;
 }
 
@@ -4425,7 +4432,8 @@ input[type="radio"] {
 .switch_dice_slider_data {
 	grid-column: 2;
 	grid-row: 1;
-    padding-top: 12px;
+    padding-top: 9px;
+	margin-left: 10px;
 }
 
 .switch_dice_initiative {
@@ -4479,7 +4487,7 @@ input[type="radio"] {
 
 .wrapper_dice_pouvoir_data{  
 	display: grid;
-    grid-template-columns: 160px 5px 218px 45px 160px 5px 218px;
+    grid-template-columns: 7px 160px 5px 218px 30px 160px 5px 218px;
 	grid-template-rows: 20px;
     margin-top: 0px;
     margin-left: 0px;
@@ -4517,6 +4525,8 @@ input[type="radio"] {
 	white-space: nowrap;	
 	margin-top: 30px;
 	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 3px;
 }
 
 .action_dice {
@@ -4526,6 +4536,8 @@ input[type="radio"] {
 	white-space: nowrap;	
 	margin-top: 15px;
 	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 3px;
 }
 
 .combattre_dice  {
@@ -4536,6 +4548,8 @@ input[type="radio"] {
 	align-items: flex-end;
 	margin-top: 15px;
 	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 3px;
 }
 
 .pouvoir_dice  {
@@ -4546,6 +4560,8 @@ input[type="radio"] {
 	align-items: flex-end;
 	margin-top: 15px;
 	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 3px;
 }
 
 .dice_decor_bas {
@@ -4719,14 +4735,14 @@ input[type="radio"] {
 }
 
 .section_pouvoir {
-    grid-column: 1/9;
+    grid-column: 1/10;
     grid-row: 1/4;
     border: 1px solid var(--blue_cabinet);
     padding-left: 10px;
     margin-left: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: 2px 2px 5px 0px #0000004d;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_background.png);
@@ -5432,6 +5448,86 @@ input[type="radio"] {
     grid-column: 3;
 }
 
+/* Pouvoirs */
+.info_pouvoir_dice {  
+	grid-column: 1;
+	font-size: 14px;
+	white-space: nowrap;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.affinite_animal {
+	grid-column: 2;
+	margin-bottom: var(--margin_dice);
+}
+
+.bouclier_ectoplasme {
+	grid-column: 2;
+	margin-bottom: var(--margin_dice);
+}
+
+.chant_lancinant {
+	grid-column: 2;
+	margin-bottom: var(--margin_dice);
+}
+
+.cri_banshee {
+	grid-column: 2;
+	margin-bottom: var(--margin_dice);
+}
+
+.dans_la_boite {
+	grid-column: 6;
+	margin-bottom: var(--margin_dice);
+}
+
+.effroi {
+	grid-column: 6;
+	margin-bottom: var(--margin_dice);
+}
+
+.lecture_de_vie {
+	grid-column: 6;
+	margin-bottom: var(--margin_dice);
+}
+
+.regard_hypnotique {
+	grid-column: 6;
+	margin-bottom: var(--margin_dice);
+}
+
+.affinite_animal_data {
+	grid-column: 4;
+}
+
+.bouclier_ectoplasme_data {
+	grid-column: 4;
+}
+
+.chant_lancinant_data {
+	grid-column: 4;
+}
+
+.cri_banshee_data {
+	grid-column: 4;
+}
+
+.dans_la_boite_data {
+	grid-column: 8;
+}
+
+.effroi_data {
+	grid-column: 8;
+}
+
+.lecture_de_vie_data {
+	grid-column: 8;
+}
+
+.regard_hypnotique_data {
+	grid-column: 8;
+}
 
   /* Style Cabinet / Corps /  */
 
@@ -5638,7 +5734,13 @@ input[type=number] {
 
 .pnj_attributs_col_1 p,
 .pnj_attributs_col_2 p,
-.pnj_attributs_col_3 p,
+.pnj_attributs_col_3 p{
+	border-radius: 0px;
+	font-family: 'Old Standard TT', serif;
+	font-size: 16px;
+	margin-top: 6px;
+}
+
 .pnj_acquis_data p,
 .pnj_pouvoir_data p{
 	border-radius: 0px;
@@ -6052,6 +6154,24 @@ span.aspect_nom_plus {
     box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
 }
 
+.aspect_bonus_pnj input.bonus,
+.aspect_bonus_pnj input.bonus[type="number"] {
+    border-radius: 30px;
+    background-color: transparent;
+    font-family: 'Dancing Script';
+    font-size: 19px;
+    color: var(--blue_cabinet);
+    outline: none;
+    border: 2px solid;
+    border-style: double;
+    width: 29px !important;
+    height: 29px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: -13px;
+    box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
+}
+
 .acquis_1_data p,
 .acquis_2_data p,
 .acquis_3_data p ,
@@ -6228,7 +6348,7 @@ div.niveau3_p {
 	margin-top: 5px;
 	padding-bottom: 0px;
     width: 25px;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
 }
 
