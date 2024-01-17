@@ -1,13 +1,14 @@
 <!-- QUESTIONS
 
-Malus corps sur quoi? 
+Malus corps sur quelles actions, toutes (mentales et physiques) ou seulement sur les physiques? 
+
+Malus corps s'appliquent-ils sur les lancés de pouvoir ?
 
 
 BESOIN
 
 Arbre de vie image
-Jetons image
-Puces images
+Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (optionnel)
 
 -->
 
@@ -2491,9 +2492,92 @@ Puces images
 		<input type="checkbox" name="attr_block_pouvoir_switch" class="sheet-pouvoir-switch" value="1" style="display: none;">
 		<div class="wrapper_dice_pouvoir_data">
 			<div class="section_pouvoir">
-			peupler le reste avec un wrapper de 160px 5px 218px 45px 160px 5px 218px
-			<br>
-			creer les div pour type chaque jet en utilisant le wrapper specifique + boutton de roll
+				<div class="wrapper_dice_pouvoir_data" style="margin-bottom: 20px;">
+					<div class="info_pouvoir_dice">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<span class="classic_title" data-i18n="dice_pouvoir_info">Certains pouvoirs nécessitent un jet de dés, ces derniers sont disponible ici.</span>
+						<span class="prouesse_title" data-i18n="dice_pouvoir_info">Certains pouvoirs nécessitent de faire un jet de dés, ces derniers sont disponible ici.</span>
+					</div>	
+				</div>
+				<div class="wrapper_dice_pouvoir_data">
+					<div class="affinite_animal">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-affinite"><span data-i18n="affinite">Affinité animale</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-affinite" value="&{template:cabinet-prouesse} {{title=^{affinite}}} {{subtitle=^{difficulte_moyenne}}} {{^{charisma_roll}=@{D_charisme_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="affinite">Affinité animale</span></button>
+					</div>
+					<div class="affinite_animal_data">
+						<span class="dice_texte"><span data-i18n="charisma_roll">Charisme</span> + <span data-i18n="neshama">NESHAMA</span></span>
+					</div>
+					
+					<div class="dans_la_boite">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-boite"><span data-i18n="boite">Dans la boîte</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-boite" value="&{template:cabinet-prouesse} {{title=^{boite}}} {{subtitle=^{difficulte_ardue}}} {{^{serenity_roll}=@{D_serenite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{robustness_roll}=[[@{Médium|robustesse_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="boite">Dans la boîte</span></button>
+					</div>
+					<div class="dans_la_boite_data">
+						<span class="dice_texte"><span data-i18n="serenity_roll">Sérénité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="robustness">ROBUSTESSE</span>)</span>
+					</div>
+					
+					<div class="bouclier_ectoplasme">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-bouclier"><span data-i18n="bouclier_ecto">Bouclier d'ectoplasme</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-bouclier" value="&{template:cabinet-prouesse} {{title=^{bouclier_ecto}}} {{subtitle=^{vs_rouah}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="bouclier_ecto">Bouclier d'ectoplasme</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
+					</div>
+					<div class="bouclier_ectoplasme_data">
+						<span class="dice_texte"><span data-i18n="courage_roll">Courage</span> + <span data-i18n="rouah">ROUA'H</span></span>
+					</div>
+					
+					<div class="effroi">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-effroi"><span data-i18n="effroi">Effroi</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-effroi" value="&{template:cabinet-prouesse} {{title=^{effroi}}} {{subtitle=^{vs_neshama}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="effroi">Effroi</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
+					</div>
+					<div class="effroi_data">
+						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="rouah">ROUA'H</span></span>
+					</div>
+					
+					<div class="chant_lancinant">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-chant"><span data-i18n="chant_lancinant">Chant lancinant</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-chant" value="&{template:cabinet-prouesse} {{title=^{chant_lancinant}}} {{subtitle=^{vs_rouah}}} {{^{sensitivity_roll}=@{D_sensibilite_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="chant_lancinant">Chant lancinant</span></button>
+						<span class="opposition" title="Jet en opposition contre ROUA'H" data-i18n-title="oppo_ROUAH">Y</span>
+					</div>
+					<div class="chant_lancinant_data">
+						<span class="dice_texte"><span data-i18n="sensitivity_roll">Sensibilité</span> + <span data-i18n="rouah">ROUA'H</span></span>
+					</div>
+					
+					<div class="lecture_de_vie">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-lecture"><span data-i18n="lecteur_vie">Lecture de vie</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-lecture" value="&{template:cabinet-prouesse} {{title=^{lecteur_vie}}} {{subtitle=^{vs_neshama}}} {{^{attention_roll}=@{D_attention_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="lecteur_vie">Lecture de vie</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
+					</div>
+					<div class="lecture_de_vie_data">
+						<span class="dice_texte"><span data-i18n="attention_roll">Attention</span> + <span data-i18n="rouah">ROUA'H</span></span>
+					</div>
+					
+					<div class="cri_banshee">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-banshee"><span data-i18n="cri_banshee">Cri de la Banshee</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-banshee" value="&{template:cabinet-prouesse} {{title=^{cri_banshee}}} {{subtitle=^{vs_nefesh_robustness}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}} {{^{attribute_power_roll}=[[@{Médium|puissance_bonus}]]}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="cri_banshee">Cri de la Banshee</span></button>
+						<span class="opposition" title="Jet en opposition contre NEFESH (+ROBUSTESSE)" data-i18n-title="oppo_NEFESH_robustesse">Y</span>
+					</div>
+					<div class="cri_banshee_data">
+						<span class="dice_texte"><span data-i18n="authority_roll">Autorité</span> + <span data-i18n="nefesh">NEFESH</span> (+ <span data-i18n="attribute_power">PUISSANCE</span>)</span>
+					</div>
+					
+					<div class="regard_hypnotique">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<button class="classic_roll" type="action" name="act_roll-spell-regard"><span data-i18n="hypno">Regard hypnotique</span></button>
+						<button class="prouesse_roll" type="roll" name="roll-prouesse-spell-regard" value="&{template:cabinet-prouesse} {{title=^{hypno}}} {{subtitle=^{vs_neshama}}} {{^{charisma_roll}=@{D_charisme_roll}}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{divers}=[[?{Bonus|0}]]}}"><span data-i18n="hypno">Regard hypnotique</span></button>
+						<span class="opposition" title="Jet en opposition contre NESHAMA" data-i18n-title="oppo_NESHAMA">Y</span>
+					</div>
+					<div class="regard_hypnotique_data">
+						<span class="dice_texte"><span data-i18n="charisma_roll">Charisme</span> + <span data-i18n="rouah">ROUA'H</span></span>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -2540,20 +2624,20 @@ Puces images
 					<div class="aspect_nom">
 						<span class="aspect_nom">NASHAMA</span><span class="aspect_nom_alt" data-i18n="reason">(RAISON)</span>
 					</div>
-					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nashama_bonus" min="1" max="9">
+					<div class="aspect_bonus_pnj">
+						<input class="bonus" type="number" name="attr_aspect_nashama_bonus" min="1" max="9">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">ROUA'H</span><span class="aspect_nom_alt" data-i18n="intuition">(INTUITION)</span>
 					</div>
-					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_rouah_bonus" min="1" max="9">
+					<div class="aspect_bonus_pnj">
+						<input class="bonus" type="number" name="attr_aspect_rouah_bonus" min="1" max="9">
 					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
 					</div>
-					<div class="aspect_bonus">
-						<span class="aspect_nom_plus">+</span><input class="bonus" type="number" name="attr_aspect_nefesh_bonus" min="1" max="9">
+					<div class="aspect_bonus_pnj">
+						<input class="bonus" type="number" name="attr_aspect_nefesh_bonus" min="1" max="9">
 					</div>
 				</div>
 			</div>
@@ -2754,19 +2838,19 @@ Puces images
 			<div class="pnj_attributs_data">
 				<div class="wrapper_pnj_attributs">
 					<div class="pnj_attributs_col_1">
-						<p><input class="data" type="text" name="attr_pnj_attributs_1"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_2"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_3"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="1" max="9"></p>
+						<p><span data-i18n="acuity">ACUITÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="1" max="9"></p>
+						<p><span data-i18n="agility">AGILITÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="1" max="9"></p>
+						<p><span data-i18n="anonymity">ANONYMAT</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="1" max="9"></p>
 					</div>
 					<div class="pnj_attributs_col_2">
-						<p><input class="data" type="text" name="attr_pnj_attributs_4"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_5"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_6"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="1" max="9"></p>
+						<p><span data-i18n="beauty">BEAUTÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="1" max="9"></p>
+						<p><span data-i18n="strangeness">ÉTRANGETÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="1" max="9"></p>
+						<p><span data-i18n="skill">HABILETÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="1" max="9"></p>
 					</div>
 					<div class="pnj_attributs_col_3">
-						<p><input class="data" type="text" name="attr_pnj_attributs_7"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_8"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="1" max="9"></p>
-						<p><input class="data" type="text" name="attr_pnj_attributs_9"> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="1" max="9"></p>
+						<p><span data-i18n="innocence">INNOCENCE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="1" max="9"></p>
+						<p><span data-i18n="attribute_power">PUISSANCE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="1" max="9"></p>
+						<p><span data-i18n="robustness">ROBUSTESSE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="1" max="9"></p>
 					</div>
 				</div>
 			</div>
@@ -4472,6 +4556,94 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
             const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
 			const computeObj = {};
 			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-affinite', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{affinite}}} {{subtitle=^{difficulte_moyenne}}} {{qualite_title=^{charisma_roll}}} {{aspect_title=^{neshama}}} {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_neshama_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-boite', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{boite}}} {{subtitle=^{difficulte_ardue}}} {{qualite_title=^{serenity_roll}}} {{aspect_title=^{nefesh}}} {{attribut_title=^{robustness_roll}}} {{malus_corps_title=^{malus_body}}} {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_serenite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|robustesse_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-bouclier', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{bouclier_ecto}}} {{subtitle=^{vs_rouah}}} {{qualite_title=^{courage_roll}}} {{aspect_title=^{rouah}}}   {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_courage}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-effroi', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{effroi}}} {{subtitle=^{vs_neshama}}} {{qualite_title=^{authority_roll}}} {{aspect_title=^{rouah}}}   {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-chant', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{chant_lancinant}}} {{subtitle=^{vs_rouah}}} {{qualite_title=^{sensitivity_roll}}} {{aspect_title=^{rouah}}}   {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_sensibilite}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-lecture', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{lecteur_vie}}} {{subtitle=^{vs_neshama}}} {{qualite_title=^{attention_roll}}} {{aspect_title=^{rouah}}}   {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_attention}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-banshee', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{cri_banshee}}} {{subtitle=^{vs_nefesh_robustness}}} {{qualite_title=^{authority_roll}}} {{aspect_title=^{nefesh}}} {{attribut_title=^{attribute_power_roll}}} {{malus_corps_title=^{malus_body}}} {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_autorite}D6k1]]}} {{aspect=[[@{aspect_nefesh_bonus}]]}} {{attribut=[[@{Médium|puissance_bonus}]]}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,attribut,malus_corps,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + attribut.result + malus_corps.result + divers.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-spell-regard', async (event) => {
+         const roll = await startRoll("&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=^{hypno}}} {{subtitle=^{vs_neshama}}} {{qualite_title=^{charisma_roll}}} {{aspect_title=^{rouah}}}   {{divers_title=^{divers}}} {{resultat_title=^{roll_result}}} {{qualite=[[@{D_charisme}D6k1]]}} {{aspect=[[@{aspect_rouah_bonus}]]}} {{divers=[[?{Bonus|0}]]}}");
+			
+            const {qualite,aspect,divers} = roll.results;
+			const computeObj = {};
+			computeObj.roll = qualite.result + aspect.result + divers.result;
     finishRoll(roll.rollId,computeObj);
   })
 </script>
