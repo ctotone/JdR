@@ -128,10 +128,10 @@ font-family: 'Great Vibes', cursive;
     text-transform: uppercase;
     border-style: solid;
     border-width: 1px;
-    border-color: #888888;
+    border-color: var(--blue_cabinet);
     font-size: 18px;
     border-radius: 15px 15px 3px 3px;
-    box-shadow: 5px 5px 9px 0px #000000a8;
+    box-shadow: -3px 0px 9px 0px #000;
 }
 
 div.arbre select {  
@@ -4068,7 +4068,7 @@ input[type="radio"] {
 
 .wrapper_pnj_attributs{  
 	display: grid;
-    grid-template-columns: 145px 33px 145px 33px 145px;
+    grid-template-columns: 115px 45px 20px 115px 45px 20px 115px 40px;
 	grid-auto-rows: 37px;
 }
 
@@ -4078,12 +4078,27 @@ input[type="radio"] {
 }
 
 .pnj_attributs_col_2{
-	grid-column: 3;
+	grid-column: 4;
     grid-row: 1;
 }
 
 .pnj_attributs_col_3{
+	grid-column: 7;
+    grid-row: 1;
+}
+
+.pnj_attributs_col_bonus_1{
+	grid-column: 2;
+    grid-row: 1;
+}
+
+.pnj_attributs_col_bonus_2{
 	grid-column: 5;
+    grid-row: 1;
+}
+
+.pnj_attributs_col_bonus_3{
+	grid-column: 8;
     grid-row: 1;
 }
 
@@ -5561,7 +5576,9 @@ input[type=number] {
     background-size: cover;
     margin-left: 20px;
     padding-left: 13px;
-	outline: none;
+    margin-top: -4px;
+    outline: none;
+    border-radius: 10px 20px 20px 5px;
     box-shadow: 3px 5px 6px 3px #00000082;
 }
 
@@ -5870,7 +5887,10 @@ input[type=number] {
 .acquis_collectifs_data3 input.bonus[type="number"],
 .attributs_bonus1 input.bonus[type="number"],
 .attributs_bonus2 input.bonus[type="number"],
-.attributs_bonus3 input.bonus[type="number"] {
+.attributs_bonus3 input.bonus[type="number"],
+.pnj_attributs_col_bonus_1 input.bonus[type="number"],
+.pnj_attributs_col_bonus_2 input.bonus[type="number"],
+.pnj_attributs_col_bonus_3 input.bonus[type="number"] {
 	width: 18px;
     font-size: 20px;
     margin-top: -5px;
@@ -5879,7 +5899,10 @@ input[type=number] {
 
 .attributs_bonus1 input.bonus[type="number"],
 .attributs_bonus2 input.bonus[type="number"],
-.attributs_bonus3 input.bonus[type="number"] {
+.attributs_bonus3 input.bonus[type="number"],
+.pnj_attributs_col_bonus_1 input.bonus[type="number"],
+.pnj_attributs_col_bonus_2 input.bonus[type="number"],
+.pnj_attributs_col_bonus_3 input.bonus[type="number"]  {
 	border-radius: 30px;
 	background-color: transparent;
 	font-family: 'Dancing Script';
@@ -5902,6 +5925,13 @@ input[type=number] {
 	text-align: right;
 	margin-left: -13px;
 	box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--blue_cabinet);
+}
+
+.pnj_attributs_col_bonus_1 input.bonus[type="number"],
+.pnj_attributs_col_bonus_2 input.bonus[type="number"],
+.pnj_attributs_col_bonus_3 input.bonus[type="number"]  {
+    margin-left: -15px;
+    padding-right: 5px;
 }
 
 .objet_esprit_data input.data,
@@ -6873,7 +6903,12 @@ span.medium_dice {
     position: relative;
     margin-bottom: 15px;
     border-radius: 40px 20px 25px 25px;
-    box-shadow: 0px 0px 9px 6px #475e66b0;
+    box-shadow: 5px 7px 18px 2px #000000ba;
+}
+
+
+.sheet-rolltemplate-cabinet-prouesse .sheet-container {
+    box-shadow: 0px 7px 18px 2px #304883;
 }
 
 .sheet-rolltemplate-cabinet-classic .sheet-type,
@@ -6938,23 +6973,6 @@ span.medium_dice {
     text-align: center;
     font-style: italic;
 }
-
-.sheet-rolltemplate-cabinet-classic .sheet-container,
-.sheet-rolltemplate-cabinet-chance .sheet-container,
-.sheet-rolltemplate-cabinet-weapon .sheet-container {
-    position: relative;
-    margin-bottom: 15px;
-    border-radius: 40px 20px 25px 25px;
-	box-shadow: 0px 0px 4px 3px #000;
-}
-
-.sheet-rolltemplate-cabinet-prouesse .sheet-container,
-.sheet-rolltemplate-cabinet-classic-qualite .sheet-container,
-.sheet-rolltemplate-cabinet-pouvoir .sheet-container {
-    box-shadow: 0px 0px 4px 3px #000;
-}
-
-
 
 .sheet-rolltemplate-cabinet-classic .sheet-container,
 .sheet-rolltemplate-cabinet-classic-qualite .sheet-container,

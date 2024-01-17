@@ -1289,18 +1289,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<button type="action" name="act_perisprit_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
 						<span class="sheet-checked">/</span></button>
 					</div>
-					<!-- 
-					ON CONSERVE AU CAS OU
-					Ancien dots non interactif
-					<div class="perisprit1"><input type="checkbox" name="attr_perisprit_1" value="1" ></div>
-					<div class="perisprit2"><input type="checkbox" name="attr_perisprit_2" value="1" ></div>
-					<div class="perisprit3"><input type="checkbox" name="attr_perisprit_3" value="1" ></div>
-					<div class="perisprit4"><input type="checkbox" name="attr_perisprit_4" value="1" ></div>
-					<div class="perisprit5"><input type="checkbox" name="attr_perisprit_5" value="1" ></div>
-					<div class="perisprit6"><input type="checkbox" name="attr_perisprit_6" value="1" ></div>
-					<div class="perisprit7"><input type="checkbox" name="attr_perisprit_7" value="1" ></div>
-					<div class="perisprit8"><input type="checkbox" name="attr_perisprit_8" value="1" ></div>
-					<div class="perisprit9"><input type="checkbox" name="attr_perisprit_9" value="1" ></div> -->
 				</div>
 			</div>
 			<div class="contact_esprit"><span data-i18n="spirit_contacts">CONTACTS</span>
@@ -2838,19 +2826,36 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 			<div class="pnj_attributs_data">
 				<div class="wrapper_pnj_attributs">
 					<div class="pnj_attributs_col_1">
-						<p><span data-i18n="acuity">ACUITÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="1" max="9"></p>
-						<p><span data-i18n="agility">AGILITÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="1" max="9"></p>
-						<p><span data-i18n="anonymity">ANONYMAT</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="1" max="9"></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="acuity">ACUITÉ</span></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="agility">AGILITÉ</span></p>
+						<p><span data-i18n="anonymity">ANONYMAT</span></p>
 					</div>
+					<div class="pnj_attributs_col_bonus_1">
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="0" max="9"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="0" max="9"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="0" max="9"></p>
+					</div>
+					
 					<div class="pnj_attributs_col_2">
-						<p><span data-i18n="beauty">BEAUTÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="1" max="9"></p>
-						<p><span data-i18n="strangeness">ÉTRANGETÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="1" max="9"></p>
-						<p><span data-i18n="skill">HABILETÉ</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="1" max="9"></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="beauty">BEAUTÉ</span></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="strangeness">ÉTRANGETÉ</span></p>
+						<p><span data-i18n="skill">HABILETÉ</span></p>
 					</div>
+					<div class="pnj_attributs_col_bonus_2">
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="0" max="9"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="0" max="9"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="0" max="9"></p>
+					</div>
+					
 					<div class="pnj_attributs_col_3">
-						<p><span data-i18n="innocence">INNOCENCE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="1" max="9"></p>
-						<p><span data-i18n="attribute_power">PUISSANCE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="1" max="9"></p>
-						<p><span data-i18n="robustness">ROBUSTESSE</span> + <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="1" max="9"></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="innocence">INNOCENCE</span></p>
+						<p style="margin-bottom: 19px;"><span data-i18n="attribute_power">PUISSANCE</span></p>
+						<p><span data-i18n="robustness">ROBUSTESSE</span></p>
+					</div>
+					<div class="pnj_attributs_col_bonus_3">
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="0" max="9"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="0" max="9"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="0" max="9"></p>
 					</div>
 				</div>
 			</div>
