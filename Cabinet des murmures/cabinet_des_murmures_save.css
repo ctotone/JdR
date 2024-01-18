@@ -231,8 +231,7 @@ input[type=radio].onglcorps:checked ~ div.corps,
 input[type=radio].onglspirit:checked ~ div.esprit,
 input[type=radio].onglquality:checked ~ div.esprit_qualite,
 input[type=radio].onglhotedice:checked ~ div.dice,
-input[type=radio].onglespritdice:checked ~ div.esprit_dice,
-input[type=radio].onglinfo:checked ~ div.info{
+input[type=radio].onglespritdice:checked ~ div.esprit_dice{
     display: block;
 } 
 
@@ -247,8 +246,7 @@ input[type=radio].onglcorps,
 input[type=radio].onglspirit,
 input[type=radio].onglquality,
 input[type=radio].onglhotedice,
-input[type=radio].onglespritdice,
-input[type=radio].onglinfo {
+input[type=radio].onglespritdice {
     display: inline-block;
     opacity: 0;
     width: 110px;
@@ -263,8 +261,7 @@ input[type=radio].onglesprit + span,
 input[type=radio].onglspirit + span,
 input[type=radio].onglquality + span,
 input[type=radio].onglhotedice + span,
-input[type=radio].onglespritdice + span,
-input[type=radio].onglinfo + span  {
+input[type=radio].onglespritdice + span  {
     text-align: center;
     display: inline-block;
     width: 110px;
@@ -299,18 +296,6 @@ input[type=radio].onglespritdice + span  {
 	box-shadow: -5px -2px 9px 0px #000000a8;
 }
 
-input[type=radio].onglinfo + span  {
-    width: 70px;
-    height: 40px;	
-    color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_unchecked.png);
-    background-position: bottom 72px right 85px;
-	font-family: 'EB Garamond';
-    font-size: 18px;
-    border-radius: 15px 15px 3px 3px;
-	box-shadow: -5px -2px 9px 0px #000000a8;
-}
-
 input[type=radio].onglcabinet:checked + span,
 input[type=radio].onglarbre:checked + span,
 input[type=radio].onglcorps:checked + span,
@@ -318,8 +303,7 @@ input[type=radio].onglesprit:checked + span,
 input[type=radio].onglspirit:checked + span,
 input[type=radio].onglquality:checked + span,
 input[type=radio].onglhotedice:checked + span,
-input[type=radio].onglespritdice:checked + span,
-input[type=radio].onglinfo:checked + span {
+input[type=radio].onglespritdice:checked + span {
     color: black;
     border-color: var(--blue_cabinet);
     border-style: solid;
@@ -336,14 +320,6 @@ input[type=radio].onglinfo:checked + span {
 
 input[type=radio].onglhotedice:checked + span,
 input[type=radio].onglespritdice:checked + span {
-    width: 70px;
-    height: 40px;	
-    color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_checked.png);
-	
-}
-
-input[type=radio].onglinfo:checked + span {
     width: 70px;
     height: 40px;	
     color: transparent;
@@ -502,7 +478,7 @@ input[type="checkbox"].sheet-pouvoir-switch:hover{
 	transition: .4s;
 	width: 25px;
 	height: 8px;
-	margin-top: 42.5px;
+	margin-top: 43px;
 	margin-left: 806px;
 }
 
@@ -1610,60 +1586,8 @@ input[type="radio"] {
 	background-size: cover;
 }
 
-/* Wrapper Graces */
 
-.wrapper_graces {  
-	display: grid;
-	grid-template-columns: 15px 210px 15px 70px;
-	grid-auto-rows: 35px;
-	border: 1px solid #ccc;
-	box-shadow: 1px 1px 0px 1px #293e4759;
-	padding-top: 5px;
-	padding-bottom: 16px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
 
-.grace_1_select {
-	grid-column: 2;
-}
-
-.grace_2_select {
-	grid-column: 2;
-}
-
-.grace_3_select {
-	grid-column: 2;
-}
-
-.grace_4_select {
-	grid-column: 2;
-}
-
-.grace_5_select {
-	grid-column: 2;
-}
-
-.grace_1_boutton {
-	grid-column: 4;
-}
-
-.grace_2_boutton {
-	grid-column: 4;
-}
-
-.grace_3_boutton {
-	grid-column: 4;
-}
-
-.grace_4_boutton {
-	grid-column: 4;
-}
-
-.grace_5_boutton {
-	grid-column: 4;
-}
 
 
 
@@ -5696,7 +5620,6 @@ input[type=number] {
 	outline: none;
 	resize: none;
 	padding: 5px;
-    padding-left: 10px;
 	box-shadow: 1px 1px 0px 1px #293e4759;
 	font-weight: normal;
 	line-height: 1.1;
@@ -5705,7 +5628,7 @@ input[type=number] {
 
 .charsheet textarea.cab_esprit,
 .charsheet textarea.cor_description {
-	width: 95%;
+	width: 420px;
 	height: 90px;
 }
 
@@ -5715,34 +5638,28 @@ input[type=number] {
 }
 
 .charsheet textarea.cab_contact {
-	width: 95%;
+	width: 420px;
 	height: 155px;
 }
 
 .charsheet textarea.cab_note {
-	width: 95%;
+	width: 420px;
 	height: 255px;
 }
 
 .charsheet textarea.cab_desc {
-	width: 94%;
+	width: 290px;
 	height: 270px;
 }
 
 .charsheet textarea.cab_adversaire {
-	width: 94%;
+	width: 290px;
 	height: 155px;
 }
 
 .charsheet textarea.cab_grace {
 	width: 290px;
 	height: 110px;
-}
-
-.graces_data p {  
-	color: red;
-	padding: 0px;
-	margin: 0;
 }
 
 .charsheet textarea.cab_xp,
@@ -5760,13 +5677,13 @@ input[type=number] {
 }
 
 .charsheet textarea.cor_equipement {
-    width: 92%;
+    width: 265px;
     height: 208px;
 }
 
 .charsheet textarea.cor_sequelles_legere,
 .charsheet textarea.cor_sequelles_grave {
-    width: 85%;
+    width: 120px;
     height: 66px;
 }
 
@@ -6482,22 +6399,6 @@ select.liste_pouvoir {
 	padding-bottom: 0px
 }
 
-select.liste_graces {  
-	width: 205px;
-	border: none;
-	border-bottom-color: currentcolor;
-	border-bottom-style: none;
-	border-bottom-width: medium;
-	background: transparent;
-	border-bottom: 1px solid #6150453b;
-	border-radius: 0;
-	color: var(--marron_cabinet);
-	font-size: 14px;
-	margin-top: 2px;
-	padding-left: 0px;
-	padding-bottom: 0px
-}
-
 .qualite_arbre_data input.data,
 .qualite_arbre_esprit input.data,
 .qualite_arbre_data input.data[type="number"],
@@ -6802,12 +6703,6 @@ span.picto_pouvoir {
 	color: var(--marron_cabinet);
 }
 
-span.picto_grace {  
-	font-family: 'Pictos';
-	font-size: 20px;
-	color: var(--marron_cabinet);
-}
-
 span.show {  
 	font-family: 'Pictos';
 }
@@ -6941,8 +6836,7 @@ span.opposition {
 
 .charsheet button[type=roll].prouesse_roll::before,
 .charsheet button[type=roll].classic_roll::before,
-.charsheet button[type=roll].weapon_roll::before,
-.charsheet button[type=roll].grace_roll::before{
+.charsheet button[type=roll].weapon_roll::before{
   content: '';
 }
 
@@ -6963,28 +6857,6 @@ span.opposition {
     -webkit-appearance: unset;
     height: 18px;
     margin-top: -6px;
-}
-
-.charsheet button[type=roll].grace_roll {  
-	border: none;
-	border-top-style: none;
-	border-right-style: none;
-	border-bottom-style: none;
-	border-left-style: none;
-	padding: 0;
-	color: var(--blue_cabinet);
-	font-size: 13px;
-	margin: 0;
-	margin-top: 0px;
-	text-shadow: none;
-	border-style: none;
-	transition: none;
-	background: none !important;
-	padding: 0 !important;
-	box-shadow: none;
-	-webkit-appearance: unset;
-	height: 18px;
-	margin-top: 10px;
 }
 
 .charsheet button[type=roll].prouesse_roll:hover,
@@ -7300,3 +7172,5 @@ span.medium_dice {
     font-size: 20px;
 	font-family: "Proxima Nova", ProximaNova-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
+
+

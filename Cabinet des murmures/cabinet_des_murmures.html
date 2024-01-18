@@ -165,8 +165,58 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border.png" />
 				</div>
 			</div>
-			<div class="graces_data">			
-				<p><textarea class="cab_grace" name="attr_cab_grace" spellcheck="false"></textarea></p>
+			<div class="graces_data">
+				<div class="wrapper_graces">
+					<div class="grace_1_select">
+						<select class="liste_graces" name="attr_grace_1">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="grace_ailleurs">Ailleurs</option>
+							<option value="2" data-i18n="grace_benediction">Bénédiction</option>
+							<option value="3" data-i18n="grace_clairvoyance">Clairvoyance</option>
+							<option value="4" data-i18n="grace_corne_abondance">Corne d'abondance</option>
+							<option value="5" data-i18n="grace_extinction">Extinction</option>
+							<option value="6" data-i18n="grace_hors_du_linceul">Hors du linceul</option>
+							<option value="7" data-i18n="grace_leve_toi">Lève-toi et marche</option>
+							<option value="8" data-i18n="grace_soleil">Soleil, suspend ton cours</option>
+						</select>
+					</div>
+					<div class="grace_1_boutton">
+						<button class="grace_roll" type="roll" name="roll-grace_1" value="&{template:cabinet-pouvoir} {{title=@{nom_grace_1}}} {{^{perisprit_macro}=16}} {{info=@{info_grace_1}}}"><span class="picto_grace" title="Afficher la grâce dans la fenêtre de discussion" data-i18n-title="show_grace">R</span></button>
+					</div>
+					<div class="grace_2_select">
+						<select class="liste_graces" name="attr_grace_2">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="grace_ailleurs">Ailleurs</option>
+							<option value="2" data-i18n="grace_benediction">Bénédiction</option>
+							<option value="3" data-i18n="grace_clairvoyance">Clairvoyance</option>
+							<option value="4" data-i18n="grace_corne_abondance">Corne d'abondance</option>
+							<option value="5" data-i18n="grace_extinction">Extinction</option>
+							<option value="6" data-i18n="grace_hors_du_linceul">Hors du linceul</option>
+							<option value="7" data-i18n="grace_leve_toi">Lève-toi et marche</option>
+							<option value="8" data-i18n="grace_soleil">Soleil, suspend ton cours</option>
+						</select>
+					</div>
+					<div class="grace_2_boutton">	
+						<button class="grace_roll" type="roll" name="roll-grace_2" value="&{template:cabinet-pouvoir} {{title=@{nom_grace_2}}} {{^{perisprit_macro}=16}} {{info=@{info_grace_2}}}"><span class="picto_grace" title="Afficher la grâce dans la fenêtre de discussion" data-i18n-title="show_grace">R</span></button>
+					</div>
+					<div class="grace_3_select">
+						<select class="liste_graces" name="attr_grace_3">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="grace_ailleurs">Ailleurs</option>
+							<option value="2" data-i18n="grace_benediction">Bénédiction</option>
+							<option value="3" data-i18n="grace_clairvoyance">Clairvoyance</option>
+							<option value="4" data-i18n="grace_corne_abondance">Corne d'abondance</option>
+							<option value="5" data-i18n="grace_extinction">Extinction</option>
+							<option value="6" data-i18n="grace_hors_du_linceul">Hors du linceul</option>
+							<option value="7" data-i18n="grace_leve_toi">Lève-toi et marche</option>
+							<option value="8" data-i18n="grace_soleil">Soleil, suspend ton cours</option>
+						</select>
+					</div>
+					<div class="grace_3_boutton">	
+						<button class="grace_roll" type="roll" name="roll-grace_3" value="&{template:cabinet-pouvoir} {{title=@{nom_grace_3}}} {{^{perisprit_macro}=16}} {{info=@{info_grace_3}}}"><span class="picto_grace" title="Afficher la grâce dans la fenêtre de discussion" data-i18n-title="show_grace">R</span></button>
+					</div>
+				</div>
+				<!-- <p><textarea class="cab_grace" name="attr_cab_grace" spellcheck="false"></textarea></p> -->
 			</div>
 			<div class="xp_collective_cadre">
 				<div class="xp_collective"><span data-i18n="collective_experience">EXPÉRIENCE COLLECTIVE</span></div>
@@ -3662,6 +3712,102 @@ on("sheet:opened change:data3_lvl_3", function() {
 });
 </script>
 
+<!-- Graces -->
+<script type="text/worker">
+on("sheet:opened change:grace_1", function() {
+    getAttrs(["grace_1"], function(values) {
+			let grace_1 = parseInt(values["grace_1"]) || 0;
+			
+			if (grace_1 == '1') 		nom_grace_1 = getTranslationByKey('grace_ailleurs'),
+										info_grace_1 = getTranslationByKey('grace_ailleurs_desc'); 
+			else if (grace_1 == '2') 	nom_grace_1 = getTranslationByKey('grace_benediction'),
+										info_grace_1 = getTranslationByKey('grace_benediction_desc');
+			else if (grace_1 == '3') 	nom_grace_1 = getTranslationByKey('grace_clairvoyance'),
+										info_grace_1 = getTranslationByKey('grace_clairvoyance_desc');
+			else if (grace_1 == '4') 	nom_grace_1 = getTranslationByKey('grace_corne_abondance'),
+										info_grace_1 = getTranslationByKey('grace_corne_abondance_desc');
+			else if (grace_1 == '5') 	nom_grace_1 = getTranslationByKey('grace_extinction'),
+										info_grace_1 = getTranslationByKey('grace_extinction_desc');
+			else if (grace_1 == '6') 	nom_grace_1 = getTranslationByKey('grace_hors_du_linceul'),
+										info_grace_1 = getTranslationByKey('grace_hors_du_linceul_desc');
+			else if (grace_1 == '7') 	nom_grace_1 = getTranslationByKey('grace_leve_toi'),
+										info_grace_1 = getTranslationByKey('grace_leve_toi_desc');
+			else if (grace_1 == '8') 	nom_grace_1 = getTranslationByKey('grace_soleil'),
+										info_grace_1 = getTranslationByKey('grace_soleil_desc');
+			else 						nom_grace_1 = "",
+										info_grace_1 = "";
+						
+			setAttrs({
+			"nom_grace_1" : nom_grace_1,
+			"info_grace_1": info_grace_1
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:grace_2", function() {
+    getAttrs(["grace_2"], function(values) {
+			let grace_2 = parseInt(values["grace_2"]) || 0;
+			
+			if (grace_2 == '1') 		nom_grace_2 = getTranslationByKey('grace_ailleurs'),
+										info_grace_2 = getTranslationByKey('grace_ailleurs_desc'); 
+			else if (grace_2 == '2') 	nom_grace_2 = getTranslationByKey('grace_benediction'),
+										info_grace_2 = getTranslationByKey('grace_benediction_desc');
+			else if (grace_2 == '3') 	nom_grace_2 = getTranslationByKey('grace_clairvoyance'),
+										info_grace_2 = getTranslationByKey('grace_clairvoyance_desc');
+			else if (grace_2 == '4') 	nom_grace_2 = getTranslationByKey('grace_corne_abondance'),
+										info_grace_2 = getTranslationByKey('grace_corne_abondance_desc');
+			else if (grace_2 == '5') 	nom_grace_2 = getTranslationByKey('grace_extinction'),
+										info_grace_2 = getTranslationByKey('grace_extinction_desc');
+			else if (grace_2 == '6') 	nom_grace_2 = getTranslationByKey('grace_hors_du_linceul'),
+										info_grace_2 = getTranslationByKey('grace_hors_du_linceul_desc');
+			else if (grace_2 == '7') 	nom_grace_2 = getTranslationByKey('grace_leve_toi'),
+										info_grace_2 = getTranslationByKey('grace_leve_toi_desc');
+			else if (grace_2 == '8') 	nom_grace_2 = getTranslationByKey('grace_soleil'),
+										info_grace_2 = getTranslationByKey('grace_soleil_desc');
+			else 						nom_grace_2 = "",
+										info_grace_2 = "";
+						
+			setAttrs({
+			"nom_grace_2" : nom_grace_2,
+			"info_grace_2": info_grace_2
+        });
+    });
+});
+</script>
+
+<script type="text/worker">
+on("sheet:opened change:grace_3", function() {
+    getAttrs(["grace_3"], function(values) {
+			let grace_3 = parseInt(values["grace_3"]) || 0;
+			
+			if (grace_3 == '1') 		nom_grace_3 = getTranslationByKey('grace_ailleurs'),
+										info_grace_3 = getTranslationByKey('grace_ailleurs_desc'); 
+			else if (grace_3 == '2') 	nom_grace_3 = getTranslationByKey('grace_benediction'),
+										info_grace_3 = getTranslationByKey('grace_benediction_desc');
+			else if (grace_3 == '3') 	nom_grace_3 = getTranslationByKey('grace_clairvoyance'),
+										info_grace_3 = getTranslationByKey('grace_clairvoyance_desc');
+			else if (grace_3 == '4') 	nom_grace_3 = getTranslationByKey('grace_corne_abondance'),
+										info_grace_3 = getTranslationByKey('grace_corne_abondance_desc');
+			else if (grace_3 == '5') 	nom_grace_3 = getTranslationByKey('grace_extinction'),
+										info_grace_3 = getTranslationByKey('grace_extinction_desc');
+			else if (grace_3 == '6') 	nom_grace_3 = getTranslationByKey('grace_hors_du_linceul'),
+										info_grace_3 = getTranslationByKey('grace_hors_du_linceul_desc');
+			else if (grace_3 == '7') 	nom_grace_3 = getTranslationByKey('grace_leve_toi'),
+										info_grace_3 = getTranslationByKey('grace_leve_toi_desc');
+			else if (grace_3 == '8') 	nom_grace_3 = getTranslationByKey('grace_soleil'),
+										info_grace_3 = getTranslationByKey('grace_soleil_desc');
+			else 						nom_grace_3 = "",
+										info_grace_3 = "";
+						
+			setAttrs({
+			"nom_grace_3" : nom_grace_3,
+			"info_grace_3": info_grace_3
+        });
+    });
+});
+</script>
 
 <!-- Malus -->
 <script type="text/worker">
