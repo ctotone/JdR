@@ -70,7 +70,8 @@ font-family: 'Great Vibes', cursive;
 .esprit_qualite,
 .dice,
 .esprit_dice,
-.intro {
+.intro,
+.info {
     width: 810px;
     border: 1px solid var(--blue_cabinet);
     padding-top: 15px;
@@ -221,7 +222,8 @@ body.sheet-darkmode .selector {
 .esprit,
 .esprit_qualite,
 .dice,
-.esprit_dice{
+.esprit_dice,
+.info {
 	display: none;
 }
 
@@ -301,14 +303,15 @@ input[type=radio].onglespritdice + span  {
 
 input[type=radio].onglinfo + span  {
     width: 70px;
-    height: 40px;	
+    height: 40px;
     color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_unchecked.png);
-    background-position: bottom 72px right 85px;
-	font-family: 'EB Garamond';
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_loupe_tab_unchecked.png);
+    background-size: 120px 70px;
+    background-position: bottom 66px right 71px;
+    font-family: 'EB Garamond';
     font-size: 18px;
     border-radius: 15px 15px 3px 3px;
-	box-shadow: -5px -2px 9px 0px #000000a8;
+    box-shadow: -5px -2px 9px 0px #000000a8;
 }
 
 input[type=radio].onglcabinet:checked + span,
@@ -347,7 +350,7 @@ input[type=radio].onglinfo:checked + span {
     width: 70px;
     height: 40px;	
     color: transparent;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_dice_tab_checked.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_button_loupe_tab_checked.png);
 	
 }
 /* 
