@@ -1999,9 +1999,196 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 		</div>
 		<input type="checkbox" name="attr_armes_switch" class="sheet-info-armes-switch" value="1" style="display: none;">
 		<div class="wrapper_dice_info_armes_data">
-			
-			tableau des ARMES
-			
+			<div class="section_arme">
+				<div class="wrapper_arme_cac">
+					<div class="arme_cac_titre">
+						<span  data-i18n="info_cac">ARMES NATURELLES ET ARMES BLANCHES</span>
+					</div>
+					<div class="arme_cac_info_gauche"><span data-i18n="info_categorie">CATÉGORIE</span></div>
+					<div class="arme_cac_info_droite"><span data-i18n="info_degats">DÉGÂTS</span><br><span data-i18n="info_ajouter_puissance">( Ajouter l'attribut "PUISSANCE" )</span></div>
+					
+					<div class="arme_cac_gauche2"><span data-i18n="info_cac_1">Poing, pied, coup de tête, morsure</span></div>
+					<div class="arme_cac_droite2"><span data-i18n="info_1_point">1 point</span></div>
+					
+					<div class="arme_cac_gauche1"><span data-i18n="info_cac_2">Canne, casse-tête, matraque, poing américain</span></div>
+					<div class="arme_cac_droite1"><span data-i18n="info_2_point">2 points</span></div>
+					
+					<div class="arme_cac_gauche2"><span data-i18n="info_cac_3">Canne-épée, couteau, baïonette, dague, poignard</span></div>
+					<div class="arme_cac_droite2"><span>1D6</span></div>
+					
+					<div class="arme_cac_gauche1"><span data-i18n="info_cac_4">Sabre, épée</span></div>
+					<div class="arme_cac_droite1"><span>1D6 + 2</span></div>
+				</div>
+				
+				<div class="wrapper_arme_distance">
+					<div class="arme_distance_titre_general"><span data-i18n="info_distance">ARMES DE TIR</span></div>
+					<!-- Gros calibre -->
+					<div class="arme_distance_titre"><span data-i18n="info_distance_categorie_1">ARMEMENT DE POING (Gros calibre, Fantassin, Cavaliers)</span></div>
+					
+					<div class="arme_distance_categorie"><span data-i18n="info_categorie">CATÉGORIE</span></div>
+					<div class="arme_distance_precision"><span data-i18n="info_precision">PRÉCISION</span></div>
+					<div class="arme_distance_portee"><span data-i18n="info_portée">PORTÉE</span></div>
+					<div class="arme_distance_degats"><span data-i18n="info_degats">DÉGÂTS</span></div>
+					<div class="arme_distance_munitions"><span data-i18n="info_munitions">MUNITIONS</span></div>
+					<div class="arme_distance_cadence"><span data-i18n="info_cadence">CADENCE</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_pistolet">Pistolet</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 2</span></div>
+					<div class="arme_distance_munitions_data_1">1 <span data-i18n="info_a">à</span> 2</div>
+					<div class="arme_distance_cadence_data_1">1 <span data-i18n="info_a">à</span> 2</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_pistolet_semi">Pistolet semi-automatique</span></div>
+					<div class="arme_distance_precision_data_2"><span>-</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_2"><span>8</span></div>
+					<div class="arme_distance_cadence_data_2"><span>3</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_revolver">Revolver</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 2</span></div>
+					<div class="arme_distance_munitions_data_1"><span>6</span></div>
+					<div class="arme_distance_cadence_data_1"><span>2</span></div>
+					
+					<!-- Calibre moyen -->
+					<div class="arme_distance_titre"><span data-i18n="info_distance_categorie_2">ARMEMENT DE POING (Calibre moyen, Armée de l'Air, Marine, Police)</span></div>
+					
+					<div class="arme_distance_categorie"><span data-i18n="info_categorie">CATÉGORIE</span></div>
+					<div class="arme_distance_precision"><span data-i18n="info_precision">PRÉCISION</span></div>
+					<div class="arme_distance_portee"><span data-i18n="info_portée">PORTÉE</span></div>
+					<div class="arme_distance_degats"><span data-i18n="info_degats">DÉGÂTS</span></div>
+					<div class="arme_distance_munitions"><span data-i18n="info_munitions">MUNITIONS</span></div>
+					<div class="arme_distance_cadence"><span data-i18n="info_cadence">CADENCE</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_pistolet">Pistolet</span></div>
+					<div class="arme_distance_precision_data_1"><span>+1</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_1"><span>1</span></div>
+					<div class="arme_distance_cadence_data_1"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_pistolet_semi">Pistolet semi-automatique</span></div>
+					<div class="arme_distance_precision_data_2"><span>-</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_10m">10m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6</span></div>
+					<div class="arme_distance_munitions_data_2"><span>6</span></div>
+					<div class="arme_distance_cadence_data_2"><span>3</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_revolver">Revolver</span></div>
+					<div class="arme_distance_precision_data_1"><span>+ 1</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_1"><span>6</span></div>
+					<div class="arme_distance_cadence_data_1"><span>2</span></div>
+					
+					<!-- Arme d'épaule -->
+					<div class="arme_distance_titre"><span data-i18n="info_distance_categorie_3">ARMEMENT D'ÉPAULE (Armée, Police)</span></div>
+					
+					<div class="arme_distance_categorie"><span data-i18n="info_categorie">CATÉGORIE</span></div>
+					<div class="arme_distance_precision"><span data-i18n="info_precision">PRÉCISION</span></div>
+					<div class="arme_distance_portee"><span data-i18n="info_portée">PORTÉE</span></div>
+					<div class="arme_distance_degats"><span data-i18n="info_degats">DÉGÂTS</span></div>
+					<div class="arme_distance_munitions"><span data-i18n="info_munitions">MUNITIONS</span></div>
+					<div class="arme_distance_cadence"><span data-i18n="info_cadence">CADENCE</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_carabine">Carabine</span></div>
+					<div class="arme_distance_precision_data_1"><span>+ 3</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_1"><span>1</span></div>
+					<div class="arme_distance_cadence_data_1"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_carabine_rep">Carabine à répétition</span></div>
+					<div class="arme_distance_precision_data_2"><span>+ 3</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_2"><span>4</span></div>
+					<div class="arme_distance_cadence_data_2"><span>2</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_fusil">Fusil</span></div>
+					<div class="arme_distance_precision_data_1"><span>+ 2</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6 + 2</span></div>
+					<div class="arme_distance_munitions_data_1"><span>2</span></div>
+					<div class="arme_distance_cadence_data_1"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_fusil_rep">Fusil à répétition</span></div>
+					<div class="arme_distance_precision_data_2"><span>+ 2</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6 + 2</span></div>
+					<div class="arme_distance_munitions_data_2"><span>2</span></div>
+					<div class="arme_distance_cadence_data_2"><span>1</span></div>
+					
+					<!-- Armement Civil -->
+					<div class="arme_distance_titre"><span data-i18n="info_distance_categorie_4">ARMEMENT CIVIL</span></div>
+					
+					<div class="arme_distance_categorie"><span data-i18n="info_categorie">CATÉGORIE</span></div>
+					<div class="arme_distance_precision"><span data-i18n="info_precision">PRÉCISION</span></div>
+					<div class="arme_distance_portee"><span data-i18n="info_portée">PORTÉE</span></div>
+					<div class="arme_distance_degats"><span data-i18n="info_degats">DÉGÂTS</span></div>
+					<div class="arme_distance_munitions"><span data-i18n="info_munitions">MUNITIONS</span></div>
+					<div class="arme_distance_cadence"><span data-i18n="info_cadence">CADENCE</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_pistolet_poche">Pistolet de poche</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6</span></div>
+					<div class="arme_distance_munitions_data_1"><span>1</span></div>
+					<div class="arme_distance_cadence_data_1"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_revolver_leger">Revolver léger</span></div>
+					<div class="arme_distance_precision_data_2"><span>-</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6</span></div>
+					<div class="arme_distance_munitions_data_2"><span>6</span></div>
+					<div class="arme_distance_cadence_data_2"><span>2</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_poivriere">Poivrière</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span>5 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>1D6</span></div>
+					<div class="arme_distance_munitions_data_1">4 <span data-i18n="info_a">à</span> 8</div>
+					<div class="arme_distance_cadence_data_1"><span>3</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_fusil_chasse">Fusil de chasse</span></div>
+					<div class="arme_distance_precision_data_2"><span>-</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6 + 1</span></div>
+					<div class="arme_distance_munitions_data_2"><span>2</span></div>
+					<div class="arme_distance_cadence_data_2"><span>2</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_fusil_canon_scie">Fusil à canon scié</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_5m">5 m</span></div>
+					<div class="arme_distance_degats_data_1"><span>2D6</span></div>
+					<div class="arme_distance_munitions_data_1"><span>2</span></div>
+					<div class="arme_distance_cadence_data_1"><span>2</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_lance_pierre">Lance-pierre</span></div>
+					<div class="arme_distance_precision_data_2"><span>-</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_10m">10 m</span></div>
+					<div class="arme_distance_degats_data_2"><span data-i18n="info_1_point">1 point</span> <span data-i18n="info_bonus_puissance">(+ Puissance)</span></div>
+					<div class="arme_distance_munitions_data_2"><span>1</span></div>
+					<div class="arme_distance_cadence_data_2"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_1"><span data-i18n="info_arc">Arc</span></div>
+					<div class="arme_distance_precision_data_1"><span>-</span></div>
+					<div class="arme_distance_portee_data_1"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_1">1D6 + 2 <span data-i18n="info_bonus_puissance">(+ Puissance)</span></div>
+					<div class="arme_distance_munitions_data_1">18 <span data-i18n="info_fleches">flèches</span></div>
+					<div class="arme_distance_cadence_data_1"><span>1</span></div>
+					
+					<div class="arme_distance_categorie_data_2"><span data-i18n="info_arbalete">Arbalète</span></div>
+					<div class="arme_distance_precision_data_2"><span>+ 2</span></div>
+					<div class="arme_distance_portee_data_2"><span data-i18n="info_20m">20 m</span></div>
+					<div class="arme_distance_degats_data_2"><span>1D6 + 2</span></div>
+					<div class="arme_distance_munitions_data_2">8 <span data-i18n="info_carreaux">carreaux</span></div>
+					<div class="arme_distance_cadence_data_2"><span>1</span></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="esprit">
