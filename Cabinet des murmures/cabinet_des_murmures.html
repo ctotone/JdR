@@ -14,7 +14,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="intro"  />
-
 <!------------------>
 <!--- DIV INTRO  --->
 <!------------------>
@@ -1223,10 +1222,787 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 
 
 	<!------------------>
-	<!-- DIV ESPRIT  -->
+	<!-- DIV INFO  -->
 	<!------------------>
 	<div class="info">
-		liste speel / grace / choix pouvoir / armes ?
+	<br>
+	<span class="info_pre" data-i18n="info_pre">Vous trouverez ici les descriptions des Pouvoir et Grâces ainsi que les caractéristiques d'Armes</span>
+		<!-- Spell lvl 1 -->
+		<div class="wrapper_dice_title">
+			<div class="info_pouvoir_1">
+				<span class="info_title" data-i18n="info_pouvoir_l">Pouvoirs de niveau 1</span>
+				<input type="checkbox" class="sheet-info-pouvoir-1-switch" name="attr_info_pouvoir_l_switch" value="1" data-i18n-title="show_hide" title="Afficher/masquer le contenu"><span class="show">|</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+			</div>
+		</div>
+		<input type="checkbox" name="attr_info_pouvoir_l_switch" class="sheet-info-pouvoir-1-switch" value="1" style="display: none;">
+		<div class="wrapper_dice_info_pouvoir_1_data">
+			<div class="section_generic_gauche_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="affinite">Affinité animale</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Netzach<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="affinite_info1">description</span> 
+						<br><br>
+						<span data-i18n="affinite_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="apnee">Apnée</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="apnee_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="angelique">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Netzach<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="angelique_info1">description</span> 
+						<br><br>
+						<span data-i18n="angelique_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="bruit">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chokmah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="bruit_info1">description</span> 
+						<br><br>
+						<span data-i18n="bruit_info2">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="esprit_babel">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Binah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="esprit_babel_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="effroi_animal">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Geburah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="effroi_animal_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="langue_babel">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chesed<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="langue_babel_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="malaise">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Geburah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="malaise_info1">description</span> 
+						<br><br>
+						<span data-i18n="malaise_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="parfum">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chokmah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="parfum_info1">description</span>
+						<br><br>
+						<span data-i18n="parfum_info2">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="oeil_babel">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Hod<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="oeil_babel_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="sentir_ame_lieu">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chokmah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="ame_lieu_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="tourmente">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chokmah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="tourmente_info">description</span> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Spell lvl 2 -->
+		<div class="wrapper_dice_title">
+			<div class="info_pouvoir_2">
+				<span class="info_title" data-i18n="info_pouvoir_2">Pouvoirs de niveau 2</span>
+				<input type="checkbox" class="sheet-info-pouvoir-2-switch" name="attr_info_pouvoir_2_switch" value="1" data-i18n-title="show_hide" title="Afficher/masquer le contenu"><span class="show">|</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+			</div>
+		</div>
+		<input type="checkbox" name="attr_info_pouvoir_2_switch" class="sheet-info-pouvoir-2-switch" value="1" style="display: none;">
+		<div class="wrapper_dice_info_pouvoir_2_data">
+			<div class="section_generic_gauche_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="chant_lancinant">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Netzach<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="chant_lancinant_info1">description</span> 
+						<br><br>
+						<span data-i18n="chant_lancinant_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="chitine">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Keter<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="chitine_info1">description</span> 
+						<br><br>
+						<span data-i18n="chitine_info2">description</span> 
+						<br><br>
+						<span data-i18n="chitine_info3">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="boite">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="boite_info1">description</span> 
+						<br><br>
+						<span data-i18n="boite_info2">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="morts">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="morts_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="effroi">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Geburah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="effroi_info1">description</span> 
+						<br><br>
+						
+						<span data-i18n="effroi_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="decharne">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="decharne_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="main_couper">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="main_couper_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="memoire">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Yesod<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="memoire_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="performance">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Netzach<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="performance_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="poltergeist">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="poltergeist_info1">description</span>
+						<br><br>
+						<span data-i18n="poltergeist_info2">description</span>
+						<br>
+						<span data-i18n="poltergeist_info3">description</span>
+						<br>
+						<span data-i18n="poltergeist_info4">description</span>
+						<br>
+						<span data-i18n="poltergeist_info5">description</span>
+						<br>
+						<span data-i18n="poltergeist_info6">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="hypno">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Netzach<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="hypno_info1">description</span> 
+						<br><br>
+						<span data-i18n="hypno_info2">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="rouage">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Binah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 2 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="rouage_info">description</span> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Spell lvl3 -->
+		<div class="wrapper_dice_title">
+			<div class="info_pouvoir_3">
+				<span class="info_title" data-i18n="info_pouvoir_3">Pouvoirs de niveau 3</span>
+				<input type="checkbox" class="sheet-info-pouvoir-3-switch" name="attr_info_pouvoir_3_switch" value="1" data-i18n-title="show_hide" title="Afficher/masquer le contenu"><span class="show">|</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+			</div>
+		</div>
+		<input type="checkbox" name="attr_info_pouvoir_3_switch" class="sheet-info-pouvoir-3-switch" value="1" style="display: none;">
+		<div class="wrapper_dice_info_pouvoir_3_data">
+			<div class="section_generic_gauche_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="bouclier_ecto">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Keter<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="bouclier_ecto_info1">description</span> 
+						<br><br>
+						<span data-i18n="bouclier_ecto_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="coupe_deux">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="coupe_deux_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="cri_banshee">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Geburah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="cri_banshee_info1">description</span> 
+						<br><br>
+						<span data-i18n="cri_banshee_info2">description</span>
+						<br><br>
+						<span data-i18n="cri_banshee_info3">description</span>
+						<br><br>
+						<span data-i18n="cri_banshee_info4">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="dans_pierre">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="dans_pierre_info1">description</span>
+						<br><br>
+						<span data-i18n="dans_pierre_info2">description</span>
+						<br><br>
+						<span data-i18n="dans_pierre_info3">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="evasion">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="evasion_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="force_invisible">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Geburah<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="force_invisible_info1">description</span>
+						<br><br>
+						<span data-i18n="force_invisible_info2">description</span>
+						<br><br>
+						<span data-i18n="force_invisible_info3">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="griffe_tenebre">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="griffe_tenebre_info1">description</span> 
+						<br><br>
+						<span data-i18n="griffe_tenebre_info2">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="intangibilite">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="intangibilite_info1">description</span>
+						<br><br>
+						
+						<span data-i18n="intangibilite_info2">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="lecteur_vie">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Yesod<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 1-3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="yes">Oui</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="lecteur_vie_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="levitation">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Malkuth<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="levitation_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="telepathie">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Chesed<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3+ <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="telepathie_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="ubiquite">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						Tiferet<br>
+						<span data-i18n="perisprit_macro">Périsprit</span> : 3 <br>
+						<span data-i18n="controle_macro">Contrôle</span> : <span data-i18n="no">Non</span> <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="ubiquite_info">description</span> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Grâces -->
+		<div class="wrapper_dice_title">
+			<div class="info_graces">
+				<span class="info_title" data-i18n="graces_info">Grâces</span>
+				<input type="checkbox" class="sheet-info-graces-switch" name="attr_graces_switch" value="1" data-i18n-title="show_hide" title="Afficher/masquer le contenu"><span class="show">|</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+			</div>
+		</div>
+		<input type="checkbox" name="attr_graces_switch" class="sheet-info-graces-switch" value="1" style="display: none;">
+		<div class="wrapper_dice_info_graces_data">
+			<div class="section_generic_gauche_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_ailleurs">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_ailleurs_info1">description</span> 
+						<br><br>
+						<span data-i18n="grace_ailleurs_info2">description</span> 
+						<br><br>
+						<span data-i18n="grace_ailleurs_info3">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite_1">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_benediction">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_benediction_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_clairvoyance">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_clairvoyance_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_corne_abondance">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_corne_abondance_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_extinction">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_extinction_info">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_hors_du_linceul">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_hors_du_linceul_info">description</span>
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_gauche">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_leve_toi">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_leve_toi_info1">description</span> 
+						<br><br>
+						<span data-i18n="grace_leve_toi_info2">description</span> 
+						<br><br>
+						<span data-i18n="grace_leve_toi_info3">description</span> 
+					</div>
+				</div>
+			</div>
+			<div class="section_generic_droite">
+				<div class="wrapper_data_generic">
+					<div class="titre_generic">
+						<span data-i18n="grace_soleil">Nom du pouvoir</span>
+					</div>
+					<div class="texte_info_pouvoir">
+						<span data-i18n="perisprit_macro">Périsprit</span> : 16 <br>
+					</div>
+					<div class="texte_desc_generic">
+						<span data-i18n="grace_soleil_info1">description</span>
+						<br><br>
+						<span data-i18n="grace_soleil_info2">description</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wrapper_dice_title">
+			<div class="info_armes">
+				<span class="info_title" data-i18n="info_armes">Armes</span>
+				<input type="checkbox" class="sheet-info-armes-switch" name="attr_armes_switch" value="1" data-i18n-title="show_hide" title="Afficher/masquer le contenu"><span class="show">|</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/official_ressource/offi_title-border-long.png" />
+				</div>
+			</div>
+		</div>
+		<input type="checkbox" name="attr_armes_switch" class="sheet-info-armes-switch" value="1" style="display: none;">
+		<div class="wrapper_dice_info_armes_data">
+			
+			tableau des ARMES
+			
+		</div>
 	</div>
 	<div class="esprit">
 		<div class="wrapper_esprit">
@@ -1430,15 +2206,15 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<option value="12" data-i18n="tourmente">Tourmente</option>
 						</select>
 					</div>
-					<div class="niveau1_p"><span class="info" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
+					<div class="niveau1_p"><span class="info_spell" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau1_p1"><input class="data" type="data" name="attr_niveau1_p1" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau1_p2"><input class="data" type="data" name="attr_niveau1_p2" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau1_p3"><input class="data" type="data" name="attr_niveau1_p3" min="0" readonly="readonly" style="border: none;"></div>
-					<div class="niveau1_c"><span class="info" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
+					<div class="niveau1_c"><span class="info_spell" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
 					<div class="niveau1_c1"><input type="checkbox" name="attr_niveau1_c1" value="1" ></div>
 					<div class="niveau1_c2"><input type="checkbox" name="attr_niveau1_c2" value="1" ></div>
 					<div class="niveau1_c3"><input type="checkbox" name="attr_niveau1_c3" value="1" ></div>
-					<div class="niveau1_s"><!-- <span class="info" title="Informations">I.</span> --></div>
+					<div class="niveau1_s"><!-- <span class="info_spell" title="Informations">I.</span> --></div>
 					<div class="niveau1_s1">
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-power" value="&{template:cabinet-pouvoir} {{title=@{nom_pouvoir_1_1}}} {{subtitle=^{pouvoir_lvl1}}} {{^{perisprit_macro}=@{niveau1_p1}}} {{Contrôle=@{affichage1_c1}}} {{^{sphere}=@{sphere1_lvl_1}}} {{info=@{info1_lvl_1}}}"><span class="picto_pouvoir" title="Afficher le pouvoir dans la fenêtre de discussion" data-i18n-title="show_power">R</span></button>
 					</div>
@@ -1502,11 +2278,11 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<option value="12" data-i18n="rouage">Rouages</option>
 						</select>
 					</div>
-					<div class="niveau2_p"><span class="info" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
+					<div class="niveau2_p"><span class="info_spell" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau2_p1"><input class="data" type="data" name="attr_niveau2_p1" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau2_p2"><input class="data" type="data" name="attr_niveau2_p2" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau2_p3"><input class="data" type="data" name="attr_niveau2_p3" min="0" readonly="readonly" style="border: none;"></div>
-					<div class="niveau2_c"><span class="info" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
+					<div class="niveau2_c"><span class="info_spell" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
 					<div class="niveau2_c1"><input type="checkbox" name="attr_niveau2_c1" value="1" ></div>
 					<div class="niveau2_c2"><input type="checkbox" name="attr_niveau2_c2" value="1" ></div>
 					<div class="niveau2_c3"><input type="checkbox" name="attr_niveau2_c3" value="1" ></div>
@@ -1574,11 +2350,11 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<option value="12" data-i18n="ubiquite">Ubiquité</option>
 						</select>
 					</div>
-					<div class="niveau3_p"><span class="info" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
+					<div class="niveau3_p"><span class="info_spell" data-i18n-title="perisprit_cost" title="Le coût en périsprit du pouvoir">P.</span></div>
 					<div class="niveau3_p1"><input class="data" type="data" name="attr_niveau3_p1" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau3_p2"><input class="data" type="data" name="attr_niveau3_p2" min="0" readonly="readonly" style="border: none;"></div>
 					<div class="niveau3_p3"><input class="data" type="data" name="attr_niveau3_p3" min="0" readonly="readonly" style="border: none;"></div>
-					<div class="niveau3_c"><span class="info" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
+					<div class="niveau3_c"><span class="info_spell" data-i18n-title="power_control" title="Cocher si le pouvoir nécessite le contrôle du corps">C.</span></div>
 					<div class="niveau3_c1"><input type="checkbox" name="attr_niveau3_c1" value="1" ></div>
 					<div class="niveau3_c2"><input type="checkbox" name="attr_niveau3_c2" value="1" ></div>
 					<div class="niveau3_c3"><input type="checkbox" name="attr_niveau3_c3" value="1" ></div>
