@@ -149,6 +149,8 @@ body.sheet-darkmode select,
 body.sheet-darkmode textarea,
 body.sheet-darkmode .charsheet {
 	color: var(--blue_cabinet);
+	
+    --blue_cabinet: white;
 }
 
 .btn:hover {
@@ -5748,7 +5750,7 @@ input[type="radio"] {
     grid-template-rows: 35px;
     margin-top: 30px;
     margin-left: 30px;
-    margin-right: 30px;
+    margin-right: 31px;
     box-shadow: -5px 4px 12px 0px #00000096;
 }
 
@@ -5758,8 +5760,18 @@ input[type="radio"] {
     grid-template-rows: 35px;
 	margin-top: 30px;
     margin-left: 30px;
-    margin-right: 30px;
+    margin-right: 31px;
 	margin-bottom: 20px;
+    box-shadow: -5px 4px 12px 0px #00000096;
+}
+
+.wrapper_info_poltergeist {
+    display: grid;
+    grid-template-columns: 300px 150px;
+    grid-template-rows: 35px;
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 178px;
     box-shadow: -5px 4px 12px 0px #00000096;
 }
 
@@ -5949,10 +5961,18 @@ input[type="radio"] {
 	border-right: 1px solid var(--marron_cabinet);
 }
 
-
-
-
-
+.section_generic_centre {
+	grid-column: 1/4;
+	border: 1px solid var(--blue_cabinet);
+    margin-left: 5px;
+    margin-top: 10px;
+	padding-top: 5px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 5px 0px #0000004d;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_background.png);
+    background-size: cover;
+    border-radius: 10px;
+}
 
 .section_generic_gauche,
 .section_generic_gauche_1 {
