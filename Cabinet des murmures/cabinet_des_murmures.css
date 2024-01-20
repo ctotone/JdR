@@ -446,6 +446,14 @@ div.perisprit_data input[type="checkbox"]:focus {
   outline: none;
 }
 
+div.wrapper_info_outil input[type="checkbox"] {
+    transform: none;
+    width: 12px;
+    height: 12px !important;
+    margin-top: 9px;
+    margin-left: 0;
+}
+
 input[type="checkbox"].sheet-general-switch:focus,
 input[type="checkbox"].sheet-agir-switch:focus,
 input[type="checkbox"].sheet-combattre-switch:focus,
@@ -453,9 +461,9 @@ input[type="checkbox"].sheet-pouvoir-switch:focus,
 input[type="checkbox"].sheet-info-pouvoir-1-switch:focus,
 input[type="checkbox"].sheet-info-pouvoir-2-switch:focus,
 input[type="checkbox"].sheet-info-pouvoir-3-switch:focus,
-input[type="checkbox"].sheet-outils-pouvoir-switch:focus,
 input[type="checkbox"].sheet-info-graces-switch:focus,
-input[type="checkbox"].sheet-info-armes-switch:focus{
+input[type="checkbox"].sheet-info-armes-switch:focus,
+input[type="checkbox"].sheet-info-outil-pouvoir-switch:focus{
   outline: none;
 }
 
@@ -466,9 +474,9 @@ input[type="checkbox"].sheet-pouvoir-switch,
 input[type="checkbox"].sheet-info-pouvoir-1-switch,
 input[type="checkbox"].sheet-info-pouvoir-2-switch,
 input[type="checkbox"].sheet-info-pouvoir-3-switch,
-input[type="checkbox"].sheet-outils-pouvoir-switch,
 input[type="checkbox"].sheet-info-graces-switch,
-input[type="checkbox"].sheet-info-armes-switch{   
+input[type="checkbox"].sheet-info-armes-switch,
+input[type="checkbox"].sheet-info-outil-pouvoir-switch{   
 	display: inline-block;
 	opacity: 0;
 	width: 65px;
@@ -486,9 +494,9 @@ input[type="checkbox"].sheet-pouvoir-switch:hover,
 input[type="checkbox"].sheet-info-pouvoir-1-switch:hover,
 input[type="checkbox"].sheet-info-pouvoir-2-switch:hover,
 input[type="checkbox"].sheet-info-pouvoir-3-switch:hover,
-input[type="checkbox"].sheet-outils-pouvoir-switch:hover,
 input[type="checkbox"].sheet-info-graces-switch:hover,
-input[type="checkbox"].sheet-info-armes-switch:hover{
+input[type="checkbox"].sheet-info-armes-switch:hover,
+input[type="checkbox"].sheet-info-outil-pouvoir-switch:hover{
     color: black;
     text-decoration: underline;
 }
@@ -4519,9 +4527,9 @@ input[type="radio"] {
 .charsheet .sheet-info-pouvoir-1-switch:not(:checked) ~ .wrapper_dice_info_pouvoir_1_data,
 .charsheet .sheet-info-pouvoir-2-switch:not(:checked) ~ .wrapper_dice_info_pouvoir_2_data,
 .charsheet .sheet-info-pouvoir-3-switch:not(:checked) ~ .wrapper_dice_info_pouvoir_3_data,
-.charsheet .sheet-outils-pouvoir-switch:not(:checked) ~ .wrapper_dice_outils_pouvoir_data,
 .charsheet .sheet-info-graces-switch:not(:checked) ~ .wrapper_dice_info_graces_data,
-.charsheet .sheet-info-armes-switch:not(:checked) ~ .wrapper_dice_info_armes_data{
+.charsheet .sheet-info-armes-switch:not(:checked) ~ .wrapper_dice_info_armes_data,
+.charsheet .sheet-info-outil-pouvoir-switch:not(:checked) ~ .wrapper_dice_info_outil_pouvoir_data{
   display: none;
 }
 
@@ -5721,12 +5729,24 @@ input[type="radio"] {
 	margin-right: 3px;
 }
 
+.info_outil_pouvoir {
+	grid-column: 1/5;
+	font-size: 16px;
+	display: flex;
+	white-space: nowrap;	
+	margin-top: 30px;
+	font-weight: bold;
+	margin-left: 5px;
+	margin-right: 3px;
+}
+
 .wrapper_dice_info_pouvoir_1_data,
 .wrapper_dice_info_pouvoir_2_data,
 .wrapper_dice_info_pouvoir_3_data,
-.wrapper_dice_outils_pouvoir_data,
+.wrapper_dice_info_outil_pouvoir_data,
 .wrapper_dice_info_graces_data,
-.wrapper_dice_info_armes_data {  
+.wrapper_dice_info_armes_data,
+.wrapper_dice_info_outil_pouvoir_data {  
 	display: grid;
     grid-template-columns: 410px 5px 410px;
 	grid-template-rows: 20px;
@@ -5771,6 +5791,17 @@ input[type="radio"] {
     margin-left: 200px;
     margin-right: 178px;
     box-shadow: -5px 4px 12px 0px #00000096;
+}
+
+.wrapper_info_outil {
+    display: grid;
+    grid-template-columns: 30px 200px 45px 200px 30px;
+    grid-template-rows: 35px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: -5px 4px 12px 0px #00000096;
+    margin-left: 157px;
+    margin-right: 156px;
 }
 
 .section_arme {
@@ -6037,6 +6068,91 @@ input[type="radio"] {
 
 .texte_droite_generic {
     grid-column: 3;
+}
+
+.outil_titre {
+    grid-column: 1/6;
+    border: 1px solid var(--marron_cabinet);
+    line-height: 35px;
+    text-align: center;
+    color: #fffffff2;
+    background-color: #37474f;
+    font-size: 17px;
+}
+
+.outil_info {
+    grid-column: 1/6;
+    border: 1px solid var(--marron_cabinet);
+    line-height: 30px;
+    text-align: center;
+    border-top: none;
+}
+
+.outil_gauche1,
+.outil_gauche2 {
+	grid-column: 2;
+	border: 1px solid var(--marron_cabinet);
+	border-top: none;
+	border-right: none;
+	border-left: none;
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+.outil_gauche1_check,
+.outil_gauche2_check {
+    grid-column: 1;
+    border: 1px solid var(--marron_cabinet);
+    text-align: center;
+    border-top: none;
+    border-right: none;
+    padding-left: 10px;
+}
+
+.outil_centre1,
+.outil_centre2 {
+    grid-column: 3;
+    border: 1px solid var(--marron_cabinet);
+    text-align: center;
+    border-top: none;
+	border-right: none;
+}
+
+.outil_droite1,
+.outil_droite2 {
+    grid-column: 4;
+    border: 1px solid var(--marron_cabinet);
+    border-top: none;
+    border-right: none;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 6px;
+}
+
+.outil_droite1_check,
+.outil_droite2_check {
+    grid-column: 5;
+    border: 1px solid var(--marron_cabinet);
+    text-align: center;
+    border-top: none;
+	border-left: none;
+	padding-left: 5px;
+}
+
+.outil_gauche1,
+.outil_centre1,
+.outil_droite1,
+.outil_gauche1_check,
+.outil_droite1_check {
+	background-color: var(--fond_tableau_clair);
+}
+
+.outil_gauche2,
+.outil_centre2,
+.outil_droite2,
+.outil_gauche2_check,
+.outil_droite2_check {
+	background-color: var(--fond_tableau_fonce);
 }
 
   /* Style Cabinet / Corps /  */
