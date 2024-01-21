@@ -2778,7 +2778,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 	<!-- DIV QUALITE ET DEFAUT  -->
 	<!---------------------------->
 	<div class="esprit_qualite">
-		<div class="wrapper_arbre">
+		<div class="wrapper_arbre_esprit_qualite">
 			<div class="qualite_arbre"><span data-i18n="qualites_and_defects">QUALITÉS ET DÉFAUTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
@@ -2917,60 +2917,70 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{attention}}} {{^{attention_roll}=[[@{D_attention}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="attention_roll">Attention</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{attention}}} {{^{attention_roll}=@{D_attention_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="attention_roll">Attention</span></button>
+						(<input class="data_info" type="number" name="attr_D_attention" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="autorite_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{authority}}} {{^{authority_roll}=[[@{D_autorite}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="authority_roll">Autorité</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{authority}}} {{^{authority_roll}=@{D_autorite_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="authority_roll">Autorité</span></button>
+						(<input class="data_info" type="number" name="attr_D_autorite" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="charisme_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{charisma}}} {{^{charisma_roll}=[[@{D_charisme}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="charisma_roll">Charisme</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{charisma}}} {{^{charisma_roll}=@{D_charisme_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="charisma_roll">Charisme</span></button>
+						(<input class="data_info" type="number" name="attr_D_charisme" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="coordination_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{coordination}}} {{^{coordination_roll}=[[@{D_coordination}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="coordination_roll">Coordination</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{coordination}}} {{^{coordination_roll}=@{D_coordination_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="coordination_roll">Coordination</span></button>
+						(<input class="data_info" type="number" name="attr_D_coordination" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="courage_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{courage}}} {{^{courage_roll}=[[@{D_courage}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="courage_roll">Courage</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{courage}}} {{^{courage_roll}=@{D_courage_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="courage_roll">Courage</span></button>
+						(<input class="data_info" type="number" name="attr_D_courage" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="intellect_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{intellect}}} {{^{intellect_roll}=[[@{D_intellect}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="intellect_roll">Intellect</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{intellect}}} {{^{intellect_roll}=@{D_intellect_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="intellect_roll">Intellect</span></button>
+						(<input class="data_info" type="number" name="attr_D_intellect" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="ouverture_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{opening}}} {{^{opening_roll}=[[@{D_ouverture}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="opening_roll">Ouverture</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{opening}}} {{^{opening_roll}=@{D_ouverture_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="opening_roll">Ouverture</span></button>
+						(<input class="data_info" type="number" name="attr_D_ouverture" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="savoir_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{know}}} {{^{know_roll}=[[@{D_savoir}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="know_roll">Savoir</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{know}}} {{^{know_roll}=@{D_savoir_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="know_roll">Savoir</span></button>
+						(<input class="data_info" type="number" name="attr_D_savoir" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="sensibilite_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{sensitivity}}} {{^{sensitivity_roll}=[[@{D_sensibilite}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="sensitivity_roll">Sensibilité</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{sensitivity}}} {{^{sensitivity_roll}=@{D_sensibilite_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="sensitivity_roll">Sensibilité</span></button>
+						(<input class="data_info" type="number" name="attr_D_sensibilite" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 					
 					<div class="serenite_dice_roll">
 						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
 						<button class="classic_roll" type="roll" name="roll-classic-qualite" value="&{template:cabinet-classic-qualite} {{title=^{serenity}}} {{^{serenity_roll}=[[@{D_serenite}D6k1]]}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="serenity_roll">Sérénite</span></button>
 						<button class="prouesse_roll" type="roll" name="roll-prouesse-qualite" value="&{template:cabinet-prouesse} {{title=^{serenity}}} {{^{serenity_roll}=@{D_serenite_roll}}} {{^{neshama}=[[@{aspect_neshama_bonus}]]}} {{^{rouah}=[[@{aspect_rouah_bonus}]]}} {{^{nefesh}=[[@{aspect_nefesh_bonus}]]}}"><span data-i18n="serenity_roll">Sérénite</span></button>
+						(<input class="data_info" type="number" name="attr_D_serenite" readonly="readonly" title="Nombre de dé(s)" data-i18n-title="dice_number">)
 					</div>
 				</div>
 			</div>
@@ -6309,7 +6319,12 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 		<div class="sheet-value">{{puissance}}</div>
 		{{/puissance}}
 		{{#computed::roll}}
-		<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}}</div>
+			{{#rollLess() computed::roll 2}}
+			<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}} <span data-i18n="weapon_point">point</span></div>
+			{{/rollLess() computed::roll 2}}
+			{{#rollGreater() computed::roll 1}}
+			<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}} <span data-i18n="weapon_points">points</span></div>
+			{{/rollGreater() computed::roll 1}}
 		{{/computed::roll}}
 	</div>
 </div>

@@ -710,6 +710,7 @@ input:checked + .slider_prouesse:before {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 .charsheet button.sheet-radio > span.sheet-checked {
 	border-radius: 50%;
@@ -1967,6 +1968,21 @@ input[type="radio"] {
     grid-template-columns: 190px 390px 210px;
     grid-auto-rows: 30px;
     margin-top: 15px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_qualite.png);
+    background-repeat: no-repeat;
+    background-size: 524px 740px;
+    background-position: bottom 248px right 159px;
+}
+
+.wrapper_arbre_esprit_qualite{  
+    display: grid;
+    grid-template-columns: 190px 390px 210px;
+    grid-auto-rows: 30px;
+    margin-top: 15px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_qualite.png);
+    background-repeat: no-repeat;
+    background-size: 430px 610px;
+    background-position: bottom 70px right 206px;
 }
 
 .qualite_arbre {
@@ -1985,10 +2001,10 @@ input[type="radio"] {
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
-    margin-top: 20px;
+    margin-top: 20px;/* 
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_qualite_esprit.png);
     background-size: contain;
-    background-repeat: no-repeat;	
+    background-repeat: no-repeat;	 */
     display: grid;
     font-family: 'IM Fell English, serif';
 	scale: 0.9;
@@ -2001,9 +2017,9 @@ input[type="radio"] {
     padding-top: 5px;
     padding-left: 5px;
     margin-top: 80px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_qualite_esprit.png);
+    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_qualite_esprit.png);
     background-size: contain;
-    background-repeat: no-repeat;	
+    background-repeat: no-repeat;	 */
     display: grid;
     font-family: 'IM Fell English, serif';
 	scale: 1.1;
@@ -3088,13 +3104,13 @@ input[type="radio"] {
 
 .arbre_esprit_froideur_input {  
 	grid-column: 1;
-	grid-row: 140;
+	grid-row: 139;
 	margin-left: 25px;
 }
 
 .arbre_esprit_superstition_input {
     grid-column: 3;
-    grid-row: 140;
+    grid-row: 139;
 	margin-left: 77px;
 }
 
@@ -4648,7 +4664,7 @@ input[type="radio"] {
 
 .wrapper_qualite_dice{    
 	display: grid;
-    grid-template-columns: 20px 130px 130px 130px;
+    grid-template-columns: 20px 140px 125px 113px;
 	grid-template-rows: 30px;
 	margin-top: 30px;
 	margin-left: 0px;
@@ -7555,6 +7571,17 @@ span.info_pre {
     font-size: 14px;
     font-weight: bold;
     margin-left: 15px;
+}
+
+.section_qualite input.data_info {
+    background: none;
+    border: none;
+    width: 10px !important;
+    padding: 0px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--blue_cabinet);
+    cursor: default;
 }
 
   /* Roll Template */
