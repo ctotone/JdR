@@ -28,6 +28,7 @@ font-family: 'Great Vibes', cursive;
 	--blue_cabinet_data: #435861e3;
     --red_cabinet: #772d34ed;
 	--marron_cabinet: #615045;
+	--defaut_arbre: #772d34ed;
 	--fond_tableau_clair: #f7f6f4;
 	--fond_tableau_fonce: #d0d4d5;
 	--dots_little_cabinet: #000;
@@ -41,14 +42,14 @@ font-family: 'Great Vibes', cursive;
 	--bouton_violet: #9001c6;
 	--border_bouton_unchecked: #0202027d;
 	--border_bouton_checked: #0202027d;
-	--defaut_blanc: #fff;
+	--defaut_blanc: transparent;
 	--defaut_rouge: #fe0000;
 	--defaut_bleu: #3900ff;
 	--defaut_jaune: #e8fe00;
 	--defaut_orange: #ff9700;
 	--defaut_vert: #16b42c;
 	--defaut_violet: #b01ee8;
-	--border_defaut_color1: #a8595c;
+	--border_defaut_color1: transparent;
 	--margin_dice: 2px;
     margin-left: -10px;
     border-radius: 5px;
@@ -3168,7 +3169,7 @@ input[type="radio"] {
 	display: grid;
     grid-template-columns: 142px 130px 130px;
 	grid-auto-rows: 1px;
-	color: #ffffffab;
+	color: #ffffffe3;
 }
 
 .courage {  
@@ -3188,42 +3189,42 @@ input[type="radio"] {
 	font-weight: bold;
 	font-size: 11px;
 	position: static;
-	margin-left: 30px;
+	margin-left: 25px;
 }
 
 .sensibilite {
     grid-column: 3;
-    grid-row: 66;
+    grid-row: 110;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
     position: static;
-    margin-left: 10px;
+    margin-left: -16px;
 }
 
 .autorite {
 	grid-column: 1;
-	grid-row: 201;
+	grid-row: 232;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: -10px;
+    margin-left: 25px;
 }
 
 .ouverture {
     grid-column: 3;
-    grid-row: 201;
+    grid-row: 232;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
     position: static;
-    margin-left: 10px;
+    margin-left: -16px;
 }
 
 .serenite {
 	grid-column: 2;
-	grid-row: 243;
+	grid-row: 289;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -3232,27 +3233,27 @@ input[type="radio"] {
 
 .savoir {
 	grid-column: 1;
-	grid-row: 337;
+	grid-row: 357;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: -15px;
+    margin-left: 25px;
 }
 
 .charisme {
 	grid-column: 3;
-	grid-row: 337;
+	grid-row: 357;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: 10px;
+    margin-left: -16px;
 }
 
 .attention {
 	grid-column: 2;
-	grid-row: 379;
+	grid-row: 415;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -3261,7 +3262,7 @@ input[type="radio"] {
 
 .coordination {
 	grid-column: 2;
-	grid-row: 514;
+	grid-row: 539;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
@@ -3279,43 +3280,43 @@ input[type="radio"] {
 
 .intellect_D {
     grid-column: 1;
-    grid-row: 84/157;
-	background-image: var(--intellect-background);
-	background-size: 72px 72px;
-	background-repeat: no-repeat;
-	margin-left: 25px;
+    grid-row: 126/326;
+    background-image: var(--intellect-background);
+    background-size: 72px 72px;
+    background-repeat: no-repeat;
+    margin-left: 47px;
 }
 
 .sensibilite_D {
 	grid-column: 3;
-	grid-row: 84/157;
+	grid-row: 126/326;
 	background-image: var(--sensibilite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 35px;
+	margin-left: 22px;
 }
 
 .autorite_D {
     grid-column: 1;
-    grid-row: 220/292;
-	background-image: var(--autorite-background);
-	background-size: 72px 72px;
-	background-repeat: no-repeat;
-	margin-left: 25px;
+    grid-row: 249/500;
+    background-image: var(--autorite-background);
+    background-size: 72px 72px;
+    background-repeat: no-repeat;
+    margin-left: 47px;
 }
 
 .ouverture_D {
     grid-column: 3;
-    grid-row: 220/292;
+    grid-row: 249/500;
 	background-image: var(--ouverture-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 35px;
+	margin-left: 22px;
 }
 
 .serenite_D {
 	grid-column: 2;
-	grid-row: 261/333;
+	grid-row: 309/600;
 	background-image: var(--serenite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3324,25 +3325,25 @@ input[type="radio"] {
 
 .savoir_D {
 	grid-column: 1;
-	grid-row: 356/428;
+	grid-row: 374/600;
 	background-image: var(--savoir-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 25px;
+	margin-left: 47px;
 }
 
 .charisme_D {
     grid-column: 3;
-    grid-row: 356/428;
+    grid-row: 374/600;
 	background-image: var(--charisme-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 35px;
+	margin-left: 22px;
 }
 
 .attention_D {
 	grid-column: 2;
-	grid-row: 397/469;
+	grid-row: 431/700;
 	background-image: var(--attention-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3351,110 +3352,110 @@ input[type="radio"] {
 
 .coordination_D {
 	grid-column: 2;
-	grid-row: 533/605;
+	grid-row: 556/700;
 	background-image: var(--coordination-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
 	margin-left: 28px;
 }
 
-.courage_defaut {      
-	grid-column: 2;
-	grid-row: 67/110;
-	background: var(--courage-defaut-background);
-	border-radius: 50%;
-	width: 35px;
-	height: 35px;
-	border: var(--border_courage_defaut);
-	margin-left: 66px;
+.courage_defaut {   
+    grid-column: 2;
+    grid-row: 100/300;
+    background: var(--courage-defaut-background);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: var(--border_courage_defaut);
+    margin-left: 94px;
 }
 
 .intellect_defaut {
 	grid-column: 1;
-	grid-row: 138/200;
+    grid-row: 178/300;
 	background: var(--intellect-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_intellect_defaut);
-	margin-left: 21px;
+    margin-left: 16.5px;
 }
 
 .sensibilite_defaut {
 	grid-column: 3;
-	grid-row: 138/200;
+    grid-row: 178/300;
 	background: var(--sensibilite-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_sensibilite_defaut);
-	margin-left: 73px;
+    margin-left: 87px;
 }
 
 .autorite_defaut {
 	grid-column: 1;
-	grid-row: 274/350;
+	grid-row: 302/450;
 	background: var(--autorite-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_autorite_defaut);
-	margin-left: 21px;
+    margin-left: 16.5px;
 }
 
 .ouverture_defaut {
 	grid-column: 3;
-	grid-row: 274/500;
+	grid-row: 302/450;
 	background: var(--ouverture-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_ouverture_defaut);
-	margin-left: 73px;
+    margin-left: 87px;
 }
 
 .serenite_defaut {
 	grid-column: 2;
-	grid-row: 315/400;
+	grid-row: 360/600;
 	background: var(--serenite-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_serenite_defaut);
-	margin-left: 66px;
+    margin-left: 94px;
 }
 
 .savoir_defaut {
 	grid-column: 1;
-	grid-row: 410/480;
+	grid-row: 426/550;
 	background: var(--savoir-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_savoir_defaut);
-	margin-left: 21px;
+    margin-left: 16.5px;
 }
 
 .charisme_defaut {
 	grid-column: 3;
-	grid-row: 410/480;
+	grid-row: 426/550;
 	background: var(--charisme-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_charisme_defaut);
-	margin-left: 73px;
+    margin-left: 87px;
 }
 
 .attention_defaut {
 	grid-column: 2;
-	grid-row: 452/500;
+	grid-row: 485/650;
 	background: var(--attention-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_attention_defaut);
-	margin-left: 66px;
+    margin-left: 94px;
 }
 
 .coordination_defaut {
@@ -3462,62 +3463,62 @@ input[type="radio"] {
 	grid-row: 588/605;
 	background: var(--coordination-defaut-background);
 	border-radius: 50%;
-	width: 35px;
-	height: 35px;
+	width: 32px;
+    height: 32px;
 	border: var(--border_coordination_defaut);
-	margin-left: 66px;
+	margin-left: 95px;
 }
 
 .imprudence {
     grid-column: 2;
-    grid-row: 108;
+    grid-row: 137;
     text-align: center;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dba8;
+    font-size: 12px;
     position: static;
-	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+    font-family: 'Shadows Into Light';
+    margin-left: 86px;
 }
 
 .froideur {
     grid-column: 1;
-    grid-row: 180;
+    grid-row: 162;
     text-align: center;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
-	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+    font-family: 'Shadows Into Light';
+    margin-left: -86px;
 }
 
 .superstition {
     grid-column: 3;
-    grid-row: 180;
+    grid-row: 167;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 9px;
     position: static;
-	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+    font-family: 'Shadows Into Light';
+    margin-left: 96px;
 }
 
 .intolerance {
     grid-column: 1;
-    grid-row: 316;
+    grid-row: 286;
     text-align: center;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 10px;
     position: static;
-	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+    font-family: 'Shadows Into Light';
+    margin-left: -110px;
 }
 
 .jalousie {
     grid-column: 3;
-    grid-row: 316;
+    grid-row: 286;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3527,8 +3528,8 @@ input[type="radio"] {
     grid-column: 2;
     grid-row: 357;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3538,8 +3539,8 @@ input[type="radio"] {
     grid-column: 1;
     grid-row: 452;
     text-align: center;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3549,8 +3550,8 @@ input[type="radio"] {
     grid-column: 3;
     grid-row: 452;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3560,8 +3561,8 @@ input[type="radio"] {
     grid-column: 2;
     grid-row: 492;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
     position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3571,8 +3572,8 @@ input[type="radio"] {
 	grid-column: 2;
 	grid-row: 630;
     text-align: right;
-    color: var(--red_cabinet);
-    font-size: 15px;
+    color: #f7d9dbb5;
+    font-size: 12px;
 	position: static;
 	font-family: 'Shadows Into Light';
 	margin-top: -5px;
@@ -3643,6 +3644,7 @@ input[type="radio"] {
     grid-row: 12;
     margin-left: 9px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .intellect_contener {
@@ -3650,6 +3652,7 @@ input[type="radio"] {
     grid-row: 83;
     margin-left: -124px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .sensibilite_contener {  
@@ -3657,6 +3660,7 @@ input[type="radio"] {
   grid-row: 83;
   margin-left: 146px;
   margin-right: 10px;
+    opacity: 0.4;
 }
 
 .autorite_contener {
@@ -3664,6 +3668,7 @@ input[type="radio"] {
     grid-row: 219;
     margin-left: -124px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .ouverture_contener {
@@ -3671,13 +3676,15 @@ input[type="radio"] {
     grid-row: 219;
 	margin-left: 146px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .serenite_contener {
     grid-column: 2;
-    grid-row: 261;
+    grid-row: 307;
     margin-left: 9px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .savoir_contener {
@@ -3685,13 +3692,15 @@ input[type="radio"] {
     grid-row: 355;
     margin-left: -124px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .charisme_contener {
     grid-column: 2;
     grid-row: 355;
-  margin-left: 146px;
+	margin-left: 146px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .attention_contener {
@@ -3699,6 +3708,7 @@ input[type="radio"] {
     grid-row: 398;
     margin-left: 9px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .coordination_contener {
@@ -3706,6 +3716,7 @@ input[type="radio"] {
     grid-row: 533;
     margin-left: 9px;
     margin-right: 10px;
+    opacity: 0.4;
 }
 
 .block_controle {
