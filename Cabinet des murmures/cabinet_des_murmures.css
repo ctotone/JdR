@@ -43,12 +43,12 @@ font-family: 'Great Vibes', cursive;
 	--border_bouton_unchecked: #0202027d;
 	--border_bouton_checked: #0202027d;
 	--defaut_blanc: transparent;
-	--defaut_rouge: #fe0000;
-	--defaut_bleu: #3900ff;
-	--defaut_jaune: #e8fe00;
-	--defaut_orange: #ff9700;
-	--defaut_vert: #16b42c;
-	--defaut_violet: #b01ee8;
+	--defaut_rouge: #ac050582;
+	--defaut_bleu: #3605df82;
+	--defaut_jaune: #a9b903a3;
+	--defaut_orange: #bd7205a3;
+	--defaut_vert: #00a817a3;
+	--defaut_violet: #7c02aa91;
 	--border_defaut_color1: transparent;
 	--margin_dice: 2px;
     margin-left: -10px;
@@ -84,7 +84,7 @@ font-family: 'Great Vibes', cursive;
     border-radius: 5px;
     box-shadow: 0px 5px 10px 6px #00000091;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_background.png);
-    background-size: contain;
+    background-size: cover;
 	position: relative;
 }
 
@@ -119,7 +119,11 @@ body.sheet-darkmode .info {
 }
 
 .arbre {
-	height: 1050px;
+	height: 1260px;
+}
+
+.esprit {
+	width: 1275px;
 }
 
 .titre_feuille { 
@@ -1141,7 +1145,7 @@ input[type="radio"] {
 }
 .controller_defaut_intellect[value*="vert"] ~ *{
     --intellect-defaut-background: var(--defaut_vert);
-	--border_defaut: 2px solid var(--border_defaut_color1);
+	--border_intellect_defaut: 2px solid var(--border_defaut_color1);
 }
 
 .controller_defaut_autorite[value*="blanc"] ~ *{
@@ -1969,13 +1973,9 @@ input[type="radio"] {
 
 .wrapper_arbre{  
     display: grid;
-    grid-template-columns: 190px 390px 210px;
+    grid-template-columns: 120px 600px 70px;
     grid-auto-rows: 30px;
     margin-top: 15px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_de_vie_ouija.jpg);
-	background-repeat: no-repeat;
-	background-size: 524px 740px;
-	background-position: bottom 233px right 145px;
 }
 
 .wrapper_arbre_esprit_qualite{  
@@ -1989,8 +1989,19 @@ input[type="radio"] {
     background-position: bottom 70px right 206px;
 }
 
+.qualite_arbre_titre_esprit {
+    grid-column: 16/18;
+    grid-row: 1;
+    font-size: 16px;
+    display: flex;
+    white-space: nowrap;
+    align-items: flex-end;
+    font-weight: bold;
+	margin-left: 10px;
+}
+
 .qualite_arbre {
-    grid-column: 1/5;
+    grid-column: 1/4;
     grid-row: 1;
     font-size: 16px;
     display: flex;
@@ -2000,38 +2011,28 @@ input[type="radio"] {
 }
 
 .qualite_arbre_esprit {
-    grid-column: 2;
-    grid-row: 1/25;
-    font-size: 14px;
-    padding-top: 5px;
-    padding-left: 5px;
-    margin-top: 20px;/* 
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_qualite_esprit.png);
-    background-size: contain;
-    background-repeat: no-repeat;	 */
-    display: grid;
-    font-family: 'IM Fell English, serif';
+	grid-column: 16/19;
+	grid-row: 1/25;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 31px;
+	margin-top: 20px;
+	display: grid;
+	font-family: 'IM Fell English, serif';
 	scale: 0.9;
 }
 
 .qualite_arbre_data {
     grid-column: 2;
-    grid-row: 1/25;
+    grid-row: 1/32;
     font-size: 14px;
     padding-top: 5px;
     padding-left: 5px;
     margin-top: 80px;
-    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_qualite_esprit.png);
-    background-size: contain;
-    background-repeat: no-repeat;	 */
     display: grid;
     font-family: 'IM Fell English, serif';
-	scale: 1.1;
+	scale:1.1;
 }
-
-
-
-
 
 
   /* Wrapper Esprit */
@@ -2039,9 +2040,18 @@ input[type="radio"] {
 
 .wrapper_esprit{  
 	display: grid;
-    grid-template-columns: 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px 20px;
+    grid-template-columns: 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px 25px 223px 210px 20px;
 	grid-auto-rows: 30px;	
     margin-top: 15px;
+}
+
+.separateur_esprit {
+	grid-column: 15;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_separateur_vertical.png);
+    background-repeat: no-repeat;
+	background-size: cover;
+	grid-row: 1/30;
+	margin-left: 7px;
 }
 
 .profil {
@@ -2837,10 +2847,16 @@ input[type="radio"] {
   
   
 
-.wrapper_arbre_esprit{  
+.wrapper_arbre_esprit{    
 	display: grid;
-    grid-template-columns: 130px 130px 130px;
+	grid-template-columns: 130px 130px 130px;
 	grid-auto-rows: 1px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_qualite.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 480px 677px;
+	background-position: bottom -21px right -12px;
+	margin-top: 60px;
 }
 
 .arbre_esprit_courage {
@@ -3167,111 +3183,117 @@ input[type="radio"] {
 
 .wrapper_arbre_data{  
 	display: grid;
-    grid-template-columns: 142px 130px 130px;
+    grid-template-columns: 223px 153px 200px;
 	grid-auto-rows: 1px;
-	color: #ffffffe3;
+	color: #ffffffeb;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_de_vie_ouija.jpg);
+	background-repeat: no-repeat;
+	background-size: 575px 835px;
 }
 
 .courage {  
 	grid-column: 2;
-	grid-row: 43;
+	grid-row: 50;
 	text-align: center;
 	font-weight: bold;
 	font-size: 11px;
 	position: static;
-	margin-top: -8px;
+	margin-left: -24px;
 }
 
 .intellect {
 	grid-column: 1;
-	grid-row: 111;
+	grid-row: 145;
 	text-align: center;
 	font-weight: bold;
 	font-size: 11px;
 	position: static;
-	margin-left: 25px;
+	margin-left: 57px;
 }
 
 .sensibilite {
-    grid-column: 3;
-    grid-row: 110;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    position: static;
-    margin-left: -16px;
+	grid-column: 3;
+	grid-row: 145;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	position: static;
+	margin-left: -81px;
 }
 
 .autorite {
 	grid-column: 1;
-	grid-row: 232;
+	grid-row: 296;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .ouverture {
     grid-column: 3;
-    grid-row: 232;
+    grid-row: 296;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
     position: static;
-    margin-left: -16px;
+	margin-left: -81px;
 }
 
 .serenite {
 	grid-column: 2;
-	grid-row: 289;
+	grid-row: 369;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: -24px;
 }
 
 .savoir {
 	grid-column: 1;
-	grid-row: 357;
+	grid-row: 450;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .charisme {
 	grid-column: 3;
-	grid-row: 357;
+	grid-row: 450;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: -16px;
+	margin-left: -81px;
 }
 
 .attention {
 	grid-column: 2;
-	grid-row: 415;
+	grid-row: 522;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: -24px;
 }
 
 .coordination {
 	grid-column: 2;
-	grid-row: 539;
+	grid-row: 677;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: -24px;
 }
 
 .courage_D {     
 	grid-column: 2;
-	grid-row: 50/124;
+	grid-row: 78/157;
 	background-image: var(--courage-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3279,17 +3301,17 @@ input[type="radio"] {
 }
 
 .intellect_D {
-    grid-column: 1;
-    grid-row: 126/326;
-    background-image: var(--intellect-background);
-    background-size: 72px 72px;
-    background-repeat: no-repeat;
-    margin-left: 47px;
+	grid-column: 1;
+	grid-row: 172/300;
+	background-image: var(--intellect-background);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	margin-left: 102px;
 }
 
 .sensibilite_D {
 	grid-column: 3;
-	grid-row: 126/326;
+	grid-row: 172/300;
 	background-image: var(--sensibilite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3298,16 +3320,16 @@ input[type="radio"] {
 
 .autorite_D {
     grid-column: 1;
-    grid-row: 249/500;
+    grid-row: 324/500;
     background-image: var(--autorite-background);
     background-size: 72px 72px;
     background-repeat: no-repeat;
-    margin-left: 47px;
+	margin-left: 102px;
 }
 
 .ouverture_D {
     grid-column: 3;
-    grid-row: 249/500;
+    grid-row: 324/500;
 	background-image: var(--ouverture-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3316,7 +3338,7 @@ input[type="radio"] {
 
 .serenite_D {
 	grid-column: 2;
-	grid-row: 309/600;
+	grid-row: 397/600;
 	background-image: var(--serenite-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3325,16 +3347,16 @@ input[type="radio"] {
 
 .savoir_D {
 	grid-column: 1;
-	grid-row: 374/600;
+	grid-row: 479/600;
 	background-image: var(--savoir-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
-	margin-left: 47px;
+	margin-left: 102px;
 }
 
 .charisme_D {
     grid-column: 3;
-    grid-row: 374/600;
+    grid-row: 479/600;
 	background-image: var(--charisme-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3343,7 +3365,7 @@ input[type="radio"] {
 
 .attention_D {
 	grid-column: 2;
-	grid-row: 431/700;
+	grid-row: 550/700;
 	background-image: var(--attention-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3352,7 +3374,7 @@ input[type="radio"] {
 
 .coordination_D {
 	grid-column: 2;
-	grid-row: 556/700;
+	grid-row: 705/860;
 	background-image: var(--coordination-background);
 	background-size: 72px 72px;
 	background-repeat: no-repeat;
@@ -3361,222 +3383,221 @@ input[type="radio"] {
 
 .courage_defaut {   
     grid-column: 2;
-    grid-row: 100/300;
+    grid-row: 136/300;
     background: var(--courage-defaut-background);
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
     border: var(--border_courage_defaut);
-    margin-left: 94px;
+    margin-left: 104px;
 }
 
 .intellect_defaut {
 	grid-column: 1;
-    grid-row: 178/300;
+    grid-row: 233/300;
 	background: var(--intellect-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_intellect_defaut);
-    margin-left: 16.5px;
+    margin-left: 62px;
 }
 
 .sensibilite_defaut {
 	grid-column: 3;
-    grid-row: 178/300;
+    grid-row: 234/300;
 	background: var(--sensibilite-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_sensibilite_defaut);
-    margin-left: 87px;
+    margin-left: 98px;
 }
 
 .autorite_defaut {
 	grid-column: 1;
-	grid-row: 302/450;
+	grid-row: 386/450;
 	background: var(--autorite-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_autorite_defaut);
-    margin-left: 16.5px;
+    margin-left: 62px;
 }
 
 .ouverture_defaut {
 	grid-column: 3;
-	grid-row: 302/450;
+	grid-row: 387/450;
 	background: var(--ouverture-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_ouverture_defaut);
-    margin-left: 87px;
+    margin-left: 98px;
 }
 
 .serenite_defaut {
 	grid-column: 2;
-	grid-row: 360/600;
+	grid-row: 459/600;
 	background: var(--serenite-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_serenite_defaut);
-    margin-left: 94px;
+    margin-left: 104px;
 }
 
 .savoir_defaut {
 	grid-column: 1;
-	grid-row: 426/550;
+	grid-row: 540/600;
 	background: var(--savoir-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_savoir_defaut);
-    margin-left: 16.5px;
+    margin-left: 62px;
 }
 
 .charisme_defaut {
 	grid-column: 3;
-	grid-row: 426/550;
+	grid-row: 541/600;
 	background: var(--charisme-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_charisme_defaut);
-    margin-left: 87px;
+    margin-left: 98px;
 }
 
 .attention_defaut {
 	grid-column: 2;
-	grid-row: 485/650;
+	grid-row: 615/650;
 	background: var(--attention-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_attention_defaut);
-    margin-left: 94px;
+    margin-left: 104px;
 }
 
 .coordination_defaut {
 	grid-column: 2;
-	grid-row: 588/605;
+	grid-row: 769/850;
 	background: var(--coordination-defaut-background);
 	border-radius: 50%;
 	width: 32px;
-    height: 32px;
+	height: 32px;
 	border: var(--border_coordination_defaut);
-	margin-left: 95px;
+	margin-left: 104px;
 }
 
 .imprudence {
-    grid-column: 2;
-    grid-row: 137;
-    text-align: center;
-    color: #f7d9dba8;
-    font-size: 12px;
-    position: static;
-    font-family: 'Shadows Into Light';
-    margin-left: 86px;
+	grid-row: 117;
+	text-align: left;
+	color: #f7d9dba8;
+	font-size: 11px;
+	position: static;
+	font-family: 'Shadows Into Light';
+	margin-left: 338px;
 }
 
 .froideur {
-    grid-column: 1;
-    grid-row: 162;
-    text-align: center;
-    color: #f7d9dbb5;
-    font-size: 12px;
-    position: static;
-    font-family: 'Shadows Into Light';
-    margin-left: -86px;
+	grid-column: 1;
+	grid-row: 212;
+	text-align: right;
+	color: #f7d9dbb5;
+	font-size: 11px;
+	position: static;
+	font-family: 'Shadows Into Light';
+	margin-right: 137px;
 }
 
-.superstition {
-    grid-column: 3;
-    grid-row: 167;
-    text-align: right;
-    color: #f7d9dbb5;
-    font-size: 9px;
-    position: static;
-    font-family: 'Shadows Into Light';
-    margin-left: 96px;
+.superstition {  
+	grid-column: 3;
+	grid-row: 212;
+	text-align: left;
+	color: #f7d9dbb5;
+	font-size: 11px;
+	position: static;
+	font-family: 'Shadows Into Light';
+	margin-left: 111px;
 }
 
 .intolerance {
     grid-column: 1;
-    grid-row: 286;
-    text-align: center;
+    grid-row: 366;
+    text-align: right;
     color: #f7d9dbb5;
-    font-size: 10px;
+    font-size: 11px;
     position: static;
     font-family: 'Shadows Into Light';
-    margin-left: -110px;
+	margin-right: 137px;
 }
 
 .jalousie {
     grid-column: 3;
-    grid-row: 286;
-    text-align: right;
+    grid-row: 366;
+    text-align: left;
     color: #f7d9dbb5;
-    font-size: 12px;
+    font-size: 11px;
     position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-left: 111px;
 }
 
 .indifference {
-    grid-column: 2;
-    grid-row: 357;
-    text-align: right;
-    color: #f7d9dbb5;
-    font-size: 12px;
-    position: static;
+	grid-column: 2;
+	grid-row: 440;
+	text-align: left;
+	color: #f7d9dbb5;
+	font-size: 10px;
+	position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-left: 114px;
 }
 
-.orgueil {
-    grid-column: 1;
-    grid-row: 452;
-    text-align: center;
-    color: #f7d9dbb5;
-    font-size: 12px;
-    position: static;
+.orgueil {  
+	grid-column: 1;
+	grid-row: 519;
+	text-align: right;
+	color: #f7d9dbb5;
+	font-size: 11px;
+	position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-right: 137px;
 }
 
 .manipulation {
     grid-column: 3;
-    grid-row: 452;
-    text-align: right;
+    grid-row: 519;
+    text-align: left;
     color: #f7d9dbb5;
-    font-size: 12px;
+    font-size: 11px;
     position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-left: 111px;
 }
 
 .manie {
-    grid-column: 2;
-    grid-row: 492;
-    text-align: right;
-    color: #f7d9dbb5;
-    font-size: 12px;
-    position: static;
+	grid-column: 2;
+	grid-row: 593;
+	text-align: left;
+	color: #f7d9dbb5;
+	font-size: 10px;
+	position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-left: 112px;
 }
 
 .avidite {
 	grid-column: 2;
-	grid-row: 630;
-    text-align: right;
-    color: #f7d9dbb5;
-    font-size: 12px;
+	grid-row: 746;
+	text-align: left;
+	color: #f7d9dbb5;
+	font-size: 11px;
 	position: static;
 	font-family: 'Shadows Into Light';
-	margin-top: -5px;
+	margin-left: 116px;
 }
 
 .imprudence_input {    
@@ -3640,88 +3661,88 @@ input[type="radio"] {
 }
 
 .courage_contener {
-    grid-column: 2;
-    grid-row: 12;
-    margin-left: 9px;
-    margin-right: 10px;
-    opacity: 0.4;
+	grid-column: 2;
+	grid-row: 76;
+	margin-left: 0px;
+	margin-right: 10px;
+	opacity: 0.4;
 }
 
 .intellect_contener {
-    grid-column: 2;
-    grid-row: 83;
-    margin-left: -124px;
-    margin-right: 10px;
-    opacity: 0.4;
+	grid-column: 2;
+	grid-row: 173;
+	margin-left: -41px;
+	margin-right: 10px;
+	opacity: 0.4;
 }
 
 .sensibilite_contener {  
-  grid-column: 2;
-  grid-row: 83;
-  margin-left: 146px;
-  margin-right: 10px;
-    opacity: 0.4;
+	grid-column: 2;
+	grid-row: 173;
+	margin-left: 147px;
+	margin-right: 10px;
+	opacity: 0.4;
 }
 
 .autorite_contener {
     grid-column: 2;
-    grid-row: 219;
-    margin-left: -124px;
+    grid-row: 324;
+    margin-left: -41px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .ouverture_contener {
     grid-column: 2;
-    grid-row: 219;
-	margin-left: 146px;
+    grid-row: 324;
+	margin-left: 147px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .serenite_contener {
     grid-column: 2;
-    grid-row: 307;
-    margin-left: 9px;
+    grid-row: 397;
+    margin-left: 0px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .savoir_contener {
     grid-column: 2;
-    grid-row: 355;
-    margin-left: -124px;
+    grid-row: 476;
+    margin-left: -41px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .charisme_contener {
     grid-column: 2;
-    grid-row: 355;
-	margin-left: 146px;
+    grid-row: 476;
+	margin-left: 147px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .attention_contener {
     grid-column: 2;
-    grid-row: 398;
-    margin-left: 9px;
+    grid-row: 548;
+    margin-left: 0px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .coordination_contener {
     grid-column: 2;
-    grid-row: 533;
-    margin-left: 9px;
+    grid-row: 703;
+    margin-left: 0px;
     margin-right: 10px;
     opacity: 0.4;
 }
 
 .block_controle {
     grid-column: 1/4;
-    grid-row: 25/35;
+	grid-row: 32/42;
     margin-top: 75px;
     margin-left: 75px;
     margin-right: 35px;
