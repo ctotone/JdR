@@ -124,6 +124,7 @@ body.sheet-darkmode .info {
 
 .esprit {
 	width: 1275px;
+    padding-left: 10px;
 }
 
 .titre_feuille { 
@@ -1990,7 +1991,7 @@ input[type="radio"] {
 }
 
 .qualite_arbre_titre_esprit {
-    grid-column: 16/18;
+    grid-column: 1/3;
     grid-row: 1;
     font-size: 16px;
     display: flex;
@@ -2011,15 +2012,14 @@ input[type="radio"] {
 }
 
 .qualite_arbre_esprit {
-	grid-column: 16/19;
-	grid-row: 1/25;
-	font-size: 14px;
-	padding-top: 5px;
-	padding-left: 31px;
-	margin-top: 20px;
-	display: grid;
-	font-family: 'IM Fell English, serif';
-	scale: 0.9;
+    grid-column: 1/4;
+    grid-row: 1/25;
+    font-size: 14px;
+    padding-top: 5px;
+    margin-top: 20px;
+    display: grid;
+    font-family: 'IM Fell English, serif';
+    scale: 0.9;
 }
 
 .qualite_arbre_data {
@@ -2040,13 +2040,13 @@ input[type="radio"] {
 
 .wrapper_esprit{  
 	display: grid;
-    grid-template-columns: 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px 25px 223px 210px 20px;
+    grid-template-columns: 150px 250px 25px 20px 80px 80px 80px 10px 80px 80px 10px 80px 10px 80px 10px 80px 80px 40px;
 	grid-auto-rows: 30px;	
     margin-top: 15px;
 }
 
 .separateur_esprit {
-	grid-column: 15;
+	grid-column: 3;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_separateur_vertical.png);
     background-repeat: no-repeat;
 	background-size: cover;
@@ -2055,7 +2055,7 @@ input[type="radio"] {
 }
 
 .profil {
-	grid-column: 1/15;
+	grid-column: 5/19;
 	grid-row: 1;
 	font-size: 16px;
 	display:flex;
@@ -2065,7 +2065,7 @@ input[type="radio"] {
 }
 
 .profil_data {
-	grid-column: 1/15;
+	grid-column: 5/19;
 	grid-row: 2/6;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2073,7 +2073,7 @@ input[type="radio"] {
 }
 
 .aspect {
-	grid-column: 1/4;
+	grid-column: 5/8;
 	grid-row: 6;
 	font-size: 16px;
 	display:flex;
@@ -2082,7 +2082,7 @@ input[type="radio"] {
 }
 
 .aspect_data {
-	grid-column: 1/4;
+	grid-column: 5/9;
 	grid-row: 7/11;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2090,7 +2090,7 @@ input[type="radio"] {
 }
 
 .acquis {
-	grid-column: 5/15;
+	grid-column: 9/19;
 	grid-row: 6;
 	font-size: 16px;
 	display:flex;
@@ -2100,7 +2100,7 @@ input[type="radio"] {
 }
 
 .acquis_1_data {
-    grid-column: 5/11;
+    grid-column: 9/15;
     grid-row: 7/11;
     font-size: 14px;
     padding-left: 5px;
@@ -2109,7 +2109,7 @@ input[type="radio"] {
 }
 
 .acquis_2_data {
-    grid-column: 10/15;
+    grid-column: 14/19;
     grid-row: 7/11;
     font-size: 14px;
     padding-left: 5px;
@@ -2118,7 +2118,7 @@ input[type="radio"] {
 }
 
 .acquis_3_data {
-	grid-column: 11/14;
+	grid-column: 14/19;
 	grid-row: 7/11;
 	font-size: 14px;
 	padding-left: 5px;
@@ -2126,7 +2126,7 @@ input[type="radio"] {
 }
 
 .perisprit {
-	grid-column: 1/7;
+	grid-column: 5/11;
 	grid-row: 11;
 	font-size: 16px;
 	display:flex;
@@ -2135,7 +2135,7 @@ input[type="radio"] {
 }
 
 .perisprit_data {
-	grid-column: 1/7;
+	grid-column: 5/11;
 	grid-row: 12/14;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2144,7 +2144,7 @@ input[type="radio"] {
 }
 
 .contact_esprit {
-	grid-column: 8/15;
+	grid-column: 12/19;
 	grid-row: 11;
 	font-size: 16px;
 	display:flex;
@@ -2152,7 +2152,7 @@ input[type="radio"] {
 }
 
 .contact_esprit_data {
-	grid-column: 8/15;
+	grid-column: 12/19;
 	grid-row: 12/15;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2160,7 +2160,7 @@ input[type="radio"] {
 }
 
 .routine {
-	grid-column: 1/7;
+	grid-column: 5/11;
 	grid-row: 14;
 	font-size: 16px;
 	display:flex;
@@ -2168,7 +2168,7 @@ input[type="radio"] {
 }
 
 .routine_data {
-	grid-column: 1/7;
+	grid-column: 5/11;
 	grid-row: 15/19;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2176,7 +2176,7 @@ input[type="radio"] {
 }
 
 .adversaire_esprit {
-	grid-column: 8/15;
+	grid-column: 12/19;
 	grid-row: 15;
 	font-size: 16px;
 	display:flex;
@@ -2184,7 +2184,7 @@ input[type="radio"] {
 }
 
 .adversaire_esprit_data {
-	grid-column: 8/15;
+	grid-column: 12/19;
 	grid-row: 16/19;
 	font-size: 14px;
 	padding-top: 5px;
@@ -2192,7 +2192,7 @@ input[type="radio"] {
 }
 
 .pouvoir {
-	grid-column: 1/15;
+	grid-column: 5/19;
 	grid-row: 19;
 	font-size: 16px;
 	display:flex;
@@ -2201,7 +2201,7 @@ input[type="radio"] {
 }
 
 .pouvoir_data {
-	grid-column: 1/15;
+	grid-column: 5/19;
 	grid-row: 20/25;
 	font-size: 16px;
 	display:flex;
@@ -2258,7 +2258,7 @@ input[type="radio"] {
 }
 
 .objet_esprit {
-	grid-column: 1/13;
+	grid-column: 5/17;
 	grid-row: 25;
 	font-size: 16px;	
 	display:flex;
@@ -2269,7 +2269,7 @@ input[type="radio"] {
 }
 
 .objet_esprit_data {
-	grid-column: 1/13;
+	grid-column: 5/17;
 	grid-row: 26;
 	font-size: 14px;
 	padding-top: 15px;
@@ -2278,7 +2278,7 @@ input[type="radio"] {
 }
 
 .corruption {
-	grid-column: 1/13;
+	grid-column: 5/17;
 	grid-row: 27;
 	font-size: 16px;
 	display:flex;
@@ -2289,7 +2289,7 @@ input[type="radio"] {
 }
 
 .corruption_data {
-	grid-column: 1/13;
+	grid-column: 5/17;
 	grid-row: 28;
 	font-size: 14px;
 	padding-top: 15px;
@@ -2298,7 +2298,7 @@ input[type="radio"] {
 }
 
 .xp_esprit_cadre {
-    grid-column: 12/15;
+    grid-column: 16/19;
     grid-row: 25/29;
     font-size: 14px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_xp_esprit.png);
@@ -2309,7 +2309,7 @@ input[type="radio"] {
 }
 
 .xp_esprit_titre {
-    grid-column: 12/15;
+    grid-column: 16/19;
     grid-row: 25;
     font-size: 14px;
     margin-left: 0px;
@@ -2318,7 +2318,7 @@ input[type="radio"] {
 }
 
 .xp_esprit_data {
-	grid-column: 12/15;
+	grid-column: 16/19;
 	grid-row: 27/29;
 	font-size: 14px;
     margin-left: 0px;
@@ -2334,12 +2334,12 @@ input[type="radio"] {
 }
 
 .esp_decor_bas {
-	grid-column: 5/11;
-	grid-row: 30;
-	grid-template-rows: 20px;
-	font-size: 20px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
-	background-size: cover;
+    grid-column: 2/8;
+    grid-row: 30;
+    grid-template-rows: 20px;
+    font-size: 20px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
+    background-size: cover;
 }
 
 
@@ -2849,14 +2849,15 @@ input[type="radio"] {
 
 .wrapper_arbre_esprit{    
 	display: grid;
-	grid-template-columns: 130px 130px 130px;
-	grid-auto-rows: 1px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_qualite.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-size: 480px 677px;
-	background-position: bottom -21px right -12px;
-	margin-top: 60px;
+    grid-template-columns: 130px 130px 130px;
+    grid-auto-rows: 1px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_arbre_qualite.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 480px 677px;
+    background-position: bottom -21px right -24px;
+    margin-top: 60px;
+    margin-left: -20px;
 }
 
 .arbre_esprit_courage {
