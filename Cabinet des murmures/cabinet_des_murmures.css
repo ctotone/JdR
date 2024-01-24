@@ -2334,12 +2334,15 @@ input[type="radio"] {
 }
 
 .esp_decor_bas {
-    grid-column: 2/8;
-    grid-row: 30;
-    grid-template-rows: 20px;
-    font-size: 20px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
-    background-size: cover;
+	grid-column: 1/13;
+	grid-row: 30;
+	grid-template-rows: 20px;
+	font-size: 20px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/deco_bottom.PNG);
+	background-size: cover;
+	margin-left: 137px;
+	margin-right: 658px;
+	margin-top: 15px;
 }
 
 
@@ -2855,8 +2858,7 @@ input[type="radio"] {
     background-repeat: no-repeat;
     background-size: cover;
     background-size: 480px 677px;
-    background-position: bottom -21px right -24px;
-    margin-top: 60px;
+    background-position: bottom 40px right -24px;
     margin-left: -20px;
 }
 
@@ -2868,6 +2870,7 @@ input[type="radio"] {
     font-size: 12px;
     position: static;
     margin-top: -8px;
+	margin-left: 65px;
 }
 
 .arbre_esprit_intellect {
@@ -2877,7 +2880,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: -10px;
+	margin-left: 60px;
 }
 
 .arbre_esprit_sensibilite {
@@ -2887,7 +2890,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
     position: static;
-    margin-left: 10px;
+	margin-left: 70px;
 }
 
 .arbre_esprit_autorite {
@@ -2896,8 +2899,7 @@ input[type="radio"] {
     text-align: center;
     font-weight: bold;
     font-size: 12px;
-	position: static;
-    margin-left: -10px;
+	position: static;margin-left: 60px;
 }
 
 .arbre_esprit_ouverture {
@@ -2907,7 +2909,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
     position: static;
-    margin-left: 10px;
+    margin-left: 70px;
 }
 
 .arbre_esprit_serenite {
@@ -2917,6 +2919,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: 65px;
 }
 
 .arbre_esprit_savoir {
@@ -2926,7 +2929,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: -15px;
+	margin-left: 60px;
 }
 
 .arbre_esprit_charisme {
@@ -2936,7 +2939,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
-    margin-left: 10px;
+    margin-left: 70px;
 }
 
 .arbre_esprit_attention {
@@ -2946,6 +2949,7 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: 65px;
 }
 
 .arbre_esprit_coordination {
@@ -2955,82 +2959,83 @@ input[type="radio"] {
     font-weight: bold;
     font-size: 12px;
 	position: static;
+	margin-left: 50px;
 }
 
 .arbre_esprit_courage_D {    
     grid-column: 2;
     grid-row: 30;
     position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .arbre_esprit_intellect_D {
     grid-column: 1;
     grid-row: 103;
     position: static;
-    margin-left: 20px;
+    margin-left: 54px;
 }
 
 .arbre_esprit_sensibilite_D {
 	grid-column: 3;
 	grid-row: 103;
 	position: static;
-	margin-left: 30px;
+	margin-left: 63px;
 }
 
 .arbre_esprit_autorite_D {
     grid-column: 1;
     grid-row: 240;
     position: static;
-    margin-left: 20px;
+    margin-left: 54px;
 }
 
 .arbre_esprit_ouverture_D {
     grid-column: 3;
     grid-row: 240;
     position: static;
-    margin-left: 30px;
+	margin-left: 63px;
 }
 
 .arbre_esprit_serenite_D {
 	grid-column: 2;
 	grid-row: 280;
 	position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .arbre_esprit_savoir_D {
 	grid-column: 1;
 	grid-row: 375;
 	position: static;
-    margin-left: 20px;
+    margin-left: 54px;
 }
 
 .arbre_esprit_charisme_D {
     grid-column: 3;
     grid-row: 375;
     position: static;
-    margin-left: 30px;
+	margin-left: 63px;
 }
 
 .arbre_esprit_attention_D {
 	grid-column: 2;
 	grid-row: 415;
 	position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .arbre_esprit_coordination_D {
 	grid-column: 2;
 	grid-row: 552;
 	position: static;
-    margin-left: 25px;
+	margin-left: 57px;
 }
 
 .arbre_esprit_imprudence {
     grid-column: 2;
     grid-row: 104;
-    text-align: center;
+    text-align: right;
     color: var(--red_cabinet);
     font-size: 11px;
     position: static;
@@ -3048,10 +3053,11 @@ input[type="radio"] {
 .arbre_esprit_superstition {
     grid-column: 3;
     grid-row: 176;
-    text-align: right;
+    text-align: center;
     color: var(--red_cabinet);
     font-size: 11px;
     position: static;
+	margin-left: 90px;
 }
 
 .arbre_esprit_intolerance {
@@ -3066,10 +3072,11 @@ input[type="radio"] {
 .arbre_esprit_jalousie {
     grid-column: 3;
     grid-row: 312;
-    text-align: right;
+    text-align: center;
     color: var(--red_cabinet);
     font-size: 11px;
     position: static;
+	margin-left: 90px;
 }
 
 .arbre_esprit_indifference {
@@ -3093,10 +3100,11 @@ input[type="radio"] {
 .arbre_esprit_manipulation {
     grid-column: 3;
     grid-row: 448;
-    text-align: right;
+    text-align: center;
     color: var(--red_cabinet);
     font-size: 11px;
     position: static;
+	margin-left: 90px;
 }
 
 .arbre_esprit_manie {
@@ -3120,61 +3128,61 @@ input[type="radio"] {
 .arbre_esprit_imprudence_input {    
 	grid-column: 2;
 	grid-row: 68;
-	margin-left: 70px;
+	margin-left: 106px;
 }
 
 .arbre_esprit_froideur_input {  
 	grid-column: 1;
 	grid-row: 139;
-	margin-left: 25px;
+	margin-left: 59px;
 }
 
 .arbre_esprit_superstition_input {
     grid-column: 3;
     grid-row: 139;
-	margin-left: 77px;
+	margin-left: 113px;
 }
 
 .arbre_esprit_intolerance_input {
     grid-column: 1;
     grid-row: 275;
-	margin-left: 25px;
+	margin-left: 59px;
 }
 
 .arbre_esprit_jalousie_input {
     grid-column: 3;
     grid-row: 275;
-	margin-left: 77px;
+	margin-left: 113px;
 }
 
 .arbre_esprit_indifference_input {
     grid-column: 2;
     grid-row: 317;
-	margin-left: 70px;
+	margin-left: 106px;
 }
 
 .arbre_esprit_orgueil_input {
     grid-column: 1;
     grid-row: 411;
-	margin-left: 25px;
+	margin-left: 59px;
 }
 
 .arbre_esprit_manipulation_input {
     grid-column: 3;
     grid-row: 411;
-	margin-left: 77px;
+	margin-left: 113px;
 }
 
 .arbre_esprit_manie_input {
     grid-column: 2;
     grid-row: 453;
-	margin-left: 70px;
+	margin-left: 106px;
 }
 
 .arbre_esprit_avidite_input {
 	grid-column: 2;
 	grid-row: 590;
-	margin-left: 70px;
+	margin-left: 106px;
 }
 
 
@@ -4946,6 +4954,7 @@ input[type="radio"] {
     box-shadow: 2px 2px 5px 0px #0000004d;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_background.png);
     background-size: cover;
+	border-radius: 10px;
 }
 
 /* Section Générale*/
@@ -4971,18 +4980,24 @@ input[type="radio"] {
 .discorde {
     grid-column: 1;
     margin-bottom: var(--margin_dice);
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
 .discorde_data {
     grid-column: 3;
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
 .chance_dice_roll {
     grid-column: 1;
     margin-bottom: var(--margin_dice);
-	padding-top: 10px;
+	padding-top: 5px;
+}
+
+.custom_roll {
+    grid-column: 1/4;
+    margin-bottom: var(--margin_dice);
+	padding-top: 5px;
 }
 
 /* Section Qualité*/
@@ -7138,6 +7153,22 @@ select.liste_graces {
 	border-radius: 0;
 	color: var(--marron_cabinet);
 	font-size: 14px;
+	margin-top: 2px;
+	padding-left: 0px;
+	padding-bottom: 0px
+}
+
+select.custom_roll {  
+	width: auto;
+	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	background: transparent;
+	border-bottom: 1px solid;
+	border-radius: 0;
+	color: var(--blue_cabinet);
+	font-size: 12px;
 	margin-top: 2px;
 	padding-left: 0px;
 	padding-bottom: 0px
