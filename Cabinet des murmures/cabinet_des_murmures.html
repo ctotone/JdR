@@ -2908,6 +2908,49 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<button class="classic_roll" type="action" name="act_roll-chance"><span data-i18n="dice_luck">Jet de Chance</span></button>
 						<button class="prouesse_roll" type="action" name="act_roll-chance"><span data-i18n="dice_luck">Jet de Chance</span></button>
 					</div>	
+					
+					<div class="custom_roll">
+						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+						<select class="custom_roll" name="attr_custom_roll_qualite">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="courage_roll">courage</option>
+							<option value="2" data-i18n="intellect_roll">intellect</option>
+							<option value="3" data-i18n="sensitivity_roll">sensitivity</option>
+							<option value="4" data-i18n="authority_roll">authority</option>
+							<option value="5" data-i18n="opening_roll">opening</option>
+							<option value="6" data-i18n="serenity_roll">serenity</option>
+							<option value="7" data-i18n="know_roll">know</option>
+							<option value="8" data-i18n="charisma_roll">charisma</option>
+							<option value="9" data-i18n="attention_roll">attention</option>
+							<option value="10" data-i18n="coordination_roll">coordination</option>
+						</select>
+						
+						+
+						
+						<select class="custom_roll" name="attr_custom_roll_aspect">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="neshama">neshama</option>
+							<option value="2" data-i18n="rouah">rouah</option>
+							<option value="3" data-i18n="nefesh">nefesh</option>
+						</select>
+						
+						( +
+						
+						<select class="custom_roll" name="attr_custom_roll_attribut">
+							<option value="0" selected="selected"></option>
+							<option value="1" data-i18n="acuity">acuity</option>
+							<option value="2" data-i18n="agility">agility</option>
+							<option value="3" data-i18n="anonymity">anonymity</option>
+							<option value="4" data-i18n="beauty">beauty</option>
+							<option value="5" data-i18n="strangeness">strangeness</option>
+							<option value="6" data-i18n="skill">skill</option>
+							<option value="7" data-i18n="innocence">innocence</option>
+							<option value="8" data-i18n="attribute_power">attribute_power</option>
+							<option value="9" data-i18n="robustness">robustness</option>
+						</select>)
+						<button class="classic_roll" type="action" name="act_roll-chance"><span class="pictod6">F</span></button>
+						<button class="prouesse_roll" type="action" name="act_roll-chance"><span class="pictod6">F</span></button>
+					</div>
 				</div>
 			</div>
 			
@@ -6121,6 +6164,78 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
     finishRoll(roll.rollId,computeObj);
   })
 </script>
+
+<!-- Custom Roll -->
+<script type="text/worker">
+on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:custom_roll_attribut", function() {
+    getAttrs(["custom_roll_qualite", "custom_roll_aspect", "custom_roll_attribut"], function(values) {
+			let custom_roll_qualite = parseInt(values["custom_roll_qualite"]) || 0;
+			let custom_roll_aspect = parseInt(values["custom_roll_aspect"]) || 0;
+			
+			if (custom_roll_qualite == '0') 		
+				custom_roll_qualite_titre = "",									
+				custom_roll_qualite_data = "",										
+				custom_roll_prouesse_qualite_data = "";
+			else if (custom_roll_qualite == '1') 	
+				custom_roll_qualite_titre = getTranslationByKey('courage_roll'),	
+				custom_roll_qualite_data = "[[@{D_courage}D6]]",				
+				custom_roll_prouesse_qualite_data = "D_courage_roll";
+			else if (custom_roll_qualite == '2') 	
+				custom_roll_qualite_titre = getTranslationByKey('intellect_roll'),	
+				custom_roll_qualite_data = "[[@{D_intellect}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_intellect_roll";
+			else if (custom_roll_qualite == '3') 	
+				custom_roll_qualite_titre = getTranslationByKey('sensitivity_roll'),	
+				custom_roll_qualite_data = "[[@{D_sensibilite}D6]]",	
+				custom_roll_prouesse_qualite_data = "D_sensibilite_roll";
+			else if (custom_roll_qualite == '4') 	
+				custom_roll_qualite_titre = getTranslationByKey('authority_roll'),	
+				custom_roll_qualite_data = "[[@{D_autorite}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_autorite_roll";
+			else if (custom_roll_qualite == '5') 	
+				custom_roll_qualite_titre = getTranslationByKey('opening_roll'),	
+				custom_roll_qualite_data = "[[@{D_ouverture}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_ouverture_roll";
+			else if (custom_roll_qualite == '6') 	
+				custom_roll_qualite_titre = getTranslationByKey('serenity_roll'),	
+				custom_roll_qualite_data = "[[@{D_serenite}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_serenite_roll";
+			else if (custom_roll_qualite == '7') 	
+				custom_roll_qualite_titre = getTranslationByKey('know_roll'),	
+				custom_roll_qualite_data = "[[@{D_savoir}D6]]",				
+				custom_roll_prouesse_qualite_data = "D_savoir_roll";
+			else if (custom_roll_qualite == '8') 	
+				custom_roll_qualite_titre = getTranslationByKey('charisma_roll'),	
+				custom_roll_qualite_data = "[[@{D_charisme}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_charisme_roll";
+			else if (custom_roll_qualite == '9') 	
+				custom_roll_qualite_titre = getTranslationByKey('attention_roll'),	
+				custom_roll_qualite_data = "[[@{D_attention}D6]]",			
+				custom_roll_prouesse_qualite_data = "D_attention_roll";
+			else if (custom_roll_qualite == '10') 	
+				custom_roll_qualite_titre = getTranslationByKey('coordination_roll'),	
+				custom_roll_qualite_data = "[[@{D_coordination}D6]]",	
+				custom_roll_prouesse_qualite_data = "D_coordination_roll";
+			if (custom_roll_aspect == '0') 	
+				custom_roll_aspect_titre = "",										
+				custom_roll_qualite_data = "";
+			else if (custom_roll_aspect == '1') 	
+				custom_roll_aspect_titre = "NESHAMA",		
+				custom_roll_aspect_data = "[[@{aspect_neshama_bonus}]]";
+			else if (custom_roll_aspect == '2') 	
+				custom_roll_aspect_titre = "ROUA'H",	
+				custom_roll_aspect_data = "[[@{aspect_rouah_bonus}]]";
+			else if (custom_roll_aspect == '3') 	
+				custom_roll_aspect_titre = "NEFESH",	
+				custom_roll_aspect_data = "[[@{aspect_nefesh_bonus}]]";
+				
+			setAttrs({
+			"custom_macro_classic" : "&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=Custom Roll}} {{qualite_title=" + custom_roll_qualite_titre + "}} {{aspect_title=" + custom_roll_aspect_titre + "}}{{malus_corps_title=^{malus_body}}} {{divers_title=^{divers}}} {{resultat_title=RÉSULTAT}} {{qualite=" + custom_roll_qualite_data + " }} {{aspect= " + custom_roll_aspect_data + "}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}" 
+        });
+    });
+});
+</script>
+
 
 <!----------------------------->			
 <!------ [ROLL TEMPLATE] ------>
