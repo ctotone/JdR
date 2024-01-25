@@ -2861,6 +2861,52 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 			</div>
 		</div>
 		
+		<div class="wrapper_dice_custom_data">
+			<div class="section_custom_roll">
+				<div class="dice_select_roll">
+					<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
+					<select class="custom_roll" name="attr_custom_roll_qualite" style="margin-right: 10px;">
+						<option value="0" selected="selected"></option>
+						<option value="1" data-i18n="courage_roll">courage</option>
+						<option value="2" data-i18n="intellect_roll">intellect</option>
+						<option value="3" data-i18n="sensitivity_roll">sensitivity</option>
+						<option value="4" data-i18n="authority_roll">authority</option>
+						<option value="5" data-i18n="opening_roll">opening</option>
+						<option value="6" data-i18n="serenity_roll">serenity</option>
+						<option value="7" data-i18n="know_roll">know</option>
+						<option value="8" data-i18n="charisma_roll">charisma</option>
+						<option value="9" data-i18n="attention_roll">attention</option>
+						<option value="10" data-i18n="coordination_roll">coordination</option>
+					</select>
+					
+					+
+					
+					<select class="custom_roll" name="attr_custom_roll_aspect"style="margin-right: 10px; margin-left: 10px; font-style: italic;">
+						<option value="0" selected="selected"></option>
+						<option value="1" data-i18n="neshama">neshama</option>
+						<option value="2" data-i18n="rouah">rouah</option>
+						<option value="3" data-i18n="nefesh">nefesh</option>
+					</select>
+					
+					( +
+					
+					<select class="custom_roll" name="attr_custom_roll_attribut" style="margin-left: 10px;">
+						<option value="0" selected="selected"></option>
+						<option value="1" data-i18n="acuity">acuity</option>
+						<option value="2" data-i18n="agility">agility</option>
+						<option value="3" data-i18n="anonymity">anonymity</option>
+						<option value="4" data-i18n="beauty">beauty</option>
+						<option value="5" data-i18n="strangeness">strangeness</option>
+						<option value="6" data-i18n="skill">skill</option>
+						<option value="7" data-i18n="innocence">innocence</option>
+						<option value="8" data-i18n="attribute_power">attribute_power</option>
+						<option value="9" data-i18n="robustness">robustness</option>
+					</select>)
+					<button class="classic_roll" type="roll" name="roll-classic-custom" value="@{custom_macro_classic}"><span class="pictod6" style="font-size: 28px; margin-left: 30px;">F</span></button>
+					<button class="prouesse_roll" type="roll" name="roll-prouesse-custom" value="@{custom_macro_prouesse}"><span class="pictod6" style="font-size: 28px; margin-left: 30px; color: var(--red_cabinet);">F</span></button>
+				</div>
+			</div>
+		</div>
 		<div class="wrapper_dice_title">
 			<div class="general_dice">
 				<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
@@ -2908,49 +2954,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<button class="classic_roll" type="action" name="act_roll-chance"><span data-i18n="dice_luck">Jet de Chance</span></button>
 						<button class="prouesse_roll" type="action" name="act_roll-chance"><span data-i18n="dice_luck">Jet de Chance</span></button>
 					</div>	
-					
-					<div class="custom_roll">
-						<input type="checkbox" name="attr_prouesse_switch" class="sheet-prouesse-switch" value="1">
-						<select class="custom_roll" name="attr_custom_roll_qualite">
-							<option value="0" selected="selected"></option>
-							<option value="1" data-i18n="courage_roll">courage</option>
-							<option value="2" data-i18n="intellect_roll">intellect</option>
-							<option value="3" data-i18n="sensitivity_roll">sensitivity</option>
-							<option value="4" data-i18n="authority_roll">authority</option>
-							<option value="5" data-i18n="opening_roll">opening</option>
-							<option value="6" data-i18n="serenity_roll">serenity</option>
-							<option value="7" data-i18n="know_roll">know</option>
-							<option value="8" data-i18n="charisma_roll">charisma</option>
-							<option value="9" data-i18n="attention_roll">attention</option>
-							<option value="10" data-i18n="coordination_roll">coordination</option>
-						</select>
-						
-						+
-						
-						<select class="custom_roll" name="attr_custom_roll_aspect">
-							<option value="0" selected="selected"></option>
-							<option value="1" data-i18n="neshama">neshama</option>
-							<option value="2" data-i18n="rouah">rouah</option>
-							<option value="3" data-i18n="nefesh">nefesh</option>
-						</select>
-						
-						( +
-						
-						<select class="custom_roll" name="attr_custom_roll_attribut">
-							<option value="0" selected="selected"></option>
-							<option value="1" data-i18n="acuity">acuity</option>
-							<option value="2" data-i18n="agility">agility</option>
-							<option value="3" data-i18n="anonymity">anonymity</option>
-							<option value="4" data-i18n="beauty">beauty</option>
-							<option value="5" data-i18n="strangeness">strangeness</option>
-							<option value="6" data-i18n="skill">skill</option>
-							<option value="7" data-i18n="innocence">innocence</option>
-							<option value="8" data-i18n="attribute_power">attribute_power</option>
-							<option value="9" data-i18n="robustness">robustness</option>
-						</select>)
-						<button class="classic_roll" type="action" name="act_roll-chance"><span class="pictod6">F</span></button>
-						<button class="prouesse_roll" type="action" name="act_roll-chance"><span class="pictod6">F</span></button>
-					</div>
 				</div>
 			</div>
 			
@@ -4424,7 +4427,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 <script type="text/worker">
 on('clicked:intro-esprit', function() {
 
-  console.log("Activate button clicked");
 	getAttrs(["sheet_version"], function(values) {
 		setAttrs({
 			sheet_version: "esprit"
@@ -4436,7 +4438,6 @@ on('clicked:intro-esprit', function() {
 <script type="text/worker">
    on('clicked:intro-cabinet', function() {
 
-  console.log("Activate button clicked");
 	getAttrs(["sheet_version"], function(values) {
 		setAttrs({
 			sheet_version: "cabinet",
@@ -4449,7 +4450,7 @@ on('clicked:intro-esprit', function() {
 <script type="text/worker">
    on('clicked:intro-pnj', function() {
 
-  console.log("Activate button clicked");
+
 	getAttrs(["sheet_version"], function(values) {
 		setAttrs({
 			sheet_version: "pnj"
@@ -4461,7 +4462,7 @@ on('clicked:intro-esprit', function() {
 <script type="text/worker">
    on('clicked:intro-reset', function() {
 
-  console.log("Activate button clicked");
+
 	getAttrs(["sheet_version"], function(values) {
 		setAttrs({
 			sheet_version: "intro"
@@ -6171,6 +6172,7 @@ on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:cus
     getAttrs(["custom_roll_qualite", "custom_roll_aspect", "custom_roll_attribut"], function(values) {
 			let custom_roll_qualite = parseInt(values["custom_roll_qualite"]) || 0;
 			let custom_roll_aspect = parseInt(values["custom_roll_aspect"]) || 0;
+			let custom_roll_attribut = parseInt(values["custom_roll_attribut"]) || 0;
 			
 			if (custom_roll_qualite == '0') 		
 				custom_roll_qualite_titre = "",									
@@ -6178,44 +6180,45 @@ on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:cus
 				custom_roll_prouesse_qualite_data = "";
 			else if (custom_roll_qualite == '1') 	
 				custom_roll_qualite_titre = getTranslationByKey('courage_roll'),	
-				custom_roll_qualite_data = "[[@{D_courage}D6]]",				
+				custom_roll_qualite_data = "[[@{D_courage}D6k1]]",				
 				custom_roll_prouesse_qualite_data = "D_courage_roll";
 			else if (custom_roll_qualite == '2') 	
 				custom_roll_qualite_titre = getTranslationByKey('intellect_roll'),	
-				custom_roll_qualite_data = "[[@{D_intellect}D6]]",			
+				custom_roll_qualite_data = "[[@{D_intellect}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_intellect_roll";
 			else if (custom_roll_qualite == '3') 	
 				custom_roll_qualite_titre = getTranslationByKey('sensitivity_roll'),	
-				custom_roll_qualite_data = "[[@{D_sensibilite}D6]]",	
+				custom_roll_qualite_data = "[[@{D_sensibilite}D6k1]]",	
 				custom_roll_prouesse_qualite_data = "D_sensibilite_roll";
 			else if (custom_roll_qualite == '4') 	
 				custom_roll_qualite_titre = getTranslationByKey('authority_roll'),	
-				custom_roll_qualite_data = "[[@{D_autorite}D6]]",			
+				custom_roll_qualite_data = "[[@{D_autorite}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_autorite_roll";
 			else if (custom_roll_qualite == '5') 	
 				custom_roll_qualite_titre = getTranslationByKey('opening_roll'),	
-				custom_roll_qualite_data = "[[@{D_ouverture}D6]]",			
+				custom_roll_qualite_data = "[[@{D_ouverture}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_ouverture_roll";
 			else if (custom_roll_qualite == '6') 	
 				custom_roll_qualite_titre = getTranslationByKey('serenity_roll'),	
-				custom_roll_qualite_data = "[[@{D_serenite}D6]]",			
+				custom_roll_qualite_data = "[[@{D_serenite}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_serenite_roll";
 			else if (custom_roll_qualite == '7') 	
 				custom_roll_qualite_titre = getTranslationByKey('know_roll'),	
-				custom_roll_qualite_data = "[[@{D_savoir}D6]]",				
+				custom_roll_qualite_data = "[[@{D_savoir}D6k1]]",				
 				custom_roll_prouesse_qualite_data = "D_savoir_roll";
 			else if (custom_roll_qualite == '8') 	
 				custom_roll_qualite_titre = getTranslationByKey('charisma_roll'),	
-				custom_roll_qualite_data = "[[@{D_charisme}D6]]",			
+				custom_roll_qualite_data = "[[@{D_charisme}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_charisme_roll";
 			else if (custom_roll_qualite == '9') 	
 				custom_roll_qualite_titre = getTranslationByKey('attention_roll'),	
-				custom_roll_qualite_data = "[[@{D_attention}D6]]",			
+				custom_roll_qualite_data = "[[@{D_attention}D6k1]]",			
 				custom_roll_prouesse_qualite_data = "D_attention_roll";
 			else if (custom_roll_qualite == '10') 	
 				custom_roll_qualite_titre = getTranslationByKey('coordination_roll'),	
-				custom_roll_qualite_data = "[[@{D_coordination}D6]]",	
+				custom_roll_qualite_data = "[[@{D_coordination}D6k1]]",	
 				custom_roll_prouesse_qualite_data = "D_coordination_roll";
+			
 			if (custom_roll_aspect == '0') 	
 				custom_roll_aspect_titre = "",										
 				custom_roll_qualite_data = "";
@@ -6229,8 +6232,63 @@ on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:cus
 				custom_roll_aspect_titre = "NEFESH",	
 				custom_roll_aspect_data = "[[@{aspect_nefesh_bonus}]]";
 				
+			if (custom_roll_attribut == '0') 		
+				custom_roll_attribut_titre = "",									
+				custom_roll_attribut_data = "",
+				custom_roll_attribut_before = "",
+				custom_roll_attribut_after = "";
+			else if (custom_roll_attribut == '1') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",
+				custom_roll_attribut_titre = getTranslationByKey('acuity'),	
+				custom_roll_attribut_data = "[[@{Médium|acuite_bonus}]]";
+			else if (custom_roll_attribut == '2') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('agility'),	
+				custom_roll_attribut_data = "[[@{Médium|agilite_bonus}]]";
+			else if (custom_roll_attribut == '3') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('anonymity'),	
+				custom_roll_attribut_data = "[[@{Médium|anonymat_bonus}]]";
+			else if (custom_roll_attribut == '4') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('beauty'),	
+				custom_roll_attribut_data = "[[@{Médium|beaute_bonus}]]";
+			else if (custom_roll_attribut == '5') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('strangeness'),	
+				custom_roll_attribut_data = "[[@{Médium|etrangete_bonus}]]";
+			else if (custom_roll_attribut == '6') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('skill'),	
+				custom_roll_attribut_data = "[[@{Médium|habilete_bonus}]]";
+			else if (custom_roll_attribut == '7')	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}", 	
+				custom_roll_attribut_titre = getTranslationByKey('innocence'),	
+				custom_roll_attribut_data = "[[@{Médium|innocence_bonus}]]";
+			else if (custom_roll_attribut == '8')	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}", 	
+				custom_roll_attribut_titre = getTranslationByKey('attribute_power'),	
+				custom_roll_attribut_data = "[[@{Médium|puissance_bonus}]]";
+			else if (custom_roll_attribut == '9') 	
+				custom_roll_attribut_before = " {{attribut_title=",
+				custom_roll_attribut_after = "}}",	
+				custom_roll_attribut_titre = getTranslationByKey('robustness'),	
+				custom_roll_attribut_data = "[[@{Médium|robustesse_bonus}]]";
+				
 			setAttrs({
-			"custom_macro_classic" : "&{template:cabinet-classic} {{roll=[[0[resultat]]]}} {{title=Custom Roll}} {{qualite_title=" + custom_roll_qualite_titre + "}} {{aspect_title=" + custom_roll_aspect_titre + "}}{{malus_corps_title=^{malus_body}}} {{divers_title=^{divers}}} {{resultat_title=RÉSULTAT}} {{qualite=" + custom_roll_qualite_data + " }} {{aspect= " + custom_roll_aspect_data + "}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}}" 
+			"custom_macro_classic" : "&{template:cabinet-classic} {{title=^{custom_roll}}} {{qualite_title=" + custom_roll_qualite_titre + "}} {{aspect_title=" + custom_roll_aspect_titre + "}}" + custom_roll_attribut_before + "" + custom_roll_attribut_titre + "" + custom_roll_attribut_after + "{{malus_corps_title=^{malus_body}}} {{divers_title=^{divers}}} {{qualite=" + custom_roll_qualite_data + " }} {{aspect= " + custom_roll_aspect_data + "}} {{attribut=" + custom_roll_attribut_data + "}} {{malus_corps=[[@{Médium|malus_total}]]}} {{divers=[[?{Bonus|0}]]}} {{footer=1}}" ,
+			"custom_macro_prouesse" : "&{template:cabinet-prouesse} {{title=^{custom_roll}}} {{" + custom_roll_qualite_titre + "=@{" + custom_roll_prouesse_qualite_data +"}}} {{" + custom_roll_aspect_titre + "=" + custom_roll_aspect_data + "}} {{" + custom_roll_attribut_titre + "=" + custom_roll_attribut_data + "}} {{^{malus_body}=[[@{Médium|malus_total}]]}} {{^{divers}=[[?{Bonus|0}]]}}"
+			
+			
+			
         });
     });
 });
@@ -6308,6 +6366,9 @@ on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:cus
 		{{#computed::roll}}
 		<div class="sheet-desc">{{resultat_title}} :   {{computed::roll}}</div>
 		{{/computed::roll}}
+		{{#footer}}
+		<div class="sheet-footer"><img class="frise_prouesse" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_result_deco.png" style="margin-top:-13px; opacity:0.7;"></div>
+		{{/footer}}
 	</div>
 </div>
 </rolltemplate>
