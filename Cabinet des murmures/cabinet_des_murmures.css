@@ -3672,81 +3672,81 @@ input[type="radio"] {
 .courage_contener {
 	grid-column: 2;
 	grid-row: 76;
-	margin-left: 0px;
-	margin-right: 10px;
-	opacity: 0.4;
+	margin-left: 10px;
+	margin-right: 4px;
+	opacity: 0.3;
 }
 
 .intellect_contener {
 	grid-column: 2;
 	grid-row: 173;
-	margin-left: -41px;
-	margin-right: 10px;
-	opacity: 0.4;
+	margin-left: -24px;
+	margin-right: 6px;
+	opacity: 0.3;
 }
 
 .sensibilite_contener {  
 	grid-column: 2;
 	grid-row: 173;
-	margin-left: 147px;
+	margin-left: 145px;
 	margin-right: 10px;
-	opacity: 0.4;
+	opacity: 0.3;
 }
 
 .autorite_contener {
     grid-column: 2;
     grid-row: 324;
-    margin-left: -41px;
-    margin-right: 10px;
-    opacity: 0.4;
+    margin-left: -24px;
+    margin-right: 6px;
+    opacity: 0.3;
 }
 
 .ouverture_contener {
     grid-column: 2;
     grid-row: 324;
-	margin-left: 147px;
+	margin-left: 145px;
     margin-right: 10px;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .serenite_contener {
     grid-column: 2;
     grid-row: 397;
-    margin-left: 0px;
-    margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 4px;
     opacity: 0.4;
 }
 
 .savoir_contener {
     grid-column: 2;
     grid-row: 476;
-    margin-left: -41px;
-    margin-right: 10px;
-    opacity: 0.4;
+    margin-left: -24px;
+    margin-right: 6px;
+    opacity: 0.3;
 }
 
 .charisme_contener {
     grid-column: 2;
     grid-row: 476;
-	margin-left: 147px;
+	margin-left: 145px;
     margin-right: 10px;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .attention_contener {
     grid-column: 2;
     grid-row: 548;
-    margin-left: 0px;
-    margin-right: 10px;
-    opacity: 0.4;
+    margin-left: 10px;
+    margin-right: 4px;
+    opacity: 0.3;
 }
 
 .coordination_contener {
     grid-column: 2;
     grid-row: 703;
-    margin-left: 0px;
-    margin-right: 10px;
-    opacity: 0.4;
+    margin-left: 10px;
+    margin-right: 4px;
+    opacity: 0.3;
 }
 
 .block_controle {
@@ -3791,6 +3791,7 @@ input[type="radio"] {
     grid-template-columns: 25px 25px 25px;
     margin-top: 25px;
     margin-left: 8px;
+	scale: 1.2;
 }
 
 .radio_blanc {
@@ -4580,6 +4581,13 @@ input[type="radio"] {
     padding: 10px;
     margin-left: 21px;
     margin-top: 30px;
+}
+
+.pnj_calcul_derive {
+  grid-column: 9;
+  grid-row: 1;
+  padding-left: 80px;
+
 }
 
   /* Wrapper Switch Dice */
@@ -6332,7 +6340,8 @@ input[type=number] {
 }
 
 .charsheet input.cabinet_name,
-.charsheet input.esprit_name {
+.charsheet input.esprit_name,
+.charsheet input.npc_name{
     border-color: var(--blue_cabinet);
     font-family: 'EB Garamond';
     font-size: 20px;
@@ -6347,6 +6356,10 @@ input[type=number] {
     outline: none;
     border-radius: 10px 20px 20px 5px;
     box-shadow: 3px 5px 6px 3px #00000082;
+}
+
+.charsheet input.npc_name{
+	width: 420px;
 }
 
 .charsheet input.esprit_name {
