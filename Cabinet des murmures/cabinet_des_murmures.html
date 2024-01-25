@@ -3868,7 +3868,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 
 <!-- MENU TAB -->
 		<div class="titre_feuille"><span data-i18n="npc_title">PNJ</span></div>
-		<input class="esprit_name" type="text" name="attr_character_name">
+		<input class="npc_name" type="text" name="attr_character_name">
 
 	<!------------------>
 	<!-- DIV PNJ  -->
@@ -4104,9 +4104,9 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<p><span data-i18n="anonymity">ANONYMAT</span></p>
 					</div>
 					<div class="pnj_attributs_col_bonus_1">
-						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="0" max="9"></p>
-						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="0" max="9"></p>
-						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="0" max="9"></p>
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_1" min="0" max="9" value="0"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_2" min="0" max="9" value="0"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_3" min="0" max="9" value="0"></p>
 					</div>
 					
 					<div class="pnj_attributs_col_2">
@@ -4115,9 +4115,9 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<p><span data-i18n="skill">HABILETÉ</span></p>
 					</div>
 					<div class="pnj_attributs_col_bonus_2">
-						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="0" max="9"></p>
-						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="0" max="9"></p>
-						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="0" max="9"></p>
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_4" min="0" max="9" value="0"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_5" min="0" max="9" value="0"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_6" min="0" max="9" value="0"></p>
 					</div>
 					
 					<div class="pnj_attributs_col_3">
@@ -4126,9 +4126,9 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<p><span data-i18n="robustness">ROBUSTESSE</span></p>
 					</div>
 					<div class="pnj_attributs_col_bonus_3">
-						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="0" max="9"></p>
-						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="0" max="9"></p>
-						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="0" max="9"></p>
+						<p style="margin-bottom: 13px; margin-top: 6px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_7" min="0" max="9" value="0"></p>
+						<p style="margin-bottom: 13px;">+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_8" min="0" max="9" value="0"></p>
+						<p>+ <input class="bonus" type="number" name="attr_pnj_attributs_bonus_9" min="0" max="9" value="0"></p>
 					</div>
 				</div>
 			</div>
@@ -4394,7 +4394,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="pnj_combat_titre_6"><span class="pnj_titre_combat" data-i18n="pnj_defend_oneself">DEFEND ONESELF</span></div>
 					<div class="pnj_combat_sous_titre_6"><span class="pnj_info_combat" data-i18n="pnj_defend_oneself_info">NEFESH + AGILITY (+ learned)</span></div>
 					<div class="pnj_combat_bonus_6"><input class="bonus" type="number" name="attr_defendre_pnj" min="0" max="9"></div>
-					
+					<div class="pnj_calcul_derive"><button type="action" class="intro_reset" name="act_pnj_derive"><span class="picto_reset_intro" data-i18n-title="calcul_derive" title="Compléter les valeurs dérivées">p</span></button></div>
 					<div class="pnj_combat_titre_malus"><span data-i18n="total_malus_pnj">TOTAL MALUS</span></div>
 					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="number" name="attr_malus_total" readonly /></div>
 			
@@ -4422,6 +4422,46 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 				});
 	</script>
 	
+<!-- Boutton calcul dérivés PNJ -->
+<script type="text/worker">
+on('clicked:pnj_derive', function() {
+
+	getAttrs(["aspect_nashama_bonus", "aspect_rouah_bonus", "aspect_nefesh_bonus", "pnj_attributs_bonus_1", "pnj_attributs_bonus_2", "pnj_attributs_bonus_3", "pnj_attributs_bonus_4", "pnj_attributs_bonus_5", "pnj_attributs_bonus_6", "pnj_attributs_bonus_7", "pnj_attributs_bonus_8", "pnj_attributs_bonus_9"], function(values) {
+		let nashama = parseInt(values["aspect_nashama_bonus"]) || 0;
+		let rouah = parseInt(values["aspect_rouah_bonus"]) || 0;
+		let nefesh = parseInt(values["aspect_nefesh_bonus"]) || 0;
+		let acuite = parseInt(values["pnj_attributs_bonus_1"]) || 0;
+		let agilite = parseInt(values["pnj_attributs_bonus_2"]) || 0;
+		let anonymat = parseInt(values["pnj_attributs_bonus_3"]) || 0;
+		let beaute = parseInt(values["pnj_attributs_bonus_4"]) || 0;
+		let etrangete = parseInt(values["pnj_attributs_bonus_5"]) || 0;
+		let habilete = parseInt(values["pnj_attributs_bonus_6"]) || 0;
+		let innocence = parseInt(values["pnj_attributs_bonus_7"]) || 0;
+		let puissance = parseInt(values["pnj_attributs_bonus_8"]) || 0;
+		let robustesse = parseInt(values["pnj_attributs_bonus_9"]) || 0;
+		
+		let bonus_initiative = nefesh + agilite;
+		let bonus_attack_pnj_1 = nefesh + agilite;
+		let bonus_attack_pnj_2 = nefesh + agilite;
+		let bonus_attack_pnj_3 = nefesh + agilite;
+		let immobiliser_pnj = nefesh + puissance;
+		let defendre_pnj = nefesh + puissance;
+		
+		
+		
+		
+		setAttrs({
+			"bonus_initiative" : nefesh + agilite,
+			"bonus_attack_pnj_1" : bonus_attack_pnj_1,
+			"bonus_attack_pnj_2" : bonus_attack_pnj_2,
+			"bonus_attack_pnj_3" : bonus_attack_pnj_3,
+			"immobiliser_pnj" : immobiliser_pnj,
+			"defendre_pnj" : defendre_pnj
+		});
+	});
+});
+</script>
+
 	
 <!-- Boutton page Introduction -->
 <script type="text/worker">
