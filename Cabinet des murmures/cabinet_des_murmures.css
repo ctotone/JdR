@@ -208,6 +208,9 @@ div.sheet_selector {
 div.sheet_reset_fiche {
     margin-left: 805px;
 }
+div.opinion {
+    margin-left: 805px;
+}
 
 .selector {
     width: auto;
@@ -220,6 +223,23 @@ div.sheet_reset_fiche {
     box-shadow: 3px 3px 3px #00000075;
     background-color: var(--blue_cabinet);
     color: #ffffffe0;
+}
+
+.opinion_select {
+    width: auto;
+    font-family: 'Libre Bodoni', serif;
+	border: 1px solid transparent;
+    z-index: 1;
+    font-size: 12px;
+    box-shadow: 3px 3px 3px #00000075;
+    color: #edeeef;
+    text-align: right;
+    padding: 3px;
+    border-radius: 10px 20px 20px 5px;
+    margin-left: 10px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_background_name.png);
+    background-size: cover;
+    background-color: #2a3c40;
 }
 
 body.sheet-darkmode .selector {
@@ -462,6 +482,32 @@ div.perisprit_data input[type="checkbox"]:checked {
 }
 
 div.perisprit_data input[type="checkbox"]:focus {
+  outline: none;
+}
+
+div.aspect_special_pnj input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+    font: inherit;
+    color: var(--blue_cabinet);
+    width: 20px;
+    height: 20px !important;
+    border: 2px solid currentColor;
+	border-radius: 15px;
+    display: grid;
+    place-content: center;
+    transform: none;
+}
+
+div.aspect_special_pnj input[type="checkbox"]:checked {
+    appearance: none;background-color: var(--blue_cabinet);
+    color: var(--blue_cabinet);
+    border: 2px solid var(--blue_cabinet);
+}
+
+div.aspect_special_pnj input[type="checkbox"]:focus {
   outline: none;
 }
 
@@ -2449,7 +2495,7 @@ input[type="radio"] {
 
 .wrapper_aspect{  
 	display: grid;
-    grid-template-columns: 175px 40px;
+    grid-template-columns: 175px 40px 40px;
 	grid-auto-rows: 37px;
 }
 
@@ -2463,6 +2509,10 @@ input[type="radio"] {
 
 .aspect_bonus_pnj {
 	grid-column: 2;
+}
+
+.aspect_special_pnj {
+	grid-column: 3;
 }
 
 
@@ -6359,7 +6409,7 @@ input[type=number] {
 }
 
 .charsheet input.npc_name{
-	width: 420px;
+	width: 410px;
 }
 
 .charsheet input.esprit_name {
