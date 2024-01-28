@@ -3899,14 +3899,14 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="aspect_bonus_pnj">
 						<input class="bonus" type="number" name="attr_aspect_rouah_bonus" min="1" max="9">
 					</div>
-					<div class="aspect_special_pnj">
-						<input type="checkbox" name="attr_special_npc" value="1" checked > 
-					</div>
 					<div class="aspect_nom">
 						<span class="aspect_nom">NEFESH</span><span class="aspect_nom_alt" data-i18n="action">(ACTION)</span>
 					</div>
 					<div class="aspect_bonus_pnj">
 						<input class="bonus" type="number" name="attr_aspect_nefesh_bonus" min="1" max="9">
+					</div>
+					<div class="aspect_special_pnj">
+						<input type="checkbox" name="attr_special_npc" value="1" > 
 					</div>
 				</div>
 			</div>
@@ -4069,6 +4069,15 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="arme_dots"><input type="checkbox" name="attr_arme1_puissance" value="1" ></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme1_munition" min="0" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme1_cadence" min="1" max="9"></p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme1_puissance" name="attr_arme1_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon1_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_1_puissance_pnj"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon1_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_1"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 				<div class="wrapper_arme_pnj">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme2_nom"></p></div>
@@ -4079,6 +4088,15 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="arme_dots"><input type="checkbox" name="attr_arme2_puissance" value="1" ></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme2_munition" min="1" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme2_cadence" min="1" max="9"></p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme2_puissance" name="attr_arme2_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon2_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_2_puissance_pnj"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon2_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_2"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 				<div class="wrapper_arme_pnj">
 					<div class="arme_nom"><p><input class="arme" type="text" name="attr_arme3_nom"></p></div>
@@ -4089,6 +4107,15 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="arme_dots"><input type="checkbox" name="attr_arme3_puissance" value="1" ></div>
 					<div class="arme_munition"><p><input class="arme_center" type="number" name="attr_arme3_munition" min="1" max="30"></p></div>
 					<div class="arme_cadence"><p><input class="arme_center" type="number" name="attr_arme3_cadence" min="1" max="9"></p></div>
+					<div class="arme_dice">
+						<input type="checkbox" class="sheet-arme3_puissance" name="attr_arme3_puissance" value="1" style="display: none;">
+						<div class="sheet-weapon3_avec_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_3_puissance_pnj"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>
+						<div class="sheet-weapon3_sans_puissance">
+							<button class="weapon_roll" type="action" name="act_roll-arme_3"><span class="pictod6" data-i18n-title="throw_damage" title="Jet de dégâts">F</span></button>
+						</div>						
+					</div>
 				</div>
 			</div>
 			<div class="pnj_notes"><span data-i18n="notes">NOTES</span> 
@@ -6138,6 +6165,17 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 </script>
 
 <script type="text/worker">
+   on('clicked:roll-arme_1_puissance_pnj', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme1_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme1_degats}]]}} {{puissance=[[@{pnj_attributs_bonus_8}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
    on('clicked:roll-arme_1', async (event) => {
          const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme1_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme1_degats}]]}} {{puissance=^{none}}} ");
 			
@@ -6160,6 +6198,17 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 </script>
 
 <script type="text/worker">
+   on('clicked:roll-arme_2_puissance_pnj', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme2_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme2_degats}]]}} {{puissance=[[@{pnj_attributs_bonus_8}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
    on('clicked:roll-arme_2', async (event) => {
          const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme2_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme2_degats}]]}} {{puissance=^{none}}} ");
 			
@@ -6173,6 +6222,17 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 <script type="text/worker">
    on('clicked:roll-arme_3_puissance', async (event) => {
          const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme3_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme3_degats}]]}} {{puissance=[[@{puissance_bonus}]]}} ");
+			
+            const {degat_arme,puissance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = degat_arme.result + puissance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-arme_3_puissance_pnj', async (event) => {
+         const roll = await startRoll("&{template:cabinet-weapon} {{roll=[[0[resultat]]]}} {{title=@{arme3_nom}}} {{degat_arme_title=^{weapon_damage_title}}} {{resultat_title=Total}} {{puissance_title=^{power_bonus_title}}} {{degat_arme=[[@{arme3_degats}]]}} {{puissance=[[@{pnj_attributs_bonus_8}]]}} ");
 			
             const {degat_arme,puissance} = roll.results;
 			const computeObj = {};
@@ -6213,6 +6273,8 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
     finishRoll(roll.rollId,computeObj);
   })
 </script>
+
+
 
 <!-- Custom Roll -->
 <script type="text/worker">

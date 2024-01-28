@@ -233,7 +233,7 @@ div.opinion {
     font-size: 12px;
     box-shadow: 3px 3px 3px #00000075;
     color: #edeeef;
-    text-align: right;
+    text-align: center;
     padding: 3px;
     border-radius: 10px 20px 20px 5px;
     margin-left: 10px;
@@ -492,19 +492,27 @@ div.aspect_special_pnj input[type="checkbox"] {
     margin: 0;
     font: inherit;
     color: var(--blue_cabinet);
-    width: 20px;
-    height: 20px !important;
-    border: 2px solid currentColor;
-	border-radius: 15px;
+    width: 45px;
+    height: 45px !important;
+    border: 2px solid #43586126;
+    border-radius: 30px;
     display: grid;
     place-content: center;
     transform: none;
+    margin-top: -5px;
+    margin-left: -10px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/2D6_unchecked.png);
+    background-size: 36px 30px;
+    background-repeat: no-repeat;
+    background-position: bottom 6px right 3px;	
+    opacity: 0.8;
 }
 
 div.aspect_special_pnj input[type="checkbox"]:checked {
-    appearance: none;background-color: var(--blue_cabinet);
     color: var(--blue_cabinet);
     border: 2px solid var(--blue_cabinet);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/2D6_checked.png);
+    opacity: 1;
 }
 
 div.aspect_special_pnj input[type="checkbox"]:focus {
@@ -2513,6 +2521,7 @@ input[type="radio"] {
 
 .aspect_special_pnj {
 	grid-column: 3;
+    margin-top: -40px;
 }
 
 
@@ -4421,7 +4430,7 @@ input[type="radio"] {
 
 .wrapper_arme_pnj{  
 	display: grid;
-    grid-template-columns: 107px 5px 5px 55px 5px 55px 5px 55px 3px 15px 5px 55px 10px 55px;
+    grid-template-columns: 107px 5px 5px 55px 5px 55px 5px 55px 3px 15px 5px 55px 10px 55px 5px 50px;
 	grid-auto-rows: 30px;
     font-size: 11px;
 }
@@ -6672,21 +6681,23 @@ input[type=number] {
 .pnj_combat_titre_2 input.data,
 .pnj_combat_titre_3 input.data,
 .pnj_combat_titre_4 input.data {  
-	border-radius: 0px;
-	background-color: transparent;
-	font-family: 'IM Fell English, serif';
-	font-size: 12px;
-	color: var(--red_cabinet);
-	outline: none;
-	border: none;
-	border-bottom-color: currentcolor;
-	border-bottom-style: none;
-	border-bottom-width: medium;
-	border-bottom: 1px solid var(--marron_cabinet);
-	padding-bottom: 0px;
-	width: 75px;
-	margin-left: 5px;
-	margin-top: -8px;
+    border-radius: 0px;
+    background-color: transparent;
+    font-family: 'IM Fell English, serif';
+    font-size: 14px;
+    color: var(--red_cabinet);
+    outline: none;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    border-bottom: 1px solid var(--red_cabinet);
+    padding-bottom: 0px;
+    width: 75px;
+    margin-left: 5px;
+    margin-top: -8px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .acquis_collectifs_data1 input.data,
