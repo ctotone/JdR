@@ -1567,13 +1567,15 @@ input[type="radio"] {
 	grid-row: 7/12;
 	font-size: 14px;
 	padding-top: 5px;
+	margin-right: -70px;
 }
 
 .acquis_collectifs_data2 {
-	grid-column: 3;
+	grid-column: 2/6;
 	grid-row: 7/12;
 	font-size: 16px;
 	padding-top: 5px;
+	margin-left: 90px;
 }
 
 .acquis_collectifs_data3 {
@@ -1908,7 +1910,7 @@ input[type="radio"] {
 }
 
 .arme {
-	grid-column: 1/11;
+	grid-column: 1/15;
 	grid-row: 27;
 	font-size: 16px;
 	display:flex;
@@ -1917,7 +1919,7 @@ input[type="radio"] {
 }
 
 .arme_data {
-	grid-column: 1/11;
+	grid-column: 1/15;
 	grid-row: 28/34;
 	font-size: 14px;
 	padding-top: 5px;
@@ -1963,13 +1965,13 @@ input[type="radio"] {
 }
 
 .sante_homme_data {
-    grid-column: 10/15;
-    grid-row: 2/29;
-    margin-top: -10px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_man.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 55px 15px;
+	grid-column: 10/15;
+	grid-row: 2/29;
+	margin-top: -10px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_man.png);
+	background-size: 320px 770px;
+	background-repeat: no-repeat;
+	background-position: 43px 15px;
 }
 
 .malus_total_cadre {
@@ -2408,16 +2410,16 @@ input[type="radio"] {
 
 .wrapper_arme{  
 	display: grid;
-    grid-template-columns: 160px 10px 5px 55px 10px 55px 10px 55px 15px 15px 15px 55px 10px 55px 10px 50px;
+    grid-template-columns: 260px 10px 15px 75px 15px 75px 15px 75px 15px 15px 15px 100px 15px 55px 15px 50px;
 	grid-auto-rows: 30px;
     font-size: 11px;
 }
 
 .wrapper_arme_title{  
 	display: grid;
-    grid-template-columns: 160px 10px 5px 55px 10px 55px 10px 55px 15px 15px 15px 55px 10px 55px 10px 50px;
+    grid-template-columns: 260px 30px 15px 75px 5px 70px 15px 75px 5px 15px 25px 100px 10px 55px 20px 50px;
 	grid-auto-rows: 30px;
-    font-size: 11px;
+    font-size: 12px;
 	margin-bottom: 11px;
 	margin-top: 5px;
 }
@@ -2425,6 +2427,7 @@ input[type="radio"] {
 .arme_titre_nom {
 	grid-column: 1;
     color: var(--red_cabinet);
+	margin-left: 5px;
 }
 
 .arme_titre_precision {
@@ -6453,7 +6456,7 @@ input[type=number] {
 .charsheet textarea.pnj_notes {    
 	background-color: transparent;
 	font-family: 'Dancing Script', cursive;
-	font-size: 20px;
+	font-size: 19px;
 	color: var(--marron_cabinet);
 	outline: none;
 	resize: none;
@@ -6727,7 +6730,7 @@ input[type=number] {
 .acquis_collectifs_data1 input.data,
 .acquis_collectifs_data2 input.data,
 .acquis_collectifs_data3 input.data {
-	width: 105px;
+	width: 170px;
 }
 
 .acquis_collectifs_data1 input.bonus[type="number"],
@@ -8122,4 +8125,24 @@ span.info_pre {
 	color: #ffffff !important;
     font-size: 20px;
 	font-family: "Proxima Nova", ProximaNova-Regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Scrollbar */
+
+.charsheet::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.charsheet::-webkit-scrollbar-track {
+  background: #435861a3;        /* color of the tracking area */
+}
+
+.charsheet::-webkit-scrollbar-thumb {
+  background-color:  #43586114;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid  #435861a3;  /* creates padding around scroll thumb */
+}
+
+.charsheet {
+	scrollbar-color: #435861a3 #43586114;
 }
