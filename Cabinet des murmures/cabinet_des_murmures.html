@@ -867,7 +867,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 			</div>
 			<div class="malus_total_cadre"></div>
 			<div class="malus_total"><span data-i18n="total_malus">TOTAL MALUS</span></div>
-			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total" readonly /></div>
+			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total" value="0" readonly /></div>
 			<div class="cor_decor_bas"></div>
 		</div>	
 		
@@ -4649,7 +4649,7 @@ on('clicked:intro-esprit', function() {
 <!-- Script spell -->
 <!-- Spell lvl 1 -->
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_1", function() {
+on("change:data1_lvl_1", function() {
     getAttrs(["data1_lvl_1"], function(values) {
 			let data1_lvl_1 = parseInt(values["data1_lvl_1"]) || 0;
 			
@@ -4680,7 +4680,7 @@ on("sheet:opened change:data1_lvl_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_1", function() {
+on("change:data2_lvl_1", function() {
     getAttrs(["data2_lvl_1"], function(values) {
 			let data2_lvl_1 = parseInt(values["data2_lvl_1"]) || 0;
 			
@@ -4711,7 +4711,7 @@ on("sheet:opened change:data2_lvl_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_1", function() {
+on("change:data3_lvl_1", function() {
     getAttrs(["data3_lvl_1"], function(values) {
 			let data3_lvl_1 = parseInt(values["data3_lvl_1"]) || 0;
 			
@@ -4744,7 +4744,7 @@ on("sheet:opened change:data3_lvl_1", function() {
 
 <!-- Spell lvl2 -->
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_2", function() {
+on("change:data1_lvl_2", function() {
     getAttrs(["data1_lvl_2"], function(values) {
 			let data1_lvl_2 = parseInt(values["data1_lvl_2"]) || 0;
 			
@@ -4775,7 +4775,7 @@ on("sheet:opened change:data1_lvl_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_2", function() {
+on("change:data2_lvl_2", function() {
     getAttrs(["data2_lvl_2"], function(values) {
 			let data2_lvl_2 = parseInt(values["data2_lvl_2"]) || 0;
 			
@@ -4883,7 +4883,7 @@ on("sheet:opened change:data2_lvl_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_2", function() {
+on("change:data3_lvl_2", function() {
     getAttrs(["data3_lvl_2"], function(values) {
 			let data3_lvl_2 = parseInt(values["data3_lvl_2"]) || 0;
 			
@@ -4916,7 +4916,7 @@ on("sheet:opened change:data3_lvl_2", function() {
 <!-- Spell lvl3 -->
 
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_3", function() {
+on("change:data1_lvl_3", function() {
     getAttrs(["data1_lvl_3"], function(values) {
 			let data1_lvl_3 = parseInt(values["data1_lvl_3"]) || 0;
 			
@@ -4947,7 +4947,7 @@ on("sheet:opened change:data1_lvl_3", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_3", function() {
+on("change:data2_lvl_3", function() {
     getAttrs(["data2_lvl_3"], function(values) {
 			let data2_lvl_3 = parseInt(values["data2_lvl_3"]) || 0;
 			
@@ -4978,7 +4978,7 @@ on("sheet:opened change:data2_lvl_3", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_3", function() {
+on("change:data3_lvl_3", function() {
     getAttrs(["data3_lvl_3"], function(values) {
 			let data3_lvl_3 = parseInt(values["data3_lvl_3"]) || 0;
 			
@@ -5010,7 +5010,7 @@ on("sheet:opened change:data3_lvl_3", function() {
 
 <!-- Graces -->
 <script type="text/worker">
-on("sheet:opened change:grace_1", function() {
+on("change:grace_1", function() {
     getAttrs(["grace_1"], function(values) {
 			let grace_1 = parseInt(values["grace_1"]) || 0;
 			
@@ -5042,7 +5042,7 @@ on("sheet:opened change:grace_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:grace_2", function() {
+on("change:grace_2", function() {
     getAttrs(["grace_2"], function(values) {
 			let grace_2 = parseInt(values["grace_2"]) || 0;
 			
@@ -5074,7 +5074,7 @@ on("sheet:opened change:grace_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:grace_3", function() {
+on("change:grace_3", function() {
     getAttrs(["grace_3"], function(values) {
 			let grace_3 = parseInt(values["grace_3"]) || 0;
 			
@@ -5107,7 +5107,7 @@ on("sheet:opened change:grace_3", function() {
 
 <!-- Malus -->
 <script type="text/worker">
-on("sheet:opened change:dot_tete", function() {
+on("change:dot_tete", function() {
     getAttrs(["dot_tete"], function(values) {
          let dot_tete = parseInt(values["dot_tete"]) || 0;
             if (dot_tete <= 2 ) stat_mod = "0";
@@ -5123,7 +5123,7 @@ on("sheet:opened change:dot_tete", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_bras_droit", function() {
+on("change:dot_bras_droit", function() {
     getAttrs(["dot_bras_droit"], function(values) {
          let dot_bras_droit = parseInt(values["dot_bras_droit"]) || 0;
             if (dot_bras_droit <= 3 ) stat_mod = "0";
@@ -5139,7 +5139,7 @@ on("sheet:opened change:dot_bras_droit", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_bras_gauche", function() {
+on("change:dot_bras_gauche", function() {
     getAttrs(["dot_bras_gauche"], function(values) {
          let dot_bras_gauche = parseInt(values["dot_bras_gauche"]) || 0;
             if (dot_bras_gauche <= 3 ) stat_mod = "0";
@@ -5155,7 +5155,7 @@ on("sheet:opened change:dot_bras_gauche", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_torse", function() {
+on("change:dot_torse", function() {
     getAttrs(["dot_torse"], function(values) {
          let dot_torse = parseInt(values["dot_torse"]) || 0;
             if (dot_torse <= 4 ) stat_mod = "0";
@@ -5172,7 +5172,7 @@ on("sheet:opened change:dot_torse", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_jambe_droite", function() {
+on("change:dot_jambe_droite", function() {
     getAttrs(["dot_jambe_droite"], function(values) {
          let dot_jambe_droite = parseInt(values["dot_jambe_droite"]) || 0;
             if (dot_jambe_droite <= 3 ) stat_mod = "0";
@@ -5188,7 +5188,7 @@ on("sheet:opened change:dot_jambe_droite", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_jambe_gauche", function() {
+on("change:dot_jambe_gauche", function() {
     getAttrs(["dot_jambe_gauche"], function(values) {
          let dot_jambe_gauche = parseInt(values["dot_jambe_gauche"]) || 0;
             if (dot_jambe_gauche <= 3 ) stat_mod = "0";
@@ -5204,7 +5204,7 @@ on("sheet:opened change:dot_jambe_gauche", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:torse_malus change:jambe_droite_malus change:jambe_gauche_malus", function() {
+on("change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:torse_malus change:jambe_droite_malus change:jambe_gauche_malus", function() {
     getAttrs(["tete_malus", "bras_droit_malus", "bras_gauche_malus", "torse_malus", "jambe_droite_malus", "jambe_gauche_malus"], function(values) {
          let tete_malus = parseInt(values.tete_malus) || 0;
 		 let bras_droit_malus = parseInt(values.bras_droit_malus) || 0;
@@ -5224,7 +5224,7 @@ on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_ma
 
 <!-- Controle des points de Qualités, Défauts et Aspects -->
 <script type="text/worker">
-on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change:D_autorite change:D_ouverture change:D_serenite change:D_savoir change:D_charisme change:D_attentionchange:D_coordination change:imprudence change:froideur change:superstition change:intolerance change:jalousie change:indifference change:orgueil change:manie change:manipulation change:avidite change:aspect_neshama_bonus change:aspect_rouah_bonus change:aspect_nefesh_bonus", function() {
+on("change:D_courage change:D_intellect change:D_sensibilite change:D_autorite change:D_ouverture change:D_serenite change:D_savoir change:D_charisme change:D_attentionchange:D_coordination change:imprudence change:froideur change:superstition change:intolerance change:jalousie change:indifference change:orgueil change:manie change:manipulation change:avidite change:aspect_neshama_bonus change:aspect_rouah_bonus change:aspect_nefesh_bonus", function() {
     getAttrs(["D_courage", "D_intellect", "D_sensibilite", "D_autorite", "D_ouverture", "D_serenite", "D_savoir", "D_charisme", "D_attention", "D_coordination", "imprudence", "froideur", "superstition", "intolerance", "jalousie", "indifference", "indifference", "orgueil", "manipulation", "manie", "avidite", "aspect_neshama_bonus", "aspect_rouah_bonus", "aspect_nefesh_bonus", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], function(values) {
          let D_courage = parseInt(values.D_courage) || 0;
 		 let D_intellect = parseInt(values.D_intellect) || 0;
@@ -5268,7 +5268,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 <!-- Parse D qualité en maccro -->
 <script type="text/worker">
-on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture change:D_serenite change:D_autorite change:D_savoir change:D_attention change:D_charisme change:D_coordination", function() {
+on("change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture change:D_serenite change:D_autorite change:D_savoir change:D_attention change:D_charisme change:D_coordination", function() {
     getAttrs(["D_courage", "D_intellect", "D_sensibilite", "D_ouverture", "D_serenite", "D_autorite", "D_savoir", "D_attention", "D_charisme", "D_coordination"], function(values) {
          let D_courage = parseInt(values["D_courage"]) || 0;
 			if (D_courage == 1 ) D_courage_roll = "[[1D6]]";
@@ -6278,7 +6278,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 <!-- Custom Roll -->
 <script type="text/worker">
-on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:custom_roll_attribut", function() {
+on("change:custom_roll_qualite change:custom_roll_aspect change:custom_roll_attribut", function() {
     getAttrs(["custom_roll_qualite", "custom_roll_aspect", "custom_roll_attribut"], function(values) {
 			let custom_roll_qualite = parseInt(values["custom_roll_qualite"]) || 0;
 			let custom_roll_aspect = parseInt(values["custom_roll_aspect"]) || 0;
