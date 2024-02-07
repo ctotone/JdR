@@ -1,17 +1,3 @@
-<!-- QUESTIONS
-
-Malus corps sur quelles actions, toutes (mentales et physiques) ou seulement sur les physiques? 
-
-Malus corps s'appliquent-ils sur les lancés de pouvoir ?
-
-
-BESOIN
-
-Arbre de vie image
-Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (optionnel)
-
--->
-
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="intro"  />
 <!------------------>
@@ -21,7 +7,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 	<div class="intro">
 		<div class="wrapper_intro">
 			<div class="text_intro">
-				<!-- <img class="logo_img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/intro_logo.png"/> -->
 				<p style="text-align: center;"><span class="intro_titre">Le Cabinet des Murmures</span></p>
 				<br>
 				<p style="text-align: center; margin-top: 10px; margin-bottom: 12px;"><span class="intro_1" data-i18n="intro_1">Le Cabinet des Murmures nécessite l'utilisation de deux types de fiches de personnage.</span></p>
@@ -120,13 +105,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 				<p><input class="data" type="text" name="attr_coll2-4"> + <input class="bonus" type="number" name="attr_collbonus2-4"></p>
 				<p><input class="data" type="text" name="attr_coll2-5"> + <input class="bonus" type="number" name="attr_collbonus2-5"></p>
 			</div>
-			<!-- <div class="acquis_collectifs_data3">
-				<p><input class="data" type="text" name="attr_coll3-1"> + <input class="bonus" type="number" name="attr_collbonus3-1"></p>
-				<p><input class="data" type="text" name="attr_coll3-2"> + <input class="bonus" type="number" name="attr_collbonus3-2"></p>
-				<p><input class="data" type="text" name="attr_coll3-3"> + <input class="bonus" type="number" name="attr_collbonus3-3"></p>
-				<p><input class="data" type="text" name="attr_coll3-4"> + <input class="bonus" type="number" name="attr_collbonus3-4"></p>
-				<p><input class="data" type="text" name="attr_coll3-5"> + <input class="bonus" type="number" name="attr_collbonus3-5"></p>
-			</div> -->
 			<div class="contact"><span data-i18n="contacts">CONTACTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
@@ -215,7 +193,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<button class="grace_roll" type="roll" name="roll-grace_3" value="&{template:cabinet-pouvoir} {{title=@{nom_grace_3}}} {{^{perisprit_macro}=16}} {{info=@{info_grace_3}}}"><span class="picto_grace" title="Afficher la grâce dans la fenêtre de discussion" data-i18n-title="show_grace">R</span></button>
 					</div>
 				</div>
-				<!-- <p><textarea class="cab_grace" name="attr_cab_grace" spellcheck="false"></textarea></p> -->
 			</div>
 			<div class="xp_collective_cadre">
 				<div class="xp_collective"><span data-i18n="collective_experience">EXPÉRIENCE COLLECTIVE</span></div>
@@ -2276,7 +2253,10 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					</div>
 				</div>
 				<div class="wrapper_info_outil">
-					<div class="outil_titre"><span  data-i18n="les_pouvoirs">LES POUVOIRS</span></div>
+					<div class="outil_titre">
+						<span  data-i18n="les_pouvoirs">LES POUVOIRS</span>
+						<button class="prouesse_roll" type="action" name="act_roll-choix-pouvoir" style="display: inline-block;"><span class="pictod6" style="font-size: 28px; margin-left: 30px; color: white;">F</span></button>
+					</div>
 					<!-- Level 1 -->
 					<div class="outil_info"><span data-i18n="level_1_info"></span></div>
 					
@@ -5215,7 +5195,7 @@ on("change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:to
 		 let malus_total = tete_malus + bras_droit_malus + bras_gauche_malus + torse_malus + jambe_droite_malus + jambe_gauche_malus;
 			
 			setAttrs({
-            "malus_total": malus_total,
+            "malus_total": malus_total
 
         });
     });
@@ -6143,6 +6123,17 @@ on("change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture 
 <script type="text/worker">
    on('clicked:roll-chance', async (event) => {
          const roll = await startRoll("&{template:cabinet-chance} {{roll=[[0[resultat]]]}} {{title=^{CHANCE}}}{{resultat_title=^{roll_result}}} {{chance=[[1d100]]}}");
+			
+            const {chance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = chance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
+<script type="text/worker">
+   on('clicked:roll-choix-pouvoir', async (event) => {
+         const roll = await startRoll("&{template:cabinet-chance} {{roll=[[0[resultat]]]}} {{title=^{CHOIX_POUVOIR}}} {{subtitle=@{character_name}}} {{resultat_title=^{roll_result}}} {{chance=[[1d6]]}}");
 			
             const {chance} = roll.results;
 			const computeObj = {};
