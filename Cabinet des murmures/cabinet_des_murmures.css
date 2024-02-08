@@ -2130,6 +2130,42 @@ input[type="radio"] {
 	padding-left: 5px;
 }
 
+.profil_big {
+	grid-column: 1/10;
+	grid-row: 1;
+	font-size: 16px;
+	display:flex;
+    white-space: nowrap;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.profil_big_data {
+	grid-column: 1/10;
+	grid-row: 2/14;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.notes_big {
+	grid-column: 1/10;
+	grid-row: 14;
+	font-size: 16px;
+	display:flex;
+    white-space: nowrap;
+    align-items: flex-end;
+	font-weight: bold;
+}
+
+.notes_big_data {
+	grid-column: 1/10;
+	grid-row: 15/27;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
 .aspect {
 	grid-column: 5/8;
 	grid-row: 6;
@@ -6455,6 +6491,8 @@ input[type=number] {
 .charsheet textarea.cor_sequelles_legere,
 .charsheet textarea.cor_sequelles_grave,
 .charsheet textarea.esp_profil,
+.charsheet textarea.esp_profil_big,
+.charsheet textarea.esp_notes_big,
 .charsheet textarea.esp_contact,
 .charsheet textarea.esp_routine,
 .charsheet textarea.esp_adversaire,
@@ -6547,6 +6585,16 @@ input[type=number] {
 .charsheet textarea.esp_profil {  
     width: 98%;
 	height: 90px;
+}
+
+.charsheet textarea.esp_profil_big {  
+    width: 98%;
+	height: 320px;
+}
+
+.charsheet textarea.esp_notes_big {  
+    width: 98%;
+	height: 320px;
 }
 
 .charsheet textarea.esp_contact,
