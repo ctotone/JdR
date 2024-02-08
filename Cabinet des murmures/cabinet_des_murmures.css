@@ -157,7 +157,9 @@ div.arbre select {
 img.dice_tab {
 }
 
-
+.ui-dialog .charsheet button[type=roll]::before {
+    content: "";
+}
   /* DARK MODE BASE */
 
 
@@ -4652,6 +4654,13 @@ input[type="radio"] {
 
 }
 
+.pnj_localisation {
+  grid-column: 7;
+  grid-row: 1;
+  padding-left: 35px;
+
+}
+
   /* Wrapper Switch Dice */
  .wrapper_switch_dice{  
 	display: grid;
@@ -7681,14 +7690,16 @@ span.opposition {
     box-shadow: 2px 1px 7px 3px #0000006e;
 }
 
-.charsheet button[type=action].intro_reset {
+.charsheet button[type=action].intro_reset,
+.charsheet button[type=roll].intro_reset{
     border: none;
     padding: 0;
     background: none;
     color: #43586147;
 }
 
-.charsheet button[type=action].intro_reset:hover {
+.charsheet button[type=action].intro_reset:hover,
+.charsheet button[type=roll].intro_reset:hover{
     color: var(--blue_cabinet);
 }
 
