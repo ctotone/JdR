@@ -68,7 +68,8 @@
 		
 		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span data-i18n="office">Cabinet</span>
 		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span data-i18n="body">Corps</span>
-		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span><!-- 
+		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span>
+		<input type="radio" name="attr_tab_hote" value="4" class="onglinfo" title="Informations"/><span>-</span><!-- 
 		<input type="radio" name="attr_tab_hote" value="4" class="onglhotedice" /><span data-i18n="dice"></span> -->
 		<input class="cabinet_name" type="text" name="attr_medium_name" placeholder="Nom du Médium">
 		
@@ -1164,11 +1165,135 @@
 		</div>		
 	</div>
 	
-	<!---------------------->
-	<!-- DIV CORPS DICE  -->
-	<!---------------------->
-	<div class="dice">
-	dice
+	<!------------------>
+	<!-- DIV INFO  -->
+	<!------------------>
+	<div class="info">
+	<br>
+		<div class="wrapper_dice_info_outil_pouvoir_data" style="display: block;">
+			<div class="section_generic_centre" style="grid-row: 1/3;">
+				<div class="wrapper_info_outil">
+					<div class="outil_titre">
+						<span  data-i18n="les_pouvoirs">LES POUVOIRS</span>
+						<button class="prouesse_roll" type="action" name="act_roll-choix-pouvoir" style="display: inline-block;"><span class="pictod6" style="font-size: 28px; margin-left: 30px; color: white;">F</span></button>
+					</div>
+					<!-- Level 1 -->
+					<div class="outil_info"><span data-i18n="level_1_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="affinite"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="apnee"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="angelique"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="bruit"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="esprit_babel"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="effroi_animal"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="langue_babel"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="malaise"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="parfum"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="oeil_babel"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="sentir_ame_lieu"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="tourmente"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_6-2" value="1" ></div>
+					<!-- Level 2 -->
+					<div class="outil_info"><span data-i18n="level_2_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="chant_lancinant"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="chitine"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="boite"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="morts"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="effroi"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="decharne"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="main_couper"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="memoire"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="performance"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="poltergeist"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="hypno"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="rouage"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_6-2" value="1" ></div>
+					<!-- Level 3 -->
+					<div class="outil_info"><span data-i18n="level_3_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="bouclier_ecto"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="coupe_deux"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="cri_banshee"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="dans_pierre"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="evasion"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="force_invisible"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="griffe_tenebre"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="intangibilite"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="lecteur_vie"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="levitation"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="telepathie"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="ubiquite"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_6-2" value="1" ></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
