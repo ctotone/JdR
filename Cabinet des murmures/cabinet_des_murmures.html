@@ -1,17 +1,3 @@
-<!-- QUESTIONS
-
-Malus corps sur quelles actions, toutes (mentales et physiques) ou seulement sur les physiques? 
-
-Malus corps s'appliquent-ils sur les lancés de pouvoir ?
-
-
-BESOIN
-
-Arbre de vie image
-Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (optionnel)
-
--->
-
 <!-- Hidden value for sheet version -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_sheet_version"  value="intro"  />
 <!------------------>
@@ -21,7 +7,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 	<div class="intro">
 		<div class="wrapper_intro">
 			<div class="text_intro">
-				<!-- <img class="logo_img" src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/intro_logo.png"/> -->
 				<p style="text-align: center;"><span class="intro_titre">Le Cabinet des Murmures</span></p>
 				<br>
 				<p style="text-align: center; margin-top: 10px; margin-bottom: 12px;"><span class="intro_1" data-i18n="intro_1">Le Cabinet des Murmures nécessite l'utilisation de deux types de fiches de personnage.</span></p>
@@ -83,7 +68,8 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 		
 		<input type="radio" name="attr_tab_hote" value="1" class="onglcabinet" checked /><span data-i18n="office">Cabinet</span>
 		<input type="radio" name="attr_tab_hote" value="2" class="onglcorps" /><span data-i18n="body">Corps</span>
-		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span><!-- 
+		<input type="radio" name="attr_tab_hote" value="3" class="onglarbre" /><span data-i18n="tree">Arbre</span>
+		<input type="radio" name="attr_tab_hote" value="4" class="onglinfo" title="Informations"/><span>-</span><!-- 
 		<input type="radio" name="attr_tab_hote" value="4" class="onglhotedice" /><span data-i18n="dice"></span> -->
 		<input class="cabinet_name" type="text" name="attr_medium_name" placeholder="Nom du Médium">
 		
@@ -120,13 +106,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 				<p><input class="data" type="text" name="attr_coll2-4"> + <input class="bonus" type="number" name="attr_collbonus2-4"></p>
 				<p><input class="data" type="text" name="attr_coll2-5"> + <input class="bonus" type="number" name="attr_collbonus2-5"></p>
 			</div>
-			<!-- <div class="acquis_collectifs_data3">
-				<p><input class="data" type="text" name="attr_coll3-1"> + <input class="bonus" type="number" name="attr_collbonus3-1"></p>
-				<p><input class="data" type="text" name="attr_coll3-2"> + <input class="bonus" type="number" name="attr_collbonus3-2"></p>
-				<p><input class="data" type="text" name="attr_coll3-3"> + <input class="bonus" type="number" name="attr_collbonus3-3"></p>
-				<p><input class="data" type="text" name="attr_coll3-4"> + <input class="bonus" type="number" name="attr_collbonus3-4"></p>
-				<p><input class="data" type="text" name="attr_coll3-5"> + <input class="bonus" type="number" name="attr_collbonus3-5"></p>
-			</div> -->
 			<div class="contact"><span data-i18n="contacts">CONTACTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
@@ -215,7 +194,6 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 						<button class="grace_roll" type="roll" name="roll-grace_3" value="&{template:cabinet-pouvoir} {{title=@{nom_grace_3}}} {{^{perisprit_macro}=16}} {{info=@{info_grace_3}}}"><span class="picto_grace" title="Afficher la grâce dans la fenêtre de discussion" data-i18n-title="show_grace">R</span></button>
 					</div>
 				</div>
-				<!-- <p><textarea class="cab_grace" name="attr_cab_grace" spellcheck="false"></textarea></p> -->
 			</div>
 			<div class="xp_collective_cadre">
 				<div class="xp_collective"><span data-i18n="collective_experience">EXPÉRIENCE COLLECTIVE</span></div>
@@ -867,7 +845,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 			</div>
 			<div class="malus_total_cadre"></div>
 			<div class="malus_total"><span data-i18n="total_malus">TOTAL MALUS</span></div>
-			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total" readonly /></div>
+			<div class="malus_total_data"><input class="malus_total" type="text" name="attr_malus_total" value="0" readonly /></div>
 			<div class="cor_decor_bas"></div>
 		</div>	
 		
@@ -924,7 +902,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_courage' id="courage_rouge" value='rouge'><label for="courage_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_courage' id="courage_bleu" value='bleu'><label for="courage_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_courage' id="courage_jaune" value='jaune'><label for="courage_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_courage' id="courage_orange" value='orange'><label for="courage_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_courage' id="courage_orange" value='orange'><label for="courage_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_courage' id="courage_vert" value='vert'><label for="courage_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_courage' id="courage_violet" value='violet'><label for="courage_violet"></label></div>
 						</div>
@@ -937,7 +915,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_intellect' id="intel_rouge" value='rouge'><label for="intel_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_intellect' id="intel_bleu" value='bleu'><label for="intel_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_intellect' id="intel_jaune" value='jaune'><label for="intel_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_intellect' id="intel_orange" value='orange'><label for="intel_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_intellect' id="intel_orange" value='orange'><label for="intel_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_intellect' id="intel_vert" value='vert'><label for="intel_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_intellect' id="intel_violet" value='violet'><label for="intel_violet"></label></div>
 						</div>
@@ -950,7 +928,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_rouge" value='rouge'><label for="sensibilite_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_bleu" value='bleu'><label for="sensibilite_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_jaune" value='jaune'><label for="sensibilite_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_orange" value='orange'><label for="sensibilite_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_orange" value='orange'><label for="sensibilite_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_vert" value='vert'><label for="sensibilite_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_sensibilite' id="sensibilite_violet" value='violet'><label for="sensibilite_violet"></label></div>
 						</div>
@@ -963,7 +941,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_autorite' id="autorite_rouge" value='rouge'><label for="autorite_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_autorite' id="autorite_bleu" value='bleu'><label for="autorite_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_autorite' id="autorite_jaune" value='jaune'><label for="autorite_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_autorite' id="autorite_orange" value='orange'><label for="autorite_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_autorite' id="autorite_orange" value='orange'><label for="autorite_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_autorite' id="autorite_vert" value='vert'><label for="autorite_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_autorite' id="autorite_violet" value='violet'><label for="autorite_violet"></label></div>
 						</div>
@@ -976,7 +954,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_ouverture' id="ouverture_rouge" value='rouge'><label for="ouverture_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_ouverture' id="ouverture_bleu" value='bleu'><label for="ouverture_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_ouverture' id="ouverture_jaune" value='jaune'><label for="ouverture_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_ouverture' id="ouverture_orange" value='orange'><label for="ouverture_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_ouverture' id="ouverture_orange" value='orange'><label for="ouverture_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_ouverture' id="ouverture_vert" value='vert'><label for="ouverture_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_ouverture' id="ouverture_violet" value='violet'><label for="ouverture_violet"></label></div>
 						</div>
@@ -989,7 +967,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_serenite' id="serenite_rouge" value='rouge'><label for="serenite_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_serenite' id="serenite_bleu" value='bleu'><label for="serenite_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_serenite' id="serenite_jaune" value='jaune'><label for="serenite_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_serenite' id="serenite_orange" value='orange'><label for="serenite_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_serenite' id="serenite_orange" value='orange'><label for="serenite_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_serenite' id="serenite_vert" value='vert'><label for="serenite_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_serenite' id="serenite_violet" value='violet'><label for="serenite_violet"></label></div>
 						</div>
@@ -1002,7 +980,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_savoir' id="savoir_rouge" value='rouge'><label for="savoir_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_savoir' id="savoir_bleu" value='bleu'><label for="savoir_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_savoir' id="savoir_jaune" value='jaune'><label for="savoir_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_savoir' id="savoir_orange" value='orange'><label for="savoir_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_savoir' id="savoir_orange" value='orange'><label for="savoir_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_savoir' id="savoir_vert" value='vert'><label for="savoir_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_savoir' id="savoir_violet" value='violet'><label for="savoir_violet"></label></div>
 						</div>
@@ -1015,7 +993,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_charisme' id="charisme_rouge" value='rouge'><label for="charisme_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_charisme' id="charisme_bleu" value='bleu'><label for="charisme_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_charisme' id="charisme_jaune" value='jaune'><label for="charisme_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_charisme' id="charisme_orange" value='orange'><label for="charisme_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_charisme' id="charisme_orange" value='orange'><label for="charisme_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_charisme' id="charisme_vert" value='vert'><label for="charisme_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_charisme' id="charisme_violet" value='violet'><label for="charisme_violet"></label></div>
 						</div>
@@ -1028,7 +1006,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_attention' id="attention_rouge" value='rouge'><label for="attention_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_attention' id="attention_bleu" value='bleu'><label for="attention_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_attention' id="attention_jaune" value='jaune'><label for="attention_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_attention' id="attention_orange" value='orange'><label for="attention_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_attention' id="attention_orange" value='orange'><label for="attention_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_attention' id="attention_vert" value='vert'><label for="attention_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_attention' id="attention_violet" value='violet'><label for="attention_violet"></label></div>
 						</div>
@@ -1041,7 +1019,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							<div class="radio_rouge"><input type='radio' name='attr_controller_coordination' id="coordination_rouge" value='rouge'><label for="coordination_rouge"></label></div>
 							<div class="radio_bleu"><input type='radio' name='attr_controller_coordination' id="coordination_bleu" value='bleu'><label for="coordination_bleu"></label></div>
 							<div class="radio_jaune"><input type='radio' name='attr_controller_coordination' id="coordination_jaune" value='jaune'><label for="coordination_jaune"></label></div>
-							<div class="radio_orange"><input type='radio' name='attr_controller_coordination' id="coordination_orange" value='orange'><label for="coordination_orange"></label></div>
+							<!-- <div class="radio_orange"><input type='radio' name='attr_controller_coordination' id="coordination_orange" value='orange'><label for="coordination_orange"></label></div> -->
 							<div class="radio_vert"><input type='radio' name='attr_controller_coordination' id="coordination_vert" value='vert'><label for="coordination_vert"></label></div>
 							<div class="radio_violet"><input type='radio' name='attr_controller_coordination' id="coordination_violet" value='violet'><label for="coordination_violet"></label></div>
 						</div>
@@ -1069,7 +1047,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 							  <option data-i18n="red" value="rouge">Rouge</option>
 							  <option data-i18n="blue" value="bleu">Bleu</option>
 							  <option data-i18n="yellow" value="jaune">Jaune</option>
-							  <option data-i18n="orange" value="orange">Orange</option>
+							  <!-- <option data-i18n="orange" value="orange">Orange</option> -->
 							  <option data-i18n="green" value="vert">Vert</option>
 							  <option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1081,7 +1059,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1093,7 +1071,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select></div>
@@ -1104,7 +1082,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1116,7 +1094,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1128,7 +1106,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1140,7 +1118,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1152,7 +1130,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1164,7 +1142,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1176,7 +1154,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 								<option data-i18n="red" value="rouge">Rouge</option>
 								<option data-i18n="blue" value="bleu">Bleu</option>
 								<option data-i18n="yellow" value="jaune">Jaune</option>
-								<option data-i18n="orange" value="orange">Orange</option>
+								<!-- <option data-i18n="orange" value="orange">Orange</option> -->
 								<option data-i18n="green" value="vert">Vert</option>
 								<option data-i18n="purple" value="violet">Violet</option>
 							</select>
@@ -1187,11 +1165,135 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 		</div>		
 	</div>
 	
-	<!---------------------->
-	<!-- DIV CORPS DICE  -->
-	<!---------------------->
-	<div class="dice">
-	dice
+	<!------------------>
+	<!-- DIV INFO  -->
+	<!------------------>
+	<div class="info">
+	<br>
+		<div class="wrapper_dice_info_outil_pouvoir_data" style="display: block;">
+			<div class="section_generic_centre" style="grid-row: 1/3;">
+				<div class="wrapper_info_outil">
+					<div class="outil_titre">
+						<span  data-i18n="les_pouvoirs">LES POUVOIRS</span>
+						<button class="prouesse_roll" type="action" name="act_roll-choix-pouvoir" style="display: inline-block;"><span class="pictod6" style="font-size: 28px; margin-left: 30px; color: white;">F</span></button>
+					</div>
+					<!-- Level 1 -->
+					<div class="outil_info"><span data-i18n="level_1_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="affinite"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="apnee"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="angelique"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="bruit"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="esprit_babel"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="effroi_animal"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="langue_babel"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="malaise"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="parfum"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="oeil_babel"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="sentir_ame_lieu"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="tourmente"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_1_6-2" value="1" ></div>
+					<!-- Level 2 -->
+					<div class="outil_info"><span data-i18n="level_2_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="chant_lancinant"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="chitine"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="boite"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="morts"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="effroi"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="decharne"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="main_couper"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="memoire"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="performance"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="poltergeist"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="hypno"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="rouage"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_2_6-2" value="1" ></div>
+					<!-- Level 3 -->
+					<div class="outil_info"><span data-i18n="level_3_info"></span></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_1-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="bouclier_ecto"></span></div>
+					<div class="outil_centre2"><span class="pictod6">A</span></div>
+					<div class="outil_droite2"><span data-i18n="coupe_deux"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_1-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_2-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="cri_banshee"></span></div>
+					<div class="outil_centre1"><span class="pictod6">B</span></div>
+					<div class="outil_droite1"><span data-i18n="dans_pierre"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_2-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_3-1" value="1" ></div>
+					<div class="outil_gauche2"><span data-i18n="evasion"></span></div>
+					<div class="outil_centre2"><span class="pictod6">C</span></div>
+					<div class="outil_droite2"><span data-i18n="force_invisible"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_3-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_4-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="griffe_tenebre"></span></div>
+					<div class="outil_centre1"><span class="pictod6">D</span></div>
+					<div class="outil_droite1"><span data-i18n="intangibilite"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_4-2" value="1" ></div>
+					
+					<div class="outil_gauche2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_5-1" value="1" ></div>				
+					<div class="outil_gauche2"><span data-i18n="lecteur_vie"></span></div>
+					<div class="outil_centre2"><span class="pictod6">E</span></div>
+					<div class="outil_droite2"><span data-i18n="levitation"></span></div>
+					<div class="outil_droite2_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_5-2" value="1" ></div>
+					
+					<div class="outil_gauche1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_6-1" value="1" ></div>
+					<div class="outil_gauche1"><span data-i18n="telepathie"></span></div>
+					<div class="outil_centre1"><span class="pictod6">F</span></div>
+					<div class="outil_droite1"><span data-i18n="ubiquite"></span></div>
+					<div class="outil_droite1_check"><input type="checkbox" name="attr_outil_pouvoir_lvl_3_6-2" value="1" ></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -1215,10 +1317,10 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 		
 	<!-- MENU TAB -->
 		<input type="radio" name="attr_tab_spirit" value="1" class="onglspirit" checked /><span data-i18n="spirit">Spirit</span>
-		<!-- <input type="radio" name="attr_tab_spirit" value="2" class="onglquality" /><span data-i18n="qualites_tab">QUALITÉS ET DÉFAUTS</span> -->
+		<input type="radio" name="attr_tab_spirit" value="2" class="onglquality" /><span data-i18n="profil_tab">Profil</span>
 		<input type="radio" name="attr_tab_spirit" value="4" class="onglinfo" title="Informations"/><span>-</span>
 		<input type="radio" name="attr_tab_spirit" value="3" class="onglespritdice" title="Lancer les dés"/><span>-</span>
-		<input class="esprit_name" type="text" name="attr_character_name">
+		<!-- <input class="esprit_name" type="text" name="attr_character_name"> -->
 
 
 	<!------------------>
@@ -2276,7 +2378,10 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					</div>
 				</div>
 				<div class="wrapper_info_outil">
-					<div class="outil_titre"><span  data-i18n="les_pouvoirs">LES POUVOIRS</span></div>
+					<div class="outil_titre">
+						<span  data-i18n="les_pouvoirs">LES POUVOIRS</span>
+						<button class="prouesse_roll" type="action" name="act_roll-choix-pouvoir" style="display: inline-block;"><span class="pictod6" style="font-size: 28px; margin-left: 30px; color: white;">F</span></button>
+					</div>
 					<!-- Level 1 -->
 					<div class="outil_info"><span data-i18n="level_1_info"></span></div>
 					
@@ -2395,16 +2500,54 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 			</div>
 		</div>
 	</div>
+	
+	<!---------------------->
+	<!-- PROFIL ET NOTES  -->
+	<!---------------------->
+	
+	<div class="esprit_qualite">
+		<div class="wrapper_esprit">
+			<div class="profil_big"><span data-i18n="profil_and_concept">PROFIL ET CONCEPT</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="profil_big_data">
+				<p><textarea class="esp_profil_big" name="attr_esp_profil" spellcheck="false"></textarea></p>
+			</div>
+			
+			<div class="notes_big"><span data-i18n="notes">Notes</span>
+				<div class="titre_trait">
+				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
+				</div>
+			</div>
+			<div class="notes_big_data">
+				<p><textarea class="esp_notes_big" name="attr_esp_notes" spellcheck="false"></textarea></p>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<!------------->
+	<!-- ESPRIT  -->
+	<!------------->
 	<div class="esprit">
 		<div class="wrapper_esprit">
-			<div class="profil"><span data-i18n="profil_and_concept">PROFIL ET CONCEPT</span>
+			<div class="avatar">
+			<img class="avatar" name="attr_character_token">
+			</div>
+			<div class="name_cali">
+			<input class="esprit_name_cali" type="text" name="attr_character_name">
+			</div>
+			<!-- <div class="profil"><span data-i18n="profil_and_concept">PROFIL ET CONCEPT</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
 				</div>
 			</div>
 			<div class="profil_data">
 				<p><textarea class="esp_profil" name="attr_esp_profil" spellcheck="false"></textarea></p>
-			</div>
+			</div> -->
 			<div class="aspect"><span data-i18n="aspects">ASPECTS</span>
 				<div class="titre_trait">
 				<img src="https://raw.githubusercontent.com/ctotone/JdR/main/Cabinet%20des%20murmures/img/offi_title-border.png" />
@@ -4430,6 +4573,7 @@ Jetons pour arbre de vie (avec code couleur) + jetons de blocage de sphere (opti
 					<div class="pnj_combat_sous_titre_6"><span class="pnj_info_combat" data-i18n="pnj_defend_oneself_info">NEFESH + AGILITY (+ learned)</span></div>
 					<div class="pnj_combat_bonus_6"><input class="bonus" type="number" name="attr_defendre_pnj" min="0" max="20"></div>
 					<div class="pnj_calcul_derive"><button type="action" class="intro_reset" name="act_pnj_derive"><span class="picto_reset_intro" data-i18n-title="calcul_derive" title="Compléter les valeurs dérivées">p</span></button></div>
+					<div class="pnj_localisation"><button  class="intro_reset" type="roll" name="roll-localisation" value="&{template:cabinet-classic-qualite} {{title=^{localisation}}}{{localisation_title=^{localisation}}} {{localisation=[[2D6]]}}"><span class="picto_reset_intro" data-i18n-title="pnj_localisation" title="Jet de localisation de l'attaque">`</span></button></div>
 					<div class="pnj_combat_titre_malus"><span data-i18n="total_malus_pnj">TOTAL MALUS</span></div>
 					<div class="pnj_combat_cadre_malus"><input class="malus_total_pnj" type="number" name="attr_malus_total" readonly /></div>
 			
@@ -4649,7 +4793,7 @@ on('clicked:intro-esprit', function() {
 <!-- Script spell -->
 <!-- Spell lvl 1 -->
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_1", function() {
+on("change:data1_lvl_1", function() {
     getAttrs(["data1_lvl_1"], function(values) {
 			let data1_lvl_1 = parseInt(values["data1_lvl_1"]) || 0;
 			
@@ -4680,7 +4824,7 @@ on("sheet:opened change:data1_lvl_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_1", function() {
+on("change:data2_lvl_1", function() {
     getAttrs(["data2_lvl_1"], function(values) {
 			let data2_lvl_1 = parseInt(values["data2_lvl_1"]) || 0;
 			
@@ -4711,7 +4855,7 @@ on("sheet:opened change:data2_lvl_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_1", function() {
+on("change:data3_lvl_1", function() {
     getAttrs(["data3_lvl_1"], function(values) {
 			let data3_lvl_1 = parseInt(values["data3_lvl_1"]) || 0;
 			
@@ -4744,7 +4888,7 @@ on("sheet:opened change:data3_lvl_1", function() {
 
 <!-- Spell lvl2 -->
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_2", function() {
+on("change:data1_lvl_2", function() {
     getAttrs(["data1_lvl_2"], function(values) {
 			let data1_lvl_2 = parseInt(values["data1_lvl_2"]) || 0;
 			
@@ -4775,7 +4919,7 @@ on("sheet:opened change:data1_lvl_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_2", function() {
+on("change:data2_lvl_2", function() {
     getAttrs(["data2_lvl_2"], function(values) {
 			let data2_lvl_2 = parseInt(values["data2_lvl_2"]) || 0;
 			
@@ -4883,7 +5027,7 @@ on("sheet:opened change:data2_lvl_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_2", function() {
+on("change:data3_lvl_2", function() {
     getAttrs(["data3_lvl_2"], function(values) {
 			let data3_lvl_2 = parseInt(values["data3_lvl_2"]) || 0;
 			
@@ -4916,7 +5060,7 @@ on("sheet:opened change:data3_lvl_2", function() {
 <!-- Spell lvl3 -->
 
 <script type="text/worker">
-on("sheet:opened change:data1_lvl_3", function() {
+on("change:data1_lvl_3", function() {
     getAttrs(["data1_lvl_3"], function(values) {
 			let data1_lvl_3 = parseInt(values["data1_lvl_3"]) || 0;
 			
@@ -4947,7 +5091,7 @@ on("sheet:opened change:data1_lvl_3", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data2_lvl_3", function() {
+on("change:data2_lvl_3", function() {
     getAttrs(["data2_lvl_3"], function(values) {
 			let data2_lvl_3 = parseInt(values["data2_lvl_3"]) || 0;
 			
@@ -4978,7 +5122,7 @@ on("sheet:opened change:data2_lvl_3", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:data3_lvl_3", function() {
+on("change:data3_lvl_3", function() {
     getAttrs(["data3_lvl_3"], function(values) {
 			let data3_lvl_3 = parseInt(values["data3_lvl_3"]) || 0;
 			
@@ -5010,7 +5154,7 @@ on("sheet:opened change:data3_lvl_3", function() {
 
 <!-- Graces -->
 <script type="text/worker">
-on("sheet:opened change:grace_1", function() {
+on("change:grace_1", function() {
     getAttrs(["grace_1"], function(values) {
 			let grace_1 = parseInt(values["grace_1"]) || 0;
 			
@@ -5042,7 +5186,7 @@ on("sheet:opened change:grace_1", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:grace_2", function() {
+on("change:grace_2", function() {
     getAttrs(["grace_2"], function(values) {
 			let grace_2 = parseInt(values["grace_2"]) || 0;
 			
@@ -5074,7 +5218,7 @@ on("sheet:opened change:grace_2", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:grace_3", function() {
+on("change:grace_3", function() {
     getAttrs(["grace_3"], function(values) {
 			let grace_3 = parseInt(values["grace_3"]) || 0;
 			
@@ -5107,7 +5251,7 @@ on("sheet:opened change:grace_3", function() {
 
 <!-- Malus -->
 <script type="text/worker">
-on("sheet:opened change:dot_tete", function() {
+on("change:dot_tete", function() {
     getAttrs(["dot_tete"], function(values) {
          let dot_tete = parseInt(values["dot_tete"]) || 0;
             if (dot_tete <= 2 ) stat_mod = "0";
@@ -5123,7 +5267,7 @@ on("sheet:opened change:dot_tete", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_bras_droit", function() {
+on("change:dot_bras_droit", function() {
     getAttrs(["dot_bras_droit"], function(values) {
          let dot_bras_droit = parseInt(values["dot_bras_droit"]) || 0;
             if (dot_bras_droit <= 3 ) stat_mod = "0";
@@ -5139,7 +5283,7 @@ on("sheet:opened change:dot_bras_droit", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_bras_gauche", function() {
+on("change:dot_bras_gauche", function() {
     getAttrs(["dot_bras_gauche"], function(values) {
          let dot_bras_gauche = parseInt(values["dot_bras_gauche"]) || 0;
             if (dot_bras_gauche <= 3 ) stat_mod = "0";
@@ -5155,7 +5299,7 @@ on("sheet:opened change:dot_bras_gauche", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_torse", function() {
+on("change:dot_torse", function() {
     getAttrs(["dot_torse"], function(values) {
          let dot_torse = parseInt(values["dot_torse"]) || 0;
             if (dot_torse <= 4 ) stat_mod = "0";
@@ -5172,7 +5316,7 @@ on("sheet:opened change:dot_torse", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_jambe_droite", function() {
+on("change:dot_jambe_droite", function() {
     getAttrs(["dot_jambe_droite"], function(values) {
          let dot_jambe_droite = parseInt(values["dot_jambe_droite"]) || 0;
             if (dot_jambe_droite <= 3 ) stat_mod = "0";
@@ -5188,7 +5332,7 @@ on("sheet:opened change:dot_jambe_droite", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:dot_jambe_gauche", function() {
+on("change:dot_jambe_gauche", function() {
     getAttrs(["dot_jambe_gauche"], function(values) {
          let dot_jambe_gauche = parseInt(values["dot_jambe_gauche"]) || 0;
             if (dot_jambe_gauche <= 3 ) stat_mod = "0";
@@ -5204,7 +5348,7 @@ on("sheet:opened change:dot_jambe_gauche", function() {
 </script>
 
 <script type="text/worker">
-on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:torse_malus change:jambe_droite_malus change:jambe_gauche_malus", function() {
+on("change:tete_malus change:bras_droit_malus change:bras_gauche_malus change:torse_malus change:jambe_droite_malus change:jambe_gauche_malus", function() {
     getAttrs(["tete_malus", "bras_droit_malus", "bras_gauche_malus", "torse_malus", "jambe_droite_malus", "jambe_gauche_malus"], function(values) {
          let tete_malus = parseInt(values.tete_malus) || 0;
 		 let bras_droit_malus = parseInt(values.bras_droit_malus) || 0;
@@ -5215,7 +5359,7 @@ on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_ma
 		 let malus_total = tete_malus + bras_droit_malus + bras_gauche_malus + torse_malus + jambe_droite_malus + jambe_gauche_malus;
 			
 			setAttrs({
-            "malus_total": malus_total,
+            "malus_total": malus_total
 
         });
     });
@@ -5224,7 +5368,7 @@ on("sheet:opened change:tete_malus change:bras_droit_malus change:bras_gauche_ma
 
 <!-- Controle des points de Qualités, Défauts et Aspects -->
 <script type="text/worker">
-on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change:D_autorite change:D_ouverture change:D_serenite change:D_savoir change:D_charisme change:D_attentionchange:D_coordination change:imprudence change:froideur change:superstition change:intolerance change:jalousie change:indifference change:orgueil change:manie change:manipulation change:avidite change:aspect_neshama_bonus change:aspect_rouah_bonus change:aspect_nefesh_bonus", function() {
+on("change:D_courage change:D_intellect change:D_sensibilite change:D_autorite change:D_ouverture change:D_serenite change:D_savoir change:D_charisme change:D_attentionchange:D_coordination change:imprudence change:froideur change:superstition change:intolerance change:jalousie change:indifference change:orgueil change:manie change:manipulation change:avidite change:aspect_neshama_bonus change:aspect_rouah_bonus change:aspect_nefesh_bonus", function() {
     getAttrs(["D_courage", "D_intellect", "D_sensibilite", "D_autorite", "D_ouverture", "D_serenite", "D_savoir", "D_charisme", "D_attention", "D_coordination", "imprudence", "froideur", "superstition", "intolerance", "jalousie", "indifference", "indifference", "orgueil", "manipulation", "manie", "avidite", "aspect_neshama_bonus", "aspect_rouah_bonus", "aspect_nefesh_bonus", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], function(values) {
          let D_courage = parseInt(values.D_courage) || 0;
 		 let D_intellect = parseInt(values.D_intellect) || 0;
@@ -5268,7 +5412,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 <!-- Parse D qualité en maccro -->
 <script type="text/worker">
-on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture change:D_serenite change:D_autorite change:D_savoir change:D_attention change:D_charisme change:D_coordination", function() {
+on("change:D_courage change:D_intellect change:D_sensibilite change:D_ouverture change:D_serenite change:D_autorite change:D_savoir change:D_attention change:D_charisme change:D_coordination", function() {
     getAttrs(["D_courage", "D_intellect", "D_sensibilite", "D_ouverture", "D_serenite", "D_autorite", "D_savoir", "D_attention", "D_charisme", "D_coordination"], function(values) {
          let D_courage = parseInt(values["D_courage"]) || 0;
 			if (D_courage == 1 ) D_courage_roll = "[[1D6]]";
@@ -6151,6 +6295,17 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
   })
 </script>
 
+<script type="text/worker">
+   on('clicked:roll-choix-pouvoir', async (event) => {
+         const roll = await startRoll("&{template:cabinet-chance} {{roll=[[0[resultat]]]}} {{title=^{CHOIX_POUVOIR}}} {{subtitle=@{character_name}}} {{resultat_title=^{roll_result}}} {{chance=[[1d6]]}}");
+			
+            const {chance} = roll.results;
+			const computeObj = {};
+			computeObj.roll = chance.result;
+    finishRoll(roll.rollId,computeObj);
+  })
+</script>
+
 <!-- Dégats des ARMES -->
 
 <script type="text/worker">
@@ -6278,7 +6433,7 @@ on("sheet:opened change:D_courage change:D_intellect change:D_sensibilite change
 
 <!-- Custom Roll -->
 <script type="text/worker">
-on("sheet:opened change:custom_roll_qualite change:custom_roll_aspect change:custom_roll_attribut", function() {
+on("change:custom_roll_qualite change:custom_roll_aspect change:custom_roll_attribut", function() {
     getAttrs(["custom_roll_qualite", "custom_roll_aspect", "custom_roll_attribut"], function(values) {
 			let custom_roll_qualite = parseInt(values["custom_roll_qualite"]) || 0;
 			let custom_roll_aspect = parseInt(values["custom_roll_aspect"]) || 0;
