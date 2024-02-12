@@ -1,0 +1,207 @@
+<div>
+    <br>
+    <div class="divTable">
+        <div class="divTableRow">
+            <div class="divTableCell"> <h1><span data-i18n="mazes">MAZES</span></h1> </div>
+        </div>
+
+		<h3><span data-i18n="character_journal">Character Journal</span></h3>
+
+		<div class="divTable">
+			<div class="divTableRow">
+				<div class="divTableCell" style="width: 120px;"> <label><span data-i18n="name">Name:</span></label> </div>
+				<div class="divTableCell"> <input type="text" name="attr_character_name" /> </label></div>
+			</div>
+			
+			<!-- ROLE -->
+			<div class="divTableRow">
+				<div class="divTableCell"> <label> <span data-i18n="role">Role: </span></label></div>
+				<div class="divTableCell">
+					<select class="sheet-roleselect" name="attr_role">
+						<option value="d4" selected="selected" data-i18n="paragon">Paragon</option>
+						<option value="d6" data-i18n="vanguard">Vanguard</option>
+						<option value="d8" data-i18n="fighter">Fighter</option>
+						<option value="d10" data-i18n="sentinel">Sentinel</option>
+					</select>
+				</div>
+			</div>
+
+			<input class="sheet-roleselect" type="hidden" name='attr_role'/>
+			<div class="sheet-divd4"><img src="https://raw.githubusercontent.com/9thLevel/roll20/main/d4.png"></img></div>
+			<div class="sheet-divd6"><img src="https://raw.githubusercontent.com/9thLevel/roll20/main/d6.png"></img></div>
+			<div class="sheet-divd8"><img src="https://raw.githubusercontent.com/9thLevel/roll20/main/d8.png"></img></div>
+			<div class="sheet-divd10"><img src="https://raw.githubusercontent.com/9thLevel/roll20/main/d10.png"></img></div>
+
+			<!-- ASPECT -->
+			<div class="divTableRow">
+				<div class="divTableCell"> <label><span data-i18n="aspect">Aspect:</span></label> </div>
+				<div class="divTableCell"> 
+					<select name="attr_aspect" class="aspect">
+						<option value="sword" data-i18n="sword">Sword</option>              
+						<option value="skill" data-i18n="skill">Skill</option>
+						<option value="sorcery" data-i18n="sorcery">Sorcery</option>  
+						<option value="scholarship" data-i18n="scholarship">Scholarship</option>   
+						<option value="seafaring" data-i18n="seafaring">Seafaring</option>
+						<option value="sylvan" data-i18n="sylvan">Sylvan</option>       
+						<option value="station" data-i18n="station">Station</option>  
+						<option value="shadows" data-i18n="shadows">Shadows</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- CLASS -->
+			<div class="divTableRow">
+				<div class="divTableCell"> <label><span data-i18n="class">Class:</span></label> </div>
+				<div class="divTableCell"> 
+				<input class="sheet-aspect" type="hidden" name='attr_aspect'/>
+					<select name="attr_class" class="sheet-sword">
+						<option value="Ill-Fated Hero" data-i18n="sword_ill_fated_hero">Ill-Fated Hero</option>
+						<option value="Bugbear Outcast" data-i18n="sword_bugbear_outcast">Bugbear Outcast</option>
+						<option value="Dangerous Bravo" selected="selected" data-i18n="sword_dangerous_bravo">Dangerous Bravo</option>
+						<option value="Hard Assassin" data-i18n="sword_hard_assassin">Hard Assassin</option>
+						<option value="Menacing Dragoon" data-i18n="sword_menacing_dragoon">Menacing Dragoon</option>
+						<option value="Monster Hunter" data-i18n="sword_monster_hunter">Monster Hunter</option>
+						<option value="Intrepid Ranger" data-i18n="sword_mysterious_ranger">Mysterious Ranger</option>
+						<option value="Sellsword Captain" data-i18n="sword_sellsword_captain">Sellsword Captain</option>
+						<option value="Street Goblin" data-i18n="sword_street_goblin">Street Goblin</option>
+					</select>
+
+					<select name="attr_class" class="sheet-skill">
+						<option value="Itinerant Smith" data-i18n="skill_itinerant_smith">Itinerant Smith</option>
+						<option value="Mad Alchemist" data-i18n="skill_mad_alchemist">Mad Alchemist</option>
+						<option value="Sea Hawk" data-i18n="skill_sea_hawk">Sea Hawk</option>
+						<option value="Shadowy Footpad" data-i18n="skill_shadowy_footpad">Shadowy Footpad</option>
+						<option value="Tomb Robber" data-i18n="skill_tomb_robber">Tomb Robber</option>
+					</select>
+
+					<select name="attr_class" class="sheet-sorcery">
+						<option value="Black Mage (Necromancer)" data-i18n="sorcery_black_mage">Black Mage</option>
+						<option value="Blue Mage (Hydromancer)" data-i18n="sorcery_blue_mage">Blue Mage</option>
+						<option value="Court Astrologer" data-i18n="sorcery_court_astrologer">Court Astrologer</option>
+						<option value="Forgotten Ilf" data-i18n="sorcery_forgotten_ilf">Forgotten Ilf</option>
+						<option value="Green Mage (Geomancer)" data-i18n="sorcery_green_mage">Green Mage</option>
+						<option value="Old Wizard" data-i18n="sorcery_old_wizard">Old Wizard</option>
+						<option value="Red Mage (Pyromancer)" data-i18n="sorcery_red_mage">Red Mage</option>
+						<option value="Slippery Illusionist" data-i18n="sorcery_slippery_illusionist">Slippery Illusionist</option>
+						<option value="White Mage (Aeromancer)" data-i18n="sorcery_white_mage">White Mage</option>
+						<option value="Wise Witch" data-i18n="sorcery_wise_witch">Wise Witch</option>
+					</select>
+
+					<select name="attr_class" class="sheet-scholarship">   
+						<option value="Court Astrologer" data-i18n="scholarship_court_astrologer">Court Astrologer</option>
+						<option value="Freed Djinn" data-i18n="scholarship_freed_djinn">Freed Djinn</option>
+						<option value="Haunted Librarian" data-i18n="scholarship_huanted_librarian">Huanted Librarian</option>
+						<option value="Old Wizard" data-i18n="scholarship_old_wizard">Old Wizard</option>
+						<option value="Rambling Bard" data-i18n="scholarship_rambling_bard">Rambling Bard</option>
+						<option value="Wise Witch" data-i18n="scholarship_wise_witch">Wise Witch</option>
+					</select>
+
+					<select name="attr_class" class="sheet-seafaring">   
+						<option value="Ancient Mariner" data-i18n="seafaring_ancient_mariner">Ancient Mariner</option>
+						<option value="Blue Mage (Hydromancer)" data-i18n="seafaring_blue_mage">Blue Mage</option>
+						<option value="Dashing Scoundrel" data-i18n="seafaring_dashing_scoundrel">Dashing Scoundrel</option>
+						<option value="Dread Reaver" data-i18n="seafaring_dread_reaver">Dread Reaver</option>
+						<option value="Filthy Urchin" data-i18n="seafaring_filthy_urchin">Filthy Urchin</option>
+						<option value="Merfolk Nomad" data-i18n="seafaring_merfolk_nomad">Merfolk Nomad</option>
+						<option value="Sea Hawk" data-i18n="seafaring_sea_hawk">Sea Hawk</option>
+						<option value="Shipwrecked Captain" data-i18n="seafaring_shipwrecked_captain">Shipwrecked Captain</option>
+					</select>
+
+					<select name="attr_class" class="sheet-sylvan">   
+						<option value="Adventurous Smallfolk" data-i18n="sylvan_adventurous_smallfolk">Adventurous Smallfolk</option>
+						<option value="Bugbear Outcast" data-i18n="sylvan_bugbear_outcast">Bugbear Outcast</option>
+						<option value="Forgotten Ilf" data-i18n="sylvan_forgotten_ilf">Forgotten Ilf</option>
+						<option value="Monster Hunter" data-i18n="sylvan_monster_hunter">Monster Hunter</option>
+						<option value="Mysterious Druid" data-i18n="sylvan_mysterious_druid">Mysterious Druid</option>
+						<option value="Intrepid Ranger" data-i18n="sylvan_intrepid_ranger">Intrepid Ranger</option>
+						<option value="Shunned Witch" data-i18n="sylvan_shunned_witch">Shunned Witch</option>
+						<option value="Wandering Herbalist" data-i18n="sylvan_wandering_herbalist">Wandering Herbalist</option>
+					</select>
+
+					<select name="attr_class" class="sheet-station">   
+						<option value="Court Astrologer" data-i18n="station_court_astrologer">Court Astrologer</option>
+						<option value="Grizzled Captain" data-i18n="station_grizzled_captain">Grizzled Captain</option>
+						<option value="Ill-Fated Hero" data-i18n="station_ill_fated_hero">Ill-Fated Hero</option>
+						<option value="Kobold Boss" data-i18n="station_kobold_boss">Kobold Boss</option>
+						<option value="Mysterious Foundling" data-i18n="station_mysterious_foundling">Mysterious Foundling</option>
+						<option value="Noble Scion" data-i18n="station_noble_scion">Noble Scion</option>
+						<option value="Slippery Illusionist" data-i18n="station_slippery_illusionist">Slippery Illusionist</option>
+						<option value="Smiling Inkeeper" data-i18n="station_smiling_inkeeper">Smiling Inkeeper</option>
+					</select>
+
+					<select name="attr_class" class="sheet-shadows">   
+						<option value="Black Mage (Necromancer)" data-i18n="shadows_black_mage">Black Mage</option>
+						<option value="Filthy Urchin" data-i18n="shadows_filthy_urchin">Filthy Urchin</option>
+						<option value="Hard Assassin" data-i18n="shadows_hard_assassin">Hard Assassin</option>
+						<option value="Shadowy Footpad" data-i18n="shadows_shadowy_footpad">Shadowy Footpad</option>
+					</select>           
+				</div>
+			</div>
+		</div>
+    </div>    
+
+	<!-- EDGES -->
+	<h3><span data-i18n="edges">Edges</span></h3>
+	<div class="divTable" align="center">
+		<div class="divTableRow" align="center">
+			<div class="divTableCell" align="center">
+				<fieldset class="repeating_edges"> 
+					<select name="attr_edges" class="edges"> 
+						<option value="Ardent" data-i18n="edge_ardent">Ardent</option>
+						<option value="Armored" data-i18n="edge_armored">Armored</option>
+						<option value="Agile" data-i18n="edge_agile">Agile</option>
+						<option value="Beautiful" data-i18n="edge_beautiful">Beautiful</option>
+						<option value="Charming" data-i18n="edge_charming">Charming</option>
+						<option value="Cunning" data-i18n="edge_cunning">Cunning</option>
+						<option value="Cursed" data-i18n="edge_cursed">Cursed</option>
+						<option value="Deadly" data-i18n="edge_deadly">Deadly</option>
+						<option value="Dexterous" data-i18n="edge_dexterous">Dexterous</option>
+						<option value="Fast" data-i18n="edge_fast">Fast</option>
+						<option value="Friends" data-i18n="edge_friends">Friends</option>
+						<option value="Gearwise" data-i18n="edge_gearwise">Gearwise</option>
+						<option value="Hale" data-i18n="edge_hale">Hale</option>
+						<option value="Intimidating" data-i18n="edge_intimidating">Intimidating</option>        
+						<option value="Lorewise" data-i18n="edge_lorewise">Lorewise</option>
+						<option value="Lucky" data-i18n="edge_lucky">Lucky</option>        
+						<option value="Keen" data-i18n="edge_keen">Keen</option>
+						<option value="Learned" data-i18n="edge_learned">Learned</option>
+						<option value="Magic Familiar" data-i18n="edge_magic_familiar">Magic Familiar</option>
+						<option value="Magic Item" data-i18n="edge_magic_item">Magic Item</option>
+						<option value="Magic Lineage" data-i18n="edge_magic_lineage">Magic Lineage</option>
+						<option value="Magic Spells" data-i18n="edge_magic_spells">Magic Spells</option>
+						<option value="Magic Weapon" data-i18n="edge_magic_weapon">Magic Weapon</option>
+						<option value="Mastery" data-i18n="edge_mastery">Mastery</option>
+						<option value="Naturewise" data-i18n="edge_naturewise">Naturewise</option>
+						<option value="Rank" data-i18n="edge_rank">Rank</option></option>
+						<option value="Retainers" data-i18n="edge_retainers">Retainers</option>
+						<option value="Sharp" data-i18n="edge_sharp">Sharp</option>
+						<option value="Stealthy" data-i18n="edge_stealthy">Stealthy</option>
+						<option value="Strange" data-i18n="edge_strange">Strange</option>
+						<option value="Streetwise" data-i18n="edge_streetwise">Streetwise</option>
+						<option value="Strong" data-i18n="edge_strong">Strong</option>
+						<option value="Tools" data-i18n="edge_tools">Tools</option>
+						<option value="Tough" data-i18n="edge_tough">Tough</option>
+						<option value="Travelled" data-i18n="edge_travelled">Travelled</option>
+						<option value="Veteran" data-i18n="edge_veteran">Veteran</option>
+						<option value="Wealth" data-i18n="edge_wealth">Wealth</option>
+						<option value="Well-Armed" data-i18n="edge_well_armed">Well-Armed</option>
+						<option value="Other" data-i18n="edge_other">Other</option>        
+					</select>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+	<!-- ROLL -->
+	<h3><span data-i18n="actions_and_saves">Actions and Saves</span></h3>
+	<div class="divTable" align="center" style="width:90%;">
+		<div class="divTableRow" align="center">
+			<div class="divTableCell"> <label style="font-size: 2.5em;"><span data-i18n="roll_roll">Roll</span></label> </div>
+			<div class="divTableCell"><button type="roll" value="/roll @{role}" name="roll_Core" class="starr"></button></div>
+			<div class="divTableCell"> <label style="font-size: 2.5em;"><span data-i18n="roll_vantage">Vantage</span></label> </div>
+			<div class="divTableCell"><button type="roll" value="/roll 2@{role}" name="roll_Vantage" class="starr"></button></div>
+			<div class="divTableCell"> <label style="font-size: 2.5em;"><span data-i18n="roll_effect">Effect</span></label> </div>
+			<div class="divTableCell"><button type="roll" value="/roll @{role}!!" name="roll_Effect" class="starr"></button></div>
+		</div>
+	</div>
+</div>
