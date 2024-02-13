@@ -4,10 +4,217 @@
 .charsheet {
     background-color: transparent;
     padding: 0 !important;	
+	font-family: 'Trade Winds';
+	--gris : #757070;
 }
 
+div.intro,
 div.personnage {
-	background-image: url('https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_1.png');
+	display: none;
+}
+
+.charsheet .sheet-sheettoggle[value="intro"] ~ div.intro,
+.charsheet .sheet-sheettoggle[value="paragon"] ~ div.personnage,
+.charsheet .sheet-sheettoggle[value="eclaireur"] ~ div.personnage,
+.charsheet .sheet-sheettoggle[value="guerrier"] ~ div.personnage,
+.charsheet .sheet-sheettoggle[value="sentinelle"] ~ div.personnage {
+    display: block;
+}
+
+
+div.personnage {
+	background-image: var(--charsheet-background);
 	width: 845px;
 	height: 1275px;
 }
+
+div.classe_epee,
+div.classe_ombre,
+div.classe_sorcellerie {
+    position: relative;
+    z-index: auto;
+    margin-top: -37px;
+    margin-left: 240px;
+}
+
+div.aspect_1,
+div.aspect_2,
+div.aspect_3,
+div.aspect_4,
+div.richesse {
+	position: relative;
+	z-index: auto;
+}
+
+div.aspect_1 {
+	margin-left: 125px;	
+    margin-top: 18px;
+}
+
+div.aspect_2 {
+	margin-left: 140px;
+    margin-top: 6px;
+}
+
+div.aspect_3 {
+	margin-left: 155px;
+    margin-top: 6px;
+}
+
+div.aspect_4 {
+	margin-left: 170px;
+    margin-top: 6px;
+}
+
+div.richesse {
+    margin-top: -122px;
+    margin-left: 19px;
+}
+
+div.coeur {
+    margin-top: 480px;
+    margin-left: 15px;
+}
+
+div.etoile {
+    margin-top: -63px;
+    margin-left: 372px;
+}
+
+
+/* #Systeme changement background */
+.selector[value*="paragon"] ~ *{
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_4.png);
+}
+
+.selector[value*="eclaireur"] ~ *{
+   --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_3.png);
+}
+
+.selector[value*="guerrier"] ~ *{
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_2.png);
+}
+
+.selector[value*="sentinelle"] ~ *{
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_1.png);
+}
+
+/* Systeme de déroulant dynamique */
+
+.classe_epee, .classe_ombre, .classe_sorcellerie {
+    display: none;
+}
+
+input[value*="epee"].archetype ~ div.classe_epee,
+input[value*="ombre"].archetype ~ div.classe_ombre,
+input[value*="sorcellerie"].archetype ~ div.classe_sorcellerie {
+	display: block;
+}
+
+/* Format de page */
+
+.charsheet textarea.name {  
+	width: 167px;  
+    outline: none;
+    resize: none;
+    padding: 5px;
+    padding-left: 10px;
+    margin-top: 73px;
+    margin-left: 32px;
+	font-family: 'Trade Winds';
+    font-size: 25px;
+    line-height: 2;
+    border: none;
+    background: none;
+    text-align: center; 
+	color: var(--gris);
+}
+
+.charsheet select {
+	width: auto;
+    border: none;
+    background: transparent;
+    padding-left: 0px;
+    padding-bottom: 0px;
+	border: 1px solid red;
+}
+
+select.archetype {  
+    margin-top: 40px;
+    font-size: 17px;
+    margin-left: 30px;
+    text-align: center;
+    width: 200px;
+    border: none;
+}
+
+select.classe {
+    font-size: 10px;
+    text-align: center;
+    width: 208px;
+	border: none;
+}
+
+select.aspect {
+    font-size: 17px;
+    text-align: center;
+    width: 265px;
+	height: 90px;
+	border: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+	border-radius: 0px;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	font-family: 'Trade Winds';
+    font-size: 25px;
+}
+
+.richesse input[type=number] {
+    font-size: 50px;
+    width: 70px !important;
+    text-align: center;
+}
+
+.coeur input[type=number],
+.etoile input[type=number] {
+    font-size: 38px;
+    width: 70px !important;
+    text-align: center;
+}
+
+span.picto_reset_intro {
+	font-family: 'Pictos';
+    font-size: 28px;
+}
+
+.charsheet button[type=action].intro_reset::before {
+	content: '';
+}
+
+.charsheet button[type=action].intro_reset{
+    border: none;
+    padding: 0;
+    background: none;
+    color: #43586147;
+}
+
+.charsheet button[type=action].intro_reset:hover{
+    color: var(--blue_cabinet);
+}
+
