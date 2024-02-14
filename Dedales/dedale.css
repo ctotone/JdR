@@ -41,6 +41,8 @@ div.personnage {
 	background-image: var(--charsheet-background);
 	width: 845px;
 	height: 1275px;
+    box-shadow: 0px 0px 15px 5px #0a0a0ac4;
+    margin-bottom: 20px;
 }
 
 div.name,
@@ -151,13 +153,13 @@ div.etoile {
 }
 
 div.dice {  
-	margin-top: 1217px;
-	margin-left: 131px;
+	margin-top: 1206px;
+	margin-left: 98px;
 }
 
 div.type_jet {
 	margin-top: 1217px;
-	margin-left: 170px;
+	margin-left: 155px;
 }
 
 /* #Systeme changement background */
@@ -218,7 +220,6 @@ label {
 /* Format de page */
 .charsheet textarea {
 	color: var(--base);
-	-webkit-text-stroke: 0.5px #868686;
 }
 
 .charsheet textarea.name {  
@@ -283,6 +284,7 @@ select.roll {
 	background: #c2c2c2;
 	height: 35px;
 	border-radius: 30px;
+    box-shadow: 2px 4px 7px 3px #0a0a0ae3;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -318,12 +320,18 @@ input[type=number] {
     text-align: center;
 }
 
+/* Bouton choix intro et Roll */
 span.picto_reset_intro {
 	font-family: 'Pictos';
     font-size: 28px;
 }
 
-.charsheet button[type=action].intro_reset::before {
+.charsheet button[type=action].intro_reset::before,
+.charsheet button[type=action].paragon_intro::before,
+.charsheet button[type=action].eclaireur_intro::before,
+.charsheet button[type=action].guerrier_intro::before,
+.charsheet button[type=action].sentinelle_intro::before,
+.charsheet button[type=roll].roll_dice::before {
 	content: '';
 }
 
@@ -334,16 +342,9 @@ span.picto_reset_intro {
     color: #43586147;
 }
 
-/* Bouton choix intro */
+
 .charsheet button[type=action].intro_reset:hover{
     color: black;
-}
-
-.charsheet button[type=action].paragon_intro::before,
-.charsheet button[type=action].eclaireur_intro::before,
-.charsheet button[type=action].guerrier_intro::before,
-.charsheet button[type=action].sentinelle_intro::before {
-	content: '';
 }
 
 
@@ -382,5 +383,23 @@ span.picto_reset_intro {
 .charsheet button[type=action].guerrier_intro:hover,
 .charsheet button[type=action].sentinelle_intro:hover {
     box-shadow: 0px 0px 16px 4px black;
+}
+
+.charsheet button[type=roll].roll_dice {
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 0;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-color: transparent;
+	
+}
+
+.charsheet button[type=roll].roll_dice:hover {
+    margin: 0px;
+	padding: 0px;
+	background-position: 0 0px;
 }
 
