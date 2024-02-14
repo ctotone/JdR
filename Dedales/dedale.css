@@ -8,6 +8,10 @@
 	--gris : #757070;
 }
 
+div.sheet_selector {
+    margin-left: 840px;
+}
+
 div.intro,
 div.personnage {
 	display: none;
@@ -21,6 +25,15 @@ div.personnage {
     display: block;
 }
 
+div.intro_texte {
+	font-size: 25px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+div.boutton_intro {
+	text-align: center;
+}
 
 div.personnage {
 	background-image: var(--charsheet-background);
@@ -214,7 +227,53 @@ span.picto_reset_intro {
     color: #43586147;
 }
 
+/* Bouton choix intro */
 .charsheet button[type=action].intro_reset:hover{
-    color: var(--blue_cabinet);
+    color: black;
+}
+
+.charsheet button[type=action].paragon_intro::before,
+.charsheet button[type=action].eclaireur_intro::before,
+.charsheet button[type=action].guerrier_intro::before,
+.charsheet button[type=action].sentinelle_intro::before {
+	content: '';
+}
+
+
+.charsheet button[type=action].paragon_intro,
+.charsheet button[type=action].eclaireur_intro,
+.charsheet button[type=action].guerrier_intro,
+.charsheet button[type=action].sentinelle_intro {
+    width: 175px;
+    height: 159px;
+    border: none;
+    padding: 0;
+	background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    box-shadow: 2px 1px 7px 3px #0000006e;
+}
+
+.charsheet button[type=action].paragon_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/button_paragon.png);
+}
+
+.charsheet button[type=action].eclaireur_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/button_eclaireur.png);
+}
+
+.charsheet button[type=action].guerrier_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/button_guerrier.png);
+}
+
+.charsheet button[type=action].sentinelle_intro {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/button_sentinelle.png);
+}
+
+.charsheet button[type=action].paragon_intro:hover,
+.charsheet button[type=action].eclaireur_intro:hover,
+.charsheet button[type=action].guerrier_intro:hover,
+.charsheet button[type=action].sentinelle_intro:hover {
+    box-shadow: 0px 0px 16px 4px black;
 }
 
