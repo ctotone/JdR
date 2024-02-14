@@ -412,7 +412,7 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale .sheet-container {
     position: relative;
     margin-bottom: 15px;
-    border-radius: 40px 20px 25px 25px;
+    border-radius: 20px 20px 25px 25px;
     box-shadow: 5px 7px 18px 2px #000000ba;
 }
 
@@ -440,34 +440,39 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale .sheet-header {
     color: var(--header-text-color);
     padding: 7px;
-    border-radius: 40px 20px 0px 0px;
     font-family: "Libre Bodoni", serif;
-    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/offi_button_background.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/roll_fond_titre.png);
     background-size: cover;
     position: relative;
     z-index: 0;
     padding-bottom: 8px;
+    border: 3px solid var(--border-roll-color);
+    border-radius: 20px 20px 0px 0px;
 }
 
 .sheet-rolltemplate-dedale .sheet-title {
-    font-size: 18px;
     padding-top: 3px;
     font-weight: bold;
     padding-bottom: 2px;
-    color: #ffffffeb;
+    color: #000000c7;
     text-align: center;
+    font-size: 22px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    line-height: 1.2;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sheet-rolltemplate-dedale .sheet-subtitle {
     font-size: 14px;
     margin-top: 2px;
-    color: #ffffffc4;
+    color: #000000c7;
     text-align: center;
     font-style: italic;
 }
 
 .sheet-rolltemplate-dedale .sheet-container {
-  --border-roll-color: #1d2d30;
+  --border-roll-color: #000000a6;
   --header-text-color: #FFF;
   --result-bg-color: #772d34;
   --header-bg-color: #475e66;
@@ -504,16 +509,15 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale .sheet-desc {
     grid-column: span 2;
     text-align: center;
-    padding-top: 12px !important;
-    padding-bottom: 9px !important;
+    padding-top: 26px !important;
+    padding-bottom: 18px !important;
     background-color: #772d34 !important;
     color: #f1f2f3 !important;
     font-size: 22px;
     font-family: 'Libre Bodoni', serif;
-    border-top: none;
-    border-radius: 0px 0px 20px 20px;
-    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/offi_button_background_result.png) !important;
-    background-size: 300px 30px !important;
+    border-radius: 0px 0px 25px 25px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/roll_fond_content.png) !important;
+    background-size: cover;
 }
 
 .sheet-rolltemplate-dedale .inlinerollresult,
@@ -527,8 +531,8 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullfail {
-	color: #ffffff !important;
-    font-size: 20px;
+	color: #000000c7 !important;
+    font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
