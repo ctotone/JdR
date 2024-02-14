@@ -375,21 +375,16 @@
 	</div>
 	<div class="type_jet">
 		<select class="roll" name="attr_rollmod">
-		   <option value="&{template:default} {{name=Jet d'Action}} {{attack=@{dice}}}" checked>Jet d'Action</option>
-		   <option value="&{template:default} {{name=Jet d'Action avec Avantage}} {{attack=@{dice} @{dice}}}">Action (Avantage)</option>
-		   <option value="&{template:default} {{name=Jet d'Action avec Désavantage}} {{attack=@{dice} @{dice}}}">Action (Désavantage)</option>
-		   <option value="&{template:default} {{name=Jet de Sauvegarde}} {{attack=@{dice}}}">Jet de Sauvegarde</option>
-		   <option value="&{template:default} {{name=Jet d'Effet}} {{attack=@{explose_dice}}}">Jet d'Effet</option>
+		   <option value="&{template:dedale} {{title=Jet d'Action}} {{desc=@{dice}}}" checked>Jet d'Action</option>
+		   <option value="&{template:dedale} {{title=Jet d'Action avec Avantage}} {{desc=@{dice} @{dice}}}">Action (Avantage)</option>
+		   <option value="&{template:dedale} {{title=Jet d'Action avec Désavantage}} {{desc=@{dice} @{dice}}}">Action (Désavantage)</option>
+		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{desc=@{dice}}}">Jet de Sauvegarde</option>
+		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}}">Jet d'Effet</option>
 		</select>
 	</div>
 	<div class="etoile">
 		<input type="number" name="attr_etoile" min="0" max="20" placeholder="etoile">
 	</div>
-	
-
-	
-	
-
 </div>
 
 
@@ -490,3 +485,37 @@ on("change:role", function() {
     });
 });
 </script>
+
+<!-- Roll template -->
+
+<rolltemplate class="sheet-rolltemplate-dedale">
+<div class="sheet-container">
+	<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+	</div>
+	<div class="sheet-content">
+		{{#qualite}}
+		<div class="sheet-key">{{qualite_title}}</div>
+		<div class="sheet-value">{{qualite}}</div>
+		{{/qualite}}
+		{{#aspect}}
+		<div class="sheet-key">{{aspect_title}}</div>
+		<div class="sheet-value">{{aspect}}</div>
+		{{/aspect}}
+		{{#attribut}}
+		<div class="sheet-key">{{attribut_title}}</div>
+		<div class="sheet-value">{{attribut}}</div>
+		{{/attribut}}
+		{{#malus_corps}}
+		<div class="sheet-key">{{malus_corps_title}}</div>
+		<div class="sheet-value">{{malus_corps}}</div>
+		{{/malus_corps}}
+		{{#divers}}
+		<div class="sheet-key">{{divers_title}}</div>
+		<div class="sheet-value">{{divers}}</div>
+		{{/divers}}
+		<div class="sheet-desc">{{desc}}</div>
+	</div>
+</div>
+</rolltemplate>
