@@ -376,6 +376,10 @@
 		   <option value="&{template:dedale} {{title=Jet d'Action}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet d'Action (2D)</option>
 		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet de Sauvegarde (2D)</option>
 		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{roll1=@{explose_dice}}}{{roll2=@{explose_dice}}} {{type=[[2]]}}">Jet d'Effet (2D)</option>
+		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Soin et Mort</option>
+		   <option value="&{template:dedale-alt} {{title=Jet de Soin}} {{roll1=@{dice}}} {{soin=oui}}">Jet de Soin</option>
+		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{mort=oui}}">Portes de la Mort</option>
+		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_desavantage=oui}}">Portes de la Mort (2D)</option>
 		</select>
 	</div>
 	<div class="etoile">
@@ -434,36 +438,172 @@
 </div>
 </rolltemplate>
 
-<rolltemplate class="sheet-rolltemplate-dedale-alt">
-<div class="sheet-container">
-	<div class="sheet-header">
-		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-	</div>
-	
-	{{#soin}}
-		<div class="sheet-content">
-			<div class="sheet-desc">{{roll1}}</div>
-		</div>
-</div>
-<div class="sheet-container-2">
-	<div class="sheet-content-2">
-		<div class="sheet-info">{{roll1}}</div>
-	</div>
-</div>
-	{{/soin}}
-	{{#mort}}
-			<div class="sheet-content">
-			<div class="sheet-desc">{{roll1}}</div>
-		</div>
-</div>
-<div class="sheet-container-2">
-	<div class="sheet-content-2">
-		<div class="sheet-info">{{roll1}}</div>
-	</div>
-</div>
-	{{/mort}}
 
+<!-- &{template:dedale-alt} {{title=Jet de Soin}} {{roll1=[[4]]}} {{soin=oui}} -->
+<rolltemplate class="sheet-rolltemplate-dedale-alt">
+{{#soin}}
+	<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		<div class="sheet-content">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-desc-orange">{{roll1}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-desc-orange">{{roll1}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-info">OUPS !<br>Frappez aux Portes de la Mort</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagner Coeur et Étoile</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagner Coeur et Étoile</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+{{/soin}}
+{{#mort}}
+	<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-desc-orange">{{roll1}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-desc-orange">{{roll1}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+{{/mort}}
+
+{{#mort_desavantage}}
+<!-- si roll1 est inferieur à roll2 -->
+{{#rollGreater() roll2 roll1}}
+	<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-desc-green" style="color:#176c17 !important;;">{{roll1}} et {{roll2}}</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+{{/rollGreater() roll2 roll1}}
+<!-- si roll1 est inferieur à roll2 -->
+
+<!-- si roll2 est inferieur à roll1 -->
+{{#^rollGreater() roll2 roll1}}
+<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll2 1}}
+			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll2}} et {{roll2}}</div>
+			{{/rollTotal() roll2 1}}
+			{{#rollTotal() roll2 2}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll2}} et {{roll2}}</div>
+			{{/rollTotal() roll2 2}}
+			{{#rollTotal() roll2 3}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll2}} et {{roll2}}</div>
+			{{/rollTotal() roll2 3}}
+			{{#rollGreater() roll2 3}}
+			<div class="sheet-desc-green" style="color:#176c17 !important;">{{roll2}} et {{roll2}}</div>
+			{{/rollGreater() roll2 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll2 1}}
+			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
+			{{/rollTotal() roll2 1}}
+			{{#rollTotal() roll2 2}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll2 2}}
+			{{#rollTotal() roll2 3}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll2 3}}
+			{{#rollGreater() roll2 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll2 3}}
+		</div>
+	</div>
+{{/^rollGreater() roll2 roll1}}
+<!-- si roll2 est inferieur à roll1 -->
+{{/mort_desavantage}}
 </rolltemplate>
 
 <!-- SCRIPT -->
