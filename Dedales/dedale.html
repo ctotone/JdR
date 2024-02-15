@@ -434,6 +434,38 @@
 </div>
 </rolltemplate>
 
+<rolltemplate class="sheet-rolltemplate-dedale-alt">
+<div class="sheet-container">
+	<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+	</div>
+	
+	{{#soin}}
+		<div class="sheet-content">
+			<div class="sheet-desc">{{roll1}}</div>
+		</div>
+</div>
+<div class="sheet-container-2">
+	<div class="sheet-content-2">
+		<div class="sheet-info">{{roll1}}</div>
+	</div>
+</div>
+	{{/soin}}
+	{{#mort}}
+			<div class="sheet-content">
+			<div class="sheet-desc">{{roll1}}</div>
+		</div>
+</div>
+<div class="sheet-container-2">
+	<div class="sheet-content-2">
+		<div class="sheet-info">{{roll1}}</div>
+	</div>
+</div>
+	{{/mort}}
+
+</rolltemplate>
+
 <!-- SCRIPT -->
 
 <script type="text/worker">

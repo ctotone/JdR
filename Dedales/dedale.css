@@ -231,7 +231,7 @@ input[type=checkbox]+label {
 }
 
 input[type=checkbox]:checked+label {
-  background: ##151414eb;
+  background: #151414eb;
 }
 
 label {
@@ -430,7 +430,7 @@ span.picto_reset_intro {
 }
 
 /* Roll Template */
-
+/* DEDALE CLASSIQUE */
 .sheet-rolltemplate-dedale {
   margin-left: -20px;
 }
@@ -559,6 +559,170 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullcrit {
+	color: #176c17 !important;
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+/* DEDALE ALT */
+.sheet-rolltemplate-dedale-alt {
+  margin-left: -20px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-container {
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+	margin-bottom: 15px;
+	box-shadow: 5px 7px 18px 2px #000000ba;
+	background-image: url('https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/roll_background.jpg');
+	background-size: 282px 172px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-container-2 {
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+	margin-bottom: 15px;
+	box-shadow: 5px 7px 18px 2px #000000ba;
+	background-image: url('https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/roll_background.jpg');
+	background-size: 282px 172px;
+}
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container {
+    box-shadow: 5px 7px 11px -1px #a4a0a05e;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-header {
+	color: var(--header-text-color);
+	height: 107px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-title {
+	font-weight: bold;
+	padding-bottom: 2px;
+	color: #000000c7;
+	text-align: center;
+	font-size: 20px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+	line-height: 1.2;
+	padding-left: 37px;
+	padding-right: 37px;
+	padding-top: 19px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-subtitle {
+    font-size: 14px;
+    margin-top: 2px;
+    color: #000000c7;
+    text-align: center;
+    font-style: italic;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-container,
+.sheet-rolltemplate-dedale-alt .sheet-container-2 {
+  --border-roll-color: #000000a6;
+  --header-text-color: #FFF;
+  --result-bg-color: #772d34;
+  --header-bg-color: #475e66;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    line-height: 1.4em;
+    color: #475e66;
+    border: none;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    line-height: 1.4em;
+    color: #475e66;
+    border: none;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info {
+    grid-column: span 2;
+    height: 80px;
+    color: #000000c7 !important;
+    font-size: 25px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content > div {
+	padding: 5px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content .sheet-key {
+	font-weight: bold;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-dedale-alt .sheet-content :nth-child(4n) {
+    background: #6150451c;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc,
+.sheet-rolltemplate-dedale-alt .sheet-desc-red,
+.sheet-rolltemplate-dedale-alt .sheet-desc-green{
+	grid-column: span 2;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .inlinerollresult.importantroll {
+	border: none !important;
+    background-color: transparent !important;
+    color: #475e66 !important;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullfail {
+	color: #000000c7 !important;
+    font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullfail {
+	color: #a20202 !important;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullcrit {
+	color: #176c17 !important;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullfail {
+	color: #a20202 !important; 
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullcrit {
 	color: #176c17 !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
