@@ -1,15 +1,3 @@
-<!-- Choix du Rôle -->
-<div class="sheet_selector">
-<button type="action" class="intro_reset" name="act_intro-reset"><span class="picto_reset_intro" data-i18n-title="intro_link" title="Changer le type de la fiche">r</span></button>
-			<!-- <select class="selector" data-i18n-title="role" title="Rôle" name="attr_role">
-				<option value="paragon" data-i18n="role_paragon">Paragon</option>
-				<option value="eclaireur" data-i18n="role_eclaireur">Éclaireur</option>
-				<option value="guerrier" data-i18n="role_guerrier">Guerrier</option>
-				<option value="sentinelle" data-i18n="role_sentinelle">Sentinelle</option>
-			</select> -->
-		</div>
-		
-		
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
 <!-- Introduction -->
 <div class="intro">
@@ -19,6 +7,7 @@
 	<div class="boutton_intro">
 		<button type="action" class="paragon_intro" name="act_intro-paragon"></button>
 		<button type="action" class="eclaireur_intro" name="act_intro-eclaireur"></button>
+		<br>
 		<button type="action" class="guerrier_intro" name="act_intro-guerrier"></button>
 		<button type="action" class="sentinelle_intro" name="act_intro-sentinelle"></button>
 	</div>
@@ -27,6 +16,9 @@
 <!-- Feuille de personnage -->
 <input type="hidden" class="selector" name="attr_role" value="paragon">		
 <div class="personnage">
+	<!-- Reset hoix du Rôle -->
+	<div class="sheet_selector">
+	<button type="action" class="intro_reset" name="act_intro-reset"><span class="picto_reset_intro" data-i18n-title="intro_link" title="Changer le type de la fiche">r</span></button></div>
 	<!-- Nom -->
 	<div class="name"><textarea class="name" name="attr_character_name" rows="2" spellcheck="false"></textarea></div>
 	
@@ -342,7 +334,7 @@
 	</div>
 	<div class="check_intermediaire">
 		<input type="checkbox" name="attr_check_intermediaire" value="1" id="c0" />
-		<label for="c0"></label>
+		<label for="c0" style="width: 51px;"></label>
 	</div>
 	<div class="check_vierge">
 		<input type="checkbox" name="attr_check_vierge" value="1" id="c1" />
@@ -375,11 +367,15 @@
 	</div>
 	<div class="type_jet">
 		<select class="roll" name="attr_rollmod">
-		   <option value="&{template:dedale} {{title=Jet d'Action}} {{desc=@{dice}}}" checked>Jet d'Action</option>
-		   <option value="&{template:dedale} {{title=Jet d'Action avec Avantage}} {{desc=@{dice} @{dice}}}">Action (Avantage)</option>
-		   <option value="&{template:dedale} {{title=Jet d'Action avec Désavantage}} {{desc=@{dice} @{dice}}}">Action (Désavantage)</option>
-		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{desc=@{dice}}}">Jet de Sauvegarde</option>
-		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}}">Jet d'Effet</option>
+		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Classique</option>
+		   <option value="&{template:dedale} {{title=Jet d'Action}} {{desc=@{dice}}} {{type=[[1]]}}" checked>Jet d'Action (1D)</option>
+		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{desc=@{dice}}} {{type=[[1]]}}">Jet de Sauvegarde (1D)</option>
+		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}} {{type=[[1]]}}">Jet d'Effet (1D)</option>
+		   <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
+		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Avantage / Désavantage</option>
+		   <option value="&{template:dedale} {{title=Jet d'Action}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet d'Action (2D)</option>
+		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet de Sauvegarde (2D)</option>
+		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{roll1=@{explose_dice}}}{{roll2=@{explose_dice}}} {{type=[[2]]}}">Jet d'Effet (2D)</option>
 		</select>
 	</div>
 	<div class="etoile">
@@ -387,20 +383,70 @@
 	</div>
 </div>
 
+<!-- Roll template -->
 
+<rolltemplate class="sheet-rolltemplate-dedale">
+<div class="sheet-container">
+	<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+	</div>
+	<div class="sheet-content">
+		{{#rollTotal() type 1}}
+		<div class="sheet-desc">{{desc}}</div>
+		{{/rollTotal() type 1}}
+		{{#rollTotal() type 2}}
+		<div class="sheet-desc">{{roll1}} et {{roll2}}</div>
+		{{/rollTotal() type 2}}
+		{{#chaos}}
+			{{#rollTotal() roll1 1}}
+		<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 3}}
+		<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollTotal() roll1 5}}
+		<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 5}}
+			{{#rollTotal() roll1 7}}
+		<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 7}}
+			{{#rollTotal() roll1 9}}
+		<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 9}}
+			{{#rollTotal() roll1 2}}
+		<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 4}}
+		<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 4}}
+			{{#rollTotal() roll1 6}}
+		<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 6}}
+			{{#rollTotal() roll1 8}}
+		<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 8}}
+			{{#rollTotal() roll1 10}}
+		<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 10}}
+		{{/chaos}}
+	</div>
+</div>
+</rolltemplate>
 
 <!-- SCRIPT -->
 
 <script type="text/worker">
 on('clicked:intro-paragon', function() {
 
-	getAttrs(["role", "role_name", "coeur", "etoile", "dice", "richesse"], function(values) {
+	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
 		setAttrs({
 			role: "1",
 			role_name: "paragon",
 			coeur: "4",
 			etoile: "4",
-			richesse: "2"
+			richesse: "2",
+			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D4]]}} {{type=[[1]]}}"
 		});
 	});
 });
@@ -409,13 +455,14 @@ on('clicked:intro-paragon', function() {
 <script type="text/worker">
 on('clicked:intro-eclaireur', function() {
 
-	getAttrs(["role", "role_name", "coeur", "etoile", "dice", "richesse"], function(values) {
+	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
 		setAttrs({
 			role: "2",
 			role_name: "eclaireur",
 			coeur: "6",
 			etoile: "3",
-			richesse: "2"
+			richesse: "2",
+			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D6]]}} {{type=[[1]]}}"
 		});
 	});
 });
@@ -424,13 +471,14 @@ on('clicked:intro-eclaireur', function() {
 <script type="text/worker">
 on('clicked:intro-guerrier', function() {
 
-	getAttrs(["role", "role_name", "coeur", "etoile", "dice", "richesse"], function(values) {
+	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
 		setAttrs({
 			role: "3",
 			role_name: "guerrier",
 			coeur: "8",
 			etoile: "2",
-			richesse: "2"
+			richesse: "2",
+			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D8]]}} {{type=[[1]]}}"
 		});
 	});
 });
@@ -439,13 +487,14 @@ on('clicked:intro-guerrier', function() {
 <script type="text/worker">
 on('clicked:intro-sentinelle', function() {
 
-	getAttrs(["role", "role_name", "coeur", "etoile", "dice", "richesse"], function(values) {
+	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
 		setAttrs({
 			role: "4",
 			role_name: "sentinelle",
 			coeur: "10",
 			etoile: "1",
-			richesse: "2"
+			richesse: "2",
+			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D10]]}} {{type=[[1]]}}"
 		});
 	});
 });
@@ -455,7 +504,7 @@ on('clicked:intro-sentinelle', function() {
    on('clicked:intro-reset', function() {
 
 
-	getAttrs(["role", "coeur", "etoile", "dice", "richesse"], function(values) {
+	getAttrs(["role", "coeur", "etoile", "richesse", "rollmod"], function(values) {
 		setAttrs({
 			role: "intro",
 			coeur: "0",
@@ -485,37 +534,3 @@ on("change:role", function() {
     });
 });
 </script>
-
-<!-- Roll template -->
-
-<rolltemplate class="sheet-rolltemplate-dedale">
-<div class="sheet-container">
-	<div class="sheet-header">
-		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-	</div>
-	<div class="sheet-content">
-		{{#qualite}}
-		<div class="sheet-key">{{qualite_title}}</div>
-		<div class="sheet-value">{{qualite}}</div>
-		{{/qualite}}
-		{{#aspect}}
-		<div class="sheet-key">{{aspect_title}}</div>
-		<div class="sheet-value">{{aspect}}</div>
-		{{/aspect}}
-		{{#attribut}}
-		<div class="sheet-key">{{attribut_title}}</div>
-		<div class="sheet-value">{{attribut}}</div>
-		{{/attribut}}
-		{{#malus_corps}}
-		<div class="sheet-key">{{malus_corps_title}}</div>
-		<div class="sheet-value">{{malus_corps}}</div>
-		{{/malus_corps}}
-		{{#divers}}
-		<div class="sheet-key">{{divers_title}}</div>
-		<div class="sheet-value">{{divers}}</div>
-		{{/divers}}
-		<div class="sheet-desc">{{desc}}</div>
-	</div>
-</div>
-</rolltemplate>
