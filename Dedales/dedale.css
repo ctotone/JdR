@@ -492,6 +492,15 @@ span.picto_reset_intro {
     border: none;
 }
 
+.sheet-rolltemplate-dedale .sheet-content2 {
+	display: grid;
+	grid-template-columns: 60px 30px 60px;
+	line-height: 1.4em;
+	color: #475e66;
+	border: none;
+	margin-left: 60px;
+}
+
 .sheet-rolltemplate-dedale .sheet-content > div {
 	padding: 5px;
 }
@@ -509,8 +518,54 @@ span.picto_reset_intro {
 
 .sheet-rolltemplate-dedale .sheet-desc,
 .sheet-rolltemplate-dedale .sheet-desc-red,
-.sheet-rolltemplate-dedale .sheet-desc-green{
+.sheet-rolltemplate-dedale .sheet-desc-green,
+.sheet-rolltemplate-dedale .sheet-desc-effet {
 	grid-column: span 2;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red {
+	grid-column: 1;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet2 {
+	grid-column: 2;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green,
+.sheet-rolltemplate-dedale .sheet-desc-effet2-green {
+	color: green;
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red,
+.sheet-rolltemplate-dedale .sheet-desc-effet2-red {
+	color: red;
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet3-green,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-red {
+	grid-column: 3;
 	text-align: center;
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
@@ -564,6 +619,32 @@ span.picto_reset_intro {
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green .inlinerollresult,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-green .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.fullcrit {
+	color: #176c17 !important;
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red .inlinerollresult,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale .sheet-desc-effet1-red .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.fullcrit{
+	color: #a20202 !important; 
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
 /* DEDALE ALT */
 .sheet-rolltemplate-dedale-alt {
   margin-left: -20px;
@@ -578,16 +659,25 @@ span.picto_reset_intro {
 	background-size: 282px 172px;
 }
 
-.sheet-rolltemplate-dedale-alt .sheet-container-2 {
+.sheet-rolltemplate-dedale-alt .sheet-container-2,
+.sheet-rolltemplate-dedale-alt .sheet-container-3 {
     border-radius: 10px 10px 10px 10px;
     position: relative;
     margin-bottom: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
     margin-top: -25px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/roll_info.png);
     box-shadow: 13px 10px 15px 0px #000000ba;
     background-size: 246px 98px;
+}
+
+ .sheet-rolltemplate-dedale-alt .sheet-container-2 {  
+	margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-container-3 {  
+	margin-left: 30px;
+	margin-right: 10px;
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale .sheet-container,
@@ -595,7 +685,9 @@ span.picto_reset_intro {
     box-shadow: 5px 7px 18px 2px #a4a0a05e;
 }
 
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container-2 {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container-2,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container-3
+{
     box-shadow: 13px 10px 15px 0px #a4a0a05e;
 }
 
@@ -629,7 +721,8 @@ span.picto_reset_intro {
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-container,
-.sheet-rolltemplate-dedale-alt .sheet-container-2 {
+.sheet-rolltemplate-dedale-alt .sheet-container-2,
+.sheet-rolltemplate-dedale-alt .sheet-container-3{
   --border-roll-color: #000000a6;
   --header-text-color: #FFF;
   --result-bg-color: #772d34;
@@ -652,7 +745,36 @@ span.picto_reset_intro {
     border: none;
 }
 
-.sheet-rolltemplate-dedale-alt .sheet-info {
+.sheet-rolltemplate-dedale-alt .sheet-content-2-double {
+	display: grid;
+	grid-template-columns: auto auto;
+	line-height: 1.4em;
+	color: #475e66;
+	border: none;
+	margin-left: 45px;
+	margin-right: 45px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content-2-triple {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    line-height: 1.4em;
+    color: #475e66;
+    border: none;
+	margin-left: 35px;
+	margin-right: 35px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    line-height: 1.4em;
+    color: #475e66;
+    border: none;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info,
+.sheet-rolltemplate-dedale-alt .sheet-info1 {
     grid-column: span 2;
     height: 100px;
     color: #000000c7 !important;
@@ -663,8 +785,91 @@ span.picto_reset_intro {
     align-items: center;
     justify-content: center;
 	text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info2-1 {
+    grid-column: 1;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info2-2 {
+    grid-column: 2;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info2-1 {
+    grid-column: 1;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info3-1 {
+    grid-column: 1;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info3-2 {
+    grid-column: 2;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-info3-3 {
+    grid-column: 3;
+    height: 100px;
+    color: #000000c7 !important;
+    font-size: 18px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-rappel_1,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_2 {
+	position: absolute;
+	margin-top: 12px;
+	margin-left: 13px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-content > div {
@@ -685,7 +890,8 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale-alt .sheet-desc,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red,
 .sheet-rolltemplate-dedale-alt .sheet-desc-green,
-.sheet-rolltemplate-dedale-alt .sheet-desc-orange {
+.sheet-rolltemplate-dedale-alt .sheet-desc-orange,
+.sheet-rolltemplate-dedale-alt .sheet-desc-image {
 	grid-column: span 2;
 	text-align: center;
 	padding-top: 5px !important;
@@ -724,6 +930,15 @@ span.picto_reset_intro {
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
+.sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.fullfail {
+	color: #000000c7 !important;
+    font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullfail {
 	color: #a20202 !important;
 }
@@ -735,7 +950,6 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullcrit,
-.sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullfail {
 	color: #a20202 !important; 
 	font-size: 45px;
@@ -745,8 +959,7 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult,
 .sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult.fullcrit,
-.sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult.fullfail,
-.sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult.fullcrit {
+.sheet-rolltemplate-dedale-alt .sheet-desc-orange .inlinerollresult.fullfail {
 	color: #b17300 !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
@@ -755,10 +968,101 @@ span.picto_reset_intro {
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult,
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullcrit,
-.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullfail,
-.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullcrit {
+.sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullfail {
 	color: #176c17 !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
+.sheet-rolltemplate-dedale-alt .sheet-rappel_1 .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_1 .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_1 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_1 .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_2 .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_2 .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_2 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_2 .inlinerollresult.fullfail{  
+	color: #000 !important;
+	font-size: 20px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+	background-color: #dbdbdb !important;
+	border-radius: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 1px solid #151515 !important;
+	text-align: center;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-cle,
+.sheet-rolltemplate-dedale-alt .sheet-bouquins,
+.sheet-rolltemplate-dedale-alt .sheet-bottes,
+.sheet-rolltemplate-dedale-alt .sheet-baston,
+.sheet-rolltemplate-dedale-alt .sheet-bravoure,
+.sheet-rolltemplate-dedale-alt .sheet-couronne {
+	width: 70px;
+	height: 70px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-cle-double,
+.sheet-rolltemplate-dedale-alt .sheet-bouquins-double,
+.sheet-rolltemplate-dedale-alt .sheet-bottes-double,
+.sheet-rolltemplate-dedale-alt .sheet-baston-double,
+.sheet-rolltemplate-dedale-alt .sheet-bravoure-double,
+.sheet-rolltemplate-dedale-alt .sheet-couronne-double {
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-cle-triple,
+.sheet-rolltemplate-dedale-alt .sheet-bouquins-triple,
+.sheet-rolltemplate-dedale-alt .sheet-bottes-triple,
+.sheet-rolltemplate-dedale-alt .sheet-baston-triple,
+.sheet-rolltemplate-dedale-alt .sheet-bravoure-triple,
+.sheet-rolltemplate-dedale-alt .sheet-couronne-triple {
+	width: 50px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.sheet-rolltemplate-dedale-alt .sheet-cle,
+.sheet-rolltemplate-dedale-alt .sheet-cle-double,
+.sheet-rolltemplate-dedale-alt .sheet-cle-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_cle.png);
+}
+
+
+.sheet-rolltemplate-dedale-alt .sheet-bouquins,
+.sheet-rolltemplate-dedale-alt .sheet-bouquins-double,
+.sheet-rolltemplate-dedale-alt .sheet-bouquins-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_bouquins.png);
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-bottes,
+.sheet-rolltemplate-dedale-alt .sheet-bottes-double,
+.sheet-rolltemplate-dedale-alt .sheet-bottes-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_bottes.png);
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-baston,
+.sheet-rolltemplate-dedale-alt .sheet-baston-double,
+.sheet-rolltemplate-dedale-alt .sheet-baston-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_baston.png);
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-bravoure,
+.sheet-rolltemplate-dedale-alt .sheet-bravoure-double,
+.sheet-rolltemplate-dedale-alt .sheet-bravoure-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_bravoure.png);
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-couronne,
+.sheet-rolltemplate-dedale-alt .sheet-couronne-double,
+.sheet-rolltemplate-dedale-alt .sheet-couronne-triple {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/info_couronne.png);
+}
