@@ -10,6 +10,12 @@
 	color: var(--base);
 }
 
+::placeholder {
+    font-family: 'Trade Winds';
+    font-size: 21px;
+    color: #2f2f2e45;
+}
+
 body.sheet-darkmode .charsheet {
     background-color: black;
 }
@@ -73,6 +79,7 @@ div.archetype,
 div.classe_epee,
 div.classe_ombre,
 div.classe_sorcellerie,
+div.etat_custom,
 div.aspect_1,
 div.aspect_2,
 div.aspect_3,
@@ -87,7 +94,8 @@ div.check_epuise,
 div.check_blesse,
 div.check_marque,
 div.dice,
-div.type_jet {
+div.type_jet,
+div.reset {
 	position: absolute;
 	z-index: auto;
 }
@@ -107,6 +115,13 @@ div.classe_ombre,
 div.classe_sorcellerie {
 	margin-top: 288px;
     margin-left: 239px;
+}
+
+div.etat_custom {
+    margin-left: 120px;
+    margin-top: 805px;
+    width: 300px;
+    height: 40px;
 }
 
 div.aspect_1 {
@@ -167,6 +182,7 @@ div.richesse {
 div.coeur {
     margin-top: 1197px;
     margin-left: 15px;
+    border-radius: 35px;
 }
 
 div.etoile {
@@ -182,6 +198,12 @@ div.dice {
 div.type_jet {
 	margin-top: 1217px;
 	margin-left: 150px;
+}
+
+div.reset {
+    margin-top: 1247px;
+    margin-left: 4px;
+    border-radius: 35px;
 }
 
 /* #Systeme changement background */
@@ -276,6 +298,22 @@ label {
 	height: 60px;
 }
 
+.charsheet input.etat_custom { 
+    width: 298px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    font-family: 'Trade Winds';
+    font-size: 21px;
+    line-height: 1.1;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    height: 38px;
+    color: #252524db;
+}
+
 .charsheet select {
 	width: auto;
     border: none;
@@ -367,12 +405,18 @@ span.picto_reset_intro {
     font-size: 28px;
 }
 
+span.picto_reset {
+	font-family: 'Pictos';
+    font-size: 28px;
+}
+
 .charsheet button[type=action].intro_reset::before,
 .charsheet button[type=action].paragon_intro::before,
 .charsheet button[type=action].eclaireur_intro::before,
 .charsheet button[type=action].guerrier_intro::before,
 .charsheet button[type=action].sentinelle_intro::before,
-.charsheet button[type=roll].roll_dice::before {
+.charsheet button[type=roll].roll_dice::before,
+.charsheet button[type=action].reset::before, {
 	content: '';
 }
 
@@ -385,6 +429,18 @@ span.picto_reset_intro {
 
 
 .charsheet button[type=action].intro_reset:hover{
+    color: #ffffffb5;
+}
+
+.charsheet button[type=action].reset{
+    border: none;
+    padding: 0;
+    background: none;
+    color: #ffffff2b;
+}
+
+
+.charsheet button[type=action].reset:hover{
     color: #ffffffb5;
 }
 
@@ -427,6 +483,10 @@ span.picto_reset_intro {
     box-shadow: 0px 0px 16px 4px black;
 }
 
+.charsheet button[type=roll].roll_dice::before {
+  content: '';
+}
+
 .charsheet button[type=roll].roll_dice {
     width: 50px;
     height: 50px;
@@ -452,7 +512,7 @@ span.picto_reset_intro {
 }
 
 .sheet-rolltemplate-dedale .sheet-container {
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 41px 10px 61px 10px;
 	position: relative;
 	margin-bottom: 15px;
 	box-shadow: 5px 7px 18px 2px #000000ba;
@@ -667,7 +727,7 @@ span.picto_reset_intro {
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-container {
-	border-radius: 10px 10px 10px 10px;
+    border-radius: 41px 10px 61px 10px;
 	position: relative;
 	margin-bottom: 15px;
 	box-shadow: 5px 7px 18px 2px #000000ba;
@@ -687,24 +747,28 @@ span.picto_reset_intro {
 }
 
  .sheet-rolltemplate-dedale-alt .sheet-container-2 {  
-	margin-left: 20px;
-    margin-right: 20px;
+    margin-left: -11px;
+    margin-right: 51px;
+    margin-top: -102px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-container-3 {  
-	margin-left: 30px;
-	margin-right: 10px;
+	margin-left: 40px;
+    margin-right: 0px;
+    margin-top: -26px;
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale .sheet-container,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container {
     box-shadow: 5px 7px 18px 2px #a4a0a05e;
+    width: 282px;
 }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container-2,
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-dedale-alt .sheet-container-3
 {
     box-shadow: 13px 10px 15px 0px #a4a0a05e;
+    width: 242px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-header {
@@ -787,6 +851,15 @@ span.picto_reset_intro {
     line-height: 1.4em;
     color: #475e66;
     border: none;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-content3 {
+	display: grid;
+	grid-template-columns: 60px 30px 60px;
+	line-height: 1.4em;
+	color: #475e66;
+	border: none;
+	margin-left: 60px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-info,
@@ -881,12 +954,173 @@ span.picto_reset_intro {
 	text-align: center;
 }
 
-.sheet-rolltemplate-dedale-alt .sheet-rappel_1,
-.sheet-rolltemplate-dedale-alt .sheet-rappel_2 {
-	position: absolute;
-	margin-top: 12px;
-	margin-left: 13px;
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-green,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-red {
+	grid-column: 1;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
 }
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet2 {
+	grid-column: 2;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red {
+	grid-column: 3;
+	text-align: center;
+	padding-top: 5px !important;
+	padding-bottom: 18px !important;
+	height: 45px;
+	color: #000000c7 !important;
+	font-size: 25px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_1,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_2,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_3,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_4,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_5,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_6,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_7,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_8,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_9,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_10,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_1,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_2,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_3,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_4,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_5,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_6,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_7,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_8,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_9,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_vert_10,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_1,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_2,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_3,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_4,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_5,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_6,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_7,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_8,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_9,
+.sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_10
+ {
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 12px;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_1.png);
+    background-size: 35px 30px;
+    width: 35px;
+    height: 30px;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-rappel_base_1 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_1.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_2 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_2.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_3 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_3.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_4 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_4.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_5 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_5.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_6 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_6.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_7 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_7.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_8 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_8.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_9 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_9.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_base_10 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_base_10.png);
+ }
+ 
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_1 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_1.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_2 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_2.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_3 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_3.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_4 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_4.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_5 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_5.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_6 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_6.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_7 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_7.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_8 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_8.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_9 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_9.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_vert_10 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_vert_10.png);
+ }
+ 
+  .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_1 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_1.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_2 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_2.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_3 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_3.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_4 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_4.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_5 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_5.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_6 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_6.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_7 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_7.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_8 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_8.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_9 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_9.png);
+ }
+ .sheet-rolltemplate-dedale-alt .sheet-rappel_rouge_10 {
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/hexa_rouge_10.png);
+ }
 
 .sheet-rolltemplate-dedale-alt .sheet-content > div {
 	padding: 5px;
@@ -1007,6 +1241,33 @@ span.picto_reset_intro {
 	padding-right: 5px;
 	border: 1px solid #151515 !important;
 	text-align: center;
+}
+
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-green .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-green .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-green .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-green .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.fullcrit {
+	color: #176c17 !important;
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-red .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-red .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-red .inlinerollresult.fullcrit,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet1-red .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.importantroll,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.fullfail,
+.sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.fullcrit{
+	color: #a20202 !important; 
+	font-size: 45px;
+	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-cle,
