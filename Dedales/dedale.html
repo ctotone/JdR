@@ -368,18 +368,19 @@
 	<div class="type_jet">
 		<select class="roll" name="attr_rollmod">
 		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Classique</option>
-		   <option value="&{template:dedale} {{title=Jet d'Action}} {{desc=@{dice}}} {{type=[[1]]}}" checked>Jet d'Action (1D)</option>
-		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{desc=@{dice}}} {{type=[[1]]}}">Jet de Sauvegarde (1D)</option>
+		   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}" checked>Jet d'Action (1D)</option>
+		   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}">Jet de Sauvegarde (1D)</option>
 		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}} {{type=[[1]]}}">Jet d'Effet (1D)</option>
 		   <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
 		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Avantage / Désavantage</option>
-		   <option value="&{template:dedale} {{title=Jet d'Action}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet d'Action (2D)</option>
-		   <option value="&{template:dedale} {{title=Jet de Sauvegarde}} {{roll1=@{dice}}}{{roll2=@{dice}}} {{type=[[2]]}}">Jet de Sauvegarde (2D)</option>
+		   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet d'Action (2D)</option>
+		   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet de Sauvegarde (2D)</option>
 		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{roll1=@{explose_dice}}}{{roll2=@{explose_dice}}} {{type=[[2]]}}">Jet d'Effet (2D)</option>
 		   <option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; Soin et Mort</option>
 		   <option value="&{template:dedale-alt} {{title=Jet de Soin}} {{roll1=@{dice}}} {{soin=oui}}">Jet de Soin</option>
 		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{mort=oui}}">Portes de la Mort</option>
-		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_desavantage=oui}}">Portes de la Mort (2D)</option>
+		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_avantage=oui}}">Portes de la Mort (Avantage)</option>
+		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_desavantage=oui}}">Portes de la Mort (Désavantage)</option>
 		</select>
 	</div>
 	<div class="etoile">
@@ -395,14 +396,28 @@
 		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
 		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
 	</div>
-	<div class="sheet-content">
+	
 		{{#rollTotal() type 1}}
+	<div class="sheet-content">
 		<div class="sheet-desc">{{desc}}</div>
+	</div>
 		{{/rollTotal() type 1}}
 		{{#rollTotal() type 2}}
-		<div class="sheet-desc">{{roll1}} et {{roll2}}</div>
+	<div class="sheet-content2">
+			{{#rollGreater() roll2 roll1}}
+				<div class="sheet-desc-effet1-red">{{roll1}}</div>
+				<div class="sheet-desc-effet2">et</div>
+				<div class="sheet-desc-effet3-green">{{roll2}}</div>
+			{{/rollGreater() roll2 roll1}}	
+			{{#^rollGreater() roll2 roll1}}
+				<div class="sheet-desc-effet1-green">{{roll1}}</div>
+				<div class="sheet-desc-effet2">et</div>
+				<div class="sheet-desc-effet3-red">{{roll2}}</div>
+			{{/^rollGreater() roll2 roll1}}
+	</div>
 		{{/rollTotal() type 2}}
 		{{#chaos}}
+	<div class="sheet-content">
 			{{#rollTotal() roll1 1}}
 		<div class="sheet-desc-red">{{roll1}}</div>
 			{{/rollTotal() roll1 1}}
@@ -433,14 +448,684 @@
 			{{#rollTotal() roll1 10}}
 		<div class="sheet-desc-green">{{roll1}}</div>
 			{{/rollTotal() roll1 10}}
-		{{/chaos}}
 	</div>
+		{{/chaos}}
 </div>
 </rolltemplate>
 
 
-<!-- &{template:dedale-alt} {{title=Jet de Soin}} {{roll1=[[4]]}} {{soin=oui}} -->
 <rolltemplate class="sheet-rolltemplate-dedale-alt">
+{{#image}}
+		<!-- Paragon -->
+		{{#rollTotal() role 1}}
+		<div class="sheet-container">
+			<div class="sheet-header">
+				{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+				{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			</div>
+			{{#simple}}
+			<div class="sheet-desc-image">{{roll1}}</div>
+			{{/simple}}
+			{{#double}}
+			<div class="sheet-desc-image">{{roll1}} et {{roll2}}</div>
+			{{/double}}
+		</div>
+		
+				{{#rollTotal() roll1 1}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 1}}
+				{{#rollTotal() roll1 2}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 2}}
+				{{#rollTotal() roll1 3}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 3}}
+				{{#rollTotal() roll1 4}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-couronne-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 4}}
+		{{#double}}
+		{{#rollTotal() roll2 1}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 1}}
+				{{#rollTotal() roll2 2}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 2}}
+				{{#rollTotal() roll2 3}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 3}}
+				{{#rollTotal() roll2 4}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-couronne-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 4}}
+		{{/double}}
+		{{/rollTotal() role 1}}
+		
+		<!-- Eclaireur -->
+		{{#rollTotal() role 2}}
+		<div class="sheet-container">
+			<div class="sheet-header">
+				{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+				{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			</div>
+			{{#simple}}
+			<div class="sheet-desc-image">{{roll1}}</div>
+			{{/simple}}
+			{{#double}}
+			<div class="sheet-desc-image">{{roll1}} et {{roll2}}</div>
+			{{/double}}
+		</div>
+		
+				{{#rollTotal() roll1 1}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 1}}
+				{{#rollTotal() roll1 2}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 2}}
+				{{#rollTotal() roll1 3}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 3}}
+				{{#rollTotal() roll1 4}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 4}}
+				{{#rollTotal() roll1 5}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 5}}
+				{{#rollTotal() roll1 6}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-couronne-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 6}}
+		{{#double}}
+		{{#rollTotal() roll2 1}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 1}}
+				{{#rollTotal() roll2 2}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 2}}
+				{{#rollTotal() roll2 3}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 3}}
+				{{#rollTotal() roll2 4}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 4}}
+				{{#rollTotal() roll2 5}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 5}}
+				{{#rollTotal() roll2 6}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-couronne-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 6}}
+		{{/double}}
+		{{/rollTotal() role 2}}
+		
+		<!-- Guerrier -->
+		{{#rollTotal() role 3}}
+		<div class="sheet-container">
+			<div class="sheet-header">
+				{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+				{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			</div>
+			{{#simple}}
+			<div class="sheet-desc-image">{{roll1}}</div>
+			{{/simple}}
+			{{#double}}
+			<div class="sheet-desc-image">{{roll1}} et {{roll2}}</div>
+			{{/double}}
+		</div>
+		
+				{{#rollTotal() roll1 1}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 1}}
+				{{#rollTotal() roll1 2}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 2}}
+				{{#rollTotal() roll1 3}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 3}}
+				{{#rollTotal() roll1 4}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 4}}
+				{{#rollTotal() roll1 5}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 5}}
+				{{#rollTotal() roll1 6}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 6}}
+				{{#rollTotal() roll1 7}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 7}}
+				{{#rollTotal() roll1 8}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-couronne-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 8}}
+		{{#double}}
+		{{#rollTotal() roll2 1}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 1}}
+				{{#rollTotal() roll2 2}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 2}}
+				{{#rollTotal() roll2 3}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 3}}
+				{{#rollTotal() roll2 4}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 4}}
+				{{#rollTotal() roll2 5}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 5}}
+				{{#rollTotal() roll2 6}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 6}}
+				{{#rollTotal() roll2 7}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 7}}
+				{{#rollTotal() roll2 8}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-couronne-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 8}}
+		{{/double}}
+		{{/rollTotal() role 3}}
+		
+		<!-- Sentinelle -->
+		{{#rollTotal() role 4}}
+		<div class="sheet-container">
+			<div class="sheet-header">
+				{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+				{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			</div>
+			{{#simple}}
+			<div class="sheet-desc-image">{{roll1}}</div>
+			{{/simple}}
+			{{#double}}
+			<div class="sheet-desc-image">{{roll1}} et {{roll2}}</div>
+			{{/double}}
+		</div>
+		
+				{{#rollTotal() roll1 1}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 1}}
+				{{#rollTotal() roll1 2}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 2}}
+				{{#rollTotal() roll1 3}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 3}}
+				{{#rollTotal() roll1 4}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 4}}
+				{{#rollTotal() roll1 5}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 5}}
+				{{#rollTotal() roll1 6}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 6}}
+				{{#rollTotal() roll1 7}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 7}}
+				{{#rollTotal() roll1 8}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bravoure"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 8}}
+				{{#rollTotal() roll1 9}}
+		<div class="sheet-container-2">
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bravoure"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 9}}
+				{{#rollTotal() roll1 10}}
+		<div class="sheet-container-2">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-couronne"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll1 10}}
+		{{#double}}
+		{{#rollTotal() roll2 1}}
+		<div class="sheet-container-3">{{#double}}<div class="sheet-rappel_1">{{roll1}}</div>{{/double}}
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-cle"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 1}}
+				{{#rollTotal() roll2 2}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bouquins"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 2}}
+				{{#rollTotal() roll2 3}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bouquins-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bottes-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 3}}
+				{{#rollTotal() roll2 4}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-bottes-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-baston-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 4}}
+				{{#rollTotal() roll2 5}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-triple">
+				<div class="sheet-info3-1">
+					<div class="sheet-bottes-triple"></div>
+				</div>
+				<div class="sheet-info3-2">
+					<div class="sheet-baston-triple"></div>
+				</div>
+				<div class="sheet-info3-3">
+					<div class="sheet-bravoure-triple"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 5}}
+				{{#rollTotal() roll2 6}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 6}}
+				{{#rollTotal() roll2 7}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2-double">
+				<div class="sheet-info2-1">
+					<div class="sheet-baston-double"></div>
+				</div>
+				<div class="sheet-info2-2">
+					<div class="sheet-bravoure-double"></div>
+				</div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 7}}
+				{{#rollTotal() roll2 8}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bravoure"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 8}}
+				{{#rollTotal() roll2 9}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-bravoure"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 9}}
+				{{#rollTotal() roll2 10}}
+		<div class="sheet-container-3"><div class="sheet-rappel_2">{{roll2}}</div>
+			<div class="sheet-content-2">
+				<div class="sheet-info1"><div class="sheet-couronne"></div></div>
+			</div>
+		</div>
+				{{/rollTotal() roll2 10}}
+		{{/double}}
+		{{/rollTotal() role 4}}
+
+		
+{{/image}}
 {{#soin}}
 	<div class="sheet-container">
 		<div class="sheet-header">
@@ -507,10 +1192,10 @@
 			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
 			{{/rollTotal() roll1 1}}
 			{{#rollTotal() roll1 2}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 2}}
 			{{#rollTotal() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
 			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
@@ -518,6 +1203,92 @@
 		</div>
 	</div>
 {{/mort}}
+
+{{#mort_avantage}}
+<!-- si roll1 est inferieur à roll2 -->
+{{#rollGreater() roll2 roll1}}
+	<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll2 1}}
+			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll2 1}}
+			{{#rollTotal() roll2 2}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll2 2}}
+			{{#rollTotal() roll2 3}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll2 3}}
+			{{#rollGreater() roll2 3}}
+			<div class="sheet-desc-green" style="color:#176c17 !important;;">{{roll1}} et {{roll2}}</div>
+			{{/rollGreater() roll2 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll2 1}}
+			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
+			{{/rollTotal() roll2 1}}
+			{{#rollTotal() roll2 2}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll2 2}}
+			{{#rollTotal() roll2 3}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll2 3}}
+			{{#rollGreater() roll2 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll2 3}}
+		</div>
+	</div>
+{{/rollGreater() roll2 roll1}}
+<!-- si roll1 est inferieur à roll2 -->
+
+<!-- si roll2 est inferieur à roll1 -->
+{{#^rollGreater() roll2 roll1}}
+<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-desc-green" style="color:#176c17 !important;">{{roll1}} et {{roll2}}</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+	<div class="sheet-container-2">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollGreater() roll1 3}}
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			{{/rollGreater() roll1 3}}
+		</div>
+	</div>
+{{/^rollGreater() roll2 roll1}}
+<!-- si roll2 est inferieur à roll1 -->
+{{/mort_avantage}}
 
 {{#mort_desavantage}}
 <!-- si roll1 est inferieur à roll2 -->
@@ -549,10 +1320,10 @@
 			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
 			{{/rollTotal() roll1 1}}
 			{{#rollTotal() roll1 2}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 2}}
 			{{#rollTotal() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
 			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
@@ -572,16 +1343,16 @@
 		
 		<div class="sheet-content">
 			{{#rollTotal() roll2 1}}
-			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll2}} et {{roll2}}</div>
+			<div class="sheet-desc-red" style="color:#a20202 !important;">{{roll1}} et {{roll2}}</div>
 			{{/rollTotal() roll2 1}}
 			{{#rollTotal() roll2 2}}
-			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll2}} et {{roll2}}</div>
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
 			{{/rollTotal() roll2 2}}
 			{{#rollTotal() roll2 3}}
-			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll2}} et {{roll2}}</div>
+			<div class="sheet-desc-orange" style="color:#b17300 !important;">{{roll1}} et {{roll2}}</div>
 			{{/rollTotal() roll2 3}}
 			{{#rollGreater() roll2 3}}
-			<div class="sheet-desc-green" style="color:#176c17 !important;">{{roll2}} et {{roll2}}</div>
+			<div class="sheet-desc-green" style="color:#176c17 !important;">{{roll1}} et {{roll2}}</div>
 			{{/rollGreater() roll2 3}}
 		</div>
 	</div>
@@ -591,10 +1362,10 @@
 			<div class="sheet-info">MORT !<br>La mort vous prend !</div>
 			{{/rollTotal() roll2 1}}
 			{{#rollTotal() roll2 2}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll2 2}}
 			{{#rollTotal() roll2 3}}
-			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
+			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll2 3}}
 			{{#rollGreater() roll2 3}}
 			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
@@ -618,7 +1389,7 @@ on('clicked:intro-paragon', function() {
 			coeur: "4",
 			etoile: "4",
 			richesse: "2",
-			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D4]]}} {{type=[[1]]}}"
+			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}"
 		});
 	});
 });
@@ -634,7 +1405,7 @@ on('clicked:intro-eclaireur', function() {
 			coeur: "6",
 			etoile: "3",
 			richesse: "2",
-			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D6]]}} {{type=[[1]]}}"
+			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}"
 		});
 	});
 });
@@ -650,7 +1421,7 @@ on('clicked:intro-guerrier', function() {
 			coeur: "8",
 			etoile: "2",
 			richesse: "2",
-			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D8]]}} {{type=[[1]]}}"
+			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}"
 		});
 	});
 });
@@ -666,7 +1437,7 @@ on('clicked:intro-sentinelle', function() {
 			coeur: "10",
 			etoile: "1",
 			richesse: "2",
-			rollmod: "&{template:dedale} {{title=Jet d'Action}} {{desc=[[1D10]]}} {{type=[[1]]}}"
+			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[4]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}"
 		});
 	});
 });
