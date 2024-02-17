@@ -508,7 +508,10 @@ span.picto_reset {
 /* Roll Template */
 /* DEDALE CLASSIQUE */
 .sheet-rolltemplate-dedale {
-  margin-left: -20px;
+	margin-left: -20px;  
+	--rouge: #a20202;
+	--vert: #176c17;
+	--noir: #000000c7;
 }
 
 .sheet-rolltemplate-dedale .sheet-container {
@@ -535,7 +538,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-title {
 	font-weight: bold;
 	padding-bottom: 2px;
-	color: #000000c7;
+	color: var(--noir);
 	text-align: center;
 	font-size: 20px;
 	font-family: 'Trade Winds', 'Proxima Nova';
@@ -548,7 +551,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-subtitle {
     font-size: 14px;
     margin-top: 2px;
-    color: #000000c7;
+    color: var(--noir);
     text-align: center;
     font-style: italic;
 }
@@ -601,7 +604,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -613,7 +616,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -624,7 +627,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -646,7 +649,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -662,17 +665,17 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullfail {
-	color: #000000c7 !important;
+	color: var(--noir) !important;
     font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullfail {
-	color: #a20202 !important;
+	color: var(--rouge) !important;
 }
 
 .sheet-rolltemplate-dedale .sheet-desc .inlinerollresult.fullcrit {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 }
 
 .sheet-rolltemplate-dedale .sheet-desc-red .inlinerollresult,
@@ -680,7 +683,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-desc-red .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale .sheet-desc-red .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale .sheet-desc-red .inlinerollresult.fullfail {
-	color: #a20202 !important; 
+	color: var(--rouge) !important; 
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -690,7 +693,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale .sheet-desc-green .inlinerollresult.fullcrit {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -703,7 +706,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale .sheet-desc-effet3-green .inlinerollresult.fullcrit {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -716,7 +719,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale .sheet-desc-effet3-red .inlinerollresult.fullcrit{
-	color: #a20202 !important; 
+	color: var(--rouge) !important; 
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -724,6 +727,9 @@ span.picto_reset {
 /* DEDALE ALT */
 .sheet-rolltemplate-dedale-alt {
   margin-left: -20px;
+  --rouge: #a20202;
+  --vert: #176c17;
+  --noir: #000000c7;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-container {
@@ -782,7 +788,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-title {
 	font-weight: bold;
 	padding-bottom: 2px;
-	color: #000000c7;
+	color: var(--noir);
 	text-align: center;
 	font-size: 20px;
 	font-family: 'Trade Winds', 'Proxima Nova';
@@ -795,7 +801,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-subtitle {
     font-size: 14px;
     margin-top: 2px;
-    color: #000000c7;
+    color: var(--noir);
     text-align: center;
     font-style: italic;
 }
@@ -866,7 +872,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info1 {
     grid-column: span 2;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -879,7 +885,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info2-1 {
     grid-column: 1;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -892,7 +898,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info2-2 {
     grid-column: 2;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -905,7 +911,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info2-1 {
     grid-column: 1;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -918,7 +924,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info3-1 {
     grid-column: 1;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -931,7 +937,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info3-2 {
     grid-column: 2;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -944,7 +950,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-info3-3 {
     grid-column: 3;
     height: 100px;
-    color: #000000c7 !important;
+    color: var(--noir) !important;
     font-size: 18px;
     font-family: 'Trade Winds', 'Proxima Nova';
     border: none;
@@ -961,7 +967,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -972,7 +978,7 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -984,9 +990,28 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desavantage,
+.sheet-rolltemplate-dedale-alt .sheet-avantage {
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 49px;
+    font-family: 'Trade Winds', 'Proxima Nova';
+    font-size: 18px;
+    color: var(--vert);
+    text-decoration: underline;
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-desavantage {
+    color: var(--rouge);
+}
+
+.sheet-rolltemplate-dedale-alt .sheet-avantage {
+    color: var(--vert);
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-rappel_base_1,
@@ -1147,17 +1172,17 @@ span.picto_reset {
 	padding-top: 5px !important;
 	padding-bottom: 18px !important;
 	height: 45px;
-	color: #000000c7 !important;
+	color: var(--noir) !important;
 	font-size: 25px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc-red {
-	color: #a20202 !important;
+	color: var(--rouge) !important;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc-green {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc-orange {
@@ -1175,7 +1200,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullfail {
-	color: #000000c7 !important;
+	color: var(--noir) !important;
     font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -1184,24 +1209,24 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale-alt .sheet-desc-image .inlinerollresult.fullfail {
-	color: #000000c7 !important;
+	color: var(--noir) !important;
     font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullfail {
-	color: #a20202 !important;
+	color: var(--rouge) !important;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc .inlinerollresult.fullcrit {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale-alt .sheet-desc-red .inlinerollresult.fullfail {
-	color: #a20202 !important; 
+	color: var(--rouge) !important; 
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -1219,7 +1244,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullcrit,
 .sheet-rolltemplate-dedale-alt .sheet-desc-green .inlinerollresult.fullfail {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -1252,7 +1277,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-green .inlinerollresult.fullcrit {
-	color: #176c17 !important;
+	color: var(--vert) !important;
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -1265,7 +1290,7 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.importantroll,
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.fullfail,
 .sheet-rolltemplate-dedale-alt .sheet-desc-effet3-red .inlinerollresult.fullcrit{
-	color: #a20202 !important; 
+	color: var(--rouge) !important; 
 	font-size: 45px;
 	font-family: 'Trade Winds', 'Proxima Nova';
 }
@@ -1278,8 +1303,9 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-couronne {
 	width: 70px;
 	height: 70px;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+    margin-top: 10px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-cle-double,
@@ -1290,8 +1316,9 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-couronne-double {
 	width: 60px;
 	height: 60px;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+    margin-top: 10px;
 }
 
 .sheet-rolltemplate-dedale-alt .sheet-cle-triple,
@@ -1302,8 +1329,9 @@ span.picto_reset {
 .sheet-rolltemplate-dedale-alt .sheet-couronne-triple {
 	width: 50px;
 	height: 50px;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+    margin-top: 10px;
 }
 
 
