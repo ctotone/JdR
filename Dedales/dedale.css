@@ -17,7 +17,7 @@
 }
 
 body.sheet-darkmode .charsheet {
-    background-color: black;
+    background-color: #1f1f1f;
 }
 
 div.sheet_selector {
@@ -78,17 +78,18 @@ div.personnage {
 }
 
 div.page_perso_info {
-	background-image: var(--charsheet-background);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_page_2.png);
     width: 845px;
-    height: 1275px;
+    height: 630px;
     box-shadow: 0px 0px 15px 5px #0a0a0ac4;
     margin-bottom: 20px;
-    border-radius: 5px 0px 0px 5px;
-    margin-left: -10px;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: 10px;
 }
 
 body.sheet-darkmode div.intro,
-body.sheet-darkmode div.personnage {
+body.sheet-darkmode div.personnage,
+body.sheet-darkmode div.page_perso_info {
 	box-shadow: 1px 0px 9px 3px #cdcdcdba;
 }
 
@@ -115,7 +116,12 @@ div.check_marque,
 div.dice,
 div.type_jet,
 div.reset,
-div.page_suivante {
+div.page_suivante,
+div.page_precedente,
+div.total_tenebres,
+div.total_tresors,
+div.decompte_tenebres,
+div.decompte_tresors {
 	position: absolute;
 	z-index: auto;
 }
@@ -236,11 +242,33 @@ div.page_suivante {
 
 div.page_precedente {
     margin-top: 0px;
-    margin-left: 845px;
-    border-radius: 0px 20px 20px 0px;
+    margin-left: -20px;
+    border-radius: 2px 0px 0px 20px;
     width: 25px;
-    height: 1275px;
 }
+
+div.total_tenebres {
+    margin-top: 183px;
+    margin-left: 202px;
+    width: 55px;
+    height: 55px;
+}
+
+div.total_tresors {
+    margin-top: 130px;
+    margin-left: 532px;
+    width: 55px;
+    height: 55px;
+}
+
+div.decompte_tenebres {
+	
+}
+
+div.decompte_tresors {
+	
+}
+
 
 /* #Systeme changement background */
 .sheet-sheettoggle[value*="1"] ~ *{
@@ -435,6 +463,25 @@ input[type=number] {
     text-align: center;
 }
 
+.total_tenebres  input[type=number],
+.total_tresors  input[type=number] {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 8px;
+    height: 70px;
+    width: 74px !important;
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.total_tenebres  input[type=number] {
+    background: #020202;
+    color: #ffffffde;
+}
+
+.total_tresors  input[type=number] {
+    background: #e9a806;
+    color: #000000c9;
+}
 /* Bouton choix intro et Roll */
 span.picto_reset_intro {
 	font-family: 'Pictos';
@@ -462,14 +509,14 @@ span.picto_reset {
     color: #ffffff2b;
     border: none;
     width: 25px;
-    height: 1275px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-size: 18px;
     background: rgb(0,0,0);
 }
 
-.charsheet button[type=action].page_up {	
+.charsheet button[type=action].page_up {
+    height: 1275px;	
 	box-shadow: 3px -1px 11px 3px #0a0a0ac4;
     border-radius: 5px 20px 20px 5px;
     margin-left: -2px;
@@ -477,9 +524,24 @@ span.picto_reset {
 }
 
 .charsheet button[type=action].page_down{
-
+    height: 630px;
+    box-shadow: -6px -3px 7px 1px #29292957;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: -5px;
+    padding-right: 3px;
+    background: rgb(99,98,98);
+    background: linear-gradient(90deg, rgba(99,98,98,1) 20%, rgb(0 0 0 / 73%) 100%);
+    border-right: 1px solid black;
 }
 
+body.sheet-darkmode button[type=action].page_up {
+    box-shadow: 5px 0px 9px 1px #cdcdcd75;
+}
+
+body.sheet-darkmode button[type=action].page_down {
+    box-shadow: -2px -3px 4px 1px #cdcdcd57;
+}
+ 
 .charsheet button[type=action].page_up:hover,
 .charsheet button[type=action].page_down:hover {
     color: #ffffffb5;
@@ -491,6 +553,8 @@ span.picto_reset {
 	
 
 .charsheet button[type=action].page_down:hover{
+	background: rgb(112,30,30);
+	background: linear-gradient(90deg, rgba(112,30,30,1) 20%, rgb(0 0 0 / 73%) 100%);
 	
 }
 

@@ -12,7 +12,7 @@
 		<button type="action" class="sentinelle_intro" name="act_intro-sentinelle"></button>
 	</div>
 </div>
-<input type="hidden" class="select_page" name="attr_page"  value="1"  />
+<input type="hidden" class="select_page" name="attr_page" value="1"  />
 <div class="page_perso_1">
 	<!-- Feuille de personnage -->
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
@@ -375,7 +375,8 @@
 			   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}" checked>Jet d'Action (1D)</option>
 			   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}">Jet de Sauvegarde (1D)</option>
 			   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}} {{type=[[1]]}}">Jet d'Effet (1D)</option>
-			   <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
+			   <!-- <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option> -->
+			   <option value="&{template:dedale-alt} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
 			   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Avantage / Désavantage</option>
 			   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet d'Action (2D)</option>
 			   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet de Sauvegarde (2D)</option>
@@ -395,14 +396,25 @@
 		<button type="action" class="reset" name="act_reset"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">1</span></button></div>
 		<!-- Page suivante -->
 		<div class="page_suivante">
-		<button type="action" class="page_up" name="act_change-page">Page suivante...</button></div>
+		<button type="action" class="page_up" name="act_change-page" title="Trésors et des Ténèbres">Trésors et Ténèbres...</button></div>
 		</div>
 	</div>
 </div>
 <div class="page_perso_info">
 	<div class="page_precedente">
-		<button type="action" class="page_down" name="act_change-page">Page précédente...</button></div>
+		<button type="action" class="page_down" name="act_change-page" title="Votre Personnage">Votre Personnage...</button>
 	</div>
+	<div class="total_tenebres">
+		<input type="number" name="attr_total_tenebres" min="1" max="20"  value="1">
+	</div>
+	<div class="total_tresors">
+		<input type="number" name="attr_total_trésors" min="1" max="20"  value="1">
+	</div>
+	<div class="decompte_tenebres">
+	</div>
+	<div class="decompte_tresors">
+	</div>
+	
 
 </div>
 <!-- Roll template -->
@@ -1422,6 +1434,81 @@
 		</div>
 	</div>
 {{/soin}}
+{{#chaos}}
+	<div class="sheet-container">
+		<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		
+		<div class="sheet-content">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollTotal() roll1 4}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 4}}
+			{{#rollTotal() roll1 5}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 5}}
+			{{#rollTotal() roll1 6}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 6}}
+			{{#rollTotal() roll1 7}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 7}}
+			{{#rollTotal() roll1 8}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 8}}
+			{{#rollTotal() roll1 9}}
+			<div class="sheet-desc-red">{{roll1}}</div>
+			{{/rollTotal() roll1 9}}
+			{{#rollTotal() roll1 10}}
+			<div class="sheet-desc-green">{{roll1}}</div>
+			{{/rollTotal() roll1 10}}
+		</div>
+	</div>
+	<div class="sheet-container-2" style="margin-top: -24px;">
+		<div class="sheet-content-2">
+			{{#rollTotal() roll1 1}}
+			<div class="sheet-info" style="font-size: 30px;">Échec</div>
+			{{/rollTotal() roll1 1}}
+			{{#rollTotal() roll1 2}}
+			<div class="sheet-info" style="font-size: 30px;">Réussite</div>
+			{{/rollTotal() roll1 2}}
+			{{#rollTotal() roll1 3}}
+			<div class="sheet-info" style="font-size: 30px;">Échec</div>
+			{{/rollTotal() roll1 3}}
+			{{#rollTotal() roll1 4}}
+			<div class="sheet-info" style="font-size: 30px;">Réussite</div>
+			{{/rollTotal() roll1 4}}
+			{{#rollTotal() roll1 5}}
+			<div class="sheet-info" style="font-size: 30px;">Échec</div>
+			{{/rollTotal() roll1 5}}
+			{{#rollTotal() roll1 6}}
+			<div class="sheet-info" style="font-size: 30px;">Réussite</div>
+			{{/rollTotal() roll1 6}}
+			{{#rollTotal() roll1 7}}
+			<div class="sheet-info" style="font-size: 30px;">Échec</div>
+			{{/rollTotal() roll1 7}}
+			{{#rollTotal() roll1 8}}
+			<div class="sheet-info" style="font-size: 30px;">Réussite</div>
+			{{/rollTotal() roll1 8}}
+			{{#rollTotal() roll1 9}}
+			<div class="sheet-info" style="font-size: 30px;">Échec</div>
+			{{/rollTotal() roll1 9}}
+			{{#rollTotal() roll1 10}}
+			<div class="sheet-info" style="font-size: 30px;">Réussite</div>
+			{{/rollTotal() roll1 10}}
+		</div>
+	</div>
+{{/chaos}}
 {{#mort}}
 	<div class="sheet-container">
 		<div class="sheet-header">
