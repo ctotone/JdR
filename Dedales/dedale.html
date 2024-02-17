@@ -11,390 +11,400 @@
 		<button type="action" class="guerrier_intro" name="act_intro-guerrier"></button>
 		<button type="action" class="sentinelle_intro" name="act_intro-sentinelle"></button>
 	</div>
-</div>		
-
-<!-- Feuille de personnage -->
-<input type="hidden" class="selector" name="attr_role" value="paragon">		
-<div class="personnage">
-	<!-- Reset choix du Rôle -->
-	<div class="sheet_selector">
-	<button type="action" class="intro_reset" name="act_intro-reset"><span class="picto_reset_intro" data-i18n-title="intro_link" title="Changer le type de la fiche">r</span></button></div>
-	<!-- Nom -->
-	<div class="name"><textarea class="name" name="attr_character_name" rows="2" spellcheck="false"></textarea></div>
-	
-	<!-- Archetype -->
-	<div class="archetype">
-		<select class="archetype" data-i18n-title="archetype" title="Archetype" name="attr_archetype">
-			<option value="epee" data-i18n="aspect_epee">Épée</option>
-			<option value="ombre" data-i18n="aspect_ombre">Ombre</option>
-			<option value="sorcellerie" data-i18n="aspect_sorcellerie">Sorcellerie</option>
-		</select>
-	</div>	
-	<!-- Classe -->
-	<!-- Épée -->
-	<input type="hidden" class="archetype" name="attr_archetype" value="epee">
-	<div class="classe_epee">
-		<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
-			<option value="bretteur" data-i18n="epee_bretteur">LE BRETTEUR DANGEREUX</option>
-			<option value="mercenaire" data-i18n="epee_mercenaire">LE MERCENAIRE DÉSABUSÉ</option>
-			<option value="ranger" data-i18n="epee_ranger">LE RANGER INTRÉPIDE</option>
-			<option value="tueur" data-i18n="epee_tueur">LE TUEUR DE MONSTRES</option>
-			<option value="gobelours" data-i18n="epee_gobelours">LE GOBELOURS EN EXIL</option>
-			<option value="hero" data-i18n="epee_hero">LE HÉROS MALGRÉ LUI</option>
-			<option value="barbare" data-i18n="epee_barbare">LE BARBARE SAUVAGE</option>
-			<option value="vaillant" data-i18n="epee_chevalier">LE VAILLANT CHEVALIER</option>
-		</select>
-	</div>
-	<!-- Ombre -->
-	<div class="classe_ombre">
-		<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
-			<option value="semi_homme" data-i18n="ombre_semi_homme">LE SEMI-HOMME AVENTUREUX</option>
-			<option value="pillard" data-i18n="ombre_pillard">LE PILLARD DE TOMBEAUX</option>
-			<option value="vagabond" data-i18n="ombre_vagabond">LE VAGABOND EXPÉRIMENTÉ</option>
-			<option value="gamin" data-i18n="ombre_gamin">LE GAMIN CRASSEUX</option>
-			<option value="assassin" data-i18n="ombre_assassin">L’ASSASSIN NOCTURNE</option>
-			<option value="serrurier" data-i18n="ombre_serrurier">LE SERRURIER GÉNIAL</option>
-			<option value="voleur" data-i18n="ombre_voleur">LE VOLEUR TALENTUEUX</option>
-			<option value="cultiste" data-i18n="ombre_cultiste">LE CULTISTE ZÉLÉ</option>
-		</select>
-	</div>
-	<!-- Sorcellerie -->
-	<div class="classe_sorcellerie">
-		<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
-			<option value="magicien" data-i18n="sorcellerie_magicien">LE MAGICIEN FLAMBOYANT</option>
-			<option value="mage" data-i18n="sorcellerie_mage">LE MAGE DE GUILDE</option>
-			<option value="bibliothecaire" data-i18n="sorcellerie_bibliothecaire">LE BIBLIOTHÉCAIRE TOURMENTÉ</option>
-			<option value="invocateur" data-i18n="sorcellerie_invocateur">L’INVOCATEUR INFERNAL</option>
-			<option value="ilfe" data-i18n="sorcellerie_ilfe">LE DERNIER ILFE</option>
-			<option value="alchimiste" data-i18n="sorcellerie_alchimiste">L’ALCHIMISTE ITINÉRANT</option>
-			<option value="druide" data-i18n="sorcellerie_druide">LE DRUIDE DES PROFONDEURS</option>
-			<option value="sorciere" data-i18n="sorcellerie_sorciere">LA SORCIÈRE SAGE</option>
-		</select>
-	</div>
-	<!-- Aspect -->
-	<div class="aspect_1">
-		<select class="aspect" data-i18n-title="aspect_1" title="Aspect n°1" name="attr_aspect_1">
-			<option selected="selected"></option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
-			<option value="adroit" data-i18n="adroit">Adroit</option>
-			<option value="agile" data-i18n="agile">Agile</option>
-			<option value="alerte" data-i18n="alerte">Alerte</option>
-			<option value="beau" data-i18n="beau">Beau</option>
-			<option value="chanceux" data-i18n="chanceux">Chanceux</option>
-			<option value="charmant" data-i18n="charmant">Charmant</option>
-			<option value="energique" data-i18n="energique">Énergique</option>
-			<option value="fort" data-i18n="fort">Fort</option>
-			<option value="intimidant" data-i18n="intimidant">Intimidant</option>
-			<option value="jeune" data-i18n="jeune">Jeune</option>
-			<option value="rapide" data-i18n="rapide">Rapide</option>
-			<option value="robuste" data-i18n="robuste">Robuste</option>
-			<option value="ruse" data-i18n="ruse">Rusé</option>
-			<option value="silencieux" data-i18n="silencieux">Silencieux</option>
-			<option value="vieux" data-i18n="vieux">Vieux</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
-			<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
-			<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
-			<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
-			<option value="mortel" data-i18n="mortel">Mortel</option>
-			<option value="precis" data-i18n="precis">Précis</option>
-			<option value="resilient" data-i18n="resilient">Résilient</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
-			<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
-			<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
-			<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
-			<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
-			<option value="fortune" data-i18n="fortune">Fortuné</option>
-			<option value="outils" data-i18n="outils">Outils</option>
-			<option value="rang" data-i18n="rang">Rang</option>
-			<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
-			<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
-			<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
-			<option value="erudit" data-i18n="erudit">Érudit</option>
-			<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
-			<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
-			<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
-			<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
-			<option value="voyageur" data-i18n="voyageur">Voyageur</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
-			<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
-			<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
-			<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">Lignée semi-homme</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
-			<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
-			<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-			<option value="familier" data-i18n="familier">Familier</option>
-			<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
-			<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
-			<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
-			<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
-			<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
-			<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
-			<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
-			<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
-			<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
-			<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
-			<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
-		</select>
-	</div>
-	<div class="aspect_2">
-		<select class="aspect" data-i18n-title="aspect_2" title="Aspect n°2" name="attr_aspect_2">
-			<option selected="selected"></option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
-			<option value="adroit" data-i18n="adroit">Adroit</option>
-			<option value="agile" data-i18n="agile">Agile</option>
-			<option value="alerte" data-i18n="alerte">Alerte</option>
-			<option value="beau" data-i18n="beau">Beau</option>
-			<option value="chanceux" data-i18n="chanceux">Chanceux</option>
-			<option value="charmant" data-i18n="charmant">Charmant</option>
-			<option value="energique" data-i18n="energique">Énergique</option>
-			<option value="fort" data-i18n="fort">Fort</option>
-			<option value="intimidant" data-i18n="intimidant">Intimidant</option>
-			<option value="jeune" data-i18n="jeune">Jeune</option>
-			<option value="rapide" data-i18n="rapide">Rapide</option>
-			<option value="robuste" data-i18n="robuste">Robuste</option>
-			<option value="ruse" data-i18n="ruse">Rusé</option>
-			<option value="silencieux" data-i18n="silencieux">Silencieux</option>
-			<option value="vieux" data-i18n="vieux">Vieux</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
-			<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
-			<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
-			<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
-			<option value="mortel" data-i18n="mortel">Mortel</option>
-			<option value="precis" data-i18n="precis">Précis</option>
-			<option value="resilient" data-i18n="resilient">Résilient</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
-			<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
-			<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
-			<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
-			<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
-			<option value="fortune" data-i18n="fortune">Fortuné</option>
-			<option value="outils" data-i18n="outils">Outils</option>
-			<option value="rang" data-i18n="rang">Rang</option>
-			<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
-			<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
-			<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
-			<option value="erudit" data-i18n="erudit">Érudit</option>
-			<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
-			<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
-			<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
-			<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
-			<option value="voyageur" data-i18n="voyageur">Voyageur</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
-			<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
-			<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
-			<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
-			<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
-			<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-			<option value="familier" data-i18n="familier">Familier</option>
-			<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
-			<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
-			<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
-			<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
-			<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
-			<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
-			<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
-			<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
-			<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
-			<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
-			<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
-		</select>
-	</div>
-	<div class="aspect_3">
-		<select class="aspect" data-i18n-title="aspect_3" title="Aspect n°3" name="attr_aspect_3">
-			<option selected="selected"></option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
-			<option value="adroit" data-i18n="adroit">Adroit</option>
-			<option value="agile" data-i18n="agile">Agile</option>
-			<option value="alerte" data-i18n="alerte">Alerte</option>
-			<option value="beau" data-i18n="beau">Beau</option>
-			<option value="chanceux" data-i18n="chanceux">Chanceux</option>
-			<option value="charmant" data-i18n="charmant">Charmant</option>
-			<option value="energique" data-i18n="energique">Énergique</option>
-			<option value="fort" data-i18n="fort">Fort</option>
-			<option value="intimidant" data-i18n="intimidant">Intimidant</option>
-			<option value="jeune" data-i18n="jeune">Jeune</option>
-			<option value="rapide" data-i18n="rapide">Rapide</option>
-			<option value="robuste" data-i18n="robuste">Robuste</option>
-			<option value="ruse" data-i18n="ruse">Rusé</option>
-			<option value="silencieux" data-i18n="silencieux">Silencieux</option>
-			<option value="vieux" data-i18n="vieux">Vieux</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
-			<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
-			<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
-			<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
-			<option value="mortel" data-i18n="mortel">Mortel</option>
-			<option value="precis" data-i18n="precis">Précis</option>
-			<option value="resilient" data-i18n="resilient">Résilient</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
-			<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
-			<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
-			<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
-			<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
-			<option value="fortune" data-i18n="fortune">Fortuné</option>
-			<option value="outils" data-i18n="outils">Outils</option>
-			<option value="rang" data-i18n="rang">Rang</option>
-			<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
-			<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
-			<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
-			<option value="erudit" data-i18n="erudit">Érudit</option>
-			<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
-			<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
-			<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
-			<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
-			<option value="voyageur" data-i18n="voyageur">Voyageur</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
-			<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
-			<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
-			<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
-			<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
-			<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-			<option value="familier" data-i18n="familier">Familier</option>
-			<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
-			<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
-			<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
-			<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
-			<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
-			<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
-			<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
-			<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
-			<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
-			<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
-			<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
-		</select>
-	</div>
-	<div class="aspect_4">
-		<select class="aspect" data-i18n-title="aspect_4" title="Aspect n°4" name="attr_aspect_4">
-			<option selected="selected"></option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
-			<option value="adroit" data-i18n="adroit">Adroit</option>
-			<option value="agile" data-i18n="agile">Agile</option>
-			<option value="alerte" data-i18n="alerte">Alerte</option>
-			<option value="beau" data-i18n="beau">Beau</option>
-			<option value="chanceux" data-i18n="chanceux">Chanceux</option>
-			<option value="charmant" data-i18n="charmant">Charmant</option>
-			<option value="energique" data-i18n="energique">Énergique</option>
-			<option value="fort" data-i18n="fort">Fort</option>
-			<option value="intimidant" data-i18n="intimidant">Intimidant</option>
-			<option value="jeune" data-i18n="jeune">Jeune</option>
-			<option value="rapide" data-i18n="rapide">Rapide</option>
-			<option value="robuste" data-i18n="robuste">Robuste</option>
-			<option value="ruse" data-i18n="ruse">Rusé</option>
-			<option value="silencieux" data-i18n="silencieux">Silencieux</option>
-			<option value="vieux" data-i18n="vieux">Vieux</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
-			<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
-			<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
-			<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
-			<option value="mortel" data-i18n="mortel">Mortel</option>
-			<option value="precis" data-i18n="precis">Précis</option>
-			<option value="resilient" data-i18n="resilient">Résilient</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
-			<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
-			<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
-			<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
-			<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
-			<option value="fortune" data-i18n="fortune">Fortuné</option>
-			<option value="outils" data-i18n="outils">Outils</option>
-			<option value="rang" data-i18n="rang">Rang</option>
-			<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
-			<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
-			<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
-			<option value="erudit" data-i18n="erudit">Érudit</option>
-			<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
-			<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
-			<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
-			<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
-			<option value="voyageur" data-i18n="voyageur">Voyageur</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
-			<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
-			<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
-			<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
-			<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
-			<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
-			<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-			<option value="familier" data-i18n="familier">Familier</option>
-			<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
-			<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
-			<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
-			<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
-			<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
-			<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
-			<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
-			<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
-			<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
-			<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
-			<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
-		</select>
-	</div>
-	<div class="check_intermediaire">
-		<input type="checkbox" name="attr_check_intermediaire" value="1" id="c0" />
-		<label for="c0" style="width: 51px;"></label>
-	</div>
-	<div class="etat_custom">
-		<input type="text" class="etat_custom" placeholder="États temporaires" name="attr_etat_custom" > 
-	</div>
-	<div class="check_vierge">
-		<input type="checkbox" name="attr_check_vierge" value="1" id="c1" />
-		<label for="c1"></label>
-	</div>	
-	<div class="check_tendu">
-		<input type="checkbox" class="tendu" name="attr_check_tendu" value="1" id="c2" />
-		<label for="c2"></label>
-	</div>
-	<div class="check_epuise">
-		<input type="checkbox" class="epuise" name="attr_check_epuise" value="1" id="c3" />
-		<label for="c3"></label>
-	</div>
-	<div class="check_blesse">
-		<input type="checkbox" class="blesse" name="attr_check_blesse" value="1" id="c4" />
-		<label for="c4"></label>
-	</div>
-	<div class="check_marque">
-		<input type="checkbox" class="marque" name="attr_check_marque" value="1" id="c5" />
-		<label for="c5"></label>
-	</div>
-	<div class="richesse">
-		<input type="number" name="attr_richesse" min="0" max="20" placeholder="2">
-	</div>	
-	<div class="coeur">
-		<input type="number" name="attr_coeur" min="0" max="20" placeholder="coeur">
-	</div>
-	<div class="dice">
-		<button class="roll_dice" type="roll" name="roll_Jet_de_dés" value="@{rollmod}" ></button>
-	</div>
-	<div class="type_jet">
-		<select class="roll" name="attr_rollmod">
-		   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Classique</option>
-		   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}" checked>Jet d'Action (1D)</option>
-		   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}">Jet de Sauvegarde (1D)</option>
-		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}} {{type=[[1]]}}">Jet d'Effet (1D)</option>
-		   <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
-		   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Avantage / Désavantage</option>
-		   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet d'Action (2D)</option>
-		   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet de Sauvegarde (2D)</option>
-		   <option value="&{template:dedale} {{title=Jet d'Effet}} {{roll1=@{explose_dice}}}{{roll2=@{explose_dice}}} {{type=[[2]]}}">Jet d'Effet (2D)</option>
-		   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Soin et Mort</option>
-		   <option value="&{template:dedale-alt} {{title=Jet de Soin}} {{roll1=@{dice}}} {{soin=oui}}">Jet de Soin</option>
-		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{mort=oui}}">Portes de la Mort</option>
-		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_avantage=oui}}">Portes de la Mort (Avantage)</option>
-		   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_desavantage=oui}}">Portes de la Mort (Désavantage)</option>
-		</select>
-	</div>
-	<div class="etoile">
-		<input type="number" name="attr_etoile" min="0" max="20" placeholder="etoile">
-	</div>
-	<!-- Reset choix du Rôle -->
-	<div class="reset">
-	<button type="action" class="reset" name="act_reset"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">1</span></button></div>
 </div>
+<input type="hidden" class="select_page" name="attr_page"  value="1"  />
+<div class="page_perso_1">
+	<!-- Feuille de personnage -->
+	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
+	<div class="personnage">
+		<!-- Reset choix du Rôle -->
+		<div class="sheet_selector">
+		<button type="action" class="intro_reset" name="act_intro-reset"><span class="picto_reset_intro" data-i18n-title="intro_link" title="Changer le type de la fiche">r</span></button></div>
+		<!-- Nom -->
+		<div class="name"><textarea class="name" name="attr_character_name" rows="2" spellcheck="false"></textarea></div>
+		
+		<!-- Archetype -->
+		<div class="archetype">
+			<select class="archetype" data-i18n-title="archetype" title="Archetype" name="attr_archetype">
+				<option value="epee" data-i18n="aspect_epee">Épée</option>
+				<option value="ombre" data-i18n="aspect_ombre">Ombre</option>
+				<option value="sorcellerie" data-i18n="aspect_sorcellerie">Sorcellerie</option>
+			</select>
+		</div>	
+		<!-- Classe -->
+		<!-- Épée -->
+		<input type="hidden" class="archetype" name="attr_archetype" value="epee">
+		<div class="classe_epee">
+			<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
+				<option value="bretteur" data-i18n="epee_bretteur">LE BRETTEUR DANGEREUX</option>
+				<option value="mercenaire" data-i18n="epee_mercenaire">LE MERCENAIRE DÉSABUSÉ</option>
+				<option value="ranger" data-i18n="epee_ranger">LE RANGER INTRÉPIDE</option>
+				<option value="tueur" data-i18n="epee_tueur">LE TUEUR DE MONSTRES</option>
+				<option value="gobelours" data-i18n="epee_gobelours">LE GOBELOURS EN EXIL</option>
+				<option value="hero" data-i18n="epee_hero">LE HÉROS MALGRÉ LUI</option>
+				<option value="barbare" data-i18n="epee_barbare">LE BARBARE SAUVAGE</option>
+				<option value="vaillant" data-i18n="epee_chevalier">LE VAILLANT CHEVALIER</option>
+			</select>
+		</div>
+		<!-- Ombre -->
+		<div class="classe_ombre">
+			<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
+				<option value="semi_homme" data-i18n="ombre_semi_homme">LE SEMI-HOMME AVENTUREUX</option>
+				<option value="pillard" data-i18n="ombre_pillard">LE PILLARD DE TOMBEAUX</option>
+				<option value="vagabond" data-i18n="ombre_vagabond">LE VAGABOND EXPÉRIMENTÉ</option>
+				<option value="gamin" data-i18n="ombre_gamin">LE GAMIN CRASSEUX</option>
+				<option value="assassin" data-i18n="ombre_assassin">L’ASSASSIN NOCTURNE</option>
+				<option value="serrurier" data-i18n="ombre_serrurier">LE SERRURIER GÉNIAL</option>
+				<option value="voleur" data-i18n="ombre_voleur">LE VOLEUR TALENTUEUX</option>
+				<option value="cultiste" data-i18n="ombre_cultiste">LE CULTISTE ZÉLÉ</option>
+			</select>
+		</div>
+		<!-- Sorcellerie -->
+		<div class="classe_sorcellerie">
+			<select class="classe" data-i18n-title="classe" title="Classe" name="attr_classe">
+				<option value="magicien" data-i18n="sorcellerie_magicien">LE MAGICIEN FLAMBOYANT</option>
+				<option value="mage" data-i18n="sorcellerie_mage">LE MAGE DE GUILDE</option>
+				<option value="bibliothecaire" data-i18n="sorcellerie_bibliothecaire">LE BIBLIOTHÉCAIRE TOURMENTÉ</option>
+				<option value="invocateur" data-i18n="sorcellerie_invocateur">L’INVOCATEUR INFERNAL</option>
+				<option value="ilfe" data-i18n="sorcellerie_ilfe">LE DERNIER ILFE</option>
+				<option value="alchimiste" data-i18n="sorcellerie_alchimiste">L’ALCHIMISTE ITINÉRANT</option>
+				<option value="druide" data-i18n="sorcellerie_druide">LE DRUIDE DES PROFONDEURS</option>
+				<option value="sorciere" data-i18n="sorcellerie_sorciere">LA SORCIÈRE SAGE</option>
+			</select>
+		</div>
+		<!-- Aspect -->
+		<div class="aspect_1">
+			<select class="aspect" data-i18n-title="aspect_1" title="Aspect n°1" name="attr_aspect_1">
+				<option selected="selected"></option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
+				<option value="adroit" data-i18n="adroit">Adroit</option>
+				<option value="agile" data-i18n="agile">Agile</option>
+				<option value="alerte" data-i18n="alerte">Alerte</option>
+				<option value="beau" data-i18n="beau">Beau</option>
+				<option value="chanceux" data-i18n="chanceux">Chanceux</option>
+				<option value="charmant" data-i18n="charmant">Charmant</option>
+				<option value="energique" data-i18n="energique">Énergique</option>
+				<option value="fort" data-i18n="fort">Fort</option>
+				<option value="intimidant" data-i18n="intimidant">Intimidant</option>
+				<option value="jeune" data-i18n="jeune">Jeune</option>
+				<option value="rapide" data-i18n="rapide">Rapide</option>
+				<option value="robuste" data-i18n="robuste">Robuste</option>
+				<option value="ruse" data-i18n="ruse">Rusé</option>
+				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="vieux" data-i18n="vieux">Vieux</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
+				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
+				<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
+				<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
+				<option value="mortel" data-i18n="mortel">Mortel</option>
+				<option value="precis" data-i18n="precis">Précis</option>
+				<option value="resilient" data-i18n="resilient">Résilient</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
+				<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
+				<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
+				<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
+				<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
+				<option value="fortune" data-i18n="fortune">Fortuné</option>
+				<option value="outils" data-i18n="outils">Outils</option>
+				<option value="rang" data-i18n="rang">Rang</option>
+				<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
+				<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
+				<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
+				<option value="erudit" data-i18n="erudit">Érudit</option>
+				<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
+				<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
+				<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
+				<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
+				<option value="voyageur" data-i18n="voyageur">Voyageur</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
+				<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
+				<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
+				<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">Lignée semi-homme</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
+				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
+				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
+				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
+				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
+				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
+				<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
+				<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
+				<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
+				<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
+				<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
+				<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
+				<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
+				<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
+			</select>
+		</div>
+		<div class="aspect_2">
+			<select class="aspect" data-i18n-title="aspect_2" title="Aspect n°2" name="attr_aspect_2">
+				<option selected="selected"></option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
+				<option value="adroit" data-i18n="adroit">Adroit</option>
+				<option value="agile" data-i18n="agile">Agile</option>
+				<option value="alerte" data-i18n="alerte">Alerte</option>
+				<option value="beau" data-i18n="beau">Beau</option>
+				<option value="chanceux" data-i18n="chanceux">Chanceux</option>
+				<option value="charmant" data-i18n="charmant">Charmant</option>
+				<option value="energique" data-i18n="energique">Énergique</option>
+				<option value="fort" data-i18n="fort">Fort</option>
+				<option value="intimidant" data-i18n="intimidant">Intimidant</option>
+				<option value="jeune" data-i18n="jeune">Jeune</option>
+				<option value="rapide" data-i18n="rapide">Rapide</option>
+				<option value="robuste" data-i18n="robuste">Robuste</option>
+				<option value="ruse" data-i18n="ruse">Rusé</option>
+				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="vieux" data-i18n="vieux">Vieux</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
+				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
+				<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
+				<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
+				<option value="mortel" data-i18n="mortel">Mortel</option>
+				<option value="precis" data-i18n="precis">Précis</option>
+				<option value="resilient" data-i18n="resilient">Résilient</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
+				<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
+				<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
+				<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
+				<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
+				<option value="fortune" data-i18n="fortune">Fortuné</option>
+				<option value="outils" data-i18n="outils">Outils</option>
+				<option value="rang" data-i18n="rang">Rang</option>
+				<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
+				<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
+				<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
+				<option value="erudit" data-i18n="erudit">Érudit</option>
+				<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
+				<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
+				<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
+				<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
+				<option value="voyageur" data-i18n="voyageur">Voyageur</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
+				<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
+				<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
+				<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
+				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
+				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
+				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
+				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
+				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
+				<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
+				<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
+				<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
+				<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
+				<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
+				<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
+				<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
+				<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
+			</select>
+		</div>
+		<div class="aspect_3">
+			<select class="aspect" data-i18n-title="aspect_3" title="Aspect n°3" name="attr_aspect_3">
+				<option selected="selected"></option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
+				<option value="adroit" data-i18n="adroit">Adroit</option>
+				<option value="agile" data-i18n="agile">Agile</option>
+				<option value="alerte" data-i18n="alerte">Alerte</option>
+				<option value="beau" data-i18n="beau">Beau</option>
+				<option value="chanceux" data-i18n="chanceux">Chanceux</option>
+				<option value="charmant" data-i18n="charmant">Charmant</option>
+				<option value="energique" data-i18n="energique">Énergique</option>
+				<option value="fort" data-i18n="fort">Fort</option>
+				<option value="intimidant" data-i18n="intimidant">Intimidant</option>
+				<option value="jeune" data-i18n="jeune">Jeune</option>
+				<option value="rapide" data-i18n="rapide">Rapide</option>
+				<option value="robuste" data-i18n="robuste">Robuste</option>
+				<option value="ruse" data-i18n="ruse">Rusé</option>
+				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="vieux" data-i18n="vieux">Vieux</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
+				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
+				<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
+				<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
+				<option value="mortel" data-i18n="mortel">Mortel</option>
+				<option value="precis" data-i18n="precis">Précis</option>
+				<option value="resilient" data-i18n="resilient">Résilient</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
+				<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
+				<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
+				<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
+				<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
+				<option value="fortune" data-i18n="fortune">Fortuné</option>
+				<option value="outils" data-i18n="outils">Outils</option>
+				<option value="rang" data-i18n="rang">Rang</option>
+				<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
+				<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
+				<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
+				<option value="erudit" data-i18n="erudit">Érudit</option>
+				<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
+				<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
+				<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
+				<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
+				<option value="voyageur" data-i18n="voyageur">Voyageur</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
+				<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
+				<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
+				<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
+				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
+				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
+				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
+				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
+				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
+				<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
+				<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
+				<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
+				<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
+				<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
+				<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
+				<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
+				<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
+			</select>
+		</div>
+		<div class="aspect_4">
+			<select class="aspect" data-i18n-title="aspect_4" title="Aspect n°4" name="attr_aspect_4">
+				<option selected="selected"></option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; ATTRIBUTS</option>
+				<option value="adroit" data-i18n="adroit">Adroit</option>
+				<option value="agile" data-i18n="agile">Agile</option>
+				<option value="alerte" data-i18n="alerte">Alerte</option>
+				<option value="beau" data-i18n="beau">Beau</option>
+				<option value="chanceux" data-i18n="chanceux">Chanceux</option>
+				<option value="charmant" data-i18n="charmant">Charmant</option>
+				<option value="energique" data-i18n="energique">Énergique</option>
+				<option value="fort" data-i18n="fort">Fort</option>
+				<option value="intimidant" data-i18n="intimidant">Intimidant</option>
+				<option value="jeune" data-i18n="jeune">Jeune</option>
+				<option value="rapide" data-i18n="rapide">Rapide</option>
+				<option value="robuste" data-i18n="robuste">Robuste</option>
+				<option value="ruse" data-i18n="ruse">Rusé</option>
+				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="vieux" data-i18n="vieux">Vieux</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
+				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
+				<option value="bon_tireur" data-i18n="bon_tireur">Bon tireur</option>
+				<option value="cuirasse" data-i18n="cuirasse">Cuirassé</option>
+				<option value="mortel" data-i18n="mortel">Mortel</option>
+				<option value="precis" data-i18n="precis">Précis</option>
+				<option value="resilient" data-i18n="resilient">Résilient</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; SOCIÉTÉ</option>
+				<option value="amis_hauts_lieux" data-i18n="amis_hauts_lieux">Amis (hauts lieux)</option>
+				<option value="amis_bas_fonds" data-i18n="amis_bas_fonds">Amis (bas-fonds)</option>
+				<option value="amis_lieux_sauvages" data-i18n="amis_lieux_sauvages">Amis (lieux sauvages)</option>
+				<option value="amis_lieux_sombres" data-i18n="amis_lieux_sombres">Amis (lieux sombres)</option>
+				<option value="fortune" data-i18n="fortune">Fortuné</option>
+				<option value="outils" data-i18n="outils">Outils</option>
+				<option value="rang" data-i18n="rang">Rang</option>
+				<option value="serviteurs" data-i18n="serviteurs">Serviteurs</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; CONNAISSANCE</option>
+				<option value="connaissance_animaux" data-i18n="connaissance_animaux">Connaissance des animaux</option>
+				<option value="connaissance_rouages" data-i18n="connaissance_rouages">Connaissance des rouages</option>
+				<option value="erudit" data-i18n="erudit">Érudit</option>
+				<option value="connaissance_arcanes" data-i18n="connaissance_arcanes">Connaissance des arcanes</option>
+				<option value="connaissance_dedales" data-i18n="connaissance_dedales">Connaissance des dédales</option>
+				<option value="connaissance_nature" data-i18n="connaissance_nature">Connaissance de la nature</option>
+				<option value="connaissance_rue" data-i18n="connaissance_rue">Connaissance de la rue</option>
+				<option value="voyageur" data-i18n="voyageur">Voyageur</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; LIGNÉE</option>
+				<option value="lignee_gobelours" data-i18n="lignee_gobelours">Lignée gobelours</option>
+				<option value="lignee_ilfe" data-i18n="lignee_ilfe">Lignée ilfe</option>
+				<option value="lignee_semi_homme" data-i18n="lignee_semi_homme">lignée semi-homme</option>
+				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
+				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
+				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
+				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
+				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
+				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
+				<option value="magie_terre" data-i18n="magie_terre">Magie (Terre)</option>
+				<option value="magie_nuit" data-i18n="magie_nuit">Magie (Nuit)</option>
+				<option value="magie_conjuration" data-i18n="magie_conjuration">Magie (Conjuration)</option>
+				<option value="magie_illumination" data-i18n="magie_illumination">Magie (Illumination)</option>
+				<option value="magie_enchantement" data-i18n="magie_enchantement">Magie (Enchantement)</option>
+				<option value="magie_evocation" data-i18n="magie_evocation">Magie (Évocation)</option>
+				<option value="magie_invocation" data-i18n="magie_invocation">Magie (Invocation)</option>
+				<option value="objet_magique" data-i18n="objet_magique">Objet magique</option>
+			</select>
+		</div>
+		<div class="check_intermediaire">
+			<input type="checkbox" name="attr_check_intermediaire" value="1" id="c0" />
+			<label for="c0" style="width: 51px;"></label>
+		</div>
+		<div class="etat_custom">
+			<input type="text" class="etat_custom" placeholder="États temporaires" name="attr_etat_custom" > 
+		</div>
+		<div class="check_vierge">
+			<input type="checkbox" name="attr_check_vierge" value="1" id="c1" />
+			<label for="c1"></label>
+		</div>	
+		<div class="check_tendu">
+			<input type="checkbox" class="tendu" name="attr_check_tendu" value="1" id="c2" />
+			<label for="c2"></label>
+		</div>
+		<div class="check_epuise">
+			<input type="checkbox" class="epuise" name="attr_check_epuise" value="1" id="c3" />
+			<label for="c3"></label>
+		</div>
+		<div class="check_blesse">
+			<input type="checkbox" class="blesse" name="attr_check_blesse" value="1" id="c4" />
+			<label for="c4"></label>
+		</div>
+		<div class="check_marque">
+			<input type="checkbox" class="marque" name="attr_check_marque" value="1" id="c5" />
+			<label for="c5"></label>
+		</div>
+		<div class="richesse">
+			<input type="number" name="attr_richesse" min="0" max="20" placeholder="2">
+		</div>	
+		<div class="coeur">
+			<input type="number" name="attr_coeur" min="0" max="20" placeholder="coeur">
+		</div>
+		<div class="dice">
+			<button class="roll_dice" type="roll" name="roll_Jet_de_dés" value="@{rollmod}" ></button>
+		</div>
+		<div class="type_jet">
+			<select class="roll" name="attr_rollmod">
+			   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Classique</option>
+			   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}" checked>Jet d'Action (1D)</option>
+			   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{image=oui]}} {{simple=oui}}">Jet de Sauvegarde (1D)</option>
+			   <option value="&{template:dedale} {{title=Jet d'Effet}} {{desc=@{explose_dice}}} {{type=[[1]]}}">Jet d'Effet (1D)</option>
+			   <option value="&{template:dedale} {{title=Jet de Chaos}} {{roll1=@{dice}}} {{chaos=oui}}">Jet de Chaos</option>
+			   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Avantage / Désavantage</option>
+			   <option value="&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet d'Action (2D)</option>
+			   <option value="&{template:dedale-alt} {{title=Jet de Sauvegarde}} {{role=[[@{role}]]}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{image=oui]}} {{double=oui}}">Jet de Sauvegarde (2D)</option>
+			   <option value="&{template:dedale} {{title=Jet d'Effet}} {{roll1=@{explose_dice}}}{{roll2=@{explose_dice}}} {{type=[[2]]}}">Jet d'Effet (2D)</option>
+			   <option disabled style="background:black;font-weight:bold;color:#ffffffed;">Soin et Mort</option>
+			   <option value="&{template:dedale-alt} {{title=Jet de Soin}} {{roll1=@{dice}}} {{soin=oui}}">Jet de Soin</option>
+			   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{mort=oui}}">Portes de la Mort</option>
+			   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_avantage=oui}}">Portes de la Mort (Avantage)</option>
+			   <option value="&{template:dedale-alt} {{title=Portes de la Mort}} {{roll1=@{dice}}} {{roll2=@{dice}}} {{mort_desavantage=oui}}">Portes de la Mort (Désavantage)</option>
+			</select>
+		</div>
+		<div class="etoile">
+			<input type="number" name="attr_etoile" min="0" max="20" placeholder="etoile">
+		</div>
+		<!-- Reset choix du Rôle -->
+		<div class="reset">
+		<button type="action" class="reset" name="act_reset"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">1</span></button></div>
+		<!-- Page suivante -->
+		<div class="page_suivante">
+		<button type="action" class="page_up" name="act_change-page">Page suivante...</button></div>
+		</div>
+	</div>
+</div>
+<div class="page_perso_info">
+	<div class="page_precedente">
+		<button type="action" class="page_down" name="act_change-page">Page précédente...</button></div>
+	</div>
 
-
+</div>
 <!-- Roll template -->
 
 <rolltemplate class="sheet-rolltemplate-dedale">
@@ -1740,5 +1750,21 @@ on("change:role", function() {
 			"explose_dice" : explose_dice
         });
     });
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:change-page', function() {
+
+
+	getAttrs(["page"], function(values) {
+		let page = parseInt(values["page"]) || 0;
+				if (page == '1') page = "2";
+				else if (page == '2') page = "1";
+				else page = "1";
+		setAttrs({
+			page: page
+		});
+	});
 });
 </script>
