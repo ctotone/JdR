@@ -411,13 +411,36 @@
 		<input type="number" name="attr_total_trésors" min="1" max="20"  value="1">
 	</div>
 	<div class="decompte_tenebres">
-	<input type="radio" value="1" name="attr_total_tenebres"  checked>
-	<input type="radio" value="2" name="attr_total_tenebres">
-	<input type="radio" value="3" name="attr_total_tenebres">
-	<input type="radio" value="4" name="attr_total_tenebres">
-	<input type="radio" value="5" name="attr_total_tenebres">
-	<input type="radio" value="6" name="attr_total_tenebres">
-	<input type="radio" value="7" name="attr_total_tenebres">
+		<div class="wrapper_tenebres">
+			<div class="tenebres1">
+				<input type="radio" value="1" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_1" checked>
+				<label for="choix_1"></label>
+			</div>
+			<div class="tenebres2">
+				<input type="radio" value="2" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_2">
+				<label for="choix_2"></label>
+			</div>
+			<div class="tenebres3">
+				<input type="radio" value="3" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_3">
+				<label for="choix_3"></label>
+			</div>
+			<div class="tenebres4">
+				<input type="radio" value="4" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_4">
+				<label for="choix_4"></label>
+			</div>
+			<div class="tenebres5">
+				<input type="radio" value="5" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_5">
+				<label for="choix_5"></label>
+			</div>
+			<div class="tenebres6">
+				<input type="radio" value="6" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_6">
+				<label for="choix_6"></label>
+			</div>
+			<div class="tenebres7">
+				<input type="radio" value="7" class="tenebre_checkbox" name="attr_tenebres_progress" id="choix_7">
+				<label for="choix_7"></label>
+			</div>
+		</div>
 	</div>
 	<div class="decompte_tresors">
 	</div>
@@ -1860,5 +1883,25 @@ on("change:role", function() {
 			page: page
 		});
 	});
+});
+</script>
+
+<script type="text/worker">
+on("change:total_tenebres", function() {
+    getAttrs(["total_tenebres"], function(values) {
+         let total_tenebres = parseInt(values["total_tenebres"]) || 0;
+			if (total_tenebres == '1') tenebres_progress = "1";
+			else if (total_tenebres == '2') tenebres_progress = "2";
+			else if (total_tenebres == '3') tenebres_progress = "3";
+			else if (total_tenebres == '4') tenebres_progress = "4";
+			else if (total_tenebres == '5') tenebres_progress = "5";
+			else if (total_tenebres == '6') tenebres_progress = "6";
+			else if (total_tenebres >= '7') tenebres_progress = "7";
+            else tenebres_progress = "1";
+			
+			setAttrs({
+			"tenebres_progress" : tenebres_progress
+        });
+    });
 });
 </script>

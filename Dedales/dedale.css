@@ -262,11 +262,55 @@ div.total_tresors {
 }
 
 div.decompte_tenebres {
-	
+    margin-top: 580px;
+    margin-left: 9px;	
 }
 
 div.decompte_tresors {
 	
+}
+
+.wrapper_tenebres{  
+	display: grid;
+    grid-template-columns: auto;
+}
+
+.tenebres1 {
+	grid-column: 1;
+}
+
+.tenebres2 {
+	grid-column: 2;
+    margin-left: -1px;
+}
+
+.tenebres3 {
+	grid-column: 3;
+    margin-left: -1px;
+}
+
+.tenebres4 {
+	grid-column: 4;
+}
+
+.tenebres5 {
+	grid-column: 5;
+    margin-left: -1px;
+}
+
+.tenebres6 {
+	grid-column: 6;
+}
+
+.tenebres7 {
+	grid-column: 7;
+    margin-left: -1px;
+    margin-top: -1px;
+}
+
+.wrapper_tresors {  
+	display: grid;
+    grid-template-columns: auto;
 }
 
 
@@ -298,7 +342,7 @@ input[value*="sorcellerie"].archetype ~ div.classe_sorcellerie {
 	display: block;
 }
 
-/* Checkbox */
+/* Checkbox Personnage */
 * {
   box-sizing: border-box;
 }
@@ -336,9 +380,64 @@ input[type=checkbox].marque:checked+label {
   background: #480048;
 }
 
-label {
+/* Checkbox Personnage */
+* {
+  box-sizing: border-box;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]+label {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 1em;
+  background: transparent; 
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked+label {
+  background: #151414eb;
+}
+
+input[type=checkbox].tendu:checked+label {
+  background: #515151;
+}
+
+input[type=checkbox].epuise:checked+label {
+  background: #593838;
+}
+
+input[type=checkbox].blesse:checked+label {
+  background: #9f0202;
+}
+
+input[type=checkbox].marque:checked+label {
+  background: #480048;
+}
+
+.personnage label {
   -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
   clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+/* Checkbox Ténèbres */
+input[type="radio"].tenebre_checkbox {
+  display: none;
+}
+input[type="radio"].tenebre_checkbox + label {
+	padding: 0;
+	border: none;
+	width: 47px;
+	height: 41px;
+	pointer-events:none;
+}
+input[type="radio"].tenebre_checkbox:checked + label {
+    border: none;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/check_tenebres.png);
+    background-size: contain;
 }
 
 /* Format de page */
