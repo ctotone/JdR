@@ -262,7 +262,7 @@ div.total_tresors {
 }
 
 div.decompte_tenebres {
-    margin-top: 580px;
+    margin-top: 578px;
     margin-left: 9px;	
 }
 
@@ -281,30 +281,32 @@ div.decompte_tresors {
 
 .tenebres2 {
 	grid-column: 2;
-    margin-left: -1px;
+    margin-left: -12px;
 }
 
 .tenebres3 {
 	grid-column: 3;
-    margin-left: -1px;
+    margin-left: -10px;
 }
 
 .tenebres4 {
 	grid-column: 4;
+    margin-left: -7px;
 }
 
 .tenebres5 {
 	grid-column: 5;
-    margin-left: -1px;
+    margin-left: -9px;
 }
 
 .tenebres6 {
 	grid-column: 6;
+    margin-left: -10px;
 }
 
 .tenebres7 {
 	grid-column: 7;
-    margin-left: -1px;
+    margin-left: -7px;
     margin-top: -1px;
 }
 
@@ -432,8 +434,8 @@ input[type="radio"].tenebre_checkbox + label,
 input[type="radio"].tenebre_checkbox_max + label {
 	padding: 0;
 	border: none;
-	width: 47px;
-	height: 41px;
+	width: 55px;
+	height: 48px;
 	pointer-events:none;
 }
 
@@ -442,6 +444,11 @@ input[type="radio"].tenebre_checkbox_max:checked + label  {
     border: none;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/check_progress_tenebres.png);
     background-size: contain;
+}
+
+input[type="radio"].tenebre_checkbox_max:checked + label  {
+    border: none;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/check_progress_tenebres_max.png);
 }
 
 /* Format de page */
