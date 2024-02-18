@@ -322,23 +322,23 @@ div.decompte_tresors {
 
 /* #Systeme changement background */
 .sheet-sheettoggle[value*="1"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_4.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_roll_d4.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_paragon.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
 }
 
 .sheet-sheettoggle[value*="2"] ~ *{
-	--charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_3.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_roll_d6.png);
+	--charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_eclaireur.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
 }
 
 .sheet-sheettoggle[value*="3"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_2.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_roll_d8.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_guerrier.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
 }
 
 .sheet-sheettoggle[value*="4"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_1.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_roll_d10.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_sentinelle.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
 }
 
 /* Systeme de déroulant dynamique */
@@ -622,7 +622,7 @@ span.picto_reset {
 .charsheet button[type=action].page_up,
 .charsheet button[type=action].page_down{
     padding: 0;
-    color: #ffffff2b;
+    color: #ffffff54;
     border: none;
     width: 25px;
     writing-mode: vertical-rl;
@@ -637,6 +637,10 @@ span.picto_reset {
     border-radius: 5px 20px 20px 5px;
     margin-left: -2px;
     background: linear-gradient(90deg, rgba(28,28,27,1) 20%, rgb(73 71 71) 100%);
+    text-align: left;
+    padding-top: 230px;
+    padding-right: 2px;
+    border-left: 1px solid #000000;
 }
 
 .charsheet button[type=action].page_down{

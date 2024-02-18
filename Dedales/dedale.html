@@ -1,4 +1,5 @@
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
+
 <!-- Introduction -->
 <div class="intro">
 	<div class="intro_texte">
@@ -13,6 +14,8 @@
 	</div>
 </div>
 <input type="hidden" class="select_page" name="attr_page" value="1"  />
+
+<!-- Page de Personnage -->
 <div class="page_perso_1">
 	<!-- Feuille de personnage -->
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
@@ -338,7 +341,7 @@
 			<label for="c0" style="width: 51px;"></label>
 		</div>
 		<div class="etat_custom">
-			<input type="text" class="etat_custom" placeholder="États temporaires" name="attr_etat_custom" > 
+			<input type="text" class="etat_custom" placeholder="État non standard" name="attr_etat_custom" > 
 		</div>
 		<div class="check_vierge">
 			<input type="checkbox" name="attr_check_vierge" value="1" id="c1" />
@@ -361,7 +364,7 @@
 			<label for="c5"></label>
 		</div>
 		<div class="richesse">
-			<input type="number" name="attr_richesse" min="0" max="20" placeholder="2">
+			<input type="number" name="attr_richesse" min="0" max="20" placeholder="2" title="Votre Richesse">
 		</div>	
 		<div class="coeur">
 			<input type="number" name="attr_coeur" min="0" max="20" placeholder="coeur">
@@ -397,18 +400,19 @@
 		<!-- Page suivante -->
 		<div class="page_suivante">
 		<button type="action" class="page_up" name="act_change-page" title="Trésors et des Ténèbres">Trésors et Ténèbres...</button></div>
-		</div>
 	</div>
 </div>
+
+<!-- Page Ténèbres et Trésors -->
 <div class="page_perso_info">
 	<div class="page_precedente">
 		<button type="action" class="page_down" name="act_change-page" title="Votre Personnage">Votre Personnage...</button>
 	</div>
 	<div class="total_tenebres">
-		<input type="number" name="attr_total_tenebres" min="1" max="20"  value="1">
+		<input type="number" name="attr_total_tenebres" min="1" max="20"  value="1" title="Niveau de Ténèbres">
 	</div>
 	<div class="total_tresors">
-		<input type="number" name="attr_total_trésors" min="1" max="20"  value="1">
+		<input type="number" name="attr_total_trésors" min="1" max="20"  value="1"title="Trésor du groupe">
 	</div>
 	<div class="decompte_tenebres">
 		<div class="wrapper_tenebres">
@@ -444,11 +448,10 @@
 	</div>
 	<div class="decompte_tresors">
 	</div>
-	
-
 </div>
-<!-- Roll template -->
 
+<!-- Roll template -->
+<!-- dedale -->
 <rolltemplate class="sheet-rolltemplate-dedale">
 <div class="sheet-container">
 	<div class="sheet-header">
@@ -512,7 +515,7 @@
 </div>
 </rolltemplate>
 
-
+<!-- dedale-alt -->
 <rolltemplate class="sheet-rolltemplate-dedale-alt">
 {{#image}}
 		<!-- Paragon -->
@@ -1753,7 +1756,7 @@
 </rolltemplate>
 
 <!-- SCRIPT -->
-
+<!-- Intro Paragon -->
 <script type="text/worker">
 on('clicked:intro-paragon', function() {
 
@@ -1770,6 +1773,7 @@ on('clicked:intro-paragon', function() {
 });
 </script>
 
+<!-- Intro Eclaireur -->
 <script type="text/worker">
 on('clicked:intro-eclaireur', function() {
 
@@ -1786,6 +1790,7 @@ on('clicked:intro-eclaireur', function() {
 });
 </script>
 
+<!-- Intro Guerrier -->
 <script type="text/worker">
 on('clicked:intro-guerrier', function() {
 
@@ -1802,6 +1807,7 @@ on('clicked:intro-guerrier', function() {
 });
 </script>
 
+<!-- Intro Sentinelle -->
 <script type="text/worker">
 on('clicked:intro-sentinelle', function() {
 
@@ -1818,6 +1824,7 @@ on('clicked:intro-sentinelle', function() {
 });
 </script>
 
+<!-- Intro Reset -->
 <script type="text/worker">
    on('clicked:intro-reset', function() {
 
@@ -1834,6 +1841,7 @@ on('clicked:intro-sentinelle', function() {
 });
 </script>
 
+<!-- Reset Coeur et Étoiles -->
 <script type="text/worker">
    on('clicked:reset', function() {
 
@@ -1851,6 +1859,7 @@ on('clicked:intro-sentinelle', function() {
 });
 </script>
 
+<!-- Mise à jour type de dés en fonction du rôle -->
 <script type="text/worker">
 on("change:role", function() {
     getAttrs(["role"], function(values) {
@@ -1870,6 +1879,7 @@ on("change:role", function() {
 });
 </script>
 
+<!-- Changement de page -->
 <script type="text/worker">
    on('clicked:change-page', function() {
 
@@ -1886,6 +1896,7 @@ on("change:role", function() {
 });
 </script>
 
+<!-- Mise à jour Ténèbres -->
 <script type="text/worker">
 on("change:total_tenebres", function() {
     getAttrs(["total_tenebres"], function(values) {
