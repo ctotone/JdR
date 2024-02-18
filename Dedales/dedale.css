@@ -424,19 +424,23 @@ input[type=checkbox].marque:checked+label {
 }
 
 /* Checkbox Ténèbres */
-input[type="radio"].tenebre_checkbox {
+input[type="radio"].tenebre_checkbox,
+input[type="radio"].tenebre_checkbox_max {
   display: none;
 }
-input[type="radio"].tenebre_checkbox + label {
+input[type="radio"].tenebre_checkbox + label,
+input[type="radio"].tenebre_checkbox_max + label {
 	padding: 0;
 	border: none;
 	width: 47px;
 	height: 41px;
 	pointer-events:none;
 }
-input[type="radio"].tenebre_checkbox:checked + label {
+
+input[type="radio"].tenebre_checkbox:checked + label,
+input[type="radio"].tenebre_checkbox_max:checked + label  {
     border: none;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/check_tenebres.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/check_progress_tenebres.png);
     background-size: contain;
 }
 
