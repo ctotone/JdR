@@ -323,18 +323,26 @@ div.decompte_tresors {
 /* #Systeme changement background */
 .sheet-sheettoggle[value*="1"] ~ *{
     --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_4.png);
+	--dice_background:;
+	--dice_background_hover:;
 }
 
 .sheet-sheettoggle[value*="2"] ~ *{
-   --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_3.png);
+	--charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_3.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+	--dice_background_hover: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice_hover.png);
 }
 
 .sheet-sheettoggle[value*="3"] ~ *{
     --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_2.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+	--dice_background_hover: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice_checked.png);
 }
 
 .sheet-sheettoggle[value*="4"] ~ *{
     --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_1.png);
+	--dice_background:;
+	--dice_background_hover:;
 }
 
 /* Systeme de déroulant dynamique */
@@ -743,7 +751,7 @@ body.sheet-darkmode button[type=action].page_down {
     border: none;
     padding: 0;
     margin: 0;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+	background-image: var(--dice_background);
 	background-size: cover;
     background-repeat: no-repeat;
 	background-color: transparent;
@@ -751,9 +759,13 @@ body.sheet-darkmode button[type=action].page_down {
 }
 
 .charsheet button[type=roll].roll_dice:hover {
-    margin: 0px;
+    margin-left: 1px;
 	padding: 0px;
 	background-position: 0 0px;
+	background-image: var(--dice_background_hover);
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-color: transparent;
 }
 
 /* Roll Template */
