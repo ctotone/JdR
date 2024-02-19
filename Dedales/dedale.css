@@ -26,6 +26,7 @@ div.sheet_selector {
 }
 
 div.intro,
+div.creation,
 div.personnage,
 div.page_perso_1,
 div.page_perso_info {
@@ -36,7 +37,8 @@ div.page_perso_info {
 .charsheet .sheet-sheettoggle[value="1"] ~ div.personnage,
 .charsheet .sheet-sheettoggle[value="2"] ~ div.personnage,
 .charsheet .sheet-sheettoggle[value="3"] ~ div.personnage,
-.charsheet .sheet-sheettoggle[value="4"] ~ div.personnage {
+.charsheet .sheet-sheettoggle[value="4"] ~ div.personnage,
+.charsheet .sheet-sheettoggle[value="5"] ~ div.creation {
     display: block;
 }
 
@@ -88,10 +90,21 @@ div.page_perso_info {
 }
 
 body.sheet-darkmode div.intro,
+body.sheet-darkmode div.creation,
 body.sheet-darkmode div.personnage,
 body.sheet-darkmode div.page_perso_info {
 	box-shadow: 1px 0px 9px 3px #cdcdcdba;
 }
+
+
+.name::-webkit-scrollbar {
+  display: none;
+}
+
+.name {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} 
 
 div.sheet_selector,
 div.name,
@@ -132,15 +145,15 @@ div.name {
 }
 
 div.archetype {
-	margin-top: 247px;
-    margin-left: -4px;	
+	margin-top: 289px;
+	margin-left: 40px;
 }
 
 div.classe_epee,
 div.classe_ombre,
 div.classe_sorcellerie {
-	margin-top: 288px;
-    margin-left: 239px;
+	margin-top: 293px;
+    margin-left: 212px;
 }
 
 div.etat_custom {
@@ -217,13 +230,13 @@ div.etoile {
 }
 
 div.dice {  
-	margin-top: 1206px;
-	margin-left: 91px;
+	margin-top: 1200px;
+	margin-left: 93px;
 }
 
 div.type_jet {
 	margin-top: 1217px;
-	margin-left: 150px;
+	margin-left: 154px;
 }
 
 div.reset {
@@ -322,26 +335,145 @@ div.decompte_tresors {
 
 /* #Systeme changement background */
 .sheet-sheettoggle[value*="1"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_paragon.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_parangon_sheet.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_4.png);
 }
 
 .sheet-sheettoggle[value*="2"] ~ *{
-	--charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_eclaireur.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+	--charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_eclaireur_sheet.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_6.png);
 }
 
 .sheet-sheettoggle[value*="3"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_guerrier.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_guerrier_sheet.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_8.png);
 }
 
 .sheet-sheettoggle[value*="4"] ~ *{
-    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_sentinelle.png);
-	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/6_dice.png);
+    --charsheet-background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/PJ_sentinelle_sheet.png);
+	--dice_background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/dice_10.png);
 }
 
-/* Systeme de déroulant dynamique */
+/* Systeme de création de personnage */
+
+/* Affichage DIV */
+.creation_archetype,
+.creation_archetype_choisi,
+.creation_classe,
+.creation_epee,
+.creation_ombre,
+.creation_sorcellerie,
+.creation_aspect,
+.creation_bretteur,
+.creation_mercenaire,
+.creation_ranger,
+.creation_tueur,
+.creation_gobelours,
+.creation_hero,
+.creation_barbare,
+.creation_chevalier,
+.creation_semi_homme,
+.creation_pillard,
+.creation_vagabond,
+.creation_gamin,
+.creation_assassin,
+.creation_serrurier,
+.creation_voleur,
+.creation_cultiste,
+.creation_magicien,
+.creation_mage,
+.creation_bibliothecaire,
+.creation_invocateur,
+.creation_ilfe,
+.creation_alchimiste,
+.creation_druide,
+.creation_sorciere{
+    display: none;
+}
+
+input[value*="parangon"].creation_role ~ div.creation_archetype_choisi,
+input[value*="eclaireur"].creation_role ~ div.creation_archetype_choisi,
+input[value*="guerrier"].creation_role ~ div.creation_archetype_choisi,
+input[value*="sentinelle"].creation_role ~ div.creation_archetype_choisi,
+input[value*="parangon"].creation_role ~ div.creation_archetype,
+input[value*="eclaireur"].creation_role ~ div.creation_archetype,
+input[value*="guerrier"].creation_role ~ div.creation_archetype,
+input[value*="sentinelle"].creation_role ~ div.creation_archetype {
+	display: block;
+}
+
+input[value*="epee"].creation_archetype ~ div.creation_classe,
+input[value*="ombre"].creation_archetype ~ div.creation_classe,
+input[value*="sorcellerie"].creation_archetype ~ div.creation_classe,
+input[value*="epee"].creation_archetype ~ div.creation_epee,
+input[value*="ombre"].creation_archetype ~ div.creation_ombre,
+input[value*="sorcellerie"].creation_archetype ~ div.creation_sorcellerie {
+	display: block;
+}
+
+input[value*="bretteur"].creation_classe ~ div.creation_aspect,
+input[value*="mercenaire"].creation_classe ~ div.creation_aspect,
+input[value*="ranger"].creation_classe ~ div.creation_aspect,
+input[value*="tueur"].creation_classe ~ div.creation_aspect,
+input[value*="gobelours"].creation_classe ~ div.creation_aspect,
+input[value*="hero"].creation_classe ~ div.creation_aspect,
+input[value*="barbare"].creation_classe ~ div.creation_aspect,
+input[value*="vaillant"].creation_classe ~ div.creation_aspect,
+input[value*="semi_homme"].creation_classe ~ div.creation_aspect,
+input[value*="pillard"].creation_classe ~ div.creation_aspect,
+input[value*="vagabond"].creation_classe ~ div.creation_aspect,
+input[value*="gamin"].creation_classe ~ div.creation_aspect,
+input[value*="assassin"].creation_classe ~ div.creation_aspect,
+input[value*="serrurier"].creation_classe ~ div.creation_aspect,
+input[value*="voleur"].creation_classe ~ div.creation_aspect,
+input[value*="cultiste"].creation_classe ~ div.creation_aspect,
+input[value*="magicien"].creation_classe ~ div.creation_aspect,
+input[value*="mage"].creation_classe ~ div.creation_aspect,
+input[value*="bibliothecaire"].creation_classe ~ div.creation_aspect,
+input[value*="invocateur"].creation_classe ~ div.creation_aspect,
+input[value*="ilfe"].creation_classe ~ div.creation_aspect,
+input[value*="alchimiste"].creation_classe ~ div.creation_aspect,
+input[value*="druide"].creation_classe ~ div.creation_aspect,
+input[value*="sorciere"].creation_classe ~ div.creation_aspect,
+input[value*="bretteur"].creation_classe ~ div.creation_bretteur,
+input[value*="mercenaire"].creation_classe ~ div.creation_mercenaire,
+input[value*="ranger"].creation_classe ~ div.creation_ranger,
+input[value*="tueur"].creation_classe ~ div.creation_tueur,
+input[value*="gobelours"].creation_classe ~ div.creation_gobelours,
+input[value*="hero"].creation_classe ~ div.creation_hero,
+input[value*="barbare"].creation_classe ~ div.creation_barbare,
+input[value*="vaillant"].creation_classe ~ div.creation_chevalier,
+input[value*="semi_homme"].creation_classe ~ div.creation_semi_homme,
+input[value*="pillard"].creation_classe ~ div.creation_pillard,
+input[value*="vagabond"].creation_classe ~ div.creation_vagabond,
+input[value*="gamin"].creation_classe ~ div.creation_gamin,
+input[value*="assassin"].creation_classe ~ div.creation_assassin,
+input[value*="serrurier"].creation_classe ~ div.creation_serrurier,
+input[value*="voleur"].creation_classe ~ div.creation_voleur,
+input[value*="cultiste"].creation_classe ~ div.creation_cultiste,
+input[value*="magicien"].creation_classe ~ div.creation_magicien,
+input[value*="mage"].creation_classe ~ div.creation_mage,
+input[value*="bibliothecaire"].creation_classe ~ div.creation_bibliothecaire,
+input[value*="invocateur"].creation_classe ~ div.creation_invocateur,
+input[value*="ilfe"].creation_classe ~ div.creation_ilfe,
+input[value*="alchimiste"].creation_classe ~ div.creation_alchimiste,
+input[value*="druide"].creation_classe ~ div.creation_druide,
+input[value*="sorciere"].creation_classe ~ div.creation_sorciere {
+	display: block;
+}
+
+/* input[value*="epee"].creation_archetype ~ div.creation_epee,
+input[value*="ombre"].creation_archetype ~ div.creation_ombre,
+input[value*="sorcellerie"].creation_archetype ~ div.creation_sorcellerie {
+	display: block;
+} */
+
+
+/* Systeme Archétype  Classe feuille de personnage */
+.classe_epee, .classe_ombre, .classe_sorcellerie {
+    display: none;
+}
+
 .classe_epee, .classe_ombre, .classe_sorcellerie {
     display: none;
 }
@@ -508,18 +640,20 @@ input[type="radio"].tenebre_checkbox_max:checked + label  {
 }
 
 select.archetype {  
-    margin-top: 40px;
-    font-size: 17px;
-    margin-left: 30px;
+    font-size: 20px;
     text-align: center;
-    width: 200px;
+	margin-top: 0px;
+    margin-left: 0px;
+    width: 155px;
     border: none;
 }
 
 select.classe {
-    font-size: 11px;
+    font-size: 12px;
     text-align: center;
-    width: 208px;
+	margin-top: 0px;
+    margin-left: 0px;
+    width: 232px;
 	border: none;
 }
 
@@ -598,6 +732,7 @@ input[type=number] {
 .total_tresors  input[type=number] {
     color: #b78300;
 }
+
 /* Bouton choix intro et Roll */
 span.picto_reset_intro {
 	font-family: 'Pictos';
@@ -618,6 +753,7 @@ span.picto_reset {
 .charsheet button[type=action].reset::before, {
 	content: '';
 }
+
 /* Boutton changement de PAGE */
 .charsheet button[type=action].page_up,
 .charsheet button[type=action].page_down{
@@ -746,8 +882,8 @@ body.sheet-darkmode button[type=action].page_down {
 }
 
 .charsheet button[type=roll].roll_dice {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: none;
     padding: 0;
     margin: 0;
