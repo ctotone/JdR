@@ -80,7 +80,8 @@ div.page_perso_info {
 .creation_ilfe,
 .creation_alchimiste,
 .creation_druide,
-.creation_sorciere {
+.creation_sorciere,
+.creation_valider {
     display: none;
 }
 
@@ -145,7 +146,8 @@ input[value*="invocateur"].creation_classe ~ div.creation_invocateur,
 input[value*="ilfe"].creation_classe ~ div.creation_ilfe,
 input[value*="alchimiste"].creation_classe ~ div.creation_alchimiste,
 input[value*="druide"].creation_classe ~ div.creation_druide,
-input[value*="sorciere"].creation_classe ~ div.creation_sorciere {
+input[value*="sorciere"].creation_classe ~ div.creation_sorciere,
+input[value*="1"].creation_validation ~ div.creation_valider {
 	display: block;
 }
 
