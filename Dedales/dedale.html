@@ -1,9 +1,4 @@
-<!-- page 84 Barbare faute de frappe -->
-
-
-
-
-
+<!-- page 84 Barbare faute de frappe --> 
 
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
 
@@ -170,7 +165,7 @@
 					<option value="resilient">Résilient</option>
 				</select>
 			</div>
-			<div class="creation_chevalier">
+			<div class="creation_chevvalier">
 			Le vaillant chevalier est toujours...
 				<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
 					<option value="0"></option>
@@ -352,7 +347,7 @@
 					<option value="fort">FORT</option>
 				</select>
 			</div>
-			<div class="creation_chevalier">
+			<div class="creation_chevvalier">
 			En tant que soldat portant une armure lourde, êtes-vous MORTEL ou avez-vous des recrues (SERVITEURS) ?
 				<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
 					<option value="0"></option>
@@ -559,7 +554,7 @@
 					<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 				</select>
 			</div>
-			<div class="creation_chevalier">
+			<div class="creation_chevvalier">
 			Êtes-vous ÉNERGIQUE, FORT ou INTIMIDANT ?
 				<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
 					<option value="0"></option>
@@ -2643,9 +2638,10 @@ on("change:total_tenebres", function() {
 <!-- MAJ aspect 1 -->
 <script type="text/worker">
 on("change:creation_classe", function() {
-    getAttrs(["creation_classe"], function(values) {
+    getAttrs(["creation_classe", "creation_aspect1"], function(values) {
          let creation_classe = parseInt(values["creation_classe"]) || 0;
-			if (creation_classe == 'bretteur') creation_aspect1 = "precis";
+		 let creation_aspect1 = parseInt(values["creation_aspect1"]) || 0;
+			if (creation_classe == "bretteur") creation_aspect1 = "precis";
 			else if (creation_classe == 'mercenaire') creation_aspect1 = "bien_arme";
 			else if (creation_classe == 'ranger') creation_aspect1 = "bon_tireur";
 			else if (creation_classe == 'tueur') creation_aspect1 = "bien_arme";
@@ -2669,10 +2665,9 @@ on("change:creation_classe", function() {
 			else if (creation_classe == 'alchimiste') creation_aspect1 = "objet_magique";
 			else if (creation_classe == 'druide') creation_aspect1 = "change_forme";
 			else if (creation_classe == 'sorciere') creation_aspect1 = "magie";
-            else creation_aspect1 = "0";
 			
 			setAttrs({
-			"creation_aspect1" : creation_aspect1
+			creation_aspect1 : creation_aspect1
         });
     });
 });
