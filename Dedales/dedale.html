@@ -1,8 +1,6 @@
 <!-- page 84 Barbare faute de frappe --> 
 <!-- Vétéran pas dans la liste des Aspect mais dans le héro -->
 
-Ajouter magie dans le deroulant aspect personnage
-
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
 <input type="hidden" name="attr_page"  value="1"  />
 
@@ -35,13 +33,13 @@ Ajouter magie dans le deroulant aspect personnage
 	<!-- Choix Rôle -->
 	<div class="creation_role">	
 	<input type="hidden" class="creation_archetype" name="attr_creation_archetype" />
-	Pourquoi voulez-vous EXPLORER DES DÉDALES ?
-		<select class="creation_role" data-i18n-title="archetype" title="Archetype" name="attr_creation_role">
-			<option value="0"></option>
-			<option value="parangon">… car je suis en quête de connaissance et de gloire. (Parangon)</option>
-			<option value="eclaireur">… car je veux être au cœur de l’action. (Éclaireur)</option>
-			<option value="guerrier"> … car j’aime me battre et Frapper avec mon épée ! (Guerrier)</option>
-			<option value="sentinelle"> … Car quelqu’un doit BIEN protéger les autres. (Sentinelle)</option>
+	<span class="picto_creation">S</span><span class="creation_titre">Pourquoi voulez-vous EXPLORER DES DÉDALES ?</span>
+		<select class="creation_role" data-i18n-title="archetype" title="Rôle" name="attr_creation_role">
+			<option value="0">Votre choix...</option>
+			<option value="parangon">… car  je suis en quête de CONNAISSANCE et de gloire. (Parangon)</option>
+			<option value="eclaireur">… car  je veux être au cœur de l’ACTION. (Éclaireur)</option>
+			<option value="guerrier"> … car  j’aime me battre et FRAPPER avec mon épée ! (Guerrier)</option>
+			<option value="sentinelle"> … car  quelqu’un doit bien PROTÉGER les autres. (Sentinelle)</option>
 		</select>
 	</div>
 	<input type="hidden" class="creation_role" name="attr_creation_role" value="0"  />
@@ -56,9 +54,9 @@ Ajouter magie dans le deroulant aspect personnage
 		<!-- Choix Archétype -->
 		<div class="creation_archetype">
 		<input type="hidden" class="creation_role" name="attr_creation_role" />
-			Comment résolvez-vous vos problèmes ?
-			<select class="creation_archetype_select" data-i18n-title="archetype" title="Archetype" name="attr_creation_archetype">
-				<option value="0"></option>
+			<span class="picto_creation">e</span><span  class="creation_titre">Comment résolvez-vous vos PROBLÈMES ?</span>
+			<select class="creation_archetype_select" data-i18n-title="archetype" title="Archétype" name="attr_creation_archetype">
+				<option value="0">Votre choix...</option>
 				<option value="epee" >...par le tranchant de mon ÉPÉE.</option>
 				<option value="ombre" >...en me fondant dans les OMBRES.</option>
 				<option value="sorcellerie" >...avec mon étrange SORCELLERIE.</option>
@@ -67,11 +65,11 @@ Ajouter magie dans le deroulant aspect personnage
 		<!-- Choix Classe -->
 		<div class="creation_classe">
 		<input type="hidden" class="creation_archetype" name="attr_creation_archetype"  />
-		Quelle est ma place dans ce monde ?
+		<span class="picto_creation">g</span><span class="creation_titre">Quelle est ma place dans ce MONDE ?</span>
 			<!-- Épée -->
 			<div class="creation_epee">
-				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe">
-					<option value="0"></option>
+				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe" >
+					<option value="0">Votre choix...</option>
 					<option value="bretteur" data-i18n="epee_bretteur">BRETTEUR DANGEREUX</option>
 					<option value="mercenaire" data-i18n="epee_mercenaire">MERCENAIRE DÉSABUSÉ</option>
 					<option value="ranger" data-i18n="epee_ranger">RANGER INTRÉPIDE</option>
@@ -79,13 +77,13 @@ Ajouter magie dans le deroulant aspect personnage
 					<option value="gobelours" data-i18n="epee_gobelours">GOBELOURS EN EXIL</option>
 					<option value="hero" data-i18n="epee_hero">HÉROS MALGRÉ LUI</option>
 					<option value="barbare" data-i18n="epee_barbare">BARBARE SAUVAGE</option>
-					<option value="chevalier" data-i18n="epee_chevalier">VAILLANT CHEVALIER</option>
+					<option value="knight" data-i18n="epee_chevalier">VAILLANT CHEVALIER</option>
 				</select>
 			</div>
 			<!-- Ombre -->
 			<div class="creation_ombre">
-				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe">
-					<option value="0"></option>
+				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe" >
+					<option value="0">Votre choix...</option>
 					<option value="semi_homme" data-i18n="ombre_semi_homme">SEMI-HOMME AVENTUREUX</option>
 					<option value="pillard" data-i18n="ombre_pillard">PILLARD DE TOMBEAUX</option>
 					<option value="vagabond" data-i18n="ombre_vagabond">VAGABOND EXPÉRIMENTÉ</option>
@@ -98,8 +96,8 @@ Ajouter magie dans le deroulant aspect personnage
 			</div>
 			<!-- Sorcellerie -->
 			<div class="creation_sorcellerie">
-				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe">
-					<option value="0"></option>
+				<select class="creation_classe_select" data-i18n-title="classe" title="Classe" name="attr_creation_classe" >
+					<option value="0">Votre choix...</option>
 					<option value="magicien" data-i18n="sorcellerie_magicien">MAGICIEN FLAMBOYANT</option>
 					<option value="mage" data-i18n="sorcellerie_mage">MAGE DE GUILDE</option>
 					<option value="bibliothecaire" data-i18n="sorcellerie_bibliothecaire">BIBLIOTHÉCAIRE TOURMENTÉ</option>
@@ -113,157 +111,158 @@ Ajouter magie dans le deroulant aspect personnage
 		</div>
 		
 		<div class="creation_aspect">
+		<span class="picto_creation">"</span><span class="creation_titre">Choix des ASPECTS</span>
 		<input type="hidden" class="creation_aspect1" name="attr_creation_aspect1" value="0"  />
 		<input type="hidden" class="creation_aspect1" name="attr_creation_aspect2" value="0"  />
 		<input type="hidden" class="creation_aspect1" name="attr_creation_aspect3" value="0"  />
 			<!-- Choix Aspect 1 -->
 			<div class="creation_aspect1">
 			<input type="hidden" class="creation_classe" name="attr_creation_classe"  />
-			Aspect 1
+			
 				<!-- Épée -->
 				<div class="creation_bretteur">
 				Le bretteur dangereux est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="precis">Précis</option>
 					</select>
 				</div>
 				<div class="creation_mercenaire">
 				Le Mercenaire Désabusé est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="bien_arme">Bien armé</option>
 					</select>
 				</div>
 				<div class="creation_ranger">
 				Le Ranger Intrépide est toujours... 
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="bon_tireur">Bon tireur</option>
 					</select>
 				</div>
 				<div class="creation_tueur">
 				Le Tueur de Monstres est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="bien_arme" selected="selected">Bien armé</option>
 					</select>
 				</div>
 				<div class="creation_gobelours">
 				Le Gobelours en Exil est toujours d’une...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="lignee_gobelours">LIGNÉE GOBELOURS</option>
 					</select>
 				</div>
 				<div class="creation_hero">
 				Le héros malgré lui est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="jeune">Jeune</option>
 					</select>
 				</div>
 				<div class="creation_barbare">
 				Le barbare sauvage est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="resilient">Résilient</option>
 					</select>
 				</div>
-				<div class="creation_chevvalier">
+				<div class="creation_knight">
 				Le vaillant chevalier est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="cuirasse">Cuirassé</option>
 					</select>
 				</div>
 				<!-- Ombre -->
 				<div class="creation_semi_homme">
 				Le semi-homme aventureux est toujours d’une...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="lignee_semi_homme">LIGNÉE SEMI-HOMME</option>
 					</select>
 				</div>
 				<div class="creation_pillard">
 				Le pillard de tombeaux a toujours une bonne...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="connaissance_dedales">Connaissance des dédales</option>
 					</select>
 				</div>
 				<div class="creation_vagabond">
 				Le vagabond expérimenté est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="voyageur">Voyageur</option>
 					</select>
 				</div>
 				<div class="creation_gamin">
 				Le gamin crasseux est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="silencieux">Silencieux</option>
 					</select>
 				</div>
 				<div class="creation_assassin">
 				L’assassin nocturne est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="mortel">Mortel</option>
 					</select>
 				</div>
 				<div class="creation_serrurier">
 				Le serrurieur génial a toujours une...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="connaissance_rouages">Connaissance des rouages</option>
 					</select>
 				</div>
 				<div class="creation_voleur">
 				Le voleur talentueux a toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="connaissance_rue">Connaissance de la rue</option>
 					</select>
 				</div>
 				<div class="creation_cultiste">
 				Le cultiste zélé a toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="connaissance_arcanes">Connaissance des arcanes</option>
 					</select>
 				</div>
 				<!-- Sorcellerie -->
 				<div class="creation_magicien">
 				Le magicien flamboyant connaît toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="magie">Magie</option>
 					</select>
 				</div>
 				<div class="creation_mage">
 				Le mage de guilde connaît toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="magie">Magie</option>
 					</select>
 				</div>
 				<div class="creation_bibliothecaire">
 				Le bibliothécaire hanté a toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="connaissance_arcanes">Connaissance des arcanes</option>
 					</select>
 				</div>
 				<div class="creation_invocateur">
 				L’invocateur infernal connaît toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="magie_invocation">Magie (Invocation)</option>
 					</select>
 				</div>
 				<div class="creation_ilfe">
 				Le dernier elfe est toujours d’une...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="lignee_ilfe">Lignée ilfe</option>
 					</select>
 				</div>
 				<div class="creation_alchimiste">
 				L’alchimiste itinérant a toujours des potions...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="objet_magique">Objet magique</option>
 					</select>
 				</div>
 				<div class="creation_druide">
 				Le druide des profondeurs est toujours...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="change_forme">Change-forme</option>
 					</select>
 				</div>
 				<div class="creation_sorciere">
 				La sorcière sage connaît toujours la...
-					<select class="creation_classe1" data-i18n-title="classe" title="Classe" name="attr_creation_aspect1">
+					<select class="creation_classe1" data-i18n-title="classe" title="Premier Aspect" name="attr_creation_aspect1">
 						<option value="magie">Magie</option>
 					</select>
 				</div>
@@ -271,68 +270,67 @@ Ajouter magie dans le deroulant aspect personnage
 			<!-- Choix Aspect 2 -->
 			<div class="creation_aspect2">		
 			<input type="hidden" class="creation_classe" name="attr_creation_classe"  />
-			Aspect 2
 				<!-- Épée -->
 				<div class="creation_bretteur">
 				En tant que dangereux combattant, êtes-vous AGILE ou BON TIREUR ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="agile">AGILE</option>
 						<option value="bon_tireur">BON TIREUR</option>
 					</select>
 				</div>
 				<div class="creation_mercenaire">
 				En tant que soldat mercenaire, avez-vous un RANG ou êtes-vous FORTUNÉ ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="rang">RANG</option>
 						<option value="fortune">FORTUNÉ</option>
 					</select>
 				</div>
 				<div class="creation_ranger">
 				En tant qu’archer talentueux, êtesvous VOYAGEUR ou SILENCIEUX ? 
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="voyageur">VOYAGEUR</option>
 						<option value="silencieux">SILENCIEUX</option>
 					</select>
 				</div>
 				<div class="creation_tueur">
 				En tant que tueur de monstres vicieux, avez-vous une CONNAISSANCE DES DÉDALES, ou avez-vous une meute de chiens fidèles (SERVITEURS) ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_dedales">CONNAISSANCE DES DÉDALES</option>
 						<option value="serviteurs">SERVITEURS</option>
 					</select>
 				</div>
 				<div class="creation_gobelours">
 				En tant que monstre solitaire, êtes-vous MORTEL ou CUIRASSÉ ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="mortel">MORTEL</option>
 						<option value="cuirasse">CUIRASSÉ</option>
 					</select>
 				</div>
 				<div class="creation_hero">
 				En tant qu’élu, avez-vous une ARME MAGIQUE ou un OBJET MAGIQUE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="arme_magique">ARME MAGIQUE</option>
 						<option value="objet_magique">OBJET MAGIQUE</option>
 					</select>
 				</div>
 				<div class="creation_barbare">
 				En tant que héros solitaire, êtesvous MORTEL ou FORT ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="mortel">MORTEL</option>
 						<option value="fort">FORT</option>
 					</select>
 				</div>
-				<div class="creation_chevvalier">
+				<div class="creation_knight">
 				En tant que soldat portant une armure lourde, êtes-vous MORTEL ou avez-vous des recrues (SERVITEURS) ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="mortel">MORTEL</option>
 						<option value="serviteurs">SERVITEURS</option>
 					</select>
@@ -340,64 +338,64 @@ Ajouter magie dans le deroulant aspect personnage
 				<!-- Ombre -->
 				<div class="creation_semi_homme">
 				En tant que petit aventurier vaillant, êtes-vous CHANGEFORME ou avez-vous une CONNAISSANCE DE LA NATURE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="changeforme">CHANGEFORME</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 					</select>
 				</div>
 				<div class="creation_pillard">
 				En tant qu’explorateur de tombeaux, avez-vous CONNAISSANCE DES ROUAGES ou des porteurs de torches (SERVITEURS) ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_rouages">CONNAISSANCE DES ROUAGES</option>
 						<option value="serviteurs">SERVITEURS</option>
 					</select>
 				</div>
 				<div class="creation_vagabond">
 				En tant qu’errant, êtes-vous CHARMANT ou RUSÉ ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="charmant">CHARMANT</option>
 						<option value="ruse">RUSÉ</option>
 					</select>
 				</div>
 				<div class="creation_gamin">
 				En tant que sans-le-sous, êtes-vous ADROIT ou avez-vous une bonne CONNAISSANCE DE LA RUE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="adroit">ADROIT</option>
 						<option value="connaissance_rue">CONNAISSANCE DE LA RUE</option>
 					</select>
 				</div>
 				<div class="creation_assassin">
 				En tant que tueur sans pitié, êtes-vous BON TIREUR ou SILENCIEUX ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="bon_tireur">BON TIREUR</option>
 						<option value="silencieux">SILENCIEUX</option>
 					</select>
 				</div>
 				<div class="creation_serrurier">
 				En tant que serrurier expert, avez-vous des OUTILS ou êtes-vous ÉRUDIT ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="outils">OUTILS</option>
 						<option value="erudit">ÉRUDIT</option>
 					</select>
 				</div>
 				<div class="creation_voleur">
 				En tant qu’escroc et voleur de grand chemin, êtes-vous BON TIREUR ou SILENCIEUX ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="bon_tireur">BON TIREUR</option>
 						<option value="silencieux">SILENCIEUX</option>
 					</select>
 				</div>
 				<div class="creation_cultiste">
 				À la recherche de sombres connaissances, avez-vous des Suivants fous (SERVITEURS) ou un sombre FAMILIER ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="serviteurs">SERVITEURS</option>
 						<option value="familier">FAMILIER</option>
 					</select>
@@ -405,64 +403,64 @@ Ajouter magie dans le deroulant aspect personnage
 				<!-- Sorcellerie -->
 				<div class="creation_magicien">
 				En tant que catalyseur de puissance brute, êtes-vous BON TIREUR ou CUIRASSÉ ? 
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="bon_tireur">BON TIREUR</option>
 						<option value="cuirasse">CUIRASSÉ</option>
 					</select>
 				</div>
 				<div class="creation_mage">
 				En tant que conjurateur des arcanes, avez-vous un FAMILIER dévoué ou un puissant OBJET MAGIQUE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="familier">FAMILIER</option>
 						<option value="objet_magique">OBJET MAGIQUE</option>
 					</select>
 				</div>
 				<div class="creation_bibliothecaire">
 				À la recherche de sombres secrets, pratiquez-vous la magie interdite (MAGIE) ou avez-vous une Relique maudite (OBJET MAGIQUE) ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="magie">MAGIE</option>
 						<option value="objet_magique">OBJET MAGIQUE</option>
 					</select>
 				</div>
 				<div class="creation_invocateur">
 				En tant que diaboliste, avez-vous une CONNAISSANCE DES ARCANES ou avez-vous un FAMILIER ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_arcanes">CONNAISSANCE DES ARCANES</option>
 						<option value="familier">FAMILIER</option>
 					</select>
 				</div>
 				<div class="creation_ilfe">
 				En tant que dernier survivant de votre espèce, pratiquez-vous la MAGIE ou avezvous une ARME MAGIQUE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="magie">MAGIE</option>
 						<option value="arme_magique">ARME MAGIQUE</option>
 					</select>
 				</div>
 				<div class="creation_alchimiste">
 				En tant que vendeur d’huile de serpent, avez-vous une CONNAISSANCE DES ARCANES ou CONNAISSANCE DE LA NATURE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_arcanes">CONNAISSANCE DES ARCANES</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 					</select>
 				</div>
 				<div class="creation_druide">
 				En tant que serviteur du monde souterrain, avez-vous une CONNAISSANCE DE LA NATURE ou une CONNAISSANCE DES DÉDALES ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 						<option value="connaissance_dedales">CONNAISSANCE DES DÉDALES</option>
 					</select>
 				</div>
 				<div class="creation_sorciere">
 				En tant que devineresse, avezvous une CONNAISSANCE DES ARCANES ou une CONNAISSANCE DE LA NATURE ?
-					<select class="creation_classe2" data-i18n-title="classe" title="Classe" name="attr_creation_aspect2">
-						<option value="0"></option>
+					<select class="creation_classe2" data-i18n-title="classe" title="Second Aspect" name="attr_creation_aspect2">
+						<option value="0">Votre choix...</option>
 						<option value="connaissance_arcanes">CONNAISSANCE DES ARCANES</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 					</select>
@@ -471,12 +469,11 @@ Ajouter magie dans le deroulant aspect personnage
 			<!-- Choix Aspect 3 -->
 			<div class="creation_aspect3">
 			<input type="hidden" class="creation_classe" name="attr_creation_classe"  />
-			Aspect 3
 				<!-- Épée -->
 				<div class="creation_bretteur">
 				Êtes-vous ROBUSTE, RAPIDE ou FORT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="robuste">ROBUSTE</option>
 						<option value="rapide">RAPIDE</option>
 						<option value="fort">FORT</option>
@@ -484,17 +481,17 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_mercenaire">
 				Êtes-vous CHANCEUX, VÉTÉRAN ou avez-vous des épées-liges (SERVITEURS)?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="chanceux">CHANCEUX</option>
 						<option value="veteran">VÉTÉRAN</option>
-						<option value="">SERVITEURS</option>
+						<option value="serviteurs">SERVITEURS</option>
 					</select>
 				</div>
 				<div class="creation_ranger">
 				Êtes-vous RÉSILIENT, ou bien avez-vous une CONNAISSANCE DE LA NATURE, ou un compagnon animal (FAMILIER) ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="resilient">RÉSILIENT</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 						<option value="familier">FAMILIER</option>
@@ -502,8 +499,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_tueur">
 				Êtes-vous RUSÉ, ADROIT ou FORT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="ruse">RUSÉ</option>
 						<option value="adroit">ADROIT</option>
 						<option value="fort">FORT</option>
@@ -511,8 +508,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_gobelours">
 				Êtes-vous FORT, RÉSILIENT ou VOYAGEUR ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="fort">FORT</option>
 						<option value="resilient">RÉSILIENT</option>
 						<option value="voyageur">VOYAGEUR</option>
@@ -520,8 +517,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_hero">
 				Les autres disent que vous êtes BEAU, CHARMANT ou CHANCEUX ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="beau">BEAU</option>
 						<option value="charmant">CHARMANT</option>
 						<option value="chanceux">CHANCEUX</option>
@@ -529,17 +526,17 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_barbare">
 				Êtes-vous ÉNERGIQUE, ROBUSTE ou avez-vous une bonne CONNAISSANCE DE LA NATURE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="energique">ÉNERGIQUE</option>
 						<option value="robuste">ROBUSTE</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
 					</select>
 				</div>
-				<div class="creation_chevvalier">
+				<div class="creation_knight">
 				Êtes-vous ÉNERGIQUE, FORT ou INTIMIDANT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="energique">ÉNERGIQUE</option>
 						<option value="fort">FORT</option>
 						<option value="intimidant">INTIMIDANT</option>
@@ -548,8 +545,8 @@ Ajouter magie dans le deroulant aspect personnage
 				<!-- Ombre -->
 				<div class="creation_semi_homme">
 				Êtes-vous CHARMANT, SILENCIEUX ou avez-vous des AMIS ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="charmant">CHARMANT</option>
 						<option value="silencieux">SILENCIEUX</option>
 						<option value="amis">AMIS</option>
@@ -557,8 +554,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_pillard">
 				Êtes-vous RUSÉ, ADROIT ou ALERTE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="ruse">RUSÉ</option>
 						<option value="adroit">ADROIT</option>
 						<option value="alerte">ALERTE</option>
@@ -566,8 +563,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_vagabond">
 				Êtes-vous RAPIDE, CHANCEUX ou avez-vous des AMIS ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="rapide">RAPIDE</option>
 						<option value="chanceux">CHANCEUX</option>
 						<option value="amis">AMIS</option>
@@ -575,8 +572,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_gamin">
 				Êtes-vous AGILE, RAPIDE ou ALERTE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="agile">AGILE</option>
 						<option value="rapide">RAPIDE</option>
 						<option value="alerte">ALERTE</option>
@@ -584,8 +581,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_assassin">
 				Êtes-vous AGILE, RAPIDE ou ALERTE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="agile">AGILE</option>
 						<option value="rapide">RAPIDE</option>
 						<option value="alerte">ALERTE</option>
@@ -593,8 +590,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_serrurier">
 				Êtes-vous ALERTE, SILENCIEUX ou avez-vous CONNAISSANCE DE LA RUE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="alerte">ALERTE</option>
 						<option value="silencieux">SILENCIEUX</option>
 						<option value="connaissance_rue">CONNAISSANCE DE LA RUE</option>
@@ -602,8 +599,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_voleur">
 				Êtes-vous AGILE, CHARMANT ou ALERTE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="agile">AGILE</option>
 						<option value="charmant">CHARMANT</option>
 						<option value="alerte">ALERTE</option>
@@ -611,8 +608,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_cultiste">
 				Êtes-vous INTIMIDANT, VIEUX ou avez-vous un RANG ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="intimidant">INTIMIDANT</option>
 						<option value="vieux">VIEUX</option>
 						<option value="rang">RANG</option>
@@ -621,8 +618,8 @@ Ajouter magie dans le deroulant aspect personnage
 				<!-- Sorcellerie -->
 				<div class="creation_magicien">
 				Êtes-vous ÉNERGIQUE, FORT ou RÉSILIENT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="energique">ÉNERGIQUE</option>
 						<option value="fort">FORT</option>
 						<option value="resilient">RÉSILIENT</option>
@@ -630,8 +627,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_mage">
 				Êtes-vous ÉRUDIT, VOYAGEUR ou avez-vous une bonne CONNAISSANCE DE LA NATURE ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="erudit">ÉRUDIT</option>
 						<option value="voyageur">VOYAGEUR</option>
 						<option value="connaissance_nature">CONNAISSANCE DE LA NATURE</option>
@@ -639,8 +636,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_bibliothecaire">
 				Êtes-vous INTIMIDANT, ALERTE ou FORTUNÉ ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="intimidant">INTIMIDANT</option>
 						<option value="alerte">ALERTE</option>
 						<option value="fortune">FORTUNÉ</option>
@@ -648,8 +645,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_invocateur">
 				Êtes-vous ÉNERGIQUE, BEAU, ou ÉRUDIT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="energique">ÉNERGIQUE</option>
 						<option value="beau">BEAU</option>
 						<option value="erudit">ÉRUDIT</option>
@@ -657,8 +654,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_ilfe">
 				Êtes-vous BEAU, RUSÉ ou SILENCIEUX ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="beau">BEAU</option>
 						<option value="ruse">RUSÉ</option>
 						<option value="silencieux">SILENCIEUX</option>
@@ -666,8 +663,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_alchimiste">
 				Êtes-vous ADROIT, RUSÉ ou ÉRUDIT ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="adroit">ADROIT</option>
 						<option value="ruse">RUSÉ</option>
 						<option value="erudit">ÉRUDIT</option>
@@ -675,8 +672,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_druide">
 				Êtes-vous FORT, RUSÉ ou MORTEL ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="fort">FORT</option>
 						<option value="ruse">RUSÉ</option>
 						<option value="mortel">MORTEL</option>
@@ -684,8 +681,8 @@ Ajouter magie dans le deroulant aspect personnage
 				</div>
 				<div class="creation_sorciere">
 				Êtes-vous RUSÉE, ÉRUDITE, ou avez-vous un FAMILIER ?
-					<select class="creation_classe3" data-i18n-title="classe" title="Classe" name="attr_creation_aspect3">
-						<option value="0"></option>
+					<select class="creation_classe3" data-i18n-title="classe" title="Troisième Aspect" name="attr_creation_aspect3">
+						<option value="0">Votre choix...</option>
 						<option value="ruse">RUSÉE</option>
 						<option value="erudit">ÉRUDITE</option>
 						<option value="familier">FAMILIER</option>
@@ -707,7 +704,7 @@ Ajouter magie dans le deroulant aspect personnage
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
 	<div class="personnage">
 	
-	<button type="action" class="reset_creation" name="act_page3"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
+	<button type="action" class="reset_creation" name="act_page3" style="position: absolute;"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
 		<!-- Input Hidden -->
 		<input type="hidden" class="archetype" name="attr_archetype" value="epee">
 		<!-- Reset choix du Rôle -->
@@ -735,7 +732,7 @@ Ajouter magie dans le deroulant aspect personnage
 				<option value="gobelours" data-i18n="epee_gobelours">GOBELOURS EN EXIL</option>
 				<option value="hero" data-i18n="epee_hero">HÉROS MALGRÉ LUI</option>
 				<option value="barbare" data-i18n="epee_barbare">BARBARE SAUVAGE</option>
-				<option value="vaillant" data-i18n="epee_chevalier">VAILLANT CHEVALIER</option>
+				<option value="knight" data-i18n="epee_chevalier">VAILLANT CHEVALIER</option>
 			</select>
 		</div>
 		<!-- Ombre -->
@@ -816,7 +813,8 @@ Ajouter magie dans le deroulant aspect personnage
 				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
 				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
 				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="familier" data-i18n="familier">Familier</option>	
+				<option value="magie">Magie</option>
 				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
 				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
 				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
@@ -950,7 +948,8 @@ Ajouter magie dans le deroulant aspect personnage
 				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; MAGIE</option>
 				<option value="arme_magique" data-i18n="arme_magique">Arme magique</option>
 				<option value="change_forme" data-i18n="change_forme">Change-forme</option>
-				<option value="familier" data-i18n="familier">Familier</option>
+				<option value="familier" data-i18n="familier">Familier</option>	
+				<option value="magie">Magie</option>
 				<option value="magie_ciel" data-i18n="magie_ciel">Magie (Ciel)</option>
 				<option value="magie_mer" data-i18n="magie_mer">Magie (Mer)</option>
 				<option value="magie_forge" data-i18n="magie_forge">Magie (Forge)</option>
@@ -2642,7 +2641,7 @@ on("change:creation_classe", function() {
 			else if (creation_classe == 'gobelours') creation_aspect1 = "lignee_gobelours";
 			else if (creation_classe == 'hero') creation_aspect1 = "jeune";
 			else if (creation_classe == 'barbare') creation_aspect1 = "resilient";
-			else if (creation_classe == 'chevalier') creation_aspect1 = "cuirasse";
+			else if (creation_classe == 'knight') creation_aspect1 = "cuirasse";
 			else if (creation_classe == 'semi_homme') creation_aspect1 = "lignee_semi_homme";
 			else if (creation_classe == 'pillard') creation_aspect1 = "connaissance_dedales";
 			else if (creation_classe == 'vagabond') creation_aspect1 = "voyageur";
@@ -2720,12 +2719,11 @@ on('clicked:valider-personnage', function() {
 		let creation_aspect1 = values.creation_aspect1;
 		let creation_aspect2 = values.creation_aspect2;
 		let creation_aspect3 = values.creation_aspect3;
-			if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon";
-			else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur";
-			else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier";
-			else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle";
-			else update_role_data = "intro", update_role = "0";
-		
+			if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon", dice = "[[1D4]]", double_dice = "[[1D4]] [[1D4]]", explose_dice = "[[1D4!!]]", coeur = "4", etoile = "4", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}";
+			else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur", dice = "[[1D6]]", double_dice = "[[1D6]] [[1D6]]", explose_dice = "[[1D6!!]]", explose_dice = "[[1D4!!]]", coeur = "6", etoile = "3", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}";
+			else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier", dice = "[[1D8]]", double_dice = "[[1D8]] [[1D8]]", explose_dice = "[[1D8!!]]", explose_dice = "[[1D4!!]]", coeur = "8", etoile = "2", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}";
+			else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle", dice = "[[1D10]]", double_dice = "[[1D10]] [[1D10]]", explose_dice = "[[1D10!!]]", explose_dice = "[[1D4!!]]", coeur = "10", etoile = "1", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}";
+			else update_role_data = "intro", update_role = "", dice = "", double_dice = "", explose_dice = "", coeur = "", etoile = "", richesse = "", rollmod = "";		
 				
 		setAttrs({
 			"page" : 1,
@@ -2735,23 +2733,19 @@ on('clicked:valider-personnage', function() {
 			"classe" : creation_classe,
 			"aspect_1" : creation_aspect1,
 			"aspect_2" : creation_aspect2,
-			"aspect_3" : creation_aspect3
-			
-			
-			
-		});
-	});
-});
-</script>
-,
-			
-			<!-- "dice": dice,
+			"aspect_3" : creation_aspect3,
+			"dice": dice,
 			"double_dice": double_dice,
 			"explose_dice": explose_dice,
 			"rollmod": rollmod,
 			"coeur": coeur,
 			"etoile": etoile,
-			"richesse": richesse -->
+			"richesse": richesse			
+		});
+	});
+});
+</script>
+
 <!-- TEMP -->
 <script type="text/worker">
    on('clicked:page3', function() {
