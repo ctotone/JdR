@@ -21,6 +21,7 @@
 <!-- Page de Création Personnage -->
 <div class="creation">
 	<button type="action" class="reset_creation" name="act_reset-creation"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">1</span></button>
+	<button type="action" class="reset_creation" name="act_page1"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
 	<input type="hidden" class="creation_role" name="attr_creation_role" value="0"  />
 	<input type="hidden" class="creation_archetype" name="attr_creation_archetype" value="0"  />
 	<input type="hidden" class="creation_classe" name="attr_creation_classe" value="0"  />
@@ -702,6 +703,8 @@
 	<!-- Feuille de personnage -->
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
 	<div class="personnage">
+	
+	<button type="action" class="reset_creation" name="act_page3"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
 		<!-- Input Hidden -->
 		<input type="hidden" class="archetype" name="attr_archetype" value="epee">
 		<!-- Reset choix du Rôle -->
@@ -842,7 +845,7 @@
 				<option value="robuste" data-i18n="robuste">Robuste</option>
 				<option value="ruse" data-i18n="ruse">Rusé</option>
 				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
-				<option value="vieux" data-i18n="veteran">Vétéran</option>
+				<option value="veteran" data-i18n="veteran">Vétéran</option>
 				<option value="vieux" data-i18n="vieux">Vieux</option>
 				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
 				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
@@ -910,6 +913,7 @@
 				<option value="robuste" data-i18n="robuste">Robuste</option>
 				<option value="ruse" data-i18n="ruse">Rusé</option>
 				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="veteran" data-i18n="veteran">Vétéran</option>
 				<option value="vieux" data-i18n="vieux">Vieux</option>
 				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
 				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
@@ -975,6 +979,7 @@
 				<option value="robuste" data-i18n="robuste">Robuste</option>
 				<option value="ruse" data-i18n="ruse">Rusé</option>
 				<option value="silencieux" data-i18n="silencieux">Silencieux</option>
+				<option value="veteran" data-i18n="veteran">Vétéran</option>
 				<option value="vieux" data-i18n="vieux">Vieux</option>
 				<option disabled style="background:gray;font-weight:bold;color:white;">&nbsp;&nbsp;&nbsp;&nbsp; COMBAT</option>
 				<option value="bien_arme" data-i18n="bien_arme">Bien armé</option>
@@ -2702,34 +2707,41 @@ on("change:creation_aspect3", function() {
 <!-- Validation creation personnage -->
 <script type="text/worker">
 on('clicked:valider-personnage', function() {
-	getAttrs(["page"], function(values) {
+  console.log("Activate button clicked");
+	getAttrs(["page", "creation_role", "creation_archetype", "creation_classe", "creation_aspect1", "creation_aspect2", "creation_aspect3"], function(values) {
 	
-		let page = "1";
+		
 		let creation_role = values.creation_role;
-		let page = "1";
 		let creation_archetype = values.creation_archetype;
 		let creation_classe = values.creation_classe;
 		let creation_aspect1 = values.creation_aspect1;
 		let creation_aspect2 = values.creation_aspect2;
-		let creation_aspect3 = values.creation_aspect2;
-		let dice = "1";
-		let double_dice = "1";
-		let explose_dice = "1";
-		let rollmod = "1";
-		let coeur = "1";
-		let etoile = "1";
-		let richesse = "1";
+		let creation_aspect3 = values.creation_aspect3;
+			if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon";
+			else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur";
+			else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier";
+			else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle";
+			else update_role_data = "intro", update_role = "0";
 		
 				
 		setAttrs({
-			"page": page,
-			"role": creation_role,
-			"role_name": role_name,
-			"archetype": creation_archetype,
-			"classe": creation_classe,
-			"aspect_1": creation_aspect1,
-			"aspect_2": creation_aspect2,
-			"aspect_3": creation_aspect3,
+			"page" : 1,
+			"role_name" : update_role,
+			"role" : update_role_data,
+			"archetype" : creation_archetype,
+			"classe" : creation_classe,
+			"aspect_1" : creation_aspect1,
+			"aspect_2" : creation_aspect2,
+			"aspect_3" : creation_aspect3
+			
+			
+			
+		});
+	});
+});
+</script>
+,
+			
 			"dice": dice,
 			"double_dice": double_dice,
 			"explose_dice": explose_dice,
@@ -2737,10 +2749,21 @@ on('clicked:valider-personnage', function() {
 			"coeur": coeur,
 			"etoile": etoile,
 			"richesse": richesse
-			
-			
-			
-		});
-	});
+<!-- TEMP -->
+<script type="text/worker">
+   on('clicked:page3', function() {
+
+	setAttrs({
+			"page": 3
+			});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:page1', function() {
+
+	setAttrs({
+			"page": 1
+			});
 });
 </script>
