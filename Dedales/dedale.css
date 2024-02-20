@@ -64,7 +64,7 @@ div.page_perso_info {
 .creation_gobelours,
 .creation_hero,
 .creation_barbare,
-.creation_chevvalier,
+.creation_knight,
 .creation_semi_homme,
 .creation_pillard,
 .creation_vagabond,
@@ -106,7 +106,7 @@ input[value*="tueur"].creation_classe ~ div.creation_aspect,
 input[value*="gobelours"].creation_classe ~ div.creation_aspect,
 input[value*="hero"].creation_classe ~ div.creation_aspect,
 input[value*="barbare"].creation_classe ~ div.creation_aspect,
-input[value*="vaillant"].creation_classe ~ div.creation_aspect,
+input[value*="knight"].creation_classe ~ div.creation_aspect,
 input[value*="semi_homme"].creation_classe ~ div.creation_aspect,
 input[value*="pillard"].creation_classe ~ div.creation_aspect,
 input[value*="vagabond"].creation_classe ~ div.creation_aspect,
@@ -130,7 +130,7 @@ input[value*="tueur"].creation_classe ~ div.creation_tueur,
 input[value*="gobelours"].creation_classe ~ div.creation_gobelours,
 input[value*="hero"].creation_classe ~ div.creation_hero,
 input[value*="barbare"].creation_classe ~ div.creation_barbare,
-input[value*="vaillant"].creation_classe ~ div.creation_chevvalier,
+input[value*="knight"].creation_classe ~ div.creation_knight,
 input[value*="semi_homme"].creation_classe ~ div.creation_semi_homme,
 input[value*="pillard"].creation_classe ~ div.creation_pillard,
 input[value*="vagabond"].creation_classe ~ div.creation_vagabond,
@@ -159,6 +159,7 @@ div.intro {
 	border-radius: 15px;
     box-shadow: 0px 0px 15px 5px #0a0a0ac4;
 }
+
 div.intro_texte {
 	font-size: 25px;
 	margin-bottom: 10px;
@@ -170,6 +171,17 @@ div.intro_texte {
 
 div.boutton_intro {
 	text-align: center;
+}
+
+div.creation {  
+	width: 845px;
+	height: 520px;
+	box-shadow: 0px 0px 15px 5px #0a0a0ac4;
+	border-radius: 15px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/background_creation_character.jpg);
+	background-size: 845px 520px;
+	padding-top: 5px;
+	margin-left: 9px;
 }
 
 div.personnage {
@@ -718,6 +730,10 @@ input[type=number] {
     color: #b78300;
 }
 
+span.creation_titre {
+	font-size: 19px;
+}
+
 /* Bouton choix intro et Roll */
 span.picto_reset_intro {
 	font-family: 'Pictos';
@@ -727,6 +743,121 @@ span.picto_reset_intro {
 span.picto_reset {
 	font-family: 'Pictos';
     font-size: 28px;
+}
+
+span.picto_creation {
+	font-family: 'Pictos';
+    font-size: 28px;
+	margin-right: 10px;
+}
+
+
+
+select.creation_role,
+select.creation_archetype_select,
+select.creation_classe,
+select.creation_classe_select,
+select.creation_classe1,
+select.creation_classe2,
+select.creation_classe3
+{
+	font-size: 15px;
+	color: #970404;
+	text-align: right;
+	border: none;
+	width: auto;
+	margin-top: -5px;
+}
+
+select.creation_classe1,
+select.creation_classe2,
+select.creation_classe3 {
+	margin-top: 0px;
+	text-align: left;
+	margin-left: 10px;
+}
+
+select.creation_classe1 {
+	pointer-events: none;
+}
+
+select.creation_role {
+	width: auto;
+	margin-left: -10px;
+}
+
+select.creation_archetype_select{
+	width: auto;
+	margin-left: 145px;
+}
+
+select.creation_classe {
+	width: auto;
+}
+
+select.creation_classe_select {
+	width: 300px;
+	margin-left: 90px;
+}
+
+div.creation_role {
+	margin-right: 90px;
+	border: 1px solid black;
+	margin-left: 200px;
+	box-shadow: 5px 5px 5px #0d0d0da6;
+	text-align: center;
+	background: #f0f1ebd9;
+	border-radius: 25px;
+}
+
+div.creation_archetype {
+	margin-top: 5px;
+	margin-right: 270px;
+	border: 1px solid black;
+	margin-left: 90px;
+	box-shadow: 5px 5px 5px #0d0d0da6;
+	text-align: center;
+	background: #f0f1eb8c;
+	border-radius: 25px;
+}
+
+div.creation_classe {
+	margin-top: 5px;
+	margin-left: 310px;
+	border: 1px solid black;
+	margin-right: 90px;
+	box-shadow: 5px 5px 5px #0d0d0da6;
+	text-align: center;
+	background: #f0f1eb8c;
+	border-radius: 25px;
+}
+
+div.creation_aspect { 
+	margin-top: 5px;
+	margin-left: 60px;
+	border: 1px solid black;
+	margin-right: 50px;
+	box-shadow: 5px 5px 5px #0d0d0da6;
+	text-align: left;
+	background: #f0f1ebd9;
+	padding-left: 12px;
+	border-radius: 25px;
+}
+
+div.creation_aspect1 { 
+	margin-top: 5px;
+	margin-left: 30px;
+	margin-right: 10px;
+}
+
+div.creation_aspect2 {  
+	margin-left: 60px;
+	margin-right: 130px;
+}
+
+div.creation_aspect3 {  
+	margin-left: 90px;
+	margin-right: 90px;
 }
 
 .charsheet button[type=action].intro_reset::before,
