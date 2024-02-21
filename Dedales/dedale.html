@@ -1,5 +1,6 @@
 <!-- page 84 Barbare faute de frappe --> 
 <!-- Vétéran pas dans la liste des Aspect mais dans le héro -->
+<!-- Feuille de personnage Archetype / Aspect ==> Il n'y a pas une inversion ? -->
 
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
 <input type="hidden" name="attr_page"  value="1"  />
@@ -9,20 +10,29 @@
 	<div class="intro_texte">
 		Choisissez le rôle de votre personnage
 	</div>
-	<div class="boutton_intro">
-		<button type="action" class="paragon_intro" name="act_intro-paragon"></button>
-		<button type="action" class="eclaireur_intro" name="act_intro-eclaireur"></button>
-		<br>
-		<button type="action" class="guerrier_intro" name="act_intro-guerrier"></button>
-		<button type="action" class="sentinelle_intro" name="act_intro-sentinelle"></button>
+	<div class="wrapper_intro">
+		<div class="boutton_intro">
+			<button type="action" class="paragon_intro" name="act_intro-paragon" title="Parangon"></button>
+			<button type="action" class="eclaireur_intro" name="act_intro-eclaireur" title="Eclaireur"></button>
+			<br>
+			<button type="action" class="guerrier_intro" name="act_intro-guerrier" title="Guerrier"></button>
+			<button type="action" class="sentinelle_intro" name="act_intro-sentinelle" title="Sentinelle"></button>
+		</div>
+		<div class="boutton_creation">
+			<button type="action" class="boutton_creation" name="act_page3" style="position: absolute;" title="Utilisez l'outil de création de personnage"></button>
+			<div class="texte_creation">Outil de création de personnage</div>
+		</div>
+		
 	</div>
 </div>
 <input type="hidden" class="select_page" name="attr_page" value="1"  />
 
 <!-- Page de Création Personnage -->
 <div class="creation">
-	<button type="action" class="reset_creation" name="act_reset-creation"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">1</span></button>
-	<button type="action" class="reset_creation" name="act_page1"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
+	<div class="reset_creation">
+		<button type="action" class="button_creation" name="act_page1"><span class="picto_reset" title="Retour vers la feuille de personnage">8</span></button>
+		<button type="action" class="button_creation" name="act_reset-creation"><span class="picto_reset" title="Réinitialiser vos choix">1</span></button>
+	</div>
 	<input type="hidden" class="creation_role" name="attr_creation_role" value="0"  />
 	<input type="hidden" class="creation_archetype" name="attr_creation_archetype" value="0"  />
 	<input type="hidden" class="creation_classe" name="attr_creation_classe" value="0"  />
@@ -703,8 +713,6 @@
 	<!-- Feuille de personnage -->
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
 	<div class="personnage">
-	
-	<button type="action" class="reset_creation" name="act_page3" style="position: absolute;"><span class="picto_reset" title="Réinitialiser vos Coeurs et Étoiles">2</span></button>
 		<!-- Input Hidden -->
 		<input type="hidden" class="archetype" name="attr_archetype" value="epee">
 		<!-- Reset choix du Rôle -->
@@ -2751,15 +2759,24 @@ on('clicked:valider-personnage', function() {
    on('clicked:page3', function() {
 
 	setAttrs({
-			"page": 3
+			"creation_role": 0,
+			"creation_archetype": 0,
+			"creation_classe": 0,
+			"creation_aspect1": 0,
+			"creation_aspect2": 0,
+			"creation_aspect3": 0,
+			"page": 3,
+			"role": 1
 			});
 });
 </script>
 
 <script type="text/worker">
    on('clicked:page1', function() {
+		
 
 	setAttrs({
+			"role": "intro",
 			"page": 1
 			});
 });
