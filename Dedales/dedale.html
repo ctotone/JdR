@@ -2,8 +2,13 @@
 <!-- Vétéran pas dans la liste des Aspect mais dans le héro -->
 <!-- Feuille de personnage Archetype / Aspect ==> Il n'y a pas une inversion ? -->
 
+<!-- --------------------------------- -->
+<!-- ----- FEUILLE DE PERSONNAGE ----- -->
+<!-- --------------------------------- -->
+
+<!-- Valeurs cachées -->
 <input type="hidden" class="sheet-sheettoggle" name="attr_role"  value="intro"  />
-<input type="hidden" name="attr_page"  value="1"  />
+<input type="hidden" class="select_page" name="attr_page" value="1"  />
 
 <!-- Introduction -->
 <div class="intro">
@@ -25,7 +30,6 @@
 		
 	</div>
 </div>
-<input type="hidden" class="select_page" name="attr_page" value="1"  />
 
 <!-- Page de Création Personnage -->
 <div class="creation">
@@ -709,15 +713,15 @@
 </div>
 
 <!-- Page de Notes -->
-	<div class="note">
-		<div class="note_titre">Mon Carnet de Route</div>
-		<div class="note_data">
-			<textarea class="note" name="attr_note" spellcheck="false"></textarea>
-		</div>
-		<!-- Page suivante -->
-		<div class="page_personnage">
-		<button type="action" class="page_up" name="act_page-personnage" title="Votre Personnage" style="height: 520px;padding-top: 170px;">Votre Personnage...</button></div>
+<div class="note">
+	<div class="note_titre">Mon Carnet de Route</div>
+	<div class="note_data">
+		<textarea class="note" name="attr_note" spellcheck="false"></textarea>
 	</div>
+	<!-- Page suivante -->
+	<div class="page_personnage">
+	<button type="action" class="page_up" name="act_page-personnage" title="Votre Personnage" style="height: 520px;padding-top: 170px;">Votre Personnage...</button></div>
+</div>
 
 <!-- Page de Personnage -->
 <div class="page_perso_1">
@@ -1166,7 +1170,12 @@
 	</div>
 </div>
 
-<!-- Roll template -->
+
+
+<!-- ------------------------- -->
+<!-- ----- ROLL TEMPLATE ----- -->
+<!-- ------------------------- -->
+
 <!-- dedale -->
 <rolltemplate class="sheet-rolltemplate-dedale">
 <div class="sheet-container">
@@ -2471,20 +2480,26 @@
 {{/mort_desavantage}}
 </rolltemplate>
 
-<!-- SCRIPT -->
+
+
+<!-- --------------------------- -->
+<!-- --------- SCRIPT ---------- -->
+<!-- --------------------------- -->
+
 <!-- Intro Paragon -->
 <script type="text/worker">
 on('clicked:intro-paragon', function() {
 
 	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
+		
 		setAttrs({
-			role: "1",
-			role_name: "paragon",
-			coeur: "4",
-			etoile: "4",
-			richesse: "2",
-			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}",
-			page: "1"
+		role: "1",
+		role_name: "paragon",
+		coeur: "4",
+		etoile: "4",
+		richesse: "2",
+		rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}",
+		page: "1"
 		});
 	});
 });
@@ -2495,14 +2510,15 @@ on('clicked:intro-paragon', function() {
 on('clicked:intro-eclaireur', function() {
 
 	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
+	
 		setAttrs({
-			role: "2",
-			role_name: "eclaireur",
-			coeur: "6",
-			etoile: "3",
-			richesse: "2",
-			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}",
-			page: "1"
+		role: "2",
+		role_name: "eclaireur",
+		coeur: "6",
+		etoile: "3",
+		richesse: "2",
+		rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}",
+		page: "1"
 		});
 	});
 });
@@ -2513,14 +2529,15 @@ on('clicked:intro-eclaireur', function() {
 on('clicked:intro-guerrier', function() {
 
 	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
+	
 		setAttrs({
-			role: "3",
-			role_name: "guerrier",
-			coeur: "8",
-			etoile: "2",
-			richesse: "2",
-			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}",
-			page: "1"
+		role: "3",
+		role_name: "guerrier",
+		coeur: "8",
+		etoile: "2",
+		richesse: "2",
+		rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}",
+		page: "1"
 		});
 	});
 });
@@ -2531,14 +2548,15 @@ on('clicked:intro-guerrier', function() {
 on('clicked:intro-sentinelle', function() {
 
 	getAttrs(["role", "role_name", "coeur", "etoile", "richesse", "rollmod"], function(values) {
+		
 		setAttrs({
-			role: "4",
-			role_name: "sentinelle",
-			coeur: "10",
-			etoile: "1",
-			richesse: "2",
-			rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[4]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}",
-			page: "1"
+		role: "4",
+		role_name: "sentinelle",
+		coeur: "10",
+		etoile: "1",
+		richesse: "2",
+		rollmod: "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[4]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}",
+		page: "1"
 		});
 	});
 });
@@ -2548,14 +2566,14 @@ on('clicked:intro-sentinelle', function() {
 <script type="text/worker">
    on('clicked:intro-reset', function() {
 
-
 	getAttrs(["role", "coeur", "etoile", "richesse", "rollmod"], function(values) {
+		
 		setAttrs({
-			role: "intro",
-			coeur: "0",
-			etoile: "0",
-			dice: "0",
-			richesse: "0"
+		role: "intro",
+		coeur: "0",
+		etoile: "0",
+		dice: "0",
+		richesse: "0"
 		});
 	});
 });
@@ -2567,11 +2585,13 @@ on('clicked:intro-sentinelle', function() {
 
 	getAttrs(["role", "coeur", "etoile"], function(values) {
 		let role = parseInt(values["role"]) || 0;
+		
 			if (role == 1 ) coeur = "4", etoile = "4";
             else if (role == 2 ) coeur = "6", etoile = "3";
             else if (role == 3 ) coeur = "8", etoile = "2";
             else if (role == 4 ) coeur = "10", etoile = "1";
-		setAttrs({
+			
+			setAttrs({
 			"coeur": coeur,
 			"etoile": etoile
 		});
@@ -2582,8 +2602,10 @@ on('clicked:intro-sentinelle', function() {
 <!-- Mise à jour type de dés en fonction du rôle -->
 <script type="text/worker">
 on("change:role", function() {
+
     getAttrs(["role"], function(values) {
          let role = parseInt(values["role"]) || 0;
+		 
 			if (role == '1') dice = "[[1D4]]", double_dice = "[[1D4]] [[1D4]]", explose_dice = "[[1D4!!]]";
 			else if (role == '2') dice = "[[1D6]]", double_dice = "[[1D6]] [[1D6]]", explose_dice = "[[1D6!!]]";
 			else if (role == '3') dice = "[[1D8]]", double_dice = "[[1D8]] [[1D8]]", explose_dice = "[[1D8!!]]";
@@ -2603,13 +2625,15 @@ on("change:role", function() {
 <script type="text/worker">
    on('clicked:change-page', function() {
 
-
 	getAttrs(["page"], function(values) {
 		let page = parseInt(values["page"]) || 0;
-				if (page == '1') page = "2";
-				else if (page == '2') page = "1";
-				else page = "1";
-		setAttrs({
+		
+			if (page == '1') page = "2";
+			else if (page == '2') page = "1";
+			
+			else page = "1";
+			
+			setAttrs({
 			page: page
 		});
 	});
@@ -2620,8 +2644,8 @@ on("change:role", function() {
    on('clicked:page-note', function() {
 
 		setAttrs({
-			"page": 4
-		});
+		"page": 4
+	});
 });
 </script>
 
@@ -2629,16 +2653,46 @@ on("change:role", function() {
    on('clicked:page-personnage', function() {
 
 		setAttrs({
-			"page": 1
-		});
+		"page": 1
+	});
+});
+</script>
+
+<!-- Retour Page création -->
+<script type="text/worker">
+   on('clicked:page3', function() {
+
+		setAttrs({
+		"creation_role": 0,
+		"creation_archetype": 0,
+		"creation_classe": 0,
+		"creation_aspect1": 0,
+		"creation_aspect2": 0,
+		"creation_aspect3": 0,
+		"page": 3,
+		"role": 1
+	});
+});
+</script>
+
+<!-- Retour Page Personnage -->
+<script type="text/worker">
+   on('clicked:page1', function() {	
+
+		setAttrs({
+		"role": "intro",
+		"page": 1
+	});
 });
 </script>
 
 <!-- Mise à jour Ténèbres -->
 <script type="text/worker">
 on("change:total_tenebres", function() {
+
     getAttrs(["total_tenebres"], function(values) {
          let total_tenebres = parseInt(values["total_tenebres"]) || 0;
+		 
 			if (total_tenebres == '1') tenebres_progress = "1";
 			else if (total_tenebres == '2') tenebres_progress = "2";
 			else if (total_tenebres == '3') tenebres_progress = "3";
@@ -2673,9 +2727,11 @@ on("change:total_tenebres", function() {
 <!-- MAJ aspect 1 -->
 <script type="text/worker">
 on("change:creation_classe", function() {
+
     getAttrs(["creation_classe", "creation_aspect1"], function(values) {
 		 let creation_classe = values.creation_classe;
 		 let creation_aspect1 = parseInt(values["creation_aspect1"]) || 0;
+		 
 			if (creation_classe == 'bretteur') creation_aspect1 = "precis";
 			else if (creation_classe == 'mercenaire') creation_aspect1 = "bien_arme";
 			else if (creation_classe == 'ranger') creation_aspect1 = "bon_tireur";
@@ -2713,12 +2769,12 @@ on("change:creation_classe", function() {
 <script type="text/worker">
 on("change:creation_archetype", function() {
 
-			setAttrs({
-			"creation_classe": 0,
-			"creation_aspect1": 0,
-			"creation_aspect2": 0,
-			"creation_aspect3": 0
-        });
+		setAttrs({
+		"creation_classe": 0,
+		"creation_aspect1": 0,
+		"creation_aspect2": 0,
+		"creation_aspect3": 0
+	});
 });
 </script>
 
@@ -2726,21 +2782,24 @@ on("change:creation_archetype", function() {
 <script type="text/worker">
 on("change:creation_classe", function() {
 
-			setAttrs({
-			"creation_aspect1": 0,
-			"creation_aspect2": 0,
-			"creation_aspect3": 0
-        });
+		setAttrs({
+		"creation_aspect1": 0,
+		"creation_aspect2": 0,
+		"creation_aspect3": 0
+	});
 });
 </script>
 
 <!-- Bouton valider au dernier aspect -->
 <script type="text/worker">
 on("change:creation_aspect3", function() {
+
 	getAttrs(["creation_aspect3"], function(values) {
          let creation_aspect3 = values.creation_aspect3;
+		 
 			if (creation_aspect3 == '0') creation_validation = "0";
 			else creation_validation = "1";
+			
 			setAttrs({
 			"creation_validation": creation_validation
         });
@@ -2753,7 +2812,6 @@ on("change:creation_aspect3", function() {
 on('clicked:valider-personnage', function() {
   console.log("Activate button clicked");
 	getAttrs(["page", "creation_role", "creation_archetype", "creation_classe", "creation_aspect1", "creation_aspect2", "creation_aspect3"], function(values) {
-	
 		
 		let creation_role = values.creation_role;
 		let creation_archetype = values.creation_archetype;
@@ -2761,13 +2819,14 @@ on('clicked:valider-personnage', function() {
 		let creation_aspect1 = values.creation_aspect1;
 		let creation_aspect2 = values.creation_aspect2;
 		let creation_aspect3 = values.creation_aspect3;
+		
 			if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon", dice = "[[1D4]]", double_dice = "[[1D4]] [[1D4]]", explose_dice = "[[1D4!!]]", coeur = "4", etoile = "4", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}";
 			else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur", dice = "[[1D6]]", double_dice = "[[1D6]] [[1D6]]", explose_dice = "[[1D6!!]]", explose_dice = "[[1D4!!]]", coeur = "6", etoile = "3", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}";
 			else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier", dice = "[[1D8]]", double_dice = "[[1D8]] [[1D8]]", explose_dice = "[[1D8!!]]", explose_dice = "[[1D4!!]]", coeur = "8", etoile = "2", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}";
 			else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle", dice = "[[1D10]]", double_dice = "[[1D10]] [[1D10]]", explose_dice = "[[1D10!!]]", explose_dice = "[[1D4!!]]", coeur = "10", etoile = "1", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}";
 			else update_role_data = "intro", update_role = "", dice = "", double_dice = "", explose_dice = "", coeur = "", etoile = "", richesse = "", rollmod = "";		
 				
-		setAttrs({
+			setAttrs({
 			"page" : 1,
 			"role_name" : update_role,
 			"role" : update_role_data,
@@ -2788,30 +2847,4 @@ on('clicked:valider-personnage', function() {
 });
 </script>
 
-<!-- TEMP -->
-<script type="text/worker">
-   on('clicked:page3', function() {
 
-	setAttrs({
-			"creation_role": 0,
-			"creation_archetype": 0,
-			"creation_classe": 0,
-			"creation_aspect1": 0,
-			"creation_aspect2": 0,
-			"creation_aspect3": 0,
-			"page": 3,
-			"role": 1
-			});
-});
-</script>
-
-<script type="text/worker">
-   on('clicked:page1', function() {
-		
-
-	setAttrs({
-			"role": "intro",
-			"page": 1
-			});
-});
-</script>
