@@ -708,11 +708,25 @@
 	</div>
 </div>
 
+<!-- Page de Notes -->
+	<div class="note">
+		<div class="note_titre">Mon Carnet de Route</div>
+		<div class="note_data">
+			<textarea class="note" name="attr_note" spellcheck="false"></textarea>
+		</div>
+		<!-- Page suivante -->
+		<div class="page_personnage">
+		<button type="action" class="page_up" name="act_page-personnage" title="Votre Personnage" style="height: 520px;padding-top: 170px;">Votre Personnage...</button></div>
+	</div>
+
 <!-- Page de Personnage -->
 <div class="page_perso_1">
 	<!-- Feuille de personnage -->
 	<input type="hidden" class="sheet-sheettoggle" name="attr_role" value="paragon">		
 	<div class="personnage">
+		<div class="page_note">
+			<button type="action" class="page_note" name="act_page-note" title="Note">Votre Carnet de Route...</button>
+		</div>
 		<!-- Input Hidden -->
 		<input type="hidden" class="archetype" name="attr_archetype" value="epee">
 		<!-- Reset choix du Rôle -->
@@ -2599,6 +2613,24 @@ on("change:role", function() {
 			page: page
 		});
 	});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:page-note', function() {
+
+		setAttrs({
+			"page": 4
+		});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:page-personnage', function() {
+
+		setAttrs({
+			"page": 1
+		});
 });
 </script>
 
