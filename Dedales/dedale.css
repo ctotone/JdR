@@ -28,6 +28,7 @@ div.sheet_selector {
 div.intro,
 div.creation,
 div.personnage,
+div.note,
 div.page_perso_1,
 div.page_perso_info {
 	display: none;
@@ -43,7 +44,8 @@ div.page_perso_info {
 
 .charsheet .select_page[value="1"] ~ div.page_perso_1,
 .charsheet .select_page[value="2"] ~ div.page_perso_info,
-.charsheet .select_page[value="3"] ~ div.creation {
+.charsheet .select_page[value="3"] ~ div.creation,
+.charsheet .select_page[value="4"] ~ div.note{
     display: block;
 }
 
@@ -211,14 +213,29 @@ div.creation {
 	margin-bottom: 20px;
 }
 
-div.personnage {
-    background-image: var(--charsheet-background);
-    width: 845px;
-    height: 1275px;
-    box-shadow: 0px 0px 15px 5px #0a0a0ac4;
-    margin-bottom: 20px;
-    border-radius: 5px 0px 0px 5px;
-    margin-left: -10px;
+div.note {  
+	width: 830px;
+	height: 520px;
+	box-shadow: 0px 0px 15px 5px #0a0a0ac4;
+	border-radius: 0px 15px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Dedales/img/background_creation_character.jpg);
+	background-size: 830px 520px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+div.personnage {  
+	background-image: var(--charsheet-background);
+	width: 820px;
+	height: 1237px;
+	box-shadow: 0px 0px 15px 5px #0a0a0ac4;
+	margin-bottom: 20px;
+	border-radius: 5px 0px 0px 5px;
+	margin-left: 10px;
+	background-size: 820px 1237px;
 }
 
 div.page_perso_info {
@@ -249,6 +266,8 @@ body.sheet-darkmode div.page_perso_info {
 } 
 
 div.sheet_selector,
+div.note_titre,
+div.note_data,
 div.name,
 div.archetype,
 div.classe_epee,
@@ -273,6 +292,8 @@ div.type_jet,
 div.reset,
 div.page_suivante,
 div.page_precedente,
+div.page_personnage,
+div.page_note,
 div.total_tenebres,
 div.total_tresors,
 div.decompte_tenebres,
@@ -281,123 +302,152 @@ div.decompte_tresors {
 	z-index: auto;
 }
 
+div.note_titre {
+	margin-top: 60px;
+	text-align: center;
+	width: 825px;
+	font-size: 40px;
+}
+
+div.note_data {
+	margin-top: 140px;
+	margin-left: 70px;
+	width: 685px;
+	margin-right: 70px;
+}
+
 div.name {
-	margin-top: 107px;
-	margin-left: 37px;
+	margin-top: 95px;
+	margin-left: 30px;
 }
 
 div.archetype {
-	margin-top: 289px;
-	margin-left: 40px;
+	margin-top: 280px;
+	margin-left: 35px;
 }
 
 div.classe_epee,
 div.classe_ombre,
 div.classe_sorcellerie {
-	margin-top: 293px;
-    margin-left: 212px;
+	margin-top: 280px;
+    margin-left: 199px;
 }
 
 div.etat_custom {
-    margin-left: 120px;
-    margin-top: 805px;
+    margin-left: 111px;
+    margin-top: 782px;
     width: 300px;
     height: 40px;
 }
 
 div.aspect_1 {
-	margin-left: 127px;	
-    margin-top: 344px;
+	margin-left: 119px;	
+    margin-top: 331px;
 }
 
 div.aspect_2 {
-	margin-left: 140px;
-    margin-top: 450px;
+	margin-left: 132px;
+    margin-top: 434px;
 }
 
 div.aspect_3 {
-	margin-left: 155px;
-    margin-top: 553px;
+	margin-left: 143px;
+    margin-top: 537px;
 }
 
 div.aspect_4 {
-	margin-left: 170px;
-    margin-top: 659px;
+	margin-left: 155px;
+    margin-top: 641px;
 }
 
 div.check_intermediaire {    
-	margin-left: 356px;
-	margin-top: 734px;
+	margin-left: 342px;
+	margin-top: 711px;
 }
 
 div.check_vierge {    
-	margin-left: 43px;
-	margin-top: 780px;
+	margin-left: 40px;
+	margin-top: 756px;
 }
 
 div.check_tendu {    
-	margin-left: 39px;
-	margin-top: 858px;
+	margin-left: 36px;
+	margin-top: 832px;
 }
 
 div.check_epuise {    
-	margin-left: 59px;
-	margin-top: 942px;
+	margin-left: 55px;
+	margin-top: 913px;
 }
 
 div.check_blesse {    
-	margin-left: 39px;
-	margin-top: 1021px;
+	margin-left: 37px;
+	margin-top: 989px;
 }
 
 div.check_marque {    
-	margin-left: -2px;
-	margin-top: 1096px;
+	margin-left: -4px;
+	margin-top: 1062px;
 }
 
 div.richesse {
-    margin-top: 635px;
-    margin-left: 19px;
+    margin-top: 617px;
+    margin-left: 10px;
 }
 
 div.coeur {
-    margin-top: 1197px;
+    margin-top: 1160px;
     margin-left: 15px;
     border-radius: 35px;
 }
 
 div.etoile {
-    margin-top: 1195px;
-    margin-left: 372px;
+    margin-top: 1158px;
+    margin-left: 357px;
 }
 
 div.dice {  
-	margin-top: 1200px;
-	margin-left: 93px;
+	margin-top: 1168px;
+	margin-left: 87px;
 }
 
 div.type_jet {
-	margin-top: 1217px;
-	margin-left: 154px;
+	margin-top: 1180px;
+	margin-left: 146px;
 }
 
 div.reset {
-    margin-top: 1247px;
+    margin-top: 1206px;
     margin-left: 4px;
     border-radius: 35px;
 }
 
 div.page_suivante {
-    margin-top: 0px;
-    margin-left: 845px;
-    border-radius: 0px 20px 20px 0px;
-    width: 25px;
-    height: 1275px;
+	margin-top: 0px;
+	margin-left: 820px;
+	border-radius: 0px 20px 20px 0px;
+	width: 25px;
+	height: 1237px;
+}
+
+div.page_personnage {
+	margin-top: -5px;
+	margin-left: 830px;
+	border-radius: 0px 20px 20px 0px;
+	width: 25px;
+	height: 520px;
 }
 
 div.page_precedente {
     margin-top: 0px;
     margin-left: -20px;
+    border-radius: 2px 0px 0px 20px;
+    width: 25px;
+}
+
+div.page_note {
+    margin-top: 0px;
+    margin-left: -10px;
     border-radius: 2px 0px 0px 20px;
     width: 25px;
 }
@@ -634,6 +684,23 @@ input[type="radio"].tenebre_checkbox_max:checked + label  {
 	font-weight: bold;
 	cursor: pointer;
 	height: 60px;
+}
+
+.charsheet textarea.note {  
+	width: 686px;
+	outline: none;
+	resize: none;
+	padding: 15px;
+	font-family: 'Trade Winds';
+	font-size: 17px;
+	line-height: 1.1;
+	border: 1px solid #0000002b;
+	cursor: pointer;
+	box-shadow: 0px 0px 15px 1px #0d0d0deb;
+	background: #f0f1ebb3;
+	border-radius: 10px;
+	height: 295px;
+	color: #000000ba;
 }
 
 .charsheet input.etat_custom { 
@@ -914,7 +981,8 @@ div.creation_valider {
 
 /* Boutton changement de PAGE */
 .charsheet button[type=action].page_up,
-.charsheet button[type=action].page_down{
+.charsheet button[type=action].page_down,
+.charsheet button[type=action].page_note{
     padding: 0;
     color: #ffffff54;
     border: none;
@@ -926,7 +994,7 @@ div.creation_valider {
 }
 
 .charsheet button[type=action].page_up {
-    height: 1275px;	
+    height: 1237px;	
 	box-shadow: 3px -1px 11px 3px #0a0a0ac4;
     border-radius: 5px 20px 20px 5px;
     margin-left: -2px;
@@ -948,6 +1016,18 @@ div.creation_valider {
     border-right: 1px solid black;
 }
 
+.charsheet button[type=action].page_note{
+    height: 1237px;
+    box-shadow: -6px -3px 7px 1px #29292957;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: -5px;
+    padding-right: 3px;
+    background: rgb(99,98,98);
+    background: linear-gradient(90deg, rgb(74, 73, 73) 20%, rgba(0, 0, 0, 0.73) 50%);
+    border-right: 1px solid black;
+	padding-bottom: 580px
+}
+
 body.sheet-darkmode button[type=action].page_up {
     box-shadow: 5px 0px 9px 1px #cdcdcd75;
 }
@@ -955,9 +1035,15 @@ body.sheet-darkmode button[type=action].page_up {
 body.sheet-darkmode button[type=action].page_down {
     box-shadow: -2px -3px 4px 1px #cdcdcd57;
 }
+
+body.sheet-darkmode button[type=action].page_note {
+    box-shadow: -2px -3px 4px 1px #cdcdcd57;
+}
  
 .charsheet button[type=action].page_up:hover,
-.charsheet button[type=action].page_down:hover {
+.charsheet button[type=action].page_down:hover,
+.charsheet button[type=action].page_note:hover
+{
     color: #ffffffb5;
 }
 
@@ -968,8 +1054,12 @@ body.sheet-darkmode button[type=action].page_down {
 
 .charsheet button[type=action].page_down:hover{
 	background: rgb(112,30,30);
-	background: linear-gradient(90deg, rgba(112,30,30,1) 20%, rgb(0 0 0 / 73%) 100%);
-	
+	background: linear-gradient(90deg, rgba(112,30,30,1) 20%, rgb(0 0 0 / 73%) 100%);	
+}
+
+.charsheet button[type=action].page_note:hover{
+	background: rgb(112,30,30);
+	background: linear-gradient(90deg, rgba(112,30,30,1) 20%, rgb(0 0 0 / 73%) 100%);	
 }
 
 /* Boutton RESET */
