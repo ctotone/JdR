@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital@0;1&display=swap');
+
+
+/* Core Format*/
+.charsheet {
+	--noir : #2c2e35;
+	--bleu : #2249a5;
+	--bleu_clair : #4e6db7;
+	--vert_clair : #0b8a8d;
+	--font_amiri: "Amiri", serif;
+	--font_basker: "Baskervville", serif;
+    background-color: var(--vert_clair);
+    padding: 20px !important;	
+	color: var(--bleu);
+	font-family: var(--font_amiri);
+	font-size: 16px;
+	font-weight: 400;
+	border: none;
+}
+
+body.sheet-darkmode .charsheet {
+    background-color: #1f1f1f;
+}
+
+div.principale {
+	background: white;
+}
+
+div.personnage {
+	background: white;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+span.lettre {
+	color: var(--bleu);
+}
+
+/* Structure Personnage*/
+
+.wrapper_personnage {  
+	display: grid;
+    grid-template-columns: 250px 10px 250px 10px 250px;
+	grid-auto-rows: 30px;
+}
+
+div.cat_logo {
+	border: 1px solid var(--bleu); 
+	grid-column: 5;
+	grid-row: 1/11;
+}
+
+div.cat_name {
+	grid-column: 1;
+	grid-row: 1;
+	white-space : nowrap;
+	color: var(--noir);
+}
+
+div.cat_caracteristiques {
+	grid-column: 1;
+	grid-row: 3/10;
+	margin-left: 10px;
+}
+
+div.cat_armure {
+	border: 1px solid var(--bleu);
+	grid-column: 1;
+	grid-row: 11/16;
+}
+
+div.cat_notes {
+	border: 1px solid var(--bleu);
+	grid-column: 1;
+	grid-row: 17/33;
+}
+
+div.cat_compagnies {
+	border: 1px solid var(--bleu);
+	grid-column: 1/4;
+	grid-row: 34/37;
+}
+
+div.cat_entreprises {
+	border: 1px solid var(--bleu);
+	grid-column: 1/4;
+	grid-row: 38/41;
+}
+
+div.cat_experience {
+	border: 1px solid var(--bleu);
+	grid-column: 3;
+	grid-row: 1/11;
+}
+
+div.cat_equipements {
+	border: 1px solid var(--bleu);
+	grid-column: 3/6;
+	grid-row: 12/33;
+}
+
+div.cat_objets_encombrants {
+	border: 1px solid var(--bleu);
+	grid-column: 5;
+	grid-row: 33/41;
+}
+
+/* Structure caracteristiques */
+
+.wrapper_caracteristiques {  
+	display: grid;
+    grid-template-columns: 100px 10px 100px;
+	grid-auto-rows: 20px;
+	margin-bottom: 15px;
+}
+
+div.caracteristiques_border {
+	grid-column: 1;
+	grid-row: 1/4;
+	border: 2px solid var(--bleu);
+}
+
+div.caracteristiques_type {
+	grid-column: 1;
+	grid-row: 1;
+	background: white;
+	padding-left: 26px;
+	margin-left: 20px;
+	margin-top: -9px;
+	font-family: var(--font_basker);
+	font-weight: bold;
+	color: var(--noir);
+	font-size: 17px;
+}
+}
+
+div.caracteristiques_data {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+div.caracteristiques_zero {
+	grid-column: 1;
+	grid-row: 3;
+	text-align: right;
+	padding-right: 7px;
+	font-style: italic;
+	color: #4e6db7ba;
+}
+
+div.caracteristiques_data1 {
+	grid-column: 3;
+	grid-row: 1;
+	margin-top: 2px;
+}
+
+div.caracteristiques_data2 {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+div.caracteristiques_data3 {
+	grid-column: 3;
+	grid-row: 3;
+	margin-top: -2px;
+}
+
+
+
+/* Syle de la page */
+
+.charsheet input.input_name { 
+    width: 190px;
+	outline: none;
+    resize: none;
+    padding: 0;
+    font-size: 21px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+	border-radius: 0px;
+	border-bottom: 1px dotted var(--bleu);
+}
