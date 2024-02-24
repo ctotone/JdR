@@ -5,11 +5,9 @@
 <div class="principale">
 	<div class="personnage">
 		<div class="wrapper_personnage">
-			<div class="cat_logo">
-			logo
-			</div>
+			<div class="cat_logo"></div>
 			<div class="cat_name">
-			<span class="lettre">N</span>om :<input type="text" class="input_name" name="attr_character_name"> 
+				<span class="lettre">N</span>om :<input type="text" class="input_name" name="attr_character_name"> 
 			</div>
 			<div class="cat_caracteristiques">
 				<div class="wrapper_caracteristiques">
@@ -17,7 +15,8 @@
 					<div class="caracteristiques_type">
 						FOR
 					</div>
-					<div class="caracteristiques_data">
+					<div class="caracteristiques_valeur">
+						<input type="text" class="input_caracteristiques" name="attr_force" placeholder="0">
 					</div>
 					<div class="caracteristiques_zero">
 						0 : mort
@@ -37,6 +36,9 @@
 					<div class="caracteristiques_type">
 						DEX
 					</div>
+					<div class="caracteristiques_valeur">
+						<input type="text" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
+					</div>
 					<div class="caracteristiques_data1">
 						Discrétion
 					</div>
@@ -49,13 +51,14 @@
 					<div class="caracteristiques_zero">
 						0 : paralysé
 					</div>
-					<div class="caracteristiques_info">
-					</div>
 				</div>
 				<div class="wrapper_caracteristiques">
 					<div class="caracteristiques_border"></div>
 					<div class="caracteristiques_type">
 						VOL
+					</div>
+					<div class="caracteristiques_valeur">
+						<input type="text" class="input_caracteristiques" name="attr_volonte" placeholder="0">
 					</div>
 					<div class="caracteristiques_data1">
 						Confiance
@@ -69,12 +72,23 @@
 					<div class="caracteristiques_zero">
 						0 : brisé
 					</div>
-					<div class="caracteristiques_info">
-					</div>
 				</div>
 			</div>
 			<div class="cat_armure">
-			armure
+				<div class="wrapper_armure">
+					<div class="armure_titre">ARMURE :</div>
+					<div class="armure_data1">
+						<input type="text" class="input_armure_nom" name="attr_armure_nom">
+					</div>
+					<div class="armure_data2">
+						(<input type="number" class="input_armure_valeur" name="attr_armure_valeur" placeholder="0">)
+					</div>
+					<div class="armure_valeur_pv">
+						<input type="number" class="input_hp" name="attr_HP_actuel" placeholder="0">/
+						<input type="number" class="input_hp" name="attr_HP_base" placeholder="0">
+					</div>
+					<div class="armure_pv">PV</div>
+				</div>
 			</div>
 			<div class="cat_notes">
 			note
@@ -86,7 +100,22 @@
 			entreprise
 			</div>
 			<div class="cat_experience">
-			experience
+				<div class="wrapper_xp">
+					<div class="xp_titre1"><span class="lettre">N</span>iveau</div>
+					<div class="xp_titre2">d'expérience :</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="1" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">N</span>ovice</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="2" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">P</span>rofessionnel</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="3" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">E</span>xpert</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="4" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">V</span>étéran</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="5" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">M</span>aître</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="6" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">A</span>u-delà</div>
+				</div>
 			</div>
 			<div class="cat_equipements">
 			equipement
