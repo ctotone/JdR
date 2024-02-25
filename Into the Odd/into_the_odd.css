@@ -76,6 +76,32 @@ input[type=radio].xp_radio:checked + span {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/radio_checked.png);
 }
 
+/* Affichage pages */
+
+div.page_config {
+	position: absolute;
+	z-index: auto;
+}
+
+div.page_config {
+    margin-left: 755px;
+    margin-top: -11px;
+}
+
+span.picto {
+	font-family: 'Pictos';
+    font-size: 30px;
+}
+
+div.personnage,
+div.outils {
+	display: none;
+}
+
+.charsheet .page[value="1"] ~ div.personnage,
+.charsheet .page[value="2"] ~ div.outils {
+    display: block;
+}
 /* Structure Personnage*/
 
 .wrapper_personnage {  
@@ -143,6 +169,7 @@ div.cat_compagnies {
 	color: var(--noir);
 	font-size: 20px;
 	font-weight: bold;
+    margin-top: -17px;
 }
 
 div.cat_entreprises {
@@ -153,6 +180,7 @@ div.cat_entreprises {
 	color: var(--noir);
 	font-size: 20px;
 	font-weight: bold;
+    margin-top: -17px;
 }
 
 div.cat_experience {
@@ -204,7 +232,7 @@ div.cat_roll {
 	padding: 5px;
 	border: 2px solid var(--bleu);
 	grid-column: 1/6;
-	grid-row: 41/44;
+	grid-row: 41/46;
 	color: var(--noir);
 	font-size: 20px;
 	font-weight: bold;
@@ -393,7 +421,7 @@ div.equipement_data {
 .wrapper_compagnies {  
 	display: grid;
     grid-template-columns: 160px 20px 30px 20px 30px 20px 30px 20px 160px;
-	grid-auto-rows: 35px;
+	grid-auto-rows: 40px;
     font-family: var(--font_basker);
 }
 
@@ -407,6 +435,7 @@ div.compagnies_titre {
 div.compagnies_nom {
 	grid-column: 1;	
     margin-left: 10px;
+    margin-top: 2px;
 }
 
 div.compagnies_force_titre {
@@ -464,7 +493,7 @@ div.compagnies_armes {
 .wrapper_entreprises {  
 	display: grid;
     grid-template-columns: 170px 15px 50px 20px 170px 15px 50px;
-	grid-auto-rows: 35px;
+	grid-auto-rows: 40px;
     font-family: var(--font_basker);
 }
 
@@ -512,8 +541,8 @@ div.entreprises_revenus_2 {
 
 .wrapper_roll {  
 	display: grid;
-    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px ;
-	grid-auto-rows: 35px;
+    grid-template-columns: 108px 108px 108px 108px 108px 108px 108px;
+	grid-auto-rows: 51px;
     font-family: var(--font_basker);
 }
 
@@ -527,36 +556,43 @@ div.roll_titre {
 div.roll_d4 {
 	grid-column: 1;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_d6 {
 	grid-column: 2;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_d8 {
 	grid-column: 3;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_d10 {
 	grid-column: 4;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_d12 {
 	grid-column: 5;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_d20 {
 	grid-column: 6;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 div.roll_chance {
 	grid-column: 7;
 	text-align: center;
+    font-family: var(--font_amiri);
 }
 
 
@@ -761,7 +797,14 @@ div.roll_chance {
 
 /* Boutton ROLL */
 .charsheet button[type=roll].roll_dice::before,
-.charsheet button[type=roll].roll_dice_big::before {
+.charsheet button[type=roll].roll_d4::before,
+.charsheet button[type=roll].roll_d6::before,
+.charsheet button[type=roll].roll_d8::before,
+.charsheet button[type=roll].roll_d10::before,
+.charsheet button[type=roll].roll_d12::before,
+.charsheet button[type=roll].roll_d20::before,
+.charsheet button[type=roll].roll_chance::before,
+.charsheet button[type=action].page::before {
   content: '';
 }
 
@@ -777,21 +820,71 @@ div.roll_chance {
 	background-color: transparent;	
 }
 
-.charsheet button[type=roll].roll_dice_big {
-    width: 25px;
-    height: 24px;
+.charsheet button[type=roll].roll_d4,
+.charsheet button[type=roll].roll_d6,
+.charsheet button[type=roll].roll_d8,
+.charsheet button[type=roll].roll_d10,
+.charsheet button[type=roll].roll_d12,
+.charsheet button[type=roll].roll_d20,
+.charsheet button[type=roll].roll_chance {
+    width: 50px;
+    height: 50px;
     border: none;
     padding: 0;
     margin: 0;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_20_bleu.png);
-	background-size: 25px 24px;
+	background-size: contain;
     background-repeat: no-repeat;
 	background-color: transparent;	
 }
 
+.charsheet button[type=roll].roll_d4 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_4.png);
+}
+
+.charsheet button[type=roll].roll_d6 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_6.png);
+}
+
+.charsheet button[type=roll].roll_d8 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_8.png);
+}
+
+.charsheet button[type=roll].roll_d10 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_10.png);
+}
+
+.charsheet button[type=roll].roll_d12 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_12.png);
+}
+
+.charsheet button[type=roll].roll_d20 {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_20.png);
+}
+
+.charsheet button[type=roll].roll_chance {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_chance.png);
+}
+
 .charsheet button[type=roll].roll_dice:hover,
-.charsheet button[type=roll].roll_dice_big:hover {
-    margin-left: 1px;
+.charsheet button[type=roll].roll_d4:hover,
+.charsheet button[type=roll].roll_d6:hover,
+.charsheet button[type=roll].roll_d8:hover,
+.charsheet button[type=roll].roll_d10:hover,
+.charsheet button[type=roll].roll_d12:hover,
+.charsheet button[type=roll].roll_d20:hover,
+.charsheet button[type=roll].roll_chance:hover {
+    margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
+}
+
+.charsheet button[type=action].page {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #a8a8a83b;
+}
+
+.charsheet button[type=action].page:hover{
+    color: var(--vert_clair);
 }

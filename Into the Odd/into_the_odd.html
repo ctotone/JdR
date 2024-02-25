@@ -3,7 +3,12 @@
 <!-- --------------------------------- -->
 
 <div class="principale">
+	<input type="hidden" class="page" name="attr_page"  value="1">
+	
+	<!-- Page de personnage -->
 	<div class="personnage">
+		<div class="page_config">
+		<button type="action" class="page" name="act_page_config"><span class="picto" title="Page de configuration">y</span></button></div>
 		<div class="wrapper_personnage">
 			<div class="cat_logo"></div>
 			<div class="cat_name">
@@ -349,7 +354,7 @@
 				</div>
 			</div>
 			<div class="cat_objets_encombrants">
-				<div class="wrapper_equipement" style="margin-top: 5px;">
+				<div class="wrapper_equipement" style="margin-top: -15px;">
 					<div class="equipement_titre" style="margin-top:30px;font-size:20px;">
 						<span class="lettre">O</span>bjets encombrants<span style="margin-left: 5px;color: var(--bleu_clair);font-size:14px;letter-spacing: 0px;">(à 2 mains)</span>
 					</div>
@@ -379,6 +384,8 @@
 					<div class="roll_titre">
 						<span class="lettre">J</span>ets de dés
 					</div>
+				</div>
+				<div class="wrapper_roll">
 					<div class="roll_d4">
 						<button class="roll_d4" type="roll" name="roll_Lancer" value="/r 1d4" title="Lancer D4 "></button>
 					</div>
@@ -399,15 +406,42 @@
 					</div>
 					<div class="roll_chance">
 						<button class="roll_chance" type="roll" name="roll_Lancer" value="/r 1d6" title="Jet de Chance"></button>
-					</div>					
+					</div>
+				</div>
+				<div class="wrapper_roll">
+					<div class="roll_d4">
+						<span class="lettre">D</span>4
+					</div>
+					<div class="roll_d6">
+						<span class="lettre">D</span>6
+					</div>
+					<div class="roll_d8">
+						<span class="lettre">D</span>8
+					</div>
+					<div class="roll_d10">
+						<span class="lettre">D</span>10
+					</div>
+					<div class="roll_d12">
+						<span class="lettre">D</span>12
+					</div>
+					<div class="roll_d20">
+						<span class="lettre">D</span>20
+					</div>
+					<div class="roll_chance">
+						<span class="lettre">C</span>hance
+					</div>
+				
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Page de configuration -->
+	<div class="outils">
+		<button type="action" class="page" name="act_page_personnage"><span class="picto" title="Page de personnage">U</span></button>
+	</div>
 </div>
 
-<div class="outils">
-</div>
+
 
 <!-- ------------------------- -->
 <!-- ----- ROLL TEMPLATE ----- -->
@@ -417,3 +451,87 @@
 <!-- --------------------------- -->
 <!-- --------- SCRIPT ---------- -->
 <!-- --------------------------- -->
+
+<!-- Changement de page -->
+<script type="text/worker">
+   on('clicked:page_config', function() {
+
+	setAttrs({
+			"page": 2
+			});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:page_personnage', function() {
+
+	setAttrs({
+			"page": 1
+			});
+});
+</script>
+
+<!-- Ajustement HP -->
+<script type="text/worker">
+on("change:HP_base change:HP_actuel", function() {
+console.log("Ajustement HP");
+
+    getAttrs(["HP_base", "HP_actuel"], function(values) {
+         let base = parseInt(values["HP_base"]) || 0;
+		 let actuel = parseInt(values["HP_actuel"]) || 0;
+		 
+			if (base <= actuel) HP_ajuste = base;
+			else HP_ajuste = actuel;
+			
+			setAttrs({
+			"HP_actuel" : HP_ajuste
+        });
+    });
+});
+</script>
+
+<!-- Attribution Item -->
+<script type="text/worker">
+on("clicked:obtenir_objets", function() {
+console.log("Obtenir Objets");
+
+    getAttrs(["HP_base", "force", "dexterite", "volonte"], function(values) {
+         let HP_base = parseInt(values["HP_base"]) || 0;
+		 let force = parseInt(values["force"]) || 0;
+		 let dexterite = parseInt(values["dexterite"]) || 0;
+		 let volonte = parseInt(values["volonte"]) || 0;
+		 let total_stat = force + dexterite + volonte;
+		 
+			if (total_stat <= '9' && HP_base == '1') 	equipement_1 = '',
+														equipement_2 = '',
+														equipement_3 = '',
+														equipement_4 = '',
+														equipement_5 = '',
+														equipement_6 = '',
+														equipement_7 = '',
+														equipement_lourd_1 = '',
+														equipement_lourd_2 = '';
+			else equipement_1 = '1',
+				 equipement_2 = '2',
+				 equipement_3 = '3',
+				 equipement_4 = '4',
+				 equipement_5 = '5',
+				 equipement_6 = '6',
+				 equipement_7 = '7',
+				 equipement_lourd_1 = '',
+				 equipement_lourd_2 = '';
+			
+			setAttrs({
+				"equipement_1" = item_1,
+				"equipement_2" = item_2,
+				"equipement_3" = item_3,
+				"equipement_4" = item_4,
+				"equipement_5" = item_5,
+				"equipement_6" = item_6,
+				"equipement_7" = item_7,
+				"equipement_lourd_1" = equipement_lourd_1,
+				"equipement_lourd_2" = equipement_lourd_2;
+        });
+    });
+});
+</script>
