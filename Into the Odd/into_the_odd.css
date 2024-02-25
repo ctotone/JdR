@@ -512,7 +512,7 @@ div.entreprises_revenus_2 {
 
 .wrapper_roll {  
 	display: grid;
-    grid-template-columns: 170px 15px 50px 20px 170px 15px 50px;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px ;
 	grid-auto-rows: 35px;
     font-family: var(--font_basker);
 }
@@ -522,6 +522,41 @@ div.roll_titre {
     margin-left: 5px;
     letter-spacing: -1.5px;
     font-size: 22px;
+}
+
+div.roll_d4 {
+	grid-column: 1;
+	text-align: center;
+}
+
+div.roll_d6 {
+	grid-column: 2;
+	text-align: center;
+}
+
+div.roll_d8 {
+	grid-column: 3;
+	text-align: center;
+}
+
+div.roll_d10 {
+	grid-column: 4;
+	text-align: center;
+}
+
+div.roll_d12 {
+	grid-column: 5;
+	text-align: center;
+}
+
+div.roll_d20 {
+	grid-column: 6;
+	text-align: center;
+}
+
+div.roll_chance {
+	grid-column: 7;
+	text-align: center;
 }
 
 
@@ -725,7 +760,8 @@ div.roll_titre {
 }
 
 /* Boutton ROLL */
-.charsheet button[type=roll].roll_dice::before {
+.charsheet button[type=roll].roll_dice::before,
+.charsheet button[type=roll].roll_dice_big::before {
   content: '';
 }
 
@@ -738,11 +774,23 @@ div.roll_titre {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_20_bleu.png);
 	background-size: 25px 24px;
     background-repeat: no-repeat;
-	background-color: transparent;
-	
+	background-color: transparent;	
 }
 
-.charsheet button[type=roll].roll_dice:hover {
+.charsheet button[type=roll].roll_dice_big {
+    width: 25px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    margin: 0;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_20_bleu.png);
+	background-size: 25px 24px;
+    background-repeat: no-repeat;
+	background-color: transparent;	
+}
+
+.charsheet button[type=roll].roll_dice:hover,
+.charsheet button[type=roll].roll_dice_big:hover {
     margin-left: 1px;
 	padding: 0px;
 	background-position: 0 0px;
