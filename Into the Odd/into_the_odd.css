@@ -200,11 +200,21 @@ div.cat_objets_encombrants {
 	margin-top: -2px;
 }
 
+div.cat_roll {
+	padding: 5px;
+	border: 2px solid var(--bleu);
+	grid-column: 1/6;
+	grid-row: 41/44;
+	color: var(--noir);
+	font-size: 20px;
+	font-weight: bold;
+}
+
 /* Structure caracteristiques */
 
 .wrapper_caracteristiques {  
 	display: grid;
-    grid-template-columns: 100px 10px 100px;
+    grid-template-columns: 115px 10px 100px;
 	grid-auto-rows: 20px;
 	margin-bottom: 15px;
 }
@@ -217,29 +227,28 @@ div.caracteristiques_border {
 
 div.caracteristiques_type {
 	grid-column: 1;
-	grid-row: 1;
-	background: white;
-	padding-left: 26px;
-	margin-left: 20px;
-	margin-top: -9px;
-	font-family: var(--font_basker);
-	font-weight: bold;
-	color: var(--noir);
-	font-size: 17px;
+    grid-row: 1;
+    background: white;
+    padding-left: 15px;
+    margin-left: 53px;
+    margin-top: -9px;
+    font-family: var(--font_basker);
+    font-weight: bold;
+    color: var(--noir);
+    font-size: 17px;
 }
 
 div.caracteristiques_valeur {
 	grid-column: 1;
 	grid-row: 1/4;
 	margin-left: 11px;
-	margin-top: -6px;
 }
 
 div.caracteristiques_roll {
 	grid-column: 1;
 	grid-row: 1/4;
-    margin-top: 15px;
-    margin-left: 60px;
+    margin-top: 16px;
+    margin-left: 73px;
 }
 
 div.caracteristiques_zero {
@@ -248,7 +257,8 @@ div.caracteristiques_zero {
 	text-align: right;
 	padding-right: 7px;
 	font-style: italic;
-	color: #4e6db7ba;
+	color: #4e6db7ba;	
+    font-size: 15px;
 }
 
 div.caracteristiques_data1 {
@@ -498,6 +508,23 @@ div.entreprises_revenus_2 {
     margin-top: 1px;
 }
 
+/* Structure entreprises */
+
+.wrapper_roll {  
+	display: grid;
+    grid-template-columns: 170px 15px 50px 20px 170px 15px 50px;
+	grid-auto-rows: 35px;
+    font-family: var(--font_basker);
+}
+
+div.roll_titre {
+	grid-column: 1;
+    margin-left: 5px;
+    letter-spacing: -1.5px;
+    font-size: 22px;
+}
+
+
 /* Syle de la page */
 
 .charsheet input.input_name { 
@@ -518,17 +545,17 @@ div.entreprises_revenus_2 {
 }
 
 .charsheet input.input_caracteristiques {
-	width: 40px;
-	outline: none;
+	width: 40px !important;
+    outline: none;
     resize: none;
     padding: 0;
     font-size: 35px;
     border: none;
     background: none;
-    text-align: left;
+    text-align: center;
     cursor: pointer;
-	color: var(--noir);
-	font-weight: bold;
+    color: var(--noir);
+    font-weight: bold;
 }
 
 .charsheet input.input_armure_nom { 
@@ -695,4 +722,28 @@ div.entreprises_revenus_2 {
     color: var(--noir);
     font-family: var(--font_amiri);
     line-height: 1.2;
+}
+
+/* Boutton ROLL */
+.charsheet button[type=roll].roll_dice::before {
+  content: '';
+}
+
+.charsheet button[type=roll].roll_dice {
+    width: 25px;
+    height: 24px;
+    border: none;
+    padding: 0;
+    margin: 0;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_20.png);
+	background-size: 25px 24px;
+    background-repeat: no-repeat;
+	background-color: transparent;
+	
+}
+
+.charsheet button[type=roll].roll_dice:hover {
+    margin-left: 1px;
+	padding: 0px;
+	background-position: 0 0px;
 }

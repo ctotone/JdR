@@ -16,10 +16,10 @@
 						FOR
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="text" class="input_caracteristiques" name="attr_force" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_force" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Lancer"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_zero">
 						0 : mort
@@ -40,7 +40,10 @@
 						DEX
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="text" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
+					</div>
+					<div class="caracteristiques_roll">
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Discrétion
@@ -61,7 +64,10 @@
 						VOL
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="text" class="input_caracteristiques" name="attr_volonte" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_volonte" placeholder="0">
+					</div>
+					<div class="caracteristiques_roll">
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Confiance
@@ -266,108 +272,115 @@
 					</div>
 				</div>
 			</div>
-		<div class="cat_equipements_droite">
-			<div class="wrapper_equipement"style="margin-left: -5px;">
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_12"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_13"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_14"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_15"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_16"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_17"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_18"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_19"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_20"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_21"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_22"> 
-				</div>
-				<div class="equipement_trait">
-					-
-				</div>
-				<div class="equipement_data">
-					<input type="text" class="input_item" name="attr_equipement_23"> 
-				</div>
-			</div>
-		</div>
-		<div class="cat_objets_encombrants">
-			<div class="wrapper_equipement" style="margin-top: 5px;">
-				<div class="equipement_titre" style="margin-top:30px;font-size:20px;">
-					<span class="lettre">O</span>bjets encombrants<span style="margin-left: 5px;color: var(--bleu_clair);font-size:14px;">(à 2 mains)</span>
-				</div>
-				<div class="equipement_titre"></div>
-				<div class="equipement_trait">
+			<div class="cat_equipements_droite">
+				<div class="wrapper_equipement"style="margin-left: -5px;">
+					<div class="equipement_trait">
 						-
 					</div>
 					<div class="equipement_data">
-						<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_1"> 
+						<input type="text" class="input_item" name="attr_equipement_12"> 
 					</div>
 					<div class="equipement_trait">
 						-
 					</div>
 					<div class="equipement_data">
-						<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_2"> 
+						<input type="text" class="input_item" name="attr_equipement_13"> 
 					</div>
 					<div class="equipement_trait">
 						-
 					</div>
 					<div class="equipement_data">
-						<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_3"> 
+						<input type="text" class="input_item" name="attr_equipement_14"> 
 					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_15"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_16"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_17"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_18"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_19"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_20"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_21"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_22"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_23"> 
+					</div>
+				</div>
 			</div>
-		</div>
+			<div class="cat_objets_encombrants">
+				<div class="wrapper_equipement" style="margin-top: 5px;">
+					<div class="equipement_titre" style="margin-top:30px;font-size:20px;">
+						<span class="lettre">O</span>bjets encombrants<span style="margin-left: 5px;color: var(--bleu_clair);font-size:14px;letter-spacing: 0px;">(à 2 mains)</span>
+					</div>
+					<div class="equipement_titre"></div>
+					<div class="equipement_trait">
+							-
+						</div>
+						<div class="equipement_data">
+							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_1"> 
+						</div>
+						<div class="equipement_trait">
+							-
+						</div>
+						<div class="equipement_data">
+							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_2"> 
+						</div>
+						<div class="equipement_trait">
+							-
+						</div>
+						<div class="equipement_data">
+							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_3"> 
+						</div>
+				</div>
+			</div>
+			<div class="cat_roll">
+				<div class="wrapper_equipement">
+					<div class="roll_titre">
+						<span class="lettre">J</span>ets de dés
+					</div>
+				</div>
+			</div>
 	</div>
 </div>
 
