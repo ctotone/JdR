@@ -438,6 +438,8 @@
 	<!-- Page de configuration -->
 	<div class="outils">
 		<button type="action" class="page" name="act_page_personnage"><span class="picto" title="Page de personnage">U</span></button>
+		<button type="action" class="page" name="act_obtenir_objets"><span class="picto" title="objets">Z</span></button>
+		
 	</div>
 </div>
 
@@ -490,47 +492,490 @@ console.log("Ajustement HP");
 });
 </script>
 
-<!-- Attribution Item -->
+<!-- Meilleur statistique -->
 <script type="text/worker">
-on("clicked:obtenir_objets", function() {
-console.log("Obtenir Objets");
+on("change:force change:dexterite change:volonte", function() {
+console.log("Meilleur statistique");
 
-    getAttrs(["HP_base", "force", "dexterite", "volonte"], function(values) {
-         let HP_base = parseInt(values["HP_base"]) || 0;
-		 let force = parseInt(values["force"]) || 0;
-		 let dexterite = parseInt(values["dexterite"]) || 0;
-		 let volonte = parseInt(values["volonte"]) || 0;
-		 let total_stat = force + dexterite + volonte;
-		 
-			if (total_stat <= '9' && HP_base == '1') 	equipement_1 = '',
-														equipement_2 = '',
-														equipement_3 = '',
-														equipement_4 = '',
-														equipement_5 = '',
-														equipement_6 = '',
-														equipement_7 = '',
-														equipement_lourd_1 = '',
-														equipement_lourd_2 = '';
-			else equipement_1 = '1',
-				 equipement_2 = '2',
-				 equipement_3 = '3',
-				 equipement_4 = '4',
-				 equipement_5 = '5',
-				 equipement_6 = '6',
-				 equipement_7 = '7',
-				 equipement_lourd_1 = '',
-				 equipement_lourd_2 = '';
+    getAttrs(["force", "dexterite", "volonte"], function(values) {
+        let force = parseInt(values["force"]) || 0;
+		let dexterite = parseInt(values["dexterite"]) || 0;
+		let volonte = parseInt(values["volonte"]) || 0;
+		
+			if (dexterite <= force && volonte <= force) stat_principale = force;
+			else if (force <= dexterite && volonte <= dexterite) stat_principale = dexterite;
+			else if (force <= volonte && dexterite <= volonte) stat_principale = volonte;
+			else stat_principale = "";
 			
 			setAttrs({
-				"equipement_1" = item_1,
-				"equipement_2" = item_2,
-				"equipement_3" = item_3,
-				"equipement_4" = item_4,
-				"equipement_5" = item_5,
-				"equipement_6" = item_6,
-				"equipement_7" = item_7,
-				"equipement_lourd_1" = equipement_lourd_1,
-				"equipement_lourd_2" = equipement_lourd_2;
+			"stat_principale" : stat_principale
+        });
+    });
+});
+</script>
+
+<!-- Attribution Item -->
+<script type="text/worker">
+on('clicked:obtenir_objets', function() {
+console.log("Obtenir Objets");
+
+    getAttrs(["HP_base", "stat_principale"], function(values) {
+         let HP_base = parseInt(values["HP_base"]) || 0;
+		 let stat_principale = parseInt(values["stat_principale"]) || 0;
+		 
+			if (stat_principale <= 9 && HP_base == 1) 		equipement_1 = "Épée (d6)", 
+															equipement_2 = "Pistolet (d6)", 
+															equipement_3 = "Armure moderne", 
+															equipement_4 = "Percevoir les êtres maléfiques à proximité", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale <= 9 && HP_base == 2) 	equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale <= 9 && HP_base == 3) 	equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale <= 9 && HP_base == 4) 	equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale <= 9 && HP_base == 5) 	equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale <= 9 && HP_base == 6) 	equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 10 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 10 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+															
+			else if (stat_principale == 10 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 10 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 10 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 10 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 11 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 11 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 11 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 11 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 11 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 11 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 12 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 12 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 12 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 12 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 12 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 12 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 13 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 13 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 13 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 13 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 13 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 13 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 14 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 14 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 14 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 14 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 14 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 14 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			else if (stat_principale == 15 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 15 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 15 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 15 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 15 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 15 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			
+			
+			else if (stat_principale == 16 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 16 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 16 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 16 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 16 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 16 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			
+			
+			else if (stat_principale == 17 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 17 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 17 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 17 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 17 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 17 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			
+			
+			else if (stat_principale == 18 && HP_base == 1) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 18 && HP_base == 2) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 18 && HP_base == 3) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 18 && HP_base == 4) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 18 && HP_base == 5) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			else if (stat_principale == 18 && HP_base == 6) equipement_1 = "", 
+															equipement_2 = "", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "";
+															
+			
+			
+			
+			else 	equipement_1 = "", 
+					equipement_2 = "", 
+					equipement_3 = "", 
+					equipement_4 = "", 
+					equipement_lourd_1 = "", 
+					equipement_lourd_2 = "";
+			
+		setAttrs({
+			"equipement_1" : equipement_1,
+			"equipement_2" : equipement_2,
+			"equipement_3" : equipement_3,
+			"equipement_4" : equipement_4,
+			"equipement_lourd_1" : equipement_lourd_1,
+			"equipement_lourd_2" : equipement_lourd_2
         });
     });
 });
