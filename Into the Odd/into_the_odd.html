@@ -190,7 +190,7 @@
 				<div class="wrapper_xp">
 					<div class="xp_titre1"><span class="lettre">N</span>iveau</div>
 					<div class="xp_titre2">d'expérience :</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="1" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="1" name="attr_xp" name="xp" checked /><span></span></div>
 					<div class="xp_radio_texte"><span class="lettre_verte">N</span>ovice</div>
 					<div class="xp_radio"><input type="radio" class="xp_radio" value="2" name="attr_xp" name="xp"><span></span></div>
 					<div class="xp_radio_texte"><span class="lettre_verte">P</span>rofessionnel</div>
@@ -257,6 +257,25 @@
 					<div class="equipement_data">
 						<input type="text" class="input_item" name="attr_equipement_8"> 
 					</div>
+					<div class="equipement_trait" style="margin-left: 5px;padding-top: 10px;font-family: var(--font_basker);letter-spacing: -1.5px;font-size: 24px;color: var(--noir);">
+						<span class="lettre">A</span>rcana
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_arcana_1"> 
+					</div>
+					<div class="equipement_trait">
+						-
+					</div>
+					<div class="equipement_data">
+						<input type="text" class="input_item" name="attr_equipement_10"> 
+					</div>
+				</div>
+			</div>
+			<div class="cat_equipements_droite">
+				<div class="wrapper_equipement"style="margin-left: -5px;">
 					<div class="equipement_trait">
 						-
 					</div>
@@ -275,10 +294,6 @@
 					<div class="equipement_data">
 						<input type="text" class="input_item" name="attr_equipement_11"> 
 					</div>
-				</div>
-			</div>
-			<div class="cat_equipements_droite">
-				<div class="wrapper_equipement"style="margin-left: -5px;">
 					<div class="equipement_trait">
 						-
 					</div>
@@ -315,47 +330,25 @@
 					<div class="equipement_data">
 						<input type="text" class="input_item" name="attr_equipement_17"> 
 					</div>
+					<div class="equipement_trait"></div>
+					<div class="equipement_data"></div>
 					<div class="equipement_trait">
 						-
 					</div>
 					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_18"> 
-					</div>
-					<div class="equipement_trait">
-						-
-					</div>
-					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_19"> 
-					</div>
-					<div class="equipement_trait">
-						-
-					</div>
-					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_20"> 
+						<input type="text" class="input_item" name="attr_attr_arcana_3"> 
 					</div>
 					<div class="equipement_trait">
 						-
 					</div>
 					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_21"> 
-					</div>
-					<div class="equipement_trait">
-						-
-					</div>
-					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_22"> 
-					</div>
-					<div class="equipement_trait">
-						-
-					</div>
-					<div class="equipement_data">
-						<input type="text" class="input_item" name="attr_equipement_23"> 
+						<input type="text" class="input_item" name="attr_attr_arcana_4"> 
 					</div>
 				</div>
 			</div>
 			<div class="cat_objets_encombrants">
-				<div class="wrapper_equipement" style="margin-top: -15px;">
-					<div class="equipement_titre" style="margin-top:30px;font-size:20px;">
+				<div class="wrapper_equipement" style="margin-top: -37px;grid-auto-rows: 48px;">
+					<div class="equipement_titre" style="margin-top:50px;font-size:20px;">
 						<span class="lettre">O</span>bjets encombrants<span style="margin-left: 5px;color: var(--bleu_clair);font-size:14px;letter-spacing: 0px;">(à 2 mains)</span>
 					</div>
 					<div class="equipement_titre"></div>
@@ -374,8 +367,18 @@
 						<div class="equipement_trait">
 							-
 						</div>
-						<div class="equipement_data">
-							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_3"> 
+						<div class="equipement_data" title="Toute personne portant trois
+objets encombrants ou plus 
+voit ses PV réduits à 0">
+							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_3" style="color: red;"> 
+						</div>
+						<div class="equipement_trait">
+							-
+						</div>
+						<div class="equipement_data" title="Toute personne portant trois
+objets encombrants ou plus 
+voit ses PV réduits à 0">
+							<input type="text" class="input_item_encombrant" name="attr_equipement_lourd_4" style="color: red;"> 
 						</div>
 				</div>
 			</div>
@@ -526,438 +529,498 @@ console.log("Obtenir Objets");
 			if (stat_principale <= 9 && HP_base == 1) 		equipement_1 = "Épée (d6)", 
 															equipement_2 = "Pistolet (d6)", 
 															equipement_3 = "Armure moderne", 
-															equipement_4 = "Percevoir les êtres maléfiques à proximité", 
+															equipement_4 = "* Percevoir les êtres maléfiques à proximité", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale <= 9 && HP_base == 2) 	equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale <= 9 && HP_base == 2) 	equipement_1 = "Épée (d6)", 
+															equipement_2 = "Grenade aveuglante", 
+															equipement_3 = "* Détecter les Arcana à proximité", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+											
+			else if (stat_principale <= 9 && HP_base == 3) 	equipement_1 = "Massue (d6)", 
+															equipement_2 = "* Immunité à la chaleur et au froid extrêmes", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale <= 9 && HP_base == 3) 	equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale <= 9 && HP_base == 4) 	equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Couteau (d6)", 
+															equipement_3 = "* Télépathie si la cible échoue à son jet de vol", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale <= 9 && HP_base == 4) 	equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale <= 9 && HP_base == 5) 	equipement_1 = "Hache (d6)", 
+															equipement_2 = "Chien bâtard", 
+															equipement_3 = "* Les rêves montrent des endroits inconnus", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Arquebuse (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale <= 9 && HP_base == 5) 	equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale <= 9 && HP_base == 6) 	equipement_1 = "Hachette (d6)", 
+															equipement_2 = "Grenade aveuglante", 
+															equipement_3 = "* Membre en fer", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale <= 9 && HP_base == 6) 	equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
 			
-			else if (stat_principale == 10 && HP_base == 1) equipement_1 = "", 
+			else if (stat_principale == 10 && HP_base == 1) equipement_1 = "Baïonnette (d6)", 
+															equipement_2 = "Briquet", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Fusil (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
+															
+			else if (stat_principale == 10 && HP_base == 2) equipement_1 = "Hachette (d6)", 
+															equipement_2 = "Faucon", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
+															
+															
+			else if (stat_principale == 10 && HP_base == 3) equipement_1 = "Gants de protection", 
 															equipement_2 = "", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 10 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 10 && HP_base == 4) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "2 flacons d’acide", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Claymore (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-															
-			else if (stat_principale == 10 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 10 && HP_base == 5) equipement_1 = "Fil de fer", 
+															equipement_2 = "Grappin", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Pistolets (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 10 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 10 && HP_base == 6) equipement_1 = "Masse (d6)", 
+															equipement_2 = "Aigle", 
+															equipement_3 = "Poison", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 10 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 10 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			
-			else if (stat_principale == 11 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 11 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 11 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 11 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 11 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 11 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Fusil (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
-			else if (stat_principale == 12 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 11 && HP_base == 1) equipement_1 = "Armure moderne", 
+															equipement_2 = "Chien", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Fusil (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 12 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 11 && HP_base == 2) equipement_1 = "Hachette (d6)", 
+															equipement_2 = "Pistolet (d6)", 
+															equipement_3 = "Cisailles", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 12 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 11 && HP_base == 3) equipement_1 = "Maillet", 
+															equipement_2 = "Billes", 
+															equipement_3 = "Chapeau fantaisie", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 12 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 11 && HP_base == 4) equipement_1 = "Baïonnette (d6)", 
+															equipement_2 = "* Chien bâtard avec lien télépathique", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 12 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 11 && HP_base == 5) equipement_1 = "Machette (d6)", 
+															equipement_2 = "Perroquet parlant", 
+															equipement_3 = "* Insomniaque", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Pistolet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 12 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 11 && HP_base == 6) equipement_1 = "Massue (d6)", 
+															equipement_2 = "3 bombes", 
+															equipement_3 = "Fusée", 
+															equipement_4 = "* Vision dans l’obscurité", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			
-			else if (stat_principale == 13 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 13 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 13 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 13 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 13 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 13 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
-			else if (stat_principale == 14 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 12 && HP_base == 1) equipement_1 = "Massue (d6)", 
+															equipement_2 = "Couteaux de lancer", 
 															equipement_3 = "", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 14 && HP_base == 2) equipement_1 = "", 
+			else if (stat_principale == 12 && HP_base == 2) equipement_1 = "Mule", 
 															equipement_2 = "", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 b)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 14 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 12 && HP_base == 3) equipement_1 = "Pioche (d6)", 
+															equipement_2 = "Menottes", 
 															equipement_3 = "", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
 															
-			else if (stat_principale == 14 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 12 && HP_base == 4) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Fusée", 
+															equipement_3 = "* Immunité aux toxines", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 14 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 12 && HP_base == 5) equipement_1 = "Bâton (d6)", 
+															equipement_2 = "Acide", 
+															equipement_3 = "* Légèrement magnétique", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Harpon (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 14 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 12 && HP_base == 6) equipement_1 = "Dague (d6)", 
+															equipement_2 = "Chaîne", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			
-			else if (stat_principale == 15 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 15 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 15 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 15 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 15 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
-															
-			else if (stat_principale == 15 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Maillet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
+			else if (stat_principale == 13 && HP_base == 1) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Éther", 
+															equipement_3 = "Poison", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
+															
+			else if (stat_principale == 13 && HP_base == 2) equipement_1 = "Épée (d6)", 
+															equipement_2 = "Pistolet (d6)", 
+															equipement_3 = "Armure grossière", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 13 && HP_base == 3) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Bombe fumigène", 
+															equipement_3 = "Mouton", 
+															equipement_4 = "Pelle", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 13 && HP_base == 4) equipement_1 = "Bélier portatif", 
+															equipement_2 = "Jeu", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 13 && HP_base == 5) equipement_1 = "Cisailles", 
+															equipement_2 = "Violon", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Arquebuse (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 13 && HP_base == 6) equipement_1 = "Rhum", 
+															equipement_2 = "Bombe", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Hache longue (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
 			
+			else if (stat_principale == 14 && HP_base == 1) equipement_1 = "Canne (d6)", 
+															equipement_2 = "Acide", 
+															equipement_3 = "Longue-vue", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "Arcanum (d66)";
+															
+			else if (stat_principale == 14 && HP_base == 2) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Cloche", 
+															equipement_3 = "Fil d’acier", 
+															equipement_4 = "Bombe fumigène", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 14 && HP_base == 3) equipement_1 = "Haches de lancer", 
+															equipement_2 = "Huile inflammable", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Hache longue (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 14 && HP_base == 4) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Scie", 
+															equipement_3 = "Piège à animaux", 
+															equipement_4 = "Longue-vue", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 14 && HP_base == 5) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Graisse", 
+															equipement_3 = "Foret à main", 
+															equipement_4 = "Tambour", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 14 && HP_base == 6) equipement_1 = "Dague (d6)", 
+															equipement_2 = "Huile inflammable", 
+															equipement_3 = "Miroir", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
 			
-			else if (stat_principale == 16 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 15 && HP_base == 1) equipement_1 = "Canari", 
+															equipement_2 = "Éther", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Paire de pistolets (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 16 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 15 && HP_base == 2) equipement_1 = "Furet", 
+															equipement_2 = "Huile inflammable", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Hache longue (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 16 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 15 && HP_base == 3) equipement_1 = "Massue (d6)", 
+															equipement_2 = "Éther", 
+															equipement_3 = "Pied-de-biche", 
+															equipement_4 = "Flûte", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 16 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 15 && HP_base == 4) equipement_1 = "Couteau (d6)", 
+															equipement_2 = "Fusée", 
+															equipement_3 = "Huile inflammable", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Arc (d6 E)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 16 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 15 && HP_base == 5) equipement_1 = "Loupe", 
+															equipement_2 = "* Borgne", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Épée et dague (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 16 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 15 && HP_base == 6) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Couteau (d6)", 
+															equipement_3 = "Bombe", 
+															equipement_4 = "Scie", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
 			
 			
-			else if (stat_principale == 17 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 16 && HP_base == 1) equipement_1 = "Montre de poche", 
+															equipement_2 = "Bombe", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 17 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 16 && HP_base == 2) equipement_1 = "Pince", 
+															equipement_2 = "Colle", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Bâton (d6 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 17 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 16 && HP_base == 3) equipement_1 = "Hachette (d6)", 
+															equipement_2 = "Filet", 
+															equipement_3 = "Huile inflammable", 
+															equipement_4 = "* Visage brûlé", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 17 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 16 && HP_base == 4) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Fouet (d6)", 
+															equipement_3 = "Cigares", 
+															equipement_4 = "* Borgne", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 17 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 16 && HP_base == 5) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Acide", 
+															equipement_3 = "Répulsif pour animaux", 
+															equipement_4 = "* Prothèse de main", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 17 && HP_base == 6) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 16 && HP_base == 6) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Bombe", 
+															equipement_3 = "Pelle", 
+															equipement_4 = "Yeux lumineux", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
 			
 			
-			else if (stat_principale == 18 && HP_base == 1) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 17 && HP_base == 1) equipement_1 = "Faux pistolet", 
+															equipement_2 = "* Poumon artificiel", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Hallebarde (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 18 && HP_base == 2) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 17 && HP_base == 2) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Filet", 
+															equipement_3 = "Trompette", 
+															equipement_4 = "* Prothèse de jambe", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 18 && HP_base == 3) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
-															equipement_4 = "", 
+			else if (stat_principale == 17 && HP_base == 3) equipement_1 = "Massue (d6)", 
+															equipement_2 = "Peinture", 
+															equipement_3 = "Pied de biche", 
+															equipement_4 = "* Respiration sifflante", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 18 && HP_base == 4) equipement_1 = "", 
-															equipement_2 = "", 
+			else if (stat_principale == 17 && HP_base == 4) equipement_1 = "Accordéon", 
+															equipement_2 = "* Anosmique", 
 															equipement_3 = "", 
 															equipement_4 = "", 
-															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 18 && HP_base == 5) equipement_1 = "", 
-															equipement_2 = "", 
-															equipement_3 = "", 
+			else if (stat_principale == 17 && HP_base == 5) equipement_1 = "Épée (d6)", 
+															equipement_2 = "Fil de fer", 
+															equipement_3 = "* Vilaine mutation", 
 															equipement_4 = "", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
-			else if (stat_principale == 18 && HP_base == 6) equipement_1 = "", 
+			else if (stat_principale == 17 && HP_base == 6) equipement_1 = "Couteaux de lancer (d6)", 
 															equipement_2 = "", 
 															equipement_3 = "", 
 															equipement_4 = "", 
+															equipement_lourd_1 = "Bâton (d6 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			
+			
+			
+			else if (stat_principale == 18 && HP_base == 1) equipement_1 = "Lacet étrangleur (d6)", 
+															equipement_2 = "* Muet", 
+															equipement_3 = "", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "Mousquet (d8 e)", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 18 && HP_base == 2) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Graisse", 
+															equipement_3 = "Scie à métaux", 
+															equipement_4 = "* Manchot", 
 															equipement_lourd_1 = "", 
-															equipement_lourd_2 = "";
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 18 && HP_base == 3) equipement_1 = "Pistolet (d6)", 
+															equipement_2 = "Cigares", 
+															equipement_3 = "Poison", 
+															equipement_4 = "* Fugitif", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 18 && HP_base == 4) equipement_1 = "Épée (d6)", 
+															equipement_2 = "Bouclier", 
+															equipement_3 = "* Analphabète", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 18 && HP_base == 5) equipement_1 = "Épée (d6)", 
+															equipement_2 = "Furet", 
+															equipement_3 = "Vêtements en lambeaux", 
+															equipement_4 = "* Dette (3G)", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
+															
+			else if (stat_principale == 18 && HP_base == 6) equipement_1 = "Masse (d6)", 
+															equipement_2 = "Pigeon", 
+															equipement_3 = "* Défiguré", 
+															equipement_4 = "", 
+															equipement_lourd_1 = "", 
+															equipement_lourd_2 = "",
+															arcana_1 = "";
 															
 			
 			
@@ -967,7 +1030,8 @@ console.log("Obtenir Objets");
 					equipement_3 = "", 
 					equipement_4 = "", 
 					equipement_lourd_1 = "", 
-					equipement_lourd_2 = "";
+					equipement_lourd_2 = "",
+					arcana_1 = "";
 			
 		setAttrs({
 			"equipement_1" : equipement_1,
@@ -975,7 +1039,8 @@ console.log("Obtenir Objets");
 			"equipement_3" : equipement_3,
 			"equipement_4" : equipement_4,
 			"equipement_lourd_1" : equipement_lourd_1,
-			"equipement_lourd_2" : equipement_lourd_2
+			"equipement_lourd_2" : equipement_lourd_2,
+			"arcana_1" : arcana_1
         });
     });
 });
