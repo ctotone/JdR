@@ -459,15 +459,89 @@ voit ses PV réduits à 0">
       {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
       {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
     </div>
-    <div class="sheet-content">
-      {{#allprops() title subtitle desc color}}
+	{{#sauvegarde}}
+		<div class="sheet-content">
+			{{#rollTotal() result 1}}
+			<div class="sheet-result">1</div>
+			{{/rollTotal() result 1}}
+			{{#rollTotal() result 2}}
+			<div class="sheet-result">2</div>
+			{{/rollTotal() result 2}}
+			{{#rollTotal() result 3}}
+			<div class="sheet-result">3</div>
+			{{/rollTotal() result 3}}
+			{{#rollTotal() result 4}}
+			<div class="sheet-result">4</div>
+			{{/rollTotal() result 4}}
+			{{#rollTotal() result 5}}
+			<div class="sheet-result">5</div>
+			{{/rollTotal() result 5}}
+			{{#rollTotal() result 6}}
+			<div class="sheet-result">6</div>
+			{{/rollTotal() result 6}}
+			{{#rollTotal() result 7}}
+			<div class="sheet-result">7</div>
+			{{/rollTotal() result 7}}
+			{{#rollTotal() result 8}}
+			<div class="sheet-result">8</div>
+			{{/rollTotal() result 8}}
+			{{#rollTotal() result 9}}
+			<div class="sheet-result">9</div>
+			{{/rollTotal() result 9}}
+			{{#rollTotal() result 10}}
+			<div class="sheet-result">10</div>
+			{{/rollTotal() result 10}}
+			{{#rollTotal() result 11}}
+			<div class="sheet-result">11</div>
+			{{/rollTotal() result 11}}
+			{{#rollTotal() result 12}}
+			<div class="sheet-result">12</div>
+			{{/rollTotal() result 12}}
+			{{#rollTotal() result 13}}
+			<div class="sheet-result">13</div>
+			{{/rollTotal() result 13}}
+			{{#rollTotal() result 14}}
+			<div class="sheet-result">14</div>
+			{{/rollTotal() result 14}}
+			{{#rollTotal() result 15}}
+			<div class="sheet-result">15</div>
+			{{/rollTotal() result 15}}
+			{{#rollTotal() result 16}}
+			<div class="sheet-result">16</div>
+			{{/rollTotal() result 16}}
+			{{#rollTotal() result 17}}
+			<div class="sheet-result">17</div>
+			{{/rollTotal() result 17}}
+			{{#rollTotal() result 18}}
+			<div class="sheet-result">18</div>
+			{{/rollTotal() result 18}}
+			{{#rollTotal() result 19}}
+			<div class="sheet-result">19</div>
+			{{/rollTotal() result 19}}
+			{{#rollTotal() result 20}}
+			<div class="sheet-result">20</div>
+			{{/rollTotal() result 20}}
+			{{#rollGreater() score result }}
+			<div class="sheet-feedback-reussite">Succés</div>
+			{{/rollGreater() score result}}
+			{{#^rollGreater() score result}}
+			<div class="sheet-feedback-echec">Echec</div>
+			{{/^rollGreater() score result}}
+		</div>
+	{{/sauvegarde}}
+	</div>
+</rolltemplate>
+
+<!-- &{template:ito} {{title=FORCE}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{carac=@{joueur|force}}} {{roll=[[D20]]}} -->
+
+
+ <!-- <div class="sheet-content">
+      {{#allprops() title subtitle desc color carac}}
       <div class="sheet-key">{{key}}</div>
       <div class="sheet-value">{{value}}</div>
-      {{/allprops() title subtitle desc color}}
+      {{/allprops() title subtitle desc color carac}}
       {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
-</rolltemplate>
+    </div> -->
 
 <!-- --------------------------- -->
 <!-- --------- SCRIPT ---------- -->
