@@ -908,14 +908,16 @@ div.roll_chance {
 	height: 260px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/background_roll.png);
 	background-size: cover;
+	font-family: "Baskervville", serif;
+	--rouge: red;
+	--vert: #00bd00;
 }
 
 /* Header formatting - title and subtitle */
 .sheet-rolltemplate-ito .sheet-header {
 	color: #000;
 	text-align: center;
-	font-family: "Baskervville", serif;
-	padding-top: 60px;
+	padding-top: 50px;
 	padding-bottom: 6px;
 	border-bottom: 2px solid #ff6c2e82;
 	margin-left: 50px;
@@ -925,25 +927,14 @@ div.roll_chance {
 	font-size: 20px;
 	font-weight: bold;	
     margin-bottom: 5px;
+    letter-spacing: -0.5px;
 }
+
 .sheet-rolltemplate-ito .sheet-subtitle {
 	font-size: 14px;
 	font-style: italic;
 	margin-bottom: 5px;
-}
-
-/* example colors */
-.sheet-rolltemplate-ito .sheet-container {
-  /* this is the default color */
-  --header-bg-color: rgba(112,32,130,1);
-  --header-text-color: #FFF;
-}
-.sheet-rolltemplate-ito .sheet-container.sheet-color-red {
-  --header-bg-color: #F00;
-}
-.sheet-rolltemplate-ito .sheet-container.sheet-color-green {
-  --header-bg-color: #0F0;
-  --header-text-color: #000;
+    letter-spacing: -0.5px;
 }
 
 /* Allprops part */
@@ -981,9 +972,37 @@ div.roll_chance {
 .sheet-rolltemplate-ito .sheet-desc,
 .sheet-rolltemplate-ito .sheet-result,
 .sheet-rolltemplate-ito .sheet-feedback-reussite,
-.sheet-rolltemplate-ito .sheet-feedback-echec
- {
+.sheet-rolltemplate-ito .sheet-feedback-echec,
+.sheet-rolltemplate-ito .sheet-result-chance {
   grid-column: span 2;
   padding: 5px;
   text-align: center;
+}
+
+.sheet-rolltemplate-ito .sheet-result {
+	margin-top: 10px;
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-ito .sheet-feedback-reussite,
+.sheet-rolltemplate-ito .sheet-feedback-echec {
+    margin-top: 30px;
+    font-size: 25px;
+	font-weight: bold;
+    letter-spacing: -1.5px;
+}
+
+.sheet-rolltemplate-ito .sheet-feedback-reussite {
+	color: var(--vert);
+}
+
+.sheet-rolltemplate-ito .sheet-feedback-echec {
+	color: var(--rouge);  
+}
+
+.sheet-rolltemplate-ito .sheet-result-chance {
+    font-size: 100px;
+    margin-top: 33px;
+    font-weight: bold;
 }

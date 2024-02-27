@@ -24,7 +24,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_force" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=FORCE}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force (@{force})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{force}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_zero">
 						0 : mort
@@ -48,7 +48,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=DEXTÉRITÉ}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Dextérité (@{dexterite})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{dexterite}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Discrétion
@@ -72,7 +72,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_volonte" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=VOLONTÉ}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Volonté (@{volonte})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{volonte}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Confiance
@@ -408,7 +408,7 @@ voit ses PV réduits à 0">
 						<button class="roll_d20" type="roll" name="roll_Lancer" value="/r 1d20" title="Lancer D20"></button>
 					</div>
 					<div class="roll_chance">
-						<button class="roll_chance" type="roll" name="roll_Lancer" value="/r 1d6" title="Jet de Chance"></button>
+						<button class="roll_chance" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Chance}} {{subtitle=@{character_name}}} {{chance=oui}}{{result=[[D6]]}}" title="Jet de Chance"></button>
 					</div>
 				</div>
 				<div class="wrapper_roll">
@@ -462,7 +462,8 @@ voit ses PV réduits à 0">
 	{{#sauvegarde}}
 		<div class="sheet-content">
 			{{#rollTotal() result 1}}
-			<div class="sheet-result">1</div>
+			<div class="sheet-result" style="color: #00bd00;">1</div>
+			<div class="sheet-feedback-reussite">Réussite</div>
 			{{/rollTotal() result 1}}
 			{{#rollTotal() result 2}}
 			<div class="sheet-result">2</div>
@@ -519,20 +520,58 @@ voit ses PV réduits à 0">
 			<div class="sheet-result">19</div>
 			{{/rollTotal() result 19}}
 			{{#rollTotal() result 20}}
-			<div class="sheet-result">20</div>
+			<div class="sheet-result" style="color: red;">20</div>
+			<div class="sheet-feedback-echec">Échec</div>
 			{{/rollTotal() result 20}}
-			{{#rollGreater() score result }}
-			<div class="sheet-feedback-reussite">Succés</div>
-			{{/rollGreater() score result}}
-			{{#^rollGreater() score result}}
-			<div class="sheet-feedback-echec">Echec</div>
-			{{/^rollGreater() score result}}
+			{{#rollGreater() result score}}
+			{{#^rollTotal() result 20}}
+			{{#^rollTotal() result 1}}
+			<div class="sheet-feedback-echec">Échec</div>
+			{{/^rollTotal() result 1}}
+			{{/^rollTotal() result 20}}
+			{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}
+			{{#^rollTotal() result 20}}
+			{{#^rollTotal() result 1}}
+			<div class="sheet-feedback-reussite">Réussite</div>
+			{{/^rollTotal() result 1}}
+			{{/^rollTotal() result 20}}
+			{{/^rollGreater() result score}}
 		</div>
 	{{/sauvegarde}}
+	
+	{{#chance}}
+	<div class="sheet-content">
+		{{#rollTotal() result 1}}
+		<div class="sheet-result-chance" style="color: red;">1</div>
+		{{/rollTotal() result 1}}
+		{{#rollTotal() result 2}}
+		<div class="sheet-result-chance" style="color: #D77104;">2</div>
+		{{/rollTotal() result 2}}
+		{{#rollTotal() result 3}}
+		<div class="sheet-result-chance" style="color: #D77104;">3</div>
+		{{/rollTotal() result 3}}
+		{{#rollTotal() result 4}}
+		<div class="sheet-result-chance" style="color: #C7B303;">4</div>
+		{{/rollTotal() result 4}}
+		{{#rollTotal() result 5}}
+		<div class="sheet-result-chance" style="color: #7BBD00;">5</div>
+		{{/rollTotal() result 5}}
+		{{#rollTotal() result 6}}
+		<div class="sheet-result-chance" style="color: #00bd00;">6</div>
+		{{/rollTotal() result 6}}
+	</div>
+	{{/chance}}
+	
+	{{#degats}}
+	{{/degats}}
+	
+	{{#arcanum}}
+	{{/arcanum}}
 	</div>
 </rolltemplate>
 
-<!-- &{template:ito} {{title=FORCE}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{carac=@{joueur|force}}} {{roll=[[D20]]}} -->
+<!-- &{template:ito} {{title=FORCE}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{joueur|force}]]}} {{result=[[D20]]}} -->
 
 
  <!-- <div class="sheet-content">
