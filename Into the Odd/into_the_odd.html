@@ -24,7 +24,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_force" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=FORCE}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_zero">
 						0 : mort
@@ -48,7 +48,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=DEXTÉRITÉ}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Discrétion
@@ -72,7 +72,7 @@
 						<input type="number" class="input_caracteristiques" name="attr_volonte" placeholder="0">
 					</div>
 					<div class="caracteristiques_roll">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="/r 1d20" title="Jet de Sauvegarde"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=VOLONTÉ}} {{subtitle=Jet de Sauvegarde}} {{Résultat=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
 						Confiance
@@ -452,6 +452,22 @@ voit ses PV réduits à 0">
 <!-- ----- ROLL TEMPLATE ----- -->
 <!-- ------------------------- -->
 
+<!-- ito -->
+<rolltemplate class="sheet-rolltemplate-ito">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
 
 <!-- --------------------------- -->
 <!-- --------- SCRIPT ---------- -->

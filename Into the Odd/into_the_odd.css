@@ -3,6 +3,7 @@
 
 /* Core Format*/
 .charsheet {
+	width: 810px;
 	--noir : #2c2e35;
 	--bleu : #2249a5;
 	--bleu_clair : #4e6db7;
@@ -889,4 +890,96 @@ div.roll_chance {
 
 .charsheet button[type=action].page:hover{
     color: var(--vert_clair);
+}
+
+/* Roll Template */
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-ito {
+  margin-left: -10px;
+}
+.withoutavatars .sheet-rolltemplate-ito {
+  margin-left: -10px;
+}
+
+.sheet-rolltemplate-ito .sheet-container {
+	border: none;
+	width: 260px;
+	height: 260px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/background_roll.png);
+	background-size: cover;
+}
+
+/* Header formatting - title and subtitle */
+.sheet-rolltemplate-ito .sheet-header {
+	color: #000;
+	text-align: center;
+	font-family: "Baskervville", serif;
+	padding-top: 60px;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #ff6c2e82;
+	margin-left: 50px;
+	width: 160px;
+}
+.sheet-rolltemplate-ito .sheet-title {
+	font-size: 20px;
+	font-weight: bold;	
+    margin-bottom: 5px;
+}
+.sheet-rolltemplate-ito .sheet-subtitle {
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 5px;
+}
+
+/* example colors */
+.sheet-rolltemplate-ito .sheet-container {
+  /* this is the default color */
+  --header-bg-color: rgba(112,32,130,1);
+  --header-text-color: #FFF;
+}
+.sheet-rolltemplate-ito .sheet-container.sheet-color-red {
+  --header-bg-color: #F00;
+}
+.sheet-rolltemplate-ito .sheet-container.sheet-color-green {
+  --header-bg-color: #0F0;
+  --header-text-color: #000;
+}
+
+/* Allprops part */
+.sheet-rolltemplate-ito .sheet-content {
+	width: 184px;
+	margin-left: 38px;
+	display: grid;
+	grid-template-columns: auto auto;
+	line-height: 1.4em;
+	margin-top: 15px;
+}
+.sheet-rolltemplate-ito .sheet-content > div {
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-ito .sheet-content .sheet-key {
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/* Empty rule, use this if you want to change the right column 
+.sheet-rolltemplate-ito .sheet-value {
+}
+*/
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-ito .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-ito .sheet-content :nth-child(4n) {
+  background:#EEE;
+}
+
+/* Description field */
+.sheet-rolltemplate-ito .sheet-desc {
+  grid-column: span 2;
+  padding: 5px;
+  text-align: center;
 }
