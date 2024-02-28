@@ -482,11 +482,15 @@ voit ses PV réduits à 0">
 	</div>
 	<!-- Page de creation personnage -->
 	<div class="creation">
-		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);">
+		<div class="creation_titre">
+			<span class="lettre">C</span>réation de personnage
+		</div>
+		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);padding-bottom: 15px;margin-bottom: 15px;margin-top: 25px;">
 			<div class="creation_stat_info">
-				Lancez 3d6 pour chaque caractéristique.<br>
+				<span class="lettre">L</span>ancez 3d6 pour chaque caractéristique.<br>
 				Vous pouvez échanger deux valeurs entre elles.
 			</div>
+			<div class="creation_fleche"></div>
 			<div class="creation_stat_force_data">
 				Force :
 			</div>
@@ -497,43 +501,41 @@ voit ses PV réduits à 0">
 				Volonté :
 			</div>
 			<div class="creation_stat_force">
-				<input type="number" class="input_creation" name="attr_creation_force" placeholder="0" min="0" max="20">
+				<input type="number" class="input_creation" name="attr_force" placeholder="0" min="0" max="20">
 			</div>
 			<div class="creation_stat_dexterite">
-				<input type="number" class="input_creation" name="attr_creation_dexterite" placeholder="0" min="0" max="20">
+				<input type="number" class="input_creation" name="attr_dexterite" placeholder="0" min="0" max="20">
 			</div>
 			<div class="creation_stat_volonte">
-				<input type="number" class="input_creation" name="attr_creation_volonte" placeholder="0" min="0" max="20">
+				<input type="number" class="input_creation" name="attr_volonte" placeholder="0" min="0" max="20">
 			</div>
-			<div class="creation_stat_force_dice">
-				dice force
-			</div>
-			<div class="creation_stat_dexterite_dice">
-				dice dexterite
-			</div>
-			<div class="creation_stat_volonte_dice">
-				dice volonte
+			<div class="creation_stat_dice">
+				<button class="roll_d6_creation" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}
+				&{template:ito} {{title=Dextérité}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}
+				&{template:ito} {{title=Volonté}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}" title="Lancer vos caractéristiques"></button>
 			</div>
 		</div>
-		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);">
+		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);padding-bottom: 15px;margin-bottom: 15px;">
 			<div class="creation_pv_info">
-				Votre personnage commence avec 1d6 points de vie qui mesurent sa capacité à éviter les dégâts qui menacent son existence.<br>
+				<span class="lettre">V</span>otre personnage commence avec 1d6 points de vie qui mesurent sa capacité à éviter les dégâts qui menacent son existence.<br>
 				Lancez le dé pour le définir.
-			</div>
+			</div>			
+			<div class="creation_fleche"></div>
 			<div class="creation_pv_data">
 				PV
 			</div>
 			<div class="creation_pv">
-				<input type="number" class="input_creation" name="attr_creation_HP" placeholder="0">
+				<input type="number" class="input_creation" name="attr_HP_base" placeholder="0">
 			</div>
 			<div class="creation_pv_dice">
-				dice pv
+				<button class="roll_d6" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Points de Vie}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[D6]]}}" title="Lancer 1D6"></button>
 			</div>
 		</div>
 		<div class="wrapper_creation">
 			<div class="creation_equipement_info">
-				Votre équipement et éventuelles informations supplémentaires sur votre personnage sont définis automatiquement. Ils seront directement inscrits sur votre feuille de personnage.
-			</div>
+				<span class="lettre">V</span>otre équipement et éventuelles informations supplémentaires sur votre personnage sont définis automatiquement. Ils seront directement inscrits sur votre feuille de personnage.
+			</div>			
+			<div class="creation_fleche"></div>
 			<div class="creation_final">
 				boutton valider
 			</div>

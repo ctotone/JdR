@@ -17,6 +17,7 @@
 	font-size: 16px;
 	font-weight: 400;
 	border: none;
+    margin-bottom: 15px;
 }
 
 body.sheet-darkmode .charsheet {
@@ -38,7 +39,7 @@ div.depart {
 }
 
 div.creation {
-    height: 350px;
+    height: 440px;
     padding: 15px;
 }
 
@@ -162,10 +163,37 @@ div.depart_droite {
 
 /* Structure Création*/
 
+div.creation_titre {
+    position: absolute;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 25px;
+    color: var(--noir);
+    font-weight: bold;
+    background: white;
+    margin-top: -40px;
+    margin-left: 0px;
+    letter-spacing: -1px;
+    font-family: var(--font_basker);
+    box-shadow: 4px 5px 10px 0px #00000080;
+}
+
 .wrapper_creation {  
 	display: grid;
     grid-template-columns: 390px 160px 80px 70px 70px;
 	grid-auto-rows: 40px;
+}
+
+div.creation_fleche {
+    grid-column: 2;
+	grid-row: 1/4;
+    width: 40px;
+    height: 37px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/fleche.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-left: 55px;
 }
 
 div.creation_stat_info {
@@ -177,6 +205,7 @@ div.creation_stat_info {
     letter-spacing: -1px;
     line-height: 1.2;
     align-self: center;
+    font-weight: bold;
 }
 
 div.creation_stat_force_data {
@@ -215,21 +244,9 @@ div.creation_stat_volonte {
     align-self: center;
 }
 
-div.creation_stat_force_dice {
+div.creation_stat_dice {
     grid-column: 5;
-	grid-row: 1;
-    align-self: center;
-}
-
-div.creation_stat_dexterite_dice {
-    grid-column: 5;
-	grid-row: 2;
-    align-self: center;
-}
-
-div.creation_stat_volonte_dice {
-    grid-column: 5;
-	grid-row: 3;
+	grid-row: 1/4;
     align-self: center;
 }
 
@@ -242,6 +259,7 @@ div.creation_pv_info {
     letter-spacing: -1px;
     line-height: 1.2;
     align-self: center;
+    font-weight: bold;
 }
 
 div.creation_pv_data {
@@ -271,6 +289,7 @@ div.creation_equipement_info {
     letter-spacing: -1px;
     line-height: 1.2;
     align-self: center;
+    font-weight: bold;
 }
 
 div.creation_final {
@@ -1034,7 +1053,8 @@ div.roll_arcanum {
 .charsheet button[type=roll].roll_chance::before,
 .charsheet button[type=action].page::before,
 .charsheet button[type=action].page_creation::before,
-.charsheet button[type=action].page_personnage::before {
+.charsheet button[type=action].page_personnage::before,
+.charsheet button[type=roll].roll_d6_creation::before {
   content: '';
 }
 
@@ -1069,12 +1089,28 @@ div.roll_arcanum {
 	cursor: pointer;
 }
 
+.charsheet button[type=roll].roll_d6_creation {
+    width: 50px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    margin: 0;
+	background-size: contain;
+    background-repeat: no-repeat;
+	background-color: transparent;
+	cursor: pointer;
+}
+
 .charsheet button[type=roll].roll_d4 {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_4.png);
 }
 
 .charsheet button[type=roll].roll_d6 {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_6.png);
+}
+
+.charsheet button[type=roll].roll_d6_creation {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_6x3.png);
 }
 
 .charsheet button[type=roll].roll_d8 {
@@ -1105,6 +1141,12 @@ div.roll_arcanum {
 .charsheet button[type=roll].roll_d12:hover,
 .charsheet button[type=roll].roll_d20:hover,
 .charsheet button[type=roll].roll_chance:hover {
+    margin-left: 2px;
+	padding: 0px;
+	background-position: 0 0px;
+}
+
+.charsheet button[type=roll].roll_d6_creation:hover {
     margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
