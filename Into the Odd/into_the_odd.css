@@ -37,6 +37,11 @@ div.depart {
 	height: 400px;
 }
 
+div.creation {
+    height: 350px;
+    padding: 15px;
+}
+
 span.lettre {
 	color: var(--bleu);
 }
@@ -99,14 +104,14 @@ span.picto {
 }
 
 div.personnage,
-div.outils,
+div.creation,
 div.depart {
 	display: none;
 }
 
 .charsheet .page[value="0"] ~ div.depart,
 .charsheet .page[value="1"] ~ div.personnage,
-.charsheet .page[value="2"] ~ div.outils {
+.charsheet .page[value="2"] ~ div.creation {
     display: block;
 }
 
@@ -114,20 +119,164 @@ div.depart {
 
 .wrapper_depart {  
 	display: grid;
-    grid-template-columns: 270px 400px;
-	grid-auto-rows: 30px;
+    grid-template-columns: 300px 50px 230px 230px;
+	grid-auto-rows: 80px;
 }
 
 div.depart_image {
-	grid-column: 1;
-	width: 270px;
-	height: 400px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/creation.png);
-	background-size: cover;
+    margin-top: 50px;
+    margin-left: 30px;
+    grid-column: 1;
+    width: 300px;
+    height: 300px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/logo.png);
+    background-size: cover;
 }
 
-div.depart_texte {
-	grid-column: 2;
+div.depart_titre {
+    grid-column: 3 / 5;
+    text-align: center;
+    font-size: 22px;
+    font-family: var(--font_basker);
+    color: var(--noir);
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    margin-top: 20px;
+}
+
+div.depart_gauche {
+	grid-column: 3;
+	text-align: center;
+    font-size: 23px;
+    color: var(--noir);
+    letter-spacing: -1.5px;
+}
+
+div.depart_droite {
+	grid-column: 4;
+	text-align: center;
+    font-size: 23px;
+    color: var(--noir);
+    letter-spacing: -1.5px;
+}
+
+/* Structure Création*/
+
+.wrapper_creation {  
+	display: grid;
+    grid-template-columns: 390px 160px 80px 70px 70px;
+	grid-auto-rows: 40px;
+}
+
+div.creation_stat_info {
+    grid-column: 1;
+	grid-row: 1/4;
+    font-size: 20px;
+    font-family: var(--font_amiri);
+    color: var(--noir);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    align-self: center;
+}
+
+div.creation_stat_force_data {
+    grid-column: 3;
+	grid-row: 1;
+    align-self: center;
+}
+
+div.creation_stat_dexterite_data {
+    grid-column: 3;
+	grid-row: 2;
+    align-self: center;
+}
+
+div.creation_stat_volonte_data {
+    grid-column: 3;
+	grid-row: 3;
+    align-self: center;
+}
+
+div.creation_stat_force {
+    grid-column: 4;
+	grid-row: 1;
+    align-self: center;
+}
+
+div.creation_stat_dexterite {
+    grid-column: 4;
+	grid-row: 2;
+    align-self: center;
+}
+
+div.creation_stat_volonte {
+    grid-column: 4;
+	grid-row: 3;
+    align-self: center;
+}
+
+div.creation_stat_force_dice {
+    grid-column: 5;
+	grid-row: 1;
+    align-self: center;
+}
+
+div.creation_stat_dexterite_dice {
+    grid-column: 5;
+	grid-row: 2;
+    align-self: center;
+}
+
+div.creation_stat_volonte_dice {
+    grid-column: 5;
+	grid-row: 3;
+    align-self: center;
+}
+
+div.creation_pv_info {
+    grid-column: 1;
+	grid-row: 1/4;
+    font-size: 20px;
+    font-family: var(--font_amiri);
+    color: var(--noir);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    align-self: center;
+}
+
+div.creation_pv_data {
+    grid-column: 3;
+	grid-row: 1/4;
+    align-self: center;
+}
+
+div.creation_pv {
+    grid-column: 4;
+	grid-row: 1/4;
+    align-self: center;
+}
+
+div.creation_pv_dice {
+    grid-column: 5;
+	grid-row: 1/4;
+    align-self: center;
+}
+
+div.creation_equipement_info {
+    grid-column: 1;
+	grid-row: 1/4;
+    font-size: 20px;
+    font-family: var(--font_amiri);
+    color: var(--noir);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    align-self: center;
+}
+
+div.creation_final {
+    grid-column: 3 / 6;
+	grid-row: 1/4;
+    align-self: center;
 }
 
 /* Structure Personnage*/
@@ -270,7 +419,7 @@ div.cat_roll {
 
 .wrapper_caracteristiques {  
 	display: grid;
-    grid-template-columns: 115px 10px 100px;
+    grid-template-columns: 135px 10px 100px;
 	grid-auto-rows: 20px;
 	margin-bottom: 15px;
 }
@@ -286,7 +435,7 @@ div.caracteristiques_type {
     grid-row: 1;
     background: white;
     padding-left: 15px;
-    margin-left: 53px;
+    margin-left: 72px;
     margin-top: -9px;
     font-family: var(--font_basker);
     font-weight: bold;
@@ -298,13 +447,24 @@ div.caracteristiques_valeur {
 	grid-column: 1;
 	grid-row: 1/4;
 	margin-left: 11px;
+	margin-top: 3px;
+}
+
+div.caracteristiques_valeur_max {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    margin-left: 57px;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #2c2e35a1;
+	font-weight: bold;
 }
 
 div.caracteristiques_roll {
 	grid-column: 1;
 	grid-row: 1/4;
     margin-top: 16px;
-    margin-left: 73px;
+    margin-left: 93px;
 }
 
 div.caracteristiques_zero {
@@ -663,6 +823,23 @@ div.roll_arcanum {
     font-weight: bold;
 }
 
+.charsheet input.input_caracteristiques_max {
+    width: 21px !important;
+    outline: none;
+    resize: none;
+    padding: 0;
+    font-size: 14px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    color: #2c2e35a1;
+    letter-spacing: -2px;
+    font-weight: bold;
+    margin-left: -4px;
+    margin-top: 1px;
+}
+
 .charsheet input.input_armure_nom { 
 	width: 120px;
 	outline: none;
@@ -829,6 +1006,23 @@ div.roll_arcanum {
     line-height: 1.2;
 }
 
+.charsheet input.input_creation { 
+	width: 50px !important;
+    outline: none;
+    resize: none;
+    padding: 0;
+    font-size: 20px;
+    border: none;	
+    border-bottom: 2px dotted var(--bleu);
+	border-radius: 0;
+    background: none;
+    text-align: center !important;
+    cursor: pointer;
+    color: var(--noir);
+    font-family: var(--font_amiri);
+    line-height: 1.2;
+}
+
 /* Boutton ROLL */
 .charsheet button[type=roll].roll_dice::before,
 .charsheet button[type=roll].roll_d4::before,
@@ -838,7 +1032,9 @@ div.roll_arcanum {
 .charsheet button[type=roll].roll_d12::before,
 .charsheet button[type=roll].roll_d20::before,
 .charsheet button[type=roll].roll_chance::before,
-.charsheet button[type=action].page::before {
+.charsheet button[type=action].page::before,
+.charsheet button[type=action].page_creation::before,
+.charsheet button[type=action].page_personnage::before {
   content: '';
 }
 
@@ -852,7 +1048,7 @@ div.roll_arcanum {
 	background-size: 25px 24px;
     background-repeat: no-repeat;
 	background-color: transparent;	
-	cursor: grab;
+	cursor: pointer;
 }
 
 .charsheet button[type=roll].roll_d4,
@@ -870,7 +1066,7 @@ div.roll_arcanum {
 	background-size: contain;
     background-repeat: no-repeat;
 	background-color: transparent;
-	cursor: grab;
+	cursor: pointer;
 }
 
 .charsheet button[type=roll].roll_d4 {
@@ -923,6 +1119,24 @@ div.roll_arcanum {
 
 .charsheet button[type=action].page:hover{
     color: var(--vert_clair);
+}
+
+.charsheet button[type=action].page_creation,
+.charsheet button[type=action].page_personnage {
+    width: 160px;
+    height: 242px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.charsheet button[type=action].page_creation {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/creation_tuto.png);
+    border: 2px solid var(--noir);
+}
+	
+.charsheet button[type=action].page_personnage {
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/creation_feuille.png);
 }
 
 /* Roll Template */

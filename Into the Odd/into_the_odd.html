@@ -8,8 +8,26 @@
 	<div class="depart">
 		<div class="wrapper_depart">
 			<div class="depart_image"></div>
-		Souhaitez vous être guider dans la création de votre personnage<br>
-		ou accéder directement à la feuille vierge?
+			<div class="depart_titre">
+				<span class="lettre">B</span>ienvenue dans INTO THE ODD
+			</div>
+		</div>
+		<div class="wrapper_depart">
+			<div class="depart_gauche">
+				<button type="action" class="page_creation" name="act_page_creation"></button>
+			</div>
+			<div class="depart_droite">
+				<button type="action" class="page_personnage" name="act_page_personnage"></button>
+			</div>
+		</div>
+		<div class="wrapper_depart" style="margin-top: 175px;">
+			<div class="depart_gauche">
+				<span class="lettre">C</span>réation de personnage
+			</div>
+			<div class="depart_droite">
+				<span class="lettre">F</span>euille vierge
+			</div>
+			
 		</div>
 		
 		<!-- <button type="action" class="page" name="act_page_personnage"><span class="picto" title="Page de personnage">U</span></button>
@@ -19,7 +37,7 @@
 	<!-- Page de personnage -->
 	<div class="personnage">
 		<div class="page_config">
-		<button type="action" class="page" name="act_page_config"><span class="picto" title="Page de configuration">y</span></button></div>
+		<button type="action" class="page" name="act_page_depart"><span class="picto" title="Page de configuration">y</span></button></div>
 		<div class="wrapper_personnage">
 			<div class="cat_logo"></div>
 			<div class="cat_name">
@@ -32,7 +50,10 @@
 						FOR
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="number" class="input_caracteristiques" name="attr_force" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_force" placeholder="0" title="FORCE actuelle" min="0" max="20">
+					</div>
+					<div class="caracteristiques_valeur_max">
+						/<input type="number" class="input_caracteristiques_max" name="attr_force_max" placeholder="0" title="FORCE maximum" min="0" max="20">
 					</div>
 					<div class="caracteristiques_roll">
 						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force (@{force})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{force}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
@@ -56,7 +77,10 @@
 						DEX
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="number" class="input_caracteristiques" name="attr_dexterite" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_dexterite" placeholder="0" title="DEXTÉRITÉ actuelle" min="0" max="20">
+					</div>
+					<div class="caracteristiques_valeur_max">
+						/<input type="number" class="input_caracteristiques_max" name="attr_dexterite_max" placeholder="0" title="DEXTÉRITÉ maximum" min="0" max="20">
 					</div>
 					<div class="caracteristiques_roll">
 						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Dextérité (@{dexterite})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{dexterite}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
@@ -80,9 +104,11 @@
 						VOL
 					</div>
 					<div class="caracteristiques_valeur">
-						<input type="number" class="input_caracteristiques" name="attr_volonte" placeholder="0">
+						<input type="number" class="input_caracteristiques" name="attr_volonte" placeholder="0" title="VOLONTÉ actuelle" min="0" max="20">
 					</div>
-					<div class="caracteristiques_roll">
+					<div class="caracteristiques_valeur_max">
+						/<input type="number" class="input_caracteristiques_max" name="attr_volonte_max" placeholder="0" title="VOLONTÉ maximum" min="0" max="20">
+					</div><div class="caracteristiques_roll">
 						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Volonté (@{volonte})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{volonte}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
 					<div class="caracteristiques_data1">
@@ -454,11 +480,64 @@ voit ses PV réduits à 0">
 			</div>
 		</div>
 	</div>
-	<!-- Page de configuration -->
-	<div class="outils">
-		<button type="action" class="page" name="act_page_personnage"><span class="picto" title="Page de personnage">U</span></button>
-		<button type="action" class="page" name="act_obtenir_objets"><span class="picto" title="objets">Z</span></button>
-		
+	<!-- Page de creation personnage -->
+	<div class="creation">
+		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);">
+			<div class="creation_stat_info">
+				Lancez 3d6 pour chaque caractéristique.<br>
+				Vous pouvez échanger deux valeurs entre elles.
+			</div>
+			<div class="creation_stat_force_data">
+				Force :
+			</div>
+			<div class="creation_stat_dexterite_data">
+				Dextérité :
+			</div>
+			<div class="creation_stat_volonte_data">
+				Volonté :
+			</div>
+			<div class="creation_stat_force">
+				<input type="number" class="input_creation" name="attr_creation_force" placeholder="0" min="0" max="20">
+			</div>
+			<div class="creation_stat_dexterite">
+				<input type="number" class="input_creation" name="attr_creation_dexterite" placeholder="0" min="0" max="20">
+			</div>
+			<div class="creation_stat_volonte">
+				<input type="number" class="input_creation" name="attr_creation_volonte" placeholder="0" min="0" max="20">
+			</div>
+			<div class="creation_stat_force_dice">
+				dice force
+			</div>
+			<div class="creation_stat_dexterite_dice">
+				dice dexterite
+			</div>
+			<div class="creation_stat_volonte_dice">
+				dice volonte
+			</div>
+		</div>
+		<div class="wrapper_creation" style="border-bottom: 1px solid var(--bleu);">
+			<div class="creation_pv_info">
+				Votre personnage commence avec 1d6 points de vie qui mesurent sa capacité à éviter les dégâts qui menacent son existence.<br>
+				Lancez le dé pour le définir.
+			</div>
+			<div class="creation_pv_data">
+				PV
+			</div>
+			<div class="creation_pv">
+				<input type="number" class="input_creation" name="attr_creation_HP" placeholder="0">
+			</div>
+			<div class="creation_pv_dice">
+				dice pv
+			</div>
+		</div>
+		<div class="wrapper_creation">
+			<div class="creation_equipement_info">
+				Votre équipement et éventuelles informations supplémentaires sur votre personnage sont définis automatiquement. Ils seront directement inscrits sur votre feuille de personnage.
+			</div>
+			<div class="creation_final">
+				boutton valider
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -600,7 +679,16 @@ voit ses PV réduits à 0">
 
 <!-- Changement de page -->
 <script type="text/worker">
-   on('clicked:page_config', function() {
+   on('clicked:page_depart', function() {
+
+	setAttrs({
+			"page": 0
+			});
+});
+</script>
+
+<script type="text/worker">
+   on('clicked:page_creation', function() {
 
 	setAttrs({
 			"page": 2
