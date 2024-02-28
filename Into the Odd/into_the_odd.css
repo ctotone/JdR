@@ -109,6 +109,27 @@ div.depart {
 .charsheet .page[value="2"] ~ div.outils {
     display: block;
 }
+
+/* Structure Depart*/
+
+.wrapper_depart {  
+	display: grid;
+    grid-template-columns: 270px 400px;
+	grid-auto-rows: 30px;
+}
+
+div.depart_image {
+	grid-column: 1;
+	width: 270px;
+	height: 400px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/creation.png);
+	background-size: cover;
+}
+
+div.depart_texte {
+	grid-column: 2;
+}
+
 /* Structure Personnage*/
 
 .wrapper_personnage {  
