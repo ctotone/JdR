@@ -3,8 +3,17 @@
 <!-- --------------------------------- -->
 
 <div class="principale">
-	<input type="hidden" class="page" name="attr_page"  value="1">
-	
+	<input type="hidden" class="page" name="attr_page"  value="0">
+	<!-- Page de départ -->
+	<div class="depart">
+		Souhaitez vous être guider dans la création de votre personnage<br>
+		ou accéder directement à la feuille vierge?
+		<button type="action" class="page" name="act_page_personnage"><span class="picto" title="Page de personnage">U</span></button>
+		
+		
+		<button type="action" class="page" name="act_obtenir_objets"><span class="picto" title="objets">Z</span></button>
+		
+	</div>
 	<!-- Page de personnage -->
 	<div class="personnage">
 		<div class="page_config">
@@ -407,11 +416,11 @@ voit ses PV réduits à 0">
 					<div class="roll_d20">
 						<button class="roll_d20" type="roll" name="roll_Lancer" value="&{template:ito} {{title=d20}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[D20]]}}" title="Lancer D20"></button>
 					</div>
-					<div class="roll_d_arcanum">
-						<button class="roll_d20" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Arcanum}} {{subtitle=@{character_name}}} {{arcanum=oui}}{{result=[[D66]]}}" title="Arcanum"></button>
-					</div>
 					<div class="roll_chance">
 						<button class="roll_chance" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Chance}} {{subtitle=@{character_name}}} {{chance=oui}}{{result=[[D6]]}}" title="Jet de Chance"></button>
+					</div>
+					<div class="roll_arcanum">
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Arcanum}} {{subtitle=@{character_name}}} {{arcanum=oui}}{{result=[[D66]]}}" title="Arcanum" style="width: 51px;height: 50px;background-size: cover;"></button>
 					</div>
 				</div>
 				<div class="wrapper_roll">
@@ -433,13 +442,12 @@ voit ses PV réduits à 0">
 					<div class="roll_d20">
 						<span class="lettre">D</span>20
 					</div>
-					<div class="roll_d_arcanum">
-						<span class="lettre">D</span>66
-					</div>
 					<div class="roll_chance">
 						<span class="lettre">C</span>hance
 					</div>
-				
+					<div class="roll_arcanum">
+						<span class="lettre">D</span>66
+					</div>
 				</div>
 			</div>
 		</div>
@@ -577,7 +585,7 @@ voit ses PV réduits à 0">
 	
 	{{#arcanum}}
 	<div class="sheet-content">
-		<div class="sheet-result-arcanum">n° {{result}}</div>
+		<div class="sheet-result-arcanum">#{{result}}</div>
 	</div>
 	{{/arcanum}}
 	</div>

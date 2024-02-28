@@ -33,6 +33,10 @@ div.personnage {
 	padding: 20px;
 }
 
+div.depart {
+	height: 400px;
+}
+
 span.lettre {
 	color: var(--bleu);
 }
@@ -95,10 +99,12 @@ span.picto {
 }
 
 div.personnage,
-div.outils {
+div.outils,
+div.depart {
 	display: none;
 }
 
+.charsheet .page[value="0"] ~ div.depart,
 .charsheet .page[value="1"] ~ div.personnage,
 .charsheet .page[value="2"] ~ div.outils {
     display: block;
@@ -542,7 +548,7 @@ div.entreprises_revenus_2 {
 
 .wrapper_roll {  
 	display: grid;
-    grid-template-columns: 108px 108px 108px 108px 108px 108px 108px;
+    grid-template-columns: 95px 95px 95px 95px 95px 95px 95px 95px;
 	grid-auto-rows: 51px;
     font-family: var(--font_basker);
 }
@@ -592,6 +598,12 @@ div.roll_d20 {
 
 div.roll_chance {
 	grid-column: 7;
+	text-align: center;
+    font-family: var(--font_amiri);
+}
+
+div.roll_arcanum {
+	grid-column: 8;
 	text-align: center;
     font-family: var(--font_amiri);
 }
@@ -1004,9 +1016,34 @@ div.roll_chance {
 }
 
 .sheet-rolltemplate-ito .sheet-result-chance,
-.sheet-rolltemplate-ito .sheet-result-degats,
-.sheet-rolltemplate-ito .sheet-result-arcanum {
+.sheet-rolltemplate-ito .sheet-result-degats {
     font-size: 100px;
     margin-top: 33px;
     font-weight: bold;
+}
+
+.sheet-rolltemplate-ito .sheet-result-arcanum {
+    font-size: 50px;
+    margin-top: 30px;
+    font-weight: bold;
+	font-style: italic;
+}
+
+.sheet-rolltemplate-ito .inlinerollresult,
+.sheet-rolltemplate-ito .inlinerollresult.importantroll,
+.sheet-rolltemplate-ito .inlinerollresult.fullcrit,
+.sheet-rolltemplate-ito .inlinerollresult.fullfail {
+	border: none !important;
+    background-color: transparent !important;
+	color: var(--noir) !important;
+    font-size: 100px;
+	font-family: "Baskervville", serif;
+}
+
+.sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult,
+.sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.importantroll,
+.sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.fullcrit,
+.sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.fullfail {
+    font-size: 80px;
+	font-style: italic;
 }
