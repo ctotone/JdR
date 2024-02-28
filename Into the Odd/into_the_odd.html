@@ -22,10 +22,10 @@
 		</div>
 		<div class="wrapper_depart" style="margin-top: 175px;">
 			<div class="depart_gauche">
-				<span class="lettre">C</span>réation de personnage
+				<span class="lettre">C</span>réation du personnage
 			</div>
 			<div class="depart_droite">
-				<span class="lettre">F</span>euille vierge
+				<span class="lettre">F</span>euille de personnage
 			</div>
 			
 		</div>
@@ -37,7 +37,8 @@
 	<!-- Page de personnage -->
 	<div class="personnage">
 		<div class="page_config">
-		<button type="action" class="page" name="act_page_depart"><span class="picto" title="Page de configuration">y</span></button></div>
+		<button type="action" class="page" name="act_page_depart"><span class="picto" title="Retour à la page
+d'introduction">r</span></button></div>
 		<div class="wrapper_personnage">
 			<div class="cat_logo"></div>
 			<div class="cat_name">
@@ -448,7 +449,7 @@ voit ses PV réduits à 0">
 						<button class="roll_chance" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Chance}} {{subtitle=@{character_name}}} {{chance=oui}}{{result=[[D6]]}}" title="Jet de Chance"></button>
 					</div>
 					<div class="roll_arcanum">
-						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Arcanum}} {{subtitle=@{character_name}}} {{arcanum=oui}}{{result=[[D66]]}}" title="Arcanum" style="width: 51px;height: 50px;background-size: cover;"></button>
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Arcanum}} {{subtitle=@{character_name}}} {{arcanum=oui}}{{result=[[D6]][[D6]]}}" title="Arcanum" style="width: 51px;height: 50px;background-size: cover;"></button>
 					</div>
 				</div>
 				<div class="wrapper_roll">
@@ -482,6 +483,9 @@ voit ses PV réduits à 0">
 	</div>
 	<!-- Page de creation personnage -->
 	<div class="creation">
+		<div class="page_config" style="margin-left: 760px;margin-top: -6px;">
+		<button type="action" class="page" name="act_page_depart"><span class="picto" title="Retour à la page
+d'introduction">r</span></button></div>
 		<div class="creation_titre">
 			<span class="lettre">C</span>réation de personnage
 		</div>
@@ -492,13 +496,13 @@ voit ses PV réduits à 0">
 			</div>
 			<div class="creation_fleche"></div>
 			<div class="creation_stat_force_data">
-				Force :
+				<span class="lettre">F</span>orce
 			</div>
 			<div class="creation_stat_dexterite_data">
-				Dextérité :
+				<span class="lettre">D</span>extérité
 			</div>
 			<div class="creation_stat_volonte_data">
-				Volonté :
+				<span class="lettre">V</span>olonté
 			</div>
 			<div class="creation_stat_force">
 				<input type="number" class="input_creation" name="attr_force" placeholder="0" min="0" max="20">
@@ -522,10 +526,10 @@ voit ses PV réduits à 0">
 			</div>			
 			<div class="creation_fleche"></div>
 			<div class="creation_pv_data">
-				PV
+				<span class="lettre">P</span>V
 			</div>
 			<div class="creation_pv">
-				<input type="number" class="input_creation" name="attr_HP_base" placeholder="0">
+				<input type="number" class="input_creation" name="attr_HP_base" placeholder="0" min="0" max="6">
 			</div>
 			<div class="creation_pv_dice">
 				<button class="roll_d6" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Points de Vie}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[D6]]}}" title="Lancer 1D6"></button>
@@ -537,7 +541,7 @@ voit ses PV réduits à 0">
 			</div>			
 			<div class="creation_fleche"></div>
 			<div class="creation_final">
-				boutton valider
+				<button type="action" class="valider_personnage" name="act_creation_final"><span title="Créer le personnage">Créer le personnage</span></button></div>
 			</div>
 		</div>
 	</div>
@@ -750,11 +754,14 @@ console.log("Meilleur statistique");
 
 <!-- Attribution Item -->
 <script type="text/worker">
-on('clicked:obtenir_objets', function() {
-console.log("Obtenir Objets");
+on('clicked:creation_final', function() {
+console.log("creation_final");
 
-    getAttrs(["HP_base", "stat_principale"], function(values) {
+    getAttrs(["HP_base", "stat_principale", "force", "dexterite", "volonte"], function(values) {
          let HP_base = parseInt(values["HP_base"]) || 0;
+		 let force_max = parseInt(values["force"]) || 0;
+		 let dexterite_max = parseInt(values["dexterite"]) || 0;
+		 let volonte_max = parseInt(values["volonte"]) || 0;
 		 let stat_principale = parseInt(values["stat_principale"]) || 0;
 		 
 			if (stat_principale <= 9 && HP_base == 1) 		equipement_1 = "Épée (d6)", 
@@ -1265,6 +1272,11 @@ console.log("Obtenir Objets");
 					arcana_1 = "";
 			
 		setAttrs({
+			"force_max" : force_max,
+			"dexterite_max" : dexterite_max,
+			"volonte_max" : volonte_max,
+			"page" : 1,
+			"HP_actuel" : HP_base,
 			"equipement_1" : equipement_1,
 			"equipement_2" : equipement_2,
 			"equipement_3" : equipement_3,

@@ -178,10 +178,10 @@ div.creation_titre {
     box-shadow: 4px 5px 10px 0px #00000080;
 }
 
-.wrapper_creation {  
-	display: grid;
-    grid-template-columns: 390px 160px 80px 70px 70px;
-	grid-auto-rows: 40px;
+.wrapper_creation {
+    display: grid;
+    grid-template-columns: 390px 120px 100px 60px 120px;
+    grid-auto-rows: 40px;
 }
 
 div.creation_fleche {
@@ -193,7 +193,7 @@ div.creation_fleche {
     background-size: contain;
     background-repeat: no-repeat;
     align-self: center;
-    margin-left: 55px;
+    margin-left: 35px;
 }
 
 div.creation_stat_info {
@@ -212,18 +212,27 @@ div.creation_stat_force_data {
     grid-column: 3;
 	grid-row: 1;
     align-self: center;
+    color: var(--noir);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 div.creation_stat_dexterite_data {
     grid-column: 3;
 	grid-row: 2;
     align-self: center;
+    color: var(--noir);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 div.creation_stat_volonte_data {
     grid-column: 3;
 	grid-row: 3;
     align-self: center;
+    color: var(--noir);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 div.creation_stat_force {
@@ -248,6 +257,7 @@ div.creation_stat_dice {
     grid-column: 5;
 	grid-row: 1/4;
     align-self: center;
+    text-align: center;
 }
 
 div.creation_pv_info {
@@ -266,6 +276,9 @@ div.creation_pv_data {
     grid-column: 3;
 	grid-row: 1/4;
     align-self: center;
+    color: var(--noir);
+    font-weight: bold;
+    font-size: 20px;
 }
 
 div.creation_pv {
@@ -278,6 +291,7 @@ div.creation_pv_dice {
     grid-column: 5;
 	grid-row: 1/4;
     align-self: center;
+    text-align: center;
 }
 
 div.creation_equipement_info {
@@ -296,6 +310,7 @@ div.creation_final {
     grid-column: 3 / 6;
 	grid-row: 1/4;
     align-self: center;
+    text-align: center;
 }
 
 /* Structure Personnage*/
@@ -1025,21 +1040,22 @@ div.roll_arcanum {
     line-height: 1.2;
 }
 
-.charsheet input.input_creation { 
-	width: 50px !important;
+.charsheet input.input_creation {
+    width: 30px !important;
     outline: none;
     resize: none;
     padding: 0;
-    font-size: 20px;
-    border: none;	
+    font-size: 22px;
+    border: none;
     border-bottom: 2px dotted var(--bleu);
-	border-radius: 0;
+    border-radius: 0;
     background: none;
     text-align: center !important;
     cursor: pointer;
-    color: var(--noir);
+    color: #b20101;
     font-family: var(--font_amiri);
     line-height: 1.2;
+    font-weight: bold;
 }
 
 /* Boutton ROLL */
@@ -1090,15 +1106,15 @@ div.roll_arcanum {
 }
 
 .charsheet button[type=roll].roll_d6_creation {
-    width: 50px;
-    height: 50px;
+    width: 91px;
+    height: 45px;
     border: none;
     padding: 0;
     margin: 0;
-	background-size: contain;
+    background-size: contain;
     background-repeat: no-repeat;
-	background-color: transparent;
-	cursor: pointer;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .charsheet button[type=roll].roll_d4 {
@@ -1150,6 +1166,24 @@ div.roll_arcanum {
     margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
+}
+
+.charsheet button[type=action].valider_personnage {
+    width: 226px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    margin: 10px;
+    box-shadow: 3px 3px 7px 1px #0000006e;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgb(25 70 177) 20%, rgb(34 73 165) 100%);
+    font-size: 18px;
+    color: #ffffffd6;
+}
+
+
+.charsheet button[type=action].valider_personnage:hover {
+    box-shadow: 3px 3px 7px 1px #000000bd;
 }
 
 .charsheet button[type=action].page {
