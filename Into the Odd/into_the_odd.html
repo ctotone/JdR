@@ -14,10 +14,12 @@
 		</div>
 		<div class="wrapper_depart">
 			<div class="depart_gauche">
-				<button type="action" class="page_creation" name="act_page_creation"></button>
+				<button type="action" class="page_creation" name="act_page_creation" title="Laissez vous guider dans la 
+création de votre personnage"></button>
 			</div>
 			<div class="depart_droite">
-				<button type="action" class="page_personnage" name="act_page_personnage"></button>
+				<button type="action" class="page_personnage" name="act_page_personnage" title="Accéder directement à
+la feuille de personnage"></button>
 			</div>
 		</div>
 		<div class="wrapper_depart" style="margin-top: 175px;">
@@ -567,58 +569,76 @@ d'introduction">r</span></button></div>
 			<div class="sheet-feedback-reussite">Réussite</div>
 			{{/rollTotal() result 1}}
 			{{#rollTotal() result 2}}
-			<div class="sheet-result">2</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">2</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">2</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 2}}
 			{{#rollTotal() result 3}}
-			<div class="sheet-result">3</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">3</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">3</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 3}}
 			{{#rollTotal() result 4}}
-			<div class="sheet-result">4</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">4</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">4</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 4}}
 			{{#rollTotal() result 5}}
-			<div class="sheet-result">5</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">5</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">5</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 5}}
 			{{#rollTotal() result 6}}
-			<div class="sheet-result">6</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">6</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">6</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 6}}
 			{{#rollTotal() result 7}}
-			<div class="sheet-result">7</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">7</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">7</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 7}}
 			{{#rollTotal() result 8}}
-			<div class="sheet-result">8</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">8</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">8</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 8}}
 			{{#rollTotal() result 9}}
-			<div class="sheet-result">9</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">9</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">9</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 9}}
 			{{#rollTotal() result 10}}
-			<div class="sheet-result">10</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">10</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">10</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 10}}
 			{{#rollTotal() result 11}}
-			<div class="sheet-result">11</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">11</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">11</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 11}}
 			{{#rollTotal() result 12}}
-			<div class="sheet-result">12</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">12</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">12</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 12}}
 			{{#rollTotal() result 13}}
-			<div class="sheet-result">13</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">13</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">13</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 13}}
 			{{#rollTotal() result 14}}
-			<div class="sheet-result">14</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">14</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">14</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 14}}
 			{{#rollTotal() result 15}}
-			<div class="sheet-result">15</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">15</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">15</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 15}}
 			{{#rollTotal() result 16}}
-			<div class="sheet-result">16</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">16</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">16</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 16}}
 			{{#rollTotal() result 17}}
-			<div class="sheet-result">17</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">17</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">17</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 17}}
 			{{#rollTotal() result 18}}
-			<div class="sheet-result">18</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">18</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">18</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 18}}
 			{{#rollTotal() result 19}}
-			<div class="sheet-result">19</div>
+			{{#rollGreater() result score}}<div class="sheet-result" style="color: red;">19</div>{{/rollGreater() result score}}
+			{{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">19</div>{{/^rollGreater() result score}}
 			{{/rollTotal() result 19}}
 			{{#rollTotal() result 20}}
 			<div class="sheet-result" style="color: red;">20</div>
@@ -672,7 +692,7 @@ d'introduction">r</span></button></div>
 	
 	{{#arcanum}}
 	<div class="sheet-content">
-		<div class="sheet-result-arcanum">#{{result}}</div>
+		<div class="sheet-result-arcanum"># {{result}}</div>
 	</div>
 	{{/arcanum}}
 	</div>
