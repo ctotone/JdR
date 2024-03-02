@@ -47,6 +47,15 @@ d'introduction">r</span></button></div>
 			<div class="cat_name">
 				<span class="lettre">N</span>om :<input type="text" class="input_name" name="attr_character_name"> 
 			</div>
+			<div class="cat_profil">
+				<span class="lettre">P</span>rofil :<input type="text" class="input_profil" name="attr_profil"> 
+			</div>
+			<div class="cat_talent">
+				<span class="lettre">T</span>alent :<input type="text" class="input_talent" name="attr_talent"> 
+			</div>
+			<div class="cat_degat_max">
+				<span class="lettre">D</span>égâts max. :<input type="text" class="input_degat_max" name="attr_degat_max"> 
+			</div>
 			<div class="cat_caracteristiques">
 				<div class="wrapper_caracteristiques">
 					<div class="caracteristiques_border"></div>
@@ -62,9 +71,9 @@ d'introduction">r</span></button></div>
 					<div class="caracteristiques_roll">
 						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force (@{force})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{force}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
 					</div>
-					<div class="caracteristiques_zero">
+					<!-- <div class="caracteristiques_zero">
 						0 : mort
-					</div>
+					</div> -->
 					<div class="caracteristiques_data1">
 						Combat
 					</div>
@@ -98,9 +107,35 @@ d'introduction">r</span></button></div>
 					<div class="caracteristiques_data3">
 						Réflexes
 					</div>
-					<div class="caracteristiques_zero">
+					<!-- <div class="caracteristiques_zero">
 						0 : paralysé
+					</div> -->
+				</div>
+				<div class="wrapper_caracteristiques">
+					<div class="caracteristiques_border"></div>
+					<div class="caracteristiques_type">
+						PER
 					</div>
+					<div class="caracteristiques_valeur">
+						<input type="number" class="input_caracteristiques" name="attr_perception" placeholder="0" title="PERCEPTION actuelle" min="0" max="20">
+					</div>
+					<div class="caracteristiques_valeur_max">
+						/<input type="number" class="input_caracteristiques_max" name="attr_perception_max" placeholder="0" title="PERCEPTION maximum" min="0" max="20">
+					</div><div class="caracteristiques_roll">
+						<button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Perception (@{perception})}} {{subtitle=Jet de Sauvegarde}} {{sauvegarde=oui}} {{score=[[@{perception}]]}} {{result=[[D20]]}}" title="Jet de Sauvegarde"></button>
+					</div>
+					<div class="caracteristiques_data1">
+						Sens
+					</div>
+					<div class="caracteristiques_data2">
+						Vigilance
+					</div>
+					<div class="caracteristiques_data3">
+						Intuition
+					</div>
+					<!-- <div class="caracteristiques_zero">
+						0 : brisé
+					</div> -->
 				</div>
 				<div class="wrapper_caracteristiques">
 					<div class="caracteristiques_border"></div>
@@ -124,14 +159,32 @@ d'introduction">r</span></button></div>
 					<div class="caracteristiques_data3">
 						Charisme
 					</div>
-					<div class="caracteristiques_zero">
+					<!-- <div class="caracteristiques_zero">
 						0 : brisé
-					</div>
+					</div> -->
+				</div>
+			</div>
+			<div class="cat_experience">
+				<div class="wrapper_xp">
+					<div class="xp_titre1"><span class="lettre">N</span>iveau</div>
+					<div class="xp_titre2">d'expérience :</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="1" name="attr_xp" name="xp" checked /><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">N</span>ovice</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="2" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">P</span>rofessionnel</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="3" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">E</span>xpert</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="4" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">V</span>étéran</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="5" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">M</span>aître</div>
+					<div class="xp_radio"><input type="radio" class="xp_radio" value="6" name="attr_xp" name="xp"><span></span></div>
+					<div class="xp_radio_texte"><span class="lettre_verte">A</span>u-delà</div>
 				</div>
 			</div>
 			<div class="cat_armure">
 				<div class="wrapper_armure">
-					<div class="armure_titre">ARMURE :</div>
+					<div class="armure_titre">DV</div>
 					<div class="armure_data1">
 						<input type="text" class="input_armure_nom" name="attr_armure_nom">
 					</div>
@@ -144,6 +197,19 @@ d'introduction">r</span></button></div>
 					</div>
 					<div class="armure_pv">PV</div>
 				</div>
+			</div>
+			<div class="cat_point_xp">
+				<div class="wrapper_point_xp">
+					<div class="point_xp_valeur">
+						<input type="number" class="input_xp_valeur" name="attr_xp_valeur" value="0">
+					</div>
+					<div class="point_xp_titre"><span class="lettre" style="color:var(--vert_clair);">E</span>XPÉRIENCE</div>
+				</div>
+			</div>
+			<div class="cat_specialite">
+				<span class="lettre">S</span>pécialité :
+				<input type="text" class="input_specialite" name="attr_specialite_1"> 
+				<input type="text" class="input_specialite" name="attr_specialite_2"> 
 			</div>
 			<div class="cat_notes">
 				<span class="lettre">N</span>otes :
@@ -225,24 +291,6 @@ d'introduction">r</span></button></div>
 					<div class="entreprises_revenus_2">
 						<input type="text" class="input_entreprises_valeur" name="attr_entreprises_revenus_2">
 					</div>
-				</div>
-			</div>
-			<div class="cat_experience">
-				<div class="wrapper_xp">
-					<div class="xp_titre1"><span class="lettre">N</span>iveau</div>
-					<div class="xp_titre2">d'expérience :</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="1" name="attr_xp" name="xp" checked /><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">N</span>ovice</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="2" name="attr_xp" name="xp"><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">P</span>rofessionnel</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="3" name="attr_xp" name="xp"><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">E</span>xpert</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="4" name="attr_xp" name="xp"><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">V</span>étéran</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="5" name="attr_xp" name="xp"><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">M</span>aître</div>
-					<div class="xp_radio"><input type="radio" class="xp_radio" value="6" name="attr_xp" name="xp"><span></span></div>
-					<div class="xp_radio_texte"><span class="lettre_verte">A</span>u-delà</div>
 				</div>
 			</div>
 			<div class="cat_equipements_gauche">

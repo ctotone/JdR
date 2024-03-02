@@ -324,13 +324,15 @@ div.creation_final {
 }
 
 div.cat_logo {
-	grid-column: 5;
-	grid-row: 1/11;
-	width: 310px;
-	height: 310px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/logo_v1.png);
-	background-size: cover;
-	margin-left: -60px;
+    grid-column: 5;
+    grid-row: 1 / 11;
+    width: 177px;
+    height: 315px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/logo_v2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 79px;
+    margin-top: 20px;
 }
 
 div.cat_name {
@@ -344,23 +346,93 @@ div.cat_name {
     letter-spacing: -1.5px;
 }
 
-div.cat_caracteristiques {
+div.cat_profil {
+    grid-column: 1;
+	grid-row: 2;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 20px;
+	font-weight: bold;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+    margin-top: 20px;
+}
+
+div.cat_talent {
 	grid-column: 1;
-	grid-row: 3/10;
-	margin-left: 10px;
+	grid-row: 3;
+    margin-top: 30px;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 20px;
+	font-weight: bold;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+}
+
+div.cat_degat_max {
+	grid-column: 1;
+	grid-row: 4;
+    margin-top: 42px;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 20px;
+	font-weight: bold;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+}    
+
+div.cat_caracteristiques {
+    grid-column: 2;
+    grid-row: 1 / 10;
+    margin-left: 14px;
     margin-top: 10px;
+}    
+
+div.cat_experience {
+    grid-column: 4;
+    grid-row: 1 / 11;
+    color: var(--noir);
+    font-size: 18px;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+    font-weight: bold;
+    margin-left: -40px;
 }
 
 div.cat_armure {
 	border: 2px solid var(--vert_clair);
 	grid-column: 1;
-	grid-row: 11/16;
+	grid-row: 7/12;
 	padding: 5px;
 	height: 90px;
 	margin-left: 30px;
 	margin-right: 45px;
-	margin-top: 25px;
-}
+	margin-top: 10px;
+}    
+
+div.cat_point_xp {
+    grid-column: 1;
+    grid-row: 11;
+    margin-top: 13px;
+    margin-left: 174px;
+    color: var(--noir);
+    font-size: 22px;
+    font-weight: bold;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+} 
+
+div.cat_specialite {
+    grid-column: 1;
+    grid-row: 11;
+    margin-top: 43px;
+    color: var(--noir);
+    font-size: 22px;
+    font-weight: bold;
+    font-family: var(--font_basker);
+    letter-spacing: -1.5px;
+}    
 
 div.cat_notes {
 	border: 2px solid var(--bleu_clair);
@@ -372,7 +444,7 @@ div.cat_notes {
 	font-weight: bold;
     font-family: var(--font_basker);
     letter-spacing: -1.5px;
-}
+}    
 
 div.cat_compagnies {
 	padding: 5px;
@@ -383,7 +455,7 @@ div.cat_compagnies {
 	font-size: 20px;
 	font-weight: bold;
     margin-top: -17px;
-}
+}    
 
 div.cat_entreprises {
 	padding: 5px;
@@ -394,18 +466,7 @@ div.cat_entreprises {
 	font-size: 20px;
 	font-weight: bold;
     margin-top: -17px;
-}
-
-div.cat_experience {
-	grid-column: 3;
-	grid-row: 1/11;
-	color: var(--noir);
-	font-size: 18px;
-	font-family: var(--font_basker);
-    letter-spacing: -1.5px;
-	font-weight: bold;
-	margin-left: 10px;
-}
+}    
 
 div.cat_equipements_gauche {
 	padding: 5px;
@@ -454,10 +515,10 @@ div.cat_roll {
 /* Structure caracteristiques */
 
 .wrapper_caracteristiques {  
-	display: grid;
-    grid-template-columns: 135px 10px 100px;
-	grid-auto-rows: 20px;
-	margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 110px 10px 77px;
+    grid-auto-rows: 20px;
+    margin-bottom: 15px;
 }
 
 div.caracteristiques_border {
@@ -467,11 +528,11 @@ div.caracteristiques_border {
 }
 
 div.caracteristiques_type {
-	grid-column: 1;
+    grid-column: 1;
     grid-row: 1;
     background: white;
     padding-left: 15px;
-    margin-left: 72px;
+    margin-left: 58px;
     margin-top: -9px;
     font-family: var(--font_basker);
     font-weight: bold;
@@ -482,14 +543,14 @@ div.caracteristiques_type {
 div.caracteristiques_valeur {
 	grid-column: 1;
 	grid-row: 1/4;
-	margin-left: 11px;
+	margin-left: 3px;
 	margin-top: 3px;
 }
 
 div.caracteristiques_valeur_max {
     grid-column: 1;
     grid-row: 1 / 4;
-    margin-left: 57px;
+    margin-left: 45px;
     margin-top: 20px;
     font-size: 12px;
     color: #2c2e35a1;
@@ -500,7 +561,7 @@ div.caracteristiques_roll {
 	grid-column: 1;
 	grid-row: 1/4;
     margin-top: 16px;
-    margin-left: 93px;
+    margin-left: 76px;
 }
 
 div.caracteristiques_zero {
@@ -610,6 +671,30 @@ div.armure_pv {
 	color: var(--vert_clair);
 	font-size: 22px;
 	width: 40px;
+}
+
+/* Structure XP point */
+
+.wrapper_point_xp {
+    display: grid;
+    grid-template-columns: 72px;
+    grid-auto-rows: 40px;
+}
+
+div.point_xp_valeur {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: var(--font_basker);
+    border: 2px solid var(--noir);
+    border-bottom: none;
+}
+
+div.point_xp_titre {
+    grid-column: 1;
+    font-size: 11px;
+    letter-spacing: normal;
 }
 
 /* Structure equipement */
@@ -828,8 +913,12 @@ div.roll_arcanum {
 
 /* Syle de la page */
 
-.charsheet input.input_name { 
-    width: 205px;
+.charsheet input.input_name,
+.charsheet input.input_profil,
+.charsheet input.input_talent,
+.charsheet input.input_degat_max,
+.charsheet input.input_specialite { 
+    width: 200px;
 	outline: none;
     resize: none;
     padding: 0;
@@ -845,12 +934,30 @@ div.roll_arcanum {
     font-weight: bold;
 }
 
+.charsheet input.input_profil { 
+    width: 198px;
+}
+
+.charsheet input.input_talent { 
+    width: 189px;
+}
+
+.charsheet input.input_degat_max { 
+    width: 145px;
+}
+
+.charsheet input.input_specialite { 
+    width: 245px;
+    margin-top: 11px;
+    text-align: left;
+}
+
 .charsheet input.input_caracteristiques {
 	width: 40px !important;
     outline: none;
     resize: none;
     padding: 0;
-    font-size: 35px;
+    font-size: 30px;
     border: none;
     background: none;
     text-align: center;
@@ -921,6 +1028,22 @@ div.roll_arcanum {
     cursor: pointer;
 	color: var(--vert_clair);
 	font-weight: bold;
+}
+
+.charsheet input.input_xp_valeur {
+    width: 68px !important;
+    outline: none;
+    resize: none;
+    padding: 0;
+    margin-top: -3px;
+    font-size: 30px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    color: #2c2e35e0;
+    font-weight: bold;
+    font-family: var(--font_amiri);
 }
 
 .charsheet textarea.notes {  
