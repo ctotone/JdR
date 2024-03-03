@@ -553,6 +553,9 @@ d'introduction">r</span></button></div>
 			<div class="creation_stat_dexterite_data">
 				<span class="lettre">D</span>extérité
 			</div>
+			<div class="creation_stat_perception_data">
+				<span class="lettre">P</span>erception
+			</div>
 			<div class="creation_stat_volonte_data">
 				<span class="lettre">V</span>olonté
 			</div>
@@ -562,12 +565,16 @@ d'introduction">r</span></button></div>
 			<div class="creation_stat_dexterite">
 				<input type="number" class="input_creation" name="attr_dexterite" placeholder="0" min="0" max="20">
 			</div>
+			<div class="creation_stat_perception">
+				<input type="number" class="input_creation" name="attr_perception" placeholder="0" min="0" max="20">
+			</div>
 			<div class="creation_stat_volonte">
 				<input type="number" class="input_creation" name="attr_volonte" placeholder="0" min="0" max="20">
 			</div>
 			<div class="creation_stat_dice">
 				<button class="roll_d6_creation" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}
 				&{template:ito} {{title=Dextérité}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}
+				&{template:ito} {{title=Perception}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}
 				&{template:ito} {{title=Volonté}} {{subtitle=@{character_name}}} {{degats=oui}}{{result=[[3D6]]}}" title="Lancer vos caractéristiques"></button>
 			</div>
 		</div>
@@ -801,17 +808,19 @@ console.log("Ajustement HP");
 
 <!-- Meilleur statistique -->
 <script type="text/worker">
-on("change:force change:dexterite change:volonte", function() {
+on("change:force change:dexterite change:volonte change:perception", function() {
 console.log("Meilleur statistique");
 
-    getAttrs(["force", "dexterite", "volonte"], function(values) {
+    getAttrs(["force", "dexterite", "volonte", "perception"], function(values) {
         let force = parseInt(values["force"]) || 0;
 		let dexterite = parseInt(values["dexterite"]) || 0;
 		let volonte = parseInt(values["volonte"]) || 0;
+		let perception = parseInt(values["perception"]) || 0;
 		
-			if (dexterite <= force && volonte <= force) stat_principale = force;
-			else if (force <= dexterite && volonte <= dexterite) stat_principale = dexterite;
-			else if (force <= volonte && dexterite <= volonte) stat_principale = volonte;
+			if (dexterite <= force && volonte <= force && perception <= force) stat_principale = force;
+			else if (force <= dexterite && volonte <= dexterite && perception <= dexterite) stat_principale = dexterite;
+			else if (force <= volonte && dexterite <= volonte && perception <= volonte) stat_principale = volonte;			
+			else if (force <= perception && dexterite <= perception && volonte <= perception) stat_principale = perception;
 			else stat_principale = "";
 			
 			setAttrs({
@@ -826,10 +835,11 @@ console.log("Meilleur statistique");
 on('clicked:creation_final', function() {
 console.log("creation_final");
 
-    getAttrs(["HP_base", "stat_principale", "force", "dexterite", "volonte"], function(values) {
+    getAttrs(["HP_base", "stat_principale", "force", "dexterite", "perception", "volonte", "xp_valeur"], function(values) {
          let HP_base = parseInt(values["HP_base"]) || 0;
 		 let force_max = parseInt(values["force"]) || 0;
 		 let dexterite_max = parseInt(values["dexterite"]) || 0;
+		 let perception_max = parseInt(values["perception"]) || 0;
 		 let volonte_max = parseInt(values["volonte"]) || 0;
 		 let stat_principale = parseInt(values["stat_principale"]) || 0;
 		 
@@ -1341,8 +1351,10 @@ console.log("creation_final");
 					arcana_1 = "";
 			
 		setAttrs({
+			"xp_valeur" : 0,
 			"force_max" : force_max,
 			"dexterite_max" : dexterite_max,
+			"perception_max" : perception_max,
 			"volonte_max" : volonte_max,
 			"page" : 1,
 			"HP_actuel" : HP_base,
