@@ -58,9 +58,7 @@
     font-weight: bolder;
     text-align: left;
 }
-.sheet-rolltemplate-sawo span.sheet-desc{
 
-}
 .sheet-rolltemplate-sawo .sheet-succes{
     color: #228000;
     font-weight: bold;
@@ -475,7 +473,7 @@ input[type="text"].sheet-compspeatt{
 input[type="text"].sheet-charname{
     text-align:center;
     font-size:1.1em;
-    font-weight: ;
+    font-weight: bold;
     width:100%;
 }
 input[type="number"]{
@@ -489,6 +487,7 @@ input[type="text"]:read-only
 {
     background-color: #f7f3f2e8;
     -moz-appearance: textfield;
+    appearance: textfield;
 	text-align:center;
 }
 input[type="number"]:disabled::-webkit-inner-spin-button,
@@ -535,6 +534,7 @@ select{
     color: black;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     width: auto;
 }
 option{
@@ -1127,9 +1127,7 @@ span.sheet-dispchk{
     color: #AAA;
     font-weight: normal;
 }
-input[type="checkbox"].sheet-dispchk:checked + span.sheet-dispchk{
 
-}
 input[type="checkbox"].sheet-dispchk:hover + span.sheet-dispchk{
     color: black;
     text-decoration: underline;

@@ -229,10 +229,7 @@ div.sheet-npc .repcontrol .repcontrol_add {
 
 /* ROLL TEMPLATE
 ============================= */
-.sheet-rolltemplate-rolls, .sheet-rolltemplate-damage, .sheet-rolltemplate-lethality, .sheet-rolltemplate-lethality_critical, .sheet-rolltemplate-sanloss, .sheet-rolltemplate-sanloss1, .sheet-rolltemplate-luck {
-  /* ROLL TEMPLATE STYLE
-  ----------------------------- */
-}
+
 .sheet-rolltemplate-rolls div.sheet-template-container, .sheet-rolltemplate-damage div.sheet-template-container, .sheet-rolltemplate-lethality div.sheet-template-container, .sheet-rolltemplate-lethality_critical div.sheet-template-container, .sheet-rolltemplate-sanloss div.sheet-template-container, .sheet-rolltemplate-sanloss1 div.sheet-template-container, .sheet-rolltemplate-luck div.sheet-template-container {
   border: 2px solid black;
   border-radius: 0.3em;
@@ -318,10 +315,7 @@ div.sheet-npc .repcontrol .repcontrol_add {
   font-size: 1.2em;
 }
 
-.sheet-rolltemplate-stats {
-  /* ROLL TEMPLATE STYLE
-  ----------------------------- */
-}
+
 .sheet-rolltemplate-stats div.sheet-template-container {
   border: 2px solid black;
   border-radius: 0.3em;
@@ -1332,9 +1326,11 @@ input[type=number1]::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 input[type=number1] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 span.sheet-switch-a, input.sheet-switchblock:checked ~ span.sheet-switch-b {
