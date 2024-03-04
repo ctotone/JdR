@@ -82,10 +82,17 @@ font-family: 'Great Vibes', cursive;
     padding-right: 10px;
     padding-left: 25px;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px 6px #00000091;
+    box-shadow: var(--comedien-shadow);
     background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Cabinet%20des%20Murmures/img/offi_background.png);
     background-size: cover;
 	position: relative;
+}
+
+.comedien_choix {
+    position: absolute;
+    z-index: 1;
+    margin-left: 710px;
+    margin-top: 19px;
 }
 
 body.sheet-darkmode .cabinet,
@@ -912,9 +919,115 @@ input[type="radio"] {
     box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
 }
  
+/* #Systeme couleur comédien */ 
  
  
- 
+.controller_comedien[value*="blanc"] ~ *{
+	--comedien-shadow: 0px 5px 10px 6px #00000091;
+}
+.controller_comedien[value*="rouge"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #bb0404c9;
+}
+.controller_comedien[value*="bleu"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #0303d7bd;
+}
+.controller_comedien[value*="jaune"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #c5d70c;
+}
+.controller_comedien[value*="orange"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #d76f009e;
+}
+.controller_comedien[value*="vert"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #02a619;
+}
+.controller_comedien[value*="violet"] ~ *{
+    --comedien-shadow: inset 0px 0px 10px 2px #9001c6;
+}
+
+
+.comedien_blanc input[type="radio"] + label,
+.comedien_rouge input[type="radio"] + label,
+.comedien_bleu input[type="radio"] + label,
+.comedien_jaune input[type="radio"] + label,
+.comedien_orange input[type="radio"] + label,
+.comedien_vert input[type="radio"] + label,
+.comedien_violet input[type="radio"] + label {
+	width: 10px;
+    height: 15px;
+    border-radius: 30px;
+    background: buttontext;
+    padding-right: 5px;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_unchecked);
+	cursor: pointer;
+}
+
+.comedien_blanc input[type="radio"]:hover,
+.comedien_rouge input[type="radio"]:hover,
+.comedien_bleu input[type="radio"]:hover,
+.comedien_jaune input[type="radio"]:hover,
+.comedien_orange input[type="radio"]:hover,
+.comedien_vert input[type="radio"]:hover,
+.comedien_violet input[type="radio"]:hover {
+    border: 1px solid black;
+}
+
+.comedien_blanc input[type="radio"] + label {
+    background-color: var(--bouton_blanc);  
+}
+
+.comedien_blanc input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);  
+}
+
+.comedien_rouge input[type="radio"] + label {
+    background-color: var(--bouton_rouge);
+}
+
+.comedien_rouge input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
+.comedien_bleu input[type="radio"] + label {
+    background-color: var(--bouton_bleu);
+}
+
+.comedien_bleu input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
+.comedien_jaune input[type="radio"] + label {
+    background-color: var(--bouton_jaune);
+}
+
+.comedien_jaune input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
+.comedien_orange input[type="radio"] + label {
+    background-color: var(--bouton_orange);
+}
+
+.comedien_orange input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
+.comedien_vert input[type="radio"] + label {
+    background-color: var(--bouton_vert);
+}
+
+.comedien_vert input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
+.comedien_violet input[type="radio"] + label {
+   background-color: var(--bouton_violet);
+}
+
+.comedien_violet input[type="radio"]:checked + label {
+    box-shadow: 0px 0px 0px 1px var(--border_bouton_checked);
+}
+
  
   /* #Systeme couleur arbre de vie */
 
@@ -1514,6 +1627,38 @@ input[type="radio"] {
 .boutton_pnj_titre{
 	grid-column: 4;
 }
+
+  /* Wrapper Choix comédien */
+
+  .wrapper_comedien_choix{  
+	display: grid;
+    grid-template-columns: 20px 20px 20px 20px 20px 20px;
+}
+
+.comedien_blanc {
+	grid-column: 1;
+}
+
+.comedien_rouge {
+	grid-column: 2;
+}
+
+.comedien_bleu {
+	grid-column: 3;
+}
+
+.comedien_jaune {
+	grid-column: 4;
+}
+
+.comedien_vert {
+	grid-column: 5;
+}
+
+.comedien_violet {
+	grid-column: 6;
+}
+
 
   /* Wrapper Cabinet */
 

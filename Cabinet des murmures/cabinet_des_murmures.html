@@ -60,6 +60,16 @@
 			<option value="intro">Introduction</option>
 		</select>
 	</div> -->
+	<div class="comedien_choix">
+		<div class="wrapper_comedien_choix">
+			<div class="comedien_blanc"><input type="radio" name="attr_controller_comedien" id="comedien_blanc" value="blanc"><label for="comedien_blanc" data-i18n-title="color_comedien" title="violet comedien"></label></div>
+			<div class="comedien_rouge"><input type="radio" name="attr_controller_comedien" id="comedien_rouge" value="rouge"><label for="comedien_rouge" data-i18n-title="color_comedien" title="red comedien"></label></div>
+			<div class="comedien_bleu"><input type="radio" name="attr_controller_comedien" id="comedien_bleu" value="bleu"><label for="comedien_bleu" data-i18n-title="color_comedien" title="blue comedien"></label></div>
+			<div class="comedien_jaune"><input type="radio" name="attr_controller_comedien" id="comedien_jaune" value="jaune"><label for="comedien_jaune" data-i18n-title="color_comedien" title="yellow comedien"></label></div>
+			<div class="comedien_vert"><input type="radio" name="attr_controller_comedien" id="comedien_vert" value="vert"><label for="comedien_vert" data-i18n-title="color_comedien" title="green comedien"></label></div>
+			<div class="comedien_violet"><input type="radio" name="attr_controller_comedien" id="comedien_violet" value="violet"><label for="comedien_violet" data-i18n-title="color_comedien" title="violet comedien"></label></div>
+		</div>
+	</div>
 	<div class="sheet_reset_fiche">
 		<button type="action" class="intro_reset" name="act_intro-reset"><span class="picto_reset_intro" data-i18n-title="intro_link" title="Changer le type de la fiche">r</span></button>
 	</div>
@@ -77,6 +87,8 @@
 	<!------------------>
 	<!-- DIV CABINET  -->
 	<!------------------>
+
+	<input type="hidden" class="controller_comedien" name="attr_controller_comedien" value="blanc">
 	<div class="cabinet">
 		<div class="wrapper_cabinet">
 			<div class="esprit_titre"><span data-i18n="spirits">ESPRITS</span>
@@ -1301,7 +1313,7 @@
 <!-- DIV PJ  -->
 <!------------------>
 <div class="feuille_pj">
-
+	<input type="hidden" class="controller_comedien" name="attr_controller_comedien" value="blanc">
 <!-- SHEET VERSION OPTION  -->
 		<!-- <div class="sheet_selector">	
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
@@ -2184,7 +2196,7 @@
 				</div>
 				
 				<div class="wrapper_arme_distance">
-					<div class="arme_distance_titre_general"><span data-i18n="info_distance">ARMES DE TIR</span></div>
+					<div class="arme_distance_titre_general"><span data-i18n="info_ranged_weapon">ARMES DE TIR</span></div>
 					<!-- Gros calibre -->
 					<div class="arme_distance_titre"><span data-i18n="info_distance_categorie_1">ARMEMENT DE POING (Gros calibre, Fantassin, Cavaliers)</span></div>
 					
@@ -3995,7 +4007,7 @@
 <!-- DIV PNJ  -->
 <!------------------>
 <div class="feuille_pnj">
-
+	<input type="hidden" class="controller_comedien" name="attr_controller_comedien" value="blanc">
 <!-- SHEET VERSION OPTION  -->
 		<!-- <div class="sheet_selector">	
 		<select class="selector" title="Choose sheet version" name="attr_sheet_version">
@@ -4646,9 +4658,11 @@ on('clicked:pnj_derive', function() {
 <script type="text/worker">
 on('clicked:intro-esprit', function() {
 
-	getAttrs(["sheet_version"], function(values) {
+	getAttrs(["sheet_version", "controller_comedien"], function(values) {
 		setAttrs({
-			sheet_version: "esprit"
+			sheet_version: "esprit",
+			controller_comedien: "blanc"
+
 		});
 	});
 });
@@ -4657,10 +4671,11 @@ on('clicked:intro-esprit', function() {
 <script type="text/worker">
    on('clicked:intro-cabinet', function() {
 
-	getAttrs(["sheet_version"], function(values) {
+	getAttrs(["sheet_version", "controller_comedien"], function(values) {
 		setAttrs({
 			sheet_version: "cabinet",
-			character_name: "Médium"
+			character_name: "Médium",
+			controller_comedien: "blanc"
 		});
 	});
 });
@@ -4670,9 +4685,10 @@ on('clicked:intro-esprit', function() {
    on('clicked:intro-pnj', function() {
 
 
-	getAttrs(["sheet_version"], function(values) {
+	getAttrs(["sheet_version", "controller_comedien"], function(values) {
 		setAttrs({
-			sheet_version: "pnj"
+			sheet_version: "pnj",
+			controller_comedien: "blanc"
 		});
 	});
 });
