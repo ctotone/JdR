@@ -6176,6 +6176,54 @@ input[type="radio"] {
     box-shadow: -5px 4px 12px 0px #00000096;
 }
 
+.reset_esprit_spell {
+    position: absolute;
+    margin-top: -64px;
+    margin-left: 796px;
+}
+
+.deroulant_esprit_spell_1_gauche {
+    position: absolute;
+    margin-top: 107px;
+    margin-left: 78px;
+}
+
+.deroulant_esprit_spell_1_droite {
+    position: absolute;
+    margin-top: 107px;
+    margin-left: 679px;
+}
+
+.deroulant_esprit_spell_2_gauche {
+    position: absolute;
+    margin-top: 315px;
+    margin-left: 78px;
+}
+
+.deroulant_esprit_spell_2_droite {
+    position: absolute;
+    margin-top: 315px;
+    margin-left: 679px;
+}
+
+.deroulant_esprit_spell_3_gauche {
+    position: absolute;
+    margin-top: 522px;
+    margin-left: 78px;
+}
+
+.deroulant_esprit_spell_3_droite {
+    position: absolute;
+    margin-top: 522px;
+    margin-left: 679px;
+}
+
+.wrapper_spell_esprit {
+    display: grid;
+    grid-template-columns: 80px;
+    grid-template-rows: 35px;
+}
+
 .wrapper_info_outil {
     display: grid;
     grid-template-columns: 30px 200px 45px 200px 30px;
@@ -7466,6 +7514,25 @@ select.liste_graces {
 	margin-top: 2px;
 	padding-left: 0px;
 	padding-bottom: 0px
+}
+
+select.deroulant_esprit_spell {
+    width: 75px;
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    background: transparent;
+    border-bottom: 1px solid #61504524;
+    border-radius: 0;
+    color: var(--marron_cabinet);
+    font-size: 12px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+    height: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+	appearance: none;
 }
 
 select.custom_roll,
