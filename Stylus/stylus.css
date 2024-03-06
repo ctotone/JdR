@@ -1,0 +1,169 @@
+
+#macrobar {
+    height: 2.3em !important;
+    width: 92% !important;
+    background-color: rgba(0, 0, 0, 0.44) !important;
+    text-align: left !important;
+    margin-left: 1px !important;
+  }
+  div.macrobox button.btn {
+      padding: 0 4px 0 4px;
+      font-size: 0.7rem;
+      line-height: 1rem;
+      margin: 0px 0 10px 0;
+  }
+  #macrobar_macros {
+    white-space: normal !important;
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+    padding-bottom: 0px !important;
+  }
+  #macrobar .macrobox {
+      margin: 1px 5px 1px 5px ;
+  }
+  #macrobar div.macrobox:hover, #macrobar div.macrobox.ui-sortable-helper {
+      padding-right: 12px;
+      margin-right: -7px;
+      border-radius: 3px;
+      background-color: #999;
+      cursor: move;
+  }
+  
+  
+  #initiativewindow .characterlist .token .name{
+      font-size: 1em !important;
+  }
+  #initiativewindow .characterlist .token .initiative{
+      font-size: 1em !important;
+      background-color: #ccc;
+      font-weight: bold;
+      border-radius: .5em;
+  }
+  
+  #initiativewindow {
+      padding: 1px 1px;
+      overflow-x: auto;
+      position:relative;
+  }
+  #initiativewindow ul li {
+      padding: 1px;
+      white-space: nowrap;
+  }
+  #initiativewindow ul li {
+      min-height: 15px
+  }
+  #initiativewindow ul li img {
+      max-width: 20px;
+      max-height: 15px;
+  }
+  #initiativewindow ul li .controls {
+      font-size: 15px;
+      padding: 1px;    
+  }
+  #initiativewindow ul li span.initiative {
+      font-size: 18px;
+      padding: 2px;
+      min-height: 12px;
+      z-index: 1000;
+      position:relative;
+  }
+  #initiativewindow ul li span.name {
+      font-size: 14px;
+      padding-top: 2px;                                       	 
+  }
+  #initiativewindow input {
+      font-size: 15px;
+      height: 15px;
+  }
+  
+  .ui-dialog-titlebar {
+      padding: 2px !important;
+  }
+  .ui-dialog-titlebar .ui-dialog-title {
+      margin: 0 !important;
+      font-size: 10px;
+      line-height: 10px;
+  }
+  .ui-dialog-buttonpane {
+      margin: 0 20px 0 0 !important;
+      padding: 1px !important;
+  }
+  .ui-button {
+      font-size: 10px !important;
+      line-height: 10px !important;
+      padding: 1px 3px !important;
+  }
+  .ui-button.bigbuttonwithicons .ui-button-text {
+      font-size: 10px !important;
+  }
+  
+  
+  
+  @-moz-document url-prefix("https://app.roll20.net/editor/") {
+      .dd-list .journalitem .name, .dd-list .library-item .name {
+      top: 0px;
+  }
+  .dd-list .journalitem .token, .dd-list .library-item .token {
+      top: 0px;
+  }
+  .dd-item  .folder-title {
+          background-color: #eee !important;
+      }
+  .dd-content {
+      padding: 0px;
+  }
+  #compendium .searchroot .dd-item .dd-content .token img {
+      padding: 0px;
+      max-width: 19px;
+      max-height: 19px;
+  }
+  #compendium .searchroot .dd-item .dd-content .token {
+      top: 0px;
+  }
+  #compendium .searchroot .dd-item .dd-content .sourcefooter {
+      width: 18px;
+         height: 18px;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      font-size: 6px;
+  }
+  .expandcontroller {
+      position: relative;
+      bottom:10px;
+  }
+  
+  #compendium .searchroot .dd-item .dd-content .sourcefooter {
+      font-size: 12px;
+  }
+  
+  .inapp .sourcefooter,.inapp.expansion3 .sourcefooter, .inapp.expansion9 .sourcefooter, .inapp.expansion13 .sourcefooter, .inapp.expansion16 .sourcefooter {
+      background-size: 15px 10px;
+      background-image:none;
+      padding-top: 5px;
+      top: 0px !important;
+  }
+  
+  .dd-item, .dd-empty, .dd-placeholder {
+      min-height: 21px;
+      font-size: 12px;
+      line-height: 20px;
+  }
+  .dd-list .handout img, .dd-list .archivetable img, .dd-list .journalitem img, .dd-list .library-item img{
+      max-width: 20px;
+      max-height: 20px;
+  }
+  .dd-item>button {
+      height: 16px;
+      margin: 0px;
+      font-size: 14px;
+      top: 0px;
+  }
+  .dd-handle {
+      top: 0px;
+      width: 20px;
+      padding: 0px 10px;
+  }
+  }
+  
+  
