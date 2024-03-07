@@ -44,6 +44,7 @@
 	<input type="hidden" class="creation_aspect1" name="attr_creation_aspect1" value="0"  />
 	<input type="hidden" class="creation_aspect1" name="attr_creation_aspect2" value="0"  />
 	<input type="hidden" class="creation_aspect1" name="attr_creation_aspect3" value="0"  />
+	<input type="hidden" class="creation_aspect1" name="attr_creation_aspect4" value="0"  />
 	<!-- Choix Rôle -->
 	<div class="creation_role">	
 	<input type="hidden" class="creation_archetype" name="attr_creation_archetype" />
@@ -2181,13 +2182,13 @@
 			<div class="sheet-info">OUPS !<br>Frappez aux Portes de la Mort</div>
 			{{/rollTotal() roll1 1}}
 			{{#rollTotal() roll1 2}}
-			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagnez Coeur et Étoile</div>
 			{{/rollTotal() roll1 2}}
 			{{#rollTotal() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">BLESSÉ !<br>Cochez l'état Blessé.<br>Regagnez Coeur et Étoile</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll1 3}}
 		</div>
 	</div>
@@ -2301,7 +2302,7 @@
 			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll1 3}}
 		</div>
 	</div>
@@ -2343,7 +2344,7 @@
 			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll2 3}}
 			{{#rollGreater() roll2 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll2 3}}
 		</div>
 	</div>
@@ -2385,7 +2386,7 @@
 			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll1 3}}
 		</div>
 	</div>
@@ -2429,7 +2430,7 @@
 			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll1 3}}
 			{{#rollGreater() roll1 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll1 3}}
 		</div>
 	</div>
@@ -2471,7 +2472,7 @@
 			<div class="sheet-info" style="font-size: 14px;line-height: 1.1;margin-left: 15px;margin-right: 15px;">SECOUÉ !<br>Cochez l'état Marqué.<br>À votre prochain tour<br>faites un jet sur la table de Soin.</div>
 			{{/rollTotal() roll2 3}}
 			{{#rollGreater() roll2 3}}
-			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagner Coeur et Étoile</div>
+			<div class="sheet-info" style="font-size: 14px;">DEBOUT !<br>Cochez l'état Marqué.<br>Tout va bien.<br>Regagnez Coeur et Étoile</div>
 			{{/rollGreater() roll2 3}}
 		</div>
 	</div>
@@ -2809,42 +2810,44 @@ on("change:creation_aspect3", function() {
 
 <!-- Validation creation personnage -->
 <script type="text/worker">
-on('clicked:valider-personnage', function() {
-  console.log("Activate button clicked");
-	getAttrs(["page", "creation_role", "creation_archetype", "creation_classe", "creation_aspect1", "creation_aspect2", "creation_aspect3"], function(values) {
-		
-		let creation_role = values.creation_role;
-		let creation_archetype = values.creation_archetype;
-		let creation_classe = values.creation_classe;
-		let creation_aspect1 = values.creation_aspect1;
-		let creation_aspect2 = values.creation_aspect2;
-		let creation_aspect3 = values.creation_aspect3;
-		
-			if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon", dice = "[[1D4]]", double_dice = "[[1D4]] [[1D4]]", explose_dice = "[[1D4!!]]", coeur = "4", etoile = "4", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}";
-			else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur", dice = "[[1D6]]", double_dice = "[[1D6]] [[1D6]]", explose_dice = "[[1D6!!]]", explose_dice = "[[1D4!!]]", coeur = "6", etoile = "3", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}";
-			else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier", dice = "[[1D8]]", double_dice = "[[1D8]] [[1D8]]", explose_dice = "[[1D8!!]]", explose_dice = "[[1D4!!]]", coeur = "8", etoile = "2", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}";
-			else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle", dice = "[[1D10]]", double_dice = "[[1D10]] [[1D10]]", explose_dice = "[[1D10!!]]", explose_dice = "[[1D4!!]]", coeur = "10", etoile = "1", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}";
-			else update_role_data = "intro", update_role = "", dice = "", double_dice = "", explose_dice = "", coeur = "", etoile = "", richesse = "", rollmod = "";		
-				
-			setAttrs({
-			"page" : 1,
-			"role_name" : update_role,
-			"role" : update_role_data,
-			"archetype" : creation_archetype,
-			"classe" : creation_classe,
-			"aspect_1" : creation_aspect1,
-			"aspect_2" : creation_aspect2,
-			"aspect_3" : creation_aspect3,
-			"dice": dice,
-			"double_dice": double_dice,
-			"explose_dice": explose_dice,
-			"rollmod": rollmod,
-			"coeur": coeur,
-			"etoile": etoile,
-			"richesse": richesse			
-		});
-	});
-});
+	on('clicked:valider-personnage', function() {
+		console.log("Activate button clicked");
+		  getAttrs(["page", "creation_role", "creation_archetype", "creation_classe", "creation_aspect1", "creation_aspect2", "creation_aspect3"], function(values) {
+			  
+			  let creation_role = values.creation_role;
+			  let creation_archetype = values.creation_archetype;
+			  let creation_classe = values.creation_classe;
+			  let creation_aspect1 = values.creation_aspect1;
+			  let creation_aspect2 = values.creation_aspect2;
+			  let creation_aspect3 = values.creation_aspect3;
+			  let creation_aspect4 = "";
+			  
+				  if (creation_role == 'parangon') update_role_data = "1", update_role = "parangon", dice = "[[1D4]]", double_dice = "[[1D4]] [[1D4]]", explose_dice = "[[1D4!!]]", coeur = "4", etoile = "4", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[1]]}} {{roll1=[[1D4]]}} {{image=oui]}} {{simple=oui}}";
+				  else if (creation_role == 'eclaireur') update_role_data = "2", update_role = "eclaireur", dice = "[[1D6]]", double_dice = "[[1D6]] [[1D6]]", explose_dice = "[[1D6!!]]", explose_dice = "[[1D4!!]]", coeur = "6", etoile = "3", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D6]]}} {{image=oui]}} {{simple=oui}}";
+				  else if (creation_role == 'guerrier') update_role_data = "3", update_role = "guerrier", dice = "[[1D8]]", double_dice = "[[1D8]] [[1D8]]", explose_dice = "[[1D8!!]]", explose_dice = "[[1D4!!]]", coeur = "8", etoile = "2", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[3]]}} {{roll1=[[1D8]]}} {{image=oui]}} {{simple=oui}}";
+				  else if (creation_role == 'sentinelle') update_role_data = "4", update_role = "sentinelle", dice = "[[1D10]]", double_dice = "[[1D10]] [[1D10]]", explose_dice = "[[1D10!!]]", explose_dice = "[[1D4!!]]", coeur = "10", etoile = "1", richesse = "2", rollmod = "&{template:dedale-alt} {{title=Jet d'Action}} {{role=[[2]]}} {{roll1=[[1D10]]}} {{image=oui]}} {{simple=oui}}";
+				  else update_role_data = "intro", update_role = "", dice = "", double_dice = "", explose_dice = "", coeur = "", etoile = "", richesse = "", rollmod = "";		
+					  
+				  setAttrs({
+				  "page" : 1,
+				  "role_name" : update_role,
+				  "role" : update_role_data,
+				  "archetype" : creation_archetype,
+				  "classe" : creation_classe,
+				  "aspect_1" : creation_aspect1,
+				  "aspect_2" : creation_aspect2,
+				  "aspect_3" : creation_aspect3,
+				  "aspect_4" : creation_aspect4,
+				  "dice": dice,
+				  "double_dice": double_dice,
+				  "explose_dice": explose_dice,
+				  "rollmod": rollmod,
+				  "coeur": coeur,
+				  "etoile": etoile,
+				  "richesse": richesse			
+			  });
+		  });
+	  });
 </script>
 
 
