@@ -92,7 +92,7 @@ font-family: 'Great Vibes', cursive;
     position: absolute;
     z-index: 1;
     margin-left: 710px;
-    margin-top: 11px;
+    margin-top: 20px;
 }
 
 body.sheet-darkmode .cabinet,
@@ -105,7 +105,7 @@ body.sheet-darkmode .dice,
 body.sheet-darkmode .esprit_dice,
 body.sheet-darkmode .intro,
 body.sheet-darkmode .info {
-    box-shadow: var(--comedien-shadow);
+    box-shadow: var(--comedien-shadow-bm);
 }
 
 .esprit_dice,
@@ -924,24 +924,31 @@ input[type="radio"] {
  
 .controller_comedien[value*="blanc"] ~ *{
 	--comedien-shadow: 0px 5px 10px 6px #00000091;
+    --comedien-shadow-bm: 1px 0px 9px 3px #cdcdcdba;
 }
 .controller_comedien[value*="rouge"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #bb0404c9;
+    --comedien-shadow-bm: 1px 0px 9px 3px #bb0404c9;
 }
 .controller_comedien[value*="bleu"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #0303d7bd;
+    --comedien-shadow-bm: 1px 0px 9px 3px #0303d7bd;
 }
 .controller_comedien[value*="jaune"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #c5d70c;
+    --comedien-shadow-bm: 1px 0px 9px 3px #c5d70c;
 }
 .controller_comedien[value*="orange"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #d76f009e;
+    --comedien-shadow-bm: 1px 0px 9px 3px #d76f009e;
 }
 .controller_comedien[value*="vert"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #02a619;
+    --comedien-shadow-bm: 1px 0px 9px 3px #02a619;
 }
 .controller_comedien[value*="violet"] ~ *{
     --comedien-shadow: inset 0px 0px 10px 2px #9001c6;
+    --comedien-shadow-bm: 1px 0px 9px 3px #9001c6;
 }
 
 
@@ -960,6 +967,7 @@ input[type="radio"] {
     opacity: 0.5;
     box-shadow: 0px 0px 0px 1px var(--border_bouton_unchecked);
 	cursor: pointer;
+    margin-top: -15px;
 }
 
 .comedien_blanc input[type="radio"]:hover + label,
@@ -1616,6 +1624,7 @@ input[type="radio"] {
 .wrapper_comedien_choix{  
 	display: grid;
 	grid-template-columns: 15px 15px 15px 15px 15px 15px;
+    grid-template-rows: 15px;
 }
 
 .comedien_blanc {
@@ -1631,15 +1640,15 @@ input[type="radio"] {
 }
 
 .comedien_jaune {
-	grid-column: 4;
+	grid-column: 1;
 }
 
 .comedien_vert {
-	grid-column: 5;
+	grid-column: 2;
 }
 
 .comedien_violet {
-	grid-column: 6;
+	grid-column: 3;
 }
 
 .comedien_text {  
