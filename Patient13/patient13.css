@@ -23,9 +23,36 @@ body.sheet-darkmode .charsheet {
     position: absolute;
     z-index: 1;
     height: 60px;
-    width: 250px;
-    margin-left: 460px;
+    width: 300px;
+    margin-left: 520px;
+    margin-top: 32px;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 22px;
+    transform: rotate(3deg);
 }
+
+body.sheet-darkmode .retourner_carte {
+    color: #ffffffbd;
+}
+
+.fleche {
+    position: absolute;
+    z-index: 1;
+    height: 40px;
+    width: 100px;
+    margin-top: 70px;
+    margin-left: 538px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche.png);
+    background-size: 100px 40px;
+    transform: rotate(-19deg);
+    opacity: 0.8;
+}
+
+body.sheet-darkmode .fleche {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche_blanche.png);
+    opacity: 0.7;
+}
+
 
 .rond_carte {
     position: absolute;
