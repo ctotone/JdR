@@ -1,11 +1,13 @@
 <div class="retourner_carte">
-    RETOURNER L'ÉTIQUETTE
+    <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="fleche"></div>
 
 <!-- Shadow du clip path -->
 <span class="shadow">
 
+
+<input type="hidden" class="page" name="attr_page"  value="1">
 <!-- Page Recto -->
 <div class="recto">
     <div class="rond_carte"></div>
@@ -47,4 +49,82 @@
         </div>
     </div>
 </div>
+
+<!-- Page verso -->
+<div class="verso">
+    <div class="rond_carte"></div>
+    <div class="wrapper_verso_titre">
+        <div class="traits_titre">
+            TRAITS
+        </div>
+        <div class="traits_plus_moins">
+            +/-
+        </div>
+    </div>
+    <div class="wrapper_verso">
+        <div class="traits">
+            input
+        </div>
+        <div class="traits_valeur">
+            valeur
+        </div>
+        <div class="traits_box">
+            <input type="hidden" class="trait_1_1" name="attr_trait_1_1"  value="0">
+            <input type="hidden" class="trait_1_2" name="attr_trait_1_2"  value="0">
+            <input type="hidden" class="trait_1_3" name="attr_trait_1_3"  value="0">
+            <input type="hidden" class="trait_1_4" name="attr_trait_1_4"  value="0">
+            <input type="hidden" class="trait_1_5" name="attr_trait_1_5"  value="0">
+            <div class="trait_1_1_zero"><button type="action" class="trait" name="act_trait_1_1">0</button></div>
+            <div class="trait_1_1_plus"><button type="action" class="trait_plus" name="act_trait_1_1">+</button></div>
+            <div class="trait_1_1_moins"><button type="action" class="trait_moins" name="act_trait_1_1">-</button></div>
+            <button type="action" class="trait" name="act_trait_1_2"></button>
+            <button type="action" class="trait" name="act_trait_1_3"></button>
+            <button type="action" class="trait" name="act_trait_1_4"></button>
+            <button type="action" class="trait" name="act_trait_1_5"></button>
+        </div>
+    </div>
+    
+</div>
 </span>
+
+
+<!-- --------------------------- -->
+<!-- --------- SCRIPT ---------- -->
+<!-- --------------------------- -->
+
+<!-- Retourner étiquette -->
+<script type="text/worker">
+    on('clicked:retourner', function() {
+        getAttrs(["page"], function(values) {
+        let page = parseInt(values["page"]) || 0;
+        
+            if (page == 1) page = "2";
+            else if (page == 2) page = "1";
+            else page == "1";
+            
+            setAttrs({
+            "page" : page
+            });
+        });
+    });
+ </script>
+
+<!-- Checkbox trait -->
+<script type="text/worker">
+    on('clicked:trait_1_1', function() {
+        getAttrs(["trait_1_1"], function(values) {
+        let trait_1_1 = parseInt(values["trait_1_1"]) || 0;
+        
+            if (trait_1_1 === 0) trait_1_1 = "1";
+            else if (trait_1_1 === 1) trait_1_1 = "2";
+            else if (trait_1_1 === 2) trait_1_1 = "0";
+            else trait_1_1 === "0";
+            
+		console.log("Activate button clicked");
+            setAttrs({
+            "trait_1_1" : trait_1_1,
+            "test_trait_1_1" : trait_1_1
+            });
+        });
+    });
+ </script>

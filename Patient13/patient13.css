@@ -45,7 +45,7 @@ body.sheet-darkmode .retourner_carte {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche.png);
     background-size: 100px 40px;
     transform: rotate(-19deg);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 body.sheet-darkmode .fleche {
@@ -85,6 +85,25 @@ img.portrait {
     margin-left: 15px;
     box-shadow: 0px 0px 5px 2px #0000008c;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+/* Retournement de la carte */
+
+.recto,
+.verso {
+    display: none;
+}
+
+.charsheet .page[value="1"] ~ div.recto,
+.charsheet .page[value="2"] ~ div.verso {
+    display: block;
+}
+
 
 .recto,
 .verso {
@@ -213,4 +232,125 @@ div.effets_personnels {
     border-top: none;
     border-right: none;
     border-bottom: none;
+}
+
+/* Structure page recto */
+
+.wrapper_verso_titre {  
+    padding-top: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: grid;
+    grid-template-columns: 250px 50px 140px;
+    grid-auto-rows: 20px;
+    margin-bottom: -15px;
+}
+
+.wrapper_verso {  
+    padding-left: 30px;
+    padding-right: 30px;
+    display: grid;
+    grid-template-columns: 240px 10px 40px 10px 140px;
+    grid-auto-rows: 40px;
+}
+
+.traits_titre {
+    grid-column: 1;
+    grid-row: 1/4;
+    padding-left: 5px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.traits_plus_moins {
+    grid-column: 2;
+    grid-row: 1/4;
+    padding-left: 5px;
+    border: none;
+}
+
+.traits {
+    grid-column: 1;
+    grid-row: 1;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px dotted black;
+    border-left: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.traits_valeur {
+    grid-column: 3;
+    grid-row: 1;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px dotted black;
+    display: flex;
+    align-items: center;
+}
+
+.traits_box {
+    grid-column: 5;
+    grid-row: 1;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px dotted black;
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Systeme trait  */
+
+div.trait_1_1_zero,
+div.trait_1_1_plus,
+div.trait_1_1_moins {
+    display: none;
+}
+
+.charsheet .trait_1_1[value="0"] ~ div.trait_1_1_zero,
+.charsheet .trait_1_1[value="1"] ~ div.trait_1_1_plus,
+.charsheet .trait_1_1[value="2"] ~ div.trait_1_1_moins {
+    display: block;
+}
+
+/* Boutton */
+
+.charsheet button[type=action].retourner_page::before,
+.charsheet button[type=action].trait::before,
+.charsheet button[type=roll]::before {
+    content: '';
+  }
+
+.charsheet button[type=action].retourner_page {
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 22px;
+    background: none;
+}
+
+.charsheet button[type=action].retourner_page:hover {
+    margin-left: 1px;
+	padding: 0px;
+	background-position: 0 0px;
+}
+
+.charsheet button[type=action].trait,
+.charsheet button[type=action].trait_plus,
+.charsheet button[type=action].trait_moins {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    margin-left: 4px;
+    cursor: pointer;
+    background: none;
 }
