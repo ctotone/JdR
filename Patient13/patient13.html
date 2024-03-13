@@ -1,11 +1,14 @@
+<input type="hidden" class="page" name="attr_page"  value="1">
 <div class="retourner_carte">
+    <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
+</div>
+<div class="retourner_carte_inverse">
     <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="fleche"></div>
 
 <!-- Shadow du clip path -->
 <span class="shadow">
-
 
 <input type="hidden" class="page" name="attr_page"  value="1">
 <!-- Page Recto -->
@@ -16,12 +19,18 @@
     <div class="wrapper_recto">
         <div class="surnom">
             SURNOM
+            <br>
+            <input type="text" class="surnom" name="attr_character_name">
         </div>
         <div class="matricule">
             MATRICULE
+            <br>
+            <input type="text" class="matricule" name="attr_matricule">
         </div>
         <div class="age">
             ÂGE APPARENT
+            <br>
+            <input type="text" class="age" name="attr_age">
         </div>
         <div class="apparence">
             APPARENCE
@@ -31,6 +40,8 @@
         </div>
         <div class="medecin">
             MÉDECIN RÉFÉRANT
+            <br>
+            <input type="text" class="medecin" name="attr_medecin">
         </div>
         <div class="signe">
             SIGNE PARTICULIER
@@ -40,9 +51,13 @@
         </div>
         <div class="allies">
             ALLIÉS
+            <br>
+            <input type="text" class="allie" name="attr_allies">
         </div>
         <div class="ennemis">
             ENNEMIS
+            <br>
+            <input type="text" class="ennemis" name="attr_ennemis">
         </div>
         <div class="effets_personnels">
             EFFETS PERSONNELS
@@ -64,10 +79,10 @@
     <!-- Trait 1 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_1_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_1_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_1_1" name="attr_trait_1_1"  value="0">
@@ -100,10 +115,10 @@
     <!-- Trait 2 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_2_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_2_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_2_1" name="attr_trait_2_1"  value="0">
@@ -136,10 +151,10 @@
     <!-- Trait 3 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_3_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_3_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_3_1" name="attr_trait_3_1"  value="0">
@@ -172,10 +187,10 @@
     <!-- Trait 4 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_4_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_4_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_4_1" name="attr_trait_4_1"  value="0">
@@ -208,10 +223,10 @@
     <!-- Trait 5 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_5_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_5_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_5_1" name="attr_trait_5_1"  value="0">
@@ -244,10 +259,10 @@
     <!-- Trait 6 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_6_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_6_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_6_1" name="attr_trait_6_1"  value="0">
@@ -280,10 +295,10 @@
     <!-- Trait 7 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_7_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_7_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_7_1" name="attr_trait_7_1"  value="0">
@@ -316,10 +331,10 @@
     <!-- Trait 8 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_8_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_8_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_8_1" name="attr_trait_8_1"  value="0">
@@ -352,10 +367,10 @@
     <!-- Trait 9 -->
     <div class="wrapper_verso">
         <div class="traits">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_9_nom">
         </div>
         <div class="traits_valeur">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_9_bonus" min="-3" max="3">
         </div>
         <div class="traits_box">
             <input type="hidden" class="trait_9_1" name="attr_trait_9_1"  value="0">
@@ -388,10 +403,10 @@
     <!-- Trait 10 -->
     <div class="wrapper_verso">
         <div class="traits" style="border-bottom: none;">
-            input
+            <input type="text" class="traits_nom" name="attr_trait_10_nom">
         </div>
         <div class="traits_valeur" style="border-bottom: none;">
-            valeur
+			<input type="number" class="trait_bonus" name="attr_trait_10_bonus" min="-3" max="3">
         </div>
         <div class="traits_box" style="border-bottom: none;">
             <input type="hidden" class="trait_10_1" name="attr_trait_10_1"  value="0">
@@ -427,85 +442,85 @@
         <div class="stat_check_0">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_1" class="sheet-radio">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #bd0000;"></span>
             </button>
         </div>
         <div class="stat_check_1">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_2" class="sheet-radio sheet-gt-1">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #b10b09;"></span>
             </button>
         </div>
         <div class="stat_check_2">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #a41612;"></span>
             </button>
         </div>
         <div class="stat_check_3">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #8c2b25;"></span>
             </button>
         </div>
         <div class="stat_check_4">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #80362e;"></span>
             </button>
         </div>
         <div class="stat_check_5">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #734137;"></span>
             </button>
         </div>
         <div class="stat_check_6">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #674c40;"></span>
             </button>
         </div>
         <div class="stat_check_7">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #5b5749;"></span>
             </button>
         </div>
         <div class="stat_check_8">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #4f6252;"></span>
             </button>
         </div>
         <div class="stat_check_9">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #426d5b;"></span>
             </button>
         </div>
         <div class="stat_check_10">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_11" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #367864;"></span>
             </button>
         </div>
         <div class="stat_check_11">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_12" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #2a826e;"></span>
             </button>
         </div>
         <div class="stat_check_12">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_13" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #1e8d77;"></span>
             </button>
         </div>
         <div class="stat_check_13">
             <input type="hidden" class="sheet-radio" name="attr_check_lucidite" value="14" />
             <button type="action" name="act_check_lucidite_14" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12 sheet-gt-13">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #119880;"></span>
             </button>
         </div>
     </div>
@@ -532,85 +547,85 @@
         <div class="stat_check_0">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_1" class="sheet-radio">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #bd0000;"></span>
             </button>
         </div>
         <div class="stat_check_1">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_2" class="sheet-radio sheet-gt-1">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #b10b09;"></span>
             </button>
         </div>
         <div class="stat_check_2">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #a41612;">-3</span>
             </button>
         </div>
         <div class="stat_check_3">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #8c2b25;"></span>
             </button>
         </div>
         <div class="stat_check_4">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #80362e;">-2</span>
             </button>
         </div>
         <div class="stat_check_5">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #734137;"></span>
             </button>
         </div>
         <div class="stat_check_6">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #674c40;">-1</span>
             </button>
         </div>
         <div class="stat_check_7">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #5b5749;"></span>
             </button>
         </div>
         <div class="stat_check_8">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #4f6252;"></span>
             </button>
         </div>
         <div class="stat_check_9">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #426d5b;"></span>
             </button>
         </div>
         <div class="stat_check_10">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_11" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #367864;"></span>
             </button>
         </div>
         <div class="stat_check_11">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_12" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #2a826e;"></span>
             </button>
         </div>
         <div class="stat_check_12">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_13" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #1e8d77;"></span>
             </button>
         </div>
         <div class="stat_check_13">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_14" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12 sheet-gt-13">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #119880;"></span>
             </button>
         </div>
     </div>
@@ -637,85 +652,85 @@
         <div class="stat_check_0">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_1" class="sheet-radio">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #bd0000;"></span>
             </button>
         </div>
         <div class="stat_check_1">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_2" class="sheet-radio sheet-gt-1">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #b10b09;"></span>
             </button>
         </div>
         <div class="stat_check_2">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #a41612;">-3</span>
             </button>
         </div>
         <div class="stat_check_3">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #8c2b25;"></span>
             </button>
         </div>
         <div class="stat_check_4">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #80362e;">-2</span>
             </button>
         </div>
         <div class="stat_check_5">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #734137;"></span>
             </button>
         </div>
         <div class="stat_check_6">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #674c40;">-1</span>
             </button>
         </div>
         <div class="stat_check_7">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #5b5749;"></span>
             </button>
         </div>
         <div class="stat_check_8">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #4f6252;"></span>
             </button>
         </div>
         <div class="stat_check_9">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #426d5b;"></span>
             </button>
         </div>
         <div class="stat_check_10">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_11" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #367864;"></span>
             </button>
         </div>
         <div class="stat_check_11">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_12" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #2a826e;"></span>
             </button>
         </div>
         <div class="stat_check_12">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_13" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #1e8d77;"></span>
             </button>
         </div>
         <div class="stat_check_13">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_14" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12 sheet-gt-13">
-            <span class="sheet-checked"></span>
+            <span class="sheet-checked" style="background-color: #119880;"></span>
             </button>
         </div>
     </div>
@@ -740,87 +755,87 @@
     <div class="wrapper_verso_stats" style="padding-top: 10px;background-color: transparent;color:#000000eb">
         <div class="stat_titre" style="color:#000000eb;">ANCIENNETÉ</div>
         <div class="stat_check_0">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="1" />
-            <button type="action" name="act_check_anciennete_1" class="sheet-radio" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_1" class="sheet-radio-anciennete" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_1">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_2" class="sheet-radio sheet-gt-1" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_2" class="sheet-radio-anciennete sheet-gt-1" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_2">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_3" class="sheet-radio sheet-gt-1 sheet-gt-2" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_3" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_3">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_4" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_4">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_5" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_5">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_6" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_6">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_7" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_7">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_8" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_8" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_8">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_9" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_9" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_9">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_10" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_10" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_10">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_11" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_11" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_11">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_12" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_12" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;background-color: #ffffff00;">✓</span>
             </button>
         </div>
         <div class="stat_check_12">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_13" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_13" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
         <div class="stat_check_13">
-            <input type="hidden" class="sheet-radio" name="attr_check_anciennete" value="14" />
-            <button type="action" name="act_check_anciennete_14" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12 sheet-gt-13" style="background-color: #ffffffe3;border:none;">
-            <span class="sheet-checked">X</span>
+            <input type="hidden" class="sheet-radio-anciennete" name="attr_check_anciennete" value="1" />
+            <button type="action" name="act_check_anciennete_14" class="sheet-radio-anciennete sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6 sheet-gt-7 sheet-gt-8 sheet-gt-9 sheet-gt-10 sheet-gt-11 sheet-gt-12 sheet-gt-13" style="background-color: #ffffff75;border:none;">
+            <span class="sheet-checked" style="font-weight: bold;">✓</span>
             </button>
         </div>
     </div>

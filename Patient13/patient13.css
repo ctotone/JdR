@@ -19,7 +19,8 @@ body.sheet-darkmode .charsheet {
     color: #000000eb;
 }
 
-.retourner_carte {
+.retourner_carte,
+.retourner_carte_inverse {
     position: absolute;
     z-index: 1;
     height: 60px;
@@ -31,7 +32,13 @@ body.sheet-darkmode .charsheet {
     transform: rotate(3deg);
 }
 
-body.sheet-darkmode .retourner_carte {
+.retourner_carte_inverse {
+    transform: rotateY(3.142rad);
+    margin-left: 520px;
+}
+
+body.sheet-darkmode .retourner_carte,
+body.sheet-darkmode .retourner_carte_inverse {
     color: #ffffffbd;
 }
 
@@ -95,12 +102,16 @@ input[type=number]::-webkit-outer-spin-button {
 /* Retournement de la carte */
 
 .recto,
-.verso {
+.verso,
+.retourner_carte,
+.retourner_carte_inverse {
     display: none;
 }
 
 .charsheet .page[value="1"] ~ div.recto,
-.charsheet .page[value="2"] ~ div.verso {
+.charsheet .page[value="2"] ~ div.verso,
+.charsheet .page[value="1"] ~ div.retourner_carte,
+.charsheet .page[value="2"] ~ div.retourner_carte_inverse {
     display: block;
 }
 
@@ -306,7 +317,7 @@ div.effets_personnels {
 
 .wrapper_verso_stats {  
     margin-left: 30px;
-    margin-right: 25px;
+    margin-right: 20px;
     display: grid;
     grid-template-columns: 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px ;
     grid-auto-rows: 25px;
@@ -805,24 +816,26 @@ div.trait_10_5_moins {
   /* Configure the button styling. This example makes it look like a radio. */
   .charsheet button.sheet-radio {
     border: 1px solid black;
-    width: 20px;
+    width: 25px;
     height: 20px;
     padding: 0;
     margin: 0;
     cursor: pointer;
-    background-color: rgb(87 0 0);
-    border-radius: 5px;
-    margin-left: 2.5px;
+    background-color: black;
   }
+
+  .charsheet button.sheet-radio:hover {
+    border: 1px solid rgb(42, 42, 42);
+    background-color: black;
+  }
+
   .charsheet button.sheet-radio > span.sheet-checked {
-    border: 1px solid black;
-    width: 20px;
+    width: 25px;
     height: 18px;
     padding: 0;
     margin: 0;
     cursor: pointer;
     background-color: #ffffffe3;
-    border-radius: 5px;
   }
   
   /* Hide the "checked" section of the radio if the attribute value does not match the radio */
@@ -840,3 +853,148 @@ div.trait_10_5_moins {
   .charsheet input.sheet-radio[value="12"] ~ button.sheet-gt-12 > span.sheet-checked {display: none;}
   .charsheet input.sheet-radio[value="13"] ~ button.sheet-gt-13 > span.sheet-checked {display: none;}
   .charsheet input.sheet-radio[value="14"] ~ button.sheet-gt-14 > span.sheet-checked {display: none;}
+
+  /* Radio ancienneté. */
+  .charsheet .sheet-radio-anciennete {
+    display: flex;
+    align-items: center;
+  }
+
+  .charsheet button.sheet-radio-anciennete {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 5px;
+    margin-left: 2.5px;
+  }
+
+  .charsheet button.sheet-radio-anciennete:hover {
+    border: 1px solid rgb(42 42 42 / 23%) !important;
+  }
+
+  .charsheet button.sheet-radio-anciennete > span.sheet-checked {
+    border: 1px solid black;
+    width: 20px;
+    height: 18px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: #ffffffe3;
+    border-radius: 5px;
+  }
+  
+  /* Hide the "checked" section of the radio if the attribute value does not match the radio */
+  .charsheet input.sheet-radio-anciennete[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="4"] ~ button.sheet-gt-4 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="5"] ~ button.sheet-gt-5 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="6"] ~ button.sheet-gt-6 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="9"] ~ button.sheet-gt-9 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="10"] ~ button.sheet-gt-10 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="11"] ~ button.sheet-gt-11 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="12"] ~ button.sheet-gt-12 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="13"] ~ button.sheet-gt-13 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio-anciennete[value="14"] ~ button.sheet-gt-14 > span.sheet-checked {display: none;}
+
+  /* textarea et input */
+  
+  .charsheet input.surnom,
+  .charsheet input.matricule,
+  .charsheet input.age,
+  .charsheet input.apparence,
+  .charsheet input.caractere,
+  .charsheet input.medecin,
+  .charsheet input.signe,
+  .charsheet input.contact,
+  .charsheet input.allie,
+  .charsheet input.ennemis,
+  .charsheet input.effet_perso,
+  .charsheet input.traits_nom { 
+    width: 97%;
+    outline: none;
+    resize: none;
+    padding: 0;
+    font-family: "Shadows Into Light Two", cursive;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    color: #000000eb;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+}
+
+.charsheet input.surnom { 
+    font-size: 19px;
+    height: 57px;
+}
+
+.charsheet input.matricule { 
+    font-size: 19px;
+    height: 20px;
+    margin-top: -5px;
+}
+
+.charsheet input.age { 
+    font-size: 19px;
+    height: 20px;
+    margin-top: -5px;
+}
+
+.charsheet input.medecin {
+    font-size: 15px;
+    height: 20px;
+    margin-top: -4px;
+    padding-right: 183px;
+    transform: rotate(0deg);
+}
+
+.charsheet input.allie,
+.charsheet input.ennemis {
+    font-size: 15px;
+    width: 99%;
+    height: 20px;
+    margin-top: -4px;
+    padding-right: 0px;
+    transform: rotate(0deg);
+}
+
+.charsheet input.traits_nom {
+    font-size: 16px;
+    width: 99%;
+    height: 20px;
+    margin-top: 10px;
+    padding-right: 0px;
+    transform: rotate(0deg);
+    text-align: left;
+    padding-left: 5px;
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+	border-radius: 0px;
+	background-color: transparent;
+	outline: none;
+	border: none;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 18px;
+	cursor: pointer;
+    text-align: center;
+}
+
+input[type=number].trait_bonus {
+    width: 35px !important;
+    font-size: 22px;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
