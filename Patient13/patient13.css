@@ -234,7 +234,7 @@ div.effets_personnels {
     border-bottom: none;
 }
 
-/* Structure page recto */
+/* Structure page recto - Traits */
 
 .wrapper_verso_titre {  
     padding-top: 90px;
@@ -302,19 +302,426 @@ div.effets_personnels {
     align-items: center;
 }
 
+/* Structure page recto - Stats */
+
+.wrapper_verso_stats {  
+    margin-left: 30px;
+    margin-right: 25px;
+    display: grid;
+    grid-template-columns: 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px 25.88px ;
+    grid-auto-rows: 25px;
+    background-color: black;
+    color: #9a9a9acc;
+}
+
+.stat_titre {
+    grid-column: 1/4;
+    grid-row: 1;
+    padding-right: 5px;
+    text-align: right;
+    font-size: 16px;
+    color: #ffffffd4;
+}
+
+.stat_sous_titre {
+    grid-column: 1/5;
+    grid-row: 1;
+    padding-right: 5px;
+    text-align: right;
+    font-size: 12px;
+}
+
+.stat_check_0 {
+    grid-column: 4;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_1 {
+    grid-column: 5;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_2 {
+    grid-column: 6;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_3 {
+    grid-column: 7;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_4 {
+    grid-column: 8;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_5 {
+    grid-column: 9;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_6 {
+    grid-column: 10;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_7 {
+    grid-column: 11;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_8 {
+    grid-column: 12;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_9 {
+    grid-column: 13;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_10 {
+    grid-column: 14;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_11 {
+    grid-column: 15;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_12 {
+    grid-column: 16;
+    grid-row: 1;
+    text-align: center;
+}
+
+.stat_check_13 {
+    grid-column: 17;
+    grid-row: 1;
+    text-align: center;
+}
+
 
 
 /* Systeme trait  */
 
 div.trait_1_1_zero,
 div.trait_1_1_plus,
-div.trait_1_1_moins {
+div.trait_1_1_moins,
+div.trait_1_2_zero,
+div.trait_1_2_plus,
+div.trait_1_2_moins,
+div.trait_1_3_zero,
+div.trait_1_3_plus,
+div.trait_1_3_moins,
+div.trait_1_4_zero,
+div.trait_1_4_plus,
+div.trait_1_4_moins,
+div.trait_1_5_zero,
+div.trait_1_5_plus,
+div.trait_1_5_moins,
+div.trait_2_1_zero,
+div.trait_2_1_plus,
+div.trait_2_1_moins,
+div.trait_2_2_zero,
+div.trait_2_2_plus,
+div.trait_2_2_moins,
+div.trait_2_3_zero,
+div.trait_2_3_plus,
+div.trait_2_3_moins,
+div.trait_2_4_zero,
+div.trait_2_4_plus,
+div.trait_2_4_moins,
+div.trait_2_5_zero,
+div.trait_2_5_plus,
+div.trait_2_5_moins,
+div.trait_3_1_zero,
+div.trait_3_1_plus,
+div.trait_3_1_moins,
+div.trait_3_2_zero,
+div.trait_3_2_plus,
+div.trait_3_2_moins,
+div.trait_3_3_zero,
+div.trait_3_3_plus,
+div.trait_3_3_moins,
+div.trait_3_4_zero,
+div.trait_3_4_plus,
+div.trait_3_4_moins,
+div.trait_3_5_zero,
+div.trait_3_5_plus,
+div.trait_3_5_moins,
+div.trait_4_1_zero,
+div.trait_4_1_plus,
+div.trait_4_1_moins,
+div.trait_4_2_zero,
+div.trait_4_2_plus,
+div.trait_4_2_moins,
+div.trait_4_3_zero,
+div.trait_4_3_plus,
+div.trait_4_3_moins,
+div.trait_4_4_zero,
+div.trait_4_4_plus,
+div.trait_4_4_moins,
+div.trait_4_5_zero,
+div.trait_4_5_plus,
+div.trait_4_5_moins,
+div.trait_5_1_zero,
+div.trait_5_1_plus,
+div.trait_5_1_moins,
+div.trait_5_2_zero,
+div.trait_5_2_plus,
+div.trait_5_2_moins,
+div.trait_5_3_zero,
+div.trait_5_3_plus,
+div.trait_5_3_moins,
+div.trait_5_4_zero,
+div.trait_5_4_plus,
+div.trait_5_4_moins,
+div.trait_5_5_zero,
+div.trait_5_5_plus,
+div.trait_5_5_moins,
+div.trait_6_1_zero,
+div.trait_6_1_plus,
+div.trait_6_1_moins,
+div.trait_6_2_zero,
+div.trait_6_2_plus,
+div.trait_6_2_moins,
+div.trait_6_3_zero,
+div.trait_6_3_plus,
+div.trait_6_3_moins,
+div.trait_6_4_zero,
+div.trait_6_4_plus,
+div.trait_6_4_moins,
+div.trait_6_5_zero,
+div.trait_6_5_plus,
+div.trait_6_5_moins,
+div.trait_7_1_zero,
+div.trait_7_1_plus,
+div.trait_7_1_moins,
+div.trait_7_2_zero,
+div.trait_7_2_plus,
+div.trait_7_2_moins,
+div.trait_7_3_zero,
+div.trait_7_3_plus,
+div.trait_7_3_moins,
+div.trait_7_4_zero,
+div.trait_7_4_plus,
+div.trait_7_4_moins,
+div.trait_7_5_zero,
+div.trait_7_5_plus,
+div.trait_7_5_moins,
+div.trait_8_1_zero,
+div.trait_8_1_plus,
+div.trait_8_1_moins,
+div.trait_8_2_zero,
+div.trait_8_2_plus,
+div.trait_8_2_moins,
+div.trait_8_3_zero,
+div.trait_8_3_plus,
+div.trait_8_3_moins,
+div.trait_8_4_zero,
+div.trait_8_4_plus,
+div.trait_8_4_moins,
+div.trait_8_5_zero,
+div.trait_8_5_plus,
+div.trait_8_5_moins,
+div.trait_9_1_zero,
+div.trait_9_1_plus,
+div.trait_9_1_moins,
+div.trait_9_2_zero,
+div.trait_9_2_plus,
+div.trait_9_2_moins,
+div.trait_9_3_zero,
+div.trait_9_3_plus,
+div.trait_9_3_moins,
+div.trait_9_4_zero,
+div.trait_9_4_plus,
+div.trait_9_4_moins,
+div.trait_9_5_zero,
+div.trait_9_5_plus,
+div.trait_9_5_moins,
+div.trait_10_1_zero,
+div.trait_10_1_plus,
+div.trait_10_1_moins,
+div.trait_10_2_zero,
+div.trait_10_2_plus,
+div.trait_10_2_moins,
+div.trait_10_3_zero,
+div.trait_10_3_plus,
+div.trait_10_3_moins,
+div.trait_10_4_zero,
+div.trait_10_4_plus,
+div.trait_10_4_moins,
+div.trait_10_5_zero,
+div.trait_10_5_plus,
+div.trait_10_5_moins {
     display: none;
 }
 
 .charsheet .trait_1_1[value="0"] ~ div.trait_1_1_zero,
 .charsheet .trait_1_1[value="1"] ~ div.trait_1_1_plus,
-.charsheet .trait_1_1[value="2"] ~ div.trait_1_1_moins {
+.charsheet .trait_1_1[value="2"] ~ div.trait_1_1_moins,
+.charsheet .trait_1_2[value="0"] ~ div.trait_1_2_zero,
+.charsheet .trait_1_2[value="1"] ~ div.trait_1_2_plus,
+.charsheet .trait_1_2[value="2"] ~ div.trait_1_2_moins,
+.charsheet .trait_1_3[value="0"] ~ div.trait_1_3_zero,
+.charsheet .trait_1_3[value="1"] ~ div.trait_1_3_plus,
+.charsheet .trait_1_3[value="2"] ~ div.trait_1_3_moins,
+.charsheet .trait_1_4[value="0"] ~ div.trait_1_4_zero,
+.charsheet .trait_1_4[value="1"] ~ div.trait_1_4_plus,
+.charsheet .trait_1_4[value="2"] ~ div.trait_1_4_moins,
+.charsheet .trait_1_5[value="0"] ~ div.trait_1_5_zero,
+.charsheet .trait_1_5[value="1"] ~ div.trait_1_5_plus,
+.charsheet .trait_1_5[value="2"] ~ div.trait_1_5_moins,
+.charsheet .trait_2_1[value="0"] ~ div.trait_2_1_zero,
+.charsheet .trait_2_1[value="1"] ~ div.trait_2_1_plus,
+.charsheet .trait_2_1[value="2"] ~ div.trait_2_1_moins,
+.charsheet .trait_2_2[value="0"] ~ div.trait_2_2_zero,
+.charsheet .trait_2_2[value="1"] ~ div.trait_2_2_plus,
+.charsheet .trait_2_2[value="2"] ~ div.trait_2_2_moins,
+.charsheet .trait_2_3[value="0"] ~ div.trait_2_3_zero,
+.charsheet .trait_2_3[value="1"] ~ div.trait_2_3_plus,
+.charsheet .trait_2_3[value="2"] ~ div.trait_2_3_moins,
+.charsheet .trait_2_4[value="0"] ~ div.trait_2_4_zero,
+.charsheet .trait_2_4[value="1"] ~ div.trait_2_4_plus,
+.charsheet .trait_2_4[value="2"] ~ div.trait_2_4_moins,
+.charsheet .trait_2_5[value="0"] ~ div.trait_2_5_zero,
+.charsheet .trait_2_5[value="1"] ~ div.trait_2_5_plus,
+.charsheet .trait_2_5[value="2"] ~ div.trait_2_5_moins,
+.charsheet .trait_3_1[value="0"] ~ div.trait_3_1_zero,
+.charsheet .trait_3_1[value="1"] ~ div.trait_3_1_plus,
+.charsheet .trait_3_1[value="2"] ~ div.trait_3_1_moins,
+.charsheet .trait_3_2[value="0"] ~ div.trait_3_2_zero,
+.charsheet .trait_3_2[value="1"] ~ div.trait_3_2_plus,
+.charsheet .trait_3_2[value="2"] ~ div.trait_3_2_moins,
+.charsheet .trait_3_3[value="0"] ~ div.trait_3_3_zero,
+.charsheet .trait_3_3[value="1"] ~ div.trait_3_3_plus,
+.charsheet .trait_3_3[value="2"] ~ div.trait_3_3_moins,
+.charsheet .trait_3_4[value="0"] ~ div.trait_3_4_zero,
+.charsheet .trait_3_4[value="1"] ~ div.trait_3_4_plus,
+.charsheet .trait_3_4[value="2"] ~ div.trait_3_4_moins,
+.charsheet .trait_3_5[value="0"] ~ div.trait_3_5_zero,
+.charsheet .trait_3_5[value="1"] ~ div.trait_3_5_plus,
+.charsheet .trait_3_5[value="2"] ~ div.trait_3_5_moins,
+.charsheet .trait_4_1[value="0"] ~ div.trait_4_1_zero,
+.charsheet .trait_4_1[value="1"] ~ div.trait_4_1_plus,
+.charsheet .trait_4_1[value="2"] ~ div.trait_4_1_moins,
+.charsheet .trait_4_2[value="0"] ~ div.trait_4_2_zero,
+.charsheet .trait_4_2[value="1"] ~ div.trait_4_2_plus,
+.charsheet .trait_4_2[value="2"] ~ div.trait_4_2_moins,
+.charsheet .trait_4_3[value="0"] ~ div.trait_4_3_zero,
+.charsheet .trait_4_3[value="1"] ~ div.trait_4_3_plus,
+.charsheet .trait_4_3[value="2"] ~ div.trait_4_3_moins,
+.charsheet .trait_4_4[value="0"] ~ div.trait_4_4_zero,
+.charsheet .trait_4_4[value="1"] ~ div.trait_4_4_plus,
+.charsheet .trait_4_4[value="2"] ~ div.trait_4_4_moins,
+.charsheet .trait_4_5[value="0"] ~ div.trait_4_5_zero,
+.charsheet .trait_4_5[value="1"] ~ div.trait_4_5_plus,
+.charsheet .trait_4_5[value="2"] ~ div.trait_4_5_moins,
+.charsheet .trait_5_1[value="0"] ~ div.trait_5_1_zero,
+.charsheet .trait_5_1[value="1"] ~ div.trait_5_1_plus,
+.charsheet .trait_5_1[value="2"] ~ div.trait_5_1_moins,
+.charsheet .trait_5_2[value="0"] ~ div.trait_5_2_zero,
+.charsheet .trait_5_2[value="1"] ~ div.trait_5_2_plus,
+.charsheet .trait_5_2[value="2"] ~ div.trait_5_2_moins,
+.charsheet .trait_5_3[value="0"] ~ div.trait_5_3_zero,
+.charsheet .trait_5_3[value="1"] ~ div.trait_5_3_plus,
+.charsheet .trait_5_3[value="2"] ~ div.trait_5_3_moins,
+.charsheet .trait_5_4[value="0"] ~ div.trait_5_4_zero,
+.charsheet .trait_5_4[value="1"] ~ div.trait_5_4_plus,
+.charsheet .trait_5_4[value="2"] ~ div.trait_5_4_moins,
+.charsheet .trait_5_5[value="0"] ~ div.trait_5_5_zero,
+.charsheet .trait_5_5[value="1"] ~ div.trait_5_5_plus,
+.charsheet .trait_5_5[value="2"] ~ div.trait_5_5_moins,
+.charsheet .trait_6_1[value="0"] ~ div.trait_6_1_zero,
+.charsheet .trait_6_1[value="1"] ~ div.trait_6_1_plus,
+.charsheet .trait_6_1[value="2"] ~ div.trait_6_1_moins,
+.charsheet .trait_6_2[value="0"] ~ div.trait_6_2_zero,
+.charsheet .trait_6_2[value="1"] ~ div.trait_6_2_plus,
+.charsheet .trait_6_2[value="2"] ~ div.trait_6_2_moins,
+.charsheet .trait_6_3[value="0"] ~ div.trait_6_3_zero,
+.charsheet .trait_6_3[value="1"] ~ div.trait_6_3_plus,
+.charsheet .trait_6_3[value="2"] ~ div.trait_6_3_moins,
+.charsheet .trait_6_4[value="0"] ~ div.trait_6_4_zero,
+.charsheet .trait_6_4[value="1"] ~ div.trait_6_4_plus,
+.charsheet .trait_6_4[value="2"] ~ div.trait_6_4_moins,
+.charsheet .trait_6_5[value="0"] ~ div.trait_6_5_zero,
+.charsheet .trait_6_5[value="1"] ~ div.trait_6_5_plus,
+.charsheet .trait_6_5[value="2"] ~ div.trait_6_5_moins,
+.charsheet .trait_7_1[value="0"] ~ div.trait_7_1_zero,
+.charsheet .trait_7_1[value="1"] ~ div.trait_7_1_plus,
+.charsheet .trait_7_1[value="2"] ~ div.trait_7_1_moins,
+.charsheet .trait_7_2[value="0"] ~ div.trait_7_2_zero,
+.charsheet .trait_7_2[value="1"] ~ div.trait_7_2_plus,
+.charsheet .trait_7_2[value="2"] ~ div.trait_7_2_moins,
+.charsheet .trait_7_3[value="0"] ~ div.trait_7_3_zero,
+.charsheet .trait_7_3[value="1"] ~ div.trait_7_3_plus,
+.charsheet .trait_7_3[value="2"] ~ div.trait_7_3_moins,
+.charsheet .trait_7_4[value="0"] ~ div.trait_7_4_zero,
+.charsheet .trait_7_4[value="1"] ~ div.trait_7_4_plus,
+.charsheet .trait_7_4[value="2"] ~ div.trait_7_4_moins,
+.charsheet .trait_7_5[value="0"] ~ div.trait_7_5_zero,
+.charsheet .trait_7_5[value="1"] ~ div.trait_7_5_plus,
+.charsheet .trait_7_5[value="2"] ~ div.trait_7_5_moins,
+.charsheet .trait_8_1[value="0"] ~ div.trait_8_1_zero,
+.charsheet .trait_8_1[value="1"] ~ div.trait_8_1_plus,
+.charsheet .trait_8_1[value="2"] ~ div.trait_8_1_moins,
+.charsheet .trait_8_2[value="0"] ~ div.trait_8_2_zero,
+.charsheet .trait_8_2[value="1"] ~ div.trait_8_2_plus,
+.charsheet .trait_8_2[value="2"] ~ div.trait_8_2_moins,
+.charsheet .trait_8_3[value="0"] ~ div.trait_8_3_zero,
+.charsheet .trait_8_3[value="1"] ~ div.trait_8_3_plus,
+.charsheet .trait_8_3[value="2"] ~ div.trait_8_3_moins,
+.charsheet .trait_8_4[value="0"] ~ div.trait_8_4_zero,
+.charsheet .trait_8_4[value="1"] ~ div.trait_8_4_plus,
+.charsheet .trait_8_4[value="2"] ~ div.trait_8_4_moins,
+.charsheet .trait_8_5[value="0"] ~ div.trait_8_5_zero,
+.charsheet .trait_8_5[value="1"] ~ div.trait_8_5_plus,
+.charsheet .trait_8_5[value="2"] ~ div.trait_8_5_moins,
+.charsheet .trait_9_1[value="0"] ~ div.trait_9_1_zero,
+.charsheet .trait_9_1[value="1"] ~ div.trait_9_1_plus,
+.charsheet .trait_9_1[value="2"] ~ div.trait_9_1_moins,
+.charsheet .trait_9_2[value="0"] ~ div.trait_9_2_zero,
+.charsheet .trait_9_2[value="1"] ~ div.trait_9_2_plus,
+.charsheet .trait_9_2[value="2"] ~ div.trait_9_2_moins,
+.charsheet .trait_9_3[value="0"] ~ div.trait_9_3_zero,
+.charsheet .trait_9_3[value="1"] ~ div.trait_9_3_plus,
+.charsheet .trait_9_3[value="2"] ~ div.trait_9_3_moins,
+.charsheet .trait_9_4[value="0"] ~ div.trait_9_4_zero,
+.charsheet .trait_9_4[value="1"] ~ div.trait_9_4_plus,
+.charsheet .trait_9_4[value="2"] ~ div.trait_9_4_moins,
+.charsheet .trait_9_5[value="0"] ~ div.trait_9_5_zero,
+.charsheet .trait_9_5[value="1"] ~ div.trait_9_5_plus,
+.charsheet .trait_9_5[value="2"] ~ div.trait_9_5_moins,
+.charsheet .trait_10_1[value="0"] ~ div.trait_10_1_zero,
+.charsheet .trait_10_1[value="1"] ~ div.trait_10_1_plus,
+.charsheet .trait_10_1[value="2"] ~ div.trait_10_1_moins,
+.charsheet .trait_10_2[value="0"] ~ div.trait_10_2_zero,
+.charsheet .trait_10_2[value="1"] ~ div.trait_10_2_plus,
+.charsheet .trait_10_2[value="2"] ~ div.trait_10_2_moins,
+.charsheet .trait_10_3[value="0"] ~ div.trait_10_3_zero,
+.charsheet .trait_10_3[value="1"] ~ div.trait_10_3_plus,
+.charsheet .trait_10_3[value="2"] ~ div.trait_10_3_moins,
+.charsheet .trait_10_4[value="0"] ~ div.trait_10_4_zero,
+.charsheet .trait_10_4[value="1"] ~ div.trait_10_4_plus,
+.charsheet .trait_10_4[value="2"] ~ div.trait_10_4_moins,
+.charsheet .trait_10_5[value="0"] ~ div.trait_10_5_zero,
+.charsheet .trait_10_5[value="1"] ~ div.trait_10_5_plus,
+.charsheet .trait_10_5[value="2"] ~ div.trait_10_5_moins {
     display: block;
 }
 
@@ -322,6 +729,10 @@ div.trait_1_1_moins {
 
 .charsheet button[type=action].retourner_page::before,
 .charsheet button[type=action].trait::before,
+.charsheet button[type=action].trait_plus::before,
+.charsheet button[type=action].trait_moins::before,
+.charsheet button[type=action].stat::before,
+.charsheet button[type=action].stat_check::before,
 .charsheet button[type=roll]::before {
     content: '';
   }
@@ -351,6 +762,81 @@ div.trait_1_1_moins {
     padding: 0;
     margin: 0;
     margin-left: 4px;
+    margin-top: 3px;
     cursor: pointer;
-    background: none;
+    background-color: #ffffff61;
+    border-radius: 30px;
 }
+
+.charsheet button[type=action].trait_moins {    
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 4px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/moins.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.charsheet button[type=action].trait_plus {    
+    border: 1px solid transparent;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 4px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/plus.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+/* Bouton stats */
+.charsheet .sheet-radio {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Configure the button styling. This example makes it look like a radio. */
+  .charsheet button.sheet-radio {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: rgb(87 0 0);
+    border-radius: 5px;
+    margin-left: 2.5px;
+  }
+  .charsheet button.sheet-radio > span.sheet-checked {
+    border: 1px solid black;
+    width: 20px;
+    height: 18px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: #ffffffe3;
+    border-radius: 5px;
+  }
+  
+  /* Hide the "checked" section of the radio if the attribute value does not match the radio */
+  .charsheet input.sheet-radio[value="1"] ~ button.sheet-gt-1 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="2"] ~ button.sheet-gt-2 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="3"] ~ button.sheet-gt-3 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="4"] ~ button.sheet-gt-4 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="5"] ~ button.sheet-gt-5 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="6"] ~ button.sheet-gt-6 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="7"] ~ button.sheet-gt-7 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="8"] ~ button.sheet-gt-8 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="9"] ~ button.sheet-gt-9 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="10"] ~ button.sheet-gt-10 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="11"] ~ button.sheet-gt-11 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="12"] ~ button.sheet-gt-12 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="13"] ~ button.sheet-gt-13 > span.sheet-checked {display: none;}
+  .charsheet input.sheet-radio[value="14"] ~ button.sheet-gt-14 > span.sheet-checked {display: none;}
