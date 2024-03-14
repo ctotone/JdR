@@ -109,9 +109,10 @@ body.sheet-darkmode .charsheet {
 }
 
 .roll_lancer {
-    grid-column: 1/4;
-    grid-row: 3; 
-    padding-left: 10px;
+    grid-column: 1 / 4;
+    grid-row: 3;
+    padding-left: 61px;
+    padding-top: 9px;
     border: 2px solid black;
     border-top: none;
     border-right: none;
@@ -1140,9 +1141,10 @@ input[type=number].roll_mod {
     font-family: Oswald;
 }
 
-.charsheet button[type=roll].roll_3d6 {
+.charsheet button[type=roll].roll_3d6,
+.charsheet button[type=action].roll_3d6 {
     width: 91px;
-    height: 45px;
+    height: 40px;
     border: none;
     padding: 0;
     margin: 0;
@@ -1150,9 +1152,10 @@ input[type=number].roll_mod {
     background-repeat: no-repeat;
     background-color: transparent;
     cursor: pointer;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_6x3.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/dice_6x3.png);
 }
-.charsheet button[type=roll].roll_d6_creation:hover {
+.charsheet button[type=roll].roll_3d6:hover,
+.charsheet button[type=action].roll_3d6:hover  {
     margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
