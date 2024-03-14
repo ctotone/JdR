@@ -32,7 +32,7 @@
             <input type="number" class="roll_mod" name="attr_roll_mod" min="-5" max="5">
         </div>
         <div class="roll_lancer">
-            <button type="action" class="roll_3d6" name="act_roll" title="Injection hasardeuse..."></button>
+            <button type="action" class="roll_3d6" name="act_roll_action" title="Injection hasardeuse..."></button>
         </div>
     </div>
 </div>
@@ -1726,4 +1726,18 @@ check_ancienneteValues.forEach(function(value) {
         });
     });
 
+</script>
+
+<!-- Script de Roll -->
+<script type="text/worker">
+on('clicked:roll_action', async (event) => {
+    const roll = await startRoll("@{gm} {{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}}");
+       
+       const {d1,d2,d3,mod} = roll.results;
+       const computeObj = {};
+       if (d1.result <= d2.result && d1.result <= d1.result) trait_10_5 = "1";
+
+       computeObj.roll = d1.result + d2.result + d3.result + mod.result;
+finishRoll(roll.rollId,computeObj);
+})
 </script>
