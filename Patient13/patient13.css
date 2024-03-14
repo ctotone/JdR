@@ -6,17 +6,20 @@
 /* Style de la page principale  */
 
 .charsheet {
+    --black: #000000eb;
+    --fond_carte: #e3e4e4ed;
     margin: 0px;
     border-radius: 0px;
-    color: #000000eb;
     font-family: Oswald;
     font-weight: bolder;
     font-size: 13px;
+    color: var(--black);
 }
 
 body.sheet-darkmode .charsheet {
     background-color: #1f1f1f;
-    color: #000000eb;
+    --black: #000000eb;
+    color: var(--black);
 }
 
 .retourner_carte,
@@ -44,6 +47,77 @@ body.sheet-darkmode .charsheet {
     transform: rotate(9deg);
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/roll_template_bg.png);
     background-size: 298px 136px;
+    display: flex;
+    align-items: center;
+}
+
+/* Structure cadre Roll */
+
+.wrapper_roll {
+    margin: 10px;
+    margin-left: 69px;
+    display: grid;
+    grid-template-columns: 90px 10px 120px;
+    grid-auto-rows: 38px;
+    font-size: 16px;
+    border-radius: 0px;
+    font-family: Oswald;
+}
+
+.roll_public {
+    grid-column: 1/3;
+    grid-row: 1;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_public_boutton {
+    grid-column: 3;
+    grid-row: 1;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_mod_titre {
+    grid-column: 1/3;
+    grid-row: 2; 
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_mod_valeur {
+    grid-column: 3;
+    grid-row: 2; 
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_lancer {
+    grid-column: 1/4;
+    grid-row: 3; 
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
 }
 
 .tache_1,
@@ -144,13 +218,15 @@ input[type=number]::-webkit-outer-spin-button {
 .verso {
     width: 500px;
     height: 810px;
-    background:#e3e4e4ed;
+    background:var(--fond_carte);
     position: relative;
     clip-path: polygon(10% 0, 90% 0, 100% 7%, 100% 100%, 0 100%, 0 7%);
   }
 
 .shadow {
     filter: drop-shadow(2px 1px 4px rgba(0, 0, 0, 0.712));
+    display: inline-block;
+    width: 500px;
   }
 
 body.sheet-darkmode .shadow {
@@ -831,6 +907,37 @@ div.trait_10_5_moins {
     background-color: transparent;
 }
 
+.charsheet button[type=action].roll_public,
+.charsheet button[type=action].roll_prive {
+    border: none;
+    width: 55px;
+    height: 20px;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: Oswald;
+    font-weight: bold;
+    text-align: left;
+}
+
+.charsheet button[type=action].roll_public {
+    padding-left: 0px;
+}
+
+div.jet_public,
+div.jet_prive {
+    display: none;
+	white-space: nowrap;
+}
+
+.charsheet .jet[value="1"] ~ div.jet_public,
+.charsheet .jet[value="2"] ~ div.jet_prive {
+    display: inline-flex;
+}
+
 /* Bouton stats */
 .charsheet .sheet-radio {
     display: flex;
@@ -940,7 +1047,8 @@ div.trait_10_5_moins {
   .charsheet input.allie,
   .charsheet input.ennemis,
   .charsheet input.effet_perso,
-  .charsheet input.traits_nom { 
+  .charsheet input.traits_nom,
+  .charsheet input.roll_mod { 
     width: 97%;
     outline: none;
     resize: none;
@@ -950,7 +1058,7 @@ div.trait_10_5_moins {
     background: none;
     text-align: center;
     cursor: pointer;
-    color: #000000eb;
+    color: var(--black);
     text-transform: uppercase;
     transform: rotate(-2deg);
 }
@@ -1021,4 +1129,31 @@ input[type=number].trait_bonus {
     margin-top: 5px;
     letter-spacing: 3px;
     font-weight: bold;
+}
+
+input[type=number].roll_mod { 
+    width: 35px !important;
+    font-size: 20px;
+    margin-top: -2px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: Oswald;
+}
+
+.charsheet button[type=roll].roll_3d6 {
+    width: 91px;
+    height: 45px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd/images/dice_6x3.png);
+}
+.charsheet button[type=roll].roll_d6_creation:hover {
+    margin-left: 2px;
+	padding: 0px;
+	background-position: 0 0px;
 }

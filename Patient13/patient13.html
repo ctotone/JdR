@@ -8,7 +8,33 @@
 <div class="fleche"></div>
 
 <div class="cadre_roll">
-
+    <div class="wrapper_roll">
+        <div class="roll_public">
+            consultation
+        </div>
+        <div class="roll_public_boutton">
+            <input type="hidden" class="jet" name="attr_jet"  value="1">
+            <div class="jet_public">
+                <button type="action" class="roll_public" name="act_jet" title="Jet public" style="cursor: default;">publique</button>
+                / 
+                <button type="action" class="roll_prive" name="act_jet" title="Jet privé" style="color: #00000052;">privé</button> 
+            </div>
+            <div class="jet_prive">
+                <button type="action" class="roll_public" name="act_jet" title="Jet public" style="color: #00000052;">publique</button>
+                / 
+                <button type="action" class="roll_prive" name="act_jet" title="Jet privé" style="cursor: default;">privé</button> 
+            </div>
+        </div>
+        <div class="roll_mod_titre">
+            modificateur
+        </div>
+        <div class="roll_mod_valeur">
+            <input type="number" class="roll_mod" name="attr_roll_mod" min="-5" max="5">
+        </div>
+        <div class="roll_lancer">
+            <button type="action" class="roll_3d6" name="act_roll" title="Injection hasardeuse...">roll</button>
+        </div>
+    </div>
 </div>
 
 <!-- tache à faire-->
@@ -884,6 +910,24 @@
             
             setAttrs({
             "page" : page
+            });
+        });
+    });
+ </script>
+
+<!-- Jet public privé -->
+<script type="text/worker">
+    on('clicked:jet', function() {
+        getAttrs(["jet"], function(values) {
+        let jet = parseInt(values["jet"]) || 0;
+        
+            if (jet == 1) jet = "2", gm = "/w gm ";
+            else if (jet == 2) jet = "1", gm = "";
+            else jet == "1";
+            
+            setAttrs({
+            "jet" : jet,
+            "gm" : gm
             });
         });
     });
