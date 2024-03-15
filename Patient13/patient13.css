@@ -121,8 +121,7 @@ body.sheet-darkmode .charsheet {
     align-items: center;
 }
 
-.tache_1,
-.tache_2 {
+.decor_1 {
     position: absolute;
     z-index: 1;
     height: 60px;
@@ -1159,4 +1158,292 @@ input[type=number].roll_mod {
     margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
+}
+
+  /* Roll Template */
+
+.sheet-rolltemplate-patient13{
+    margin-left: -46px;
+    transform: rotate(1deg);
+    color: black;
+    font-family: Oswald;
+    font-weight: bold;
+  }
+
+ .sheet-rolltemplate-patient13 .sheet-shadow_roll {
+    filter: drop-shadow(2px 1px 4px rgba(0, 0, 0, 0.712));
+    display: inline-block;
+    width: 500px;
+  }
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-patient13 .sheet-shadow_roll {
+    filter: drop-shadow(0px 0px 2px white);
+  }
+
+.sheet-rolltemplate-patient13 .sheet-ecart {
+    height: 20px;
+    background-color: transparent;
+}
+
+.sheet-rolltemplate-patient13 .sheet-container {
+    position: relative;
+    margin-bottom: 0;
+    width: 290px;
+    height: 132px;
+    background-image: url();
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/roll_template_bg.png);
+    background-size: 290px 132px;
+    background-repeat: no-repeat;
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.sheet-rolltemplate-patient13 .sheet-type {
+    position: relative;
+    z-index: 1;
+    padding: 2px;
+    border-radius: 20px 20px;
+    border: 2px solid #475e66;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    height: 15px;
+    top: 4px;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/offi_button_background_result.png);
+    color: white;
+}
+
+.sheet-rolltemplate-patient13 .sheet-container {
+  --border-roll-color: #1d2d30;
+  --header-text-color: #FFF;
+  --result-bg-color: #772d34;
+  --header-bg-color: #475e66;
+  --echec-classique: #957003;
+  --echec-majeur: #830478;
+  --echec-critique: red;
+  --reussite-classique: #027ac3;
+  --reussite-majeur: #003395;
+  --reussite-critique: green;
+
+}
+
+
+.sheet-rolltemplate-patient13 .sheet-content {
+    display: grid;
+    grid-template-columns: 75px 45px 45px 45px;
+    line-height: 20px;
+    border-top: none;
+    margin-left: 70px;
+    border-left: 2px solid black;
+    height: 117px;
+    font-size: 16px;
+}
+
+.sheet-rolltemplate-patient13 .sheet-patient-titre {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.sheet-rolltemplate-patient13 .sheet-patient-valeur {
+    grid-column: 2/5;
+    grid-row: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 22px;
+}
+.sheet-rolltemplate-patient13 .sheet-posologie {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.sheet-rolltemplate-patient13 .sheet-value-1 {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.sheet-rolltemplate-patient13 .sheet-value-2 {
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.sheet-rolltemplate-patient13 .sheet-value-3 {
+    grid-column: 4;
+    grid-row: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 20px;
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-reussite1 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: var(--reussite-classique);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-reussite2-1 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--reussite-majeur);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-reussite2-2 {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--reussite-majeur);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-reussite3-1 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: var(--reussite-critique);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec3-2 {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--reussite-critique);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec1 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--echec-classique);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec2-1 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: var(--echec-majeur);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec2-2 {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--echec-majeur);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec3-1 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: var(--echec-critique);
+}
+
+.sheet-rolltemplate-patient13 .sheet-desc-echec3-2 {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--echec-critique);
+}
+
+.sheet-rolltemplate-patient13 .inlinerollresult,
+.sheet-rolltemplate-patient13 .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .inlinerollresult.fullfail  {
+	border: none !important;
+    background-color: transparent !important;
+    color: black !important;
+    font-size: 22px;
 }

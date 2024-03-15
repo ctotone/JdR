@@ -29,11 +29,12 @@
             modificateur
         </div>
         <div class="roll_mod_valeur">
-            <input type="number" class="roll_mod" name="attr_roll_mod" min="-3" max="3">
+            <input type="number" class="roll_mod" name="attr_roll_mod" min="-3" max="3" title="Si un de vos Traits est en rapport 
+avec l’action qui est tentée, notez
+sa valeur ici.">
         </div>
         <div class="roll_lancer">
-            <button type="action" class="roll_3d6" name="act_roll_action" title="Injection hasardeuse..."></button>
-            <button type="action" class="roll_test" name="act_roll_test" title="Injection hasardeuse...">test</button>
+            <button type="action" class="roll_3d6" name="act_roll_action" title="Traitement hasardeux..."></button>
         </div>
     </div>
 </div>
@@ -58,7 +59,7 @@
         <div class="matricule">
             MATRICULE
             <br>
-            <input type="text" class="matricule" name="attr_matricule">
+            <input type="text" class="matricule" name="attr_matricule" value="# 000000">
         </div>
         <div class="age">
             ÂGE APPARENT
@@ -1732,7 +1733,7 @@ check_ancienneteValues.forEach(function(value) {
 <!-- Script de Roll -->
 <script type="text/worker">
     on('clicked:roll_action', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -1766,183 +1767,174 @@ check_ancienneteValues.forEach(function(value) {
 <!-- ----- ROLL TEMPLATE ------- -->
 <!-- --------------------------- -->
 
-
 <rolltemplate class="sheet-rolltemplate-patient13">
+<div class="ecart"></div>
+<span class="shadow_roll">
     <div class="sheet-container">
-        <div class="sheet-header">
-            
-        </div>
         <div class="sheet-content">
-            <div class="sheet-key"></div>
+            <div class="sheet-patient-titre">patient</div>
+            <div class="sheet-patient-valeur">{{title}}</div>
+            {{#rollTotal() seuil 1}}
+            <div class="sheet-posologie" title="Seuil de réussite: 1">résultats</div>
+            {{/rollTotal() seuil 1}}
+            {{#rollTotal() seuil 2}}
+            <div class="sheet-posologie" title="Seuil de réussite : 2">résultats</div>
+            {{/rollTotal() seuil 2}}
+            {{#rollTotal() seuil 3}}
+            <div class="sheet-posologie" title="Seuil de réussite : 3">résultats</div>
+            {{/rollTotal() seuil 3}}
+            {{#rollTotal() seuil 4}}
+            <div class="sheet-posologie" title="Seuil de réussite : 4">résultats</div>
+            {{/rollTotal() seuil 4}}
+            {{#rollTotal() seuil 5}}
+            <div class="sheet-posologie" title="Seuil de réussite : 5">résultats</div>
+            {{/rollTotal() seuil 5}}
+            {{#rollTotal() seuil 6}}
+            <div class="sheet-posologie" title="Seuil de réussite : 6">résultats</div>
+            {{/rollTotal() seuil 6}}
+            <div class="sheet-value-1">{{computed::d1}}</div>
+            <div class="sheet-value-2">{{computed::d2}}</div>
+            <div class="sheet-value-3">{{computed::d3}}</div>
             <!-- Echec classique -->
-            {{#rollGreater() computed::d1 seuil}}
-                {{#^rollGreater() computed::d2 seuil}}
-                    {{#^rollGreater() computed::d3 seuil}}
-                        Echec classique
-                    {{/^rollGreater() computed::d3 seuil}}
-                {{/^rollGreater() computed::d2 seuil}}
-            {{/rollGreater() computed::d1 seuil}}
-
-            {{#rollGreater() computed::d3 seuil}}
-                {{#^rollGreater() computed::d1 seuil}}
-                    {{#^rollGreater() computed::d2 seuil}}
-                        Echec classique
-                    {{/^rollGreater() computed::d2 seuil}}
-                {{/^rollGreater() computed::d1 seuil}}
-            {{/rollGreater() computed::d3 seuil}}
-
-            {{#rollGreater() computed::d2 seuil}}
-                {{#^rollGreater() computed::d1 seuil}}
-                    {{#^rollGreater() computed::d3 seuil}}
-                        Echec classique
-                    {{/^rollGreater() computed::d3 seuil}}
-                {{/^rollGreater() computed::d1 seuil}}
-            {{/rollGreater() computed::d2 seuil}}
-            <!-- Echec 3d -->
-            {{#^rollGreater() computed::d1 seuil}}
-                {{#^rollGreater() computed::d2 seuil}}
-                    {{#^rollGreater() computed::d3 seuil}}
-                        {{#rollGreater() computed::d1 computed::d2}}
-                            {{#rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d1 computed::d3}}
-                            {{#^rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d1 computed::d3}}
-                        {{/rollGreater() computed::d1 computed::d2}}
-
-                        {{#^rollGreater() computed::d1 computed::d2}}
-                            {{#rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d1 computed::d3}}
-                            {{#^rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d1 computed::d3}}
-                        {{/^rollGreater() computed::d1 computed::d2}}
-                    {{/^rollGreater() computed::d3 seuil}}
-                {{/^rollGreater() computed::d2 seuil}}
-            {{/^rollGreater() computed::d1 seuil}}
-            <!-- Echec triple -->
-            {{#^rollGreater() computed::d1 seuil}}
-                {{#^rollGreater() computed::d2 seuil}}
-                    {{#^rollGreater() computed::d3 seuil}}
-                        {{#rollTotal() computed::d1 computed::d2}}
-                            {{#rollTotal() computed::d2 computed::d3}}
-                                Echec + triple !!!
-                            {{/rollTotal() computed::d2 computed::d3}}
-                        {{/rollTotal() computed::d1 computed::d2}}  
-                    {{/^rollGreater() computed::d3 seuil}}
-                {{/^rollGreater() computed::d2 seuil}}
-            {{/^rollGreater() computed::d1 seuil}}
-
-            <!-- Resussite classique -->
-            {{#rollGreater() computed::d1 seuil}}
-                {{#rollGreater() computed::d2 seuil}}
-                    {{#^rollGreater() computed::d3 seuil}}
-                        Réussite classique
-                    {{/^rollGreater() computed::d3 seuil}}
-                {{/rollGreater() computed::d2 seuil}}
-            {{/rollGreater() computed::d1 seuil}}
-
-            {{#rollGreater() computed::d3 seuil}}
                 {{#rollGreater() computed::d1 seuil}}
                     {{#^rollGreater() computed::d2 seuil}}
-                        Réussite classique
+                        {{#^rollGreater() computed::d3 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                        {{/^rollGreater() computed::d3 seuil}}
                     {{/^rollGreater() computed::d2 seuil}}
                 {{/rollGreater() computed::d1 seuil}}
-            {{/rollGreater() computed::d3 seuil}}
 
-            {{#rollGreater() computed::d3 seuil}}
+                {{#rollGreater() computed::d3 seuil}}
+                    {{#^rollGreater() computed::d1 seuil}}
+                        {{#^rollGreater() computed::d2 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                        {{/^rollGreater() computed::d2 seuil}}
+                    {{/^rollGreater() computed::d1 seuil}}
+                {{/rollGreater() computed::d3 seuil}}
+
                 {{#rollGreater() computed::d2 seuil}}
                     {{#^rollGreater() computed::d1 seuil}}
-                        Réussite classique
+                        {{#^rollGreater() computed::d3 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                        {{/^rollGreater() computed::d3 seuil}}
                     {{/^rollGreater() computed::d1 seuil}}
                 {{/rollGreater() computed::d2 seuil}}
-            {{/rollGreater() computed::d3 seuil}}
+
+            <!-- Echec 3d -->
+                {{#^rollGreater() computed::d1 seuil}}
+                    {{#^rollGreater() computed::d2 seuil}}
+                        {{#^rollGreater() computed::d3 seuil}}
+                            {{#^rollTotal() computed::d1 computed::d2}}
+                                {{#rollGreater() computed::d1 computed::d2}}
+                                    {{#rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                    {{/rollGreater() computed::d1 computed::d3}}
+                                    {{#^rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                    {{/^rollGreater() computed::d1 computed::d3}}
+                                {{/rollGreater() computed::d1 computed::d2}}
+
+                                {{#^rollGreater() computed::d1 computed::d2}}
+                                    {{#rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                    {{/rollGreater() computed::d1 computed::d3}}
+                                    {{#^rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                    {{/^rollGreater() computed::d1 computed::d3}}
+                                {{/^rollGreater() computed::d1 computed::d2}}
+                            {{/^rollTotal() computed::d1 computed::d2}}
+                        {{/^rollGreater() computed::d3 seuil}}
+                    {{/^rollGreater() computed::d2 seuil}}
+                {{/^rollGreater() computed::d1 seuil}}
+
+            <!-- Echec triple -->
+                {{#^rollGreater() computed::d1 seuil}}
+                    {{#^rollGreater() computed::d2 seuil}}
+                        {{#^rollGreater() computed::d3 seuil}}
+                            {{#rollTotal() computed::d1 computed::d2}}
+                                {{#rollTotal() computed::d2 computed::d3}}
+                                <div class="sheet-desc-echec3-1">catastrophe !!!</div>
+                                <div class="sheet-desc-echec3-2">(notez trois - au Trait)</div>
+                                {{/rollTotal() computed::d2 computed::d3}}
+                            {{/rollTotal() computed::d1 computed::d2}}  
+                        {{/^rollGreater() computed::d3 seuil}}
+                    {{/^rollGreater() computed::d2 seuil}}
+                {{/^rollGreater() computed::d1 seuil}}
+
+            <!-- Resussite classique -->
+                {{#rollGreater() computed::d1 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        {{#^rollGreater() computed::d3 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                        {{/^rollGreater() computed::d3 seuil}}
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d1 seuil}}
+
+                {{#rollGreater() computed::d3 seuil}}
+                    {{#rollGreater() computed::d1 seuil}}
+                        {{#^rollGreater() computed::d2 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                        {{/^rollGreater() computed::d2 seuil}}
+                    {{/rollGreater() computed::d1 seuil}}
+                {{/rollGreater() computed::d3 seuil}}
+
+                {{#rollGreater() computed::d3 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        {{#^rollGreater() computed::d1 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                        {{/^rollGreater() computed::d1 seuil}}
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d3 seuil}}
 
             <!-- Reussite 3d -->
-            {{#rollGreater() computed::d1 seuil}}
-                {{#rollGreater() computed::d2 seuil}}
-                    {{#rollGreater() computed::d3 seuil}}
-                    
-                        {{#rollGreater() computed::d1 computed::d2}}
-                            {{#rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d1 computed::d3}}
-                            {{#^rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d1 computed::d3}}
-                        {{/rollGreater() computed::d1 computed::d2}}
+                {{#rollGreater() computed::d1 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        {{#rollGreater() computed::d3 seuil}}
+                            {{#^rollTotal() computed::d1 computed::d2}}
+                                {{#rollGreater() computed::d1 computed::d2}}
+                                    {{#rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                    {{/rollGreater() computed::d1 computed::d3}}
+                                    {{#^rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                    {{/^rollGreater() computed::d1 computed::d3}}
+                                {{/rollGreater() computed::d1 computed::d2}}
 
-                        {{#^rollGreater() computed::d1 computed::d2}}
-                            {{#rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d1 computed::d3}}
-                            {{#^rollGreater() computed::d1 computed::d3}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d1 computed::d3}}
-                        {{/^rollGreater() computed::d1 computed::d2}}
-                        
-                    {{/rollGreater() computed::d3 seuil}}
-                {{/rollGreater() computed::d2 seuil}}
-            {{/rollGreater() computed::d1 seuil}}
+                                {{#^rollGreater() computed::d1 computed::d2}}
+                                    {{#rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                    {{/rollGreater() computed::d1 computed::d3}}
+                                    {{#^rollGreater() computed::d1 computed::d3}}
+                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                    {{/^rollGreater() computed::d1 computed::d3}}
+                                {{/^rollGreater() computed::d1 computed::d2}}
+                            {{/^rollTotal() computed::d1 computed::d2}}   
+                        {{/rollGreater() computed::d3 seuil}}
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d1 seuil}}
 
             <!-- Reussite triple -->
-            {{#rollGreater() computed::d1 seuil}}
-                {{#rollGreater() computed::d2 seuil}}
-                    {{#rollGreater() computed::d3 seuil}}
-                        {{#rollTotal() computed::d1 computed::d2}}
-                            {{#rollTotal() computed::d2 computed::d3}}
-                                Reussite + triple !!!
-                            {{/rollTotal() computed::d2 computed::d3}}
-                        {{/rollTotal() computed::d1 computed::d2}}  
-                    {{/rollGreater() computed::d3 seuil}}
-                {{/rollGreater() computed::d2 seuil}}
-            {{/rollGreater() computed::d1 seuil}}
-
-
-
-            <div class="sheet-value">{{d1}} {{d2}} {{d3}}</div><br>
-            <div class="sheet-value">{{mod}}</div><br>
-            <div class="sheet-value">{{computed::d1}} {{computed::d2}} {{computed::d3}}</div><br>
-            <div class="sheet-value">{{seuil}}</div><br>
-            
+                {{#rollGreater() computed::d1 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        {{#rollGreater() computed::d3 seuil}}
+                            {{#rollTotal() computed::d1 computed::d2}}
+                                {{#rollTotal() computed::d2 computed::d3}}
+                                <div class="sheet-desc-reussite3-1">réussite exceptionnelle !!!</div>
+                                <div class="sheet-desc-reussite3-2">(notez trois + au Trait)</div>
+                                {{/rollTotal() computed::d2 computed::d3}}
+                            {{/rollTotal() computed::d1 computed::d2}}  
+                        {{/rollGreater() computed::d3 seuil}}
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d1 seuil}}
         </div>
     </div>
-    </rolltemplate>
-
-
-
-
-
-    <!-- Script de Roll -->
-<script type="text/worker">
-    on('clicked:roll_test', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{roll=[[0[resultat]]]}} {{d1=[[2]]}} {{d2=[[3]]}} {{d3=[[4]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let mod = parseInt(results.results.mod.result);
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-        
-                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
-                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
-                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
-                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
-                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
-                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
-    
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3
-                    }
-                    );
-                });
-            });
-</script>
+</span>
+</rolltemplate>
