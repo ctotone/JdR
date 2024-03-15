@@ -30,7 +30,7 @@
             modificateur
         </div>
         <div class="roll_mod_valeur">
-            <input type="number" class="roll_mod" name="attr_roll_mod" min="-3" max="3" title="Si un de vos Traits est en rapport 
+            <input type="number" class="roll_mod" name="attr_roll_mod" min="-3" max="3" value="0" title="Si un de vos Traits est en rapport 
 avec l’action qui est tentée, notez
 sa valeur ici.">
         </div>
@@ -436,7 +436,7 @@ sa valeur ici.">
     </div>
 
     <!-- Trait 10 -->
-    <div class="wrapper_verso">
+    <div class="wrapper_verso" style="grid-auto-rows: 45px;">
         <div class="traits" style="border-bottom: none;">
             <input type="text" class="traits_nom" name="attr_trait_10_nom">
         </div>
@@ -469,6 +469,12 @@ sa valeur ici.">
             <div class="trait_10_5_plus"><button type="action" class="trait_plus" name="act_trait_10_5"></button></div>
             <div class="trait_10_5_moins"><button type="action" class="trait_moins" name="act_trait_10_5"></button></div>
         </div>
+    </div>
+
+    <div class="wrapper_verso_stats_max">
+        <div class="stat_recap_1">LUCIDITÉ MAX : <input type="number" class="max_stat" name="attr_vitalite_max"></div>
+        <div class="stat_recap_2">SANG-FROID MAX :</div>
+        <div class="stat_recap_3">VITALITÉ MAX :</div>
     </div>
 
     <!-- Lucidité -->
@@ -1727,8 +1733,10 @@ check_sang_froidValues.forEach(function(value) {
 const check_vitaliteValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
 check_vitaliteValues.forEach(function(value) {
     on(`clicked:check_vitalite_${value}`, function() {
+        let vitalite = value - 1;
         setAttrs({
-        "check_vitalite": value
+        "check_vitalite": value,
+        "vitalite": vitalite
         });
     });
     });
