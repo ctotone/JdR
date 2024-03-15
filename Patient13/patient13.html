@@ -6,6 +6,7 @@
     <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="fleche"></div>
+<!-- <div class="decor_1"></div> -->
 
 <div class="cadre_roll">
     <div class="wrapper_roll">
@@ -559,20 +560,21 @@ sa valeur ici.">
         </div>
     </div>
     <div class="wrapper_verso_stats" style="margin-top: -3px;">
-        <div class="stat_sous_titre">PERTE DE MÉMOIRE</div>
-        <div class="stat_check_1">1</div>
-        <div class="stat_check_2">2</div>
-        <div class="stat_check_3">3</div>
-        <div class="stat_check_4">4</div>
-        <div class="stat_check_5">5</div>
-        <div class="stat_check_6">6</div>
-        <div class="stat_check_7">7</div>
-        <div class="stat_check_8">8</div>
-        <div class="stat_check_9">9</div>
-        <div class="stat_check_10">10</div>
-        <div class="stat_check_11">11</div>
-        <div class="stat_check_12">12</div>
-        <div class="stat_check_13">13</div>
+        <input type="hidden" class="memoire" name="attr_memoire" value="0" />
+        <div class="stat_sous_titre"><button type="action" class="crises" name="act_memoire_0">PERTE DE MÉMOIRE</button></div>
+        <div class="stat_check_1_memoire"><button type="action" class="crises" name="act_memoire_1">1</button></div>
+        <div class="stat_check_2_memoire"><button type="action" class="crises" name="act_memoire_2">2</button></div>
+        <div class="stat_check_3_memoire"><button type="action" class="crises" name="act_memoire_3">3</button></div>
+        <div class="stat_check_4_memoire"><button type="action" class="crises" name="act_memoire_4">4</button></div>
+        <div class="stat_check_5_memoire"><button type="action" class="crises" name="act_memoire_5">5</button></div>
+        <div class="stat_check_6_memoire"><button type="action" class="crises" name="act_memoire_6">6</button></div>
+        <div class="stat_check_7_memoire"><button type="action" class="crises" name="act_memoire_7">7</button></div>
+        <div class="stat_check_8_memoire"><button type="action" class="crises" name="act_memoire_8">8</button></div>
+        <div class="stat_check_9_memoire"><button type="action" class="crises" name="act_memoire_9">9</button></div>
+        <div class="stat_check_10_memoire"><button type="action" class="crises" name="act_memoire_10">10</button></div>
+        <div class="stat_check_11_memoire"><button type="action" class="crises" name="act_memoire_11">11</button></div>
+        <div class="stat_check_12_memoire"><button type="action" class="crises" name="act_memoire_12">12</button></div>
+        <div class="stat_check_13_memoire"><button type="action" class="crises" name="act_memoire_13">13</button></div>
     </div>
 
     <!-- Sang froid -->
@@ -587,37 +589,37 @@ sa valeur ici.">
         <div class="stat_check_1">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_2" class="sheet-radio sheet-gt-1">
-            <span class="sheet-checked" style="background-color: #b10b09;"></span>
+            <span class="sheet-checked" style="background-color: #b10b09;">-3</span>
             </button>
         </div>
         <div class="stat_check_2">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-            <span class="sheet-checked" style="background-color: #a41612;">-3</span>
+            <span class="sheet-checked" style="background-color: #a41612;"></span>
             </button>
         </div>
         <div class="stat_check_3">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-            <span class="sheet-checked" style="background-color: #8c2b25;"></span>
+            <span class="sheet-checked" style="background-color: #8c2b25;">-2</span>
             </button>
         </div>
         <div class="stat_check_4">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-            <span class="sheet-checked" style="background-color: #80362e;">-2</span>
+            <span class="sheet-checked" style="background-color: #80362e;"></span>
             </button>
         </div>
         <div class="stat_check_5">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-            <span class="sheet-checked" style="background-color: #734137;"></span>
+            <span class="sheet-checked" style="background-color: #734137;">-1</span>
             </button>
         </div>
         <div class="stat_check_6">
             <input type="hidden" class="sheet-radio" name="attr_check_sang_froid" value="14" />
             <button type="action" name="act_check_sang_froid_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-            <span class="sheet-checked" style="background-color: #674c40;">-1</span>
+            <span class="sheet-checked" style="background-color: #674c40;"></span>
             </button>
         </div>
         <div class="stat_check_7">
@@ -664,20 +666,21 @@ sa valeur ici.">
         </div>
     </div>
     <div class="wrapper_verso_stats" style="margin-top: -3px;">
-        <div class="stat_sous_titre">HYSTÉRIE</div>
-        <div class="stat_check_1">1</div>
-        <div class="stat_check_2">2</div>
-        <div class="stat_check_3">3</div>
-        <div class="stat_check_4">4</div>
-        <div class="stat_check_5">5</div>
-        <div class="stat_check_6">6</div>
-        <div class="stat_check_7">7</div>
-        <div class="stat_check_8">8</div>
-        <div class="stat_check_9">9</div>
-        <div class="stat_check_10">10</div>
-        <div class="stat_check_11">11</div>
-        <div class="stat_check_12">12</div>
-        <div class="stat_check_13">13</div>
+        <input type="hidden" class="hysterie" name="attr_hysterie" value="0" />
+        <div class="stat_sous_titre"><button type="action" class="crises" name="act_hysterie_0">HYSTÉRIE</button></div>
+        <div class="stat_check_1_hysterie"><button type="action" class="crises" name="act_hysterie_1">1</button></div>
+        <div class="stat_check_2_hysterie"><button type="action" class="crises" name="act_hysterie_2">2</button></div>
+        <div class="stat_check_3_hysterie"><button type="action" class="crises" name="act_hysterie_3">3</button></div>
+        <div class="stat_check_4_hysterie"><button type="action" class="crises" name="act_hysterie_4">4</button></div>
+        <div class="stat_check_5_hysterie"><button type="action" class="crises" name="act_hysterie_5">5</button></div>
+        <div class="stat_check_6_hysterie"><button type="action" class="crises" name="act_hysterie_6">6</button></div>
+        <div class="stat_check_7_hysterie"><button type="action" class="crises" name="act_hysterie_7">7</button></div>
+        <div class="stat_check_8_hysterie"><button type="action" class="crises" name="act_hysterie_8">8</button></div>
+        <div class="stat_check_9_hysterie"><button type="action" class="crises" name="act_hysterie_9">9</button></div>
+        <div class="stat_check_10_hysterie"><button type="action" class="crises" name="act_hysterie_10">10</button></div>
+        <div class="stat_check_11_hysterie"><button type="action" class="crises" name="act_hysterie_11">11</button></div>
+        <div class="stat_check_12_hysterie"><button type="action" class="crises" name="act_hysterie_12">12</button></div>
+        <div class="stat_check_13_hysterie"><button type="action" class="crises" name="act_hysterie_13">13</button></div>
     </div>
 
     <!-- VITALITÉ -->
@@ -692,37 +695,37 @@ sa valeur ici.">
         <div class="stat_check_1">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_2" class="sheet-radio sheet-gt-1">
-            <span class="sheet-checked" style="background-color: #b10b09;"></span>
+            <span class="sheet-checked" style="background-color: #b10b09;">-3</span>
             </button>
         </div>
         <div class="stat_check_2">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_3" class="sheet-radio sheet-gt-1 sheet-gt-2">
-            <span class="sheet-checked" style="background-color: #a41612;">-3</span>
+            <span class="sheet-checked" style="background-color: #a41612;"></span>
             </button>
         </div>
         <div class="stat_check_3">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_4" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3">
-            <span class="sheet-checked" style="background-color: #8c2b25;"></span>
+            <span class="sheet-checked" style="background-color: #8c2b25;">-2</span>
             </button>
         </div>
         <div class="stat_check_4">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_5" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4">
-            <span class="sheet-checked" style="background-color: #80362e;">-2</span>
+            <span class="sheet-checked" style="background-color: #80362e;"></span>
             </button>
         </div>
         <div class="stat_check_5">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_6" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5">
-            <span class="sheet-checked" style="background-color: #734137;"></span>
+            <span class="sheet-checked" style="background-color: #734137;">-1</span>
             </button>
         </div>
         <div class="stat_check_6">
             <input type="hidden" class="sheet-radio" name="attr_check_vitalite" value="14" />
             <button type="action" name="act_check_vitalite_7" class="sheet-radio sheet-gt-1 sheet-gt-2 sheet-gt-3 sheet-gt-4 sheet-gt-5 sheet-gt-6">
-            <span class="sheet-checked" style="background-color: #674c40;">-1</span>
+            <span class="sheet-checked" style="background-color: #674c40;"></span>
             </button>
         </div>
         <div class="stat_check_7">
@@ -769,21 +772,32 @@ sa valeur ici.">
         </div>
     </div>
     <div class="wrapper_verso_stats" style="margin-top: -3px;">
-        <div class="stat_sous_titre">INCONSCIENCE</div>
-        <div class="stat_check_1">1</div>
-        <div class="stat_check_2">2</div>
-        <div class="stat_check_3">3</div>
-        <div class="stat_check_4">4</div>
-        <div class="stat_check_5">5</div>
-        <div class="stat_check_6">6</div>
-        <div class="stat_check_7">7</div>
-        <div class="stat_check_8">8</div>
-        <div class="stat_check_9">9</div>
-        <div class="stat_check_10">10</div>
-        <div class="stat_check_11">11</div>
-        <div class="stat_check_12">12</div>
-        <div class="stat_check_13">13</div>
+        <input type="hidden" class="inconscience" name="attr_inconscience" value="0" />
+        <div class="stat_sous_titre"><button type="action" class="crises" name="act_inconscience_0">INCONSCIENCE</button></div>
+        <div class="stat_check_1_inconscience"><button type="action" class="crises" name="act_inconscience_1">1</button></div>
+        <div class="stat_check_2_inconscience"><button type="action" class="crises" name="act_inconscience_2">2</button></div>
+        <div class="stat_check_3_inconscience"><button type="action" class="crises" name="act_inconscience_3">3</button></div>
+        <div class="stat_check_4_inconscience"><button type="action" class="crises" name="act_inconscience_4">4</button></div>
+        <div class="stat_check_5_inconscience"><button type="action" class="crises" name="act_inconscience_5">5</button></div>
+        <div class="stat_check_6_inconscience"><button type="action" class="crises" name="act_inconscience_6">6</button></div>
+        <div class="stat_check_7_inconscience"><button type="action" class="crises" name="act_inconscience_7">7</button></div>
+        <div class="stat_check_8_inconscience"><button type="action" class="crises" name="act_inconscience_8">8</button></div>
+        <div class="stat_check_9_inconscience"><button type="action" class="crises" name="act_inconscience_9">9</button></div>
+        <div class="stat_check_10_inconscience"><button type="action" class="crises" name="act_inconscience_10">10</button></div>
+        <div class="stat_check_11_inconscience"><button type="action" class="crises" name="act_inconscience_11">11</button></div>
+        <div class="stat_check_12_inconscience"><button type="action" class="crises" name="act_inconscience_12">12</button></div>
+        <div class="stat_check_13_inconscience"><button type="action" class="crises" name="act_inconscience_13">13</button></div>
     </div>
+ 
+    <!-- Récapitulatif stats
+    <div class="wrapper_verso_stats" style="padding-top: 10px;">
+        <div class="stat_recap_1">LUCIDITÉ max. : input</div>
+        <div class="stat_recap_2">SANG-FROID max. : input</div>
+        <div class="stat_recap_3">VITALITÉ max. : input</div>
+        <div class="stat_recap_1">Amnésie : input</div>
+        <div class="stat_recap_2">Crise : input</div>
+        <div class="stat_recap_3">Malaise : input</div>
+    </div> -->
 
     <!-- ANCIENNETE -->
     <div class="wrapper_verso_stats" style="padding-top: 10px;background-color: transparent;color:#000000eb">
@@ -1729,6 +1743,36 @@ check_ancienneteValues.forEach(function(value) {
     });
 
 </script>
+
+<!-- Crise et autres -->
+<script type="text/worker">
+    const memoireValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    memoireValues.forEach(function(value) {
+      on(`clicked:memoire_${value}`, function() {
+        setAttrs({
+          "memoire": value
+        });
+      });
+    });
+
+    const inconscienceValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    inconscienceValues.forEach(function(value) {
+      on(`clicked:inconscience_${value}`, function() {
+        setAttrs({
+          "inconscience": value
+        });
+      });
+    });
+
+    const hysterieValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    hysterieValues.forEach(function(value) {
+      on(`clicked:hysterie_${value}`, function() {
+        setAttrs({
+          "hysterie": value
+        });
+      });
+    });
+  </script>
 
 <!-- Script de Roll -->
 <script type="text/worker">
