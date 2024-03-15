@@ -1,4 +1,12 @@
+<!-- Valeurs cachées -->
+
 <input type="hidden" class="page" name="attr_page"  value="1">
+<input type="hidden"name="attr_malus_vitalite"  value="0">
+<input type="hidden"name="attr_malus_sang_froid"  value="0">
+
+
+
+<!-- Cadre retourner carte -->
 <div class="retourner_carte">
     <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
@@ -6,12 +14,39 @@
     <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="fleche"></div>
-<!-- <div class="decor_1"></div> -->
 
+<!-- Cadre des Roll -->
 <div class="cadre_roll">
     <div class="wrapper_roll">
+        <div class="roll_type">
+            type
+        </div>
+        <div class="roll_type_boutton">
+            <input type="hidden" class="jet_type" name="attr_type_jet"  value="1">
+            <div class="jet_action">
+                <button type="action" class="roll_action" name="act_type_jet_1" title="Jet pour une action" style="cursor: default;">action</button>
+                / 
+                <button type="action" class="roll_combat" name="act_type_jet_2" title="Jet pour un affrontement physique" style="color: #00000052;">physique</button>
+                / 
+                <button type="action" class="roll_mental" name="act_type_jet_3" title="Jet pour un affrontement psychologique" style="color: #00000052;">psycho</button> 
+            </div>
+            <div class="jet_combat">
+                <button type="action" class="roll_action" name="act_type_jet_1" title="Jet pour une action" style="color: #00000052;">action</button>
+                / 
+                <button type="action" class="roll_combat" name="act_type_jet_2" title="Jet pour un affrontement physique" style="cursor: default;">physique</button>
+                / 
+                <button type="action" class="roll_mental" name="act_type_jet_3" title="Jet pour un affrontement psychologique" style="color: #00000052;">psycho</button> 
+            </div>
+            <div class="jet_mental">
+                <button type="action" class="roll_action" name="act_type_jet_1" title="Jet pour une action" style="color: #00000052;">action</button>
+                / 
+                <button type="action" class="roll_combat" name="act_type_jet_2" title="Jet pour un affrontement physique" style="color: #00000052;">physique</button>
+                / 
+                <button type="action" class="roll_mental" name="act_type_jet_3" title="Jet pour un affrontement psychologique" style="cursor: default;">psycho</button> 
+            </div>
+        </div>
         <div class="roll_public">
-            consultation
+            entretien
         </div>
         <div class="roll_public_boutton">
             <input type="hidden" class="jet" name="attr_jet"  value="1">
@@ -35,12 +70,19 @@ avec l’action qui est tentée, notez
 sa valeur ici.">
         </div>
         <div class="roll_lancer">
-            <button type="action" class="roll_3d6" name="act_roll_action" title="Traitement hasardeux..."></button>
+            <input type="hidden" class="jet_type" name="attr_type_jet"  value="1">
+            <div class="type_action">
+                <button type="action" class="roll_3d6" name="act_roll_action" title="Traitement hasardeux...">Tenter l'action...</button>
+            </div>
+            <div class="type_combat">
+                <button type="action" class="roll_3d6" name="act_roll_combat" title="Traitement hasardeux...">Affrontement physique...</button>
+            </div>
+            <div class="type_mental">
+                <button type="action" class="roll_3d6" name="act_roll_mental" title="Traitement hasardeux...">Combat psychologique...</button>
+            </div>
         </div>
     </div>
 </div>
-
-<!-- tache à faire-->
 
 <!-- Shadow du clip path -->
 <span class="shadow">
@@ -68,10 +110,12 @@ sa valeur ici.">
             <input type="text" class="age" name="attr_age">
         </div>
         <div class="apparence">
-            APPARENCE
+            APPARENCE<br>
+            <textarea class="apparence" name="attr_apparence" spellcheck="false"></textarea>
         </div>
         <div class="caractere">
-            CARACTÈRE
+            CARACTÈRE<br>
+            <textarea class="caractere" name="attr_caractere" spellcheck="false"></textarea>
         </div>
         <div class="medecin">
             MÉDECIN RÉFÉRANT
@@ -79,10 +123,12 @@ sa valeur ici.">
             <input type="text" class="medecin" name="attr_medecin">
         </div>
         <div class="signe">
-            SIGNE PARTICULIER
+            SIGNE PARTICULIER<br>
+            <textarea class="signe" name="attr_signe" spellcheck="false"></textarea>
         </div>
         <div class="contact">
-            CONTACTS
+            CONTACTS<br>
+            <textarea class="contact" name="attr_contact" spellcheck="false"></textarea>
         </div>
         <div class="allies">
             ALLIÉS
@@ -95,7 +141,8 @@ sa valeur ici.">
             <input type="text" class="ennemis" name="attr_ennemis">
         </div>
         <div class="effets_personnels">
-            EFFETS PERSONNELS
+            EFFETS PERSONNELS<br>
+            <textarea class="stuff" name="attr_stuff" spellcheck="false"></textarea>
         </div>
     </div>
 </div>
@@ -472,9 +519,9 @@ sa valeur ici.">
     </div>
 
     <div class="wrapper_verso_stats_max">
-        <div class="stat_recap_1">LUCIDITÉ MAX : <input type="number" class="max_stat" name="attr_vitalite_max"></div>
-        <div class="stat_recap_2">SANG-FROID MAX :</div>
-        <div class="stat_recap_3">VITALITÉ MAX :</div>
+        <div class="stat_recap_1">LUCIDITÉ MAX : <input type="number" class="max_stat" name="attr_lucidite_max" min="5" max="13"></div>
+        <div class="stat_recap_2">SANG-FROID MAX : <input type="number" class="max_stat" name="attr_sang_froid_max" min="5" max="13"></div>
+        <div class="stat_recap_3">VITALITÉ MAX : <input type="number" class="max_stat" name="attr_vitalite_max" min="5" max="13"></div>
     </div>
 
     <!-- Lucidité -->
@@ -920,7 +967,7 @@ sa valeur ici.">
 <!-- --------- SCRIPT ---------- -->
 <!-- --------------------------- -->
 
-<!-- Retourner étiquette -->
+<!-- Retourner étiquette / Jet public privé / Crise et autre / Checkbox stats-->
 <script type="text/worker">
     on('clicked:retourner', function() {
         getAttrs(["page"], function(values) {
@@ -935,10 +982,7 @@ sa valeur ici.">
             });
         });
     });
- </script>
 
-<!-- Jet public privé -->
-<script type="text/worker">
     on('clicked:jet', function() {
         getAttrs(["jet"], function(values) {
         let jet = parseInt(values["jet"]) || 0;
@@ -953,6 +997,85 @@ sa valeur ici.">
             });
         });
     });
+
+    const memoireValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    memoireValues.forEach(function(value) {
+      on(`clicked:memoire_${value}`, function() {
+        setAttrs({
+          "memoire": value
+        });
+      });
+    });
+    
+    const type_jetValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    type_jetValues.forEach(function(value) {
+      on(`clicked:type_jet_${value}`, function() {
+        setAttrs({
+          "type_jet": value
+        });
+      });
+    });
+
+    const inconscienceValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    inconscienceValues.forEach(function(value) {
+      on(`clicked:inconscience_${value}`, function() {
+        setAttrs({
+          "inconscience": value
+        });
+      });
+    });
+
+    const hysterieValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
+    hysterieValues.forEach(function(value) {
+      on(`clicked:hysterie_${value}`, function() {
+        setAttrs({
+          "hysterie": value
+        });
+      });
+    });
+
+    const check_luciditeValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
+check_luciditeValues.forEach(function(value) {
+    on(`clicked:check_lucidite_${value}`, function() {
+        let lucidite = value - 1;
+        setAttrs({
+        "check_lucidite": value,
+        "lucidite": lucidite
+        });
+    });
+});
+
+    const check_sang_froidValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
+    check_sang_froidValues.forEach(function(value) {
+        on(`clicked:check_sang_froid_${value}`, function() {
+            let sang_froid = value - 1;
+            setAttrs({
+                "check_sang_froid": value,
+                "sang_froid": sang_froid
+            });
+        });
+    });
+
+    const check_vitaliteValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
+    check_vitaliteValues.forEach(function(value) {
+        on(`clicked:check_vitalite_${value}`, function() {
+            let vitalite = value - 1;
+            setAttrs({
+                "check_vitalite": value,
+                "vitalite": vitalite
+            });
+        });
+    });
+
+    const check_ancienneteValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
+    check_ancienneteValues.forEach(function(value) {
+            on(`clicked:check_anciennete_${value}`, function() {
+            setAttrs({
+                "check_anciennete": value
+            });
+            });
+        });
+
  </script>
 
 <!-- Checkbox trait -->
@@ -1710,79 +1833,72 @@ sa valeur ici.">
 
  </script>
 
- <!-- Checkbox stats -->
+<!-- Stats ajustement valeur -->
+
 <script type="text/worker">
-const check_luciditeValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
-check_luciditeValues.forEach(function(value) {
-    on(`clicked:check_lucidite_${value}`, function() {
-        setAttrs({
-        "check_lucidite": value
-        });
-    });
-    });
+    on("change:lucidite_max change:check_lucidite change:sang_froid_max change:check_sang_froid change:vitalite_max change:check_vitalite", function() {
+        getAttrs(["lucidite", "lucidite_max", "check_lucidite", "sang_froid", "sang_froid_max", "check_sang_froid", "vitalite", "vitalite_max", "check_vitalite"], function(values) {
+             let vitalite = parseInt(values["vitalite"]) || 0;
+             let check_vitalite = parseInt(values["check_vitalite"]) || 0;
+             let vitalite_max = parseInt(values["vitalite_max"]) || 0;
+             let lucidite = parseInt(values["lucidite"]) || 0;
+             let check_lucidite = parseInt(values["check_lucidite"]) || 0;
+             let lucidite_max = parseInt(values["lucidite_max"]) || 0;
+             let sang_froid = parseInt(values["sang_froid"]) || 0;
+             let check_sang_froid = parseInt(values["check_sang_froid"]) || 0;
+             let sang_froid_max = parseInt(values["sang_froid_max"]) || 0;
 
-const check_sang_froidValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
-check_sang_froidValues.forEach(function(value) {
-        on(`clicked:check_sang_froid_${value}`, function() {
-        setAttrs({
-            "check_sang_froid": value
-        });
+                if (vitalite_max < vitalite ) vitalite = vitalite_max;
+                else if (vitalite_max == 0 ) vitalite = vitalite;
+                if (vitalite_max < check_vitalite - 1 ) check_vitalite = vitalite_max + 1;
+                else if (vitalite_max == 0 ) check_vitalite = check_vitalite;
+
+                if (lucidite_max < lucidite ) lucidite = lucidite_max;
+                else if (lucidite_max == 0 ) lucidite = lucidite;
+                if (lucidite_max < check_lucidite - 1 ) check_lucidite = lucidite_max + 1;
+                else if (lucidite_max == 0 ) check_lucidite = check_lucidite;
+
+                if (sang_froid_max < sang_froid ) sang_froid = sang_froid_max;
+                else if (sang_froid_max == 0 ) sang_froid = sang_froid;
+                if (sang_froid_max < check_sang_froid - 1 ) check_sang_froid = sang_froid_max + 1;
+                else if (sang_froid_max == 0 ) check_sang_froid = check_sang_froid;
+
+                if (check_sang_froid == 6 ) malus_sang_froid = "1";
+                else if (check_sang_froid == 5) malus_sang_froid = "1";
+                else if (check_sang_froid == 4) malus_sang_froid = "2";
+                else if (check_sang_froid == 3) malus_sang_froid = "2";
+                else if (check_sang_froid == 2) malus_sang_froid = "3";
+                else if (check_sang_froid == 1) malus_sang_froid = "3";
+                else malus_sang_froid = "0";
+
+                if (check_vitalite == 6 ) malus_vitalite = "1";
+                else if (check_vitalite == 5 ) malus_vitalite = "1";
+                else if (check_vitalite == 4) malus_vitalite = "2";
+                else if (check_vitalite == 3) malus_vitalite = "2";
+                else if (check_vitalite == 2) malus_vitalite = "3";
+                else if (check_vitalite == 1) malus_vitalite = "3";
+                else malus_vitalite = "0";
+                
+                
+                setAttrs({
+                "vitalite": vitalite,
+                "check_vitalite": check_vitalite,
+                "lucidite": lucidite,
+                "check_lucidite": check_lucidite,
+                "sang_froid": sang_froid,
+                "check_sang_froid": check_sang_froid,
+                "malus_sang_froid": malus_sang_froid,                
+                "malus_vitalite": malus_vitalite
+            });
         });
     });
+    </script>
+    
+<!-- --------------------------- -->
+<!-- ------ SCRIPT ROLL -------- -->
+<!-- --------------------------- -->
 
-const check_vitaliteValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
-check_vitaliteValues.forEach(function(value) {
-    on(`clicked:check_vitalite_${value}`, function() {
-        let vitalite = value - 1;
-        setAttrs({
-        "check_vitalite": value,
-        "vitalite": vitalite
-        });
-    });
-    });
-
-const check_ancienneteValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"];
-check_ancienneteValues.forEach(function(value) {
-        on(`clicked:check_anciennete_${value}`, function() {
-        setAttrs({
-            "check_anciennete": value
-        });
-        });
-    });
-
-</script>
-
-<!-- Crise et autres -->
-<script type="text/worker">
-    const memoireValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
-    memoireValues.forEach(function(value) {
-      on(`clicked:memoire_${value}`, function() {
-        setAttrs({
-          "memoire": value
-        });
-      });
-    });
-
-    const inconscienceValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
-    inconscienceValues.forEach(function(value) {
-      on(`clicked:inconscience_${value}`, function() {
-        setAttrs({
-          "inconscience": value
-        });
-      });
-    });
-
-    const hysterieValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
-    hysterieValues.forEach(function(value) {
-      on(`clicked:hysterie_${value}`, function() {
-        setAttrs({
-          "hysterie": value
-        });
-      });
-    });
-  </script>
-
-<!-- Script de Roll -->
+<!-- Script de Roll action -->
 <script type="text/worker">
     on('clicked:roll_action', (info) => {
         startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
@@ -1801,6 +1917,70 @@ check_ancienneteValues.forEach(function(value) {
                 else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
                 else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
                 else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+</script>
+<!-- Script de Roll combat -->
+<script type="text/worker">
+    on('clicked:roll_combat', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let mod = parseInt(results.results.mod.result);
+            let malus = parseInt(results.results.malus.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+</script>
+<!-- Script de Roll mental -->
+<script type="text/worker">
+    on('clicked:roll_mental', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let mod = parseInt(results.results.mod.result);
+            let malus = parseInt(results.results.malus.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
     
                 finishRoll(
                     results.rollId,
@@ -1899,6 +2079,34 @@ check_ancienneteValues.forEach(function(value) {
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/^rollGreater() computed::d1 computed::d2}}
                             {{/^rollTotal() computed::d1 computed::d2}}
+
+                            {{#rollTotal() computed::d1 computed::d2}}
+                                {{#^rollTotal() computed::d1 computed::d3}}
+                                    {{#rollGreater() computed::d1 computed::d2}}
+                                        {{#rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                        {{/rollGreater() computed::d1 computed::d3}}
+                                        {{#^rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                        {{/^rollGreater() computed::d1 computed::d3}}
+                                    {{/rollGreater() computed::d1 computed::d2}}
+
+                                    {{#^rollGreater() computed::d1 computed::d2}}
+                                        {{#rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                        {{/rollGreater() computed::d1 computed::d3}}
+                                        {{#^rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
+                                        {{/^rollGreater() computed::d1 computed::d3}}
+                                    {{/^rollGreater() computed::d1 computed::d2}}
+                                 {{/^rollTotal() computed::d1 computed::d3}}
+                            {{/rollTotal() computed::d1 computed::d2}}
+
+
                         {{/^rollGreater() computed::d3 seuil}}
                     {{/^rollGreater() computed::d2 seuil}}
                 {{/^rollGreater() computed::d1 seuil}}
@@ -1968,7 +2176,35 @@ check_ancienneteValues.forEach(function(value) {
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/^rollGreater() computed::d1 computed::d2}}
-                            {{/^rollTotal() computed::d1 computed::d2}}   
+                            {{/^rollTotal() computed::d1 computed::d2}}  
+                            
+                            {{#rollTotal() computed::d1 computed::d2}}
+                                {{#^rollTotal() computed::d1 computed::d3}}
+                                    {{#rollGreater() computed::d1 computed::d2}}
+                                        {{#rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                        {{/rollGreater() computed::d1 computed::d3}}
+                                        {{#^rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                        {{/^rollGreater() computed::d1 computed::d3}}
+                                    {{/rollGreater() computed::d1 computed::d2}}
+
+                                    {{#^rollGreater() computed::d1 computed::d2}}
+                                        {{#rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                        {{/rollGreater() computed::d1 computed::d3}}
+                                        {{#^rollGreater() computed::d1 computed::d3}}
+                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
+                                        {{/^rollGreater() computed::d1 computed::d3}}
+                                    {{/^rollGreater() computed::d1 computed::d2}}
+                                {{/^rollTotal() computed::d1 computed::d3}}
+                            {{/rollTotal() computed::d1 computed::d2}}  
+
+
                         {{/rollGreater() computed::d3 seuil}}
                     {{/rollGreater() computed::d2 seuil}}
                 {{/rollGreater() computed::d1 seuil}}

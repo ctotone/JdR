@@ -39,14 +39,14 @@ body.sheet-darkmode .charsheet {
     position: absolute;
     z-index: 0;
     height: 136px;
-    width: 298px;
+    width: 350px;
     margin-left: 477px;
     margin-top: 295px;
     font-family: "Shadows Into Light Two", cursive;
     font-size: 22px;
     transform: rotate(9deg);
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/roll_template_bg.png);
-    background-size: 298px 136px;
+    background-size: 350px 136px;
     display: flex;
     align-items: center;
 }
@@ -55,18 +55,40 @@ body.sheet-darkmode .charsheet {
 
 .wrapper_roll {
     margin: 10px;
-    margin-left: 69px;
+    margin-left: 76px;
     display: grid;
-    grid-template-columns: 90px 10px 120px;
-    grid-auto-rows: 38px;
+    grid-template-columns: 90px 1px 175px;
+    grid-auto-rows: 30px;
     font-size: 16px;
     border-radius: 0px;
     font-family: Oswald;
 }
 
-.roll_public {
+.roll_type {
     grid-column: 1/3;
     grid-row: 1;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_type_boutton {
+    grid-column: 3;
+    grid-row: 1;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.roll_public {
+    grid-column: 1/3;
+    grid-row: 2;
     padding-left: 10px;
     border: 2px solid black;
     border-top: none;
@@ -77,7 +99,7 @@ body.sheet-darkmode .charsheet {
 
 .roll_public_boutton {
     grid-column: 3;
-    grid-row: 1;
+    grid-row: 2;
     padding-left: 10px;
     border: 2px solid black;
     border-top: none;
@@ -88,7 +110,7 @@ body.sheet-darkmode .charsheet {
 
 .roll_mod_titre {
     grid-column: 1/3;
-    grid-row: 2; 
+    grid-row: 3; 
     padding-left: 10px;
     border: 2px solid black;
     border-top: none;
@@ -99,7 +121,7 @@ body.sheet-darkmode .charsheet {
 
 .roll_mod_valeur {
     grid-column: 3;
-    grid-row: 2; 
+    grid-row: 3; 
     padding-left: 10px;
     border: 2px solid black;
     border-top: none;
@@ -110,15 +132,15 @@ body.sheet-darkmode .charsheet {
 
 .roll_lancer {
     grid-column: 1 / 4;
-    grid-row: 3;
-    padding-left: 61px;
-    padding-top: 9px;
+    grid-row: 4;
+    padding-top: 7px;
     border: 2px solid black;
     border-top: none;
     border-right: none;
     border-bottom: none;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .decor_1 {
@@ -148,14 +170,14 @@ body.sheet-darkmode .retourner_carte_inverse {
     width: 100px;
     margin-top: 70px;
     margin-left: 538px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche_black.png);
     background-size: 100px 40px;
     transform: rotate(-19deg);
     opacity: 0.7;
 }
 
 body.sheet-darkmode .fleche {
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche_blanche.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/fleche_white.png);
     opacity: 0.7;
 }
 
@@ -1053,6 +1075,33 @@ div.trait_10_5_moins {
     padding-left: 0px;
 }
 
+.charsheet button[type=action].roll_action,
+.charsheet button[type=action].roll_combat,
+.charsheet button[type=action].roll_mental {
+    border: none;
+    width: 35px;
+    height: 20px;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    background-color: transparent;
+    font-size: 16px;
+    font-family: Oswald;
+    font-weight: bold;
+    text-align: left;
+}
+
+.charsheet button[type=action].roll_combat {
+    padding-left: 5px;
+    padding-right: 0px;
+    width: 55px;
+}
+
+.charsheet button[type=action].roll_mental {
+    padding-left: 5px;
+}
+
 .charsheet button[type=action].crises {
     border: none;
     padding: 0;
@@ -1075,6 +1124,26 @@ div.jet_prive {
 
 .charsheet .jet[value="1"] ~ div.jet_public,
 .charsheet .jet[value="2"] ~ div.jet_prive {
+    display: inline-flex;
+}
+
+div.jet_action,
+div.jet_combat,
+div.jet_mental,
+div.type_action,
+div.type_combat,
+div.type_mental {
+    display: none;
+	white-space: nowrap;
+    margin-left: -3px;
+}
+
+.charsheet .jet_type[value="1"] ~ div.jet_action,
+.charsheet .jet_type[value="2"] ~ div.jet_combat,
+.charsheet .jet_type[value="3"] ~ div.jet_mental,
+.charsheet .jet_type[value="1"] ~ div.type_action,
+.charsheet .jet_type[value="2"] ~ div.type_combat,
+.charsheet .jet_type[value="3"] ~ div.type_mental  {
     display: inline-flex;
 }
 
@@ -1294,22 +1363,62 @@ input[type=number].max_stat {
 
 .charsheet button[type=roll].roll_3d6,
 .charsheet button[type=action].roll_3d6 {
-    width: 91px;
-    height: 40px;
+    width: 210px;
+    height: 30px;
     border: none;
     padding: 0;
     margin: 0;
-    background-size: contain;
-    background-repeat: no-repeat;
     background-color: transparent;
     cursor: pointer;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/dice_6x3.png);
+    font-size: 21px;
 }
 .charsheet button[type=roll].roll_3d6:hover,
 .charsheet button[type=action].roll_3d6:hover  {
     margin-left: 2px;
 	padding: 0px;
 	background-position: 0 0px;
+}
+
+.charsheet textarea.apparence,
+.charsheet textarea.caractere,
+.charsheet textarea.signe,
+.charsheet textarea.contact,
+.charsheet textarea.stuff {
+    outline: none;
+    resize: none;
+    padding: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--black);
+    border: none;
+    background: none;
+    line-height: 16px;
+    font-family: "Shadows Into Light Two", cursive;
+}
+
+.charsheet textarea.apparence { 
+    width: 215px;
+    height: 51px;
+}
+
+.charsheet textarea.caractere { 
+    width: 215px;
+    height: 100px;
+}
+
+.charsheet textarea.signe { 
+    width: 215px;
+    height: 82px;
+}
+
+.charsheet textarea.contact { 
+    width: 415px;
+    height: 51px;
+}
+
+.charsheet textarea.stuff { 
+    width: 415px;
+    height: 51px;
 }
 
   /* Roll Template */
@@ -1513,13 +1622,13 @@ input[type=number].max_stat {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 21px;
     padding-top: 5px;
     font-weight: bold;
     color: var(--reussite-critique);
 }
 
-.sheet-rolltemplate-patient13 .sheet-desc-echec3-2 {
+.sheet-rolltemplate-patient13 .sheet-desc-reussite3-2 {
     grid-column: 1 / 5;
     grid-row: 4;
     text-align: center;
