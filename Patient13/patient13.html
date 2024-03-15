@@ -7,18 +7,20 @@
 
 
 <!-- Cadre retourner carte -->
+
 <div class="retourner_carte">
-    <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
+    <button type="action" class="retourner_page" name="act_retourner" title="Verso de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="retourner_carte_inverse">
-    <button type="action" class="retourner_page" name="act_retourner" title="Accédez à l'arrière de votre fiche">RETOURNER L'ÉTIQUETTE</button>
+    <button type="action" class="retourner_page" name="act_retourner" title="Recto de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
 <div class="fleche"></div>
 
 <!-- Cadre des Roll -->
+<span class="shadow">
 <div class="cadre_roll">
     <div class="wrapper_roll">
-        <div class="roll_type">
+        <div class="roll_type" title="Définissez le type de jet">
             type
         </div>
         <div class="roll_type_boutton">
@@ -45,7 +47,7 @@
                 <button type="action" class="roll_mental" name="act_type_jet_3" title="Jet pour un affrontement psychologique" style="cursor: default;">psycho</button> 
             </div>
         </div>
-        <div class="roll_public">
+        <div class="roll_public" title="Définissez si le jet est public ou privé">
             entretien
         </div>
         <div class="roll_public_boutton">
@@ -61,7 +63,9 @@
                 <button type="action" class="roll_prive" name="act_jet" title="Jet privé" style="cursor: default;">privé</button> 
             </div>
         </div>
-        <div class="roll_mod_titre">
+        <div class="roll_mod_titre" title="Si un de vos Traits est en rapport 
+avec l’action qui est tentée, notez
+sa valeur ici."">
             modificateur
         </div>
         <div class="roll_mod_valeur">
@@ -83,6 +87,7 @@ sa valeur ici.">
         </div>
     </div>
 </div>
+</span>
 
 <!-- Shadow du clip path -->
 <span class="shadow">
@@ -1836,27 +1841,32 @@ check_luciditeValues.forEach(function(value) {
 <!-- Stats ajustement valeur -->
 
 <script type="text/worker">
-    on("change:lucidite_max change:check_lucidite change:sang_froid_max change:check_sang_froid change:vitalite_max change:check_vitalite", function() {
-        getAttrs(["lucidite", "lucidite_max", "check_lucidite", "sang_froid", "sang_froid_max", "check_sang_froid", "vitalite", "vitalite_max", "check_vitalite"], function(values) {
-             let vitalite = parseInt(values["vitalite"]) || 0;
-             let check_vitalite = parseInt(values["check_vitalite"]) || 0;
-             let vitalite_max = parseInt(values["vitalite_max"]) || 0;
+    on("change:lucidite_max change:check_lucidite", function() {
+        getAttrs(["lucidite", "lucidite_max", "check_lucidite"], function(values) {
              let lucidite = parseInt(values["lucidite"]) || 0;
              let check_lucidite = parseInt(values["check_lucidite"]) || 0;
              let lucidite_max = parseInt(values["lucidite_max"]) || 0;
-             let sang_froid = parseInt(values["sang_froid"]) || 0;
-             let check_sang_froid = parseInt(values["check_sang_froid"]) || 0;
-             let sang_froid_max = parseInt(values["sang_froid_max"]) || 0;
-
-                if (vitalite_max < vitalite ) vitalite = vitalite_max;
-                else if (vitalite_max == 0 ) vitalite = vitalite;
-                if (vitalite_max < check_vitalite - 1 ) check_vitalite = vitalite_max + 1;
-                else if (vitalite_max == 0 ) check_vitalite = check_vitalite;
 
                 if (lucidite_max < lucidite ) lucidite = lucidite_max;
                 else if (lucidite_max == 0 ) lucidite = lucidite;
                 if (lucidite_max < check_lucidite - 1 ) check_lucidite = lucidite_max + 1;
                 else if (lucidite_max == 0 ) check_lucidite = check_lucidite;
+               
+                
+                setAttrs({
+               
+                "lucidite": lucidite,
+                "check_lucidite": check_lucidite
+            });
+        });
+    });
+
+    on("change:sang_froid_max change:check_sang_froid", function() {
+        getAttrs(["sang_froid", "sang_froid_max", "check_sang_froid"], function(values) {
+             
+             let sang_froid = parseInt(values["sang_froid"]) || 0;
+             let check_sang_froid = parseInt(values["check_sang_froid"]) || 0;
+             let sang_froid_max = parseInt(values["sang_froid_max"]) || 0;
 
                 if (sang_froid_max < sang_froid ) sang_froid = sang_froid_max;
                 else if (sang_froid_max == 0 ) sang_froid = sang_froid;
@@ -1870,6 +1880,27 @@ check_luciditeValues.forEach(function(value) {
                 else if (check_sang_froid == 2) malus_sang_froid = "3";
                 else if (check_sang_froid == 1) malus_sang_froid = "3";
                 else malus_sang_froid = "0";
+                
+                
+                setAttrs({
+                
+                "sang_froid": sang_froid,
+                "check_sang_froid": check_sang_froid,
+                "malus_sang_froid": malus_sang_froid
+            });
+        });
+    });
+
+    on("change:vitalite_max change:check_vitalite", function() {
+        getAttrs(["vitalite", "vitalite_max", "check_vitalite"], function(values) {
+             let vitalite = parseInt(values["vitalite"]) || 0;
+             let check_vitalite = parseInt(values["check_vitalite"]) || 0;
+             let vitalite_max = parseInt(values["vitalite_max"]) || 0;
+             
+                if (vitalite_max < vitalite ) vitalite = vitalite_max;
+                else if (vitalite_max == 0 ) vitalite = vitalite;
+                if (vitalite_max < check_vitalite - 1 ) check_vitalite = vitalite_max + 1;
+                else if (vitalite_max == 0 ) check_vitalite = check_vitalite;
 
                 if (check_vitalite == 6 ) malus_vitalite = "1";
                 else if (check_vitalite == 5 ) malus_vitalite = "1";
@@ -1883,11 +1914,6 @@ check_luciditeValues.forEach(function(value) {
                 setAttrs({
                 "vitalite": vitalite,
                 "check_vitalite": check_vitalite,
-                "lucidite": lucidite,
-                "check_lucidite": check_lucidite,
-                "sang_froid": sang_froid,
-                "check_sang_froid": check_sang_froid,
-                "malus_sang_froid": malus_sang_froid,                
                 "malus_vitalite": malus_vitalite
             });
         });
