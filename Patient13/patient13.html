@@ -3,6 +3,7 @@
 <input type="hidden" class="page" name="attr_page"  value="1">
 <input type="hidden"name="attr_malus_vitalite"  value="0">
 <input type="hidden"name="attr_malus_sang_froid"  value="0">
+<input type="hidden"name="attr_gm"  value="">
 
 
 
@@ -974,6 +975,15 @@ sa valeur ici.">
 
 <!-- Retourner étiquette / Jet public privé / Crise et autre / Checkbox stats-->
 <script type="text/worker">
+    on('sheet:opened', function() {
+            let gm = "";  
+            let jet = "1";
+            setAttrs({
+            "gm" : gm,
+            "jet" : jet
+            });
+    });
+    
     on('clicked:retourner', function() {
         getAttrs(["page"], function(values) {
         let page = parseInt(values["page"]) || 0;
