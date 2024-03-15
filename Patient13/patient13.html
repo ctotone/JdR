@@ -33,6 +33,7 @@
         </div>
         <div class="roll_lancer">
             <button type="action" class="roll_3d6" name="act_roll_action" title="Injection hasardeuse..."></button>
+            <button type="action" class="roll_test" name="act_roll_test" title="Injection hasardeuse...">test</button>
         </div>
     </div>
 </div>
@@ -1761,7 +1762,6 @@ check_ancienneteValues.forEach(function(value) {
 </script>
 
 
-
 <!-- --------------------------- -->
 <!-- ----- ROLL TEMPLATE ------- -->
 <!-- --------------------------- -->
@@ -1804,30 +1804,21 @@ check_ancienneteValues.forEach(function(value) {
                     {{#^rollGreater() computed::d3 seuil}}
                         {{#rollGreater() computed::d1 computed::d2}}
                             {{#rollGreater() computed::d1 computed::d3}}
-                                3D echec
+                                3D au dela du seuil
                             {{/rollGreater() computed::d1 computed::d3}}
                             {{#^rollGreater() computed::d1 computed::d3}}
-                                3D echec
+                                3D au dela du seuil
                             {{/^rollGreater() computed::d1 computed::d3}}
                         {{/rollGreater() computed::d1 computed::d2}}
-                        
-                        {{#rollGreater() computed::d2 computed::d3}}
-                            {{#rollGreater() computed::d2 computed::d1}}
-                                3D echec
-                            {{/rollGreater() computed::d2 computed::d1}}
-                            {{#^rollGreater() computed::d2 computed::d1}}
-                                3D echec
-                            {{/^rollGreater() computed::d2 computed::d1}}
-                        {{/rollGreater() computed::d2 computed::d3}}
-                          
-                        {{#rollGreater() computed::d3 computed::d1}}
-                            {{#rollGreater() computed::d3 computed::d2}}
-                                3D echec
-                            {{/rollGreater() computed::d3 computed::d2}}
-                            {{#^rollGreater() computed::d3 computed::d2}}
-                                3D echec
-                            {{/^rollGreater() computed::d3 computed::d2}}
-                        {{/rollGreater() computed::d3 computed::d1}} 
+
+                        {{#^rollGreater() computed::d1 computed::d2}}
+                            {{#rollGreater() computed::d1 computed::d3}}
+                                3D au dela du seuil
+                            {{/rollGreater() computed::d1 computed::d3}}
+                            {{#^rollGreater() computed::d1 computed::d3}}
+                                3D au dela du seuil
+                            {{/^rollGreater() computed::d1 computed::d3}}
+                        {{/^rollGreater() computed::d1 computed::d2}}
                     {{/^rollGreater() computed::d3 seuil}}
                 {{/^rollGreater() computed::d2 seuil}}
             {{/^rollGreater() computed::d1 seuil}}
@@ -1873,6 +1864,7 @@ check_ancienneteValues.forEach(function(value) {
             {{#rollGreater() computed::d1 seuil}}
                 {{#rollGreater() computed::d2 seuil}}
                     {{#rollGreater() computed::d3 seuil}}
+                    
                         {{#rollGreater() computed::d1 computed::d2}}
                             {{#rollGreater() computed::d1 computed::d3}}
                                 3D au dela du seuil
@@ -1881,24 +1873,16 @@ check_ancienneteValues.forEach(function(value) {
                                 3D au dela du seuil
                             {{/^rollGreater() computed::d1 computed::d3}}
                         {{/rollGreater() computed::d1 computed::d2}}
+
+                        {{#^rollGreater() computed::d1 computed::d2}}
+                            {{#rollGreater() computed::d1 computed::d3}}
+                                3D au dela du seuil
+                            {{/rollGreater() computed::d1 computed::d3}}
+                            {{#^rollGreater() computed::d1 computed::d3}}
+                                3D au dela du seuil
+                            {{/^rollGreater() computed::d1 computed::d3}}
+                        {{/^rollGreater() computed::d1 computed::d2}}
                         
-                        {{#rollGreater() computed::d2 computed::d3}}
-                            {{#rollGreater() computed::d2 computed::d1}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d2 computed::d1}}
-                            {{#^rollGreater() computed::d2 computed::d1}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d2 computed::d1}}
-                        {{/rollGreater() computed::d2 computed::d3}}
-                          
-                        {{#rollGreater() computed::d3 computed::d1}}
-                            {{#rollGreater() computed::d3 computed::d2}}
-                                3D au dela du seuil
-                            {{/rollGreater() computed::d3 computed::d2}}
-                            {{#^rollGreater() computed::d3 computed::d2}}
-                                3D au dela du seuil
-                            {{/^rollGreater() computed::d3 computed::d2}}
-                        {{/rollGreater() computed::d3 computed::d1}} 
                     {{/rollGreater() computed::d3 seuil}}
                 {{/rollGreater() computed::d2 seuil}}
             {{/rollGreater() computed::d1 seuil}}
@@ -1926,3 +1910,39 @@ check_ancienneteValues.forEach(function(value) {
         </div>
     </div>
     </rolltemplate>
+
+
+
+
+
+    <!-- Script de Roll -->
+<script type="text/worker">
+    on('clicked:roll_test', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{roll=[[0[resultat]]]}} {{d1=[[2]]}} {{d2=[[3]]}} {{d3=[[4]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let mod = parseInt(results.results.mod.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+</script>
