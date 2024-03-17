@@ -127,8 +127,7 @@ sa valeur ici.">
         <div class="surnom">
             SURNOM
             <br>
-            <!-- <input type="text" class="surnom" name="attr_character_name"> -->
-            <input type="text" class="surnom" name="attr_insecte">
+            <input type="text" class="surnom" name="attr_character_name">
         </div>
         <div class="matricule">
             MATRICULE
@@ -1976,7 +1975,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll action -->
 <script type="text/worker">
     on('clicked:roll_action', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2021,7 +2020,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll combat -->
 <script type="text/worker">
     on('clicked:roll_combat', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2053,7 +2052,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll mental -->
 <script type="text/worker">
     on('clicked:roll_mental', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}}{{roll=[[0[resultat]]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2095,24 +2094,84 @@ check_luciditeValues.forEach(function(value) {
         <div class="sheet-content">
             <div class="sheet-patient-titre">patient</div>
             <div class="sheet-patient-valeur">{{title}}</div>
-            {{#rollTotal() seuil 1}}
-            <div class="sheet-posologie" title="Seuil de réussite: 1">résultats</div>
-            {{/rollTotal() seuil 1}}
-            {{#rollTotal() seuil 2}}
-            <div class="sheet-posologie" title="Seuil de réussite : 2">résultats</div>
-            {{/rollTotal() seuil 2}}
-            {{#rollTotal() seuil 3}}
-            <div class="sheet-posologie" title="Seuil de réussite : 3">résultats</div>
-            {{/rollTotal() seuil 3}}
-            {{#rollTotal() seuil 4}}
-            <div class="sheet-posologie" title="Seuil de réussite : 4">résultats</div>
-            {{/rollTotal() seuil 4}}
-            {{#rollTotal() seuil 5}}
-            <div class="sheet-posologie" title="Seuil de réussite : 5">résultats</div>
-            {{/rollTotal() seuil 5}}
-            {{#rollTotal() seuil 6}}
-            <div class="sheet-posologie" title="Seuil de réussite : 6">résultats</div>
-            {{/rollTotal() seuil 6}}
+            {{#action}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 1">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 2">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 3">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 4">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 5">résultats</div>
+                {{/rollTotal() seuil 5}}
+                {{#rollTotal() seuil 6}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 6">résultats</div>
+                {{/rollTotal() seuil 6}}
+            {{/action}}
+            {{#combat}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 1">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 2">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 3">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 4">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 5">résultats</div>
+                {{/rollTotal() seuil 5}}
+                {{#rollTotal() seuil 6}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 6">résultats</div>
+                {{/rollTotal() seuil 6}}
+            {{/combat}}
+            {{#mental}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite: 1">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 2">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 3">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 4">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 5">résultats</div>
+                {{/rollTotal() seuil 5}}
+                {{#rollTotal() seuil 6}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 6">résultats</div>
+                {{/rollTotal() seuil 6}}
+            {{/mental}}
             <div class="sheet-value-1">{{computed::d1}}</div>
             <div class="sheet-value-2">{{computed::d2}}</div>
             <div class="sheet-value-3">{{computed::d3}}</div>

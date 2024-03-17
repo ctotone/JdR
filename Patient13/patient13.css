@@ -599,13 +599,13 @@ body.sheet-darkmode .shadow {
 }
 
 .insecte_21 {
-    margin-top: 408px;
-    margin-left: 611px;
+    margin-top: 418px;
+    margin-left: 700px;
     width: 140px;
     height: 56px;
     opacity: 01;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/insecte_ver.png);
-    transform: rotate(200deg);
+    transform: rotate(230deg);
 }
 
 
@@ -1798,6 +1798,22 @@ input[type=number].max_stat {
     background-color: transparent;
 }
 
+.sheet-rolltemplate-patient13 .sheet-info {
+    position: absolute;
+    font-family: Pictos;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 10px;
+    height: 10px;
+    content: "i";
+    opacity: 0.5;
+    cursor:help;
+}
+
+.sheet-rolltemplate-patient13 .sheet-info:hover {
+    opacity: 0.8;
+}
+
 .sheet-rolltemplate-patient13 .sheet-container {
     position: relative;
     margin-bottom: 0;
@@ -1829,19 +1845,13 @@ input[type=number].max_stat {
 }
 
 .sheet-rolltemplate-patient13 .sheet-container {
-  --border-roll-color: #1d2d30;
-  --header-text-color: #FFF;
-  --result-bg-color: #772d34;
-  --header-bg-color: #475e66;
   --echec-classique: #957003;
   --echec-majeur: #830478;
   --echec-critique: red;
   --reussite-classique: #027ac3;
   --reussite-majeur: #003395;
   --reussite-critique: green;
-
 }
-
 
 .sheet-rolltemplate-patient13 .sheet-content {
     display: grid;
@@ -1885,6 +1895,7 @@ input[type=number].max_stat {
     padding-left: 10px;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
+    cursor: help;
 }
 
 .sheet-rolltemplate-patient13 .sheet-value-1 {
