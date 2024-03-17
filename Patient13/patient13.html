@@ -1,10 +1,10 @@
 <!-- Valeurs cachées -->
 
 <input type="hidden" class="page" name="attr_page"  value="1">
-<input type="hidden"name="attr_malus_vitalite"  value="0">
-<input type="hidden"name="attr_malus_sang_froid"  value="0">
-<input type="hidden"name="attr_gm"  value="">
-<input type="hidden"name="attr_insecte"  value="1">
+<input type="hidden" name="attr_malus_vitalite"  value="0">
+<input type="hidden" name="attr_malus_sang_froid"  value="0">
+<input type="hidden" name="attr_gm"  value="">
+<input type="hidden" class="insecte" name="attr_insecte"  value="1">
 
 
 
@@ -19,6 +19,7 @@
 <div class="insecte_8"></div>
 <div class="insecte_9"></div>
 <div class="insecte_10"></div>
+<div class="insecte_11"></div>
 <div class="insecte_12"></div>
 <div class="insecte_12"></div>
 <div class="insecte_13"></div>
@@ -29,6 +30,7 @@
 <div class="insecte_18"></div>
 <div class="insecte_19"></div>
 <div class="insecte_20"></div>
+<div class="insecte_21"></div>
 
 <!-- Cadre retourner carte -->
 <div class="retourner_carte">
@@ -125,7 +127,8 @@ sa valeur ici.">
         <div class="surnom">
             SURNOM
             <br>
-            <input type="text" class="surnom" name="attr_character_name">
+            <!-- <input type="text" class="surnom" name="attr_character_name"> -->
+            <input type="text" class="surnom" name="attr_insecte">
         </div>
         <div class="matricule">
             MATRICULE
@@ -1001,8 +1004,8 @@ sa valeur ici.">
         getAttrs(["insecte"], function(values) {
             let insecte = parseInt(values["insecte"]) || 0;
             
-            if (insecte < 20) insecte_new = insecte + 1;
-            else if (insecte == 20) insecte_new = 1;
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
             else insecte = "1";
 
             setAttrs({
@@ -2000,6 +2003,20 @@ check_luciditeValues.forEach(function(value) {
                     );
                 });
             });
+
+    on('clicked:roll_action', (info) => {
+        getAttrs(["insecte"], function(values) {
+            let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
+            else insecte = "1";
+
+            setAttrs({
+            "insecte" : insecte_new
+            });
+        });
+    });
 </script>
 <!-- Script de Roll combat -->
 <script type="text/worker">
