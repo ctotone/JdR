@@ -1023,15 +1023,22 @@ sa valeur ici.">
     });
     
     on('clicked:retourner', function() {
-        getAttrs(["page"], function(values) {
+        getAttrs(["page", "insecte"], function(values) {
         let page = parseInt(values["page"]) || 0;
         
             if (page == 1) page = "2";
             else if (page == 2) page = "1";
             else page == "1";
+
+        let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
+            else insecte = "1";
             
             setAttrs({
-            "page" : page
+            "page" : page,
+            "insecte" : insecte_new
             });
         });
     });
