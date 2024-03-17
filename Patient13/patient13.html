@@ -4,11 +4,33 @@
 <input type="hidden"name="attr_malus_vitalite"  value="0">
 <input type="hidden"name="attr_malus_sang_froid"  value="0">
 <input type="hidden"name="attr_gm"  value="">
+<input type="hidden"name="attr_insecte"  value="1">
 
 
+
+<!-- Cadre insecte -->
+<div class="insecte_1"></div>
+<div class="insecte_2"></div>
+<div class="insecte_3"></div>
+<div class="insecte_4"></div>
+<div class="insecte_5"></div>
+<div class="insecte_6"></div>
+<div class="insecte_7"></div>
+<div class="insecte_8"></div>
+<div class="insecte_9"></div>
+<div class="insecte_10"></div>
+<div class="insecte_12"></div>
+<div class="insecte_12"></div>
+<div class="insecte_13"></div>
+<div class="insecte_14"></div>
+<div class="insecte_15"></div>
+<div class="insecte_16"></div>
+<div class="insecte_17"></div>
+<div class="insecte_18"></div>
+<div class="insecte_19"></div>
+<div class="insecte_20"></div>
 
 <!-- Cadre retourner carte -->
-
 <div class="retourner_carte">
     <button type="action" class="retourner_page" name="act_retourner" title="Verso de votre fiche">RETOURNER L'ÉTIQUETTE</button>
 </div>
@@ -973,8 +995,22 @@ sa valeur ici.">
 <!-- --------- SCRIPT ---------- -->
 <!-- --------------------------- -->
 
-<!-- Retourner étiquette / Jet public privé / Crise et autre / Checkbox stats-->
+<!-- Ouverture page insecte / Retourner étiquette / Jet public privé / Crise et autre / Checkbox stats-->
 <script type="text/worker">
+    on('sheet:opened change:check_lucidite change:check_sang_froid change:check_vitalite', function() {
+        getAttrs(["insecte"], function(values) {
+            let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 20) insecte_new = insecte + 1;
+            else if (insecte == 20) insecte_new = 1;
+            else insecte = "1";
+
+            setAttrs({
+            "insecte" : insecte_new
+            });
+        });
+    });
+    
     on('sheet:opened', function() {
             let gm = "";  
             let jet = "1";
