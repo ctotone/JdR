@@ -90,7 +90,7 @@
         </div>
         <div class="roll_mod_titre" title="Si un de vos Traits est en rapport 
 avec l’action qui est tentée, notez
-sa valeur ici."">
+sa valeur ici.">
             modificateur
         </div>
         <div class="roll_mod_valeur">
@@ -98,8 +98,16 @@ sa valeur ici."">
 avec l’action qui est tentée, notez
 sa valeur ici.">
         </div>
+        <div class="roll_des_bonus_titre" title="En dépensant 1 point de Lucidité,
+lancez un dé supplémentaire.">
+            dés bonus
+        </div>
+        <div class="roll_des_bonus_checkbox">
+            <input type="checkbox" name="attr_des_bonus" value="1" checked >
+        </div>
         <div class="roll_lancer">
             <input type="hidden" class="jet_type" name="attr_type_jet"  value="1">
+            <input type="hidden" class="jet_final" name="attr_jet_final"  value="1">
             <div class="type_action">
                 <button type="action" class="roll_3d6" name="act_roll_action" title="Traitement hasardeux...">Tenter l'action...</button>
             </div>
@@ -108,6 +116,15 @@ sa valeur ici.">
             </div>
             <div class="type_mental">
                 <button type="action" class="roll_3d6" name="act_roll_mental" title="Traitement hasardeux...">Combat psychologique...</button>
+            </div>
+            <div class="type_action_4d">
+                <button type="action" class="roll_3d6" name="act_roll_action_4d" title="Traitement hasardeux...">Tenter l'action 4d...</button>
+            </div>
+            <div class="type_combat_4d">
+                <button type="action" class="roll_3d6" name="act_roll_combat_4d" title="Traitement hasardeux...">Affrontement physique 4d...</button>
+            </div>
+            <div class="type_mental_4d">
+                <button type="action" class="roll_3d6" name="act_roll_mental_4d" title="Traitement hasardeux...">Combat psychologique 4d...</button>
             </div>
         </div>
     </div>
@@ -1016,9 +1033,12 @@ sa valeur ici.">
     on('sheet:opened', function() {
             let gm = "";  
             let jet = "1";
+            let des_bonus = "0";
+
             setAttrs({
             "gm" : gm,
-            "jet" : jet
+            "jet" : jet,
+            "des_bonus" : des_bonus
             });
     });
     
@@ -1074,6 +1094,25 @@ sa valeur ici.">
           "type_jet": value
         });
       });
+    });
+
+    on('change:type_jet change:des_bonus', function() {
+        getAttrs(["type_jet", "des_bonus"], function(values) {
+            let type_jet = parseInt(values["type_jet"]) || 0;
+            let des_bonus = parseInt(values["des_bonus"]) || 0;
+            
+            if (type_jet == 1 && des_bonus == 0) jet_final = 1;
+            else if (type_jet == 1 && des_bonus == 1) jet_final = 4;
+            else if (type_jet == 2 && des_bonus == 0) jet_final = 2;
+            else if (type_jet == 2 && des_bonus == 1) jet_final = 5;
+            else if (type_jet == 3 && des_bonus == 0) jet_final = 3;
+            else if (type_jet == 3 && des_bonus == 1) jet_final = 6;
+            else jet_final = "1";
+
+            setAttrs({
+            "jet_final" : jet_final
+            });
+        });
     });
 
     const inconscienceValues = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13"];
@@ -1979,6 +2018,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- ------ SCRIPT ROLL -------- -->
 <!-- --------------------------- -->
 
+<!-- Roll 3D -->
 <!-- Script de Roll action -->
 <script type="text/worker">
     on('clicked:roll_action', (info) => {
@@ -2069,6 +2109,134 @@ check_luciditeValues.forEach(function(value) {
             let computed_d1 = 0;
             let computed_d2 = 0;
             let computed_d3 = 0;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+</script>
+
+
+
+<!-- Roll 4D -->
+<!-- Script de Roll 4d action -->
+<script type="text/worker">
+    on('clicked:roll_action_4d', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let d4 = parseInt(results.results.d4.dice);
+            let mod = parseInt(results.results.mod.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+
+                if (d1 <= d2 && d1 <= d3 && d1 <= d4) d1 = d4;
+                else if (d2 <= d1 && d2 <= d3 && d2 <= d4) d2 = d4;
+                else if (d3 <= d1 && d3 <= d2 && d3 <= d4) d2 = d4;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+
+    on('clicked:roll_action', (info) => {
+        getAttrs(["insecte"], function(values) {
+            let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
+            else insecte = "1";
+
+            setAttrs({
+            "insecte" : insecte_new
+            });
+        });
+    });
+</script>
+<!-- Script de Roll 4d combat -->
+<script type="text/worker">
+    on('clicked:roll_combat_4d', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let d4 = parseInt(results.results.d4.dice);
+            let mod = parseInt(results.results.mod.result);
+            let malus = parseInt(results.results.malus.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+
+                if (d1 <= d2 && d1 <= d3 && d1 <= d4) d1 = d4;
+                else if (d2 <= d1 && d2 <= d3 && d2 <= d4) d2 = d4;
+                else if (d3 <= d1 && d3 <= d2 && d3 <= d4) d2 = d4;
+        
+                if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
+                else if (d1 <= d2 && d2 <= d3) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d3 <= d2 && d2 <= d1) computed_d2 = d2 + mod - malus, computed_d1 = d1, computed_d3 = d3;
+                else if (d1 <= d3 && d3 <= d2) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+                else if (d2 <= d3 && d3 <= d1) computed_d3 = d3 + mod - malus, computed_d1 = d1, computed_d2 = d2;
+    
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1,
+                        d2: computed_d2,
+                        d3: computed_d3
+                    }
+                    );
+                });
+            });
+</script>
+<!-- Script de Roll 4d mental -->
+<script type="text/worker">
+    on('clicked:roll_mental_4d', (info) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let d2 = parseInt(results.results.d2.dice);
+            let d3 = parseInt(results.results.d3.dice);
+            let d4 = parseInt(results.results.d4.dice);
+            let mod = parseInt(results.results.mod.result);
+            let malus = parseInt(results.results.malus.result);
+            let computed_d1 = 0;
+            let computed_d2 = 0;
+            let computed_d3 = 0;
+
+                if (d1 <= d2 && d1 <= d3 && d1 <= d4) d1 = d4;
+                else if (d2 <= d1 && d2 <= d3 && d2 <= d4) d2 = d4;
+                else if (d3 <= d1 && d3 <= d2 && d3 <= d4) d2 = d4;
         
                 if (d2 <= d1 && d1 <= d3) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
                 else if (d3 <= d1 && d1 <= d2) computed_d1 = d1 + mod - malus, computed_d2 = d2, computed_d3 = d3;
@@ -2182,6 +2350,8 @@ Seuil de réussite : 6">résultats</div>
             <div class="sheet-value-1">{{computed::d1}}</div>
             <div class="sheet-value-2">{{computed::d2}}</div>
             <div class="sheet-value-3">{{computed::d3}}</div>
+            <!-- Jet sans bonus -->
+            {{#^bonus}}
             <!-- Echec classique -->
                 {{#rollGreater() computed::d1 seuil}}
                     {{#^rollGreater() computed::d2 seuil}}
@@ -2377,6 +2547,49 @@ Seuil de réussite : 6">résultats</div>
                         {{/rollGreater() computed::d3 seuil}}
                     {{/rollGreater() computed::d2 seuil}}
                 {{/rollGreater() computed::d1 seuil}}
+            {{/^bonus}}
+
+            <!-- Jet avec bonus -->
+            {{#bonus}}
+                <!-- Echec -->
+                {{#^rollGreater() computed::d2 seuil}}
+                    {{#^rollGreater() computed::d3 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                    {{/^rollGreater() computed::d3 seuil}}
+                {{/^rollGreater() computed::d2 seuil}}
+
+                {{#^rollGreater() computed::d1 seuil}}
+                    {{#^rollGreater() computed::d2 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                    {{/^rollGreater() computed::d2 seuil}}
+                {{/^rollGreater() computed::d1 seuil}}
+
+                {{#^rollGreater() computed::d1 seuil}}
+                    {{#^rollGreater() computed::d3 seuil}}
+                        <div class="sheet-desc-echec1">échec du test</div>
+                    {{/^rollGreater() computed::d3 seuil}}
+                {{/^rollGreater() computed::d1 seuil}}
+
+                <!-- Resussite -->
+                {{#rollGreater() computed::d1 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d1 seuil}}
+
+                {{#rollGreater() computed::d3 seuil}}
+                    {{#rollGreater() computed::d1 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                    {{/rollGreater() computed::d1 seuil}}
+                {{/rollGreater() computed::d3 seuil}}
+
+                {{#rollGreater() computed::d3 seuil}}
+                    {{#rollGreater() computed::d2 seuil}}
+                        <div class="sheet-desc-reussite1">réussite du test</div>
+                    {{/rollGreater() computed::d2 seuil}}
+                {{/rollGreater() computed::d3 seuil}}
+            {{/bonus}}
+            
         </div>
     </div>
 </span>

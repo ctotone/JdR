@@ -130,6 +130,32 @@ body.sheet-darkmode .charsheet {
     align-items: center;
 }
 
+.roll_des_bonus_titre {
+    grid-column: 3;
+    grid-row: 3;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    margin-left: 80px;
+}
+
+.roll_des_bonus_checkbox {
+    grid-column: 4;
+    grid-row: 3;
+    padding-left: 10px;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    display: flex;
+    align-items: center;
+    margin-left: -26px;
+    margin-top: 3px;
+}
+
 .roll_lancer {
     grid-column: 1 / 4;
     grid-row: 4;
@@ -324,6 +350,7 @@ body.sheet-darkmode .shadow {
     position: absolute;
     z-index: 2;
     background-size: contain;
+    animation-delay: 5s;
     -webkit-animation: fadein 20s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 20s; /* Firefox < 16 */
     -ms-animation: fadein 20s; /* Internet Explorer */
@@ -1484,7 +1511,10 @@ div.jet_combat,
 div.jet_mental,
 div.type_action,
 div.type_combat,
-div.type_mental {
+div.type_mental,
+div.type_action_4d,
+div.type_combat_4d,
+div.type_mental_4d {
     display: none;
 	white-space: nowrap;
     margin-left: -3px;
@@ -1493,9 +1523,12 @@ div.type_mental {
 .charsheet .jet_type[value="1"] ~ div.jet_action,
 .charsheet .jet_type[value="2"] ~ div.jet_combat,
 .charsheet .jet_type[value="3"] ~ div.jet_mental,
-.charsheet .jet_type[value="1"] ~ div.type_action,
-.charsheet .jet_type[value="2"] ~ div.type_combat,
-.charsheet .jet_type[value="3"] ~ div.type_mental  {
+.charsheet .jet_final[value="1"] ~ div.type_action,
+.charsheet .jet_final[value="2"] ~ div.type_combat,
+.charsheet .jet_final[value="3"] ~ div.type_mental,
+.charsheet .jet_final[value="4"] ~ div.type_action_4d,
+.charsheet .jet_final[value="5"] ~ div.type_combat_4d,
+.charsheet .jet_final[value="6"] ~ div.type_mental_4d  {
     display: inline-flex;
 }
 
@@ -1697,6 +1730,7 @@ input[type=number].roll_mod {
     font-size: 20px;
     margin-top: -2px;
     letter-spacing: 3px;
+    margin-left: 13px;
     font-weight: bold;
     font-family: Oswald;
 }
@@ -1711,6 +1745,10 @@ input[type=number].max_stat {
     font-weight: bold;
     font-family: Oswald;
     border-bottom: 2px dotted #0000006e;
+}
+
+input[type=checkbox] {
+    accent-color: #1f1f1f;
 }
 
 .charsheet button[type=roll].roll_3d6,
