@@ -224,7 +224,7 @@ body.sheet-darkmode .fleche {
     background-size: 60px 60px;
 }
 
-body.sheet-darkmode.rond_carte {
+body.sheet-darkmode .rond_carte {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/darkmode_rond_carte.png);
 }
 
@@ -1760,8 +1760,17 @@ input[type=number].max_stat {
     border-bottom: 2px dotted #0000006e;
 }
 
-input[type=checkbox] {
+input[type=checkbox].de_bonus {
     accent-color: #1f1f1f;
+}
+
+body.sheet-darkmode input[type=checkbox].de_bonus {
+    background-color: #ffffff2e;
+}
+
+input[type=checkbox].roll_des_bonus_checkbox {
+    accent-color: #1f1f1f;
+    background-color: #ffffff2e;
 }
 
 .charsheet button[type=roll].roll_3d6,
