@@ -118,13 +118,13 @@ lancez un dé supplémentaire.">
                 <button type="action" class="roll_3d6" name="act_roll_mental" title="Traitement hasardeux...">Combat psychologique...</button>
             </div>
             <div class="type_action_4d">
-                <button type="action" class="roll_3d6" name="act_roll_action_4d" title="Traitement hasardeux...">Tenter l'action 4d...</button>
+                <button type="action" class="roll_3d6" name="act_roll_action_4d" title="Traitement hasardeux avec bonus...">Tenter l'action...</button>
             </div>
             <div class="type_combat_4d">
-                <button type="action" class="roll_3d6" name="act_roll_combat_4d" title="Traitement hasardeux...">Affrontement physique 4d...</button>
+                <button type="action" class="roll_3d6" name="act_roll_combat_4d" title="Traitement hasardeux avec bonus...">Affrontement physique...</button>
             </div>
             <div class="type_mental_4d">
-                <button type="action" class="roll_3d6" name="act_roll_mental_4d" title="Traitement hasardeux...">Combat psychologique 4d...</button>
+                <button type="action" class="roll_3d6" name="act_roll_mental_4d" title="Traitement hasardeux avec bonus...">Combat psychologique...</button>
             </div>
         </div>
     </div>
@@ -2022,7 +2022,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll action -->
 <script type="text/worker">
     on('clicked:roll_action', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{bonus=[[0]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2067,7 +2067,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll combat -->
 <script type="text/worker">
     on('clicked:roll_combat', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{bonus=[[0]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2099,7 +2099,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll mental -->
 <script type="text/worker">
     on('clicked:roll_mental', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{bonus=[[0]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2135,7 +2135,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll 4d action -->
 <script type="text/worker">
     on('clicked:roll_action_4d', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{action=oui}} {{bonus=[[1]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2185,7 +2185,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll 4d combat -->
 <script type="text/worker">
     on('clicked:roll_combat_4d', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{combat=oui}} {{bonus=[[1]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_vitalite}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2222,7 +2222,7 @@ check_luciditeValues.forEach(function(value) {
 <!-- Script de Roll 4d mental -->
 <script type="text/worker">
     on('clicked:roll_mental_4d', (info) => {
-        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{bonus=oui}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}}{{seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
+        startRoll("@{gm}  &{template:patient13} {{title=@{matricule}}} {{mental=oui}} {{bonus=[[1]]}} {{d1=[[D6]]}} {{d2=[[D6]]}} {{d3=[[D6]]}} {{d4=[[D6]]}} {{mod=[[@{roll_mod}]]}} {{malus=[[@{malus_sang_froid}]]}} {{seuil=[[?{Seuil de réussite|4} -1]]}} {{rappel_seuil=[[?{Seuil de réussite|4}]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -2270,88 +2270,105 @@ check_luciditeValues.forEach(function(value) {
             <div class="sheet-patient-titre">patient</div>
             <div class="sheet-patient-valeur">{{title}}</div>
             {{#action}}
-                {{#rollTotal() seuil 1}}
+                {{#rollTotal() seuil 0}}
                 <div class="sheet-posologie" title="Jet d'action
 Seuil de réussite: 1">résultats</div>
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 2">résultats</div>
                 {{/rollTotal() seuil 1}}
                 {{#rollTotal() seuil 2}}
                 <div class="sheet-posologie" title="Jet d'action
-Seuil de réussite: 2">résultats</div>
+Seuil de réussite: 3">résultats</div>
                 {{/rollTotal() seuil 2}}
                 {{#rollTotal() seuil 3}}
                 <div class="sheet-posologie" title="Jet d'action
-Seuil de réussite: 3">résultats</div>
+Seuil de réussite: 4">résultats</div>
                 {{/rollTotal() seuil 3}}
                 {{#rollTotal() seuil 4}}
                 <div class="sheet-posologie" title="Jet d'action
-Seuil de réussite: 4">résultats</div>
+Seuil de réussite: 5">résultats</div>
                 {{/rollTotal() seuil 4}}
                 {{#rollTotal() seuil 5}}
                 <div class="sheet-posologie" title="Jet d'action
-Seuil de réussite: 5">résultats</div>
-                {{/rollTotal() seuil 5}}
-                {{#rollTotal() seuil 6}}
-                <div class="sheet-posologie" title="Jet d'action
 Seuil de réussite: 6">résultats</div>
-                {{/rollTotal() seuil 6}}
+                {{/rollTotal() seuil 5}}
             {{/action}}
             {{#combat}}
-                {{#rollTotal() seuil 1}}
+                {{#rollTotal() seuil 0}}
                 <div class="sheet-posologie" title="Jet de combat
 Seuil de réussite: 1">résultats</div>
-                {{/rollTotal() seuil 1}}
-                {{#rollTotal() seuil 2}}
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
                 <div class="sheet-posologie" title="Jet de combat
 Seuil de réussite: 2">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 3">résultats</div>
                 {{/rollTotal() seuil 2}}
                 {{#rollTotal() seuil 3}}
                 <div class="sheet-posologie" title="Jet de combat
-Seuil de réussite: 3">résultats</div>
+Seuil de réussite: 4">résultats</div>
                 {{/rollTotal() seuil 3}}
                 {{#rollTotal() seuil 4}}
                 <div class="sheet-posologie" title="Jet de combat
-Seuil de réussite: 4">résultats</div>
+Seuil de réussite: 5">résultats</div>
                 {{/rollTotal() seuil 4}}
                 {{#rollTotal() seuil 5}}
                 <div class="sheet-posologie" title="Jet de combat
-Seuil de réussite: 5">résultats</div>
-                {{/rollTotal() seuil 5}}
-                {{#rollTotal() seuil 6}}
-                <div class="sheet-posologie" title="Jet de combat
 Seuil de réussite: 6">résultats</div>
-                {{/rollTotal() seuil 6}}
+                {{/rollTotal() seuil 5}}
             {{/combat}}
             {{#mental}}
-                {{#rollTotal() seuil 1}}
+                {{#rollTotal() seuil 0}}
                 <div class="sheet-posologie" title="Jet de psychologie
 Seuil de réussite: 1">résultats</div>
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite: 2">résultats</div>
                 {{/rollTotal() seuil 1}}
                 {{#rollTotal() seuil 2}}
                 <div class="sheet-posologie" title="Jet de psychologie
-Seuil de réussite : 2">résultats</div>
+Seuil de réussite : 3">résultats</div>
                 {{/rollTotal() seuil 2}}
                 {{#rollTotal() seuil 3}}
                 <div class="sheet-posologie" title="Jet de psychologie
-Seuil de réussite : 3">résultats</div>
+Seuil de réussite : 4">résultats</div>
                 {{/rollTotal() seuil 3}}
                 {{#rollTotal() seuil 4}}
                 <div class="sheet-posologie" title="Jet de psychologie
-Seuil de réussite : 4">résultats</div>
+Seuil de réussite : 5">résultats</div>
                 {{/rollTotal() seuil 4}}
                 {{#rollTotal() seuil 5}}
                 <div class="sheet-posologie" title="Jet de psychologie
-Seuil de réussite : 5">résultats</div>
-                {{/rollTotal() seuil 5}}
-                {{#rollTotal() seuil 6}}
-                <div class="sheet-posologie" title="Jet de psychologie
 Seuil de réussite : 6">résultats</div>
-                {{/rollTotal() seuil 6}}
+                {{/rollTotal() seuil 5}}
             {{/mental}}
-            <div class="sheet-value-1">{{computed::d1}}</div>
-            <div class="sheet-value-2">{{computed::d2}}</div>
-            <div class="sheet-value-3">{{computed::d3}}</div>
-            <!-- Jet sans bonus -->
-            {{#^bonus}}
+            {{#rollGreater() computed::d1 seuil}}
+                <div class="sheet-value-1" style="color:#005700 !important;">{{computed::d1}}</div>
+            {{/rollGreater() computed::d1 seuil}}
+             {{#^rollGreater() computed::d1 seuil}}
+                <div class="sheet-value-1" style="color:#a30000 !important;">{{computed::d1}}</div>
+            {{/^rollGreater() computed::d1 seuil}}
+
+            {{#rollGreater() computed::d2 seuil}}
+                <div class="sheet-value-2" style="color:#005700 !important;">{{computed::d2}}</div>
+            {{/rollGreater() computed::d2 seuil}}
+             {{#^rollGreater() computed::d2 seuil}}
+                <div class="sheet-value-2" style="color:#a30000 !important;">{{computed::d2}}</div>
+            {{/^rollGreater() computed::d2 seuil}}
+
+            {{#rollGreater() computed::d3 seuil}}
+                <div class="sheet-value-3" style="color:#005700 !important;">{{computed::d3}}</div>
+            {{/rollGreater() computed::d3 seuil}}
+             {{#^rollGreater() computed::d3 seuil}}
+                <div class="sheet-value-3" style="color:#a30000 !important;">{{computed::d3}}</div>
+            {{/^rollGreater() computed::d3 seuil}}
+        <!-- Jet sans bonus -->
+        {{#rollTotal() bonus 0}}
             <!-- Echec classique -->
                 {{#rollGreater() computed::d1 seuil}}
                     {{#^rollGreater() computed::d2 seuil}}
@@ -2384,22 +2401,34 @@ Seuil de réussite : 6">résultats</div>
                             {{#^rollTotal() computed::d1 computed::d2}}
                                 {{#rollGreater() computed::d1 computed::d2}}
                                     {{#rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                     <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                     {{/rollGreater() computed::d1 computed::d3}}
                                     {{#^rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                     <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/rollGreater() computed::d1 computed::d2}}
 
                                 {{#^rollGreater() computed::d1 computed::d2}}
                                     {{#rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                     <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                     {{/rollGreater() computed::d1 computed::d3}}
                                     {{#^rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-echec2-1">échec majeur</div>
+                                    <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                     <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/^rollGreater() computed::d1 computed::d2}}
@@ -2409,22 +2438,34 @@ Seuil de réussite : 6">résultats</div>
                                 {{#^rollTotal() computed::d1 computed::d3}}
                                     {{#rollGreater() computed::d1 computed::d2}}
                                         {{#rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                         <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                         <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/rollGreater() computed::d1 computed::d2}}
 
                                     {{#^rollGreater() computed::d1 computed::d2}}
                                         {{#rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                         <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-echec2-1">échec majeur</div>
+                                        <div class="sheet-desc-echec2-1"<div class="sheet-desc-echec2-1" title="L’action est particulièrement ratée. 
+Vous ne faites pas simplement qu’échouer,
+vous perdez du temps, vous trompez totalement, etc.
+Notez un - à côté du Trait impliqué dans l’action.">échec majeur</div>
                                         <div class="sheet-desc-echec2-2">(notez un - au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/^rollGreater() computed::d1 computed::d2}}
@@ -2442,7 +2483,9 @@ Seuil de réussite : 6">résultats</div>
                         {{#^rollGreater() computed::d3 seuil}}
                             {{#rollTotal() computed::d1 computed::d2}}
                                 {{#rollTotal() computed::d2 computed::d3}}
-                                <div class="sheet-desc-echec3-1">catastrophe !!!</div>
+                                <div class="sheet-desc-echec3-1" title="L’action est un fiasco total, une vraie catastrophe,
+un pitoyable échec  !
+Notez trois - à côté du Trait impliqué dans l’action.">catastrophe !!!</div>
                                 <div class="sheet-desc-echec3-2">(notez trois - au Trait)</div>
                                 {{/rollTotal() computed::d2 computed::d3}}
                             {{/rollTotal() computed::d1 computed::d2}}  
@@ -2482,18 +2525,27 @@ Seuil de réussite : 6">résultats</div>
                             {{#^rollTotal() computed::d1 computed::d2}}
                                 {{#rollGreater() computed::d1 computed::d2}}
                                     {{#rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/rollGreater() computed::d1 computed::d3}}
                                     {{#^rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">>réussite majeur</div>
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/rollGreater() computed::d1 computed::d2}}
 
                                 {{#^rollGreater() computed::d1 computed::d2}}
                                     {{#rollGreater() computed::d1 computed::d3}}
-                                    <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                    <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">réussite majeur</div>
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/rollGreater() computed::d1 computed::d3}}
                                     {{#^rollGreater() computed::d1 computed::d3}}
@@ -2507,22 +2559,34 @@ Seuil de réussite : 6">résultats</div>
                                 {{#^rollTotal() computed::d1 computed::d3}}
                                     {{#rollGreater() computed::d1 computed::d2}}
                                         {{#rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/rollGreater() computed::d1 computed::d2}}
 
                                     {{#^rollGreater() computed::d1 computed::d2}}
                                         {{#rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
-                                        <div class="sheet-desc-reussite2-1">réussite majeur</div>
+                                        <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
+ou plus rapidement, mais dans tout les cas,
+mieux que prévu. Notez un + à côté du Trait 
+impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/^rollGreater() computed::d1 computed::d2}}
@@ -2540,17 +2604,19 @@ Seuil de réussite : 6">résultats</div>
                         {{#rollGreater() computed::d3 seuil}}
                             {{#rollTotal() computed::d1 computed::d2}}
                                 {{#rollTotal() computed::d2 computed::d3}}
-                                <div class="sheet-desc-reussite3-1">réussite exceptionnelle !!!</div>
+                                <div class="sheet-desc-reussite3-1"title="L’action est une réussite exceptionnelle, 
+quasiment miraculeuse ! 
+Notez trois + à côté du Trait impliqué dans l’action.">réussite exceptionnelle !!!</div>
                                 <div class="sheet-desc-reussite3-2">(notez trois + au Trait)</div>
                                 {{/rollTotal() computed::d2 computed::d3}}
                             {{/rollTotal() computed::d1 computed::d2}}  
                         {{/rollGreater() computed::d3 seuil}}
                     {{/rollGreater() computed::d2 seuil}}
                 {{/rollGreater() computed::d1 seuil}}
-            {{/^bonus}}
+        {{/rollTotal() bonus 0}}
 
-            <!-- Jet avec bonus -->
-            {{#bonus}}
+        <!-- Jet avec bonus -->
+        {{#rollTotal() bonus 1}}
                 <!-- Echec -->
                 {{#^rollGreater() computed::d2 seuil}}
                     {{#^rollGreater() computed::d3 seuil}}
@@ -2588,7 +2654,7 @@ Seuil de réussite : 6">résultats</div>
                         <div class="sheet-desc-reussite1">réussite du test</div>
                     {{/rollGreater() computed::d2 seuil}}
                 {{/rollGreater() computed::d3 seuil}}
-            {{/bonus}}
+        {{/rollTotal() bonus 1}}
             
         </div>
     </div>
