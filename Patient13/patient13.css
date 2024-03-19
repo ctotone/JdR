@@ -19,6 +19,7 @@
 body.sheet-darkmode .charsheet {
     background-color: #1f1f1f;
     --black: #000000eb;
+    --fond_carte: #939898ed;
     color: var(--black);
 }
 
@@ -49,6 +50,10 @@ body.sheet-darkmode .charsheet {
     background-size: 350px 136px;
     display: flex;
     align-items: center;
+}
+
+body.sheet-darkmode .cadre_roll {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/darkmode_roll_template_bg.png);
 }
 
 /* Structure cadre Roll */
@@ -1819,6 +1824,10 @@ input[type=checkbox] {
     color: black;
     font-family: Oswald;
     font-weight: bold;
+  }
+
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-patient13 {
+    color: black;
   }
 
  .sheet-rolltemplate-patient13 .sheet-shadow_roll {
