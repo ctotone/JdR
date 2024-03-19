@@ -2095,6 +2095,20 @@ check_luciditeValues.forEach(function(value) {
                     );
                 });
             });
+
+            on('clicked:roll_combat', (info) => {
+                getAttrs(["insecte"], function(values) {
+                    let insecte = parseInt(values["insecte"]) || 0;
+                    
+                    if (insecte < 21) insecte_new = insecte + 1;
+                    else if (insecte == 21) insecte_new = 1;
+                    else insecte = "1";
+        
+                    setAttrs({
+                    "insecte" : insecte_new
+                    });
+                });
+            });
 </script>
 <!-- Script de Roll mental -->
 <script type="text/worker">
@@ -2125,6 +2139,20 @@ check_luciditeValues.forEach(function(value) {
                         d3: computed_d3
                     }
                     );
+                });
+            });
+
+            on('clicked:roll_mental', (info) => {
+                getAttrs(["insecte"], function(values) {
+                    let insecte = parseInt(values["insecte"]) || 0;
+                    
+                    if (insecte < 21) insecte_new = insecte + 1;
+                    else if (insecte == 21) insecte_new = 1;
+                    else insecte = "1";
+        
+                    setAttrs({
+                    "insecte" : insecte_new
+                    });
                 });
             });
 </script>
@@ -2168,7 +2196,7 @@ check_luciditeValues.forEach(function(value) {
                 });
             });
 
-    on('clicked:roll_action', (info) => {
+    on('clicked:roll_action_4d', (info) => {
         getAttrs(["insecte"], function(values) {
             let insecte = parseInt(values["insecte"]) || 0;
             
@@ -2218,6 +2246,20 @@ check_luciditeValues.forEach(function(value) {
                     );
                 });
             });
+
+    on('clicked:roll_combat_4d', (info) => {
+        getAttrs(["insecte"], function(values) {
+            let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
+            else insecte = "1";
+
+            setAttrs({
+            "insecte" : insecte_new
+            });
+        });
+    });
 </script>
 <!-- Script de Roll 4d mental -->
 <script type="text/worker">
@@ -2255,6 +2297,20 @@ check_luciditeValues.forEach(function(value) {
                     );
                 });
             });
+
+    on('clicked:roll_mental_4d', (info) => {
+        getAttrs(["insecte"], function(values) {
+            let insecte = parseInt(values["insecte"]) || 0;
+            
+            if (insecte < 21) insecte_new = insecte + 1;
+            else if (insecte == 21) insecte_new = 1;
+            else insecte = "1";
+
+            setAttrs({
+            "insecte" : insecte_new
+            });
+        });
+    });
 </script>
 
 
@@ -2269,6 +2325,7 @@ check_luciditeValues.forEach(function(value) {
         <div class="sheet-content">
             <div class="sheet-patient-titre">patient</div>
             <div class="sheet-patient-valeur">{{title}}</div>
+        {{#rollTotal() bonus 0}}
             {{#action}}
                 {{#rollTotal() seuil 0}}
                 <div class="sheet-posologie" title="Jet d'action
@@ -2347,6 +2404,106 @@ Seuil de réussite : 5">résultats</div>
 Seuil de réussite : 6">résultats</div>
                 {{/rollTotal() seuil 5}}
             {{/mental}}
+        {{/rollTotal() bonus 0}}
+        {{#rollTotal() bonus 1}}
+            {{#action}}
+                {{#rollTotal() seuil 0}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 1
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 2
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 3
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 4
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 5
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet d'action
+Seuil de réussite: 6
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 5}}
+            {{/action}}
+            {{#combat}}
+                {{#rollTotal() seuil 0}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 1
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 2
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 3
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 4
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 5
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet de combat
+Seuil de réussite: 6
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 5}}
+            {{/combat}}
+            {{#mental}}
+                {{#rollTotal() seuil 0}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite: 1
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 0}}
+                {{#rollTotal() seuil 1}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite: 2
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 1}}
+                {{#rollTotal() seuil 2}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 3
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 2}}
+                {{#rollTotal() seuil 3}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 4
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 3}}
+                {{#rollTotal() seuil 4}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 5
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 4}}
+                {{#rollTotal() seuil 5}}
+                <div class="sheet-posologie" title="Jet de psychologie
+Seuil de réussite : 6
+Avec dé bonus">résultats</div>
+                {{/rollTotal() seuil 5}}
+            {{/mental}}
+        {{/rollTotal() bonus 1}}
+
             {{#rollGreater() computed::d1 seuil}}
                 <div class="sheet-value-1-reussite">{{computed::d1}}</div>
             {{/rollGreater() computed::d1 seuil}}
