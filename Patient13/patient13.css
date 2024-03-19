@@ -1888,7 +1888,7 @@ input[type=checkbox] {
   --echec-critique: red;
   --reussite-classique: #027ac3;
   --reussite-majeur: #003395;
-  --reussite-critique: green;
+  --reussite-critique: #025302;
 }
 
 .sheet-rolltemplate-patient13 .sheet-content {
@@ -1937,7 +1937,8 @@ input[type=checkbox] {
     height: 35px;
 }
 
-.sheet-rolltemplate-patient13 .sheet-value-1 {
+.sheet-rolltemplate-patient13 .sheet-value-1-reussite,
+.sheet-rolltemplate-patient13 .sheet-value-1-echec {
     grid-column: 2;
     grid-row: 2;
     text-align: center;
@@ -1949,7 +1950,8 @@ input[type=checkbox] {
     height: 35px;
 }
 
-.sheet-rolltemplate-patient13 .sheet-value-2 {
+.sheet-rolltemplate-patient13 .sheet-value-2-reussite,
+.sheet-rolltemplate-patient13 .sheet-value-2-echec {
     grid-column: 3;
     grid-row: 2;
     text-align: center;
@@ -1961,7 +1963,8 @@ input[type=checkbox] {
     height: 35px;
 }
 
-.sheet-rolltemplate-patient13 .sheet-value-3 {
+.sheet-rolltemplate-patient13 .sheet-value-3-reussite,
+.sheet-rolltemplate-patient13 .sheet-value-3-echec {
     grid-column: 4;
     grid-row: 2;
     text-align: center;
@@ -2116,4 +2119,50 @@ input[type=checkbox] {
     /* color: black !important; */
     color: unset !important;
     font-size: 25px;
+}
+
+.sheet-rolltemplate-patient13 .sheet-value-1-reussite .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-1-reussite .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-1-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-1-reussite .inlinerollresult.fullfail,
+.sheet-rolltemplate-patient13 .sheet-value-2-reussite .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-2-reussite .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-2-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-2-reussite .inlinerollresult.fullfail,
+.sheet-rolltemplate-patient13 .sheet-value-3-reussite .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-3-reussite .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-3-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-3-reussite .inlinerollresult.fullfail  {
+	border: none !important;
+    background-color: #036d03 !important;
+    color: white !important;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 29px;
+}
+
+.sheet-rolltemplate-patient13 .sheet-value-1-echec .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-1-echec .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-1-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-1-echec .inlinerollresult.fullfail,
+.sheet-rolltemplate-patient13 .sheet-value-2-echec .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-2-echec .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-2-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-2-echec .inlinerollresult.fullfail,
+.sheet-rolltemplate-patient13 .sheet-value-3-echec .inlinerollresult,
+.sheet-rolltemplate-patient13 .sheet-value-3-echec .inlinerollresult.importantroll,
+.sheet-rolltemplate-patient13 .sheet-value-3-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-patient13 .sheet-value-3-echec .inlinerollresult.fullfail  {
+	border: none !important;
+    background-color: #a20404 !important;
+    color: white !important;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 29px;
 }

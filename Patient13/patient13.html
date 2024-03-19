@@ -2348,24 +2348,24 @@ Seuil de réussite : 6">résultats</div>
                 {{/rollTotal() seuil 5}}
             {{/mental}}
             {{#rollGreater() computed::d1 seuil}}
-                <div class="sheet-value-1" style="color:#005700 !important;">{{computed::d1}}</div>
+                <div class="sheet-value-1-reussite">{{computed::d1}}</div>
             {{/rollGreater() computed::d1 seuil}}
              {{#^rollGreater() computed::d1 seuil}}
-                <div class="sheet-value-1" style="color:#a30000 !important;">{{computed::d1}}</div>
+                <div class="sheet-value-1-echec">{{computed::d1}}</div>
             {{/^rollGreater() computed::d1 seuil}}
 
             {{#rollGreater() computed::d2 seuil}}
-                <div class="sheet-value-2" style="color:#005700 !important;">{{computed::d2}}</div>
+                <div class="sheet-value-2-reussite">{{computed::d2}}</div>
             {{/rollGreater() computed::d2 seuil}}
              {{#^rollGreater() computed::d2 seuil}}
-                <div class="sheet-value-2" style="color:#a30000 !important;">{{computed::d2}}</div>
+                <div class="sheet-value-2-echec">{{computed::d2}}</div>
             {{/^rollGreater() computed::d2 seuil}}
 
             {{#rollGreater() computed::d3 seuil}}
-                <div class="sheet-value-3" style="color:#005700 !important;">{{computed::d3}}</div>
+                <div class="sheet-value-3-reussite">{{computed::d3}}</div>
             {{/rollGreater() computed::d3 seuil}}
              {{#^rollGreater() computed::d3 seuil}}
-                <div class="sheet-value-3" style="color:#a30000 !important;">{{computed::d3}}</div>
+                <div class="sheet-value-3-echec">{{computed::d3}}</div>
             {{/^rollGreater() computed::d3 seuil}}
         <!-- Jet sans bonus -->
         {{#rollTotal() bonus 0}}
@@ -2534,8 +2534,8 @@ Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                     {{#^rollGreater() computed::d1 computed::d3}}
                                     <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">>réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/^rollGreater() computed::d1 computed::d3}}
                                 {{/rollGreater() computed::d1 computed::d2}}
@@ -2544,8 +2544,8 @@ impliqué dans l’action.">>réussite majeur</div>
                                     {{#rollGreater() computed::d1 computed::d3}}
                                     <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                     <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                     {{/rollGreater() computed::d1 computed::d3}}
                                     {{#^rollGreater() computed::d1 computed::d3}}
@@ -2561,15 +2561,15 @@ impliqué dans l’action.">réussite majeur</div>
                                         {{#rollGreater() computed::d1 computed::d3}}
                                         <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
                                         <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/rollGreater() computed::d1 computed::d2}}
@@ -2578,15 +2578,15 @@ impliqué dans l’action.">réussite majeur</div>
                                         {{#rollGreater() computed::d1 computed::d3}}
                                         <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/rollGreater() computed::d1 computed::d3}}
                                         {{#^rollGreater() computed::d1 computed::d3}}
                                         <div class="sheet-desc-reussite2-1" title="Vous accomplissez votre action plus facilement
 ou plus rapidement, mais dans tout les cas,
-mieux que prévu. Notez un + à côté du Trait 
-impliqué dans l’action.">réussite majeur</div>
+mieux que prévu. 
+Notez un + à côté du Trait impliqué dans l’action.">réussite majeur</div>
                                         <div class="sheet-desc-reussite2-2">(notez un + au Trait)</div>
                                         {{/^rollGreater() computed::d1 computed::d3}}
                                     {{/^rollGreater() computed::d1 computed::d2}}
