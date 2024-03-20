@@ -5,9 +5,10 @@
 /* Style de la page principale  */
 
 .charsheet {
-    --black: #000000c7;
+    /* --black: #000000c7; */
+    --black: black;
     --white: #ffffffed;
-    --grey: #686868;
+    --grey: #737272d4;
     --oswald: "Oswald";
     --dancing: "Dancing Script", cursive;
     --rouge_script: "Rouge Script", cursive;
@@ -17,13 +18,17 @@
     font-weight: bolder;
     font-size: 13px;
     color: var(--black);
-    width: 835px;
+    width: 860px;
     margin-top: -10px;
-
-
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Notre%20tombeau/images/back1.png);
+    background-size: 880px 483px;
+    background-repeat: no-repeat;
+    margin-left: -15px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
 }
 
-div { border: 1px solid black;}
+/* div { border: 1px solid black;} */
 
 body.sheet-darkmode .charsheet {
     background-color: #1f1f1f;
@@ -32,11 +37,38 @@ body.sheet-darkmode .charsheet {
     color: var(--black);
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0;
+}
+
+input[type=number].aptitudes,
+input[type=number].vie_adrenaline {
+    background: transparent;
+    color: var(--black);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    width: 26px !important;
+    height: 21px;
+    text-align: center;
+    margin-top: -1px;
+    outline: none;
+}
+
+input[type=number].vie_adrenaline {
+    width: 121px !important;
+    height: 107px;
+    font-size: 70px;
+}
+
+
 /* Structure générale de la feuille */
 
 .wrapper_feuille {
     display: grid;
-    grid-template-columns: 350px 15px 130px 15px 320px;
+    grid-template-columns: 370px 15px 130px 15px 320px;
     grid-auto-rows: 30px;
     margin-top: 15px;
 }
@@ -48,9 +80,9 @@ body.sheet-darkmode .charsheet {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 55px;
+    font-size: 61px;
     margin-top: -15px;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     white-space: nowrap;
 }
 
@@ -63,13 +95,14 @@ body.sheet-darkmode .charsheet {
     line-height: 22px;
     letter-spacing: 1px;
     color: #000000a1;
-    padding-top: 8px;
+    padding-top: 5px;
+    margin-left: 11px;
 }
 
 span.hugo {
     font-family: var(--oswald);
     font-size: 11px;
-    letter-spacing: 0px;
+    letter-spacing: -0.2px;
     color: var(--black);
 }
 
@@ -83,6 +116,7 @@ span.hugo {
     grid-column: 3;
     grid-row: 3/7;
     margin-bottom: 5px;
+    border: 5px solid black;
 }
 
 .feuille_vie_titre {
@@ -99,6 +133,7 @@ span.hugo {
     grid-column: 3;
     grid-row: 9/13;
     margin-bottom: 5px;
+    border: 5px solid black;
 }
 
 .feuille_adrenaline_titre {
@@ -121,6 +156,7 @@ span.hugo {
     display: flex;
     align-items: center;
     padding-left: 10px;
+    height: 35px;
 }
 
 .feuille_arme_donnees {
@@ -138,6 +174,7 @@ span.hugo {
     display: flex;
     align-items: center;
     padding-left: 10px;
+    height: 35px;
 }
 
 .feuille_sauvagerie_donnees {
@@ -150,18 +187,20 @@ span.hugo {
 
 .wrapper_aptitude {
     display: grid;
-    grid-template-columns: 120px 5px 30px 5px 50px 140px;
-    grid-auto-rows: 30px;
+    grid-template-columns: 120px 5px 30px 15px 50px 150px;
+    grid-auto-rows: 29px;
 }
 
 .aptitude_titre1 {
-    grid-column: 1/5;
+    letter-spacing: 2px;
+    grid-column: 1 / 5;
     background: black;
     color: var(--white);
-    font-size: 22px;
+    font-size: 29px;
     display: flex;
     align-items: center;
     padding-left: 10px;
+    height: 35px;
 }
 
 .aptitude_titre2 {
@@ -171,6 +210,8 @@ span.hugo {
     font-size: 12px;
     display: flex;
     align-items: flex-end;
+    height: 35px;
+    padding-left: 5px;
 }
 
 .aptitude_titre3 {
@@ -182,6 +223,7 @@ span.hugo {
     align-items: flex-end;
     justify-content: flex-end;
     padding-right: 3px;
+    height: 35px;
 }
 
 .aptitude_1 {
@@ -191,19 +233,30 @@ span.hugo {
     justify-content: flex-end;
     padding-right: 10px;
     font-size: 18px;
+    padding-left: 5px;
 }
 
 .aptitude_2 {
     grid-column: 3;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    font-size: 16px;
 }
 
 .aptitude_3 {
     grid-column: 5;
     color: var(--grey);
-    font-size: 12px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    white-space: nowrap;
+    padding-left: 5px;
+    letter-spacing: -0.5px;
 }
 
 .aptitude_4 {
@@ -211,7 +264,85 @@ span.hugo {
     color: var(--grey);
     font-size: 12px;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
     padding-right: 3px;
+    align-items: center;
+    margin-top: 2px;
+    letter-spacing: -0.5px;
 }
+
+/* Structure Armes */
+
+.wrapper_armes {
+    display: grid;
+    grid-template-columns: 220px 10px 15px 30px 15px 25px;
+    grid-auto-rows: 29px;
+    font-size: 20px;
+}
+
+.armes_nom {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px dotted black;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.armes_fixe1 {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.armes_d1 {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.armes_fixe2 {
+    grid-column: 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.armes_d2 {
+    grid-column: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.armes_fixe3 {
+    grid-column: 6;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Structure Sauvagerie */
+
+.wrapper_sauvagerie {
+    display: grid;
+    grid-template-columns: 315px;
+    grid-auto-rows: 16px;
+    font-size: 14px;
+}
+
+.sauvagerie_nom {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.sauvagerie_info {
+    grid-column: 1;
+    grid-row: 2;
+    font-family: var(--dancing);
+    font-size: 14px;
+    height: 15px;
+}
+
