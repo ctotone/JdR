@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* Style de la page principale  */
 
@@ -55,12 +56,14 @@ input[type=number].vie_adrenaline {
     text-align: center;
     margin-top: -1px;
     outline: none;
+    cursor: pointer;
 }
 
 input[type=number].vie_adrenaline {
     width: 121px !important;
     height: 107px;
     font-size: 70px;
+    cursor: pointer;
 }
 
 
@@ -68,7 +71,7 @@ input[type=number].vie_adrenaline {
 
 .wrapper_feuille {
     display: grid;
-    grid-template-columns: 370px 15px 130px 15px 320px;
+    grid-template-columns: 370px 10px 130px 10px 340px;
     grid-auto-rows: 30px;
     margin-top: 15px;
 }
@@ -90,13 +93,13 @@ input[type=number].vie_adrenaline {
     grid-column: 3 / 6;
     grid-row: 1 / 3;
     margin-bottom: 5px;
-    font-family: var(--rouge_script);
-    font-size: 25px;
+    font-family: var(--dancing);
+    font-size: 23px;
     line-height: 22px;
     letter-spacing: 1px;
     color: #000000a1;
     padding-top: 5px;
-    margin-left: 11px;
+    margin-left: -7px;
 }
 
 span.hugo {
@@ -131,9 +134,11 @@ span.hugo {
 
 .feuille_adrenaline {
     grid-column: 3;
-    grid-row: 9/13;
+    grid-row: 9 / 13;
     margin-bottom: 5px;
     border: 5px solid black;
+    margin-top: -20px;
+    margin-bottom: 25px;
 }
 
 .feuille_adrenaline_titre {
@@ -144,6 +149,7 @@ span.hugo {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-top: -40px;
 }
 
 .feuille_arme {
@@ -161,8 +167,9 @@ span.hugo {
 
 .feuille_arme_donnees {
     grid-column: 5;
-    grid-row: 4/9;
+    grid-row: 4 / 9;
     margin-bottom: 5px;
+    margin-top: -10px;
 }
 
 .feuille_sauvagerie {
@@ -175,12 +182,15 @@ span.hugo {
     align-items: center;
     padding-left: 10px;
     height: 35px;
+    margin-top: -20px;
 }
 
 .feuille_sauvagerie_donnees {
     grid-column: 5;
-    grid-row: 10/16;
+    grid-row: 10 / 16;
     margin-bottom: 5px;
+    margin-top: -11px;
+    padding-left: 10px;
 }
 
 /* Structure Aptitudes */
@@ -275,7 +285,7 @@ span.hugo {
 
 .wrapper_armes {
     display: grid;
-    grid-template-columns: 220px 10px 15px 30px 15px 25px;
+    grid-template-columns: 243px 10px 15px 30px 15px 25px;
     grid-auto-rows: 29px;
     font-size: 20px;
 }
@@ -328,8 +338,8 @@ span.hugo {
 
 .wrapper_sauvagerie {
     display: grid;
-    grid-template-columns: 315px;
-    grid-auto-rows: 16px;
+    grid-template-columns: 330px;
+    grid-auto-rows: 17px;
     font-size: 14px;
 }
 
@@ -342,7 +352,273 @@ span.hugo {
     grid-column: 1;
     grid-row: 2;
     font-family: var(--dancing);
-    font-size: 14px;
+    font-size: 15px;
     height: 15px;
+    margin-top: -4px;
+}
+
+.charsheet input.armes { 
+    font-weight: bold;
+    width: 97%;
+    resize: none;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    font-family: var(--oswald);
+    font-size: 15px;
+    color: var(--black);
+    padding-top: 6px;
+}
+
+
+/* Roll template */
+
+
+.sheet-rolltemplate-tombeau{
+    margin-left: -46px;
+    transform: rotate(1deg);
+    color: black;
+    font-family: Oswald;
+    font-weight: bold;
+  }
+
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau {
+    color: black;
+  }
+
+ .sheet-rolltemplate-tombeau .sheet-shadow_roll {
+    filter: drop-shadow(2px 1px 4px rgba(0, 0, 0, 0.712));
+    display: inline-block;
+    width: 500px;
+  }
+
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau .sheet-shadow_roll {
+    filter: drop-shadow(0px 0px 2px white);
+  }
+
+.sheet-rolltemplate-tombeau .sheet-ecart {
+    height: 20px;
+    background-color: transparent;
+}
+
+.sheet-rolltemplate-tombeau .sheet-info {
+    position: absolute;
+    font-family: Pictos;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 10px;
+    height: 10px;
+    content: "i";
+    opacity: 0.5;
+    cursor:help;
+}
+
+.sheet-rolltemplate-tombeau .sheet-info:hover {
+    opacity: 0.8;
+}
+
+.sheet-rolltemplate-tombeau .sheet-container {
+    position: relative;
+    margin-bottom: 0;
+    width: 290px;
+    height: 132px;
+    background-image: url();
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Patient13/image/roll_template_bg.png);
+    background-size: 290px 132px;
+    background-repeat: no-repeat;
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-type {
+    position: relative;
+    z-index: 1;
+    padding: 2px;
+    border-radius: 20px 20px;
+    border: 2px solid #475e66;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    height: 15px;
+    top: 4px;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Cabinet%2520des%2520murmures/img/offi_button_background_result.png);
+    color: white;
+}
+
+.sheet-rolltemplate-tombeau .sheet-container {
+  --echec-classique: #957003;
+  --echec-majeur: #830478;
+  --echec-critique: red;
+  --reussite-classique: #027ac3;
+  --reussite-majeur: #003395;
+  --reussite-critique: #025302;
+}
+
+.sheet-rolltemplate-tombeau .sheet-content {
+    display: grid;
+    grid-template-columns: 75px 45px 45px 45px;
+    line-height: 20px;
+    border-top: none;
+    margin-left: 70px;
+    border-left: 2px solid black;
+    height: 117px;
+    font-size: 16px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-survivant-titre {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.sheet-rolltemplate-tombeau .sheet-survivant-valeur {
+    grid-column: 2/5;
+    grid-row: 1;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 22px;
+}
+.sheet-rolltemplate-tombeau .sheet-difficulte {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    cursor: help;
+    height: 35px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-resultat-des {
+    grid-column: 2/5;
+    grid-row: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    font-family: "Shadows Into Light Two", cursive;
+    height: 35px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Shadows Into Light Two", cursive;
+    font-size: 20px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-reussite1 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--reussite-classique);
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-reussite2 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--reussite-majeur);
+    cursor: help;
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-echec1 {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--echec-classique);
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-echec2 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: var(--echec-majeur);
+    cursor: help;
+}
+
+.sheet-rolltemplate-tombeau .inlinerollresult,
+.sheet-rolltemplate-tombeau .inlinerollresult.importantroll,
+.sheet-rolltemplate-tombeau .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tombeau .inlinerollresult.fullfail  {
+	border: none !important;
+    background-color: transparent !important;
+    color: unset !important;
+    font-size: 25px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult,
+.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.importantroll,
+.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullfail {
+	border: none !important;
+    background-color: #036d03 !important;
+    color: white !important;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 29px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult,
+.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.importantroll,
+.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullfail  {
+	border: none !important;
+    background-color: #a20404 !important;
+    color: white !important;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 29px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
