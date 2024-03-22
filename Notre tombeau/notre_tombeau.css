@@ -79,11 +79,13 @@ input[type=number].armes_d {
     width: 20px !important;
 }
 
-.charsheet button[type=action].aptitudes::before {
+.charsheet button[type=action].aptitudes::before,
+.charsheet button[type=action].roll_armes::before {
     content: '';
   }
 
-.charsheet button[type=action].aptitudes {
+.charsheet button[type=action].aptitudes,
+.charsheet button[type=action].roll_armes {
     background-color: transparent;
     cursor: pointer;
     border: none;
@@ -96,6 +98,23 @@ input[type=number].armes_d {
     font-weight: bold;
     padding-left: 5px;
 } 
+
+.charsheet button[type=action].roll_armes {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Notre%20tombeau/images/dice_arme.png);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.charsheet button[type=action].roll_armes:hover {
+    margin-left: 2px;
+    padding: 0px;
+    padding-left: 2px;
+    background-position: 0 0px;
+}
 
 .charsheet button[type=action].aptitudes:hover {
     color: #6d0101;
@@ -370,13 +389,13 @@ span.hugo {
 
 .wrapper_armes {
     display: grid;
-    grid-template-columns: 220px 10px 15px 30px 15px 25px 23px;
+    grid-template-columns: 29px 214px 10px 15px 30px 15px 25px;
     grid-auto-rows: 29px;
     font-size: 20px;
 }
 
 .armes_nom {
-    grid-column: 1;
+    grid-column: 2;
     display: flex;
     align-items: center;
     border-bottom: 2px dotted black;
@@ -385,28 +404,28 @@ span.hugo {
 }
 
 .armes_fixe1 {
-    grid-column: 2;
+    grid-column: 3;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .armes_d1 {
-    grid-column: 3;
+    grid-column: 4;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .armes_fixe2 {
-    grid-column: 4;
+    grid-column: 5;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .armes_d2 {
-    grid-column: 5;
+    grid-column: 6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -414,19 +433,17 @@ span.hugo {
 }
 
 .armes_fixe3 {
-    grid-column: 6;
+    grid-column: 7;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .armes_roll {
-    grid-column: 7;
+    grid-column: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-image: url(https://github.com/ctotone/JdR/blob/main/Notre%20tombeau/images/dice_6.png);
-    background-size: cover;
 }
 
 /* Structure Sauvagerie */
