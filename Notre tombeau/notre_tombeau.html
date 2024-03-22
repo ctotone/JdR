@@ -93,13 +93,13 @@
         <div class="regain">REGAIN <span style="font-size: 13px;margin-left: 3px;">(1 POINT)</span>
         </div><div class="regain_info">regagne 1 point de Vie</div>
         <div class="feuille_vie">
-            <input type="number" class="vie_adrenaline" name="attr_hp" value="0">
+            <input type="number" class="vie_adrenaline" name="attr_hp" min="1" max="6" value="0">
         </div>
         <div class="feuille_vie_titre">
             VIE
         </div>
         <div class="feuille_adrenaline">
-            <input type="number" class="vie_adrenaline" name="attr_adrenaline" value="0">
+            <input type="number" class="vie_adrenaline" name="attr_adrenaline" min="1" max="6" value="0">
         </div>
         <div class="feuille_adrenaline_titre">
             ADRÉNALINE
@@ -111,33 +111,33 @@
             <div class="wrapper_armes" style="margin-top: 15px;">
                 <div class="armes_nom"><input type="text" class="armes" name="attr_arme_1"></div>
                 <div class="armes_fixe1">(</div>                
-                <div class="armes_d1">1</div>
+                <div class="armes_d1"><input type="number" class="armes_d" name="attr_dgt_arme_1" min="0" max="4" value="0"></div>
                 <div class="armes_fixe2">D /</div>
-                <div class="armes_d2">0</div>
+                <div class="armes_d2"><input type="number" class="armes_d" name="attr_dgt_arme_1_relance" min="0" max="2" value="0"></div>
                 <div class="armes_fixe3">D)</div>
             </div>
             <div class="wrapper_armes">
                 <div class="armes_nom"><input type="text" class="armes" name="attr_arme_2"></div>
                 <div class="armes_fixe1">(</div>                
-                <div class="armes_d1">1</div>
+                <div class="armes_d1"><input type="number" class="armes_d" name="attr_dgt_arme_2" min="0" max="4" value="0"></div>
                 <div class="armes_fixe2">D /</div>
-                <div class="armes_d2">0</div>
+                <div class="armes_d2"><input type="number" class="armes_d" name="attr_dgt_arme_2_relance" min="0" max="2" value="0"></div>
                 <div class="armes_fixe3">D)</div>
             </div>
             <div class="wrapper_armes">
                 <div class="armes_nom"><input type="text" class="armes" name="attr_arme_3"></div>
                 <div class="armes_fixe1">(</div>                
-                <div class="armes_d1">1</div>
+                <div class="armes_d1"><input type="number" class="armes_d" name="attr_dgt_arme_3" min="0" max="4" value="0"></div>
                 <div class="armes_fixe2">D /</div>
-                <div class="armes_d2">0</div>
+                <div class="armes_d2"><input type="number" class="armes_d" name="attr_dgt_arme_3_relance" min="0" max="2" value="0"></div>
                 <div class="armes_fixe3">D)</div>
             </div>
             <div class="wrapper_armes">
                 <div class="armes_nom"><input type="text" class="armes" name="attr_arme_4"></div>
                 <div class="armes_fixe1">(</div>                
-                <div class="armes_d1">1</div>
+                <div class="armes_d1"><input type="number" class="armes_d" name="attr_dgt_arme_4" min="0" max="4" value="0"></div>
                 <div class="armes_fixe2">D /</div>
-                <div class="armes_d2">0</div>
+                <div class="armes_d2"><input type="number" class="armes_d" name="attr_dgt_arme_4_relance" min="0" max="2" value="0"></div>
                 <div class="armes_fixe3">D)</div>
             </div>
         </div>
@@ -1345,27 +1345,25 @@
 <!-- Script Relance d'un dés -->
 <script type="text/worker">
     on('clicked:relancer_de', (info) => {
-        startRoll("&{template:relance} {{relancer=oui}} {{title=RELANCE}} {{d1=[[d6]]}} {{d1bis=[[d6 (Relance du dé)]]}} {{relance_1=[[0[resultat]]]}}", (results) => {
+        startRoll("&{template:relance} {{relancer=oui}} {{title=RELANCE}} {{d1=[[d6]]}} {{d1bis=[[d6 (Relance du dé)]]}} {{relance=[[0[resultat]]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
-            let computed_d1_1 = 0;
-            let d1bis_1 = parseInt(results.results.d1bis.dice);
-            let computed_d1bis_1 = 0;
-            let computed_relance_1_1 = 0;
-            let relance_1 = 0;
+            let d1bis = parseInt(results.results.d1bis.dice);
+            let computed_d1bis = 0;
+            let computed_relance = 0;
     
-                if (d1 > 3) reussite_1 = 1, computed_d1_1 = d1;
-                else computed_d1_1 = d1;
+                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
+                else reussite_1 = 0, computed_d1 = d1;
+                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
+                else computed_d1bis = d1bis, computed_relance = 0;
 
-                if (d1 > 5) computed_d1bis_1 = d1bis_1, computed_relance_1_1 = 1;
-                console.log(d1);
-                console.log(computed_d1_1);
                 finishRoll(
                     results.rollId,
                     {
-                        d1: computed_d1_1,
-                        d1bis_1: computed_d1bis_1,
-                        relance_1: computed_relance_1_1
+                        d1: computed_d1,
+                        d1bis: computed_d1bis,
+                        relance: computed_relance
+
                     }
              );
         });
@@ -1556,20 +1554,15 @@
                     {{/^rollGreater() computed::d1 3}}
                     
 
-                    {{#rollTotal() computed::relance_1 1}}
-                        <div class="sheet-separateur">/</div>
-                    {{/rollTotal() computed::relance_1 1}}
-
-                    {{#rollGreater() computed::d1 5}}
-                        {{#rollGreater() computed::d1bis_1 3}}
-    <!-- soucis ici il ne fait pas cette condiciton -->
-                        <div class="sheet-value-reussite">{{computed::d1bis_1}}</div>
-                        {{/rollGreater() computed::d1bis_1 3}}
-                        {{#^rollGreater() computed::d1bis_1 3}}
-                        echec
-                        <div class="sheet-value-echec">{{computed::d1bis_1}}</div>
-                        {{/^rollGreater() computed::d1bis_1 3}}
-                    {{/rollGreater() computed::d1 5}}
+                    {{#rollTotal() computed::relance 1}}
+                            <div class="sheet-separateur">/</div>
+                        {{#rollGreater() computed::d1bis 3}}
+                            <div class="sheet-value-reussite">{{d1bis}}</div>
+                        {{/rollGreater() computed::d1bis 3}}
+                        {{#^rollGreater() computed::d1bis 3}}
+                            <div class="sheet-value-echec">{{d1bis}}</div>
+                        {{/^rollGreater() computed::d1bis 3}}
+                    {{/rollTotal() computed::relance 1}}
                 </div>
                 {{/relancer}}
             </div>

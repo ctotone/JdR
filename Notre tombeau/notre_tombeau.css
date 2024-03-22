@@ -66,6 +66,19 @@ input[type=number].vie_adrenaline {
     cursor: pointer;
 }
 
+input[type=number].armes_d {
+    background: transparent;
+    color: var(--black);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    margin-top: -1px;
+    outline: none;
+    cursor: pointer;
+    width: 20px !important;
+}
+
 .charsheet button[type=action].aptitudes::before {
     content: '';
   }
@@ -324,7 +337,7 @@ span.hugo {
     font-size: 18px;
     height: 15px;
     white-space: nowrap;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: -135px;
 }
 
@@ -357,7 +370,7 @@ span.hugo {
 
 .wrapper_armes {
     display: grid;
-    grid-template-columns: 243px 10px 15px 30px 15px 25px;
+    grid-template-columns: 220px 10px 15px 30px 15px 25px 23px;
     grid-auto-rows: 29px;
     font-size: 20px;
 }
@@ -381,7 +394,7 @@ span.hugo {
 .armes_d1 {
     grid-column: 3;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -395,8 +408,9 @@ span.hugo {
 .armes_d2 {
     grid-column: 5;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    margin-left: 5px;
 }
 
 .armes_fixe3 {
@@ -455,19 +469,23 @@ span.hugo {
     font-family: Oswald;
   }
 
-  .sheet-rolltemplate-tombeau a[href^="~"] {
+.sheet-rolltemplate-relance {
+    margin-left: 15px;
+  }
+
+.sheet-rolltemplate-tombeau a[href^="~"] {
     color: var(--echec-majeur);
     background-color: transparent;
     font-size: 14px;
     border: none;
   }
 
-  .sheet-rolltemplate-tombeau a[href^="~"]:hover {
+.sheet-rolltemplate-tombeau a[href^="~"]:hover {
     color: #fd8181;
   }
 
-  .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau,
-  .sheet-rolltemplate-darkmode.sheet-rolltemplate-relance {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-relance {
     color: black;
   }
 
@@ -492,6 +510,12 @@ span.hugo {
     box-shadow: 3px -3px 10px 3px #606060e3;
 }
 
+.sheet-rolltemplate-relance .sheet-container {
+    width: 200px;
+    height: 110px;
+    background-size: 220px 130px;
+}
+
 .sheet-rolltemplate-tombeau .sheet-container,
 .sheet-rolltemplate-relance .sheet-container {
   --echec-classique: #ff2f2fc7;
@@ -507,6 +531,14 @@ span.hugo {
     line-height: 25px;
     height: 150px;
     font-size: 16px;
+}
+
+.sheet-rolltemplate-relance .sheet-content {
+    grid-template-columns: 65px 45px 45px 45px;
+}
+
+.sheet-rolltemplate-relance .sheet-content {
+    height: 120px;
 }
 
 .sheet-rolltemplate-tombeau .sheet-survivant-titre,
@@ -539,6 +571,10 @@ span.hugo {
     color: #ffffff9c;
     margin-left: 3px;
     margin-right: 3px;
+}
+
+.sheet-rolltemplate-relance .sheet-separateur {
+    font-size: 35px;
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc {
@@ -661,6 +697,15 @@ span.hugo {
     border-radius: 5px;
 }
 
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.importantrol,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.fullfail {
+    font-size: 35px;
+    width: 33px;
+    height: 44px;
+}
+
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullcrit,
@@ -681,5 +726,14 @@ span.hugo {
     margin-left: 2px;
     margin-right: 2px;
     border-radius: 5px;
+}
+
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.importantrol,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.fullfail  {
+    font-size: 35px;
+    width: 33px;
+    height: 44px;
 }
 
