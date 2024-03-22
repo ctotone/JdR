@@ -66,6 +66,28 @@ input[type=number].vie_adrenaline {
     cursor: pointer;
 }
 
+.charsheet button[type=action].aptitudes::before {
+    content: '';
+  }
+
+.charsheet button[type=action].aptitudes {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 5px;
+} 
+
+.charsheet button[type=action].aptitudes:hover {
+    color: #6d0101;
+}
+
 
 /* Structure générale de la feuille */
 
@@ -244,6 +266,7 @@ span.hugo {
     padding-right: 10px;
     font-size: 18px;
     padding-left: 5px;
+    white-space: nowrap;
 }
 
 .aptitude_2 {
@@ -382,6 +405,17 @@ span.hugo {
     font-family: Oswald;
   }
 
+  .sheet-rolltemplate-tombeau a[href^="~"] {
+    color: var(--echec-majeur);
+    background-color: transparent;
+    font-size: 14px;
+    border: none;
+  }
+
+  .sheet-rolltemplate-tombeau a[href^="~"]:hover {
+    color: #fd8181;
+  }
+
   .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau {
     color: black;
   }
@@ -393,9 +427,9 @@ span.hugo {
 
 .sheet-rolltemplate-tombeau .sheet-container {
     width: 260px;
-    height: 120px;
+    height: 150px;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Notre%2520tombeau/images/background_rolltemplate.jpg);
-    background-size: 280px 140px;
+    background-size: 280px 170px;
     background-repeat: no-repeat;
     padding: 10px;
     border: 2px solid #393939;
@@ -406,19 +440,17 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-container {
-  --echec-classique: #957003;
-  --echec-majeur: #830478;
-  --echec-critique: red;
-  --reussite-classique: #027ac3;
-  --reussite-majeur: #003395;
-  --reussite-critique: #025302;
+  --echec-classique: #ff2f2fc7;
+  --echec-majeur: #ff2f2fc7;
+  --reussite-classique: #4ad960b3;
+  --reussite-majeur: #84a7fb;
 }
 
 .sheet-rolltemplate-tombeau .sheet-content {
     display: grid;
     grid-template-columns: 125px 45px 45px 45px;
-    line-height: 20px;
-    height: 120px;
+    line-height: 25px;
+    height: 150px;
     font-size: 16px;
 }
 
@@ -443,6 +475,14 @@ span.hugo {
     height: 35px;
 }
 
+.sheet-rolltemplate-tombeau .sheet-separateur {
+    font-size: 29px;
+    font-weight: bold;
+    color: #ffffff9c;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
 .sheet-rolltemplate-tombeau .sheet-desc {
     grid-column: 1 / 5;
     grid-row: 3 / 5;
@@ -456,14 +496,26 @@ span.hugo {
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite1 {
     grid-column: 1 / 5;
-    grid-row: 3 / 5;
+    grid-row: 3;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
-    color: var(--reussite-classique);
+    color: var(--reussite-majeur);
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--reussite-majeur);
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite2 {
@@ -473,22 +525,21 @@ span.hugo {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
-    color: var(--reussite-majeur);
-    cursor: help;
+    color: var(--reussite-classique);
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec1 {
     grid-column: 1 / 5;
-    grid-row: 3 / 5;
+    grid-row: 3;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
-    color: var(--echec-classique);
+    color: var(--echec-majeur);
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec2 {
@@ -498,11 +549,24 @@ span.hugo {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 30px;
     padding-top: 5px;
     font-weight: bold;
+    color: var(--echec-classique);
+}
+
+.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte {
+    grid-column: 1 / 5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffffb3;
     color: var(--echec-majeur);
-    cursor: help;
+    line-height: 16px;
 }
 
 .sheet-rolltemplate-tombeau .inlinerollresult,
