@@ -304,6 +304,55 @@ span.hugo {
     letter-spacing: -0.5px;
 }
 
+.relance {
+    grid-column: 2;
+    grid-row: 13;
+    padding-right: 3px;
+    margin-top: 2px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+    margin-left: -140px;
+}
+
+.relance_info {
+    grid-column: 2;
+    grid-row: 13;
+    font-family: var(--dancing);
+    font-size: 18px;
+    height: 15px;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-left: -135px;
+}
+
+.regain {
+    grid-column: 2;
+    grid-row: 14 / 16;
+    padding-right: 3px;
+    margin-top: 2px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+    padding-top: 15px;
+    margin-left: -135px;
+}
+
+.regain_info {
+    grid-column: 2;
+    grid-row: 14;
+    font-family: var(--dancing);
+    font-size: 18px;
+    height: 15px;
+    white-space: nowrap;
+    margin-top: 35px;
+    margin-left: -135px;
+}
+
 /* Structure Armes */
 
 .wrapper_armes {
@@ -399,7 +448,8 @@ span.hugo {
 /* Roll template */
 
 
-.sheet-rolltemplate-tombeau {
+.sheet-rolltemplate-tombeau,
+.sheet-rolltemplate-relance {
     margin-left: -15px;
     color: #ffffffb3;
     font-family: Oswald;
@@ -416,19 +466,22 @@ span.hugo {
     color: #fd8181;
   }
 
-  .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau {
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau,
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-relance {
     color: black;
   }
 
-.sheet-rolltemplate-tombeau .sheet-ecart {
+.sheet-rolltemplate-tombeau .sheet-ecart,
+.sheet-rolltemplate-relance .sheet-ecart {
     height: 20px;
     background-color: transparent;
 }
 
-.sheet-rolltemplate-tombeau .sheet-container {
+.sheet-rolltemplate-tombeau .sheet-container,
+.sheet-rolltemplate-relance .sheet-container {
     width: 260px;
     height: 150px;
-    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Notre%2520tombeau/images/background_rolltemplate.jpg);
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Notre%2520tombeau/images/background_roll.jpg);
     background-size: 280px 170px;
     background-repeat: no-repeat;
     padding: 10px;
@@ -439,14 +492,16 @@ span.hugo {
     box-shadow: 3px -3px 10px 3px #606060e3;
 }
 
-.sheet-rolltemplate-tombeau .sheet-container {
+.sheet-rolltemplate-tombeau .sheet-container,
+.sheet-rolltemplate-relance .sheet-container {
   --echec-classique: #ff2f2fc7;
   --echec-majeur: #ff2f2fc7;
-  --reussite-classique: #4ad960b3;
-  --reussite-majeur: #84a7fb;
+  --reussite-classique: #03b91fb3;
+  --reussite-majeur: #03b91fb3;
 }
 
-.sheet-rolltemplate-tombeau .sheet-content {
+.sheet-rolltemplate-tombeau .sheet-content,
+.sheet-rolltemplate-relance .sheet-content {
     display: grid;
     grid-template-columns: 125px 45px 45px 45px;
     line-height: 25px;
@@ -454,7 +509,8 @@ span.hugo {
     font-size: 16px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-survivant-titre {
+.sheet-rolltemplate-tombeau .sheet-survivant-titre,
+.sheet-rolltemplate-relance .sheet-survivant-titre {
     grid-column: 1 / 5;
     grid-row: 1;
     text-align: left;
@@ -465,7 +521,8 @@ span.hugo {
     margin-bottom: 15px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-resultat-des {
+.sheet-rolltemplate-tombeau .sheet-resultat-des,
+.sheet-rolltemplate-relance .sheet-resultat-des {
     grid-column: 1/5;
     grid-row: 2;
     text-align: center;
@@ -475,7 +532,8 @@ span.hugo {
     height: 35px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-separateur {
+.sheet-rolltemplate-tombeau .sheet-separateur,
+.sheet-rolltemplate-relance .sheet-separateur {
     font-size: 29px;
     font-weight: bold;
     color: #ffffff9c;
@@ -504,6 +562,7 @@ span.hugo {
     font-size: 24px;
     font-weight: bold;
     color: var(--reussite-majeur);
+    margin-top: 15px;
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain {
@@ -513,9 +572,10 @@ span.hugo {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: var(--reussite-majeur);
+    line-height: 20px;
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite2 {
@@ -566,7 +626,7 @@ span.hugo {
     font-weight: bold;
     color: #ffffffb3;
     color: var(--echec-majeur);
-    line-height: 16px;
+    line-height: 20px;
 }
 
 .sheet-rolltemplate-tombeau .inlinerollresult,
@@ -582,7 +642,11 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult,
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullcrit,
-.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullfail {
+.sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullfail,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.importantrol,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.fullfail {
 	border: none !important;
     background-color: #005200 !important;
     color: #ffffffb3 !important;
@@ -600,7 +664,11 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullcrit,
-.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullfail  {
+.sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullfail,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.importantrol,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.fullfail  {
 	border: none !important;
     background-color: #7b0606 !important;
     color: #ffffffb3 !important;

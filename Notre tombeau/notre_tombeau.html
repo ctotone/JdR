@@ -80,12 +80,18 @@
             <div class="wrapper_aptitude">
                 <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_se_calmer">SE CALMER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_se_calmer" min="1" max="6" value="0"></div>
+                
             </div>
             <div class="wrapper_aptitude">
                 <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_viser">VISER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_viser" min="1" max="6" value="0"></div>
             </div>            
         </div>
+        <div class="relance"><button type="action" class="aptitudes" name="act_relancer_de">RELANCE <span style="font-size: 13px;margin-left: 3px;">(1 POINT)</span></button> 
+        </div>
+        <div class="relance_info">relance un dé</div>
+        <div class="regain">REGAIN <span style="font-size: 13px;margin-left: 3px;">(1 POINT)</span>
+        </div><div class="regain_info">regagne 1 point de Vie</div>
         <div class="feuille_vie">
             <input type="number" class="vie_adrenaline" name="attr_hp" value="0">
         </div>
@@ -1336,6 +1342,36 @@
     });
 </script>
 
+<!-- Script Relance d'un dés -->
+<script type="text/worker">
+    on('clicked:relancer_de', (info) => {
+        startRoll("&{template:relance} {{relancer=oui}} {{title=RELANCE}} {{d1=[[d6]]}} {{d1bis=[[d6 (Relance du dé)]]}} {{relance_1=[[0[resultat]]]}}", (results) => {
+                 
+            let d1 = parseInt(results.results.d1.dice);
+            let computed_d1_1 = 0;
+            let d1bis_1 = parseInt(results.results.d1bis.dice);
+            let computed_d1bis_1 = 0;
+            let computed_relance_1_1 = 0;
+            let relance_1 = 0;
+    
+                if (d1 > 3) reussite_1 = 1, computed_d1_1 = d1;
+                else computed_d1_1 = d1;
+
+                if (d1 > 5) computed_d1bis_1 = d1bis_1, computed_relance_1_1 = 1;
+                console.log(d1);
+                console.log(computed_d1_1);
+                finishRoll(
+                    results.rollId,
+                    {
+                        d1: computed_d1_1,
+                        d1bis_1: computed_d1bis_1,
+                        relance_1: computed_relance_1_1
+                    }
+             );
+        });
+    });
+</script>
+
 <!-- --------------------------- -->
 <!-- ----- ROLL TEMPLATE ------- -->
 <!-- --------------------------- -->
@@ -1459,7 +1495,6 @@
                         {{/^rollGreater() computed::d6bis 3}}
                     {{/rollGreater() computed::d6 5}}
                 </div>
-
                 {{#aptitude}}
                     {{#rollTotal() difficulte 0}}
                         {{#^rollLess() computed::reussite difficulte_reel}}
@@ -1492,12 +1527,51 @@
                 {{/aptitude}}
                 {{#echec}}
                     {{#^rollLess() computed::reussite difficulte_reel}}
-                        <div class="sheet-desc-reussite1">RÉUSSITE</div>
+                        <div class="sheet-desc-reussite1">RÉUSSITE</div><br>
+                        <div class="sheet-desc-adrenaline_gain">Vous ne perdez aucun point d'Adrénaline</div>
                     {{/^rollLess() computed::reussite difficulte_reel}}
                     {{#rollLess() computed::reussite difficulte_reel}}
                         <div class="sheet-desc-echec1">ÉCHEC</div>
+                        <div class="sheet-desc-adrenaline_perte">Vous perdez, non pas 1, mais 2 points d'Adrénaline</div>
                     {{/rollLess() computed::reussite difficulte_reel}}
                 {{/echec}}
+            </div>
+        </div>
+</rolltemplate>
+
+
+
+<rolltemplate class="sheet-rolltemplate-relance">
+    <div class="ecart"></div>
+        <div class="sheet-container">
+            <div class="sheet-content">
+                {{#relancer}}
+                <div class="sheet-survivant-titre">{{title}}</div>
+                <div class="sheet-resultat-des"> 
+                    {{#rollGreater() computed::d1 3}}
+                            <div class="sheet-value-reussite">{{computed::d1}}</div>
+                    {{/rollGreater() computed::d1 3}}
+                    {{#^rollGreater() computed::d1 3}}
+                            <div class="sheet-value-echec">{{computed::d1}}</div>
+                    {{/^rollGreater() computed::d1 3}}
+                    
+
+                    {{#rollTotal() computed::relance_1 1}}
+                        <div class="sheet-separateur">/</div>
+                    {{/rollTotal() computed::relance_1 1}}
+
+                    {{#rollGreater() computed::d1 5}}
+                        {{#rollGreater() computed::d1bis_1 3}}
+    <!-- soucis ici il ne fait pas cette condiciton -->
+                        <div class="sheet-value-reussite">{{computed::d1bis_1}}</div>
+                        {{/rollGreater() computed::d1bis_1 3}}
+                        {{#^rollGreater() computed::d1bis_1 3}}
+                        echec
+                        <div class="sheet-value-echec">{{computed::d1bis_1}}</div>
+                        {{/^rollGreater() computed::d1bis_1 3}}
+                    {{/rollGreater() computed::d1 5}}
+                </div>
+                {{/relancer}}
             </div>
         </div>
 </rolltemplate>
