@@ -13,3 +13,14 @@ DIV hide en fonction de checkbox
 .charsheet .sheet-attribut:checked ~ .sheet-class_1 {
   display: none;
 }
+
+
+<!-- Integrer un boutton dans un roll template -->
+
+<!-- Mettre cela dans le html -->
+<div style="display:none">
+  <button type="action" name="act_echec_majeur">
+</div>
+
+<!-- Integrer cela dans le rolltemplate -->
+[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)

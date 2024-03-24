@@ -6,7 +6,6 @@
 /* Style de la page principale  */
 
 .charsheet {
-    /* --black: #000000c7; */
     --black: black;
     --white: #ffffffed;
     --grey: #737272d4;
@@ -20,13 +19,14 @@
     font-size: 13px;
     color: var(--black);
     width: 860px;
-    margin-top: -10px;
+    margin-top: -17px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Notre%20tombeau/images/back1.png);
     background-size: 880px 483px;
     background-repeat: no-repeat;
     margin-left: -15px;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 3px !important;
 }
 
 /* div { border: 1px solid black;} */
@@ -125,14 +125,16 @@ input[type=number].armes_d {
     color: #6d0101 !important;
 }
 
-div.armes_roll {
+div.armes_roll,
+div.affichage_aptitude {
     display: none;
 }
 
 .charsheet .arme_d1[value="1"] ~ div.armes_roll,
 .charsheet .arme_d2[value="1"] ~ div.armes_roll,
 .charsheet .arme_d3[value="1"] ~ div.armes_roll,
-.charsheet .arme_d4[value="1"] ~ div.armes_roll {
+.charsheet .arme_d4[value="1"] ~ div.armes_roll,
+.charsheet .affichage_aptitude[value="1"] ~ div.affichage_aptitude {
     display: block;
 }
 
@@ -142,7 +144,7 @@ div.armes_roll {
     display: grid;
     grid-template-columns: 370px 10px 130px 10px 340px;
     grid-auto-rows: 30px;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .feuille_titre {
@@ -153,7 +155,7 @@ div.armes_roll {
     align-items: center;
     justify-content: center;
     font-size: 61px;
-    margin-top: -15px;
+    margin-top: -3px;
     letter-spacing: -3px;
     white-space: nowrap;
 }
@@ -168,7 +170,7 @@ div.armes_roll {
     letter-spacing: 1px;
     color: #000000a1;
     padding-top: 5px;
-    margin-left: -7px;
+    margin-left: 3px;
 }
 
 span.hugo {
@@ -218,7 +220,7 @@ span.hugo {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: -40px;
+    margin-top: -35px;
 }
 
 .feuille_arme {
@@ -351,6 +353,25 @@ span.hugo {
     letter-spacing: -0.5px;
 }
 
+.affichage_aptitude {
+    grid-column: 2;
+    grid-row: 11;
+    margin-top: 2px;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--white);
+    margin-left: -194px;
+    border: 2px solid #0000008c;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background: #6d0101;
+}
+
 .relance {
     grid-column: 2;
     grid-row: 13;
@@ -466,7 +487,7 @@ span.hugo {
 .wrapper_sauvagerie {
     display: grid;
     grid-template-columns: 330px;
-    grid-auto-rows: 17px;
+    grid-auto-rows: 16px;
     font-size: 14px;
 }
 
@@ -504,7 +525,8 @@ span.hugo {
 
 
 .sheet-rolltemplate-tombeau,
-.sheet-rolltemplate-relance {
+.sheet-rolltemplate-relance,
+.sheet-rolltemplate-aptitude {
     margin-left: -15px;
     color: #ffffffb3;
     font-family: Oswald;
@@ -514,30 +536,33 @@ span.hugo {
     margin-left: 15px;
   }
 
-.sheet-rolltemplate-tombeau a[href^="~"] {
+.sheet-rolltemplate-aptitude a[href^="~"] {
     color: var(--echec-majeur);
     background-color: transparent;
     font-size: 14px;
     border: none;
   }
 
-.sheet-rolltemplate-tombeau a[href^="~"]:hover {
+.sheet-rolltemplate-aptitude a[href^="~"]:hover {
     color: #fd8181;
   }
 
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-tombeau,
-.sheet-rolltemplate-darkmode.sheet-rolltemplate-relance {
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-relance,
+.sheet-rolltemplate-darkmode.sheet-rolltemplate-aptitude {
     color: black;
   }
 
 .sheet-rolltemplate-tombeau .sheet-ecart,
-.sheet-rolltemplate-relance .sheet-ecart {
+.sheet-rolltemplate-relance .sheet-ecart,
+.sheet-rolltemplate-aptitude .sheet-ecart {
     height: 20px;
     background-color: transparent;
 }
 
 .sheet-rolltemplate-tombeau .sheet-container,
-.sheet-rolltemplate-relance .sheet-container {
+.sheet-rolltemplate-relance .sheet-container,
+.sheet-rolltemplate-aptitude .sheet-container {
     width: 260px;
     height: 150px;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Notre%2520tombeau/images/background_roll.jpg);
@@ -558,7 +583,8 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-container,
-.sheet-rolltemplate-relance .sheet-container {
+.sheet-rolltemplate-relance .sheet-container,
+.sheet-rolltemplate-aptitude .sheet-container {
   --echec-classique: #ff2f2fc7;
   --echec-majeur: #ff2f2fc7;
   --reussite-classique: #03b91fb3;
@@ -566,7 +592,8 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-content,
-.sheet-rolltemplate-relance .sheet-content {
+.sheet-rolltemplate-relance .sheet-content,
+.sheet-rolltemplate-aptitude .sheet-content {
     display: grid;
     grid-template-columns: 125px 45px 45px 45px;
     line-height: 25px;
@@ -583,19 +610,22 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-survivant-titre,
-.sheet-rolltemplate-relance .sheet-survivant-titre {
+.sheet-rolltemplate-relance .sheet-survivant-titre,
+.sheet-rolltemplate-aptitude .sheet-survivant-titre {
     grid-column: 1 / 5;
     grid-row: 1;
-    text-align: left;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .sheet-rolltemplate-tombeau .sheet-resultat-des,
-.sheet-rolltemplate-relance .sheet-resultat-des {
+.sheet-rolltemplate-relance .sheet-resultat-des,
+.sheet-rolltemplate-aptitude .sheet-resultat-des {
     grid-column: 1/5;
     grid-row: 2;
     text-align: center;
@@ -606,7 +636,8 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-separateur,
-.sheet-rolltemplate-relance .sheet-separateur {
+.sheet-rolltemplate-relance .sheet-separateur,
+.sheet-rolltemplate-aptitude .sheet-separateur {
     font-size: 29px;
     font-weight: bold;
     color: #ffffff9c;
@@ -618,7 +649,8 @@ span.hugo {
     font-size: 35px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc {
+.sheet-rolltemplate-tombeau .sheet-desc,
+.sheet-rolltemplate-aptitude .sheet-desc {
     grid-column: 1 / 5;
     grid-row: 3 / 5;
     text-align: center;
@@ -629,7 +661,8 @@ span.hugo {
     margin-top: -65px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-reussite1 {
+.sheet-rolltemplate-tombeau .sheet-desc-reussite1,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1 {
     grid-column: 1 / 5;
     grid-row: 3;
     text-align: center;
@@ -642,7 +675,8 @@ span.hugo {
     margin-top: 15px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain {
+.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain {
     grid-column: 1 / 5;
     grid-row: 4;
     text-align: center;
@@ -655,7 +689,8 @@ span.hugo {
     line-height: 20px;
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-reussite2 {
+.sheet-rolltemplate-tombeau .sheet-desc-reussite2,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2 {
     grid-column: 1 / 5;
     grid-row: 3 / 5;
     text-align: center;
@@ -667,7 +702,8 @@ span.hugo {
     color: var(--reussite-classique);
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-echec1 {
+.sheet-rolltemplate-tombeau .sheet-desc-echec1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1 {
     grid-column: 1 / 5;
     grid-row: 3;
     text-align: center;
@@ -679,7 +715,8 @@ span.hugo {
     color: var(--echec-majeur);
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-echec2 {
+.sheet-rolltemplate-tombeau .sheet-desc-echec2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2 {
     grid-column: 1 / 5;
     grid-row: 3 / 5;
     text-align: center;
@@ -692,7 +729,8 @@ span.hugo {
     color: var(--echec-classique);
 }
 
-.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte {
+.sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte {
     grid-column: 1 / 5;
     grid-row: 4;
     text-align: center;
@@ -709,7 +747,11 @@ span.hugo {
 .sheet-rolltemplate-tombeau .inlinerollresult,
 .sheet-rolltemplate-tombeau .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .inlinerollresult.fullcrit,
-.sheet-rolltemplate-tombeau .inlinerollresult.fullfail  {
+.sheet-rolltemplate-tombeau .inlinerollresult.fullfail,
+.sheet-rolltemplate-aptitude .inlinerollresult,
+.sheet-rolltemplate-aptitude .inlinerollresult.importantroll,
+.sheet-rolltemplate-aptitude .inlinerollresult.fullcrit,
+.sheet-rolltemplate-aptitude .inlinerollresult.fullfail  {
 	border: none !important;
     background-color: transparent !important;
     color: unset !important;
@@ -720,6 +762,10 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullcrit,
 .sheet-rolltemplate-tombeau .sheet-value-reussite .inlinerollresult.fullfail,
+.sheet-rolltemplate-aptitude .sheet-value-reussite .inlinerollresult,
+.sheet-rolltemplate-aptitude .sheet-value-reussite .inlinerollresult.importantroll,
+.sheet-rolltemplate-aptitude .sheet-value-reussite .inlinerollresult.fullcrit,
+.sheet-rolltemplate-aptitude .sheet-value-reussite .inlinerollresult.fullfail,
 .sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult,
 .sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.importantrol,
 .sheet-rolltemplate-relance .sheet-value-reussite .inlinerollresult.fullcrit,
@@ -751,6 +797,10 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.importantroll,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullcrit,
 .sheet-rolltemplate-tombeau .sheet-value-echec .inlinerollresult.fullfail,
+.sheet-rolltemplate-aptitude .sheet-value-echec .inlinerollresult,
+.sheet-rolltemplate-aptitude .sheet-value-echec .inlinerollresult.importantroll,
+.sheet-rolltemplate-aptitude .sheet-value-echec .inlinerollresult.fullcrit,
+.sheet-rolltemplate-aptitude .sheet-value-echec .inlinerollresult.fullfail,
 .sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult,
 .sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.importantrol,
 .sheet-rolltemplate-relance .sheet-value-echec .inlinerollresult.fullcrit,

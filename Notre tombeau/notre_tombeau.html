@@ -1,7 +1,8 @@
 <!-- ----------------- -->
 <!-- Valeurs integrées -->
 <!-- ----------------- -->
-
+<input type="hidden" name="attr_total_aptitudes" value="12">
+<input type="hidden" name="attr_delta_aptitudes" value="30">
 <div style="display:none">
     <button type="action" name="act_echec_majeur">
 </div>
@@ -17,76 +18,99 @@
         <div class="feuille_citation">
             "Ceci est le combat du jour et de la nuit...
             <br>
-            Je vois de la lumière noire. " <span class="hugo">DERNIERS MOTS DE VICTOR HUGO, 22MAI 1885</span>
+            Je vois de la lumière noire." <span class="hugo">DERNIERS MOTS DE VICTOR HUGO, 22MAI 1885</span>
         </div>
         <div class="feuille_aptitude">
             <div class="wrapper_aptitude">
-                <div class="aptitude_titre1">APTITUDES</div>
+                <div class="aptitude_titre1"><button type="action" class="aptitudes" title="Afficher ou masquer la 
+somme des aptitudes" name="act_somme_aptitudes" style="font-size: 29px;">APTITUDES</button></div>
                 <div class="aptitude_titre2">ACTION</div>
                 <div class="aptitude_titre3">NOMBRE DE DÉS À 4 OU +</div>
             </div>
             <div class="wrapper_aptitude" style="margin-top: 15px;">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_courir">COURIR</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_1" title="courir vite, longtemps, 
+tout en évitant les obstacles">COURIR</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_courir" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">FACILE</div>
                 <div class="aptitude_4">RÉUSSITE AUTOMATIQUE</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_encaisser">ENCAISSER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_2" title="résister aux chocs, aux maladies,
+à l'humidité, aux coups">ENCAISSER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_encaisser" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">RELATIVEMENT FACILE</div>
                 <div class="aptitude_4">1</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_escalader">ESCALADER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_3" title="grimper à une corde ou à des aspérités,
+le long d'un mur, s'avancer sur une corniche">ESCALADER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_escalader" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">MOYENNE</div>
                 <div class="aptitude_4">2</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_forcer">FORCER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_4" title="pousser ou soulever un objet, 
+lancer un objet le plus loin 
+possible, tirer sur une corde, 
+porter une personne sur ses épaules">FORCER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_forcer" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">DIFFICILE</div>
                 <div class="aptitude_4">3</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_reagir">RÉAGIR</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_5" title="être rapide, avoir des réflexes, 
+prendre l'initiative">RÉAGIR</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_reagir" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">TRÉS DIFFICILE</div>
                 <div class="aptitude_4">4</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_remarquer">REMARQUER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_6" title="utiliser ses cinq sens">REMARQUER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_remarquer" min="1" max="6" value="1"></div>
                 <div class="aptitude_3">IMPOSSIBLE</div>
                 <div class="aptitude_4">ÉCHEC AUTOMATIQUE</div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_imposer">S'IMPOSER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_7" title="commander, donner des ordres 
+ou intimider (des êtres humains)">S'IMPOSER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_imposer" min="1" max="6" value="1"></div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_sauter">SAUTER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_8" title="sauter au dessus d'un précipice, 
+tomber de plusieurs mètres de haut 
+et retomber sur ses pas">SAUTER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_sauter" min="1" max="6" value="1"></div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_savoir_faire">SAVOIR-FAIRE</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_9" title="crocheter une serrure, faire un 
+noeud coulant, un garrot, pratiquer 
+les premiers soins, posséder des 
+connaissances pratiques">SAVOIR-FAIRE</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_savoir_faire" min="1" max="6" value="1"></div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_se_battre">SE BATTRE</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_10" title="frapper au contact, 
+utiliser une arme, 
+esquiver un coup">SE BATTRE</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_se_battre" min="1" max="6" value="1"></div>
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_se_calmer">SE CALMER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_11" title="se montrer discret, 
+être silencieux, 
+contrôler ses émotions, 
+garder son sang-froid">SE CALMER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_se_calmer" min="1" max="6" value="1"></div>
                 
             </div>
             <div class="wrapper_aptitude">
-                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_viser">VISER</button></div>
+                <div class="aptitude_1"><button type="action" class="aptitudes" name="act_roll_aptitude_12" title="toucher une cible à distance, 
+lancer une corde pour qu'elle 
+s'agrippe">VISER</button></div>
                 <div class="aptitude_2"><input type="number" class="aptitudes" name="attr_viser" min="1" max="6" value="1"></div>
             </div>            
         </div>
+        <input type="hidden" class="affichage_aptitude" name="attr_affichage_aptitude" value="0">
+        <div class="affichage_aptitude">Points d'Aptitudes : <input type="number" class="aptitudes" name="attr_total_aptitudes" style="cursor: default;color: var(--white);font-size: 16px;margin-top: -7px;"> / 42</div>
         <div class="relance"><button type="action" class="aptitudes" name="act_relancer_de" title="1 point d'Adrénaline permet de relancer un dés 
 (n'importe lequel, n'importe quand) aprés un 
 jet de dés raté (1 maximum par tour)">RELANCE <span style="font-size: 13px;margin-left: 3px;">(1 POINT)</span></button> 
@@ -196,8 +220,10 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
 
 <!-- Script Roll aptitudes -->
 <script type="text/worker">
-    on('clicked:roll_courir', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=COURIR}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{courir}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
+    const roll_aptitude_Values = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+    roll_aptitude_Values.forEach(function(value) {
+    on(`clicked:roll_aptitude_${value}`, (info) => {
+        startRoll("&{template:aptitude} {{aptitude=oui}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{courir=[[@{courir}]]}}  {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -205,8 +231,20 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
             let d4 = parseInt(results.results.d4.dice);
             let d5 = parseInt(results.results.d5.dice);
             let d6 = parseInt(results.results.d6.dice);
+            let courir = parseInt(results.results.courir.result);
+            let encaisser = parseInt(results.results.encaisser.result);
+            let escalader = parseInt(results.results.escalader.result);
+            let reagir = parseInt(results.results.reagir.result);
+            let remarquer = parseInt(results.results.remarquer.result);
+            let imposer = parseInt(results.results.imposer.result);
+            let savoir_faire = parseInt(results.results.savoir_faire.result);
+            let se_battre = parseInt(results.results.se_battre.result);
+            let se_calmer = parseInt(results.results.se_calmer.result);
+            let viser = parseInt(results.results.viser.result);
+            let forcer = parseInt(results.results.forcer.result);
+            let sauter = parseInt(results.results.sauter.result);
             let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
+            let nombre_de = 0;
             let reussite_1 = 0;
             let reussite_2 = 0;
             let reussite_3 = 0;
@@ -239,7 +277,24 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
             let reussite_6bis = 0;
             let computed_relance = 0;
             let relance = 0;
+
+            console.log(courir);
+            console.log(value);
+                if (value == 1) nombre_de = courir;
+                if (value == 2) nombre_de = encaisser;
+                if (value == 3) nombre_de = escalader;
+                if (value == 4) nombre_de = forcer;
+                if (value == 5) nombre_de = reagir;
+                if (value == 6) nombre_de = remarquer;
+                if (value == 7) nombre_de = imposer;
+                if (value == 8) nombre_de = sauter;
+                if (value == 9) nombre_de = savoir_faire;
+                if (value == 10) nombre_de = se_battre;
+                if (value == 11) nombre_de = se_calmer;
+                if (value == 12) nombre_de = viser;
     
+                console.log(nombre_de);
+
                 if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
                 if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
                 if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
@@ -279,995 +334,17 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                         d5bis: computed_d5bis,
                         d6bis: computed_d6bis,
                         reussite: reussite_totale,
-                        relance: computed_relance
+                        relance: computed_relance,
+                        nombre_de: nombre_de,
+                        titre: value
                     }
              );
         });
     });
-    
-    on('clicked:roll_encaisser', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=ENCAISSER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{encaisser}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_escalader', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=ESCALADER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{escalader}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    
-    
-    on('clicked:roll_forcer', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=FORCER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{forcer}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_reagir', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=RÉAGIR}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{reagir}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_remarquer', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=REMARQUER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{remarquer}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_imposer', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=IMPOSER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{imposer}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_sauter', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=SAUTER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{sauter}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_savoir_faire', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=SAVOIR-FAIRE}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{savoir_faire}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_se_battre', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=SE BATTRE}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{se_battre}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_se_calmer', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=SE CALMER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{se_calmer}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
-    
-    on('clicked:roll_viser', (info) => {
-        startRoll("&{template:tombeau} {{aptitude=oui}} {{title=VISER}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
-                 
-            let d1 = parseInt(results.results.d1.dice);
-            let d2 = parseInt(results.results.d2.dice);
-            let d3 = parseInt(results.results.d3.dice);
-            let d4 = parseInt(results.results.d4.dice);
-            let d5 = parseInt(results.results.d5.dice);
-            let d6 = parseInt(results.results.d6.dice);
-            let difficulte = parseInt(results.results.difficulte.result);
-            let nombre_de = parseInt(results.results.nombre_de.result);
-            let reussite_1 = 0;
-            let reussite_2 = 0;
-            let reussite_3 = 0;
-            let reussite_4 = 0;
-            let reussite_5 = 0;
-            let reussite_6 = 0;
-            let computed_d1 = 0;
-            let computed_d2 = 0;
-            let computed_d3 = 0;
-            let computed_d4 = 0;
-            let computed_d5 = 0;
-            let computed_d6 = 0;
-            let d1bis = parseInt(results.results.d1bis.dice);
-            let d2bis = parseInt(results.results.d2bis.dice);
-            let d3bis = parseInt(results.results.d3bis.dice);
-            let d4bis = parseInt(results.results.d4bis.dice);
-            let d5bis = parseInt(results.results.d5bis.dice);
-            let d6bis = parseInt(results.results.d6bis.dice);
-            let computed_d1bis = 0;
-            let computed_d2bis = 0;
-            let computed_d3bis = 0;
-            let computed_d4bis = 0;
-            let computed_d5bis = 0;
-            let computed_d6bis = 0;
-            let reussite_1bis = 0;
-            let reussite_2bis = 0;
-            let reussite_3bis = 0;
-            let reussite_4bis = 0;
-            let reussite_5bis = 0;
-            let reussite_6bis = 0;
-            let computed_relance = 0;
-            let relance = 0;
-    
-                if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
-                if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
-                if (d3 > 3 && nombre_de >= 3) reussite_3 = 1, computed_d3 = d3;
-                if (d4 > 3 && nombre_de >= 4) reussite_4 = 1, computed_d4 = d4;
-                if (d5 > 3 && nombre_de >= 5) reussite_5 = 1, computed_d5 = d5;
-                if (d6 > 3 && nombre_de >= 6) reussite_6 = 1, computed_d6 = d6; 
-
-                
-                if (d1 > 5) computed_d1bis = d1bis, computed_relance = 1;
-                if (d1 > 5 && computed_d1bis > 3) reussite_1bis = 1;
-                if (d2 > 5 && nombre_de >= 2) computed_d2bis = d2bis, computed_relance = 1;
-                if (d2 > 5 && computed_d2bis > 3 && nombre_de >= 2) reussite_2bis = 1;
-                if (d3 > 5 && nombre_de >= 3) computed_d3bis = d3bis, computed_relance = 1;
-                if (d4 > 5 && computed_d3bis > 3 && nombre_de >= 3) reussite_3bis = 1;
-                if (d4 > 5 && nombre_de >= 4) computed_d4bis = d4bis, computed_relance = 1;
-                if (d4 > 5 && computed_d4bis > 3 && nombre_de >= 4) reussite_4bis = 1;
-                if (d5 > 5 && nombre_de >= 5) computed_d5bis = d5bis, computed_relance = 1;
-                if (d5 > 5 && computed_d5bis > 3 && nombre_de >= 5) reussite_5bis = 1;
-                if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
-                if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
-
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
-
-                finishRoll(
-                    results.rollId,
-                    {
-                        d1: computed_d1,
-                        d2: computed_d2,
-                        d3: computed_d3,
-                        d4: computed_d4,
-                        d5: computed_d5,
-                        d6: computed_d6,
-                        d1bis: computed_d1bis,
-                        d2bis: computed_d2bis,
-                        d3bis: computed_d3bis,
-                        d4bis: computed_d4bis,
-                        d5bis: computed_d5bis,
-                        d6bis: computed_d6bis,
-                        reussite: reussite_totale,
-                        relance: computed_relance
-                    }
-             );
-        });
-    });
+});
 </script>
 
-<!-- Script Roll Se calmer suite à échec majeur -->
+<!-- Script Roll se calmer suite à échec majeur -->
 <script type="text/worker">
     on('clicked:echec_majeur', (info) => {
         startRoll("&{template:tombeau} {{echec=oui}} {{title=SE CALMER}}{{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{se_calmer}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
@@ -1476,7 +553,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                 if (d4ter > 5 && d4 > 5 && d4bis > 5 && computed_d4quat > 3 && nombre_de >= 4) reussite_4quat = 1;
                  
             let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_1ter + reussite_2ter + reussite_3ter + reussite_4ter + reussite_1quat + reussite_2quat + reussite_3quat + reussite_4quat;
-console.log(computed_relance);
+
                 finishRoll(
                     results.rollId,
                     {
@@ -1877,7 +954,53 @@ console.log(computed_relance);
             });
         });
     });
-    </script>
+</script>
+
+<!-- Calcul nombre de point aptitudes -->
+<script type="text/worker">
+    on("change:courir change:encaisser change:escalader change:forcer change:reagir change:remarquer change:imposer change:sauter change:savoir_faire change:se_battre change:se_calmer change:viser", function() {
+    
+        getAttrs(["courir", "encaisser", "escalader", "forcer", "reagir", "remarquer", "imposer", "sauter", "savoir_faire", "se_battre", "se_calmer", "viser"], function(values) {
+             let courir = parseInt(values.courir) || 0;
+             let encaisser = parseInt(values.encaisser) || 0;
+             let escalader = parseInt(values.escalader) || 0;
+             let forcer = parseInt(values.forcer) || 0;
+             let reagir = parseInt(values.reagir) || 0;
+             let remarquer = parseInt(values.remarquer) || 0;
+             let imposer = parseInt(values.imposer) || 0;
+             let sauter = parseInt(values.sauter) || 0;
+             let savoir_faire = parseInt(values.savoir_faire) || 0;
+             let se_battre = parseInt(values.se_battre) || 0;
+             let se_calmer = parseInt(values.se_calmer) || 0;
+             let viser = parseInt(values.viser) || 0;
+             console.log(courir);
+             let total_aptitudes = courir + encaisser + escalader + forcer + reagir + remarquer + imposer + sauter + savoir_faire + se_battre + se_calmer + viser;
+             let delta_aptitudes = 42 - total_aptitudes;
+            console.log(total_aptitudes);
+            console.log(delta_aptitudes);
+                setAttrs({
+                "total_aptitudes" : total_aptitudes,
+                "delta_aptitudes" : delta_aptitudes
+            });
+        });
+    });
+</script>
+
+<!-- Affichage somme aptitudes -->
+<script type="text/worker">
+	on('clicked:somme_aptitudes', function() {
+        getAttrs(["affichage_aptitude"], function(values) {
+            let affichage_aptitude = parseInt(values["affichage_aptitude"]) || 0;
+            
+               if (affichage_aptitude == 0) affichage_aptitude = 1;
+               else affichage_aptitude = 0;
+
+		setAttrs({
+				"affichage_aptitude" : affichage_aptitude
+			});
+		});
+    });
+</script>
 
 <!-- --------------------------- -->
 <!-- ----- ROLL TEMPLATE ------- -->
@@ -1888,7 +1011,7 @@ console.log(computed_relance);
     <div class="ecart"></div>
         <div class="sheet-container">
             <div class="sheet-content">
-                {{#relancer}}
+                {{#relance}}
                 <div class="sheet-survivant-titre">{{title}}</div>
                 <div class="sheet-resultat-des"> 
                     {{#rollGreater() computed::d1 3}}
@@ -1909,7 +1032,244 @@ console.log(computed_relance);
                         {{/^rollGreater() computed::d1bis 3}}
                     {{/rollTotal() computed::relance 1}}
                 </div>
-                {{/relancer}}
+                {{/relance}}
+                {{#test}}
+                    {{#rollTotal() computed::titre 1}}
+                        <div class="sheet-survivant-titre">titre 1</div>
+                    {{/rollTotal() computed::titre 1}}
+                    {{#rollTotal() computed::titre 2}}
+                        <div class="sheet-survivant-titre">titre 2</div>
+                    {{/rollTotal() computed::titre 2}}
+                    {{#rollTotal() computed::titre 3}}
+                        <div class="sheet-survivant-titre">titre 2</div>
+                    {{/rollTotal() computed::titre 3}}
+                {{/test}}
+            </div>
+        </div>
+</rolltemplate>
+
+<!-- Rolltemplate des aptitudes -->
+<rolltemplate class="sheet-rolltemplate-aptitude">
+    <div class="ecart"></div>
+        <div class="sheet-container">
+            <div class="sheet-content">
+        <!-- Titre -->
+                {{#rollTotal() computed::titre 1}}   
+                <div class="sheet-survivant-titre">COURIR</div>
+                {{/rollTotal() computed::titre 1}}
+                {{#rollTotal() computed::titre 2}}   
+                <div class="sheet-survivant-titre">ENCAISSER</div>
+                {{/rollTotal() computed::titre 2}}
+                {{#rollTotal() computed::titre 3}}   
+                <div class="sheet-survivant-titre">ESCALADER</div>
+                {{/rollTotal() computed::titre 3}}
+                {{#rollTotal() computed::titre 4}}   
+                <div class="sheet-survivant-titre">FORCER</div>
+                {{/rollTotal() computed::titre 4}}
+                {{#rollTotal() computed::titre 5}}   
+                <div class="sheet-survivant-titre">RÉAGIR</div>
+                {{/rollTotal() computed::titre 5}}
+                {{#rollTotal() computed::titre 6}}   
+                <div class="sheet-survivant-titre">REMARQUER</div>
+                {{/rollTotal() computed::titre 6}}
+                {{#rollTotal() computed::titre 7}}   
+                <div class="sheet-survivant-titre">S'IMPOSER</div>
+                {{/rollTotal() computed::titre 7}}
+                {{#rollTotal() computed::titre 8}}   
+                <div class="sheet-survivant-titre">SAUTER</div>
+                {{/rollTotal() computed::titre 8}}
+                {{#rollTotal() computed::titre 9}}   
+                <div class="sheet-survivant-titre">SAVOIR-FAIRE</div>
+                {{/rollTotal() computed::titre 9}}
+                {{#rollTotal() computed::titre 10}}   
+                <div class="sheet-survivant-titre">SE BATTRE</div>
+                {{/rollTotal() computed::titre 10}}
+                {{#rollTotal() computed::titre 11}}   
+                <div class="sheet-survivant-titre">SE CALMER</div>
+                {{/rollTotal() computed::titre 11}}
+                {{#rollTotal() computed::titre 12}}   
+                <div class="sheet-survivant-titre">VISER</div>
+                {{/rollTotal() computed::titre 12}}
+                
+                <div class="sheet-resultat-des">
+                    {{#rollGreater() computed::nombre_de 0}}
+                        {{#rollGreater() computed::d1 3}}
+                        <div class="sheet-value-reussite">{{d1}}</div>
+                        {{/rollGreater() computed::d1 3}}
+                        {{#^rollGreater() computed::d1 3}}
+                        <div class="sheet-value-echec">{{d1}}</div>
+                        {{/^rollGreater() computed::d1 3}}
+                    {{/rollGreater() computed::nombre_de 0}}
+                    {{#rollGreater() computed::nombre_de 1}}
+                        {{#rollGreater() computed::d2 3}}
+                        <div class="sheet-value-reussite">{{d2}}</div>
+                        {{/rollGreater() computed::d2 3}}
+                        {{#^rollGreater() computed::d2 3}}
+                        <div class="sheet-value-echec">{{d2}}</div>
+                        {{/^rollGreater() computed::d2 3}}
+                    {{/rollGreater() computed::nombre_de 1}}
+                    {{#rollGreater() computed::nombre_de 2}}
+                        {{#rollGreater() computed::d3 3}}
+                        <div class="sheet-value-reussite">{{d3}}</div>
+                        {{/rollGreater() computed::d3 3}}
+                        {{#^rollGreater() computed::d3 3}}
+                        <div class="sheet-value-echec">{{d3}}</div>
+                        {{/^rollGreater() computed::d3 3}}
+                    {{/rollGreater() computed::nombre_de 2}}
+                    {{#rollGreater() computed::nombre_de 3}}
+                        {{#rollGreater() computed::d4 3}}
+                        <div class="sheet-value-reussite">{{d4}}</div>
+                        {{/rollGreater() computed::d4 3}}
+                        {{#^rollGreater() computed::d4 3}}
+                        <div class="sheet-value-echec">{{d4}}</div>
+                        {{/^rollGreater() computed::d4 3}}
+                    {{/rollGreater() computed::nombre_de 3}}
+                    {{#rollGreater() computed::nombre_de 4}}
+                        {{#rollGreater() computed::d5 3}}
+                        <div class="sheet-value-reussite">{{d5}}</div>
+                        {{/rollGreater() computed::d5 3}}
+                        {{#^rollGreater() computed::d5 3}}
+                        <div class="sheet-value-echec">{{d5}}</div>
+                        {{/^rollGreater() computed::d5 3}}
+                    {{/rollGreater() computed::nombre_de 4}}
+                    {{#rollGreater() computed::nombre_de 5}}
+                        {{#rollGreater() computed::d6 3}}
+                        <div class="sheet-value-reussite">{{d6}}</div>
+                        {{/rollGreater() computed::d6 3}}
+                        {{#^rollGreater() computed::d6 3}}
+                        <div class="sheet-value-echec">{{d6}}</div>
+                        {{/^rollGreater() computed::d6 3}}
+                    {{/rollGreater() computed::nombre_de 5}}
+            <!-- Dés bonus -->
+                    {{#rollTotal() computed::relance 1}}
+                    <div class="sheet-separateur">/</div>
+                    {{/rollTotal() computed::relance 1}}
+                    {{#rollGreater() computed::d1 5}}
+                        {{#rollGreater() computed::d1bis 3}}
+                        <div class="sheet-value-reussite">{{d1bis}}</div>
+                        {{/rollGreater() computed::d1bis 3}}
+                        {{#^rollGreater() computed::d1bis 3}}
+                        <div class="sheet-value-echec">{{d1bis}}</div>
+                        {{/^rollGreater() computed::d1bis 3}}
+                    {{/rollGreater() computed::d1 5}}
+                    {{#rollGreater() computed::d2 5}}
+                        {{#rollGreater() computed::d2bis 3}}
+                        <div class="sheet-value-reussite">{{d2bis}}</div>
+                        {{/rollGreater() computed::d2bis 3}}
+                        {{#^rollGreater() computed::d2bis 3}}
+                        <div class="sheet-value-echec">{{d2bis}}</div>
+                        {{/^rollGreater() computed::d2bis 3}}
+                    {{/rollGreater() computed::d2 5}}
+                    {{#rollGreater() computed::d3 5}}
+                        {{#rollGreater() computed::d3bis 3}}
+                        <div class="sheet-value-reussite">{{d3bis}}</div>
+                        {{/rollGreater() computed::d3bis 3}}
+                        {{#^rollGreater() computed::d3bis 3}}
+                        <div class="sheet-value-echec">{{d3bis}}</div>
+                        {{/^rollGreater() computed::d3bis 3}}
+                    {{/rollGreater() computed::d3 5}}
+                    {{#rollGreater() computed::d4 5}}
+                        {{#rollGreater() computed::d4bis 3}}
+                        <div class="sheet-value-reussite">{{d4bis}}</div>
+                        {{/rollGreater() computed::d4bis 3}}
+                        {{#^rollGreater() computed::d4bis 3}}
+                        <div class="sheet-value-echec">{{d4bis}}</div>
+                        {{/^rollGreater() computed::d4bis 3}}
+                    {{/rollGreater() computed::d4 5}}
+                    {{#rollGreater() computed::d5 5}}
+                        {{#rollGreater() computed::d5bis 3}}
+                        <div class="sheet-value-reussite">{{d5bis}}</div>
+                        {{/rollGreater() computed::d5bis 3}}
+                        {{#^rollGreater() computed::d5bis 3}}
+                        <div class="sheet-value-echec">{{d5bis}}</div>
+                        {{/^rollGreater() computed::d5bis 3}}
+                    {{/rollGreater() computed::d5 5}}
+                    {{#rollGreater() computed::d6 5}}
+                        {{#rollGreater() computed::d6bis 3}}
+                        <div class="sheet-value-reussite">{{d6bis}}</div>
+                        {{/rollGreater() computed::d6bis 3}}
+                        {{#^rollGreater() computed::d6bis 3}}
+                        <div class="sheet-value-echec">{{d6bis}}</div>
+                        {{/^rollGreater() computed::d6bis 3}}
+                    {{/rollGreater() computed::d6 5}}
+            <!-- Dé TER -->
+                    {{#rollGreater() computed::d1bis 5}}
+                        {{#rollGreater() computed::d1ter 3}}
+                        <div class="sheet-value-reussite">{{d1ter}}</div>
+                        {{/rollGreater() computed::d1ter 3}}
+                        {{#^rollGreater() computed::d1ter 3}}
+                        <div class="sheet-value-echec">{{d1ter}}</div>
+                        {{/^rollGreater() computed::d1ter 3}}
+                    {{/rollGreater() computed::d1bis 5}}
+                    {{#rollGreater() computed::d2bis 5}}
+                        {{#rollGreater() computed::d2ter 3}}
+                        <div class="sheet-value-reussite">{{d2ter}}</div>
+                        {{/rollGreater() computed::d2ter 3}}
+                        {{#^rollGreater() computed::d2ter 3}}
+                        <div class="sheet-value-echec">{{d2ter}}</div>
+                        {{/^rollGreater() computed::d2ter 3}}
+                    {{/rollGreater() computed::d2bis 5}}
+                    {{#rollGreater() computed::d3bis 5}}
+                        {{#rollGreater() computed::d3ter 3}}
+                        <div class="sheet-value-reussite">{{d3ter}}</div>
+                        {{/rollGreater() computed::d3ter 3}}
+                        {{#^rollGreater() computed::d3ter 3}}
+                        <div class="sheet-value-echec">{{d3ter}}</div>
+                        {{/^rollGreater() computed::d3ter 3}}
+                    {{/rollGreater() computed::d3bis 5}}
+                    {{#rollGreater() computed::d4bis 5}}
+                        {{#rollGreater() computed::d4ter 3}}
+                        <div class="sheet-value-reussite">{{d4ter}}</div>
+                        {{/rollGreater() computed::d4ter 3}}
+                        {{#^rollGreater() computed::d4ter 3}}
+                        <div class="sheet-value-echec">{{d4ter}}</div>
+                        {{/^rollGreater() computed::d4ter 3}}
+                    {{/rollGreater() computed::d4bis 5}}
+                    {{#rollGreater() computed::d5bis 5}}
+                        {{#rollGreater() computed::d5ter 3}}
+                        <div class="sheet-value-reussite">{{d5ter}}</div>
+                        {{/rollGreater() computed::d5ter 3}}
+                        {{#^rollGreater() computed::d5ter 3}}
+                        <div class="sheet-value-echec">{{d5ter}}</div>
+                        {{/^rollGreater() computed::d5ter 3}}
+                    {{/rollGreater() computed::d5bis 5}}
+                    {{#rollGreater() computed::d6bis 5}}
+                        {{#rollGreater() computed::d6bis 3}}
+                        <div class="sheet-value-reussite">{{d6bis}}</div>
+                        {{/rollGreater() computed::d6bis 3}}
+                        {{#^rollGreater() computed::d6bis 3}}
+                        <div class="sheet-value-echec">{{d6bis}}</div>
+                        {{/^rollGreater() computed::d6bis 3}}
+                    {{/rollGreater() computed::d6bis 5}}
+                </div>
+                    {{#rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-reussite1">RÉUSSITE</div>
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-echec1">ÉCHEC</div>
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/rollTotal() difficulte 0}}
+                    {{#^rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite1">RÉUSSITE MAJEURE</div>
+                                <div class="sheet-desc-adrenaline_gain">Vous gagnez 1 point d'Adrénaline</div>
+                            {{/rollGreater() computed::reussite difficulte_reel}}
+                            {{#^rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite2">RÉUSSITE</div>
+                            {{/^rollGreater() computed::reussite difficulte_reel}}
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec2">ÉCHEC</div>
+                            {{/rollGreater() computed::reussite 0}}
+                            {{#^rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec1">ÉCHEC MAJEUR</div>
+                            <div class="sheet-desc-adrenaline_perte">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            {{/^rollGreater() computed::reussite 0}}    
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/^rollTotal() difficulte 0}}
             </div>
         </div>
 </rolltemplate>
@@ -2131,21 +1491,21 @@ console.log(computed_relance);
                 {{/echec}}
                 {{#armes}}
                     {{#rollGreater() computed::reussite 0}}
-                        <div class="sheet-desc-reussite1">{{computed::reussite}} DÉGÂTS</div>
+                        <div class="sheet-desc-reussite1">{{computed::reussite}} POINT(S) DE DÉGÂTS</div>
                         {{#rollTotal() nombre_relance 1}}
-                        <div class="sheet-desc-adrenaline_gain">Votre arme vous permet de <br>relancer 1 dé</div>
+                        <div class="sheet-desc-adrenaline_gain">Cette arme permet de <br>relancer 1 dé</div>
                         {{/rollTotal() nombre_relance 1}}
                         {{#rollTotal() nombre_relance 2}}
-                        <div class="sheet-desc-adrenaline_gain">Votre arme vous permet de <br>relancer 2 dés</div>
+                        <div class="sheet-desc-adrenaline_gain">Cette arme permet de <br>relancer 2 dés</div>
                         {{/rollTotal() nombre_relance 2}}
                     {{/rollGreater() computed::reussite 0}}
                     {{#^rollGreater() computed::reussite 0}}
-                        <div class="sheet-desc-echec1">AUCUN DÉGÂTS</div>
+                        <div class="sheet-desc-echec1">AUCUN DÉGÂT</div>
                         {{#rollTotal() nombre_relance 1}}
-                        <div class="sheet-desc-adrenaline_perte">Votre arme vous permet de <br>relancer 1 dé</div>
+                        <div class="sheet-desc-adrenaline_perte">Cette arme permet de <br>relancer 1 dé</div>
                         {{/rollTotal() nombre_relance 1}}
                         {{#rollTotal() nombre_relance 2}}
-                        <div class="sheet-desc-adrenaline_perte">Votre arme vous permet de <br>relancer 2 dés</div>
+                        <div class="sheet-desc-adrenaline_perte">Cette arme permet de <br>relancer 2 dés</div>
                         {{/rollTotal() nombre_relance 2}}
                     {{/^rollGreater() computed::reussite 0}}
                 {{/armes}}
