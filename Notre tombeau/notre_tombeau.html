@@ -223,7 +223,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
     const roll_aptitude_Values = ["1","2","3","4","5","6","7","8","9","10","11","12"];
     roll_aptitude_Values.forEach(function(value) {
     on(`clicked:roll_aptitude_${value}`, (info) => {
-        startRoll("&{template:aptitude} {{aptitude=oui}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{courir=[[@{courir}]]}}  {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}}", (results) => {
+        startRoll("&{template:aptitude} {{aptitude=oui}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{d1ter=[[d6 (Relance du D1bis)]]}} {{d2ter=[[d6 (Relance du D2bis)]]}} {{d3ter=[[d6 (Relance du D3bis)]]}} {{d4ter=[[d6 (Relance du D4bis)]]}}  {{d5ter=[[d6 (Relance du D5bis)]]}} {{d6ter=[[d6 (Relance du D6bis)]]}} {{d1quat=[[d6 (Relance du D1ter)]]}} {{d2quat=[[d6 (Relance du D2ter)]]}} {{d3quat=[[d6 (Relance du D3ter)]]}} {{d4quat=[[d6 (Relance du D4ter)]]}} {{d5quat=[[d6 (Relance du D5ter)]]}} {{d6quat=[[d6 (Relance du D6ter)]]}} {{courir=[[@{courir}]]}} {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -275,11 +275,46 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
             let reussite_4bis = 0;
             let reussite_5bis = 0;
             let reussite_6bis = 0;
+            let d1ter = parseInt(results.results.d1ter.dice);
+            let d2ter = parseInt(results.results.d2ter.dice);
+            let d3ter = parseInt(results.results.d3ter.dice);
+            let d4ter = parseInt(results.results.d4ter.dice);
+            let d5ter = parseInt(results.results.d5ter.dice);
+            let d6ter = parseInt(results.results.d6ter.dice);
+            let computed_d1ter = 0;
+            let computed_d2ter = 0;
+            let computed_d3ter = 0;
+            let computed_d4ter = 0;
+            let computed_d5ter = 0;
+            let computed_d6ter = 0;
+            let reussite_1ter = 0;
+            let reussite_2ter = 0;
+            let reussite_3ter = 0;
+            let reussite_4ter = 0;
+            let reussite_5ter = 0;
+            let reussite_6ter = 0;
+            let d1quat = parseInt(results.results.d1quat.dice);
+            let d2quat = parseInt(results.results.d2quat.dice);
+            let d3quat = parseInt(results.results.d3quat.dice);
+            let d4quat = parseInt(results.results.d4quat.dice);
+            let d5quat = parseInt(results.results.d5quat.dice);
+            let d6quat = parseInt(results.results.d6quat.dice);
+            let computed_d1quat = 0;
+            let computed_d2quat = 0;
+            let computed_d3quat = 0;
+            let computed_d4quat = 0;
+            let computed_d5quat = 0;
+            let computed_d6quat = 0;
+            let reussite_1quat = 0;
+            let reussite_2quat = 0;
+            let reussite_3quat = 0;
+            let reussite_4quat = 0;
+            let reussite_5quat = 0;
+            let reussite_6quat = 0;
+            
             let computed_relance = 0;
             let relance = 0;
 
-            console.log(courir);
-            console.log(value);
                 if (value == 1) nombre_de = courir;
                 if (value == 2) nombre_de = encaisser;
                 if (value == 3) nombre_de = escalader;
@@ -292,8 +327,6 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                 if (value == 10) nombre_de = se_battre;
                 if (value == 11) nombre_de = se_calmer;
                 if (value == 12) nombre_de = viser;
-    
-                console.log(nombre_de);
 
                 if (d1 > 3) reussite_1 = 1, computed_d1 = d1;
                 if (d2 > 3 && nombre_de >= 2) reussite_2 = 1, computed_d2 = d2;
@@ -316,7 +349,33 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                 if (d6 > 5 && nombre_de >= 6) computed_d6bis = d6bis, computed_relance = 1;
                 if (d6 > 5 && computed_d6bis > 3 && nombre_de >= 6) reussite_6bis = 1;
 
-            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis;
+                if (d1ter > 5 && d1bis > 5 && d1 > 5) computed_d1ter = d1ter, computed_relance = 1;
+                if (d1ter > 5 && d1bis > 5 && d1 > 5 && computed_d1ter > 3) reussite_1ter = 1;
+                if (d2ter > 5 && d2bis > 5 && d2 > 5) computed_d2ter = d2ter, computed_relance = 1;
+                if (d2ter > 5 && d2bis > 5 && d2 > 5 && computed_d2ter > 3) reussite_2ter = 1;
+                if (d3ter > 5 && d3bis > 5 && d3 > 5) computed_d3ter = d3ter, computed_relance = 1;
+                if (d3ter > 5 && d3bis > 5 && d3 > 5 && computed_d3ter > 3) reussite_3ter = 1;
+                if (d4ter > 5 && d4bis > 5 && d4 > 5) computed_d4ter = d4ter, computed_relance = 1;
+                if (d4ter > 5 && d4bis > 5 && d4 > 5 && computed_d4ter > 3) reussite_4ter = 1;
+                if (d5ter > 5 && d5bis > 5 && d5 > 5) computed_d5ter = d5ter, computed_relance = 1;
+                if (d5ter > 5 && d5bis > 5 && d5 > 5 && computed_d5ter > 3) reussite_5ter = 1;
+                if (d6ter > 5 && d6bis > 5 && d6 > 5) computed_d6ter = d6ter, computed_relance = 1;
+                if (d6ter > 5 && d6bis > 5 && d6 > 5 && computed_d6ter > 3) reussite_6ter = 1;
+
+                if (d1quat > 5 && d1ter > 5 && d1bis > 5 && d1 > 5) computed_d1quat = d1quat, computed_relance = 1;
+                if (d1quat > 5 && d1ter > 5 && d1bis > 5 && d1 > 5 && computed_d1ter > 3) reussite_1quat = 1;
+                if (d2quat > 5 && d2ter > 5 && d2bis > 5 && d2 > 5) computed_d2quat = d2quat, computed_relance = 1;
+                if (d2quat > 5 && d2ter > 5 && d2bis > 5 && d2 > 5 && computed_d2ter > 3) reussite_2quat = 1;
+                if (d3quat > 5 && d3ter > 5 && d3bis > 5 && d3 > 5) computed_d3quat = d3quat, computed_relance = 1;
+                if (d3quat > 5 && d3ter > 5 && d3bis > 5 && d3 > 5 && computed_d3ter > 3) reussite_3quat = 1;
+                if (d4quat > 5 && d4ter > 5 && d4bis > 5 && d4 > 5) computed_d4quat = d4quat, computed_relance = 1;
+                if (d4quat > 5 && d4ter > 5 && d4bis > 5 && d4 > 5 && computed_d4ter > 3) reussite_4quat = 1;
+                if (d5quat > 5 && d5ter > 5 && d5bis > 5 && d5 > 5) computed_d5quat = d5quat, computed_relance = 1;
+                if (d5quat > 5 && d5ter > 5 && d5bis > 5 && d5 > 5 && computed_d5ter > 3) reussite_5quat = 1;
+                if (d6quat > 5 && d6ter > 5 && d6bis > 5 && d6 > 5) computed_d6quat = d6quat, computed_relance = 1;
+                if (d6quat > 5 && d6ter > 5 && d6bis > 5 && d6 > 5 && computed_d6ter > 3) reussite_6quat = 1;
+
+            let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_5 + reussite_6 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_5bis + reussite_6bis + reussite_1ter + reussite_2ter + reussite_3ter + reussite_4ter + reussite_5ter + reussite_6ter + reussite_1quat + reussite_2quat + reussite_3quat + reussite_4quat + reussite_5quat + reussite_6quat;
 
                 finishRoll(
                     results.rollId,
@@ -333,6 +392,18 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                         d4bis: computed_d4bis,
                         d5bis: computed_d5bis,
                         d6bis: computed_d6bis,
+                        d1ter: computed_d1ter,
+                        d2ter: computed_d2ter,
+                        d3ter: computed_d3ter,
+                        d4ter: computed_d4ter,
+                        d5ter: computed_d5ter,
+                        d6ter: computed_d6ter,
+                        d1quat: computed_d1quat,
+                        d2quat: computed_d2quat,
+                        d3quat: computed_d3quat,
+                        d4quat: computed_d4quat,
+                        d5quat: computed_d5quat,
+                        d6quat: computed_d6quat,
                         reussite: reussite_totale,
                         relance: computed_relance,
                         nombre_de: nombre_de,
@@ -669,7 +740,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                 if (d4ter > 5 && d4 > 5 && d4bis > 5 && computed_d4quat > 3 && nombre_de >= 4) reussite_4quat = 1;
                  
             let reussite_totale = reussite_1 + reussite_2 + reussite_3 + reussite_4 + reussite_1bis + reussite_2bis + reussite_3bis + reussite_4bis + reussite_1ter + reussite_2ter + reussite_3ter + reussite_4ter + reussite_1quat + reussite_2quat + reussite_3quat + reussite_4quat;
-console.log(computed_relance);
+
                 finishRoll(
                     results.rollId,
                     {
@@ -1144,6 +1215,7 @@ console.log(computed_relance);
                     {{#rollTotal() computed::relance 1}}
                     <div class="sheet-separateur">/</div>
                     {{/rollTotal() computed::relance 1}}
+            <!-- Dés bonus bis -->
                     {{#rollGreater() computed::d1 5}}
                         {{#rollGreater() computed::d1bis 3}}
                         <div class="sheet-value-reussite">{{d1bis}}</div>
@@ -1234,13 +1306,62 @@ console.log(computed_relance);
                         {{/^rollGreater() computed::d5ter 3}}
                     {{/rollGreater() computed::d5bis 5}}
                     {{#rollGreater() computed::d6bis 5}}
-                        {{#rollGreater() computed::d6bis 3}}
-                        <div class="sheet-value-reussite">{{d6bis}}</div>
-                        {{/rollGreater() computed::d6bis 3}}
-                        {{#^rollGreater() computed::d6bis 3}}
-                        <div class="sheet-value-echec">{{d6bis}}</div>
-                        {{/^rollGreater() computed::d6bis 3}}
+                        {{#rollGreater() computed::d6ter 3}}
+                        <div class="sheet-value-reussite">{{d6ter}}</div>
+                        {{/rollGreater() computed::d6ter 3}}
+                        {{#^rollGreater() computed::d6ter 3}}
+                        <div class="sheet-value-echec">{{d6ter}}</div>
+                        {{/^rollGreater() computed::d6ter 3}}
                     {{/rollGreater() computed::d6bis 5}}
+            <!-- Dé QUATTRO -->
+                    {{#rollGreater() computed::d1ter 5}}
+                        {{#rollGreater() computed::d1quat 3}}
+                        <div class="sheet-value-reussite">{{d1quat}}</div>
+                        {{/rollGreater() computed::d1quat 3}}
+                        {{#^rollGreater() computed::d1quat 3}}
+                        <div class="sheet-value-echec">{{d1quat}}</div>
+                        {{/^rollGreater() computed::d1quat 3}}
+                    {{/rollGreater() computed::d1ter 5}}
+                    {{#rollGreater() computed::d2ter 5}}
+                        {{#rollGreater() computed::d2quat 3}}
+                        <div class="sheet-value-reussite">{{d2quat}}</div>
+                        {{/rollGreater() computed::d2quat 3}}
+                        {{#^rollGreater() computed::d2quat 3}}
+                        <div class="sheet-value-echec">{{d2quat}}</div>
+                        {{/^rollGreater() computed::d2quat 3}}
+                    {{/rollGreater() computed::d2ter 5}}
+                    {{#rollGreater() computed::d3ter 5}}
+                        {{#rollGreater() computed::d3quat 3}}
+                        <div class="sheet-value-reussite">{{d3quat}}</div>
+                        {{/rollGreater() computed::d3quat 3}}
+                        {{#^rollGreater() computed::d3quat 3}}
+                        <div class="sheet-value-echec">{{d3quat}}</div>
+                        {{/^rollGreater() computed::d3quat 3}}
+                    {{/rollGreater() computed::d3ter 5}}
+                    {{#rollGreater() computed::d4ter 5}}
+                        {{#rollGreater() computed::d4quat 3}}
+                        <div class="sheet-value-reussite">{{d4quat}}</div>
+                        {{/rollGreater() computed::d4quat 3}}
+                        {{#^rollGreater() computed::d4quat 3}}
+                        <div class="sheet-value-echec">{{d4quat}}</div>
+                        {{/^rollGreater() computed::d4quat 3}}
+                    {{/rollGreater() computed::d4ter 5}}
+                    {{#rollGreater() computed::d5ter 5}}
+                        {{#rollGreater() computed::d5quat 3}}
+                        <div class="sheet-value-reussite">{{d5quat}}</div>
+                        {{/rollGreater() computed::d5quat 3}}
+                        {{#^rollGreater() computed::d5quat 3}}
+                        <div class="sheet-value-echec">{{d5quat}}</div>
+                        {{/^rollGreater() computed::d5quat 3}}
+                    {{/rollGreater() computed::d5ter 5}}
+                    {{#rollGreater() computed::d6ter 5}}
+                        {{#rollGreater() computed::d6quat 3}}
+                        <div class="sheet-value-reussite">{{d6quat}}</div>
+                        {{/rollGreater() computed::d6quat 3}}
+                        {{#^rollGreater() computed::d6quat 3}}
+                        <div class="sheet-value-echec">{{d6quat}}</div>
+                        {{/^rollGreater() computed::d6quat 3}}
+                    {{/rollGreater() computed::d6ter 5}}
                 </div>
                     {{#rollTotal() difficulte 0}}
                         {{#^rollLess() computed::reussite difficulte_reel}}
@@ -1442,43 +1563,13 @@ console.log(computed_relance);
                     {{/rollGreater() computed::d5bis 5}}
                     {{#rollGreater() computed::d6bis 5}}
                         {{#rollGreater() computed::d6bis 3}}
-                        <div class="sheet-value-reussite">{{d6bis}}</div>
+                        <div class="sheet-value-reussite">{{d6ter}}</div>
                         {{/rollGreater() computed::d6bis 3}}
                         {{#^rollGreater() computed::d6bis 3}}
-                        <div class="sheet-value-echec">{{d6bis}}</div>
+                        <div class="sheet-value-echec">{{d6ter}}</div>
                         {{/^rollGreater() computed::d6bis 3}}
                     {{/rollGreater() computed::d6bis 5}}
                 </div>
-                {{#aptitude}}
-                    {{#rollTotal() difficulte 0}}
-                        {{#^rollLess() computed::reussite difficulte_reel}}
-                            <div class="sheet-desc-reussite1">RÉUSSITE</div>
-                        {{/^rollLess() computed::reussite difficulte_reel}}
-                        {{#rollLess() computed::reussite difficulte_reel}}
-                            <div class="sheet-desc-echec1">ÉCHEC</div>
-                        {{/rollLess() computed::reussite difficulte_reel}}
-                    {{/rollTotal() difficulte 0}}
-                    {{#^rollTotal() difficulte 0}}
-                        {{#^rollLess() computed::reussite difficulte_reel}}
-                            {{#rollGreater() computed::reussite difficulte_reel}}
-                                <div class="sheet-desc-reussite1">RÉUSSITE MAJEURE</div>
-                                <div class="sheet-desc-adrenaline_gain">Vous gagnez 1 point d'Adrénaline</div>
-                            {{/rollGreater() computed::reussite difficulte_reel}}
-                            {{#^rollGreater() computed::reussite difficulte_reel}}
-                                <div class="sheet-desc-reussite2">RÉUSSITE</div>
-                            {{/^rollGreater() computed::reussite difficulte_reel}}
-                        {{/^rollLess() computed::reussite difficulte_reel}}
-                        {{#rollLess() computed::reussite difficulte_reel}}
-                            {{#rollGreater() computed::reussite 0}}  
-                            <div class="sheet-desc-echec2">ÉCHEC</div>
-                            {{/rollGreater() computed::reussite 0}}
-                            {{#^rollGreater() computed::reussite 0}}  
-                            <div class="sheet-desc-echec1">ÉCHEC MAJEUR</div>
-                            <div class="sheet-desc-adrenaline_perte">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
-                            {{/^rollGreater() computed::reussite 0}}    
-                        {{/rollLess() computed::reussite difficulte_reel}}
-                    {{/^rollTotal() difficulte 0}}
-                {{/aptitude}}
                 {{#echec}}
                     {{#^rollLess() computed::reussite difficulte_reel}}
                         <div class="sheet-desc-reussite1">RÉUSSITE</div>
