@@ -6,7 +6,7 @@
     --bleu: #8882a6;
     --text: "Oswald";
     --cursive: "Dancing Script", cursive;
-    width: 900px;
+    width: 920px;
     height: 670px;
     background-image: none;
     background-color: white;
@@ -68,6 +68,7 @@ div.joueur_tribune {
 
 /* Structure générale intro */
 
+
 /* Structure générale commune_crime */
 
 .wrapper_crime {
@@ -76,6 +77,128 @@ div.joueur_tribune {
     grid-auto-rows: 12px;
     margin-top: 5px;
 }
+
+.commune_carte_lieu {
+    grid-column: 1;
+    grid-row: 1 / 7;
+    margin-right: 135px;
+    margin-top: -10px;
+    background-image: var(--carte_lieu);
+    background-size: 100px 79px;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_victime {
+    grid-column: 3;
+    grid-row: 1 / 13;
+    margin-right: 105px;
+    background-image: var(--carte_victime);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_cause_deces {
+    grid-column: 1;
+    grid-row: 8/13;
+    margin-right: 105px;
+    background-image: var(--carte_cause_deces);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_indice_1 {
+    grid-column: 6;
+    grid-row: 1 / 7;
+    margin-right: 105px;
+    background-image: var(--carte_indice_1);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_indice_2 {
+    grid-column: 8;
+    grid-row: 1 / 7;
+    margin-right: 105px;
+    background-image: var(--carte_indice_2);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_indice_3 {
+    grid-column: 6;
+    grid-row: 8/13;
+    margin-right: 105px;
+    background-image: var(--carte_indice_3);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+}
+
+.commune_carte_suspect_1 {
+    grid-column: 3;
+    grid-row: 20/26;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_1);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.commune_carte_suspect_2 {
+    grid-column: 3;
+    grid-row: 34/40;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_2);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.commune_carte_suspect_3 {
+    grid-column: 3;
+    grid-row: 47/53;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_3);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.commune_carte_suspect_4 {
+    grid-column: 8;
+    grid-row: 21/27;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_4);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.commune_carte_suspect_5 {
+    grid-column: 8;
+    grid-row: 33/39;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_5);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+.commune_carte_suspect_6 {
+    grid-column: 8;
+    grid-row: 48/54;
+    margin-right: 105px;
+    background-image: var(--carte_suspect_6);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
+
+
 
 .commune_lieu {
     grid-column: 1;
@@ -106,6 +229,13 @@ div.joueur_tribune {
     border-radius: 0px 15px 15px 0px;
 }
 
+.commune_nom_suspect_1 {
+    grid-column: 3;
+    grid-row: 14/19;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
 .commune_suspect_1 {
     grid-column: 1/4;
     grid-row: 14/27;
@@ -113,9 +243,23 @@ div.joueur_tribune {
     border-radius: 20px 0px 0px 20px;
 }
 
+.commune_nom_suspect_2 {
+    grid-column: 3;
+    grid-row: 28/33;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
 .commune_suspect_2 {
     grid-column: 1/4;
     grid-row: 28/41;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.commune_nom_suspect_3 {
+    grid-column: 3;
+    grid-row: 42/47;
     border: 2px solid var(--orange);
     border-radius: 20px 0px 0px 20px;
 }
@@ -171,6 +315,13 @@ div.joueur_tribune {
     border-radius: 0px 15px 15px 0px;
 }
 
+.commune_nom_suspect_4 {
+    grid-column: 8;
+    grid-row: 15/20;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
 .commune_suspect_4 {
     grid-column: 6/9;
     grid-row: 14/27;
@@ -178,9 +329,23 @@ div.joueur_tribune {
     border-radius: 20px 0px 0px 20px;
 }
 
+.commune_nom_suspect_5 {
+    grid-column: 8;
+    grid-row: 28/33;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
 .commune_suspect_5 {
     grid-column: 6/9;
     grid-row: 28/41;
+    border: 2px solid var(--orange);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.commune_nom_suspect_6 {
+    grid-column: 8;
+    grid-row: 42/47;
     border: 2px solid var(--orange);
     border-radius: 20px 0px 0px 20px;
 }
@@ -205,3 +370,401 @@ div.joueur_tribune {
 /* Structure générale commune_tribune */
 
 /* Structure générale joueur_tribune */
+
+/* Systeme de carte dynamique */
+
+.charsheet .carte_lieu[value="0"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="1"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="2"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="3"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="4"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="5"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_lieu[value="6"] ~ *{
+    --carte_lieu : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_lieu_temp.png);
+}
+
+.charsheet .carte_victime[value="0"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="1"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="2"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="3"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="4"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="5"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="6"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="7"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="8"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="9"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="10"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="11"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="12"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="13"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="14"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_victime[value="15"] ~ *{
+    --carte_victime : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_victime_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="0"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="1"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="2"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="3"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="4"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="5"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="6"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="7"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_cause_deces[value="8"] ~ *{
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+}
+
+.charsheet .carte_indice_1[value="0"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="1"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="2"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="3"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="4"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="5"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="6"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="7"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="8"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="9"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="10"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="11"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="12"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="13"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="14"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="15"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_1[value="16"] ~ *{
+    --carte_indice_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="0"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="1"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="2"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="3"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="4"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="5"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="6"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="7"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="8"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="9"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="10"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="11"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="12"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="13"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="14"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="15"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_2[value="16"] ~ *{
+    --carte_indice_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="0"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="1"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="2"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="3"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="4"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="5"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="6"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="7"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="8"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="9"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="10"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="11"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="12"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="13"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="14"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="15"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_indice_3[value="16"] ~ *{
+    --carte_indice_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_indice_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="0"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="1"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="2"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="3"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="4"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="5"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="6"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="7"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="8"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="9"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="10"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="11"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="12"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="13"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="14"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
+
+.charsheet .carte_suspect_1[value="15"] ~ *{
+    --carte_suspect_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_protagoniste_temp.png);
+}
