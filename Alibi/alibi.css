@@ -1,0 +1,143 @@
+.charsheet {
+    --black: black;
+    --white: #ffffffed;
+    --grey: #737272d4;
+    --text: "Oswald";
+    --cursive: "Dancing Script", cursive;
+    width: 900px;
+    height: 670px;
+    background-image: none;
+    background-color: white;
+    background-size: 880px 495px;
+    background-repeat: no-repeat;
+    font-family: var(--oswald);
+    color: var(--black);
+    font-size: 13px;
+    margin: 0px;
+    box-shadow: 1px 1px 10px 1px #000000;
+}
+
+.sheet-darkmode .sheetform {
+    background-color: #1F1F1F;
+}
+
+/* div { border: 1px solid black;} */
+
+body.sheet-darkmode .charsheet {
+    background-color: white;
+    --black: #000000eb;
+    --fond_carte: #939898ed;
+    color: var(--black);
+    box-shadow: 1px 1px 14px 1px #ff00006e;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0;
+}
+
+div {border: 1px solid black;}
+
+/* Affichage des pages */
+
+div.intro,
+div.commune,
+div.joueur,
+div.commun_crime,
+div.commun_tribune,
+div.joueur_tribune {
+    display: none;
+    border: none;
+}
+
+.charsheet .type_feuille[value="0"] ~ div.intro,
+.charsheet .type_feuille[value="1"] ~ div.commune,
+.charsheet .type_feuille[value="2"] ~ div.joueur,
+.charsheet .page_commune[value="1"] ~ div.commun_crime,
+.charsheet .page_commune[value="2"] ~ div.commun_tribune,
+.charsheet .page_joueur[value="1"] ~ div.joueur_tribune {
+    display: block;
+}
+
+
+
+/* Structure générale intro */
+
+/* Structure générale commune_crime */
+
+.wrapper_crime {
+    display: grid;
+    grid-template-columns: 235px 20px 155px 20px 50px 195px 20px 195px 20px;
+    grid-auto-rows: 12px;
+    margin-top: 5px;
+}
+
+.commune_lieu {
+    grid-column: 1;
+    grid-row: 1 / 7;
+}
+
+.commune_victime {
+    grid-column: 3;
+    grid-row: 1 / 13;
+}
+
+.commune_cause_deces {
+    grid-column: 1;
+    grid-row: 8/13;
+}
+
+.commune_suspect_1 {
+    grid-column: 1/4;
+    grid-row: 14/27;
+}
+
+.commune_suspect_2 {
+    grid-column: 1/4;
+    grid-row: 28/41;
+}
+
+.commune_suspect_3 {
+    grid-column: 1/4;
+    grid-row: 42/55;    
+}
+
+.commune_indice_1 {
+    grid-column: 6;
+    grid-row: 1 / 7;    
+}
+
+.commune_indice_2 {
+    grid-column: 8;
+    grid-row: 1 / 7; 
+    
+}
+
+.commune_indice_3 {
+    grid-column: 6/9;
+    grid-row: 8/13;
+    
+}
+
+.commune_suspect_4 {
+    grid-column: 6/9;
+    grid-row: 14/27;
+}
+
+.commune_suspect_5 {
+    grid-column: 6/9;
+    grid-row: 28/41;
+}
+
+.commune_suspect_6 {
+    grid-column: 6/9;
+    grid-row: 42/55;
+    
+}
+
+
+
+/* Structure générale commune_tribune */
+
+/* Structure générale joueur_tribune */
