@@ -34,7 +34,6 @@
     background-color: #1F1F1F;
 }
 
-
 body.sheet-darkmode .charsheet {
     background-color: white;
     --black: #000000eb;
@@ -43,6 +42,12 @@ body.sheet-darkmode .charsheet {
     box-shadow: 1px 1px 14px 1px #ff00006e;
 }
 
+.shadow {
+    filter: drop-shadow(2px 1px 4px rgba(0, 0, 0, 0.712));
+    display: block;
+    width: 1px;
+  }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -50,10 +55,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 select.choix_carte {
-    color: #00000076;
-    font-size: 10px;
+    color: #000000d1;
+    font-size: 14px;
     width: auto;
-    height: 12px;
+    height: 18px;
     padding: 0;
     margin: 0;
     border: none;
@@ -62,7 +67,7 @@ select.choix_carte {
     border-bottom-width: medium;
     background: transparent;
     border-radius: 0;
-	outline: none;
+    outline: none;
 }
 
 
@@ -240,6 +245,8 @@ div.commune_carte_input_suspect_6 {
     background-size: 100px 79px;
     background-repeat: no-repeat;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_victime {
@@ -253,6 +260,8 @@ div.commune_carte_input_suspect_6 {
     background-repeat: no-repeat;
     margin-top: -10px;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_cause_deces {
@@ -265,6 +274,8 @@ div.commune_carte_input_suspect_6 {
     background-repeat: no-repeat;
     margin-top: -6px;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_indice_1 {
@@ -277,6 +288,8 @@ div.commune_carte_input_suspect_6 {
     background-repeat: no-repeat;
     margin-top: -10px;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_indice_2 {
@@ -289,6 +302,8 @@ div.commune_carte_input_suspect_6 {
     background-repeat: no-repeat;
     margin-top: -10px;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_indice_3 {
@@ -301,6 +316,8 @@ div.commune_carte_input_suspect_6 {
     background-repeat: no-repeat;
     margin-top: -10px;
     transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_1 {
@@ -314,6 +331,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: -4px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_2 {
@@ -327,6 +346,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: -4px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_3 {
@@ -340,6 +361,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: -4px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_4 {
@@ -353,6 +376,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: -4px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_5 {
@@ -366,6 +391,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: 9px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_carte_suspect_6 {
@@ -377,6 +404,8 @@ div.commune_carte_input_suspect_6 {
     margin-top: -4px;
     transform: rotate(-5deg);
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;
 }
 
 .commune_lieu {
@@ -854,39 +883,39 @@ div.commune_carte_input_suspect_6 {
 }
 
 .charsheet .carte_cause_deces[value="0"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_vierge.png);
 }
 
 .charsheet .carte_cause_deces[value="1"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_arme_blanche.png);
 }
 
 .charsheet .carte_cause_deces[value="2"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_chute.png);
 }
 
 .charsheet .carte_cause_deces[value="3"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_en_voiture.png);
 }
 
 .charsheet .carte_cause_deces[value="4"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_par_balle.png);
 }
 
 .charsheet .carte_cause_deces[value="5"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_pendaison.png);
 }
 
 .charsheet .carte_cause_deces[value="6"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_poison.png);
 }
 
 .charsheet .carte_cause_deces[value="7"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_strangulation.png);
 }
 
 .charsheet .carte_cause_deces[value="8"] ~ *{
-    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_temp.png);
+    --carte_cause_deces : url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/carte_cause_deces_z_custom.png);
 }
 
 .charsheet .carte_indice_1[value="0"] ~ *{
