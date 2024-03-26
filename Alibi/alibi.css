@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+/* font-family: "Caveat", cursive; */
+
+
+
+
 .charsheet {
     --black: black;
     --white: #ffffffed;
@@ -5,14 +11,14 @@
     --orange: #c19685;
     --bleu: #8882a6;
     --text: "Oswald";
-    --cursive: "Dancing Script", cursive;
+    --cursive: "Caveat", cursive;
     width: 920px;
     height: 670px;
     background-image: none;
     background-color: #7231000d;
     background-size: 880px 495px;
     background-repeat: no-repeat;
-    font-family: var(--oswald);
+    font-family: var(--cursive);
     color: var(--black);
     font-size: 13px;
     margin: 0px;
@@ -122,6 +128,89 @@ div.commune_carte_input_suspect_6 {
     color: var(--black);
 }
 
+.charsheet textarea.lieu,
+.charsheet textarea.victime,
+.charsheet textarea.cause_deces,
+.charsheet textarea.suspect,
+.charsheet textarea.donnee_indice_1,
+.charsheet textarea.donnee_indice_2,
+.charsheet textarea.donnee_nom_suspect {
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 0px;
+    color: var(--noir);
+    background: transparent;
+    line-height: 21px;
+    font-family: var(--font_amiri);
+    overflow: hidden;
+}
+
+.charsheet textarea.lieu {
+    height: 65px;
+    width: 120px;
+    margin-left: 108px;
+    align-content: center;
+}
+
+.charsheet textarea.victime {
+    height: 100px;
+    width: 139px;
+    margin-top: 5px;
+    margin-left: 8px;
+    line-height: 20px;
+    align-content: center;
+    text-indent: 50px;
+}
+
+.charsheet textarea.cause_deces {
+    height: 55px;
+    width: 164px;
+    padding-top: 1px;
+    margin-left: 58px;
+    line-height: 18px;
+    align-content: center;
+}
+
+.charsheet textarea.suspect {
+    width: 225px;
+    margin-left: 5px;
+    padding-top: 7px;
+    text-indent: 20px;
+}
+
+.charsheet textarea.donnee_indice_1 {
+    height: 65px;
+    width: 126px;
+    margin-left: 51px;
+    align-content: center;
+    text-indent: 5px;
+}
+
+.charsheet textarea.donnee_indice_2 {
+    height: 50px;
+    width: 338px;
+    margin-left: 58px;
+    line-height: 24px;
+    padding-top: 3px;
+    align-content: center;
+    text-indent: 5px;
+}
+
+.charsheet textarea.donnee_nom_suspect {
+    height: 41px;
+    width: 108px;
+    margin-left: 34px;
+    margin-top: 7px;
+    padding-top: 3px;
+    line-height: 18px;
+    text-align: center;
+    align-content: center;
+    text-transform: uppercase;
+}
 
 /* Structure générale intro */
 
@@ -325,6 +414,7 @@ div.commune_carte_input_suspect_6 {
     border: none;
     border-radius: 0px 15px 15px 0px;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_habillage_1_temp.png);
+    background-size: 20px 144px;
 }
 
 .commune_nom_suspect_1 {
@@ -385,12 +475,16 @@ div.commune_carte_input_suspect_6 {
 }
 
 .commune_habillage_2 {
-    grid-column: 4;
+    z-index: 5;
+    grid-column: 3;
     grid-row: 14 / 55;
-    background: grey;
+    width: 42px;
+    height: 492px;
     border: none;
     border-radius: 0px 15px 15px 0px;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_habillage_2_temp.png);
+    background-size: 42px 492px;
+    margin-left: 146px;
 }
 
 .commune_habillage_central {
@@ -434,6 +528,7 @@ div.commune_carte_input_suspect_6 {
     border: none;
     border-radius: 0px 15px 15px 0px;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_habillage_1_temp.png);
+    background-size: 20px 144px;
 }
 
 .commune_nom_suspect_4 {
@@ -497,13 +592,16 @@ div.commune_carte_input_suspect_6 {
 }
 
 .commune_habillage_4 {
-    grid-column: 9;
+    z-index: 5;
+    grid-column: 8;
     grid-row: 14 / 55;
-    background: grey;
+    width: 42px;
+    height: 492px;
     border: none;
     border-radius: 0px 15px 15px 0px;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_habillage_2_temp.png);
-    background-size: 155px 60px;
+    background-size: 42px 492px;
+    margin-left: 186px;
 }
 
 .commune_carte_input_lieu {
