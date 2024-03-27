@@ -27,9 +27,17 @@
             <input type="hidden" name="attr_carte_suspect_4" class="carte_suspect_4"  value="0">
             <input type="hidden" name="attr_carte_suspect_5" class="carte_suspect_5"  value="0">
             <input type="hidden" name="attr_carte_suspect_6" class="carte_suspect_6"  value="0">
+            <input type="hidden" name="attr_page_commune" class="page"  value="1">
             <input type="hidden" name="attr_config" class="config"  value="0">
-            <div class="commune_postit_rouge"></div>
-            <div class="commune_postit_bleu"></div>
+            <div class="commune_onglet_xcard"><button type="action" class="onglet_page" name="act_xcard" title="Cliquez pour utiliser la carte X">X CARD</button></div>
+            <div class="commune_onglet_tribune"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche 
+Tribunes">TRIBUNES</button></div>
+            <div class="commune_onglet_tribune_choix"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche
+Tribunes">TRIBUNES</button></div>
+            <div class="commune_onglet_crime"><button type="action" class="onglet_page" name="act_page_crime" title="Accédez à la fiche
+Investigations">INVESTIGATIONS</button></div>
+            <div class="commune_onglet_crime_choix"><button type="action" class="onglet_page" name="act_page_crime" title="Accédez à la fiche
+Investigations">INVESTIGATIONS</button></div>
             <div class="commune_trombone"></div>
             <div class="commune_carte_lieu"></div>
             <div class="commune_lieu"><textarea class="lieu" name="attr_lieu_data"></textarea></div>
@@ -107,7 +115,7 @@
             <div class="commune_carte_suspect_1"></div>
             <div class="commune_suspect_1">
                 <textarea class="suspect" name="attr_suspect_1_1_data"></textarea>
-                <textarea class="suspect" name="attr_suspect_1_1_data" style="margin-top: -10px;"></textarea>
+                <textarea class="suspect" name="attr_suspect_1_2_data" style="margin-top: -10px;"></textarea>
             </div>
             <div class="commune_nom_suspect_2"><textarea class="donnee_nom_suspect" name="attr_nom_suspect_2"></textarea></div>
             <div class="commune_carte_input_suspect_2">
@@ -330,9 +338,10 @@ déroulants du choix des cartes" >y</button></div>
                 <input type="hidden" name="attr_carte_suspect_4" class="carte_suspect_4"  value="0">
                 <input type="hidden" name="attr_carte_suspect_5" class="carte_suspect_5"  value="0">
                 <input type="hidden" name="attr_carte_suspect_6" class="carte_suspect_6"  value="0">
+                <input type="hidden" name="attr_page_commune" class="page"  value="1">
                 <input type="hidden" name="attr_config" class="config"  value="0">
 
-
+                <!-- Affichage des tribunes -->
                 <div class="commune_tribune_1"></div>
                 <div class="commune_tribune_2"></div>
                 <div class="commune_tribune_3"></div>
@@ -340,9 +349,16 @@ déroulants du choix des cartes" >y</button></div>
                 <div class="commune_tribune_5"></div>
                 <div class="commune_tribune_6"></div>
 
-
-
-                <!-- Affichage fixe du dossier d'enquête -->            
+                <!-- Affichage fixe du dossier d'enquête -->  
+                <div class="commune_onglet_xcard"><button type="action" class="onglet_page" name="act_xcard" title="Cliquez pour utiliser la carte X">X CARD</button></div>
+                <div class="commune_onglet_crime"><button type="action" class="onglet_page" name="act_page_crime" title="Accédez à la fiche
+Investigations">INVESTIGATIONS</button></div>
+                <div class="commune_onglet_crime_choix"><button type="action" class="onglet_page" name="act_page_crime" title="Accédez à la fiche
+Investigations">INVESTIGATIONS</button></div>
+                <div class="commune_onglet_tribune"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche
+Tribunes">TRIBUNES</button></div>
+                <div class="commune_onglet_tribune_choix"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche
+Tribunes">TRIBUNES</button></div>
                 <div class="commune_trombone"></div>
                 <div class="commune_carte_lieu"></div>
                 <div class="commune_lieu"><textarea class="lieu" name="attr_lieu_data" style="cursor: default;pointer-events: none;"></textarea></div>
@@ -425,6 +441,25 @@ déroulants du choix des cartes" >y</button></div>
             else config = 0;
             setAttrs({
                 "config": config
+            });
+        });
+    });
+
+    on('clicked:page_crime', function() {
+        getAttrs(["page_commune"], function(values) {
+
+            setAttrs({
+                page_commune: "1"
+            });
+        });
+    });
+
+    on('clicked:page_tribune', function() {
+        getAttrs(["page_commune"], function(values) {
+            
+
+            setAttrs({
+                page_commune: "2"
             });
         });
     });
