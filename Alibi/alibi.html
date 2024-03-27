@@ -29,7 +29,7 @@
             <input type="hidden" name="attr_carte_suspect_6" class="carte_suspect_6"  value="0">
             <input type="hidden" name="attr_page_commune" class="page"  value="1">
             <input type="hidden" name="attr_config" class="config"  value="0">
-            <div class="commune_onglet_xcard"><button type="action" class="onglet_page" name="act_xcard" title="Cliquez pour utiliser la carte X">X CARD</button></div>
+            <div class="commune_onglet_xcard"><button type="roll" class="onglet_page" name="roll_XCard" value="&{template:xcard}" title="Cliquez pour utiliser la carte X">X CARD</button></div>
             <div class="commune_onglet_tribune"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche 
 Tribunes">TRIBUNES</button></div>
             <div class="commune_onglet_tribune_choix"><button type="action" class="onglet_page" name="act_page_tribune" title="Accédez à la fiche
@@ -468,5 +468,9 @@ Tribunes">TRIBUNES</button></div>
 <!-- --------------------------- -->
 <!-- ----- ROLL TEMPLATE ------- -->
 <!-- --------------------------- -->
+
+<rolltemplate class="sheet-rolltemplate-xcard">
+    <div class="sheet-xcard"></div>
+</rolltemplate>
 
 
