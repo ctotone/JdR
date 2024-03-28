@@ -13,21 +13,13 @@
     --bleu: #273583;
     --text: "Oswald";
     --cursive: "Caveat", cursive;
-    width: 920px;
-    height: 670px;
     font-family: var(--cursive);
     color: var(--black);
     font-size: 13px;
     margin: 0px;
     margin-top: 35px;
     margin-bottom: 25px;
-    padding-top: 20px !important;
-    box-shadow: 20px 15px 15px 1px #000000d1;
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/background_feuille.png);
-    background-size: 950px 660px;
-    background-repeat: no-repeat;
-    background-position: right 21% bottom 0%;
-    border: 1px solid;
+    
 }
 
 .sheet-darkmode .sheetform {
@@ -39,14 +31,38 @@ body.sheet-darkmode .charsheet {
     --black: #000000eb;
     --fond_carte: #939898ed;
     color: var(--black);
+}
+
+div.commune_cadre {
+    width: 920px;
+    height: 670px;
+    padding-top: 20px !important;
+    box-shadow: 20px 15px 15px 1px #000000d1;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/background_feuille.png);
+    background-size: 950px 660px;
+    background-repeat: no-repeat;
+    background-position: right 21% bottom 0%;
+    border: 1px solid;
+}
+
+div.joueur_cadre {
+    width: 810px;
+    height: 400px;
+    padding-top: 20px !important;
+    padding-left: 15px;
+    box-shadow: 20px 15px 15px 1px #000000d1;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/background_feuille.png);
+    background-size: 810px 400px;
+    background-repeat: no-repeat;
+    background-position: right 91% bottom 0%;
+    border: 1px solid;
+}
+
+body.sheet-darkmode .commune_cadre,
+body.sheet-darkmode .joueur_cadre {    
     box-shadow: 1px 1px 14px 1px #ff00006e;
 }
 
-.shadow {
-    filter: drop-shadow(2px 1px 4px rgba(0, 0, 0, 0.712));
-    display: block;
-    width: 1px;
-  }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
@@ -75,11 +91,12 @@ select.choix_carte {
 /* Affichage des pages */
 
 div.intro,
+div.commune_cadre,
 div.commune,
+div.joueur_cadre,
 div.joueur,
 div.commun_crime,
 div.commun_tribune,
-div.joueur_tribune,
 div.commune_carte_input_lieu,
 div.commune_carte_input_victime,
 div.commune_carte_input_cause_deces,
@@ -98,6 +115,8 @@ div.commune_carte_input_suspect_6 {
 .charsheet .type_feuille[value="0"] ~ div.intro,
 .charsheet .type_feuille[value="1"] ~ div.commune,
 .charsheet .type_feuille[value="2"] ~ div.joueur,
+.charsheet .type_feuille[value="1"] ~ div.commune_cadre,
+.charsheet .type_feuille[value="2"] ~ div.joueur_cadre,
 .charsheet .page_commune[value="1"] ~ div.commun_crime,
 .charsheet .page_commune[value="2"] ~ div.commun_tribune,
 .charsheet .page_joueur[value="1"] ~ div.joueur_tribune,
@@ -116,7 +135,8 @@ div.commune_carte_input_suspect_6 {
     display: block;
 }
 
-.charsheet button[type=action]::before {
+.charsheet button[type=action]::before,
+.charsheet button[type=roll].onglet_page::before {
 	content: '';
 }
 
@@ -132,7 +152,8 @@ div.commune_carte_input_suspect_6 {
     color: var(--black);
 }
 
-.charsheet button[type=action].onglet_page {
+.charsheet button[type=action].onglet_page,
+.charsheet button[type=roll].onglet_page {
     border: 1px solid #000000d9;
     padding: 0px;
     padding-left: 5px;
@@ -142,7 +163,8 @@ div.commune_carte_input_suspect_6 {
     font-size: 14px;
 }
 
-.charsheet button[type=action].onglet_page:hover{
+.charsheet button[type=action].onglet_page:hover,
+.charsheet button[type=roll].onglet_page:hover {
     padding-left: 6px;
 }
 
@@ -152,7 +174,9 @@ div.commune_carte_input_suspect_6 {
 .charsheet textarea.suspect,
 .charsheet textarea.donnee_indice_1,
 .charsheet textarea.donnee_indice_2,
-.charsheet textarea.donnee_nom_suspect {
+.charsheet textarea.donnee_nom_suspect,
+.charsheet textarea.donnee_notes,
+.charsheet textarea.donnee_tribune {
     border: none;
     outline: none;
     resize: none;
@@ -229,6 +253,26 @@ div.commune_carte_input_suspect_6 {
     text-align: center;
     align-content: center;
     text-transform: uppercase;
+}
+
+.charsheet textarea.donnee_notes {
+    height: 50px;
+    width: 338px;
+    margin-left: 58px;
+    line-height: 24px;
+    padding-top: 3px;
+    align-content: center;
+    text-indent: 5px;
+}
+
+.charsheet textarea.donnee_tribune {
+    height: 50px;
+    width: 338px;
+    margin-left: 58px;
+    line-height: 24px;
+    padding-top: 3px;
+    align-content: center;
+    text-indent: 5px;
 }
 
 /* Structure générale intro */
@@ -919,17 +963,134 @@ div.commune_onglet_crime {
 
 /* Structure générale joueur_tribune */
 
+.wrapper_joueur {
+    display: grid;
+    grid-template-columns: 375px 0px 0px 0px 40px 375px 0px 0px 0px;
+    grid-auto-rows: 12px;
+    margin-top: 5px;
+}
+
+.joueur_trombone_notes {z-index: 1;
+    grid-column: 1;
+    grid-row: 1;
+    width: 21px;
+    height: 56px;
+    margin-top: -30px;
+    margin-left: 10px;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/trombone.png);
+    background-size: 21px 56px;
+    transform: rotate(-10deg);
+    
+}
+
+.joueur_postit_notes {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100px;
+    height: 79px;
+    margin-top: -10px;
+    background-image: var(--carte_lieu);
+    background-size: 100px 79px;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 15px;    
+}
+
+.joueur_zone_notes {
+    grid-column: 1;
+    grid-row: 1 / 32;
+    border: 2px solid var(--bleu);
+    border-radius: 15px;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_fond_texte_lieu.png);
+    background-size: 235px 72px;
+    box-shadow: 3px 3px 7px 0px #00000069;
+    
+}
+
+.joueur_trombone_tribune {
+    z-index: 6;
+    grid-column: 6;
+    grid-row: 1;
+    width: 21px;
+    height: 56px;
+    margin-top: -30px;
+    margin-left: 10px;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/trombone.png);
+    background-size: 21px 56px;
+    transform: rotate(-10deg);    
+}
+
+.joueur_postit_tribune {
+    grid-column: 6;
+    grid-row: 1;
+    height: 50px;
+    width: 50px;
+    background-image: var(--carte_indice_1);
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    transform: rotate(-10deg);
+    box-shadow: 4px 4px 7px 1px #000000c4;
+    border-radius: 5px;    
+}
+
+.joueur_zone_tribune {
+    grid-column: 6;
+    grid-row: 1 / 32;
+    border: 2px solid var(--bleu);
+    border-radius: 20px 20px 20px 20px;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/commune_fond_texte_indice_court.png);
+    background-size: 195px 72px;
+    box-shadow: 3px 3px 7px 0px #00000069;
+    
+}
+
+.joueur_annoncer {
+    grid-column: 2;
+    grid-row: 1;
+    
+}
+
 /* Roll template */
 .sheet-rolltemplate-xcard {
-    margin-left: -10px;
+    margin-left: 20px;
+  }
+  .withoutavatars .sheet-rolltemplate-xcard {
+    margin-left: -7px;
+  }
+  
+  .sheet-rolltemplate-xcard .sheet-container {
+    border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 200px;
+    height: 200px;
   }
 
-.sheet-rolltemplate-xcard .sheet-xcard {
-    width: 240px;
-    height: 240px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/xcard.png);
-    background-size: 240px 240px;
-}
+  
+  .sheet-rolltemplate-xcard .sheet-container {
+    --header-bg-color: rgb(0, 0, 0);
+    --header-text-color: #FFF;
+  }
+  
+.sheet-rolltemplate-xcard .sheet-content {
+    display: grid;
+    width: 200px;
+    height: 200px;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/xcard.png);
+    background-size: 200px 200px;
+    grid-template-columns: auto auto;
+    line-height:1.4em;
+  }
+
+  /* Description field */
+  .sheet-rolltemplate-xcard .sheet-desc {
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+  }
+
+
 /* Systeme de carte dynamique */
 
 .charsheet .carte_lieu[value="0"] ~ *{
