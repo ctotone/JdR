@@ -1,7 +1,7 @@
 <!-- ----------------- -->
 <!-- Valeurs integrées -->
 <!-- ----------------- -->
-<input type="hidden" name="attr_type_feuille" class="type_feuille" value="1">
+<input type="hidden" name="attr_type_feuille" class="type_feuille" value="0">
 
 <!-- --------------------- -->
 <!-- Feuille de personnage -->
@@ -448,7 +448,10 @@
                 <div class="joueur_trombone_tribune"></div>
                 <div class="joueur_postit_tribune">TRIBUNE</div>
                 <div class="joueur_zone_tribune"><textarea class="donnee_tribune" name="attr_tribune"></textarea></div>
-                <div class="joueur_annoncer">Partagez votre tribune dans la fenêtre de discussion</div>
+                <div class="joueur_annoncer">
+                    <button type="roll" class="partage_tribune" name="roll_Tribune" value="&{template:tribune} {{title=tribune}} {{tribune=oui}} {{texte=@{tribune}}} {{confirm=?{Confirmer le partage|OUI}}}" title="Cliquez pour partagez votre tribune 
+dans la fenêtre de discussion">Partagez votre tribune dans la fenêtre de discussion</button>
+                </div>
             </div>
         </div>
     </div>
@@ -520,12 +523,22 @@
 
             
 <rolltemplate class="sheet-rolltemplate-xcard">
-    <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-container">
       {{#xcard}}
-      <div class="sheet-content">&nbsp;</div>
-      </div>
+      <div class="sheet-content-xcard">&nbsp;</div>
       {{/xcard}}
+      {{#tribune}}
+      <div class="sheet-content-tribune">&nbsp;</div>
+      {{/tribune}}
     </div>
-  </rolltemplate>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-tribune">
+    <div class="sheet-container">
+      {{#tribune}}
+      <div class="sheet-content-tribune">{{texte}}</div>
+      {{/tribune}}
+    </div>
+</rolltemplate>
 
 

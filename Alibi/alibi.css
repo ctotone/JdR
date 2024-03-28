@@ -157,7 +157,8 @@ div.commune_carte_input_suspect_6 {
 }
 
 .charsheet button[type=action]::before,
-.charsheet button[type=roll].onglet_page::before {
+.charsheet button[type=roll].onglet_page::before,
+.charsheet button[type=roll].partage_tribune::before {
 	content: '';
 }
 
@@ -209,6 +210,30 @@ div.commune_carte_input_suspect_6 {
     text-align: center;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/image_joueur.png);
     background-size: 312px 164px;
+}
+
+.charsheet button[type=roll].partage_tribune {
+    width: 320px;
+    height: 80px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 0px;
+    font-size: 19px;
+    color: var(--white);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-wrap: wrap;
+    line-height: 34px;
+    background: radial-gradient(circle, rgba(165, 2, 2, 1) 0%, rgba(179, 0, 0, 1) 35%, rgba(123, 2, 2, 1) 100%);
+    box-shadow: 3px 3px 7px 1px #00000053;
+}
+
+.charsheet button[type=roll].partage_tribune:hover {
+    padding-left: 2px;    
+    box-shadow: 3px 3px 7px 1px #000000b5;
 }
 
 .charsheet button[type=action].boutton_joueur:hover{
@@ -324,6 +349,7 @@ div.commune_carte_input_suspect_6 {
     line-height: 26px;
     text-align: center;
     transform: rotate(0deg);
+    font-weight: bold;
 }
 
 /* Structure générale intro */
@@ -1163,7 +1189,7 @@ div.commune_onglet_crime {
     height: 253px;
     margin-left: -15px;
     border: 2px solid var(--bleu);
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 5px;
     background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/tribune_cadre_background.png);
     background-size: 390px 253px;
     box-shadow: 3px 3px 7px 0px #00000069;
@@ -1175,58 +1201,82 @@ div.commune_onglet_crime {
     grid-row: 25;
     width: 320px;
     height: 80px;
-    font-size: 19px;
-    border: 3px solid black;
-    color: var(--white);
-    text-transform: uppercase;
     margin-left: 21px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     transform: rotate(-1deg);
-    border-radius: 10px;
-    background: rgb(165, 2, 2);
-    background: radial-gradient(circle, rgba(165, 2, 2, 1) 0%, rgba(179, 0, 0, 1) 35%, rgba(123, 2, 2, 1) 100%);
 }
 
 /* Roll template */
 .sheet-rolltemplate-xcard {
     margin-left: 20px;
-  }
-  .withoutavatars .sheet-rolltemplate-xcard {
-    margin-left: -7px;
-  }
+}
+.sheet-rolltemplate-tribune {
+      margin-left: -35px;
+    }
   
-  .sheet-rolltemplate-xcard .sheet-container {
+.sheet-rolltemplate-xcard .sheet-container {
     border: 2px solid;
     border-color: var(--header-bg-color);
     width: 200px;
     height: 200px;
-  }
+    box-shadow: 3px 3px 7px 0px #00000069;
+    border-radius: 15px;
+ }
+
+ .sheet-rolltemplate-tribune .sheet-container {
+    border: 2px solid;
+    border-color: #273583;
+    width: 300px;
+    height: 230px;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/tribune_cadre_background.png);
+    background-size: 300px 230px;
+    transform: rotate(1deg);
+    box-shadow: 3px 3px 7px 0px #00000069;
+    border-radius: 5px;
+ }
 
   
-  .sheet-rolltemplate-xcard .sheet-container {
+.sheet-rolltemplate-xcard .sheet-container,
+.sheet-rolltemplate-tribune .sheet-container {
     --header-bg-color: rgb(0, 0, 0);
     --header-text-color: #FFF;
-  }
+}
   
-.sheet-rolltemplate-xcard .sheet-content {
-    display: grid;
+.sheet-rolltemplate-xcard .sheet-content-xcard {
     width: 200px;
     height: 200px;
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/xcard.png);
     background-size: 200px 200px;
     grid-template-columns: auto auto;
     line-height:1.4em;
-  }
+    border-radius: 12px;
+}
+
+.sheet-rolltemplate-tribune .sheet-content-tribune {
+    width: 260px;
+    height: 137px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 62px;
+    line-height: 20px;
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
   /* Description field */
-  .sheet-rolltemplate-xcard .sheet-desc {
+.sheet-rolltemplate-xcard .sheet-desc,
+.sheet-rolltemplate-tribune .sheet-desc {
     grid-column: span 2;
     padding: 5px;
     text-align: center;
-  }
+}
 
 
 /* Systeme de carte dynamique */
