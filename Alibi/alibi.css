@@ -19,6 +19,7 @@
     margin: 0px;
     margin-top: 35px;
     margin-bottom: 25px;
+    margin-left: -10px;
     
 }
 
@@ -31,6 +32,21 @@ body.sheet-darkmode .charsheet {
     --black: #000000eb;
     --fond_carte: #939898ed;
     color: var(--black);
+}
+
+div.commun_intro {
+    width: 810px;
+    height: 400px;
+    padding-top: 20px !important;
+    padding-left: 15px;
+    box-shadow: 20px 15px 15px 1px #000000d1;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/background_feuille.png);
+    background-size: 810px 800px;
+    background-repeat: no-repeat;
+    background-position: right 45% bottom 0%;
+    border: 1px solid;
+    padding-left: 25px;
+    padding-right: 10px;
 }
 
 div.commune_cadre {
@@ -285,6 +301,60 @@ div.commune_carte_input_suspect_6 {
 }
 
 /* Structure générale intro */
+
+.wrapper_intro {
+    display: grid;
+    grid-template-columns: 269px 100px 69px 100px 269px;
+    grid-auto-rows: 12px;
+    margin-top: 5px;;
+    grid-auto-rows: 12px;
+    margin-top: 5px;
+}
+
+.intro_titre {
+    height: 50px;
+    grid-column: 1 / 6;
+    grid-row: 1;
+    text-align: center;
+    background: radial-gradient(circle, rgba(165, 2, 2, 1) 0%, rgba(179, 0, 0, 1) 35%, rgba(123, 2, 2, 1) 100%);
+    color: white;
+    box-shadow: 3px 3px 7px 0px #00000069;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 5px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.intro_clic_1 {
+    grid-column: 1/3;
+    grid-row: 2;
+    width: 300px;
+    height: 233px;
+    text-align: center;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/image_commune.png);
+    background-size: 300px 233px;
+    margin-top: 70px;
+    margin-left: 50px;
+    transform: rotate(-3deg);
+}
+
+.intro_clic_2 {
+    grid-column: 4/6;
+    grid-row: 2;
+    width: 300px;
+    height: 164px;
+    text-align: center;
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/image_joueur.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 105px;
+    margin-left: 20px;
+    transform: rotate(3deg);
+}
 
 
 /* Structure générale commune_crime */
