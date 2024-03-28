@@ -458,8 +458,29 @@
 <!-- ----- SCRIPT ------- -->
 <!-- -------------------- -->
 
-<!-- Boutton config -->
+<!-- Boutton config et autres -->
 <script type="text/worker">
+    on('clicked:choix_type_commune', function() {
+        getAttrs(["type_feuille", "page_commune"], function(values) {
+            
+
+            setAttrs({
+                type_feuille: "1",
+                page_commune: "1"
+            });
+        });
+    });
+
+    on('clicked:choix_type_joueur', function() {
+        getAttrs(["type_feuille"], function(values) {
+            
+
+            setAttrs({
+                type_feuille: "2"
+            });
+        });
+    });
+
     on('clicked:config', function() {
         getAttrs(["config"], function(values) {
             
@@ -491,7 +512,7 @@
             });
         });
     });
-    </script>
+</script>
 
 <!-- --------------------------- -->
 <!-- ----- ROLL TEMPLATE ------- -->
