@@ -347,12 +347,12 @@
                     <input type="hidden" name="attr_config" class="config"  value="0">
 
                     <!-- Affichage des tribunes -->
-                    <div class="commune_tribune_1"></div>
-                    <div class="commune_tribune_2"></div>
-                    <div class="commune_tribune_3"></div>
-                    <div class="commune_tribune_4"></div>
-                    <div class="commune_tribune_5"></div>
-                    <div class="commune_tribune_6"></div>
+                    <div class="commune_tribune_1"><textarea class="donnee_tribune" name="attr_tribune_1"></textarea></div>
+                    <div class="commune_tribune_2"><textarea class="donnee_tribune" name="attr_tribune_2"></textarea></div>
+                    <div class="commune_tribune_3"><textarea class="donnee_tribune" name="attr_tribune_3"></textarea></div>
+                    <div class="commune_tribune_4"><textarea class="donnee_tribune" name="attr_tribune_4"></textarea></div>
+                    <div class="commune_tribune_5"><textarea class="donnee_tribune" name="attr_tribune_5"></textarea></div>
+                    <div class="commune_tribune_6"><textarea class="donnee_tribune" name="attr_tribune_6"></textarea></div>
 
                     <!-- Affichage fixe du dossier d'enquête -->  
                     <div class="commune_onglet_xcard"><button type="roll" class="onglet_page" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" title="Cliquez pour utiliser la carte X">X CARD</button></div>
@@ -433,15 +433,15 @@
         <!-- Page note et Tribune joueur -->
         <div class="joueur_tribune">
             <div class="wrapper_joueur">
-                <div class="joueur_trombone_notes">trombone</div>
-                <div class="joueur_postit_notes">postit_notes</div>
-                <div class="joueur_zone_notes"><textarea class="donnee_notes" name="attr_notes">Mes notes</textarea></div>
+                <div class="joueur_trombone_notes"></div>
+                <div class="joueur_postit_notes">NOTES</div>
+                <div class="joueur_zone_notes"><textarea class="donnee_notes" name="attr_notes"></textarea></div>
                 
                 
-                <div class="joueur_trombone_tribune">trombone</div>
-                <div class="joueur_postit_tribune">postit tribune</div>
-                <div class="joueur_zone_tribune"><textarea class="donnee_tribune" name="attr_tribune">Mes notes</textarea></div>
-                <div class="joueur_annoncer">icone</div>
+                <div class="joueur_trombone_tribune"></div>
+                <div class="joueur_postit_tribune">TRIBUNE</div>
+                <div class="joueur_zone_tribune"><textarea class="donnee_tribune" name="attr_tribune"></textarea></div>
+                <div class="joueur_annoncer">Partagez votre tribune dans la fenêtre de discussion</div>
             </div>
         </div>
     </div>
@@ -494,7 +494,7 @@
 <rolltemplate class="sheet-rolltemplate-xcard">
     <div class="sheet-container sheet-color-{{color}}">
       {{#xcard}}
-      <div class="sheet-content">test</div>
+      <div class="sheet-content">&nbsp;</div>
       </div>
       {{/xcard}}
     </div>
