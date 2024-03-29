@@ -173,6 +173,18 @@ div.commune_carte_input_suspect_6 {
     color: var(--black);
 }
 
+.charsheet button[type=action].reset {
+    border: none;
+    padding: 0;
+    background: none;
+    color: transparent;
+    font-size: 20px;
+}
+
+.charsheet button[type=action].reset:hover{
+    color: #00000021;
+}
+
 .charsheet button[type=action].onglet_page,
 .charsheet button[type=roll].onglet_page {
     border: 1px solid #000000d9;
@@ -540,8 +552,8 @@ div.commune_onglet_crime {
     font-size: 20px;
 }
 
-.commune_config {
-    grid-column: 1;
+.commune_reset {
+    grid-column: 10;
     grid-row: 55;
     font-family: 'Pictos';
     font-size: 20px;
