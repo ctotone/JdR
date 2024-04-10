@@ -469,12 +469,13 @@ dans la fenêtre de discussion"><span data-i18n="partager_tribune">Partagez votr
 <!-- Boutton config et autres -->
 <script type="text/worker">
     on('clicked:choix_type_commune', function() {
-        getAttrs(["type_feuille", "page_commune"], function(values) {
+        getAttrs(["type_feuille", "page_commune", "character_name"], function(values) {
             
 
             setAttrs({
                 type_feuille: "1",
-                page_commune: "1"
+                page_commune: "1",
+                character_name: "Feuille commune"
             });
         });
     });
