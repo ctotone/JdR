@@ -92,18 +92,28 @@ input[type=number]::-webkit-outer-spin-button {
       margin: 0;
 }
 
-select.choix_carte {
-    color: #000000d1;
+select.choix_carte_bleu {    
+    color: white;
     font-size: 14px;
     width: auto;
-    height: 18px;
-    padding: 0;
+    height: 27px;
+    padding: 2px;
     margin: 0;
-    border: none;
-    border-bottom-color: currentcolor;
-    border-bottom-style: none;
-    border-bottom-width: medium;
-    background: transparent;
+    border: 1px solid #000000fc;
+    background: #273583;
+    border-radius: 0;
+    outline: none;
+}
+
+select.choix_carte_rouge {
+    color: white;
+    font-size: 14px;
+    width: auto;
+    height: 27px;
+    padding: 2px;
+    margin: 0;
+    border: 1px solid #00000078;
+    background: #cd1619;
     border-radius: 0;
     outline: none;
 }
@@ -562,7 +572,7 @@ div.commune_onglet_crime {
     width: 90px;
     height: 25px;
     margin-top: -51px;
-    margin-left: 260px;
+    margin-left: 146px;
     background: #737272;
     border-radius: 10px 16px 0px 0px;
     border: 1px solid var(--black);
@@ -1022,6 +1032,7 @@ div.commune_onglet_crime {
     grid-row: 1;
     margin-top: -18px;
     margin-left: 96px;
+    z-index: 1;
 }
 
 .commune_carte_input_victime {
@@ -1029,6 +1040,7 @@ div.commune_onglet_crime {
     grid-row: 1;
     margin-top: -18px;
     margin-left: 36px;
+    z-index: 1;
 }
 
 .commune_carte_input_cause_deces {
@@ -1036,6 +1048,7 @@ div.commune_onglet_crime {
     grid-row: 8;
     margin-top: -16px;
     margin-left: 45px;
+    z-index: 1;
 }
 
 .commune_carte_input_indice_1 {
@@ -1044,6 +1057,7 @@ div.commune_onglet_crime {
     margin-right: 105px;
     margin-top: -18px;
     margin-left: 48px;
+    z-index: 1;
 }
 
 .commune_carte_input_indice_2 {
@@ -1051,6 +1065,7 @@ div.commune_onglet_crime {
     grid-row: 1;
     margin-top: -18px;
     margin-left: 48px;
+    z-index: 1;
 }
 
 .commune_carte_input_indice_3 {
@@ -1058,6 +1073,7 @@ div.commune_onglet_crime {
     grid-row: 8;
     margin-top: -16px;
     margin-left: 48px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_1 {
@@ -1065,7 +1081,8 @@ div.commune_onglet_crime {
     grid-column: 3;
     grid-row: 20;
     margin-top: -16px;
-    margin-left: 122px;
+    margin-left: 110px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_2 {
@@ -1073,7 +1090,8 @@ div.commune_onglet_crime {
     grid-column: 3;
     grid-row: 34;
     margin-top: -16px;
-    margin-left: 122px;
+    margin-left: 110px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_3 {
@@ -1081,7 +1099,8 @@ div.commune_onglet_crime {
     grid-column: 3;
     grid-row: 48;
     margin-top: -16px;
-    margin-left: 122px;
+    margin-left: 110px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_4 {
@@ -1089,7 +1108,8 @@ div.commune_onglet_crime {
     grid-column: 8;
     grid-row: 20;
     margin-top: -16px;
-    margin-left: 163px;
+    margin-left: 150px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_5 {
@@ -1097,7 +1117,8 @@ div.commune_onglet_crime {
     grid-column: 8;
     grid-row: 33;
     margin-top: -4px;
-    margin-left: 163px;
+    margin-left: 150px;
+    z-index: 1;
 }
 
 .commune_carte_input_suspect_6 {
@@ -1105,7 +1126,8 @@ div.commune_onglet_crime {
     grid-column: 8;
     grid-row: 48;
     margin-top: -16px;
-    margin-left: 163px;
+    margin-left: 150px;
+    z-index: 2;
 }
 
 /* Structure générale commune_tribune */
