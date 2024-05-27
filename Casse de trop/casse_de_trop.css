@@ -74,6 +74,28 @@ select.choix_carte_butin {
 	text-align: center;
 }
 
+.charsheet button[type=roll].button_xcard::before {
+	content: '';
+}
+
+.charsheet button[type=roll].button_xcard {
+    width: 70px;
+    height: 119px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/xcard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid #000000b0;
+    box-shadow: 3px 3px 7px 3px #000;
+    padding: 0;
+    margin: 0;
+}
+
+.charsheet button[type=roll].button_xcard:hover {
+    margin-left: -1px;
+    padding: 0px;
+    background-position: unset;
+}
+
 div.commune {  
 	width: 960px;
 	height: 800px;
@@ -132,6 +154,7 @@ body.sheet-darkmode .commune {
     grid-row: 12;
 	margin-top: 10px;
 	margin-left: -30px;
+    transform: rotate(-2deg);
 	/* border: 1px solid red; */
 }
 
@@ -140,6 +163,7 @@ body.sheet-darkmode .commune {
     grid-row: 2;
 	margin-top: -15px;
 	margin-left: -10px;
+    transform: rotate(2deg);
 	/* border: 1px solid red; */
 }
 
@@ -148,6 +172,7 @@ body.sheet-darkmode .commune {
     grid-row: 2;
 	margin-left: 90px;
 	margin-top: -15px;
+    transform: rotate(-2deg);
 	/* border: 1px solid red; */
 }
 
@@ -156,6 +181,7 @@ body.sheet-darkmode .commune {
     grid-row: 12;
 	margin-top: 10px;
 	margin-left: 30px;
+    transform: rotate(2deg);
 	/* border: 1px solid red; */
 }
 
@@ -163,6 +189,7 @@ body.sheet-darkmode .commune {
 	grid-column: 3;
     grid-row: 23;
 	margin-left: -10px;
+    transform: rotate(-2deg);
 	/* border: 1px solid red; */
 }
 
@@ -170,22 +197,20 @@ body.sheet-darkmode .commune {
 	grid-column: 6;
     grid-row: 23;
 	margin-left: 90px;
+    transform: rotate(2deg);
 	/* border: 1px solid red; */
 }
 
 .xcard {
-	grid-column: 2;
-	grid-row: 24;
-	width: 82px;
-	height: 140px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/xcard.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	border: 1px solid #000000b0;
-	transform: rotate(-11deg);
-	margin-top: 49px;
-	margin-left: -6px;
-	box-shadow: 3px 3px 7px 3px #000;
+    grid-column: 2;
+    grid-row: 24;
+    width: 70px;
+    height: 119px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-11deg);
+    margin-top: 77px;
+    margin-left: -14px;
 }
 
 /* Structure cadre joueur */
@@ -269,6 +294,38 @@ body.sheet-darkmode .commune {
 	margin-top: 25px;
 	/* border: 1px solid red; */
 }
+
+/* Roll template */
+.sheet-rolltemplate-xcard {
+    margin-left: 20px;
+}
+
+.sheet-rolltemplate-xcard .sheet-container {
+    border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 168px;
+    height: 288px;
+    box-shadow: 3px 3px 7px 0px #000000db;
+    border-radius: 15px;
+ }
+
+ .sheet-rolltemplate-xcard .sheet-container {
+    --header-bg-color: rgb(0, 0, 0);
+    --header-text-color: #FFF;
+}
+
+.sheet-rolltemplate-xcard .sheet-content-xcard {
+    width: 168px;
+    height: 288px;
+    border-radius: 12px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/xcard.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
 
 /* Systeme de carte dynamique */
 
