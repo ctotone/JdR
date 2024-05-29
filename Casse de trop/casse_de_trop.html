@@ -1,50 +1,52 @@
 <div class="commune">
 	<input type="hidden" name="attr_carte_butin" class="carte_butin"  value="0">
-	<input type="hidden" name="attr_carte_personnage_1" class="carte_personnage_1"  value="0">
-	<input type="hidden" name="attr_carte_personnage_2" class="carte_personnage_2"  value="0">
-	<input type="hidden" name="attr_carte_personnage_3" class="carte_personnage_3"  value="0">
-	<input type="hidden" name="attr_carte_personnage_4" class="carte_personnage_4"  value="0">
-	<input type="hidden" name="attr_carte_personnage_5" class="carte_personnage_5"  value="0">
-	<input type="hidden" name="attr_carte_personnage_6" class="carte_personnage_6"  value="0">
+	<input type="hidden" name="attr_carte_personnage_1" class="carte_personnage_1" value="0">
+	<input type="hidden" name="attr_carte_personnage_2" class="carte_personnage_2" value="0">
+	<input type="hidden" name="attr_carte_personnage_3" class="carte_personnage_3" value="0">
+	<input type="hidden" name="attr_carte_personnage_4" class="carte_personnage_4" value="0">
+	<input type="hidden" name="attr_carte_personnage_5" class="carte_personnage_5" value="0">
+	<input type="hidden" name="attr_carte_personnage_6" class="carte_personnage_6" value="0">
+	<input type="hidden" name="attr_affichage" class="affichage_compteur" value="0">
+	<input type="hidden" name="attr_valeur_compteur" class="compteur_variable"  value="0">
 	<div class="wrapper_page">
+		<button type="action" class="button_switch_compteur" name="act_switch_compteur" data-i18n-title="affichage_compteur" title="Afficher / Masquer le compteur">y</button>
 		<!-- Butin -->
 		<div class="butin_carte"></div>
 		<div class="butin_select">
 			<select class="choix_carte_butin" name="attr_carte_butin">
-				<option value="0" selected="selected" style="background-color : #6f0406; color: #ffffffb5;">Choix du Butin</option>
-				<option value="1">Argent du casino</option>
-				<option value="2">Cambriolage du manoir</option>
-				<option value="3">Documents Top-Secret</option>
-				<option value="4">Drogue du cartel</option>
-				<option value="5">Échantillon de virus</option>
-				<option value="6">Évasion d'un parrain</option>
-				<option value="7">Joyaux de la couronne</option>
-				<option value="8">Kidnapping</option>
-				<option value="9">Ogives nucléaires</option>
-				<option value="10">Tableaux de maîtres</option>
+				<option value="0" selected="selected" style="background-color : #6f0406; color: #ffffffb5;" data-i18n-list="choix_butin_dos">Choix du Butin</option>
+				<option value="1" data-i18n-list="choix_butin_casino">Argent du casino</option>
+				<option value="2" data-i18n-list="choix_butin_manoir">Cambriolage du manoir</option>
+				<option value="3" data-i18n-list="choix_butin_documents">Documents Top-Secret</option>
+				<option value="4" data-i18n-list="choix_butin_drogue">Drogue du cartel</option>
+				<option value="5" data-i18n-list="choix_butin_virus">Échantillon de virus</option>
+				<option value="6" data-i18n-list="choix_butin_parrain">Évasion d'un parrain</option>
+				<option value="7" data-i18n-list="choix_butin_joyaux">Joyaux de la couronne</option>
+				<option value="8" data-i18n-list="choix_butin_kidnapping">Kidnapping</option>
+				<option value="9" data-i18n-list="choix_butin_ogives">Ogives nucléaires</option>
+				<option value="10" data-i18n-list="choix_butin_tableaux">Tableaux de maîtres</option>
 			</select>
 		</div>
 		<!-- Joueur 1 -->
 		<div class="joueur1">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_1" class="carte_personnage_1"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_1" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_1" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur1_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_1">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
@@ -52,24 +54,23 @@
 		<!-- Joueur 2 -->
 		<div class="joueur2">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_2" class="carte_joueur_2"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_2" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_2" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur2_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_2">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
@@ -77,24 +78,23 @@
 		<!-- Joueur 3 -->
 		<div class="joueur3">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_3" class="carte_joueur_3"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_3" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_3" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur3_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_3">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
@@ -102,24 +102,23 @@
 		<!-- Joueur 4 -->
 		<div class="joueur4">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_4" class="carte_joueur_4"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_4" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_4" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur4_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_4">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
@@ -127,24 +126,23 @@
 		<!-- Joueur 5 -->
 		<div class="joueur5">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_5" class="carte_joueur_5"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_5" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_5" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur5_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_5">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
@@ -152,29 +150,34 @@
 		<!-- Joueur 6 -->
 		<div class="joueur6">
 			<div class="wrapper_joueur">
-			<input type="hidden" name="attr_carte_personnage_6" class="carte_joueur_6"  value="0">
-				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_6" placeholder="Nom du personnage">
+				<div class="joueur_nom"><input type="text" class="nom_personnage" name="attr_nom_6" placeholder="Nom du personnage" data-i18n-placeholder="nom_personnage">
 				</div>
 				<div class="joueur6_carte">
 				</div>
 				<div class="joueur_select">
 					<select class="choix_carte" name="attr_carte_personnage_6">
-                        <option value="0" selected="selected" style="background-color : #a80b0e; color: ffffffd1;">Choix du personnage</option>
-                        <option value="1">L'As du volant</option>
-                        <option value="2">Le Cerveau de l'opération</option>
-                        <option value="3">L'Experte en démolition</option>
-                        <option value="4">La Faussaire</option>
-                        <option value="5">Le Guetteur</option>
-                        <option value="6">Le Hacker</option>
-                        <option value="7">L'Infiltré</option>
-                        <option value="8">Le Porte-Flingues</option>
-                        <option value="9">La Receleuse</option>
-                        <option value="10">La Séductrice</option>
+                        <option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_dos">Choix du personnage</option>
+                        <option value="1" data-i18n-list="choix_personnage_as">L'As du volant</option>
+                        <option value="2" data-i18n-list="choix_personnage_cerveau">Le Cerveau de l'opération</option>
+                        <option value="3" data-i18n-list="choix_personnage_demolition">L'Experte en démolition</option>
+                        <option value="4" data-i18n-list="choix_personnage_faussaire">La Faussaire</option>
+                        <option value="5" data-i18n-list="choix_personnage_guetteur">Le Guetteur</option>
+                        <option value="6" data-i18n-list="choix_personnage_hacker">Le Hacker</option>
+                        <option value="7" data-i18n-list="choix_personnage_infiltre">L'Infiltré</option>
+                        <option value="8" data-i18n-list="choix_personnage_flingues">Le Porte-Flingues</option>
+                        <option value="9" data-i18n-list="choix_personnage_receleuse">La Receleuse</option>
+                        <option value="10" data-i18n-list="choix_personnage_seductrice">La Séductrice</option>
                     </select>
 				</div>
 			</div>
 		</div>
-		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" title="Cliquez pour utiliser la carte X"></button></div>
+		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" data-i18n-title="utiliser_xcard" title="Cliquez pour utiliser la carte X"></button></div>
+		<input type="hidden" name="attr_affichage" class="affichage_compteur"  value="0">
+		<input type="hidden" name="attr_valeur_compteur" class="valeur_compteur" value="0">
+		<div class="afficher_compteur">			
+			<button type="action" class="button_compteur_plus" name="act_compteur_plus" data-i18n-title="compteur_plus" title="Augmenter le compteur">+</button>
+			<button type="action" class="button_compteur_reset" name="act_compteur_reset" data-i18n-title="compteur_reset" title="Réinitialiser le compteur">reset</button>
+		</div>		
 	</div>
 </div>
 
@@ -187,3 +190,62 @@
       {{/xcard}}
     </div>
 </rolltemplate>
+
+
+<!-- ----- SCRIPT ------- -->
+
+<script type="text/worker">
+	on('clicked:switch_compteur', function() {
+        getAttrs(["affichage"], function(values) {
+            
+        let affichage = parseInt(values["affichage"]) || 0;
+
+            if (affichage == 0) affichage = 1;
+            else affichage = 0;
+            setAttrs({
+                "affichage": affichage
+            });
+        });
+    });
+
+	on('clicked:compteur_reset', function() {
+        getAttrs(["valeur_compteur"], function(values) {
+            
+		let valeur_compteur = 0;
+
+            setAttrs({
+                "valeur_compteur": valeur_compteur
+            });
+        });
+    });
+
+	on('clicked:compteur_plus', function() {
+        getAttrs(["valeur_compteur"], function(values) {
+            
+		let valeur_compteur = parseInt(values["valeur_compteur"]) || 0;
+
+		if (valeur_compteur == 0) valeur_compteur = 1;
+		else if (valeur_compteur == 1) valeur_compteur = 2;
+		else if (valeur_compteur == 2) valeur_compteur = 3;
+		else if (valeur_compteur == 3) valeur_compteur = 4;
+		else if (valeur_compteur == 4) valeur_compteur = 5;
+		else if (valeur_compteur == 5) valeur_compteur = 6;
+		else if (valeur_compteur == 6) valeur_compteur = 7;
+		else if (valeur_compteur == 7) valeur_compteur = 8;
+		else if (valeur_compteur == 8) valeur_compteur = 9;
+		else if (valeur_compteur == 9) valeur_compteur = 10;
+		else if (valeur_compteur == 10) valeur_compteur = 11;
+		else if (valeur_compteur == 11) valeur_compteur = 12;
+		else if (valeur_compteur == 12) valeur_compteur = 13;
+		else if (valeur_compteur == 13) valeur_compteur = 14;
+		else if (valeur_compteur == 14) valeur_compteur = 15;
+		else if (valeur_compteur >= 15) valeur_compteur = 15;
+
+
+            setAttrs({
+                "valeur_compteur": valeur_compteur
+            });
+        });
+    });
+
+</script>

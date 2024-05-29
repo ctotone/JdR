@@ -101,9 +101,9 @@ div.commune {
 	height: 800px;
 	box-shadow: 3px 3px 15px 5px #000000;
 	background-color: #efefef;
-	border-radius: 5px;
+	border-radius: 15px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/plateau.webp);
-	background-size: contain;
+    background-size: 960px 801px;
 	background-repeat: no-repeat;    
     border: 2px solid #000000d4;
 }
@@ -111,6 +111,53 @@ div.commune {
 body.sheet-darkmode .commune {
 	box-shadow: 1px 1px 14px 1px #ffffff6e;    
     border: 2px solid #0f2f28;
+}
+
+/* Affichage compteur et defilement */
+
+div.afficher_compteur {
+    display: none;
+}
+
+.charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur {
+    display: grid;
+}
+
+.charsheet button[type=action].button_switch_compteur {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #00000054;
+    font-family: 'Pictos';
+    font-size: 30px;
+}
+
+.charsheet button[type=action].button_switch_compteur:hover{
+    color: var(--black);
+}
+
+.charsheet button[type=action].button_compteur_plus{
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid red; */
+    padding: 0;
+    background: none;
+    margin-top: 46px;
+    margin-left: -5px;
+    cursor: cell;
+    border: none;
+}
+
+.charsheet button[type=action].button_compteur_reset {
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid red; */
+    padding: 0;
+    background: none;
+    margin-top: -117px;
+    margin-left: 124px;
+    cursor: pointer;
+    border: none;
 }
 
 /* Structure générale de la page */
@@ -121,6 +168,19 @@ body.sheet-darkmode .commune {
     grid-auto-rows: 25px;
 	padding-top: 10px;
 	/* border: 1px solid red; */
+}
+
+.afficher_compteur {
+    grid-column: 5;
+    grid-row: 5;
+    width: 171px;
+    height: 221px;
+    margin-left: -45px;
+    margin-top: -4px;
+    background-image: var(--compteur_variable);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
 }
 
 .butin_carte {
@@ -332,6 +392,72 @@ body.sheet-darkmode .commune {
 
 
 /* Systeme de carte dynamique */
+
+/* COMPTEUR */
+/* BUTIN */
+.charsheet .valeur_compteur[value="0"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_0.webp);
+}
+
+.charsheet .valeur_compteur[value="1"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_1.webp);
+}
+
+.charsheet .valeur_compteur[value="2"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_2.webp);
+}
+
+.charsheet .valeur_compteur[value="3"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_3.webp);
+}
+
+.charsheet .valeur_compteur[value="4"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_4.webp);
+}
+
+.charsheet .valeur_compteur[value="5"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_5.webp);
+}
+
+.charsheet .valeur_compteur[value="6"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_6.webp);
+}
+
+.charsheet .valeur_compteur[value="7"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_7.webp);
+}
+
+.charsheet .valeur_compteur[value="8"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_8.webp);
+}
+
+.charsheet .valeur_compteur[value="9"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_9.webp);
+}
+
+.charsheet .valeur_compteur[value="10"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_10.webp);
+}
+
+.charsheet .valeur_compteur[value="11"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_11.webp);
+}
+
+.charsheet .valeur_compteur[value="12"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_12.webp);
+}
+
+.charsheet .valeur_compteur[value="13"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_13.webp);
+}
+
+.charsheet .valeur_compteur[value="14"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_14.webp);
+}
+
+.charsheet .valeur_compteur[value="15"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_15.webp);
+}
 
 /* BUTIN */
 .charsheet .carte_butin[value="0"] ~ *{
