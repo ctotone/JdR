@@ -104,11 +104,13 @@ div.commune {
 	border-radius: 5px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/plateau.webp);
 	background-size: contain;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat;    
+    border: 2px solid #000000d4;
 }
 
 body.sheet-darkmode .commune {
-	box-shadow: 1px 1px 14px 1px #ffffff6e;
+	box-shadow: 1px 1px 14px 1px #ffffff6e;    
+    border: 2px solid #0f2f28;
 }
 
 /* Structure générale de la page */
@@ -161,7 +163,7 @@ body.sheet-darkmode .commune {
 .joueur2 {
 	grid-column: 3;
     grid-row: 2;
-	margin-top: -15px;
+	margin-top: -12px;
 	margin-left: -10px;
     transform: rotate(2deg);
 	/* border: 1px solid red; */
@@ -171,7 +173,7 @@ body.sheet-darkmode .commune {
 	grid-column: 6;
     grid-row: 2;
 	margin-left: 90px;
-	margin-top: -15px;
+	margin-top: -12px;
     transform: rotate(-2deg);
 	/* border: 1px solid red; */
 }
