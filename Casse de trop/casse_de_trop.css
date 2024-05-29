@@ -119,6 +119,32 @@ div.afficher_compteur {
     display: none;
 }
 
+div.info_plus {
+    margin-top: 16px;
+    margin-left: -23px;
+    /* border: 1px solid red; */
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fbfbfbbd;
+    width: 40px;
+    height: 37px;
+    transform: rotate(-7deg);
+}
+
+div.info_reset {
+    margin-top: -67px;
+    margin-left: 144px;
+    /* border: 1px solid red; */
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fbfbfbbd;
+    width: 40px;
+    height: 37px;
+    transform: rotate(27deg);
+}
+
 .charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur {
     display: grid;
 }
@@ -137,26 +163,26 @@ div.afficher_compteur {
 }
 
 .charsheet button[type=action].button_compteur_plus{
-    width: 50px;
-    height: 50px;
-    /* border: 1px solid red; */
+    z-index: 2;
+    width: 70px;
+    height: 71px;
+    /* border: 1px solid red !important; */
     padding: 0;
     background: none;
-    margin-top: 46px;
-    margin-left: -5px;
-    cursor: cell;
+    margin-top: -120px;
+    margin-left: -21px;
     border: none;
 }
 
 .charsheet button[type=action].button_compteur_reset {
-    width: 50px;
-    height: 50px;
-    /* border: 1px solid red; */
+    z-index: 2;
+    width: 75px;
+    height: 70px;
+    /* border: 1px solid red !important; */
     padding: 0;
     background: none;
-    margin-top: -117px;
+    margin-top: -150px;
     margin-left: 124px;
-    cursor: pointer;
     border: none;
 }
 
