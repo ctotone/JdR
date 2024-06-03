@@ -13,9 +13,30 @@
 		<!-- Logo -->
 		<div class="logo_fts"></div>
 		<div class="logo_casse"></div>
-		<!-- Butin -->
+		<!-- Butin sans compteur-->
+		<input type="hidden" name="attr_affichage" class="affichage_compteur" value="0">
 		<div class="butin_carte"></div>
+		<input type="hidden" name="attr_affichage" class="affichage_compteur" value="0">
 		<div class="butin_select">
+			<select class="choix_carte_butin" name="attr_carte_butin">
+				<option value="0" selected="selected" style="background-color : #6f0406; color: #ffffffb5;" data-i18n-list="choix_butin_dos">Choix du Butin</option>
+				<option value="1" data-i18n-list="choix_butin_casino">Argent du casino</option>
+				<option value="2" data-i18n-list="choix_butin_manoir">Cambriolage du manoir</option>
+				<option value="3" data-i18n-list="choix_butin_documents">Documents Top-Secret</option>
+				<option value="4" data-i18n-list="choix_butin_drogue">Drogue du cartel</option>
+				<option value="5" data-i18n-list="choix_butin_virus">Échantillon de virus</option>
+				<option value="6" data-i18n-list="choix_butin_parrain">Évasion d'un parrain</option>
+				<option value="7" data-i18n-list="choix_butin_joyaux">Joyaux de la couronne</option>
+				<option value="8" data-i18n-list="choix_butin_kidnapping">Kidnapping</option>
+				<option value="9" data-i18n-list="choix_butin_ogives">Ogives nucléaires</option>
+				<option value="10" data-i18n-list="choix_butin_tableaux">Tableaux de maîtres</option>
+			</select>
+		</div>
+		<!-- Butin avec compteur-->
+		<input type="hidden" name="attr_affichage" class="affichage_compteur" value="0">
+		<div class="butin_carte_compteur"></div>
+		<input type="hidden" name="attr_affichage" class="affichage_compteur" value="0">
+		<div class="butin_select_compteur">
 			<select class="choix_carte_butin" name="attr_carte_butin">
 				<option value="0" selected="selected" style="background-color : #6f0406; color: #ffffffb5;" data-i18n-list="choix_butin_dos">Choix du Butin</option>
 				<option value="1" data-i18n-list="choix_butin_casino">Argent du casino</option>
@@ -180,7 +201,7 @@
 		<div class="afficher_compteur">	
 			<div class="info_plus">+1</div>	
 			<div class="info_reset">reset</div>		
-			<button type="action" class="button_compteur_plus" name="act_compteur_plus" data-i18n-title="compteur_plus" title="Augmenter le compteur">+</button>
+			<button type="action" class="button_compteur_plus" name="act_compteur_plus" data-i18n-title="compteur_plus" title="Augmenter le compteur"></button>
 			<button type="action" class="button_compteur_reset" name="act_compteur_reset" data-i18n-title="compteur_reset" title="Réinitialiser le compteur"></button>
 		</div>		
 	</div>
