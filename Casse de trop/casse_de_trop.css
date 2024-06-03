@@ -119,13 +119,17 @@ div.afficher_compteur,
 div.butin_carte_compteur,
 div.butin_select_compteur,
 div.butin_carte,
-div.butin_select {
+div.butin_select,
+div.logo_casse,
+div.logo_casse_compteur {
     display: none;
 }
 
 .charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur,
 .charsheet .affichage_compteur[value="1"] ~ div.butin_carte_compteur,
-.charsheet .affichage_compteur[value="0"] ~ div.butin_carte {
+.charsheet .affichage_compteur[value="0"] ~ div.butin_carte,
+.charsheet .affichage_compteur[value="0"] ~ div.logo_casse,
+.charsheet .affichage_compteur[value="1"] ~ div.logo_casse_compteur {
     display: block;
 }
 
@@ -360,13 +364,25 @@ div.info_reset {
     height: 170px;
 }
 
+.logo_casse_compteur {
+    grid-column: 4;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/logo.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-left: 110px;
+    width: 190px;
+    height: 200px;
+}
+
 .logo_casse {
     grid-column: 4;
     grid-row: 1;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/logo.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 18px;
+    margin-top: 58px;
     margin-left: 110px;
     width: 190px;
     height: 200px;
