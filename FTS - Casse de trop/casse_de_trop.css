@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Permanent+Marker&display=swap');
+/* font-family: "Caveat Brush", cursive; */
+/* font-family: "Permanent Marker", cursive; */
+
+
+.charsheet {
+    --black: #000000eb;
+    --white: #ffffffed;
+	--marker: 'Permanent Marker', cursive;
+	--butin_choisi: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_dos.png);
+    font-family: 'Caveat', cursive;
+    color: var(--black);
+    font-size: 18px;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px; 
+}
+
+.sheet-darkmode .sheetform {
+    background-color: #1F1F1F;
+}
+
+body.sheet-darkmode .charsheet {
+    /* background-color: white; */
+    --black: #000000eb;
+    --fond_carte: #939898ed;
+    color: var(--black);
+}
+
+::placeholder {
+  color: rgba(128, 128, 128, 0.548);
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+
+.charsheet input.nom_personnage {  border: none;
+  /* outline: none; */
+  resize: none;
+  padding: 0px;
+  margin-top: 6px;
+  font-size: 18px;
+  line-height: 18px;
+  cursor: pointer;
+  border-radius: 0px;
+  color: #000000eb;
+  background: transparent;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Caveat Brush", cursive;
+}
+
+select.choix_carte,
+select.choix_carte_butin{   
+	color: #ffffffd1;
+	font-size: 14px;
+	padding: 2px;
+	margin: 0;
+	border: 1px solid #ffffffa8;
+	background: #000;
+	border-radius: 15px;
+	outline: none;
+	font-family: "Caveat Brush", cursive;
+	text-align: center;
+}
+
+select.choix_carte_butin {
+	background: #a80b0e;
+	border-radius: 15px;
+	outline: none;
+	font-family: "Caveat Brush", cursive;
+	text-align: center;
+}
+
+.charsheet button[type=roll].button_xcard::before {
+	content: '';
+}
+
+.charsheet button[type=roll].button_xcard {
+    width: 70px;
+    height: 119px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/xcard.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid #000000b0;
+    box-shadow: 3px 3px 7px 3px #000;
+    padding: 0;
+    margin: 0;
+}
+
+.charsheet button[type=roll].button_xcard:hover {
+    margin-left: -1px;
+    padding: 0px;
+    background-position: unset;
+}
+
+div.commune {  
+	width: 960px;
+	height: 800px;
+	box-shadow: 3px 3px 15px 5px #000000;
+	background-color: #efefef;
+	border-radius: 15px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/background_sheet.webp);
+    background-size: 960px 801px;
+	background-repeat: no-repeat;    
+    border: 2px solid #000000d4;
+}
+
+body.sheet-darkmode .commune {
+	box-shadow: 1px 1px 14px 1px #ffffff6e;    
+    border: 2px solid #0f2f28;
+}
+
+/* Affichage compteur et defilement */
+
+div.afficher_compteur,
+div.butin_carte_compteur,
+div.butin_select_compteur,
+div.butin_carte,
+div.butin_select,
+div.logo_casse,
+div.logo_casse_compteur {
+    display: none;
+}
+
+.charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur,
+.charsheet .affichage_compteur[value="1"] ~ div.butin_carte_compteur,
+.charsheet .affichage_compteur[value="0"] ~ div.butin_carte,
+.charsheet .affichage_compteur[value="0"] ~ div.logo_casse,
+.charsheet .affichage_compteur[value="1"] ~ div.logo_casse_compteur {
+    display: block;
+}
+
+
+.charsheet .affichage_compteur[value="1"] ~ div.butin_select_compteur,
+.charsheet .affichage_compteur[value="0"] ~ div.butin_select {
+    display: flex;
+}
+
+
+div.info_plus {
+    margin-top: 17px;
+    margin-left: -23px;
+    /* border: 1px solid red; */
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fbfbfbbd;
+    width: 40px;
+    height: 37px;
+    transform: rotate(-7deg);
+    position: absolute;
+}
+
+div.info_reset {
+    margin-top: 28px;
+    margin-left: 144px;
+    /* border: 1px solid red; */
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fbfbfbbd;
+    width: 40px;
+    height: 37px;
+    transform: rotate(27deg);
+    display: flex;
+    position: absolute;
+}
+
+.charsheet button[type=action].button_switch_compteur {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #00000054;
+    font-family: 'Pictos';
+    font-size: 30px;
+}
+
+.charsheet button[type=action].button_switch_compteur:hover{
+    color: var(--black);
+}
+
+.charsheet button[type=action].button_compteur_plus{
+    z-index: 2;
+    width: 52px;
+    height: 71px;
+    /* border: 1px solid red !important; */
+    padding: 0;
+    background: none;
+    margin-top: 18px;
+    margin-left: -16px;
+    border: none;
+    position: absolute;
+    transform: rotate(-24deg);
+}
+
+.charsheet button[type=action].button_compteur_reset {
+    z-index: 2;
+    width: 71px;
+    height: 70px;
+    /* border: 1px solid red !important; */
+    padding: 0;
+    background: none;
+    margin-top: 36px;
+    margin-left: 127px;
+    border: none;
+    position: absolute;
+    transform: rotate(28deg);
+}
+
+/* Structure générale de la page */
+
+.wrapper_page {
+    display: grid;
+    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
+    grid-auto-rows: 25px;
+	padding-top: 10px;
+	/* border: 1px solid red; */
+}
+
+.afficher_compteur {
+    grid-column: 5;
+    grid-row: 5;
+    width: 171px;
+    height: 221px;
+    margin-left: -45px;
+    margin-top: -4px;
+    background-image: var(--compteur_variable);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
+}
+
+.butin_carte {
+	grid-column: 4;
+	grid-row: 11;
+	width: 185px;
+	height: 248px;
+	background-image: var(--butin_choisi);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right 50% bottom 45%;
+	margin-left: 109px;
+	margin-top: 10px;
+	/* border: 2px solid #060606; */
+    box-shadow: 0px 0px 10px 9px #000000;
+}
+
+.butin_select {
+	grid-column: 4;
+	grid-row: 21;
+	width: 160px;
+	margin-left: 125px;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	border: 1px solid red;
+	margin-top: 35px;
+}
+
+.butin_carte_compteur {
+	grid-column: 4;
+	grid-row: 11;
+	width: 185px;
+	height: 248px;
+	background-image: var(--butin_choisi);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: right 50% bottom 45%;
+	margin-left: 109px;
+	margin-top: 50px;
+	/* border: 2px solid #060606; */
+    box-shadow: 0px 0px 10px 9px #000000;
+}
+
+.butin_select_compteur {
+	grid-column: 4;
+	grid-row: 21;
+	width: 160px;
+	margin-left: 125px;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	border: 1px solid red;
+	margin-top: 85px;
+}
+
+.joueur1 {
+	grid-column: 2;
+    grid-row: 12;
+	margin-top: 10px;
+	margin-left: -30px;
+    transform: rotate(-2deg);
+	/* border: 1px solid red; */
+}
+
+.joueur2 {
+	grid-column: 3;
+    grid-row: 2;
+	margin-top: -12px;
+	margin-left: -10px;
+    transform: rotate(2deg);
+	/* border: 1px solid red; */
+}
+
+.joueur3 {
+	grid-column: 6;
+    grid-row: 2;
+	margin-left: 90px;
+	margin-top: -12px;
+    transform: rotate(-2deg);
+	/* border: 1px solid red; */
+}
+
+.joueur4 {
+	grid-column: 8;
+    grid-row: 12;
+	margin-top: 10px;
+	margin-left: 30px;
+    transform: rotate(2deg);
+	/* border: 1px solid red; */
+}
+
+.joueur5 {
+	grid-column: 3;
+    grid-row: 23;
+	margin-left: -10px;
+    margin-top: -5px;
+    transform: rotate(-2deg);
+	/* border: 1px solid red; */
+}
+
+.joueur6 {
+	grid-column: 6;
+    grid-row: 23;
+	margin-left: 90px;
+    margin-top: -8px;
+    transform: rotate(2deg);
+	/* border: 1px solid red; */
+}
+
+.xcard {
+    grid-column: 2;
+    grid-row: 24;
+    width: 70px;
+    height: 119px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-11deg);
+    margin-top: 72px;
+    margin-left: -2px;
+}
+
+.logo_fts {
+    grid-column: 2;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/fts_casse.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    margin-left: 22px;
+    height: 170px;
+}
+
+.logo_casse_compteur {
+    grid-column: 4;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/logo.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-left: 110px;
+    width: 190px;
+    height: 200px;
+}
+
+.logo_casse {
+    grid-column: 4;
+    grid-row: 1;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/logo.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 58px;
+    margin-left: 110px;
+    width: 190px;
+    height: 200px;
+}
+
+/* Structure cadre joueur */
+
+.wrapper_joueur {
+    display: grid;
+    grid-template-columns: 160px;
+    grid-auto-rows: 25px;
+	width: 160px;
+	/* border: 1px solid red; */
+}
+
+.joueur_nom {  
+	grid-column: 1;
+	grid-row: 1;
+	flex-wrap: wrap;
+	display: flex !important;
+	align-content: center;
+	justify-content: center;
+	margin-top: -15px;
+	margin-bottom: 5px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/fond_nom_personnage.png);
+	background-size: 160px 40px;
+	background-repeat: no-repeat;
+	height: 32px;
+	width: 160px;
+	box-shadow: 3px 3px 5px 0px #000;
+	/* border: 1px solid red; */
+}
+
+.joueur1_carte,
+.joueur2_carte,
+.joueur3_carte,
+.joueur4_carte,
+.joueur5_carte,
+.joueur6_carte {  
+	grid-column: 1;
+	grid-row: 2/8;
+	height: 180px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+	background-size: 150px 272px;
+	background-repeat: no-repeat;
+	background-position: right 40% bottom 100%;
+	border: 1px solid #060606;
+	width: 150px;
+	margin-left: 4px;
+	box-shadow: 3px 3px 7px 3px #000;
+}
+
+.joueur1_carte {  
+	background-image: var(--carte_personnage_1);
+}
+
+.joueur2_carte {  
+	background-image: var(--carte_personnage_2);
+}
+
+.joueur3_carte {  
+	background-image: var(--carte_personnage_3);
+}
+
+.joueur4_carte {  
+	background-image: var(--carte_personnage_4);
+}
+
+.joueur5_carte {  
+	background-image: var(--carte_personnage_5);
+}
+
+.joueur6_carte {  
+	background-image: var(--carte_personnage_6);
+}
+
+.joueur_select {
+    grid-column: 1;
+    grid-row: 9;
+    flex-wrap: wrap;
+    display: flex !important;
+    align-content: center;
+    justify-content: center;
+	margin-top: 25px;
+	/* border: 1px solid red; */
+}
+
+/* Roll template */
+.sheet-rolltemplate-xcard {
+    margin-left: 20px;
+}
+
+.sheet-rolltemplate-xcard .sheet-container {
+    border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 168px;
+    height: 288px;
+    box-shadow: 3px 3px 7px 0px #000000db;
+    border-radius: 15px;
+ }
+
+ .sheet-rolltemplate-xcard .sheet-container {
+    --header-bg-color: rgb(0, 0, 0);
+    --header-text-color: #FFF;
+}
+
+.sheet-rolltemplate-xcard .sheet-content-xcard {
+    width: 168px;
+    height: 288px;
+    border-radius: 12px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/xcard.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+/* Systeme de carte dynamique */
+
+/* COMPTEUR */
+/* BUTIN */
+.charsheet .valeur_compteur[value="0"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_0.webp);
+}
+
+.charsheet .valeur_compteur[value="1"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_1.webp);
+}
+
+.charsheet .valeur_compteur[value="2"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_2.webp);
+}
+
+.charsheet .valeur_compteur[value="3"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_3.webp);
+}
+
+.charsheet .valeur_compteur[value="4"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_4.webp);
+}
+
+.charsheet .valeur_compteur[value="5"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_5.webp);
+}
+
+.charsheet .valeur_compteur[value="6"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_6.webp);
+}
+
+.charsheet .valeur_compteur[value="7"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_7.webp);
+}
+
+.charsheet .valeur_compteur[value="8"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_8.webp);
+}
+
+.charsheet .valeur_compteur[value="9"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_9.webp);
+}
+
+.charsheet .valeur_compteur[value="10"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_10.webp);
+}
+
+.charsheet .valeur_compteur[value="11"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_11.webp);
+}
+
+.charsheet .valeur_compteur[value="12"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_12.webp);
+}
+
+.charsheet .valeur_compteur[value="13"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_13.webp);
+}
+
+.charsheet .valeur_compteur[value="14"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_14.webp);
+}
+
+.charsheet .valeur_compteur[value="15"] ~ *{
+    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/chronometre_15.webp);
+}
+
+/* BUTIN */
+.charsheet .carte_butin[value="0"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_dos_max_size.webp);
+}
+
+.charsheet .carte_butin[value="1"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_casino_max.webp);
+}
+
+.charsheet .carte_butin[value="2"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_manoir_max.webp);
+}
+
+.charsheet .carte_butin[value="3"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_ambassade_max.webp);
+}
+
+.charsheet .carte_butin[value="4"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_drogue_max.webp);
+}
+
+.charsheet .carte_butin[value="5"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_laboratoire_max.webp);
+}
+
+.charsheet .carte_butin[value="6"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_parrain_max.webp);
+}
+
+.charsheet .carte_butin[value="7"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_joyaux_max.webp);
+}
+
+.charsheet .carte_butin[value="8"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_kidnapping_max.webp);
+}
+
+.charsheet .carte_butin[value="9"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_ogives_max.webp);
+}
+
+.charsheet .carte_butin[value="10"] ~ *{
+    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/butin_tableau_max.webp);
+}
+
+/* JOUEUR 1 */
+
+.charsheet .carte_personnage_1[value="0"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_1[value="1"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_1[value="2"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_1[value="3"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_1[value="4"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_1[value="5"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_1[value="6"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_1[value="7"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_1[value="8"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_1[value="9"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_1[value="10"] ~ *{
+    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+/* JOUEUR 2 */
+
+.charsheet .carte_personnage_2[value="0"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_2[value="1"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_2[value="2"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_2[value="3"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_2[value="4"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_2[value="5"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_2[value="6"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_2[value="7"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_2[value="8"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_2[value="9"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_2[value="10"] ~ *{
+    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+/* JOUEUR 3 */
+
+.charsheet .carte_personnage_3[value="0"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_3[value="1"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_3[value="2"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_3[value="3"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_3[value="4"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_3[value="5"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_3[value="6"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_3[value="7"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_3[value="8"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_3[value="9"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_3[value="10"] ~ *{
+    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+/* JOUEUR 4 */
+
+.charsheet .carte_personnage_4[value="0"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_4[value="1"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_4[value="2"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_4[value="3"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_4[value="4"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_4[value="5"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_4[value="6"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_4[value="7"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_4[value="8"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_4[value="9"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_4[value="10"] ~ *{
+    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+/* JOUEUR 5 */
+
+.charsheet .carte_personnage_5[value="0"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_5[value="1"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_5[value="2"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_5[value="3"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_5[value="4"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_5[value="5"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_5[value="6"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_5[value="7"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_5[value="8"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_5[value="9"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_5[value="10"] ~ *{
+    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+/* JOUEUR 6 */
+
+.charsheet .carte_personnage_6[value="0"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_Dos.webp);
+}
+
+.charsheet .carte_personnage_6[value="1"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_as.webp);
+}
+
+.charsheet .carte_personnage_6[value="2"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_cerveau.webp);
+}
+
+.charsheet .carte_personnage_6[value="3"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_demolition.webp);
+}
+
+.charsheet .carte_personnage_6[value="4"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_faussaire.webp);
+}
+
+.charsheet .carte_personnage_6[value="5"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_guetteur.webp);
+}
+
+.charsheet .carte_personnage_6[value="6"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_hacker.webp);
+}
+
+.charsheet .carte_personnage_6[value="7"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_infiltre.webp);
+}
+
+.charsheet .carte_personnage_6[value="8"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_flingue.webp);
+}
+
+.charsheet .carte_personnage_6[value="9"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_receleuse.webp);
+}
+
+.charsheet .carte_personnage_6[value="10"] ~ *{
+    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/Casse%20de%20trop/images/casting_seductrice.webp);
+}
+
+
+
