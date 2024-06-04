@@ -237,22 +237,23 @@ div.commune_carte_input_suspect_6 {
 }
 
 .charsheet button[type=roll].partage_tribune {
-    width: 320px;
-    height: 80px;
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 0px;
-    font-size: 19px;
-    color: var(--white);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-wrap: wrap;
-    line-height: 34px;
-    background: radial-gradient(circle, rgba(165, 2, 2, 1) 0%, rgba(179, 0, 0, 1) 35%, rgba(123, 2, 2, 1) 100%);
-    box-shadow: 3px 3px 7px 1px #00000053;
+	width: 320px;
+	height: 50px;
+	border: 3px solid black;
+	border-radius: 10px;
+	padding: 0px;
+	font-size: 18px;
+	color: var(--white);
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-wrap: wrap;
+	line-height: 22px;
+	background: radial-gradient(circle, rgba(165, 2, 2, 1) 0%, rgba(179, 0, 0, 1) 35%, rgba(123, 2, 2, 1) 100%);
+	box-shadow: 3px 3px 7px 1px #00000053;
+	white-space: normal;
 }
 
 .charsheet button[type=roll].partage_tribune:hover {
@@ -269,7 +270,9 @@ div.commune_carte_input_suspect_6 {
 .charsheet textarea.donnee_indice_2,
 .charsheet textarea.donnee_nom_suspect,
 .charsheet textarea.donnee_notes,
-.charsheet textarea.donnee_tribune {
+.charsheet textarea.donnee_tribune,
+.charsheet textarea.donnee_tribune_titre,
+.charsheet textarea.donnee_tribune_corps {
     border: none;
     outline: none;
     resize: none;
@@ -369,17 +372,57 @@ div.commune_carte_input_suspect_6 {
     text-align: center;
 }
 
-.charsheet textarea.donnee_tribune {
-    height: 142px;
-    width: 351px;
-    margin: 0;
-    margin-top: 53px;
-    margin-left: 8px;
-    padding: 10px;
-    line-height: 26px;
-    text-align: center;
-    transform: rotate(0deg);
-    font-weight: bold;
+.charsheet textarea.donnee_tribune {  
+	height: 142px;
+	width: 351px;
+	margin-top: 57px;
+	margin-left: 8px;
+	padding: 10px;
+	line-height: 21px;
+	text-align: center;
+	transform: rotate(0deg);
+	font-weight: bold;
+}
+
+.charsheet textarea.donnee_tribune_titre {
+	height: 15px;
+	width: 351px;
+	margin: 0;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-top: 73px;
+	margin-left: 8px;
+	padding: 10px;
+	padding-top: 10px;
+	padding-top: 6px;
+	line-height: 21px;
+	text-align: center;
+	transform: rotate(0deg);
+	font-weight: bold;
+	/* border: 1px solid red; */
+}
+
+.charsheet textarea.donnee_tribune_corps { 
+	height: 120px;
+	width: 351px;
+	margin: 0;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-left: 0px;
+	margin-left: 13px;
+	padding: 10px;
+	padding-top: 10px;
+	padding-top: 10px;
+	padding-top: 0px;
+	line-height: 21px;
+	text-align: center;
+	transform: rotate(0deg);
+	overflow: auto;
+	font-size: 17px;
+	margin-top: 2px;
+}
 }
 
 /* Structure générale intro */
@@ -1293,23 +1336,24 @@ div.commune_onglet_crime {
 }
 
 .joueur_zone_tribune {   
-    z-index: 0;
-    grid-column: 6;
-    grid-row: 1 / 32;
-    width: 390px;
-    height: 253px;
-    margin-left: -15px;
-    border: 2px solid var(--bleu);
-    border-radius: 5px;
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/tribune_cadre_background.png);
-    background-size: 390px 253px;
-    box-shadow: 3px 3px 7px 0px #000000db;
-    transform: rotate(2deg);
+	z-index: 0;
+	grid-column: 6;
+	grid-row: 1 / 37;
+	width: 390px;
+	height: 300px;
+	margin-left: -15px;
+	border: 2px solid var(--bleu);
+	border-radius: 5px;
+	background: url(https://raw.githubusercontent.com/ctotone/JdR/main/Alibi/images/tribune_cadre_background.png);
+	background-size: auto;
+	background-size: 390px 300px;
+	box-shadow: 3px 3px 7px 0px #000000db;
+	transform: rotate(2deg);
 }
 
 .joueur_annoncer {
     grid-column: 6;
-    grid-row: 25;
+    grid-row: 27;
     width: 320px;
     height: 80px;
     margin-left: 21px;
@@ -1384,6 +1428,36 @@ div.commune_onglet_crime {
     color: black;
     border-radius: 5px;
     font-weight: bold;
+}
+
+.sheet-rolltemplate-tribune .sheet-content-tribune-titre {
+	width: 260px;
+	height: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 73px;
+	line-height: 20px;
+	text-align: center;
+	font-family: "Caveat", cursive;
+	font-size: 12px;
+	color: black;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.sheet-rolltemplate-tribune .sheet-content-tribune-corps {
+	width: 260px;
+	height: 125px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 8px;
+	line-height: 20px;
+	text-align: center;
+	font-family: "Caveat", cursive;
+	font-size: 12px;
+	color: black;
+	border-radius: 5px;
+	overflow: auto;
 }
 
   /* Description field */
