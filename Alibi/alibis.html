@@ -452,9 +452,12 @@
                 
                 <div class="joueur_trombone_tribune"></div>
                 <div class="joueur_postit_tribune"><span data-i18n="TRIBUNES">TRIBUNE</span></div>
-                <div class="joueur_zone_tribune"><textarea class="donnee_tribune" name="attr_tribune"></textarea></div>
+                <div class="joueur_zone_tribune">
+					<textarea class="donnee_tribune_titre" name="attr_tribune_titre" placeholder="Titre de la tribune"></textarea>
+					<textarea class="donnee_tribune_corps" name="attr_tribune_corps" placeholder="Corps de la tribune"></textarea>
+				</div>
                 <div class="joueur_annoncer">
-                    <button type="roll" class="partage_tribune" name="roll_Tribune" value="&{template:tribune} {{title=tribune}} {{tribune=oui}} {{texte=@{tribune}}} {{confirm=?{Confirmer le partage|OUI}}}" data-i18n-title="cliquer_partage_tribune" title="Cliquez pour partagez votre tribune 
+                    <button type="roll" class="partage_tribune" name="roll_Tribune" value="&{template:tribune} {{title=tribune}} {{tribune=oui}} {{titre_tribune=@{tribune_titre}}} {{corps_tribune=@{tribune_corps}}} {{confirm=?{Confirmer le partage|OUI}}}" data-i18n-title="cliquer_partage_tribune" title="Cliquez pour partagez votre tribune 
 dans la fenêtre de discussion"><span data-i18n="partager_tribune">Partagez votre tribune dans la fenêtre de discussion</span></button>
                 </div>
             </div>
@@ -553,7 +556,8 @@ dans la fenêtre de discussion"><span data-i18n="partager_tribune">Partagez votr
     <div class="ecart"></div>
     <div class="sheet-container">
       {{#tribune}}
-      <div class="sheet-content-tribune">{{texte}}</div>
+      <div class="sheet-content-tribune-titre">{{titre_tribune}}</div>
+	  <div class="sheet-content-tribune-corps">{{corps_tribune}}</div>
       {{/tribune}}
     </div>
 </rolltemplate>
