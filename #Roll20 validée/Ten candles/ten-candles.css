@@ -831,6 +831,7 @@ body.sheet-darkmode .section-GM button {
 .sheet-rolltemplate-tencandles-hope .sheet-title {
 	font-size: 30px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .sheet-rolltemplate-tencandles .sheet-subtitle,
@@ -845,14 +846,14 @@ body.sheet-darkmode .section-GM button {
     --tencandles-background-header: #7b0505cf;
 	--tencandles-border: #444141;
 	--tencandles-background-header-darkmode: #1e1e1e;
-	--tencandles-border-darkmode: #000;
+	--tencandles-border-darkmode: #7575759c;
 	--tencandles-content-background-darkmode: #bb13132e;
 	--tencandles-content-desc-darkmode:red;
 	
 	--tencandles-background-header-hope: #68276d;
 	--tencandles-border-hope: #444141;
 	--tencandles-background-header-hope-darkmode: #1e1e1e;
-	--tencandles-border-hope-darkmode: #000;
+	--tencandles-border-hope-darkmode: #7575759c;
 	--tencandles-content-background-hope-darkmode: #6c0e863d;
 	--tencandles-content-desc-hope-darkmode:#a614ce3d;
 }
@@ -893,9 +894,14 @@ body.sheet-darkmode .section-GM button {
     padding-right: 10px;
     text-align: right;
 	font-family: 'Shadows Into Light';
-	font-size: 20px;
+	font-size: 26px;
 	color:#f91f1ff7;
     font-weight: bold;
+	height: 30px;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: right;
 }
 
 .sheet-rolltemplate-tencandles .sheet-reussite {
@@ -903,8 +909,13 @@ body.sheet-darkmode .section-GM button {
     padding-right: 10px;
     text-align: right;
 	font-family: 'Shadows Into Light';
-	font-size: 20px;
+	font-size: 26px;
 	color:#02bb49f7;
+	height: 30px;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: right;
 }
 
 /* Make even-numbered rows grey */
@@ -963,6 +974,10 @@ body.sheet-darkmode .section-GM button {
 	border-color:#02bb4900;
     font-size: 0px;
     color: #87878794;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-top: 3px;
 }
 
 .sheet-rolltemplate-tencandles .sheet-reussite-result .inlinerollresult::before,
@@ -972,6 +987,9 @@ body.sheet-darkmode .section-GM button {
     font-family: 'Pictos';
     content: "i";
     font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: left;
 }
 
 /* Failure border */
@@ -985,9 +1003,13 @@ body.sheet-darkmode .section-GM button {
 .sheet-rolltemplate-tencandles .sheet-echec-result-lost .inlinerollresult.fullfail{
     border: 2px solid;
 	border-color:rgba(255, 0, 0, 0);
-    font-size: 20px;
+    font-size: 27px;
     color: #f91f1fce;
     font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-top: 3px;
 }
 
 .sheet-rolltemplate-tencandles .sheet-echec-result .inlinerollresult,
@@ -996,6 +1018,9 @@ body.sheet-darkmode .section-GM button {
 .sheet-rolltemplate-tencandles .sheet-echec-result .inlinerollresult.fullfail {
     font-size: 0;
     color: #87878794;
+	display: flex;
+	align-items: center;
+	justify-content: left;
 }
 
 .sheet-rolltemplate-tencandles .sheet-echec-result .inlinerollresult::before,
@@ -1005,6 +1030,9 @@ body.sheet-darkmode .section-GM button {
     font-family: 'Pictos';
     content: "i";
     font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: left;
 }
 
 /* Hope Dice result in chatcontainer */
@@ -1018,6 +1046,10 @@ body.sheet-darkmode .section-GM button {
     font-size: 0px;
     color: black;
     font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-top: 3px;
 }
 
 .sheet-rolltemplate-tencandles-hope .inlinerollresult::before,
@@ -1028,6 +1060,9 @@ body.sheet-darkmode .section-GM button {
     content: "i";
     font-size: 20px;
     color: #87878794;
+	display: flex;
+	align-items: center;
+	justify-content: left;
 }
 
 /*------------------------------------*\
@@ -1136,19 +1171,24 @@ AJOUTER HOPE DICE ROLLTEMPLATE
     padding-right: 10px;
     text-align: right;
 	font-family: 'Shadows Into Light';
-	font-size: 20px;
+	font-size: 27px;
 }
 
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-key-failure,
 .sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-key-failure,
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-echec,
 .sheet-rolltemplate-tencandles-hope.sheet-rolltemplate-darkmode .sheet-echec {
-    font-weight: bold;
-    padding-right: 10px;
-    text-align: right;
+	font-weight: bold;
+	padding-right: 10px;
+	text-align: right;
 	font-family: 'Shadows Into Light';
-	font-size: 20px;
-	color:#ed7171f7;
+	font-size: 27px;
+	color: #ed7171f7;
+	height: 30px;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: right;
 }
 
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-reussite,
@@ -1157,8 +1197,13 @@ AJOUTER HOPE DICE ROLLTEMPLATE
     padding-right: 10px;
     text-align: right;
 	font-family: 'Shadows Into Light';
-	font-size: 20px;
+	font-size: 27px;
 	color:#02bb49f7;
+	height: 30px;
+	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: right;
 }
 
 /* Make even-numbered rows grey */
@@ -1236,7 +1281,7 @@ AJOUTER HOPE DICE ROLLTEMPLATE
 .sheet-rolltemplate-tencandles.sheet-rolltemplate-darkmode .sheet-echec-result-lost .inlinerollresult.fullfail{
     border: 2px solid;
 	border-color:rgba(255, 0, 0, 0);
-    font-size: 20px;
+    font-size: 27px;
     color: #ed7171f7;
     font-weight: bold;
     background-color: transparent !important;
