@@ -131,13 +131,11 @@ input[type=radio].onglgm:checked + span {
 div.main {
 	width: 775px;
 	padding: 10px;
-	height: 550px;
+	height: auto;
+	margin-left: 40px;
 }
 
 body.sheet-darkmode div.main {
-	width: 775px;
-    padding: 10px;
-    height: 550px;
     background: radial-gradient(circle, rgba(219, 219, 219, 0.08) 0%, rgb(30, 32, 33) 50%);
 	background-position: -150px 50px;
 	background-repeat: no-repeat;
@@ -150,21 +148,16 @@ body.sheet-darkmode div.main {
 }
 
 div.logo {
-	width: 462px;
+	width: 600px;
     height: auto;
-    /* margin-bottom: 35px; */
     background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/logo.png);
     background-size: 375px;
     background-repeat: no-repeat;
+	margin-left: -20px;
 }
 
 body.sheet-darkmode div.logo {
-	width: 462px;
-    height: auto;
-    /* margin-bottom: 35px; */
     background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/logo_darkmode.png);
-    background-size: 375px;
-    background-repeat: no-repeat;
 }
 
 img.img {
@@ -405,6 +398,7 @@ div.d6{
   background-repeat: no-repeat;
   width: 55px;
   height: 55px;
+  margin-top: -20px !important;
 }
 
 div.dicehope{
@@ -432,22 +426,10 @@ button[type="action"].d6:hover{
 button[type="roll"].d6,
 button[type="action"].d6{
   background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/D6_tencandles.png); 
-  background-size: 50px 50px;
+  background-size: 90px 77px;
   background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  background-color: transparent;
-  margin-left: 5px;
-}
-
-button[type="roll"]body.darkmode .d6,
-button[type="action"]body.darkmode .d6{
-  background-image:url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Ten%20candles/img/D6_tencandles.png); 
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 77px;
   border-style: none;
   background-color: transparent;
   margin-left: 5px;
@@ -573,10 +555,10 @@ button[type="action"].empty:before{
 /*----------- Card Section -------------*/
 
 .charsheet div.section-profile{
-    padding-top: 30px;
+    padding-top: 13px;
     padding-bottom: 10px;
 	margin-left: 20px;
-	height: 350px;
+	height: auto;
 }
 
 input[type=text],
@@ -716,9 +698,8 @@ body.sheet-darkmode .charsheet textarea.notes {
 /*----------- Concept Section -------------*/
 
 div.section-abilities {
-    padding-top: 30px;
+    padding-top: 13px;
 	margin-left: 20px;
-	height: 350px;
 }
 
 
@@ -727,22 +708,22 @@ div.section-abilities {
 /*----------- Rules Section -------------*/
 
 .charsheet div.section-profile{
-    padding-top: 30px;
+    padding-top: 13px;
     padding-bottom: 10px;
 	margin-left: 20px;
-	height: 350px;
+	height: auto;
 }
 
 .charsheet div.section-rule{
-    padding-top: 30px;
+    padding-top: 13px;
     padding-bottom: 10px;
 	margin-left: 20px;
-	height: 350px;
+	height: auto;
 }
 
 div.section-regle {
     margin-left: 20px;
-	height: 350px;
+	height: auto;
 }
 
 div.section-regle p{
