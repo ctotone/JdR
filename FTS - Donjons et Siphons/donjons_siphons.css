@@ -97,13 +97,13 @@ select.choix_carte_butin {
 }
 
 div.commune {  
-	width: 960px;
+	width: 1600px;
 	height: 800px;
 	box-shadow: 3px 3px 15px 5px #000000;
 	background-color: #efefef;
 	border-radius: 15px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/background_sheet.webp);
-    background-size: 960px 801px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Casse%20de%20trop/images/fond_cdt.png);
+    background-size: 1600px 801px;
 	background-repeat: no-repeat;    
     border: 2px solid #000000d4;
 }
@@ -225,8 +225,8 @@ div.info_reset {
     grid-row: 5;
     width: 171px;
     height: 221px;
-    margin-left: -45px;
-    margin-top: -4px;
+    margin-left: 254px;
+    margin-top: -17px;
     background-image: var(--compteur_variable);
     background-size: contain;
     background-repeat: no-repeat;
@@ -234,111 +234,105 @@ div.info_reset {
 }
 
 .butin_carte {
-	grid-column: 4;
-	grid-row: 11;
-	width: 185px;
-	height: 248px;
-	background-image: var(--butin_choisi);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right 50% bottom 45%;
-	margin-left: 109px;
-	margin-top: 10px;
-	/* border: 2px solid #060606; */
+    grid-column: 4;
+    grid-row: 11;
+    width: 185px;
+    height: 249px;
+    background-image: var(--butin_choisi);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 50% bottom 45%;
+    margin-left: 410px;
+    margin-top: -80px;
+    /* border: 2px solid #060606; */
     box-shadow: 0px 0px 10px 9px #000000;
 }
 
 .butin_select {
-	grid-column: 4;
-	grid-row: 21;
-	width: 160px;
-	margin-left: 125px;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
-	border: 1px solid red;
-	margin-top: 35px;
+    grid-column: 4;
+    grid-row: 18;
+    width: 160px;
+    margin-left: 425px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin-top: 11px;
 }
 
 .butin_carte_compteur {
-	grid-column: 4;
-	grid-row: 11;
-	width: 185px;
-	height: 248px;
-	background-image: var(--butin_choisi);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right 50% bottom 45%;
-	margin-left: 109px;
-	margin-top: 50px;
-	/* border: 2px solid #060606; */
+    grid-column: 4;
+    grid-row: 11;
+    width: 185px;
+    height: 248px;
+    background-image: var(--butin_choisi);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 50% bottom 45%;
+    margin-left: 409px;
+    margin-top: 14px;
+    /* border: 2px solid #060606; */
     box-shadow: 0px 0px 10px 9px #000000;
 }
 
 .butin_select_compteur {
-	grid-column: 4;
-	grid-row: 21;
-	width: 160px;
-	margin-left: 125px;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
-	border: 1px solid red;
-	margin-top: 85px;
+    grid-column: 4;
+    grid-row: 21;
+    width: 160px;
+    margin-left: 425px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin-top: 35px;
 }
 
 .joueur1 {
-	grid-column: 2;
+    grid-column: 2;
     grid-row: 12;
-	margin-top: 10px;
-	margin-left: -30px;
+    margin-top: -62px;
+    margin-left: 5px;
     transform: rotate(-2deg);
-	/* border: 1px solid red; */
 }
 
 .joueur2 {
-	grid-column: 3;
+    grid-column: 3;
     grid-row: 2;
-	margin-top: -12px;
-	margin-left: -10px;
+    margin-top: -28px;
+    margin-left: 149px;
     transform: rotate(2deg);
-	/* border: 1px solid red; */
 }
 
 .joueur3 {
-	grid-column: 6;
+    grid-column: 6;
     grid-row: 2;
-	margin-left: 90px;
-	margin-top: -12px;
+    margin-left: 463px;
+    margin-top: -33px;
     transform: rotate(-2deg);
-	/* border: 1px solid red; */
 }
 
 .joueur4 {
-	grid-column: 8;
+    grid-column: 8;
     grid-row: 12;
-	margin-top: 10px;
-	margin-left: 30px;
+    margin-top: -20px;
+    margin-left: 605px;
     transform: rotate(2deg);
-	/* border: 1px solid red; */
 }
 
 .joueur5 {
-	grid-column: 3;
+    grid-column: 3;
     grid-row: 23;
-	margin-left: -10px;
-    margin-top: -5px;
+    margin-left: 232px;
+    margin-top: -105px;
     transform: rotate(-2deg);
-	/* border: 1px solid red; */
 }
 
 .joueur6 {
-	grid-column: 6;
+    grid-column: 6;
     grid-row: 23;
-	margin-left: 90px;
-    margin-top: -8px;
+    margin-left: 403px;
+    margin-top: -104px;
     transform: rotate(2deg);
-	/* border: 1px solid red; */
 }
 
 .xcard {
@@ -364,6 +358,26 @@ div.info_reset {
     height: 170px;
 }
 
+.logo_nico {  
+	grid-column: 12;
+	grid-row: 2;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Casse%20de%20trop/images/cdt_nico.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 45px;
+}
+
+.logo_creative {  
+	grid-column: 12;
+	grid-row: 30;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Casse%20de%20trop/images/cdt_creative.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-top: -10px;
+	margin-left: 21px;
+	height: 40px;
+}
+
 .logo_casse_compteur {
     grid-column: 4;
     grid-row: 1;
@@ -371,7 +385,7 @@ div.info_reset {
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 6px;
-    margin-left: 110px;
+    margin-left: 407px;
     width: 190px;
     height: 200px;
 }
@@ -382,8 +396,8 @@ div.info_reset {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/logo.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 58px;
-    margin-left: 110px;
+    margin-top: 27px;
+    margin-left: 407px;
     width: 190px;
     height: 200px;
 }
@@ -399,21 +413,21 @@ div.info_reset {
 }
 
 .joueur_nom {  
-	grid-column: 1;
-	grid-row: 1;
-	flex-wrap: wrap;
-	display: flex !important;
-	align-content: center;
-	justify-content: center;
-	margin-top: -15px;
-	margin-bottom: 5px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/fond_nom_personnage.png);
-	background-size: 160px 40px;
-	background-repeat: no-repeat;
-	height: 32px;
-	width: 160px;
-	box-shadow: 3px 3px 5px 0px #000;
-	/* border: 1px solid red; */
+    grid-column: 1;
+    grid-row: 1;
+    flex-wrap: wrap;
+    display: flex !important;
+    align-content: center;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 28px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/fond_nom_personnage.png);
+    background-size: 160px 40px;
+    background-repeat: no-repeat;
+    height: 32px;
+    width: 160px;
+    box-shadow: 3px 3px 5px 0px #000;
 }
 
 .joueur1_carte,
@@ -421,18 +435,18 @@ div.info_reset {
 .joueur3_carte,
 .joueur4_carte,
 .joueur5_carte,
-.joueur6_carte {  
-	grid-column: 1;
-	grid-row: 2/8;
-	height: 180px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-	background-size: 150px 272px;
-	background-repeat: no-repeat;
-	background-position: right 40% bottom 100%;
-	border: 1px solid #060606;
-	width: 150px;
-	margin-left: 4px;
-	box-shadow: 3px 3px 7px 3px #000;
+.joueur6_carte { 
+    grid-column: 1;
+    grid-row: 2 / 8;
+    height: 360px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: right 40% bottom 100%; */
+    border: 1px solid #ffffff82;
+    width: 210px;
+    /* margin-left: 4px; */
+    /* box-shadow: 3px 3px 7px 3px #000; */
 }
 
 .joueur1_carte {  
@@ -466,8 +480,8 @@ div.info_reset {
     display: flex !important;
     align-content: center;
     justify-content: center;
-	margin-top: 25px;
-	/* border: 1px solid red; */
+    margin-top: 198px;
+    margin-left: 60px;
 }
 
 /* Roll template */
@@ -890,3 +904,6 @@ div.info_reset {
 .charsheet .carte_personnage_6[value="10"] ~ *{
     --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
 }
+
+
+
