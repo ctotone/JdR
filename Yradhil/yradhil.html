@@ -13,29 +13,29 @@
             <div class="ev">Énergie Vitale :</div>
             <div class="mana">Mana :</div>
             <div class="psi">Ψ :</div>
-            <div class="nom_data">data_Nom</div>
-            <div class="race_data">data_Race</div>
-            <div class="ev_data">data_Énergie_Vitale</div>
-            <div class="mana_data">data_Mana</div>
-            <div class="psi_data">data_Ψ</div>
+            <div class="nom_data"><input type="text" class="input_fiche" name="attr_character_name"></div>
+            <div class="race_data"><input type="text" class="input_fiche" name="attr_race"></div>
+            <div class="ev_data"><input type="number" class="input_stats" name="attr_hp" placeholder="0" min="0" max="20"></div>
+            <div class="mana_data"><input type="number" class="input_stats" name="attr_mana" placeholder="0" min="0" max="20"></div>
+            <div class="psi_data"><input type="number" class="input_stats" name="attr_psi" title="Moyenne Force, Volonté et Endurance" placeholder="0" min="0" max="20"></div>
         </div>
 
         <br>
         <!-- Section Statistiques -->
 		<div class="wrapper_stats">
             <div class="stat_titre">Talent du personnage</div>
-            <div class="stat_force_dice">Dice</div>
-            <div class="stat_dexterite_dice">Dice</div>
-            <div class="stat_intelligence_dice">Dice</div>
-            <div class="stat_charisme_dice">Dice</div>
-            <div class="stat_courage_dice">Dice</div>
-            <div class="stat_attaque_dice">Dice</div>
-            <div class="stat_volonte_dice">Dice</div>
-            <div class="stat_endurance_dice">Dice</div>
-            <div class="stat_constitution_dice">Dice</div>
-            <div class="stat_persuasion_dice">Dice</div>
-            <div class="stat_perception_dice">Dice</div>
-            <div class="stat_parade_dice">Dice</div>
+            <div class="stat_force_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Force (@{force})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{force} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Force"></button></div>
+            <div class="stat_dexterite_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Dextérité (@{dexterite})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{dexterite} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Dextérité"></button></div>
+            <div class="stat_intelligence_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Intelligence (@{intelligence})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{intelligence} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Intelligence"></button></div>
+            <div class="stat_charisme_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Charisme (@{charisme})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{charisme} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Charisme"></button></div>
+            <div class="stat_courage_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Courage (@{courage})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{courage} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Courage"></button></div>
+            <div class="stat_attaque_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Attaque (@{attaque})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{attaque} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Attaque"></button></div>
+            <div class="stat_volonte_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Volonté (@{volonte})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{volonte} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Volonté"></button></div>
+            <div class="stat_endurance_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Endurance (@{endurance})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{endurance} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Endurance"></button></div>
+            <div class="stat_constitution_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Constitution (@{constitution})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{constitution} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Constitution"></button></div>
+            <div class="stat_persuasion_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Persuasion (@{persuasion})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{persuasion} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Persuasion"></button></div>
+            <div class="stat_perception_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Perception (@{perception})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{perception} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Perception"></button></div>
+            <div class="stat_parade_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Parade (@{parade})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{parade} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Parade"></button></div>
             <div class="stat_force">Force</div>
             <div class="stat_dexterite">Dextérité</div>
             <div class="stat_intelligence">Intelligence</div>
@@ -48,18 +48,18 @@
             <div class="stat_persuasion">Persuasion</div>
             <div class="stat_perception">Perception</div>
             <div class="stat_parade">Parade</div>
-            <div class="stat_force_data">Force_data</div>
-            <div class="stat_dexterite_data">Dextérité_data</div>
-            <div class="stat_intelligence_data">Intelligence_data</div>
-            <div class="stat_charisme_data">Charisme_data</div>
-            <div class="stat_courage_data">Courage_data</div>
-            <div class="stat_attaque_data">Attaque_data</div>
-            <div class="stat_volonte_data">Volonté_data</div>
-            <div class="stat_endurance_data">Endurance_data</div>
-            <div class="stat_constitution_data">Constitution_data</div>
-            <div class="stat_persuasion_data">Persuasion_data</div>
-            <div class="stat_perception_data">Perception_data</div>
-            <div class="stat_parade_data">Parade_data</div>
+            <div class="stat_force_data"><input type="number" class="input_stats" name="attr_force" placeholder="0" title="Force" min="0" max="20"></div>
+            <div class="stat_dexterite_data"><input type="number" class="input_stats" name="attr_dexterite" placeholder="0" title="Dextérité" min="0" max="20"></div>
+            <div class="stat_intelligence_data"><input type="number" class="input_stats" name="attr_intelligence" placeholder="0" title="Intelligence" min="0" max="20"></div>
+            <div class="stat_charisme_data"><input type="number" class="input_stats" name="attr_charisme" placeholder="0" title="Charisme" min="0" max="20"></div>
+            <div class="stat_courage_data"><input type="number" class="input_stats" name="attr_courage" placeholder="0" title="Courage" min="0" max="20"></div>
+            <div class="stat_attaque_data"><input type="number" class="input_stats" name="attr_attaque" placeholder="0" title="Attaque" min="0" max="20"></div>
+            <div class="stat_volonte_data"><input type="number" class="input_stats" name="attr_volonte" placeholder="0" title="Volonté" min="0" max="20"></div>
+            <div class="stat_endurance_data"><input type="number" class="input_stats" name="attr_endurance" placeholder="0" title="Endurance" min="0" max="20"></div>
+            <div class="stat_constitution_data"><input type="number" class="input_stats" name="attr_constitution" placeholder="0" title="Constitution" min="0" max="20"></div>
+            <div class="stat_persuasion_data"><input type="number" class="input_stats" name="attr_persuasion" placeholder="0" title="Persuasion" min="0" max="20"></div>
+            <div class="stat_perception_data"><input type="number" class="input_stats" name="attr_perception" placeholder="0" title="Perception" min="0" max="20"></div>
+            <div class="stat_parade_data"><input type="number" class="input_stats" name="attr_parade" placeholder="0" title="Parade" min="0" max="20"></div>
         </div>
         <br>
 
@@ -72,9 +72,9 @@
             <div class="armes">Armes du personnage</div>
             <div class="armures">Armures du personnage</div>
             <div class="materiel">Matériel - Nourriture - Inventaire</div>
-            <div class="or_data">or_data</div>
-            <div class="argent_data">argent_data</div>
-            <div class="cuivre_data">cuivre_data</div>
+            <div class="or_data"><input type="number" class="input_money" name="attr_ORII" placeholder="0" title="ORII" min="0"></div>
+            <div class="argent_data"><input type="number" class="input_money" name="attr_ARGII" placeholder="0" title="ARGII" min="0"></div>
+            <div class="cuivre_data"><input type="number" class="input_money" name="attr_CUVRII" placeholder="0" title="CUVRII" min="0"></div>
             <div class="armes_data">armes_data</div>
             <div class="armures_data">armures_data</div>
             <div class="materiel_data">materiel_data</div>
@@ -134,22 +134,165 @@
             <div class="comp_pacifiste">Pacifiste</div>
             <div class="comp_repos_guerrier">Repos du guerrier</div>
             <div class="comp_vol_tire">Vol à la tire</div>
+            <!-- Data Compétences -->
+            <div class="comp_ambidextrie_data"><input type="text" class="input_competences" name="attr_ambidextrie"></div>
+            <div class="comp_armes_deux_mains_data"><input type="text" class="input_competences" name="attr_armes_deux_mains"></div>
+            <div class="comp_armes_de_tir_data"><input type="text" class="input_competences" name="attr_armes_de_tir"></div>
+            <div class="comp_bouclier_data"><input type="text" class="input_competences" name="attr_bouclier"></div>
+            <div class="comp_artisan_data"><input type="text" class="input_competences" name="attr_artisan"></div>
+            <div class="comp_brasseur_data"><input type="text" class="input_competences" name="attr_brasseur"></div>
+            <div class="comp_combat_mains_nues_data"><input type="text" class="input_competences" name="attr_combat_mains_nues"></div>
+            <div class="comp_cuisiner_data"><input type="text" class="input_competences" name="attr_cuisiner"></div>
+            <div class="comp_denicheur_data"><input type="text" class="input_competences" name="attr_denicheur"></div>
+            <div class="comp_desamorcage_data"><input type="text" class="input_competences" name="attr_desamorcage"></div>
+            <div class="comp_dressage_data"><input type="text" class="input_competences" name="attr_dressage"></div>
+            <div class="comp_erudit_data"><input type="text" class="input_competences" name="attr_erudit"></div>
+            <div class="comp_evasion_data"><input type="text" class="input_competences" name="attr_evasion"></div>
+            <div class="comp_frappe_furtive_data"><input type="text" class="input_competences" name="attr_frappe_furtive"></div>
+            <div class="comp_ingenieur_data"><input type="text" class="input_competences" name="attr_ingenieur"></div>
+            <div class="comp_intimidation_data"><input type="text" class="input_competences" name="attr_intimidation"></div>
+            <div class="comp_langage_monstre_data"><input type="text" class="input_competences" name="attr_langage_monstre"></div>
+            <div class="comp_maitres_armes_data"><input type="text" class="input_competences" name="attr_maitres_armes"></div>
+            <div class="comp_meconnaissable_data"><input type="text" class="input_competences" name="attr_meconnaissable"></div>
+            <div class="comp_mefiance_data"><input type="text" class="input_competences" name="attr_mefiance"></div>
+            <div class="comp_natation_data"><input type="text" class="input_competences" name="attr_natation"></div>
+            <div class="comp_orientation_data"><input type="text" class="input_competences" name="attr_orientation"></div>
+            <div class="comp_pistage_data"><input type="text" class="input_competences" name="attr_pistage"></div>
+            <div class="comp_premiers_soins_data"><input type="text" class="input_competences" name="attr_premiers_soins"></div>
+            <div class="comp_runique_data"><input type="text" class="input_competences" name="attr_runique"></div>
+            <div class="comp_armes_une_main_data"><input type="text" class="input_competences" name="attr_armes_une_main"></div>
+            <div class="comp_armes_hast_data"><input type="text" class="input_competences" name="attr_armes_hast"></div>
+            <div class="comp_armes_jet_data"><input type="text" class="input_competences" name="attr_armes_jet"></div>
+            <div class="comp_alchimie_data"><input type="text" class="input_competences" name="attr_alchimie"></div>
+            <div class="comp_barde_data"><input type="text" class="input_competences" name="attr_barde"></div>
+            <div class="comp_chevaucher_data"><input type="text" class="input_competences" name="attr_chevaucher"></div>
+            <div class="comp_comprehension_animale_data"><input type="text" class="input_competences" name="attr_comprehension_animale"></div>
+            <div class="comp_crochetage_data"><input type="text" class="input_competences" name="attr_crochetage"></div>
+            <div class="comp_debrouillard_data"><input type="text" class="input_competences" name="attr_debrouillard"></div>
+            <div class="comp_discretion_data"><input type="text" class="input_competences" name="attr_discretion"></div>
+            <div class="comp_detection_data"><input type="text" class="input_competences" name="attr_detection"></div>
+            <div class="comp_eloquence_data"><input type="text" class="input_competences" name="attr_eloquence"></div>
+            <div class="comp_escalade_data"><input type="text" class="input_competences" name="attr_escalade"></div>
+            <div class="comp_forgeron_data"><input type="text" class="input_competences" name="attr_forgeron"></div>
+            <div class="comp_herboristerie_data"><input type="text" class="input_competences" name="attr_herboristerie"></div>
+            <div class="comp_instinct_survie_data"><input type="text" class="input_competences" name="attr_instinct_survie"></div>
+            <div class="comp_invincible_combat_data"><input type="text" class="input_competences" name="attr_invincible_combat"></div>
+            <div class="comp_leader_data"><input type="text" class="input_competences" name="attr_leader"></div>
+            <div class="comp_marchandage_data"><input type="text" class="input_competences" name="attr_marchandage"></div>
+            <div class="comp_medecine_data"><input type="text" class="input_competences" name="attr_medecine"></div>
+            <div class="comp_mental_acier_data"><input type="text" class="input_competences" name="attr_mental_acier"></div>
+            <div class="comp_observation_data"><input type="text" class="input_competences" name="attr_observation"></div>
+            <div class="comp_pacifiste_data"><input type="text" class="input_competences" name="attr_pacifiste"></div>
+            <div class="comp_repos_guerrier_data"><input type="text" class="input_competences" name="attr_repos_guerrier"></div>
+            <div class="comp_vol_tire_data"><input type="text" class="input_competences" name="attr_vol_tire"></div>
 
         </div>
 
-
-
-	</div>
+    </div>
 	
 
-
-<!-- ------------------------- -->
-<!-- ----- ROLL TEMPLATE ----- -->
-<!-- ------------------------- -->
-
-
-
-
-<!-- --------------------------- -->
-<!-- --------- SCRIPT ---------- -->
-<!-- --------------------------- -->
+<rolltemplate class="sheet-rolltemplate-ito">
+    <div class="sheet-container">
+      <div class="sheet-header">
+        {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+        {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+      </div>
+      {{#sauvegarde}}
+          <div class="sheet-content">
+              {{#rollTotal() result 1}}
+              <div class="sheet-result" style="color: #00bd00;">1</div>
+              <div class="sheet-feedback-reussite">Réussite</div>
+              {{/rollTotal() result 1}}
+              {{#rollTotal() result 2}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">2</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">2</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 2}}
+              {{#rollTotal() result 3}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">3</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">3</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 3}}
+              {{#rollTotal() result 4}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">4</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">4</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 4}}
+              {{#rollTotal() result 5}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">5</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">5</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 5}}
+              {{#rollTotal() result 6}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">6</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">6</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 6}}
+              {{#rollTotal() result 7}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">7</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">7</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 7}}
+              {{#rollTotal() result 8}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">8</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">8</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 8}}
+              {{#rollTotal() result 9}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">9</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">9</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 9}}
+              {{#rollTotal() result 10}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">10</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">10</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 10}}
+              {{#rollTotal() result 11}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">11</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">11</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 11}}
+              {{#rollTotal() result 12}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">12</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">12</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 12}}
+              {{#rollTotal() result 13}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">13</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">13</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 13}}
+              {{#rollTotal() result 14}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">14</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">14</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 14}}
+              {{#rollTotal() result 15}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">15</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">15</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 15}}
+              {{#rollTotal() result 16}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">16</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">16</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 16}}
+              {{#rollTotal() result 17}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">17</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">17</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 17}}
+              {{#rollTotal() result 18}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">18</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">18</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 18}}
+              {{#rollTotal() result 19}}
+              {{#rollGreater() result score}}<div class="sheet-result" style="color: red;">19</div>{{/rollGreater() result score}}
+              {{#^rollGreater() result score}}<div class="sheet-result" style="color: #00bd00;">19</div>{{/^rollGreater() result score}}
+              {{/rollTotal() result 19}}
+              {{#rollTotal() result 20}}
+              <div class="sheet-result" style="color: red;">20</div>
+              <div class="sheet-feedback-echec">Échec</div>
+              {{/rollTotal() result 20}}
+              {{#rollGreater() result score}}
+              {{#^rollTotal() result 20}}
+              {{#^rollTotal() result 1}}
+              <div class="sheet-feedback-echec">Échec</div>
+              {{/^rollTotal() result 1}}
+              {{/^rollTotal() result 20}}
+              {{/rollGreater() result score}}
+              {{#^rollGreater() result score}}
+              {{#^rollTotal() result 20}}
+              {{#^rollTotal() result 1}}
+              <div class="sheet-feedback-reussite">Réussite</div>
+              {{/^rollTotal() result 1}}
+              {{/^rollTotal() result 20}}
+              {{/^rollGreater() result score}}
+          </div>
+      {{/sauvegarde}}
+</rolltemplate>

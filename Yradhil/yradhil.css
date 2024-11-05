@@ -1,4 +1,150 @@
-/* Core Format*/
+/* Roll Template */
+
+/* Smaller margins - remove these if you want the huge default left margin */
+.sheet-rolltemplate-ito {
+	margin-left: -10px;
+  }
+  .withoutavatars .sheet-rolltemplate-ito {
+	margin-left: -10px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-container {
+	  border: none;
+	  border-radius: 130px;
+	  box-shadow: 0px 0px 10px 3px #000000ad;
+	  width: 260px;
+	  height: 260px;
+	  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/background_roll_v2.png);
+	  background-size: cover;
+	  font-family: "Baskervville", serif;
+	  --rouge: red;
+	  --vert: #00bd00;
+  }
+  
+  .sheet-rolltemplate-darkmode.sheet-rolltemplate-ito .sheet-container {
+	  box-shadow: 0px 0px 10px 3px #919191c4;
+  }
+  
+  /* Header formatting - title and subtitle */
+  .sheet-rolltemplate-ito .sheet-header {
+	  color: #000;
+	  text-align: center;
+	  padding-top: 50px;
+	  padding-bottom: 6px;
+	  border-bottom: 2px solid #ff6c2e82;
+	  margin-left: 50px;
+	  width: 160px;
+  }
+  .sheet-rolltemplate-ito .sheet-title {
+	  font-size: 20px;
+	  font-weight: bold;	
+	  margin-bottom: 5px;
+	  letter-spacing: -0.5px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-subtitle {
+	  font-size: 14px;
+	  font-style: italic;
+	  margin-bottom: 5px;
+	  letter-spacing: -0.5px;
+  }
+  
+  /* Allprops part */
+  .sheet-rolltemplate-ito .sheet-content {
+	  width: 184px;
+	  margin-left: 38px;
+	  display: grid;
+	  grid-template-columns: auto auto;
+	  line-height: 1.4em;
+	  margin-top: 15px;
+  }
+  .sheet-rolltemplate-ito .sheet-content > div {
+	padding: 5px;
+  }
+  
+  /* Left column */
+  .sheet-rolltemplate-ito .sheet-content .sheet-key {
+	font-weight: bold;
+	padding-right: 10px;
+	text-align: right;
+  }
+  
+  /* Make even-numbered rows grey */
+  .sheet-rolltemplate-ito .sheet-content :nth-child(4n+3),
+  .sheet-rolltemplate-ito .sheet-content :nth-child(4n) {
+	background:#EEE;
+  }
+  
+  /* Description field */
+  .sheet-rolltemplate-ito .sheet-desc,
+  .sheet-rolltemplate-ito .sheet-result,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite,
+  .sheet-rolltemplate-ito .sheet-feedback-echec,
+  .sheet-rolltemplate-ito .sheet-result-chance,
+  .sheet-rolltemplate-ito .sheet-result-degats,
+  .sheet-rolltemplate-ito .sheet-result-arcanum {
+	grid-column: span 2;
+	padding: 5px;
+	text-align: center;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-result {
+	  margin-top: 10px;
+	  font-size: 60px;
+	  font-weight: bold;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite,
+  .sheet-rolltemplate-ito .sheet-feedback-echec {
+	  margin-top: 30px;
+	  font-size: 25px;
+	  font-weight: bold;
+	  letter-spacing: -1.5px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite {
+	  color: var(--vert);
+  }
+  
+  .sheet-rolltemplate-ito .sheet-feedback-echec {
+	  color: var(--rouge);  
+  }
+  
+  .sheet-rolltemplate-ito .sheet-result-chance,
+  .sheet-rolltemplate-ito .sheet-result-degats {
+	  font-size: 100px;
+	  margin-top: 33px;
+	  font-weight: bold;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-result-arcanum {
+	  font-size: 50px;
+	  margin-top: 30px;
+	  font-weight: bold;
+	  font-style: italic;
+  }
+  
+  .sheet-rolltemplate-ito .inlinerollresult,
+  .sheet-rolltemplate-ito .inlinerollresult.importantroll,
+  .sheet-rolltemplate-ito .inlinerollresult.fullcrit,
+  .sheet-rolltemplate-ito .inlinerollresult.fullfail {
+	  border: none !important;
+	  background-color: transparent !important;
+	  color: var(--noir) !important;
+	  font-size: 100px;
+	  font-family: "Baskervville", serif;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult,
+  .sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.importantroll,
+  .sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.fullcrit,
+  .sheet-rolltemplate-ito .sheet-result-arcanum .inlinerollresult.fullfail {
+	  font-size: 80px;
+	  font-style: italic;
+	  padding: 0;
+  }
+   
+  /* Core Format*/
 .charsheet {
 	width: 810px;
 	--noir : #2c2e35;
@@ -23,11 +169,102 @@ body.sheet-darkmode .charsheet {
     box-shadow: 0px 0px 8px 1px #9f9e9ebf;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0; 
+}
+
 div.personnage {
 	background: white;
 	border: 1px solid black;
 	padding: 20px;
 } 
+
+.charsheet input.input_stats,
+.charsheet input.input_money {
+	width: 40px !important;
+    outline: none;
+    resize: none;
+    padding: 0;
+    font-size: 16px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    color: var(--noir);
+    font-weight: bold;
+}
+
+.charsheet input.input_fiche { 
+    width: 240px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    border: none;
+    background: none;
+    /* text-align: center; */
+    cursor: pointer;
+    height: 16px;
+    border-radius: 0px;
+    border-bottom: 2px solid #000000ad;
+    color: var(--noir);
+}
+
+.charsheet input.input_competences { 
+    width: 50px;
+    outline: none;
+    resize: none;
+    padding: 0;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    font-size: 14px;
+    border: none;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    height: 16px;
+    border-radius: 0px;
+    /* border-bottom: 2px solid #000000ad; */
+    color: var(--noir);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Roll design
+
+/* Boutton ROLL */
+.charsheet button[type=roll].roll_dice::before {
+  content: '';
+}
+
+.charsheet button[type=roll].roll_dice {
+    width: 20px;
+    height: 19px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/dice_20_bleu.png);
+    background-size: 20px 18px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.charsheet button[type=roll].roll_dice:hover {
+    margin-left: 2px;
+	padding: 0px;
+	background-position: 0 0px;
+}
 
 /* Structure informations*/
 
@@ -677,7 +914,7 @@ div.materiel_data {
 
 .wrapper_comp {  
 	display: grid;
-    grid-template-columns: 300px 100px 300px 100px;
+    grid-template-columns: 300px 50px 300px 50px;
 	grid-auto-rows: 22px;
 }
 
@@ -1184,6 +1421,506 @@ div.comp_repos_guerrier {
 
 div.comp_vol_tire {
 	grid-column: 3;
+	grid-row: 26;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_ambidextrie_data {
+	grid-column: 2;
+	grid-row: 2;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_armes_deux_mains_data {
+	grid-column: 2;
+	grid-row: 3;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_armes_de_tir_data {
+	grid-column: 2;
+	grid-row: 4;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_bouclier_data {
+	grid-column: 2;
+	grid-row: 5;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_artisan_data {
+    grid-column: 2;
+    grid-row: 6;
+    white-space : nowrap;
+    color: var(--noir);
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_brasseur_data {
+	grid-column: 2;
+	grid-row: 7;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_combat_mains_nues_data {
+	grid-column: 2;
+	grid-row: 8;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_cuisiner_data {
+	grid-column: 2;
+	grid-row: 9;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_denicheur_data {
+	grid-column: 2;
+	grid-row: 10;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_desamorcage_data {
+	grid-column: 2;
+	grid-row: 11;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_dressage_data {
+    grid-column: 2;
+    grid-row: 12;
+    white-space : nowrap;
+    color: var(--noir);
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_erudit_data {
+	grid-column: 2;
+	grid-row: 13;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_evasion_data {
+	grid-column: 2;
+	grid-row: 14;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_frappe_furtive_data {
+	grid-column: 2;
+	grid-row: 15;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_ingenieur_data {
+	grid-column: 2;
+	grid-row: 16;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_intimidation_data {
+	grid-column: 2;
+	grid-row: 17;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_langage_monstre_data {
+	grid-column: 2;
+	grid-row: 18;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_maitres_armes_data {
+	grid-column: 2;
+	grid-row: 19;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_meconnaissable_data {
+	grid-column: 2;
+	grid-row: 20;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_mefiance_data {
+	grid-column: 2;
+	grid-row: 21;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_natation_data {
+	grid-column: 2;
+	grid-row: 22;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_orientation_data {
+	grid-column: 2;
+	grid-row: 23;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_pistage_data {
+	grid-column: 2;
+	grid-row: 24;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_premiers_soins_data {
+	grid-column: 2;
+	grid-row: 25;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_runique_data {
+	grid-column: 2;
+	grid-row: 26;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_armes_une_main_data {
+	grid-column: 4;
+	grid-row: 2;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_armes_hast_data {
+	grid-column: 4;
+	grid-row: 3;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_armes_jet_data {
+	grid-column: 4;
+	grid-row: 4;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_alchimie_data {
+	grid-column: 4;
+	grid-row: 5;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_barde_data {
+	grid-column: 4;
+	grid-row: 6;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_chevaucher_data {
+	grid-column: 4;
+	grid-row: 7;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_comprehension_animale_data {
+	grid-column: 4;
+	grid-row: 8;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_crochetage_data {
+	grid-column: 4;
+	grid-row: 9;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_debrouillard_data {
+	grid-column: 4;
+	grid-row: 10;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_discretion_data {
+	grid-column: 4;
+	grid-row: 11;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_detection_data {
+	grid-column: 4;
+	grid-row: 12;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_eloquence_data {
+	grid-column: 4;
+	grid-row: 13;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_escalade_data {
+	grid-column: 4;
+	grid-row: 14;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_forgeron_data {
+	grid-column: 4;
+	grid-row: 15;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_herboristerie_data {
+	grid-column: 4;
+	grid-row: 16;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_instinct_survie_data {
+    grid-column: 4;
+    grid-row: 17;
+    white-space : nowrap;
+    color: var(--noir);
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_invincible_combat_data {
+	grid-column: 4;
+	grid-row: 18;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_leader_data {
+	grid-column: 4;
+	grid-row: 19;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_marchandage_data {
+	grid-column: 4;
+	grid-row: 20;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_medecine_data {
+	grid-column: 4;
+	grid-row: 21;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_mental_acier_data {
+	grid-column: 4;
+	grid-row: 22;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_observation_data {
+	grid-column: 4;
+	grid-row: 23;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_pacifiste_data {
+	grid-column: 4;
+	grid-row: 24;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_repos_guerrier_data {
+	grid-column: 4;
+	grid-row: 25;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    border: 1px solid red;
+}
+
+div.comp_vol_tire_data {
+	grid-column: 4;
 	grid-row: 26;
 	white-space : nowrap;
 	color: var(--noir);
