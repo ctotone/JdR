@@ -224,7 +224,7 @@ div.titre_fiche {
 
 div.logo {
     grid-column: 5;
-    grid-row: 1 / 8;
+    grid-row: 1 / 9;
     white-space: nowrap;
     color: var(--noir);
     font-size: 14px;
@@ -262,7 +262,7 @@ div.race {
     text-align: right;
 }
 
-div.ev {
+div.classe {
 	grid-column: 1;
 	grid-row: 5;
 	white-space : nowrap;
@@ -273,7 +273,7 @@ div.ev {
     text-align: right;
 }
 
-div.mana {
+div.ev {
 	grid-column: 1;
 	grid-row: 6;
 	white-space : nowrap;
@@ -284,9 +284,20 @@ div.mana {
     text-align: right;
 }
 
-div.psi {
+div.mana {
 	grid-column: 1;
 	grid-row: 7;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    /* border: 1px solid red; */
+    text-align: right;
+}
+
+div.psi {
+	grid-column: 1;
+	grid-row: 8;
 	white-space : nowrap;
 	color: var(--noir);
 	font-size: 14px;
@@ -315,7 +326,7 @@ div.race_data {
     /* border: 1px solid red; */
 }
 
-div.ev_data {
+div.classe_data {
 	grid-column: 3;
 	grid-row: 5;
 	white-space : nowrap;
@@ -325,7 +336,7 @@ div.ev_data {
     /* border: 1px solid red; */
 }
 
-div.mana_data {
+div.ev_data {
 	grid-column: 3;
 	grid-row: 6;
 	white-space : nowrap;
@@ -335,9 +346,19 @@ div.mana_data {
     /* border: 1px solid red; */
 }
 
-div.psi_data {
+div.mana_data {
 	grid-column: 3;
 	grid-row: 7;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: 14px;
+	font-weight: bold;
+    /* border: 1px solid red; */
+}
+
+div.psi_data {
+	grid-column: 3;
+	grid-row: 8;
 	white-space : nowrap;
 	color: var(--noir);
 	font-size: 14px;
