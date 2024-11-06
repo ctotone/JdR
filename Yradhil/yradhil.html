@@ -40,18 +40,18 @@
                 <div class="stat_persuasion_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Persuasion (@{persuasion})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{persuasion} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Persuasion"></button></div>
                 <div class="stat_perception_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Perception (@{perception})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{perception} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Perception"></button></div>
                 <div class="stat_parade_dice"><button class="roll_dice" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Parade (@{parade})}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{score=[[@{parade} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Parade"></button></div>
-                <div class="stat_force">Force</div>
-                <div class="stat_dexterite">Dextérité</div>
-                <div class="stat_intelligence">Intelligence</div>
-                <div class="stat_charisme">Charisme</div>
-                <div class="stat_courage">Courage</div>
-                <div class="stat_attaque">Attaque</div>
-                <div class="stat_volonte">Volonté</div>
-                <div class="stat_endurance">Endurance</div>
-                <div class="stat_constitution">Constitution</div>
-                <div class="stat_persuasion">Persuasion</div>
-                <div class="stat_perception">Perception</div>
-                <div class="stat_parade">Parade</div>
+                <div class="stat_force">Force <span class="petit">(FOR)</span></div>
+                <div class="stat_dexterite">Dextérité <span class="petit">(DEX)</span></div>
+                <div class="stat_intelligence">Intelligence <span class="petit">(INT)</span></div>
+                <div class="stat_charisme">Charisme <span class="petit">(CHA)</span></div>
+                <div class="stat_courage">Courage <span class="petit">(COU)</span></div>
+                <div class="stat_attaque">Attaque <span class="petit">(ATQ)</span></div>
+                <div class="stat_volonte">Volonté <span class="petit">(VOL)</span></div>
+                <div class="stat_endurance">Endurance <span class="petit">(END)</span></div>
+                <div class="stat_constitution">Constitution <span class="petit">(CONS)</span></div>
+                <div class="stat_persuasion">Persuasion <span class="petit">(PERS)</span></div>
+                <div class="stat_perception">Perception <span class="petit">(PERC)</span></div>
+                <div class="stat_parade">Parade <span class="petit">(PRD)</span></div>
                 <div class="stat_force_data"><input type="number" class="input_stats" name="attr_force" placeholder="0" title="Force" min="0" max="20"></div>
                 <div class="stat_dexterite_data"><input type="number" class="input_stats" name="attr_dexterite" placeholder="0" title="Dextérité" min="0" max="20"></div>
                 <div class="stat_intelligence_data"><input type="number" class="input_stats" name="attr_intelligence" placeholder="0" title="Intelligence" min="0" max="20"></div>
@@ -98,58 +98,58 @@
                 <div class="comp_titre">Compétences et Malus du héros</div>
             </div>
             <div class="wrapper_comp">
-                <div class="comp_ambidextrie">Ambidextrie</div>
-                <div class="comp_armes_deux_mains">Armes à deux mains</div>
-                <div class="comp_armes_de_tir">Armes de tir</div>
-                <div class="comp_bouclier">Bouclier</div>
-                <div class="comp_artisan">Artisan - Bois</div>
-                <div class="comp_brasseur">Brasseur</div>
-                <div class="comp_combat_mains_nues">Combat à mains nues</div>
-                <div class="comp_cuisiner">Cuisiner</div>
-                <div class="comp_denicheur">Dénicheur</div>
-                <div class="comp_desamorcage">Désamorçage</div>
-                <div class="comp_dressage">Dressage</div>
-                <div class="comp_erudit">Érudit</div>
-                <div class="comp_evasion">Évasion</div>
-                <div class="comp_frappe_furtive">Frappe furtive</div>
-                <div class="comp_ingenieur">Ingénieur</div>
-                <div class="comp_intimidation">Intimidation</div>
-                <div class="comp_langage_monstre">Langage des monstres</div>
-                <div class="comp_maitres_armes">Maître d'armes</div>
-                <div class="comp_meconnaissable">Méconnaissable</div>
-                <div class="comp_mefiance">Méfiance</div>
-                <div class="comp_natation">Natation</div>
-                <div class="comp_orientation">Orientation</div>
-                <div class="comp_pistage">Pistage</div>
-                <div class="comp_premiers_soins">Premiers soins</div>
-                <div class="comp_runique">Runique</div>
-                <div class="comp_autre_competence_1"><input type="text" class="input_competences" name="attr_nom_competence_1" placeholder="Autre..."></div>
-                <div class="comp_armes_une_main">Armes à une main</div>
-                <div class="comp_armes_hast">Armes d'hast</div>
-                <div class="comp_armes_jet">Armes de jet</div>
-                <div class="comp_alchimie">Alchimie</div>
-                <div class="comp_barde">Barde</div>
-                <div class="comp_chevaucher">Chevaucher</div>
-                <div class="comp_comprehension_animale">Compréhension animale</div>
-                <div class="comp_crochetage">Crochetage</div>
-                <div class="comp_debrouillard">Débrouillard</div>
-                <div class="comp_discretion">Discrétion</div>
-                <div class="comp_detection">Détection</div>
-                <div class="comp_eloquence">Éloquence</div>
-                <div class="comp_escalade">Escalade</div>
-                <div class="comp_forgeron">Forgeron</div>
-                <div class="comp_herboristerie">Herboristerie</div>
-                <div class="comp_instinct_survie">Instinct de survie</div>
-                <div class="comp_invincible_combat">Invincible au combat</div>
-                <div class="comp_leader">Leader</div>
-                <div class="comp_marchandage">Marchandage</div>
-                <div class="comp_medecine">Médecine</div>
-                <div class="comp_mental_acier">Mental d'acier</div>
-                <div class="comp_observation">Observation</div>
-                <div class="comp_pacifiste">Pacifiste</div>
-                <div class="comp_repos_guerrier">Repos du guerrier</div>
-                <div class="comp_vol_tire">Vol à la tire</div>
-                <div class="comp_autre_competence_2"><input type="text" class="input_competences" name="attr_nom_competence_2" placeholder="Autre..."></div>
+                <div class="comp_ambidextrie">Ambidextrie <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_armes_deux_mains">Armes à deux mains <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_armes_de_tir">Armes de tir <span class="petit">(DEX)</span></div>
+                <div class="comp_bouclier">Bouclier <span class="petit">(PRD)</span></div>
+                <div class="comp_artisan">Artisan - Bois <span class="petit">(DEX/INT)</span></div>
+                <div class="comp_brasseur">Brasseur <span class="petit">(INT)</span></div>
+                <div class="comp_combat_mains_nues">Combat à mains nues <span class="petit">(ATQ/PRD/DEX)</span></div>
+                <div class="comp_cuisiner">Cuisiner <span class="petit">(INT)</span></div>
+                <div class="comp_denicheur">Dénicheur <span class="petit">(PERC)</span></div>
+                <div class="comp_desamorcage">Désamorçage <span class="petit">(INT)</span></div>
+                <div class="comp_dressage">Dressage <span class="petit">(INT)</span></div>
+                <div class="comp_erudit">Érudit <span class="petit">(INT)</span></div>
+                <div class="comp_evasion">Évasion <span class="petit">(DEX)</span></div>
+                <div class="comp_frappe_furtive">Frappe furtive <span class="petit">(ATQ)</span></div>
+                <div class="comp_ingenieur">Ingénieur <span class="petit">(INT)</span></div>
+                <div class="comp_intimidation">Intimidation <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_langage_monstre">Langage des monstres <span class="petit">(INT)</span></div>
+                <div class="comp_maitres_armes">Maître d'armes <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_meconnaissable">Méconnaissable <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_mefiance">Méfiance <span class="petit">(PERC)</span></div>
+                <div class="comp_natation">Natation <span class="petit">(END)</span></div>
+                <div class="comp_orientation">Orientation <span class="petit">(INT)</span></div>
+                <div class="comp_pistage">Pistage <span class="petit">(PERC)</span></div>
+                <div class="comp_premiers_soins">Premiers soins <span class="petit">(INT)</span></div>
+                <div class="comp_runique">Runique <span class="petit">(INT)</span></div>
+                <div class="comp_autre_competence_1"><input type="text" class="input_competences_autre" name="attr_nom_competence_1" placeholder="Autre..."></div>
+                <div class="comp_armes_une_main">Armes à une main <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_armes_hast">Armes d'hast <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_armes_jet">Armes de jet <span class="petit">(DEX)</span></div>
+                <div class="comp_alchimie">Alchimie <span class="petit">(INT)</span></div>
+                <div class="comp_barde">Barde <span class="petit">(INT)</span></div>
+                <div class="comp_chevaucher">Chevaucher <span class="petit">(DEX)</span></div>
+                <div class="comp_comprehension_animale">Compréhension animale <span class="petit">(INT)</span></div>
+                <div class="comp_crochetage">Crochetage <span class="petit">(DEX)</span></div>
+                <div class="comp_debrouillard">Débrouillard <span class="petit">(INT)</span></div>
+                <div class="comp_discretion">Discrétion <span class="petit">(DEX)</span></div>
+                <div class="comp_detection">Détection <span class="petit">(PERC)</span></div>
+                <div class="comp_eloquence">Éloquence <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_escalade">Escalade <span class="petit">(END)</span></div>
+                <div class="comp_forgeron">Forgeron <span class="petit">(INT)</span></div>
+                <div class="comp_herboristerie">Herboristerie <span class="petit">(INT)</span></div>
+                <div class="comp_instinct_survie">Instinct de survie <span class="petit">(VOL)</span></div>
+                <div class="comp_invincible_combat">Invincible au combat <span class="petit">(ATQ/PRD)</span></div>
+                <div class="comp_leader">Leader <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_marchandage">Marchandage <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_medecine">Médecine <span class="petit">(INT)</span></div>
+                <div class="comp_mental_acier">Mental d'acier <span class="petit">(VOL)</span></div>
+                <div class="comp_observation">Observation <span class="petit">(PERC)</span></div>
+                <div class="comp_pacifiste">Pacifiste <span class="petit">(CHA/PERS)</span></div>
+                <div class="comp_repos_guerrier">Repos du guerrier <span class="petit">(CONS)</span></div>
+                <div class="comp_vol_tire">Vol à la tire <span class="petit">(DEX)</span></div>
+                <div class="comp_autre_competence_2"><input type="text" class="input_competences_autre" name="attr_nom_competence_2" placeholder="Autre..."></div>
                 <!-- Data Compétences -->
                 <div class="comp_ambidextrie_data"><input type="text" class="input_competences" name="attr_ambidextrie"></div>
                 <div class="comp_armes_deux_mains_data"><input type="text" class="input_competences" name="attr_armes_deux_mains"></div>
@@ -217,6 +217,7 @@
                 <div class="comp_penible">Pénible</div>
                 <div class="comp_radin">Radin</div>
                 <div class="comp_xenophobe">Xénophobe</div>
+                <div class="comp_autre_malus_1"><input type="text" class="input_defaut_autre" name="attr_nom_malus_1" placeholder="Autre..."></div>
                 <div class="comp_alcoolique">Alcoolique</div>
                 <div class="comp_coeur_artichaut">Coeur d'artichaut</div>
                 <div class="comp_fantomes_passe">Fantômes du passé</div>
@@ -228,29 +229,32 @@
                 <div class="comp_phobique">Phobique</div>
                 <div class="comp_recherche">Recherché</div>
                 <div class="comp_sanguinaire">Sanguinaire</div>
+                <div class="comp_autre_malus_2"><input type="text" class="input_defaut_autre" name="attr_nom_malus_2" placeholder="Autre..."></div>
                 <!-- Data malus -->
-                <div class="comp_agoraphobie_data"><input type="text" class="input_competences" name="attr_agoraphobie"></div>
-                <div class="comp_bagarreur_data"><input type="text" class="input_competences" name="attr_bagarreur"></div>
-                <div class="comp_coureur_jupon_data"><input type="text" class="input_competences" name="attr_coureur_jupon"></div>
-                <div class="comp_gourmandise_data"><input type="text" class="input_competences" name="attr_gourmandise"></div>
-                <div class="comp_insomniaque_data"><input type="text" class="input_competences" name="attr_insomniaque"></div>
-                <div class="comp_junkie_data"><input type="text" class="input_competences" name="attr_junkie"></div>
-                <div class="comp_mephitique_data"><input type="text" class="input_competences" name="attr_mephitique"></div>
-                <div class="comp_naif_data"><input type="text" class="input_competences" name="attr_naif"></div>
-                <div class="comp_penible_data"><input type="text" class="input_competences" name="attr_penible"></div>
-                <div class="comp_radin_data"><input type="text" class="input_competences" name="attr_radin"></div>
-                <div class="comp_xenophobe_data"><input type="text" class="input_competences" name="attr_xenophobe"></div>
-                <div class="comp_alcoolique_data"><input type="text" class="input_competences" name="attr_alcoolique"></div>
-                <div class="comp_coeur_artichaut_data"><input type="text" class="input_competences" name="attr_coeur_artichaut"></div>
-                <div class="comp_fantomes_passe_data"><input type="text" class="input_competences" name="attr_fantomes_passe"></div>
-                <div class="comp_impulsif_data"><input type="text" class="input_competences" name="attr_impulsif"></div>
-                <div class="comp_introverti_data"><input type="text" class="input_competences" name="attr_introverti"></div>
-                <div class="comp_maladroit_data"><input type="text" class="input_competences" name="attr_maladroit"></div>
-                <div class="comp_misogyne_misandre_data"><input type="text" class="input_competences" name="attr_misogyne_misandre"></div>
-                <div class="comp_orgueilleux_data"><input type="text" class="input_competences" name="attr_orgueilleux"></div>
-                <div class="comp_phobique_data"><input type="text" class="input_competences" name="attr_phobique"></div>
-                <div class="comp_recherche_data"><input type="text" class="input_competences" name="attr_recherche"></div>
-                <div class="comp_sanguinaire_data"><input type="text" class="input_competences" name="attr_sanguinaire"></div>
+                <div class="comp_agoraphobie_data"><input type="text" class="input_competences_rouge" name="attr_agoraphobie"></div>
+                <div class="comp_bagarreur_data"><input type="text" class="input_competences_rouge" name="attr_bagarreur"></div>
+                <div class="comp_coureur_jupon_data"><input type="text" class="input_competences_rouge" name="attr_coureur_jupon"></div>
+                <div class="comp_gourmandise_data"><input type="text" class="input_competences_rouge" name="attr_gourmandise"></div>
+                <div class="comp_insomniaque_data"><input type="text" class="input_competences_rouge" name="attr_insomniaque"></div>
+                <div class="comp_junkie_data"><input type="text" class="input_competences_rouge" name="attr_junkie"></div>
+                <div class="comp_mephitique_data"><input type="text" class="input_competences_rouge" name="attr_mephitique"></div>
+                <div class="comp_naif_data"><input type="text" class="input_competences_rouge" name="attr_naif"></div>
+                <div class="comp_penible_data"><input type="text" class="input_competences_rouge" name="attr_penible"></div>
+                <div class="comp_radin_data"><input type="text" class="input_competences_rouge" name="attr_radin"></div>
+                <div class="comp_xenophobe_data"><input type="text" class="input_competences_rouge" name="attr_xenophobe"></div>
+                <div class="comp_autre_malus_1_data"><input type="text" class="input_competences_rouge" name="attr_valeur_malus_1"></div>
+                <div class="comp_alcoolique_data"><input type="text" class="input_competences_rouge" name="attr_alcoolique"></div>
+                <div class="comp_coeur_artichaut_data"><input type="text" class="input_competences_rouge" name="attr_coeur_artichaut"></div>
+                <div class="comp_fantomes_passe_data"><input type="text" class="input_competences_rouge" name="attr_fantomes_passe"></div>
+                <div class="comp_impulsif_data"><input type="text" class="input_competences_rouge" name="attr_impulsif"></div>
+                <div class="comp_introverti_data"><input type="text" class="input_competences_rouge" name="attr_introverti"></div>
+                <div class="comp_maladroit_data"><input type="text" class="input_competences_rouge" name="attr_maladroit"></div>
+                <div class="comp_misogyne_misandre_data"><input type="text" class="input_competences_rouge" name="attr_misogyne_misandre"></div>
+                <div class="comp_orgueilleux_data"><input type="text" class="input_competences_rouge" name="attr_orgueilleux"></div>
+                <div class="comp_phobique_data"><input type="text" class="input_competences_rouge" name="attr_phobique"></div>
+                <div class="comp_recherche_data"><input type="text" class="input_competences_rouge" name="attr_recherche"></div>
+                <div class="comp_sanguinaire_data"><input type="text" class="input_competences_rouge" name="attr_sanguinaire"></div>
+                <div class="comp_autre_malus_2_data"><input type="text" class="input_competences_rouge" name="attr_valeur_malus_2"></div>
 
             </div>
         </div>

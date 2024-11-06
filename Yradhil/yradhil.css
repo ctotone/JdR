@@ -5,6 +5,8 @@
 	width: 810px;
 	--noir : #2c2e35;
 	--rouge : #ff0000b9;
+	--noir_clair : #2c2e358f;
+	--rouge_clair : #ff000079;
 	--bleu : #2249a5;
 	--bleu_clair : #4e6db7;
 	--vert_clair : #0b8a8d;
@@ -103,7 +105,8 @@ div.personnage {
     color: var(--noir);
 }
 
-.charsheet input.input_competences { 
+.charsheet input.input_competences,
+.charsheet input.input_competences_rouge { 
     width: 50px;
     outline: none;
     resize: none;
@@ -118,6 +121,10 @@ div.personnage {
     color: var(--noir);
     font-weight: bold;
     text-transform: capitalize;
+}
+
+.charsheet input.input_competences_rouge { 
+    color: var(--rouge);
 }
 
 .charsheet textarea.notes {  
@@ -136,6 +143,40 @@ div.personnage {
     margin-top: 5px;
     line-height: 15px;
     font-family: var(--font_metamorphous);
+}
+
+.charsheet input.input_competences_autre,
+.charsheet input.input_defaut_autre { 
+	white-space: nowrap;
+    color: var(--noir);
+    font-size: var(--size_competence);
+    font-weight: bold;
+    background: none;
+    border: none;
+    align-content: center;
+    padding-left: var(--padding_competence);
+    line-height: 12px;
+    margin-top: -4px;
+    margin-left: -5px;
+    width: 300px;
+    outline: none;
+}
+
+.charsheet input.input_defaut_autre { 
+	color: var(--rouge);
+}
+
+.charsheet input.input_competences_autre::placeholder { 
+	color: var(--noir_clair);
+}
+
+.charsheet input.input_defaut_autre::placeholder { 
+	color: var(--rouge_clair);
+}
+
+span.petit {
+	color: var(--noir_clair);
+	font-size: 10px;
 }
 
 /* Roll design */
@@ -314,7 +355,7 @@ div.psi_data {
 
 .wrapper_stats {  
 	display: grid;
-    grid-template-columns: 50px 0px 119px 0px 50px 31px 50px 0px 119px 0px 50px 31px 50px 0px 119px 0px 50px;
+    grid-template-columns: 40px 0px 145px 0px 50px 5px 40px 0px 149px 0px 50px 5px 40px 0px 145px 0px 50px;
 	grid-auto-rows: 35px;
 }
 
@@ -2501,6 +2542,56 @@ div.comp_xenophobe {
     align-content: center;
 }
 
+div.comp_autre_malus_1 {
+	grid-column: 1;
+	grid-row: 12;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_competence);
+	font-weight: bold;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	padding-left: var(--padding_competence);
+}
+
+div.comp_autre_malus_2 {
+	grid-column: 3;
+	grid-row: 12;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_competence);
+	font-weight: bold;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	padding-left: var(--padding_competence);
+}
+
+div.comp_autre_malus_1_data {
+	grid-column: 2;
+	grid-row: 12;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_competence);
+	font-weight: bold;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+}
+
+div.comp_autre_malus_2_data {
+	grid-column: 4;
+	grid-row: 12;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_competence);
+	font-weight: bold;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+}
+
 div.comp_alcoolique {
 	grid-column: 3;
 	grid-row: 1;
@@ -2653,7 +2744,6 @@ div.comp_agoraphobie_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2666,7 +2756,6 @@ div.comp_bagarreur_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2679,7 +2768,6 @@ div.comp_coureur_jupon_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2692,7 +2780,6 @@ div.comp_gourmandise_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2705,7 +2792,6 @@ div.comp_insomniaque_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2718,7 +2804,6 @@ div.comp_junkie_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2731,7 +2816,6 @@ div.comp_mephitique_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2744,7 +2828,6 @@ div.comp_naif_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2757,7 +2840,6 @@ div.comp_penible_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2770,7 +2852,6 @@ div.comp_radin_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2783,7 +2864,6 @@ div.comp_xenophobe_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2796,7 +2876,6 @@ div.comp_alcoolique_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2809,7 +2888,6 @@ div.comp_coeur_artichaut_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2822,7 +2900,6 @@ div.comp_fantomes_passe_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2835,7 +2912,6 @@ div.comp_impulsif_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2848,7 +2924,6 @@ div.comp_introverti_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2861,7 +2936,6 @@ div.comp_maladroit_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2874,7 +2948,6 @@ div.comp_misogyne_misandre_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2887,7 +2960,6 @@ div.comp_orgueilleux_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2900,7 +2972,6 @@ div.comp_phobique_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2913,7 +2984,6 @@ div.comp_recherche_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
@@ -2926,7 +2996,6 @@ div.comp_sanguinaire_data {
 	font-weight: bold;
     border: var(--border_competence);
     border-style: var(--border_style_competence);
-	padding-left: var(--padding_competence);
     align-content: center;
 }
 
