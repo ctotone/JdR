@@ -2,7 +2,8 @@
 
   /* Core Format*/
 .charsheet {
-	width: 810px;
+	width: 812px;
+	--black: white;
 	--noir : #2c2e35;
 	--rouge : #ff0000b9;
 	--noir_clair : #2c2e358f;
@@ -10,12 +11,16 @@
 	--bleu : #2249a5;
 	--bleu_clair : #4e6db7;
 	--vert_clair : #0b8a8d;
+	--souligne:  #000000ad;
+	--couleur_border: #ffffff69;
 	--font_metamorphous: "Metamorphous", serif;
 	--font_medieva: "Metamorphous", serif;
 	--size_competence: 13px;
-	--border_competence: 3px groove #000000d6;
+	--border_competence: 3px groove var(--couleur_border);
     --border_style_competence: double;
 	--padding_competence: 5px;
+	--line_height1: 30px;
+	--line-height_titre: 55px;
     background-color: var(--vert_clair);
     padding: 20px !important;	
 	color: var(--bleu);
@@ -34,8 +39,18 @@ div.competence {
 }
 
 body.sheet-darkmode .charsheet {
-    background-color: var(--vert_clair);
-    box-shadow: 0px 0px 8px 1px #9f9e9ebf;
+	background-color: var(--vert_clair);
+	box-shadow: 0px 0px 8px 1px #9f9e9ebf;
+	--black: black;
+	--noir: #ffffffd1;
+	--rouge: #ff0000b9;
+	--noir_clair: #ffffff8f;
+	--rouge_clair: #ff000079;
+	--bleu: #2249a5;
+	--bleu_clair: #4e6db7;
+	--vert_clair: #481c5e;
+	--souligne:  #7c349fd6;
+	--couleur_border: #7c349fd6;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -52,6 +67,12 @@ input[type=number] {
 
 div.personnage {
 	background: white;
+	border: 1px solid black;
+	padding: 20px;
+} 
+
+body.sheet-darkmode div.personnage {
+	background: black;
 	border: 1px solid black;
 	padding: 20px;
 } 
@@ -101,7 +122,7 @@ div.personnage {
     cursor: pointer;
     height: 20px;
     border-radius: 0px;
-    border-bottom: 1px solid #000000ad;
+    border-bottom: 1px solid var(--souligne);
     color: var(--noir);
 }
 
@@ -139,7 +160,7 @@ div.personnage {
     height: 158px;
     color: var(--noir);
     border: none;
-    background: white;
+    background: var(--black);
     margin-top: 5px;
     line-height: 15px;
     font-family: var(--font_metamorphous);
@@ -176,6 +197,11 @@ div.personnage {
 
 span.petit {
 	color: var(--noir_clair);
+	font-size: 10px;
+}
+
+span.petit_rouge {
+	color: var(--rouge_clair);
 	font-size: 10px;
 }
 
@@ -236,9 +262,9 @@ div.logo {
     width: 190px;
 }
 
-/* body.sheet-darkmode div.logo {
+body.sheet-darkmode div.logo {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Yradhil/images/logo_ydra_dark.png);
-} */
+}
 
 div.nom {
 	grid-column: 1;
@@ -392,6 +418,7 @@ div.stat_titre {
     border-style: var(--border_style_competence);
     align-content: center;
     text-align: center;
+	line-height: var(--line-height_titre);
 }
 
 div.stat_force_dice {
@@ -407,6 +434,7 @@ div.stat_force_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_dexterite_dice {
@@ -422,6 +450,7 @@ div.stat_dexterite_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_intelligence_dice {
@@ -437,6 +466,7 @@ div.stat_intelligence_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_charisme_dice {
@@ -452,6 +482,7 @@ div.stat_charisme_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_volonte_dice {
@@ -467,6 +498,7 @@ div.stat_volonte_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_endurance_dice {
@@ -482,6 +514,7 @@ div.stat_endurance_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_constitution_dice {
@@ -497,6 +530,7 @@ div.stat_constitution_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_persuasion_dice {
@@ -512,6 +546,7 @@ div.stat_persuasion_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_courage_dice {
@@ -527,6 +562,7 @@ div.stat_courage_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_perception_dice {
@@ -542,6 +578,7 @@ div.stat_perception_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_attaque_dice {
@@ -557,6 +594,7 @@ div.stat_attaque_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_parade_dice {
@@ -572,6 +610,7 @@ div.stat_parade_dice {
 	border-right: none;
     align-content: center;
     text-align: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_force {
@@ -586,6 +625,7 @@ div.stat_force {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_dexterite {
@@ -600,6 +640,7 @@ div.stat_dexterite {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_intelligence {
@@ -614,6 +655,7 @@ div.stat_intelligence {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_charisme {
@@ -628,6 +670,7 @@ div.stat_charisme {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_volonte {
@@ -642,6 +685,7 @@ div.stat_volonte {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_endurance {
@@ -656,6 +700,7 @@ div.stat_endurance {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_constitution {
@@ -670,6 +715,7 @@ div.stat_constitution {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_persuasion {
@@ -684,6 +730,7 @@ div.stat_persuasion {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_courage {
@@ -698,6 +745,7 @@ div.stat_courage {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_perception {
@@ -712,6 +760,7 @@ div.stat_perception {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_attaque {
@@ -726,6 +775,7 @@ div.stat_attaque {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_parade {
@@ -740,6 +790,7 @@ div.stat_parade {
     border-style: var(--border_style_competence);
 	border-left: none;
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_force_data {
@@ -753,6 +804,7 @@ div.stat_force_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_dexterite_data {
@@ -766,6 +818,7 @@ div.stat_dexterite_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_intelligence_data {
@@ -779,6 +832,7 @@ div.stat_intelligence_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_charisme_data {
@@ -792,6 +846,7 @@ div.stat_charisme_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_volonte_data {
@@ -805,6 +860,7 @@ div.stat_volonte_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_endurance_data {
@@ -818,6 +874,7 @@ div.stat_endurance_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_constitution_data {
@@ -831,6 +888,7 @@ div.stat_constitution_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_persuasion_data {
@@ -844,6 +902,7 @@ div.stat_persuasion_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_courage_data {
@@ -857,6 +916,7 @@ div.stat_courage_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_perception_data {
@@ -870,6 +930,7 @@ div.stat_perception_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_attaque_data {
@@ -883,6 +944,7 @@ div.stat_attaque_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 div.stat_parade_data {
@@ -896,6 +958,7 @@ div.stat_parade_data {
     border: var(--border_competence);
     border-style: var(--border_style_competence);
     align-content: center;
+	line-height: var(--line_height1);
 }
 
 /* Structure informations*/
@@ -924,6 +987,7 @@ div.equipement_titre {
     border-style: var(--border_style_competence);
     align-content: center;
     text-align: center;
+	line-height: var(--line-height_titre);
 }
 
 div.or {
@@ -1118,6 +1182,7 @@ div.comp_titre {
     border-style: var(--border_style_competence);
     align-content: center;
     text-align: center;
+	line-height: var(--line-height_titre);
 }
 
 div.comp_ambidextrie {
@@ -3045,7 +3110,8 @@ div.comp_sanguinaire_data {
 }
   
 .sheet-rolltemplate-darkmode.sheet-rolltemplate-ito .sheet-container {
-	box-shadow: 0px 0px 10px 3px #919191c4;
+	box-shadow: 0px 0px 10px 3px #000000ed;
+	filter: brightness(83%);
 }
   
 .sheet-rolltemplate-ito .sheet-header {
