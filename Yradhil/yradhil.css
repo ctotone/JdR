@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
 
   /* Core Format*/
+.sheetform,
+body.sheet-darkmode .sheetforme {
+	 background-color: #fff0 !important;
+ }
+ 
 .charsheet {
 	width: 812px;
 	--black: white;
@@ -12,7 +17,7 @@
 	--bleu_clair : #4e6db7;
 	--vert_clair : #0b8a8d;
 	--souligne:  #000000ad;
-	--couleur_border: #ffffff69;
+	--couleur_border: #000000ad;
 	--font_metamorphous: "Metamorphous", serif;
 	--font_medieva: "Metamorphous", serif;
 	--size_competence: 13px;
@@ -30,12 +35,7 @@
 	border: none;
     margin-bottom: 15px;
     box-shadow: 0px 0px 10px 1px #000000;
-}
-
-div.talent,
-div.equipement,
-div.competence {
-	margin-left: 20px;
+	border-radius: 10px;
 }
 
 body.sheet-darkmode .charsheet {
@@ -51,6 +51,20 @@ body.sheet-darkmode .charsheet {
 	--vert_clair: #481c5e;
 	--souligne:  #7c349fd6;
 	--couleur_border: #7c349fd6;
+}
+
+div.talent,
+div.equipement,
+div.competence {  
+	margin-left: 20px;
+	width: 719px;
+	box-shadow: 2px 2px 9px 1px #00000075;
+}
+
+body.sheet-darkmode div.talent,
+body.sheet-darkmode div.equipement,
+body.sheet-darkmode div.competence { 
+	box-shadow: 0px 0px 4px 3px #fbfbfb4f;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -69,6 +83,7 @@ div.personnage {
 	background: white;
 	border: 1px solid black;
 	padding: 20px;
+	border-radius: 10px;
 } 
 
 body.sheet-darkmode div.personnage {
@@ -195,6 +210,10 @@ body.sheet-darkmode div.personnage {
 	color: var(--rouge_clair);
 }
 
+.charsheet input.input_defaut_autre::placeholder { 
+	color: var(--rouge_clair);
+}
+
 span.petit {
 	color: var(--noir_clair);
 	font-size: 10px;
@@ -235,7 +254,7 @@ span.petit_rouge {
 
 .wrapper_info {  
     display: grid;
-    grid-template-columns: 117px 10px 420px 10px 188px;
+    grid-template-columns: 143px 10px 388px 10px 188px;
     grid-auto-rows: 30px;
 }
 
@@ -257,9 +276,9 @@ div.logo {
     font-weight: bold;
     /* border: 1px solid red; */
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Yradhil/images/logo_ydra.png);
-    background-size: 190px 190px;
-    height: 190px;
-    width: 190px;
+	background-size: 220px 220px;
+	height: 220px;
+	width: 220px;
 }
 
 body.sheet-darkmode div.logo {
