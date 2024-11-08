@@ -462,8 +462,12 @@ div.psi_data {
 
 .wrapper_stats {  
 	display: grid;
-    grid-template-columns: 30px 0px 116px 50px 35px 5px 30px 0px 130px 50px 35px 5px 30px 0px 118px 50px 35px;
-	grid-auto-rows: 35px;
+    grid-template-columns: 50px 0px 136px 50px 0px 5px 50px 0px 138px 50px 0px 5px 50px 0px 135px 50px 0px;
+}
+
+.wrapper_stats_bonus {  
+	display: grid;
+    grid-template-columns: 186px 50px 0px 0px 0px 5px 188px 50px 0px 0px 0px 5px 185px 50px 0px 0px 0px;
 }
 
 div.stat_titre {
@@ -1039,10 +1043,8 @@ div.stat_parade_data {
 	line-height: var(--line_height1);
 }
 
-
-
-div.stat_force_bonus {
-	grid-column: 5;
+div.stat_perception_bonus {
+	grid-column: 1;
 	grid-row: 1;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1056,7 +1058,7 @@ div.stat_force_bonus {
 }
 
 div.stat_dexterite_bonus {
-	grid-column: 5;
+	grid-column: 1;
 	grid-row: 2;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1069,36 +1071,8 @@ div.stat_dexterite_bonus {
 	line-height: var(--line_height1);
 }
 
-div.stat_intelligence_bonus {
-	grid-column: 5;
-	grid-row: 3;
-	white-space : nowrap;
-	color: var(--noir);
-	font-size: var(--size_talent_bonus);
-	font-weight: bold;
-    border: 1px solid red;
-    border: var(--border_competence);
-    border-style: var(--border_style_competence);
-    align-content: center;
-	line-height: var(--line_height1);
-}
-
-div.stat_charisme_bonus {
-	grid-column: 5;
-	grid-row: 4;
-	white-space : nowrap;
-	color: var(--noir);
-	font-size: var(--size_talent_bonus);
-	font-weight: bold;
-    border: 1px solid red;
-    border: var(--border_competence);
-    border-style: var(--border_style_competence);
-    align-content: center;
-	line-height: var(--line_height1);
-}
-
-div.stat_volonte_bonus {
-	grid-column: 11;
+div.stat_force_bonus {
+	grid-column: 7;
 	grid-row: 1;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1111,8 +1085,8 @@ div.stat_volonte_bonus {
 	line-height: var(--line_height1);
 }
 
-div.stat_endurance_bonus {
-	grid-column: 11;
+div.stat_volonte_bonus {
+	grid-column: 7;
 	grid-row: 2;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1126,35 +1100,7 @@ div.stat_endurance_bonus {
 }
 
 div.stat_constitution_bonus {
-	grid-column: 11;
-	grid-row: 3;
-	white-space : nowrap;
-	color: var(--noir);
-	font-size: var(--size_talent_bonus);
-	font-weight: bold;
-    border: 1px solid red;
-    border: var(--border_competence);
-    border-style: var(--border_style_competence);
-    align-content: center;
-	line-height: var(--line_height1);
-}
-
-div.stat_persuasion_bonus {
-	grid-column: 11;
-	grid-row: 4;
-	white-space : nowrap;
-	color: var(--noir);
-	font-size: var(--size_talent_bonus);
-	font-weight: bold;
-    border: 1px solid red;
-    border: var(--border_competence);
-    border-style: var(--border_style_competence);
-    align-content: center;
-	line-height: var(--line_height1);
-}
-
-div.stat_courage_bonus {
-	grid-column: 17;
+	grid-column: 13;
 	grid-row: 1;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1167,8 +1113,8 @@ div.stat_courage_bonus {
 	line-height: var(--line_height1);
 }
 
-div.stat_perception_bonus {
-	grid-column: 17;
+div.stat_endurance_bonus {
+	grid-column: 13;
 	grid-row: 2;
 	white-space : nowrap;
 	color: var(--noir);
@@ -1181,9 +1127,9 @@ div.stat_perception_bonus {
 	line-height: var(--line_height1);
 }
 
-div.stat_attaque_bonus {
-	grid-column: 17;
-	grid-row: 3;
+div.stat_perception_bonus_data {
+	grid-column: 2;
+	grid-row: 1;
 	white-space : nowrap;
 	color: var(--noir);
 	font-size: var(--size_talent_bonus);
@@ -1195,9 +1141,65 @@ div.stat_attaque_bonus {
 	line-height: var(--line_height1);
 }
 
-div.stat_parade_bonus {
-	grid-column: 17;
-	grid-row: 4;
+div.stat_dexterite_bonus {
+	grid-column: 2;
+	grid-row: 2;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_talent_bonus);
+	font-weight: bold;
+    border: 1px solid red;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	line-height: var(--line_height1);
+}
+
+div.stat_force_bonus {
+	grid-column: 8;
+	grid-row: 1;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_talent_bonus);
+	font-weight: bold;
+    border: 1px solid red;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	line-height: var(--line_height1);
+}
+
+div.stat_volonte_bonus {
+	grid-column: 8;
+	grid-row: 2;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_talent_bonus);
+	font-weight: bold;
+    border: 1px solid red;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	line-height: var(--line_height1);
+}
+
+div.stat_constitution_bonus {
+	grid-column: 14;
+	grid-row: 1;
+	white-space : nowrap;
+	color: var(--noir);
+	font-size: var(--size_talent_bonus);
+	font-weight: bold;
+    border: 1px solid red;
+    border: var(--border_competence);
+    border-style: var(--border_style_competence);
+    align-content: center;
+	line-height: var(--line_height1);
+}
+
+div.stat_endurance_bonus {
+	grid-column: 14;
+	grid-row: 2;
 	white-space : nowrap;
 	color: var(--noir);
 	font-size: var(--size_talent_bonus);
