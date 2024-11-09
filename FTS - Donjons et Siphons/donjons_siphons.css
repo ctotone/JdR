@@ -79,9 +79,9 @@ select.choix_carte_butin {
 }
 
 .charsheet button[type=roll].button_xcard {
-    width: 70px;
-    height: 119px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/xcard.png);
+    width: 72px;
+    height: 123px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Donjons%20et%20Siphons/images/X-Cards.webp);
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid #000000b0;
@@ -113,102 +113,6 @@ body.sheet-darkmode .commune {
     border: 2px solid #0f2f28;
 }
 
-/* Affichage compteur et defilement */
-
-div.afficher_compteur,
-div.butin_carte_compteur,
-div.butin_select_compteur,
-div.butin_carte,
-div.butin_select,
-div.logo_casse,
-div.logo_casse_compteur {
-    display: none;
-}
-
-.charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur,
-.charsheet .affichage_compteur[value="1"] ~ div.butin_carte_compteur,
-.charsheet .affichage_compteur[value="0"] ~ div.butin_carte,
-.charsheet .affichage_compteur[value="0"] ~ div.logo_casse,
-.charsheet .affichage_compteur[value="1"] ~ div.logo_casse_compteur {
-    display: block;
-}
-
-
-.charsheet .affichage_compteur[value="1"] ~ div.butin_select_compteur,
-.charsheet .affichage_compteur[value="0"] ~ div.butin_select {
-    display: flex;
-}
-
-
-div.info_plus {
-    margin-top: 17px;
-    margin-left: -23px;
-    /* border: 1px solid red; */
-    font-family: 'Caveat', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fbfbfbbd;
-    width: 40px;
-    height: 37px;
-    transform: rotate(-7deg);
-    position: absolute;
-}
-
-div.info_reset {
-    margin-top: 28px;
-    margin-left: 144px;
-    /* border: 1px solid red; */
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fbfbfbbd;
-    width: 40px;
-    height: 37px;
-    transform: rotate(27deg);
-    display: flex;
-    position: absolute;
-}
-
-.charsheet button[type=action].button_switch_compteur {
-    border: none;
-    padding: 0;
-    background: none;
-    color: #00000054;
-    font-family: 'Pictos';
-    font-size: 30px;
-}
-
-.charsheet button[type=action].button_switch_compteur:hover{
-    color: var(--black);
-}
-
-.charsheet button[type=action].button_compteur_plus{
-    z-index: 2;
-    width: 52px;
-    height: 71px;
-    /* border: 1px solid red !important; */
-    padding: 0;
-    background: none;
-    margin-top: 18px;
-    margin-left: -16px;
-    border: none;
-    position: absolute;
-    transform: rotate(-24deg);
-}
-
-.charsheet button[type=action].button_compteur_reset {
-    z-index: 2;
-    width: 71px;
-    height: 70px;
-    /* border: 1px solid red !important; */
-    padding: 0;
-    background: none;
-    margin-top: 36px;
-    margin-left: 127px;
-    border: none;
-    position: absolute;
-    transform: rotate(28deg);
-}
 
 /* Structure générale de la page */
 
@@ -378,19 +282,8 @@ div.info_reset {
 	height: 40px;
 }
 
-.logo_casse_compteur {
-    grid-column: 4;
-    grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/logo.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 6px;
-    margin-left: 407px;
-    width: 190px;
-    height: 200px;
-}
 
-.logo_casse {
+.logo_donjon {
     grid-column: 4;
     grid-row: 1;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/logo.webp);
@@ -507,7 +400,7 @@ div.info_reset {
     width: 168px;
     height: 288px;
     border-radius: 12px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/xcard.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Donjons%20et%20Siphons/images/X-Cards.webp);
     background-repeat: no-repeat;
     background-size: contain;
 }
