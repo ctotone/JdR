@@ -421,7 +421,7 @@ span.petit_rouge {
 }
 
 .charsheet button[type=roll].roll_chance {
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/dice_chance.png);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/Into%20the%20Odd%20v2/images/dice_d100.png);
 }
 
 .charsheet button[type=roll].roll_dice:hover,
@@ -1401,7 +1401,7 @@ span.lettre {
 
 .wrapper_roll_dice {  
     display: grid;
-    grid-template-columns: 85px 85px 85px 85px 85px 85px 85px 85px;
+    grid-template-columns: 85px 85px 85px 85px 85px 85px 85px;
     grid-auto-rows: 51px;
     color: var(--noir);
     padding-top: 10px;
@@ -1413,7 +1413,7 @@ span.lettre {
 
 .wrapper_roll {  
     display: grid;
-    grid-template-columns: 85px 85px 85px 85px 85px 85px 85px 85px;
+    grid-template-columns: 85px 85px 85px 85px 85px 85px 85px;
     grid-auto-rows: 33px;
     color: var(--noir);	
     border-radius: 0px 0px 10px 10px;
@@ -1459,13 +1459,8 @@ div.roll_d20 {
 	text-align: center;
 }
 
-div.roll_chance {
+div.roll_d100 {
 	grid-column: 7;
-	text-align: center;
-}
-
-div.roll_arcanum {
-	grid-column: 8;
 	text-align: center;
 }
 
