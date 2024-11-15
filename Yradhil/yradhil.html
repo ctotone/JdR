@@ -6,6 +6,11 @@
     </div>
 	<!-- Page de personnage -->
 	<div class="personnage">
+		<!-- Image personnage -->
+		<!-- <div class="portrait">
+			<img name="attr_character_avatar">
+			<img name="attr_character_token">
+		</div> -->
         <!-- Section informations -->
 		<div class="wrapper_info">
             <div class="titre_fiche">Fiche de personnage</div>
@@ -163,49 +168,49 @@
                     <input type="number" class="input_arme_data" name="attr_arme1_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme1_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_1}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme1_nbr}D@{arme1_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_1}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme1_nbr}D@{arme1_d}}} {{result=[[?{Modificateur|0} + @{arme1_nbr}D@{arme1_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data2">
                     <input type="text" class="info_armes" name="attr_armes_data_2">
                     <input type="number" class="input_arme_data" name="attr_arme2_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme2_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_2}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme2_nbr}D@{arme2_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_2}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme2_nbr}D@{arme2_d}}} {{result=[[?{Modificateur|0} + @{arme2_nbr}D@{arme2_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data3">
                     <input type="text" class="info_armes" name="attr_armes_data_3">
                     <input type="number" class="input_arme_data" name="attr_arme3_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme3_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_3}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme3_nbr}D@{arme3_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_3}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme3_nbr}D@{arme3_d}}} {{result=[[?{Modificateur|0} + @{arme3_nbr}D@{arme3_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data4">
                     <input type="text" class="info_armes" name="attr_armes_data_4">
                     <input type="number" class="input_arme_data" name="attr_arme4_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme4_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_4}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme4_nbr}D@{arme4_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_4}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme4_nbr}D@{arme4_d}}} {{result=[[?{Modificateur|0} + @{arme4_nbr}D@{arme4_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data5">
                     <input type="text" class="info_armes" name="attr_armes_data_5">
                     <input type="number" class="input_arme_data" name="attr_arme5_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme5_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_5}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme5_nbr}D@{arme5_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_5}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme5_nbr}D@{arme5_d}}} {{result=[[?{Modificateur|0} + @{arme5_nbr}D@{arme5_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data6">
                     <input type="text" class="info_armes" name="attr_armes_data_6">
                     <input type="number" class="input_arme_data" name="attr_arme6_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme6_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_6}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme6_nbr}D@{arme6_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_6}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme6_nbr}D@{arme6_d}}} {{result=[[?{Modificateur|0} + @{arme6_nbr}D@{arme6_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armes_data7">
                     <input type="text" class="info_armes" name="attr_armes_data_7">
                     <input type="number" class="input_arme_data" name="attr_arme7_nbr" placeholder="0" min="1" max="9">
                     D
                     <input type="number" class="input_arme_data2" name="attr_arme_d" placeholder="4" min="4" max="20">
-                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_7}}} {{subtitle=Modificateur : ?{Modificateur|0}}} {{degats=oui}} {{result=[[@{arme7_nbr}D@{arme7_d} + ?{Modificateur|0}]]}}" title="Jet de dégâts"></button>
+                    <button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=@{armes_data_7}}} {{subtitle=oui}} {{degats=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{des=@{arme7_nbr}D@{arme7_d}}} {{result=[[?{Modificateur|0} + @{arme7_nbr}D@{arme7_d}]]}}" title="Jet de dégâts"></button>
                 </div>
                 <div class="armures_data"><textarea class="notes" name="attr_armures_data" spellcheck="false"></textarea></div>
                 <div class="materiel_data"><textarea class="notes" name="attr_materiel_data" spellcheck="false"></textarea></div>
@@ -387,7 +392,19 @@
     <div class="sheet-container">
       <div class="sheet-header">
         {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-        {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+        {{#subtitle}}
+			{{#rollTotal() mod 0}}
+				<div class="sheet-subtitle">{{des}}</div>
+			{{/rollTotal() mod 0}}
+			{{#^rollTotal() mod 0}}
+				{{#rollGreater() mod 0}}
+					<div class="sheet-subtitle">{{des}} +{{mod_affiche}}</div>
+				{{/rollGreater() mod 0}}
+				{{#^rollGreater() mod 0}}
+					<div class="sheet-subtitle">{{des}} {{mod_affiche}}</div>
+				{{/^rollGreater() mod 0}}
+			{{/^rollTotal() mod 0}}
+		{{/subtitle}}
       </div>
       {{#sauvegarde}}
           <div class="sheet-content">
