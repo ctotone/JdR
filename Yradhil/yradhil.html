@@ -26,7 +26,7 @@
             <div class="classe_data"><input type="text" class="input_fiche" name="attr_classe"></div>
             <div class="ev_data"><input type="number" class="input_stats" name="attr_hp" placeholder="0" min="0" max="20" title="Énergie Vitale actuelle"> / <input type="number" class="input_stats" title="Énergie Vitale maximum" name="attr_hpmax" placeholder="0" min="0" max="20"></div>
             <div class="mana_data"><input type="number" class="input_stats" name="attr_mana" placeholder="0" min="0" max="20" title="Mana actuelle"> / <input type="number" class="input_stats" title="Mana maximum" name="attr_manamax" placeholder="0" min="0" max="20"></div>
-            <div class="psi_data"><input type="number" class="input_stats" name="attr_psi" title="Moyenne Force, Volonté et Endurance" placeholder="0" min="0" max="20" readonly /></div>
+            <div class="psi_data"><input type="number" class="input_stats" name="attr_psi_actuelle" placeholder="0" min="0" max="20" title="Psi actuelle"> / <input type="number" class="input_stats" name="attr_psi" title="Psi maximum" placeholder="0" min="0" max="20" readonly /><button class="roll_dice_armes" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Ψ (@{psi_actuelle})}} {{subtitle_d=Modificateur : ?{Modificateur|0}}} {{sauvegarde=oui}} {{mod=[[?{Modificateur|0}]]}} {{mod_affiche=?{Modificateur|0}}} {{score=[[@{psi_actuelle} + ?{Modificateur|0}]]}} {{result=[[D20]]}}" title="Jet de Psi"></button></div>
         </div>
         <br>
         <br>
