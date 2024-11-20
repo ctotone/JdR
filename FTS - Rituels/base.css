@@ -81,7 +81,7 @@ select.choix_carte_butin {
 .charsheet button[type=roll].button_xcard {
     width: 70px;
     height: 119px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/xcard.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Rituels/images/xcard.webp);
     background-size: contain;
     background-repeat: no-repeat;
     border: 1px solid #000000b0;
@@ -102,7 +102,7 @@ div.commune {
 	box-shadow: 3px 3px 15px 5px #000000;
 	background-color: #efefef;
 	border-radius: 15px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/background_sheet.webp);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Rituels/images/background.webp);
     background-size: 960px 801px;
 	background-repeat: no-repeat;    
     border: 2px solid #000000d4;
@@ -220,19 +220,6 @@ div.info_reset {
 	/* border: 1px solid red; */
 }
 
-.afficher_compteur {
-    grid-column: 5;
-    grid-row: 5;
-    width: 171px;
-    height: 221px;
-    margin-left: -45px;
-    margin-top: -4px;
-    background-image: var(--compteur_variable);
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: rotate(-10deg);
-}
-
 .butin_carte {
 	grid-column: 4;
 	grid-row: 11;
@@ -258,33 +245,6 @@ div.info_reset {
 	justify-content: center;
 	border: 1px solid red;
 	margin-top: 35px;
-}
-
-.butin_carte_compteur {
-	grid-column: 4;
-	grid-row: 11;
-	width: 185px;
-	height: 248px;
-	background-image: var(--butin_choisi);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right 50% bottom 45%;
-	margin-left: 109px;
-	margin-top: 50px;
-	/* border: 2px solid #060606; */
-    box-shadow: 0px 0px 10px 9px #000000;
-}
-
-.butin_select_compteur {
-	grid-column: 4;
-	grid-row: 21;
-	width: 160px;
-	margin-left: 125px;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
-	border: 1px solid red;
-	margin-top: 85px;
 }
 
 .joueur1 {
@@ -351,41 +311,6 @@ div.info_reset {
     transform: rotate(-11deg);
     margin-top: 72px;
     margin-left: -2px;
-}
-
-.logo_fts {
-    grid-column: 2;
-    grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/fts_casse.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: -10px;
-    margin-left: 22px;
-    height: 170px;
-}
-
-.logo_casse_compteur {
-    grid-column: 4;
-    grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/logo.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 6px;
-    margin-left: 110px;
-    width: 190px;
-    height: 200px;
-}
-
-.logo_casse {
-    grid-column: 4;
-    grid-row: 1;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/logo.webp);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 58px;
-    margin-left: 110px;
-    width: 190px;
-    height: 200px;
 }
 
 /* Structure cadre joueur */
