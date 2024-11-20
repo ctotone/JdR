@@ -1,0 +1,139 @@
+<div class="commune">
+	<input type="hidden" name="attr_carte_contexte" class="choix_carte_contexte" value="0">
+	<input type="hidden" name="attr_carte_rituel" class="choix_carte_rituel" value="0">
+	<input type="hidden" name="attr_carte_loyaute" class="choix_carte_loyaute" value="0">
+	<input type="hidden" name="attr_step" class="etape" value="0">
+	<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+	<div class="wrapper_page">
+		<!-- Nom du joueur -->
+		<div class="name">
+			<input type="text" class="nom_personnage" name="attr_character_name" placeholder="Quel est votre nom..." data-i18n-placeholder="nom_personnage">
+		</div>
+
+		<!-- Retour -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="retour">
+			<button type="action" class="button_retour_vote" name="act_vers_vote">Retourner à l'étape précedente...</button>
+		</div>
+
+		<!-- Contexte -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="contexte">
+			<div class="wrapper_carte">
+				<div class="contexte_carte"><!-- Affichage de la carte dynamique --></div>
+				<div class="carte_select">
+					<select class="choix_carte_contexte" name="attr_carte_contexte">
+						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_contexte_back">Contexte</option>
+                        <option value="1" data-i18n-list="choix_contexte_1">États-Unis d'Amérique</option>
+                        <option value="2" data-i18n-list="choix_contexte_2">Antiquité</option>
+                        <option value="3" data-i18n-list="choix_contexte_3">Paris, 1920</option>
+                        <option value="4" data-i18n-list="choix_contexte_4">Années 60-70</option>
+                        <option value="5" data-i18n-list="choix_contexte_5">Expansion spatiale</option>
+                        <option value="6" data-i18n-list="choix_contexte_6">Grandes découvertes</option>
+                        <option value="7" data-i18n-list="choix_contexte_7">Asie, Cyberpunk</option>
+                        <option value="8" data-i18n-list="choix_contexte_8">Moyen-Âge, Europe</option>
+                    </select>
+				</div>
+			</div>
+		</div>
+
+		<!-- Rituel -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="rituel">
+			<div class="wrapper_carte">
+				<div class="rituel_carte"><!-- Affichage de la carte dynamique --></div>
+				<div class="carte_select">
+					<select class="choix_carte_rituel" name="attr_carte_rituel">
+						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_rituel_back">Rituel</option>
+                        <option value="1" data-i18n-list="choix_rituel_1">Nuage de cendres</option>
+                        <option value="2" data-i18n-list="choix_rituel_2">Stérilité de l'humanité</option>
+                        <option value="3" data-i18n-list="choix_rituel_3">Vie éternelle</option>
+                        <option value="4" data-i18n-list="choix_rituel_4">Les Contrées du Rêve</option>
+                        <option value="5" data-i18n-list="choix_rituel_5">Éclosion de l'oeuf</option>
+                        <option value="6" data-i18n-list="choix_rituel_6">Celui-qui-a-été-banni</option>
+                        <option value="7" data-i18n-list="choix_rituel_7">Créature surnaturelle</option>
+                        <option value="8" data-i18n-list="choix_rituel_8">Brèche vers le Néant</option>
+                    </select>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bouton vote -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="vers_vote">
+			<button type="action" class="button_vers_vote" name="act_vers_vote">Lorsque le meneur vous y invitera, cliquez ici pour accéder au choix final...</button>
+		</div>
+
+		<!-- Choix loyaute -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="loyaute">
+			<div class="wrapper_carte">
+				<div class="loyaute_carte"><!-- Affichage de la carte dynamique --></div>
+				<div class="carte_select_loyaute">
+					<select class="choix_carte_loyaute" name="attr_carte_loyaute" style="font-size: 30px;height: 55px;/* width: 180px; */">
+						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_loyaute_back">Votre choix...</option>
+                        <option value="1" data-i18n-list="choix_loyaute_loyal">La loyauté</option>
+                        <option value="2" data-i18n-list="choix_loyaute_trahir">La trahison</option>
+                    </select>
+				</div>
+				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+				<div class="choix_loyaute">
+					<button type="action" class="button_vers_vote" name="act_annonce_loyal">Quand arrivera votre tour, cliquez ici pour annoncer votre LOYAUTÉ !</button>
+				</div>				
+				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+				<div class="choix_trahir">
+					<button type="action" class="button_vers_vote" name="act_annonce_trahison">Quand arrivera votre tour, cliquez ici pour annoncer votre TRAHISON !</button>
+		
+				</div>
+			</div>
+		</div>
+		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" data-i18n-title="utiliser_xcard" title="Cliquez pour utiliser la carte X"></button></div>
+	</div>
+</div>
+
+<!-- ROLL TEMPLATE -->
+
+<rolltemplate class="sheet-rolltemplate-xcard">
+    <div class="sheet-container">
+      {{#xcard}}
+      <div class="sheet-content-xcard">&nbsp;</div>
+      {{/xcard}}
+	  {{#loyaute}}
+      <div class="sheet-content-loyaute">&nbsp;</div>
+      {{/loyaute}}
+	  {{#trahir}}
+      <div class="sheet-content-trahir">&nbsp;</div>
+      {{/trahir}}
+    </div>
+</rolltemplate>
+
+
+<!-- ----- SCRIPT ------- -->
+
+<script type="text/worker">
+	on('clicked:vers_vote', function() {
+        getAttrs(["step"], function(values) {
+            
+        let step = parseInt(values["step"]) || 0;
+
+            if (step == 0) step = 1;
+			else if (step == 1) step = 0;
+
+            else step = 0;
+            setAttrs({
+                "step": step
+            });
+        });
+    });
+
+	on('clicked:annonce_trahison', async (event) => {
+		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{trahir=oui}} {{confirm=?{Confirmer le partage|OUI}}}");
+   finishRoll(roll.rollId);
+ 	})
+
+	 on('clicked:annonce_loyal', async (event) => {
+		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{loyaute=oui}} {{confirm=?{Confirmer le partage|OUI}}}");
+   finishRoll(roll.rollId);
+ 	})
+
+</script>
