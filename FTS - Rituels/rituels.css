@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Permanent+Marker&display=swap');
-/* font-family: "Caveat Brush", cursive; */
-/* font-family: "Permanent Marker", cursive; */
 
 
 .charsheet {
@@ -36,42 +34,40 @@ body.sheet-darkmode .charsheet {
 
 
 .charsheet input.nom_personnage {  border: none;
-  /* outline: none; */
-  resize: none;
-  padding: 0px;
-  margin-top: 6px;
-  font-size: 18px;
-  line-height: 18px;
-  cursor: pointer;
-  border-radius: 0px;
-  color: #000000eb;
-  background: transparent;
-  overflow: hidden;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: "Caveat Brush", cursive;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0px;
+    /* margin-top: 6px; */
+    font-size: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #141414;
+    background: #d9a700;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Caveat Brush", cursive;
+    box-shadow: 0px 0px 24px 0px #d9a700a3;
+    width: 320px;
+    height: 50px;
 }
 
-select.choix_carte,
-select.choix_carte_butin{   
-	color: #ffffffd1;
-	font-size: 14px;
-	padding: 2px;
-	margin: 0;
-	border: 1px solid #ffffffa8;
-	background: #000;
-	border-radius: 15px;
-	outline: none;
-	font-family: "Caveat Brush", cursive;
-	text-align: center;
-}
-
-select.choix_carte_butin {
-	background: #a80b0e;
-	border-radius: 15px;
-	outline: none;
-	font-family: "Caveat Brush", cursive;
-	text-align: center;
+select.choix_carte_contexte,
+select.choix_carte_rituel,
+select.choix_carte_loyaute { 
+    color: #ffffffd1;
+    font-size: 14px;
+    padding: 2px;
+    border: 1px solid #ffffffa8;
+    background: #000;
+    border-radius: 15px;
+    outline: none;
+    font-family: "Caveat Brush", cursive;
+    text-align: center;
+    margin-top: 510px;
+    margin-left: 100px;
 }
 
 .charsheet button[type=roll].button_xcard::before {
@@ -79,13 +75,14 @@ select.choix_carte_butin {
 }
 
 .charsheet button[type=roll].button_xcard {
-    width: 70px;
-    height: 119px;
+    width: 50px;
+    height: 85px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Rituels/images/xcard.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    border: 1px solid #000000b0;
-    box-shadow: 3px 3px 7px 3px #000;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 3px 0px #f4f1f187;
     padding: 0;
     margin: 0;
 }
@@ -94,6 +91,50 @@ select.choix_carte_butin {
     margin-left: -1px;
     padding: 0px;
     background-position: unset;
+}
+
+.charsheet button[type=action].button_vers_vote::before {
+	content: '';
+}
+
+.charsheet button[type=action].button_vers_vote {
+    width: 200px;
+    height: 62px;
+    border-radius: 10px;
+    background-color: #d9a700;
+    box-shadow: 0px 0px 3px 0px #f4f1f187;
+    padding: 15px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+    font-family: "Caveat Brush", cursive;
+}
+
+.charsheet button[type=action].button_vers_vote:hover {
+    background-color: #e46c04;
+    box-shadow: 0px 0px 20px 0px #f4f1f187;
+}
+
+.charsheet button[type=action].button_retour_vote::before {
+	content: '';
+}
+
+.charsheet button[type=action].button_retour_vote {
+    width: 224px;
+    height: 33px;
+    border-radius: 10px;
+    background-color: transparent;    
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #ffffffb3;
+    line-height: 16px;
+    font-family: "Caveat Brush", cursive;
+}
+
+.charsheet button[type=action].button_retour_vote:hover {
+    text-decoration: underline;
 }
 
 div.commune {  
@@ -113,101 +154,26 @@ body.sheet-darkmode .commune {
     border: 2px solid #0f2f28;
 }
 
-/* Affichage compteur et defilement */
+/* Gestion des affichage */
 
-div.afficher_compteur,
-div.butin_carte_compteur,
-div.butin_select_compteur,
-div.butin_carte,
-div.butin_select,
-div.logo_casse,
-div.logo_casse_compteur {
+div.contexte,
+div.rituel,
+div.vers_vote,
+div.loyaute,
+div.retour,
+div.choix_loyaute,
+div.choix_trahir {
     display: none;
 }
 
-.charsheet .affichage_compteur[value="1"] ~ div.afficher_compteur,
-.charsheet .affichage_compteur[value="1"] ~ div.butin_carte_compteur,
-.charsheet .affichage_compteur[value="0"] ~ div.butin_carte,
-.charsheet .affichage_compteur[value="0"] ~ div.logo_casse,
-.charsheet .affichage_compteur[value="1"] ~ div.logo_casse_compteur {
+.charsheet .etape[value="0"] ~ div.contexte,
+.charsheet .etape[value="0"] ~ div.rituel,
+.charsheet .etape[value="0"] ~ div.vers_vote,
+.charsheet .etape[value="1"] ~ div.loyaute,
+.charsheet .etape[value="1"] ~ div.retour,
+.charsheet .choix_loyaute_fait[value="1"] ~ div.choix_loyaute,
+.charsheet .choix_loyaute_fait[value="2"] ~ div.choix_trahir {
     display: block;
-}
-
-
-.charsheet .affichage_compteur[value="1"] ~ div.butin_select_compteur,
-.charsheet .affichage_compteur[value="0"] ~ div.butin_select {
-    display: flex;
-}
-
-
-div.info_plus {
-    margin-top: 17px;
-    margin-left: -23px;
-    /* border: 1px solid red; */
-    font-family: 'Caveat', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fbfbfbbd;
-    width: 40px;
-    height: 37px;
-    transform: rotate(-7deg);
-    position: absolute;
-}
-
-div.info_reset {
-    margin-top: 28px;
-    margin-left: 144px;
-    /* border: 1px solid red; */
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fbfbfbbd;
-    width: 40px;
-    height: 37px;
-    transform: rotate(27deg);
-    display: flex;
-    position: absolute;
-}
-
-.charsheet button[type=action].button_switch_compteur {
-    border: none;
-    padding: 0;
-    background: none;
-    color: #00000054;
-    font-family: 'Pictos';
-    font-size: 30px;
-}
-
-.charsheet button[type=action].button_switch_compteur:hover{
-    color: var(--black);
-}
-
-.charsheet button[type=action].button_compteur_plus{
-    z-index: 2;
-    width: 52px;
-    height: 71px;
-    /* border: 1px solid red !important; */
-    padding: 0;
-    background: none;
-    margin-top: 18px;
-    margin-left: -16px;
-    border: none;
-    position: absolute;
-    transform: rotate(-24deg);
-}
-
-.charsheet button[type=action].button_compteur_reset {
-    z-index: 2;
-    width: 71px;
-    height: 70px;
-    /* border: 1px solid red !important; */
-    padding: 0;
-    background: none;
-    margin-top: 36px;
-    margin-left: 127px;
-    border: none;
-    position: absolute;
-    transform: rotate(28deg);
 }
 
 /* Structure générale de la page */
@@ -220,102 +186,81 @@ div.info_reset {
 	/* border: 1px solid red; */
 }
 
-.butin_carte {
-	grid-column: 4;
-	grid-row: 11;
-	width: 185px;
-	height: 248px;
-	background-image: var(--butin_choisi);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: right 50% bottom 45%;
-	margin-left: 109px;
-	margin-top: 10px;
-	/* border: 2px solid #060606; */
-    box-shadow: 0px 0px 10px 9px #000000;
+.name {
+    grid-column: 4;
+    grid-row: 1;
+    margin-top: 9px;
+    margin-left: 50px;
 }
 
-.butin_select {
-	grid-column: 4;
-	grid-row: 21;
-	width: 160px;
-	margin-left: 125px;
-	flex-wrap: wrap;
-	align-content: center;
-	justify-content: center;
-	border: 1px solid red;
-	margin-top: 35px;
+.retour {
+    grid-column: 4;
+    grid-row: 3;
+    margin-top: 11px;
+    margin-left: 96px;
 }
 
-.joueur1 {
+.contexte {
 	grid-column: 2;
-    grid-row: 12;
-	margin-top: 10px;
-	margin-left: -30px;
+    grid-row: 6;
+	margin-top: 0px;
+	margin-left: 0px;
     transform: rotate(-2deg);
 	/* border: 1px solid red; */
 }
 
-.joueur2 {
-	grid-column: 3;
-    grid-row: 2;
-	margin-top: -12px;
-	margin-left: -10px;
+.rituel {
+    grid-column: 7;
+    grid-row: 6;
+    margin-top: -6px;
+    margin-left: 0px;
     transform: rotate(2deg);
 	/* border: 1px solid red; */
 }
 
-.joueur3 {
-	grid-column: 6;
-    grid-row: 2;
-	margin-left: 90px;
-	margin-top: -12px;
-    transform: rotate(-2deg);
-	/* border: 1px solid red; */
+.loyaute {
+    grid-column: 4;
+    grid-row: 6;
+    margin-left: 83px;
+    margin-top: 0px;
+    /* transform: rotate(2deg); */
+    /* border: 1px solid red; */
 }
 
-.joueur4 {
-	grid-column: 8;
-    grid-row: 12;
-	margin-top: 10px;
-	margin-left: 30px;
-    transform: rotate(2deg);
-	/* border: 1px solid red; */
+.vers_vote  {
+    grid-column: 4;
+    grid-row: 26;
+    margin-left: 83px;
+    margin-top: 22px;
+    /* transform: rotate(2deg); */
+    /* border: 1px solid red; */
 }
 
-.joueur5 {
-	grid-column: 3;
-    grid-row: 23;
-	margin-left: -10px;
-    margin-top: -5px;
-    transform: rotate(-2deg);
-	/* border: 1px solid red; */
-}
-
-.joueur6 {
-	grid-column: 6;
-    grid-row: 23;
-	margin-left: 90px;
-    margin-top: -8px;
-    transform: rotate(2deg);
-	/* border: 1px solid red; */
+.choix_trahir,
+.choix_loyaute  {
+    grid-column: 1;
+    grid-row: 10;
+    margin-left: 340px;
+    margin-top: 0px;
+    /* transform: rotate(2deg); */
+    /* border: 1px solid red; */
 }
 
 .xcard {
-    grid-column: 2;
-    grid-row: 24;
+    grid-column: 8;
+    grid-row: 27;
     width: 70px;
     height: 119px;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: rotate(-11deg);
-    margin-top: 72px;
-    margin-left: -2px;
+    transform: rotate(-4deg);
+    margin-top: -6px;
+    margin-left: 93px;
 }
 
 /* Structure cadre joueur */
 
-.wrapper_joueur {
+.wrapper_carte {
     display: grid;
     grid-template-columns: 160px;
     grid-auto-rows: 25px;
@@ -337,54 +282,47 @@ div.info_reset {
 	background-repeat: no-repeat;
 	height: 32px;
 	width: 160px;
-	box-shadow: 3px 3px 5px 0px #000;
+	box-shadow: 0px 0px 12px 3px #f4f1f1a1;
 	/* border: 1px solid red; */
 }
 
-.joueur1_carte,
-.joueur2_carte,
-.joueur3_carte,
-.joueur4_carte,
-.joueur5_carte,
-.joueur6_carte {  
+.contexte_carte,
+.rituel_carte,
+.loyaute_carte {  
 	grid-column: 1;
 	grid-row: 2/8;
-	height: 180px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-	background-size: 150px 272px;
-	background-repeat: no-repeat;
-	background-position: right 40% bottom 100%;
+	height: 427px;    
+	width: 249px;
+	background-size: cover;
 	border: 1px solid #060606;
-	width: 150px;
 	margin-left: 4px;
-	box-shadow: 3px 3px 7px 3px #000;
+	box-shadow: 0px 0px 12px 3px #f4f1f1a1;
 }
 
-.joueur1_carte {  
-	background-image: var(--carte_personnage_1);
+.loyaute_carte {  
+    grid-column: 1;
+    grid-row: 2 / 8;
+    height: 517px;
+    width: 300px;
+    background-size: cover;
+    border: 1px solid #060606;
+    margin-left: -20px;
+    box-shadow: 0px 0px 12px 3px #f4f1f1a1;
 }
 
-.joueur2_carte {  
-	background-image: var(--carte_personnage_2);
+.contexte_carte {  
+	background-image: var(--carte_contexte);
 }
 
-.joueur3_carte {  
-	background-image: var(--carte_personnage_3);
+.rituel_carte {  
+	background-image: var(--carte_rituel);
 }
 
-.joueur4_carte {  
-	background-image: var(--carte_personnage_4);
+.loyaute_carte {  
+	background-image: var(--carte_loyaute);
 }
 
-.joueur5_carte {  
-	background-image: var(--carte_personnage_5);
-}
-
-.joueur6_carte {  
-	background-image: var(--carte_personnage_6);
-}
-
-.joueur_select {
+.carte_select {
     grid-column: 1;
     grid-row: 9;
     flex-wrap: wrap;
@@ -393,6 +331,16 @@ div.info_reset {
     justify-content: center;
 	margin-top: 25px;
 	/* border: 1px solid red; */
+}
+
+.carte_select_loyaute {
+    grid-column: 1;
+    grid-row: 13;
+    flex-wrap: wrap;
+    display: flex !important;
+    align-content: center;
+    justify-content: center;
+    margin-top: 38px;
 }
 
 /* Roll template */
@@ -418,400 +366,117 @@ div.info_reset {
     width: 168px;
     height: 288px;
     border-radius: 12px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/xcard.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Rituels/images/xcard.webp);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
+.sheet-rolltemplate-xcard .sheet-content-loyaute {
+    width: 168px;
+    height: 288px;
+    border-radius: 12px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/loyaute.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
-
-
+.sheet-rolltemplate-xcard .sheet-content-trahir {
+    width: 168px;
+    height: 288px;
+    border-radius: 12px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/trahison.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 /* Systeme de carte dynamique */
 
-/* COMPTEUR */
-/* BUTIN */
-.charsheet .valeur_compteur[value="0"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_0.webp);
-}
-
-.charsheet .valeur_compteur[value="1"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_1.webp);
-}
-
-.charsheet .valeur_compteur[value="2"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_2.webp);
-}
-
-.charsheet .valeur_compteur[value="3"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_3.webp);
-}
-
-.charsheet .valeur_compteur[value="4"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_4.webp);
-}
-
-.charsheet .valeur_compteur[value="5"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_5.webp);
-}
-
-.charsheet .valeur_compteur[value="6"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_6.webp);
-}
-
-.charsheet .valeur_compteur[value="7"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_7.webp);
-}
-
-.charsheet .valeur_compteur[value="8"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_8.webp);
-}
-
-.charsheet .valeur_compteur[value="9"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_9.webp);
-}
-
-.charsheet .valeur_compteur[value="10"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_10.webp);
-}
-
-.charsheet .valeur_compteur[value="11"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_11.webp);
-}
-
-.charsheet .valeur_compteur[value="12"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_12.webp);
-}
-
-.charsheet .valeur_compteur[value="13"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_13.webp);
-}
-
-.charsheet .valeur_compteur[value="14"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_14.webp);
-}
-
-.charsheet .valeur_compteur[value="15"] ~ *{
-    --compteur_variable : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/chronometre_15.webp);
-}
-
-/* BUTIN */
-.charsheet .carte_butin[value="0"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_dos_max_size.webp);
-}
-
-.charsheet .carte_butin[value="1"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_casino_max.webp);
-}
-
-.charsheet .carte_butin[value="2"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_manoir_max.webp);
-}
-
-.charsheet .carte_butin[value="3"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_ambassade_max.webp);
-}
-
-.charsheet .carte_butin[value="4"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_drogue_max.webp);
-}
-
-.charsheet .carte_butin[value="5"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_laboratoire_max.webp);
-}
-
-.charsheet .carte_butin[value="6"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_parrain_max.webp);
-}
-
-.charsheet .carte_butin[value="7"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_joyaux_max.webp);
-}
-
-.charsheet .carte_butin[value="8"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_kidnapping_max.webp);
-}
-
-.charsheet .carte_butin[value="9"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_ogives_max.webp);
-}
-
-.charsheet .carte_butin[value="10"] ~ *{
-    --butin_choisi : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/butin_tableau_max.webp);
-}
-
-/* JOUEUR 1 */
-
-.charsheet .carte_personnage_1[value="0"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-}
-
-.charsheet .carte_personnage_1[value="1"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
-}
-
-.charsheet .carte_personnage_1[value="2"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
-}
-
-.charsheet .carte_personnage_1[value="3"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
-}
-
-.charsheet .carte_personnage_1[value="4"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
-}
-
-.charsheet .carte_personnage_1[value="5"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
-}
-
-.charsheet .carte_personnage_1[value="6"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
-}
-
-.charsheet .carte_personnage_1[value="7"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
-}
-
-.charsheet .carte_personnage_1[value="8"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
-}
-
-.charsheet .carte_personnage_1[value="9"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
-}
-
-.charsheet .carte_personnage_1[value="10"] ~ *{
-    --carte_personnage_1 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
-}
-
-/* JOUEUR 2 */
-
-.charsheet .carte_personnage_2[value="0"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-}
-
-.charsheet .carte_personnage_2[value="1"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
-}
-
-.charsheet .carte_personnage_2[value="2"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
-}
-
-.charsheet .carte_personnage_2[value="3"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
-}
-
-.charsheet .carte_personnage_2[value="4"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
-}
-
-.charsheet .carte_personnage_2[value="5"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
-}
-
-.charsheet .carte_personnage_2[value="6"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
-}
-
-.charsheet .carte_personnage_2[value="7"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
-}
-
-.charsheet .carte_personnage_2[value="8"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
-}
-
-.charsheet .carte_personnage_2[value="9"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
-}
-
-.charsheet .carte_personnage_2[value="10"] ~ *{
-    --carte_personnage_2 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
-}
-
-/* JOUEUR 3 */
-
-.charsheet .carte_personnage_3[value="0"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-}
-
-.charsheet .carte_personnage_3[value="1"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
-}
-
-.charsheet .carte_personnage_3[value="2"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
-}
-
-.charsheet .carte_personnage_3[value="3"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
-}
-
-.charsheet .carte_personnage_3[value="4"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
-}
+/* CONTEXTE */
 
-.charsheet .carte_personnage_3[value="5"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
+.charsheet .choix_carte_contexte[value="0"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_BACK.webp);
 }
 
-.charsheet .carte_personnage_3[value="6"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
+.charsheet .choix_carte_contexte[value="1"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_1.webp);
 }
 
-.charsheet .carte_personnage_3[value="7"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
+.charsheet .choix_carte_contexte[value="2"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_2.webp);
 }
 
-.charsheet .carte_personnage_3[value="8"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
+.charsheet .choix_carte_contexte[value="3"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_3.webp);
 }
 
-.charsheet .carte_personnage_3[value="9"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
+.charsheet .choix_carte_contexte[value="4"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_4.webp);
 }
 
-.charsheet .carte_personnage_3[value="10"] ~ *{
-    --carte_personnage_3 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
+.charsheet .choix_carte_contexte[value="5"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_5.webp);
 }
 
-/* JOUEUR 4 */
-
-.charsheet .carte_personnage_4[value="0"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-}
-
-.charsheet .carte_personnage_4[value="1"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
-}
-
-.charsheet .carte_personnage_4[value="2"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
-}
-
-.charsheet .carte_personnage_4[value="3"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
-}
-
-.charsheet .carte_personnage_4[value="4"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
-}
-
-.charsheet .carte_personnage_4[value="5"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
-}
-
-.charsheet .carte_personnage_4[value="6"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
-}
-
-.charsheet .carte_personnage_4[value="7"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
-}
-
-.charsheet .carte_personnage_4[value="8"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
-}
-
-.charsheet .carte_personnage_4[value="9"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
-}
-
-.charsheet .carte_personnage_4[value="10"] ~ *{
-    --carte_personnage_4 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
-}
-
-/* JOUEUR 5 */
-
-.charsheet .carte_personnage_5[value="0"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
-}
-
-.charsheet .carte_personnage_5[value="1"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
-}
-
-.charsheet .carte_personnage_5[value="2"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
-}
-
-.charsheet .carte_personnage_5[value="3"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
-}
-
-.charsheet .carte_personnage_5[value="4"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
+.charsheet .choix_carte_contexte[value="6"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_6.webp);
 }
 
-.charsheet .carte_personnage_5[value="5"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
+.charsheet .choix_carte_contexte[value="7"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_7.webp);
 }
 
-.charsheet .carte_personnage_5[value="6"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
+.charsheet .choix_carte_contexte[value="8"] ~ *{
+    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_8.webp);
 }
 
-.charsheet .carte_personnage_5[value="7"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
-}
-
-.charsheet .carte_personnage_5[value="8"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
-}
+/* RITUEL */
 
-.charsheet .carte_personnage_5[value="9"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
+.charsheet .choix_carte_rituel[value="0"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_BACK.webp);
 }
 
-.charsheet .carte_personnage_5[value="10"] ~ *{
-    --carte_personnage_5 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
+.charsheet .choix_carte_rituel[value="1"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_1.webp);
 }
 
-/* JOUEUR 6 */
-
-.charsheet .carte_personnage_6[value="0"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_Dos.webp);
+.charsheet .choix_carte_rituel[value="2"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_2.webp);
 }
 
-.charsheet .carte_personnage_6[value="1"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_as.webp);
+.charsheet .choix_carte_rituel[value="3"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_3.webp);
 }
 
-.charsheet .carte_personnage_6[value="2"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_cerveau.webp);
+.charsheet .choix_carte_rituel[value="4"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_4.webp);
 }
 
-.charsheet .carte_personnage_6[value="3"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_demolition.webp);
+.charsheet .choix_carte_rituel[value="5"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_5.webp);
 }
 
-.charsheet .carte_personnage_6[value="4"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_faussaire.webp);
+.charsheet .choix_carte_rituel[value="6"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_6.webp);
 }
 
-.charsheet .carte_personnage_6[value="5"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_guetteur.webp);
+.charsheet .choix_carte_rituel[value="7"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_7.webp);
 }
 
-.charsheet .carte_personnage_6[value="6"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_hacker.webp);
+.charsheet .choix_carte_rituel[value="8"] ~ *{
+    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_8.webp);
 }
 
-.charsheet .carte_personnage_6[value="7"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_infiltre.webp);
-}
+/* LOYAUTE */
 
-.charsheet .carte_personnage_6[value="8"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_flingue.webp);
+.charsheet .choix_carte_loyaute[value="0"] ~ *{
+    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/choix_BACK.webp);
 }
 
-.charsheet .carte_personnage_6[value="9"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_receleuse.webp);
+.charsheet .choix_carte_loyaute[value="1"] ~ *{
+    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/loyaute.webp);
 }
 
-.charsheet .carte_personnage_6[value="10"] ~ *{
-    --carte_personnage_6 : url(https://raw.githubusercontent.com/ctotone/JdR/main/FTS%20-%20Casse%20de%20trop/images/casting_seductrice.webp);
+.charsheet .choix_carte_loyaute[value="2"] ~ *{
+    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/trahison.webp);
 }
