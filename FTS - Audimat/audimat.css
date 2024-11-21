@@ -54,20 +54,22 @@ body.sheet-darkmode .charsheet {
     height: 50px;
 }
 
-select.choix_carte_contexte,
-select.choix_carte_rituel,
-select.choix_carte_loyaute { 
-    color: #ffffffd1;
-    font-size: 14px;
-    padding: 2px;
-    border: 1px solid #ffffffa8;
-    background: #000;
-    border-radius: 15px;
-    outline: none;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    margin-top: 510px;
-    margin-left: 100px;
+select.choix_carte_lieux,
+select.choix_carte_personnage,
+select.choix_carte_loyaute {   
+	color: #121d1d;
+	font-size: 14px;
+	padding: 10px;
+	border: 1px solid #ffffffa8;
+	background: #03b5bf;
+	border-radius: 10px;
+	outline: none;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	margin-top: 510px;
+	margin-left: 100px;
+	height: 40px;
+	line-height: 14px;
 }
 
 .charsheet button[type=roll].button_xcard::before {
@@ -98,23 +100,19 @@ select.choix_carte_loyaute {
 }
 
 .charsheet button[type=action].button_vers_vote {
-    width: 200px;
-    height: 62px;
-    border-radius: 10px;
-    background-color: #f7f3b7;
-    color: black;
-    box-shadow: 0px 0px 3px 0px #f4f1f187;
-    padding: 15px;
-    margin: 0;
-    font-size: 20px;
-    line-height: 22px;
-    font-family: 'Open Sans', sans-serif;
+	width: 140px;
+	height: 165px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/bouton_vote.webp);
+	background-size: contain;
+	background-repeat: no-repeat;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
 }
 
 .charsheet button[type=action].button_vers_vote:hover {
-    background-color: #a50303ef;
-    box-shadow: 0px 0px 20px 0px #f4f1f187;
-    color: #f7f3b7;
+    margin-left: -2px;
 }
 
 .charsheet button[type=action].button_retour_vote::before {
@@ -157,23 +155,31 @@ body.sheet-darkmode .commune {
 
 /* Gestion des affichage */
 
-div.contexte,
-div.rituel,
+div.tournage,
+div.personnage,
 div.vers_vote,
 div.loyaute,
 div.retour,
-div.choix_loyaute,
-div.choix_trahir {
+div.choix_rouge,
+div.choix_orange,
+div.choix_jaune,
+div.choix_vert,
+div.choix_bleu,
+div.choix_rose {
     display: none;
 }
 
-.charsheet .etape[value="0"] ~ div.contexte,
-.charsheet .etape[value="0"] ~ div.rituel,
+.charsheet .etape[value="0"] ~ div.tournage,
+.charsheet .etape[value="0"] ~ div.personnage,
 .charsheet .etape[value="0"] ~ div.vers_vote,
 .charsheet .etape[value="1"] ~ div.loyaute,
 .charsheet .etape[value="1"] ~ div.retour,
-.charsheet .choix_loyaute_fait[value="1"] ~ div.choix_loyaute,
-.charsheet .choix_loyaute_fait[value="2"] ~ div.choix_trahir {
+.charsheet .choix_loyaute_fait[value="1"] ~ div.choix_rouge,
+.charsheet .choix_loyaute_fait[value="2"] ~ div.choix_orange,
+.charsheet .choix_loyaute_fait[value="3"] ~ div.choix_jaune,
+.charsheet .choix_loyaute_fait[value="4"] ~ div.choix_vert,
+.charsheet .choix_loyaute_fait[value="5"] ~ div.choix_bleu,
+.charsheet .choix_loyaute_fait[value="6"] ~ div.choix_rose {
     display: block;
 }
 
@@ -202,7 +208,7 @@ div.choix_trahir {
     margin-left: 96px;
 }
 
-.contexte {
+.tournage {
 	grid-column: 2;
     grid-row: 6;
 	margin-top: 0px;
@@ -211,7 +217,7 @@ div.choix_trahir {
 	/* border: 1px solid red; */
 }
 
-.rituel {
+.personnage {
     grid-column: 7;
     grid-row: 6;
     margin-top: -6px;
@@ -230,16 +236,30 @@ div.choix_trahir {
 }
 
 .vers_vote  {
-    grid-column: 4;
-    grid-row: 26;
-    margin-left: 83px;
-    margin-top: 22px;
-    /* transform: rotate(2deg); */
-    /* border: 1px solid red; */
+	grid-column: 4;
+	grid-row: 23;
+	margin-left: 115px;
+	margin-top: -6px;
+	transform: rotate(-2deg);
+	border: 1px solid #f5f2b5;
+	width: 141px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px solid #f6f3b7;
+	height: 206px;
+	padding: 10px;
+	background-color: #03b5bf78;
+	color: #051617;
+	box-shadow: 0px 0px 12px 1px #f5f2b6;
 }
 
-.choix_trahir,
-.choix_loyaute  {
+.choix_rouge,
+.choix_orange,
+.choix_jaune,
+.choix_vert,
+.choix_bleu,
+.choix_rose  {
     grid-column: 1;
     grid-row: 10;
     margin-left: 340px;
@@ -288,9 +308,19 @@ div.choix_trahir {
 	/* border: 1px solid red; */
 }
 
-.contexte_carte,
-.rituel_carte,
-.loyaute_carte {  
+.tournage_carte {   
+	grid-column: 1;
+	grid-row: 5/8;
+	height: 192px;
+	width: 330px;
+	background-size: cover;
+	border: 1px solid #060606;
+	margin-left: -17px;
+	box-shadow: 0px 0px 12px 10px #f5f2b6;
+	margin-top: 73px;
+}
+
+.personnage_carte {  
 	grid-column: 1;
 	grid-row: 2/8;
 	height: 427px;    
@@ -298,7 +328,7 @@ div.choix_trahir {
 	background-size: cover;
 	border: 1px solid #060606;
 	margin-left: 4px;
-	box-shadow: 0px 0px 12px 3px #f4f1f1a1;
+	box-shadow: 0px 0px 12px 10px #f5f2b6;
 }
 
 .loyaute_carte {  
@@ -312,26 +342,38 @@ div.choix_trahir {
     box-shadow: 0px 0px 12px 3px #f4f1f1a1;
 }
 
-.contexte_carte {  
-	background-image: var(--carte_contexte);
+.tournage_carte {  
+	background-image: var(--carte_lieux);
 }
 
-.rituel_carte {  
-	background-image: var(--carte_rituel);
+.personnage_carte {  
+	background-image: var(--carte_personnage);
 }
 
 .loyaute_carte {  
-	background-image: var(--carte_loyaute);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/carte_vote.webp);
+	box-shadow: 0px 0px 35px 16px var(--color_vote);
 }
 
-.carte_select {
+.carte_select_tournage {
+	grid-column: 1;
+	grid-row: 6;
+	flex-wrap: wrap;
+	display: flex !important;
+	align-content: center;
+	justify-content: center;
+	margin-top: 15px;
+	margin-left: 40px;
+}
+
+.carte_select_personnage {
     grid-column: 1;
     grid-row: 9;
     flex-wrap: wrap;
     display: flex !important;
     align-content: center;
     justify-content: center;
-	margin-top: 25px;
+	margin-top: 30px;
 	/* border: 1px solid red; */
 }
 
@@ -346,8 +388,10 @@ div.choix_trahir {
 }
 
 /* Roll template */
-.sheet-rolltemplate-xcard {
+.sheet-rolltemplate-xcard,
+.sheet-rolltemplate-vote{
     margin-left: 20px;
+	padding-top: 10px;
 }
 
 .sheet-rolltemplate-xcard .sheet-container {
@@ -356,9 +400,19 @@ div.choix_trahir {
     width: 220px;
     height: 377px;
     box-shadow: 3px 3px 7px 0px #000000db;
- }
+}
 
- .sheet-rolltemplate-xcard .sheet-container {
+.sheet-rolltemplate-vote .sheet-container {
+    border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 220px;
+    height: 170px;
+    box-shadow: 3px 3px 7px 0px #000000db;
+	border-radius: 10px;
+}
+
+.sheet-rolltemplate-xcard .sheet-container,
+.sheet-rolltemplate-vote .sheet-container{
     --header-bg-color: rgb(0, 0, 0);
     --header-text-color: #FFF;
 }
@@ -372,112 +426,175 @@ div.choix_trahir {
     background-size: contain;
 }
 
-.sheet-rolltemplate-xcard .sheet-content-loyaute {
-    width: 225px;
-    height: 377px;
-    border-radius: 0px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/loyaute.webp);
-    background-repeat: no-repeat;
-    background-size: contain;
+.sheet-rolltemplate-vote .sheet-content-rouge,
+.sheet-rolltemplate-vote .sheet-content-orange,
+.sheet-rolltemplate-vote .sheet-content-jaune,
+.sheet-rolltemplate-vote .sheet-content-vert,
+.sheet-rolltemplate-vote .sheet-content-bleu,
+.sheet-rolltemplate-vote .sheet-content-rose {
+	width: 190px;
+	height: 140px;
+	border-radius: 0px;
+	background-color: red;
+	padding: 15px;
+	font-size: 25px;
+	line-height: 30px;
+	text-align: center;
+	color: #000000f0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	align-content: center;
+	display: grid;
+	border-radius: 10px;
 }
 
-.sheet-rolltemplate-xcard .sheet-content-trahir {
-    width: 225px;
-    height: 377px;
-    border-radius: 0px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/trahison.webp);
-    background-repeat: no-repeat;
-    background-size: contain;
+.sheet-rolltemplate-vote .sheet-content-rouge {
+    background-color: red;
 }
+
+.sheet-rolltemplate-vote .sheet-content-orange {
+    background-color: #ff8300;
+}
+
+.sheet-rolltemplate-vote .sheet-content-jaune {
+    background-color: yellow;
+}
+
+.sheet-rolltemplate-vote .sheet-content-vert {
+    background-color: #02a202;
+}
+
+.sheet-rolltemplate-vote .sheet-content-bleu {
+	background-color: #6363ff;
+	color: #ffffffd4;
+}
+
+.sheet-rolltemplate-vote .sheet-content-rose {
+    background-color: #e141aa;
+}
+
+
 
 /* Systeme de carte dynamique */
 
-/* CONTEXTE */
+/* Lieux de tournage */
 
-.charsheet .choix_carte_contexte[value="0"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_BACK.webp);
+.charsheet .choix_carte_lieux[value="0"] ~ *{
+    --carte_lieux : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/tournage_back.webp);
 }
 
-.charsheet .choix_carte_contexte[value="1"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_1.webp);
+.charsheet .choix_carte_lieux[value="1"] ~ *{
+    --carte_lieux : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/tournage_1.webp);
 }
 
-.charsheet .choix_carte_contexte[value="2"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_2.webp);
+.charsheet .choix_carte_lieux[value="2"] ~ *{
+    --carte_lieux : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/tournage_2.webp);
 }
 
-.charsheet .choix_carte_contexte[value="3"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_3.webp);
+.charsheet .choix_carte_lieux[value="3"] ~ *{
+    --carte_lieux : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/tournage_3.webp);
 }
 
-.charsheet .choix_carte_contexte[value="4"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_4.webp);
+.charsheet .choix_carte_lieux[value="4"] ~ *{
+    --carte_lieux : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/tournage_4.webp);
 }
 
-.charsheet .choix_carte_contexte[value="5"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_5.webp);
+/* Personnage */
+
+.charsheet .choix_carte_personnage[value="0"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back.webp);
 }
 
-.charsheet .choix_carte_contexte[value="6"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_6.webp);
+.charsheet .choix_carte_personnage[value="1"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_1.webp);
 }
 
-.charsheet .choix_carte_contexte[value="7"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_7.webp);
+.charsheet .choix_carte_personnage[value="2"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_1.webp);
 }
 
-.charsheet .choix_carte_contexte[value="8"] ~ *{
-    --carte_contexte : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/contextes_8.webp);
+.charsheet .choix_carte_personnage[value="3"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_2.webp);
 }
 
-/* RITUEL */
-
-.charsheet .choix_carte_rituel[value="0"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_BACK.webp);
+.charsheet .choix_carte_personnage[value="4"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_2.webp);
 }
 
-.charsheet .choix_carte_rituel[value="1"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_1.webp);
+.charsheet .choix_carte_personnage[value="5"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_3.webp);
 }
 
-.charsheet .choix_carte_rituel[value="2"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_2.webp);
+.charsheet .choix_carte_personnage[value="6"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_3.webp);
 }
 
-.charsheet .choix_carte_rituel[value="3"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_3.webp);
+.charsheet .choix_carte_personnage[value="7"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_4.webp);
 }
 
-.charsheet .choix_carte_rituel[value="4"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_4.webp);
+.charsheet .choix_carte_personnage[value="8"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_4.webp);
 }
 
-.charsheet .choix_carte_rituel[value="5"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_5.webp);
+.charsheet .choix_carte_personnage[value="9"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_5.webp);
 }
 
-.charsheet .choix_carte_rituel[value="6"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_6.webp);
+.charsheet .choix_carte_personnage[value="10"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_5.webp);
 }
 
-.charsheet .choix_carte_rituel[value="7"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_7.webp);
+.charsheet .choix_carte_personnage[value="11"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_6.webp);
 }
 
-.charsheet .choix_carte_rituel[value="8"] ~ *{
-    --carte_rituel : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/rituels_8.webp);
+.charsheet .choix_carte_personnage[value="12"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_6.webp);
 }
 
-/* LOYAUTE */
+.charsheet .choix_carte_personnage[value="13"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_7.webp);
+}
+
+.charsheet .choix_carte_personnage[value="14"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_7.webp);
+}
+
+.charsheet .choix_carte_personnage[value="15"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_back_8.webp);
+}
+
+.charsheet .choix_carte_personnage[value="16"] ~ *{
+    --carte_personnage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Audimat/images/personnage_front_8.webp);
+}
+
+/* Carte Vote */
 
 .charsheet .choix_carte_loyaute[value="0"] ~ *{
-    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/choix_BACK.webp);
+    --color_vote : transparent;
 }
 
 .charsheet .choix_carte_loyaute[value="1"] ~ *{
-    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/loyaute.webp);
+    --color_vote : red;
 }
 
 .charsheet .choix_carte_loyaute[value="2"] ~ *{
-    --carte_loyaute : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/FTS%20-%20Rituels/images/trahison.webp);
+    --color_vote : #ff8300;
+}
+
+.charsheet .choix_carte_loyaute[value="3"] ~ *{
+    --color_vote : yellow;
+}
+
+.charsheet .choix_carte_loyaute[value="4"] ~ *{
+    --color_vote : green;
+}
+
+.charsheet .choix_carte_loyaute[value="5"] ~ *{
+    --color_vote : blue;
+}
+
+.charsheet .choix_carte_loyaute[value="6"] ~ *{
+    --color_vote : #e141aa;
 }
