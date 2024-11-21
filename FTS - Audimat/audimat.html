@@ -75,7 +75,7 @@
 			<div class="wrapper_carte">
 				<div class="loyaute_carte"><!-- Affichage de la carte dynamique --></div>
 				<div class="carte_select_loyaute">
-					<select class="choix_carte_loyaute" name="attr_carte_loyaute" style="font-size: 20px;height: 55px;">
+					<select class="choix_carte_loyaute" name="attr_carte_loyaute" style="font-size: 20px;height: 55px; width: 300px;">
 						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_vote">Éliminer le candidat...</option>
                         <option value="1" data-i18n-list="choix_rouge">Rouge</option>
                         <option value="2" data-i18n-list="choix_orange">Orange</option>
@@ -110,6 +110,20 @@
 					<button type="action" class="button_vers_vote" name="act_annonce_rose">rose</button>
 				</div>
 			</div>
+		</div>
+
+		<!-- Fleche info choix à faire -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+		<div class="info_choix_a_faire">
+			<div class="fleche_1"></div>
+			<div class="text_a_faire">Choisis un candidat avant de pouvoir voter.</div>
+		</div>
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+		<div class="info_choix_ok">
+			<div class="fleche_2"></div>
+			<div class="text_ok">Tu peux maintenant voter !</div>			
 		</div>
 		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" data-i18n-title="utiliser_xcard" title="Cliquez pour utiliser la carte X"></button></div>
 	</div>
@@ -218,4 +232,13 @@
    finishRoll(roll.rollId);
  	})
 
+	 on('clicked:annonce_rouge clicked:annonce_orange clicked:annonce_jaune clicked:annonce_vert clicked:annonce_bleu clicked:annonce_rose', function() {
+		 getAttrs(["carte_loyaute"], function(values) {
+		 let carte_loyaute = parseInt(values["carte_loyaute"]) || 0;
+		 carte_loyaute = 0;
+			 setAttrs({
+				 "carte_loyaute": carte_loyaute
+			 });
+		 });
+	 });
 </script>

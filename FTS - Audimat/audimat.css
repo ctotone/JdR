@@ -165,7 +165,9 @@ div.choix_orange,
 div.choix_jaune,
 div.choix_vert,
 div.choix_bleu,
-div.choix_rose {
+div.choix_rose,
+div .info_choix_a_faire,
+div .info_choix_ok {
     display: none;
 }
 
@@ -179,7 +181,14 @@ div.choix_rose {
 .charsheet .choix_loyaute_fait[value="3"] ~ div.choix_jaune,
 .charsheet .choix_loyaute_fait[value="4"] ~ div.choix_vert,
 .charsheet .choix_loyaute_fait[value="5"] ~ div.choix_bleu,
-.charsheet .choix_loyaute_fait[value="6"] ~ div.choix_rose {
+.charsheet .choix_loyaute_fait[value="6"] ~ div.choix_rose,
+.charsheet .choix_loyaute_fait[value="0"] ~ div.info_choix_a_faire,
+.charsheet .choix_loyaute_fait[value="1"] ~ div.info_choix_ok,
+.charsheet .choix_loyaute_fait[value="2"] ~ div.info_choix_ok,
+.charsheet .choix_loyaute_fait[value="3"] ~ div.info_choix_ok,
+.charsheet .choix_loyaute_fait[value="4"] ~ div.info_choix_ok,
+.charsheet .choix_loyaute_fait[value="5"] ~ div.info_choix_ok,
+.charsheet .choix_loyaute_fait[value="6"] ~ div.info_choix_ok {
     display: block;
 }
 
@@ -229,10 +238,30 @@ div.choix_rose {
 .loyaute {
     grid-column: 4;
     grid-row: 6;
-    margin-left: 83px;
+    margin-left: -60px;
     margin-top: 0px;
     /* transform: rotate(2deg); */
     /* border: 1px solid red; */
+}
+
+.fleche_1 {
+    position: absolute;
+    z-index: 2;
+}
+
+.fleche_2 {
+    position: absolute;
+    z-index: 2;
+}
+
+.text_a_faire {
+    position: absolute;
+    z-index: 2;
+}
+
+.text_ok {
+    position: absolute;
+    z-index: 2;
 }
 
 .vers_vote  {
