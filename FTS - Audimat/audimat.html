@@ -13,7 +13,7 @@
 		<!-- Retour -->
 		<input type="hidden" name="attr_step" class="etape" value="0">
 		<div class="retour">
-			<button type="action" class="button_retour_vote" name="act_vers_vote">Retourner à l'étape précedente...</button>
+			<button type="action" class="button_retour_vote" name="act_vers_vote">8</button>
 		</div>
 
 		<!-- Lieu de tournage -->
@@ -87,43 +87,46 @@
 				</div>
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_rouge">
-					<button type="action" class="button_vers_vote" name="act_annonce_rouge">rouge</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_rouge"></button>
 				</div>				
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_orange">
-					<button type="action" class="button_vers_vote" name="act_annonce_orange">orange</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_orange"></button>
 				</div>			
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_jaune">
-					<button type="action" class="button_vers_vote" name="act_annonce_jaune">jaune</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_jaune"></button>
 				</div>			
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_vert">
-					<button type="action" class="button_vers_vote" name="act_annonce_vert">vert</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_vert"></button>
 				</div>			
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_bleu">
-					<button type="action" class="button_vers_vote" name="act_annonce_bleu">bleu</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_bleu"></button>
 				</div>			
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 				<div class="choix_rose">
-					<button type="action" class="button_vers_vote" name="act_annonce_rose">rose</button>
+					<button type="action" class="button_vers_vote" name="act_annonce_rose"></button>
 				</div>
 			</div>
 		</div>
 
 		<!-- Fleche info choix à faire -->
 		<input type="hidden" name="attr_step" class="etape" value="0">
-		<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
-		<div class="info_choix_a_faire">
-			<div class="fleche_1"></div>
-			<div class="text_a_faire">Choisis un candidat avant de pouvoir voter.</div>
-		</div>
-		<input type="hidden" name="attr_step" class="etape" value="0">
-		<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
-		<div class="info_choix_ok">
-			<div class="fleche_2"></div>
-			<div class="text_ok">Tu peux voter !</div>			
+		 <div class="block_fleche">
+			<input type="hidden" name="attr_step" class="etape" value="0">
+			<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+			<div class="info_choix_a_faire">
+				<div class="fleche_1"></div>
+				<div class="text_a_faire">Choisis un candidat avant de pouvoir voter.</div>
+			</div>
+			<input type="hidden" name="attr_step" class="etape" value="0">
+			<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
+			<div class="info_choix_ok">
+				<div class="fleche_2"></div>
+				<div class="text_ok">Tu peux voter !</div>			
+			</div>
 		</div>
 		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" data-i18n-title="utiliser_xcard" title="Cliquez pour utiliser la carte X"></button></div>
 	</div>
@@ -188,16 +191,19 @@
 
 <script type="text/worker">
 	on('clicked:vers_vote', function() {
-        getAttrs(["step"], function(values) {
+        getAttrs(["step", "carte_loyaute"], function(values) {
             
         let step = parseInt(values["step"]) || 0;
+		let carte_loyaute = parseInt(values["carte_loyaute"]) || 0;
+		carte_loyaute = 0;
 
             if (step == 0) step = 1;
 			else if (step == 1) step = 0;
 
             else step = 0;
             setAttrs({
-                "step": step
+                "step": step,
+				"carte_loyaute" : carte_loyaute
             });
         });
     });
@@ -233,11 +239,14 @@
  	})
 
 	 on('clicked:annonce_rouge clicked:annonce_orange clicked:annonce_jaune clicked:annonce_vert clicked:annonce_bleu clicked:annonce_rose', function() {
-		 getAttrs(["carte_loyaute"], function(values) {
+		 getAttrs(["carte_loyaute", "step"], function(values) {
 		 let carte_loyaute = parseInt(values["carte_loyaute"]) || 0;
+		 let step = parseInt(values["step"]) || 0;
 		 carte_loyaute = 0;
+		 step = 0,
 			 setAttrs({
-				 "carte_loyaute": carte_loyaute
+				 "carte_loyaute": carte_loyaute,
+				 "step": step
 			 });
 		 });
 	 });
