@@ -5,6 +5,12 @@
 	<input type="hidden" name="attr_step" class="etape" value="0">
 	<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 	<div class="wrapper_page">
+		<!-- Oeil premiere page -->
+		<input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="oeil_1"></div>
+		<!-- Oeil deuxieme page -->
+		 <input type="hidden" name="attr_step" class="etape" value="0">
+		<div class="oeil_2"></div>
 		<!-- Nom du joueur -->
 		<div class="name">
 			<input type="text" class="nom_personnage" name="attr_character_name" placeholder="Quel est votre nom..." data-i18n-placeholder="nom_personnage">
@@ -114,7 +120,7 @@
 
 		<!-- Fleche info choix à faire -->
 		<input type="hidden" name="attr_step" class="etape" value="0">
-		 <div class="block_fleche">
+		<div class="block_fleche">
 			<input type="hidden" name="attr_step" class="etape" value="0">
 			<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
 			<div class="info_choix_a_faire">
@@ -129,18 +135,8 @@
 			</div>
 		</div>
 
-		<!-- Oeil premiere page -->
-		<input type="hidden" name="attr_step" class="etape" value="0">
-		<div classe="oeil_1">
-
-		</div>
-
-		<!-- Oeil deuxieme page -->
-		 <input type="hidden" name="attr_step" class="etape" value="0">
-		<div classe="oeil_2">
-			
-		</div>
-
+		<!-- xcard -->
+		<div class="xcard"><button type="roll" class="button_xcard" name="roll_XCard" value="&{template:xcard} {{title=xcard}} {{xcard=oui}}" data-i18n-title="utiliser_xcard" title="Cliquez pour utiliser la carte X"></button></div>
 	</div>
 </div>
 
