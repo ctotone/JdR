@@ -47,22 +47,22 @@
 				<div class="carte_select_personnage">
 					<select class="choix_carte_personnage" name="attr_carte_personnage">
 						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_personnage_back">Votre personnage</option>
-                        <option value="1" data-i18n-list="choix_personnage_1_r">Carte 1 recto</option>
-						<option value="2" data-i18n-list="choix_personnage_1_v">Carte 1 verso</option>
-						<option value="3" data-i18n-list="choix_personnage_2_r">Carte 2 recto</option>
-						<option value="4" data-i18n-list="choix_personnage_2_v">Carte 2 verso</option>
-						<option value="5" data-i18n-list="choix_personnage_3_r">Carte 3 recto</option>
-						<option value="6" data-i18n-list="choix_personnage_3_v">Carte 3 verso</option>
-						<option value="7" data-i18n-list="choix_personnage_4_r">Carte 4 recto</option>
-						<option value="8" data-i18n-list="choix_personnage_4_v">Carte 4 verso</option>
-						<option value="9" data-i18n-list="choix_personnage_5_r">Carte 5 recto</option>
-						<option value="10" data-i18n-list="choix_personnage_5_v">Carte 5 verso</option>
-						<option value="11" data-i18n-list="choix_personnage_6_r">Carte 6 recto</option>
-						<option value="12" data-i18n-list="choix_personnage_6_v">Carte 6 verso</option>
-						<option value="13" data-i18n-list="choix_personnage_7_r">Carte 7 recto</option>
-						<option value="14" data-i18n-list="choix_personnage_7_v">Carte 7 verso</option>
-						<option value="15" data-i18n-list="choix_personnage_8_r">Carte 8 recto</option>
-						<option value="16" data-i18n-list="choix_personnage_8_v">Carte 8 verso</option>
+                        <option value="1" data-i18n-list="choix_personnage_1">Carte 1</option>
+						<option value="2" data-i18n-list="choix_personnage_2">Carte 2</option>
+						<option value="3" data-i18n-list="choix_personnage_3">Carte 3</option>
+						<option value="4" data-i18n-list="choix_personnage_4">Carte 4</option>
+						<option value="5" data-i18n-list="choix_personnage_5">Carte 5</option>
+						<option value="6" data-i18n-list="choix_personnage_6">Carte 6</option>
+						<option value="7" data-i18n-list="choix_personnage_7">Carte 7</option>
+						<option value="8" data-i18n-list="choix_personnage_8">Carte 8</option>
+						<option value="9" data-i18n-list="choix_personnage_9">Carte 9</option>
+						<option value="10" data-i18n-list="choix_personnage_10">Carte 10</option>
+						<option value="11" data-i18n-list="choix_personnage_11">Carte 11</option>
+						<option value="12" data-i18n-list="choix_personnage_12">Carte 12</option>
+						<option value="13" data-i18n-list="choix_personnage_13">Carte 13</option>
+						<option value="14" data-i18n-list="choix_personnage_14">Carte 14</option>
+						<option value="15" data-i18n-list="choix_personnage_15">Carte 15</option>
+						<option value="16" data-i18n-list="choix_personnage_16">Carte 16</option>
                     </select>
 				</div>
 			</div>
@@ -83,12 +83,12 @@
 				<div class="carte_select_loyaute">
 					<select class="choix_carte_loyaute" name="attr_carte_loyaute" style="font-size: 20px;height: 55px; width: 300px;">
 						<option value="0" selected="selected" style="background-color : #a80b0e; color: #ffffffb5;" data-i18n-list="choix_vote">Éliminer le candidat...</option>
-                        <option value="1" data-i18n-list="choix_rouge">Rouge</option>
+                        <option value="1" data-i18n-list="choix_rouge">Violet</option>
                         <option value="2" data-i18n-list="choix_orange">Orange</option>
+                        <option value="6" data-i18n-list="choix_rose">Rose</option>
                         <option value="3" data-i18n-list="choix_jaune">Jaune</option>
                         <option value="4" data-i18n-list="choix_vert">Vert</option>
                         <option value="5" data-i18n-list="choix_bleu">Bleu</option>
-                        <option value="6" data-i18n-list="choix_rose">Rose</option>
                     </select>
 				</div>
 				<input type="hidden" name="attr_carte_loyaute" class="choix_loyaute_fait" value="0">
@@ -174,7 +174,7 @@
       <div class="sheet-content-xcard">&nbsp;</div>
       {{/xcard}}
 	  {{#rouge}}
-      <div class="sheet-content-rouge">{{nom}}<br><span data-i18n="votre_contre_rouge">vote ROUGE</span></div>
+      <div class="sheet-content-rouge">{{nom}}<br><span data-i18n="votre_contre_rouge">vote VIOLET</span></div>
       {{/rouge}}
 	  {{#orange}}
       <div class="sheet-content-orange">{{nom}}<br><span data-i18n="votre_contre_orange">vote ORANGE</span></div>
