@@ -127,12 +127,12 @@
     });
 
 	on('clicked:annonce_trahison', async (event) => {
-		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{trahir=oui}} {{confirm=?{Confirmer le partage|OUI}}}");
+		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{trahir=oui}}}");
    finishRoll(roll.rollId);
  	})
 
 	 on('clicked:annonce_loyal', async (event) => {
-		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{loyaute=oui}} {{confirm=?{Confirmer le partage|OUI}}}");
+		const roll = await startRoll("&{template:xcard} {{title=xcard}} {{loyaute=oui}}}");
    finishRoll(roll.rollId);
  	})
 
