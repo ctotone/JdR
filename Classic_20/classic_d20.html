@@ -1,7 +1,7 @@
 <script type="text/worker">
     on("sheet:opened", function(eventInfo){
         setAttrs({
-            rollmodifier: "?{" + getTranslationByKey("modifier") + "|0|1|2|3|-1|-2|-3}",
+            rollmodifier: "?{" + getTranslationByKey("modifier") + "|0|1|2|3|4|5|-1|-2|-3|-4|-5}",
         });
     });
 </script>
@@ -40,14 +40,14 @@
     <div class="sheet-itd-inner">
         <div class="sheet-itd-table-6col">
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_CARRURE" />
-            <div class="sheet-itd-basic-attribute-corps">
+            <div class="sheet-itd-basic-talent-corps">
                 <span data-i18n="attr-CARRURE">CARRURE</span>
             </div>
             <button type="roll" class="sheet-itd-attr-button" name="roll_CARRURE"
                     value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-CARRURE}}} {{result=[[2d6+@{CARRURE}+@{rollmodifier}]]}}"></button>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="text" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_AGILITE" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_AGILITE" />
             <div class="sheet-itd-basic-attribute-corps">
                 <span data-i18n="attr-AGILITE">AGILITÉ</span>
             </div>
@@ -55,7 +55,7 @@
                     value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-AGILITE}}} {{result=[[2d6+@{AGILITE}+@{rollmodifier}]]}}"></button>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="text" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_PERCEPTION" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_PERCEPTION" />
             <div class="sheet-itd-basic-attribute-ame">
                 <span data-i18n="attr-PERCEPTION">PERCEPTION</span>
             </div>
@@ -63,7 +63,7 @@
                     value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-PERCEPTION}}} {{result=[[2d6+@{PERCEPTION}+@{rollmodifier}]]}}"></button>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="text" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_MENTAL" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_MENTAL" />
             <div class="sheet-itd-basic-attribute-ame">
                 <span data-i18n="attr-MENTAL">MENTAL</span>
             </div>
@@ -71,7 +71,7 @@
                     value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-MENTAL}}} {{result=[[2d6+@{MENTAL}+@{rollmodifier}]]}}"></button>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="text" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="INTELLECT" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="INTELLECT" />
             <div class="sheet-itd-basic-attribute-esprit">
                 <span data-i18n="attr-INTELLECT">INTELLECT</span>
             </div>
@@ -79,7 +79,7 @@
                     value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-INTELLECT}}} {{result=[[2d6+@{INTELLECT}+@{rollmodifier}]]}}"></button>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="text" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_CHARISME" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_CHARISME" />
             <div class="sheet-itd-basic-attribute-esprit">
                 <span data-i18n="attr-CHARISME">CHARISME</span>
             </div>
@@ -166,7 +166,104 @@
         </div>
     </div>
 
+    <!-- TALENTS -->
+    <div class="sheet-itd-marker">
+        <span class="sheet-itd-marker-text"><span data-i18n="specializations-and-talens">ESPECIALIZACIONES Y TALENTOS</span></span>
+    </div>
+    <div class="sheet-itd-inner">
+        <!-- CARRURE -->
+        <div class="sheet-wrapper_talent" style="margin-top: 35px;">
+            <div class="sheet-titre_talent_1"><span class="rouge" data-i18n="attr-constitution">Constitution</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_constitution"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_constitution"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-constitution}}} {{result=[[2d6+@{constitution}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="rouge" data-i18n="attr-force">Force</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_force"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_force"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-force}}} {{result=[[2d6+@{force}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="rouge" data-i18n="attr-vitalite">Vitalité</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_vitalite"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_vitalite"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-vitalite}}} {{result=[[2d6+@{vitalite}+@{rollmodifier}]]}}"></button></div>
+        </div>
+        <!-- AGILLITÉ -->
+        <div class="sheet-wrapper_talent" style="margin-top: 20px;">
+            <div class="sheet-titre_talent_1"><span class="rouge" data-i18n="attr-dexterite">Dextérité</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_dexterite"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_dexterite"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-dexterite}}} {{result=[[2d6+@{dexterite}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="rouge" data-i18n="attr-rapidite">Rapidité</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_rapidite"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_rapidite"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-rapidite}}} {{result=[[2d6+@{rapidite}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="rouge" data-i18n="attr-souplesse">Souplesse</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_souplesse"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_souplesse"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-souplesse}}} {{result=[[2d6+@{souplesse}+@{rollmodifier}]]}}"></button></div>
+        </div> 
+        <!-- PERCEPTION -->
+        <div class="sheet-wrapper_talent" style="margin-top: 30px;">
+            <div class="sheet-titre_talent_1"><span class="jaune" data-i18n="attr-concentration">Concentration</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_concentration"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_concentration"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-concentration}}} {{result=[[2d6+@{concentration}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="jaune" data-i18n="attr-intuition">Intuition</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_intuition"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_intuition"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-intuition}}} {{result=[[2d6+@{intuition}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="jaune" data-i18n="attr-sens">Sens</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_sens"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_sens"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-sens}}} {{result=[[2d6+@{sens}+@{rollmodifier}]]}}"></button></div>
+        </div>
+        <!-- MENTAL -->
+        <div class="sheet-wrapper_talent" style="margin-top: 20px;">
+            <div class="sheet-titre_talent_1"><span class="jaune" data-i18n="attr-decision">Décision</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_decision"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_decision"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-decision}}} {{result=[[2d6+@{decision}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="jaune" data-i18n="attr-equilibre">Équilibre Mental</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_equilibre"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_equilibre"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-equilibre}}} {{result=[[2d6+@{equilibre}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="jaune" data-i18n="attr-volonte">Volonté</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_volonte"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_volonte"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-volonte}}} {{result=[[2d6+@{volonte}+@{rollmodifier}]]}}"></button></div>
+        </div>
+        <!-- INTELLECT -->
+        <div class="sheet-wrapper_talent" style="margin-top: 30px;">
+            <div class="sheet-titre_talent_1"><span class="bleu" data-i18n="attr-analyse">Analyse</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_analyse"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_analyse"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-analyse}}} {{result=[[2d6+@{analyse}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="bleu" data-i18n="attr-imagination">Imagination</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_imagination"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_imagination"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-imagination}}} {{result=[[2d6+@{imagination}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="bleu" data-i18n="attr-savoir">Savoir</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_savoir"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_savoir"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-savoir}}} {{result=[[2d6+@{savoir}+@{rollmodifier}]]}}"></button></div>
+        </div>
+        <!-- CHARISME -->
+        <div class="sheet-wrapper_talent" style="margin-top: 20px; margin-bottom: 30px;">
+            <div class="sheet-titre_talent_1"><span class="bleu" data-i18n="attr-apparence">Apparence</span></div>
+            <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_apparence"></div>
+            <div class="sheet-roll_talent_1"> <button type="roll" class="sheet-itd-talent-button" name="roll_apparence"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-apparence}}} {{result=[[2d6+@{apparence}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_2"><span class="bleu" data-i18n="attr-communication">Communication</span></div>
+            <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_communication"></div>
+            <div class="sheet-roll_talent_2"> <button type="roll" class="sheet-itd-talent-button" name="roll_communication"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-communication}}} {{result=[[2d6+@{communication}+@{rollmodifier}]]}}"></button></div>
+            <div class="sheet-titre_talent_3"><span class="bleu" data-i18n="attr-presence">Présence</span></div>
+            <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_presence"></div>
+            <div class="sheet-roll_talent_3"> <button type="roll" class="sheet-itd-talent-button" name="roll_presence"
+                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-presence}}} {{result=[[2d6+@{presence}+@{rollmodifier}]]}}"></button></div>
+        </div>
+    </div>
 
+    <!-- INVENTAIRE -->
     <div class="sheet-itd-marker">
         <span class="sheet-itd-marker-text"><span data-i18n="shell">FUNDA</span></span>
     </div>
@@ -174,13 +271,7 @@
         <textarea rows="4" width="100%" spellcheck="false" name="attr_shell"></textarea>
     </div>
 
-    <div class="sheet-itd-marker">
-        <span class="sheet-itd-marker-text"><span data-i18n="specializations-and-talens">ESPECIALIZACIONES Y TALENTOS</span></span>
-    </div>
-    <div class="sheet-itd-inner-text">
-        <textarea rows="8" cols="50" spellcheck="false" name="attr_specializations-and-talens"></textarea>
-    </div>
-
+    <!-- NOTES -->
     <div class="sheet-itd-marker">
         <span class="sheet-itd-marker-text"><span data-i18n="weapons-and-gear">ARMAS Y EQUIPAMIENTO</span></span>
     </div>
@@ -190,7 +281,7 @@
 
     <div class="sheet-itd-black-band">
         <div class="sheet-itd-black-band-text">
-            <span data-i18n="experience">EXPERIENCIA</span> &nbsp;
+            <!-- <span data-i18n="experience">EXPERIENCIA</span> &nbsp;
             <label class="sheet-itd-radio-container">
                 <input type="radio" name="attr_experience" value="0" checked="checked">
                 <span class="sheet-itd-radio-checkmark sheet-zero-color"></span>
@@ -208,12 +299,12 @@
                 <span class="sheet-itd-radio-checkmark sheet-experience-color"></span>
             </label>
             &nbsp;&nbsp;
-            <span data-i18n="experience-rule">Cada 3PE, elige una opción y márcala.</span>
+            <span data-i18n="experience-rule">Cada 3PE, elige una opción y márcala.</span> -->
         </div>
     </div>
 
 
-    <div class="sheet-itd-inner">
+   <!--  <div class="sheet-itd-inner">
         <div class="sheet-itd-table">
             <div class="sheet-itd-table-3col">
                 <label class="sheet-itd-checkbox-container">
@@ -279,7 +370,7 @@
                 <span data-i18n="new-talent">Un nuevo talento</span>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 </div>
