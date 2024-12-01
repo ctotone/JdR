@@ -1,4 +1,6 @@
 <div class="sheet-itd-container">
+    <input type="hidden" name="attr_total_point_talent" value="0">
+    <input type="hidden" name="attr_total_point_competence" value="0">
     <div class="sheet-itd-inner sheet-itd-logo-and-info">
         <div class="sheet-itd-logo-table-col">
             <img class="sheet-itd-logo"
@@ -34,42 +36,42 @@
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_CARRURE" min="0" max="100" />
             <div class="sheet-itd-basic-talent-corps">
                 <button type="roll" class="sheet-button_competence" name="roll_CARRURE" title="info" data-i18n-title="attr-CARRURE_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-CARRURE}}} {{result=[[2d6+@{CARRURE}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></button>
+                value="&{template:itd} {{title=^{attr-CARRURE}}} {{subheader=@{character_name}}} {{seuil=[[@{CARRURE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></button>
             </div>
         </div>
         <div class="sheet-itd-table-6col">
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_AGILITE" min="0" max="100" />
             <div class="sheet-itd-basic-attribute-corps">
                 <button type="roll" class="sheet-button_competence" name="roll_AGILITE" title="info" data-i18n-title="attr-AGILITE_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-AGILITE}}} {{result=[[2d6+@{AGILITE}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></button>
+                value="&{template:itd} {{title=^{attr-AGILITE}}} {{subheader=@{character_name}}} {{seuil=[[@{AGILITE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></button>
             </div>
         </div>
         <div class="sheet-itd-table-6col">
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_PERCEPTION" min="0" max="100" />
             <div class="sheet-itd-basic-attribute-ame">
                 <button type="roll" class="sheet-button_competence" name="roll_AGILITE" title="info" data-i18n-title="attr-PERCEPTION_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-PERCEPTION}}} {{result=[[2d6+@{PERCEPTION}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
+                value="&{template:itd} {{title=^{attr-PERCEPTION}}} {{subheader=@{character_name}}} {{seuil=[[@{PERCEPTION}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
             </div>
         </div>
         <div class="sheet-itd-table-6col">
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_MENTAL" min="0" max="100" />
             <div class="sheet-itd-basic-attribute-ame">
                 <button type="roll" class="sheet-button_competence" name="roll_MENTAL" title="info" data-i18n-title="attr-MENTAL_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-MENTAL}}} {{result=[[2d6+@{MENTAL}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></button>
+                value="&{template:itd} {{title=^{attr-MENTAL}}} {{subheader=@{character_name}}} {{seuil=[[@{MENTAL}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></button>
             </div>
         </div>
         <div class="sheet-itd-table-6col">
-            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="INTELLECT" min="0" max="100" />
+            <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_INTELLECT" min="0" max="100" />
             <div class="sheet-itd-basic-attribute-esprit">
                 <button type="roll" class="sheet-button_competence" name="roll_INTELLECT" title="info" data-i18n-title="attr-INTELLECT_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-INTELLECT}}} {{result=[[2d6+@{INTELLECT}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></button>
+                value="&{template:itd} {{title=^{attr-INTELLECT}}} {{subheader=@{character_name}}} {{seuil=[[@{INTELLECT}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></button>
             </div>
         </div>
         <div class="sheet-itd-table-6col">
             <input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-attribute" name="attr_CHARISME" min="0" max="100" />
             <div class="sheet-itd-basic-attribute-esprit">
                 <button type="roll" class="sheet-button_competence" name="roll_CHARISME" title="info" data-i18n-title="attr-CHARISME_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-CHARISME}}} {{result=[[2d6+@{CHARISME}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
+                value="&{template:itd} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
             </div>
         </div>
     </div>
@@ -161,78 +163,78 @@
         <div class="sheet-wrapper_talent" style="margin-top: 30px;">
             <div class="sheet-titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_endurance" title="info" data-i18n-title="attr-endurance_info"
-                value="&{template:itd} {{title=^{attr-CARRURE}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button></div>
+                value="&{template:itd} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_force_brute" title="info" data-i18n-title="attr-force_brute_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-force_brute}}} {{result=[[2d6+@{force_brute}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button></div>
+                value="&{template:itd} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_robustesse" title="info" data-i18n-title="attr-robustesse_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-robustesse}}} {{result=[[2d6+@{robustesse}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button></div>
+                value="&{template:itd} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
         </div>
         <!-- AGILLITÉ -->
         <div class="sheet-wrapper_talent" style="margin-top: 15px;">
             <div class="sheet-titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_agilite_corporelle" title="info" data-i18n-title="attr-agilite_corporelle_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-agilite_corporelle}}} {{result=[[2d6+@{agilite_corporelle}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button></div>
+                value="&{template:itd} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_precision" title="info" data-i18n-title="attr-precision_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-precision}}} {{result=[[2d6+@{precision}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-precision">Précision</span></button></div>
+                value="&{template:itd} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-precision">Précision</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_reflexe" title="info" data-i18n-title="attr-reflexe_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-reflexe}}} {{result=[[2d6+@{reflexe}+@{rollmodifier}]]}}"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button></div>
+                value="&{template:itd} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
         </div> 
         <!-- PERCEPTION -->
         <div class="sheet-wrapper_talent" style="margin-top: 25px;">
             <div class="sheet-titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-acuite_sensorielle}}} {{result=[[2d6+@{acuite_sensorielle}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button></div>
+                value="&{template:itd} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-sixieme_sens}}} {{result=[[2d6+@{sixieme_sens}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button></div>
+                value="&{template:itd} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_vigilance" title="info" data-i18n-title="attr-vigilance_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-vigilance}}} {{result=[[2d6+@{vigilance}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button></div>
+                value="&{template:itd} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
         </div>
         <!-- MENTAL -->
         <div class="sheet-wrapper_talent" style="margin-top: 15px;">
             <div class="sheet-titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_decision" title="info" data-i18n-title="attr-decision_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-decision}}} {{result=[[2d6+@{decision}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-decision">Décision</span></button></div>
+                value="&{template:itd} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-decision">Décision</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_determination" title="info" data-i18n-title="attr-determination_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-determination}}} {{result=[[2d6+@{determination}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-determination">Détermination</span></button></div>
+                value="&{template:itd} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-determination">Détermination</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-equilibre_mental}}} {{result=[[2d6+@{equilibre_mental}+@{rollmodifier}]]}}"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button></div>
+                value="&{template:itd} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
         </div>
         <!-- INTELLECT -->
         <div class="sheet-wrapper_talent" style="margin-top: 25px;">
                 <div class="sheet-titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_creativite" title="info" data-i18n-title="attr-creativite_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-creativite}}} {{result=[[2d6+@{creativite}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button></div>
+                value="&{template:itd} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_erudition" title="info" data-i18n-title="attr-erudition_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-erudition}}} {{result=[[2d6+@{erudition}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button></div>
+                value="&{template:itd} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_logique" title="info" data-i18n-title="attr-logique_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-logique}}} {{result=[[2d6+@{logique}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-logique">Logique</span></button></div>
+                value="&{template:itd} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-logique">Logique</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
         </div>
         <!-- CHARISME -->
         <div class="sheet-wrapper_talent" style="margin-top: 15px; margin-bottom: 30px;">
             <div class="sheet-titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
             <div class="sheet-titre_talent_1"><button type="roll" class="sheet-button_talent" name="roll_aura" title="info" data-i18n-title="attr-aura_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-aura}}} {{result=[[2d6+@{aura}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-aura">Aura</span></button></div>
+                value="&{template:itd} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-aura">Aura</span></button></div>
             <div class="sheet-valeur_talent_1"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
             <div class="sheet-titre_talent_2"><button type="roll" class="sheet-button_talent" name="roll_communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-communication_expressive}}} {{result=[[2d6+@{communication_expressive}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button></div>
+                value="&{template:itd} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button></div>
             <div class="sheet-valeur_talent_2"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
             <div class="sheet-titre_talent_3"><button type="roll" class="sheet-button_talent" name="roll_persuasion" title="info" data-i18n-title="attr-persuasion_info"
-                value="&{template:itd} {{title=@{character_name}}} {{subheader=^{attr-persuasion}}} {{result=[[2d6+@{persuasion}+@{rollmodifier}]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
+                value="&{template:itd} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
             <div class="sheet-valeur_talent_3"><input type="number" value="0" spellcheck="false" class="sheet-itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
         </div>
     </div>
@@ -474,6 +476,37 @@
 </rolltemplate>
 
 <script type="text/worker">
+
+    on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion", function() {
+
+        getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion"], function(values) {
+            let endurance = parseInt(values["endurance"]) || 0;
+            let force_brute = parseInt(values["force_brute"]) || 0;
+            let robustesse = parseInt(values["robustesse"]) || 0;
+            let agilite_corporelle = parseInt(values["agilite_corporelle"]) || 0;
+            let precision = parseInt(values["precision"]) || 0;
+            let reflexe = parseInt(values["reflexe"]) || 0;
+            let acuite_sensorielle = parseInt(values["acuite_sensorielle"]) || 0;
+            let sixieme_sens = parseInt(values["sixieme_sens"]) || 0;
+            let vigilance = parseInt(values["vigilance"]) || 0;
+            let decision = parseInt(values["decision"]) || 0;
+            let determination = parseInt(values["determination"]) || 0;
+            let equilibre_mental = parseInt(values["equilibre_mental"]) || 0;
+            let creativite = parseInt(values["creativite"]) || 0;
+            let erudition = parseInt(values["erudition"]) || 0;
+            let logique = parseInt(values["logique"]) || 0;
+            let aura = parseInt(values["aura"]) || 0;
+            let communication_expressive = parseInt(values["communication_expressive"]) || 0;
+            let persuasion = parseInt(values["persuasion"]) || 0;
+            let total_point_talent = endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental + creativite + erudition + logique + aura + communication_expressive + persuasion;
+
+                
+                setAttrs({
+                    "total_point_talent": total_point_talent
+            });
+        });
+    });
+    
     on("sheet:opened", function(eventInfo){
         setAttrs({
             rollmodifier: "?{" + getTranslationByKey("Modificateur") + "|+0|+10|+20|+30|+40|+50|-10|-20|-30|-40|-50}",
@@ -498,7 +531,3 @@
         });
     });
 </script>
-
-
-
-
