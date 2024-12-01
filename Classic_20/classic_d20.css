@@ -13,6 +13,58 @@ input[type=number]::-webkit-outer-spin-button {
       margin: 0; 
 }
 
+.charsheet button[type=action].sheet-button_talent::before,
+.charsheet button[type=roll].sheet-button_talent::before,
+.charsheet button[type=action].sheet-button_competence::before,
+.charsheet button[type=roll].sheet-button_competence::before {
+	content: '';
+}
+
+.charsheet button[type=action].sheet-button_talent,
+.charsheet button[type=roll].sheet-button_talent {
+  width: 119px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 14px;
+  text-align: right;
+  line-height: 14px;
+  margin-top: -5px;
+  padding-right: 5px;
+}
+
+.charsheet button[type=action].sheet-button_competence,
+.charsheet button[type=roll].sheet-button_competence {
+  width: 95px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 18px;
+  text-align: center;
+  line-height: 18px;
+  margin-top: -7px;
+}
+
+.charsheet button[type=action].sheet-button_talent:hover,
+.charsheet button[type=roll].sheet-button_talent:hover {
+    margin-left: -1px;
+}
+
+.charsheet button[type=action].sheet-button_competence:hover,
+.charsheet button[type=roll].sheet-button_competence:hover {
+    margin-left: -2px;
+}
+
 .sheet-itd-container {
   font-family: 'Homenaje', 'Contrail One', sans-serif;
   min-width: 825px;
@@ -51,6 +103,22 @@ span.sheet-jaune {
 
 span.sheet-bleu {
 	color: var(--color_attribut_esprit);
+  text-decoration: underline;
+}
+
+span.sheet-rouge-souligne {
+	color: var(--color_attribut_corps);
+  text-decoration: underline;
+}
+
+span.sheet-jaune-souligne {
+	color: var(--color_attribut_ame);
+  text-decoration: underline;
+}
+
+span.sheet-bleu-souligne {
+	color: var(--color_attribut_esprit);
+  text-decoration: underline;
 }
 
 .sheet-itd-logo-table-col {
@@ -218,15 +286,14 @@ span.sheet-bleu {
 .sheet-itd-input-basic-talent {
   width: 30px !important;
   height: 30px !important;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   font-family: 'Homenaje', 'Contrail One', sans-serif;
   border-color: black;
   background-color: transparent;
   border-radius: 0px;
   border: none;
-  margin-top: -10px;
-  margin-top: -11px;
+  margin-top: -5px;
 }
 
 .sheet-itd-talent-button {
@@ -238,8 +305,19 @@ span.sheet-bleu {
 
 .sheet-wrapper_talent {
   display: grid;
-  grid-template-columns: 0% 20% 1% 4% 1% 4% 3% 20% 1% 4% 1% 4% 3% 20% 1% 4% 1% 4% 0%;
+  grid-template-columns: 18% 18% 1% 4% 2% 0% 2% 18% 1% 4% 2% 0% 2% 18% 1% 4% 0% 0% 0%;
   grid-auto-rows: 25px;
+  font-size: 14px;
+  padding: 11px;
+  box-shadow: -2px 2px 5px 0px #0000004f;
+}
+
+.sheet-titre_competence_liee {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left;
+  padding-right: 0px;
+  font-size: 18px;
 }
 
 .sheet-titre_talent_1 {
