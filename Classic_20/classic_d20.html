@@ -363,94 +363,46 @@
             {{result}}
         </div>
         <div class="sheet-rolltemplate-itd sheet-template-itd-texte">
-        {{#rollGreater() result 95}}
-            {{#rollTotal() result 100}}
-            Echec critique<br>tragique
-            {{/rollTotal() result 100}}
-            {{#rollTotal() result 99}}
-            Echec critique
-            {{/rollTotal() result 99}}
-            {{#^rollTotal() result 99}}
-                {{#^rollTotal() result 100}}
-                    Echec automatique
-                {{/^rollTotal() result 100}}
-            {{/^rollTotal() result 99}}
-        {{/rollGreater() result 95}}
-        {{#^rollGreater() result 95}}
-            {{#rollGreater() result seuil}}
-                {{#rollTotal() result 11}}
+            {{#rollGreater() result 95}}
+                {{#rollTotal() result 100}}
+                Echec critique<br>tragique
+                {{/rollTotal() result 100}}
+                {{#rollTotal() result 99}}
                 Echec critique
-                {{/rollTotal() result 11}}
-                {{#rollTotal() result 22}}
-                Echec critique
-                {{/rollTotal() result 22}}
-                {{#rollTotal() result 33}}
-                Echec critique
-                {{/rollTotal() result 33}}
-                {{#rollTotal() result 44}}
-                Echec critique
-                {{/rollTotal() result 44}}
-                {{#rollTotal() result 55}}
-                Echec critique
-                {{/rollTotal() result 55}}
-                {{#rollTotal() result 66}}
-                Echec critique
-                {{/rollTotal() result 66}}
-                {{#rollTotal() result 77}}
-                Echec critique
-                {{/rollTotal() result 77}}
-                {{#rollTotal() result 88}}
-                Echec critique
-                {{/rollTotal() result 88}}
+                {{/rollTotal() result 99}}
+                {{#^rollTotal() result 99}}
+                    {{#^rollTotal() result 100}}
+                        Echec automatique
+                    {{/^rollTotal() result 100}}
+                {{/^rollTotal() result 99}}
+            {{/rollGreater() result 95}}
+            {{#^rollGreater() result 95}}
+                {{#rollGreater() result seuil}}
+                    {{#rollTotal() result 11}}
+                    Echec critique
+                    {{/rollTotal() result 11}}
+                    {{#rollTotal() result 22}}
+                    Echec critique
+                    {{/rollTotal() result 22}}
+                    {{#rollTotal() result 33}}
+                    Echec critique
+                    {{/rollTotal() result 33}}
+                    {{#rollTotal() result 44}}
+                    Echec critique
+                    {{/rollTotal() result 44}}
+                    {{#rollTotal() result 55}}
+                    Echec critique
+                    {{/rollTotal() result 55}}
+                    {{#rollTotal() result 66}}
+                    Echec critique
+                    {{/rollTotal() result 66}}
+                    {{#rollTotal() result 77}}
+                    Echec critique
+                    {{/rollTotal() result 77}}
+                    {{#rollTotal() result 88}}
+                    Echec critique
+                    {{/rollTotal() result 88}}
 
-                {{#^rollTotal() result 11}}
-                    {{#^rollTotal() result 22}}
-                        {{#^rollTotal() result 33}}
-                            {{#^rollTotal() result 44}}
-                                {{#^rollTotal() result 55}}
-                                    {{#^rollTotal() result 66}}
-                                        {{#^rollTotal() result 77}}
-                                            {{#^rollTotal() result 88}}
-                                            Echec
-                                            {{/^rollTotal() result 88}} 
-                                        {{/^rollTotal() result 77}}                                    
-                                    {{/^rollTotal() result 66}}
-                                {{/^rollTotal() result 55}}
-                            {{/^rollTotal() result 44}}
-                        {{/^rollTotal() result 33}}
-                    {{/^rollTotal() result 22}}
-                {{/^rollTotal() result 11}}
-            {{/rollGreater() result seuil}}
-
-            {{#^rollGreater() result seuil}}
-                {{#rollTotal() result 1}}
-                Réussite critique exceptionnelle
-                {{/rollTotal() result 1}}
-                {{#rollTotal() result 11}}
-                Réussite critique
-                {{/rollTotal() result 11}}
-                {{#rollTotal() result 22}}
-                Réussite critique
-                {{/rollTotal() result 22}}
-                {{#rollTotal() result 33}}
-                Réussite critique
-                {{/rollTotal() result 33}}
-                {{#rollTotal() result 44}}
-                Réussite critique
-                {{/rollTotal() result 44}}
-                {{#rollTotal() result 55}}
-                Réussite critique
-                {{/rollTotal() result 55}}
-                {{#rollTotal() result 66}}
-                Réussite critique
-                {{/rollTotal() result 66}}
-                {{#rollTotal() result 77}}
-                Réussite critique
-                {{/rollTotal() result 77}}
-                {{#rollTotal() result 88}}
-                Réussite critique
-                {{/rollTotal() result 88}}
-                {{#^rollTotal() result 1}}
                     {{#^rollTotal() result 11}}
                         {{#^rollTotal() result 22}}
                             {{#^rollTotal() result 33}}
@@ -459,7 +411,7 @@
                                         {{#^rollTotal() result 66}}
                                             {{#^rollTotal() result 77}}
                                                 {{#^rollTotal() result 88}}
-                                                Reussite
+                                                Echec
                                                 {{/^rollTotal() result 88}} 
                                             {{/^rollTotal() result 77}}                                    
                                         {{/^rollTotal() result 66}}
@@ -468,9 +420,57 @@
                             {{/^rollTotal() result 33}}
                         {{/^rollTotal() result 22}}
                     {{/^rollTotal() result 11}}
-                {{/^rollTotal() result 1}}
-            {{/^rollGreater() result seuil}}
-        {{/^rollGreater() result 95}}
+                {{/rollGreater() result seuil}}
+
+                {{#^rollGreater() result seuil}}
+                    {{#rollTotal() result 1}}
+                    Réussite critique exceptionnelle
+                    {{/rollTotal() result 1}}
+                    {{#rollTotal() result 11}}
+                    Réussite critique
+                    {{/rollTotal() result 11}}
+                    {{#rollTotal() result 22}}
+                    Réussite critique
+                    {{/rollTotal() result 22}}
+                    {{#rollTotal() result 33}}
+                    Réussite critique
+                    {{/rollTotal() result 33}}
+                    {{#rollTotal() result 44}}
+                    Réussite critique
+                    {{/rollTotal() result 44}}
+                    {{#rollTotal() result 55}}
+                    Réussite critique
+                    {{/rollTotal() result 55}}
+                    {{#rollTotal() result 66}}
+                    Réussite critique
+                    {{/rollTotal() result 66}}
+                    {{#rollTotal() result 77}}
+                    Réussite critique
+                    {{/rollTotal() result 77}}
+                    {{#rollTotal() result 88}}
+                    Réussite critique
+                    {{/rollTotal() result 88}}
+                    {{#^rollTotal() result 1}}
+                        {{#^rollTotal() result 11}}
+                            {{#^rollTotal() result 22}}
+                                {{#^rollTotal() result 33}}
+                                    {{#^rollTotal() result 44}}
+                                        {{#^rollTotal() result 55}}
+                                            {{#^rollTotal() result 66}}
+                                                {{#^rollTotal() result 77}}
+                                                    {{#^rollTotal() result 88}}
+                                                    Reussite
+                                                    {{/^rollTotal() result 88}} 
+                                                {{/^rollTotal() result 77}}                                    
+                                            {{/^rollTotal() result 66}}
+                                        {{/^rollTotal() result 55}}
+                                    {{/^rollTotal() result 44}}
+                                {{/^rollTotal() result 33}}
+                            {{/^rollTotal() result 22}}
+                        {{/^rollTotal() result 11}}
+                    {{/^rollTotal() result 1}}
+                {{/^rollGreater() result seuil}}
+            {{/^rollGreater() result 95}}
         </div>
     </div>
 </rolltemplate>
@@ -478,7 +478,6 @@
 <script type="text/worker">
 
     on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion", function() {
-
         getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion"], function(values) {
             let endurance = parseInt(values["endurance"]) || 0;
             let force_brute = parseInt(values["force_brute"]) || 0;
@@ -500,9 +499,8 @@
             let persuasion = parseInt(values["persuasion"]) || 0;
             let total_point_talent = endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental + creativite + erudition + logique + aura + communication_expressive + persuasion;
 
-                
-                setAttrs({
-                    "total_point_talent": total_point_talent
+        setAttrs({
+            "total_point_talent": total_point_talent
             });
         });
     });
@@ -514,7 +512,6 @@
     });
 
     on("sheet:opened change:blessure change:stress", function() {
-
         getAttrs(["blessure", "stress"], function(values) {
             let blessure = parseInt(values["blessure"]) || 0;
             let stress = parseInt(values["stress"]) || 0;
@@ -522,11 +519,10 @@
             let malus_stress = stress*5;
             let total_malus = (blessure + stress)*5;
 
-                
-                setAttrs({
-                    "malus_blessure": malus_blessure,
-                    "malus_stress": malus_stress,
-                    "total_malus": total_malus
+            setAttrs({
+                "malus_blessure": malus_blessure,
+                "malus_stress": malus_stress,
+                "total_malus": total_malus
             });
         });
     });
