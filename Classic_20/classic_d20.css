@@ -583,6 +583,12 @@ textarea {
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-center {
   text-align: center;
   /* margin-left: 30px; */
+  --echec_2: #ff0000;
+  --echec_3: #ff006f;
+  --echec_1: #dc00c9;
+  --reussite_3: #009700;
+  --reussite_2: #0082ff;
+  --reussite_1: #fffe00;
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-background {
@@ -607,7 +613,13 @@ textarea {
   /* margin-top: 25px; */
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader {
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-tragique,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-critique,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-exceptionnelle,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-critique,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite {
   background-color: transparent;
   color: #ffffffde;
   font-size: 40px;
@@ -617,17 +629,73 @@ textarea {
   margin-top: 25px;
 }
 
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-tragique {
+  color: var(--echec_1);
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-critique{
+  color: var(--echec_2);
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec{
+  color: var(--echec_3);
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-exceptionnelle {
+  color: var(--reussite_1);
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-critique {
+  color: var(--reussite_2);
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite {
+  color: var(--reussite_3);
+}
+
 .sheet-rolltemplate-itd .sheet-template-itd-result {
   font-size: 36px;
   font-family: 'Contrail One';
   padding: 15px;
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte {
+.sheet-rolltemplate-itd .sheet-template-itd-texte,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-tragique,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-critique,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-critique,
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite
+
+ {
   font-size: 18px;
   line-height: 20px;
   font-family: 'Contrail One';
   padding: 15px;
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-tragique {
+  color: var(--echec_1);
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-critique{
+  color: var(--echec_2);
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-echec{
+  color: var(--echec_3);
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-exceptionnelle {
+  color: var(--reussite_1);
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-critique {
+  color: var(--reussite_2);
+}
+
+.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite {
+  color: var(--reussite_3);
 }
 
 .sheet-rolltemplate-itd .sheet-template-itd-succeeds {
@@ -641,29 +709,29 @@ textarea {
 .sheet-rolltemplate-itd .inlinerollresult {
   background-color: transparent !important;
   border: none !important;
-  color: #ffffffde !important;
+  color: unset !important;
 }
 
 .sheet-rolltemplate-itd-header .inlinerollresult {
   background-color: transparent !important;
   border: none !important;
-  color: #ffffffde !important;
+  color: unset !important;
 }
  
 .sheet-rolltemplate-itd .inlinerollresult.fullcrit {
   background-color: transparent !important;
   border: none !important;
-  color: #ffffffde !important;
+  color: unset !important;
 }
  
 .sheet-rolltemplate-itd .inlinerollresult.fullfail {
   background-color: transparent !important;
   border: none !important;
-  color: #ffffffde !important;
+  color: unset !important;
 }
  
 .sheet-rolltemplate-itd .inlinerollresult.importantroll {
   background-color: transparent !important;
   border: none !important;
-  color: #ffffffde !important;
+  color: unset !important;
 }
