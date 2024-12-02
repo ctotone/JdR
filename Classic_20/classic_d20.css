@@ -5,6 +5,7 @@
   --color_attribut_corps: #e42525f0;
   --color_attribut_ame: #c5a600; 
   --color_attribut_esprit: #4682B4; 
+  --color_base: #000000;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -172,6 +173,12 @@ span.sheet-bleu-souligne {
   text-align: center;
 }
 
+.sheet-itd-table-7col {
+  float: left;
+  width: 14%;
+  text-align: center;
+}
+
 .sheet-itd-basic-info {
   display: inline-block;
   vertical-align: middle;
@@ -245,7 +252,8 @@ span.sheet-bleu-souligne {
 
 .sheet-itd-basic-attribute-corps,
 .sheet-itd-basic-attribute-ame,
-.sheet-itd-basic-attribute-esprit {
+.sheet-itd-basic-attribute-esprit,
+.sheet-itd-basic-attribute-initiative {
   font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 18px;
   margin-top: 8px;
@@ -262,6 +270,10 @@ span.sheet-bleu-souligne {
 
 .sheet-itd-basic-attribute-esprit {
   color: var(--color_attribut_esprit);;
+}
+
+.sheet-itd-basic-attribute-esprit {
+  color: var(--color_base);;
 }
 
 .sheet-itd-input-basic-attribute {
