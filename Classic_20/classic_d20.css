@@ -1,11 +1,21 @@
 /* INTO THE DARK */
 /* @import url('https://fonts.googleapis.com/css2?family=Homenaje&display=swap'); */
 
+.sheet-darkmode .sheetform {
+  background-color: #333;
+}
+
+.sheetform {
+  background-color: transparent;
+}
+
 .charsheet {
   --color_attribut_corps: #e42525f0;
   --color_attribut_ame: #c5a600; 
   --color_attribut_esprit: #4682B4; 
   --color_base: #000000;
+  background-color: white;
+  width: 825px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -17,7 +27,9 @@ input[type=number]::-webkit-outer-spin-button {
 .charsheet button[type=action].sheet-button_talent::before,
 .charsheet button[type=roll].sheet-button_talent::before,
 .charsheet button[type=action].sheet-button_competence::before,
-.charsheet button[type=roll].sheet-button_competence::before {
+.charsheet button[type=roll].sheet-button_competence::before,
+.charsheet button[type=action].sheet-button_initiative::before,
+.charsheet button[type=roll].sheet-button_initiative::before {
 	content: '';
 }
 
@@ -56,20 +68,51 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: -7px;
 }
 
+.charsheet button[type=action].sheet-button_initiative,
+.charsheet button[type=roll].sheet-button_initiative {
+  width: 95px;
+  height: 25px;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+  margin-top: -12px;
+  color: white;
+}
+
 .charsheet button[type=action].sheet-button_talent:hover,
 .charsheet button[type=roll].sheet-button_talent:hover {
     margin-left: -1px;
 }
 
 .charsheet button[type=action].sheet-button_competence:hover,
-.charsheet button[type=roll].sheet-button_competence:hover {
+.charsheet button[type=roll].sheet-button_competence:hover{
     margin-left: -2px;
+}
+
+.charsheet button[type=action].sheet-button_initiative:hover,
+.charsheet button[type=roll].sheet-button_initiative:hover {
+    margin-left: -2px;
+    color: #a52e2e;
+}
+
+.sheet-initiative-haut {
+  position: absolute;
+  z-index: 2;
+  margin-top: 9%;
+  margin-left: 86%;
+  transform: rotate(90deg);
 }
 
 .sheet-itd-container {
   font-family: 'Homenaje', 'Contrail One', sans-serif;
-  min-width: 825px;
-  max-width: 1000px;
+  width: 825px;
   padding-top: 20px;
 }
 
@@ -119,6 +162,10 @@ span.sheet-jaune-souligne {
 span.sheet-bleu-souligne {
 	color: var(--color_attribut_esprit);
   text-decoration: underline;
+}
+
+.span.sheet-info-xp {
+  font-size: 14px;
 }
 
 .sheet-itd-logo-table-col-titre {
@@ -289,6 +336,19 @@ span.sheet-bleu-souligne {
   border-width: 2px;
 }
 
+.sheet-itd-basic-initiative {
+  width: 60px !important;
+  height: 60px !important;
+  border-color: black;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Classic_20/images/d6.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  border-width: 2px;
+  margin-left: 22px;
+  background-position: bottom 1px right 1px;
+}
+
 .sheet-itd-attr-button {
   height: 25px;
   width: 25px;
@@ -420,6 +480,15 @@ span.sheet-bleu-souligne {
   margin-top: -6px;
 }
 
+.sheet-initiative {
+  grid-column: 1/21;
+  grid-row: 1;
+  text-align: center;
+  padding-right: 0px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+}
+
 .sheet-itd-black-band {
   width: 100%;
   height: 50px;
@@ -435,6 +504,7 @@ span.sheet-bleu-souligne {
 .sheet-itd-black-band-text {
   margin: 0% 5% 0% 5%;
   padding-top: 14px;
+  text-align: center;
 }
 
 .sheet-itd-marker {
