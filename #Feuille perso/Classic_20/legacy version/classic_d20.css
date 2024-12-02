@@ -2,7 +2,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Homenaje&display=swap'); */
 
 .sheet-darkmode .sheetform {
-  background-color: #1f1f1f;
+  background-color: #333;
 }
 
 .sheetform {
@@ -10,21 +10,12 @@
 }
 
 .charsheet {
-  font-family: 'Contrail One', sans-serif;
   --color_attribut_corps: #e42525f0;
   --color_attribut_ame: #c5a600; 
   --color_attribut_esprit: #4682B4; 
   --color_base: #000000;
-  --border_talent: #00000085;
-  --text_black: #333;
-  color: var(--text_black);
-  width: 825px;
-  margin-bottom: 10px;
   background-color: white;
-  border: 1px solid var(--black);
-  box-shadow: 2px 2px 5px 1px #000000ba;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Classic_20/images/background_feuille.webp);
-  background-size: cover;
+  width: 825px;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -33,17 +24,17 @@ input[type=number]::-webkit-outer-spin-button {
       margin: 0; 
 }
 
-.charsheet button[type=action].button_talent::before,
-.charsheet button[type=roll].button_talent::before,
-.charsheet button[type=action].button_competence::before,
-.charsheet button[type=roll].button_competence::before,
-.charsheet button[type=action].button_initiative::before,
-.charsheet button[type=roll].button_initiative::before {
+.charsheet button[type=action].sheet-button_talent::before,
+.charsheet button[type=roll].sheet-button_talent::before,
+.charsheet button[type=action].sheet-button_competence::before,
+.charsheet button[type=roll].sheet-button_competence::before,
+.charsheet button[type=action].sheet-button_initiative::before,
+.charsheet button[type=roll].sheet-button_initiative::before {
 	content: '';
 }
 
-.charsheet button[type=action].button_talent,
-.charsheet button[type=roll].button_talent {
+.charsheet button[type=action].sheet-button_talent,
+.charsheet button[type=roll].sheet-button_talent {
   width: 119px;
   height: 25px;
   border: none;
@@ -60,8 +51,8 @@ input[type=number]::-webkit-outer-spin-button {
   padding-right: 5px;
 }
 
-.charsheet button[type=action].button_competence,
-.charsheet button[type=roll].button_competence {
+.charsheet button[type=action].sheet-button_competence,
+.charsheet button[type=roll].sheet-button_competence {
   width: 95px;
   height: 25px;
   border: none;
@@ -77,8 +68,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin-top: -7px;
 }
 
-.charsheet button[type=action].button_initiative,
-.charsheet button[type=roll].button_initiative {
+.charsheet button[type=action].sheet-button_initiative,
+.charsheet button[type=roll].sheet-button_initiative {
   width: 95px;
   height: 25px;
   border: none;
@@ -95,23 +86,23 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
 }
 
-.charsheet button[type=action].button_talent:hover,
-.charsheet button[type=roll].button_talent:hover {
+.charsheet button[type=action].sheet-button_talent:hover,
+.charsheet button[type=roll].sheet-button_talent:hover {
     margin-left: -1px;
 }
 
-.charsheet button[type=action].button_competence:hover,
-.charsheet button[type=roll].button_competence:hover{
+.charsheet button[type=action].sheet-button_competence:hover,
+.charsheet button[type=roll].sheet-button_competence:hover{
     margin-left: -2px;
 }
 
-.charsheet button[type=action].button_initiative:hover,
-.charsheet button[type=roll].button_initiative:hover {
+.charsheet button[type=action].sheet-button_initiative:hover,
+.charsheet button[type=roll].sheet-button_initiative:hover {
     margin-left: -2px;
     color: #a52e2e;
 }
 
-.initiative-haut {
+.sheet-initiative-haut {
   position: absolute;
   z-index: 2;
   margin-top: 9%;
@@ -119,65 +110,65 @@ input[type=number]::-webkit-outer-spin-button {
   transform: rotate(90deg);
 }
 
-.itd-container {
-  font-family: 'Contrail One', sans-serif;
+.sheet-itd-container {
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   width: 825px;
   padding-top: 20px;
 }
 
-.itd-logo-and-info {
+.sheet-itd-logo-and-info {
   padding-bottom: 30px;
 }
 
-.itd-inner {
+.sheet-itd-inner {
   text-align: center;
   font-size: 18px;
   margin: 0% 5% 0% 5%;
   display: block;
 }
 
-.itd-inner-text {
+.sheet-itd-inner-text {
   margin: 25px 5% 25px 5%;
 }
 
-.itd-inner:after {
+.sheet-itd-inner:after {
   content: "";
   display: table;
   clear: both;
 }
 
-span.rouge {
+span.sheet-rouge {
 	color: var(--color_attribut_corps);
 }
 
-span.jaune {
+span.sheet-jaune {
 	color: var(--color_attribut_ame);
 }
 
-span.bleu {
+span.sheet-bleu {
 	color: var(--color_attribut_esprit);
 }
 
-span.rouge-souligne {
+span.sheet-rouge-souligne {
 	color: var(--color_attribut_corps);
   text-decoration: underline;
 }
 
-span.jaune-souligne {
+span.sheet-jaune-souligne {
 	color: var(--color_attribut_ame);
   text-decoration: underline;
 }
 
-span.bleu-souligne {
+span.sheet-bleu-souligne {
 	color: var(--color_attribut_esprit);
   text-decoration: underline;
 }
 
-.span.info-xp {
+.span.sheet-info-xp {
   font-size: 14px;
 }
 
-.itd-logo-table-col-titre {
+.sheet-itd-logo-table-col-titre {
   float: left;
   width: 50%;
   text-align: center;
@@ -190,22 +181,7 @@ span.bleu-souligne {
   font-size: 30px;
 }
 
-.itd-logo-table-col-portrait {
-  float: left;
-  width: 110px;
-  height: 130px;
-  text-align: center;
-  margin-left: 40px;
-  display: grid;
-  align-items: center;
-  padding: 20px;
-  font-size: 30px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Classic_20/images/cadre_portrait.png);
-  background-size: cover;
-  box-shadow: 0px 0px 7px 1px black;
-}
-
-.itd-logo-table-col1 {
+.sheet-itd-logo-table-col1 {
   float: left;
   width: 50%;
   text-align: center;
@@ -214,82 +190,82 @@ span.bleu-souligne {
   align-items: center;
 }
 
-.itd-logo-table-col {
+.sheet-itd-logo-table-col {
   float: left;
   width: 50%;
   text-align: center;
 }
 
-.itd-table-2col {
+.sheet-itd-table-2col {
   float: left;
   width: 50%;
   text-align: center;
 }
 
-.itd-table-3col {
+.sheet-itd-table-3col {
   float: left;
   width: 33.3%;
   text-align: center;
 }
 
-.itd-table-5col {
+.sheet-itd-table-5col {
   float: left;
   width: 20%;
   text-align: center;
 }
 
-.itd-table-6col {
+.sheet-itd-table-6col {
   float: left;
   width: 16%;
   text-align: center;
 }
 
-.itd-table-7col {
+.sheet-itd-table-7col {
   float: left;
   width: 14%;
   text-align: center;
 }
 
-.itd-basic-info {
+.sheet-itd-basic-info {
   display: inline-block;
   vertical-align: middle;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 20px;
   width: 100%;
   height: 100%;
   margin-top: 10%;
 }
 
-.itd-input-basic-info {
+.sheet-itd-input-basic-info {
   resize: none;
   display: inline-block;
   vertical-align: middle;
 }
 
-.input-basic-info {
-  font-family: 'Contrail One', sans-serif;
+.sheet-input-basic-info {
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 20px;
   width: 100%;
   padding: 5px 5px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #ffffff52;
+  background-color: #f8f8f8;
   resize: none;
   display: inline-block;
   vertical-align: middle;
 }
 
-.itd-label-basic-info {
-  font-family: 'Contrail One', sans-serif;
+.sheet-itd-label-basic-info {
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 20px;
   display: inline-block;
   vertical-align: middle;    
 }
 
-.itd-label-basic-info-col {
+.sheet-itd-label-basic-info-col {
    position: relative;
    overflow: hidden;
    float: left;
@@ -297,7 +273,7 @@ span.bleu-souligne {
    text-align: center;
    margin-top: 7px;
 }
-.input-basic-info-col {
+.sheet-input-basic-info-col {
    position: relative;
    overflow: hidden;
    float: left;
@@ -305,63 +281,62 @@ span.bleu-souligne {
    text-align: center;
 }
 
-.itd-logo {
+.sheet-itd-logo {
   width: 250px;
   height: 200px;
   text-align: center;
 }
 
-.itd-basic-attribute-cells {
+.sheet-itd-basic-attribute-cells {
   display: inline-block;
   height: 23px;
   text-align: center;
 }
 
-.itd-three-columns-td {
+.sheet-itd-three-columns-td {
   width: 33.3%;
 }
 
-.itd-basic-attribute-corps,
-.itd-basic-attribute-ame,
-.itd-basic-attribute-esprit,
-.itd-basic-attribute-initiative {
-  font-family: 'Contrail One', sans-serif;
+.sheet-itd-basic-attribute-corps,
+.sheet-itd-basic-attribute-ame,
+.sheet-itd-basic-attribute-esprit,
+.sheet-itd-basic-attribute-initiative {
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 18px;
   margin-top: 8px;
   margin-bottom: 3px;
 }
 
-.itd-basic-attribute-corps {
+.sheet-itd-basic-attribute-corps {
   color: var(--color_attribut_corps);
 }
 
-.itd-basic-attribute-ame {
+.sheet-itd-basic-attribute-ame {
   color: var(--color_attribut_ame);;
 }
 
-.itd-basic-attribute-esprit {
+.sheet-itd-basic-attribute-esprit {
   color: var(--color_attribut_esprit);;
 }
 
-.itd-basic-attribute-esprit {
+.sheet-itd-basic-attribute-esprit {
   color: var(--color_base);;
 }
 
-.itd-input-basic-attribute {
+.sheet-itd-input-basic-attribute {
   width: 60px !important;
   height: 60px !important;
   font-size: 40px;
   text-align: center;
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   border-color: black;
-  background-color: transparent;
+  background-color: white;  
   border-radius: 0px;
   border-style: solid;
   border-width: 2px;
-  box-shadow: 2px 2px 6px 0px #00000091;
 }
 
-.itd-basic-initiative {
+.sheet-itd-basic-initiative {
   width: 60px !important;
   height: 60px !important;
   border-color: black;
@@ -374,39 +349,39 @@ span.bleu-souligne {
   background-position: bottom 1px right 1px;
 }
 
-.itd-attr-button {
+.sheet-itd-attr-button {
   height: 25px;
   width: 25px;
   vertical-align: middle;
 }
 
-.itd-basic-talent-corps,
-.itd-basic-talent-ame,
-.itd-basic-talent-esprit {
-  font-family: 'Contrail One', sans-serif;
+.sheet-itd-basic-talent-corps,
+.sheet-itd-basic-talent-ame,
+.sheet-itd-basic-talent-esprit {
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   font-size: 18px;
   margin-top: 8px;
   margin-bottom: 3px;
 }
 
-.itd-basic-talent-corps {
+.sheet-itd-basic-talent-corps {
   color: var(--color_attribut_corps);
 }
 
-.itd-basic-talent-ame {
+.sheet-itd-basic-talent-ame {
   color: var(--color_attribut_ame);;
 }
 
-.itd-basic-talent-esprit {
+.sheet-itd-basic-talent-esprit {
   color: var(--color_attribut_esprit);;
 }
 
-.charsheet .itd-input-basic-talent {
+.sheet-itd-input-basic-talent {
   width: 30px !important;
   height: 30px !important;
   font-size: 16px;
   text-align: center;
-  font-family: 'Contrail One', sans-serif;
+  font-family: 'Homenaje', 'Contrail One', sans-serif;
   border-color: black;
   background-color: transparent;
   border-radius: 0px;
@@ -414,84 +389,98 @@ span.bleu-souligne {
   margin-top: -5px;
 }
 
-.itd-talent-button {
+.sheet-itd-talent-button {
   height: 20px;
   width: 20px;
   vertical-align: middle;
   margin-top: -11px;
 }
 
-.wrapper_talent {
+.sheet-wrapper_talent {
   display: grid;
-  grid-template-columns: 18% 6% 17% 0% 4% 3% 0% 2% 17% 0% 4% 3% 0% 2% 17% 0% 4% 0% 0% 0%;
+  grid-template-columns: 18% 3% 18% 1% 4% 2% 0% 2% 18% 1% 4% 2% 0% 2% 18% 1% 4% 0% 0% 0%;
   grid-auto-rows: 25px;
   font-size: 14px;
   padding: 5px;
-  border: 2px solid #00000061;
-  box-shadow: 2px 2px 6px 0px #000000ed;
 }
 
-.titre_competence_liee {
+.sheet-titre_competence_liee {
   grid-column: 1;
   grid-row: 1;
   text-align: center;
   padding-right: 0px;
   font-size: 18px;
-  margin-top: 2px;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.titre_talent_1 {
+.sheet-titre_talent_1 {
   grid-column: 3;
   grid-row: 1;
   text-align: right;
   padding-right: 10px;
-  margin-top: 2px;
-  border-bottom: 2px solid var(--border_talent);
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.valeur_talent_1 {
+.sheet-valeur_talent_1 {
   grid-column: 5;
   grid-row: 1;
-  border-right: 2px solid var(--border_talent);
-  border-bottom: 2px solid var(--border_talent);
-  margin-top: 2px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.titre_talent_2 {
+.sheet-roll_talent_1 {
+  grid-column: 7;
+  grid-row: 1;
+  margin-top: -6px;
+}
+
+.sheet-titre_talent_2 {
   grid-column: 9;
   grid-row: 1;
   text-align: right;
   padding-right: 10px;
-  margin-top: 2px;
-  border-bottom: 2px solid var(--border_talent);
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.valeur_talent_2 {
+.sheet-valeur_talent_2 {
   grid-column: 11;
   grid-row: 1;
-  border-right: 2px solid var(--border_talent);
-  border-bottom: 2px solid var(--border_talent);
-  margin-top: 2px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.titre_talent_3 {
+.sheet-roll_talent_2 {
+  grid-column: 13;
+  grid-row: 1;
+  margin-top: -6px;
+}
+
+.sheet-titre_talent_3 {
   grid-column: 15;
   grid-row: 1; 
   text-align: right;
   padding-right: 10px;
-  margin-top: 2px;
-  border-bottom: 2px solid var(--border_talent);
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
 }
 
-.valeur_talent_3 {
+.sheet-valeur_talent_3 {
   grid-column: 17;
   grid-row: 1;
-  border-right: 2px solid var(--border_talent);
-  border-bottom: 2px solid var(--border_talent);
-  margin-top: 2px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
-.initiative {
+.sheet-roll_talent_3 {
+  grid-column: 19;
+  grid-row: 1;
+  margin-top: -6px;
+}
+
+.sheet-initiative {
   grid-column: 1/21;
   grid-row: 1;
   text-align: center;
@@ -500,7 +489,7 @@ span.bleu-souligne {
   border-left: 2px solid black;
 }
 
-.charsheet .itd-black-band {
+.sheet-itd-black-band {
   width: 100%;
   height: 50px;
   color: white;
@@ -512,29 +501,27 @@ span.bleu-souligne {
   margin-bottom: 20px;
 }
 
-.charsheet .itd-black-band-text {
+.sheet-itd-black-band-text {
   margin: 0% 5% 0% 5%;
   padding-top: 14px;
   text-align: center;
 }
 
-.itd-marker {
+.sheet-itd-marker {
   width: 100%;
   height: 15px;
   border-bottom: 5px solid black;
   text-align: center;
 }
 
-.itd-marker-text {
+.sheet-itd-marker-text {
   font-size: 24px;
   background-color: white;
   padding: 0 10px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Classic_20/images/background_feuille.webp);
-  background-size: cover;
 }
 
 textarea {
-  font-family: sans-serif;
+  font-family: 'Homenaje', sans-serif;
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -542,17 +529,15 @@ textarea {
   border-radius: 4px;
   background-color: #f8f8f8;
   resize: none;
-  box-shadow: 3px 3px 5px 1px #000000a6;
-  font-family: 'Contrail One', sans-serif;
 }
 
-.itd-experience-option {
+.sheet-itd-experience-option {
   font-weight: bold;
   text-align: center;
 }
 
 /* CUSTOM CHECKBOX */
-.charsheet .itd-checkbox-container {
+.sheet-itd-checkbox-container {
   display: inline;
   position: relative;
   padding-left: 20px;
@@ -567,7 +552,7 @@ textarea {
 }
 
 /* Hide the browser's checkbox */
-.charsheet .itd-checkbox-container input {
+.sheet-itd-checkbox-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -575,7 +560,7 @@ textarea {
   width: 0;
 }
 
-.charsheet .itd-checkbox-checkmark {
+.sheet-itd-checkbox-checkmark {
   position: absolute;
   top: -2px;
   left: 0;
@@ -585,30 +570,29 @@ textarea {
   border-radius: 0px;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 2px 2px 3px 0px #000000a6;
 }
 
-.charsheet .itd-checkbox-container:hover input~.itd-checkbox-checkmark {
+.sheet-itd-checkbox-container:hover input~.sheet-itd-checkbox-checkmark {
   background-color: #ccc;
 }
 
-.charsheet .itd-checkbox-container input:checked~.itd-checkbox-checkmark {
+.sheet-itd-checkbox-container input:checked~.sheet-itd-checkbox-checkmark {
   background-color: black;
 }
 
-.charsheet .itd-checkbox-checkmark:after {
+.sheet-itd-checkbox-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-.charsheet .itd-checkbox-container input:checked~.itd-checkbox-checkmark:after {
+.sheet-itd-checkbox-container input:checked~.sheet-itd-checkbox-checkmark:after {
   display: block;
 }
 
 /* Custom checkmark */
-.charsheet .itd-checkbox-container .itd-checkbox-checkmark:after {
+.sheet-itd-checkbox-container .sheet-itd-checkbox-checkmark:after {
   left: 6px;
   top: 2px;
   width: 5px;
@@ -622,7 +606,7 @@ textarea {
 }
 
 /* CUSTOM RADIO BUTTONS */
-.charsheet .itd-radio-container {
+.sheet-itd-radio-container {
   display: inline;
   position: relative;
   padding-left: 15px; /* 22px; outside roll20 */
@@ -635,7 +619,7 @@ textarea {
   user-select: none;
 }
 
-.charsheet .itd-radio-container input {
+.sheet-itd-radio-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -644,7 +628,7 @@ textarea {
 }
 
 
-.charsheet .itd-radio-checkmark {
+.sheet-itd-radio-checkmark {
   position: absolute;
   top: 3px;
   left: 3px;
@@ -653,44 +637,44 @@ textarea {
   background-color: #eee;
 }
 
-.charsheet .itd-radio-container:hover input~.itd-radio-checkmark {
+.sheet-itd-radio-container:hover input~.sheet-itd-radio-checkmark {
   background-color: #ccc;
 }
 
-.charsheet .itd-radio-container input:checked~.protection-color {
+.sheet-itd-radio-container input:checked~.sheet-protection-color {
   background-color: #018610;
 }
 
-.charsheet .itd-radio-container input:checked~.wound-color {
+.sheet-itd-radio-container input:checked~.sheet-wound-color {
   background-color: #b70000;
 }
 
-.charsheet .itd-radio-container input:checked~.stress-color {
+.sheet-itd-radio-container input:checked~.sheet-stress-color {
   background-color: #940094;
 }
 
-.charsheet .itd-radio-container input:checked~.zero-color {
+.sheet-itd-radio-container input:checked~.sheet-zero-color {
   background-color: #404040;
 }
 
-.charsheet .itd-radio-container input:checked~.experience-color {
+.sheet-itd-radio-container input:checked~.sheet-experience-color {
   background-color: #dcca00;
 }
 
 /* Hide indicator when not checked */
-.charsheet .itd-radio-checkmark:after {
+.sheet-itd-radio-checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the indicator when checked */
-.charsheet .itd-radio-container input:checked~.itd-radio-checkmark:after {
+.sheet-itd-radio-container input:checked~.sheet-itd-radio-checkmark:after {
   display: inline;
 }
 
 /* Style the indicator */
-.charsheet .itd-radio-container .itd-radio-checkmark:after {
+.sheet-itd-radio-container .sheet-itd-radio-checkmark:after {
   top: 6px;
   left: 6px;
   width: 8px;
