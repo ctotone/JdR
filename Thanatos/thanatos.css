@@ -124,15 +124,72 @@ div.personnes_marquantes {
 
 .wrapper_page_personnage {
     display: grid;
-    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
-    grid-auto-rows: 25px;
-	padding-top: 10px;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
 	border: 1px solid red;
 }
 
-.base {
-    grid-column: 1;
-    grid-row: 1;
+.page1_zone_personnage {
+    grid-column: 6 / 43;
+    grid-row: 16 / 32;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_familier {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_caracteristiques {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_competences {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_attributs {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_talents {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_artifices {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_dons {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
+}
+
+.page1_zone_apprentissage {
+    grid-column: 43 / 81;
+    grid-row: 17 / 34;
+    border: 1px solid red;
+    transform: rotate(1deg);
 }
 
 /* Structure générale de la page_équipement */
