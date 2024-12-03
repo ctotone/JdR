@@ -12,7 +12,7 @@
 }
 
 .sheet-darkmode .sheetform {
-    background-color: red;
+    background-color: #ffffff;
 }
 
 body.sheet-darkmode .charsheet {
@@ -68,33 +68,33 @@ body.sheet-darkmode .charsheet {
 
 
 div.personnage {  
-	width: 960px;
-	height: auto;
-	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    width: 830px;
+    height: 1174px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnage.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
 
 div.equipement {  
-	width: 960px;
-	height: auto;
-	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    width: 830px;
+    height: 1174px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_equipement.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
 
 div.parcours_de_vie {  
-	width: 960px;
-	height: auto;
-	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    width: 965px;
+    height: 1368px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_parcours.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
 
 div.personnes_marquantes {  
-	width: 960px;
-	height: auto;
-	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    width: 965px;
+    height: 1368px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnes.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -108,10 +108,10 @@ div.personnes_marquantes {
     display: none;
 }
 
-.charsheet .page[value="0"] ~ div.personnage,
-.charsheet .page[value="1"] ~ div.equipement,
-.charsheet .page[value="2"] ~ div.parcours_de_vie,
-.charsheet .page[value="3"] ~ div.personnes_marquantes {
+.charsheet .choix_page[value="0"] ~ div.personnage,
+.charsheet .choix_page[value="1"] ~ div.equipement,
+.charsheet .choix_page[value="2"] ~ div.parcours_de_vie,
+.charsheet .choix_page[value="3"] ~ div.personnes_marquantes {
     display: block;
 }
 
