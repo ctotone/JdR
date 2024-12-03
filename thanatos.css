@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+
+.charsheet {
+    --black: #000000;
+    --white: #ffffff;
+	--font_playfair: "Playfair", serif;
+    font-family: "Playfair", serif;
+    color: var(--black);
+    font-size: 18px;
+    margin: 0px;
+}
+
+.sheet-darkmode .sheetform {
+    background-color: red;
+}
+
+body.sheet-darkmode .charsheet {
+    --black: #000000;
+    --white: #ffffff;
+    color: var(--black);
+}
+
+::placeholder {
+  color: rgba(128, 128, 128, 0.548);
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+
+.charsheet input {  
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.charsheet input[type=number]::-webkit-inner-spin-button,
+.charsheet input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+.charsheet button[type=action].button_texte::before,
+.charsheet button[type=roll].button_texte::before {
+	content: '';
+}
+
+.charsheet button[type=action].button_texte,
+.charsheet button[type=roll].button_texte {
+  width: 119px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+}
+
+.charsheet button[type=action].button_texte:hover,
+.charsheet button[type=roll].button_texte:hover {
+    margin-left: -1px;
+}
+
+
+
+div.personnage {  
+	width: 960px;
+	height: auto;
+	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.equipement {  
+	width: 960px;
+	height: auto;
+	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.parcours_de_vie {  
+	width: 960px;
+	height: auto;
+	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.personnes_marquantes {  
+	width: 960px;
+	height: auto;
+	background-image: url(https://raw.githubusercontent.com/ctotone/);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* Gestion des affichage */
+
+div.personnage,
+div.equipement,
+div.parcours_de_vie,
+div.personnes_marquantes {
+    display: none;
+}
+
+.charsheet .page[value="0"] ~ div.personnage,
+.charsheet .page[value="1"] ~ div.equipement,
+.charsheet .page[value="2"] ~ div.parcours_de_vie,
+.charsheet .page[value="3"] ~ div.personnes_marquantes {
+    display: block;
+}
+
+/* Structure générale de la page_personnage */
+
+.wrapper_page_personnage {
+    display: grid;
+    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
+    grid-auto-rows: 25px;
+	padding-top: 10px;
+	border: 1px solid red;
+}
+
+.base {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Structure générale de la page_équipement */
+
+.wrapper_page_equipement {
+    display: grid;
+    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
+    grid-auto-rows: 25px;
+	padding-top: 10px;
+	border: 1px solid red;
+}
+
+.base {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Structure générale de la page_parcours_de_vie */
+
+.wrapper_page_parcours_de_vie {
+    display: grid;
+    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
+    grid-auto-rows: 25px;
+	padding-top: 10px;
+	border: 1px solid red;
+}
+
+.base {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Structure générale de la page personnes_marquantes */
+
+.wrapper_page_personnes_marquantes {
+    display: grid;
+    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
+    grid-auto-rows: 25px;
+	padding-top: 10px;
+	border: 1px solid red;
+}
+
+.base {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Roll template */
+.sheet-rolltemplate-thanatos{
+    margin-left: 0px;
+	padding-top: 0px;
+}
+
+.sheet-rolltemplate-thanatos .sheet-container {
+    border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 220px;
+    height: 377px;
+    box-shadow: 3px 3px 7px 0px #000000db;
+}
+
+.sheet-rolltemplate-thanatos .sheet-container {
+    --header-bg-color: rgb(0, 0, 0);
+    --header-text-color: #FFF;
+	border: 2px solid;
+    border-color: var(--header-bg-color);
+    width: 220px;
+    height: 170px;
+    box-shadow: 3px 3px 7px 0px #000000db;
+	border-radius: 10px;
+}
