@@ -1,4 +1,5 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_blessure" value="0">
 	<select class="choix_page" name="attr_page" style="font-size: 15px;">
 		<option value="0" selected="selected">Feuille de Personnage</option>
 		<option value="1">Feuille d'Équipement</option>
@@ -128,11 +129,16 @@
 			</div>
 			<div class="wrapper_page1_zone_attributs_blessure" style="margin-top: 15px;">
 				<div class="page1_zone_attributs_blessure_titre">Blessure légère (Difficulté + 1)</div>
-				<div class="page1_zone_attributs_blessure_valeur">X</div>
+				<div class="page1_zone_attributs_blessure_valeur">
+					<input type="checkbox" name="attr_blessure" value="1" id="blessure">
+					<label for="blessure"></label>
+				</div>
 			</div>
 			<div class="wrapper_page1_zone_attributs_blessure" style="margin-top: -13px;">
 				<div class="page1_zone_attributs_blessure_titre">Blessure grave (Difficulté + 3)</div>
-				<div class="page1_zone_attributs_blessure_valeur">X</div>
+				<div class="page1_zone_attributs_blessure_valeur"><input type="checkbox" name="attr_blessure" value="3" id="blessure1">
+					<label for="blessure1"></label>>
+				</div>
 			</div>
 		</div>
 		<div class="page1_zone_talents">
@@ -162,7 +168,6 @@
 		</div>
 		<div class="page1_zone_apprentissage">
 			<div class="wrapper_page1_zone_XP">
-				<div class="page1_zone_xp_titre">Points d'apprentissage</div>
 				<div class="page1_zone_xp_valeur"><input type="number" class="input_carac" name="attr_xp" value="0"></div>
 			</div>
 		</div>

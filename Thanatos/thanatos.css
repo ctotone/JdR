@@ -2,8 +2,8 @@
 
 
 .charsheet {
-    --black: #000000e0;
-    --white: #ffffffde;
+    --black: #000002;
+    --white: #fcfcfd;
 	--font_playfair: "Playfair", serif;
     --borderdev: 1px solid red;
     --couleur_dotted: #00000078;
@@ -94,6 +94,54 @@
 .charsheet textarea.area_talents {
     width: 98%;
     height: 165px;
+}
+
+input[type="checkbox"] {    
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--white);
+    margin: 0;
+    font: inherit;
+    color: var(--white);
+    width: 18px;
+    height: 18px !important;
+    border: 2px solid var(--white);
+    border-radius: 1px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--white);
+    border: 2px solid var(--white);
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    width: 18px !important;
+    height: 18px;
+    padding: 0px !important;
+    margin: 0 !important;
+}
+
+label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+  }
+
+input[type="checkbox"]:checked + label::before {
+    content: "✔";
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: -19px;
+  }
+
+input[type="checkbox"]:focus {
+  outline: none;
 }
 
 .charsheet input[type=number]::-webkit-inner-spin-button,
@@ -259,7 +307,7 @@ div.personnes_marquantes {
 .page1_zone_apprentissage {
     grid-column: 50 / 80;
     grid-row: 112 / 117;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
     transform: rotate(-3deg);
 }
 
@@ -476,8 +524,8 @@ div.personnes_marquantes {
 .page1_zone_xp_valeur {
     grid-column: 3;
     grid-row: 1;
-    /* border: var(--borderdev); */
-    letter-spacing: -0.4px;
+    margin-top: 10px;
+    margin-left: -5px;
 }
 
 /* Roll template */
