@@ -52,7 +52,8 @@
     z-index: 1;
 }
 
-.charsheet input.input_dotted {  
+.charsheet input.input_dotted,
+.charsheet input.input_dotted2 {  
     width: 100% !important;
     border-bottom: 1px dotted var(--couleur_dotted);
     height: 20px !important;
@@ -63,6 +64,10 @@
     padding-left: 2px;
     color: var(--text_input);
     letter-spacing: -0.7px;
+}
+
+.charsheet input.input_dotted2 { 
+    height: 21px !important;
 }
 
 .charsheet input.input_carac {  
@@ -79,10 +84,11 @@
 }
 
 .charsheet textarea {
-    border: none;
+    border: 1px solid #0000000f;
     outline: none;
     resize: none;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background.png);   
+    background-color: #00000003;
+    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background20.png); */ 
 }
 
 .charsheet textarea.area_talents {
@@ -123,7 +129,7 @@
 div.personnage {  
     width: 830px;
     height: 1174px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnage1.webp);    
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnage2.webp);    
 	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_01.webp); */
     background-size: cover;
 	background-repeat: no-repeat;
@@ -225,25 +231,29 @@ div.personnes_marquantes {
 
 .page1_zone_talents {
     grid-column: 4 / 44;
-    grid-row: 77 / 95;
-    border: var(--borderdev);
+    grid-row: 76 / 95;
+    /* border: var(--borderdev); */
     transform: rotate(-1.5deg);
     margin-left: 10px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .page1_zone_artifices {
-    grid-column: 3 / 47;
-    grid-row: 95 / 115;
-    border: var(--borderdev);
+    grid-column: 3 / 46;
+    grid-row: 100 / 114;
+    /* border: var(--borderdev); */
     transform: rotate(-1.5deg);
+    margin-left: 10px;
+    margin-top: -3px;
 }
 
 .page1_zone_dons {
     grid-column: 47 / 80;
-    grid-row: 87 / 110;
-    border: var(--borderdev);
+    grid-row: 91 / 108;
+    /* border: var(--borderdev); */
     transform: rotate(-1.5deg);
+    margin-left: 3px;
 }
 
 .page1_zone_apprentissage {
@@ -382,7 +392,8 @@ div.personnes_marquantes {
 .wrapper_page1_zone_caracteristiques,
 .wrapper_page1_zone_competences,
 .wrapper_page1_zone_attributs,
-.wrapper_page1_zone_attributs_blessure {
+.wrapper_page1_zone_attributs_blessure,
+.wrapper_page1_zone_XP {
     display: grid;
     grid-template-columns: 49% 4% 30%;
     grid-auto-rows: 37px;
@@ -403,9 +414,15 @@ div.personnes_marquantes {
     margin-left: -15px;
 }
 
+.wrapper_page1_zone_XP {
+    grid-template-columns: 75% 5% 20%;
+    /* border: var(--borderdev); */
+}
+
 .page1_zone_caracteristiques_titre,
 .page1_zone_competences_titre,
-.page1_zone_attributs_blessure_titre {
+.page1_zone_attributs_blessure_titre,
+.page1_zone_xp_titre {
     grid-column: 1;
     grid-row: 1;
     /* border: var(--borderdev); */
@@ -414,7 +431,8 @@ div.personnes_marquantes {
 
 .page1_zone_caracteristiques_valeur,
 .page1_zone_competences_valeur,
-.page1_zone_attributs_blessure_valeur {
+.page1_zone_attributs_blessure_valeur,
+.page1_zone_xp_valeur {
     grid-column: 3;
     grid-row: 1;
     /* border: var(--borderdev); */
@@ -446,6 +464,20 @@ div.personnes_marquantes {
     grid-column: 5;
     grid-row: 1;
     /* border: var(--borderdev); */
+}
+
+.page1_zone_xp_titre {
+    grid-column: 1;
+    grid-row: 1;
+    /* border: var(--borderdev); */
+    letter-spacing: -0.4px;
+}
+
+.page1_zone_xp_valeur {
+    grid-column: 3;
+    grid-row: 1;
+    /* border: var(--borderdev); */
+    letter-spacing: -0.4px;
 }
 
 /* Roll template */
