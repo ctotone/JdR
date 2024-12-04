@@ -1,5 +1,5 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
-	<select class="choix_page" name="attr_page">
+	<select class="choix_page" name="attr_page" style="font-size: 15px;">
 		<option value="0" selected="selected">Feuille de Personnage</option>
 		<option value="1">Feuille d'Équipement</option>
 		<option value="2">Feuille du Parcours de vie</option>
@@ -8,11 +8,125 @@
 
 <div class="personnage">
 	<div class="wrapper_page_personnage">
-		<div class="page1_zone_personnage">zone personnage</div>
-		<div class="page1_zone_familier">zone familier</div>
-		<div class="page1_zone_caracteristiques">zone caracteristiques</div>
-		<div class="page1_zone_competences">zone competences</div>
-		<div class="page1_zone_attributs">zone attributs</div>
+		<div class="page1_zone_personnage">
+			<div class="page1_zone_personnage_line">Nom : <input type="text" class="input_dotted" name="attr_character_name"></div>
+			<div class="page1_zone_personnage_line">Sexe :<input type="text" class="input_dotted" name="attr_sexe">Âge :<input type="text" class="input_dotted"  name="attr_age"></div>
+			<div class="page1_zone_personnage_line">Rang :<input type="text" class="input_dotted" name="attr_rang"></div>
+			<div class="page1_zone_personnage_line">Activité antérieure :<input type="text" class="input_dotted" name="attr_activite_anterieure"></div>
+			<div class="page1_zone_personnage_line">Marque :<input type="text" class="input_dotted" name="attr_marque"></div>
+			<div class="page1_zone_personnage_line">Visage :<input type="text" class="input_dotted" name="attr_visage"></div>
+		</div>
+		<div class="page1_zone_familier">
+			<div class="page1_zone_personnage_line">Espèce : <input type="text" class="input_dotted" name="attr_familier_espece"></div>
+			<div class="page1_zone_personnage_line">Apparence inanimée :<input type="text" class="input_dotted" name="attr_familier_apparence_1"></div>
+			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_apparence_2"></div>
+			<div class="page1_zone_personnage_line">Traits :<input type="text" class="input_dotted" name="attr_familier_trait1"></div>
+			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_trait_2"></div>
+			<div class="page1_zone_personnage_line">Accomodement (input number)</div>
+		</div>
+		<div class="page1_zone_caracteristiques">
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Vigueur</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Adresse</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_adresse" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Instinct</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_instinct" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Raison</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_raison" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Témérité</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_temerite" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Aura</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_aura" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_caracteristiques">
+				<div class="page1_zone_caracteristiques_titre">Fluide</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_fluide" value="0"></div>
+			</div>
+		</div>
+		<div class="page1_zone_competences">
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Mêlée</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_melee" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Agilité</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_agilite" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Perception</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_perception" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Culture</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_culture" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Manipulation</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_manipulation" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Précision</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_precision" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_competences">
+				<div class="page1_zone_competences_titre">Rituel</div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_rituel" value="0"></div>
+			</div>
+		</div>
+		<div class="page1_zone_attributs">
+			<div class="wrapper_page1_zone_attributs">
+				<div class="page1_zone_attributs_titre">Points de Vie</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_de_vie" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs">
+				<div class="page1_zone_attributs_titre">Points d'Endurance</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_endurance" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs">
+				<div class="page1_zone_attributs_titre">Points de Fluide</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_de_fluide" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
+				<div class="page1_zone_attributs_demi_titre">Dégâts</div>				
+				<div class="page1_zone_attributs_details">Légers</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_legers" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
+				<div class="page1_zone_attributs_details">Normaux</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_normaux" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
+				<div class="page1_zone_attributs_details">Supérieurs</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_superieurs" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
+				<div class="page1_zone_attributs_details">Exceptionnels</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_exceptionnels" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs" style="margin-top: 7px;">
+				<div class="page1_zone_attributs_titre">Résistance</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_resistance" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs">
+				<div class="page1_zone_attributs_titre">Protection</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_protection" value="0"></div>
+			</div>
+			<div class="wrapper_page1_zone_attributs">
+				<div class="page1_zone_attributs_titre">Fatigue par tour</div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_fatigue" value="0"></div>
+			</div>
+		</div>
 		<div class="page1_zone_talents">zone talents</div>
 		<div class="page1_zone_artifices">zone artifices</div>
 		<div class="page1_zone_dons">zone dons</div>
