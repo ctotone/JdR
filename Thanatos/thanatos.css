@@ -78,6 +78,18 @@
     padding-bottom: 6px;
 }
 
+.charsheet textarea {
+    border: none;
+    outline: none;
+    resize: none;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background.png);   
+}
+
+.charsheet textarea.area_talents {
+    width: 98%;
+    height: 165px;
+}
+
 .charsheet input[type=number]::-webkit-inner-spin-button,
 .charsheet input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -213,29 +225,31 @@ div.personnes_marquantes {
 
 .page1_zone_talents {
     grid-column: 4 / 44;
-    grid-row: 72 / 95;
-    /* border: var(--borderdev); */
+    grid-row: 77 / 95;
+    border: var(--borderdev);
     transform: rotate(-1.5deg);
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .page1_zone_artifices {
     grid-column: 3 / 47;
     grid-row: 95 / 115;
-    /* border: var(--borderdev); */
+    border: var(--borderdev);
     transform: rotate(-1.5deg);
 }
 
 .page1_zone_dons {
     grid-column: 47 / 80;
     grid-row: 87 / 110;
-    /* border: var(--borderdev); */
+    border: var(--borderdev);
     transform: rotate(-1.5deg);
 }
 
 .page1_zone_apprentissage {
     grid-column: 50 / 80;
     grid-row: 112 / 117;
-    /* border: var(--borderdev); */
+    border: var(--borderdev);
     transform: rotate(-3deg);
 }
 
@@ -367,12 +381,13 @@ div.personnes_marquantes {
 
 .wrapper_page1_zone_caracteristiques,
 .wrapper_page1_zone_competences,
-.wrapper_page1_zone_attributs {
+.wrapper_page1_zone_attributs,
+.wrapper_page1_zone_attributs_blessure {
     display: grid;
     grid-template-columns: 49% 4% 30%;
     grid-auto-rows: 37px;
     color: var(--white);
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
 }
 
 .wrapper_page1_zone_competences {
@@ -383,32 +398,39 @@ div.personnes_marquantes {
     grid-template-columns: 28% 0% 30% 4% 30%;
 }
 
+.wrapper_page1_zone_attributs_blessure {
+    grid-template-columns: 80% 0% 10%;
+    margin-left: -15px;
+}
+
 .page1_zone_caracteristiques_titre,
-.page1_zone_competences_titre {
+.page1_zone_competences_titre,
+.page1_zone_attributs_blessure_titre {
     grid-column: 1;
     grid-row: 1;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
     letter-spacing: -0.4px;
 }
 
 .page1_zone_caracteristiques_valeur,
-.page1_zone_competences_valeur {
+.page1_zone_competences_valeur,
+.page1_zone_attributs_blessure_valeur {
     grid-column: 3;
     grid-row: 1;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
 }
 
 .page1_zone_attributs_titre {
     grid-column: 1/4;
     grid-row: 1;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
     letter-spacing: -0.4px;
 }
 
 .page1_zone_attributs_demi_titre {
     grid-column: 1/3;
     grid-row: 1;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
     letter-spacing: -0.4px;
 }
 
@@ -417,13 +439,13 @@ div.personnes_marquantes {
     grid-row: 1;
     letter-spacing: -0.4px;
     font-style: italic;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
 }
 
 .page1_zone_attributs_valeur {
     grid-column: 5;
     grid-row: 1;
-    border: var(--borderdev);
+    /* border: var(--borderdev); */
 }
 
 /* Roll template */
