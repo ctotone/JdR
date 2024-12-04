@@ -5,6 +5,8 @@
     --black: #000000;
     --white: #ffffff;
 	--font_playfair: "Playfair", serif;
+    --borderdev: 1px solid red;
+    /* --borderdev: none; */
     font-family: "Playfair", serif;
     color: var(--black);
     font-size: 18px;
@@ -70,7 +72,7 @@ body.sheet-darkmode .charsheet {
     margin-left: -1px;
 }
 
-
+/* Cadre des pages */
 
 div.personnage {  
     width: 830px;
@@ -126,115 +128,185 @@ div.personnes_marquantes {
     display: grid;
     grid-template-columns: repeat(83, 10px);;
     grid-auto-rows: 10px;
-	border: 1px solid red;
+	border: var(--borderdev);
 }
 
 .page1_zone_personnage {
     grid-column: 6 / 43;
     grid-row: 16 / 32;
-    border: 1px solid red;
+    border: var(--borderdev);
     transform: rotate(1deg);
 }
 
 .page1_zone_familier {
     grid-column: 43 / 81;
     grid-row: 17 / 34;
-    border: 1px solid red;
+    border: var(--borderdev);
     transform: rotate(1deg);
 }
 
 .page1_zone_caracteristiques {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 7 / 27;
+    grid-row: 39 / 71;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
 }
 
 .page1_zone_competences {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 29 / 48;
+    grid-row: 39 / 71;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
 }
 
 .page1_zone_attributs {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 48 / 76;
+    grid-row: 39 / 86;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
 }
 
 .page1_zone_talents {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 4 / 44;
+    grid-row: 72 / 95;
+    border: var(--borderdev);
+    transform: rotate(-1.5deg);
 }
 
 .page1_zone_artifices {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 3 / 47;
+    grid-row: 95 / 115;
+    border: var(--borderdev);
+    transform: rotate(-1.5deg);
 }
 
 .page1_zone_dons {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 47 / 80;
+    grid-row: 87 / 110;
+    border: var(--borderdev);
+    transform: rotate(-1.5deg);
 }
 
 .page1_zone_apprentissage {
-    grid-column: 43 / 81;
-    grid-row: 17 / 34;
-    border: 1px solid red;
-    transform: rotate(1deg);
+    grid-column: 50 / 80;
+    grid-row: 112 / 117;
+    border: var(--borderdev);
+    transform: rotate(-3deg);
 }
 
 /* Structure générale de la page_équipement */
 
 .wrapper_page_equipement {
     display: grid;
-    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
-    grid-auto-rows: 25px;
-	padding-top: 10px;
-	border: 1px solid red;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+	border: var(--borderdev);
 }
 
-.base {
-    grid-column: 1;
-    grid-row: 1;
+.page2_zone_personnage {
+    grid-column: 59 / 80;
+    grid-row: 2 / 11;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
+}
+
+.page2_zone_couronnes {
+    grid-column: 5 / 35;
+    grid-row: 12 / 17;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
+}
+
+.page2_zone_equipement {
+    grid-column: 3 / 80;
+    grid-row: 17 / 35;
+    border: var(--borderdev);
+    transform: rotate(-0.5deg);
+}
+
+.page2_zone_armes {
+    grid-column: 6 / 75;
+    grid-row: 41 / 49;
+    border: var(--borderdev);
+    transform: rotate(-0.3deg);
+}
+
+.page2_zone_projectiles {
+    grid-column: 8 / 75;
+    grid-row: 55 / 64;
+    border: var(--borderdev);
+    transform: rotate(0.6deg);
+}
+
+.page2_zone_artillerie {
+    grid-column: 5 / 75;
+    grid-row: 69 / 78;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
+}
+
+.page2_zone_armures {
+    grid-column: 13 / 78;
+    grid-row: 84 / 90;
+    border: var(--borderdev);
+    transform: rotate(0deg);
+}
+
+.page2_zone_bouclier {
+    grid-column: 5 / 79;
+    grid-row: 95 / 101;
+    border: var(--borderdev);
+    transform: rotate(1deg);
+}
+
+.page2_zone_casques {
+    grid-column: 36 / 79;
+    grid-row: 107 / 113;
+    border: var(--borderdev);
+    transform: rotate(-0.5deg);
 }
 
 /* Structure générale de la page_parcours_de_vie */
 
 .wrapper_page_parcours_de_vie {
     display: grid;
-    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
-    grid-auto-rows: 25px;
-	padding-top: 10px;
-	border: 1px solid red;
+    grid-template-columns: repeat(110, 10px);
+    grid-auto-rows: 10px;
+    border: var(--borderdev);
 }
 
-.base {
-    grid-column: 1;
-    grid-row: 1;
+.page3_zone_nom {
+    grid-column: 91 / 109;
+    grid-row: 5 / 16;
+    border: var(--borderdev);
+}
+
+.page3_zone_tableau {
+    grid-column: 8 / 105;
+    grid-row: 24 / 73;
+    border: var(--borderdev);
 }
 
 /* Structure générale de la page personnes_marquantes */
 
 .wrapper_page_personnes_marquantes {
     display: grid;
-    grid-template-columns: 40px 160px 80px 160px 80px 160px 80px 160px 25px;
-    grid-auto-rows: 25px;
-	padding-top: 10px;
-	border: 1px solid red;
+    grid-template-columns: repeat(110, 10px);
+    grid-auto-rows: 10px;
+    border: var(--borderdev);
 }
 
-.base {
-    grid-column: 1;
-    grid-row: 1;
+.page4_zone_nom {
+    grid-column: 4 / 28;
+    grid-row: 4 / 12;
+    border: var(--borderdev);
+    transform: rotate(-1deg);
+}
+
+.page4_zone_tableau {
+    grid-column: 7 / 101;
+    grid-row: 19 / 74;
+    border: var(--borderdev);
 }
 
 
