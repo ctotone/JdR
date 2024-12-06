@@ -37,6 +37,12 @@
   margin-top: 0px;
 }
 
+span.sur {  
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 14px;
+}
+
 .charsheet input {  
     border: none;
     outline: none;
@@ -70,7 +76,8 @@
     height: 21px !important;
 }
 
-.charsheet input.input_carac {  
+.charsheet input.input_carac,
+.charsheet input.input_demi_carac {  
     width: 50px !important;
     height: 28px;
     border: none;
@@ -81,6 +88,10 @@
     font-size: 25px;
     padding: 0;
     padding-bottom: 6px;
+}
+
+.charsheet input.input_demi_carac {  
+    width: 35px !important;
 }
 
 .charsheet textarea {
@@ -96,8 +107,41 @@
     height: 165px;
 }
 
+.charsheet select.choix_visage,
+.charsheet select.choix_rang,
+.charsheet select.choix_marque{   
+	width: auto;
+	color: var(--text_input);
+	letter-spacing: -0.7px;
+	border: none;
+	border-bottom: 1px dotted var(--couleur_dotted);
+	outline: none;
+	cursor: pointer;
+	font-size: 18px;
+	margin-top: -3px;
+	margin-right: 5px;
+	margin-left: 10px;
+	padding-left: 40px;
+	padding-right: 10px;
+}
+
+.charsheet select.choix_rang,
+.charsheet select.choix_marque{
+	width: 100% !important;
+	width: 100% !important;
+	font-size: 18px;
+	margin-top: -1px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-left: 2px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	height: 25px;
+}
+
 input[type="checkbox"] {    
     -webkit-appearance: none;
+	-moz-appearance: none;
     appearance: none;
     background-color: var(--white);
     margin: 0;
@@ -145,9 +189,12 @@ input[type="checkbox"]:focus {
 }
 
 .charsheet input[type=number]::-webkit-inner-spin-button,
-.charsheet input[type=number]::-webkit-outer-spin-button { 
+.charsheet input[type=number]::-webkit-outer-spin-button,
+.charsheet input[type=number] { 
       -webkit-appearance: none; 
       -moz-appearance: none;
+	  appearance: textfield;
+	  -moz-appearance: textfield;
       margin: 0; 
 }
 
@@ -224,6 +271,28 @@ div.personnes_marquantes {
     display: block;
 }
 
+.charsheet .choix_visage[value="0"] ~ *{
+    --carte_visage : none;
+}
+
+.charsheet .choix_visage[value="1"] ~ *{
+    --carte_visage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/visage_borhh.png);
+}
+
+.charsheet .choix_visage[value="2"] ~ *{
+    --carte_visage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/visage_gull.png);
+}
+
+.charsheet .choix_visage[value="3"] ~ *{
+    --carte_visage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/visage_satyr.png);
+}
+
+.charsheet .choix_visage[value="4"] ~ *{
+    --carte_visage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/visage_skrag.png);
+}
+
+
+
 /* Structure générale de la page_personnage */
 
 .wrapper_page_personnage {
@@ -241,6 +310,15 @@ div.personnes_marquantes {
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 10px;
+}
+
+.page1_image_visage {  
+	width: 60px;
+	height: 60px;
+	margin-left: 90px;
+	margin-top: -4px;
+	background-image: var(--carte_visage);
+	background-size: contain;
 }
 
 .page1_zone_familier {
@@ -455,7 +533,7 @@ div.personnes_marquantes {
 }
 
 .wrapper_page1_zone_attributs {
-    grid-template-columns: 28% 0% 30% 4% 30%;
+    grid-template-columns: 28% 0% 30% 4% 40%;
 }
 
 .wrapper_page1_zone_attributs_blessure {
