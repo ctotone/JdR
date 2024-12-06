@@ -94,6 +94,15 @@ span.sur {
     width: 35px !important;
 }
 
+.charsheet input.input_cadre {  
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black);
+}
+
 .charsheet textarea {
     border: 1px solid #0000000f;
     outline: none;
@@ -109,41 +118,40 @@ span.sur {
 
 .charsheet select.choix_visage,
 .charsheet select.choix_rang,
-.charsheet select.choix_marque{   
+.charsheet select.choix_marque {   
 	width: auto;
 	color: var(--text_input);
 	letter-spacing: -0.7px;
 	border: none;
 	border-bottom: 1px dotted var(--couleur_dotted);
+    border-radius: 1px;
 	outline: none;
 	cursor: pointer;
-	font-size: 18px;
-	margin-top: -3px;
-	margin-right: 5px;
-	margin-left: 10px;
-	padding-left: 40px;
-	padding-right: 10px;
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top: -4px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-left: 2px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+}
+
+.charsheet select.choix_visage {  
+    width: 120px;
+    text-align: center;
+    height: 27px;
 }
 
 .charsheet select.choix_rang,
-.charsheet select.choix_marque{
-	width: 100% !important;
-	width: 100% !important;
-	font-size: 18px;
-	margin-top: -1px;
-	margin-right: 5px;
-	margin-left: 5px;
-	padding-left: 2px;
-	padding-right: 10px;
-	padding-bottom: 0px;
-	height: 25px;
-	margin-bottom: 0px;
+.charsheet select.choix_marque {
+    width: 100% !important;
+    height: 25px;
 }
 
 input[type="checkbox"] {    
     -webkit-appearance: none;
 	-moz-appearance: none;
-    appearance: none;
     background-color: var(--white);
     margin: 0;
     font: inherit;
@@ -194,8 +202,7 @@ input[type="checkbox"]:focus {
 .charsheet input[type=number] { 
       -webkit-appearance: none; 
       -moz-appearance: none;
-	  appearance: textfield;
-	  -moz-appearance: textfield;
+	  /* -moz-appearance: textfield; */
       margin: 0; 
 }
 
@@ -235,7 +242,8 @@ div.personnage {
 div.equipement {  
     width: 830px;
     height: 1174px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_2.webp);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_equipement2.webp);
+	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_2.webp); */
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -300,13 +308,13 @@ div.personnes_marquantes {
     display: grid;
     grid-template-columns: repeat(83, 10px);;
     grid-auto-rows: 10px;
-	/* border: var(--borderdev); */
+	/* background-color: #0100ff85; */
 }
 
 .page1_zone_personnage {
     grid-column: 6 / 43;
     grid-row: 16 / 32;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(1deg);
     margin-top: 5px;
     margin-left: 5px;
@@ -325,7 +333,7 @@ div.personnes_marquantes {
 .page1_zone_familier {
     grid-column: 43 / 81;
     grid-row: 17 / 34;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(1deg);
     margin-top: 3px;
     margin-left: 5px;
@@ -334,7 +342,7 @@ div.personnes_marquantes {
 .page1_zone_caracteristiques {
     grid-column: 7 / 27;
     grid-row: 45 / 71;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-left: 10px;
 }
@@ -342,7 +350,7 @@ div.personnes_marquantes {
 .page1_zone_competences {
     grid-column: 29 / 48;
     grid-row: 44 / 71;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-top: 7px;
     margin-left: 12px;
@@ -351,7 +359,7 @@ div.personnes_marquantes {
 .page1_zone_attributs {
     grid-column: 51 / 81;
     grid-row: 44 / 86;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-left: 5px;
     margin-top: 1px;
@@ -360,7 +368,7 @@ div.personnes_marquantes {
 .page1_zone_talents {
     grid-column: 4 / 44;
     grid-row: 76 / 95;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 10px;
     margin-bottom: 10px;
@@ -370,7 +378,7 @@ div.personnes_marquantes {
 .page1_zone_artifices {
     grid-column: 3 / 46;
     grid-row: 100 / 114;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 10px;
     margin-top: -3px;
@@ -379,7 +387,7 @@ div.personnes_marquantes {
 .page1_zone_dons {
     grid-column: 47 / 80;
     grid-row: 91 / 108;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 3px;
 }
@@ -387,7 +395,7 @@ div.personnes_marquantes {
 .page1_zone_apprentissage {
     grid-column: 50 / 80;
     grid-row: 112 / 117;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-3deg);
 }
 
@@ -397,69 +405,94 @@ div.personnes_marquantes {
     display: grid;
     grid-template-columns: repeat(83, 10px);;
     grid-auto-rows: 10px;
-	/* border: var(--borderdev); */
+	/* background-color: #0100ff85; */
 }
 
 .page2_zone_personnage {
     grid-column: 59 / 80;
-    grid-row: 2 / 11;
-    /* border: var(--borderdev); */
+    grid-row: 6 / 11;
     transform: rotate(-1deg);
+    display: flex;
+    margin-top: -5px;
 }
 
 .page2_zone_couronnes {
-    grid-column: 5 / 35;
+    grid-column: 23 / 34;
     grid-row: 12 / 17;
-    /* border: var(--borderdev); */
+    margin-top: 5px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
 }
 
 .page2_zone_equipement {
-    grid-column: 3 / 80;
-    grid-row: 17 / 35;
-    /* border: var(--borderdev); */
+    grid-column: 5 / 79;
+    grid-row: 18 / 36;
     transform: rotate(-0.5deg);
 }
 
 .page2_zone_armes {
     grid-column: 6 / 75;
     grid-row: 41 / 49;
-    /* border: var(--borderdev); */
+    margin-top: 6px;
+    margin-left: 4px;
+    margin-bottom: -3px;
+    margin-right: 1px;
+    /* background-color: #0100ff85; */
     transform: rotate(-0.3deg);
 }
 
 .page2_zone_projectiles {
     grid-column: 8 / 75;
-    grid-row: 55 / 64;
-    /* border: var(--borderdev); */
+    grid-row: 56 / 63;
+    margin-top: -2px;
+    margin-left: 2px;
+    margin-right: 6px;
+    margin-bottom: -6px;
+    /* background-color: #0100ff85; */
     transform: rotate(0.6deg);
 }
 
 .page2_zone_artillerie {
-    grid-column: 5 / 75;
-    grid-row: 69 / 78;
-    /* border: var(--borderdev); */
+    grid-column: 6 / 74;
+    grid-row: 70 / 77;
+    margin-top: -2px;
+    margin-bottom: -4px;
+    margin-right: -4px;
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
 }
 
 .page2_zone_armures {
-    grid-column: 13 / 78;
-    grid-row: 84 / 90;
-    /* border: var(--borderdev); */
+    grid-column: 14 / 78;
+    grid-row: 84 / 89;
+    margin-top: 4px;
+    margin-bottom: -5px;
+    margin-left: 2px;
+    margin-right: 1px;
+    /* background-color: #0100ff85; */
     transform: rotate(0deg);
 }
 
 .page2_zone_bouclier {
     grid-column: 5 / 79;
     grid-row: 95 / 101;
-    /* border: var(--borderdev); */
+    margin-left: 8px;
+    margin-right: 7px;
+    margin-top: 9px;
+    margin-bottom: 0px;
+    /* background-color: #0100ff85; */
     transform: rotate(1deg);
 }
 
 .page2_zone_casques {
     grid-column: 36 / 79;
     grid-row: 107 / 113;
-    /* border: var(--borderdev); */
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 8px;
+    /* background-color: #0100ff85; */
     transform: rotate(-0.5deg);
 }
 
@@ -469,19 +502,19 @@ div.personnes_marquantes {
     display: grid;
     grid-template-columns: repeat(110, 10px);
     grid-auto-rows: 10px;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page3_zone_nom {
     grid-column: 91 / 109;
     grid-row: 5 / 16;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page3_zone_tableau {
     grid-column: 8 / 105;
     grid-row: 24 / 73;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 /* Structure générale de la page personnes_marquantes */
@@ -490,26 +523,27 @@ div.personnes_marquantes {
     display: grid;
     grid-template-columns: repeat(110, 10px);
     grid-auto-rows: 10px;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page4_zone_nom {
     grid-column: 4 / 28;
     grid-row: 4 / 12;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
 }
 
 .page4_zone_tableau {
     grid-column: 7 / 101;
     grid-row: 19 / 74;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 
-/* Wrapper interne Page personnage et familier */
+/* Wrapper ligne simple */
 
-.page1_zone_personnage_line {
+.page1_zone_personnage_line,
+.page2_zone_equipement_line {
     display: flex;
     white-space: nowrap;
     letter-spacing: -0.7px;
@@ -526,7 +560,7 @@ div.personnes_marquantes {
     grid-template-columns: 49% 4% 30%;
     grid-auto-rows: 37px;
     color: var(--white);
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .wrapper_page1_zone_competences {
@@ -544,7 +578,7 @@ div.personnes_marquantes {
 
 .wrapper_page1_zone_XP {
     grid-template-columns: 75% 5% 20%;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page1_zone_caracteristiques_titre,
@@ -553,7 +587,7 @@ div.personnes_marquantes {
 .page1_zone_xp_titre {
     grid-column: 1;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -563,20 +597,20 @@ div.personnes_marquantes {
 .page1_zone_xp_valeur {
     grid-column: 3;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page1_zone_attributs_titre {
     grid-column: 1/4;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
 .page1_zone_attributs_demi_titre {
     grid-column: 1/3;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -585,19 +619,19 @@ div.personnes_marquantes {
     grid-row: 1;
     letter-spacing: -0.4px;
     font-style: italic;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page1_zone_attributs_valeur {
     grid-column: 5;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
 }
 
 .page1_zone_xp_titre {
     grid-column: 1;
     grid-row: 1;
-    /* border: var(--borderdev); */
+    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -607,6 +641,401 @@ div.personnes_marquantes {
     margin-top: 10px;
     margin-left: -5px;
 }
+
+/* Wrapper interne Page equipement */
+
+.wrapper_page2_zone_armes,
+.wrapper_page2_zone_projectiles,
+.wrapper_page2_zone_artillerie,
+.wrapper_page2_zone_armures,
+.wrapper_page2_zone_bouclier,
+.wrapper_page2_zone_casque {
+    display: grid;
+    grid-auto-rows: 26px;
+    color: var(--black);
+    font-size: 16px;
+    /* background-color: #0100ff85; */
+}
+
+.wrapper_page2_zone_armes {
+    grid-template-columns: 23.3% 18.5% 13.4% 13.4% 12.4% 13% 7%;
+}
+
+.page2_zone_armes_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_types {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_vigueur {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_degats {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_portee {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_kaa {
+    grid-column: 6;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armes_roll {
+    grid-column: 7;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_page2_zone_projectiles {
+    grid-template-columns: 20.7% 19.1% 13.8% 14% 32.3%;
+}
+
+.page2_zone_projectiles_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_projectiles_types {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_projectiles_kaa {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_projectiles_nombres {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_projectiles_notes {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_page2_zone_artillerie {
+    grid-template-columns: 20% 18.4% 11% 23.6% 21% 6.1%;
+}
+
+.page2_zone_artillerie_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_artillerie_degats {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_artillerie_portee {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_artillerie_zone {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_artillerie_bottes {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_artillerie_roll {
+    grid-column: 6;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_page2_zone_armures {
+    grid-template-columns: 21.5% 19.8% 24% 18.7% 16%;
+}
+
+.page2_zone_armures_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armures_protection {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armures_diff_agi {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armures_contre {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_armures_fatigue {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_page2_zone_bouclier {
+    grid-template-columns: 18.8% 17.5% 16.5% 16.4% 16.5% 14.1%;
+}
+
+.page2_zone_bouclier_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_bouclier_vigueur {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_bouclier_diff_melee {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_bouclier_diff_distance {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_bouclier_diff_agi {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_bouclier_fatigue {
+    grid-column: 6;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper_page2_zone_casque {
+    grid-template-columns: 32.3% 29.7% 37.8%;
+}
+
+.page2_zone_casque_nom {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_casque_qualite {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page2_zone_casque_contre {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Roll template */
 .sheet-rolltemplate-thanatos{

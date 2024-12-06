@@ -1,4 +1,3 @@
-<-- TODO Verifier calcul endurance -->
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
 <input type="hidden" name="attr_blessure" value="0">
@@ -208,15 +207,141 @@
 </div>
 <div class="equipement">
 	<div class="wrapper_page_equipement">
-		<div class="page2_zone_personnage">page2_zone_personnage </div>
-		<div class="page2_zone_couronnes">page2_zone_couronnes </div>
-		<div class="page2_zone_equipement">page2_zone_equipement </div>
-		<div class="page2_zone_armes">page2_zone_armes </div>
-		<div class="page2_zone_projectiles">page2_zone_projectiles </div>
-		<div class="page2_zone_artillerie">page2_zone_artillerie </div>
-		<div class="page2_zone_armures">page2_zone_armures </div>
-		<div class="page2_zone_bouclier">page2_zone_bouclier </div>
-		<div class="page2_zone_casques">page2_zone_casques </div>
+		<div class="page2_zone_personnage"><input type="text" class="input_cadre" name="attr_character_name"></div>
+		<div class="page2_zone_couronnes"><input type="text" class="input_cadre" name="attr_couronnes" style="font-size: 40px;margin-top: 0px;padding-bottom: 7px;"></div>
+		<div class="page2_zone_equipement">
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_1"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_2"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_3"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_4"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_5"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_6"></div>
+			<div class="page2_zone_equipement_line"><input type="text" class="input_dotted2" name="attr_equipement_7"></div>
+		</div>
+		<div class="page2_zone_armes">
+			<div class="wrapper_page2_zone_armes">
+				<div class="page2_zone_armes_nom">nom</div>
+				<div class="page2_zone_armes_types">types</div>
+				<div class="page2_zone_armes_vigueur">vigueur</div>
+				<div class="page2_zone_armes_degats">degats</div>
+				<div class="page2_zone_armes_portee">portee</div>
+				<div class="page2_zone_armes_kaa">kaa</div>
+				<div class="page2_zone_armes_roll">roll</div>
+			</div>
+			<div class="wrapper_page2_zone_armes">
+				<div class="page2_zone_armes_nom">nom</div>
+				<div class="page2_zone_armes_types">types</div>
+				<div class="page2_zone_armes_vigueur">vigueur</div>
+				<div class="page2_zone_armes_degats">degats</div>
+				<div class="page2_zone_armes_portee">portee</div>
+				<div class="page2_zone_armes_kaa">kaa</div>
+				<div class="page2_zone_armes_roll">roll</div>
+			</div>
+			<div class="wrapper_page2_zone_armes">
+				<div class="page2_zone_armes_nom">nom</div>
+				<div class="page2_zone_armes_types">types</div>
+				<div class="page2_zone_armes_vigueur">vigueur</div>
+				<div class="page2_zone_armes_degats">degats</div>
+				<div class="page2_zone_armes_portee">portee</div>
+				<div class="page2_zone_armes_kaa">kaa</div>
+				<div class="page2_zone_armes_roll">roll</div>
+			</div>
+		</div>
+		<div class="page2_zone_projectiles">			
+			<div class="wrapper_page2_zone_projectiles">
+				<div class="page2_zone_projectiles_nom">nom</div>
+				<div class="page2_zone_projectiles_types">types</div>
+				<div class="page2_zone_projectiles_kaa">kaa</div>
+				<div class="page2_zone_projectiles_nombres">nombres</div>
+				<div class="page2_zone_projectiles_notes">notes</div>
+			</div>
+			<div class="wrapper_page2_zone_projectiles">
+				<div class="page2_zone_projectiles_nom">nom</div>
+				<div class="page2_zone_projectiles_types">types</div>
+				<div class="page2_zone_projectiles_kaa">kaa</div>
+				<div class="page2_zone_projectiles_nombres">nombres</div>
+				<div class="page2_zone_projectiles_notes">notes</div>
+			</div>
+			<div class="wrapper_page2_zone_projectiles">
+				<div class="page2_zone_projectiles_nom">nom</div>
+				<div class="page2_zone_projectiles_types">types</div>
+				<div class="page2_zone_projectiles_kaa">kaa</div>
+				<div class="page2_zone_projectiles_nombres">nombres</div>
+				<div class="page2_zone_projectiles_notes">notes</div>
+			</div>
+		</div>
+		<div class="page2_zone_artillerie">
+			<div class="wrapper_page2_zone_artillerie">
+				<div class="page2_zone_artillerie_nom">nom</div>
+				<div class="page2_zone_artillerie_degats">degats</div>
+				<div class="page2_zone_artillerie_portee">portee</div>
+				<div class="page2_zone_artillerie_zone">zone</div>
+				<div class="page2_zone_artillerie_bottes">bottes</div>
+				<div class="page2_zone_artillerie_roll">roll</div>
+			</div>
+			<div class="wrapper_page2_zone_artillerie">
+				<div class="page2_zone_artillerie_nom">nom</div>
+				<div class="page2_zone_artillerie_degats">degats</div>
+				<div class="page2_zone_artillerie_portee">portee</div>
+				<div class="page2_zone_artillerie_zone">zone</div>
+				<div class="page2_zone_artillerie_bottes">bottes</div>
+				<div class="page2_zone_artillerie_roll">roll</div>
+			</div>
+			<div class="wrapper_page2_zone_artillerie">
+				<div class="page2_zone_artillerie_nom">nom</div>
+				<div class="page2_zone_artillerie_degats">degats</div>
+				<div class="page2_zone_artillerie_portee">portee</div>
+				<div class="page2_zone_artillerie_zone">zone</div>
+				<div class="page2_zone_artillerie_bottes">bottes</div>
+				<div class="page2_zone_artillerie_roll">roll</div>
+			</div>
+		</div>
+		<div class="page2_zone_armures">
+			<div class="wrapper_page2_zone_armures">
+				<div class="page2_zone_armures_nom">nom</div>
+				<div class="page2_zone_armures_protection">protection</div>
+				<div class="page2_zone_armures_diff_agi">diff_agi</div>
+				<div class="page2_zone_armures_contre">contre</div>
+				<div class="page2_zone_armures_fatigue">fatigue</div>
+			</div>
+			<div class="wrapper_page2_zone_armures">
+				<div class="page2_zone_armures_nom">nom</div>
+				<div class="page2_zone_armures_protection">protection</div>
+				<div class="page2_zone_armures_diff_agi">diff_agi</div>
+				<div class="page2_zone_armures_contre">contre</div>
+				<div class="page2_zone_armures_fatigue">fatigue</div>
+			</div>
+		</div>
+		<div class="page2_zone_bouclier">
+			<div class="wrapper_page2_zone_bouclier">
+				<div class="page2_zone_bouclier_nom">nom</div>
+				<div class="page2_zone_bouclier_vigueur">vigueur</div>
+				<div class="page2_zone_bouclier_diff_melee">diff_melee</div>
+				<div class="page2_zone_bouclier_diff_distance">diff_distance</div>
+				<div class="page2_zone_bouclier_diff_agi">diff_agi</div>
+				<div class="page2_zone_bouclier_fatigue">fatigue</div>
+			</div>
+			<div class="wrapper_page2_zone_bouclier">
+				<div class="page2_zone_bouclier_nom">nom</div>
+				<div class="page2_zone_bouclier_vigueur">vigueur</div>
+				<div class="page2_zone_bouclier_diff_melee">diff_melee</div>
+				<div class="page2_zone_bouclier_diff_distance">diff_distance</div>
+				<div class="page2_zone_bouclier_diff_agi">diff_agi</div>
+				<div class="page2_zone_bouclier_fatigue">fatigue</div>
+			</div>
+		</div>
+		<div class="page2_zone_casques">
+			<div class="wrapper_page2_zone_casque">
+				<div class="page2_zone_casque_nom">nom</div>
+				<div class="page2_zone_casque_qualite">qualité</div>
+				<div class="page2_zone_casque_contre">nbr contre</div>
+			</div>
+			<div class="wrapper_page2_zone_casque">
+				<div class="page2_zone_casque_nom">nom</div>
+				<div class="page2_zone_casque_qualite">qualité</div>
+				<div class="page2_zone_casque_contre">nbr contre</div>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="parcours_de_vie">
@@ -255,7 +380,7 @@
 			let comp_precision = Math.floor((carac_raison + carac_adresse)/2);
 			let comp_rituel = Math.floor((carac_raison + carac_fluide)/2);
 			let attributs_points_de_vie_base = (carac_vigueur * 2);
-			let attributs_points_endurance_base = carac_temerite + Math.floor(carac_vigueur / 2);
+			let attributs_points_endurance_base = carac_temerite + carac_vigueur;
 			let attributs_degats_legers = Math.floor(carac_vigueur / 2);
 			let attributs_degats_normaux = carac_vigueur;
 			let attributs_degats_superieurs = (carac_vigueur * 2);
