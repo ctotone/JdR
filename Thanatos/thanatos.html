@@ -1,4 +1,5 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_visage" class="choix_visage" value="0">
 <input type="hidden" name="attr_blessure" value="0">
 	<select class="choix_page" name="attr_page" style="font-size: 15px;">
 		<option value="0" selected="selected">Feuille de Personnage</option>
@@ -7,16 +8,46 @@
 		<option value="3">Feuille de Personnes marquantes</option>
 	</select>
 
- <!-- // TODO stats derivées pg 91 -->
 <div class="personnage">
 	<div class="wrapper_page_personnage">
 		<div class="page1_zone_personnage">
 			<div class="page1_zone_personnage_line">Nom : <input type="text" class="input_dotted" name="attr_character_name"></div>
 			<div class="page1_zone_personnage_line">Sexe :<input type="text" class="input_dotted" name="attr_sexe">Âge :<input type="text" class="input_dotted"  name="attr_age"></div>
-			<div class="page1_zone_personnage_line">Rang :<input type="text" class="input_dotted" name="attr_rang"></div>
+			<div class="page1_zone_personnage_line">Rang :
+				<select class="choix_rang" name="attr_rang">
+					<option value="0" selected="selected"></option>
+					<option value="Bellatores">Bellatores</option>
+					<option value="Oratores">Oratores</option>
+					<option value="Laboratores">Laboratores</option>
+				</select>
+			</div>
 			<div class="page1_zone_personnage_line">Activité antérieure :<input type="text" class="input_dotted" name="attr_activite_anterieure"></div>
-			<div class="page1_zone_personnage_line">Marque :<input type="text" class="input_dotted" name="attr_marque"></div>
-			<div class="page1_zone_personnage_line">Visage :<input type="text" class="input_dotted" name="attr_visage"></div>
+			<div class="page1_zone_personnage_line">Marque :
+				<select class="choix_rang" name="attr_marque">
+					<option value="0" selected="selected"></option>
+					<option value="Maladie">Maladie</option>
+					<option value="Excentricité">Excentricité</option>
+					<option value="Associable">Associable</option>
+					<option value="Mort">Mort</option>
+					<option value="Nerveux">Nerveux</option>
+					<option value="Mélancolique">Mélancolique</option>
+					<option value="Sauvage">Sauvage</option>
+					<option value="Reclus">Reclus</option>
+					<option value="Enragé">Enragé</option>
+					<option value="Marque de naissance">Marque de naissance</option>
+				</select>
+			</div>
+			<div class="page1_zone_personnage_line" style="margin-top: 10px;">Visage :
+				<select class="choix_visage" name="attr_visage">
+					<option value="0" selected="selected"></option>
+					<option value="1">Borrh</option>
+					<option value="2">Gull</option>
+					<option value="3">Satyr</option>
+					<option value="4">Skrag</option>
+				</select>
+				<input type="hidden" name="attr_visage" class="choix_visage" value="0">
+				<div class="page1_image_visage"></div>
+			</div>
 		</div>
 		<div class="page1_zone_familier">
 			<div class="page1_zone_personnage_line">Espèce : <input type="text" class="input_dotted" name="attr_familier_espece"></div>
@@ -24,7 +55,7 @@
 			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_apparence_2"></div>
 			<div class="page1_zone_personnage_line">Traits :<input type="text" class="input_dotted" name="attr_familier_trait1"></div>
 			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_trait_2"></div>
-			<div class="page1_zone_personnage_line" style="margin-top: 5px;">Accomodement <input type="number" class="input_carac" name="attr_accomodement"  value="0" min="0" max="20" style="border: 1px solid var(--black); margin-left: 12px; margin-top: 2px;"></div>
+			<div class="page1_zone_personnage_line" style="margin-top: 5px;">Accomodement <input type="number" class="input_carac" name="attr_accomodement"  value="5" min="0" max="10" style="border: 1px solid var(--black); margin-left: 12px; margin-top: 2px;"></div>
 		</div>
 		<div class="page1_zone_caracteristiques">
 			<div class="wrapper_page1_zone_caracteristiques">
@@ -59,74 +90,74 @@
 		<div class="page1_zone_competences">
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Mêlée</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_melee"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_melee" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Agilité</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_agilite"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_agilite" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Perception</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_perception"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_perception" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Culture</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_culture"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_culture" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Manipulation</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_manipulation"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_manipulation" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Précision</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_precision"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_precision" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
 				<div class="page1_zone_competences_titre">Rituel</div>
-				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_rituel"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_rituel" style="cursor: default;" readonly /></div>
 			</div>
 		</div>
 		<div class="page1_zone_attributs">
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points de Vie</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_de_vie"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie" value="0" min="0" max="40"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie_base" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points d'Endurance</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_endurance"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_endurance"  value="0" min="0" max="20"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_attributs_points_endurance_base" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points de Fluide</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_points_de_fluide"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_de_fluide" value="0" min="0" max="20"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_carac_fluide" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_demi_titre">Dégâts</div>				
 				<div class="page1_zone_attributs_details">Légers</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_legers"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_legers" value="0" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Normaux</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_normaux"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_normaux" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Supérieurs</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_superieurs"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_superieurs" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Exceptionnels</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_exceptionnels"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_exceptionnels" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="margin-top: 7px;">
 				<div class="page1_zone_attributs_titre">Résistance</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_resistance"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_resistance" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Protection</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_protection"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_protection" value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Fatigue par tour</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_fatigue"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_fatigue" value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs_blessure" style="margin-top: 15px;">
 				<div class="page1_zone_attributs_blessure_titre">Blessure légère (Difficulté + 1)</div>
@@ -199,3 +230,55 @@
 		<div class="page4_zone_tableau">zone tableau</div>
 	</div>
 </div>
+
+
+<!-- SCRIPT -->
+
+<script type="text/worker">
+
+    on("sheet:opened change:carac_vigueur change:carac_adresse change:carac_instinct change:carac_raison change:carac_temerite change:carac_aura change:carac_fluide", function() {
+        getAttrs(["carac_vigueur", "carac_adresse", "carac_instinct", "carac_raison", "carac_temerite", "carac_aura", "carac_fluide"], function(values) {
+            let carac_vigueur = parseInt(values["carac_vigueur"]) || 0;
+			let carac_adresse = parseInt(values["carac_adresse"]) || 0;
+			let carac_instinct = parseInt(values["carac_instinct"]) || 0;
+			let carac_raison = parseInt(values["carac_raison"]) || 0;
+			let carac_temerite = parseInt(values["carac_temerite"]) || 0;
+			let carac_aura = parseInt(values["carac_aura"]) || 0;
+			let carac_fluide = parseInt(values["carac_fluide"]) || 0;
+			
+            let comp_melee = Math.floor((carac_vigueur + carac_adresse + carac_instinct)/3);
+			let comp_agilite = Math.floor((carac_adresse + carac_instinct)/2);
+			let comp_perception = Math.floor((carac_instinct + carac_raison)/2);			
+			let comp_culture = Math.floor((carac_aura + carac_raison)/2);			
+			let comp_manipulation = Math.floor((carac_aura + carac_temerite)/2);
+			let comp_precision = Math.floor((carac_raison + carac_adresse)/2);
+			let comp_rituel = Math.floor((carac_raison + carac_fluide)/2);
+			let attributs_points_de_vie_base = (carac_vigueur * 2);
+			let attributs_points_endurance_base = Math.floor((carac_vigueur + carac_temerite)/2);
+			let attributs_degats_legers = Math.floor(carac_vigueur / 2);
+			let attributs_degats_normaux = carac_vigueur;
+			let attributs_degats_superieurs = (carac_vigueur * 2);
+			let attributs_exceptionnels = (carac_vigueur * 3);
+			let attributs_resistance = Math.floor(carac_vigueur / 4);
+
+        setAttrs({
+            "comp_melee": comp_melee,
+			"comp_agilite": comp_agilite,
+			"comp_perception": comp_perception,
+			"comp_culture": comp_culture,
+			"comp_manipulation": comp_manipulation,
+			"comp_precision": comp_precision,
+			"comp_rituel": comp_rituel,
+			"attributs_points_de_vie_base": attributs_points_de_vie_base,
+			"attributs_points_endurance_base": attributs_points_endurance_base,
+			"attributs_degats_legers": attributs_degats_legers,
+			"attributs_degats_normaux": attributs_degats_normaux,
+			"attributs_degats_superieurs": attributs_degats_superieurs,
+			"attributs_exceptionnels": attributs_exceptionnels,
+			"attributs_resistance": attributs_resistance
+			
+            });
+        });
+    });
+
+</script>
