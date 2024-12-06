@@ -254,7 +254,7 @@
 			let comp_precision = Math.floor((carac_raison + carac_adresse)/2);
 			let comp_rituel = Math.floor((carac_raison + carac_fluide)/2);
 			let attributs_points_de_vie_base = (carac_vigueur * 2);
-			let attributs_points_endurance_base = Math.floor((carac_vigueur + carac_temerite)/2);
+			let attributs_points_endurance_base = carac_temerite + Math.floor(carac_vigueur / 2);
 			let attributs_degats_legers = Math.floor(carac_vigueur / 2);
 			let attributs_degats_normaux = carac_vigueur;
 			let attributs_degats_superieurs = (carac_vigueur * 2);
