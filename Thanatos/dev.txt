@@ -4,23 +4,25 @@ Roll jet
 
 ATTENTION RESULTAT NEGATIF
 
-dé 10
+#dé 10
     echec automatique
 /dé 10
 
-pas dé 10
-    dé 1
-        reussite
-            Reussite critique
-        /reussite
-    /dé 1
-    pas dé 1
-        echec
+#pas dé 10
+        #ECHEC ecart inferieur 0
             Echec
-        /echec
-        pas echec
-
-        /pas echec
-    /pa dé 1
-
+        /ECHEC ecart inferieur 0
+        #REUSSITE ecart entre 0 et 2
+            Reussite normale
+        /REUSSITE ecart entre 0 et 2
+        #REUSSITE ecart entre 3 et 5
+            Reussite excellente
+        /REUSSITE ecart entre 3 et 5
+        #REUSSITE ecart superieur à 5
+            Reussite exceptionnelle
+        /REUSSITE ecart superieur à 5
 /pas dé 10
+
+
+
+5 stat - 2des +5

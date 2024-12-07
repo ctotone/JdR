@@ -1,10 +1,8 @@
-<!-- 
-TODO Peupler tableau equipement
-TODO Peupler deux derniers tableaux
-TODO Creer bouton de roll pour carac / page1_zone_competences
-TODO Creer bouton roll equipement
-TODO Créer Roll template 
-TODO Onglets des pages-->
+<!-- TODO Peupler tableau equipement -->
+<!-- TODO Peupler deux derniers tableaux -->
+<!-- TODO Creer bouton roll equipement -->
+<!-- TODO Créer Roll template meilleur qualite -->
+<!-- TODO Onglets des pages -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
@@ -69,64 +67,88 @@ TODO Onglets des pages-->
 		<div class="page1_zone_caracteristiques">
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
-					<!-- <button type="roll" class="button_texte" name="roll_Vigueur" title="info" data-i18n-title="carac_vigueur"
-                value="&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{seuil=[[@{carac_vigueur}[Compétence]]]}} {{result=[[1d10[Jet] @{rollmodifier}[Modificateur] +@{blessure}[Blessure]]]}}">Vigueur</button> -->
 					<button type="action" class="button_texte" name="act_roll-vigueur">Vigueur</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Adresse</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_adresse"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-adresse">Adresse</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_adresse"  value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Instinct</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_instinct"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-instinct">Instinct</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_instinct"  value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Raison</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_raison"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-raison">Raison</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_raison"  value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Témérité</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_temerite"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-temerite">Témérité</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_temerite"  value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Aura</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_aura"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-aura">Aura</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_aura"  value="0" min="0" max="10"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Fluide</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_fluide"  value="0" min="0" max="20"></div>
+				<div class="page1_zone_caracteristiques_titre">
+					<button type="action" class="button_texte" name="act_roll-fluide">Fluide</button>
+				</div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_fluide"  value="0" min="0" max="10"></div>
 			</div>
 		</div>
 		<div class="page1_zone_competences">
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Mêlée</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-melee">Mêlée</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_melee" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Agilité</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-agilite">Agilité</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_agilite" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Perception</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-perception">Perception</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_perception" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Culture</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-culture">Culture</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_culture" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Manipulation</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-manipulation">Manipulation</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_manipulation" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Précision</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-precision">Précision</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_precision" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_competences">
-				<div class="page1_zone_competences_titre">Rituel</div>
+				<div class="page1_zone_competences_titre">
+					<button type="action" class="button_texte" name="act_roll-rituel">Rituel</button>
+				</div>
 				<div class="page1_zone_competences_valeur"><input type="number" class="input_carac" name="attr_comp_rituel" style="cursor: default;" readonly /></div>
 			</div>
 		</div>
@@ -514,7 +536,7 @@ TODO Onglets des pages-->
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
                 {{result}}
             </div>
-            <div class="sheet-rolltemplate-thanatos sheet-template-itd-texte">
+            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte">
                 {{subheader}}
             </div>
         </div>
@@ -524,9 +546,32 @@ TODO Onglets des pages-->
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}} ({{stat}})
             </div>
-			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
-                {{computed::roll}} {{computed:ecart}}
-            </div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})</div>
+
+			{{#rollTotal() des 10}}
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
+				<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-tragique">Échec automatique</div>
+			{{/rollTotal() des 10}}
+			{{#^rollTotal() des 10}}
+				{{#rollLess() computed::roll 0}}
+					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
+					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec</div>
+				{{/rollLess() computed::roll 0}}
+				{{#rollBetween() computed::roll 0 2}}
+					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
+					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite</div>
+				{{/rollBetween() computed::roll 0 2}}
+				{{#rollBetween() computed::roll 3 5}}
+					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
+					<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-texte-reussite-critique">Réussite excellente</div>
+				{{/rollBetween() computed::roll 3 5}}
+				{{#rollGreater() computed::roll 5}}
+					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle">{{des}}</div>
+					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-exceptionnelle">Réussite exceptionnelle</div>
+				{{/rollGreater() computed::roll 5}}
+			{{/^rollTotal() des 10}}
+
+
         </div>
     {{/jet}}
 </rolltemplate>
@@ -587,13 +632,129 @@ TODO Onglets des pages-->
     });
 
 	on('clicked:roll-vigueur', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{ecart=[[0[resultat]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}");
-		   
-		   const {stat,des,mod,blessure} = roll.results;
-		   const computeObj = {};
-		   const ecart = des.result + mod.result + blessure.result - stat.result;
-		   computeObj.roll = des.result;
-   finishRoll(roll.rollId,computeObj);
- })
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+ 	})
+
+	on('clicked:roll-adresse', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Adresse}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_adresse}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-instinct', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Instinct}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_instinct}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-raison', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Raison}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_raison}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-temerite', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Témérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_temerite}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+		})
+
+	on('clicked:roll-aura', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Aura}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_aura}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-fluide', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Fluide}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_fluide}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-melee', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Mêlée}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_melee}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-agilite', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Agilité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_agilite}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+		})
+
+	on('clicked:roll-perception', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Perception}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_perception}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-culture', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Culture}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_culture}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-manipulation', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Manipulation}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_manipulation}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-precision', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Précision}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_precision}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+		})
+
+	on('clicked:roll-rituel', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Rituel}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_rituel}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
 
 </script>
