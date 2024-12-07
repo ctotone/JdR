@@ -8,6 +8,8 @@
     --borderdev: 1px solid red;
     --couleur_dotted: #00000078;
     --text_input: #000000bd;
+    --color_border_equipement: #000000d9;
+    --color_border_parcours_personnes: #000000d9;
     /* --borderdev: none; */
     font-family: "Playfair", serif;
     color: var(--black);
@@ -117,6 +119,16 @@ span.sur {
 }
 
 .charsheet textarea.texte_cadre_nom1 { 
+    width: 95%;
+    height: 85%;
+    font-size: 20px;
+    display: table-cell;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.charsheet textarea.texte_cadre_nom2 { 
     width: 95%;
     height: 85%;
     font-size: 20px;
@@ -271,7 +283,7 @@ div.personnes_marquantes {
     width: 1087px;
     height: 769px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnes1.webp);
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_04.webp);
+	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_04.webp); */
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -546,15 +558,20 @@ div.personnes_marquantes {
 
 .page4_zone_nom {
     grid-column: 4 / 28;
-    grid-row: 4 / 12;
+    grid-row: 7 / 12;
+    margin-left: 10px;
     /* background-color: #0100ff85; */
-    transform: rotate(-1deg);
+    transform: rotate(0deg);
 }
 
 .page4_zone_tableau {
     grid-column: 7 / 101;
     grid-row: 19 / 74;
     /* background-color: #0100ff85; */
+    transform: rotate(1deg);
+    margin-top: 11px;
+    margin-left: 13px;
+    margin-right: 11px;
 }
 
 
@@ -682,7 +699,7 @@ div.personnes_marquantes {
 .page2_zone_armes_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -693,7 +710,7 @@ div.personnes_marquantes {
 .page2_zone_armes_types {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -704,7 +721,7 @@ div.personnes_marquantes {
 .page2_zone_armes_vigueur {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -715,7 +732,7 @@ div.personnes_marquantes {
 .page2_zone_armes_degats {
     grid-column: 4;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -726,7 +743,7 @@ div.personnes_marquantes {
 .page2_zone_armes_portee {
     grid-column: 5;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -737,7 +754,7 @@ div.personnes_marquantes {
 .page2_zone_armes_kaa {
     grid-column: 6;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -748,7 +765,7 @@ div.personnes_marquantes {
 .page2_zone_armes_roll {
     grid-column: 7;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-right: none;
     border-top: none;
@@ -764,7 +781,7 @@ div.personnes_marquantes {
 .page2_zone_projectiles_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -775,7 +792,7 @@ div.personnes_marquantes {
 .page2_zone_projectiles_types {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -786,7 +803,7 @@ div.personnes_marquantes {
 .page2_zone_projectiles_kaa {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -797,7 +814,7 @@ div.personnes_marquantes {
 .page2_zone_projectiles_nombres {
     grid-column: 4;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -808,7 +825,7 @@ div.personnes_marquantes {
 .page2_zone_projectiles_notes {
     grid-column: 5;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     border-right: none;
@@ -824,7 +841,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -835,7 +852,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_degats {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -846,7 +863,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_portee {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -857,7 +874,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_zone {
     grid-column: 4;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -868,7 +885,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_bottes {
     grid-column: 5;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -879,7 +896,7 @@ div.personnes_marquantes {
 .page2_zone_artillerie_roll {
     grid-column: 6;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -894,7 +911,7 @@ div.personnes_marquantes {
 .page2_zone_armures_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -905,7 +922,7 @@ div.personnes_marquantes {
 .page2_zone_armures_protection {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -916,7 +933,7 @@ div.personnes_marquantes {
 .page2_zone_armures_diff_agi {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -927,7 +944,7 @@ div.personnes_marquantes {
 .page2_zone_armures_contre {
     grid-column: 4;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -938,7 +955,7 @@ div.personnes_marquantes {
 .page2_zone_armures_fatigue {
     grid-column: 5;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     border-right: none;
@@ -954,7 +971,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -965,7 +982,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_vigueur {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -976,7 +993,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_diff_melee {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -987,7 +1004,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_diff_distance {
     grid-column: 4;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -998,7 +1015,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_diff_agi {
     grid-column: 5;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1009,7 +1026,7 @@ div.personnes_marquantes {
 .page2_zone_bouclier_fatigue {
     grid-column: 6;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     border-right: none;
@@ -1025,7 +1042,7 @@ div.personnes_marquantes {
 .page2_zone_casque_nom {
     grid-column: 1;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-top: none;
     display: flex;
     justify-content: center;
@@ -1035,7 +1052,7 @@ div.personnes_marquantes {
 .page2_zone_casque_qualite {
     grid-column: 2;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1046,7 +1063,7 @@ div.personnes_marquantes {
 .page2_zone_casque_contre {
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
+    border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1068,7 +1085,7 @@ div.personnes_marquantes {
 .page3_zone_tableau_cartes {
     grid-column: 1;
     grid-row: 1;
-    border: 2px solid black;
+    border: 2px solid var(--color_border_parcours_personnes);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1079,7 +1096,7 @@ div.personnes_marquantes {
 .page3_zone_tableau_endroit {
     grid-column: 2;
     grid-row: 1;
-    border: 2px solid black;
+    border: 2px solid var(--color_border_parcours_personnes);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1090,7 +1107,7 @@ div.personnes_marquantes {
 .page3_zone_tableau_envers {
     grid-column: 3;
     grid-row: 1;
-    border: 2px solid black;
+    border: 2px solid var(--color_border_parcours_personnes);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1101,7 +1118,7 @@ div.personnes_marquantes {
 .page3_zone_tableau_signification {
     grid-column: 4;
     grid-row: 1;
-    border: 2px solid black;
+    border: 2px solid var(--color_border_parcours_personnes);
     border-left: none;
     border-top: none;
     display: flex;
@@ -1112,7 +1129,74 @@ div.personnes_marquantes {
 .page3_zone_tableau_histoire {
     grid-column: 5;
     grid-row: 1;
-    border: 2px solid black;
+    border: 2px solid var(--color_border_parcours_personnes);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper interne Page parcours */
+
+.wrapper_page4_zone_tableau {
+    display: grid;
+    grid-auto-rows: 60px;    
+    grid-template-columns: 20.5% 21.2% 6.6% 6.3% 45.4%;
+    color: var(--black);
+    font-size: 16px;
+    /* background-color: #0100ff85; */
+}
+
+.page4_zone_tableau_noms {
+    grid-column: 1;
+    grid-row: 1;
+    border: 2px solid var(--color_border_parcours_personnes);
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page4_zone_tableau_figures {
+    grid-column: 2;
+    grid-row: 1;
+    border: 2px solid var(--color_border_parcours_personnes);
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page4_zone_tableau_endroit {
+    grid-column: 3;
+    grid-row: 1;
+    border: 2px solid var(--color_border_parcours_personnes);
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page4_zone_tableau_envers {
+    grid-column: 4;
+    grid-row: 1;
+    border: 2px solid var(--color_border_parcours_personnes);
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page4_zone_tableau_presentation {
+    grid-column: 5;
+    grid-row: 1;
+    border: 2px solid var(--color_border_parcours_personnes);
     border-left: none;
     border-top: none;
     border-right: none;
