@@ -104,16 +104,26 @@ span.sur {
 }
 
 .charsheet textarea {
-    border: 1px solid #0000000f;
+    border: none;
     outline: none;
     resize: none;
-    background-color: #00000003;
-    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background20.png); */ 
+    background-color: transparent;
+    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background20.png); */
 }
 
 .charsheet textarea.area_talents {
     width: 98%;
     height: 165px;
+}
+
+.charsheet textarea.texte_cadre_nom1 { 
+    width: 95%;
+    height: 85%;
+    font-size: 20px;
+    display: table-cell;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
 }
 
 .charsheet select.choix_visage,
@@ -251,7 +261,8 @@ div.equipement {
 div.parcours_de_vie {  
     width: 1087px;
     height: 769px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_03.webp);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_parcours.webp);
+	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_03.webp); */
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -507,13 +518,19 @@ div.personnes_marquantes {
 
 .page3_zone_nom {
     grid-column: 91 / 109;
-    grid-row: 5 / 16;
+    grid-row: 9 / 16;
+    margin-left: 5px;
+    margin-right: 8px;
+    margin-bottom: 5px;
     /* background-color: #0100ff85; */
 }
 
 .page3_zone_tableau {
     grid-column: 8 / 105;
-    grid-row: 24 / 73;
+    grid-row: 24 / 72;
+    margin-top: 5px;
+    margin-left: 8px;
+    margin-right: 5px;
     /* background-color: #0100ff85; */
 }
 
@@ -1035,6 +1052,84 @@ div.personnes_marquantes {
     justify-content: center;
     align-items: center;
 }
+
+/* Wrapper interne Page parcours */
+
+.wrapper_page3_zone_tableau {
+    display: grid;
+    grid-auto-rows: 60px;    
+    grid-template-columns: 20.5% 6.5% 6% 22.4% 44.6%;
+    color: var(--black);
+    font-size: 16px;
+    /* background-color: #0100ff85; */
+}
+
+.page3_zone_tableau_cartes {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3_zone_tableau_endroit {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3_zone_tableau_envers {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3_zone_tableau_signification {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page3_zone_tableau_histoire {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Roll template */
