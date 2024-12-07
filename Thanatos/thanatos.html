@@ -68,7 +68,11 @@ TODO Onglets des pages-->
 		</div>
 		<div class="page1_zone_caracteristiques">
 			<div class="wrapper_page1_zone_caracteristiques">
-				<div class="page1_zone_caracteristiques_titre">Vigueur</div>
+				<div class="page1_zone_caracteristiques_titre">
+					<!-- <button type="roll" class="button_texte" name="roll_Vigueur" title="info" data-i18n-title="carac_vigueur"
+                value="&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{seuil=[[@{carac_vigueur}[Compétence]]]}} {{result=[[1d10[Jet] @{rollmodifier}[Modificateur] +@{blessure}[Blessure]]]}}">Vigueur</button> -->
+					<button type="action" class="button_texte" name="act_roll-vigueur">Vigueur</button>
+				</div>
 				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
@@ -499,9 +503,43 @@ TODO Onglets des pages-->
 </div>
 
 
+<!-- ROLL TEMPLATE -->
+
+<rolltemplate class="sheet-rolltemplate-thanatos">
+    {{#initiative}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                {{title}}
+            </div>
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-thanatos sheet-template-itd-texte">
+                {{subheader}}
+            </div>
+        </div>
+    {{/initiative}}
+    {{#jet}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                {{title}} ({{stat}})
+            </div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
+                {{computed::roll}} {{computed:ecart}}
+            </div>
+        </div>
+    {{/jet}}
+</rolltemplate>
+
 <!-- SCRIPT -->
 
 <script type="text/worker">
+  
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollmodifier: "?{Modificateur de difficulté |+0|+1|+2|+3|+4|+5|+6|+7|+8|-1|-2|-3|-4}",
+        });
+    });	
 
     on("sheet:opened change:carac_vigueur change:carac_adresse change:carac_instinct change:carac_raison change:carac_temerite change:carac_aura change:carac_fluide", function() {
         getAttrs(["carac_vigueur", "carac_adresse", "carac_instinct", "carac_raison", "carac_temerite", "carac_aura", "carac_fluide"], function(values) {
@@ -547,5 +585,15 @@ TODO Onglets des pages-->
             });
         });
     });
+
+	on('clicked:roll-vigueur', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{ecart=[[0[resultat]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}");
+		   
+		   const {stat,des,mod,blessure} = roll.results;
+		   const computeObj = {};
+		   const ecart = des.result + mod.result + blessure.result - stat.result;
+		   computeObj.roll = des.result;
+   finishRoll(roll.rollId,computeObj);
+ })
 
 </script>

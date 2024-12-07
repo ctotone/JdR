@@ -235,19 +235,29 @@ input[type="checkbox"]:focus {
 
 .charsheet button[type=action].button_texte,
 .charsheet button[type=roll].button_texte {
-  width: 119px;
-  height: 25px;
-  border: none;
-  padding: 0;
-  margin: 0;
-  box-shadow: none;
-  text-shadow: none;
-  background-color: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    width: 90px !important;
+    text-align: left;
+    height: 29px;
+    border: none;
+    border-radius: 1px;
+    color: var(--white);
+    font-size: 19px;
+    line-height: 25px;
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
 }
 
 .charsheet button[type=action].button_texte:hover,
 .charsheet button[type=roll].button_texte:hover {
-    margin-left: -1px;
+    /* color: #ff9191; */
+    font-weight: bold;
+    /* text-decoration: underline; */
 }
 
 /* Cadre des pages */
@@ -1217,27 +1227,157 @@ div.personnes_marquantes {
 
 
 
-/* Roll template */
-.sheet-rolltemplate-thanatos{
-    margin-left: 0px;
-	padding-top: 0px;
-}
-
-.sheet-rolltemplate-thanatos .sheet-container {
-    border: 2px solid;
-    border-color: var(--header-bg-color);
-    width: 220px;
-    height: 377px;
-    box-shadow: 3px 3px 7px 0px #000000db;
-}
-
-.sheet-rolltemplate-thanatos .sheet-container {
-    --header-bg-color: rgb(0, 0, 0);
-    --header-text-color: #FFF;
-	border: 2px solid;
-    border-color: var(--header-bg-color);
-    width: 220px;
-    height: 170px;
-    box-shadow: 3px 3px 7px 0px #000000db;
-	border-radius: 10px;
-}
+/* ROLL TEMPLATE */
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-center {
+    text-align: center;
+    /* margin-left: 30px; */
+    --echec_2: #ff0000;
+    --echec_3: #ff006f;
+    --echec_1: #dc00c9;
+    --reussite_3: #009700;
+    --reussite_2: #0082ff;
+    --reussite_1: #fffe00;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
+    background-repeat: no-repeat;
+    border-spacing: 0;
+    max-height: 200px;
+    min-height: 130px;
+    max-width: 250px;
+    margin: 0px;
+    padding-bottom: 5px;
+    padding-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
+    color: #ffffffde;
+    font-size: 20px;
+    font-family: "Playfair", serif;
+    letter-spacing: 0px;
+    word-wrap: break-word;
+    /* margin-top: 25px; */
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique,
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
+    background-color: transparent;
+    color: #ffffffde;
+    font-size: 60px !important;
+    font-family: "Playfair", serif;
+    letter-spacing: 0px;
+    padding: 15px;
+    margin-top: 25px;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique {
+    color: var(--echec_1);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique{
+    color: var(--echec_2);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec{
+    color: var(--echec_3);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle {
+    color: var(--reussite_1);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique {
+    color: var(--reussite_2);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
+    color: var(--reussite_3);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-result {
+    font-size: 36px;
+    font-family: "Playfair", serif;
+    padding: 15px;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec-tragique,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec-critique,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite-exceptionnelle,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite-critique,
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite {
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Playfair", serif;
+    padding: 15px;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec-tragique {
+    color: var(--echec_1);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec-critique{
+    color: var(--echec_2);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-echec{
+    color: var(--echec_3);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite-exceptionnelle {
+    color: var(--reussite_1);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite-critique {
+    color: var(--reussite_2);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-texte-reussite {
+    color: var(--reussite_3);
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-succeeds {
+    color: #148c00;
+  }
+  
+  .sheet-rolltemplate-thanatos .sheet-template-itd-misses {
+    color: #a90000;
+  }
+  
+  .sheet-rolltemplate-thanatos .inlinerollresult {
+    background-color: transparent !important;
+    border: none !important;
+    color: unset !important;
+  }
+  
+  .sheet-rolltemplate-thanatos-header .inlinerollresult {
+    background-color: transparent !important;
+    border: none !important;
+    color: unset !important;
+  }
+   
+  .sheet-rolltemplate-thanatos .inlinerollresult.fullcrit {
+    background-color: transparent !important;
+    border: none !important;
+    color: unset !important;
+  }
+   
+  .sheet-rolltemplate-thanatos .inlinerollresult.fullfail {
+    background-color: transparent !important;
+    border: none !important;
+    color: unset !important;
+  }
+   
+  .sheet-rolltemplate-thanatos .inlinerollresult.importantroll {
+    background-color: transparent !important;
+    border: none !important;
+    color: unset !important;
+  }
