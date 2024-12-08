@@ -28,8 +28,10 @@ ATTENTION RESULTAT NEGATIF
 5 stat - 2des +5
 
 
-<select class="choix_visage" name="attr_visage">
+
+<select class="choix_armes" name="attr_armes_nom_2">
     <option value="0" selected="selected"></option>
+    <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes de mêlée --</option>
     <option value="1">Aiguille</option>
     <option value="2">Demi-lune</option>
     <option value="3">Disque noir</option>
@@ -58,4 +60,54 @@ ATTENTION RESULTAT NEGATIF
     <option value="26">Sabre à 2mains</option>
     <option value="27">Sabre worzaï</option>
     <option value="28">Tranchoir</option>
+    <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes à projectiles --</option>
+    <option value="30">Arbalète légère</option>
+    <option value="31">Arbalète lourde</option>
+    <option value="32">Arc court</option>
+    <option value="33">Arc de bataille</option>
+    <option value="34">Arc long</option>
+    <option value="35">Lance pierre</option>
 </select>
+
+<select class="choix_armes" name="attr_projectiles_nom_1">
+    <option value="0" selected="selected"></option>
+    <option value="1">Flèches</option>
+    <option value="2">Flèches inflammables</option>
+    <option value="3">Flèche perce-armure</option>
+    <option value="4">Carreaux</option>
+    <option value="5">Carreaux inflammables</option>
+    <option value="6">CFlèches ou carreaux perce-armure</option>
+    <option value="7">Pierre</option>
+</select>
+
+<select class="choix_armes" name="attr_artillerie_nom_1">
+    <option value="0" selected="selected"></option>
+    <option value="1">Bombarde</option>
+    <option value="2">Canon de poing</option>
+    <option value="3">Pot de fer</option>
+    <option value="4">Vauglaire</option>
+</select>
+
+<select class="choix_armes" name="attr_armures_nom_1">
+    <option value="0" selected="selected"></option>
+    <option value="1">Armure complète</option>
+    <option value="2">Armure de cuir</option>
+    <option value="3">Cotte de maille</option>
+    <option value="4">Robe de fer</option>
+</select>
+
+<select class="choix_armes" name="attr_boucliers_nom_1">
+    <option value="0" selected="selected"></option>
+    <option value="1">Bouclier grand</option>
+    <option value="2">Bouclier moyen</option>
+    <option value="3">Bouclier petit</option>
+</select>
+
+<select class="choix_armes" name="attr_casques_nom_1">
+    <option value="0" selected="selected"></option>
+    <option value="1">Médiocre</option>
+    <option value="2">Bonne</option>
+    <option value="3">Disque noir</option>
+    <option value="4">Excellente</option>
+</select>
+
