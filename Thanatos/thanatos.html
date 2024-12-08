@@ -1,4 +1,3 @@
-<!-- TODO Peupler tableau equipement -->
 <!-- TODO Peupler deux derniers tableaux -->
 <!-- TODO Creer bouton roll equipement -->
 <!-- TODO Créer Roll template meilleur qualite -->
@@ -17,7 +16,7 @@
 <div class="personnage">
 	<div class="wrapper_page_personnage">
 		<div class="page1_zone_personnage">
-			<div class="page1_zone_personnage_line">Nom : <input type="text" class="input_dotted" name="attr_character_name"></div>
+			<div class="page1_zone_personnage_line">qualite : <input type="text" class="input_dotted" name="attr_character_name"></div>
 			<div class="page1_zone_personnage_line">Sexe :<input type="text" class="input_dotted" name="attr_sexe">Âge :<input type="text" class="input_dotted"  name="attr_age"></div>
 			<div class="page1_zone_personnage_line">Rang :
 				<select class="choix_rang" name="attr_rang">
@@ -61,7 +60,7 @@
 			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_apparence_2"></div>
 			<div class="page1_zone_personnage_line">Traits :<input type="text" class="input_dotted" name="attr_familier_trait1"></div>
 			<div class="page1_zone_personnage_line"><input type="text" class="input_dotted" name="attr_familier_trait_2"></div>
-			<div class="page1_zone_personnage_line" style="margin-top: 5px;">Accomodement <input type="number" class="input_carac" name="attr_accomodement"  value="5" min="0" max="10" style="border: 1px solid var(--black); margin-left: 12px; margin-top: 2px; 
+			<div class="page1_zone_personnage_line" style="margin-top: 5px;">Accomodement <input type="number" class="input_carac" name="attr_accomodement"  value="5" min="0" max="20" style="border: 1px solid var(--black); margin-left: 12px; margin-top: 2px; 
     box-shadow: 2px 2px 3px 0px #000000a6;"></div>
 		</div>
 		<div class="page1_zone_caracteristiques">
@@ -69,43 +68,43 @@
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-vigueur">Vigueur</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_vigueur" value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-adresse">Adresse</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_adresse"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_adresse"  value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-instinct">Instinct</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_instinct"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_instinct"  value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-raison">Raison</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_raison"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_raison"  value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-temerite">Témérité</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_temerite"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_temerite"  value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-aura">Aura</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_aura"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_aura"  value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_caracteristiques">
 				<div class="page1_zone_caracteristiques_titre">
 					<button type="action" class="button_texte" name="act_roll-fluide">Fluide</button>
 				</div>
-				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_fluide"  value="0" min="0" max="10"></div>
+				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac" name="attr_carac_fluide"  value="0" min="0" max="20"></div>
 			</div>
 		</div>
 		<div class="page1_zone_competences">
@@ -188,7 +187,7 @@
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Protection</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_protection" value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_armures_protection_1" value="0" min="0" max="20" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Fatigue par tour</div>
@@ -264,7 +263,7 @@
 			<div class="wrapper_page2_zone_armes">
 				<div class="page2_zone_armes_nom">
 					<select class="choix_armes" name="attr_armes_nom_1">
-						<option value="0" selected="selected"></option>
+						<option value="0"></option>
 						<option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes de mêlée --</option>
 						<option value="1">Aiguille</option>
 						<option value="2">Demi-lune</option>
@@ -283,7 +282,7 @@
 						<option value="15">Hallebarde</option>
 						<option value="16">Javelot</option>
 						<option value="17">Lance</option>
-						<option value="18">Mains nues</option>
+						<option value="18" selected="selected">Mains nues</option>
 						<option value="19">Massue</option>
 						<option value="20">Masse de guerre</option>
 						<option value="21">Masse tranchante</option>
@@ -295,15 +294,15 @@
 						<option value="27">Sabre worzaï</option>
 						<option value="28">Tranchoir</option>
 						<option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes à projectiles --</option>
-						<option value="30">Arbalète légère</option>
-						<option value="31">Arbalète lourde</option>
-						<option value="32">Arc court</option>
-						<option value="33">Arc de bataille</option>
-						<option value="34">Arc long</option>
-						<option value="35">Lance pierre</option>
+						<option value="29">Arbalète légère</option>
+						<option value="30">Arbalète lourde</option>
+						<option value="31">Arc court</option>
+						<option value="32">Arc de bataille</option>
+						<option value="33">Arc long</option>
+						<option value="34">Lance pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_1"></div>
+				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_1" style="letter-spacing: -1px;"></div>
 				<div class="page2_zone_armes_vigueur"><input type="text" class="equipement_tableau" name="attr_armes_vigueur_1"></div>
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_1"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_1"></div>
@@ -344,15 +343,15 @@
 						<option value="27">Sabre worzaï</option>
 						<option value="28">Tranchoir</option>
 						<option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes à projectiles --</option>
-						<option value="30">Arbalète légère</option>
-						<option value="31">Arbalète lourde</option>
-						<option value="32">Arc court</option>
-						<option value="33">Arc de bataille</option>
-						<option value="34">Arc long</option>
-						<option value="35">Lance pierre</option>
+						<option value="29">Arbalète légère</option>
+						<option value="30">Arbalète lourde</option>
+						<option value="31">Arc court</option>
+						<option value="32">Arc de bataille</option>
+						<option value="33">Arc long</option>
+						<option value="34">Lance pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_2"></div>
+				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_2" style="letter-spacing: -1px;"></div>
 				<div class="page2_zone_armes_vigueur"><input type="text" class="equipement_tableau" name="attr_armes_vigueur_2"></div>
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_2"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_2"></div>
@@ -393,19 +392,19 @@
 						<option value="27">Sabre worzaï</option>
 						<option value="28">Tranchoir</option>
 						<option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes à projectiles --</option>
-						<option value="30">Arbalète légère</option>
-						<option value="31">Arbalète lourde</option>
-						<option value="32">Arc court</option>
-						<option value="33">Arc de bataille</option>
-						<option value="34">Arc long</option>
-						<option value="35">Lance pierre</option>
+						<option value="29">Arbalète légère</option>
+						<option value="30">Arbalète lourde</option>
+						<option value="31">Arc court</option>
+						<option value="32">Arc de bataille</option>
+						<option value="33">Arc long</option>
+						<option value="34">Lance pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_armes_types">Tranchante, Estoc / 1main</div>
-				<div class="page2_zone_armes_vigueur">oui</div>
-				<div class="page2_zone_armes_degats">N + 1 / L + 1</div>
-				<div class="page2_zone_armes_portee">500m</div>
-				<div class="page2_zone_armes_kaa">oui</div>
+				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_3" style="letter-spacing: -1px;"></div>
+				<div class="page2_zone_armes_vigueur"><input type="text" class="equipement_tableau" name="attr_armes_vigueur_3"></div>
+				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_3"></div>
+				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_3"></div>
+				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_3"></div>
 				<div class="page2_zone_armes_roll">dice</div>
 			</div>
 		</div>
@@ -423,10 +422,10 @@
 						<option value="7">Pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_projectiles_types"></div>
-				<div class="page2_zone_projectiles_kaa"></div>
-				<div class="page2_zone_projectiles_nombres"></div>
-				<div class="page2_zone_projectiles_notes"></div>
+				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_1"></div>
+				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_1"></div>
+				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_1"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_1"></div>
 			</div>		
 			<div class="wrapper_page2_zone_projectiles">
 				<div class="page2_zone_projectiles_nom">
@@ -441,10 +440,10 @@
 						<option value="7">Pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_projectiles_types">Contondantes</div>
-				<div class="page2_zone_projectiles_kaa">Oui</div>
-				<div class="page2_zone_projectiles_nombres">50</div>
-				<div class="page2_zone_projectiles_notes">Protection de l'armure divisé par 2</div>
+				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_2"></div>
+				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_2"></div>
+				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_2"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_2"></div>
 			</div>		
 			<div class="wrapper_page2_zone_projectiles">
 				<div class="page2_zone_projectiles_nom">
@@ -459,10 +458,10 @@
 						<option value="7">Pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_projectiles_types"></div>
-				<div class="page2_zone_projectiles_kaa"></div>
-				<div class="page2_zone_projectiles_nombres"></div>
-				<div class="page2_zone_projectiles_notes"></div>
+				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_3"></div>
+				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_3"></div>
+				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_3"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_3"></div>
 			</div>
 		</div>
 		<div class="page2_zone_artillerie">
@@ -476,11 +475,11 @@
 						<option value="4">Vauglaire</option>
 					</select>
 				</div>
-				<div class="page2_zone_artillerie_degats"></div>
-				<div class="page2_zone_artillerie_portee"></div>
-				<div class="page2_zone_artillerie_zone"></div>
-				<div class="page2_zone_artillerie_bottes"></div>
-				<div class="page2_zone_artillerie_roll"></div>
+				<div class="page2_zone_artillerie_degats"><input type="text" class="equipement_tableau" name="attr_artillerie_degats_1"></div>
+				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_1"></div>
+				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_1"></div>
+				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_1"></div>
+				<div class="page2_zone_artillerie_roll">dice</div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -492,11 +491,11 @@
 						<option value="4">Vauglaire</option>
 					</select>
 				</div>
-				<div class="page2_zone_artillerie_degats"></div>
-				<div class="page2_zone_artillerie_portee"></div>
-				<div class="page2_zone_artillerie_zone"></div>
-				<div class="page2_zone_artillerie_bottes"></div>
-				<div class="page2_zone_artillerie_roll"></div>
+				<div class="page2_zone_artillerie_degats"><input type="text" class="equipement_tableau" name="attr_artillerie_degats_2"></div>
+				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_2"></div>
+				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_2"></div>
+				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_2"></div>
+				<div class="page2_zone_artillerie_roll">dice</div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -508,11 +507,11 @@
 						<option value="4">Vauglaire</option>
 					</select>
 				</div>
-				<div class="page2_zone_artillerie_degats"></div>
-				<div class="page2_zone_artillerie_portee"></div>
-				<div class="page2_zone_artillerie_zone"></div>
-				<div class="page2_zone_artillerie_bottes"></div>
-				<div class="page2_zone_artillerie_roll"></div>
+				<div class="page2_zone_artillerie_degats"><input type="text" class="equipement_tableau" name="attr_artillerie_degats_3"></div>
+				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_3"></div>
+				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_3"></div>
+				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_3"></div>
+				<div class="page2_zone_artillerie_roll">dice</div>
 			</div>
 		</div>
 		<div class="page2_zone_armures">
@@ -526,14 +525,16 @@
 						<option value="4">Robe de fer</option>
 					</select>
 				</div>
-				<div class="page2_zone_armures_protection">5</div>
-				<div class="page2_zone_armures_diff_agi">+ 2</div>
-				<div class="page2_zone_armures_contre">Empaler / Lacérer</div>
-				<div class="page2_zone_armures_fatigue">2</div>
+				<div class="page2_zone_armures_protection"><input type="text" class="equipement_tableau" name="attr_armures_protection_1"></div>
+				<div class="page2_zone_armures_diff_agi"><input type="text" class="equipement_tableau" name="attr_armures_diff_agi_1"></div>
+				<div class="page2_zone_armures_contre"><input type="text" class="equipement_tableau" name="attr_armures_contre_1"></div>
+				<div class="page2_zone_armures_fatigue"><input type="text" class="equipement_tableau" name="attr_armures_fatigue_1"></div>
 			</div>
 			<div class="wrapper_page2_zone_armures">
 				<div class="page2_zone_armures_nom">
-					<select class="choix_armes" name="attr_armures_nom_2">
+				<select class="choix_armes" name="attr_armures_nom_2" style="background: #80808078;" title="Les armures n'étant pas superposables,
+seule celle dans la ligne du dessus 
+sera prise en compte.">
 						<option value="0" selected="selected"></option>
 						<option value="1">Armure complète</option>
 						<option value="2">Armure de cuir</option>
@@ -541,42 +542,42 @@
 						<option value="4">Robe de fer</option>
 					</select>
 				</div>
-				<div class="page2_zone_armures_protection"></div>
-				<div class="page2_zone_armures_diff_agi"></div>
-				<div class="page2_zone_armures_contre"></div>
-				<div class="page2_zone_armures_fatigue"></div>
+				<div class="page2_zone_armures_protection" style="background: #80808078;"><input type="text" class="equipement_tableau" name="attr_armures_protection_2"></div>
+				<div class="page2_zone_armures_diff_agi" style="background: #80808078;"><input type="text" class="equipement_tableau" name="attr_armures_diff_agi_2"></div>
+				<div class="page2_zone_armures_contre" style="background: #80808078;"><input type="text" class="equipement_tableau" name="attr_armures_contre_2"></div>
+				<div class="page2_zone_armures_fatigue" style="background: #80808078;"><input type="text" class="equipement_tableau" name="attr_armures_fatigue_2"></div>
 			</div>
 		</div>
 		<div class="page2_zone_bouclier">
 			<div class="wrapper_page2_zone_bouclier">
 				<div class="page2_zone_bouclier_nom">
-					<select class="choix_armes" name="attr_boucliers_nom_1">
+					<select class="choix_armes" name="attr_bouclier_nom_1">
 						<option value="0" selected="selected"></option>
 						<option value="1">Bouclier grand</option>
 						<option value="2">Bouclier moyen</option>
 						<option value="3">Bouclier petit</option>
 					</select>
 				</div>
-				<div class="page2_zone_bouclier_vigueur"></div>
-				<div class="page2_zone_bouclier_diff_melee"></div>
-				<div class="page2_zone_bouclier_diff_distance"></div>
-				<div class="page2_zone_bouclier_diff_agi"></div>
-				<div class="page2_zone_bouclier_fatigue"></div>
+				<div class="page2_zone_bouclier_vigueur"><input type="text" class="equipement_tableau" name="attr_bouclier_vigueur_1"></div>
+				<div class="page2_zone_bouclier_diff_melee"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_melee_1"></div>
+				<div class="page2_zone_bouclier_diff_distance"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_distance_1"></div>
+				<div class="page2_zone_bouclier_diff_agi"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_agi_1"></div>
+				<div class="page2_zone_bouclier_fatigue"><input type="text" class="equipement_tableau" name="attr_bouclier_fatigue_1"></div>
 			</div>
 			<div class="wrapper_page2_zone_bouclier">
 				<div class="page2_zone_bouclier_nom">
-					<select class="choix_armes" name="attr_boucliers_nom_2">
+					<select class="choix_armes" name="attr_bouclier_nom_2">
 						<option value="0" selected="selected"></option>
 						<option value="1">Bouclier grand</option>
 						<option value="2">Bouclier moyen</option>
 						<option value="3">Bouclier petit</option>
 					</select>
 				</div>
-				<div class="page2_zone_bouclier_vigueur"></div>
-				<div class="page2_zone_bouclier_diff_melee"></div>
-				<div class="page2_zone_bouclier_diff_distance"></div>
-				<div class="page2_zone_bouclier_diff_agi"></div>
-				<div class="page2_zone_bouclier_fatigue"></div>
+				<div class="page2_zone_bouclier_vigueur"><input type="text" class="equipement_tableau" name="attr_bouclier_vigueur_2"></div>
+				<div class="page2_zone_bouclier_diff_melee"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_melee_2"></div>
+				<div class="page2_zone_bouclier_diff_distance"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_distance_2"></div>
+				<div class="page2_zone_bouclier_diff_agi"><input type="text" class="equipement_tableau" name="attr_bouclier_diff_agi_2"></div>
+				<div class="page2_zone_bouclier_fatigue"><input type="text" class="equipement_tableau" name="attr_bouclier_fatigue_2"></div>
 			</div>
 		</div>
 		<div class="page2_zone_casques">
@@ -584,25 +585,37 @@
 				<div class="page2_zone_casque_nom">
 					<select class="choix_armes" name="attr_casques_nom_1">
 						<option value="0" selected="selected"></option>
-						<option value="1">Médiocre</option>
-						<option value="2">Bonne</option>
-						<option value="3">Excellente</option>
+						<option value="Casque">Casque</option>
+						<option value="Bavière">Bavière</option>
 					</select>
 				</div>
-				<div class="page2_zone_casque_qualite"></div>
-				<div class="page2_zone_casque_contre"></div>
-			</div>
-			<div class="wrapper_page2_zone_casque">
-				<div class="page2_zone_casque_nom">
-					<select class="choix_armes" name="attr_casques_nom_2">
+				<div class="page2_zone_casque_qualite">
+					<select class="choix_armes" name="attr_casques_qualite_1">
 						<option value="0" selected="selected"></option>
 						<option value="1">Médiocre</option>
 						<option value="2">Bonne</option>
 						<option value="3">Excellente</option>
 					</select>
 				</div>
-				<div class="page2_zone_casque_qualite"></div>
-				<div class="page2_zone_casque_contre"></div>
+				<div class="page2_zone_casque_contre"><input type="text" class="equipement_tableau" name="attr_casques_contre_1"></div>
+			</div>
+			<div class="wrapper_page2_zone_casque">
+				<div class="page2_zone_casque_nom">
+					<select class="choix_armes" name="attr_casques_nom_2">
+						<option value="0" selected="selected"></option>
+						<option value="Casque">Casque</option>
+						<option value="Bavière">Bavière</option>
+					</select>
+				</div>
+				<div class="page2_zone_casque_qualite">
+					<select class="choix_armes" name="attr_casques_qualite_2">
+						<option value="0" selected="selected"></option>
+						<option value="1">Médiocre</option>
+						<option value="2">Bonne</option>
+						<option value="3">Excellente</option>
+					</select>
+				</div>
+				<div class="page2_zone_casque_contre"><input type="text" class="equipement_tableau" name="attr_casques_contre_2"></div>
 			</div>
 		</div>
 	</div>
@@ -767,7 +780,12 @@
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}} ({{stat}})
             </div>
-			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})</div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})
+				{{#jet_agi}}
+				<br>Malus d'armure ({{malusarmure}})
+				{{/jet_agi}}
+			</div>
+			
 
 			{{#rollTotal() des 10}}
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
@@ -798,16 +816,14 @@
 </rolltemplate>
 
 <!-- SCRIPT -->
-
-<script type="text/worker">
-  
+<script type="text/worker"> 
     on("sheet:opened", function(eventInfo){
         setAttrs({
             rollmodifier: "?{Modificateur de difficulté |+0|+1|+2|+3|+4|+5|+6|+7|+8|-1|-2|-3|-4}",
         });
     });	
 
-    on("sheet:opened change:carac_vigueur change:carac_adresse change:carac_instinct change:carac_raison change:carac_temerite change:carac_aura change:carac_fluide", function() {
+    on("change:carac_vigueur change:carac_adresse change:carac_instinct change:carac_raison change:carac_temerite change:carac_aura change:carac_fluide", function() {
         getAttrs(["carac_vigueur", "carac_adresse", "carac_instinct", "carac_raison", "carac_temerite", "carac_aura", "carac_fluide"], function(values) {
             let carac_vigueur = parseInt(values["carac_vigueur"]) || 0;
 			let carac_adresse = parseInt(values["carac_adresse"]) || 0;
@@ -852,6 +868,22 @@
         });
     });
 
+	on("change:armures_fatigue_1 change:bouclier_fatigue_1", function() {
+        getAttrs(["armures_fatigue_1", "bouclier_fatigue_1", "attributs_fatigue"], function(values) {
+            let armures_fatigue_1 = parseInt(values["armures_fatigue_1"]) || 0;
+			let bouclier_fatigue_1 = parseInt(values["bouclier_fatigue_1"]) || 0;
+			
+			let attributs_fatigue = 1 + armures_fatigue_1 + bouclier_fatigue_1;
+
+        setAttrs({
+            "attributs_fatigue": attributs_fatigue
+			
+            });
+        });
+    });
+</script>
+
+<script type="text/worker">
 	on('clicked:roll-vigueur', async (event) => {
 		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
 		const {stat,des,mod,blessure} = roll.results;
@@ -925,11 +957,11 @@
 	})
 
 	on('clicked:roll-agilite', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Agilité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_agilite}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
-		const {stat,des,mod,blessure} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{jet_agi=oui}} {{title=Agilité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_agilite}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}} {{malusarmure=[[@{armures_diff_agi_1}[Malus armure]]]}}"); 
+		const {stat,des,mod,blessure,malusarmure} = roll.results;
 		const computeObj = {};
-		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
-		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result + malusarmure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result - malusarmure.result;
 	finishRoll(roll.rollId,computeObj);
 		})
 
@@ -977,5 +1009,818 @@
 		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
 	finishRoll(roll.rollId,computeObj);
 	})
+</script>
+
+<script type="text/worker">
+	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+		getAttrs([
+			"armes_nom_1",
+			"armes_nom_2",
+			"armes_nom_3",
+			"attributs_degats_legers",
+			"attributs_degats_normaux",
+			"attributs_degats_superieurs",
+			"attributs_degats_exceptionnels"
+		], function (values) {
+			const attributs = {
+				degats_legers: parseInt(values["attributs_degats_legers"]) || 0,
+				degats_normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+				degats_superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+				degats_exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+			};
+	
+			const armes = [1, 2, 3].map(num => {
+				const armeNom = parseInt(values[`armes_nom_${num}`]) || 0;
+				let arme = {
+					designation: "",
+					types: "",
+					vigueur: "",
+					degats: "",
+					portee: "",
+					kaa: ""
+				};
+	
+				switch (armeNom) {
+					//Aiguille
+					case 1:
+						arme = {
+							designation: "Aiguille",
+							types: "Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Demi lune
+					case 2:
+						arme = {
+							designation: "Demi-lune",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 2} / ${attributs.degats_legers}`,
+							portee: "3 m",
+							kaa: ""
+						};
+						break;
+					//Disque noir
+					case 3:
+						arme = {
+							designation: "Disque noir",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers} / ${attributs.degats_legers + 1}`,
+							portee: "10 m",
+							kaa: ""
+						};
+						break;
+					//Epee
+					case 4:
+						arme = {
+							designation: "Épée",
+							types: "Tranchante, Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_normaux,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Epee 2 mains
+					case 5:
+						arme = {
+							designation: "Épée à 2 mains",
+							types: "Tranchante / 2 mains",
+							vigueur: "5",
+							degats: attributs.degats_superieurs + 1,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Epee mixte
+					case 6:
+						arme = {
+							designation: "Épée mixte",
+							types: "Tranchante / 1 ou 2 mains",
+							vigueur: "4",
+							degats: `${attributs.degats_normaux} ou ${attributs.degats_superieurs}`,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Epee longue
+					case 7:
+						arme = {
+							designation: "Épée longue",
+							types: "Tranchante, Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_normaux + 1,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Faux
+					case 8:
+						arme = {
+							designation: "Faux",
+							types: "Tranchante / 2 mains",
+							vigueur: "4",
+							degats: attributs.degats_normaux + 1,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Faux de guerre
+					case 9:
+						arme = {
+							designation: "Faux de guerre",
+							types: "Tranchante / 2 mains",
+							vigueur: "5",
+							degats: attributs.degats_superieurs + 1,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Glaive
+					case 10:
+						arme = {
+							designation: "Glaive",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 1} / ${attributs.degats_legers}`,
+							portee: "5 m",
+							kaa: ""
+						};
+						break;
+					//Hache 2 mains
+					case 11:
+						arme = {
+							designation: "Hache à 2 mains",
+							types: "Tranchante / 2 mains",
+							vigueur: "6",
+							degats: attributs.degats_superieurs + 2,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Hache de bataille
+					case 12:
+						arme = {
+							designation: "Hache de bataille",
+							types: "Tranchante / 1 main",
+							vigueur: "4",
+							degats: `${attributs.degats_normaux + 2} / ${attributs.degats_legers + 1}`,
+							portee: "3 m",
+							kaa: ""
+						};
+						break;
+					//Hachette
+					case 13:
+						arme = {
+							designation: "Hachette",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 1} / ${attributs.degats_legers}`,
+							portee: "5 m",
+							kaa: ""
+						};
+						break;
+					//Hachoir de geant
+					case 14:
+						arme = {
+							designation: "Hachoir de geant",
+							types: "Tranchante / 2 mains",
+							vigueur: "9",
+							degats: attributs.degats_superieurs + 3,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Hallebarde
+					case 15:
+						arme = {
+							designation: "Hallebarde",
+							types: "Tranchante / Estoc / 2 mains",
+							vigueur: "6",
+							degats: attributs.degats_superieurs + 3,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Javelot
+					case 16:
+						arme = {
+							designation: "Javelot",
+							types: "Estoc / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_normaux + 1} / ${attributs.degats_legers + 1}`,
+							portee: "20 m",
+							kaa: ""
+						};
+						break;
+					//Lance
+					case 17:
+						arme = {
+							designation: "Lance",
+							types: "Estoc / 2 mains",
+							vigueur: "5",
+							degats: `${attributs.degats_superieurs + 1} / ${attributs.degats_normaux}`,
+							portee: "20 m",
+							kaa: ""
+						};
+						break;
+					//Mains nues
+					case 18:
+						arme = {
+							designation: "Mains nues",
+							types: "Rixes",
+							vigueur: "-",
+							degats: attributs.degats_legers,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Massue
+					case 19:
+						arme = {
+							designation: "Massue",
+							types: "Contandante / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers + 1,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Masse de guerre
+					case 20:
+						arme = {
+							designation: "Masse de guerre",
+							types: "Contandante / 1 main",
+							vigueur: "4",
+							degats: attributs.degats_normaux + 2,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Masse tranchante
+					case 21:
+						arme = {
+							designation: "Masse tranchante",
+							types: "Contandante / Tranchante / 2 mains",
+							vigueur: "5",
+							degats: attributs.degats_normaux + 3,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Masse double-poids
+					case 22:
+						arme = {
+							designation: "Masse double-poids",
+							types: "Contandante / 2 mains",
+							vigueur: "8",
+							degats: attributs.degats_superieurs + 2,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Masse tranchante double-poids
+					case 23:
+						arme = {
+							designation: "Masse tranchante double-poids",
+							types: "Contandante / Tranchante / 1 main",
+							vigueur: "9",
+							degats: attributs.degats_superieurs + 3,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Poignard
+					case 24:
+						arme = {
+							designation: "Poignard",
+							types: "Tranchante, Estoc / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 1} / ${attributs.degats_legers}`,
+							portee: "5 m",
+							kaa: ""
+						};
+						break;
+					//Sabre
+					case 25:
+						arme = {
+							designation: "Sabre",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_normaux + 2,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Sabre 2 mains
+					case 26:
+						arme = {
+							designation: "Sabre à 2 mains",
+							types: "Tranchante / 2 mains",
+							vigueur: "5",
+							degats: attributs.degats_normaux + 3,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Sabre worzai
+					case 27:
+						arme = {
+							designation: "Sabre worzai",
+							types: "Tranchante / 1 main",
+							vigueur: "6",
+							degats: attributs.degats_superieurs,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Tranchoir
+					case 28:
+						arme = {
+							designation: "Tranchoir",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers + 2,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Arbalete legere
+					case 29:
+						arme = {
+							designation: "Arbalete légère",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: "0 / 5",
+							portee: "50 m",
+							kaa: ""
+						};
+						break;
+					//Arbalete lourde
+					case 30:
+						arme = {
+							designation: "Arbalete lourde",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: "0 / 10",
+							portee: "75 m",
+							kaa: ""
+						};
+						break;
+					//Arc court
+					case 31:
+						arme = {
+							designation: "Arc court",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: "0 / 4",
+							portee: "75 m",
+							kaa: ""
+						};
+						break;
+					//Arc de bataille
+					case 32:
+						arme = {
+							designation: "Arc de bataille",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 2} / 6`,
+							portee: "75 m",
+							kaa: ""
+						};
+						break;
+					//Arc long
+					case 33:
+						arme = {
+							designation: "Arc long",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: "0 / 6",
+							portee: "100 m",
+							kaa: ""
+						};
+						break;
+					//Lance pierre
+					case 34:
+						arme = {
+							designation: "Lance-pierre",
+							types: " Arme à projectiles",
+							vigueur: "-",
+							degats: "0 / 4",
+							portee: "15 m",
+							kaa: ""
+						};
+						break;
+				}
+	
+				return arme;
+			});
+	
+			let updates = {};
+			armes.forEach((arme, index) => {
+				const num = index + 1;
+				updates[`armes_designation_${num}`] = arme.designation;
+				updates[`armes_types_${num}`] = arme.types;
+				updates[`armes_vigueur_${num}`] = arme.vigueur;
+				updates[`armes_degats_${num}`] = arme.degats;
+				updates[`armes_portee_${num}`] = arme.portee;
+				updates[`armes_kaa_${num}`] = arme.kaa;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+
+	on("change:projectiles_nom_1 change:projectiles_nom_2 change:projectiles_nom_3", function () {
+		getAttrs([
+			"projectiles_nom_1",
+			"projectiles_nom_2",
+			"projectiles_nom_3"
+		], function (values) {
+			const attributs = {};
+	
+			const projectiles = [1, 2, 3].map(num => {
+				const projectileNom = parseInt(values[`projectiles_nom_${num}`]) || 0;
+				let projectile = {
+					designation: "",
+					types: "",
+					kaa: "",
+					nombres: "",
+					notes: ""
+				};
+	
+				switch (projectileNom) {
+					//Fleches
+					case 1:
+						projectile = {
+							designation: "Flèches",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+					//Fleches inflammables
+					case 2:
+						projectile = {
+							designation: "Flèches inflammables",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+					break;
+					//Fleches perce armure
+					case 3:
+						projectile = {
+							designation: "Flèches perce-armure",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+					break;
+					//Carreaux
+					case 4:
+						projectile = {
+							designation: "Carreaux",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+					break;
+					//Carreaux inflammables
+					case 5:
+						projectile = {
+							designation: "Carreaux inflammables",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+					//Carreaux perce armure
+					case 6:
+						projectile = {
+							designation: "Carreaux perce-armure",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;					
+					//Pierre
+					case 7:
+						projectile = {
+							designation: "Pierre",
+							types: "Contondantes",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+				}
+	
+				return projectile;
+			});
+	
+			let updates = {};
+			projectiles.forEach((projectile, index) => {
+				const num = index + 1;
+				updates[`projectiles_designation_${num}`] = projectile.designation;
+				updates[`projectiles_types_${num}`] = projectile.types;
+				updates[`projectiles_kaa_${num}`] = projectile.kaa;
+				updates[`projectiles_nombres_${num}`] = projectile.nombres;
+				updates[`projectiles_notes_${num}`] = projectile.notes;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+
+	on("change:artillerie_nom_1 change:artillerie_nom_2 change:artillerie_nom_3", function () {
+		getAttrs([
+			"artillerie_nom_1",
+			"artillerie_nom_2",
+			"artillerie_nom_3"
+		], function (values) {
+			const attributs = {};
+	
+			const artillerie = [1, 2, 3].map(num => {
+				const artilleNom = parseInt(values[`artillerie_nom_${num}`]) || 0;
+				let artille = {
+					designation: "",
+					degats: "",
+					portee: "",
+					zone: "",
+					bottes: ""
+				};
+	
+				switch (artilleNom) {
+					//Bombarde
+					case 1:
+						artille = {
+							designation: "Bombarde",
+							degats: "12",
+							portee: "150 m",
+							zone: "15 m",
+							bottes: "Étourdir"
+						};
+						break;
+					//Canon de poing
+					case 2:
+						artille = {
+							designation: "Canon de poing",
+							degats: "10",
+							portee: "25 m",
+							zone: "-",
+							bottes: "Briser"
+						};
+					break;
+					//Pot de fer
+					case 3:
+						artille = {
+							designation: "Pot de fer",
+							degats: "10",
+							portee: "-",
+							zone: "8 m",
+							bottes: "Étourdir"
+						};
+					break;
+					//Veuglaire
+					case 4:
+						artille = {
+							designation: "Veuglaire",
+							degats: "8",
+							portee: "75 m",
+							zone: "3 m",
+							bottes: "Étourdir"
+						};
+					break;
+				}
+	
+				return artille;
+			});
+	
+			let updates = {};
+			artillerie.forEach((artille, index) => {
+				const num = index + 1;
+				updates[`artillerie_designation_${num}`] = artille.designation;
+				updates[`artillerie_degats_${num}`] = artille.degats;
+				updates[`artillerie_portee_${num}`] = artille.portee;
+				updates[`artillerie_zone_${num}`] = artille.zone;
+				updates[`artillerie_bottes_${num}`] = artille.bottes;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+
+	on("change:armures_nom_1 change:armures_nom_2", function () {
+		getAttrs([
+			"armures_nom_1",
+			"armures_nom_2"
+		], function (values) {
+			const attributs = {};
+	
+			const armures = [1, 2].map(num => {
+				const armureNom = parseInt(values[`armures_nom_${num}`]) || 0;
+				let armure = {
+					designation: "",
+					protection: "",
+					diff_agi: "",
+					contre: "",
+					fatigue: ""
+				};
+	
+				switch (armureNom) {
+					//Armure complete
+					case 1:
+						armure = {
+							designation: "Armure complète",
+							protection: "5",
+							diff_agi: "2",
+							contre: "Empaler / Lacérer",
+							fatigue: "2"
+						};
+						break;
+					//Armure de cuir
+					case 2:
+						armure = {
+							designation: "Armure de cuir",
+							protection: "1",
+							diff_agi: "0",
+							contre: "-",
+							fatigue: "0"
+						};
+					break;
+					//Cotte de maille
+					case 3:
+						armure = {
+							designation: "Cotte de mailles",
+							protection: "3",
+							diff_agi: "1",
+							contre: "Lacérer",
+							fatigue: "1"
+						};
+					break;
+					//Robe de fer
+					case 4:
+						armure = {
+							designation: "Robe de fer",
+							protection: "3",
+							diff_agi: "1",
+							contre: "Empaler",
+							fatigue: "1"
+						};
+					break;
+				}
+	
+				return armure;
+			});
+
+	
+			let updates = {};
+			armures.forEach((armure, index) => {
+				const num = index + 1;
+				updates[`armures_designation_${num}`] = armure.designation;
+				updates[`armures_protection_${num}`] = armure.protection;
+				updates[`armures_diff_agi_${num}`] = armure.diff_agi;
+				updates[`armures_contre_${num}`] = armure.contre;
+				updates[`armures_fatigue_${num}`] = armure.fatigue;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+
+	on("change:bouclier_nom_1 change:bouclier_nom_2", function () {
+		getAttrs([
+			"bouclier_nom_1",
+			"bouclier_nom_2"
+		], function (values) {
+			const attributs = {};
+	
+			const bouclier = [1, 2].map(num => {
+				const bouclarNom = parseInt(values[`bouclier_nom_${num}`]) || 0;
+				let bouclar = {
+					designation: "",
+					vigueur: "",
+					diff_melee: "",
+					diff_distance: "",
+					diff_agi: "",
+					fatigue: ""
+				};
+	
+				switch (bouclarNom) {
+					//Bouclier grand
+					case 1:
+						bouclar = {
+							designation: "Bouclier grand",
+							vigueur: "7",
+							diff_melee: "- 2",
+							diff_distance: "- 3",
+							diff_agi: "+ 2",
+							fatigue: "1"
+						};
+						break;
+					//Bouclier moyen
+					case 2:
+						bouclar = {
+							designation: "Bouclier moyen",
+							vigueur: "5",
+							diff_melee: "- 2",
+							diff_distance: "- 2",
+							diff_agi: "+ 1",
+							fatigue: "-"
+						};
+					break;
+					//Bouclier petit
+					case 3:
+						bouclar = {
+							designation: "Bouclier petit",
+							vigueur: "-",
+							diff_melee: "- 1",
+							diff_distance: "- 1",
+							diff_agi: "0",
+							fatigue: "-"
+						};
+					break;
+				}
+	
+				return bouclar;
+			});
+	
+			let updates = {};
+			bouclier.forEach((bouclar, index) => {
+				const num = index + 1;
+				updates[`bouclier_designation_${num}`] = bouclar.designation;
+				updates[`bouclier_vigueur_${num}`] = bouclar.vigueur;
+				updates[`bouclier_diff_melee_${num}`] = bouclar.diff_melee;
+				updates[`bouclier_diff_distance_${num}`] = bouclar.diff_distance;
+				updates[`bouclier_diff_agi_${num}`] = bouclar.diff_agi;
+				updates[`bouclier_fatigue_${num}`] = bouclar.fatigue;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+
+	on("change:casques_qualite_1 change:casques_qualite_2", function () {
+		getAttrs([
+			"casques_qualite_1",
+			"casques_qualite_2"
+		], function (values) {
+			const attributs = {};
+	
+			const casques = [1, 2].map(num => {
+				const casquebaviereQualite = parseInt(values[`casques_qualite_${num}`]) || 0;
+				let casquebaviere = {
+					designation: "",
+					contre: ""
+				};
+	
+				switch (casquebaviereQualite) {
+					//Mediocre
+					case 1:
+						casquebaviere = {
+							designation: "Médiocre",
+							contre: "1"
+						};
+						break;
+					//Bonne
+					case 2:
+						casquebaviere = {
+							designation: "Bonne",
+							contre: "2"
+						};
+					break;
+					//Excellente
+					case 3:
+						casquebaviere = {
+							designation: "Excellente",
+							contre: "3"
+						};
+					break;
+				}
+	
+				return casquebaviere;
+			});
+	
+			let updates = {};
+			casques.forEach((casquebaviere, index) => {
+				const num = index + 1;
+				updates[`casques_designation_${num}`] = casquebaviere.designation;
+				updates[`casques_contre_${num}`] = casquebaviere.contre;
+			});
+	
+			setAttrs(updates);
+		});
+	});
 
 </script>

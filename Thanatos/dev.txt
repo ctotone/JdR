@@ -111,3 +111,55 @@ ATTENTION RESULTAT NEGATIF
     <option value="4">Excellente</option>
 </select>
 
+
+
+
+
+
+on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function() {
+        getAttrs(["armes_nom_1", "armes_nom_2", "armes_nom_3", "attributs_degats_legers", "attributs_degats_normaux", "attributs_degats_superieurs", "attributs_exceptionnels"], function(values) {
+            let armes_nom_1 = parseInt(values["armes_nom_1"]) || 0;
+			let armes_nom_2 = parseInt(values["armes_nom_2"]) || 0;
+			let armes_nom_3 = parseInt(values["armes_nom_3"]) || 0;
+			let attributs_degats_legers = parseInt(values["attributs_degats_legers"]) || 0;
+			let attributs_degats_normaux = parseInt(values["attributs_degats_normaux"]) || 0;
+			let attributs_degats_superieurs = parseInt(values["attributs_degats_superieurs"]) || 0;
+			let attributs_exceptionnels = parseInt(values["attributs_exceptionnels"]) || 0;
+			
+			if (armes_nom_1 == '1') 		armes_types_1 = "Estoc / 1 main", armes_vigueur_1 = "-", armes_degats_1 = attributs_degats_legers, armes_portee_1 ="-", armes_kaa_1 = "";
+			else if (armes_nom_1 == '2') 	armes_types_1 = "Tranchante / 1 main", armes_vigueur_1 = "-", armes_degats_1 = attributs_degats_legers, armes_portee_1 ="3 m", armes_kaa_1 = "";
+			else if (armes_nom_1 == '2') 	armes_types_1 = "Tranchante / 1 main", armes_vigueur_1 = "-", armes_degats_1 = attributs_degats_legers, armes_portee_1 ="3 m", armes_kaa_1 = "";
+			else							armes_types_1 = "", armes_vigueur_1 = "", armes_degats_1 = "", armes_portee_1 ="", armes_kaa_1 = "";
+
+            if (armes_nom_2 == '1') 		armes_types_2 = "Estoc / 1 main", armes_vigueur_2 = "-", armes_degats_2 = attributs_degats_legers, armes_portee_2 ="-", armes_kaa_2 = "";
+			else if (armes_nom_2 == '2') 	armes_types_2 = "Tranchante / 1 main", armes_vigueur_2 = "-", armes_degats_2 = attributs_degats_legers, armes_portee_2 ="3 m", armes_kaa_2 = "";
+			else if (armes_nom_2 == '2') 	armes_types_2 = "Tranchante / 1 main", armes_vigueur_2 = "-", armes_degats_2 = attributs_degats_legers, armes_portee_2 ="3 m", armes_kaa_2 = "";
+			else							armes_types_2 = "", armes_vigueur_2 = "", armes_degats_2 = "", armes_portee_2 ="", armes_kaa_2 = "";
+
+            if (armes_nom_3 == '1') 		armes_types_3 = "Estoc / 1 main", armes_vigueur_3 = "-", armes_degats_3 = attributs_degats_legers, armes_portee_3 ="-", armes_kaa_3 = "";
+			else if (armes_nom_3 == '2') 	armes_types_3 = "Tranchante / 1 main", armes_vigueur_3 = "-", armes_degats_3 = attributs_degats_legers, armes_portee_3 ="3 m", armes_kaa_3 = "";
+			else if (armes_nom_3 == '2') 	armes_types_3 = "Tranchante / 1 main", armes_vigueur_3 = "-", armes_degats_3 = attributs_degats_legers, armes_portee_3 ="3 m", armes_kaa_3 = "";
+			else							armes_types_3 = "", armes_vigueur_3 = "", armes_degats_3 = "", armes_portee_3 ="", armes_kaa_3 = "";
+			
+
+        setAttrs({
+            "armes_types_1": armes_types_1,
+			"armes_vigueur_1": armes_vigueur_1,
+			"armes_degats_1": armes_degats_1,
+			"armes_portee_1": armes_portee_1,
+			"armes_kaa_1": armes_kaa_1,
+            "armes_types_2": armes_types_2,
+			"armes_vigueur_2": armes_vigueur_2,
+			"armes_degats_2": armes_degats_2,
+			"armes_portee_2": armes_portee_2,
+			"armes_kaa_2": armes_kaa_2,
+            "armes_types_3": armes_types_3,
+			"armes_vigueur_3": armes_vigueur_3,
+			"armes_degats_3": armes_degats_3,
+			"armes_portee_3": armes_portee_3,
+			"armes_kaa_3": armes_kaa_3
+			
+            });
+        });
+    });
+
