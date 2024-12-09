@@ -780,9 +780,11 @@ sera prise en compte.">
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}}
             </div>
+			<div class="sheet-separateur"></div>
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
                 {{result}}
             </div>
+			<div class="sheet-separateur"></div>
             <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte">
                 {{subheader}}
             </div>
@@ -793,6 +795,7 @@ sera prise en compte.">
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}}
             </div>
+			<div class="sheet-separateur"></div>
 			<div class="sheet-content">
 			{{#allprops() title subheader annonce_armes}}
 			  <div class="sheet-key">{{key}}</div>
@@ -806,6 +809,7 @@ sera prise en compte.">
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}}
             </div>
+			<div class="sheet-separateur"></div>
 			<div class="sheet-content">
 			{{#allprops() title subheader annonce_artillerie}}
 			  <div class="sheet-key">{{key}}</div>
@@ -818,8 +822,8 @@ sera prise en compte.">
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
                 {{title}} <span style="font-size: 17px;">({{stat}})</span>
-            </div>			
-
+            </div>
+			<div class="sheet-separateur"></div>
 			{{#rollTotal() des 10}}
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
 				<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-tragique">Échec automatique</div>
@@ -843,11 +847,14 @@ sera prise en compte.">
 				{{/rollGreater() computed::roll 5}}
 			{{/^rollTotal() des 10}}
 			
-			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})
+			<div class="sheet-separateur"></div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+				Modificateur ({{mod}}) | Blessure ({{blessure}})
 				{{#jet_agi}}
-				<br>Malus d'armure ({{malusarmure}})
+				Malus d'armure ({{malusarmure}})
 				{{/jet_agi}}
 			</div>
+				
         </div>
     {{/jet}}
 	<div class="sheet-bottom"></div>
