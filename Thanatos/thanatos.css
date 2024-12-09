@@ -45,6 +45,11 @@ span.sur {
 	font-size: 14px;
 }
 
+span.picto {  
+	font-family: "pictos";
+	font-size: 16px;
+}
+
 .charsheet input {  
     border: none;
     outline: none;
@@ -79,7 +84,8 @@ span.sur {
 }
 
 .charsheet input.input_carac,
-.charsheet input.input_demi_carac {  
+.charsheet input.input_demi_carac,
+.charsheet input.input_carac_long {  
     width: 50px !important;
     height: 28px;
     border: none;
@@ -93,7 +99,16 @@ span.sur {
 }
 
 .charsheet input.input_demi_carac {  
-    width: 35px !important;
+    width: 28px !important;
+}
+
+.charsheet input.input_carac_long {  
+    width: 81px !important;
+}
+
+div.fond_blanc {  
+	width: 81px;
+	background: white;
 }
 
 .charsheet input.input_cadre {  
@@ -245,13 +260,15 @@ input[type="checkbox"]:focus {
 .charsheet input[type=number]::-webkit-outer-spin-button,
 .charsheet input[type=number] { 
       -webkit-appearance: none; 
-      -moz-appearance: none;
-	  /* -moz-appearance: textfield; */
+      /* -moz-appearance: none; */
+	  -moz-appearance: textfield;
       margin: 0; 
 }
 
 .charsheet button[type=action].button_texte::before,
-.charsheet button[type=roll].button_texte::before {
+.charsheet button[type=roll].button_texte::before,
+.charsheet button[type=action].button_annonce::before,
+.charsheet button[type=roll].button_annonce::before {
 	content: '';
 }
 
@@ -280,6 +297,24 @@ input[type="checkbox"]:focus {
     /* color: #ff9191; */
     font-weight: bold;
     /* text-decoration: underline; */
+}
+
+.charsheet button[type=action].button_annonce,
+.charsheet button[type=roll].button_annonce {  
+	padding: 0;
+	margin: 0;
+	box-shadow: none;
+	text-shadow: none;
+	background: none;
+	width: 100%;
+	text-align: center;
+	border: none;
+	border-radius: 1px;
+	font-size: 19px;
+	margin-top: -2px;
+	font-family: "pictos";
+	font-size: 16px;
+	color: var(--text_input);
 }
 
 /* Cadre des pages */
@@ -783,6 +818,7 @@ div.personnes_marquantes {
     border-left: none;
     border-right: none;
     border-top: none;
+	text-align: center;
 }
 
 .wrapper_page2_zone_projectiles {
@@ -832,7 +868,7 @@ div.personnes_marquantes {
 }
 
 .wrapper_page2_zone_artillerie {
-    grid-template-columns: 20% 18.4% 11% 23.6% 21% 6.1%;
+    grid-template-columns: 20% 18.4% 11% 23.6% 21% 6.5%;
 }
 
 .page2_zone_artillerie_nom {
@@ -881,6 +917,7 @@ div.personnes_marquantes {
     border: 1px solid var(--color_border_equipement);
     border-left: none;
     border-top: none;
+	text-align: center;
 }
 
 .wrapper_page2_zone_armures {
@@ -1134,9 +1171,9 @@ div.personnes_marquantes {
     --reussite_3: #009700;
     --reussite_2: #0082ff;
     --reussite_1: #fffe00;
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
     background: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
     background-repeat: no-repeat;
     border-spacing: 0;
@@ -1144,29 +1181,31 @@ div.personnes_marquantes {
     min-height: 130px;
     max-width: 250px;
     margin: 0px;
-    padding-bottom: 5px;
-    padding-top: 12px;
     border-radius: 10px;
     border: 2px solid #ffffff9e;
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
-    color: #ffffffde;
-    font-size: 22px;
-    font-family: "Playfair", serif;
-    letter-spacing: 0px;
-    word-wrap: break-word;
-    letter-spacing: -0.7px;
-    /* margin-top: 25px; */
-  }
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
+	color: #ffffffde;
+	font-size: 22px;
+	font-family: "Playfair", serif;
+	word-wrap: break-word;
+	letter-spacing: -0.7px;
+	border-bottom: 1px solid #ffffff70;
+	padding: 5px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+	background-color: #ffffff36;
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique,
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
     background-color: transparent;
     color: #ffffffde;
     font-size: 60px !important;
@@ -1174,132 +1213,170 @@ div.personnes_marquantes {
     padding: 15px;
     margin-top: 15px;
     font-family: "EB Garamond", serif;
-  }
+	color: #ffffffde;
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique {
     color: var(--echec_1);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique{
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique{
     color: var(--echec_2);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec{
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec{
     color: var(--echec_3);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle {
     color: var(--reussite_1);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique {
     color: var(--reussite_2);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
     color: var(--reussite_3);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-result {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-result {
     font-size: 36px;
     font-family: "Playfair", serif;
     padding: 15px;
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite {
-    font-size: 25px;
-    line-height: 25px;
-    font-family: "Playfair", serif;
-    padding: 5px;
-    padding-top: 20px;
-    letter-spacing: -0.7px;
-  }
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite {
+	font-size: 25px;
+	line-height: 25px;
+	font-family: "Playfair", serif;
+	padding: 5px;
+	padding-top: 15px;
+	letter-spacing: -0.7px;
+	margin-bottom: 10px;
+}
 
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite {
-    font-size: 12px;
-    line-height: 12px;
-    font-family: "Playfair", serif;
-    padding: 10px;
-    border-bottom: 2px solid #ffffff9e;
-    letter-spacing: -0.2px;
-  }
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite {  
+	font-size: 12px;
+	line-height: 12px;
+	font-family: "Playfair", serif;
+	padding: 5px;
+	padding-bottom: 6px;
+	border-top: 1px solid #ffffff70;
+	letter-spacing: -0.2px;
+	color: #ffffffde;
+	background-color: #ffffff36;
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique {
     color: var(--echec_1);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique{
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,   
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique{
     color: var(--echec_2);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec {
     color: var(--echec_3);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle {
     color: var(--reussite_1);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique {
     color: var(--reussite_2);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite,
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite {
     color: var(--reussite_3);
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-succeeds {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-succeeds {
     color: #148c00;
-  }
+}
   
-  .sheet-rolltemplate-thanatos .sheet-template-thanatos-misses {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-misses {
     color: #a90000;
-  }
+}
   
-  .sheet-rolltemplate-thanatos .inlinerollresult {
+.sheet-rolltemplate-thanatos .inlinerollresult {
     background-color: transparent !important;
     border: none !important;
     color: unset !important;
-  }
+}
   
-  .sheet-rolltemplate-thanatos-header .inlinerollresult {
+.sheet-rolltemplate-thanatos-header .inlinerollresult {
     background-color: transparent !important;
     border: none !important;
     color: unset !important;
-  }
+}
    
-  .sheet-rolltemplate-thanatos .inlinerollresult.fullcrit {
+.sheet-rolltemplate-thanatos .inlinerollresult.fullcrit {
     background-color: transparent !important;
     border: none !important;
     color: unset !important;
-  }
+}
    
-  .sheet-rolltemplate-thanatos .inlinerollresult.fullfail {
+.sheet-rolltemplate-thanatos .inlinerollresult.fullfail {
     background-color: transparent !important;
     border: none !important;
     color: unset !important;
-  }
+}
    
-  .sheet-rolltemplate-thanatos .inlinerollresult.importantroll {
+.sheet-rolltemplate-thanatos .inlinerollresult.importantroll {
     background-color: transparent !important;
     border: none !important;
     color: unset !important;
-  }
+}
+
+.sheet-rolltemplate-thanatos .sheet-content {  
+	display: grid;
+	grid-template-columns: 50% 50%;
+	line-height: 13px;
+	color: #ffffffde;
+}
+
+.sheet-rolltemplate-thanatos .sheet-content > div{
+    padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-thanatos .sheet-content .sheet-key {  
+	font-weight: bold;
+	padding-right: 2px;
+	text-align: right;
+	font-size: 13px;
+}
+
+/* Right column */
+.sheet-rolltemplate-thanatos .sheet-content .sheet-value {
+	  padding-right: 5px;
+	text-align: left;
+	font-size: 13px;
+}
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-thanatos .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-thanatos .sheet-content :nth-child(4n) {
+  background:#ffffff36;
+  color: unset !important;
+}
