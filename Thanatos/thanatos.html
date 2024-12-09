@@ -1,5 +1,4 @@
 <!-- TODO Peupler deux derniers tableaux -->
-<!-- TODO Creer bouton roll equipement -->
 <!-- TODO Créer Roll template meilleur qualite -->
 <!-- TODO Onglets des pages -->
 
@@ -154,44 +153,56 @@
 		<div class="page1_zone_attributs">
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points de Vie</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie" value="0" min="0" max="40"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie_base" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur">
+					<div class="fond_blanc">
+						<input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie" value="0" min="0" max="40"><input type="text" class="input_demi_carac" name="attr_texte_sur" value="sur" style="cursor: default;width: 21px !important;font-size: 14px;padding-top: 5px;" readonly /><input type="number" class="input_demi_carac" name="attr_attributs_points_de_vie_base" style="cursor: default;" readonly />
+					</div>
+				</div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points d'Endurance</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_endurance"  value="0" min="0" max="20"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_attributs_points_endurance_base" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur">
+					<div class="fond_blanc">
+						<input type="number" class="input_demi_carac" name="attr_attributs_points_endurance"  value="0" min="0" max="20"><input type="text" class="input_demi_carac" name="attr_texte_sur" value="sur" style="cursor: default;width: 21px !important;font-size: 14px;padding-top: 5px;" readonly /><input type="number" class="input_demi_carac" name="attr_attributs_points_endurance_base" style="cursor: default;" readonly />
+					</div>
+				</div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Points de Fluide</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_demi_carac" name="attr_attributs_points_de_fluide" value="0" min="0" max="20"><span class="sur">sur</span><input type="number" class="input_demi_carac" name="attr_carac_fluide" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur">
+					<div class="fond_blanc">
+					<input type="number" class="input_demi_carac" name="attr_attributs_points_de_fluide" value="0" min="0" max="20"><input type="text" class="input_demi_carac" name="attr_texte_sur" value="sur" style="cursor: default;width: 21px !important;font-size: 14px;padding-top: 5px;" readonly /><input type="number" class="input_demi_carac" name="attr_carac_fluide" style="cursor: default;" readonly />
+					</div>
+				</div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_demi_titre">Dégâts</div>				
 				<div class="page1_zone_attributs_details">Légers</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_legers" value="0" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_degats_legers" value="0" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Normaux</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_normaux" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_degats_normaux" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Supérieurs</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_degats_superieurs" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_degats_superieurs" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="grid-template-columns: 17% 7% 34% 4% 30%;grid-auto-rows: 32px;">
 				<div class="page1_zone_attributs_details">Exceptionnels</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_exceptionnels" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_exceptionnels" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs" style="margin-top: 7px;">
 				<div class="page1_zone_attributs_titre">Résistance</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_resistance" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_resistance" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Protection</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_armures_protection_1" value="0" min="0" max="20" style="cursor: default;" readonly /></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_armures_protection_1" value="0" min="0" max="20" style="cursor: default;" readonly /></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs">
 				<div class="page1_zone_attributs_titre">Fatigue par tour</div>
-				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac" name="attr_attributs_fatigue" value="0" min="0" max="20"></div>
+				<div class="page1_zone_attributs_valeur"><input type="number" class="input_carac_long" name="attr_attributs_fatigue" value="0" min="0" max="20"></div>
 			</div>
 			<div class="wrapper_page1_zone_attributs_blessure" style="margin-top: 15px;">
 				<div class="page1_zone_attributs_blessure_titre">Blessure légère (Difficulté + 1)</div>
@@ -307,7 +318,7 @@
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_1"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_1"></div>
 				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_1"></div>
-				<div class="page2_zone_armes_roll">dice</div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_1}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_1}}} {{Vigueur :=@{armes_vigueur_1}}} {{Dégâts :=@{armes_degats_1}}} {{Portée :=@{armes_portee_1}}} {{Kaa :=@{armes_kaa_1}}}" class="button_annonce">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_armes">
 				<div class="page2_zone_armes_nom">
@@ -356,7 +367,7 @@
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_2"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_2"></div>
 				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_2"></div>
-				<div class="page2_zone_armes_roll">dice</div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_2}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_2}}} {{Vigueur :=@{armes_vigueur_2}}} {{Dégâts :=@{armes_degats_2}}} {{Portée :=@{armes_portee_2}}} {{Kaa :=@{armes_kaa_2}}}" class="button_annonce">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_armes">
 				<div class="page2_zone_armes_nom">
@@ -405,7 +416,7 @@
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_3"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_3"></div>
 				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_3"></div>
-				<div class="page2_zone_armes_roll">dice</div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_3}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_3}}} {{Vigueur :=@{armes_vigueur_3}}} {{Dégâts :=@{armes_degats_3}}} {{Portée :=@{armes_portee_3}}} {{Kaa :=@{armes_kaa_3}}}" class="button_annonce">w</button></div>
 			</div>
 		</div>
 		<div class="page2_zone_projectiles">			
@@ -479,7 +490,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_1"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_1"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_1"></div>
-				<div class="page2_zone_artillerie_roll">dice</div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_1}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_1}}} {{Portée :=@{artillerie_portee_1}}} {{Zone d'impact :=@{artillerie_zone_1}}} {{Bottes :=@{artillerie_bottes_1}}}" class="button_annonce">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -495,7 +506,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_2"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_2"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_2"></div>
-				<div class="page2_zone_artillerie_roll">dice</div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_2}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_2}}} {{Portée :=@{artillerie_portee_2}}} {{Zone d'impact :=@{artillerie_zone_2}}} {{Bottes :=@{artillerie_bottes_2}}}" class="button_annonce">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -511,7 +522,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_3"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_3"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_3"></div>
-				<div class="page2_zone_artillerie_roll">dice</div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_3}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_3}}} {{Portée :=@{artillerie_portee_3}}} {{Zone d'impact :=@{artillerie_zone_3}}} {{Bottes :=@{artillerie_bottes_3}}}" class="button_annonce">w</button></div>
 			</div>
 		</div>
 		<div class="page2_zone_armures">
@@ -775,17 +786,37 @@ sera prise en compte.">
             </div>
         </div>
     {{/initiative}}
+	{{#annonce_armes}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                {{title}}
+            </div>
+			<div class="sheet-content">
+			{{#allprops() title subheader annonce_armes}}
+			  <div class="sheet-key">{{key}}</div>
+			  <div class="sheet-value">{{value}}</div>
+			{{/allprops() title subheader annonce_armes}}
+			</div>
+        </div>
+    {{/annonce_armes}}
+	{{#annonce_artillerie}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                {{title}}
+            </div>
+			<div class="sheet-content">
+			{{#allprops() title subheader annonce_artillerie}}
+			  <div class="sheet-key">{{key}}</div>
+			  <div class="sheet-value">{{value}}</div>
+			{{/allprops() title subheader annonce_artillerie}}
+			</div>
+        </div>
+    {{/annonce_artillerie}}
     {{#jet}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}} ({{stat}})
-            </div>
-			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})
-				{{#jet_agi}}
-				<br>Malus d'armure ({{malusarmure}})
-				{{/jet_agi}}
-			</div>
-			
+                {{title}} <span style="font-size: 17px;">({{stat}})</span>
+            </div>			
 
 			{{#rollTotal() des 10}}
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
@@ -809,8 +840,12 @@ sera prise en compte.">
 					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-exceptionnelle">Réussite exceptionnelle</div>
 				{{/rollGreater() computed::roll 5}}
 			{{/^rollTotal() des 10}}
-
-
+			
+			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">Modificateur ({{mod}}) | Blessure ({{blessure}})
+				{{#jet_agi}}
+				<br>Malus d'armure ({{malusarmure}})
+				{{/jet_agi}}
+			</div>
         </div>
     {{/jet}}
 </rolltemplate>
