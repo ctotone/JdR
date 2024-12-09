@@ -1162,7 +1162,7 @@ div.personnes_marquantes {
 
 
 /* ROLL TEMPLATE */
-.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-center {
+.sheet-rolltemplate-thanatos {
     text-align: center;
     /* margin-left: 30px; */
     --echec_2: #ff0000;
@@ -1171,17 +1171,47 @@ div.personnes_marquantes {
     --reussite_3: #009700;
     --reussite_2: #0082ff;
     --reussite_1: #fffe00;
-    width: 242px;
+    width: 260px;
+    height: auto;
+}
+
+.sheet-rolltemplate-thanatos .sheet-toper {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border-spacing: 0; */
+    /* margin: 0px; */
+    /* border-radius: 0px; */
+    /* border: none; */
+    width: auto;
+}
+
+.sheet-rolltemplate-thanatos .sheet-bottom {
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_bottom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border-spacing: 0; */
+    /* margin: 0px; */
+    /* border-radius: 0px; */
+    /* border: none; */
+    width: auto;
+}
+
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-center {
+    text-align: center;
+    width: auto;
 }
   
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_rolltemplate.png);
-    background-size: contain;
+    background: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_middle.png);
+    background-size: cover;
     background-repeat: no-repeat;
     border-spacing: 0;
     margin: 0px;
     border-radius: 0px;
     border: none;
+    width: auto;
 }
   
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
@@ -1194,6 +1224,7 @@ div.personnes_marquantes {
     padding-top: 15px;
     padding-bottom: 15px;
     font-weight: bold;
+    width: auto;
 
 }
   
