@@ -10,7 +10,6 @@
     --text_input: #000000bd;
     --color_border_equipement: #000000d9;
     --color_border_parcours_personnes: #000000d9;
-    /* --borderdev: none; */
     font-family: "Playfair", serif;
     color: var(--black);
     font-size: 19px;
@@ -26,12 +25,6 @@
 .sheet-darkmode .sheetform {
     background-color: #ffffff;
 }
-
-/* body.sheet-darkmode .charsheet {
-    --black: #000000;
-    --white: #ffffff;
-    color: var(--black);
-} */
 
 ::placeholder {
   color: rgba(128, 128, 128, 0.548);
@@ -125,7 +118,6 @@ div.fond_blanc {
     height: 97%;
     text-align: center;
     font-size: 15px;
-    /* font-weight: bold; */
     color: var(--text_input);
     margin-top: 0px;
 }
@@ -135,7 +127,6 @@ div.fond_blanc {
     outline: none;
     resize: none;
     background-color: transparent;
-    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/area_background20.png); */
 }
 
 .charsheet textarea.area_talents {
@@ -191,17 +182,16 @@ div.fond_blanc {
 }
 
 .charsheet textarea.carnet_de_route {
-    /* background: #0080006b; */
     width: 98%;
     height: 97%;
     margin-top: 7px;
     padding: 0px;
-    font-size: 15px;
-    line-height: 18px;
-    font-family: "Eagle Lake", serif;
+    font-size: 16px;
+    line-height: 19px;
     letter-spacing: -0.4px;
     padding-left: 6px;
     overflow: hidden;
+    font-family: "Playfair", serif;
 }
 
 .charsheet select.choix_visage,
@@ -337,9 +327,7 @@ input[type="checkbox"]:focus {
 
 .charsheet button[type=action].button_texte:hover,
 .charsheet button[type=roll].button_texte:hover {
-    /* color: #ff9191; */
     font-weight: bold;
-    /* text-decoration: underline; */
 }
 
 .charsheet button[type=action].button_annonce,
@@ -365,8 +353,7 @@ input[type="checkbox"]:focus {
 div.personnage {  
     width: 830px;
     height: 1174px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnage2.webp);    
-	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_01.webp); */
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_personnage.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -374,8 +361,7 @@ div.personnage {
 div.equipement {  
     width: 830px;
     height: 1174px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_equipement3.webp);
-	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_2.webp); */
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_equipement.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -383,8 +369,7 @@ div.equipement {
 div.parcours_de_vie {  
     width: 1087px;
     height: 769px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_parcours1.webp);
-	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_03.webp); */
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_parcours.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -392,8 +377,7 @@ div.parcours_de_vie {
 div.personnes_marquantes {  
     width: 1087px;
     height: 769px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_personnes1.webp);
-	/* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/calque_04.webp); */
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_personnes.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -401,7 +385,7 @@ div.personnes_marquantes {
 div.carnet {  
     width: 830px;
     height: 835px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_notes.webp);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_notes.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -452,13 +436,11 @@ div.carnet {
     display: grid;
     grid-template-columns: repeat(83, 10px);;
     grid-auto-rows: 10px;
-	/* background-color: #0100ff85; */
 }
 
 .page1_zone_personnage {
     grid-column: 6 / 43;
     grid-row: 16 / 32;
-    /* background-color: #0100ff85; */
     transform: rotate(1deg);
     margin-top: 5px;
     margin-left: 5px;
@@ -477,7 +459,6 @@ div.carnet {
 .page1_zone_familier {
     grid-column: 43 / 81;
     grid-row: 17 / 34;
-    /* background-color: #0100ff85; */
     transform: rotate(1deg);
     margin-top: 3px;
     margin-left: 5px;
@@ -486,7 +467,6 @@ div.carnet {
 .page1_zone_caracteristiques {
     grid-column: 7 / 27;
     grid-row: 45 / 71;
-    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-left: 10px;
 }
@@ -494,7 +474,6 @@ div.carnet {
 .page1_zone_competences {
     grid-column: 29 / 48;
     grid-row: 44 / 71;
-    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-top: 7px;
     margin-left: 12px;
@@ -503,7 +482,6 @@ div.carnet {
 .page1_zone_attributs {
     grid-column: 51 / 81;
     grid-row: 44 / 86;
-    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
     margin-left: 5px;
     margin-top: 1px;
@@ -512,7 +490,6 @@ div.carnet {
 .page1_zone_talents {
     grid-column: 4 / 44;
     grid-row: 76 / 95;
-    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 10px;
     margin-bottom: 10px;
@@ -522,7 +499,6 @@ div.carnet {
 .page1_zone_artifices {
     grid-column: 3 / 46;
     grid-row: 100 / 114;
-    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 10px;
     margin-top: -3px;
@@ -531,7 +507,6 @@ div.carnet {
 .page1_zone_dons {
     grid-column: 47 / 80;
     grid-row: 91 / 108;
-    /* background-color: #0100ff85; */
     transform: rotate(-1.5deg);
     margin-left: 3px;
 }
@@ -539,7 +514,6 @@ div.carnet {
 .page1_zone_apprentissage {
     grid-column: 50 / 80;
     grid-row: 112 / 117;
-    /* background-color: #0100ff85; */
     transform: rotate(-3deg);
 }
 
@@ -549,7 +523,6 @@ div.carnet {
     display: grid;
     grid-template-columns: repeat(83, 10px);;
     grid-auto-rows: 10px;
-	/* background-color: #0100ff85; */
 }
 
 .page2_zone_personnage {
@@ -566,7 +539,6 @@ div.carnet {
     margin-top: 5px;
     margin-bottom: 3px;
     margin-left: 4px;
-    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
 }
 
@@ -583,7 +555,6 @@ div.carnet {
     margin-left: 4px;
     margin-bottom: -3px;
     margin-right: 1px;
-    /* background-color: #0100ff85; */
     transform: rotate(-0.3deg);
 }
 
@@ -594,7 +565,6 @@ div.carnet {
     margin-left: 2px;
     margin-right: 6px;
     margin-bottom: -6px;
-    /* background-color: #0100ff85; */
     transform: rotate(0.6deg);
 }
 
@@ -604,7 +574,6 @@ div.carnet {
     margin-top: -2px;
     margin-bottom: -4px;
     margin-right: -4px;
-    /* background-color: #0100ff85; */
     transform: rotate(-1deg);
 }
 
@@ -615,7 +584,6 @@ div.carnet {
     margin-bottom: -5px;
     margin-left: 2px;
     margin-right: 1px;
-    /* background-color: #0100ff85; */
     transform: rotate(0deg);
 }
 
@@ -626,7 +594,6 @@ div.carnet {
     margin-right: 7px;
     margin-top: 9px;
     margin-bottom: 0px;
-    /* background-color: #0100ff85; */
     transform: rotate(1deg);
 }
 
@@ -636,7 +603,6 @@ div.carnet {
     margin-left: 2px;
     margin-right: 2px;
     margin-bottom: 8px;
-    /* background-color: #0100ff85; */
     transform: rotate(-0.5deg);
 }
 
@@ -646,7 +612,6 @@ div.carnet {
     display: grid;
     grid-template-columns: repeat(110, 10px);
     grid-auto-rows: 10px;
-    /* background-color: #0100ff85; */
 }
 
 .page3_zone_nom {
@@ -655,7 +620,6 @@ div.carnet {
     margin-left: 5px;
     margin-right: 8px;
     margin-bottom: 5px;
-    /* background-color: #0100ff85; */
 }
 
 .page3_zone_tableau {
@@ -664,7 +628,6 @@ div.carnet {
     margin-top: 5px;
     margin-left: 8px;
     margin-right: 5px;
-    /* background-color: #0100ff85; */
 }
 
 /* Structure générale de la page personnes_marquantes */
@@ -673,21 +636,18 @@ div.carnet {
     display: grid;
     grid-template-columns: repeat(110, 10px);
     grid-auto-rows: 10px;
-    /* background-color: #0100ff85; */
 }
 
 .page4_zone_nom {
     grid-column: 4 / 28;
     grid-row: 7 / 12;
     margin-left: 10px;
-    /* background-color: #0100ff85; */
     transform: rotate(0deg);
 }
 
 .page4_zone_tableau {
     grid-column: 7 / 101;
     grid-row: 19 / 74;
-    /* background-color: #0100ff85; */
     transform: rotate(1deg);
     margin-top: 11px;
     margin-left: 13px;
@@ -747,7 +707,6 @@ div.carnet {
     grid-template-columns: 49% 4% 30%;
     grid-auto-rows: 37px;
     color: var(--white);
-    /* background-color: #0100ff85; */
 }
 
 .wrapper_page1_zone_competences {
@@ -765,7 +724,6 @@ div.carnet {
 
 .wrapper_page1_zone_XP {
     grid-template-columns: 75% 5% 20%;
-    /* background-color: #0100ff85; */
 }
 
 .page1_zone_caracteristiques_titre,
@@ -774,7 +732,6 @@ div.carnet {
 .page1_zone_xp_titre {
     grid-column: 1;
     grid-row: 1;
-    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -784,20 +741,17 @@ div.carnet {
 .page1_zone_xp_valeur {
     grid-column: 3;
     grid-row: 1;
-    /* background-color: #0100ff85; */
 }
 
 .page1_zone_attributs_titre {
     grid-column: 1/4;
     grid-row: 1;
-    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
 .page1_zone_attributs_demi_titre {
     grid-column: 1/3;
     grid-row: 1;
-    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -806,19 +760,16 @@ div.carnet {
     grid-row: 1;
     letter-spacing: -0.4px;
     font-style: italic;
-    /* background-color: #0100ff85; */
 }
 
 .page1_zone_attributs_valeur {
     grid-column: 5;
     grid-row: 1;
-    /* background-color: #0100ff85; */
 }
 
 .page1_zone_xp_titre {
     grid-column: 1;
     grid-row: 1;
-    /* background-color: #0100ff85; */
     letter-spacing: -0.4px;
 }
 
@@ -841,7 +792,6 @@ div.carnet {
     grid-auto-rows: 26px;
     color: var(--black);
     font-size: 15px;
-    /* background-color: #0100ff85; */
 }
 
 .wrapper_page2_zone_armes {
@@ -1138,7 +1088,6 @@ div.carnet {
     grid-template-columns: 20.5% 6.5% 6% 22.4% 44.6%;
     color: var(--black);
     font-size: 16px;
-    /* background-color: #0100ff85; */
 }
 
 .page3_zone_tableau_cartes {
@@ -1190,7 +1139,6 @@ div.carnet {
     grid-template-columns: 20.5% 21.2% 6.6% 6.3% 45.4%;
     color: var(--black);
     font-size: 16px;
-    /* background-color: #0100ff85; */
 }
 
 .page4_zone_tableau_noms {
@@ -1237,7 +1185,6 @@ div.carnet {
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-thanatos {
     text-align: center;
-    /* margin-left: 30px; */
     --echec_2: #bc0000e0;
     --echec_3: #bc0000e0;
     --echec_1: #b016a0;
@@ -1269,34 +1216,26 @@ div.carnet {
 }
 
 .sheet-rolltemplate-thanatos .sheet-toper {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_top.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_top.png);
     background-size: cover;
     background-repeat: no-repeat;
-    /* border-spacing: 0; */
-    /* margin: 0px; */
-    /* border-radius: 0px; */
-    /* border: none; */
     height: 4px;
 }
 
 .sheet-rolltemplate-thanatos .sheet-bottom {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_bottom1.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_bottom.png);
     background-size: cover;
     background-repeat: no-repeat;
-    /* border-spacing: 0; */
-    /* margin: 0px; */
-    /* border-radius: 0px; */
-    /* border: none; */
     height: 4px;
 }
 
 .sheet-rolltemplate-thanatos .sheet-separateur {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/barre_separation3.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_separation.png);
     background-size: 260px;
     background-repeat: no-repeat;
     height: 10px;
     width: 255px;
-    margin-left: 2px;
+    margin-left: 3px;
 }
 
 
@@ -1306,7 +1245,7 @@ div.carnet {
 }
 
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-color {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_middle2.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_middle.png);
     background-size: 260px 500px;
 	box-shadow: var(--box_shadow);
 }
