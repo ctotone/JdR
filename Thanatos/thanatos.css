@@ -143,7 +143,8 @@ div.fond_blanc {
     height: 165px;
 }
 
-.charsheet textarea.texte_cadre_nom1 { 
+.charsheet textarea.texte_cadre_nom1,
+.charsheet textarea.texte_cadre_nom2 { 
     width: 95%;
     height: 85%;
     font-size: 20px;
@@ -153,7 +154,13 @@ div.fond_blanc {
     font-weight: bold;
 }
 
-.charsheet textarea.texte_cadre_nom2 { 
+.charsheet input.feuille_cartes,
+.charsheet input.feuille_endroit_envers,
+.charsheet textarea.feuille_signification,
+.charsheet textarea.feuille_histoire_perso,
+.charsheet input.feuille_noms,
+.charsheet input.feuille_figures,
+.charsheet textarea.feuille_presentations { 
     width: 95%;
     height: 85%;
     font-size: 20px;
@@ -161,6 +168,26 @@ div.fond_blanc {
     align-content: center;
     text-align: center;
     font-weight: bold;
+}
+
+.charsheet textarea.feuille_signification,
+.charsheet textarea.feuille_histoire_perso,
+.charsheet textarea.feuille_presentations {  
+    font-size: 14px;
+    line-height: 15px;
+    padding-top: 8px;
+    padding-bottom: 0px;
+    height: 90%;
+    margin: 0px;
+    width: 96%;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+
+.charsheet textarea.feuille_histoire_perso,
+.charsheet textarea.feuille_presentations {  
+    width: 98%;
 }
 
 .charsheet select.choix_visage,
@@ -211,6 +238,7 @@ div.fond_blanc {
 input[type="checkbox"] {    
     -webkit-appearance: none;
 	-moz-appearance: none;
+    appearance: none;
     background-color: var(--white);
     margin: 0;
     font: inherit;
@@ -262,6 +290,7 @@ input[type="checkbox"]:focus {
       -webkit-appearance: none; 
       /* -moz-appearance: none; */
 	  -moz-appearance: textfield;
+      appearance: textfield;
       margin: 0; 
 }
 
@@ -1148,18 +1177,6 @@ div.personnes_marquantes {
     border-top: none;
     border-right: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-thanatos {
