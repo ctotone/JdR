@@ -1171,10 +1171,28 @@ div.personnes_marquantes {
     --reussite_3: #036c03;
     --reussite_2: #035bae;
     --reussite_1: #9e9c02d9;
-    --blanc_roll: #fcfcfd;
+    --blanc_roll: #fcfcfdf0;
+	--blanc_roll_dark: #fcfcfdf0;
     --noir_roll: #000004;
+	--box_shadow: 2px 2px 10px 1px #000000f2;	
+	--box_shadow_dark: 0px 1px 4px 3px #ffffff69;
+	--background_color: #fcfcfdf0;
+	--background_color_dark: #fcfcfdf0;
     width: 260px;
     height: auto;
+}
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-darkmode {
+    --echec_2: #a80303e0;
+    --echec_3: #a80303e0;
+    --echec_1: #8a0f7d;
+    --reussite_3: #036c03;
+    --reussite_2: #004280;
+    --reussite_1: #8a8809;
+    --blanc_roll: #fcfcfde5;
+    --noir_roll: #000004;	
+	--box_shadow: 0px 1px 4px 3px #ffffff69;
+	--background_color: #fcfcfde5;
 }
 
 .sheet-rolltemplate-thanatos .sheet-toper {
@@ -1189,7 +1207,7 @@ div.personnes_marquantes {
 }
 
 .sheet-rolltemplate-thanatos .sheet-bottom {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_bottom.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_bottom1.png);
     background-size: cover;
     background-repeat: no-repeat;
     /* border-spacing: 0; */
@@ -1200,7 +1218,7 @@ div.personnes_marquantes {
 }
 
 .sheet-rolltemplate-thanatos .sheet-separateur {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_separation.png);
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/barre_separation2.png);
     background-size: 260px;
     background-repeat: no-repeat;
     height: 10px;
@@ -1213,32 +1231,32 @@ div.personnes_marquantes {
     text-align: center;
     width: auto;
 }
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-color {
+    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_middle2.png);
+    background-size: 260px 500px;
+	box-shadow: var(--box_shadow);
+}
   
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
-    background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_middle1.png);
+    background: var(--background_color);
     background-size: 260px 500px;
-    background-repeat: repeat;
-    border-spacing: 0;
-    margin: 0px;
-    border-radius: 0px;
-    border: none;
-    width: auto;
 }
   
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
-    color: var(--blanc_roll);
-    font-size: 22px;
-    font-family: "Playfair", serif;
-    word-wrap: break-word;
-    letter-spacing: -0.7px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-weight: bold;
-    width: auto;
-    margin-left: 4px;
-    background: var(--noir_roll);
-    margin-top: -1px;
-    margin-bottom: -5px;
+	font-size: 22px;
+	font-family: "Playfair", serif;
+	word-wrap: break-word;
+	letter-spacing: -0.7px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+	width: auto;
+	margin-left: 1px;
+	background: var(--noir_roll);
+	margin-top: -1px;
+	margin-bottom: -5px;
+	color: var(--blanc_roll);
 }
   
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
@@ -1312,17 +1330,18 @@ div.personnes_marquantes {
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite { 
-    font-size: 12px;
-    line-height: 12px;
-    font-family: "Playfair", serif;
-    padding: 5px;
-    padding-bottom: 6px;
-    letter-spacing: -0.2px;
-    color: var(--blanc_roll);
-    width: 93%;
-    margin-left: 4px;
-    background: var(--noir_roll);
-    margin-top: -5px;
+	font-size: 12px;
+	line-height: 12px;
+	font-family: "Playfair", serif;
+	padding: 5px;
+	padding-bottom: 5px;
+	padding-bottom: 6px;
+	letter-spacing: -0.2px;
+	color: var(--blanc_roll);
+	width: auto;
+	margin-left: 0px;
+	background: var(--noir_roll);
+	margin-top: -5px;
 }
   
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
