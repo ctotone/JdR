@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Eagle+Lake&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 
 .charsheet {
@@ -188,6 +188,17 @@ div.fond_blanc {
 .charsheet textarea.feuille_histoire_perso,
 .charsheet textarea.feuille_presentations {  
     width: 98%;
+}
+
+.charsheet textarea.carnet_de_route {
+    /* background: #0080006b; */
+    width: 96%;
+    height: 97%;
+    margin-top: 7px;
+    padding: 0px;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: "Eagle Lake", serif;
 }
 
 .charsheet select.choix_visage,
@@ -384,19 +395,29 @@ div.personnes_marquantes {
 	background-repeat: no-repeat;
 }
 
+div.carnet {  
+    width: 830px;
+    height: 835px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/background_notes.webp);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
 /* Gestion des affichage */
 
 div.personnage,
 div.equipement,
 div.parcours_de_vie,
-div.personnes_marquantes {
+div.personnes_marquantes,
+div.carnet {
     display: none;
 }
 
 .charsheet .choix_page[value="0"] ~ div.personnage,
 .charsheet .choix_page[value="1"] ~ div.equipement,
 .charsheet .choix_page[value="2"] ~ div.parcours_de_vie,
-.charsheet .choix_page[value="3"] ~ div.personnes_marquantes {
+.charsheet .choix_page[value="3"] ~ div.personnes_marquantes,
+.charsheet .choix_page[value="4"] ~ div.carnet {
     display: block;
 }
 
@@ -668,6 +689,43 @@ div.personnes_marquantes {
     margin-top: 11px;
     margin-left: 13px;
     margin-right: 11px;
+}
+
+/* Structure générale de la page carnet + colonne */
+
+.wrapper_page5_texte {
+    display: grid;
+    grid-template-columns: 402px 5px 402px;
+    grid-auto-rows: 810px;
+    width: 100%;
+    transform: rotate(0.9deg);
+}
+
+.page5_colonne_gauche {
+    grid-column: 1;
+    grid-row: 1;
+    /* background-color: #0100ff85; */
+    letter-spacing: -0.4px;
+    margin-top: 140px;
+    margin-left: 26px;
+}
+
+.page5_separateur {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 140px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemplate_separation.png);
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.page5_colonne_droite {
+    grid-column: 3;
+    grid-row: 1;
+    /* background-color: #0100ff85; */
+    letter-spacing: -0.4px;
+    margin-top: 140px;
+    border-left: 3px dotted #00000082;
 }
 
 
