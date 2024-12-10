@@ -5,6 +5,13 @@
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
 <input type="hidden" name="attr_blessure" value="0">
 <input type="hidden" name="attr_armures_diff_agi_hide_1" value="0">
+<input type="hidden" name="attr_armes_nom_1" value="0">
+<input type="hidden" name="attr_armes_types_1" value="Rixes">
+<input type="hidden" name="attr_armes_vigueur_1" value="-">
+<input type="hidden" name="attr_armes_degats_1" value="0">
+<input type="hidden" name="attr_armes_portee_1" value="-">
+<input type="hidden" name="attr_armes_kaa_1" value="">
+<input type="hidden" name="attr_armes_designation_1" value="Mains nues">
 	<select class="choix_page" name="attr_page" style="font-size: 15px;">
 		<option value="0" selected="selected">Feuille de Personnage</option>
 		<option value="1">Feuille d'Équipement</option>
@@ -313,12 +320,12 @@
 						<option value="34">Lance pierre</option>
 					</select>
 				</div>
-				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_1" style="letter-spacing: -1px;"></div>
-				<div class="page2_zone_armes_vigueur"><input type="text" class="equipement_tableau" name="attr_armes_vigueur_1"></div>
-				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_1"></div>
-				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_1"></div>
-				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_1"></div>
-				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_1}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_1}}} {{Vigueur :=@{armes_vigueur_1}}} {{Dégâts :=@{armes_degats_1}}} {{Portée :=@{armes_portee_1}}} {{Kaa :=@{armes_kaa_1}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_armes_types"><input type="text" class="equipement_tableau" name="attr_armes_types_1" style="letter-spacing: -1px;" value="Mains nues"></div>
+				<div class="page2_zone_armes_vigueur"><input type="text" class="equipement_tableau" name="attr_armes_vigueur_1" value="-"></div>
+				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_1" value="0"></div>
+				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_1" value="-"></div>
+				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_1" value=""></div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_1}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_1}}} {{Vigueur :=@{armes_vigueur_1}}} {{Dégâts :=@{armes_degats_1}}} {{Portée :=@{armes_portee_1}}} {{Kaa :=@{armes_kaa_1}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_armes">
 				<div class="page2_zone_armes_nom">
@@ -367,7 +374,7 @@
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_2"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_2"></div>
 				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_2"></div>
-				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_2}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_2}}} {{Vigueur :=@{armes_vigueur_2}}} {{Dégâts :=@{armes_degats_2}}} {{Portée :=@{armes_portee_2}}} {{Kaa :=@{armes_kaa_2}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_2}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_2}}} {{Vigueur :=@{armes_vigueur_2}}} {{Dégâts :=@{armes_degats_2}}} {{Portée :=@{armes_portee_2}}} {{Kaa :=@{armes_kaa_2}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_armes">
 				<div class="page2_zone_armes_nom">
@@ -416,7 +423,7 @@
 				<div class="page2_zone_armes_degats"><input type="text" class="equipement_tableau" name="attr_armes_degats_3"></div>
 				<div class="page2_zone_armes_portee"><input type="text" class="equipement_tableau" name="attr_armes_portee_3"></div>
 				<div class="page2_zone_armes_kaa"><input type="text" class="equipement_tableau" name="attr_armes_kaa_3"></div>
-				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_3}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_3}}} {{Vigueur :=@{armes_vigueur_3}}} {{Dégâts :=@{armes_degats_3}}} {{Portée :=@{armes_portee_3}}} {{Kaa :=@{armes_kaa_3}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_armes_roll"><button type="roll" value="&{template:thanatos} {{annonce_armes=oui}} {{title=@{armes_designation_3}}} {{subheader=@{character_name}}} {{Type :=@{armes_types_3}}} {{Vigueur :=@{armes_vigueur_3}}} {{Dégâts :=@{armes_degats_3}}} {{Portée :=@{armes_portee_3}}} {{Kaa :=@{armes_kaa_3}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 		</div>
 		<div class="page2_zone_projectiles">			
@@ -436,7 +443,7 @@
 				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_1"></div>
 				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_1"></div>
 				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_1"></div>
-				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_1"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_1" style="font-size: 13px;"></div>
 			</div>		
 			<div class="wrapper_page2_zone_projectiles">
 				<div class="page2_zone_projectiles_nom">
@@ -454,7 +461,7 @@
 				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_2"></div>
 				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_2"></div>
 				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_2"></div>
-				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_2"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_2" style="font-size: 13px;"></div>
 			</div>		
 			<div class="wrapper_page2_zone_projectiles">
 				<div class="page2_zone_projectiles_nom">
@@ -472,7 +479,7 @@
 				<div class="page2_zone_projectiles_types"><input type="text" class="equipement_tableau" name="attr_projectiles_types_3"></div>
 				<div class="page2_zone_projectiles_kaa"><input type="text" class="equipement_tableau" name="attr_projectiles_kaa_3"></div>
 				<div class="page2_zone_projectiles_nombres"><input type="text" class="equipement_tableau" name="attr_projectiles_nombres_3"></div>
-				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_3"></div>
+				<div class="page2_zone_projectiles_notes"><input type="text" class="equipement_tableau" name="attr_projectiles_notes_3" style="font-size: 13px;"></div>
 			</div>
 		</div>
 		<div class="page2_zone_artillerie">
@@ -490,7 +497,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_1"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_1"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_1"></div>
-				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_1}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_1}}} {{Portée :=@{artillerie_portee_1}}} {{Zone d'impact :=@{artillerie_zone_1}}} {{Bottes :=@{artillerie_bottes_1}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_1}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_1}}} {{Portée :=@{artillerie_portee_1}}} {{Zone d'impact :=@{artillerie_zone_1}}} {{Bottes :=@{artillerie_bottes_1}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -506,7 +513,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_2"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_2"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_2"></div>
-				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_2}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_2}}} {{Portée :=@{artillerie_portee_2}}} {{Zone d'impact :=@{artillerie_zone_2}}} {{Bottes :=@{artillerie_bottes_2}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_2}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_2}}} {{Portée :=@{artillerie_portee_2}}} {{Zone d'impact :=@{artillerie_zone_2}}} {{Bottes :=@{artillerie_bottes_2}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 			<div class="wrapper_page2_zone_artillerie">
 				<div class="page2_zone_artillerie_nom">
@@ -522,7 +529,7 @@
 				<div class="page2_zone_artillerie_portee"><input type="text" class="equipement_tableau" name="attr_artillerie_portee_3"></div>
 				<div class="page2_zone_artillerie_zone"><input type="text" class="equipement_tableau" name="attr_artillerie_zone_3"></div>
 				<div class="page2_zone_artillerie_bottes"><input type="text" class="equipement_tableau" name="attr_artillerie_bottes_3"></div>
-				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_3}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_3}}} {{Portée :=@{artillerie_portee_3}}} {{Zone d'impact :=@{artillerie_zone_3}}} {{Bottes :=@{artillerie_bottes_3}}}" class="button_annonce">w</button></div>
+				<div class="page2_zone_artillerie_roll"><button type="roll" value="&{template:thanatos} {{annonce_artillerie=oui}} {{title=@{artillerie_designation_3}}} {{subheader=@{character_name}}} {{Dégâts :=@{artillerie_degats_3}}} {{Portée :=@{artillerie_portee_3}}} {{Zone d'impact :=@{artillerie_zone_3}}} {{Bottes :=@{artillerie_bottes_3}}}" class="button_annonce" title="Afficher dans le chat.">w</button></div>
 			</div>
 		</div>
 		<div class="page2_zone_armures">
@@ -776,84 +783,92 @@ sera prise en compte.">
 	<div class="sheet-toper"></div>
     {{#initiative}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}}
-            </div>
-			<div class="sheet-separateur"></div>
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
-                {{result}}
-            </div>
-			<div class="sheet-separateur"></div>
-            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte">
-                {{subheader}}
-            </div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+					{{title}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader">
+					{{result}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte">
+					{{subheader}}
+				</div>
+			</div>
         </div>
     {{/initiative}}
 	{{#annonce_armes}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}}
-            </div>
-			<div class="sheet-separateur"></div>
-			<div class="sheet-content">
-			{{#allprops() title subheader annonce_armes}}
-			  <div class="sheet-key">{{key}}</div>
-			  <div class="sheet-value">{{value}}</div>
-			{{/allprops() title subheader annonce_armes}}
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+					{{title}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-content">
+				{{#allprops() title subheader annonce_armes}}
+				  <div class="sheet-key">{{key}}</div>
+				  <div class="sheet-value">{{value}}</div>
+				{{/allprops() title subheader annonce_armes}}
+				</div>
 			</div>
         </div>
     {{/annonce_armes}}
 	{{#annonce_artillerie}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}}
-            </div>
-			<div class="sheet-separateur"></div>
-			<div class="sheet-content">
-			{{#allprops() title subheader annonce_artillerie}}
-			  <div class="sheet-key">{{key}}</div>
-			  <div class="sheet-value">{{value}}</div>
-			{{/allprops() title subheader annonce_artillerie}}
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+					{{title}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-content">
+				{{#allprops() title subheader annonce_artillerie}}
+				  <div class="sheet-key">{{key}}</div>
+				  <div class="sheet-value">{{value}}</div>
+				{{/allprops() title subheader annonce_artillerie}}
+				</div>
 			</div>
         </div>
     {{/annonce_artillerie}}
     {{#jet}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}} <span style="font-size: 17px;">({{stat}})</span>
-            </div>
-			<div class="sheet-separateur"></div>
-			{{#rollTotal() des 10}}
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
-				<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-tragique">Échec automatique</div>
-			{{/rollTotal() des 10}}
-			{{#^rollTotal() des 10}}
-				{{#rollLess() computed::roll 0}}
-					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
-					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec</div>
-				{{/rollLess() computed::roll 0}}
-				{{#rollBetween() computed::roll 0 2}}
-					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
-					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite</div>
-				{{/rollBetween() computed::roll 0 2}}
-				{{#rollBetween() computed::roll 3 5}}
-					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
-					<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-texte-reussite-critique">Réussite excellente</div>
-				{{/rollBetween() computed::roll 3 5}}
-				{{#rollGreater() computed::roll 5}}
-					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle">{{des}}</div>
-					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-exceptionnelle">Réussite exceptionnelle</div>
-				{{/rollGreater() computed::roll 5}}
-			{{/^rollTotal() des 10}}
-			
-			<div class="sheet-separateur"></div>
-			<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
-				Modificateur ({{mod}}) | Blessure ({{blessure}})
-				{{#jet_agi}}
-				<br> d'armure ({{malusarmure}})
-				{{/jet_agi}}
-			</div>
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+		
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+					{{title}} <span style="font-size: 17px;">({{stat}})</span>
+				</div>
+				<div class="sheet-separateur"></div>
+				{{#rollTotal() des 10}}
+					<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-tragique">{{des}}</div>
+					<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-tragique">Échec automatique</div>
+				{{/rollTotal() des 10}}
+				{{#^rollTotal() des 10}}
+					{{#rollLess() computed::roll 0}}
+						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
+						<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec</div>
+					{{/rollLess() computed::roll 0}}
+					{{#rollBetween() computed::roll 0 2}}
+						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
+						<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite</div>
+					{{/rollBetween() computed::roll 0 2}}
+					{{#rollBetween() computed::roll 3 5}}
+						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
+						<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-texte-reussite-critique">Réussite excellente</div>
+					{{/rollBetween() computed::roll 3 5}}
+					{{#rollGreater() computed::roll 5}}
+						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle">{{des}}</div>
+						<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-exceptionnelle">Réussite exceptionnelle</div>
+					{{/rollGreater() computed::roll 5}}
+				{{/^rollTotal() des 10}}
 				
+				<div class="sheet-separateur"></div>
+				<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+					Modificateur ({{mod}}) | Blessure ({{blessure}})
+					{{#jet_agi}}
+					<br> Malus d'armure ({{malusarmure}})
+					{{/jet_agi}}
+				</div>
+			</div>
         </div>
     {{/jet}}
 	<div class="sheet-bottom"></div>
@@ -1056,7 +1071,7 @@ sera prise en compte.">
 </script>
 
 <script type="text/worker">
-	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3 change:attributs_degats_normaux", function () {
 		getAttrs([
 			"armes_nom_1",
 			"armes_nom_2",
@@ -1587,7 +1602,7 @@ sera prise en compte.">
 		});
 	});
 
-	on("change:artillerie_nom_1 change:artillerie_nom_2 change:artillerie_nom_3", function () {
+	on("change:artillerie_nom_1 change:artillerie_nom_2 change:artillerie_nom_3 change:carac_vigueur", function () {
 		getAttrs([
 			"artillerie_nom_1",
 			"artillerie_nom_2",
