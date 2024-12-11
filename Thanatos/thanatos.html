@@ -1,4 +1,5 @@
-<!-- TODO Onglets des pages -->
+<!-- TODO Fiche PNJ -->
+<!-- TODO Alerte recalcul ? -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
@@ -11,13 +12,17 @@
 <input type="hidden" name="attr_armes_portee_1" value="-">
 <input type="hidden" name="attr_armes_kaa_1" value="">
 <input type="hidden" name="attr_armes_designation_1" value="Mains nues">
-	<select class="choix_page" name="attr_page" style="font-size: 15px;">
-		<option value="0" selected="selected">Feuille de Personnage</option>
-		<option value="1">Feuille d'Équipement</option>
-		<option value="2">Feuille du Parcours de vie</option>
-		<option value="3">Feuille de Personnes marquantes</option>
-		<option value="4">Carnet de route</option>
-	</select>
+
+<div class="menu">
+    <button type="action" name="act_0" class="button0" style="margin-left: 2px;">Personnage</button>
+    <button type="action" name="act_1" class="button1">Équipement</button>
+    <button type="action" name="act_2" class="button2">Parcours de vie</button>
+    <button type="action" name="act_3" class="button3">Personnes marquantes</button>
+    <button type="action" name="act_4" class="button4">Carnet de route</button>
+    <button type="action" name="act_5" class="button5">PNJ</button>
+</div>
+
+
 
 <div class="personnage">
 	<div class="wrapper_page_personnage">
@@ -774,7 +779,17 @@ sera prise en compte.">
 		</div>
 	</div>
 </div>
+
 <div class="carnet">
+	<div class="wrapper_page5_texte">
+		<div class="page5_colonne_gauche"><textarea class="carnet_de_route" name="attr_carnet_de_route1"></textarea></div>
+		<div class="page5_separateur"></div>
+		<div class="page5_colonne_droite"><textarea class="carnet_de_route" name="attr_carnet_de_route2" style="padding-left: 10px;"></textarea></div>
+	</div>
+</div>
+
+
+<div class="pnj">
 	<div class="wrapper_page5_texte">
 		<div class="page5_colonne_gauche"><textarea class="carnet_de_route" name="attr_carnet_de_route1"></textarea></div>
 		<div class="page5_separateur"></div>
@@ -1904,5 +1919,14 @@ sera prise en compte.">
 			setAttrs(updates);
 		});
 	});
+
+	const buttonlist = ["0", "1", "2", "3", "4", "5"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
 
 </script>
