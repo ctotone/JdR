@@ -97,7 +97,10 @@ span.picto {
 
 .charsheet input.input_carac,
 .charsheet input.input_demi_carac,
-.charsheet input.input_carac_long {  
+.charsheet input.input_carac_long,
+.charsheet input.input_carac_pnj,
+.charsheet input.input_demi_carac_pnj,
+.charsheet input.input_carac_pnj_long {  
     width: 50px !important;
     height: 28px;
     border: none;
@@ -110,11 +113,21 @@ span.picto {
     padding-bottom: 6px;
 }
 
-.charsheet input.input_demi_carac {  
+.charsheet input.input_carac_pnj,
+.charsheet input.input_demi_carac_pnj,
+.charsheet input.input_carac_pnj_long {
+    height: 23px;
+    font-size: 22px;
+    padding-bottom: 3px;
+}
+
+.charsheet input.input_demi_carac,
+.charsheet input.input_demi_carac_pnj {  
     width: 28px !important;
 }
 
-.charsheet input.input_carac_long {  
+.charsheet input.input_carac_long,
+.charsheet input.input_carac_pnj_long {  
     width: 81px !important;
 }
 
@@ -460,7 +473,7 @@ div.carnet {
 div.pnj {  
     width: 830px;
     height: 1174px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_pnj2.webp);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/back_pnj3.webp);
     background-size: cover;
 	background-repeat: no-repeat;
     margin-top: 15px;
@@ -804,6 +817,48 @@ div.pnj {
 
 /* Zone PNJ retouche  */
 
+.page_pnj_zone_caracteristiques {
+    grid-column: 7 / 27;
+    grid-row: 41 / 71;
+    transform: rotate(-1deg);
+    margin-left: 10px;
+}
+
+.page_pnj_zone_competences {
+    grid-column: 29 / 48;
+    grid-row: 42 / 71;
+    transform: rotate(-1deg);
+    margin-top: 7px;
+    margin-left: 12px;
+}
+
+.page_pnj_zone_attributs {
+    grid-column: 51 / 81;
+    grid-row: 45 / 86;
+    transform: rotate(-1deg);
+    margin-left: 5px;
+    margin-top: 1px;
+}
+
+
+
+.page_pnj_zone_gauche {
+    grid-column: 6 / 38;
+    grid-row: 12 / 32;
+    transform: rotate(1deg);
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.page_pnj_zone_droite {
+    grid-column: 38 / 81;
+    grid-row: 13 / 34;
+    transform: rotate(1deg);
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
 .page_pnj_zone_notes {
     grid-column: 4 / 44;
     grid-row: 76 / 115;
@@ -811,6 +866,30 @@ div.pnj {
     margin-left: 10px;
     margin-bottom: 13px;
     margin-top: 10px;
+}
+
+.wrapper_page_pnj_zone_caracteristiques,
+.wrapper_page_pnj_zone_competences,
+.wrapper_page_pnj_zone_attributs,
+.wrapper_page_pnj_zone_attributs_blessure {
+    display: grid;
+    grid-template-columns: 62% 4% 30%;
+    grid-auto-rows: 25px;
+    color: var(--white);
+}
+
+.wrapper_page_pnj_zone_competences {
+    grid-template-columns: 61% 4% 30%;
+}
+
+.wrapper_page_pnj_zone_attributs {
+    grid-template-columns: 28% 0% 30% 4% 40%;
+    grid-auto-rows: 27px;
+}
+
+.wrapper_page_pnj_zone_attributs_blessure {
+    grid-template-columns: 80% 0% 10%;
+    margin-left: -15px;
 }
 
 
