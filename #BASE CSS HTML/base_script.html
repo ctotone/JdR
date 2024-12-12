@@ -1,0 +1,33 @@
+<!-- ////////////////////////////////////////// -->
+<!--                   SCRIPT                   -->
+<!-- ////////////////////////////////////////// -->
+
+<!-- Script pour integrer le ?modifier dans la feuille de personnage -->
+<script type="text/worker">
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollmodifier: "?{Modificateur de difficulté |+0|+1|+2|+3|-1|-2|-3|}",
+        });
+    });	
+</script>
+
+<!-- Script pour integrer le ?modifier avec traduction -->
+<script type="text/worker">
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollmodifier: "?{" + getTranslationByKey("modifier") + "|0|1|2|3|-1|-2|-3}"",
+        });
+    });	
+</script>
+
+<!-- Script pour les bouttons menus -->
+<script type="text/worker">
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
+</script>

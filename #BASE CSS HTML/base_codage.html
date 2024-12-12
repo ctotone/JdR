@@ -1,0 +1,323 @@
+https://wiki.roll20.net/Building_Character_Sheets
+
+https://wiki.roll20.net/Reusing_Rolls
+https://wiki.roll20.net/Roll_Templates
+https://wiki.roll20.net/Building_Character_Sheets/Roll_Templates
+
+https://wiki.roll20.net/CSS_Wizardry
+
+<!-- Tous les Roll -->
+https://wiki.roll20.net/Dice_Reference
+
+<!-- SCRIPT -->
+https://wiki.roll20.net/Sheet_Worker_Scripts
+
+<!-- Stockage des données en constant -->
+==> https://app.roll20.net/forum/post/6963354/build-lookup-table-into-a-character-sheet/?pageforid=6964447#post-6964447
+<!-- VRAC de script -->
+ https://wiki.roll20.net/UniversalSheetWorkers
+
+<!--  
+ floor(x) arrondit x vers l’infini négatif.
+ round(x) arrondit x vers 0 si la partie fractionnaire de x est inférieure à 0,5, et arrondit x vers l'infini positif si la partie fractionnaire de x est égale ou supérieure à 0,5.
+ ceil(x) arrondit x vers l'infini positif.
+ abs(x) renvoie la valeur absolue de x 
+ -->
+
+
+
+
+
+<!-- Valeur caché de la feuille -->
+<input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_visage" class="choix_visage" value="0">
+<input type="hidden" name="attr_blessure" value="0">
+
+<!-- Barre de menu avec des boutons de changement de page -->
+ <!-- Chercher dans css /* Boutton pour les menus */ -->
+<div class="menu">
+    <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
+    <button type="action" name="act_1" class="button1">Page 1</button>
+    <button type="action" name="act_2" class="button2">Page 2</button>
+    <button type="action" name="act_3" class="button3">Page 3</button>
+</div>
+
+<!-- Systeme des pages avec wrapper de base -->
+<div class="page1">
+	<div class="wrapper_page_1">
+		<div class="page1_zone_1">
+        </div>
+    </div>
+</div>
+
+<div class="page2">
+	<div class="wrapper_page_2">
+		<div class="page2_zone_1">
+        </div>
+    </div>
+</div>
+
+<div class="page3">
+	<div class="wrapper_page_3">
+		<div class="page3_zone_1">
+        </div>
+    </div>
+</div>
+
+<!-- Input, input souligné -->
+<input type="text" name="attr_sexe">
+<input type="text" class="input_souligne" name="attr_sexe">
+
+<!-- SELECT avec hidden -->
+<input type="hidden" name="attr_rang" value="0">
+<select class="choix_select" name="attr_rang">
+    <option value="0" selected="selected"></option>
+    <option value="1">Bellatores</option>
+    <option value="2">Oratores</option>
+    <option value="3">Laboratores</option>
+</select>
+
+<!-- Input number stat + readonly-->
+<input type="number" class="case_stat" name="attr_stat" value="1" min="0" max="20">
+<input type="number" class="case_stat" name="attr_stat" value="1" min="0" max="20"readonly />
+
+<!-- Bouton de roll forme de texte -->
+<button type="action" class="boutton_texte" name="act_nom_du_script" title="titre">Roll par script</button>
+<button type="roll" class="boutton_texte" name="roll_nom_du_script" title="titre" value="&{template:ito} {{title=}} {{result=[[D20]]}}">Roll classique</button>
+
+<!-- Checkbox -->
+    <!-- Checkbox liées (meme attr et label) -->
+    <input type="checkbox" name="attr_blessure" value="1" id="blessure"><label for="blessure"></label>
+    <input type="checkbox" name="attr_blessure" value="2" id="blessure"><label for="blessure"></label>
+
+     <!-- Checkbox non liées (attr et label differents) -->
+     <input type="checkbox" name="attr_blessure_legere" value="1" id="blessure"><label for="blessure"></label>
+     <input type="checkbox" name="attr_blessure_grave" value="2" id="blessure1"><label for="blessure1"></label>
+
+
+
+
+<!-- ////////////////////////////////////////// -->
+<!--               Roll TEMPLATE                -->
+<!-- ////////////////////////////////////////// -->
+
+
+
+<!-- ////////////////////////////////////////// -->
+<!--                   SCRIPT                   -->
+<!-- ////////////////////////////////////////// -->
+
+<!-- Script pour integrer le ?modifier dans la feuille de personnage -->
+<script type="text/worker">
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollmodifier: "?{Modificateur de difficulté |+0|+1|+2|+3|-1|-2|-3|}",
+        });
+    });	
+</script>
+
+<!-- Script pour integrer le ?modifier avec traduction -->
+<script type="text/worker">
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollmodifier: "?{" + getTranslationByKey("modifier") + "|0|1|2|3|-1|-2|-3}"",
+        });
+    });	
+</script>
+
+<!-- Script pour les bouttons menus -->
+<script type="text/worker">
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
+</script>
+
+<!-- Script pour les rolls -->
+    <!-- ==> On utilise computed::roll dans le rolltemplate pour appeller le resultat du dé -->
+    <!-- On utilise des dans le rolltemplate pour appeler le resultat du des aprés operation -->
+<script type="text/worker">
+    on('clicked:roll-nomduroll', async (event) => {
+		const roll = await startRoll("&{template:thanatos} 
+        {{jet=oui}} 
+        {{title=Vigueur}} 
+        {{subheader=@{character_name}}} 
+        {{roll=[[0[resultat]]]}} 
+        {{stat=[[@{carac_vigueur}[Compétence]]]}} 
+        {{des=[[1d10[Jet]]]}} 
+        {{mod=[[@{rollmodifier}[Modificateur]]]}} 
+        {{blessure=[[@{blessure}[Blessure]]]}}"); 
+
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+ 	})
+</script>
+
+<!-- Script pour  mise à jour des stats -->
+
+<script type="text/worker">
+    on("change:carac_1 change:carac_2 change:carac_3", function() {
+        getAttrs([" change:carac_1", " change:carac_2", " change:carac_3"], function(values) {
+            let carac_1 = parseInt(values["carac_1"]) || 0;
+			let carac_2 = parseInt(values["carac_2"]) || 0;
+			let carac_3 = parseInt(values["carac_3"]) || 0;
+			
+            let carac_3 = Math.floor((carac_1 + carac2)/2);
+
+        setAttrs({
+            "carac_1": carac_1,
+			"carac_2": carac_2,
+			"carac_3": carac_3			
+            });
+        });
+    });
+</script>
+
+<!-- Script pour mise à jour tableau en fonction du choix initial. Exemple armes avec les stats qui se mettent à jour. On integre aussi le calcul en fonction d'une autre valeur de degats récupérée dans la feuille de personnage-->
+<script type="text/worker">
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+		getAttrs([
+			"armes_nom_1",
+			"armes_nom_2",
+			"armes_nom_3",
+			"attributs_degats_legers",
+			"attributs_degats_normaux",
+			"attributs_degats_superieurs",
+			"attributs_degats_exceptionnels"
+		], function (values) {
+			const attributs = {
+				degats_legers: parseInt(values["attributs_degats_legers"]) || 0,
+				degats_normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+				degats_superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+				degats_exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+			};
+	
+			const armes = [1, 2, 3].map(num => {
+				const nom_au_choixNom = parseInt(values[`armes_nom_${num}`]) || 0;
+				let nom_au_choix = {
+					designation: "",
+					types: "",
+					vigueur: "",
+					degats: "",
+					portee: "",
+					kaa: ""
+				};
+	
+				switch (nom_au_choixNom) {
+					//Aiguille
+					case 1:
+						nom_au_choix = {
+							designation: "Aiguille",
+							types: "Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Demi lune
+					case 2:
+						nom_au_choix = {
+							designation: "Demi-lune",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 2} / ${attributs.degats_legers}`,
+							portee: "3 m",
+							kaa: ""
+						};
+						break;
+					//Disque noir
+					case 3:
+						nom_au_choix = {
+							designation: "Disque noir",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers} / ${attributs.degats_legers + 1}`,
+							portee: "10 m",
+							kaa: ""
+						};
+						break;
+				}
+	
+				return nom_au_choix;
+			});
+	
+			let updates = {};
+			armes.forEach((nom_au_choix, index) => {
+				const num = index + 1;
+				updates[`armes_designation_${num}`] = nom_au_choix.designation;
+				updates[`armes_types_${num}`] = nom_au_choix.types;
+				updates[`armes_vigueur_${num}`] = nom_au_choix.vigueur;
+				updates[`armes_degats_${num}`] = nom_au_choix.degats;
+				updates[`armes_portee_${num}`] = nom_au_choix.portee;
+				updates[`armes_kaa_${num}`] = nom_au_choix.kaa;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+</script>
+<!-- ALTERNATIVE NON TESTÉE avec stockage des infos dans une constante -->
+<script type="text/worker">
+    const nom_au_choixData = {
+        1: { designation: "Aiguille", types: "Estoc / 1 main", vigueur: "-", degats: "legers", portee: "-", kaa: "" },
+        2: { designation: "Demi-lune", types: "Tranchante / 1 main", vigueur: "-", degats: "legers + 2 / legers", portee: "3 m", kaa: "" },
+        3: { designation: "Disque noir", types: "Tranchante / 1 main", vigueur: "-", degats: "legers / legers + 1", portee: "10 m", kaa: "" },
+    };
+
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+        getAttrs([
+            "armes_nom_1", "armes_nom_2", "armes_nom_3",
+            "attributs_degats_legers", "attributs_degats_normaux",
+            "attributs_degats_superieurs", "attributs_degats_exceptionnels"
+        ], function (values) {
+            const attributs = {
+                legers: parseInt(values["attributs_degats_legers"]) || 0,
+                normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+                superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+                exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+            };
+    
+            ["armes_nom_1", "armes_nom_2", "armes_nom_3"].forEach((nom_au_choixKey) => {
+                const nom_au_choixNom = parseInt(values[nom_au_choixKey]) || 0;
+                const nom_au_choix = nom_au_choixData[nom_au_choixNom];
+                
+                if (nom_au_choix) {
+                    const degats = eval(nom_au_choix.degats.replace(/legers|normaux|superieurs|exceptionnels/g, (match) => attributs[match]));
+                    const updates = {
+                        [`${nom_au_choixKey}_designation`]: nom_au_choix.designation,
+                        [`${nom_au_choixKey}_types`]: nom_au_choix.types,
+                        [`${nom_au_choixKey}_vigueur`]: nom_au_choix.vigueur,
+                        [`${nom_au_choixKey}_degats`]: degats,
+                        [`${nom_au_choixKey}_portee`]: nom_au_choix.portee,
+                        [`${nom_au_choixKey}_kaa`]: nom_au_choix.kaa
+                    };
+                    setAttrs(updates);
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Script pour  -->
+<script type="text/worker">
+
+</script>
+
+<!-- Script pour  -->
+<script type="text/worker">
+
+</script>
+
+<!-- Script pour  -->
+<script type="text/worker">
+
+</script>
