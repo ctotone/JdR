@@ -17,7 +17,8 @@
     <button type="action" name="act_1" class="button1">Équipement</button>
     <button type="action" name="act_4" class="button4">Carnet de route</button>
     <button type="action" name="act_2" class="button2">Parcours de vie</button>
-    <button type="action" name="act_3" class="button3">Personnes marquantes</button>
+    <button type="action" name="act_3" class="button3">Personnes marquantes</button>	
+    <button type="action" name="act_roll-sens" class="button_sens_carte" title="Cliquez pour savoir dans quel sens est la carte.">Oracle</button>
 	<button type="action" name="act_6" class="button6">Fatalité</button>
     <button type="action" name="act_5" class="button5">PNJ</button>
 </div>
@@ -1128,7 +1129,28 @@ sera prise en compte.">
 
 <rolltemplate class="sheet-rolltemplate-thanatos">
 	<div class="sheet-toper"></div>
-    {{#initiative}}
+    {{#sens}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+					{{title}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader" style="padding-top: 0px;margin-top: 0px;">
+					{{#rollTotal() des 1}}
+					<span style="font-size: 30px;">Carte à <br>L'ENDROIT</span>
+					{{/rollTotal() des 1}}
+					{{#^rollTotal() des 1}}
+					<span style="font-size: 30px;">Carte à <br>L'ENVERS</span>
+					{{/^rollTotal() des 1}}
+				</div>
+				<div class="sheet-separateur"></div>
+				<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+				</div>
+			</div>
+        </div>
+    {{/sens}}
+	{{#initiative}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
 			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
@@ -1545,6 +1567,14 @@ sera prise en compte.">
 		const computeObj = {};
 		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
 		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+
+	on('clicked:roll-sens', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{sens=oui}} {{title=Oracle de Hartdörf}} {{roll=[[0[resultat]]]}} {{des=[[1d2[Jet]]]}}"); 
+		const {des} = roll.results;
+		const computeObj = {};
+		computeObj.roll = des.result;
 	finishRoll(roll.rollId,computeObj);
 	})
 </script>

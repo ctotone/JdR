@@ -18,6 +18,7 @@
     --color_text_button_selected: #fcfcfd;
     --color_button_hover: #d7d2d2;
     --color_text_hover: #000000;
+    --color_ombre_button: #575757a8;
     font-family: "Playfair", serif;
     color: var(--black);
     font-size: 19px;
@@ -34,6 +35,7 @@
     --color_text_hover: #fcfcfd;
     --color_text_button_selected: #000000ed;
     --color_button_hover: #292929;
+    --color_ombre_button: #2f2f2fa8;
 }
 
 .sheetform {
@@ -342,7 +344,8 @@ input[type="checkbox"]:focus {
 .charsheet button[type=action].button3::before,
 .charsheet button[type=action].button4::before,
 .charsheet button[type=action].button5::before,
-.charsheet button[type=action].button6::before {
+.charsheet button[type=action].button6::before,
+.charsheet button[type=action].button_sens_carte::before {
 	content: '';
 }
 
@@ -372,7 +375,8 @@ input[type="checkbox"]:focus {
 .charsheet button[type=action].button3,
 .charsheet button[type=action].button4,
 .charsheet button[type=action].button5,
-.charsheet button[type=action].button6 {
+.charsheet button[type=action].button6,
+.charsheet button[type=action].button_sens_carte {
     box-shadow: none;
     text-shadow: none;
     background: var(--color_background_button);
@@ -386,6 +390,7 @@ input[type="checkbox"]:focus {
     border-bottom: none;
     padding-right: 15px;
     padding-left: 10px;
+    box-shadow: -4px 1px 6px 0px var(--color_ombre_button);
 }
 
 .charsheet button[type=action].button_texte:hover,
@@ -399,8 +404,8 @@ input[type="checkbox"]:focus {
 .charsheet button[type=action].button3:hover,
 .charsheet button[type=action].button4:hover,
 .charsheet button[type=action].button5:hover,
-.charsheet button[type=action].button6:hover {
-    /* background: var(--color_button_hover); */
+.charsheet button[type=action].button6:hover,
+.charsheet button[type=action].button_sens_carte:hover {
     color: var(--color_text_hover);
 }
 
@@ -429,7 +434,7 @@ div.menu {
     border-bottom: 1px solid var(--color_ligne_menu);
     margin-left: 24px;
     margin-bottom: 15px;
-    width: 73.4%;
+    width: 76.4%;
 }
 
 div.personnage {  
@@ -518,13 +523,15 @@ div.fatalite {
 .charsheet .choix_page[value="5"] ~ div .button6 {margin-left: 81px;}
 .charsheet .choix_page[value="6"] ~ div .button6 {margin-left: 350px;} */
 
-.charsheet .choix_page[value="0"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="1"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="2"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="3"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="4"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="5"] ~ div .button6 {margin-left: 81px;}
-.charsheet .choix_page[value="6"] ~ div .button6 {margin-left: 81px;}
+.charsheet .choix_page[value="0"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="1"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="2"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="3"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="4"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="5"] ~ div .button_sens_carte,
+.charsheet .choix_page[value="6"] ~ div .button_sens_carte {
+    margin-left: 50px;
+}
 
 .charsheet .choix_page[value="0"] ~ div.personnage,
 .charsheet .choix_page[value="1"] ~ div.equipement,
@@ -535,34 +542,6 @@ div.fatalite {
 .charsheet .choix_page[value="6"] ~ div.fatalite {
     display: block;
 }
-
-/* .charsheet .choix_page[value="0"] ~ div.menu {
-    width: 73.4%;
-}
-
-.charsheet .choix_page[value="1"] ~ div.menu {
-    width: 71.4%;
-}
-
-.charsheet .choix_page[value="2"] ~ div.menu {
-    width: 97.4%;
-}
-
-.charsheet .choix_page[value="3"] ~ div.menu {
-    width: 95.4%;
-}
-
-.charsheet .choix_page[value="4"] ~ div.menu {
-    width: 74.4%;
-}
-
-.charsheet .choix_page[value="5"] ~ div.menu {
-    width: 73.4%;
-}
-
-.charsheet .choix_page[value="6"] ~ div.menu {
-    width: 98.4%;
-} */
  
 .charsheet .choix_visage[value="0"] ~ *{
     --carte_visage : none;
