@@ -27,6 +27,24 @@
   background-size: cover;
 }
 
+div.go_systeme,
+div.go_feuille {
+  position: absolute;
+  right: 3%;
+  margin-top: -2px;
+}
+
+/* Affichage des page dynamique */
+div.feuille,
+div.systeme {
+    display: none;
+}
+
+.charsheet .choix_page[value="0"] ~ div.feuille,
+.charsheet .choix_page[value="1"] ~ div.systeme {
+    display: block;
+}
+
 .charsheet input[type=number]::-webkit-inner-spin-button,
 .charsheet input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -42,7 +60,8 @@ input[type="number"] {
 .charsheet button[type=action].button_competence::before,
 .charsheet button[type=roll].button_competence::before,
 .charsheet button[type=action].button_initiative::before,
-.charsheet button[type=roll].button_initiative::before {
+.charsheet button[type=roll].button_initiative::before,
+.charsheet button[type=action].button_go::before {
 	content: '';
 }
 
@@ -81,6 +100,24 @@ input[type="number"] {
   margin-top: -7px;
 }
 
+.charsheet button[type=action].button_go {
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  text-align: center;
+  line-height: 18px;
+  margin-top: -7px;
+  font-family: 'Pictos';
+  color: #00000042;
+  width: 25px;
+  font-size: 25px;
+}
+
 .charsheet button[type=action].button_initiative,
 .charsheet button[type=roll].button_initiative {
   width: 95px;
@@ -113,6 +150,10 @@ input[type="number"] {
 .charsheet button[type=roll].button_initiative:hover {
     margin-left: -2px;
     color: #a52e2e;
+}
+
+.charsheet button[type=action].button_go:hover {
+  color: black;
 }
 
 .initiative-haut {
@@ -674,6 +715,34 @@ textarea {
   background: black;
 }
 
+/* CSS de la partie systeme */
+.summary-d100 {
+  line-height: 1.6;
+  color: #333;
+  margin-left: 25px;
+  padding-right: 390px;
+}
+
+.summary-d100 h2 {
+  text-align: center;
+  color: #444;
+  margin-left: -25px;
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+}
+
+.summary-d100 h3 {
+  color: #555;
+}
+
+.summary-d100 ul {
+  margin-left: 20px;
+}
+
+.summary-d100 ul li {
+  margin-bottom: 5px;
+}
 
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-center {
