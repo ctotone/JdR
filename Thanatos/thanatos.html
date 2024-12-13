@@ -3,6 +3,7 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
 <input type="hidden" name="attr_blessure" value="0">
+<input type="hidden" name="attr_blessure_pnj" value="0">
 <input type="hidden" name="attr_armures_diff_agi_hide_1" value="0">
 <input type="hidden" name="attr_armes_nom_1" value="0">
 <input type="hidden" name="attr_armes_types_1" value="Rixes">
@@ -1255,7 +1256,7 @@ des Compétences et des Attributs."><span class="picto" style="margin-right: 5px
 <!-- SCRIPT -->
 <!-- Roll modifier / Menu / MAJ Stats PJ et PNJ / MAJ fatigue et total blessure -->
 <script type="text/worker"> 
-	
+
 	const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
