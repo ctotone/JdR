@@ -31,3 +31,310 @@
         });
     });
 </script>
+
+<!-- Script pour les rolls -->
+<!-- ==> On utilise computed::roll dans le rolltemplate pour appeller le resultat du dé -->
+<!-- On utilise des dans le rolltemplate pour appeler le resultat du des aprés operation -->
+<!-- Script pour  mise à jour des stats -->
+<script type="text/worker">
+    on('clicked:roll-perception', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Perception}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_perception}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
+		const {stat,des,mod,blessure} = roll.results;
+		const computeObj = {};
+		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
+		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
+	finishRoll(roll.rollId,computeObj);
+	})
+</script>
+
+<!-- Script pour mise à jour tableau en fonction du choix initial. Exemple armes avec les stats qui se mettent à jour. On integre aussi le calcul en fonction d'une autre valeur de degats récupérée dans la feuille de personnage -->
+<script type="text/worker">
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+		getAttrs([
+			"armes_nom_1",
+			"armes_nom_2",
+			"armes_nom_3",
+			"attributs_degats_legers",
+			"attributs_degats_normaux",
+			"attributs_degats_superieurs",
+			"attributs_degats_exceptionnels"
+		], function (values) {
+			const attributs = {
+				degats_legers: parseInt(values["attributs_degats_legers"]) || 0,
+				degats_normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+				degats_superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+				degats_exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+			};
+	
+			const armes = [1, 2, 3].map(num => {
+				const nom_au_choixNom = parseInt(values[`armes_nom_${num}`]) || 0;
+				let nom_au_choix = {
+					designation: "",
+					types: "",
+					vigueur: "",
+					degats: "",
+					portee: "",
+					kaa: ""
+				};
+	
+				switch (nom_au_choixNom) {
+					//Aiguille
+					case 1:
+						nom_au_choix = {
+							designation: "Aiguille",
+							types: "Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Demi lune
+					case 2:
+						nom_au_choix = {
+							designation: "Demi-lune",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 2} / ${attributs.degats_legers}`,
+							portee: "3 m",
+							kaa: ""
+						};
+						break;
+					//Disque noir
+					case 3:
+						nom_au_choix = {
+							designation: "Disque noir",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers} / ${attributs.degats_legers + 1}`,
+							portee: "10 m",
+							kaa: ""
+						};
+						break;
+				}
+	
+				return nom_au_choix;
+			});
+	
+			let updates = {};
+			armes.forEach((nom_au_choix, index) => {
+				const num = index + 1;
+				updates[`armes_designation_${num}`] = nom_au_choix.designation;
+				updates[`armes_types_${num}`] = nom_au_choix.types;
+				updates[`armes_vigueur_${num}`] = nom_au_choix.vigueur;
+				updates[`armes_degats_${num}`] = nom_au_choix.degats;
+				updates[`armes_portee_${num}`] = nom_au_choix.portee;
+				updates[`armes_kaa_${num}`] = nom_au_choix.kaa;
+			});
+	
+			setAttrs(updates);
+		});
+	});
+</script>
+<!-- ALTERNATIVE NON TESTÉE avec stockage des infos dans une constante -->
+<script type="text/worker">
+    const nom_au_choixData = {
+        1: { designation: "Aiguille", types: "Estoc / 1 main", vigueur: "-", degats: "legers", portee: "-", kaa: "" },
+        2: { designation: "Demi-lune", types: "Tranchante / 1 main", vigueur: "-", degats: "legers + 2 / legers", portee: "3 m", kaa: "" },
+        3: { designation: "Disque noir", types: "Tranchante / 1 main", vigueur: "-", degats: "legers / legers + 1", portee: "10 m", kaa: "" },
+    };
+
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
+        getAttrs([
+            "armes_nom_1", "armes_nom_2", "armes_nom_3",
+            "attributs_degats_legers", "attributs_degats_normaux",
+            "attributs_degats_superieurs", "attributs_degats_exceptionnels"
+        ], function (values) {
+            const attributs = {
+                legers: parseInt(values["attributs_degats_legers"]) || 0,
+                normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+                superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+                exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+            };
+    
+            ["armes_nom_1", "armes_nom_2", "armes_nom_3"].forEach((nom_au_choixKey) => {
+                const nom_au_choixNom = parseInt(values[nom_au_choixKey]) || 0;
+                const nom_au_choix = nom_au_choixData[nom_au_choixNom];
+                
+                if (nom_au_choix) {
+                    const degats = eval(nom_au_choix.degats.replace(/legers|normaux|superieurs|exceptionnels/g, (match) => attributs[match]));
+                    const updates = {
+                        [`${nom_au_choixKey}_designation`]: nom_au_choix.designation,
+                        [`${nom_au_choixKey}_types`]: nom_au_choix.types,
+                        [`${nom_au_choixKey}_vigueur`]: nom_au_choix.vigueur,
+                        [`${nom_au_choixKey}_degats`]: degats,
+                        [`${nom_au_choixKey}_portee`]: nom_au_choix.portee,
+                        [`${nom_au_choixKey}_kaa`]: nom_au_choix.kaa
+                    };
+                    setAttrs(updates);
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Script pour ne changer que les valeurs des armes qu'on a choisi mais mettre à jour tous les degats quand on change la valeur globale de degat normaux-->
+<script type="text/worker">
+	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3 change:attributs_degats_normaux", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
+		const isGlobalChange = changedAttribute === "attributs_degats_normaux"; // Vérifie si c'est un changement global
+	
+		// Charger les données nécessaires
+		const attrsToGet = [
+			"attributs_degats_legers",
+			"attributs_degats_normaux",
+			"attributs_degats_superieurs",
+			"attributs_degats_exceptionnels",
+			"armes_nom_1",
+			"armes_nom_2",
+			"armes_nom_3"
+		];
+	
+		getAttrs(attrsToGet, function (values) {
+			const attributs = {
+				degats_legers: parseInt(values["attributs_degats_legers"]) || 0,
+				degats_normaux: parseInt(values["attributs_degats_normaux"]) || 0,
+				degats_superieurs: parseInt(values["attributs_degats_superieurs"]) || 0,
+				degats_exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
+			};
+	
+			const armesToUpdate = isGlobalChange ? [1, 2, 3] : [changedAttribute.match(/armes_nom_(\d+)/)[1]];
+	
+			let updates = {};
+	
+			armesToUpdate.forEach(index => {
+				const armeNom = parseInt(values[`armes_nom_${index}`]) || 0;
+	
+				let arme = {
+					designation: "",
+					types: "",
+					vigueur: "",
+					degats: "",
+					portee: "",
+					kaa: ""
+				};
+	
+				// Déterminer les valeurs en fonction de l'arme sélectionnée
+				switch (armeNom) {
+					//Aiguille
+					case 1:
+						arme = {
+							designation: "Aiguille",
+							types: "Estoc / 1 main",
+							vigueur: "-",
+							degats: attributs.degats_legers,
+							portee: "-",
+							kaa: ""
+						};
+						break;
+					//Demi lune
+					case 2:
+						arme = {
+							designation: "Demi-lune",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers + 2} / ${attributs.degats_legers}`,
+							portee: "3 m",
+							kaa: ""
+						};
+						break;
+					//Disque noir
+					case 3:
+						arme = {
+							designation: "Disque noir",
+							types: "Tranchante / 1 main",
+							vigueur: "-",
+							degats: `${attributs.degats_legers} / ${attributs.degats_legers + 1}`,
+							portee: "10 m",
+							kaa: ""
+						};
+						break;
+			}
+
+			// Ajouter les mises à jour pour cette arme
+			updates[`armes_designation_${index}`] = arme.designation;
+			updates[`armes_types_${index}`] = arme.types;
+			updates[`armes_vigueur_${index}`] = arme.vigueur;
+			updates[`armes_degats_${index}`] = arme.degats;
+			updates[`armes_portee_${index}`] = arme.portee;
+			updates[`armes_kaa_${index}`] = arme.kaa;
+		});
+
+		// Appliquer les mises à jour
+		setAttrs(updates);
+	});
+});
+
+</script>
+
+<!-- Script pour pour ne changer que les valeurs des projectiles qu'on a choisi  -->
+<script type="text/worker">
+	on("change:projectiles_nom_1 change:projectiles_nom_2 change:projectiles_nom_3", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
+	
+		if (changedAttribute.startsWith("projectiles_nom_")) {
+			getAttrs([changedAttribute], function (values) {
+				const projectileNom = parseInt(values[changedAttribute]) || 0;
+				let projectile = {
+					designation: "",
+					types: "",
+					kaa: "",
+					nombres: "",
+					notes: ""
+				};
+	
+				// Détermine les valeurs en fonction du projectile sélectionné
+				switch (projectileNom) {
+					// Flèches
+					case 1:
+						projectile = {
+							designation: "Flèches",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+					// Flèches inflammables
+					case 2:
+						projectile = {
+							designation: "Flèches inflammables",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+					// Flèches perce-armure
+					case 3:
+						projectile = {
+							designation: "Flèches perce-armure",
+							types: "Estoc",
+							kaa: "",
+							nombres: "",
+							notes: ""
+						};
+						break;
+				}
+	
+				// Détermine l'index de l'attribut modifié (ex. "1", "2", ou "3")
+				const num = changedAttribute.match(/\d+/)[0];
+	
+				// Met à jour uniquement les champs liés à l'attribut modifié
+				const updates = {};
+				updates[`projectiles_designation_${num}`] = projectile.designation;
+				updates[`projectiles_types_${num}`] = projectile.types;
+				updates[`projectiles_kaa_${num}`] = projectile.kaa;
+				updates[`projectiles_nombres_${num}`] = projectile.nombres;
+				updates[`projectiles_notes_${num}`] = projectile.notes;
+	
+				setAttrs(updates);
+			});
+		}
+	});
+</script>
+
+<!-- Script pour  -->
+<script type="text/worker">
+
+</script>

@@ -787,7 +787,6 @@ sera prise en compte.">
 		<div class="page5_colonne_droite"><textarea class="carnet_de_route" name="attr_carnet_de_route2" style="padding-left: 10px;"></textarea></div>
 	</div>
 </div>
-
 <div class="fatalite">
 	<div class="wrapper_page_fatalite">
 		<div class="page5_zone_tableau">
@@ -884,7 +883,6 @@ sera prise en compte.">
 		</div>
 	</div>
 </div>
-
 <div class="pnj">
 	<div class="wrapper_page_personnage">
 		<div class="page_pnj_zone_gauche">
@@ -1003,6 +1001,16 @@ sera prise en compte.">
 				</div>
 				<div class="page1_zone_caracteristiques_valeur"><input type="number" class="input_carac_pnj" name="attr_carac_fluide" value="1" min="0" max="20"></div>
 			</div>
+			<div class="wrapper_page_pnj_zone_caracteristiques"></div>
+			<div class="wrapper_page_pnj_zone_caracteristiques" style="grid-template-columns: 62% 4% 50%;">
+				<div class="page1_zone_caracteristiques_titre" style="grid-column: 1/4;margin-top: 72px;margin-left: -35px;">
+					<button type="action" class="button_texte" name="act_update_stat_pnj" style="width: auto !important;color: #fdfdfd57;font-size: 13px;" title="Calculer automatiquement les valeurs
+des Compétences et des Attributs."><span class="picto" style="margin-right: 5px;size: 24px;">0</span> Calculer les Compétences et Attributs</button>
+				</div>
+			</div>
+
+
+			
 		</div>
 		<div class="page_pnj_zone_competences">
 			<div class="wrapper_page_pnj_zone_competences">
@@ -1245,8 +1253,19 @@ sera prise en compte.">
 </rolltemplate>
 
 <!-- SCRIPT -->
+<!-- Roll modifier / Menu / MAJ Stats PJ et PNJ / MAJ fatigue et total blessure -->
 <script type="text/worker"> 
-    on("sheet:opened", function(eventInfo){
+	
+	const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
+	
+	on("sheet:opened", function(eventInfo){
         setAttrs({
             rollmodifier: "?{Modificateur de difficulté |+0|+1|+2|+3|+4|+5|+6|+7|+8|-1|-2|-3|-4}",
         });
@@ -1297,6 +1316,51 @@ sera prise en compte.">
         });
     });
 
+	on('clicked:update_stat_pnj', async (event) => {
+		getAttrs(["carac_vigueur", "carac_adresse", "carac_instinct", "carac_raison", "carac_temerite", "carac_aura", "carac_fluide"], function(values) {
+            let carac_vigueur = parseInt(values["carac_vigueur"]) || 0;
+			let carac_adresse = parseInt(values["carac_adresse"]) || 0;
+			let carac_instinct = parseInt(values["carac_instinct"]) || 0;
+			let carac_raison = parseInt(values["carac_raison"]) || 0;
+			let carac_temerite = parseInt(values["carac_temerite"]) || 0;
+			let carac_aura = parseInt(values["carac_aura"]) || 0;
+			let carac_fluide = parseInt(values["carac_fluide"]) || 0;
+			
+            let comp_melee_pnj = Math.floor((carac_vigueur + carac_adresse + carac_instinct)/3);
+			let comp_agilite_pnj = Math.floor((carac_adresse + carac_instinct)/2);
+			let comp_perception_pnj = Math.floor((carac_instinct + carac_raison)/2);			
+			let comp_culture_pnj = Math.floor((carac_aura + carac_raison)/2);			
+			let comp_manipulation_pnj = Math.floor((carac_aura + carac_temerite)/2);
+			let comp_precision_pnj = Math.floor((carac_raison + carac_adresse)/2);
+			let comp_rituel_pnj = Math.floor((carac_raison + carac_fluide)/2);
+			let attributs_points_de_vie_base_pnj = (carac_vigueur * 2);
+			let attributs_points_endurance_base_pnj = carac_temerite + carac_vigueur;
+			let attributs_degats_legers_pnj = Math.floor(carac_vigueur / 2);
+			let attributs_degats_normaux_pnj = carac_vigueur;
+			let attributs_degats_superieurs_pnj = (carac_vigueur * 2);
+			let attributs_exceptionnels_pnj = (carac_vigueur * 3);
+			let attributs_resistance_pnj = Math.floor(carac_vigueur / 4);
+
+        setAttrs({
+            "comp_melee_pnj": comp_melee_pnj,
+			"comp_agilite_pnj": comp_agilite_pnj,
+			"comp_perception_pnj": comp_perception_pnj,
+			"comp_culture_pnj": comp_culture_pnj,
+			"comp_manipulation_pnj": comp_manipulation_pnj,
+			"comp_precision_pnj": comp_precision_pnj,
+			"comp_rituel_pnj": comp_rituel_pnj,
+			"attributs_points_de_vie_base_pnj": attributs_points_de_vie_base_pnj,
+			"attributs_points_endurance_base_pnj": attributs_points_endurance_base_pnj,
+			"attributs_degats_legers_pnj": attributs_degats_legers_pnj,
+			"attributs_degats_normaux_pnj": attributs_degats_normaux_pnj,
+			"attributs_degats_superieurs_pnj": attributs_degats_superieurs_pnj,
+			"attributs_exceptionnels_pnj": attributs_exceptionnels_pnj,
+			"attributs_resistance_pnj": attributs_resistance_pnj
+			
+            });
+        });
+    });
+
 	on("change:armures_fatigue_1 change:bouclier_fatigue_1", function() {
         getAttrs(["armures_fatigue_1", "bouclier_fatigue_1", "attributs_fatigue"], function(values) {
             let armures_fatigue_1 = parseInt(values["armures_fatigue_1"]) || 0;
@@ -1340,6 +1404,7 @@ sera prise en compte.">
     });
 </script>
 
+<!-- Roll Action -->
 <script type="text/worker">
 	on('clicked:roll-vigueur', async (event) => {
 		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
@@ -1466,11 +1531,6 @@ sera prise en compte.">
 		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
 	finishRoll(roll.rollId,computeObj);
 	})
-
-	
-
-
-
 
 	on('clicked:roll-pnj-vigueur', async (event) => {
 		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Vigueur}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{carac_vigueur}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure_pnj}[Blessure]]]}}"); 
@@ -1607,17 +1667,24 @@ sera prise en compte.">
 	})
 </script>
 
+<!-- MAJ equipement -->
 <script type="text/worker">
-	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3 change:attributs_degats_normaux", function () {
-		getAttrs([
-			"armes_nom_1",
-			"armes_nom_2",
-			"armes_nom_3",
+	on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3 change:attributs_degats_normaux", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
+		const isGlobalChange = changedAttribute === "attributs_degats_normaux"; // Vérifie si c'est un changement global
+	
+		// Charger les données nécessaires
+		const attrsToGet = [
 			"attributs_degats_legers",
 			"attributs_degats_normaux",
 			"attributs_degats_superieurs",
-			"attributs_degats_exceptionnels"
-		], function (values) {
+			"attributs_degats_exceptionnels",
+			"armes_nom_1",
+			"armes_nom_2",
+			"armes_nom_3"
+		];
+	
+		getAttrs(attrsToGet, function (values) {
 			const attributs = {
 				degats_legers: parseInt(values["attributs_degats_legers"]) || 0,
 				degats_normaux: parseInt(values["attributs_degats_normaux"]) || 0,
@@ -1625,8 +1692,13 @@ sera prise en compte.">
 				degats_exceptionnels: parseInt(values["attributs_degats_exceptionnels"]) || 0,
 			};
 	
-			const armes = [1, 2, 3].map(num => {
-				const armeNom = parseInt(values[`armes_nom_${num}`]) || 0;
+			const armesToUpdate = isGlobalChange ? [1, 2, 3] : [changedAttribute.match(/armes_nom_(\d+)/)[1]];
+	
+			let updates = {};
+	
+			armesToUpdate.forEach(index => {
+				const armeNom = parseInt(values[`armes_nom_${index}`]) || 0;
+	
 				let arme = {
 					designation: "",
 					types: "",
@@ -1636,6 +1708,7 @@ sera prise en compte.">
 					kaa: ""
 				};
 	
+				// Déterminer les valeurs en fonction de l'arme sélectionnée
 				switch (armeNom) {
 					//Aiguille
 					case 1:
@@ -2011,36 +2084,28 @@ sera prise en compte.">
 							kaa: ""
 						};
 						break;
-				}
-	
-				return arme;
-			});
-	
-			let updates = {};
-			armes.forEach((arme, index) => {
-				const num = index + 1;
-				updates[`armes_designation_${num}`] = arme.designation;
-				updates[`armes_types_${num}`] = arme.types;
-				updates[`armes_vigueur_${num}`] = arme.vigueur;
-				updates[`armes_degats_${num}`] = arme.degats;
-				updates[`armes_portee_${num}`] = arme.portee;
-				updates[`armes_kaa_${num}`] = arme.kaa;
-			});
-	
-			setAttrs(updates);
-		});
-	});
+			}
 
-	on("change:projectiles_nom_1 change:projectiles_nom_2 change:projectiles_nom_3", function () {
-		getAttrs([
-			"projectiles_nom_1",
-			"projectiles_nom_2",
-			"projectiles_nom_3"
-		], function (values) {
-			const attributs = {};
+			// Ajouter les mises à jour pour cette arme
+			updates[`armes_designation_${index}`] = arme.designation;
+			updates[`armes_types_${index}`] = arme.types;
+			updates[`armes_vigueur_${index}`] = arme.vigueur;
+			updates[`armes_degats_${index}`] = arme.degats;
+			updates[`armes_portee_${index}`] = arme.portee;
+			updates[`armes_kaa_${index}`] = arme.kaa;
+		});
+
+		// Appliquer les mises à jour
+		setAttrs(updates);
+	});
+});
+
+	on("change:projectiles_nom_1 change:projectiles_nom_2 change:projectiles_nom_3", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
 	
-			const projectiles = [1, 2, 3].map(num => {
-				const projectileNom = parseInt(values[`projectiles_nom_${num}`]) || 0;
+		if (changedAttribute.startsWith("projectiles_nom_")) {
+			getAttrs([changedAttribute], function (values) {
+				const projectileNom = parseInt(values[changedAttribute]) || 0;
 				let projectile = {
 					designation: "",
 					types: "",
@@ -2049,8 +2114,9 @@ sera prise en compte.">
 					notes: ""
 				};
 	
+				// Détermine les valeurs en fonction du projectile sélectionné
 				switch (projectileNom) {
-					//Fleches
+					// Flèches
 					case 1:
 						projectile = {
 							designation: "Flèches",
@@ -2060,7 +2126,7 @@ sera prise en compte.">
 							notes: ""
 						};
 						break;
-					//Fleches inflammables
+					// Flèches inflammables
 					case 2:
 						projectile = {
 							designation: "Flèches inflammables",
@@ -2069,8 +2135,8 @@ sera prise en compte.">
 							nombres: "",
 							notes: ""
 						};
-					break;
-					//Fleches perce armure
+						break;
+					// Flèches perce-armure
 					case 3:
 						projectile = {
 							designation: "Flèches perce-armure",
@@ -2079,8 +2145,8 @@ sera prise en compte.">
 							nombres: "",
 							notes: ""
 						};
-					break;
-					//Carreaux
+						break;
+					// Carreaux
 					case 4:
 						projectile = {
 							designation: "Carreaux",
@@ -2089,8 +2155,8 @@ sera prise en compte.">
 							nombres: "",
 							notes: ""
 						};
-					break;
-					//Carreaux inflammables
+						break;
+					// Carreaux inflammables
 					case 5:
 						projectile = {
 							designation: "Carreaux inflammables",
@@ -2100,7 +2166,7 @@ sera prise en compte.">
 							notes: ""
 						};
 						break;
-					//Carreaux perce armure
+					// Carreaux perce-armure
 					case 6:
 						projectile = {
 							designation: "Carreaux perce-armure",
@@ -2109,8 +2175,8 @@ sera prise en compte.">
 							nombres: "",
 							notes: ""
 						};
-						break;					
-					//Pierre
+						break;
+					// Pierre
 					case 7:
 						projectile = {
 							designation: "Pierre",
@@ -2122,33 +2188,29 @@ sera prise en compte.">
 						break;
 				}
 	
-				return projectile;
-			});
+				// Détermine l'index de l'attribut modifié (ex. "1", "2", ou "3")
+				const num = changedAttribute.match(/\d+/)[0];
 	
-			let updates = {};
-			projectiles.forEach((projectile, index) => {
-				const num = index + 1;
+				// Met à jour uniquement les champs liés à l'attribut modifié
+				const updates = {};
 				updates[`projectiles_designation_${num}`] = projectile.designation;
 				updates[`projectiles_types_${num}`] = projectile.types;
 				updates[`projectiles_kaa_${num}`] = projectile.kaa;
 				updates[`projectiles_nombres_${num}`] = projectile.nombres;
 				updates[`projectiles_notes_${num}`] = projectile.notes;
-			});
 	
-			setAttrs(updates);
-		});
+				setAttrs(updates);
+			});
+		}
 	});
 
-	on("change:artillerie_nom_1 change:artillerie_nom_2 change:artillerie_nom_3 change:carac_vigueur", function () {
-		getAttrs([
-			"artillerie_nom_1",
-			"artillerie_nom_2",
-			"artillerie_nom_3"
-		], function (values) {
-			const attributs = {};
+	on("change:artillerie_nom_1 change:artillerie_nom_2 change:artillerie_nom_3 change:carac_vigueur", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
 	
-			const artillerie = [1, 2, 3].map(num => {
-				const artilleNom = parseInt(values[`artillerie_nom_${num}`]) || 0;
+		// Ne traiter que si l'attribut modifié est une artillerie
+		if (changedAttribute.startsWith("artillerie_nom_")) {
+			getAttrs([changedAttribute], function (values) {
+				const artilleNom = parseInt(values[changedAttribute]) || 0;
 				let artille = {
 					designation: "",
 					degats: "",
@@ -2157,8 +2219,9 @@ sera prise en compte.">
 					bottes: ""
 				};
 	
+				// Détermine les valeurs en fonction de l'artillerie sélectionnée
 				switch (artilleNom) {
-					//Bombarde
+					// Bombarde
 					case 1:
 						artille = {
 							designation: "Bombarde",
@@ -2168,7 +2231,7 @@ sera prise en compte.">
 							bottes: "Étourdir"
 						};
 						break;
-					//Canon de poing
+					// Canon de poing
 					case 2:
 						artille = {
 							designation: "Canon de poing",
@@ -2177,8 +2240,8 @@ sera prise en compte.">
 							zone: "-",
 							bottes: "Briser"
 						};
-					break;
-					//Pot de fer
+						break;
+					// Pot de fer
 					case 3:
 						artille = {
 							designation: "Pot de fer",
@@ -2187,8 +2250,8 @@ sera prise en compte.">
 							zone: "8 m",
 							bottes: "Étourdir"
 						};
-					break;
-					//Veuglaire
+						break;
+					// Veuglaire
 					case 4:
 						artille = {
 							designation: "Veuglaire",
@@ -2197,252 +2260,225 @@ sera prise en compte.">
 							zone: "3 m",
 							bottes: "Étourdir"
 						};
-					break;
+						break;
 				}
 	
-				return artille;
-			});
+				// Détermine l'index de l'attribut modifié (ex. "1", "2", ou "3")
+				const num = changedAttribute.match(/\d+/)[0];
 	
-			let updates = {};
-			artillerie.forEach((artille, index) => {
-				const num = index + 1;
+				// Met à jour uniquement les champs liés à l'attribut modifié
+				const updates = {};
 				updates[`artillerie_designation_${num}`] = artille.designation;
 				updates[`artillerie_degats_${num}`] = artille.degats;
 				updates[`artillerie_portee_${num}`] = artille.portee;
 				updates[`artillerie_zone_${num}`] = artille.zone;
 				updates[`artillerie_bottes_${num}`] = artille.bottes;
+	
+				setAttrs(updates);
 			});
+		}
+	});
+
+	on("change:armures_nom_1 change:armures_nom_2", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
+	
+		getAttrs([changedAttribute], function (values) {
+			const armureNom = parseInt(values[changedAttribute]) || 0;
+			let armure = {
+				designation: "",
+				protection: "",
+				diff_agi: "",
+				diff_agi_hide: "",
+				contre: "",
+				fatigue: ""
+			};
+	
+			// Détermine les valeurs en fonction de l'armure sélectionnée
+			switch (armureNom) {
+				// Armure complète
+				case 1:
+					armure = {
+						designation: "Armure complète",
+						protection: "5",
+						diff_agi: "2",
+						diff_agi_hide: "2",
+						contre: "Empaler / Lacérer",
+						fatigue: "2"
+					};
+					break;
+				// Armure de cuir
+				case 2:
+					armure = {
+						designation: "Armure de cuir",
+						protection: "1",
+						diff_agi: "0",
+						diff_agi_hide: "0",
+						contre: "-",
+						fatigue: "0"
+					};
+					break;
+				// Cotte de mailles
+				case 3:
+					armure = {
+						designation: "Cotte de mailles",
+						protection: "3",
+						diff_agi: "1",
+						diff_agi_hide: "1",
+						contre: "Lacérer",
+						fatigue: "1"
+					};
+					break;
+				// Robe de fer
+				case 4:
+					armure = {
+						designation: "Robe de fer",
+						protection: "3",
+						diff_agi: "1",
+						diff_agi_hide: "1",
+						contre: "Empaler",
+						fatigue: "1"
+					};
+					break;
+				// Aucune
+				case 5:
+					armure = {
+						designation: "Aucune",
+						protection: "0",
+						diff_agi: "0",
+						diff_agi_hide: "0",
+						contre: "-",
+						fatigue: "0"
+					};
+					break;
+			}
+	
+			// Détermine l'index de l'attribut modifié (ex. "1" ou "2")
+			const num = changedAttribute.match(/\d+/)[0];
+	
+			// Met à jour uniquement les champs liés à l'attribut modifié
+			const updates = {};
+			updates[`armures_designation_${num}`] = armure.designation;
+			updates[`armures_protection_${num}`] = armure.protection;
+			updates[`armures_diff_agi_${num}`] = armure.diff_agi;
+			updates[`armures_diff_agi_hide_${num}`] = armure.diff_agi_hide;
+			updates[`armures_contre_${num}`] = armure.contre;
+			updates[`armures_fatigue_${num}`] = armure.fatigue;
 	
 			setAttrs(updates);
 		});
 	});
 
-	on("change:armures_nom_1 change:armures_nom_2", function () {
-		getAttrs([
-			"armures_nom_1",
-			"armures_nom_2"
-		], function (values) {
-			const attributs = {};
+	on("change:bouclier_nom_1 change:bouclier_nom_2", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
 	
-			const armures = [1, 2].map(num => {
-				const armureNom = parseInt(values[`armures_nom_${num}`]) || 0;
-				let armure = {
-					designation: "",
-					protection: "",
-					diff_agi: "",
-					diff_agi_hide: "",
-					contre: "",
-					fatigue: ""
-				};
+		getAttrs([changedAttribute], function (values) {
+			const bouclarNom = parseInt(values[changedAttribute]) || 0;
+			let bouclar = {
+				designation: "",
+				vigueur: "",
+				diff_melee: "",
+				diff_distance: "",
+				diff_agi: "",
+				fatigue: ""
+			};
 	
-				switch (armureNom) {
-					//Armure complete
-					case 1:
-						armure = {
-							designation: "Armure complète",
-							protection: "5",
-							diff_agi: "2",
-							diff_agi_hide: "2",
-							contre: "Empaler / Lacérer",
-							fatigue: "2"
-						};
-						break;
-					//Armure de cuir
-					case 2:
-						armure = {
-							designation: "Armure de cuir",
-							protection: "1",
-							diff_agi: "0",
-							diff_agi_hide: "0",
-							contre: "-",
-							fatigue: "0"
-						};
+			// Détermine les valeurs en fonction du bouclier sélectionné
+			switch (bouclarNom) {
+				// Bouclier grand
+				case 1:
+					bouclar = {
+						designation: "Bouclier grand",
+						vigueur: "7",
+						diff_melee: "- 2",
+						diff_distance: "- 3",
+						diff_agi: "+ 2",
+						fatigue: "1"
+					};
 					break;
-					//Cotte de maille
-					case 3:
-						armure = {
-							designation: "Cotte de mailles",
-							protection: "3",
-							diff_agi: "1",
-							diff_agi_hide: "1",
-							contre: "Lacérer",
-							fatigue: "1"
-						};
+				// Bouclier moyen
+				case 2:
+					bouclar = {
+						designation: "Bouclier moyen",
+						vigueur: "5",
+						diff_melee: "- 2",
+						diff_distance: "- 2",
+						diff_agi: "+ 1",
+						fatigue: "-"
+					};
 					break;
-					//Robe de fer
-					case 4:
-						armure = {
-							designation: "Robe de fer",
-							protection: "3",
-							diff_agi: "1",
-							diff_agi_hide: "1",
-							contre: "Empaler",
-							fatigue: "1"
-						};
+				// Bouclier petit
+				case 3:
+					bouclar = {
+						designation: "Bouclier petit",
+						vigueur: "-",
+						diff_melee: "- 1",
+						diff_distance: "- 1",
+						diff_agi: "0",
+						fatigue: "-"
+					};
 					break;
-					//Aucune
-					case 4:
-						armure = {
-							designation: "Aucune",
-							protection: "0",
-							diff_agi: "0",
-							diff_agi_hide: "0",
-							contre: "-",
-							fatigue: "0"
-						};
-					break;
-				}
+			}
 	
-				return armure;
-			});
-
+			// Détermine l'index de l'attribut modifié (ex. "1" ou "2")
+			const num = changedAttribute.match(/\d+/)[0];
 	
-			let updates = {};
-			armures.forEach((armure, index) => {
-				const num = index + 1;
-				updates[`armures_designation_${num}`] = armure.designation;
-				updates[`armures_protection_${num}`] = armure.protection;
-				updates[`armures_diff_agi_${num}`] = armure.diff_agi;
-				updates[`armures_diff_agi_hide_${num}`] = armure.diff_agi_hide;
-				updates[`armures_contre_${num}`] = armure.contre;
-				updates[`armures_fatigue_${num}`] = armure.fatigue;
-			});
+			// Met à jour uniquement les champs liés à l'attribut modifié
+			const updates = {};
+			updates[`bouclier_designation_${num}`] = bouclar.designation;
+			updates[`bouclier_vigueur_${num}`] = bouclar.vigueur;
+			updates[`bouclier_diff_melee_${num}`] = bouclar.diff_melee;
+			updates[`bouclier_diff_distance_${num}`] = bouclar.diff_distance;
+			updates[`bouclier_diff_agi_${num}`] = bouclar.diff_agi;
+			updates[`bouclier_fatigue_${num}`] = bouclar.fatigue;
 	
 			setAttrs(updates);
 		});
 	});
 
-	on("change:bouclier_nom_1 change:bouclier_nom_2", function () {
-		getAttrs([
-			"bouclier_nom_1",
-			"bouclier_nom_2"
-		], function (values) {
-			const attributs = {};
+	on("change:casques_qualite_1 change:casques_qualite_2", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
 	
-			const bouclier = [1, 2].map(num => {
-				const bouclarNom = parseInt(values[`bouclier_nom_${num}`]) || 0;
-				let bouclar = {
-					designation: "",
-					vigueur: "",
-					diff_melee: "",
-					diff_distance: "",
-					diff_agi: "",
-					fatigue: ""
-				};
+		getAttrs([changedAttribute], function (values) {
+			const casquebaviereQualite = parseInt(values[changedAttribute]) || 0;
+			let casquebaviere = {
+				designation: "",
+				contre: ""
+			};
 	
-				switch (bouclarNom) {
-					//Bouclier grand
-					case 1:
-						bouclar = {
-							designation: "Bouclier grand",
-							vigueur: "7",
-							diff_melee: "- 2",
-							diff_distance: "- 3",
-							diff_agi: "+ 2",
-							fatigue: "1"
-						};
-						break;
-					//Bouclier moyen
-					case 2:
-						bouclar = {
-							designation: "Bouclier moyen",
-							vigueur: "5",
-							diff_melee: "- 2",
-							diff_distance: "- 2",
-							diff_agi: "+ 1",
-							fatigue: "-"
-						};
+			// Détermine les valeurs en fonction de la qualité
+			switch (casquebaviereQualite) {
+				// Médiocre
+				case 1:
+					casquebaviere = {
+						designation: "Médiocre",
+						contre: "1"
+					};
 					break;
-					//Bouclier petit
-					case 3:
-						bouclar = {
-							designation: "Bouclier petit",
-							vigueur: "-",
-							diff_melee: "- 1",
-							diff_distance: "- 1",
-							diff_agi: "0",
-							fatigue: "-"
-						};
+				// Bonne
+				case 2:
+					casquebaviere = {
+						designation: "Bonne",
+						contre: "2"
+					};
 					break;
-				}
+				// Excellente
+				case 3:
+					casquebaviere = {
+						designation: "Excellente",
+						contre: "3"
+					};
+					break;
+			}
 	
-				return bouclar;
-			});
+			// Détermine l'index de l'attribut (ex. "1" ou "2")
+			const num = changedAttribute.match(/\d+/)[0];
 	
-			let updates = {};
-			bouclier.forEach((bouclar, index) => {
-				const num = index + 1;
-				updates[`bouclier_designation_${num}`] = bouclar.designation;
-				updates[`bouclier_vigueur_${num}`] = bouclar.vigueur;
-				updates[`bouclier_diff_melee_${num}`] = bouclar.diff_melee;
-				updates[`bouclier_diff_distance_${num}`] = bouclar.diff_distance;
-				updates[`bouclier_diff_agi_${num}`] = bouclar.diff_agi;
-				updates[`bouclier_fatigue_${num}`] = bouclar.fatigue;
-			});
+			// Met à jour uniquement les champs liés à l'attribut modifié
+			const updates = {};
+			updates[`casques_designation_${num}`] = casquebaviere.designation;
+			updates[`casques_contre_${num}`] = casquebaviere.contre;
 	
 			setAttrs(updates);
 		});
 	});
-
-	on("change:casques_qualite_1 change:casques_qualite_2", function () {
-		getAttrs([
-			"casques_qualite_1",
-			"casques_qualite_2"
-		], function (values) {
-			const attributs = {};
-	
-			const casques = [1, 2].map(num => {
-				const casquebaviereQualite = parseInt(values[`casques_qualite_${num}`]) || 0;
-				let casquebaviere = {
-					designation: "",
-					contre: ""
-				};
-	
-				switch (casquebaviereQualite) {
-					//Mediocre
-					case 1:
-						casquebaviere = {
-							designation: "Médiocre",
-							contre: "1"
-						};
-						break;
-					//Bonne
-					case 2:
-						casquebaviere = {
-							designation: "Bonne",
-							contre: "2"
-						};
-					break;
-					//Excellente
-					case 3:
-						casquebaviere = {
-							designation: "Excellente",
-							contre: "3"
-						};
-					break;
-				}
-	
-				return casquebaviere;
-			});
-	
-			let updates = {};
-			casques.forEach((casquebaviere, index) => {
-				const num = index + 1;
-				updates[`casques_designation_${num}`] = casquebaviere.designation;
-				updates[`casques_contre_${num}`] = casquebaviere.contre;
-			});
-	
-			setAttrs(updates);
-		});
-	});
-
-	const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
-    buttonlist.forEach(button => {
-        on(`clicked:${button}`, function() {
-            setAttrs({
-                page: button
-            });
-        });
-    });
-
 </script>

@@ -138,50 +138,21 @@ https://wiki.roll20.net/Sheet_Worker_Scripts
 </script>
 
 <!-- Script pour les rolls -->
-    <!-- ==> On utilise computed::roll dans le rolltemplate pour appeller le resultat du dé -->
-    <!-- On utilise des dans le rolltemplate pour appeler le resultat du des aprés operation -->
+<!-- ==> On utilise computed::roll dans le rolltemplate pour appeller le resultat du dé -->
+<!-- On utilise des dans le rolltemplate pour appeler le resultat du des aprés operation -->
+<!-- Script pour  mise à jour des stats -->
 <script type="text/worker">
-    on('clicked:roll-nomduroll', async (event) => {
-		const roll = await startRoll("&{template:thanatos} 
-        {{jet=oui}} 
-        {{title=Vigueur}} 
-        {{subheader=@{character_name}}} 
-        {{roll=[[0[resultat]]]}} 
-        {{stat=[[@{carac_vigueur}[Compétence]]]}} 
-        {{des=[[1d10[Jet]]]}} 
-        {{mod=[[@{rollmodifier}[Modificateur]]]}} 
-        {{blessure=[[@{blessure}[Blessure]]]}}"); 
-
+    on('clicked:roll-perception', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{title=Perception}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{stat=[[@{comp_perception}[Compétence]]]}} {{des=[[1d10[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{blessure=[[@{blessure}[Blessure]]]}}"); 
 		const {stat,des,mod,blessure} = roll.results;
 		const computeObj = {};
-
 		if (des.result == 1) computeObj.roll = (stat.result - des.result + (mod.result*-1) - blessure.result)*2;
 		else computeObj.roll = stat.result - des.result + (mod.result*-1) - blessure.result;
 	finishRoll(roll.rollId,computeObj);
- 	})
+	})
 </script>
 
-<!-- Script pour  mise à jour des stats -->
-
-<script type="text/worker">
-    on("change:carac_1 change:carac_2 change:carac_3", function() {
-        getAttrs([" change:carac_1", " change:carac_2", " change:carac_3"], function(values) {
-            let carac_1 = parseInt(values["carac_1"]) || 0;
-			let carac_2 = parseInt(values["carac_2"]) || 0;
-			let carac_3 = parseInt(values["carac_3"]) || 0;
-			
-            let carac_3 = Math.floor((carac_1 + carac2)/2);
-
-        setAttrs({
-            "carac_1": carac_1,
-			"carac_2": carac_2,
-			"carac_3": carac_3			
-            });
-        });
-    });
-</script>
-
-<!-- Script pour mise à jour tableau en fonction du choix initial. Exemple armes avec les stats qui se mettent à jour. On integre aussi le calcul en fonction d'une autre valeur de degats récupérée dans la feuille de personnage-->
+<!-- Script pour mise à jour tableau en fonction du choix initial. Exemple armes avec les stats qui se mettent à jour. On integre aussi le calcul en fonction d'une autre valeur de degats récupérée dans la feuille de personnage -->
 <script type="text/worker">
     on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function () {
 		getAttrs([
