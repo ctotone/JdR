@@ -57,7 +57,7 @@
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_PERCEPTION" min="0" max="100" />
                 <div class="itd-basic-attribute-ame">
-                    <button type="roll" class="button_competence" name="roll_AGILITE" title="info" data-i18n-title="attr-PERCEPTION_info"
+                    <button type="roll" class="button_competence" name="roll_PERCEPTION" title="info" data-i18n-title="attr-PERCEPTION_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-PERCEPTION}}} {{subheader=@{character_name}}} {{seuil=[[@{PERCEPTION}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
                 </div>
             </div>
@@ -249,7 +249,32 @@
             </div>
         </div>
 
-        <!-- Spécialisation -->
+         <!-- STATISTIQUES DE COMBAT -->
+        <div class="itd-marker">
+            <span class="itd-marker-text"><span data-i18n="stat_combat">ESPECIALIZACIONES Y TALENTOS</span></span>
+        </div>
+		<div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
+            <div class="itd-table-3col">
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="100" readonly>
+                <div class="itd-basic-talent-corps">
+                    <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                </div>
+            </div>
+            <div class="itd-table-3col">
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="100" readonly>
+                <div class="itd-basic-attribute-ame">
+                    <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                </div>
+            </div>
+            <div class="itd-table-3col">
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="100" readonly>
+                <div class="itd-basic-attribute-esprit">
+                    <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                </div>
+            </div>
+		</div>		
+		
+		<!-- Spécialisation -->
         <div class="itd-marker">
             <span class="itd-marker-text"><span data-i18n="specialisation" data-i18n-title="specialisation_info" style="cursor: help;">SPÉCIALISATION</span>
         </div>
@@ -409,6 +434,33 @@
             </ul>
             <p><em>Exemple :</em> Un personnage avec 2 blessures et 3 de stress subit un malus total de -25 % à ses jets.</p>
             <br>
+			
+			<div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
+                <hr style="width: 50%; border: 1px solid black; margin: auto;">
+              </div>
+            <h3>3. Combat</h3>
+            <p>Les combats reposent sur trois types d’attaques : <br><strong>Corps à corps, Distance et Verbal.</strong>
+            <h4>Calcul des scores de combat :</h4>
+            <ul>
+              <li><strong>Corps à corps :</strong> Moyenne de Carrure + Agilité + Moyenne des 6 talents associés.</li>
+              <li><strong>Distance  :</strong>  Moyenne de Perception + Mental + Moyenne des 6 talents associés.</li>
+              <li><strong>Verbal  :</strong> Moyenne d'Intellect + Charisme + Moyenne des 6 talents associés.</li>
+            </ul>
+          
+            <h4>Résolution d’une attaque :</h4>
+            <ol type="1">
+              <li><strong>Jet d’opposition :</strong><br>L’attaquant et le défenseur effectuent chacun un jet d100 basé sur la statistique de combat appropriée.
+			  </li>
+              <li><strong>Calcul des marges de réussite :</strong><br>Marge = (Score de combat - Résultat du dés) / 10
+			  </li>
+              <li><strong>Résultat du combat :
+			  <ul><li>Si l’attaquant échoue, l’attaque est un échèc.</li>
+			  <li>Si l’attaquant réussit et que le défenseur échoue, l’attaque est pleinement réussie.</li>
+			  <li>Si les deux réussissent, leurs marges sont comparées : celui avec la marge la plus élevée remporte le duel. En cas d’égalité, le défenseur l’emporte.</li>
+			  </li>
+			  </ul>
+            </ol>		
+			
             <div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
                 <hr style="width: 50%; border: 1px solid black; margin: auto;">
               </div>
@@ -633,6 +685,189 @@
             </div>
         </div>
     {{/jet}}
+	{{#combat}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
+                {{title}} ({{seuil}})
+            </div>
+                {{#rollGreater() result 95}}
+                    {{#rollTotal() result 100}}
+                    <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-tragique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-tragique">
+                    Echec critique<br>tragique
+                    {{/rollTotal() result 100}}
+                    {{#rollTotal() result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                    Echec critique<br>avec une marge de {{computed::roll}}
+                    {{/rollTotal() result 99}}
+                    {{#^rollTotal() result 99}}
+                        {{#^rollTotal() result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
+                            Echec automatique<br>avec une marge de {{computed::roll}}
+                        {{/^rollTotal() result 100}}
+                    {{/^rollTotal() result 99}}
+                {{/rollGreater() result 95}}
+                {{#^rollGreater() result 95}}
+                    {{#rollGreater() result seuil}}
+                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 11}}
+                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 22}}
+                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 33}}
+                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 44}}
+                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 55}}
+                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 66}}
+                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique<br>avec une marge de {{computed::roll}}
+                        {{/rollTotal() result 77}}
+                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
+                        Echec critique
+                        {{/rollTotal() result 88}}
+
+                        {{#^rollTotal() result 11}}
+                            {{#^rollTotal() result 22}}
+                                {{#^rollTotal() result 33}}
+                                    {{#^rollTotal() result 44}}
+                                        {{#^rollTotal() result 55}}
+                                            {{#^rollTotal() result 66}}
+                                                {{#^rollTotal() result 77}}
+                                                    {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
+                                                    Echec<br>avec une marge de {{computed::roll}}
+                                                    {{/^rollTotal() result 88}} 
+                                                {{/^rollTotal() result 77}}                                    
+                                            {{/^rollTotal() result 66}}
+                                        {{/^rollTotal() result 55}}
+                                    {{/^rollTotal() result 44}}
+                                {{/^rollTotal() result 33}}
+                            {{/^rollTotal() result 22}}
+                        {{/^rollTotal() result 11}}
+                    {{/rollGreater() result seuil}}
+
+                    {{#^rollGreater() result seuil}}
+                        {{#rollTotal() result 1}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-exceptionnelle">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-exceptionnelle">
+                        Réussite critique exceptionnelle<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 1}}
+                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 11}}
+                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 22}}
+                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 33}}
+                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 44}}
+                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 55}}
+                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 66}}
+                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{/rollTotal() result 77}}
+                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
+                        Réussite critique
+                        {{/rollTotal() result 88}}
+                        {{#^rollTotal() result 1}}
+                            {{#^rollTotal() result 11}}
+                                {{#^rollTotal() result 22}}
+                                    {{#^rollTotal() result 33}}
+                                        {{#^rollTotal() result 44}}
+                                            {{#^rollTotal() result 55}}
+                                                {{#^rollTotal() result 66}}
+                                                    {{#^rollTotal() result 77}}
+                                                        {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite">
+                                                        Reussite<br>avec une marge de +{{computed::roll}}
+                                                        {{/^rollTotal() result 88}} 
+                                                    {{/^rollTotal() result 77}}                                    
+                                                {{/^rollTotal() result 66}}
+                                            {{/^rollTotal() result 55}}
+                                        {{/^rollTotal() result 44}}
+                                    {{/^rollTotal() result 33}}
+                                {{/^rollTotal() result 22}}
+                            {{/^rollTotal() result 11}}
+                        {{/^rollTotal() result 1}}
+                    {{/^rollGreater() result seuil}}
+                {{/^rollGreater() result 95}}
+            </div>
+        </div>
+    {{/combat}}
 </rolltemplate>
 
 <script type="text/worker">
@@ -645,9 +880,15 @@
         });
     });
 
-    on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion", function() {
-        getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion"], function(values) {
-            let endurance = parseInt(values["endurance"]) || 0;
+    on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion change:CARRURE change:AGILITE change:PERCEPTION change:MENTAL change:INTELLECT change:CHARISME", function() {
+        getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion", "CARRURE", "AGILITE", "PERCEPTION", "MENTAL", "INTELLECT", "CHARISME"], function(values) {
+            let CARRURE = parseInt(values["CARRURE"]) || 0;
+			let AGILITE = parseInt(values["AGILITE"]) || 0;
+			let PERCEPTION = parseInt(values["PERCEPTION"]) || 0;
+			let MENTAL = parseInt(values["MENTAL"]) || 0;
+			let INTELLECT = parseInt(values["INTELLECT"]) || 0;
+			let CHARISME = parseInt(values["CHARISME"]) || 0;
+			let endurance = parseInt(values["endurance"]) || 0;
             let force_brute = parseInt(values["force_brute"]) || 0;
             let robustesse = parseInt(values["robustesse"]) || 0;
             let agilite_corporelle = parseInt(values["agilite_corporelle"]) || 0;
@@ -666,9 +907,18 @@
             let communication_expressive = parseInt(values["communication_expressive"]) || 0;
             let persuasion = parseInt(values["persuasion"]) || 0;
             let total_point_talent = endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental + creativite + erudition + logique + aura + communication_expressive + persuasion;
+			let score_cac = Math.floor(((CARRURE + AGILITE)/2) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe)/6));
+			
+			let score_distance = Math.floor(((PERCEPTION + MENTAL)/2) + ((acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/6));
+			
+			let score_verbal = Math.floor(((INTELLECT + CHARISME)/2) + ((equilibre_mental + creativite + erudition + logique + aura + communication_expressive)/6));
+			
 
         setAttrs({
-            "total_point_talent": total_point_talent
+            "total_point_talent": total_point_talent,
+			"score_cac": score_cac,
+			"score_distance": score_distance,
+			"score_verbal": score_verbal
             });
         });
     });
@@ -709,5 +959,29 @@
             });
         });
     });
+	
+	on('clicked:roll-cac', async (event) => {
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-CAC}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const {seuil,result} = roll.results;
+		const computeObj = {};
+		computeObj.roll = Math.floor((seuil.result - result.result)/10);
+	finishRoll(roll.rollId,computeObj);
+	})
+	
+	on('clicked:roll-distance', async (event) => {
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-DISTANCE}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const {seuil,result} = roll.results;
+		const computeObj = {};
+		computeObj.roll = Math.floor((seuil.result - result.result)/10);
+	finishRoll(roll.rollId,computeObj);
+	})
+	
+	on('clicked:roll-verbal', async (event) => {
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const {seuil,result} = roll.results;
+		const computeObj = {};
+		computeObj.roll = Math.floor((seuil.result - result.result)/10);
+	finishRoll(roll.rollId,computeObj);
+	})
 
 </script>
