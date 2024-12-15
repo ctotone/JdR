@@ -37,6 +37,7 @@
   width: 105%;
   color: var(--text_black);
   padding-left: 5px;
+  padding-top: 3px;
 }
 
 .charsheet input.armes {  
@@ -88,7 +89,9 @@ input[type="number"] {
 .charsheet button[type=roll].button_competence::before,
 .charsheet button[type=action].button_initiative::before,
 .charsheet button[type=roll].button_initiative::before,
-.charsheet button[type=action].button_go::before {
+.charsheet button[type=action].button_go::before,
+.charsheet button[type=action].button_show::before,
+.charsheet button[type=roll].button_roll::before {
 	content: '';
 }
 
@@ -111,7 +114,9 @@ input[type="number"] {
 }
 
 .charsheet button[type=action].button_competence,
-.charsheet button[type=roll].button_competence {
+.charsheet button[type=roll].button_competence,
+.charsheet button[type=action].button_show,
+.charsheet button[type=roll].button_roll {
   width: 95px;
   height: 25px;
   border: none;
@@ -143,6 +148,19 @@ input[type="number"] {
   color: #00000042;
   width: 25px;
   font-size: 25px;
+}
+
+.charsheet button[type=action].button_show {
+  width: auto;
+  font-size: 24px;
+  color: #33333342;
+  margin-left: 10px;
+}
+
+.charsheet button[type=roll].button_roll {
+  width: auto;
+  font-size: 20px;
+  color: #333333c0;
 }
 
 .charsheet button[type=action].button_initiative,
@@ -179,8 +197,10 @@ input[type="number"] {
     color: #a52e2e;
 }
 
-.charsheet button[type=action].button_go:hover {
-  color: black;
+.charsheet button[type=action].button_go:hover,
+.charsheet button[type=action].button_show:hover,
+.charsheet button[type=roll].button_roll:hover {
+  color: var(--text_black);
 }
 
 .initiative-haut {
@@ -190,6 +210,23 @@ input[type="number"] {
   margin-left: 86%;
   transform: rotate(90deg);
 }
+
+div.show_talent,
+div.show_combat,
+div.show_specialisation,
+div.show_inventaire,
+div.show_note {
+  display: none;
+}
+
+.charsheet .voir_talent[value="0"] ~ div.show_talent,
+.charsheet .voir_combat[value="0"] ~ div.show_combat,
+.charsheet .voir_specialisation[value="0"] ~ div.show_specialisation,
+.charsheet .voir_inventaire[value="0"] ~ div.show_inventaire,
+.charsheet .voir_note[value="0"] ~ div.show_note {
+    display: block;
+}
+
 
 .itd-container {
   font-family: 'Contrail One', sans-serif;
@@ -245,8 +282,12 @@ span.bleu-souligne {
   text-decoration: underline;
 }
 
-.span.info-xp {
+span.info-xp {
   font-size: 14px;
+}
+
+span.picto {
+  font-family: 'pictos';
 }
 
 .itd-logo-table-col-titre {
