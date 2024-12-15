@@ -27,6 +27,33 @@
   background-size: cover;
 }
 
+.charsheet select.choix_armes {
+  text-align: left;
+  height: 20px;
+  margin: 0px;
+  padding: 0px;
+  background: transparent;
+  border: none;
+  width: 105%;
+  color: var(--text_black);
+  padding-left: 5px;
+}
+
+.charsheet input.armes {  
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  color: var(--black);
+  font-size: 13px;
+  line-height: 20px;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+}
+
 div.go_systeme,
 div.go_feuille {
   position: absolute;
@@ -448,6 +475,16 @@ span.bleu-souligne {
   box-shadow: 2px 2px 6px 0px #000000ed;
 }
 
+.wrapper_armes {
+  display: grid;
+  grid-template-columns: 10% 2% 28% 0.5% 36% 0% 0% 0.5% 13% 0.5% 6%;
+  grid-auto-rows: 25px;
+  font-size: 13px;
+  padding: 5px;
+  border: 2px solid #00000061;
+  box-shadow: 2px 2px 6px 0px #000000ed;
+}
+
 .titre_competence_liee {
   grid-column: 1;
   grid-row: 1;
@@ -505,6 +542,49 @@ span.bleu-souligne {
   grid-row: 1;
   border-right: 2px solid var(--border_talent);
   border-bottom: 2px solid var(--border_talent);
+  margin-top: 2px;
+}
+
+.titre_armes {
+  grid-column: 1;
+  grid-row: 1/5;
+  text-align: center;
+  padding-right: 0px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type_arme {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 2px;
+  border: 1px solid var(--border_talent);
+}
+
+.nom_arme {
+  grid-column: 5;
+  grid-row: 1;
+  margin-top: 2px;
+  border: 1px solid var(--border_talent);
+}
+
+.degat_arme {
+  grid-column: 9;
+  grid-row: 1;
+  text-align: right;
+  padding-right: 10px;
+  margin-top: 2px;
+  border: 1px solid var(--border_talent);
+}
+
+.roll_arme {
+  grid-column: 11;
+  grid-row: 1;
+  border: 1px solid var(--border_talent);
   margin-top: 2px;
 }
 

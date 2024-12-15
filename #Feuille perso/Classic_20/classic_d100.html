@@ -38,9 +38,9 @@
             </div>
         </div>
 
-
+        <!-- Caractéristiques -->
         <div class="itd-inner">
-            <div class="itd-table-7col">
+            <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CARRURE" min="0" max="100" />
                 <div class="itd-basic-talent-corps">
                     <button type="roll" class="button_competence" name="roll_CARRURE" title="info" data-i18n-title="attr-CARRURE_info"
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-
+        <!-- Blessure / Stress -->
         <div class="itd-black-band">
             <div class="itd-black-band-text">
                 <div class="itd-table">
@@ -106,7 +106,7 @@
                             <span class="itd-radio-checkmark protection-color"></span>
                         </label>
                     </div> -->
-                    <div class="itd-table-3col"><span data-i18n="wounds">HERIDAS</span> &nbsp;
+                    <div class="itd-table-3col"><span data-i18n="wounds">BLESSURES</span> &nbsp;
                         <label class="itd-radio-container">
                             <input type="radio" name="attr_blessure" value="0" checked="checked">
                             <span class="itd-radio-checkmark zero-color"></span>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="itd-table-3col"><button type="roll" class="button_initiative" name="roll_INITIATIVE" title="info" data-i18n-title="initiative_info"
                         value="&{template:itd} {{initiative=oui}} {{title=^{initiative}}} {{subheader=@{character_name}}} {{initiative=oui}} {{seuil=@{stat_initiative}}} {{result=[[1d10 [Jet] + @{stat_initiative} [Bonus Initiative] &{tracker}]]}}"><span data-i18n="initiative">Initiative</span></div>
-                    <div class="itd-table-3col"><span data-i18n="stress">ESTRÉS</span> &nbsp;
+                    <div class="itd-table-3col"><span data-i18n="stress">STRESS</span> &nbsp;
                         <label class="itd-radio-container">
                             <input type="radio" name="attr_stress" value="0" checked="checked">
                             <span class="itd-radio-checkmark zero-color"></span>
@@ -164,10 +164,11 @@
             </div>
         </div>
 
-        <!-- TALENTS -->
+       
         <div class="itd-marker">
             <span class="itd-marker-text"><span data-i18n="specializations-and-talens">ESPECIALIZACIONES Y TALENTOS</span></span>
-        </div>
+        </div> 
+        <!-- TALENTS -->
         <div class="itd-inner">
             <!-- CARRURE -->
             <div class="wrapper_talent" style="margin-top: 30px;">
@@ -249,10 +250,12 @@
             </div>
         </div>
 
-         <!-- STATISTIQUES DE COMBAT -->
+         
         <div class="itd-marker">
             <span class="itd-marker-text"><span data-i18n="stat_combat">ESPECIALIZACIONES Y TALENTOS</span></span>
         </div>
+
+        <!-- STATISTIQUES DE COMBAT -->
 		<div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
             <div class="itd-table-3col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="100" readonly>
@@ -272,8 +275,111 @@
                     <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
                 </div>
             </div>
-		</div>		
-		
+		</div>	
+
+        <!-- ARMES -->
+        <div class="itd-inner">
+            <div class="wrapper_armes" style="margin-top: 30px;margin-bottom: 30px;">
+                <div class="titre_armes">ARMES</span></div>
+                <div class="type_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">TYPE</div>
+                <div class="nom_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">NOM</div>
+                <div class="degat_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">DÉGÂTS</div>
+                <div class="roll_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">JET</div>
+                <div class="type_arme" style="grid-row: 2;">
+                    <select class="choix_armes" name="attr_arme_1">
+                        <option value="0" selected="selected"></option>
+                        <option value="19">Mains nues</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque ancienne --</option>
+                        <option value="1">Armes légères</option>
+                        <option value="2">Armes à une main</option>
+                        <option value="3">Armes à deux mains</option>
+                        <option value="4">Armes de jet</option>
+                        <option value="5">Armes à distance</option>
+                        <option value="6">Armes à distance lourdes</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque moderne --</option>
+                        <option value="7">Armes blanches légères</option>
+                        <option value="8">Armes blanches lourdes</option>
+                        <option value="9">Armes à feu légères</option>
+                        <option value="10">Armes à feu lourdes</option>
+                        <option value="11">Armes automatiques</option>
+                        <option value="12">Explosifs</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes futuristes --</option>
+                        <option value="13">Armes énergétiques légères</option>
+                        <option value="14">Armes énergétiques lourdes</option>
+                        <option value="15">Armes tranchantes</option>
+                        <option value="16">Armes de mêlée massives</option>
+                        <option value="17">Explosifs avancés</option>
+                        <option value="18">Armes à distance avancées</option>
+                    </select>
+                </div>
+                <div class="nom_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_nom_arme_1"></div>
+                <div class="degat_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_degat_arme_1"></div>
+                <div class="roll_arme" style="grid-row: 2;">roll</div>
+
+                <div class="type_arme" style="grid-row: 3;">
+                    <select class="choix_armes" name="attr_arme_2">
+                        <option value="0" selected="selected"></option>
+                        <option value="19">Mains nues</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque ancienne --</option>
+                        <option value="1">Armes légères</option>
+                        <option value="2">Armes à une main</option>
+                        <option value="3">Armes à deux mains</option>
+                        <option value="4">Armes de jet</option>
+                        <option value="5">Armes à distance</option>
+                        <option value="6">Armes à distance lourdes</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque moderne --</option>
+                        <option value="7">Armes blanches légères</option>
+                        <option value="8">Armes blanches lourdes</option>
+                        <option value="9">Armes à feu légères</option>
+                        <option value="10">Armes à feu lourdes</option>
+                        <option value="11">Armes automatiques</option>
+                        <option value="12">Explosifs</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes futuristes --</option>
+                        <option value="13">Armes énergétiques légères</option>
+                        <option value="14">Armes énergétiques lourdes</option>
+                        <option value="15">Armes tranchantes</option>
+                        <option value="16">Armes de mêlée massives</option>
+                        <option value="17">Explosifs avancés</option>
+                        <option value="18">Armes à distance avancées</option>
+                    </select>
+                </div>
+                <div class="nom_arme" style="grid-row: 3;"><input type="text" class="armes" name="attr_nom_arme_2"></div>
+                <div class="degat_arme" style="grid-row: 3;"><input type="text" class="armes" name="attr_degat_arme_2"></div>
+                <div class="roll_arme" style="grid-row: 3;">roll</div>
+
+                <div class="type_arme" style="grid-row: 4;">  
+                    <select class="choix_armes" name="attr_arme_3">
+                        <option value="0" selected="selected"></option>
+                        <option value="19">Mains nues</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque ancienne --</option>
+                        <option value="1">Armes légères</option>
+                        <option value="2">Armes à une main</option>
+                        <option value="3">Armes à deux mains</option>
+                        <option value="4">Armes de jet</option>
+                        <option value="5">Armes à distance</option>
+                        <option value="6">Armes à distance lourdes</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque moderne --</option>
+                        <option value="7">Armes blanches légères</option>
+                        <option value="8">Armes blanches lourdes</option>
+                        <option value="9">Armes à feu légères</option>
+                        <option value="10">Armes à feu lourdes</option>
+                        <option value="11">Armes automatiques</option>
+                        <option value="12">Explosifs</option>
+                        <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Armes futuristes --</option>
+                        <option value="13">Armes énergétiques légères</option>
+                        <option value="14">Armes énergétiques lourdes</option>
+                        <option value="15">Armes tranchantes</option>
+                        <option value="16">Armes de mêlée massives</option>
+                        <option value="17">Explosifs avancés</option>
+                        <option value="18">Armes à distance avancées</option>
+                    </select>
+                </div>
+                <div class="nom_arme" style="grid-row: 4;"><input type="text" class="armes" name="attr_nom_arme_3"></div>
+                <div class="degat_arme" style="grid-row: 4;"><input type="text" class="armes" name="attr_degat_arme_3"></div>
+                <div class="roll_arme" style="grid-row: 4;">roll</div>
+            </div>	
+		</div>
+
 		<!-- Spécialisation -->
         <div class="itd-marker">
             <span class="itd-marker-text"><span data-i18n="specialisation" data-i18n-title="specialisation_info" style="cursor: help;">SPÉCIALISATION</span>
@@ -284,23 +390,24 @@
 
         <!-- INVENTAIRE -->
         <div class="itd-marker">
-            <span class="itd-marker-text"><span data-i18n="shell">FUNDA</span></span>
+            <span class="itd-marker-text"><span data-i18n="inventaire">INVENTAIRE</span></span>
         </div>
         <div class="itd-inner-text">
-            <textarea rows="4" width="100%" spellcheck="false" name="attr_shell"></textarea>
+            <textarea rows="4" width="100%" spellcheck="false" name="attr_inventaire"></textarea>
         </div>
 
         <!-- NOTES -->
         <div class="itd-marker">
-            <span class="itd-marker-text"><span data-i18n="weapons-and-gear">ARMAS Y EQUIPAMIENTO</span></span>
+            <span class="itd-marker-text"><span data-i18n="notes">NOTES</span></span>
         </div>
         <div class="itd-inner-text">
-            <textarea rows="6" cols="50" spellcheck="false" name="attr_weapons-and-gear"></textarea>
+            <textarea rows="6" cols="50" spellcheck="false" name="attr_notes"></textarea>
         </div>
 
+        <!-- EXPERIENCE -->
         <div class="itd-black-band">
             <div class="itd-black-band-text">
-                <span data-i18n="experience">EXPERIENCIA</span> &nbsp;
+                <span data-i18n="experience">EXPERIENCE</span> &nbsp;
                 <label class="itd-radio-container">
                     <input type="radio" name="attr_experience" value="0" checked="checked">
                     <span class="itd-radio-checkmark zero-color"></span>
@@ -419,11 +526,11 @@
 					</li>
 					<li><strong>Talents :</strong> Répartissez <strong>100 points</strong> librement entre les talents (max 30 % par talent).</li>
 				</ul>
-        <br>
-		<div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
-			<hr style="width: 50%; border: 1px solid black; margin: auto;">
-		</div>
-		<h3>2. Système de résolution des actions</h3>
+            <br>
+            <div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
+                <hr style="width: 50%; border: 1px solid black; margin: auto;">
+            </div>
+            <h3>2. Système de résolution des actions</h3>
             <p style="font-family: unset;">Pour effectuer une action, le joueur associe une compétence et un talent pertinents, lance un <strong>d100</strong> puis compare le résultat à son <strong>score total</strong> qui est défini comme suit :
             <p style="color: #bb0000cf;font-size: 14px;margin-top: 5px;margin-bottom: 20px;"><strong>Score total = </strong>Compétence + Talent - Malus éventuels (Blessures, Stress, etc.)</p>
           
@@ -449,11 +556,11 @@
 				</ul>
             <p style="font-family: unset;"><em>Exemple :</em> Un personnage avec 2 blessures et 3 de stress subit un malus total de -25 % à ses jets.</p>
 
-		<br>	
-		<div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
-			<hr style="width: 50%; border: 1px solid black; margin: auto;">
-		</div>
-		<h3>3. Spécialisation</h3>
+            <br>	
+            <div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
+                <hr style="width: 50%; border: 1px solid black; margin: auto;">
+            </div>
+            <h3>3. Spécialisation</h3>
             <p style="font-family: unset;">Les spécialisations représentent des compétences ou connaissances précises, acquises à travers le vécu, les apprentissages ou les expériences des personnages. Elles doivent être assez spécifiques pour limiter leur utilisation à des situations bien définies, évitant ainsi qu'elles soient trop souvent invoquées.</p>
 			<p style="font-family: unset;">Par exemple, un médecin pourrait choisir une spécialisation comme médecine traumatologique ou médecine de guerre, plutôt que simplement médecine. Libre à lui de choisir Médecine générale, mais dans ce cas là, le bonus octroyé sera moindre qu'avec une spécialisation plus précise. Chaque personnage peut avoir 1 à 2 spécialisations, offrant un bonus variable selon la situation, qui pourra être défini entre le joueur et le MJ.</p>
 			<br>
@@ -476,11 +583,11 @@
 					<li><strong>Vente perspicace</strong> (capacité à négocier et convaincre dans des échanges commerciaux difficiles)</li>
 				</ul>
            
-		<br>	
-		<div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
-			<hr style="width: 50%; border: 1px solid black; margin: auto;">
-		</div>
-		<h3>4. Combat</h3>
+            <br>	
+            <div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
+                <hr style="width: 50%; border: 1px solid black; margin: auto;">
+            </div>
+            <h3>4. Combat</h3>
             <p style="font-family: unset;">Les combats reposent sur trois types d’attaques : <br><strong>Corps à corps, Distance et Verbal.</strong>
 			<br>
             <h4>Calcul des scores de combat :</h4>
@@ -503,12 +610,15 @@
 			  </li>
 			  </ul>
             </ol>	
+            <br>
+            <h4>Dégâts subis :</h4>
+            <p style="font-family: unset;">En cas de réussite critique sur un jet d'attaque ou échec critique sur un jet de défense, les dégâts sont doublés.</p>
 
-		<br>	
-		<div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
-			<hr style="width: 50%; border: 1px solid black; margin: auto;">
-		</div>
-		<h3>5. Exemples d’actions</h3>
+            <br>	
+            <div style="text-align: center;margin-bottom: 25px;margin-left: -10px;">
+                <hr style="width: 50%; border: 1px solid black; margin: auto;">
+            </div>
+            <h3>5. Exemples d’actions</h3>
 			<br>
 			<h4>Exemple 1 : Détecter une présence</h4>
 				<ul>
@@ -520,7 +630,7 @@
 				  <li><strong>Score effectif :</strong> (70 + 13 - 5 - 0 - 15) = 63</li>
 				</ul>
 				<br>
-			<div style="margin-left: 25px;">
+			    <div style="margin-left: 25px;">
 				<h4>Résultats du D100:</h4>
 				<ul>
 					<li><strong>63 ou moins = </strong>Réussite</li>
@@ -1032,4 +1142,172 @@
 	finishRoll(roll.rollId,computeObj);
 	})
 
+</script>
+
+<!-- MAJ equipement -->
+<script type="text/worker">
+	on("change:arme_1 change:arme_2 change:arme_3", function (eventInfo) {
+		const changedAttribute = eventInfo.sourceAttribute; // L'attribut qui a déclenché l'événement
+	
+		getAttrs([changedAttribute], function (values) {
+			const weaponNom = parseInt(values[changedAttribute]) || 0;
+			let weapon = {
+				nom: "",
+				degat: "",
+			};
+	
+			
+			switch (weaponNom) {
+				case 1:
+					weapon = {
+						nom: "Dague, couteau",
+                        degat: "1D2"
+					};
+					break;
+
+				case 2:
+					weapon = {
+						nom: "Épée courte, masse, hache",
+                        degat: "1D3"
+					};
+					break;
+
+				case 3:
+					weapon = {
+						nom: "Épée longue, marteau, hallebarde",
+                        degat: "1D3+1"
+					};
+					break;
+
+				case 4:
+					weapon = {
+						nom: "Javelot, fronde",
+                        degat: "1D3"
+					};
+					break;
+
+				case 5:
+					weapon = {
+						nom: "Arc court, arbalète légère",
+                        degat: "1D3"
+					};
+					break;
+
+                case 6:
+                weapon = {
+                    nom: "Arc long, arbalète lourde",
+                    degat: ""
+                };
+                break;
+
+                case 7:
+                weapon = {
+                    nom: "Couteau, matraque",
+                    degat: "1D2"
+                };
+                break;
+
+                case 8:
+                weapon = {
+                    nom: "Batte de baseball, machette",
+                    degat: "1D3"
+                };
+                break;
+
+                case 9:
+                weapon = {
+                    nom: "Pistolet",
+                    degat: "1D3"
+                };
+                break;
+
+                case 10:
+                weapon = {
+                    nom: "Fusil de chasse",
+                    degat: "1D4"
+                };
+                break;
+
+                case 11:
+                weapon = {
+                    nom: "Mitraillette, fusil d'assaut",
+                    degat: "1D4+1"
+                };
+                break;
+
+                case 12:
+                weapon = {
+                    nom: "Grenade, dynamite",
+                    degat: "1D6"
+                };
+                break;
+
+                case 13:
+                weapon = {
+                    nom: "Pistolet laser",
+                    degat: "1d2"
+                };
+                break;
+
+                case 14:
+                weapon = {
+                    nom: "Fusil plasma",
+                    degat: "1D3+1"
+                };
+                break;
+
+                case 15:
+                weapon = {
+                    nom: "Épée énergetique, vibro-lame",
+                    degat: "1D2+1"
+                };
+                break;
+
+                case 16:
+                weapon = {
+                    nom: "Marteau gravitationnel",
+                    degat: "1D3+1"
+                };
+                break;
+
+                case 17:
+                weapon = {
+                    nom: "Grenade EMP, détonateur nucléaire",
+                    degat: "1D6"
+                };
+                break;
+
+                case 18:
+                weapon = {
+                    nom: "Railgun, canon à particules",
+                    degat: "1D5+1"
+                };
+                break;
+
+                case 19:
+                weapon = {
+                    nom: "Pugilat, Boxe, Lutte",
+                    degat: "1"
+                };
+                break;
+
+                
+
+                
+
+                
+				
+			}
+	
+			// Détermine l'index de l'attribut modifié (ex. "1" ou "2")
+			const num = changedAttribute.match(/\d+/)[0];
+	
+			// Met à jour uniquement les champs liés à l'attribut modifié
+			const updates = {};
+			updates[`nom_arme_${num}`] = weapon.nom;
+			updates[`degat_arme_${num}`] = weapon.degat;
+	
+			setAttrs(updates);
+		});
+	});
 </script>
