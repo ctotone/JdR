@@ -65,22 +65,23 @@ div.go_feuille {
 /* Affichage des page dynamique */
 div.feuille,
 div.systeme {
-    display: none;
+  display: none;
 }
 
 .charsheet .choix_page[value="0"] ~ div.feuille,
 .charsheet .choix_page[value="1"] ~ div.systeme {
-    display: block;
+  display: block;
 }
 
 .charsheet input[type=number]::-webkit-inner-spin-button,
 .charsheet input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  appearance: unset;
+  -moz-appearance: textfield;
 }
 
 .charsheet button[type=action].button_talent::before,
@@ -916,7 +917,7 @@ textarea {
   background: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
   background-repeat: no-repeat;
   border-spacing: 0;
-  max-height: 200px;
+  /* max-height: 200px; */
   min-height: 130px;
   max-width: 250px;
   margin: 0px;
@@ -932,6 +933,7 @@ textarea {
   letter-spacing: 0px;
   word-wrap: break-word;
   /* margin-top: 25px; */
+  line-height: 24px;
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader,
@@ -1055,4 +1057,38 @@ textarea {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
+}
+
+/* Boutons liens */
+/* Roll Buttons */
+.sheet-rolltemplate-itd a[href^='!'],
+.sheet-rolltemplate-itd a[href^='~'],
+.sheet-rolltemplate-itd a[href^='`']{
+  color: #dfdfdf;
+  border: none;
+  background: none;
+  font-size: 14px;
+  line-height: 6px;
+  text-align: left;
+}
+.sheet-rolltemplate-itd a[href^='!']:hover,
+.sheet-rolltemplate-itd a[href^='~']:hover,
+.sheet-rolltemplate-itd a[href^='`']:hover{
+  top: -1px;
+  color: #ff0039;
+}
+/* hyperlinks */
+.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']){
+    font-weight: bold;
+    color:#3f8aa6;
+}
+.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):hover {
+  font-weight: bold;
+  color:#70c0dd;
+}
+.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):visited{
+  color:purple;
+}
+.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):visited:hover{
+  color:rgb(187, 45, 187);
 }

@@ -1,5 +1,3 @@
-<!-- TODO Roll des dégats d'arme -->
-
 <div class="sheet-itd-container">
     <input type="hidden" name="attr_page" class="choix_page" value="0">
  
@@ -15,8 +13,30 @@
     <input type="hidden" class="voir_inventaire" name="attr_show_inventaire" value="0">
     <input type="hidden" class="voir_note" name="attr_show_note" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">
-    <input type="hidden" name="attr_nom_arme1" value="Pugilat, Boxe, Lutte">
-    <input type="hidden" name="attr_degat_arme1" value="1">
+    <input type="hidden" name="attr_nom_arme_1" value="Pugilat, Boxe, Lutte">
+    <input type="hidden" name="attr_degat_arme_1" value="1">    
+    <input type="hidden" name="attr_degat_maxi_arme_1" value="1">    
+    <input type="hidden" name="attr_DMG_1" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_1" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <input type="hidden" name="attr_nom_arme_2" value=" ">
+    <input type="hidden" name="attr_degat_arme_2" value="1">    
+    <input type="hidden" name="attr_degat_maxi_arme_2" value="1">    
+    <input type="hidden" name="attr_DMG_2" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_2" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <input type="hidden" name="attr_nom_arme_3" value=" ">
+    <input type="hidden" name="attr_degat_arme_3" value="1">    
+    <input type="hidden" name="attr_degat_maxi_arme_3" value="1">    
+    <input type="hidden" name="attr_DMG_3" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_3" value="&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <button type="roll" name="roll_weapon_dmg_1" style="display: none;" value="@{DMG_1}"></button> 
+    <button type="roll" name="roll_weapon_dmg_2" style="display: none;" value="@{DMG_2}"></button>
+    <button type="roll" name="roll_weapon_dmg_3" style="display: none;" value="@{DMG_3}"></button>
+    <button type="roll" name="roll_weapon_dmg_maxi_1" style="display: none;" value="@{DMG_maxi_1}"></button> 
+    <button type="roll" name="roll_weapon_dmg_maxi_2" style="display: none;" value="@{DMG_maxi_2}"></button>
+    <button type="roll" name="roll_weapon_dmg_maxi_3" style="display: none;" value="@{DMG_maxi_3}"></button>
+    <button type="roll" name="roll_critique_cac" style="display: none;" value="&{template:itd} {{critique_cac=oui}} {{result=[[1D20]]}}"></button>
+    <button type="roll" name="roll_critique_distance" style="display: none;" value="&{template:itd} {{critique_distance=oui}} {{result=[[1D20]]}}"></button>
+    <button type="roll" name="roll_critique_verbal" style="display: none;" value="&{template:itd} {{critique_verbal=oui}} {{result=[[1D10]]}}"></button>
 
         <div class="itd-inner itd-logo-and-info">
             <div class="itd-logo-table-col1">
@@ -52,42 +72,42 @@
         <!-- Caractéristiques -->
         <div class="itd-inner">
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CARRURE" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CARRURE" min="0" max="99" />
                 <div class="itd-basic-talent-corps">
                     <button type="roll" class="button_competence" name="roll_CARRURE" title="info" data-i18n-title="attr-CARRURE_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-CARRURE}}} {{subheader=@{character_name}}} {{seuil=[[@{CARRURE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_AGILITE" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_AGILITE" min="0" max="99" />
                 <div class="itd-basic-attribute-corps">
                     <button type="roll" class="button_competence" name="roll_AGILITE" title="info" data-i18n-title="attr-AGILITE_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-AGILITE}}} {{subheader=@{character_name}}} {{seuil=[[@{AGILITE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_PERCEPTION" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_PERCEPTION" min="0" max="99" />
                 <div class="itd-basic-attribute-ame">
                     <button type="roll" class="button_competence" name="roll_PERCEPTION" title="info" data-i18n-title="attr-PERCEPTION_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-PERCEPTION}}} {{subheader=@{character_name}}} {{seuil=[[@{PERCEPTION}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_MENTAL" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_MENTAL" min="0" max="99" />
                 <div class="itd-basic-attribute-ame">
                     <button type="roll" class="button_competence" name="roll_MENTAL" title="info" data-i18n-title="attr-MENTAL_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-MENTAL}}} {{subheader=@{character_name}}} {{seuil=[[@{MENTAL}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_INTELLECT" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_INTELLECT" min="0" max="99" />
                 <div class="itd-basic-attribute-esprit">
                     <button type="roll" class="button_competence" name="roll_INTELLECT" title="info" data-i18n-title="attr-INTELLECT_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-INTELLECT}}} {{subheader=@{character_name}}} {{seuil=[[@{INTELLECT}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
-                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CHARISME" min="0" max="100" />
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CHARISME" min="0" max="99" />
                 <div class="itd-basic-attribute-esprit">
                     <button type="roll" class="button_competence" name="roll_CHARISME" title="info" data-i18n-title="attr-CHARISME_info"
                     value="&{template:itd} {{jet=oui}} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
@@ -175,7 +195,6 @@
             </div>
         </div>
 
-       
         <div class="itd-marker">
             <span class="itd-marker-text"><span data-i18n="specializations-and-talens">TALENT</span><button type="action" class="button_show" name="act_hide_talent" title="Afficher / Cacher" ><span class="picto">|</span></button></span>
         </div> 
@@ -263,31 +282,29 @@
             </div>
         </div>
 
-         
         <div class="itd-marker" style="margin-top: 30px;">
             <span class="itd-marker-text"><span data-i18n="stat_combat">COMBAT</span><button type="action" class="button_show" name="act_hide_combat" title="Afficher / Cacher" ><span class="picto">|</span></button></span>
         </div>
-
 
         <!-- STATISTIQUES DE COMBAT -->
         <div class="show_combat">
             <div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
                 <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="100" readonly>
+                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
                     <div class="itd-basic-talent-corps">
-                        <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                        <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
                     </div>
                 </div>
                 <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="100" readonly>
+                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
                     <div class="itd-basic-attribute-ame">
-                        <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                        <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
                     </div>
                 </div>
                 <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="100" readonly>
+                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
                     <div class="itd-basic-attribute-esprit">
-                        <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
                     </div>
                 </div>
             </div>	
@@ -302,8 +319,8 @@
                     <div class="roll_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">JET</div>
                     <div class="type_arme" style="grid-row: 2;">
                         <select class="choix_armes" name="attr_arme_1">
-                            <option value="0" selected="selected"></option>
-                            <option value="19">Mains nues</option>
+                            <option value="0"></option>
+                            <option value="19" selected="selected">Mains nues</option>
                             <option disabled style="background:rgb(0, 0, 0);font-weight:bold;color:white;">-- Époque ancienne --</option>
                             <option value="1">Armes légères</option>
                             <option value="2">Armes à une main</option>
@@ -327,8 +344,8 @@
                             <option value="18">Armes à distance avancées</option>
                         </select>
                     </div>
-                    <div class="nom_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_nom_arme_1"></div>
-                    <div class="degat_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_degat_arme_1"></div>
+                    <div class="nom_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_nom_arme_1" value="Pugilat, Boxe, Lutte"></div>
+                    <div class="degat_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_degat_arme_1" value="1"></div>
                     <div class="roll_arme" style="grid-row: 2;"><button type="roll" class="button_roll" name="roll_roll-arme1" value="&{template:itd} {{degat=oui}} {{title=@{nom_arme_1}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_1}]]}}"><span class="picto">R</span></button></div>
 
                     <div class="type_arme" style="grid-row: 3;">
@@ -451,7 +468,6 @@
             </div>
         </div>
 
-
         <div class="itd-inner" style="font-size: 15px; line-height: 26px;">
             <div class="itd-table">
                 <div class="itd-table-3col">
@@ -543,9 +559,9 @@
             <p style="font-family: unset;">Chaque personnage est défini par <strong>6 compétences</strong> et <strong>18 talents</strong>.</p>
 				<ul>
 				  <li><strong>Compétences :</strong> Répartissez les valeurs suivantes entre les 6 compétences : 
-					<br><strong>30 %, 40 %, 50 %, 50 %, 60 %, 70 %</strong>.
+					<br><strong>20 %, 30 %, 40 %, 40 %, 50 %, 60 %</strong>.
 					<br>Ces compétences reflètent les aptitudes générales de votre personnage.
-					<br>Exemple : Un pilote peut attribuer 70 % à Agilité, 60 % à Perception, et ainsi de suite.
+					<br>Exemple : Un pilote peut attribuer 60 % à Agilité, 50 % à Perception, et ainsi de suite.
 					<br>
 					</li>
 					<li><strong>Talents :</strong> Répartissez <strong>100 points</strong> librement entre les talents (max 30 % par talent).</li>
@@ -684,6 +700,8 @@
         <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
             <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
                 {{title}}
+                <br>
+                inflige
             </div>
             <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color:#ff0039;font-size: 31px;">
                 {{#rollTotal() result 1}}
@@ -698,6 +716,278 @@
             </div>
         </div>
     {{/degat}}
+    {{#critique_cac}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
+            </div>
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color: #ff0039;font-size: 16px;text-align: justify;margin-top: -20px;">
+                {{#rollTotal() result 1}}
+                    Vulnérabilité temporaire
+                    <br><br>Vous perdez votre équilibre et êtes légèrement désorienté, mais vous pouvez encore vous défendre
+                    <br><br>Encaissez 1 point de Stress
+                {{/rollTotal() result 1}}
+                {{#rollTotal() result 2}}
+                    Erreur d'attaque
+                    <br><br>Vous frappez dans le vide, exposant votre côté et permettant à 1 ennemi de contre-attaquer une fois de plus ce tour-ci
+                {{/rollTotal() result 2}}
+                {{#rollTotal() result 3}}
+                    Mouvement hésitant
+                    <br><br>Votre coup manque et vous reculez maladroitement
+                    <br><br>Impossible d'effectuer une action de combat au tour suivant
+                {{/rollTotal() result 3}}
+                {{#rollTotal() result 4}}
+                    Blessure mineure
+                    <br><br>Vous vous blessez légèrement, peut-être en heurtant une partie de votre corps sur votre propre arme
+                    <br><br>Encaissez 1 point de blessure
+                {{/rollTotal() result 4}}
+                {{#rollTotal() result 5}}
+                    Perte d'équilibre
+                    <br><br>Vous trébuchez ou perdez votre posture, vous êtes à la merci de l'ennemi pour un court instant
+                    <br><br>Bonus de 20 pour la prochaine attaque vous ciblant
+                {{/rollTotal() result 5}}
+                {{#rollTotal() result 6}}
+                    Arme déviée
+                    <br><br>Votre arme se prend dans votre propre équipement (vêtements, armure) ou un obstacle, ce qui la rend moins efficace pour la prochaine attaque
+                    <br><br>50% de dégâts de l'arme sur la prochaine utilisation.
+                {{/rollTotal() result 6}}
+                {{#rollTotal() result 7}}
+                    Désorientation
+                    <br><br>Vous êtes momentanément étourdi, vos mouvements deviennent plus lents et plus imprécis pendant un tour
+                    <br><br>Encaissez 1 point de Stress et Malus de 10 sur la prochaine action
+                {{/rollTotal() result 7}}
+                {{#rollTotal() result 8}}
+                    Oubli de défense
+                    <br><br>Vous laissez une ouverture dans votre garde, permettant à l'ennemi de frapper sans difficulté
+                    <br><br>Malus de 20% sur la prochaine action de défense 
+                {{/rollTotal() result 8}}
+                {{#rollTotal() result 9}}
+                    Fracture mineure
+                    <br><br>Un mouvement mal exécuté provoque une douleur vive, vous infligeant une petite fracture dans un membre
+                    <br><br>Encaissez 1 point de blessure et 1 point de Stress
+                {{/rollTotal() result 9}}
+                {{#rollTotal() result 10}}
+                    Concentration brisée
+                    <br><br>Vous perdez votre concentration et avez des difficultés à réagir pendant les prochains tours
+                    <br><br>Encaissez 2 points de Stress et Malus de 20 sur la prochaine action
+                {{/rollTotal() result 10}}
+                {{#rollTotal() result 11}}
+                    Échec d'attaque puissante
+                    <br><br>Vous tentiez de porter un coup puissant, mais votre maladresse vous en empêche, perdant ainsi un avantage crucial
+                    <br><br>Encaissez 2 points de Stress
+                {{/rollTotal() result 11}}
+                {{#rollTotal() result 12}}
+                    Contre-attaque réussie
+                    <br><br>L'ennemi profite de votre faux mouvement pour porter un coup dans un point faible
+                    <br><br>Decrivez une conséquences grave ou subissez 1 point de blessure
+                {{/rollTotal() result 12}}
+                {{#rollTotal() result 13}}
+                    Mouvement déstabilisant
+                    <br><br>Vous vous exposez complètement
+                    <br><br>Votre adversaire infligera le maximum de dégats de son arme s’il réussit son jet
+                {{/rollTotal() result 13}}
+                {{#rollTotal() result 14}}
+                    Légère commotion
+                    <br><br>Un coup raté vous fait heurter votre tête contre un obstacle ou un adversaire
+                    <br><br>Subissez 2 points de blessure et vous agirez en dernier au tour prochain
+                {{/rollTotal() result 14}}
+                {{#rollTotal() result 15}}
+                    Pied coincé
+                    <br><br>Vous vous retrouvez coincé ou entravé dans un obstacle (rocher, racine, etc.)
+                    <br><br>Passez un tour à vous dégager ou acceptez de ne plus pouvoir vous deplacer.
+                {{/rollTotal() result 15}}
+                {{#rollTotal() result 16}}
+                    Déchirement musculaire
+                    <br><br>Un mauvais mouvement engendre une douleur intense dans un muscle
+                    <br><br>Perte temporaire de 20 points en Carrure ET Agilité
+                {{/rollTotal() result 16}}
+                {{#rollTotal() result 17}}
+                    Blessure grave
+                    <br><br>Vous vous infligez une profonde blessure à un membre, entraînant une douleur persistante
+                    <br><br>Encaissez 2 points de blessure et 2 points de Stress
+                {{/rollTotal() result 17}}
+                {{#rollTotal() result 18}}
+                    Perte de conscience
+                    <br><br>Le choc est si intense que vous perdez connaissance pendant un tour
+                    <br><br>Encaissez 3 points de Stress
+                {{/rollTotal() result 18}}
+                {{#rollTotal() result 19}}
+                    Fracture multiple
+                    <br><br>Un coup mal placé vous brise un membre, vous rendant complètement inefficace dans le combat
+                    <br><br>Encaissez 3 points de blessure et seules des actions de défense sont possibles
+                {{/rollTotal() result 19}}
+                {{#rollTotal() result 20}}
+                    Mauvaise cible
+                    <br><br>Dans la précipitation, votre coup atteint un allié et lui inflige le maximum des dégâts de votre arme
+                    <br><br>Encaissez 4 points de Stress
+                {{/rollTotal() result 20}}
+            </div>
+        </div>
+    {{/critique_cac}}
+    {{#critique_distance}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
+            </div>
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color: #ff0039;font-size: 16px;text-align: justify;margin-top: -20px;">
+                {{#rollTotal() result 1}}
+                    Vulnérabilité temporaire
+                    <br><br>Vous perdez votre équilibre et êtes légèrement désorienté, mais vous pouvez encore vous défendre
+                    <br><br>Encaissez 1 point de Stress
+                {{/rollTotal() result 1}}
+                {{#rollTotal() result 2}}
+                    Erreur d'attaque
+                    <br><br>Vous agissez dans le vide, exposant votre côté et permettant à 1 ennemi de contre-attaquer une fois de plus ce tour-ci
+                {{/rollTotal() result 2}}
+                {{#rollTotal() result 3}}
+                    Mouvement hésitant
+                    <br><br>Votre coup manque et vous reculez maladroitement
+                    <br><br>Impossible d'effectuer une action de combat au tour suivant
+                {{/rollTotal() result 3}}
+                {{#rollTotal() result 4}}
+                    Blessure mineure
+                    <br><br>Vous vous blessez légèrement, peut-être en heurtant une partie de votre corps sur votre propre arme
+                    <br><br>Encaissez 1 point de blessure
+                {{/rollTotal() result 4}}
+                {{#rollTotal() result 5}}
+                    Perte d'équilibre
+                    <br><br>Vous trébuchez ou perdez votre posture, vous êtes à la merci de l'ennemi pour un court instant
+                    <br><br>Bonus de 20 pour la prochaine attaque vous ciblant
+                {{/rollTotal() result 5}}
+                {{#rollTotal() result 6}}
+                    Arme déviée
+                    <br><br>Votre arme se prend dans votre propre équipement (vêtements, armure) ou un obstacle, ce qui la rend moins efficace pour la prochaine attaque
+                    <br><br>50% de dégâts de l'arme sur la prochaine utilisation.
+                {{/rollTotal() result 6}}
+                {{#rollTotal() result 7}}
+                    Désorientation
+                    <br><br>Vous êtes momentanément étourdi, vos mouvements deviennent plus lents et plus imprécis pendant un tour
+                    <br><br>Encaissez 1 point de Stress et Malus de 10 sur la prochaine action
+                {{/rollTotal() result 7}}
+                {{#rollTotal() result 8}}
+                    Oubli de défense
+                    <br><br>Vous êtes tellement concentré ce qui permet à un ennemi de frapper sans difficulté
+                    <br><br>Malus de 20% sur la prochaine action de défense 
+                {{/rollTotal() result 8}}
+                {{#rollTotal() result 9}}
+                    Dégâts collatéral
+                    <br><br>Le projectile touche un allié ou un compagnon par accident
+                    <br><br>Il encaisse 1 point de blessure et vous encaissez point de Stress
+                {{/rollTotal() result 9}}
+                {{#rollTotal() result 10}}
+                    Concentration brisée
+                    <br><br>Vous perdez votre concentration et avez des difficultés à réagir pendant les prochains tours
+                    <br><br>Encaissez 2 points de Stress et Malus de 20 sur la prochaine action
+                {{/rollTotal() result 10}}
+                {{#rollTotal() result 11}}
+                    Impact destructeur
+                    <br><br>Vous tirez si maladroitement que votre projectile frappe un terrain ou un objet à proximité, réduisant la couverture ou détruisant un élément utile (ex. : une porte ou une barricade)
+                    <br><br>Encaissez 2 points de Stress
+                {{/rollTotal() result 11}}
+                {{#rollTotal() result 12}}
+                    Mauvais contrôle
+                    <br><br>Vous ratez et perdez faites tomber votre arme dans une direction imprévisible
+                    <br><br>La récupérer vous prendra 1 tour entier et encaissez 2 points de Stress
+                {{/rollTotal() result 12}}
+                {{#rollTotal() result 13}}
+                    Mouvement déstabilisant
+                    <br><br>Vous vous exposez complètement
+                    <br><br>Votre adversaire infligera le maximum de dégats de son arme s’il réussit son jet
+                {{/rollTotal() result 13}}
+                {{#rollTotal() result 14}}
+                    Légère commotion
+                    <br><br>Un mouvement mal maitriser vous fait heurter la tête contre un obstacle ou un adversaire
+                    <br><br>Subissez 2 points de blessure et vous agirez en dernier au tour prochain
+                {{/rollTotal() result 14}}
+                {{#rollTotal() result 15}}
+                Détournement de la cible
+                    <br><br>Le tir part si mal qu’il dévie de sa trajectoire et touche un autre ennemi ou une cible inattendue (de préférence moins grave, mais perturbante)
+                    <br><br>Encaissez 2 points de Stress
+                {{/rollTotal() result 15}}
+                {{#rollTotal() result 16}}
+                    Fatigue extrême
+                    <br><br>Vous êtes tellement épuisé par l’effort que votre précision se dégrade pour un moment
+                    <br><br>Ne faites aucune action de combat pendant 2 tours entier ou acceptez un malus de 30% sur toutes vos actions jusqu'à la fin du combat ou de la scène
+                {{/rollTotal() result 16}}
+                {{#rollTotal() result 17}}
+                    Bruit gênant
+                    <br><br>Le bruit de votre tir est soudainement assourdissant, dérangeant votre concentration
+                    <br><br>Encaissez 3 points de Stress et appliquez un malus de 30% à votre prochaine action de combat
+                {{/rollTotal() result 17}}
+                {{#rollTotal() result 18}}
+                    Perte de conscience
+                    <br><br>Le choc est si intense que vous perdez connaissance pendant un tour
+                    <br><br>Encaissez 3 points de Stress
+                {{/rollTotal() result 18}}
+                {{#rollTotal() result 19}}
+                Retour du projectile
+                    <br><br>Le projectile ricoche, vous atteint en retour un retouret vous blesse serieusement au visage
+                    <br><br>Encaissez 3 points de blessure et seules des actions de défense sont possibles
+                {{/rollTotal() result 19}}
+                {{#rollTotal() result 20}}
+                    Accident grave
+                    <br><br>Un tir tellement mal effectué que l’arme se casse et vous blesse grièvement
+                    <br><br>Encaissez 3 points de Blessures et 2 points de Stress
+                {{/rollTotal() result 20}}
+            </div>
+        </div>
+    {{/critique_distance}}
+    {{#critique_verbal}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
+            </div>
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color: #ff0039;font-size: 16px;text-align: justify;margin-top: -20px;">
+                {{#rollTotal() result 1}}
+                    Contradiction embarrassante
+                    <br><br>Votre discours devient incohérent ou contradictoire, mettant en lumière vos propres incohérences et diminuant votre crédibilité
+                    <br><br>Encaissez 1 point de Stress
+                {{/rollTotal() result 1}}
+                {{#rollTotal() result 2}}
+                    Exposition de vos faiblesses
+                    <br><br>Vous vous perdez dans votre argumentation, et l’adversaire saisit l’occasion pour dévoiler une faiblesse ou une faille dans vos propos, vous rendant vulnérable
+                    <br><br>Encaissez 1 point de Stress
+                {{/rollTotal() result 2}}
+                {{#rollTotal() result 3}}
+                    Réaction agressive
+                    <br><br>Votre tentative de manipulation ou de persuasion provoque une réaction plus violente que prévue, et l’opposant réagit avec colère ou mépris
+                    <br><br>Encaissez 1 point de Stress
+                {{/rollTotal() result 3}}
+                {{#rollTotal() result 4}}
+                    Mauvaise interprétation
+                    <br><br>Ce que vous dites est mal compris, et vous vous retrouvez dans une position où vous devez expliquer une situation que vous n’aviez pas du tout l’intention de créer
+                    <br><br>Encaissez 2 points de Stress
+                {{/rollTotal() result 4}}
+                {{#rollTotal() result 5}}
+                    Perte de confiance
+                    <br><br>Votre manque de cohérence dans les arguments ou de persévérance dans votre discours entame votre autorité, vous faisant perdre le respect de l’audience ou de l’adversaire
+                    <br><br>Encaissez 2 points de Stress
+                {{/rollTotal() result 5}}
+                {{#rollTotal() result 6}}
+                    Retour de bâton
+                    <br><br>En essayant de manipuler ou de tromper, vous vous exposez à une réplique acerbe ou à une accusation qui ébranle votre position
+                    <br><br>Encaissez 3 points de Stress
+                {{/rollTotal() result 6}}
+                {{#rollTotal() result 7}}
+                    Humiliation publique
+                    <br><br>Votre tentative de prendre le dessus échoue, et vous êtes ridiculisé ou exposé devant les autres, ce qui vous fait perdre de la face
+                    <br><br>Encaissez 3 points de Stress
+                {{/rollTotal() result 7}}
+                {{#rollTotal() result 8}}
+                    Maladresse
+                    <br><br>Vos mots se retournent contre vous, et vous vous retrouvez à défendre des positions ou des principes que vous ne souhaitez pas réellement soutenir, créant une situation inconfortable
+                    <br><br>Encaissez 3 points de Stress
+                {{/rollTotal() result 8}}
+                {{#rollTotal() result 9}}
+                    Perte de contrôle émotionnel
+                    <br><br>Vous perdez votre calme ou votre sang-froid dans l’échange, vous exposant à des moqueries ou des attaques personnelles de la part de votre adversaire
+                    <br><br>Encaissez 4 points de Stress
+                {{/rollTotal() result 9}}
+                {{#rollTotal() result 10}}
+                    Exagération risquée
+                    <br><br>Vous allez trop loin dans votre tentative de convaincre ou de manipuler, ce qui vous met dans une position délicate, où vous êtes obligé de tenir un discours encore plus extrême pour éviter de perdre tout crédibilité
+                    <br><br>Encaissez 4 points de Stress
+                {{/rollTotal() result 10}}
+            </div>
+        </div>
+    {{/critique_verbal}}
     {{#jet}}
         <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
             <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">
@@ -893,12 +1183,18 @@
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-tragique">
                     Echec critique<br>tragique
+                    <br>
+                    <hr>
+                    {{consequence}}
                     {{/rollTotal() result 100}}
                     {{#rollTotal() result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                     Echec critique<br>avec une marge de {{computed::roll}}
+                    <br>
+                    <hr>
+                    {{consequence}}
                     {{/rollTotal() result 99}}
                     {{#^rollTotal() result 99}}
                         {{#^rollTotal() result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
@@ -916,48 +1212,72 @@
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 11}}
                         {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 22}}
                         {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 33}}
                         {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 44}}
                         {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 55}}
                         {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 66}}
                         {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 77}}
                         {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
+                        <br>
+                        <hr>
+                        {{consequence}}
                         {{/rollTotal() result 88}}
 
                         {{#^rollTotal() result 11}}
@@ -988,48 +1308,152 @@
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-exceptionnelle">
                         Réussite critique exceptionnelle<br>avec une marge de +{{computed::roll}}
+                            {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                            {{/show_degat}}
                         {{/rollTotal() result 1}}
                         {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                            {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 11}}
                         {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 22}}
                         {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 33}}
                         {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 44}}
                         {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 55}}
                         {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 66}}
                         {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
+                        {{#show_degat}}
+                            <br>
+                            <hr>
+                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                            <br>
+                            <br>
+                            {{arme_maxi_1}}
+                            <br>
+                            {{arme_maxi_2}}
+                            <br>
+                            {{arme_maxi_3}}
+                            <br>
+                        {{/show_degat}}
                         {{/rollTotal() result 77}}
                         {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
                 {{result}}
@@ -1050,6 +1474,19 @@
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite">
                                                         Reussite<br>avec une marge de +{{computed::roll}}
+                                                        {{#show_degat}}
+                                                            <br>
+                                                            <hr>
+                                                            <span style="color: #dfdfdf; font-size: 20px;">JET DE DÉGÂTS</span>
+                                                            <br>
+                                                            <br>
+                                                            {{arme1}}
+                                                            <br>
+                                                            {{arme2}}
+                                                            <br>
+                                                            {{arme3}}
+                                                            <br>
+                                                        {{/show_degat}}
                                                         {{/^rollTotal() result 88}} 
                                                     {{/^rollTotal() result 77}}                                    
                                                 {{/^rollTotal() result 66}}
@@ -1062,7 +1499,6 @@
                     {{/^rollGreater() result seuil}}
                 {{/^rollGreater() result 95}}
             </div>
-        </div>
     {{/combat}}
 </rolltemplate>
 
@@ -1158,11 +1594,10 @@
             let communication_expressive = parseInt(values["communication_expressive"]) || 0;
             let persuasion = parseInt(values["persuasion"]) || 0;
             let total_point_talent = endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental + creativite + erudition + logique + aura + communication_expressive + persuasion;
-			let score_cac = Math.floor(((CARRURE + AGILITE)/2) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe)/6));
 			
-			let score_distance = Math.floor(((PERCEPTION + MENTAL)/2) + ((acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/6));
-			
-			let score_verbal = Math.floor(((INTELLECT + CHARISME)/2) + ((equilibre_mental + creativite + erudition + logique + aura + communication_expressive)/6));
+            let score_cac = Math.min(Math.floor(((CARRURE + AGILITE)/2) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe)/6)),99);
+			let score_distance = Math.min(Math.floor(((PERCEPTION + MENTAL)/2) + ((acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/6)),99);
+            let score_verbal = Math.min(Math.floor(((INTELLECT + CHARISME)/2) + ((equilibre_mental + creativite + erudition + logique + aura + communication_expressive)/6)),99);
 			
 
         setAttrs({
@@ -1211,7 +1646,7 @@
     });
 	
 	on('clicked:roll-cac', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-CAC}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
@@ -1219,7 +1654,7 @@
 	})
 	
 	on('clicked:roll-distance', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-DISTANCE}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
@@ -1227,7 +1662,7 @@
 	})
 	
 	on('clicked:roll-verbal', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
@@ -1246,140 +1681,200 @@
 			let weapon = {
 				nom: "",
 				degat: "",
+                degat_maxi: "",
+                DMG: "",
+                DMG_maxi: ""
 			};
 	
 			
 			switch (weaponNom) {
 				case 1:
 					weapon = {
-						nom: "Dague, couteau",
-                        degat: "1D2"
+                    nom: "Dague, couteau",
+                    degat: "1D2",
+                    degat_maxi: "2",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Dague, couteau}} {{result=[[1D2]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Dague, couteau}} {{result=[[2]]}}"
 					};
-					break;
+                break;
 
 				case 2:
 					weapon = {
-						nom: "Épée courte, masse, hache",
-                        degat: "1D3"
+                    nom: "Épée courte, masse, hache",
+                    degat: "1D3",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Épée courte, masse, hache}} {{result=[[1D3]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Épée courte, masse, hache}} {{result=[[3]]}}"
 					};
-					break;
+                break;
 
 				case 3:
 					weapon = {
-						nom: "Épée longue, marteau, hallebarde",
-                        degat: "1D3+1"
+                    nom: "Épée longue, marteau, hallebarde",
+                    degat: "1D3+1",
+                    degat_maxi: "4",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Épée longue, marteau, hallebarde}} {{result=[[1D3+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Épée longue, marteau, hallebarde}} {{result=[[4]]}}"
 					};
-					break;
+                break;
 
 				case 4:
-					weapon = {
-						nom: "Javelot, fronde",
-                        degat: "1D3"
-					};
-					break;
+                    weapon = {
+                    nom: "Javelot, fronde",
+                    degat: "1D3",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Javelot, fronde}} {{result=[[1D3]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Javelot, fronde}} {{result=[[3]]}}"
+                    };
+                break;
 
 				case 5:
-					weapon = {
-						nom: "Arc court, arbalète légère",
-                        degat: "1D3"
-					};
-					break;
+                    weapon = {
+                    nom: "Arc court, arbalète légère",
+                    degat: "1D3",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Arc court, arbalète légère}} {{result=[[1D3]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Arc court, arbalète légère}} {{result=[[3]]}}"
+                    };
+                break;
 
                 case 6:
-                weapon = {
+                    weapon = {
                     nom: "Arc long, arbalète lourde",
-                    degat: ""
+                    degat: "1D4",
+                    degat_maxi: "4",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Arc long, arbalète lourde}} {{result=[[1D4]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Arc long, arbalète lourde}} {{result=[[4]]}}"
                 };
                 break;
 
                 case 7:
-                weapon = {
+                    weapon = {
                     nom: "Couteau, matraque",
-                    degat: "1D2"
+                    degat: "1D2",
+                    degat_maxi: "2",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Couteau, matraque}} {{result=[[1D2]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Couteau, matraque}} {{result=[[2]]}}"
                 };
                 break;
 
                 case 8:
-                weapon = {
+                    weapon = {
                     nom: "Batte de baseball, machette",
-                    degat: "1D3"
+                    degat: "1D3",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Batte de baseball, machette}} {{result=[[1D3]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Batte de baseball, machette}} {{result=[[3]]}}"
                 };
                 break;
 
                 case 9:
-                weapon = {
+                    weapon = {
                     nom: "Pistolet",
-                    degat: "1D3"
+                    degat: "1D3",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Pistolet}} {{result=[[1D3]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Pistolet}} {{result=[[3]]}}"
                 };
                 break;
 
                 case 10:
-                weapon = {
+                    weapon = {
                     nom: "Fusil de chasse",
-                    degat: "1D4"
+                    degat: "1D4",
+                    degat_maxi: "4",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Fusil de chasse}} {{result=[[1D4]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Fusil de chasse}} {{result=[[4]]}}"
                 };
                 break;
 
                 case 11:
-                weapon = {
+                    weapon = {
                     nom: "Mitraillette, fusil d'assaut",
-                    degat: "1D4+1"
+                    degat: "1D4+1",
+                    degat_maxi: "5",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Mitraillette, fusil d'assaut}} {{result=[[1D4+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Mitraillette, fusil d'assaut}} {{result=[[5]]}}"
                 };
                 break;
 
                 case 12:
-                weapon = {
+                    weapon = {
                     nom: "Grenade, dynamite",
-                    degat: "1D6"
+                    degat: "1D6",
+                    degat_maxi: "6",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Grenade, dynamite}} {{result=[[1D6]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Grenade, dynamite}} {{result=[[6]]}}"
                 };
                 break;
 
                 case 13:
-                weapon = {
+                    weapon = {
                     nom: "Pistolet laser",
-                    degat: "1d2"
+                    degat: "1d2",
+                    degat_maxi: "2",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Pistolet laser}} {{result=[[1D2]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Pistolet laser}} {{result=[[2]]}}"
                 };
                 break;
 
                 case 14:
-                weapon = {
+                    weapon = {
                     nom: "Fusil plasma",
-                    degat: "1D3+1"
+                    degat: "1D3+1",
+                    degat_maxi: "4",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Fusil plasma}} {{result=[[1D3+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Fusil plasma}} {{result=[[4]]}}"
                 };
                 break;
 
                 case 15:
-                weapon = {
+                    weapon = {
                     nom: "Épée énergetique, vibro-lame",
-                    degat: "1D2+1"
+                    degat: "1D2+1",
+                    degat_maxi: "3",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Épée énergetique, vibro-lame}} {{result=[[1D2+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Épée énergetique, vibro-lame}} {{result=[[3]]}}"
                 };
                 break;
 
                 case 16:
-                weapon = {
+                    weapon = {
                     nom: "Marteau gravitationnel",
-                    degat: "1D3+1"
+                    degat: "1D3+1",
+                    degat_maxi: "4",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Marteau gravitationnel}} {{result=[[1D3+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Marteau gravitationnel}} {{result=[[4]]}}"
                 };
                 break;
 
                 case 17:
-                weapon = {
+                    weapon = {
                     nom: "Grenade EMP, détonateur nucléaire",
-                    degat: "1D6"
+                    degat: "1D6",
+                    degat_maxi: "6",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Grenade EMP, détonateur nucléaire}} {{result=[[1D6]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Grenade EMP, détonateur nucléaire}} {{result=[[6]]}}"
                 };
                 break;
 
                 case 18:
-                weapon = {
+                    weapon = {
                     nom: "Railgun, canon à particules",
-                    degat: "1D5+1"
+                    degat: "1D5+1",
+                    degat_maxi: "6",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Railgun, canon à particules}} {{result=[[1D5+1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Railgun, canon à particules}} {{result=[[6]]}}"
                 };
                 break;
 
                 case 19:
-                weapon = {
+                    weapon = {
                     nom: "Pugilat, Boxe, Lutte",
-                    degat: "1"
+                    degat: "1",
+                    degat_maxi: "1",
+                    DMG: "&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}",
+                    DMG_maxi: "&{template:itd} {{degat=oui}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}"
                 };
                 break;
 			}
@@ -1391,6 +1886,9 @@
 			const updates = {};
 			updates[`nom_arme_${num}`] = weapon.nom;
 			updates[`degat_arme_${num}`] = weapon.degat;
+            updates[`degat_maxi_arme_${num}`] = weapon.degat_maxi;
+            updates[`DMG_${num}`] = weapon.DMG;
+            updates[`DMG_maxi_${num}`] = weapon.DMG_maxi;
 	
 			setAttrs(updates);
 		});
