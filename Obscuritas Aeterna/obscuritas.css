@@ -3,14 +3,14 @@
 
 .charsheet {
   font-family: "Playfair", serif;
-  color: var(--white);
+  color: var(--black);
   font-size: 19px;
   line-height: 25px;
   margin: 0px;
   --black: #000002;
   --white: #fcfcfd;
   --font_playfair: "Playfair", serif;
-  --color_dev: rgba(255, 0, 0, 0.158);
+  --color_dev: rgba(255, 0, 0, 0.062);
 
 
   --couleur_dotted: #00000078;
@@ -27,13 +27,12 @@
   --color_text_hover: #000000;
   --color_ombre_button: #575757a8;
   font-family: "Playfair", serif;
-  color: var(--black);
   font-size: 19px;
   line-height: 25px;
   margin: 0px;
 }
 
-.sheet-darkmode .charsheet {
+/* .sheet-darkmode .charsheet {
   --color_ligne_menu: #dddddd;
   --color_border_button: #595959;    
   --color_background_button: #0c0c0c;
@@ -43,7 +42,7 @@
   --color_text_button_selected: #000000ed;
   --color_button_hover: #292929;
   --color_ombre_button: #2f2f2fa8;
-}
+} */
 
 .sheetform {
   background-color: #ffffff;
@@ -69,7 +68,7 @@
   overflow: hidden;
   font-family: "Playfair", serif;
   color: var(--black);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 25px;
   background: white;
   z-index: 1;
@@ -107,7 +106,7 @@
   background-color: var(--white);
   color: var(--black);
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   padding: 0;
   padding-bottom: 6px;
 }
@@ -150,6 +149,7 @@ div.fond_blanc {
 
 .charsheet select.choix_custom {   
   width: auto;
+  height: 24px;
   color: var(--text_input);
   letter-spacing: -0.7px;
   border: none;
@@ -157,7 +157,7 @@ div.fond_blanc {
   border-radius: 1px;
   outline: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0px;
   margin-top: -4px;
   margin-right: 5px;
@@ -230,6 +230,8 @@ input[type="number"] {
 
 .charsheet button[type=action].button_texte::before,
 .charsheet button[type=roll].button_texte::before,
+.charsheet button[type=action].button_texte_noir::before,
+.charsheet button[type=roll].button_texte_noir::before,
 .charsheet button[type=action].button_annonce::before,
 .charsheet button[type=roll].button_annonce::before,
 .charsheet button[type=action].button0::before,
@@ -244,7 +246,9 @@ input[type="number"] {
 }
 
 .charsheet button[type=action].button_texte,
-.charsheet button[type=roll].button_texte {
+.charsheet button[type=roll].button_texte,
+.charsheet button[type=action].button_texte_noir,
+.charsheet button[type=roll].button_texte_noir {
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -255,12 +259,17 @@ input[type="number"] {
   height: 29px;
   border: none;
   border-radius: 1px;
-  color: var(--white);
-  font-size: 19px;
+  color: var(--black);
+  font-size: 16px;
   line-height: 25px;
   margin-top: -2px;
   display: flex;
   align-items: center;
+}
+
+.charsheet button[type=action].button_texte_noir,
+.charsheet button[type=roll].button_texte_noir {
+  color: var(--black);
 }
 
 .charsheet button[type=action].button0,
@@ -288,7 +297,9 @@ input[type="number"] {
 }
 
 .charsheet button[type=action].button_texte:hover,
-.charsheet button[type=roll].button_texte:hover {
+.charsheet button[type=roll].button_texte:hover,
+.charsheet button[type=action].button_texte_noir:hover,
+.charsheet button[type=roll].button_texte_noir:hover {
   font-weight: bold;
 }
 
@@ -321,9 +332,27 @@ input[type="number"] {
 	color: var(--text_input);
 }
 
+.page1 {
+  width: 830px;
+  height: auto;
+  background: rgb(226, 226, 226);
+  border: 2px solid rgba(255, 0, 0, 0.603);
+}
 
+/* Affichage des page dynamique */
+/* div.zone_caracteristiques,
+div.zone_derives,
+div.zone_talents,
+div.zone_armes {
+    display: none;
+}
 
-
+.charsheet .choix_page[value="0"] ~ div.zone_caracteristiques,
+.charsheet .choix_page[value="1"] ~ div.zone_derives,
+.charsheet .choix_page[value="2"] ~ div.zone_talents,
+.charsheet .choix_page[value="3"] ~ div.zone_armes {
+    display: block;
+} */
 
 
 
@@ -339,29 +368,29 @@ input[type="number"] {
 }
 
 .zone_info {
-  grid-column: 1 / 84;
-  grid-row: 1 / 10;
-  margin-top: 0px;  
+  grid-column: 3 / 38;
+  grid-row: 2 / 23;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   background: var(--color_dev);
 }
 
-.zone_caracteristiques {  
-  grid-column: 1 / 84;
-  grid-row: 15 / 30;
-  margin-top: 0px;  
+.zone_caracteristiques { 
+  grid-column: 44 / 82;
+  grid-row: 2 / 23;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   background: var(--color_dev);
 }
 
-.zone_derives {  
-  grid-column: 1 / 84;
-  grid-row: 35 / 43;
-  margin-top: 0px;  
+.zone_derives { 
+  grid-column: 44 / 82;
+  grid-row: 25 / 44;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -378,10 +407,32 @@ input[type="number"] {
   background: var(--color_dev);
 }
 
-.zone_armes {  
-  grid-column: 1 / 84;
-  grid-row: 126 / 139;
+
+
+.zone_talents_1 {  
+  grid-column: 1 / 40;
+  grid-row: 45 / 86;
   margin-top: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: var(--color_dev);
+}
+
+.zone_talents_2 {  
+  grid-column: 42 / 84;
+  grid-row: 45 / 86;
+  margin-top: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: var(--color_dev);
+}
+
+.zone_armes { 
+  grid-column: 1 / 84;
+  grid-row: 88 / 102;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -390,7 +441,7 @@ input[type="number"] {
 
 .zone_armures {  
   grid-column: 1 / 84;
-  grid-row: 145 / 155;
+  grid-row: 103 / 117;
   margin-top: 0px;  
   margin-bottom: 0px;
   margin-left: 0px;
@@ -400,7 +451,7 @@ input[type="number"] {
 
 .zone_boucliers {  
   grid-column: 1 / 84;
-  grid-row: 160 / 170;
+  grid-row: 122 / 139;
   margin-top: 0px;  
   margin-bottom: 0px;
   margin-left: 0px;
@@ -438,9 +489,8 @@ input[type="number"] {
 
 .wrapper_zone_derives {
   display: grid;
-  grid-template-columns: 62% 4% 30%;
+  grid-template-columns: 52% 4% 37%;
   grid-auto-rows: 25px;
-  color: var(--white);
 }
 
 .derives_titre {
@@ -459,9 +509,10 @@ input[type="number"] {
 
 .wrapper_zone_talents {
   display: grid;
-  grid-template-columns: 40% 0% 60%;
+  grid-template-columns: 70% 0% 30%;
   grid-auto-rows: 25px;
   color: var(--white);
+  font-size: 13px;
 }
 
 .talents_titre {
@@ -480,9 +531,11 @@ input[type="number"] {
 
 .wrapper_zone_armes {
   display: grid;
-  grid-template-columns: 14% 2% 14% 2% 8% 2% 8% 2% 18% 2% 20% 2% 8%;
+  grid-template-columns: 15% 1% 0% 0% 5% 1% 5% 1% 28% 1% 38% 1% 4%;
   grid-auto-rows: 25px;
-  color: var(--white);
+  text-align: center;
+  /* color: var(--white); */
+  font-size: 12px;
 }
 
 .armes_type {
@@ -525,9 +578,10 @@ input[type="number"] {
 
 .wrapper_zone_armures {
   display: grid;
-  grid-template-columns: 5% 2% 14% 2% 14% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 15% 2%;
+  grid-template-columns: 3% 1% 20% 1% 0% 0% 9% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 14%;
   grid-auto-rows: 25px;
-  color: var(--white);
+  /* color: var(--white); */
+  font-size: 12px;
 }
 
 .armures_equipee {
@@ -595,9 +649,10 @@ input[type="number"] {
 
 .wrapper_zone_boucliers {
   display: grid;
-  grid-template-columns: 5% 2% 14% 2% 14% 2% 5% 2% 5% 2% 15% 2%;
+  grid-template-columns: 2% 1% 15% 1% 0% 0% 6% 1% 6% 1% 65%;
   grid-auto-rows: 25px;
-  color: var(--white);
+  /* color: var(--white); */
+  font-size: 12px;
 }
 
 .boucliers_equipee {
@@ -640,168 +695,286 @@ input[type="number"] {
 
 
 /* ROLL TEMPLATE */
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-center {
+.sheet-rolltemplate-thanatos {
   text-align: center;
-  /* margin-left: 30px; */
-  --echec_2: #ff0000;
-  --echec_3: #ff006f;
-  --echec_1: #dc00c9;
-  --reussite_3: #009700;
-  --reussite_2: #0082ff;
-  --reussite_1: #fffe00;
+  --echec_2: #bc0000e0;
+  --echec_3: #bc0000e0;
+  --echec_1: #b016a0;
+  --reussite_3: #036c03;
+  --reussite_2: #035bae;
+  --reussite_1: #9e9c02d9;
+  --blanc_roll: #fcfcfdf0;
+--blanc_roll_dark: #fcfcfdf0;
+  --noir_roll: #000004;
+--box_shadow: 2px 2px 10px 1px #000000f2;	
+--box_shadow_dark: 0px 1px 4px 3px #ffffff69;
+--background_color: #fcfcfdf0;
+--background_color_dark: #fcfcfdf0;
+  width: 260px;
+  height: auto;
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-background {
-  background: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-darkmode {
+  --echec_2: #a80303e0;
+  --echec_3: #a80303e0;
+  --echec_1: #8a0f7d;
+  --reussite_3: #036c03;
+  --reussite_2: #004280;
+  --reussite_1: #8a8809;
+  --blanc_roll: #fcfcfde5;
+  --noir_roll: #000004;	
+--box_shadow: 0px 1px 4px 3px #ffffff69;
+--background_color: #fcfcfde5;
+}
+
+.sheet-rolltemplate-thanatos .sheet-toper {
+  background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_top.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  border-spacing: 0;
-  /* max-height: 200px; */
-  min-height: 130px;
-  max-width: 250px;
-  margin: 0px;
-  padding-bottom: 5px;
-  padding-top: 20px;
-  border-radius: 10px;
+  height: 4px;
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-header {
-  color: #ffffffde;
-  font-size: 20px;
-  font-family: 'Contrail One';
-  letter-spacing: 0px;
-  word-wrap: break-word;
-  /* margin-top: 25px; */
-  line-height: 24px;
+.sheet-rolltemplate-thanatos .sheet-bottom {
+  background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_bottom.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 4px;
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-tragique,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-critique,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-exceptionnelle,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-critique,
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite {
+.sheet-rolltemplate-thanatos .sheet-separateur {
+  background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_separation.png);
+  background-size: 260px;
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 255px;
+  margin-left: 3px;
+}
+
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-center {
+  text-align: center;
+  width: auto;
+}
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-color {
+  background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/rolltemp_middle.png);
+  background-size: 260px 500px;
+box-shadow: var(--box_shadow);
+}
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-background {
+  background: var(--background_color);
+  background-size: 260px 500px;
+}
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
+font-size: 22px;
+font-family: "Playfair", serif;
+word-wrap: break-word;
+letter-spacing: -0.7px;
+padding-top: 15px;
+padding-bottom: 15px;
+font-weight: bold;
+width: auto;
+margin-left: 1px;
+background: var(--noir_roll);
+margin-top: -1px;
+margin-bottom: -5px;
+color: var(--blanc_roll);
+}
+
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
   background-color: transparent;
-  color: #ffffffde;
-  font-size: 40px;
-  font-family: 'Contrail One';
+  color: #000000b3;
+  font-size: 60px !important;
   letter-spacing: 0px;
   padding: 15px;
-  margin-top: 25px;
+  margin-top: 15px;
+  font-family: "EB Garamond", serif;
+  width: auto;
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-tragique {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-tragique {
   color: var(--echec_1);
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec-critique{
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec-critique{
   color: var(--echec_2);
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-echec{
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-echec{
   color: var(--echec_3);
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-exceptionnelle {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-exceptionnelle {
   color: var(--reussite_1);
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite-critique {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite-critique {
   color: var(--reussite_2);
 }
 
-.sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite {
+.sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
   color: var(--reussite_3);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-result {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-result {
   font-size: 36px;
-  font-family: 'Contrail One';
+  font-family: "Playfair", serif;
   padding: 15px;
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-tragique,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-critique,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-exceptionnelle,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-critique,
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite
-
- {
-  font-size: 18px;
-  line-height: 20px;
-  font-family: 'Contrail One';
-  padding: 15px;
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite {
+font-size: 25px;
+line-height: 25px;
+font-family: "Playfair", serif;
+padding: 5px;
+padding-top: 15px;
+letter-spacing: -0.7px;
+margin-bottom: 10px;
+  width: auto;
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-tragique {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite { 
+font-size: 12px;
+line-height: 12px;
+font-family: "Playfair", serif;
+padding: 5px;
+padding-bottom: 5px;
+padding-bottom: 6px;
+letter-spacing: -0.2px;
+color: var(--blanc_roll);
+width: auto;
+margin-left: 0px;
+background: var(--noir_roll);
+margin-top: -5px;
+}
+
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-tragique {
   color: var(--echec_1);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec-critique{
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-critique,   
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec-critique{
   color: var(--echec_2);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-echec{
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-echec {
   color: var(--echec_3);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-exceptionnelle {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle {
   color: var(--reussite_1);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite-critique {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique {
   color: var(--reussite_2);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-texte-reussite {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite,
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite {
   color: var(--reussite_3);
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-succeeds {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-succeeds {
   color: #148c00;
 }
 
-.sheet-rolltemplate-itd .sheet-template-itd-misses {
+.sheet-rolltemplate-thanatos .sheet-template-thanatos-misses {
   color: #a90000;
 }
 
-.sheet-rolltemplate-itd .inlinerollresult {
+.sheet-rolltemplate-thanatos .inlinerollresult {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
 }
 
-.sheet-rolltemplate-itd-header .inlinerollresult {
+.sheet-rolltemplate-thanatos-header .inlinerollresult {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
 }
  
-.sheet-rolltemplate-itd .inlinerollresult.fullcrit {
+.sheet-rolltemplate-thanatos .inlinerollresult.fullcrit {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
 }
  
-.sheet-rolltemplate-itd .inlinerollresult.fullfail {
+.sheet-rolltemplate-thanatos .inlinerollresult.fullfail {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
 }
  
-.sheet-rolltemplate-itd .inlinerollresult.importantroll {
+.sheet-rolltemplate-thanatos .inlinerollresult.importantroll {
   background-color: transparent !important;
   border: none !important;
   color: unset !important;
+}
+
+.sheet-rolltemplate-thanatos .sheet-content {  
+display: grid;
+grid-template-columns: 50% 50%;
+line-height: 13px;
+  color: #000000b3;
+  margin-left: 2px;
+}
+
+.sheet-rolltemplate-thanatos .sheet-content > div{
+  padding: 5px;
+}
+
+/* Left column */
+.sheet-rolltemplate-thanatos .sheet-content .sheet-key {  
+font-weight: bold;
+padding-right: 2px;
+text-align: right;
+font-size: 13px;
+}
+
+/* Right column */
+.sheet-rolltemplate-thanatos .sheet-content .sheet-value {
+padding-right: 5px;
+text-align: left;
+font-size: 13px;
+}
+
+/* Make even-numbered rows grey */
+.sheet-rolltemplate-thanatos .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-thanatos .sheet-content :nth-child(4n) {
+background: #51515136;
+color: unset !important;
 }
 
 /* Boutons liens */
 /* Roll Buttons */
-.sheet-rolltemplate-itd a[href^='!'],
-.sheet-rolltemplate-itd a[href^='~'],
-.sheet-rolltemplate-itd a[href^='`']{
+.sheet-rolltemplate-thanatos a[href^='!'],
+.sheet-rolltemplate-thanatos a[href^='~'],
+.sheet-rolltemplate-thanatos a[href^='`']{
   color: #dfdfdf;
   border: none;
   background: none;
@@ -809,24 +982,24 @@ input[type="number"] {
   line-height: 6px;
   text-align: left;
 }
-.sheet-rolltemplate-itd a[href^='!']:hover,
-.sheet-rolltemplate-itd a[href^='~']:hover,
-.sheet-rolltemplate-itd a[href^='`']:hover{
+.sheet-rolltemplate-thanatos a[href^='!']:hover,
+.sheet-rolltemplate-thanatos a[href^='~']:hover,
+.sheet-rolltemplate-thanatos a[href^='`']:hover{
   top: -1px;
   color: #ff0039;
 }
 /* hyperlinks */
-.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']){
+.sheet-rolltemplate-thanatos a:not([href^='~']):not([href^='!']):not([href^='`']){
     font-weight: bold;
     color:#3f8aa6;
 }
-.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):hover {
+.sheet-rolltemplate-thanatos a:not([href^='~']):not([href^='!']):not([href^='`']):hover {
   font-weight: bold;
   color:#70c0dd;
 }
-.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):visited{
+.sheet-rolltemplate-thanatos a:not([href^='~']):not([href^='!']):not([href^='`']):visited{
   color:purple;
 }
-.sheet-rolltemplate-itd a:not([href^='~']):not([href^='!']):not([href^='`']):visited:hover{
+.sheet-rolltemplate-thanatos a:not([href^='~']):not([href^='!']):not([href^='`']):visited:hover{
   color:rgb(187, 45, 187);
 }
