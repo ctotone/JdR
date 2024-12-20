@@ -1,4 +1,13 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_malus_total_dexterite" value="0">
+<input type="hidden" name="attr_malus_total_athletisme" value="0">
+<input type="hidden" name="attr_malus_total_combat_cac" value="0">
+<input type="hidden" name="attr_malus_total_combat_puglilat" value="0">
+<input type="hidden" name="attr_malus_total_combat_distance" value="0">
+<input type="hidden" name="attr_malus_total_discretion" value="0">
+<input type="hidden" name="attr_malus_total_esquive" value="0">
+<input type="hidden" name="attr_malus_total_esquive" value="0">
+
 
 <div class="feuille">
     <div class="go_systeme">
@@ -6,6 +15,19 @@
     </div>
     <!-- Hidden input -->
 
+    CARAC utiliser
+    <input type="number" class="input_carac" name="attr_force_reel" value="15" min="15" max="99">
+    <br>
+    <input type="number" class="input_carac" name="attr_dexterite_reel" value="15" min="15" max="99">
+    <br>
+    <input type="number" class="input_carac" name="attr_constitution_reel" value="15" min="15" max="99">
+    <br>
+    <input type="number" class="input_carac" name="attr_intelligence_reel" value="15" min="15" max="99">
+    <br>
+    <input type="number" class="input_carac" name="attr_charisme_reel" value="15" min="15" max="99">
+    <br>
+    <input type="number" class="input_carac" name="attr_volonte_reel" value="15" min="15" max="99">
+    <br>
 
     <!-- Information personnage -->
     <div class="personnage">
@@ -13,11 +35,11 @@
             <!-- INFORMATIONS -->
             <div class="zone_info">
                 <div class="wrapper_zone_info">
-                    <span data-i18n="name">Nom</span>:
-                    <input name="attr_character_name" type="text" spellcheck="false" class="input-basic-info" />
-                    <span data-i18n="origin">Age</span>:<input name="attr_age" type="text" spellcheck="false" class="input-basic-info" />
-                    <span data-i18n="training">Profession</span>:
-                    <input name="attr_profession" type="text" spellcheck="false" class="input-basic-info" />
+                    <span>Nom</span>:
+                    <input name="attr_character_name" type="text" spellcheck="false" class="input_dotted" />
+                    <span>Age</span>:<input name="attr_age" type="text" spellcheck="false" class="input_dotted" />
+                    <span>Profession</span>:
+                    <input name="attr_profession" type="text" spellcheck="false" class="input_dotted" />
                 </div>
             </div>  
             <!-- CARACTERISTIQUES -->
@@ -486,9 +508,309 @@
                         <button type="roll">ROLL</button>
                     </div>
                 </div>
+            </div>
+            <!-- ARMEMENT -->
+            <div class="zone_armes">
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_custom" name="attr_armes_nom_1">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_roll">
+                        roll                        
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_custom" name="attr_armes_nom_2">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_roll">
+                        roll                        
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_custom" name="attr_armes_nom_3">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_roll">
+                        roll                        
+                    </div>
+                </div>
+            </div>
 
+            <!-- ARMURES -->
+            <div class="zone_armures">
+                <div class="wrapper_zone_armures">
+                    <div class="armures_equipee">
+                        <input type="checkbox" name="attr_armures_equipe_1" value="1" id="armure1">
+					    <label for="armure1"></label>
+                    </div>
+                    <div class="armures_type">
+                        <select class="choix_custom" name="attr_armures_nom_1">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Vêtements renforcés</option>
+                            <option value="2">Cuir bouilli</option>
+                            <option value="3">Armures de mailles</option>
+                            <option value="4">Armure de plaque</option>
+                        </select>
+                    </div>
+                    <div class="armures_nom">
+                        <input name="attr_armures_designation_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_encaissement">
+                        <input name="attr_armures_encaissement_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_dexterite">
+                        <input name="attr_armures_malus_dexterite_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_athletisme">
+                        <input name="attr_armures_malus_athletisme_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_cac">
+                        <input name="attr_armures_malus_combat_cac_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_pugilat">
+                        <input name="attr_armures_malus_combat_pugilat_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_distance">
+                        <input name="attr_armures_malus_combat_distance_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_discretion">
+                        <input name="attr_armures_malus_discretion_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_esquive">
+                        <input name="attr_armures_malus_esquive_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_notes">
+                        <input name="attr_armures_notes_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                </div>
+                <div class="wrapper_zone_armures">
+                    <div class="armures_equipee">
+                        <input type="checkbox" name="attr_armures_equipe_2" value="1" id="armure2">
+					    <label for="armure2"></label>
+                    </div>
+                    <div class="armures_type">
+                        <select class="choix_custom" name="attr_armures_nom_2">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Vêtements renforcés</option>
+                            <option value="2">Cuir bouilli</option>
+                            <option value="3">Armures de mailles</option>
+                            <option value="4">Armure de plaque</option>
+                        </select>
+                    </div>
+                    <div class="armures_nom">
+                        <input name="attr_armures_designation_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_encaissement">
+                        <input name="attr_armures_encaissement_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_dexterite">
+                        <input name="attr_armures_malus_dexterite_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_athletisme">
+                        <input name="attr_armures_malus_athletisme_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_cac">
+                        <input name="attr_armures_malus_combat_cac_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_pugilat">
+                        <input name="attr_armures_malus_combat_pugilat_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_distance">
+                        <input name="attr_armures_malus_combat_distance_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_discretion">
+                        <input name="attr_armures_malus_discretion_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_esquive">
+                        <input name="attr_armures_malus_esquive_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_notes">
+                        <input name="attr_armures_notes_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                </div>
+                <div class="wrapper_zone_armures">
+                    <div class="armures_equipee">
+                        <input type="checkbox" name="attr_armures_equipe_3" value="1" id="armure3">
+					    <label for="armure3"></label>
+                    </div>
+                    <div class="armures_type">
+                        <select class="choix_custom" name="attr_armures_nom_3">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Vêtements renforcés</option>
+                            <option value="2">Cuir bouilli</option>
+                            <option value="3">Armures de mailles</option>
+                            <option value="4">Armure de plaque</option>
+                        </select>
+                    </div>
+                    <div class="armures_nom">
+                        <input name="attr_armures_designation_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_encaissement">
+                        <input name="attr_armures_encaissement_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_dexterite">
+                        <input name="attr_armures_malus_dexterite_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_athletisme">
+                        <input name="attr_armures_malus_athletisme_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_cac">
+                        <input name="attr_armures_malus_combat_cac_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_pugilat">
+                        <input name="attr_armures_malus_combat_pugilat_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_distance">
+                        <input name="attr_armures_malus_combat_distance_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_discretion">
+                        <input name="attr_armures_malus_discretion_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_esquive">
+                        <input name="attr_armures_malus_esquive_3" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armures_notes">
+                        <input name="attr_armures_notes_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                </div>
+            </div>
 
-            <!-- ARMEMENT -->      
+            <!-- BOUCLIERS -->
+            <div class="zone_boucliers">
+                <div class="wrapper_zone_boucliers">
+                    <div class="boucliers_equipee">
+                        <input type="checkbox" name="attr_boucliers_equipe_1" value="1" id="bouclier1">
+                        <label for="bouclier1"></label>
+                    </div>
+                    <div class="boucliers_type">
+                        <select class="choix_custom" name="attr_boucliers_nom_1">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Bouclier rond</option>
+                            <option value="2">Pavois</option>
+                        </select>
+                    </div>
+                    <div class="boucliers_nom">
+                        <input name="attr_boucliers_designation_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_parade">
+                        <input name="attr_boucliers_bonus_parade_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_esquive">
+                        <input name="attr_boucliers_malus_esquive_1" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_notes">
+                        <input name="attr_boucliers_notes_1" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                </div>
+                <div class="wrapper_zone_boucliers">
+                    <div class="boucliers_equipee">
+                        <input type="checkbox" name="attr_boucliers_equipe_2" value="1" id="bouclier2">
+                        <label for="bouclier2"></label>
+                    </div>
+                    <div class="boucliers_type">
+                        <select class="choix_custom" name="attr_boucliers_nom_2">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Bouclier rond</option>
+                            <option value="2">Pavois</option>
+                        </select>
+                    </div>
+                    <div class="boucliers_nom">
+                        <input name="attr_boucliers_designation_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_parade">
+                        <input name="attr_boucliers_bonus_parade_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_esquive">
+                        <input name="attr_boucliers_malus_esquive_2" type="number" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="boucliers_notes">
+                        <input name="attr_boucliers_notes_2" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                </div>
+
+                <!-- RECAP ESQUIVE PARADE -->
+                 ESQUIVE : <input name="attr_malus_esquive_final" type="text" spellcheck="false" class="input_dotted">
+                 PARADE : <input name="attr_bonus_parade_final" type="text" spellcheck="false" class="input_dotted">
+            </div>
 
 
             <!-- AURA -->
@@ -498,7 +820,6 @@
             <!-- NOTES -->
             
             <!-- EXPERIENCE -->
-        </div> 
     </div>  
 </div>
 
@@ -830,7 +1151,7 @@
     });	
 
      
-    on("change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
+    on("change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
 
         getAttrs(["stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
             let stat_1 = parseInt(values["stat_1"]) || 0;
@@ -903,6 +1224,13 @@
             let custom_3 = Math.floor(stat_3 + (comp_3/2));
             let custom_4 = Math.floor(stat_4 + (comp_4/2));
 
+            let force_reel = force;
+            let dexterite_reel = dexterite;
+            let constitution_reel = constitution;
+            let intelligence_reel = intelligence;
+            let charisme_reel = charisme;
+            let volonte_reel = volonte;
+
 
 
             setAttrs({
@@ -938,7 +1266,13 @@
                 "custom_1": custom_1,
                 "custom_2": custom_2,
                 "custom_3": custom_3,
-                "custom_4": custom_4
+                "custom_4": custom_4,
+                "force_reel": force_reel,
+                "dexterite_reel": dexterite_reel,
+                "constitution_reel": constitution_reel,
+                "intelligence_reel": intelligence_reel,
+                "charisme_reel": charisme_reel,
+                "volonte_reel": volonte_reel
             });
         });
     });
@@ -946,7 +1280,7 @@
 
 <!-- MAJ equipement -->
 <script type="text/worker">
-    on("change:armes_nom_1 changearmes_nom_2 change:armes_nom_3", function (eventInfo) {
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function (eventInfo) {
         const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
 
         if (changedAttribute.startsWith("armes_nom_")) {
@@ -1081,3 +1415,310 @@
         }
     });
 
+    on("change:armures_nom_1 change:armures_nom_2 change:armures_nom_3", function (eventInfo) {
+        const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
+
+        if (changedAttribute.startsWith("armures_nom_")) {
+            getAttrs([changedAttribute], function (values) {
+                const armureNom = parseInt(values[changedAttribute]) || 0;
+                let armure = {
+                    designation: "",
+                    type: "",
+                    encaissement: "",
+                    malus_dexterite: "",
+                    malus_athletisme: "",
+                    malus_combat_cac: "",
+                    malus_combat_pugilat: "",
+                    malus_combat_distance: "",
+                    malus_discretion: "",
+                    malus_esquive: "",
+                    notes: "Peu encombrant, protection minimale"
+                };
+
+                // Détermine les valeurs en fonction de l'armure sélectionnée
+                switch (armureNom) {
+                    // Vetements renforcés
+                    case 1:
+                        armure = {
+                            designation: "Vêtements renforcés",
+                            type: "Vêtements renforcés",
+                            encaissement: "1",
+                            malus_dexterite: "0",
+                            malus_athletisme: "0",
+                            malus_combat_cac: "0",
+                            malus_combat_pugilat: "0",
+                            malus_combat_distance: "0",
+                            malus_discretion: "0",
+                            malus_esquive: "0",
+                            notes: ""
+                        };
+                        break;
+                    // Cuir bouilli
+                    case 2:
+                        armure = {
+                            designation: "Cuir bouilli",
+                            type: "Cuir bouilli",
+                            encaissement: "2",
+                            malus_dexterite: "5",
+                            malus_athletisme: "0",
+                            malus_combat_cac: "0",
+                            malus_combat_pugilat: "0",
+                            malus_combat_distance: "0",
+                            malus_discretion: "0",
+                            malus_esquive: "0",
+                            notes: "Couramment utilisé par les chasseurs"
+                        };
+                        break;
+                    // Armure de mailles
+                    case 3:
+                        armure = {
+                            designation: "Armure de maille",
+                            type: "Armure de maille",
+                            encaissement: "4",
+                            malus_dexterite: "10",
+                            malus_athletisme: "5",
+                            malus_combat_cac: "2",
+                            malus_combat_pugilat: "5",
+                            malus_combat_distance: "5",
+                            malus_discretion: "5",
+                            malus_esquive: "5",
+                            notes: "Équilibre entre protection et mobilité"
+                        };
+                        break;
+                    // Armure de plaque
+                    case 4:
+                        armure = {
+                            designation: "Armure de plaques",
+                            type: "Armure de plaques",
+                            encaissement: "6",
+                            malus_dexterite: "20",
+                            malus_athletisme: "10",
+                            malus_combat_cac: "5",
+                            malus_combat_pugilat: "10",
+                            malus_combat_distance: "10",
+                            malus_discretion: "10",
+                            malus_esquive: "10",
+                            notes: "Lourde, mais excellente protection"
+                        };
+                        break;
+                }
+
+                // Détermine l'index de l'attribut modifié (ex. "1", "2", ou "3")
+                const num = changedAttribute.match(/\d+/)[0];
+
+                // Met à jour uniquement les champs liés à l'attribut modifié
+                const updates = {};
+                updates[`armures_designation_${num}`] = armure.designation;
+                updates[`armures_type_${num}`] = armure.type;
+                updates[`armures_encaissement_${num}`] = armure.encaissement;
+                updates[`armures_malus_dexterite_${num}`] = armure.malus_dexterite;
+                updates[`armures_malus_athletisme_${num}`] = armure.malus_athletisme;
+                updates[`armures_malus_combat_cac_${num}`] = armure.malus_combat_cac;
+                updates[`armures_malus_combat_pugilat_${num}`] = armure.malus_combat_pugilat;
+                updates[`armures_malus_combat_distance_${num}`] = armure.malus_combat_distance;
+                updates[`armures_malus_discretion_${num}`] = armure.malus_discretion;
+                updates[`armures_malus_esquive_${num}`] = armure.malus_esquive;
+                updates[`armures_notes_${num}`] = armure.notes;
+
+                setAttrs(updates);
+            });
+        }
+    });
+
+    on("change:boucliers_nom_1 change:boucliers_nom_2", function (eventInfo) {
+        const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
+
+        if (changedAttribute.startsWith("boucliers_nom_")) {
+            getAttrs([changedAttribute], function (values) {
+                const bouclierNom = parseInt(values[changedAttribute]) || 0;
+                let bouclier = {
+                    designation: "",
+                    type: "",
+                    bonus_parade: "",
+                    malus_esquive: "",
+                    notes: ""
+                };
+
+                // Détermine les valeurs en fonction du bouclier sélectionné
+                switch (bouclierNom) {
+                    // Bouclier rond
+                    case 1:
+                        bouclier = {
+                            designation: "Bouclier rond",
+                            type: "Bouclier rond",
+                            bonus_parade: "1",
+                            malus_esquive: "5",
+                            notes: "Facile à manier, améliore la défense"
+                        };
+                        break;
+                    // Pavois
+                    case 2:
+                        bouclier = {
+                            designation: "Pavois",
+                            type: "Pavois",
+                            bonus_parade: "2",
+                            malus_esquive: "10",
+                            notes: "Idéal pour tenir une position défensive"
+                        };
+                        break;
+                }
+
+                // Détermine l'index de l'attribut modifié (ex. "1" ou "2")
+                const num = changedAttribute.match(/\d+/)[0];
+
+                // Met à jour uniquement les champs liés à l'attribut modifié
+                const updates = {};
+                updates[`boucliers_designation_${num}`] = bouclier.designation;
+                updates[`boucliers_type_${num}`] = bouclier.type;
+                updates[`boucliers_bonus_parade_${num}`] = bouclier.bonus_parade;
+                updates[`boucliers_malus_esquive_${num}`] = bouclier.malus_esquive;
+                updates[`boucliers_notes_${num}`] = bouclier.notes;
+
+                setAttrs(updates);
+            });
+        }
+    });
+
+    on("change:armures_nom_1 change:armures_nom_2 change:armures_nom_3 change:armures_equipe_1 change:armures_equipe_2 change:armures_equipe_3 change:armures_encaissement_1 change:armures_malus_athletisme_1 change:armures_malus_combat_cac_1 change:armures_malus_combat_pugilat_1 change:armures_malus_combat_pugilat_1 change:armures_malus_combat_distance_1 change:armures_malus_discretion_1 change:armures_malus_esquive_1 change:armures_encaissement_2 change:armures_malus_athletisme_2 change:armures_malus_combat_cac_2 change:armures_malus_combat_pugilat_2 change:armures_malus_combat_pugilat_2 change:armures_malus_combat_distance_2 change:armures_malus_discretion_2 change:armures_malus_esquive_2 change:armures_encaissement_3 change:armures_malus_athletisme_3 change:armures_malus_combat_cac_3 change:armures_malus_combat_pugilat_3 change:armures_malus_combat_pugilat_3 change:armures_malus_combat_distance_3 change:armures_malus_discretion_3 change:armures_malus_esquive_3", function() {
+
+        getAttrs(["armures_encaissement_1", "armures_malus_dexterite_1", "armures_malus_athletisme_1", "armures_malus_combat_cac_1", "armures_malus_combat_pugilat_1", "armures_malus_combat_distance_1", "armures_malus_discretion_1", "armures_malus_esquive_1", "armures_encaissement_2", "armures_malus_dexterite_2", "armures_malus_athletisme_2", "armures_malus_combat_cac_2", "armures_malus_combat_pugilat_2", "armures_malus_combat_distance_2", "armures_malus_discretion_2", "armures_malus_esquive_2","armures_encaissement_3", "armures_malus_dexterite_3", "armures_malus_athletisme_3", "armures_malus_combat_cac_3", "armures_malus_combat_pugilat_3", "armures_malus_combat_distance_3", "armures_malus_discretion_3", "armures_malus_esquive_3", "armures_equipe_1", "armures_equipe_2", "armures_equipe_3"], function(values) {
+            let armures_encaissement_1 = parseInt(values["armures_encaissement_1"]) || 0;
+            let armures_malus_dexterite_1 = parseInt(values["armures_malus_dexterite_1"]) || 0;
+            let armures_malus_athletisme_1 = parseInt(values["armures_malus_athletisme_1"]) || 0;
+            let armures_malus_combat_cac_1 = parseInt(values["armures_malus_combat_cac_1"]) || 0;
+            let armures_malus_combat_pugilat_1 = parseInt(values["armures_malus_combat_pugilat_1"]) || 0;
+            let armures_malus_combat_distance_1 = parseInt(values["armures_malus_combat_distance_1"]) || 0;
+            let armures_malus_discretion_1 = parseInt(values["armures_malus_discretion_1"]) || 0;
+            let armures_malus_esquive_1 = parseInt(values["armures_malus_esquive_1"]) || 0;
+            let armures_equipe_1 = parseInt(values["armures_equipe_1"]) || 0;
+
+            let armures_encaissement_2 = parseInt(values["armures_encaissement_2"]) || 0;
+            let armures_malus_dexterite_2 = parseInt(values["armures_malus_dexterite_2"]) || 0;
+            let armures_malus_athletisme_2 = parseInt(values["armures_malus_athletisme_2"]) || 0;
+            let armures_malus_combat_cac_2 = parseInt(values["armures_malus_combat_cac_2"]) || 0;
+            let armures_malus_combat_pugilat_2 = parseInt(values["armures_malus_combat_pugilat_2"]) || 0;
+            let armures_malus_combat_distance_2 = parseInt(values["armures_malus_combat_distance_2"]) || 0;
+            let armures_malus_discretion_2 = parseInt(values["armures_malus_discretion_2"]) || 0;
+            let armures_malus_esquive_2 = parseInt(values["armures_malus_esquive_2"]) || 0;
+            let armures_equipe_2 = parseInt(values["armures_equipe_2"]) || 0;
+
+            let armures_encaissement_3 = parseInt(values["armures_encaissement_3"]) || 0;
+            let armures_malus_dexterite_3 = parseInt(values["armures_malus_dexterite_3"]) || 0;
+            let armures_malus_athletisme_3 = parseInt(values["armures_malus_athletisme_3"]) || 0;
+            let armures_malus_combat_cac_3 = parseInt(values["armures_malus_combat_cac_3"]) || 0;
+            let armures_malus_combat_pugilat_3 = parseInt(values["armures_malus_combat_pugilat_3"]) || 0;
+            let armures_malus_combat_distance_3 = parseInt(values["armures_malus_combat_distance_3"]) || 0;
+            let armures_malus_discretion_3 = parseInt(values["armures_malus_discretion_3"]) || 0;
+            let armures_malus_esquive_3 = parseInt(values["armures_malus_esquive_3"]) || 0;
+            let armures_equipe_3 = parseInt(values["armures_equipe_3"]) || 0;
+            
+
+            if (armures_equipe_1 == 1) 
+                total_armures_encaissement = armures_encaissement_1, 
+                total_armures_malus_dexterite = armures_malus_dexterite_1,
+                total_armures_malus_athletisme = armures_malus_athletisme_1,
+                total_armures_malus_combat_cac = armures_malus_combat_cac_1,
+                total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_1,
+                total_armures_malus_combat_distance = armures_malus_combat_distance_1,
+                total_armures_malus_discretion = armures_malus_discretion_1,
+                total_armures_malus_esquive = armures_malus_esquive_1;
+
+            else if (armures_equipe_2 == 1) 
+                total_armures_encaissement = armures_encaissement_2, 
+                total_armures_malus_dexterite = armures_malus_dexterite_2,
+                total_armures_malus_athletisme = armures_malus_athletisme_2,
+                total_armures_malus_combat_cac = armures_malus_combat_cac_2,
+                total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_2,
+                total_armures_malus_combat_distance = armures_malus_combat_distance_2,
+                total_armures_malus_discretion = armures_malus_discretion_2,
+                total_armures_malus_esquive = armures_malus_esquive_2;
+
+            else if (armures_equipe_3 == 1) 
+                total_armures_encaissement = armures_encaissement_3, 
+                total_armures_malus_dexterite = armures_malus_dexterite_3,
+                total_armures_malus_athletisme = armures_malus_athletisme_3,
+                total_armures_malus_combat_cac = armures_malus_combat_cac_3,
+                total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_3,
+                total_armures_malus_combat_distance = armures_malus_combat_distance_3,
+                total_armures_malus_discretion = armures_malus_discretion_3,
+                total_armures_malus_esquive = armures_malus_esquive_3;
+
+            else             
+            total_armures_encaissement = 0, 
+            total_armures_malus_dexterite = 0,
+            total_armures_malus_athletisme = 0,
+            total_armures_malus_combat_cac = 0,
+            total_armures_malus_combat_pugilat = 0,
+            total_armures_malus_combat_distance = 0,
+            total_armures_malus_discretion = 0,
+            total_armures_malus_esquive = 0;
+            
+            
+            setAttrs({
+                "total_armures_encaissement": total_armures_encaissement,
+                "total_armures_malus_dexterite": total_armures_malus_dexterite,
+                "total_armures_malus_athletisme": total_armures_malus_athletisme,
+                "total_armures_malus_combat_cac": total_armures_malus_combat_cac,
+                "total_armures_malus_combat_pugilat": total_armures_malus_combat_pugilat,
+                "total_armures_malus_combat_distance": total_armures_malus_combat_distance,
+                "total_armures_malus_discretion": total_armures_malus_discretion,
+                "total_armures_malus_esquive": total_armures_malus_esquive
+
+            });
+        });
+    });
+
+
+    on("change:boucliers_nom_1 change:boucliers_nom_2 change:boucliers_equipe_1 change:boucliers_equipe_2 change:boucliers_bonus_parade_1 change:boucliers_bonus_parade_2 change:boucliers_malus_esquive_1 change:boucliers_malus_esquive_2", function() {
+
+        getAttrs(["boucliers_equipe_1", "boucliers_equipe_2", "boucliers_bonus_parade_1", "boucliers_bonus_parade_2", "boucliers_malus_esquive_1", "boucliers_malus_esquive_2"], function(values) {
+
+            let boucliers_equipe_1 = parseInt(values["boucliers_equipe_1"]) || 0;
+            let boucliers_equipe_2 = parseInt(values["boucliers_equipe_2"]) || 0;
+            let boucliers_bonus_parade_1 = parseInt(values["boucliers_bonus_parade_1"]) || 0;
+            let boucliers_bonus_parade_2 = parseInt(values["boucliers_bonus_parade_2"]) || 0;
+            let boucliers_malus_esquive_1 = parseInt(values["boucliers_malus_esquive_1"]) || 0;
+            let boucliers_malus_esquive_2 = parseInt(values["boucliers_malus_esquive_2"]) || 0;
+            
+
+            if (boucliers_equipe_1 == 1) 
+                total_boucliers_bonus_parade = boucliers_bonus_parade_1,
+                total_boucliers_malus_esquive = boucliers_malus_esquive_1;
+
+            else if (boucliers_equipe_2 == 1) 
+                total_boucliers_bonus_parade = boucliers_bonus_parade_2,
+                total_boucliers_malus_esquive = boucliers_malus_esquive_2;
+
+            else             
+            total_boucliers_bonus_parade = 0, 
+            total_boucliers_malus_esquive = 0;
+            
+            
+            setAttrs({
+                "total_boucliers_bonus_parade": total_boucliers_bonus_parade,
+                "total_boucliers_malus_esquive": total_boucliers_malus_esquive
+            });
+        });
+    });
+
+    on("change:total_boucliers_bonus_parade change:total_boucliers_malus_esquive change:total_armures_malus_esquive", function() {
+
+        getAttrs(["total_boucliers_bonus_parade", "total_boucliers_malus_esquive", "total_armures_malus_esquive"], function(values) {
+
+            let total_boucliers_bonus_parade = parseInt(values["total_boucliers_bonus_parade"]) || 0;
+            let total_boucliers_malus_esquive = parseInt(values["total_boucliers_malus_esquive"]) || 0;
+            let total_armures_malus_esquive = parseInt(values["total_armures_malus_esquive"]) || 0;
+            let bonus_parade_final = total_boucliers_bonus_parade;
+            let malus_esquive_final = total_boucliers_malus_esquive + total_armures_malus_esquive;
+            
+            
+            setAttrs({
+                "bonus_parade_final": bonus_parade_final,
+                "malus_esquive_final": malus_esquive_final
+            });
+        });
+    });
+
+    
+
+</script>
