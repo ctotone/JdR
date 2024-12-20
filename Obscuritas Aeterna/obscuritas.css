@@ -3,7 +3,7 @@
 
 .charsheet {
   font-family: "Playfair", serif;
-  color: var(--black);
+  color: var(--white);
   font-size: 19px;
   line-height: 25px;
   margin: 0px;
@@ -71,7 +71,7 @@
   color: var(--black);
   font-size: 18px;
   line-height: 25px;
-  background: transparent;
+  background: white;
   z-index: 1;
 }
 
@@ -370,7 +370,37 @@ input[type="number"] {
 
 .zone_talents {  
   grid-column: 1 / 84;
-  grid-row: 45 / 100;
+  grid-row: 45 / 122;
+  margin-top: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: var(--color_dev);
+}
+
+.zone_armes {  
+  grid-column: 1 / 84;
+  grid-row: 126 / 139;
+  margin-top: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: var(--color_dev);
+}
+
+.zone_armures {  
+  grid-column: 1 / 84;
+  grid-row: 145 / 155;
+  margin-top: 0px;  
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background: var(--color_dev);
+}
+
+.zone_boucliers {  
+  grid-column: 1 / 84;
+  grid-row: 160 / 170;
   margin-top: 0px;  
   margin-bottom: 0px;
   margin-left: 0px;
@@ -447,6 +477,159 @@ input[type="number"] {
 
 
 
+
+.wrapper_zone_armes {
+  display: grid;
+  grid-template-columns: 14% 2% 14% 2% 8% 2% 8% 2% 18% 2% 20% 2% 8%;
+  grid-auto-rows: 25px;
+  color: var(--white);
+}
+
+.armes_type {
+  grid-column: 1;
+  grid-row: 1;
+  letter-spacing: -0.4px;
+}
+
+.armes_nom {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.armes_degats {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.armes_portee {
+  grid-column: 7;
+  grid-row: 1;
+}
+
+.armes_effet {
+  grid-column: 9;
+  grid-row: 1;
+}
+
+.armes_notes {
+  grid-column: 11;
+  grid-row: 1;
+}
+
+.armes_roll {
+  grid-column: 13;
+  grid-row: 1;
+}
+
+
+
+.wrapper_zone_armures {
+  display: grid;
+  grid-template-columns: 5% 2% 14% 2% 14% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 5% 2% 15% 2%;
+  grid-auto-rows: 25px;
+  color: var(--white);
+}
+
+.armures_equipee {
+  grid-column: 1;
+  grid-row: 1;
+  letter-spacing: -0.4px;
+}
+
+.armures_type {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.armures_nom {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.armures_encaissement {
+  grid-column: 7;
+  grid-row: 1;
+}
+
+.armures_dexterite {
+  grid-column: 9;
+  grid-row: 1;
+}
+
+.armures_athletisme {
+  grid-column: 11;
+  grid-row: 1;
+}
+
+.armures_cac {
+  grid-column: 13;
+  grid-row: 1;
+}
+
+.armures_pugilat {
+  grid-column: 15;
+  grid-row: 1;
+}
+
+.armures_distance {
+  grid-column: 17;
+  grid-row: 1;
+}
+
+.armures_discretion {
+  grid-column: 19;
+  grid-row: 1;
+}
+
+.armures_esquive {
+  grid-column: 21;
+  grid-row: 1;
+}
+
+.armures_notes {
+  grid-column: 23;
+  grid-row: 1;
+}
+
+
+
+.wrapper_zone_boucliers {
+  display: grid;
+  grid-template-columns: 5% 2% 14% 2% 14% 2% 5% 2% 5% 2% 15% 2%;
+  grid-auto-rows: 25px;
+  color: var(--white);
+}
+
+.boucliers_equipee {
+  grid-column: 1;
+  grid-row: 1;
+  letter-spacing: -0.4px;
+}
+
+.boucliers_type {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.boucliers_nom {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.boucliers_parade {
+  grid-column: 7;
+  grid-row: 1;
+}
+
+.boucliers_esquive {
+  grid-column: 9;
+  grid-row: 1;
+}
+
+.boucliers_notes {
+  grid-column: 11;
+  grid-row: 1;
+}
 
 
 
