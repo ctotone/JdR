@@ -1,3 +1,7 @@
+<!-- TODO Vérifier CaC Dexterité si bonus force ou dexterite -->
+<!-- TODO Jauge blessure  -->
+<!-- TODO AURA / ETC  -->
+
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_malus_total_dexterite" value="0">
 <input type="hidden" name="attr_malus_total_athletisme" value="0">
@@ -7,6 +11,43 @@
 <input type="hidden" name="attr_malus_total_discretion" value="0">
 <input type="hidden" name="attr_malus_total_esquive" value="0">
 <input type="hidden" name="attr_malus_total_esquive" value="0">
+<input type="hidden" name="attr_malus_blessure" value="0">
+<input type="hidden" name="attr_total_armures_malus_combat_cac" value="0">
+<input type="hidden" name="attr_total_armures_malus_demi_dexterite" value="0">
+<input type="hidden" name="attr_total_armures_malus_athletisme" value="0">
+<input type="hidden" name="attr_total_armures_malus_combat_pugilat" value="0">
+<input type="hidden" name="attr_total_armures_malus_combat_distance" value="0">
+<input type="hidden" name="attr_bonus_force" value="0">
+<input type="hidden" name="attr_bonus_dexterite" value="0">
+<input type="hidden" name="attr_bonus_reussite" value="0">
+<input type="hidden" name="attr_armes_designation_1" value="Pugilat, Boxe, Lutte">
+<input type="hidden" name="attr_armes_degats_1" value="1">
+<input type="hidden" name="attr_armes_effet_1" value=" "> 
+<input type="hidden" name="attr_armes_designation_2" value=" ">
+<input type="hidden" name="attr_armes_degats_2" value="1"> 
+<input type="hidden" name="attr_armes_effet_2" value=" "> 
+<input type="hidden" name="attr_armes_designation_3" value=" ">
+<input type="hidden" name="attr_armes_degats_3" value="1">
+<input type="hidden" name="attr_armes_effet_3" value=" ">  
+<input type="hidden" name="attr_armes_designation_4" value=" ">
+<input type="hidden" name="attr_armes_degats_4" value="1">
+<input type="hidden" name="attr_armes_effet_4" value=" ">  
+<input type="hidden" name="attr_DMG_1" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_1}}} {{result=[[@{armes_degats_1}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_1}}}">
+<input type="hidden" name="attr_DMG_1_distance" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_1}}} {{result=[[@{armes_degats_1}[Dégâts de base]+@{bonus_dexterite}[Bonus de Dextérité]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_1}}}">
+<input type="hidden" name="attr_DMG_2" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_2}}} {{result=[[@{armes_degats_2}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_2}}}">
+<input type="hidden" name="attr_DMG_2_distance" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_2}}} {{result=[[@{armes_degats_2}[Dégâts de base]+@{bonus_dexterite}[Bonus de Dextérité]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_2}}}">
+<input type="hidden" name="attr_DMG_3" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_3}}} {{result=[[@{armes_degats_3}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_3}}}">
+<input type="hidden" name="attr_DMG_3_distance" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_3}}} {{result=[[@{armes_degats_3}[Dégâts de base]+@{bonus_dexterite}[Bonus de Dextérité]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_3}}}">
+<input type="hidden" name="attr_DMG_4" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_4}}} {{result=[[@{armes_degats_4}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_4}}}">
+<input type="hidden" name="attr_DMG_4_distance" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_4}}} {{result=[[@{armes_degats_4}[Dégâts de base]+@{bonus_dexterite}[Bonus de Dextérité]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_4}}}">
+<button type="roll" name="roll_weapon_dmg_1" style="display: none;" value="@{DMG_1}"></button> 
+<button type="roll" name="roll_weapon_dmg_2" style="display: none;" value="@{DMG_2}"></button>
+<button type="roll" name="roll_weapon_dmg_3" style="display: none;" value="@{DMG_3}"></button>
+<button type="roll" name="roll_weapon_dmg_4" style="display: none;" value="@{DMG_4}"></button>
+<button type="roll" name="roll_weapon_dmg_1_distance" style="display: none;" value="@{DMG_1_distance}"></button> 
+<button type="roll" name="roll_weapon_dmg_2_distance" style="display: none;" value="@{DMG_2_distance}"></button>
+<button type="roll" name="roll_weapon_dmg_3_distance" style="display: none;" value="@{DMG_3_distance}"></button>
+<button type="roll" name="roll_weapon_dmg_4_distance" style="display: none;" value="@{DMG_4_distance}"></button>
 
 <!-- <div class="menu">
     
@@ -101,7 +142,7 @@
                         <button type="action" class="button_texte" name="act_roll-pdv">POINTS DE VIE</button>
                     </div>
                     <div class="derives_valeur">
-                        <input type="number" class="input_carac" name="attr_pdv" value="0" min="0" max="99">
+                        <input type="number" class="input_carac" name="attr_pdv" value="1" min="0" max="99">
                         sur <input type="number" class="input_carac_lock" name="attr_pdv_maxi" value="1" min="1" max="99" readonly />
                     </div>
                 </div>
@@ -110,7 +151,7 @@
                         <button type="action" class="button_texte" name="act_roll-pdm">POINTS DE MAGIE</button>
                     </div>
                     <div class="derives_valeur">
-                        <input type="number" class="input_carac" name="attr_pdm" value="1" min="1" max="99">
+                        <input type="number" class="input_carac" name="attr_pdm" value="1" min="0" max="99">
                         sur <input type="number" class="input_carac_lock" name="attr_pdm_maxi" value="1" min="1" max="99" readonly />
                     </div>
                 </div>
@@ -119,7 +160,7 @@
                         <button type="action" class="button_texte" name="act_roll-sm">SANTÉ MENTALE</button>
                     </div>
                     <div class="derives_valeur">
-                        <input type="number" class="input_carac" name="attr_sm" value="1" min="1" max="99">
+                        <input type="number" class="input_carac" name="attr_sm" value="1" min="0" max="99">
                         sur <input type="number" class="input_carac_lock" name="attr_sm_maxi" value="1" min="1" max="99" readonly />
                     </div>
                 </div>
@@ -127,18 +168,50 @@
                 <div class="wrapper_zone_derives"></div>
                 <div class="wrapper_zone_derives">
                     <div class="derives_titre">
-                        MALUS ESQUIVE 
+                        malus_esquive_final 
                     </div>
                     <div class="derives_valeur">
-                        <input type="number" class="input_carac_lock" name="attr_malus_esquive_final" readonly />
+                        <input type="number" class="input_carac_lock" value="0" name="attr_malus_esquive_final" readonly />
                     </div>
                 </div>
                 <div class="wrapper_zone_derives">
                     <div class="derives_titre">
-                        BONUS PARADE 
+                        bonus_parade_final 
                     </div>
                     <div class="derives_valeur">
-                        <input type="number" class="input_carac_lock" name="attr_bonus_parade_final" readonly />
+                        <input type="number" class="input_carac_lock" value="0" name="attr_bonus_parade_final" readonly />
+                    </div>
+                </div>
+                <div class="wrapper_zone_derives">
+                    <div class="derives_titre">
+                        encaissement 
+                    </div>
+                    <div class="derives_valeur">
+                        <input type="number" class="input_carac_lock" value="0" name="attr_encaissement" readonly />
+                    </div>
+                </div>
+                <div class="wrapper_zone_derives">
+                    <div class="derives_titre">
+                        bonus_force 
+                    </div>
+                    <div class="derives_valeur">
+                        <input type="number" class="input_carac_lock" value="0" name="attr_bonus_force" readonly />
+                    </div>
+                </div>
+                <div class="wrapper_zone_derives">
+                    <div class="derives_titre">
+                        bonus_dexterite 
+                    </div>
+                    <div class="derives_valeur">
+                        <input type="number" class="input_carac_lock" value="0" name="attr_bonus_dexterite" readonly />
+                    </div>
+                </div>
+                <div class="wrapper_zone_derives">
+                    <div class="derives_titre">
+                        malus_blessure 
+                    </div>
+                    <div class="derives_valeur">
+                        <input type="number" class="input_carac_lock" value="0" name="attr_malus_blessure" readonly />
                     </div>
                 </div>
             </div>          
@@ -285,7 +358,7 @@
             <div class="zone_talents_2">
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Langue (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-langue">Langue (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_langue" value="0" min="0" max="99">
@@ -294,7 +367,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Médecine (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-medecine">Médecine (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_medecine" value="0" min="0" max="99">
@@ -303,7 +376,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Métier (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-metier-intell">Métier (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_metier" value="0" min="0" max="99">
@@ -312,7 +385,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Métier (Volonté)</button>
+                        <button type="action" class="button_texte" name="act_roll-metier-volonte">Métier (Volonté)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_metier" value="0" min="0" max="99" style="visibility: hidden;">
@@ -321,7 +394,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Perception (Volonté)</button>
+                        <button type="action" class="button_texte" name="act_roll-perception">Perception (Volonté)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_perception" value="0" min="0" max="99">
@@ -330,7 +403,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Psychologie (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-psychologie">Psychologie (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_psychologie" value="0" min="0" max="99">
@@ -339,7 +412,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Sciences (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-sciences">Sciences (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_science" value="0" min="0" max="99">
@@ -348,7 +421,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Sciences occultes (Volonté)</button>
+                        <button type="action" class="button_texte" name="act_roll-sciences-occultes">Sciences occultes (Volonté)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_sciences_occultes" value="0" min="0" max="99">
@@ -357,7 +430,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Survie (Intelligence)</button>
+                        <button type="action" class="button_texte" name="act_roll-survie">Survie (Intelligence)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_survie" value="0" min="0" max="99">
@@ -366,7 +439,7 @@
                 </div>
                 <div class="wrapper_zone_talents">
                     <div class="talents_titre">
-                        <button type="action" class="button_texte" name="act_roll-athletisme">Vigilance (Dextérité)</button>
+                        <button type="action" class="button_texte" name="act_roll-vigilance">Vigilance (Dextérité)</button>
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac" name="attr_stat_vigilance" value="0" min="0" max="99">
@@ -410,11 +483,8 @@
                         </select>
                     </div>
                     <div class="talents_valeur">
-                        <!-- Pour contôle si besoin -->
-                        <!-- <input type="number" class="input_carac_lock" name="attr_stat_1" value="0" min="0" max="99" readonly />
-                        <input type="number" class="input_carac_lock" name="attr_comp_1" value="0" min="0" max="99" readonly /> -->
                         <input type="number" class="input_carac_lock" name="attr_custom_1" value="0" min="0" max="99" readonly />
-                        <button type="roll">ROLL</button>
+                        <button type="action" name="act_roll-custom1">Roll</button>
                     </div>
                 </div>
                 <div class="wrapper_zone_talents">
@@ -455,7 +525,7 @@
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac_lock" name="attr_custom_2" value="0" min="0" max="99" readonly />
-                        <button type="roll">ROLL</button>
+                        <button type="action" name="act_roll-custom2">Roll</button>
                     </div>
                 </div>
                 <div class="wrapper_zone_talents">
@@ -496,7 +566,7 @@
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac_lock" name="attr_custom_3" value="0" min="0" max="99" readonly />
-                        <button type="roll">ROLL</button>
+                        <button type="action" name="act_roll-custom3">Roll</button>
                     </div>
                 </div>
                 <div class="wrapper_zone_talents">
@@ -537,7 +607,7 @@
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac_lock" name="attr_custom_4" value="0" min="0" max="99" readonly />
-                        <button type="roll">ROLL</button>
+                        <button type="action" name="act_roll-custom4">Roll</button>
                     </div>
                 </div>
             </div>
@@ -554,7 +624,8 @@
                 <div class="wrapper_zone_armes">
                     <div class="armes_type">
                         <select class="choix_custom" name="attr_armes_nom_1">
-                            <option value="0" selected="selected"></option>
+                            <option value="0"></option>
+                            <option value="10" selected="selected">Mains nues</option>
                             <option value="1">Dague</option>
                             <option value="2">Épée courte</option>
                             <option value="3">Épée longue</option>
@@ -565,6 +636,9 @@
                             <option value="8">Arc long</option>
                             <option value="9">Arbalète</option>
                         </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_degats">
                         <input name="attr_armes_degats_1" type="text" spellcheck="false" class="input_dotted">
@@ -586,6 +660,7 @@
                     <div class="armes_type">
                         <select class="choix_custom" name="attr_armes_nom_2">
                             <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
                             <option value="1">Dague</option>
                             <option value="2">Épée courte</option>
                             <option value="3">Épée longue</option>
@@ -596,6 +671,9 @@
                             <option value="8">Arc long</option>
                             <option value="9">Arbalète</option>
                         </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_degats">
                         <input name="attr_armes_degats_2" type="text" spellcheck="false" class="input_dotted">
@@ -617,6 +695,7 @@
                     <div class="armes_type">
                         <select class="choix_custom" name="attr_armes_nom_3">
                             <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
                             <option value="1">Dague</option>
                             <option value="2">Épée courte</option>
                             <option value="3">Épée longue</option>
@@ -627,6 +706,9 @@
                             <option value="8">Arc long</option>
                             <option value="9">Arbalète</option>
                         </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_degats">
                         <input name="attr_armes_degats_3" type="text" spellcheck="false" class="input_dotted">
@@ -639,6 +721,41 @@
                     </div>
                     <div class="armes_notes">
                         <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_roll">
+                        roll                        
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_custom" name="attr_armes_nom_4">
+                            <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_4" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_4" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_4" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_4" type="text" spellcheck="false" class="input_dotted">
+                    </div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_4" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_roll">
                         roll                        
@@ -953,29 +1070,91 @@
 					<br><span style="font-size: 16px; font-weight: normal;">{{subheader}}</span>
 				</div>
 				<div class="sheet-separateur"></div>
-					{{#rollGreater() des computed::roll}}
-						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
-						<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec </div>
-					{{/rollGreater() des computed::roll}}
-					{{#^rollGreater() des computed::roll}}
-						<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
-						<div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite
+                {{#rollGreater() des 95}}
+                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-critique">{{des}}</div>
+                    <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-critique">Échec Critique</div>
+                {{/rollGreater() des 95}}
+                {{#^rollGreater() des 95}}
+                    {{#^rollGreater() des 5}}
+                        <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
+                        <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-critique">Réussite critique
                             {{#^rollTotal() computed::degre 0}}
                             <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
                             {{/^rollTotal() computed::degre 0}}
+                            {{#show_degat}}
+                                <br>
+                                <hr>
+                                <span style="color: #000000; font-size: 20px;">JET DE DÉGÂTS</span>
+                                <br>
+                                {{arme1}}
+                                <br>
+                                {{arme2}}
+                                <br>
+                                {{arme3}}
+                                <br>
+                                {{arme4}}
+                                <br>
+                            {{/show_degat}}
                         </div>
-					{{/^rollGreater() des computed::roll}}
+                    {{/^rollGreater() des 5}}
+                    {{#rollGreater() des 5}}
+                        {{#rollGreater() des computed::roll}}
+                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
+                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec </div>
+                        {{/rollGreater() des computed::roll}}
+                        {{#^rollGreater() des computed::roll}}
+                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
+                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite
+                                {{#^rollTotal() computed::degre 0}}
+                                <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
+                                {{/^rollTotal() computed::degre 0}}
+                                {{#show_degat}}
+                                    <br>
+                                    <hr>
+                                    <span style="color: #000000; font-size: 20px;">JET DE DÉGÂTS</span>
+                                    <br>
+                                    {{arme1}}
+                                    <br>
+                                    {{arme2}}
+                                    <br>
+                                    {{arme3}}
+                                    <br>
+                                    {{arme4}}
+                                    <br>
+                                {{/show_degat}}
+                            </div>
+                        {{/^rollGreater() des computed::roll}}
+                    {{/rollGreater() des 5}}
+                {{/^rollGreater() des 95}}
 				
 				<div class="sheet-separateur"></div>
 				<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
-					Modificateur ({{mod}}) | Blessure ({{blessure}})
-					{{#jet_agi}}
-					<br> Malus d'armure ({{malusarmure}})
-					{{/jet_agi}}
+					Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
 				</div>
 			</div>
         </div>
     {{/jet}}
+    {{#degat}}
+        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                {{title}}
+                <br>
+                inflige
+            </div>
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader" style="color: #ff0000;font-size: 31px !important;">
+                {{#rollTotal() result 1}}
+                {{result}} dégât
+                {{/rollTotal() result 1}}
+                {{#^rollTotal() result 1}}
+                {{result}} dégâts
+                {{/^rollTotal() result 1}}
+                <br><br><span style="font-size: 17px;font-style: italic;color: #000000 !important;">{{effet}}</span>
+            </div>
+				
+            <div class="sheet-separateur"></div>
+            <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel"></div>
+        </div>
+    {{/degat}}
 	<div class="sheet-bottom"></div>
 </rolltemplate>
 
@@ -987,9 +1166,9 @@
 
 <!-- Custom Attributs  -->
 <script type="text/worker">
-    on("change:custom_stat_1 change:custom_stat_2 change:custom_stat_3 change:custom_stat_4 change:custom_comp_1 change:custom_comp_2 change:custom_comp_3 change:custom_comp_4", function() {
+    on("sheet:opened change:custom_stat_1 change:custom_stat_2 change:custom_stat_3 change:custom_stat_4 change:custom_comp_1 change:custom_comp_2 change:custom_comp_3 change:custom_comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:total_armures_malus_demi_dexterite change:total_armures_malus_athletisme change:total_armures_malus_combat_cac change:total_armures_malus_combat_pugilat change:total_armures_malus_combat_distance change:total_armures_malus_discretion change:total_armures_malus_esquive change:total_boucliers_malus_esquive", function() {
 
-        getAttrs(["custom_stat_1", "custom_stat_2", "custom_stat_3", "custom_stat_4", "custom_comp_1", "custom_comp_2", "custom_comp_3", "custom_comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
+        getAttrs(["custom_stat_1", "custom_stat_2", "custom_stat_3", "custom_stat_4", "custom_comp_1", "custom_comp_2", "custom_comp_3", "custom_comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "total_armures_malus_demi_dexterite", "total_armures_malus_athletisme", "total_armures_malus_combat_cac", "total_armures_malus_combat_pugilat", "total_armures_malus_combat_distance", "total_armures_malus_discretion", "total_armures_malus_esquive", "total_boucliers_malus_esquive"], function(values) {
             let custom_stat_1 = parseInt(values["custom_stat_1"]) || 0;
             let custom_stat_2 = parseInt(values["custom_stat_2"]) || 0;
             let custom_stat_3 = parseInt(values["custom_stat_3"]) || 0;
@@ -998,6 +1177,16 @@
             let custom_comp_2 = parseInt(values["custom_comp_2"]) || 0;
             let custom_comp_3 = parseInt(values["custom_comp_3"]) || 0;
             let custom_comp_4 = parseInt(values["custom_comp_4"]) || 0;
+
+            let total_armures_malus_demi_dexterite = parseInt(values["total_armures_malus_demi_dexterite"]) || 0;
+            let total_armures_malus_athletisme = parseInt(values["total_armures_malus_athletisme"]) || 0;
+            let total_armures_malus_combat_cac = parseInt(values["total_armures_malus_combat_cac"]) || 0;
+            let total_armures_malus_combat_pugilat = parseInt(values["total_armures_malus_combat_pugilat"]) || 0;
+            let total_armures_malus_combat_distance = parseInt(values["total_armures_malus_combat_distance"]) || 0;
+            let total_armures_malus_discretion = parseInt(values["total_armures_malus_discretion"]) || 0;
+            let total_armures_malus_esquive = parseInt(values["total_armures_malus_esquive"]) || 0;
+            let total_boucliers_malus_esquive = parseInt(values["total_boucliers_malus_esquive"]) || 0;
+
             let force = parseInt(values["force"]) || 0;
             let dexterite = parseInt(values["dexterite"]) || 0;
             let constitution = parseInt(values["constitution"]) || 0;
@@ -1025,140 +1214,143 @@
             let stat_survie = parseInt(values["stat_survie"]) || 0;
             let stat_vigilance = parseInt(values["stat_vigilance"]) || 0;
 
-            if      (custom_stat_1 == 1) stat_1 = stat_athletisme;
-            else if (custom_stat_1 == 2) stat_1 = stat_baratin;
-            else if (custom_stat_1 == 3) stat_1 = stat_bibliotheque;
-            else if (custom_stat_1 == 4) stat_1 = stat_chercher;
-            else if (custom_stat_1 == 5) stat_1 = stat_combat_cac;
-            else if (custom_stat_1 == 6) stat_1 = stat_combat_pugilat;
-            else if (custom_stat_1 == 7) stat_1 = stat_combat_distance;
-            else if (custom_stat_1 == 8) stat_1 = stat_discretion;
-            else if (custom_stat_1 == 9) stat_1 = stat_endurance;
-            else if (custom_stat_1 == 10) stat_1 = stat_esquive;
-            else if (custom_stat_1 == 11) stat_1 = stat_langue_ancienne;
-            else if (custom_stat_1 == 12) stat_1 = stat_langue;
-            else if (custom_stat_1 == 13) stat_1 = stat_medecine;
-            else if (custom_stat_1 == 14) stat_1 = stat_metier;
-            else if (custom_stat_1 == 15) stat_1 = stat_perception;
-            else if (custom_stat_1 == 16) stat_1 = stat_psychologie;
-            else if (custom_stat_1 == 17) stat_1 = stat_science;
-            else if (custom_stat_1 == 18) stat_1 = stat_sciences_occultes;
-            else if (custom_stat_1 == 19) stat_1 = stat_survie;
-            else if (custom_stat_1 == 20) stat_1 = stat_vigilance;
-            else stat_1 = 0;
+            if      (custom_stat_1 == 1) stat_1 = stat_athletisme - total_armures_malus_athletisme, stat_1_name = "Athlétisme";
+            else if (custom_stat_1 == 2) stat_1 = stat_baratin, stat_1_name = "Baratin";
+            else if (custom_stat_1 == 3) stat_1 = stat_bibliotheque, stat_1_name = "Bibliothèque";
+            else if (custom_stat_1 == 4) stat_1 = stat_chercher, stat_1_name = "Chercher";
+            else if (custom_stat_1 == 5) stat_1 = stat_combat_cac - total_armures_malus_combat_cac, stat_1_name = "Corps à corps";
+            else if (custom_stat_1 == 6) stat_1 = stat_combat_pugilat - total_armures_malus_combat_pugilat, stat_1_name = "Pugilat";
+            else if (custom_stat_1 == 7) stat_1 = stat_combat_distance, stat_1_name = "Distance";
+            else if (custom_stat_1 == 8) stat_1 = stat_discretion - total_armures_malus_discretion, stat_1_name = "Discrétion";
+            else if (custom_stat_1 == 9) stat_1 = stat_endurance, stat_1_name = "Endurance";
+            else if (custom_stat_1 == 10) stat_1 = stat_esquive - total_armures_malus_esquive - total_boucliers_malus_esquive, stat_1_name = "Esquive";
+            else if (custom_stat_1 == 11) stat_1 = stat_langue_ancienne, stat_1_name = "Langue ancienne";
+            else if (custom_stat_1 == 12) stat_1 = stat_langue, stat_1_name = "Langue";
+            else if (custom_stat_1 == 13) stat_1 = stat_medecine, stat_1_name = "Médecine";
+            else if (custom_stat_1 == 14) stat_1 = stat_metier, stat_1_name = "Métier";
+            else if (custom_stat_1 == 15) stat_1 = stat_perception, stat_1_name = "Perception";
+            else if (custom_stat_1 == 16) stat_1 = stat_psychologie, stat_1_name = "Psychologie";
+            else if (custom_stat_1 == 17) stat_1 = stat_science, stat_1_name = "Sciences";
+            else if (custom_stat_1 == 18) stat_1 = stat_sciences_occultes, stat_1_name = "Sciences occultes";
+            else if (custom_stat_1 == 19) stat_1 = stat_survie, stat_1_name = "Survie";
+            else if (custom_stat_1 == 20) stat_1 = stat_vigilance, stat_1_name = "Vigilance";
+            else stat_1 = 0, stat_1_name = "";
 
-            if      (custom_stat_2 == 1) stat_2 = stat_athletisme;
-            else if (custom_stat_2 == 2) stat_2 = stat_baratin;
-            else if (custom_stat_2 == 3) stat_2 = stat_bibliotheque;
-            else if (custom_stat_2 == 4) stat_2 = stat_chercher;
-            else if (custom_stat_2 == 5) stat_2 = stat_combat_cac;
-            else if (custom_stat_2 == 6) stat_2 = stat_combat_pugilat;
-            else if (custom_stat_2 == 7) stat_2 = stat_combat_distance;
-            else if (custom_stat_2 == 8) stat_2 = stat_discretion;
-            else if (custom_stat_2 == 9) stat_2 = stat_endurance;
-            else if (custom_stat_2 == 10) stat_2 = stat_esquive;
-            else if (custom_stat_2 == 11) stat_2 = stat_langue_ancienne;
-            else if (custom_stat_2 == 12) stat_2 = stat_langue;
-            else if (custom_stat_2 == 13) stat_2 = stat_medecine;
-            else if (custom_stat_2 == 14) stat_2 = stat_metier;
-            else if (custom_stat_2 == 15) stat_2 = stat_perception;
-            else if (custom_stat_2 == 16) stat_2 = stat_psychologie;
-            else if (custom_stat_2 == 17) stat_2 = stat_science;
-            else if (custom_stat_2 == 18) stat_2 = stat_sciences_occultes;
-            else if (custom_stat_2 == 19) stat_2 = stat_survie;
-            else if (custom_stat_2 == 20) stat_2 = stat_vigilance;
-            else stat_2 = 0;
+            if      (custom_stat_2 == 1) stat_2 = stat_athletisme - total_armures_malus_athletisme, stat_2_name = "Athlétisme";
+            else if (custom_stat_2 == 2) stat_2 = stat_baratin, stat_2_name = "Baratin";
+            else if (custom_stat_2 == 3) stat_2 = stat_bibliotheque, stat_2_name = "Bibliothèque";
+            else if (custom_stat_2 == 4) stat_2 = stat_chercher, stat_2_name = "Chercher";
+            else if (custom_stat_2 == 5) stat_2 = stat_combat_cac - total_armures_malus_combat_cac, stat_2_name = "Corps à corps";
+            else if (custom_stat_2 == 6) stat_2 = stat_combat_pugilat - total_armures_malus_combat_pugilat, stat_2_name = "Pugilat";
+            else if (custom_stat_2 == 7) stat_2 = stat_combat_distance - total_armures_malus_combat_distance, stat_2_name = "Distance";
+            else if (custom_stat_2 == 8) stat_2 = stat_discretion - total_armures_malus_discretion, stat_2_name = "Discrétion";
+            else if (custom_stat_2 == 9) stat_2 = stat_endurance, stat_2_name = "Endurance";
+            else if (custom_stat_2 == 10) stat_2 = stat_esquive - total_armures_malus_esquive - total_boucliers_malus_esquive, stat_2_name = "Esquive";
+            else if (custom_stat_2 == 11) stat_2 = stat_langue_ancienne, stat_2_name = "Langue ancienne";
+            else if (custom_stat_2 == 12) stat_2 = stat_langue, stat_2_name = "Langue";
+            else if (custom_stat_2 == 13) stat_2 = stat_medecine, stat_2_name = "Médecine";
+            else if (custom_stat_2 == 14) stat_2 = stat_metier, stat_2_name = "Métier";
+            else if (custom_stat_2 == 15) stat_2 = stat_perception, stat_2_name = "Perception";
+            else if (custom_stat_2 == 16) stat_2 = stat_psychologie, stat_2_name = "Psychologie";
+            else if (custom_stat_2 == 17) stat_2 = stat_science, stat_2_name = "Sciences";
+            else if (custom_stat_2 == 18) stat_2 = stat_sciences_occultes, stat_2_name = "Sciences occultes";
+            else if (custom_stat_2 == 19) stat_2 = stat_survie, stat_2_name = "Survie";
+            else if (custom_stat_2 == 20) stat_2 = stat_vigilance, stat_2_name = "Vigilance";
+            else stat_2 = 0, stat_2_name = "";
 
-            if      (custom_stat_3 == 1) stat_3 = stat_athletisme;
-            else if (custom_stat_3 == 2) stat_3 = stat_baratin;
-            else if (custom_stat_3 == 3) stat_3 = stat_bibliotheque;
-            else if (custom_stat_3 == 4) stat_3 = stat_chercher;
-            else if (custom_stat_3 == 5) stat_3 = stat_combat_cac;
-            else if (custom_stat_3 == 6) stat_3 = stat_combat_pugilat;
-            else if (custom_stat_3 == 7) stat_3 = stat_combat_distance;
-            else if (custom_stat_3 == 8) stat_3 = stat_discretion;
-            else if (custom_stat_3 == 9) stat_3 = stat_endurance;
-            else if (custom_stat_3 == 10) stat_3 = stat_esquive;
-            else if (custom_stat_3 == 11) stat_3 = stat_langue_ancienne;
-            else if (custom_stat_3 == 12) stat_3 = stat_langue;
-            else if (custom_stat_3 == 13) stat_3 = stat_medecine;
-            else if (custom_stat_3 == 14) stat_3 = stat_metier;
-            else if (custom_stat_3 == 15) stat_3 = stat_perception;
-            else if (custom_stat_3 == 16) stat_3 = stat_psychologie;
-            else if (custom_stat_3 == 17) stat_3 = stat_science;
-            else if (custom_stat_3 == 18) stat_3 = stat_sciences_occultes;
-            else if (custom_stat_3 == 19) stat_3 = stat_survie;
-            else if (custom_stat_3 == 20) stat_3 = stat_vigilance;
-            else stat_3 = 0;
+            if      (custom_stat_3 == 1) stat_3 = stat_athletisme - total_armures_malus_athletisme, stat_3_name = "Athlétisme";
+            else if (custom_stat_3 == 2) stat_3 = stat_baratin, stat_3_name = "Baratin";
+            else if (custom_stat_3 == 3) stat_3 = stat_bibliotheque, stat_3_name = "Bibliothèque";
+            else if (custom_stat_3 == 4) stat_3 = stat_chercher, stat_3_name = "Chercher";
+            else if (custom_stat_3 == 5) stat_3 = stat_combat_cac - total_armures_malus_combat_cac, stat_3_name = "Corps à corps";
+            else if (custom_stat_3 == 6) stat_3 = stat_combat_pugilat - total_armures_malus_combat_pugilat, stat_3_name = "Pugilat";
+            else if (custom_stat_3 == 7) stat_3 = stat_combat_distance - total_armures_malus_combat_distance, stat_3_name = "Distance";
+            else if (custom_stat_3 == 8) stat_3 = stat_discretion - total_armures_malus_discretion, stat_3_name = "Discrétion";
+            else if (custom_stat_3 == 9) stat_3 = stat_endurance, stat_3_name = "Endurance";
+            else if (custom_stat_3 == 10) stat_3 = stat_esquive - total_armures_malus_esquive - total_boucliers_malus_esquive, stat_3_name = "Esquive";
+            else if (custom_stat_3 == 11) stat_3 = stat_langue_ancienne, stat_3_name = "Langue ancienne";
+            else if (custom_stat_3 == 12) stat_3 = stat_langue, stat_3_name = "Langue";
+            else if (custom_stat_3 == 13) stat_3 = stat_medecine, stat_3_name = "Médecine";
+            else if (custom_stat_3 == 14) stat_3 = stat_metier, stat_3_name = "Métier";
+            else if (custom_stat_3 == 15) stat_3 = stat_perception, stat_3_name = "Perception";
+            else if (custom_stat_3 == 16) stat_3 = stat_psychologie, stat_3_name = "Psychologie";
+            else if (custom_stat_3 == 17) stat_3 = stat_science, stat_3_name = "Sciences";
+            else if (custom_stat_3 == 18) stat_3 = stat_sciences_occultes, stat_3_name = "Sciences occultes";
+            else if (custom_stat_3 == 19) stat_3 = stat_survie, stat_3_name = "Survie";
+            else if (custom_stat_3 == 20) stat_3 = stat_vigilance, stat_3_name = "Vigilance";
+            else stat_3 = 0, stat_3_name = "";
 
-            if      (custom_stat_4 == 1) stat_4 = stat_athletisme;
-            else if (custom_stat_4 == 2) stat_4 = stat_baratin;
-            else if (custom_stat_4 == 3) stat_4 = stat_bibliotheque;
-            else if (custom_stat_4 == 4) stat_4 = stat_chercher;
-            else if (custom_stat_4 == 5) stat_4 = stat_combat_cac;
-            else if (custom_stat_4 == 6) stat_4 = stat_combat_pugilat;
-            else if (custom_stat_4 == 7) stat_4 = stat_combat_distance;
-            else if (custom_stat_4 == 8) stat_4 = stat_discretion;
-            else if (custom_stat_4 == 9) stat_4 = stat_endurance;
-            else if (custom_stat_4 == 10) stat_4 = stat_esquive;
-            else if (custom_stat_4 == 11) stat_4 = stat_langue_ancienne;
-            else if (custom_stat_4 == 12) stat_4 = stat_langue;
-            else if (custom_stat_4 == 13) stat_4 = stat_medecine;
-            else if (custom_stat_4 == 14) stat_4 = stat_metier;
-            else if (custom_stat_4 == 15) stat_4 = stat_perception;
-            else if (custom_stat_4 == 16) stat_4 = stat_psychologie;
-            else if (custom_stat_4 == 17) stat_4 = stat_science;
-            else if (custom_stat_4 == 18) stat_4 = stat_sciences_occultes;
-            else if (custom_stat_4 == 19) stat_4 = stat_survie;
-            else if (custom_stat_4 == 20) stat_4 = stat_vigilance;
-            else stat_4 = 0;
+            if      (custom_stat_4 == 1) stat_4 = stat_athletisme - total_armures_malus_athletisme, stat_4_name = "Athlétisme";
+            else if (custom_stat_4 == 2) stat_4 = stat_baratin, stat_4_name = "Baratin";
+            else if (custom_stat_4 == 3) stat_4 = stat_bibliotheque, stat_4_name = "Bibliothèque";
+            else if (custom_stat_4 == 4) stat_4 = stat_chercher, stat_4_name = "Chercher";
+            else if (custom_stat_4 == 5) stat_4 = stat_combat_cac - total_armures_malus_combat_cac, stat_4_name = "Corps à corps";
+            else if (custom_stat_4 == 6) stat_4 = stat_combat_pugilat - total_armures_malus_combat_pugilat, stat_4_name = "Pugilat";
+            else if (custom_stat_4 == 7) stat_4 = stat_combat_distance - total_armures_malus_combat_distance, stat_4_name = "Distance";
+            else if (custom_stat_4 == 8) stat_4 = stat_discretion - total_armures_malus_discretion, stat_4_name = "Discrétion";
+            else if (custom_stat_4 == 9) stat_4 = stat_endurance, stat_4_name = "Endurance";
+            else if (custom_stat_4 == 10) stat_4 = stat_esquive - total_armures_malus_esquive - total_boucliers_malus_esquive, stat_4_name = "Esquive";
+            else if (custom_stat_4 == 11) stat_4 = stat_langue_ancienne, stat_4_name = "Langue ancienne";
+            else if (custom_stat_4 == 12) stat_4 = stat_langue, stat_4_name = "Langue";
+            else if (custom_stat_4 == 13) stat_4 = stat_medecine, stat_4_name = "Médecine";
+            else if (custom_stat_4 == 14) stat_4 = stat_metier, stat_4_name = "Métier";
+            else if (custom_stat_4 == 15) stat_4 = stat_perception, stat_4_name = "Perception";
+            else if (custom_stat_4 == 16) stat_4 = stat_psychologie, stat_4_name = "Psychologie";
+            else if (custom_stat_4 == 17) stat_4 = stat_science, stat_4_name = "Sciences";
+            else if (custom_stat_4 == 18) stat_4 = stat_sciences_occultes, stat_4_name = "Sciences occultes";
+            else if (custom_stat_4 == 19) stat_4 = stat_survie, stat_4_name = "Survie";
+            else if (custom_stat_4 == 20) stat_4 = stat_vigilance, stat_4_name = "Vigilance";
+            else stat_4 = 0, stat_4_name = "";
 
-            if      (custom_comp_1 == 1) comp_1 = force;
-            else if (custom_comp_1 == 2) comp_1 = dexterite;
-            else if (custom_comp_1 == 3) comp_1 = constitution;
-            else if (custom_comp_1 == 4) comp_1 = intelligence;
-            else if (custom_comp_1 == 5) comp_1 = charisme;
-            else if (custom_comp_1 == 6) comp_1 = volonte;
-            else comp_1 = 0;
+            if      (custom_comp_1 == 1) comp_1 = force, comp_1_name = "Force";
+            else if (custom_comp_1 == 2) comp_1 = dexterite - total_armures_malus_demi_dexterite, comp_1_name = "Dextérité";
+            else if (custom_comp_1 == 3) comp_1 = constitution, comp_1_name = "Constitution";
+            else if (custom_comp_1 == 4) comp_1 = intelligence, comp_1_name = "Intelligence";
+            else if (custom_comp_1 == 5) comp_1 = charisme, comp_1_name = "Charisme";
+            else if (custom_comp_1 == 6) comp_1 = volonte, comp_1_name = "Volonté";
+            else comp_1 = 0, comp_1_name = "";
 
-            if      (custom_comp_2 == 1) comp_2 = force;
-            else if (custom_comp_2 == 2) comp_2 = dexterite;
-            else if (custom_comp_2 == 3) comp_2 = constitution;
-            else if (custom_comp_2 == 4) comp_2 = intelligence;
-            else if (custom_comp_2 == 5) comp_2 = charisme;
-            else if (custom_comp_2 == 6) comp_2 = volonte;
-            else comp_2 = 0;
+            if      (custom_comp_2 == 1) comp_2 = force, comp_2_name = "Force";
+            else if (custom_comp_2 == 2) comp_2 = dexterite - total_armures_malus_demi_dexterite, comp_2_name = "Dextérité";
+            else if (custom_comp_2 == 3) comp_2 = constitution, comp_2_name = "Constitution";
+            else if (custom_comp_2 == 4) comp_2 = intelligence, comp_2_name = "Intelligence";
+            else if (custom_comp_2 == 5) comp_2 = charisme, comp_2_name = "Charisme";
+            else if (custom_comp_2 == 6) comp_2 = volonte, comp_2_name = "Volonté";
+            else comp_2 = 0, comp_2_name = "";
 
-            if      (custom_comp_3 == 1) comp_3 = force;
-            else if (custom_comp_3 == 2) comp_3 = dexterite;
-            else if (custom_comp_3 == 3) comp_3 = constitution;
-            else if (custom_comp_3 == 4) comp_3 = intelligence;
-            else if (custom_comp_3 == 5) comp_3 = charisme;
-            else if (custom_comp_3 == 6) comp_3 = volonte;
-            else comp_3 = 0;
+            if      (custom_comp_3 == 1) comp_3 = force, comp_3_name = "Force";
+            else if (custom_comp_3 == 2) comp_3 = dexterite - total_armures_malus_demi_dexterite, comp_3_name = "Dextérité";
+            else if (custom_comp_3 == 3) comp_3 = constitution, comp_3_name = "Constitution";
+            else if (custom_comp_3 == 4) comp_3 = intelligence, comp_3_name = "Intelligence";
+            else if (custom_comp_3 == 5) comp_3 = charisme, comp_3_name = "Charisme";
+            else if (custom_comp_3 == 6) comp_3 = volonte, comp_3_name = "Volonté";
+            else comp_3 = 0, comp_3_name = "";
 
-            if      (custom_comp_4 == 1) comp_4 = force;
-            else if (custom_comp_4 == 2) comp_4 = dexterite;
-            else if (custom_comp_4 == 3) comp_4 = constitution;
-            else if (custom_comp_4 == 4) comp_4 = intelligence;
-            else if (custom_comp_4 == 5) comp_4 = charisme;
-            else if (custom_comp_4 == 6) comp_4 = volonte;
-            else comp_4 = 0;
-
-            console.log("stat_1:", stat_1);
-            console.log("stat_2:", stat_2);
-            console.log("stat_3:", stat_3);
-            console.log("stat_4:", stat_4);
+            if      (custom_comp_4 == 1) comp_4 = force, comp_4_name = "Force";
+            else if (custom_comp_4 == 2) comp_4 = dexterite - total_armures_malus_demi_dexterite, comp_4_name = "Dextérité";
+            else if (custom_comp_4 == 3) comp_4 = constitution, comp_4_name = "Constitution";
+            else if (custom_comp_4 == 4) comp_4 = intelligence, comp_4_name = "Intelligence";
+            else if (custom_comp_4 == 5) comp_4 = charisme, comp_4_name = "Charisme";
+            else if (custom_comp_4 == 6) comp_4 = volonte, comp_4_name = "Volonté";
+            else comp_4 = 0, comp_4_name = "";
             
             setAttrs({
                 "stat_1": stat_1,
                 "stat_2": stat_2,
                 "stat_3": stat_3,
                 "stat_4": stat_4,
+                "stat_1_name": stat_1_name,
+                "stat_2_name": stat_2_name,
+                "stat_3_name": stat_3_name,
+                "stat_4_name": stat_4_name,
                 "comp_1": comp_1,
                 "comp_2": comp_2,
                 "comp_3": comp_3,
-                "comp_4": comp_4
+                "comp_4": comp_4,
+                "comp_1_name": comp_1_name,
+                "comp_2_name": comp_2_name,
+                "comp_3_name": comp_3_name,
+                "comp_4_name": comp_4_name
             });
         });
     });
@@ -1173,8 +1365,28 @@
         });
     });	
 
+    on("change:pdv", function() {
+
+        getAttrs(["pdv", "pdv_maxi"], function(values) {
+
+            let pdv = parseInt(values["pdv"]) || 0;
+            let pdv_maxi = parseInt(values["pdv_maxi"]) || 0;
+            let malus_blessure = 0;
+            
+            if (pdv <= pdv_maxi * 0.25) {
+                malus_blessure = -10; // Moins de 25%
+            } else if (pdv <= pdv_maxi * 0.5) {
+                malus_blessure = -5; // Moins de 50%
+            }
+            
+            setAttrs({
+                "malus_blessure": malus_blessure
+            });
+        });
+    });
+
      
-    on("change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
+    on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
 
         getAttrs(["stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
             let stat_1 = parseInt(values["stat_1"]) || 0;
@@ -1216,6 +1428,8 @@
             let pdm_maxi = Math.floor(volonte / 5);
             let sm_maxi = 100-intelligence;
             let mouvement = Math.floor(dexterite/10)*2;
+            let bonus_force = Math.floor(force/10);            
+            let bonus_dexterite = Math.floor(dexterite/10);
 
             let athletisme_force = Math.floor(stat_athletisme + (force/2));
             let athletisme_dexterite = Math.floor(stat_athletisme + (dexterite/2));
@@ -1261,6 +1475,8 @@
                 "pdm_maxi": pdm_maxi,
                 "sm_maxi": sm_maxi,
                 "mouvement": mouvement,
+                "bonus_force":bonus_force,
+                "bonus_dexterite":bonus_dexterite,
                 "athletisme_force": athletisme_force,
                 "athletisme_dexterite": athletisme_dexterite,
                 "baratin_charisme": baratin_charisme,
@@ -1303,7 +1519,7 @@
 
 <!-- MAJ equipement -->
 <script type="text/worker">
-    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3", function (eventInfo) {
+    on("change:armes_nom_1 change:armes_nom_2 change:armes_nom_3 change:armes_nom_4", function (eventInfo) {
         const changedAttribute = eventInfo.sourceAttribute; // Attribut déclencheur
 
         if (changedAttribute.startsWith("armes_nom_")) {
@@ -1327,8 +1543,8 @@
                             type: "Dague",
                             degats: "1D4",
                             portee: "",
-                            effet: "Peut s'utiliser sur la Dextérité",
-                            notes: "Arme légère, discrète, facile à dissimuler"
+                            effet: "",
+                            notes: ""
                         };
                         break;
                     // Épée courte
@@ -1339,7 +1555,7 @@
                             degats: "1D6",
                             portee: "",
                             effet: "",
-                            notes: "Maniable, souvent utilisée par les mercenaires"
+                            notes: ""
                         };
                         break;
                     // Épée longue
@@ -1350,7 +1566,7 @@
                             degats: "1D6 +1",
                             portee: "",
                             effet: "Ignore 1 point d'armure",
-                            notes: "Arme polyvalente, symbole de noblesse"
+                            notes: ""
                         };
                         break;
                     // Hache
@@ -1361,7 +1577,7 @@
                             degats: "1D8",
                             portee: "",
                             effet: "Sur une attaque critique, brise un bouclier",
-                            notes: "Lourde mais puissante, idéale pour briser les boucliers"
+                            notes: ""
                         };
                         break;
                     // Lance
@@ -1372,7 +1588,7 @@
                             degats: "1D6",
                             portee: "2m",
                             effet: "",
-                            notes: "Bonne portée, souvent utilisée à cheval"
+                            notes: ""
                         };
                         break;
                     // Masse d'armes
@@ -1383,7 +1599,7 @@
                             degats: "1D6",
                             portee: "",
                             effet: "Ignore 2 points d'armure",
-                            notes: "Effet dévastateur contre les armures lourdes"
+                            notes: ""
                         };
                         break;
                     // Arc court
@@ -1394,7 +1610,7 @@
                             degats: "1D6",
                             portee: "20m",
                             effet: "",
-                            notes: "Arme commune des chasseurs et éclaireurs"
+                            notes: ""
                         };
                         break;
                     // Arc long
@@ -1405,7 +1621,7 @@
                             degats: "1D6 +1",
                             portee: "30m",
                             effet: "",
-                            notes: "Arme des archers expérimentés"
+                            notes: ""
                         };
                         break;
                     // Arbalète
@@ -1416,7 +1632,19 @@
                             degats: "1D8",
                             portee: "40m",
                             effet: "Ignore 3 points d'armure",
-                            notes: "Ignorant une partie de l’armure, mais longue à recharger (1action simple)"
+                            notes: ""
+                        };
+                        break;
+                    
+                    // Mains nues
+                    case 10:
+                        arme = {
+                            designation: "Mains nues",
+                            type: "Mains nues",
+                            degats: "0",
+                            portee: "",
+                            effet: "",
+                            notes: ""
                         };
                         break;
                 }
@@ -1726,20 +1954,24 @@
         });
     });
 
-    on("change:total_boucliers_bonus_parade change:total_boucliers_malus_esquive change:total_armures_malus_esquive", function() {
+    on("change:constitution change:total_armures_encaissement change:total_boucliers_bonus_parade change:total_boucliers_malus_esquive change:total_armures_malus_esquive", function() {
 
-        getAttrs(["total_boucliers_bonus_parade", "total_boucliers_malus_esquive", "total_armures_malus_esquive"], function(values) {
+        getAttrs(["total_boucliers_bonus_parade", "total_boucliers_malus_esquive", "total_armures_malus_esquive", "total_armures_encaissement", "constitution"], function(values) {
 
             let total_boucliers_bonus_parade = parseInt(values["total_boucliers_bonus_parade"]) || 0;
             let total_boucliers_malus_esquive = parseInt(values["total_boucliers_malus_esquive"]) || 0;
             let total_armures_malus_esquive = parseInt(values["total_armures_malus_esquive"]) || 0;
+            let total_armures_encaissement = parseInt(values["total_armures_encaissement"]) || 0;
+            let constitution = parseInt(values["constitution"]) || 0;
             let bonus_parade_final = total_boucliers_bonus_parade;
             let malus_esquive_final = total_boucliers_malus_esquive + total_armures_malus_esquive;
+            let encaissement = total_armures_encaissement + Math.floor(constitution/10);
             
             
             setAttrs({
                 "bonus_parade_final": bonus_parade_final,
-                "malus_esquive_final": malus_esquive_final
+                "malus_esquive_final": malus_esquive_final,
+                "encaissement": encaissement
             });
         });
     });
@@ -1751,183 +1983,564 @@
 <!-- JET DE DÉS -->
 <script type="text/worker">
     on('clicked:roll-athletisme-force', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{stat=[[@{athletisme_force}[Compétence]-@{total_armures_malus_athletisme}[Malus Armure]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_force}[Compétence]-@{total_armures_malus_athletisme}[Malus Armure]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
 
         // Calcul du degré de réussite ou d'échec
         const difference = computeObj.roll - des.result; // Différence entre la statistique ajustée et le jet de dés
         const degre = Math.floor(Math.abs(difference) / 10); // Un degré par palier de 10
         computeObj.degre = degre; 
 
+        // Stocker la valeur du degré dans la fiche avec setAttrs
+        setAttrs({
+            bonus_reussite: degre
+        });
+
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-athletisme-dex', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{stat=[[@{athletisme_dexterite}[Compétence]-@{total_armures_malus_athletisme}[Armure - Malus Athlétisme]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_dexterite}[Compétence]-@{total_armures_malus_athletisme}[Armure - Malus Athlétisme]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-baratin-charisme', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Charisme}} {{roll=[[0[resultat]]]}} {{stat=[[@{baratin_charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Charisme}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-baratin-force', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{stat=[[@{baratin_force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-bibliotheque', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Bibliothèque}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{stat=[[@{bibliotheque}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Bibliothèque}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{bibliotheque}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-chercher', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Chercher}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{stat=[[@{chercher}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Chercher}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{chercher}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-cac-dex', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Corps à corps}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{stat=[[@{combat_cac_dexterite}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Corps à corps}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_dexterite}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-cac-force', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Corps à corps}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{stat=[[@{combat_cac_force}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Corps à corps}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_force}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-pugilat', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Pugilat}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{stat=[[@{combat_pugilat}[Compétence]-@{total_armures_malus_combat_pugilat}[Armure - Malus Pugilat]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Pugilat}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_pugilat}[Compétence]-@{total_armures_malus_combat_pugilat}[Armure - Malus Pugilat]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-distance', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_combat_distance}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_combat_distance}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1_distance)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2_distance)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3_distance)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4_distance)}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-discretion', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Discrétion}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{stat=[[@{discretion}[Compétence]-@{total_armures_malus_discretion}[Armure - Malus Discrétion]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Discrétion}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{discretion}[Compétence]-@{total_armures_malus_discretion}[Armure - Malus Discrétion]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-endurance', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Endurance}} {{subheader=Constitution}} {{roll=[[0[resultat]]]}} {{stat=[[@{endurance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}}{{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Endurance}} {{subheader=Constitution}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{endurance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}}{{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-esquive', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Esquive}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{stat=[[@{esquive}[Compétence]-@{total_armures_malus_esquive}[Armure - Malus Esquive]-@{total_boucliers_malus_esquive}[Bouclier - Malus Esquive]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Esquive}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{esquive}[Compétence]-@{total_armures_malus_esquive}[Armure - Malus Esquive]-@{total_boucliers_malus_esquive}[Bouclier - Malus Esquive]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-ancienne-intel', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{stat=[[@{langue_ancienne_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})
 
     on('clicked:roll-ancienne-volonte', async (event) => {
-		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{stat=[[@{langue_ancienne_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
-		computeObj.roll = mod.result + stat.result;
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-langue', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-medecine', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Médecine}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{medecine}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-metier-intell', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Métier}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-metier-volonte', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Métier}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-perception', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Perception}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{perception}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-psychologie', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Psychologie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{psychologie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-sciences', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Sciences}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{science}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-sciences-occultes', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Sciences occultes}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{sciences_occultes}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-survie', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Survie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{survie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-vigilance', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Vigilance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{vigilance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-custom1', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_1_name}}} {{subheader=@{comp_1_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_1}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-custom2', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_2_name}}} {{subheader=@{comp_2_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_2}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-custom3', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_3_name}}} {{subheader=@{comp_3_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_3}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-custom4', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_4_name}}} {{subheader=@{comp_4_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_4}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-force', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Force}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})    
+
+    on('clicked:roll-dexterite', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Dextérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{dexterite}[Compétence]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-constitution', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Constitution}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{constitution}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-intelligence', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Intelligence}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-charisme', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Charisme}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
+    on('clicked:roll-volonte', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Volonté}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result - malus_blessure.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
 
 	finishRoll(roll.rollId,computeObj);
 	})

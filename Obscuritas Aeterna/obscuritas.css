@@ -369,7 +369,7 @@ div.zone_armes {
 
 .zone_info {
   grid-column: 3 / 38;
-  grid-row: 2 / 23;
+  grid-row: 2 / 21;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -379,7 +379,7 @@ div.zone_armes {
 
 .zone_caracteristiques { 
   grid-column: 44 / 82;
-  grid-row: 2 / 23;
+  grid-row: 2 / 21;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -389,7 +389,7 @@ div.zone_armes {
 
 .zone_derives { 
   grid-column: 44 / 82;
-  grid-row: 25 / 44;
+  grid-row: 23 / 44;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -431,7 +431,7 @@ div.zone_armes {
 
 .zone_armes { 
   grid-column: 1 / 84;
-  grid-row: 88 / 102;
+  grid-row: 88 / 107;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -441,8 +441,8 @@ div.zone_armes {
 
 .zone_armures {  
   grid-column: 1 / 84;
-  grid-row: 103 / 117;
-  margin-top: 0px;  
+  grid-row: 108 / 124;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -451,8 +451,8 @@ div.zone_armes {
 
 .zone_boucliers {  
   grid-column: 1 / 84;
-  grid-row: 122 / 139;
-  margin-top: 0px;  
+  grid-row: 125 / 139;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
@@ -531,7 +531,7 @@ div.zone_armes {
 
 .wrapper_zone_armes {
   display: grid;
-  grid-template-columns: 15% 1% 0% 0% 5% 1% 5% 1% 28% 1% 38% 1% 4%;
+  grid-template-columns: 15% 1% 15% 1% 5% 1% 5% 1% 28% 1% 38% 1% 4%;
   grid-auto-rows: 25px;
   text-align: center;
   /* color: var(--white); */
@@ -792,7 +792,7 @@ color: var(--blanc_roll);
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader-reussite {
   background-color: transparent;
   color: #000000b3;
-  font-size: 60px !important;
+  font-size: 60px;
   letter-spacing: 0px;
   padding: 15px;
   margin-top: 15px;
@@ -837,13 +837,13 @@ color: var(--blanc_roll);
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite {
-font-size: 25px;
-line-height: 25px;
-font-family: "Playfair", serif;
-padding: 5px;
-padding-top: 15px;
-letter-spacing: -0.7px;
-margin-bottom: 10px;
+  font-size: 25px;
+  line-height: 20px;
+  font-family: "Playfair", serif;
+  padding: 5px;
+  padding-top: 15px;
+  letter-spacing: -0.7px;
+  margin-bottom: 10px;
   width: auto;
 }
 
@@ -854,18 +854,18 @@ margin-bottom: 10px;
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite { 
-font-size: 12px;
-line-height: 12px;
-font-family: "Playfair", serif;
-padding: 5px;
-padding-bottom: 5px;
-padding-bottom: 6px;
-letter-spacing: -0.2px;
-color: var(--blanc_roll);
-width: auto;
-margin-left: 0px;
-background: var(--noir_roll);
-margin-top: -5px;
+  font-size: 12px;
+  line-height: 12px;
+  font-family: "Playfair", serif;
+  padding: 5px;
+  padding-bottom: 5px;
+  padding-bottom: 6px;
+  letter-spacing: -0.2px;
+  color: var(--blanc_roll);
+  width: auto;
+  margin-left: 0px;
+  background: var(--noir_roll);
+  margin-top: -5px;
 }
 
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,
@@ -975,7 +975,7 @@ color: unset !important;
 .sheet-rolltemplate-thanatos a[href^='!'],
 .sheet-rolltemplate-thanatos a[href^='~'],
 .sheet-rolltemplate-thanatos a[href^='`']{
-  color: #dfdfdf;
+  color: #000000e8;
   border: none;
   background: none;
   font-size: 14px;
@@ -986,7 +986,7 @@ color: unset !important;
 .sheet-rolltemplate-thanatos a[href^='~']:hover,
 .sheet-rolltemplate-thanatos a[href^='`']:hover{
   top: -1px;
-  color: #ff0039;
+  color: #ff0000cb;
 }
 /* hyperlinks */
 .sheet-rolltemplate-thanatos a:not([href^='~']):not([href^='!']):not([href^='`']){

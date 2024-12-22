@@ -334,7 +334,33 @@
 	});
 </script>
 
-<!-- Script pour  -->
+<!-- Script classique d'update stat  -->
 <script type="text/worker">
+	on("change:stat1 change:stat2", function() {
 
+        getAttrs(["stat", "stat2"], function(values) {
+
+            let stat1 = parseInt(values["stat1"]) || 0;
+            let stat2 = parseInt(values["stat2"]) || 0;
+            
+
+            if (stat1 == 1) 
+                stat3 = stat1,
+                stat4 = stat1;
+
+            else if (stat2 == 1) 
+				stat3 = stat2,
+                stat4 = stat2;
+
+            else             
+            stat3 = 0, 
+            total_boucliers_malus_esquive = 0;
+            
+            
+            setAttrs({
+                "stat3": stat3,
+                "stat4": stat4
+            });
+        });
+    });
 </script>
