@@ -49,20 +49,134 @@
 <button type="roll" name="roll_weapon_dmg_3_distance" style="display: none;" value="@{DMG_3_distance}"></button>
 <button type="roll" name="roll_weapon_dmg_4_distance" style="display: none;" value="@{DMG_4_distance}"></button>
 
-<!-- <div class="menu">
+<div class="menu">
     
     <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
-    <button type="action" name="act_1" class="button1">Équipement</button>
-    <button type="action" name="act_4" class="button4">Carnet de route</button>
-    <button type="action" name="act_2" class="button2">Parcours de vie</button>
-    <button type="action" name="act_3" class="button3">Personnes marquantes</button>	
-    <button type="action" name="act_roll-sens" class="button_sens_carte" title="Cliquez pour savoir dans quel sens est la carte.">Oracle</button>
-	<button type="action" name="act_6" class="button6">Fatalité</button>
-    <button type="action" name="act_5" class="button5">PNJ</button>
-</div> -->
+    <button type="action" name="act_1" class="button1">Caractéristiques</button>
+    <button type="action" name="act_4" class="button4">Attributs</button>
+    <button type="action" name="act_2" class="button2">Équipement</button>
+</div>
 
 
 <div class="page1">
+    <!-- Information personnage -->
+    <div class="personnage">
+        <div class="wrapper_page_1">
+            <input type="hidden" name="attr_page" class="choix_page" value="0">
+            <!-- Banniere et titre -->
+            <div class="cadre_titre">
+                <div class="wrapper_titre">
+                    <div class="titre_logo"></div>
+                    <div class="titre_titre">OBSCURITAS AETERNA</div> 
+                </div>
+            </div>
+            <!-- INFORMATIONS -->
+            <div class="cadre_info">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_info_titre">PERSONNAGE</div>
+                    <!-- Gauche -->
+                    <div class="zone_info_gauche">
+                        <div class="wrapper_zone_info">   
+                            <div class="info_data"><input name="attr_character_name" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">NOM</div>
+                        </div>
+                        <div class="wrapper_zone_info">
+                            <div class="info_data" style="margin-right: 15px;"><input name="attr_profession" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">PROFESSION ET RÔLE</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-right: 25px;">
+                            <div class="info_data"><input name="attr_apparence1" type="text" spellcheck="false" class="input_ligne" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-right: 25px;">
+                            <div class="info_data"><input name="attr_apparence2" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">APPARENCE</div>
+                        </div>
+                        <div class="wrapper_zone_info">
+                            <div class="info_data" style="margin-right: 15px;"><input name="attr_origine1" type="text" spellcheck="false" class="input_ligne" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_origine2" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">ORIGINE</div>
+                        </div>
+                    </div>
+                    <!-- Centre -->
+                    <div class="zone_info_avatar">
+                        <div class="wrapper_zone_info">
+                            <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
+                        </div>
+                    </div>
+                    <div class="zone_info_background" style="margin-top: 15px;">
+                        <div class="wrapper_zone_info">
+                            <div class="info_titre" style="text-align: center;grid-row: 1;margin-top: -20px;">HISTOIRE PERSONNELLE</div>
+                            <div class="info_data" style="grid-row: 1;"><input name="attr_background1" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background2" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background3" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background4" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                    <!-- Droite -->
+                    <div class="zone_info_droite">
+                        <div class="wrapper_zone_info">
+                            <div class="info_data"><input name="attr_caractere1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 7px;">
+                            <div class="info_data"><input name="attr_caractere2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 15px;">
+                            <div class="info_data"><input name="attr_caractere3" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CARACTÈRE ET PERSONNALITÉ</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 25px;">                    
+                            <div class="info_data"><input name="attr_croyance1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 25px;">
+                            <div class="info_data"><input name="attr_croyance2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CROYANCES ET CONVICTIONS</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 15px;"">
+                            <div class="info_data"><input name="attr_condition1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_condition2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CONDITION PHYSIQUE</div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- CARACTÉRISTIQUES -->
+            <div class="cadre_caracteristiques">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_caracteristiques_titre">CARACTÉRISTIQUES</div>
+                </div>
+                <div class="wrapper_zone_carac">
+                    <div class="caracteristiques_pentacle"></div>
+                    <div class="caracteristiques_force_data"><input type="number" class="input_carac" name="attr_force" value="15" min="15" max="99"></div>
+                    <div class="caracteristiques_dexterite_data"><input type="number" class="input_carac" name="attr_dexterite" value="15" min="15" max="99"></div>
+                    <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution value="15" min="15" max="99"></div>
+                    <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force">FORCE</button></div>
+                    <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite">DEXTÉRITÉ</button></div>
+                    <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution">CONSTITUTION</button></div>
+                  
+                    <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligencevalue="15" min="15" max="99"></div>
+                    <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme" value="15" min="15" max="99"></div>
+                    <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte" value="15" min="15" max="99"></div>
+                    <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence">INTELLIGENCE</button></div>
+                    <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme">CHARISME</button></div>
+                    <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte">VOLONTÉ</button></div>
+                </div>  
+            </div>
+        </div> 
+    </div>
+</div>  
+
+<div class="page2">
 
     <!-- <input type="number" class="input_carac" name="attr_force_reel" value="15" min="15" max="99">
     <br>
@@ -86,10 +200,10 @@
                 INFORMATIONS PERSONNAGE<br>
                 <div class="wrapper_zone_info">
                     <span>Nom</span>:
-                    <input name="attr_character_name" type="text" spellcheck="false" class="input_dotted" />
-                    <span>Age</span>:<input name="attr_age" type="text" spellcheck="false" class="input_dotted" />
+                    <input name="attr_character_name" type="text" spellcheck="false" class="input_ligne" />
+                    <span>Age</span>:<input name="attr_age" type="text" spellcheck="false" class="input_ligne" />
                     <span>Profession</span>:
-                    <input name="attr_profession" type="text" spellcheck="false" class="input_dotted" />
+                    <input name="attr_profession" type="text" spellcheck="false" class="input_ligne" />
                 </div>
             </div>  
             <!-- CARACTERISTIQUES -->
@@ -1164,8 +1278,18 @@
 <!--                  SCRIPT                    -->
 <!-- ------------------------------------------ -->
 
-<!-- Custom Attributs  -->
+<!-- Custom Attributs  / Menu -->
 <script type="text/worker">
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
+
+    
     on("sheet:opened change:custom_stat_1 change:custom_stat_2 change:custom_stat_3 change:custom_stat_4 change:custom_comp_1 change:custom_comp_2 change:custom_comp_3 change:custom_comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:total_armures_malus_demi_dexterite change:total_armures_malus_athletisme change:total_armures_malus_combat_cac change:total_armures_malus_combat_pugilat change:total_armures_malus_combat_distance change:total_armures_malus_discretion change:total_armures_malus_esquive change:total_boucliers_malus_esquive", function() {
 
         getAttrs(["custom_stat_1", "custom_stat_2", "custom_stat_3", "custom_stat_4", "custom_comp_1", "custom_comp_2", "custom_comp_3", "custom_comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "total_armures_malus_demi_dexterite", "total_armures_malus_athletisme", "total_armures_malus_combat_cac", "total_armures_malus_combat_pugilat", "total_armures_malus_combat_distance", "total_armures_malus_discretion", "total_armures_malus_esquive", "total_boucliers_malus_esquive"], function(values) {
