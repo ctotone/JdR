@@ -3,6 +3,9 @@
 <!-- TODO AURA / ETC  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
+<input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
+<input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
 <input type="hidden" name="attr_malus_total_dexterite" value="0">
 <input type="hidden" name="attr_malus_total_athletisme" value="0">
 <input type="hidden" name="attr_malus_total_combat_cac" value="0">
@@ -71,9 +74,15 @@
                 </div>
             </div>
             <!-- INFORMATIONS -->
+            <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
+            <div class="cadre_info_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_info_titre">PERSONNAGE<button type="action" class="button_show" name="act_hide_info" title="Afficher / Cacher" ><span class="picto">|</span></button></div>
+                </div>
+            </div>
             <div class="cadre_info">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_info_titre">PERSONNAGE</div>
+                    <div class="zone_info_titre">PERSONNAGE<button type="action" class="button_show" name="act_hide_info" title="Afficher / Cacher" ><span class="picto">|</span></button></div>
                     <!-- Gauche -->
                     <div class="zone_info_gauche">
                         <div class="wrapper_zone_info">   
@@ -97,27 +106,6 @@
                         <div class="wrapper_zone_info" style="margin-top: 0px;">
                             <div class="info_data"><input name="attr_origine2" type="text" spellcheck="false" class="input_ligne" /></div>
                             <div class="info_titre">ORIGINE</div>
-                        </div>
-                    </div>
-                    <!-- Centre -->
-                    <div class="zone_info_avatar">
-                        <div class="wrapper_zone_info">
-                            <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
-                        </div>
-                    </div>
-                    <div class="zone_info_background" style="margin-top: 15px;">
-                        <div class="wrapper_zone_info">
-                            <div class="info_titre" style="text-align: center;grid-row: 1;margin-top: -20px;">HISTOIRE PERSONNELLE</div>
-                            <div class="info_data" style="grid-row: 1;"><input name="attr_background1" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background2" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background3" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background4" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
                         </div>
                     </div>
                     <!-- Droite -->
@@ -147,13 +135,40 @@
                             <div class="info_titre">CONDITION PHYSIQUE</div>
                         </div>
                     </div> 
+                    <!-- Centre -->
+                    <div class="zone_info_avatar">
+                        <div class="wrapper_zone_info">
+                            <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
+                        </div>
+                    </div>
+                    <div class="zone_info_background" style="margin-top: 15px;">
+                        <div class="wrapper_zone_info">
+                            <div class="info_titre" style="text-align: center;grid-row: 1;margin-top: -20px;">HISTOIRE PERSONNELLE</div>
+                            <div class="info_data" style="grid-row: 1;"><input name="attr_background1" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background2" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background3" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background4" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- CARACTÉRISTIQUES -->
+            <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
+            <div class="cadre_caracteristiques_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_caracteristiques_titre"><button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> CARACTÉRISTIQUES</div>
+                </div>
+            </div> 
             <div class="cadre_caracteristiques">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_caracteristiques_titre">CARACTÉRISTIQUES</div>
+                    <div class="zone_caracteristiques_titre"><button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> CARACTÉRISTIQUES</div>
                 </div>
                 <div class="wrapper_zone_carac">
                     <div class="bloc_pentacle">
@@ -161,8 +176,8 @@
                             <div class="caracteristiques_pentacle"></div>
                             <div class="caracteristiques_force_data"><input type="number" class="input_carac" name="attr_force" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_dexterite_data"><input type="number" class="input_carac" name="attr_dexterite" value="15" min="15" max="99"></div>
-                            <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution value="15" min="15" max="99"></div>
-                            <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligencevalue="15" min="15" max="99"></div>
+                            <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution" value="15" min="15" max="99"></div>
+                            <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force">FORCE</button></div>
@@ -175,9 +190,65 @@
                     </div>
                     <div class="caracteristiques_separateur"></div>
                     <div class="caracteristiques_derivees">
-
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Points de vie</div>
+                            <div class="derivees_data"><input type="number" class="input_derivees" name="attr_pdv" value="1" min="0" max="99"></div>
+                            <div class="derivees_sur">sur</div>
+                            <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi" value="0" readonly /></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Points de magie</div>
+                            <div class="derivees_data"><input type="number" class="input_derivees" name="attr_pdm" value="1" min="0" max="99"></div>
+                            <div class="derivees_sur">sur</div>
+                            <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi" value="0" readonly /></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Santé mentale</div>
+                            <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
+                            <div class="derivees_sur">sur</div>
+                            <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
+                        </div>
+                        <div class="wrapper_zone_derivees" style="margin-top: 25px;">
+                            <div class="derivees_titre">Bonus de Force</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Bonus de Dextérité</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Encaissement</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees" style="margin-top: 25px;">
+                            <div class="derivees_titre">Malus de blessures</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_malus_blessure" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Malus d'Esquive</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_malus_esquive_final" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Malus de Parade</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_parade_final" value="0" min="0" max="99"></div>
+                        </div>
                     </div>
                 </div>  
+            </div>
+            <!-- COMPETENCES -->
+            <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
+            <div class="cadre_competence_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_competence_titre">COMPÉTENCES <button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher"><span class="picto">|</span></button></div>
+                </div>
+            </div> 
+            <div class="cadre_competence">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_competence_titre">COMPÉTENCES <button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher"><span class="picto">|</span></button></div>
+                </div>
+                <div class="wrapper_zone_carac">
+                    blabla 
+                </div>
             </div>
         </div> 
     </div>
@@ -2675,4 +2746,37 @@
 
 	finishRoll(roll.rollId,computeObj);
 	})
+
+    on('clicked:hide_info', async (event) => {
+		getAttrs(["info_reduit"], function(values) {
+            let info_reduit = parseInt(values["info_reduit"]) || 0;
+            if (info_reduit == 0) info_reduit = 1;
+            else info_reduit = 0;
+        setAttrs({
+            "info_reduit": info_reduit			
+            });
+        });
+    });
+
+    on('clicked:hide_carac', async (event) => {
+		getAttrs(["carac_reduit"], function(values) {
+            let carac_reduit = parseInt(values["carac_reduit"]) || 0;
+            if (carac_reduit == 0) carac_reduit = 1;
+            else carac_reduit = 0;
+        setAttrs({
+            "carac_reduit": carac_reduit			
+            });
+        });
+    });
+
+    on('clicked:hide_competence', async (event) => {
+		getAttrs(["competence_reduit"], function(values) {
+            let competence_reduit = parseInt(values["competence_reduit"]) || 0;
+            if (competence_reduit == 0) competence_reduit = 1;
+            else competence_reduit = 0;
+        setAttrs({
+            "competence_reduit": competence_reduit			
+            });
+        });
+    });
 </script>

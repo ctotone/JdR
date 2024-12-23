@@ -60,6 +60,10 @@
   margin-top: 0px;
 }
 
+span.picto {
+  font-family: 'pictos';
+}
+
 img.portrait {
   border-radius: 120px;
   box-shadow: 0px 0px 14px 2px black;
@@ -132,6 +136,24 @@ img.portrait {
   margin-top: 0px;
   font-family: 'Metamorphous';
   font-weight: bold;
+}
+
+.charsheet input.input_derivees,
+.charsheet input.input_derivees_lock { 
+  width: 100% !important;
+  border-bottom: 1px dotted var(--couleur_ligne);
+  height: 25px !important;
+  border-radius: 1px;
+  color: var(--black);
+  letter-spacing: 0px;
+  background: none;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Metamorphous';
+}
+
+.charsheet input.input_derivees_lock { 
+  border: none;
 }
 
 
@@ -265,7 +287,8 @@ input[type="number"] {
 .charsheet button[type=action].button5::before,
 .charsheet button[type=action].button6::before,
 .charsheet button[type=action].button_sens_carte::before,
-.charsheet button[type=action].button_carac::before {
+.charsheet button[type=action].button_carac::before,
+.charsheet button[type=action].button_show::before {
 	content: '';
 }
 
@@ -289,6 +312,25 @@ input[type="number"] {
   margin-top: -2px;
   display: flex;
   align-items: center;
+}
+
+.charsheet button[type=action].button_show {
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 18px;
+  text-align: center;
+  line-height: 18px;
+  margin-top: -7px;
+  width: auto;
+  font-size: 18px;
+  color: #fdfdfd30;
+  margin-left: 14px;
 }
 
 .charsheet button[type=action].button_carac {
@@ -362,6 +404,10 @@ input[type="number"] {
   color: var(--color_text_hover);
 }
 
+.charsheet button[type=action].button_show:hover {
+  color: var(--white);
+}
+
 .charsheet button[type=action].button_annonce,
 .charsheet button[type=roll].button_annonce {  
 	padding: 0;
@@ -382,7 +428,8 @@ input[type="number"] {
 
 .page1 {  
   width: 820px;
-  height: 1200px;
+  min-height: 500px;
+  height: auto;
   background: rgb(226, 226, 226);
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
   background-size: cover;
@@ -413,6 +460,25 @@ div.zone_armes {
     display: block;
 }
 
+/* Reduction des cadres */
+div.cadre_info,
+div.cadre_info_reduit,
+div.cadre_caracteristiques,
+div.cadre_caracteristiques_reduit,
+div.cadre_competence,
+div.cadre_competence_reduit {
+  display: none;
+}
+
+.charsheet .voir_info[value="0"] ~ div.cadre_info,
+.charsheet .voir_info[value="1"] ~ div.cadre_info_reduit,
+.charsheet .voir_carac[value="0"] ~ div.cadre_caracteristiques,
+.charsheet .voir_carac[value="1"] ~ div.cadre_caracteristiques_reduit,
+.charsheet .voir_competence[value="0"] ~ div.cadre_competence,
+.charsheet .voir_competence[value="1"] ~ div.cadre_competence_reduit {
+    display: block;
+}
+
 
 
 /* Structure générale de la page_personnage */
@@ -424,8 +490,11 @@ div.zone_armes {
 
 .wrapper_page_1 {
   display: grid;
-  grid-template-columns: repeat(83, 10px);
-  grid-auto-rows: 10px;
+  grid-template-columns: repeat(83, 1fr); /* Colonnes dynamiques */
+  grid-auto-rows: auto; /* Lignes ajustées au contenu */
+  gap: 10px; /* Espacement entre les colonnes et les lignes */
+  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
+  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
 }
 
 .cadre_titre {
@@ -438,24 +507,37 @@ div.zone_armes {
   border-radius: 10px;
 }
 
-.cadre_info {
+.cadre_info,
+.cadre_info_reduit {
   grid-column: 1 / 83;
-  grid-row: 27 / 66;
   border: 2px solid #00000087;
   padding: 10px;
   box-shadow: 0px 0px 5px 2px #000000c4;
   background: #ffffff52;
   border-radius: 10px;
+  margin-top: 35px;
 }
 
-.cadre_caracteristiques {
+.cadre_caracteristiques,
+.cadre_caracteristiques_reduit {
   grid-column: 1 / 83;
-  grid-row: 71 / 122;
   border: 2px solid #00000087;
   padding: 10px;
   box-shadow: 0px 0px 5px 2px #000000c4;
   background: #ffffff52;
   border-radius: 10px;
+  margin-top: 35px;
+}
+
+.cadre_competence,
+.cadre_competence_reduit {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 35px;
 }
 
 .wrapper_zone_personnage {
@@ -465,7 +547,8 @@ div.zone_armes {
 }
 
 .zone_info_titre,
-.zone_caracteristiques_titre {
+.zone_caracteristiques_titre,
+.zone_competence_titre {
   grid-column: 1 / 36;
   grid-row: 1 / 4;
   margin-top: 0px;
@@ -489,10 +572,10 @@ div.zone_armes {
 }
 
 .zone_caracteristiques_titre {
-  grid-column: 45 / 81;
+  grid-column: 45 / 79;
   grid-row: 1 / 4;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre4.png);
-  padding-left: 77px;
+  padding-left: 31px;
   padding-top: 18px;
   transform: rotate(-1deg);
 }
@@ -517,7 +600,7 @@ div.zone_armes {
 
 .zone_info_background {
   grid-column: 1 / 80;
-  grid-row: 27 / 34;
+  grid-row: 28 / 39;
   margin-top: -8px;
   margin-bottom: 0px;
   margin-left: 80px;
@@ -530,7 +613,7 @@ div.zone_armes {
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
-  margin-right: 0px;
+  margin-right: 5px;
   text-align: right;
 }
 
@@ -724,21 +807,80 @@ div.zone_armes {
 }
 
 .caracteristiques_separateur {
-  grid-column: 1 / 91;
-  grid-row: 1 / 9;
+  grid-column: 86;
+  grid-row: 1;
+  width: 104px;
+  height: 467px;
+  margin-top: -18px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_croix.png);
+  background-size: cover;
+}
+
+.caracteristiques_derivees {
+  grid-column: 103 / 156;
+  grid-row: 1 / 8;
+  margin-top: 21px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.wrapper_zone_derivees {
+  display: grid;
+  grid-template-columns: 0% 66% 1% 10% 2% 10% 4% 10% 0%;
+  grid-auto-rows: 32px;
+  font-size: 16px;
+  font-family: 'Metamorphous';
+}
+
+.derivees_titre {
+  grid-column: 2;
+  grid-row: 1;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
 }
 
-.caracteristiques_derivees {
-  grid-column: 1 / 91;
-  grid-row: 1 / 9;
+.derivees_data {
+  grid-column: 4;
+  grid-row: 1;
+  margin-top: -4px;
+  margin-bottom: 0px;
+  margin-left: -10px;
+  margin-right: 0px;
+}
+
+.derivees_sur {
+  grid-column: 6;
+  grid-row: 1;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  font-size: 15px;
+}
+
+.derivees_max {
+  grid-column: 8;
+  grid-row: 1;
+  margin-top: -4px;
+  margin-bottom: 0px;
+  margin-left: -10px;
+  margin-right: 0px;
+}
+
+.derivees_bonus {
+  grid-column: 4/9;
+  grid-row: 1;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+
 }
 
 
