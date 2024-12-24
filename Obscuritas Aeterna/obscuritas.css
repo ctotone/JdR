@@ -1,18 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Metamorphous&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 /* font-family: "Metamorphous", serif; */
+/* font-family: "Jim Nightshade", serif; */
 
 .charsheet {
-  font-family: "Playfair", serif;
+  /* font-family: "Playfair", serif; */
+  font-family: "Metamorphous", serif;
   color: var(--black);
   font-size: 16px;
   letter-spacing: -0.4px;
-  line-height: 25px;
+  line-height: 18px;
   margin: 0px;
   --black: #000002;
   --white: #fcfcfd;
   --font_playfair: "Playfair", serif;
   --color_dev: rgba(255, 0, 0, 0.062);
   --text_input_info: #a20303d4;
+  --hover_bouton: #a20303d4;
 
   --couleur_ligne: #000000e5;
   --text_input: #000000bd;
@@ -27,10 +30,6 @@
   --color_button_hover: #d7d2d2;
   --color_text_hover: #000000;
   --color_ombre_button: #575757a8;
-  font-family: "Playfair", serif;
-  font-size: 16px;
-  line-height: 18px;
-  margin: 0px;
 }
 
 /* .sheet-darkmode .charsheet {
@@ -105,6 +104,7 @@ img.portrait {
 
 .charsheet input.input_carac,
 .charsheet input.input_carac_lock,
+.charsheet input.input_comp,
 .charsheet input.input_demi_carac,
 .charsheet input.input_carac_long,
 .charsheet input.input_carac_pnj,
@@ -128,7 +128,7 @@ img.portrait {
   border: none;
   border-radius: 30px;
   background-color: transparent;
-  color: var(--black);
+  color: var(--text_input_info);
   text-align: center;
   font-size: 15px;
   padding: 0;
@@ -159,6 +159,22 @@ img.portrait {
 
 .charsheet input.input_carac_lock {
   cursor: default;
+}
+
+.charsheet input.input_comp {
+  width: 35px !important;
+  height: 35px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--text_input_info);
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  font-family: 'Metamorphous';
+  font-weight: bold;
 }
 
 .charsheet input.input_carac_pnj,
@@ -193,24 +209,24 @@ div.fond_blanc {
   color: var(--black);
 }
 
-.charsheet select.choix_custom {   
-  width: auto;
-  height: 24px;
-  color: var(--text_input);
+.charsheet select.choix_custom {
+  width: 117px;
+  height: 25px;
   letter-spacing: -0.7px;
   border: none;
-  border-bottom: 1px dotted var(--couleur_dotted);
   border-radius: 1px;
   outline: none;
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 0px;
-  margin-top: -4px;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding-left: 2px;
-  padding-right: 10px;
-  padding-bottom: 0px;
+  font-size: 13px;
+  padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+  margin: 0;
+  background: transparent;
+  color: var(--black);
+  font-size: 21px;
+  font-family: "Jim Nightshade";
+  padding-top: 2px;
 }
 
 
@@ -288,6 +304,7 @@ input[type="number"] {
 .charsheet button[type=action].button6::before,
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
+.charsheet button[type=action].button_comp::before,
 .charsheet button[type=action].button_show::before {
 	content: '';
 }
@@ -353,6 +370,22 @@ input[type="number"] {
   text-align: center;
 }
 
+.charsheet button[type=action].button_comp {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  width: auto !important;
+  height: 20px;
+  border: none;
+  border-radius: 1px;
+  color: var(--black);
+  font-size: 21px;
+  font-family: "Jim Nightshade";
+  padding-top: 2px;
+}
+
 .charsheet button[type=action].button_texte_noir,
 .charsheet button[type=roll].button_texte_noir {
   color: var(--black);
@@ -389,8 +422,9 @@ input[type="number"] {
   font-weight: bold;
 }
 
-.charsheet button[type=action].button_carac:hover {
-  color: red;
+.charsheet button[type=action].button_carac:hover,
+.charsheet button[type=action].button_comp:hover {
+  color: var(--hover_bouton);
 }
 
 .charsheet button[type=action].button0:hover,
@@ -807,10 +841,10 @@ div.cadre_competence_reduit {
 }
 
 .caracteristiques_separateur {
-  grid-column: 86;
+  grid-column: 82;
   grid-row: 1;
-  width: 104px;
-  height: 467px;
+  width: 115px;
+  height: 498px;
   margin-top: -18px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -820,12 +854,17 @@ div.cadre_competence_reduit {
 }
 
 .caracteristiques_derivees {
-  grid-column: 103 / 156;
-  grid-row: 1 / 8;
-  margin-top: 21px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  grid-column: 93 / 156;
+  grid-row: 1 / 9;
+  margin-top: 24px;
+  margin-bottom: 71px;
+  margin-left: 1px;
   margin-right: 0px;
+  box-shadow: 2px 1px 6px 2px #0000009c;
+  padding: 20px;
+    padding-left: 20px;
+  padding-left: 35px;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .wrapper_zone_derivees {
@@ -880,7 +919,164 @@ div.cadre_competence_reduit {
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
+}
 
+.derivees_separateur {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-left: -8px;
+  margin-right: 0px;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_horizontal_1.png);
+  background-size: contain;
+  height: 13px;
+  width: 276px;
+}
+
+.wrapper_zone_competence {
+  display: grid;
+  grid-template-columns: 6% 43% 1% 45% 0%;
+  grid-auto-rows: 32px;
+}
+
+.competence_gauche {
+  grid-column: 2;
+  grid-row: 2/19;
+  transform: rotate(-0.8deg);
+  box-shadow: -4px 3px 6px 4px #0000009c;
+  border-radius: 15px 0px 0px 15px;
+  margin: -4px;
+  padding: 15px;
+  margin-top: 9px;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-size: cover;
+}
+
+.competence_droite {
+  grid-column: 4;
+  grid-row: 2/19;
+  transform: rotate(-0.8deg);
+  box-shadow: 4px 3px 6px 4px #000000c4;
+  border-radius: 15px;
+  margin: -4px;
+  padding: 15px;
+  margin-top: 4px;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-size: cover;
+  background-position: 25% 75%;
+}
+
+.competence_separateur {
+  grid-column: 3;
+  grid-row: 1/20;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_comp.png);
+  background-size: cover;
+  margin-top: -40px;
+  margin-left: -31px;
+  width: 78px;
+  transform: rotate(-1deg);
+  height: 110%;
+}
+
+.competence_crane {
+  grid-column: 3;
+  grid-row: 1/4;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_crane_blanc.png);
+  background-size: contain;
+  margin-top: -40px;
+  margin-left: -36px;
+  width: 81px;
+  transform: rotate(-1deg);
+  height: 115px;
+}
+
+.wrapper_tableau_competence {
+  display: grid;
+  grid-template-columns: 12% 1% 71% 0% 14% 0%;
+  grid-auto-rows: 20px;
+  font-size: 13px;
+  font-family: 'Metamorphous';
+  margin-top: 5px;
+}
+
+.competence_valeur_simple {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.competence_valeur_double {
+  grid-column: 1;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.competence_nom_double {
+  grid-column: 3;
+  grid-row: 1/3;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 10px;
+  border-bottom: 1px dotted black;
+}
+
+.competence_nom_haut {
+  grid-column: 3;
+  grid-row: 1;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.competence_nom_bas {
+  grid-column: 3;
+  grid-row: 2;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  padding-left: 10px;
+  border-bottom: 1px dotted black;
+}
+
+.competence_final_double {
+  grid-column: 5;
+  grid-row: 1/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
+  border-radius: 0px 0px 15px 0px;
+}
+
+.competence_final_haut {
+  grid-column: 5;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px dotted black;
+}
+
+.competence_final_bas {
+  grid-column: 5;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dotted black;
+  border-right: 1px dotted black;
+  border-radius: 0px 0px 15px 0px;
 }
 
 
