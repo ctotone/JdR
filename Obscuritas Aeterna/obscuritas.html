@@ -13,13 +13,13 @@
 <input type="hidden" name="attr_malus_total_combat_distance" value="0">
 <input type="hidden" name="attr_malus_total_discretion" value="0">
 <input type="hidden" name="attr_malus_total_esquive" value="0">
-<input type="hidden" name="attr_malus_total_esquive" value="0">
 <input type="hidden" name="attr_malus_blessure" value="0">
 <input type="hidden" name="attr_total_armures_malus_combat_cac" value="0">
 <input type="hidden" name="attr_total_armures_malus_demi_dexterite" value="0">
 <input type="hidden" name="attr_total_armures_malus_athletisme" value="0">
 <input type="hidden" name="attr_total_armures_malus_combat_pugilat" value="0">
 <input type="hidden" name="attr_total_armures_malus_combat_distance" value="0">
+<input type="hidden" name="attr_total_boucliers_malus_esquive" value="0">
 <input type="hidden" name="attr_bonus_force" value="0">
 <input type="hidden" name="attr_bonus_dexterite" value="0">
 <input type="hidden" name="attr_bonus_reussite" value="0">
@@ -53,7 +53,6 @@
 <button type="roll" name="roll_weapon_dmg_4_distance" style="display: none;" value="@{DMG_4_distance}"></button>
 
 <div class="menu">
-    
     <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
     <button type="action" name="act_1" class="button1">Caractéristiques</button>
     <button type="action" name="act_4" class="button4">Attributs</button>
@@ -208,7 +207,10 @@
                             <div class="derivees_sur">sur</div>
                             <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
                         </div>
-                        <div class="wrapper_zone_derivees" style="margin-top: 25px;">
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_separateur"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
                             <div class="derivees_titre">Bonus de Force</div>
                             <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force" value="0" min="0" max="99"></div>
                         </div>
@@ -220,7 +222,10 @@
                             <div class="derivees_titre">Encaissement</div>
                             <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement" value="0" min="0" max="99"></div>
                         </div>
-                        <div class="wrapper_zone_derivees" style="margin-top: 25px;">
+                        <div class="wrapper_zone_derivees">
+                            <div class="derivees_separateur"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
                             <div class="derivees_titre">Malus de blessures</div>
                             <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_malus_blessure" value="0" min="0" max="99"></div>
                         </div>
@@ -246,8 +251,267 @@
                 <div class="wrapper_zone_personnage">
                     <div class="zone_competence_titre">COMPÉTENCES <button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher"><span class="picto">|</span></button></div>
                 </div>
-                <div class="wrapper_zone_carac">
-                    blabla 
+                <div class="wrapper_zone_competence"> 
+                    <div class="competence_gauche">
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_athletisme" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_haut"><button type="action" class="button_comp" name="act_roll-athletisme-force">Athletisme (Force)</button></div>
+                            <div class="competence_nom_bas"><button type="action" class="button_comp" name="act_roll-athletisme-dex">Athletisme (Dextérité)</button></div>
+                            <div class="competence_final_haut"><input type="number" class="input_carac_lock" name="attr_athletisme_force" value="0" min="0" max="99" readonly /></div> 
+                            <div class="competence_final_bas"><input type="number" class="input_carac_lock" name="attr_athletisme_dexterite" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_baratin" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_haut"><button type="action" class="button_comp" name="act_roll-baratin-charisme">Baratin (Charisme)</button></div>
+                            <div class="competence_nom_bas"><button type="action" class="button_comp" name="act_roll-baratin-force">Baratin (Force)</button></div>
+                            <div class="competence_final_haut"><input type="number" class="input_carac_lock" name="attr_baratin_charisme" value="0" min="0" max="99" readonly /></div>
+                            <div class="competence_final_bas"><input type="number" class="input_carac_lock" name="attr_baratin_force" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_bibliotheque" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-bibliotheque">Bibliothèque (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_bibliotheque" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_chercher" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-chercher">Chercher (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_chercher" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_combat_cac" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-cac-force">Combat CaC (Force)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_stat_combat_cac_force" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_combat_pugilat" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-pugilat">Combat Pugilat (Force)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_combat_pugilat" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_combat_distance" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-distance">Combat Distance (Dextérité)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_combat_distance" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_discretion" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-discretion">Discrétion (Dextérité)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_langue_ancienne" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_haut"><button type="action" class="button_comp" name="act_roll-ancienne-intel">Langue ancienne (Intelligence)</button></div>
+                            <div class="competence_nom_bas"><button type="action" class="button_comp" name="act_roll-ancienne-volonte">Langue ancienne (Volonté)</button></div>
+                            <div class="competence_final_haut"><input type="number" class="input_carac_lock" name="attr_langue_ancienne_intelligence" value="0" min="0" max="99" readonly /></div> 
+                            <div class="competence_final_bas"><input type="number" class="input_carac_lock" name="attr_langue_ancienne_volonte" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_langue" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-langue">Langue (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_langue" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                    </div>
+                    <div class="competence_separateur"></div>
+                    <div class="competence_droite">
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_medecine" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-medecine">Médecine (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_medecine" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_metier" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_haut"><button type="action" class="button_comp" name="act_roll-metier-intell">Métier (Intelligence)</button></div>
+                            <div class="competence_nom_bas"><button type="action" class="button_comp" name="act_roll-metier-volonte">Métier (Volonté)</button></div>
+                            <div class="competence_final_haut"><input type="number" class="input_carac_lock" name="attr_metier_intelligence" value="0" min="0" max="99" readonly /></div> 
+                            <div class="competence_final_bas"><input type="number" class="input_carac_lock" name="attr_metier_volonte" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences">Sciences (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_science" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_sciences_occultes" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences-occultes">Sciences occultes (Volonté)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_sciences_occultes" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_survie" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-survie">Survie (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_survie" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_vigilance" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-vigilance">Vigilance (Dextérité)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_vigilance" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom1"><span class="picto">b</span></button></div>
+                            <div class="competence_nom_double">
+                                <select class="choix_custom" name="attr_custom_stat_1">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Athlétisme</option>
+                                    <option value="2">Baratin</option>
+                                    <option value="3">Bibliothèque</option>
+                                    <option value="4">Chercher</option>
+                                    <option value="5">Combat CaC</option>
+                                    <option value="6">Combat Pugilat</option>
+                                    <option value="7">Combat Distance</option>
+                                    <option value="8">Discrétion</option>
+                                    <option value="9">Endurance</option>
+                                    <option value="10">Esquive</option>
+                                    <option value="11">Langue ancienne</option>
+                                    <option value="12">Langue</option>
+                                    <option value="13">Médecine</option>
+                                    <option value="14">Métier</option>
+                                    <option value="15">Perception</option>
+                                    <option value="16">Psychologie</option>
+                                    <option value="17">Sciences</option>
+                                    <option value="18">Sciences occultes</option>
+                                    <option value="19">Survie</option>
+                                    <option value="20">Vigilance</option>
+                                </select>
+
+                                <select class="choix_custom" name="attr_custom_comp_1" style="text-align: right;width: 100px;">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">(Force)</option>
+                                    <option value="2">(Dextérité)</option>
+                                    <option value="3">(Constitution)</option>
+                                    <option value="4">(Intelligence)</option>
+                                    <option value="5">(Charisme)</option>
+                                    <option value="6">(Volonté)</option>
+                                </select>
+                            </div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_custom_2" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom2"><span class="picto">b</span></button></div>
+                            <div class="competence_nom_double">
+                                <select class="choix_custom" name="attr_custom_stat_2">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Athlétisme</option>
+                                    <option value="2">Baratin</option>
+                                    <option value="3">Bibliothèque</option>
+                                    <option value="4">Chercher</option>
+                                    <option value="5">Combat CaC</option>
+                                    <option value="6">Combat Pugilat</option>
+                                    <option value="7">Combat Distance</option>
+                                    <option value="8">Discrétion</option>
+                                    <option value="9">Endurance</option>
+                                    <option value="10">Esquive</option>
+                                    <option value="11">Langue ancienne</option>
+                                    <option value="12">Langue</option>
+                                    <option value="13">Médecine</option>
+                                    <option value="14">Métier</option>
+                                    <option value="15">Perception</option>
+                                    <option value="16">Psychologie</option>
+                                    <option value="17">Sciences</option>
+                                    <option value="18">Sciences occultes</option>
+                                    <option value="19">Survie</option>
+                                    <option value="20">Vigilance</option>
+                                </select>
+
+                                <select class="choix_custom" name="attr_custom_comp_2" style="text-align: right;width: 100px;">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">(Force)</option>
+                                    <option value="2">(Dextérité)</option>
+                                    <option value="3">(Constitution)</option>
+                                    <option value="4">(Intelligence)</option>
+                                    <option value="5">(Charisme)</option>
+                                    <option value="6">(Volonté)</option>
+                                </select>
+                            </div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_custom_2" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom3"><span class="picto">b</span></button></div>
+                            <div class="competence_nom_double">
+                                <select class="choix_custom" name="attr_custom_stat_3">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Athlétisme</option>
+                                    <option value="2">Baratin</option>
+                                    <option value="3">Bibliothèque</option>
+                                    <option value="4">Chercher</option>
+                                    <option value="5">Combat CaC</option>
+                                    <option value="6">Combat Pugilat</option>
+                                    <option value="7">Combat Distance</option>
+                                    <option value="8">Discrétion</option>
+                                    <option value="9">Endurance</option>
+                                    <option value="10">Esquive</option>
+                                    <option value="11">Langue ancienne</option>
+                                    <option value="12">Langue</option>
+                                    <option value="13">Médecine</option>
+                                    <option value="14">Métier</option>
+                                    <option value="15">Perception</option>
+                                    <option value="16">Psychologie</option>
+                                    <option value="17">Sciences</option>
+                                    <option value="18">Sciences occultes</option>
+                                    <option value="19">Survie</option>
+                                    <option value="20">Vigilance</option>
+                                </select>
+
+                                <select class="choix_custom" name="attr_custom_comp_3" style="text-align: right;width: 100px;">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">(Force)</option>
+                                    <option value="2">(Dextérité)</option>
+                                    <option value="3">(Constitution)</option>
+                                    <option value="4">(Intelligence)</option>
+                                    <option value="5">(Charisme)</option>
+                                    <option value="6">(Volonté)</option>
+                                </select>
+                            </div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_custom_3" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom4"><span class="picto">b</span></button></div>
+                            <div class="competence_nom_double">
+                                <select class="choix_custom" name="attr_custom_stat_4">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Athlétisme</option>
+                                    <option value="2">Baratin</option>
+                                    <option value="3">Bibliothèque</option>
+                                    <option value="4">Chercher</option>
+                                    <option value="5">Combat CaC</option>
+                                    <option value="6">Combat Pugilat</option>
+                                    <option value="7">Combat Distance</option>
+                                    <option value="8">Discrétion</option>
+                                    <option value="9">Endurance</option>
+                                    <option value="10">Esquive</option>
+                                    <option value="11">Langue ancienne</option>
+                                    <option value="12">Langue</option>
+                                    <option value="13">Médecine</option>
+                                    <option value="14">Métier</option>
+                                    <option value="15">Perception</option>
+                                    <option value="16">Psychologie</option>
+                                    <option value="17">Sciences</option>
+                                    <option value="18">Sciences occultes</option>
+                                    <option value="19">Survie</option>
+                                    <option value="20">Vigilance</option>
+                                </select>
+
+                                <select class="choix_custom" name="attr_custom_comp_4" style="text-align: right;width: 100px;">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">(Force)</option>
+                                    <option value="2">(Dextérité)</option>
+                                    <option value="3">(Constitution)</option>
+                                    <option value="4">(Intelligence)</option>
+                                    <option value="5">(Charisme)</option>
+                                    <option value="6">(Volonté)</option>
+                                </select>
+                            </div>
+                            <div class="competence_final_double"><input type="number" class="input_carac_lock" name="attr_custom_4" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                    </div> 
+                    <div class="competence_crane"></div>         
                 </div>
             </div>
         </div> 
@@ -255,20 +519,6 @@
 </div>  
 
 <div class="page2">
-
-    <!-- <input type="number" class="input_carac" name="attr_force_reel" value="15" min="15" max="99">
-    <br>
-    <input type="number" class="input_carac" name="attr_dexterite_reel" value="15" min="15" max="99">
-    <br>
-    <input type="number" class="input_carac" name="attr_constitution_reel" value="15" min="15" max="99">
-    <br>
-    <input type="number" class="input_carac" name="attr_intelligence_reel" value="15" min="15" max="99">
-    <br>
-    <input type="number" class="input_carac" name="attr_charisme_reel" value="15" min="15" max="99">
-    <br>
-    <input type="number" class="input_carac" name="attr_volonte_reel" value="15" min="15" max="99">
-    <br> -->
-
     <!-- Information personnage -->
     <div class="personnage">
         <div class="wrapper_page_personnage">
@@ -704,7 +954,7 @@
                             <option value="19">Survie</option>
                             <option value="20">Vigilance</option>
                         </select>
-
+                        &nbsp; (&nbsp;
                         <select class="choix_custom" name="attr_custom_comp_2">
                             <option value="0" selected="selected"></option>
                             <option value="1">Force</option>
@@ -714,6 +964,7 @@
                             <option value="5">Charisme</option>
                             <option value="6">Volonté</option>
                         </select>
+                        &nbsp;)
                     </div>
                     <div class="talents_valeur">
                         <input type="number" class="input_carac_lock" name="attr_custom_2" value="0" min="0" max="99" readonly />
@@ -2205,7 +2456,7 @@
 
     on('clicked:roll-athletisme-dex', async (event) => {
 		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_dexterite}[Compétence]-@{total_armures_malus_athletisme}[Armure - Malus Athlétisme]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
-		const {stat,des,mod,malus} = roll.results;
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
         const difference = computeObj.roll - des.result;
