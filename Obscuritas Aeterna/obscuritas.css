@@ -63,6 +63,11 @@ span.picto {
   font-family: 'pictos';
 }
 
+span.D20 {
+  font-family: 'dicefontd20';
+  font-size: 32px;
+}
+
 img.portrait {
   border-radius: 120px;
   box-shadow: 0px 0px 14px 2px black;
@@ -105,6 +110,7 @@ img.portrait {
 .charsheet input.input_carac,
 .charsheet input.input_carac_lock,
 .charsheet input.input_comp,
+.charsheet input.input_comp_lock,
 .charsheet input.input_demi_carac,
 .charsheet input.input_carac_long,
 .charsheet input.input_carac_pnj,
@@ -154,6 +160,7 @@ img.portrait {
 
 .charsheet input.input_derivees_lock { 
   border: none;
+  cursor: default;
 }
 
 
@@ -175,6 +182,38 @@ img.portrait {
   margin-top: 0px;
   font-family: 'Metamorphous';
   font-weight: bold;
+}
+
+.charsheet input.input_comp_double {
+  width: 35px !important;
+  height: 80px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--text_input_info);
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+  padding-bottom: 0px;
+  margin-top: 45px;
+  font-family: 'Metamorphous';
+  font-weight: bold;
+}
+
+.charsheet input.input_comp_lock {
+  width: 35px !important;
+  height: 35px;
+  border: 2px solid #010101d4;
+  border-radius: 14px;
+  background-color: #5d0202;
+  color: #fdfdfdfc;
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  font-family: 'Metamorphous';
+  cursor: default;
 }
 
 .charsheet input.input_carac_pnj,
@@ -222,7 +261,7 @@ div.fond_blanc {
   margin: 0;
   background: transparent;
   color: var(--black);
-  font-size: 21px;
+  font-size: 19px;
   font-family: "Jim Nightshade";
   padding-top: 2px;
 }
@@ -284,6 +323,7 @@ input[type="checkbox"]:focus {
 }
 
 input[type="number"] {
+  appearance: none;
   -moz-appearance: textfield;
 }
 
@@ -379,7 +419,7 @@ input[type="number"] {
   border: none;
   border-radius: 1px;
   color: var(--black);
-  font-size: 21px;
+  font-size: 19px;
   font-family: "Jim Nightshade";
   padding-top: 2px;
 }
@@ -463,7 +503,7 @@ input[type="number"] {
   min-height: 500px;
   height: auto;
   background: rgb(226, 226, 226);
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.webp);
   background-size: cover;
   padding: 20px;
   border-radius: 10px;
@@ -860,17 +900,18 @@ div.cadre_competence_reduit {
   margin-right: 0px;
   box-shadow: 2px 1px 6px 2px #0000009c;
   padding: 20px;
-    padding-left: 20px;
   padding-left: 35px;
   border-radius: 0px 5px 5px 0px;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-size: cover;
 }
 
 .wrapper_zone_derivees {
   display: grid;
   grid-template-columns: 0% 66% 1% 10% 2% 10% 4% 10% 0%;
   grid-auto-rows: 32px;
-  font-size: 16px;
-  font-family: 'Metamorphous';
+  font-size: 24px;
+  font-family: "Jim Nightshade";
 }
 
 .derivees_titre {
@@ -940,12 +981,13 @@ div.cadre_competence_reduit {
 
 .competence_gauche {
   grid-column: 2;
-  grid-row: 2/19;
+  grid-row: 2/22;
   transform: rotate(-0.8deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px 0px 0px 15px;
   margin: -4px;
   padding: 15px;
+  padding-left: 30px;
   margin-top: 9px;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
   background-size: cover;
@@ -953,13 +995,14 @@ div.cadre_competence_reduit {
 
 .competence_droite {
   grid-column: 4;
-  grid-row: 2/19;
+  grid-row: 2 / 22;
   transform: rotate(-0.8deg);
   box-shadow: 4px 3px 6px 4px #000000c4;
   border-radius: 15px;
   margin: -4px;
   padding: 15px;
-  margin-top: 4px;
+  padding-left: 30px;
+  margin-top: 5px;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
   background-size: cover;
   background-position: 25% 75%;
@@ -991,31 +1034,31 @@ div.cadre_competence_reduit {
 
 .competence_separateur_centre {
   grid-column: 3;
-  grid-row: 1/20;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_centre_croix.png);
+  grid-row: 1 / 20;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_centre_comp.png);
   background-size: cover;
-  margin-top: -40px;
-  margin-left: -31px;
-  width: 78px;
-  transform: rotate(-1deg);
+  margin-top: -56px;
+  margin-left: -12px;
+  width: 25px;
+  transform: rotate(-0.6deg);
   height: 110%;
 }
 
 .competence_separateur_bas {
   grid-column: 3;
-  grid-row: 16 / 20;
+  grid-row: 19 / 23;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_bas_croix.png);
   background-size: cover;
-  margin-top: 18px;
-  margin-left: -34px;
-  width: 78px;
+  margin-top: 32px;
+  margin-left: -26px;
+  width: 65px;
   transform: rotate(-1deg);
-  height: 106%;
+  height: 94%;
 }
 
 .wrapper_tableau_competence {
   display: grid;
-  grid-template-columns: 12% 1% 71% 0% 14% 0%;
+  grid-template-columns: 12% 0% 68% 0% 17% 0%;
   grid-auto-rows: 20px;
   font-size: 13px;
   font-family: 'Metamorphous';
@@ -1046,7 +1089,8 @@ div.cadre_competence_reduit {
   align-items: center;
   padding: 5px;
   padding-left: 10px;
-  border-bottom: 1px dotted black;
+  padding-right: 0px;
+  border-bottom: 1px dotted #00000042;
 }
 
 .competence_nom_haut {
@@ -1067,7 +1111,7 @@ div.cadre_competence_reduit {
   align-items: center;
   padding: 5px;
   padding-left: 10px;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted #00000042;
 }
 
 .competence_final_double {
@@ -1076,9 +1120,9 @@ div.cadre_competence_reduit {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px dotted black;
-  border-right: 1px dotted black;
-  border-radius: 0px 0px 15px 0px;
+  border-bottom: 1px dotted #00000042;
+  /* border-bottom: 1px dotted black; */
+  /* border-right: 1px dotted black; */
 }
 
 .competence_final_haut {
