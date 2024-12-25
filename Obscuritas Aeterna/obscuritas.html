@@ -6,6 +6,7 @@
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
 <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
+<input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
 <input type="hidden" name="attr_malus_total_dexterite" value="0">
 <input type="hidden" name="attr_malus_total_athletisme" value="0">
 <input type="hidden" name="attr_malus_total_combat_cac" value="0">
@@ -488,10 +489,42 @@
                     <div class="competence_separateur_bas"></div>       
                 </div>
             </div>
+
+            <!-- ARMEMENT / INVENTAIRE / COMBAT -->
+            <input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
+            <div class="cadre_armement_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
+                </div>
+            </div> 
+            <div class="cadre_armement">
+                <div class="wrapper_zone_personnage">
+                <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
+                blalblbld
+            </div>            
         </div> 
     </div>
 </div>  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OLD DEV -->
 <div class="page2">
     <!-- Information personnage -->
     <div class="personnage">
@@ -3001,6 +3034,17 @@
             else competence_reduit = 0;
         setAttrs({
             "competence_reduit": competence_reduit			
+            });
+        });
+    });
+
+    on('clicked:hide_armement', async (event) => {
+		getAttrs(["armement_reduit"], function(values) {
+            let armement_reduit = parseInt(values["armement_reduit"]) || 0;
+            if (armement_reduit == 0) armement_reduit = 1;
+            else armement_reduit = 0;
+        setAttrs({
+            "armement_reduit": armement_reduit			
             });
         });
     });

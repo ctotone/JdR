@@ -538,7 +538,9 @@ div.cadre_info_reduit,
 div.cadre_caracteristiques,
 div.cadre_caracteristiques_reduit,
 div.cadre_competence,
-div.cadre_competence_reduit {
+div.cadre_competence_reduit,
+div.cadre_armement,
+div.cadre_armement_reduit {
   display: none;
 }
 
@@ -547,7 +549,9 @@ div.cadre_competence_reduit {
 .charsheet .voir_carac[value="0"] ~ div.cadre_caracteristiques,
 .charsheet .voir_carac[value="1"] ~ div.cadre_caracteristiques_reduit,
 .charsheet .voir_competence[value="0"] ~ div.cadre_competence,
-.charsheet .voir_competence[value="1"] ~ div.cadre_competence_reduit {
+.charsheet .voir_competence[value="1"] ~ div.cadre_competence_reduit,
+.charsheet .voir_armement[value="0"] ~ div.cadre_armement,
+.charsheet .voir_armement[value="1"] ~ div.cadre_armement_reduit {
     display: block;
 }
 
@@ -587,7 +591,7 @@ div.cadre_competence_reduit {
   box-shadow: 0px 0px 5px 2px #000000c4;
   background: #ffffff52;
   border-radius: 10px;
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 .cadre_caracteristiques,
@@ -598,7 +602,7 @@ div.cadre_competence_reduit {
   box-shadow: 0px 0px 5px 2px #000000c4;
   background: #ffffff52;
   border-radius: 10px;
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 .cadre_competence,
@@ -609,7 +613,18 @@ div.cadre_competence_reduit {
   box-shadow: 0px 0px 5px 2px #000000c4;
   background: #ffffff52;
   border-radius: 10px;
-  margin-top: 35px;
+  margin-top: 15px;
+}
+
+.cadre_armement,
+.cadre_armement_reduit {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 .wrapper_zone_personnage {
@@ -620,7 +635,8 @@ div.cadre_competence_reduit {
 
 .zone_info_titre,
 .zone_caracteristiques_titre,
-.zone_competence_titre {
+.zone_competence_titre,
+.zone_armement_titre {
   grid-column: 1 / 36;
   grid-row: 1 / 4;
   margin-top: 0px;
@@ -643,7 +659,8 @@ div.cadre_competence_reduit {
   font-size: 22px;
 }
 
-.zone_caracteristiques_titre {
+.zone_caracteristiques_titre,
+.zone_armement_titre {
   grid-column: 45 / 79;
   grid-row: 1 / 4;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre4.png);
@@ -902,7 +919,7 @@ div.cadre_competence_reduit {
   padding: 20px;
   padding-left: 35px;
   border-radius: 0px 5px 5px 0px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
   background-size: cover;
 }
 
@@ -989,7 +1006,7 @@ div.cadre_competence_reduit {
   padding: 15px;
   padding-left: 30px;
   margin-top: 9px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
   background-size: cover;
 }
 
@@ -1003,7 +1020,7 @@ div.cadre_competence_reduit {
   padding: 15px;
   padding-left: 30px;
   margin-top: 5px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background-parchemin.jpg);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
   background-size: cover;
   background-position: 25% 75%;
 }
