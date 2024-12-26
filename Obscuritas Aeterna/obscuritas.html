@@ -5,6 +5,7 @@
 <!-- TODO IMAGE Armure en variable en fonction du choix  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
 <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
@@ -687,7 +688,8 @@
                     </div>
                     <div class="bloc_armures">
                         <div class="wrapper_bloc_armures">
-                            <div class="illustration_armures"></div>
+                            <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
+                            <div class="illustration_armures_plaque"></div>
                             <div class="tableau_armures">
                                 <div class="wrapper_zone_armures_titre" style="background: none;grid-auto-rows: 25px;margin-bottom: 10px;margin-left: -25px;margin-right: -11px;">
                                     <div class="armures_malus_titre" style="font-size: 11px;letter-spacing: 0px;">MALUS D'ARMURE</div>
@@ -2653,7 +2655,7 @@
 
     on("change:armures_nom_1 change:armures_nom_2 change:armures_nom_3 change:armures_equipe_1 change:armures_equipe_2 change:armures_equipe_3 change:armures_encaissement_1 change:armures_malus_athletisme_1 change:armures_malus_combat_cac_1 change:armures_malus_combat_pugilat_1 change:armures_malus_combat_pugilat_1 change:armures_malus_combat_distance_1 change:armures_malus_discretion_1 change:armures_malus_esquive_1 change:armures_encaissement_2 change:armures_malus_athletisme_2 change:armures_malus_combat_cac_2 change:armures_malus_combat_pugilat_2 change:armures_malus_combat_pugilat_2 change:armures_malus_combat_distance_2 change:armures_malus_discretion_2 change:armures_malus_esquive_2 change:armures_encaissement_3 change:armures_malus_athletisme_3 change:armures_malus_combat_cac_3 change:armures_malus_combat_pugilat_3 change:armures_malus_combat_pugilat_3 change:armures_malus_combat_distance_3 change:armures_malus_discretion_3 change:armures_malus_esquive_3", function() {
 
-        getAttrs(["armures_encaissement_1", "armures_malus_dexterite_1", "armures_malus_athletisme_1", "armures_malus_combat_cac_1", "armures_malus_combat_pugilat_1", "armures_malus_combat_distance_1", "armures_malus_discretion_1", "armures_malus_esquive_1", "armures_encaissement_2", "armures_malus_dexterite_2", "armures_malus_athletisme_2", "armures_malus_combat_cac_2", "armures_malus_combat_pugilat_2", "armures_malus_combat_distance_2", "armures_malus_discretion_2", "armures_malus_esquive_2","armures_encaissement_3", "armures_malus_dexterite_3", "armures_malus_athletisme_3", "armures_malus_combat_cac_3", "armures_malus_combat_pugilat_3", "armures_malus_combat_distance_3", "armures_malus_discretion_3", "armures_malus_esquive_3", "armures_equipe_1", "armures_equipe_2", "armures_equipe_3"], function(values) {
+        getAttrs(["armures_nom_1","armures_nom_2","armures_nom_3","armures_encaissement_1", "armures_malus_dexterite_1", "armures_malus_athletisme_1", "armures_malus_combat_cac_1", "armures_malus_combat_pugilat_1", "armures_malus_combat_distance_1", "armures_malus_discretion_1", "armures_malus_esquive_1", "armures_encaissement_2", "armures_malus_dexterite_2", "armures_malus_athletisme_2", "armures_malus_combat_cac_2", "armures_malus_combat_pugilat_2", "armures_malus_combat_distance_2", "armures_malus_discretion_2", "armures_malus_esquive_2","armures_encaissement_3", "armures_malus_dexterite_3", "armures_malus_athletisme_3", "armures_malus_combat_cac_3", "armures_malus_combat_pugilat_3", "armures_malus_combat_distance_3", "armures_malus_discretion_3", "armures_malus_esquive_3", "armures_equipe_1", "armures_equipe_2", "armures_equipe_3"], function(values) {
             let armures_encaissement_1 = parseInt(values["armures_encaissement_1"]) || 0;
             let armures_malus_dexterite_1 = parseInt(values["armures_malus_dexterite_1"]) || 0;
             let armures_malus_athletisme_1 = parseInt(values["armures_malus_athletisme_1"]) || 0;
@@ -2663,6 +2665,7 @@
             let armures_malus_discretion_1 = parseInt(values["armures_malus_discretion_1"]) || 0;
             let armures_malus_esquive_1 = parseInt(values["armures_malus_esquive_1"]) || 0;
             let armures_equipe_1 = parseInt(values["armures_equipe_1"]) || 0;
+            let armures_nom_1 = parseInt(values["armures_nom_1"]) || 0;
 
             let armures_encaissement_2 = parseInt(values["armures_encaissement_2"]) || 0;
             let armures_malus_dexterite_2 = parseInt(values["armures_malus_dexterite_2"]) || 0;
@@ -2673,6 +2676,7 @@
             let armures_malus_discretion_2 = parseInt(values["armures_malus_discretion_2"]) || 0;
             let armures_malus_esquive_2 = parseInt(values["armures_malus_esquive_2"]) || 0;
             let armures_equipe_2 = parseInt(values["armures_equipe_2"]) || 0;
+            let armures_nom_2 = parseInt(values["armures_nom_2"]) || 0;
 
             let armures_encaissement_3 = parseInt(values["armures_encaissement_3"]) || 0;
             let armures_malus_dexterite_3 = parseInt(values["armures_malus_dexterite_3"]) || 0;
@@ -2683,6 +2687,7 @@
             let armures_malus_discretion_3 = parseInt(values["armures_malus_discretion_3"]) || 0;
             let armures_malus_esquive_3 = parseInt(values["armures_malus_esquive_3"]) || 0;
             let armures_equipe_3 = parseInt(values["armures_equipe_3"]) || 0;
+            let armures_nom_3 = parseInt(values["armures_nom_3"]) || 0;
             
 
             if (armures_equipe_1 == 1) 
@@ -2693,7 +2698,8 @@
                 total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_1,
                 total_armures_malus_combat_distance = armures_malus_combat_distance_1,
                 total_armures_malus_discretion = armures_malus_discretion_1,
-                total_armures_malus_esquive = armures_malus_esquive_1;
+                total_armures_malus_esquive = armures_malus_esquive_1,
+                armure_affichee = armures_nom_1;
 
             else if (armures_equipe_2 == 1) 
                 total_armures_encaissement = armures_encaissement_2, 
@@ -2703,7 +2709,8 @@
                 total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_2,
                 total_armures_malus_combat_distance = armures_malus_combat_distance_2,
                 total_armures_malus_discretion = armures_malus_discretion_2,
-                total_armures_malus_esquive = armures_malus_esquive_2;
+                total_armures_malus_esquive = armures_malus_esquive_2,
+                armure_affichee = armures_nom_2;
 
             else if (armures_equipe_3 == 1) 
                 total_armures_encaissement = armures_encaissement_3, 
@@ -2713,7 +2720,8 @@
                 total_armures_malus_combat_pugilat = armures_malus_combat_pugilat_3,
                 total_armures_malus_combat_distance = armures_malus_combat_distance_3,
                 total_armures_malus_discretion = armures_malus_discretion_3,
-                total_armures_malus_esquive = armures_malus_esquive_3;
+                total_armures_malus_esquive = armures_malus_esquive_3,
+                armure_affichee = armures_nom_3;
 
             else             
             total_armures_encaissement = 0, 
@@ -2723,7 +2731,8 @@
             total_armures_malus_combat_pugilat = 0,
             total_armures_malus_combat_distance = 0,
             total_armures_malus_discretion = 0,
-            total_armures_malus_esquive = 0;
+            total_armures_malus_esquive = 0,
+            armure_affichee = 0;
             
             total_armures_malus_demi_dexterite = Math.floor(total_armures_malus_dexterite/2);
             
@@ -2736,7 +2745,8 @@
                 "total_armures_malus_combat_pugilat": total_armures_malus_combat_pugilat,
                 "total_armures_malus_combat_distance": total_armures_malus_combat_distance,
                 "total_armures_malus_discretion": total_armures_malus_discretion,
-                "total_armures_malus_esquive": total_armures_malus_esquive
+                "total_armures_malus_esquive": total_armures_malus_esquive,
+                "armure_affichee": armure_affichee
 
             });
         });
