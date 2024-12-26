@@ -1441,10 +1441,10 @@ div.illustration_armures_aucune {
     display: none;
 }
 
-.charsheet .choix_armure[value="0"] ~ div.illustration_armures_plaque,
-.charsheet .choix_armure[value="1"] ~ div.illustration_armures_maille,
+.charsheet .choix_armure[value="4"] ~ div.illustration_armures_plaque,
+.charsheet .choix_armure[value="3"] ~ div.illustration_armures_maille,
 .charsheet .choix_armure[value="2"] ~ div.illustration_armures_cuir,
-.charsheet .choix_armure[value="0"] ~ div.illustration_armures_vetement,
+.charsheet .choix_armure[value="1"] ~ div.illustration_armures_vetement,
 .charsheet .choix_armure[value="0"] ~ div.illustration_armures_aucune {
     display: block;
 }
@@ -1452,31 +1452,36 @@ div.illustration_armures_aucune {
 .illustration_armures_plaque {
   grid-column: 2;
   grid-row: 2/26;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_plaque.webp);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_plaques.webp);
   background-size: contain;
 }
 
 .illustration_armures_maille {
   grid-column: 2;
-  grid-row: 2/26;
+  grid-row: 1 / 26;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_maille.webp);
-  background-size: contain;
+  background-size: 124px 320px;
+  margin-left: -10px;
+  margin-top: -14px;
 }
 
 
 .illustration_armures_cuir {
   grid-column: 2;
-  grid-row: 2/26;
+  grid-row: 1 / 30;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_cuir.webp);
-  background-size: contain;
+  background-size: 120px 323px;
+  margin-top: -20px;
+  margin-left: -3px;
 }
 
 
 .illustration_armures_vetement {
   grid-column: 2;
-  grid-row: 2/26;
+  grid-row: 1 / 29;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_tissu.webp);
-  background-size: contain;
+  background-size: 120px 310px;
+  margin-top: -30px;
 }
 
 .illustration_armures_aucune {
