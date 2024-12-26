@@ -1,6 +1,8 @@
 <!-- TODO Revoir calcul des champs custom -->
 <!-- TODO Jauge blessure  -->
 <!-- TODO AURA / ETC  -->
+<!-- TODO Jet roll degats dans tableau des armes  -->
+<!-- TODO IMAGE Armure en variable en fonction du choix  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
@@ -496,12 +498,371 @@
                 <div class="wrapper_zone_personnage">
                     <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
                 </div>
-            </div> 
+            </div>
+            <!-- DEBUT BLOC APRES TITRE --> 
             <div class="cadre_armement">
                 <div class="wrapper_zone_personnage">
-                <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
-                blalblbld
-            </div>            
+                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
+                </div>
+                <div class="wrapper_zone_armement">
+                    <div class="bloc_armes">
+                        <div class="illustration_armes"></div>
+                        <div class="wrapper_zone_armes_titre">
+                            <div class="armes_type_titre">TYPE</div>
+                            <div class="armes_nom_titre">NOM</div>
+                            <div class="armes_degats_titre">DÉGÂTS</div>
+                            <div class="armes_portee_titre">PORTÉE</div>
+                            <div class="armes_effet_titre">EFFETS</div>
+                            <div class="armes_roll_titre">JET DE DÉGÂTS</div>
+                        </div>
+                        <div class="wrapper_zone_armes">
+                            <div class="armes_type">
+                                <select class="choix_armes" name="attr_armes_nom_1">
+                                    <option value="0"></option>
+                                    <option value="10" selected="selected">Mains nues</option>
+                                    <option value="1">Dague</option>
+                                    <option value="2">Épée courte</option>
+                                    <option value="3">Épée longue</option>
+                                    <option value="4">Hache</option>
+                                    <option value="5">Lance</option>
+                                    <option value="6">Masse d'arme</option>
+                                    <option value="7">Arc court</option>
+                                    <option value="8">Arc long</option>
+                                    <option value="9">Arbalète</option>
+                                </select>
+                            </div>
+                            <div class="armes_nom">
+                                <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_degats">
+                                <input name="attr_armes_degats_1" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_portee">
+                                <input name="attr_armes_portee_1" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_effet">
+                                <input name="attr_armes_effet_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_prenotes"></div>
+                            <div class="armes_notes">
+                                <input name="attr_armes_notes_1" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                            <div class="armes_roll">
+                                roll                        
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armes"></div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur">     
+                            <div class="separateur_armes_border"></div>
+                        </div>
+                        <div class="wrapper_zone_armes">
+                            <div class="armes_type">
+                                <select class="choix_armes" name="attr_armes_nom_2">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="10">Mains nues</option>
+                                    <option value="1">Dague</option>
+                                    <option value="2">Épée courte</option>
+                                    <option value="3">Épée longue</option>
+                                    <option value="4">Hache</option>
+                                    <option value="5">Lance</option>
+                                    <option value="6">Masse d'arme</option>
+                                    <option value="7">Arc court</option>
+                                    <option value="8">Arc long</option>
+                                    <option value="9">Arbalète</option>
+                                </select>
+                            </div>
+                            <div class="armes_nom">
+                                <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_degats">
+                                <input name="attr_armes_degats_2" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_portee">
+                                <input name="attr_armes_portee_2" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_effet">
+                                <input name="attr_armes_effet_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_prenotes"></div>
+                            <div class="armes_notes">
+                                <input name="attr_armes_notes_2" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                            <div class="armes_roll">
+                                roll                        
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armes"></div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur">     
+                            <div class="separateur_armes_border"></div>
+                        </div>
+                        <div class="wrapper_zone_armes">
+                            <div class="armes_type">
+                                <select class="choix_armes" name="attr_armes_nom_3">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="10">Mains nues</option>
+                                    <option value="1">Dague</option>
+                                    <option value="2">Épée courte</option>
+                                    <option value="3">Épée longue</option>
+                                    <option value="4">Hache</option>
+                                    <option value="5">Lance</option>
+                                    <option value="6">Masse d'arme</option>
+                                    <option value="7">Arc court</option>
+                                    <option value="8">Arc long</option>
+                                    <option value="9">Arbalète</option>
+                                </select>
+                            </div>
+                            <div class="armes_nom">
+                                <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_degats">
+                                <input name="attr_armes_degats_3" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_portee">
+                                <input name="attr_armes_portee_3" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_effet">
+                                <input name="attr_armes_effet_3" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_prenotes"></div>
+                            <div class="armes_notes">
+                                <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                            <div class="armes_roll">
+                                roll                        
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armes"></div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur">     
+                            <div class="separateur_armes_border"></div>
+                        </div>
+                        <div class="separateur_armes"></div>
+                        <div class="wrapper_zone_armes">
+                            <div class="armes_type">
+                                <select class="choix_armes" name="attr_armes_nom_4">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="10">Mains nues</option>
+                                    <option value="1">Dague</option>
+                                    <option value="2">Épée courte</option>
+                                    <option value="3">Épée longue</option>
+                                    <option value="4">Hache</option>
+                                    <option value="5">Lance</option>
+                                    <option value="6">Masse d'arme</option>
+                                    <option value="7">Arc court</option>
+                                    <option value="8">Arc long</option>
+                                    <option value="9">Arbalète</option>
+                                </select>
+                            </div>
+                            <div class="armes_nom">
+                                <input name="attr_armes_designation_4" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_degats">
+                                <input name="attr_armes_degats_4" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_portee">
+                                <input name="attr_armes_portee_4" type="text" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armes_effet">
+                                <input name="attr_armes_effet_4" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                            <div class="armes_prenotes"></div>
+                            <div class="armes_notes">
+                                <input name="attr_armes_notes_4" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                            <div class="armes_roll">
+                                roll                        
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armes"></div>
+                        </div>
+                        <div class="wrapper_zone_armes_separateur">     
+                            <div class="separateur_armes_border_end"></div>
+                        </div>
+                    </div>
+                    <div class="bloc_armures">
+                        <div class="wrapper_bloc_armures">
+                            <div class="illustration_armures"></div>
+                            <div class="tableau_armures">
+                                <div class="wrapper_zone_armures_titre" style="background: none;grid-auto-rows: 25px;margin-bottom: 10px;margin-left: -25px;margin-right: -11px;">
+                                    <div class="armures_malus_titre" style="font-size: 11px;letter-spacing: 0px;">MALUS D'ARMURE</div>
+                                </div>
+                                <div class="wrapper_zone_armures_titre"style="margin-top: -14px;margin-left: -3px;padding-left: 3px;">
+                                    <div class="armures_equipee_titre"></div>
+                                    <div class="armures_type_titre">TYPE</div>
+                                    <div class="armures_encaissement_titre" style="font-size: 10px;margin-left: -50px;">ENCAISSEMENT</div>
+                                    <div class="armures_dexterite_titre">DEX</div>
+                                    <div class="armures_athletisme_titre">ATHLE</div>
+                                    <div class="armures_cac_titre">CAC</div>
+                                    <div class="armures_pugilat_titre">PUGILAT</div>
+                                    <div class="armures_distance_titre">DISTANCE</div>
+                                    <div class="armures_discretion_titre">DISCRETION</div>
+                                    <div class="armures_esquive_titre">ESQUIVE</div>
+                                </div>
+                                <div class="wrapper_zone_armures">
+                                    <div class="armures_equipee">
+                                        <input type="checkbox" name="attr_armures_equipe_1" value="1" id="armure1">
+                                        <label for="armure1"></label>
+                                    </div>
+                                    <div class="armures_type">
+                                        <select class="choix_custom" name="attr_armures_nom_1">
+                                            <option value="0" selected="selected"></option>
+                                            <option value="1">Vêtements renforcés</option>
+                                            <option value="2">Cuir bouilli</option>
+                                            <option value="3">Armures de mailles</option>
+                                            <option value="4">Armure de plaque</option>
+                                        </select>
+                                    </div>
+                                    <div class="armures_encaissement">
+                                        <input name="attr_armures_encaissement_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_dexterite">
+                                        <input name="attr_armures_malus_dexterite_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_athletisme">
+                                        <input name="attr_armures_malus_athletisme_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_cac">
+                                        <input name="attr_armures_malus_combat_cac_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_pugilat">
+                                        <input name="attr_armures_malus_combat_pugilat_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_distance">
+                                        <input name="attr_armures_malus_combat_distance_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_discretion">
+                                        <input name="attr_armures_malus_discretion_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_esquive">
+                                        <input name="attr_armures_malus_esquive_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_prenotes"></div>
+                                    <div class="armures_notes">
+                                        <input name="attr_armures_notes_1" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_armures_separateur" style="grid-auto-rows: 1px;">     
+                                    <div class="separateur_armures"></div>
+                                </div>
+                                <div class="wrapper_zone_armures_separateur">     
+                                    <div class="separateur_armures_border"></div>
+                                </div>
+                                <div class="wrapper_zone_armures">
+                                    <div class="armures_equipee">
+                                        <input type="checkbox" name="attr_armures_equipe_2" value="1" id="armure2">
+                                        <label for="armure2"></label>
+                                    </div>
+                                    <div class="armures_type">
+                                        <select class="choix_custom" name="attr_armures_nom_2">
+                                            <option value="0" selected="selected"></option>
+                                            <option value="1">Vêtements renforcés</option>
+                                            <option value="2">Cuir bouilli</option>
+                                            <option value="3">Armures de mailles</option>
+                                            <option value="4">Armure de plaque</option>
+                                        </select>
+                                    </div>
+                                    <div class="armures_encaissement">
+                                        <input name="attr_armures_encaissement_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_dexterite">
+                                        <input name="attr_armures_malus_dexterite_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_athletisme">
+                                        <input name="attr_armures_malus_athletisme_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_cac">
+                                        <input name="attr_armures_malus_combat_cac_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_pugilat">
+                                        <input name="attr_armures_malus_combat_pugilat_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_distance">
+                                        <input name="attr_armures_malus_combat_distance_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_discretion">
+                                        <input name="attr_armures_malus_discretion_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_esquive">
+                                        <input name="attr_armures_malus_esquive_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_prenotes"></div>
+                                    <div class="armures_notes">
+                                        <input name="attr_armures_notes_2" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_armures_separateur" style="grid-auto-rows: 1px;">     
+                                    <div class="separateur_armures"></div>
+                                </div>
+                                <div class="wrapper_zone_armures_separateur">     
+                                    <div class="separateur_armures_border"></div>
+                                </div>
+                                <div class="wrapper_zone_armures">
+                                    <div class="armures_equipee">
+                                        <input type="checkbox" name="attr_armures_equipe_3" value="1" id="armure3">
+                                        <label for="armure3"></label>
+                                    </div>
+                                    <div class="armures_type">
+                                        <select class="choix_custom" name="attr_armures_nom_3">
+                                            <option value="0" selected="selected"></option>
+                                            <option value="1">Vêtements renforcés</option>
+                                            <option value="2">Cuir bouilli</option>
+                                            <option value="3">Armures de mailles</option>
+                                            <option value="4">Armure de plaque</option>
+                                        </select>
+                                    </div>
+                                    <div class="armures_encaissement">
+                                        <input name="attr_armures_encaissement_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_dexterite">
+                                        <input name="attr_armures_malus_dexterite_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_athletisme">
+                                        <input name="attr_armures_malus_athletisme_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_cac">
+                                        <input name="attr_armures_malus_combat_cac_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_pugilat">
+                                        <input name="attr_armures_malus_combat_pugilat_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_distance">
+                                        <input name="attr_armures_malus_combat_distance_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_discretion">
+                                        <input name="attr_armures_malus_discretion_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_esquive">
+                                        <input name="attr_armures_malus_esquive_3" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="armures_prenotes"></div>
+                                    <div class="armures_notes">
+                                        <input name="attr_armures_notes_3" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                                    </div>
+                                    <div class="separateur_armures_border_end"></div>
+                                </div>
+                            </div>                            
+                        </div>                        
+                    </div>
+                    <div class="bloc_boucliers">boucliers
+                        <div class="wrapper_bloc_boucliers">
+                                                    
+                        </div>                        
+                    </div>
+                    <div class="bloc_inventaire">inventaire
+                        <div class="wrapper_zone_inventaire">
+                            
+                        </div>                        
+                    </div>
+                </div>
+                <!-- Fin creer CSS -->
+            </div>  
+            <!-- FIN BLOC APRES TITRE -->          
         </div> 
     </div>
 </div>  
@@ -1988,7 +2349,7 @@
                 let arme = {
                     designation: "",
                     type: "",
-                    degats: "",
+                    degats: " ",
                     portee: "",
                     effet: "",
                     notes: ""
