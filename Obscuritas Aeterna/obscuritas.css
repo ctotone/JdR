@@ -49,6 +49,7 @@
   --bouclier_dessin_rond: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_rond.webp);
   --bouclier_dessin_pavois: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_pavois.webp);
   --bouclier_dessin_aucun: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_aucune.webp);
+  --fond_zone_note: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/ligne_notes.png);
 
 
   /* FIN VARIABLES GLOBALES */ 
@@ -108,6 +109,26 @@ img.portrait {
   border-radius: 120px;
   box-shadow: var(--image_portrait_shadow);
   background: var(--image_portrait_background);
+}
+
+.charsheet textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+}
+
+.charsheet textarea.sac {
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--text_input_info);
+  font-family: "Playfair", serif;
+  padding: 10px;
+  overflow: hidden;
+  background-image: var(--fond_zone_note);
+  background-size: auto 13.7px;
+  width: 79%;
+  height: 92%;
 }
 
 .charsheet input {  
@@ -1970,24 +1991,27 @@ div.illustration_bouclier_aucun {
 
 .wrapper_bloc_inventaire {
   display: grid;
-  grid-template-columns: 0% 15% 3% 83% 3%;
+  grid-template-columns: 2% 16% 64% 17% 0%;
   grid-auto-rows: 10px;
   margin-top: 17px;
 }
 
 .illustration_sac {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 4;
+  grid-row: 1 / 13;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_sac.webp);
+  background-size: 132px 207px;
+  margin-top: -72px;
 }
 
-.texte_sac_gauche {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.texte_sac_droite {
-  grid-column: 1;
-  grid-row: 1;
+.texte_sac {
+  grid-column: 3 / 5;
+  grid-row: 1 / 22;
+  border-radius: 10px;
+  background-image: var(--background_page);
+  background-size: cover;
+  box-shadow: 4px 3px 6px 4px #000000c4;
+  margin-right: -2px;
 }
 
 .texte_bourse {
