@@ -234,7 +234,7 @@ img.portrait {
 
 .charsheet input.input_comp_double {
   width: 35px !important;
-  height: 80px;
+  height: 71px;
   border: 2px solid black;
   border-radius: 10px;
   background-color: transparent;
@@ -324,7 +324,7 @@ div.fond_blanc {
 }
 
 .charsheet select.choix_boucliers {
-  padding-top: 11px;
+  padding-top: 7px;
 }
 
 
@@ -408,6 +408,7 @@ input[type="number"] {
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
 .charsheet button[type=action].button_comp::before,
+.charsheet button[type=roll].button_comp::before,
 .charsheet button[type=action].button_show::before {
 	content: '';
 }
@@ -473,7 +474,8 @@ input[type="number"] {
   text-align: center;
 }
 
-.charsheet button[type=action].button_comp {
+.charsheet button[type=action].button_comp,
+.charsheet button[type=roll].button_comp {
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -526,7 +528,8 @@ input[type="number"] {
 }
 
 .charsheet button[type=action].button_carac:hover,
-.charsheet button[type=action].button_comp:hover {
+.charsheet button[type=action].button_comp:hover,
+.charsheet button[type=roll].button_comp:hover {
   color: var(--hover_bouton);
 }
 
@@ -605,7 +608,9 @@ div.cadre_caracteristiques_reduit,
 div.cadre_competence,
 div.cadre_competence_reduit,
 div.cadre_armement,
-div.cadre_armement_reduit {
+div.cadre_armement_reduit,
+div.cadre_inventaire,
+div.cadre_inventaire_reduit {
   display: none;
 }
 
@@ -616,7 +621,9 @@ div.cadre_armement_reduit {
 .charsheet .voir_competence[value="0"] ~ div.cadre_competence,
 .charsheet .voir_competence[value="1"] ~ div.cadre_competence_reduit,
 .charsheet .voir_armement[value="0"] ~ div.cadre_armement,
-.charsheet .voir_armement[value="1"] ~ div.cadre_armement_reduit {
+.charsheet .voir_armement[value="1"] ~ div.cadre_armement_reduit,
+.charsheet .voir_inventaire[value="0"] ~ div.cadre_inventaire,
+.charsheet .voir_inventaire[value="1"] ~ div.cadre_inventaire_reduit {
     display: block;
 }
 
@@ -704,6 +711,20 @@ div.cadre_armement_reduit {
   background-blend-mode: lighten;
 }
 
+.cadre_inventaire,
+.cadre_inventaire_reduit {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-image: var(--esoterik_equipement);
+  background-size: contain;
+  background-blend-mode: lighten;
+}
+
 .wrapper_zone_personnage {
   display: grid;
   grid-template-columns: repeat(83, 10px);
@@ -713,7 +734,8 @@ div.cadre_armement_reduit {
 .zone_info_titre,
 .zone_caracteristiques_titre,
 .zone_competence_titre,
-.zone_armement_titre {
+.zone_armement_titre,
+.zone_inventaire_titre {
   grid-column: 1 / 36;
   grid-row: 1 / 4;
   margin-top: 0px;
@@ -1083,7 +1105,7 @@ div.cadre_armement_reduit {
 
 .competence_gauche {
   grid-column: 2;
-  grid-row: 2/22;
+  grid-row: 2 / 20;
   transform: rotate(-0.8deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px 0px 0px 15px;
@@ -1091,16 +1113,17 @@ div.cadre_armement_reduit {
   padding: 15px;
   padding-left: 30px;
   margin-top: 9px;
+  margin-bottom: 15px;
   background-image: var(--background_page);
   background-size: cover;
 }
 
 .competence_droite {
   grid-column: 4;
-  grid-row: 2 / 22;
+  grid-row: 2 / 20;
   transform: rotate(-0.8deg);
   box-shadow: 4px 3px 6px 4px #000000c4;
-  border-radius: 15px;
+  border-radius: 0px 15px 15px 0px;
   margin: -4px;
   padding: 15px;
   padding-left: 30px;
@@ -1108,6 +1131,7 @@ div.cadre_armement_reduit {
   background-image: var(--background_page);
   background-size: cover;
   background-position: 25% 75%;
+  margin-bottom: 20px;
 }
 
 .competence_crane {
@@ -1124,7 +1148,7 @@ div.cadre_armement_reduit {
 
 .competence_separateur_centre {
   grid-column: 3;
-  grid-row: 1 / 20;
+  grid-row: 1 / 18;
   background-image: var(--separateur_centre_competence);
   background-size: cover;
   margin-top: -56px;
@@ -1136,7 +1160,7 @@ div.cadre_armement_reduit {
 
 .competence_separateur_bas {
   grid-column: 3;
-  grid-row: 19 / 23;
+  grid-row: 16 / 20;
   background-image: var(--separateur_croix_competence);
   background-size: cover;
   margin-top: 32px;
@@ -1149,7 +1173,7 @@ div.cadre_armement_reduit {
 .wrapper_tableau_competence {
   display: grid;
   grid-template-columns: 12% 0% 68% 0% 17% 0%;
-  grid-auto-rows: 20px;
+  grid-auto-rows: 17px;
   font-size: 13px;
   font-family: 'Metamorphous';
   margin-top: 5px;
@@ -1161,6 +1185,7 @@ div.cadre_armement_reduit {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 15px;
 }
 
 .competence_valeur_double {
@@ -1169,6 +1194,7 @@ div.cadre_armement_reduit {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -9px;
 }
 
 .competence_nom_double {
@@ -1749,13 +1775,13 @@ div.illustration_armures_aucune {
 /* Affichage des page dynamique */
 div.illustration_pavois,
 div.illustration_bouclier_rond,
-div.illustration_bouclier_aucune {
+div.illustration_bouclier_aucun {
     display: none;
 }
 
 .charsheet .choix_bouclier[value="2"] ~ div.illustration_pavois,
 .charsheet .choix_bouclier[value="1"] ~ div.illustration_bouclier_rond,
-.charsheet .choix_bouclier[value="0"] ~ div.illustration_bouclier_aucune {
+.charsheet .choix_bouclier[value="0"] ~ div.illustration_bouclier_aucun {
     display: block;
 }
 
@@ -1766,7 +1792,8 @@ div.illustration_bouclier_aucune {
   background-size: 159px 150px;
   margin-top: -25px;
   margin-left: 17px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
+  opacity: 0.5;
 }
 
 .illustration_bouclier_rond {
@@ -1811,7 +1838,7 @@ div.illustration_bouclier_aucune {
 .wrapper_zone_boucliers,
 .wrapper_zone_boucliers_titre {
   display: grid;
-  grid-template-columns: 2% 5% 18% 2% 0% 0% 11% 1% 12% 1% 48% 1%;
+  grid-template-columns: 2% 4% 19% 2% 0% 0% 11% 1% 12% 1% 48% 1%;
   grid-auto-rows: 25px;
   font-size: 12px;
   line-height: 33px;
@@ -1874,7 +1901,7 @@ div.illustration_bouclier_aucune {
   grid-column: 1;
   grid-row: 1;
   letter-spacing: -0.4px;
-  padding-top: 6px;
+  padding-top: 2px;
   padding-left: 4px;
   border-left: 1px solid var(--border_armes);
 }
@@ -1937,6 +1964,35 @@ div.illustration_bouclier_aucune {
   border-left: 1px solid var(--border_armes);
   border-bottom: 1px solid var(--border_armes);
   border-radius: 0px 0px 5px 5px;
+}
+
+/* INVENTAIRE */
+
+.wrapper_bloc_inventaire {
+  display: grid;
+  grid-template-columns: 0% 15% 3% 83% 3%;
+  grid-auto-rows: 10px;
+  margin-top: 17px;
+}
+
+.illustration_sac {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.texte_sac_gauche {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.texte_sac_droite {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.texte_bourse {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 
@@ -2300,8 +2356,6 @@ box-shadow: var(--box_shadow);
 }
 
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-header {
-font-size: 22px;
-font-family: "Playfair", serif;
 word-wrap: break-word;
 letter-spacing: -0.7px;
 padding-top: 15px;
@@ -2313,6 +2367,9 @@ background: var(--noir_roll);
 margin-top: -1px;
 margin-bottom: -5px;
 color: var(--blanc_roll);
+font-size: 30px;
+font-family: "Jim Nightshade";
+line-height: 23px;
 }
 
 .sheet-rolltemplate-thanatos .sheet-rolltemplate-thanatos-subheader,
@@ -2386,11 +2443,7 @@ color: var(--blanc_roll);
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-exceptionnelle,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite-critique,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-rappel-reussite { 
-  font-size: 12px;
-  line-height: 12px;
-  font-family: "Playfair", serif;
   padding: 5px;
-  padding-bottom: 5px;
   padding-bottom: 6px;
   letter-spacing: -0.2px;
   color: var(--blanc_roll);
@@ -2398,6 +2451,10 @@ color: var(--blanc_roll);
   margin-left: 0px;
   background: var(--noir_roll);
   margin-top: -5px;
+  font-family: "Jim Nightshade";
+  font-size: 17px;
+  line-height: 10px;
+  padding-top: 10px;
 }
 
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-echec-tragique,

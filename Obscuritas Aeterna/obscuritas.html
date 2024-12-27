@@ -1,8 +1,6 @@
-<!-- TODO Revoir calcul des champs custom -->
 <!-- TODO Jauge blessure  -->
 <!-- TODO AURA / ETC  -->
 <!-- TODO Jet roll degats dans tableau des armes  -->
-<!-- TODO IMAGE Boucliers en variable en fonction du choix - juste besoin de trouver les image code operationnel  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
@@ -11,6 +9,7 @@
 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
 <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
 <input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
+<input type="hidden" name="attr_inventaire_reduit" class="voir_inventaire" value="0">
 <input type="hidden" name="attr_malus_total_dexterite" value="0">
 <input type="hidden" name="attr_malus_total_athletisme" value="0">
 <input type="hidden" name="attr_malus_total_combat_cac" value="0">
@@ -277,12 +276,12 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_baratin_force" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_bibliotheque" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_bibliotheque" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-bibliotheque">Bibliothèque (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_bibliotheque" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_chercher" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_chercher" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-chercher">Chercher (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_chercher" value="0" min="0" max="99" readonly /></div>
                         </div>
@@ -296,27 +295,27 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_cac_force" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_combat_pugilat" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_pugilat" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-pugilat">Combat Pugilat (Force)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_pugilat" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_combat_distance" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_distance" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-distance">Combat Distance (Dextérité)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_distance" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_discretion" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_discretion" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-discretion">Discrétion (Dextérité)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_langue" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_langue" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-langue">Langue (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue" value="0" min="0" max="99" readonly /></div>
                         </div>
@@ -332,7 +331,7 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue_ancienne_volonte" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_medecine" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_medecine" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-medecine">Médecine (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_medecine" value="0" min="0" max="99" readonly /></div>
                         </div>
@@ -346,32 +345,32 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_metier_volonte" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences">Sciences (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_science" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_sciences_occultes" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_sciences_occultes" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences-occultes">Sciences occultes (Volonté)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_sciences_occultes" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_survie" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_survie" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-survie">Survie (Intelligence)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_survie" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><input type="number" class="input_comp" name="attr_stat_vigilance" value="0" min="0" max="99"></div>
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_vigilance" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-vigilance">Vigilance (Dextérité)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_vigilance" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom1"><span class="D20">J</span></button></div>
+                            <div class="competence_valeur_simple"><button type="action" class="button_comp" name="act_roll-custom1"><span class="D20">J</span></button></div>
                             <div class="competence_nom_double" style="padding-left: 4px;">
                                 <select class="choix_custom" name="attr_custom_stat_1">
                                     <option value="0" selected="selected"></option>
@@ -410,7 +409,7 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_custom_1" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom2"><span class="D20">J</span></button></div>
+                            <div class="competence_valeur_simple"><button type="action" class="button_comp" name="act_roll-custom2"><span class="D20">J</span></button></div>
                             <div class="competence_nom_double" style="padding-left: 4px;">
                                 <select class="choix_custom" name="attr_custom_stat_2">
                                     <option value="0" selected="selected"></option>
@@ -449,7 +448,7 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_custom_2" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
-                            <div class="competence_valeur_double"><button type="action" class="button_comp" name="act_roll-custom3"><span class="D20">J</span></button></div>
+                            <div class="competence_valeur_simple"><button type="action" class="button_comp" name="act_roll-custom3"><span class="D20">J</span></button></div>
                             <div class="competence_nom_double" style="padding-left: 4px;">
                                 <select class="choix_custom" name="attr_custom_stat_3">
                                     <option value="0" selected="selected"></option>
@@ -498,13 +497,13 @@
             <input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
             <div class="cadre_armement_reduit">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
+                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ARMES ET ARMURES</div>
                 </div>
             </div>
             <!-- DEBUT BLOC APRES TITRE --> 
             <div class="cadre_armement">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ÉQUIPEMENT</div>
+                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ARMES ET ARMURES</div>
                 </div>
                 <div class="wrapper_zone_armement">
                     <div class="bloc_armes">
@@ -550,7 +549,7 @@
                                 <input name="attr_armes_notes_1" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
                             </div>
                             <div class="armes_roll">
-                                roll                        
+                                <button type="roll" class="button_comp" name="roll-degat_arme_1" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_1}}} {{result=[[@{armes_degats_1}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_1}}}"><span class="D20">J</span></button>
                             </div>
                         </div>
                         <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
@@ -592,7 +591,7 @@
                                 <input name="attr_armes_notes_2" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
                             </div>
                             <div class="armes_roll">
-                                roll                        
+                                <button type="roll" class="button_comp" name="roll-degat_arme_2" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_2}}} {{result=[[@{armes_degats_2}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_2}}}"><span class="D20">J</span></button>
                             </div>
                         </div>
                         <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
@@ -634,7 +633,7 @@
                                 <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
                             </div>
                             <div class="armes_roll">
-                                roll                        
+                                <button type="roll" class="button_comp" name="roll-degat_arme_3" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_3}}} {{result=[[@{armes_degats_3}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_3}}}"><span class="D20">J</span></button>
                             </div>
                         </div>
                         <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
@@ -677,7 +676,7 @@
                                 <input name="attr_armes_notes_4" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
                             </div>
                             <div class="armes_roll">
-                                roll                        
+                                <button type="roll" class="button_comp" name="roll-degat_arme_4" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_4}}} {{result=[[@{armes_degats_4}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_4}}}"><span class="D20">J</span></button>
                             </div>
                         </div>
                         <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
@@ -926,19 +925,145 @@
                             </div>
                         </div>  
                     </div>
-                    
-                    <div class="bloc_inventaire">inventaire
-                        <div class="wrapper_zone_inventaire">
-                            
-                        </div>                        
-                    </div>
                 </div>
-                <!-- Fin creer CSS -->
             </div>  
+            <!-- INVENTAIRE -->
+            <input type="hidden" name="attr_inventaire_reduit" class="voir_inventaire" value="0">
+            <div class="cadre_inventaire_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_inventaire_titre">INVENTAIRE <button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                </div>
+            </div>
+            <div class="cadre_inventaire">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_inventaire_titre">INVENTAIRE <button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                </div>
+                <div class="wrapper_bloc_inventaire">
+                    <div class="illustration_sac"></div>
+                    <div class="texte_sac_gauche">textarea</div>
+                    <div class="texte_sac_droite">textarea</div>
+                    <div class="texte_bourse">textarea</div>
+                </div>
+            <!-- DEBUT BLOC APRES TITRE -->
+                
+            </div> 
             <!-- FIN BLOC APRES TITRE -->          
         </div> 
     </div>
 </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1537,7 +1662,7 @@
                         <input name="attr_armes_notes_1" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_roll">
-                        roll                        
+                        <button type="roll" class="button_comp" name="roll-degat_arme_1" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_1}}} {{result=[[@{armes_degats_1}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_1}}}">Roll</button>   
                     </div>
                 </div>
                 <div class="wrapper_zone_armes">
@@ -1572,7 +1697,7 @@
                         <input name="attr_armes_notes_2" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_roll">
-                        roll                        
+                        <button type="roll" class="button_comp" name="roll-degat_arme_2" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_2}}} {{result=[[@{armes_degats_2}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_2}}}">Roll</button>
                     </div>
                 </div>
                 <div class="wrapper_zone_armes">
@@ -1607,7 +1732,7 @@
                         <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_roll">
-                        roll                        
+                        <button type="roll" class="button_comp" name="roll-degat_arme_3" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_3}}} {{result=[[@{armes_degats_3}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_3}}}">Roll</button>
                     </div>
                 </div>
                 <div class="wrapper_zone_armes">
@@ -1642,7 +1767,7 @@
                         <input name="attr_armes_notes_4" type="text" spellcheck="false" class="input_dotted">
                     </div>
                     <div class="armes_roll">
-                        roll                        
+                        <button type="roll" class="button_comp" name="roll-degat_arme_4" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_4}}} {{result=[[@{armes_degats_4}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_4}}}">Roll</button>                        
                     </div>
                 </div>
             </div>
@@ -2020,23 +2145,25 @@
     {{/jet}}
     {{#degat}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-                {{title}}
-                <br>
-                inflige
+			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+                <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
+                    {{title}}
+                    <br>
+                    <span style="font-size:24px;">inflige</span>
+                </div>
+                <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader" style="color: #ff0000;font-size: 31px !important;">
+                    {{#rollTotal() result 1}}
+                    {{result}} dégât
+                    {{/rollTotal() result 1}}
+                    {{#^rollTotal() result 1}}
+                    {{result}} dégâts
+                    {{/^rollTotal() result 1}}
+                    <br><br><span style="font-size: 17px;font-style: italic;color: #000000 !important;">{{effet}}</span>
+                </div>
+                    
+                <div class="sheet-separateur"></div>
+                <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel"></div>
             </div>
-            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader" style="color: #ff0000;font-size: 31px !important;">
-                {{#rollTotal() result 1}}
-                {{result}} dégât
-                {{/rollTotal() result 1}}
-                {{#^rollTotal() result 1}}
-                {{result}} dégâts
-                {{/^rollTotal() result 1}}
-                <br><br><span style="font-size: 17px;font-style: italic;color: #000000 !important;">{{effet}}</span>
-            </div>
-				
-            <div class="sheet-separateur"></div>
-            <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel"></div>
         </div>
     {{/degat}}
 	<div class="sheet-bottom"></div>
@@ -2770,7 +2897,9 @@
                 total_armures_malus_combat_distance = armures_malus_combat_distance_1,
                 total_armures_malus_discretion = armures_malus_discretion_1,
                 total_armures_malus_esquive = armures_malus_esquive_1,
-                armure_affichee = armures_nom_1;
+                armure_affichee = armures_nom_1,
+                armures_equipe_2 = 0,
+                armures_equipe_3 = 0;
 
             else if (armures_equipe_2 == 1) 
                 total_armures_encaissement = armures_encaissement_2, 
@@ -2781,7 +2910,9 @@
                 total_armures_malus_combat_distance = armures_malus_combat_distance_2,
                 total_armures_malus_discretion = armures_malus_discretion_2,
                 total_armures_malus_esquive = armures_malus_esquive_2,
-                armure_affichee = armures_nom_2;
+                armure_affichee = armures_nom_2,
+                armures_equipe_1 = 0,
+                armures_equipe_3 = 0;
 
             else if (armures_equipe_3 == 1) 
                 total_armures_encaissement = armures_encaissement_3, 
@@ -2792,7 +2923,9 @@
                 total_armures_malus_combat_distance = armures_malus_combat_distance_3,
                 total_armures_malus_discretion = armures_malus_discretion_3,
                 total_armures_malus_esquive = armures_malus_esquive_3,
-                armure_affichee = armures_nom_3;
+                armure_affichee = armures_nom_3,
+                armures_equipe_1 = 0,
+                armures_equipe_2 = 0;
 
             else             
             total_armures_encaissement = 0, 
@@ -2803,7 +2936,10 @@
             total_armures_malus_combat_distance = 0,
             total_armures_malus_discretion = 0,
             total_armures_malus_esquive = 0,
-            armure_affichee = 0;
+            armure_affichee = 0,
+            armures_equipe_1 = 0,
+            armures_equipe_2 = 0,
+            armures_equipe_3 = 0;
             
             total_armures_malus_demi_dexterite = Math.floor(total_armures_malus_dexterite/2);
             
@@ -2817,7 +2953,10 @@
                 "total_armures_malus_combat_distance": total_armures_malus_combat_distance,
                 "total_armures_malus_discretion": total_armures_malus_discretion,
                 "total_armures_malus_esquive": total_armures_malus_esquive,
-                "armure_affichee": armure_affichee
+                "armure_affichee": armure_affichee,
+                "armures_equipe_1": armures_equipe_1,
+                "armures_equipe_2": armures_equipe_2,
+                "armures_equipe_3": armures_equipe_3
 
             });
         });
@@ -2829,9 +2968,9 @@
         getAttrs(["boucliers_nom_1", "boucliers_nom_1", "boucliers_equipe_1", "boucliers_equipe_2", "boucliers_bonus_parade_1", "boucliers_bonus_parade_2", "boucliers_malus_esquive_1", "boucliers_malus_esquive_2"], function(values) {
 
             let boucliers_equipe_1 = parseInt(values["boucliers_equipe_1"]) || 0;
+            let boucliers_equipe_2 = parseInt(values["boucliers_equipe_2"]) || 0;
             let boucliers_nom_1 = parseInt(values["boucliers_nom_1"]) || 0;
             let boucliers_nom_2 = parseInt(values["boucliers_nom_2"]) || 0;
-            let boucliers_equipe_2 = parseInt(values["boucliers_equipe_2"]) || 0;
             let boucliers_bonus_parade_1 = parseInt(values["boucliers_bonus_parade_1"]) || 0;
             let boucliers_bonus_parade_2 = parseInt(values["boucliers_bonus_parade_2"]) || 0;
             let boucliers_malus_esquive_1 = parseInt(values["boucliers_malus_esquive_1"]) || 0;
@@ -2841,12 +2980,14 @@
             if (boucliers_equipe_1 == 1) 
                 total_boucliers_bonus_parade = boucliers_bonus_parade_1,
                 total_boucliers_malus_esquive = boucliers_malus_esquive_1,
-                bouclier_affichee = boucliers_nom_1;
+                bouclier_affichee = boucliers_nom_1,
+                boucliers_equipe_2 = 0;
 
             else if (boucliers_equipe_2 == 1) 
                 total_boucliers_bonus_parade = boucliers_bonus_parade_2,
                 total_boucliers_malus_esquive = boucliers_malus_esquive_2,
-                bouclier_affichee = boucliers_nom_2;
+                bouclier_affichee = boucliers_nom_2,
+                boucliers_equipe_1 = 0;
 
             else             
             total_boucliers_bonus_parade = 0, 
@@ -2857,7 +2998,9 @@
             setAttrs({
                 "total_boucliers_bonus_parade": total_boucliers_bonus_parade,
                 "total_boucliers_malus_esquive": total_boucliers_malus_esquive,
-                "bouclier_affichee": bouclier_affichee
+                "bouclier_affichee": bouclier_affichee,
+                "boucliers_equipe_1": boucliers_equipe_1,
+                "boucliers_equipe_2": boucliers_equipe_2
             });
         });
     });
@@ -3493,6 +3636,17 @@
             else armement_reduit = 0;
         setAttrs({
             "armement_reduit": armement_reduit			
+            });
+        });
+    });
+
+    on('clicked:hide_inventaire', async (event) => {
+		getAttrs(["inventaire_reduit"], function(values) {
+            let inventaire_reduit = parseInt(values["inventaire_reduit"]) || 0;
+            if (inventaire_reduit == 0) inventaire_reduit = 1;
+            else inventaire_reduit = 0;
+        setAttrs({
+            "inventaire_reduit": inventaire_reduit			
             });
         });
     });
