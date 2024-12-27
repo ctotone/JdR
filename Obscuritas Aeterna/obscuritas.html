@@ -2,10 +2,11 @@
 <!-- TODO Jauge blessure  -->
 <!-- TODO AURA / ETC  -->
 <!-- TODO Jet roll degats dans tableau des armes  -->
-<!-- TODO IMAGE Armure en variable en fonction du choix  -->
+<!-- TODO IMAGE Boucliers en variable en fonction du choix - juste besoin de trouver les image code operationnel  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
+<input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
 <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
@@ -853,13 +854,79 @@
                                     <div class="separateur_armures_border_end"></div>
                                 </div>
                             </div>                            
-                        </div>                        
+                        </div>   
+                        <!-- BLOC bouclier -->
+                        <div class="wrapper_bloc_boucliers" style="margin-top: 45px;">
+                            
+                            <input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
+                            <div class="illustration_pavois"></div>
+                            <div class="illustration_bouclier_rond"></div>
+                            <div class="illustration_bouclier_aucune"></div>
+                            <!-- Tableau bouclier -->
+                            <div class="tableau_boucliers">
+                                <div class="wrapper_zone_boucliers_titre" style="grid-auto-rows: 34px;line-height: 12px;margin-top: -14px;margin-left: -3px;padding-left: 3px;">
+                                    <div class="boucliers_equipee">
+                                    </div>
+                                    <div class="boucliers_type_titre">TYPE</div>
+                                    <div class="boucliers_parade_titre">BONUS PARADE</div>
+                                    <div class="boucliers_esquive_titre">MALUS ESQUIVE</div>
+                                    <div class="boucliers_notes_titre">NOTES</div>
+                                </div>
+                                <div class="wrapper_zone_boucliers" style="grid-auto-rows: 35px;">
+                                    <div class="boucliers_equipee">
+                                        <input type="checkbox" name="attr_boucliers_equipe_1" value="1" id="bouclier1">
+                                        <label for="bouclier1"></label>
+                                    </div>
+                                    <div class="boucliers_type">
+                                        <select class="choix_boucliers" name="attr_boucliers_nom_1">
+                                            <option value="0" selected="selected"></option>
+                                            <option value="1">Bouclier rond</option>
+                                            <option value="2">Pavois</option>
+                                        </select>
+                                    </div>
+                                    <div class="boucliers_parade">
+                                        <input name="attr_boucliers_bonus_parade_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="boucliers_esquive">
+                                        <input name="attr_boucliers_malus_esquive_1" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="boucliers_notes">
+                                        <input name="attr_boucliers_notes_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_boucliers_separateur" style="grid-auto-rows: 1px;">     
+                                    <div class="separateur_boucliers"></div>
+                                </div>
+                                <div class="wrapper_zone_boucliers_separateur">     
+                                    <div class="separateur_boucliers_border"></div>
+                                </div>
+                                <div class="wrapper_zone_boucliers">
+                                    <div class="boucliers_equipee">
+                                        <input type="checkbox" name="attr_boucliers_equipe_2" value="1" id="bouclier2">
+                                        <label for="bouclier2"></label>
+                                    </div>
+                                    <div class="boucliers_type">
+                                        <select class="choix_boucliers" name="attr_boucliers_nom_2">
+                                            <option value="0" selected="selected"></option>
+                                            <option value="1">Bouclier rond</option>
+                                            <option value="2">Pavois</option>
+                                        </select>
+                                    </div>
+                                    <div class="boucliers_parade">
+                                        <input name="attr_boucliers_bonus_parade_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="boucliers_esquive">
+                                        <input name="attr_boucliers_malus_esquive_2" type="number" spellcheck="false" class="input_dotted_centre">
+                                    </div>
+                                    <div class="boucliers_notes">
+                                        <input name="attr_boucliers_notes_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                                    </div>                                    
+                                    <div class="separateur_boucliers_border_end"></div>
+                                </div>                                
+                            </div>
+                        </div>  
                     </div>
-                    <div class="bloc_boucliers">boucliers
-                        <div class="wrapper_bloc_boucliers">
-                                                    
-                        </div>                        
-                    </div>
+                    
                     <div class="bloc_inventaire">inventaire
                         <div class="wrapper_zone_inventaire">
                             
@@ -2759,9 +2826,11 @@
 
     on("change:boucliers_nom_1 change:boucliers_nom_2 change:boucliers_equipe_1 change:boucliers_equipe_2 change:boucliers_bonus_parade_1 change:boucliers_bonus_parade_2 change:boucliers_malus_esquive_1 change:boucliers_malus_esquive_2", function() {
 
-        getAttrs(["boucliers_equipe_1", "boucliers_equipe_2", "boucliers_bonus_parade_1", "boucliers_bonus_parade_2", "boucliers_malus_esquive_1", "boucliers_malus_esquive_2"], function(values) {
+        getAttrs(["boucliers_nom_1", "boucliers_nom_1", "boucliers_equipe_1", "boucliers_equipe_2", "boucliers_bonus_parade_1", "boucliers_bonus_parade_2", "boucliers_malus_esquive_1", "boucliers_malus_esquive_2"], function(values) {
 
             let boucliers_equipe_1 = parseInt(values["boucliers_equipe_1"]) || 0;
+            let boucliers_nom_1 = parseInt(values["boucliers_nom_1"]) || 0;
+            let boucliers_nom_2 = parseInt(values["boucliers_nom_2"]) || 0;
             let boucliers_equipe_2 = parseInt(values["boucliers_equipe_2"]) || 0;
             let boucliers_bonus_parade_1 = parseInt(values["boucliers_bonus_parade_1"]) || 0;
             let boucliers_bonus_parade_2 = parseInt(values["boucliers_bonus_parade_2"]) || 0;
@@ -2771,20 +2840,24 @@
 
             if (boucliers_equipe_1 == 1) 
                 total_boucliers_bonus_parade = boucliers_bonus_parade_1,
-                total_boucliers_malus_esquive = boucliers_malus_esquive_1;
+                total_boucliers_malus_esquive = boucliers_malus_esquive_1,
+                bouclier_affichee = boucliers_nom_1;
 
             else if (boucliers_equipe_2 == 1) 
                 total_boucliers_bonus_parade = boucliers_bonus_parade_2,
-                total_boucliers_malus_esquive = boucliers_malus_esquive_2;
+                total_boucliers_malus_esquive = boucliers_malus_esquive_2,
+                bouclier_affichee = boucliers_nom_2;
 
             else             
             total_boucliers_bonus_parade = 0, 
-            total_boucliers_malus_esquive = 0;
+            total_boucliers_malus_esquive = 0,
+            bouclier_affichee = 0;
             
             
             setAttrs({
                 "total_boucliers_bonus_parade": total_boucliers_bonus_parade,
-                "total_boucliers_malus_esquive": total_boucliers_malus_esquive
+                "total_boucliers_malus_esquive": total_boucliers_malus_esquive,
+                "bouclier_affichee": bouclier_affichee
             });
         });
     });
