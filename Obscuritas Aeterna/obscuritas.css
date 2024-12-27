@@ -50,6 +50,8 @@
   --bouclier_dessin_pavois: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_pavois.webp);
   --bouclier_dessin_aucun: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_aucune.webp);
   --fond_zone_note: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/ligne_notes.png);
+  --dessin_sac: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_sac.webp);
+  --dessin_bourse: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_bourse.webp);
 
 
   /* FIN VARIABLES GLOBALES */ 
@@ -127,7 +129,7 @@ img.portrait {
   overflow: hidden;
   background-image: var(--fond_zone_note);
   background-size: auto 13.7px;
-  width: 79%;
+  width: 81%;
   height: 92%;
 }
 
@@ -1991,17 +1993,20 @@ div.illustration_bouclier_aucun {
 
 .wrapper_bloc_inventaire {
   display: grid;
-  grid-template-columns: 2% 16% 64% 17% 0%;
+  grid-template-columns: 7% 6% 73% 17% 0%;
   grid-auto-rows: 10px;
   margin-top: 17px;
+  margin-bottom: 20px;
 }
 
 .illustration_sac {
   grid-column: 4;
   grid-row: 1 / 13;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_sac.webp);
+  background-image: var(--dessin_sac);
   background-size: 132px 207px;
   margin-top: -72px;
+  margin-left: -37px;
+  background-repeat: no-repeat;
 }
 
 .texte_sac {
@@ -2011,12 +2016,24 @@ div.illustration_bouclier_aucun {
   background-image: var(--background_page);
   background-size: cover;
   box-shadow: 4px 3px 6px 4px #000000c4;
-  margin-right: -2px;
+  margin-right: 37px;
+  margin-left: -50px;
 }
 
-.texte_bourse {
-  grid-column: 1;
-  grid-row: 1;
+.illustration_bourse {
+  grid-column: 1 / 3;
+  grid-row: 11 / 23;
+  background-image: var(--dessin_bourse);
+  background-size: 122px 119px;
+  background-repeat: no-repeat;
+  margin-left: -19px;
+  transform: rotate(-21.5deg);
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 10px;
 }
 
 
