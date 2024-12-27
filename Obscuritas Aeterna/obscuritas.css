@@ -2,6 +2,7 @@
 /* font-family: "Metamorphous", serif; */
 /* font-family: "Jim Nightshade", serif; */
 
+
 .charsheet {
   /* font-family: "Playfair", serif; */
   font-family: "Metamorphous", serif;
@@ -17,6 +18,40 @@
   --text_input_info: #a20303d4;
   --hover_bouton: #a20303d4;
   --border_armes:  #000000d1;
+
+
+  /* VARIABLES GLOBALES */
+
+  --image_portrait_shadow: 0px 0px 14px 2px black;
+  --image_portrait_background: black;
+
+  --background_page: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  --esoterik_info: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_info.webp);
+  --esoterik_carac: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_carac.webp);
+  --esoterik_competences: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_competences.webp);
+  --esoterik_equipement: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_armement.webp);
+  --cadre_titre_gauche: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre3.png);
+  --cadre_titre_droite: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre4.png);
+  --hexagramme: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/hexagram.png);
+  --cadre_input_carac: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  --separateur_vertical_carac: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_croix.png);
+  --separateur_horizontal_carac: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_horizontal_1.png);
+  --separateur_crane_competence: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_crane_blanc.png);
+  --separateur_centre_competence: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_centre_comp.png);
+  --separateur_croix_competence: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_bas_croix.png);
+  --armes_barre_titre: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/barre_titre_armes.webp);
+  --armes_image_1: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_armes.webp);
+  --armure_dessin_plaque: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_plaques.webp);
+  --armure_dessin_maille: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_maille.webp);
+  --armure_dessin_cuir: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_cuir.webp);
+  --armure_dessin_tissu: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_tissu.webp);
+  --armure_dessin_aucune: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_aucune.webp);
+  --bouclier_dessin_rond: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_rond.webp);
+  --bouclier_dessin_pavois: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_pavois.webp);
+  --bouclier_dessin_aucun: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/bouclier_aucune.webp);
+
+
+  /* FIN VARIABLES GLOBALES */ 
 
   --couleur_ligne: #000000e5;
   --text_input: #000000bd;
@@ -71,7 +106,8 @@ span.D20 {
 
 img.portrait {
   border-radius: 120px;
-  box-shadow: 0px 0px 14px 2px black;
+  box-shadow: var(--image_portrait_shadow);
+  background: var(--image_portrait_background);
 }
 
 .charsheet input {  
@@ -334,7 +370,11 @@ input[type="checkbox"]:checked + label::before {
   color: var(--black);
   font-size: 17px;
   font-weight: bold;
-  margin-top: -19px;
+  margin-top: -17px;
+}
+
+div.boucliers_equipee input[type="checkbox"]:checked + label::before {
+  margin-top: -23px;
 }
 
 input[type="checkbox"]:focus {
@@ -528,7 +568,7 @@ input[type="number"] {
   min-height: 1180px;
   height: auto;
   background: rgb(226, 226, 226);
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: contain;
   padding: 20px;
   border-radius: 10px;
@@ -617,7 +657,7 @@ div.cadre_armement_reduit {
   background: #ffffff52;
   border-radius: 10px;
   margin-top: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_info.webp);
+  background-image: var(--esoterik_info);
   background-size: contain;
   /* background-blend-mode: lighten; */
 }
@@ -631,7 +671,7 @@ div.cadre_armement_reduit {
   background: #ffffff52;
   border-radius: 10px;
   margin-top: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_carac.webp);
+  background-image: var(--esoterik_carac);
   background-size: contain;
   background-blend-mode: lighten;
 }
@@ -645,7 +685,7 @@ div.cadre_armement_reduit {
   background: #ffffff52;
   border-radius: 10px;
   margin-top: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_competences.webp);
+  background-image: var(--esoterik_competences);
   background-size: contain;
   background-blend-mode: lighten;
 }
@@ -659,7 +699,7 @@ div.cadre_armement_reduit {
   background: #ffffff52;
   border-radius: 10px;
   margin-top: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/esoterik_background_armement.webp);
+  background-image: var(--esoterik_equipement);
   background-size: contain;
   background-blend-mode: lighten;
 }
@@ -680,7 +720,7 @@ div.cadre_armement_reduit {
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre3.png);
+  background-image: var(--cadre_titre_gauche);
   background-size: cover;
   margin-top: -33px;
   margin-bottom: 12px;
@@ -700,7 +740,7 @@ div.cadre_armement_reduit {
 .zone_armement_titre {
   grid-column: 45 / 79;
   grid-row: 1 / 4;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cadre4.png);
+  background-image: var(--cadre_titre_droite);
   padding-left: 31px;
   padding-top: 18px;
   transform: rotate(-1deg);
@@ -770,7 +810,7 @@ div.cadre_armement_reduit {
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/hexagram.png);
+  background-image: var(--hexagramme);
   background-size: contain;
 }
 
@@ -784,7 +824,7 @@ div.cadre_armement_reduit {
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -799,7 +839,7 @@ div.cadre_armement_reduit {
   margin-left: 3px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -814,7 +854,7 @@ div.cadre_armement_reduit {
   margin-left: -6px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -829,7 +869,7 @@ div.cadre_armement_reduit {
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -844,7 +884,7 @@ div.cadre_armement_reduit {
   margin-left: 2px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -859,7 +899,7 @@ div.cadre_armement_reduit {
   margin-left: 2px;
   margin-right: 0px;
   text-align: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/border_carac.png);
+  background-image: var(--cadre_input_carac);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -945,7 +985,7 @@ div.cadre_armement_reduit {
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_croix.png);
+  background-image: var(--separateur_vertical_carac);
   background-size: cover;
 }
 
@@ -960,7 +1000,7 @@ div.cadre_armement_reduit {
   padding: 20px;
   padding-left: 35px;
   border-radius: 0px 5px 5px 0px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
 }
 
@@ -1025,7 +1065,7 @@ div.cadre_armement_reduit {
   margin-bottom: 0px;
   margin-left: -8px;
   margin-right: 0px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_horizontal_1.png);
+  background-image: var(--separateur_horizontal_carac);
   background-size: contain;
   height: 13px;
   width: 276px;
@@ -1051,7 +1091,7 @@ div.cadre_armement_reduit {
   padding: 15px;
   padding-left: 30px;
   margin-top: 9px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
 }
 
@@ -1065,27 +1105,15 @@ div.cadre_armement_reduit {
   padding: 15px;
   padding-left: 30px;
   margin-top: 5px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
   background-position: 25% 75%;
-}
-
-.competence_separateur {
-  grid-column: 3;
-  grid-row: 1/20;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_comp.png);
-  background-size: cover;
-  margin-top: -40px;
-  margin-left: -31px;
-  width: 78px;
-  transform: rotate(-1deg);
-  height: 110%;
 }
 
 .competence_crane {
   grid-column: 3;
   grid-row: 1/4;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_crane_blanc.png);
+  background-image: var(--separateur_crane_competence);
   background-size: contain;
   margin-top: -40px;
   margin-left: -36px;
@@ -1097,7 +1125,7 @@ div.cadre_armement_reduit {
 .competence_separateur_centre {
   grid-column: 3;
   grid-row: 1 / 20;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_centre_comp.png);
+  background-image: var(--separateur_centre_competence);
   background-size: cover;
   margin-top: -56px;
   margin-left: -12px;
@@ -1109,7 +1137,7 @@ div.cadre_armement_reduit {
 .competence_separateur_bas {
   grid-column: 3;
   grid-row: 19 / 23;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/separateur_bas_croix.png);
+  background-image: var(--separateur_croix_competence);
   background-size: cover;
   margin-top: 32px;
   margin-left: -26px;
@@ -1228,7 +1256,7 @@ div.cadre_armement_reduit {
   transform: rotate(0.8deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
   margin-bottom: 20px;
 }
@@ -1246,7 +1274,7 @@ div.cadre_armement_reduit {
   transform: rotate(-0.4deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
   margin-bottom: 20px;
 }
@@ -1264,7 +1292,7 @@ div.cadre_armement_reduit {
   transform: rotate(0.8deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background.webp);
+  background-image: var(--background_page);
   background-size: cover;
   margin-bottom: 20px;
 }
@@ -1284,7 +1312,7 @@ div.cadre_armement_reduit {
 .illustration_inventaire {  
   height: 56px;
   margin-bottom: 15px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/dessin_armes.webp);
+  background-image: var(--armes_image_1);
   background-size: 429px 55px;
   margin-left: 150px;
   margin-right: 150px;
@@ -1305,7 +1333,7 @@ div.cadre_armement_reduit {
   grid-auto-rows: 30px;
   line-height: 30px;
   border: none;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/barre_titre_armes.webp);
+  background-image: var(--armes_barre_titre);
   color: var(--white);
   font-weight: bold;
   font-size: 12px;
@@ -1464,7 +1492,7 @@ div.illustration_armures_aucune {
 .illustration_armures_plaque {
   grid-column: 2;
   grid-row: 2 / 26;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_plaques.webp);
+  background-image: var(--armure_dessin_plaque);
   background-size: 123px 305px;
   margin-left: -5px;
   margin-top: -19px;
@@ -1473,7 +1501,7 @@ div.illustration_armures_aucune {
 .illustration_armures_maille {
   grid-column: 2;
   grid-row: 1 / 26;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_maille.webp);
+  background-image: var(--armure_dessin_maille);
   background-size: 124px 320px;
   margin-left: -10px;
   margin-top: -14px;
@@ -1482,8 +1510,8 @@ div.illustration_armures_aucune {
 
 .illustration_armures_cuir {
   grid-column: 2;
-  grid-row: 1 / 30;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_cuir.webp);
+  grid-row: 1 / 26;
+  background-image: var(--armure_dessin_cuir);
   background-size: 120px 323px;
   margin-top: -20px;
   margin-left: -3px;
@@ -1492,8 +1520,8 @@ div.illustration_armures_aucune {
 
 .illustration_armures_vetement {
   grid-column: 2;
-  grid-row: 1 / 29;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_tissu.webp);
+  grid-row: 1 / 26;
+  background-image: var(--armure_dessin_tissu);
   background-size: 120px 310px;
   margin-top: -30px;
 }
@@ -1501,7 +1529,7 @@ div.illustration_armures_aucune {
 .illustration_armures_aucune {
   grid-column: 2;
   grid-row: 2/26;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_aucune.webp);
+  background-image: var(--armure_dessin_aucune);
   background-size: contain;
 }
 
@@ -1523,7 +1551,7 @@ div.illustration_armures_aucune {
   grid-auto-rows: 30px;
   line-height: 30px;
   border: none;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/barre_titre_armes.webp);
+  background-image: var(--armes_barre_titre);
   color: var(--white);
   font-weight: bold;
   font-size: 10px;
@@ -1546,7 +1574,7 @@ div.illustration_armures_aucune {
   grid-column: 9/22;
   grid-row: 1;
   letter-spacing: -0.4px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/barre_titre_armes.webp);
+  background-image: var(--armes_barre_titre);
   color: var(--white);
   font-weight: bold;
   font-size: 10px;
@@ -1731,30 +1759,49 @@ div.illustration_bouclier_aucune {
     display: block;
 }
 
-.illustration_bouclier_rond {
-  grid-column: 4;
-  grid-row: 1 / 30;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_cuir.webp);
-  background-size: 120px 323px;
-  margin-top: -20px;
-  margin-left: -3px;
+.illustration_bouclier_aucun {
+  grid-column: 4/6;
+  grid-row: 1 / 14;
+  background-image: var(--bouclier_dessin_rond);
+  background-size: 159px 150px;
+  margin-top: -25px;
+  margin-left: 17px;
+  background-repeat: no-repeat;
 }
 
+.illustration_bouclier_rond {
+  grid-column: 4/6;
+  grid-row: 1 / 14;
+  background-image: var(--bouclier_dessin_rond);
+  background-size: 159px 150px;
+  margin-top: -25px;
+  margin-left: 17px;
+  background-repeat: no-repeat;
+}
 
 .illustration_pavois {
   grid-column: 4;
   grid-row: 1 / 29;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_tissu.webp);
-  background-size: 120px 310px;
-  margin-top: -30px;
+  background-image: var(--bouclier_dessin_pavois);
+  background-size: 131px 150px;
+  margin-top: -20px;
+  margin-left: 30px;
+  background-repeat: no-repeat;
 }
 
-.illustration_bouclier_aucun {
+/* .illustration_bouclier_aucun {
   grid-column: 4;
-  grid-row: 2/26;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/armure_aucune.webp);
-  background-size: contain;
-}
+  grid-row: 1/15;
+  background-image: var(--bouclier_dessin_aucun);
+  background-size: 182px 133px;
+  margin-top: -8px;
+  margin-left: 0px;
+  background-repeat: no-repeat;
+  border-radius: 70px;
+  margin-bottom: 14px;
+  transform: rotate(3.7deg);
+  opacity: 0.9;
+} */
 
 .tableau_boucliers {
   grid-column: 2;
@@ -1775,7 +1822,7 @@ div.illustration_bouclier_aucune {
   grid-auto-rows: 30px;
   line-height: 30px;
   border: none;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/barre_titre_armes.webp);
+  background-image: var(--armes_barre_titre);
   color: var(--white);
   font-weight: bold;
   font-size: 10px;
