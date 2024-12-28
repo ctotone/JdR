@@ -2611,4 +2611,14 @@
             });
         });
     });
+
+on('clicked:change_avatar', async (event) => {
+    getAttrs(["avatar"], function(values) {
+        let avatar = (parseInt(values["avatar"]) || 0) + 1;
+        avatar %= 4; // Remet à 0 après 3
+        setAttrs({
+            "avatar": avatar
+        });
+    });
+});
 </script>
