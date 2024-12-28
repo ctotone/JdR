@@ -60,12 +60,14 @@
 <div class="menu">
     <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
     <button type="action" name="act_1" class="button1">Caractéristiques</button>
-    <button type="action" name="act_4" class="button4">Attributs</button>
-    <button type="action" name="act_2" class="button2">Équipement</button>
+    <button type="action" name="act_2" class="button2">Compétences</button>
+    <button type="action" name="act_3" class="button3">Équipement</button>
+    <button type="action" name="act_4" class="button4">Notes</button>
+    <button type="action" name="act_5" class="button5"><span class="picto">y</span></button>
 </div>
 
 
-<div class="page1">
+<div class="page_complete">
     <!-- Information personnage -->
     <div class="personnage">
         <div class="wrapper_page_1">
@@ -148,7 +150,7 @@
                             <div class="info_avatar_einarth"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_einarth.webp"></div>
                             <div class="info_avatar_felix"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_felix.webp"></div>
                             <div class="info_avatar_baudoin"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_baudoin.webp"></div>
-                            <div class="info_avatar_mathilde"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_matilde.webp"></div>
+                            <div class="info_avatar_mathilde"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_mathilde.webp"></div>
                             <div class="info_avatar_robert"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_robert.webp"></div>
                             <div class="zone_bouton_avatar"><button type="action" class="button_avatar" name="act_change_avatar"></button></div>
                         </div>
@@ -955,6 +957,777 @@
             </div>   
         </div> 
     </div>
+</div>
+
+<div class="page_caracteristiques">
+    <div class="wrapper_page_1">
+        <div class="cadre_caracteristiques" style="display: block;">
+            <div class="wrapper_zone_personnage">
+                <div class="zone_caracteristiques_titre">CARACTÉRISTIQUES</div>
+            </div>
+            <div class="wrapper_zone_carac">
+                <div class="bloc_pentacle">
+                    <div class="wrapper_zone_carac">
+                        <div class="caracteristiques_pentacle"></div>
+                        <div class="caracteristiques_force_data"><input type="number" class="input_carac" name="attr_force" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_dexterite_data"><input type="number" class="input_carac" name="attr_dexterite" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte" value="15" min="15" max="99"></div>
+                        <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force">FORCE</button></div>
+                        <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite">DEXTÉRITÉ</button></div>
+                        <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution">CONSTITUTION</button></div>
+                        <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence">INTELLIGENCE</button></div>
+                        <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme">CHARISME</button></div>
+                        <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte">VOLONTÉ</button></div>
+                    </div>
+                </div>
+                <div class="caracteristiques_derivees">
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Points de vie</div>
+                        <div class="derivees_data"><input type="number" class="input_derivees" name="attr_pdv" value="1" min="0" max="99"></div>
+                        <div class="derivees_sur">sur</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Points de magie</div>
+                        <div class="derivees_data"><input type="number" class="input_derivees" name="attr_pdm" value="1" min="0" max="99"></div>
+                        <div class="derivees_sur">sur</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Santé mentale</div>
+                        <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
+                        <div class="derivees_sur">sur</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_separateur"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Bonus de Force</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Bonus de Dextérité</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Encaissement</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_separateur"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Malus de blessures</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_malus_blessure" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Malus d'Esquive</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_malus_esquive_final" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Bonus de Parade</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_parade_final" value="0" min="0" max="99"></div>
+                    </div>
+                </div>
+                <div class="caracteristiques_separateur"></div>
+            </div>  
+        </div>
+    </div>
+</div>
+
+<div class="page_competences">
+    <div class="cadre_competence" style="display: block;">
+        <div class="wrapper_zone_personnage">
+            <div class="zone_competence_titre">COMPÉTENCES</div>
+        </div>
+        <div class="wrapper_zone_competence"> 
+            <div class="competence_gauche">
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_athletisme" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-athletisme-force">Athletisme (Force)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_athletisme_force" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-athletisme-dex">Athletisme (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_athletisme_dexterite" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_baratin" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-baratin-charisme">Baratin (Charisme)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_baratin_charisme" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-baratin-force">Baratin (Force)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_baratin_force" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_bibliotheque" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-bibliotheque">Bibliothèque (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_bibliotheque" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_chercher" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-chercher">Chercher (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_chercher" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_combat_cac" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-cac-dex">Combat CaC (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_cac_dexterite" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-cac-force">Combat CaC (Force)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_cac_force" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_pugilat" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-pugilat">Combat Pugilat (Force)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_pugilat" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_distance" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-distance">Combat Distance (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_distance" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_discretion" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-discretion">Discrétion (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_langue" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-langue">Langue (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue" value="0" min="0" max="99" readonly /></div>
+                </div>
+            </div>
+            <div class="competence_droite">
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_langue_ancienne" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-ancienne-intel">Langue ancienne (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue_ancienne_intelligence" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-ancienne-volonte">Langue ancienne (Volonté)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue_ancienne_volonte" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_medecine" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-medecine">Médecine (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_medecine" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_metier" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-metier-intell">Métier (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_metier_intelligence" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-metier-volonte">Métier (Volonté)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_metier_volonte" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences">Sciences (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_science" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_sciences_occultes" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences-occultes">Sciences occultes (Volonté)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_sciences_occultes" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_survie" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-survie">Survie (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_survie" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_vigilance" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-vigilance">Vigilance (Dextérité)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_vigilance" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple" style="background: transparent;"><button type="action" class="button_comp" name="act_roll-custom1"><span class="D20">J</span></button></div>
+                    <div class="competence_nom_double" style="padding-left: 4px;">
+                        <select class="choix_custom" name="attr_custom_stat_1">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Athlétisme</option>
+                            <option value="2">Baratin</option>
+                            <option value="3">Bibliothèque</option>
+                            <option value="4">Chercher</option>
+                            <option value="5">Combat CaC</option>
+                            <option value="6">Combat Pugilat</option>
+                            <option value="7">Combat Distance</option>
+                            <option value="8">Discrétion</option>
+                            <option value="9">Endurance</option>
+                            <option value="10">Esquive</option>
+                            <option value="11">Langue ancienne</option>
+                            <option value="12">Langue</option>
+                            <option value="13">Médecine</option>
+                            <option value="14">Métier</option>
+                            <option value="15">Perception</option>
+                            <option value="16">Psychologie</option>
+                            <option value="17">Sciences</option>
+                            <option value="18">Sciences occultes</option>
+                            <option value="19">Survie</option>
+                            <option value="20">Vigilance</option>
+                        </select>
+
+                        <select class="choix_custom" name="attr_custom_comp_1" style="width: 105px;">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">(Force)</option>
+                            <option value="2">(Dextérité)</option>
+                            <option value="3">(Constitution)</option>
+                            <option value="4">(Intelligence)</option>
+                            <option value="5">(Charisme)</option>
+                            <option value="6">(Volonté)</option>
+                        </select>
+                    </div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_custom_1" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple" style="background: transparent;"><button type="action" class="button_comp" name="act_roll-custom2"><span class="D20">J</span></button></div>
+                    <div class="competence_nom_double" style="padding-left: 4px;">
+                        <select class="choix_custom" name="attr_custom_stat_2">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Athlétisme</option>
+                            <option value="2">Baratin</option>
+                            <option value="3">Bibliothèque</option>
+                            <option value="4">Chercher</option>
+                            <option value="5">Combat CaC</option>
+                            <option value="6">Combat Pugilat</option>
+                            <option value="7">Combat Distance</option>
+                            <option value="8">Discrétion</option>
+                            <option value="9">Endurance</option>
+                            <option value="10">Esquive</option>
+                            <option value="11">Langue ancienne</option>
+                            <option value="12">Langue</option>
+                            <option value="13">Médecine</option>
+                            <option value="14">Métier</option>
+                            <option value="15">Perception</option>
+                            <option value="16">Psychologie</option>
+                            <option value="17">Sciences</option>
+                            <option value="18">Sciences occultes</option>
+                            <option value="19">Survie</option>
+                            <option value="20">Vigilance</option>
+                        </select>
+
+                        <select class="choix_custom" name="attr_custom_comp_2" style="width: 105px;">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">(Force)</option>
+                            <option value="2">(Dextérité)</option>
+                            <option value="3">(Constitution)</option>
+                            <option value="4">(Intelligence)</option>
+                            <option value="5">(Charisme)</option>
+                            <option value="6">(Volonté)</option>
+                        </select>
+                    </div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_custom_2" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple" style="background: transparent;"><button type="action" class="button_comp" name="act_roll-custom3"><span class="D20">J</span></button></div>
+                    <div class="competence_nom_double" style="padding-left: 4px;">
+                        <select class="choix_custom" name="attr_custom_stat_3">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">Athlétisme</option>
+                            <option value="2">Baratin</option>
+                            <option value="3">Bibliothèque</option>
+                            <option value="4">Chercher</option>
+                            <option value="5">Combat CaC</option>
+                            <option value="6">Combat Pugilat</option>
+                            <option value="7">Combat Distance</option>
+                            <option value="8">Discrétion</option>
+                            <option value="9">Endurance</option>
+                            <option value="10">Esquive</option>
+                            <option value="11">Langue ancienne</option>
+                            <option value="12">Langue</option>
+                            <option value="13">Médecine</option>
+                            <option value="14">Métier</option>
+                            <option value="15">Perception</option>
+                            <option value="16">Psychologie</option>
+                            <option value="17">Sciences</option>
+                            <option value="18">Sciences occultes</option>
+                            <option value="19">Survie</option>
+                            <option value="20">Vigilance</option>
+                        </select>
+
+                        <select class="choix_custom" name="attr_custom_comp_3" style="width: 105px;">
+                            <option value="0" selected="selected"></option>
+                            <option value="1">(Force)</option>
+                            <option value="2">(Dextérité)</option>
+                            <option value="3">(Constitution)</option>
+                            <option value="4">(Intelligence)</option>
+                            <option value="5">(Charisme)</option>
+                            <option value="6">(Volonté)</option>
+                        </select>
+                    </div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_custom_3" value="0" min="0" max="99" readonly /></div>
+                </div>
+            </div> 
+            <div class="competence_crane"></div>
+            <div class="competence_separateur_centre"></div>
+            <div class="competence_separateur_bas"></div>       
+        </div>
+    </div>
+</div>
+
+<div class="page_equipement">
+    <div class="cadre_armement" style="display: block;">
+        <div class="wrapper_zone_personnage">
+            <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ARMES ET ARMURES</div>
+        </div>
+        <div class="wrapper_zone_armement">
+            <div class="bloc_armes">
+                <div class="illustration_armes"></div>
+                <div class="wrapper_zone_armes_titre">
+                    <div class="armes_type_titre">TYPE</div>
+                    <div class="armes_nom_titre">NOM</div>
+                    <div class="armes_degats_titre">DÉGÂTS</div>
+                    <div class="armes_portee_titre">PORTÉE</div>
+                    <div class="armes_effet_titre">EFFETS</div>
+                    <div class="armes_roll_titre">JET DE DÉGÂTS</div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_armes" name="attr_armes_nom_1">
+                            <option value="0"></option>
+                            <option value="10" selected="selected">Mains nues</option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_1" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_1" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_prenotes"></div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_1" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                    </div>
+                    <div class="armes_roll">
+                        <button type="roll" class="button_comp" name="roll-degat_arme_1" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_1}}} {{result=[[@{armes_degats_1}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_1}}}"><span class="D20">J</span></button>
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                    <div class="separateur_armes"></div>
+                </div>
+                <div class="wrapper_zone_armes_separateur">     
+                    <div class="separateur_armes_border"></div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_armes" name="attr_armes_nom_2">
+                            <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_2" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_2" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_prenotes"></div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_2" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                    </div>
+                    <div class="armes_roll">
+                        <button type="roll" class="button_comp" name="roll-degat_arme_2" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_2}}} {{result=[[@{armes_degats_2}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_2}}}"><span class="D20">J</span></button>
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                    <div class="separateur_armes"></div>
+                </div>
+                <div class="wrapper_zone_armes_separateur">     
+                    <div class="separateur_armes_border"></div>
+                </div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_armes" name="attr_armes_nom_3">
+                            <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_3" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_3" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_3" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_prenotes"></div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_3" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                    </div>
+                    <div class="armes_roll">
+                        <button type="roll" class="button_comp" name="roll-degat_arme_3" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_3}}} {{result=[[@{armes_degats_3}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_3}}}"><span class="D20">J</span></button>
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                    <div class="separateur_armes"></div>
+                </div>
+                <div class="wrapper_zone_armes_separateur">     
+                    <div class="separateur_armes_border"></div>
+                </div>
+                <div class="separateur_armes"></div>
+                <div class="wrapper_zone_armes">
+                    <div class="armes_type">
+                        <select class="choix_armes" name="attr_armes_nom_4">
+                            <option value="0" selected="selected"></option>
+                            <option value="10">Mains nues</option>
+                            <option value="1">Dague</option>
+                            <option value="2">Épée courte</option>
+                            <option value="3">Épée longue</option>
+                            <option value="4">Hache</option>
+                            <option value="5">Lance</option>
+                            <option value="6">Masse d'arme</option>
+                            <option value="7">Arc court</option>
+                            <option value="8">Arc long</option>
+                            <option value="9">Arbalète</option>
+                        </select>
+                    </div>
+                    <div class="armes_nom">
+                        <input name="attr_armes_designation_4" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_degats">
+                        <input name="attr_armes_degats_4" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_portee">
+                        <input name="attr_armes_portee_4" type="text" spellcheck="false" class="input_dotted_centre">
+                    </div>
+                    <div class="armes_effet">
+                        <input name="attr_armes_effet_4" type="text" spellcheck="false" class="input_dotted_gauche">
+                    </div>
+                    <div class="armes_prenotes"></div>
+                    <div class="armes_notes">
+                        <input name="attr_armes_notes_4" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                    </div>
+                    <div class="armes_roll">
+                        <button type="roll" class="button_comp" name="roll-degat_arme_4" value="&{template:thanatos} {{degat=oui}} {{title=@{armes_designation_4}}} {{result=[[@{armes_degats_4}[Dégâts de base]+@{bonus_force}[Bonus de Force]+@{bonus_reussite}[Dégâts de Réussite]]]}} {{effet=@{armes_effet_4}}}"><span class="D20">J</span></button>
+                    </div>
+                </div>
+                <div class="wrapper_zone_armes_separateur" style="grid-auto-rows: 1px;">     
+                    <div class="separateur_armes"></div>
+                </div>
+                <div class="wrapper_zone_armes_separateur">     
+                    <div class="separateur_armes_border_end"></div>
+                </div>
+            </div>
+            <div class="bloc_armures">
+                <div class="wrapper_bloc_armures">
+                    <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
+                    <div class="illustration_armures_plaque"></div>
+                    <div class="illustration_armures_maille"></div>
+                    <div class="illustration_armures_cuir"></div>
+                    <div class="illustration_armures_vetement"></div>
+                    <div class="illustration_armures_aucune"></div>
+                    <div class="tableau_armures">
+                        <div class="wrapper_zone_armures_titre" style="background: none;grid-auto-rows: 25px;margin-bottom: 10px;margin-left: -25px;margin-right: -11px;">
+                            <div class="armures_malus_titre" style="font-size: 11px;letter-spacing: 0px;">MALUS D'ARMURE</div>
+                        </div>
+                        <div class="wrapper_zone_armures_titre"style="margin-top: -14px;margin-left: -3px;padding-left: 3px;">
+                            <div class="armures_equipee_titre"></div>
+                            <div class="armures_type_titre">TYPE</div>
+                            <div class="armures_encaissement_titre" style="font-size: 10px;margin-left: -50px;">ENCAISSEMENT</div>
+                            <div class="armures_dexterite_titre">DEX</div>
+                            <div class="armures_athletisme_titre">ATHLE</div>
+                            <div class="armures_cac_titre">CAC</div>
+                            <div class="armures_pugilat_titre">PUGILAT</div>
+                            <div class="armures_distance_titre">DISTANCE</div>
+                            <div class="armures_discretion_titre">DISCRETION</div>
+                            <div class="armures_esquive_titre">ESQUIVE</div>
+                        </div>
+                        <div class="wrapper_zone_armures">
+                            <div class="armures_equipee" title="Cliquer pour équiper l'armure">
+                                <input type="checkbox" name="attr_armures_equipe_1" value="1" id="armure1">
+                                <label for="armure1"></label>
+                            </div>
+                            <div class="armures_type">
+                                <select class="choix_custom" name="attr_armures_nom_1">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Vêtements renforcés</option>
+                                    <option value="2">Cuir bouilli</option>
+                                    <option value="3">Armures de mailles</option>
+                                    <option value="4">Armure de plaque</option>
+                                </select>
+                            </div>
+                            <div class="armures_encaissement">
+                                <input name="attr_armures_encaissement_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_dexterite">
+                                <input name="attr_armures_malus_dexterite_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_athletisme">
+                                <input name="attr_armures_malus_athletisme_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_cac">
+                                <input name="attr_armures_malus_combat_cac_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_pugilat">
+                                <input name="attr_armures_malus_combat_pugilat_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_distance">
+                                <input name="attr_armures_malus_combat_distance_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_discretion">
+                                <input name="attr_armures_malus_discretion_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_esquive">
+                                <input name="attr_armures_malus_esquive_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_prenotes"></div>
+                            <div class="armures_notes">
+                                <input name="attr_armures_notes_1" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armures_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armures"></div>
+                        </div>
+                        <div class="wrapper_zone_armures_separateur">     
+                            <div class="separateur_armures_border"></div>
+                        </div>
+                        <div class="wrapper_zone_armures">
+                            <div class="armures_equipee" title="Cliquer pour équiper l'armure.">
+                                <input type="checkbox" name="attr_armures_equipe_2" value="1" id="armure2">
+                                <label for="armure2"></label>
+                            </div>
+                            <div class="armures_type">
+                                <select class="choix_custom" name="attr_armures_nom_2">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Vêtements renforcés</option>
+                                    <option value="2">Cuir bouilli</option>
+                                    <option value="3">Armures de mailles</option>
+                                    <option value="4">Armure de plaque</option>
+                                </select>
+                            </div>
+                            <div class="armures_encaissement">
+                                <input name="attr_armures_encaissement_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_dexterite">
+                                <input name="attr_armures_malus_dexterite_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_athletisme">
+                                <input name="attr_armures_malus_athletisme_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_cac">
+                                <input name="attr_armures_malus_combat_cac_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_pugilat">
+                                <input name="attr_armures_malus_combat_pugilat_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_distance">
+                                <input name="attr_armures_malus_combat_distance_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_discretion">
+                                <input name="attr_armures_malus_discretion_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_esquive">
+                                <input name="attr_armures_malus_esquive_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_prenotes"></div>
+                            <div class="armures_notes">
+                                <input name="attr_armures_notes_2" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_armures_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_armures"></div>
+                        </div>
+                        <div class="wrapper_zone_armures_separateur">     
+                            <div class="separateur_armures_border"></div>
+                        </div>
+                        <div class="wrapper_zone_armures">
+                            <div class="armures_equipee" title="Cliquer pour équiper l'armure">
+                                <input type="checkbox" name="attr_armures_equipe_3" value="1" id="armure3">
+                                <label for="armure3"></label>
+                            </div>
+                            <div class="armures_type">
+                                <select class="choix_custom" name="attr_armures_nom_3">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Vêtements renforcés</option>
+                                    <option value="2">Cuir bouilli</option>
+                                    <option value="3">Armures de mailles</option>
+                                    <option value="4">Armure de plaque</option>
+                                </select>
+                            </div>
+                            <div class="armures_encaissement">
+                                <input name="attr_armures_encaissement_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_dexterite">
+                                <input name="attr_armures_malus_dexterite_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_athletisme">
+                                <input name="attr_armures_malus_athletisme_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_cac">
+                                <input name="attr_armures_malus_combat_cac_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_pugilat">
+                                <input name="attr_armures_malus_combat_pugilat_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_distance">
+                                <input name="attr_armures_malus_combat_distance_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_discretion">
+                                <input name="attr_armures_malus_discretion_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_esquive">
+                                <input name="attr_armures_malus_esquive_3" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="armures_prenotes"></div>
+                            <div class="armures_notes">
+                                <input name="attr_armures_notes_3" type="text" spellcheck="false" class="input_dotted_gauche" placeholder="Notes...">
+                            </div>
+                            <div class="separateur_armures_border_end"></div>
+                        </div>
+                    </div>                            
+                </div>   
+                <!-- BLOC bouclier -->
+                <div class="wrapper_bloc_boucliers" style="margin-top: 45px;">
+                    
+                    <input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
+                    <div class="illustration_pavois"></div>
+                    <div class="illustration_bouclier_rond"></div>
+                    <div class="illustration_bouclier_aucun"></div>
+                    <!-- Tableau bouclier -->
+                    <div class="tableau_boucliers">
+                        <div class="wrapper_zone_boucliers_titre" style="grid-auto-rows: 34px;line-height: 12px;margin-top: -14px;margin-left: -3px;padding-left: 3px;">
+                            <div class="boucliers_equipee">
+                            </div>
+                            <div class="boucliers_type_titre">TYPE</div>
+                            <div class="boucliers_parade_titre">BONUS PARADE</div>
+                            <div class="boucliers_esquive_titre">MALUS ESQUIVE</div>
+                            <div class="boucliers_notes_titre">NOTES</div>
+                        </div>
+                        <div class="wrapper_zone_boucliers" style="grid-auto-rows: 35px;">
+                            <div class="boucliers_equipee">
+                                <input type="checkbox" name="attr_boucliers_equipe_1" value="1" id="bouclier1">
+                                <label for="bouclier1"></label>
+                            </div>
+                            <div class="boucliers_type">
+                                <select class="choix_boucliers" name="attr_boucliers_nom_1">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Bouclier rond</option>
+                                    <option value="2">Pavois</option>
+                                </select>
+                            </div>
+                            <div class="boucliers_parade">
+                                <input name="attr_boucliers_bonus_parade_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="boucliers_esquive">
+                                <input name="attr_boucliers_malus_esquive_1" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="boucliers_notes">
+                                <input name="attr_boucliers_notes_1" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_boucliers_separateur" style="grid-auto-rows: 1px;">     
+                            <div class="separateur_boucliers"></div>
+                        </div>
+                        <div class="wrapper_zone_boucliers_separateur">     
+                            <div class="separateur_boucliers_border"></div>
+                        </div>
+                        <div class="wrapper_zone_boucliers">
+                            <div class="boucliers_equipee">
+                                <input type="checkbox" name="attr_boucliers_equipe_2" value="1" id="bouclier2">
+                                <label for="bouclier2"></label>
+                            </div>
+                            <div class="boucliers_type">
+                                <select class="choix_boucliers" name="attr_boucliers_nom_2">
+                                    <option value="0" selected="selected"></option>
+                                    <option value="1">Bouclier rond</option>
+                                    <option value="2">Pavois</option>
+                                </select>
+                            </div>
+                            <div class="boucliers_parade">
+                                <input name="attr_boucliers_bonus_parade_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="boucliers_esquive">
+                                <input name="attr_boucliers_malus_esquive_2" type="number" spellcheck="false" class="input_dotted_centre">
+                            </div>
+                            <div class="boucliers_notes">
+                                <input name="attr_boucliers_notes_2" type="text" spellcheck="false" class="input_dotted_gauche">
+                            </div>                                    
+                            <div class="separateur_boucliers_border_end"></div>
+                        </div>                                
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div> 
+    <div class="cadre_inventaire" style="display: block;">
+        <div class="wrapper_zone_personnage">
+            <div class="zone_inventaire_titre">INVENTAIRE <button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+        </div>
+        <div class="wrapper_bloc_inventaire">
+            <div class="texte_sac"><textarea class="sac" spellcheck="false" name="attr_inventaire"></textarea></div>
+            <div class="illustration_sac"></div>
+            <div class="illustration_bourse"><input type="number" class="input_comp" name="attr_bourse" value="0" min="0" style="background: #fdfdfdbf;width: 50px !important;height: 50px !important;border: 1px solid black;font-family: 'Jim Nightshade';font-size: 18px;background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/cercle_carac.webp);background-size: 49px 49px;background-repeat: no-repeat;"></div>
+        </div>
+    </div> 
+</div>
+
+<div class="page_note">
+
+</div>
+
+<div class="page_config">
+
 </div>
 
 
