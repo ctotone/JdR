@@ -107,10 +107,34 @@ span.D20 {
   font-size: 32px;
 }
 
-img.portrait {
+img.portrait,
+img.portrait_aude,
+img.portrait_einarth,
+img.portrait_felix,
+img.portrait_baudoin {
   border-radius: 120px;
   box-shadow: var(--image_portrait_shadow);
   background: var(--image_portrait_background);
+}
+
+img.portrait_aude {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_aude.webp);
+  background-size: 170px 170px
+}
+
+img.portrait_einarth {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_einarth.webp);
+  background-size: 170px 170px
+}
+
+img.portrait_felix {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_felix.webp);
+  background-size: 170px 170px
+}
+
+img.portrait_baudoin {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_baudoin.webp);
+  background-size: 170px 170px
 }
 
 .charsheet textarea {
@@ -616,6 +640,23 @@ div.zone_armes {
 .charsheet .choix_page[value="1"] ~ div.page2,
 .charsheet .choix_page[value="2"] ~ div.zone_talents,
 .charsheet .choix_page[value="3"] ~ div.zone_armes {
+    display: block;
+}
+
+/* Affichage avatar */
+div.info_avatar,
+div.info_avatar_aude,
+div.info_avatar_einarth,
+div.info_avatar_felix,
+div.info_avatar_baudoin {
+    display: none;
+}
+
+.charsheet .choix_avatar[value="0"] ~ div.info_avatar,
+.charsheet .choix_avatar[value="1"] ~ div.info_avatar_aude,
+.charsheet .choix_avatar[value="2"] ~ div.info_avatar_einarth,
+.charsheet .choix_avatar[value="3"] ~ div.info_avatar_felix,
+.charsheet .choix_avatar[value="4"] ~ div.info_avatar_baudoin {
     display: block;
 }
 
@@ -2239,7 +2280,11 @@ div.illustration_bouclier_aucun {
   font-size: 10px;
 }
 
-.info_avatar {
+.info_avatar,
+.info_avatar_aude,
+.info_avatar_einarth,
+.info_avatar_felix,
+.info_avatar_baudoin {
   display: flex;
   align-content: center;
   vertical-align: middle;
