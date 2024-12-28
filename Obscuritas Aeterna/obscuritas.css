@@ -452,8 +452,19 @@ input[type="number"] {
 .charsheet button[type=action].button_carac::before,
 .charsheet button[type=action].button_comp::before,
 .charsheet button[type=roll].button_comp::before,
-.charsheet button[type=action].button_show::before {
+.charsheet button[type=action].button_show::before,
+.charsheet button[type=action].button_avatar::before {
 	content: '';
+}
+
+.charsheet button[type=action].button_avatar {
+  width: 155px;
+  height: 163px;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  border-radius: 120px;
+  border: none;
 }
 
 .charsheet button[type=action].button_texte,
@@ -2284,7 +2295,8 @@ div.illustration_bouclier_aucun {
 .info_avatar_aude,
 .info_avatar_einarth,
 .info_avatar_felix,
-.info_avatar_baudoin {
+.info_avatar_baudoin,
+.zone_bouton_avatar {
   display: flex;
   align-content: center;
   vertical-align: middle;

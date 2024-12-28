@@ -148,6 +148,7 @@
                             <div class="info_avatar_einarth"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_einarth.webp"></div>
                             <div class="info_avatar_felix"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_felix.webp"></div>
                             <div class="info_avatar_baudoin"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_baudoin.webp"></div>
+                            <div class="zone_bouton_avatar"><button type="action" class="button_avatar" name="act_change_avatar"></button></div>
                         </div>
                     </div>
                     <div class="zone_info_background" style="margin-top: 15px;">
@@ -2615,7 +2616,7 @@
 on('clicked:change_avatar', async (event) => {
     getAttrs(["avatar"], function(values) {
         let avatar = (parseInt(values["avatar"]) || 0) + 1;
-        avatar %= 4; // Remet à 0 après 3
+        avatar %= 5; // Remet à 0 après 4
         setAttrs({
             "avatar": avatar
         });

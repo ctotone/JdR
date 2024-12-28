@@ -364,3 +364,16 @@
         });
     });
 </script>
+
+<!-- Script de changement circulaire de valeur (avatar changeant Obscuritas)  -->
+<script type="text/worker">
+	on('clicked:change_avatar', async (event) => {
+		getAttrs(["avatar"], function(values) {
+			let avatar = (parseInt(values["avatar"]) || 0) + 1;
+			avatar %= 5; // Remet à 0 après 4
+			setAttrs({
+				"avatar": avatar
+			});
+		});
+	});
+</script>
