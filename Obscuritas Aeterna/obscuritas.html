@@ -63,7 +63,7 @@
     <button type="action" name="act_2" class="button2">Compétences</button>
     <button type="action" name="act_3" class="button3">Équipement</button>
     <button type="action" name="act_4" class="button4">Notes</button>
-    <button type="action" name="act_5" class="button5"><span class="picto">y</span></button>
+    <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
 </div>
 
 
@@ -321,6 +321,11 @@
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_endurance" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-endurance">Endurance (Constitution)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_endurance" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
                             <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
@@ -359,6 +364,11 @@
                             <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
                             <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
                             <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
+                        </div>
+                        <div class="wrapper_tableau_competence">
+                            <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_psychologie" value="0" min="0" max="99"></div>
+                            <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-psychologie">Psychologie (Intelligence)</button></div>
+                            <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_psychologie" value="0" min="0" max="99" readonly /></div>
                         </div>
                         <div class="wrapper_tableau_competence">
                             <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
@@ -1099,6 +1109,11 @@
                     <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
                 </div>
                 <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_endurance" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-endurance">Endurance (Constitution)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_endurance" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
                     <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
                     <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
                     <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
@@ -1137,6 +1152,11 @@
                     <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
                     <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
                     <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
+                </div>
+                <div class="wrapper_tableau_competence">
+                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_psychologie" value="0" min="0" max="99"></div>
+                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-psychologie">Psychologie (Intelligence)</button></div>
+                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_psychologie" value="0" min="0" max="99" readonly /></div>
                 </div>
                 <div class="wrapper_tableau_competence">
                     <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
@@ -1723,11 +1743,25 @@
 </div>
 
 <div class="page_note">
-
+    <div class="cadre_carnet" style="display: block;">
+        <div class="wrapper_zone_personnage">
+            <div class="zone_carnet_titre" style="padding-left: 60px;">CARNET DE ROUTE</div>
+        </div>
+        <div class="wrapper_bloc_note">
+            <div class="texte_note_gauche"><textarea class="carnet" name="attr_note_1"></textarea></div>
+            <div class="texte_note_droite"><textarea class="carnet" name="attr_note_2"></textarea></div>
+            <div class="illustration_carnet"></div>
+        </div>
+    </div> 
 </div>
 
 <div class="page_config">
-
+    <div class="wrapper_config">
+        <div class="config_titre1">Points de caractéristiques attribués : </div>
+        <div class="config_data1"><input type="number" class="input_config" name="attr_points_carac" readonly /> / 235</div>
+        <div class="config_titre2">Points de compétences attribués : </div>
+        <div class="config_data2"><input type="number" class="input_config" name="attr_points_comp" readonly /> / 300</div>
+    </div>
 </div>
 
 
@@ -2188,6 +2222,8 @@
             let mouvement = Math.floor(dexterite/10)*2;
             let bonus_force = Math.floor(force/10);            
             let bonus_dexterite = Math.floor(dexterite/10);
+            let points_carac = force + dexterite + constitution + intelligence + charisme + volonte;
+            let points_comp = stat_athletisme + stat_baratin + stat_bibliotheque + stat_chercher + stat_combat_cac + stat_combat_pugilat + stat_combat_distance + stat_discretion + stat_endurance + stat_esquive + stat_langue_ancienne + stat_langue + stat_medecine + stat_metier + stat_perception + stat_psychologie + stat_science + stat_sciences_occultes + stat_survie + stat_vigilance;
 
             let athletisme_force = Math.floor(stat_athletisme + (force/2));
             let athletisme_dexterite = Math.floor(stat_athletisme + (dexterite/2));
@@ -2269,7 +2305,9 @@
                 "constitution_reel": constitution_reel,
                 "intelligence_reel": intelligence_reel,
                 "charisme_reel": charisme_reel,
-                "volonte_reel": volonte_reel
+                "volonte_reel": volonte_reel,
+                "points_carac": points_carac,
+                "points_comp": points_comp
             });
         });
     });
