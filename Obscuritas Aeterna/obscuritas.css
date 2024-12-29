@@ -22,7 +22,7 @@
 
 
   /* VARIABLES GLOBALES */
-
+  --box_shadow_page: 0px 0px 6px 6px #000000ba;
   --image_portrait_shadow: 0px 0px 14px 2px black;
   --image_portrait_background: black;
 
@@ -640,7 +640,7 @@ input[type="number"] {
 .page_competences,
 .page_equipement,
 .page_note,
-.page_config {  
+.page_config { 
   width: 820px;
   min-height: 1180px;
   height: auto;
@@ -650,13 +650,46 @@ input[type="number"] {
   padding: 20px;
   border-radius: 10px;
   margin-left: -14px;
+  box-shadow: var(--box_shadow_page);
+  margin-bottom: 20px;
 }
+
+.page_caracteristiques {
+  height: 560px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
+}
+
+.page_competences {
+  height: 690px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
+}
+
+.page_equipement {
+  height: 1330px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
+}
+
+.page_note {
+  height: 1180px !important;
+}
+
+.page_config {
+  height: 1180px !important;
+}
+
 
 /* Affichage des page dynamique */
 div.page_complete,
 div.page_caracteristiques,
 div.page_competences,
 div.page_equipement,
+div.page_note,
 div.page_config {
     display: none;
 }
