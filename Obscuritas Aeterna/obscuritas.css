@@ -818,6 +818,22 @@ div.cadre_inventaire_reduit {
   text-align: center;
 }
 
+/* Zone AURA */
+
+.barre_aura {
+  grid-column: 11 / 69;
+  grid-row: 1 / 14;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_jauge.webp);
+  background-size: 600px 341px;
+}
+
+.marqueur_aura {
+  grid-column: 1 / 7;
+  grid-row: 4 / 10;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_marque.webp);
+  background-size: 60px 61px;
+}
+
 /* Zone informations */
 .wrapper_zone_info {
   display: grid;
@@ -909,6 +925,19 @@ div.cadre_inventaire_reduit {
   border-radius: 10px;
   margin-bottom: 25px;
   margin-top: 20px;
+}
+
+.cadre_aura {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-image: var(--esoterik_aura);
+  background-size: contain;
+  background-blend-mode: lighten;
 }
 
 .cadre_info,
