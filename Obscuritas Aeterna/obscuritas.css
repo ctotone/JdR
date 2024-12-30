@@ -1021,11 +1021,17 @@ div.marqueur_aura_n10 {
 }
 
 .background_aura {
-  grid-column: 10 / 80;
-  grid-row: 4 / 18;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background_aura_1.webp);
-  background-size: 600px 173px;
+  grid-column: 16 / 62;
+  grid-row: 13 / 20;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/background_aura.webp);
+  background-size: cover;
+  background-position: -2px -169px;
   background-repeat: no-repeat;
+  margin-right: -2px;
+  margin-left: 6px;
+  border-radius: 0px 0px 90px 90px;
+  border: 2px solid var(--black);
+  box-shadow: 1px 3px 8px 1px #000000c9;
 }
 
 .barre_aura {
@@ -1086,10 +1092,11 @@ div.marqueur_aura_n10 {
 
 .boutton_aura {
   grid-column: 32 / 47;
-  grid-row: 16 / 22;
+  grid-row: 12 / 25;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -6px;
 }
 
 /* Zone informations */
