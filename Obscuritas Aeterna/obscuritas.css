@@ -801,6 +801,8 @@ div.info_avatar_robert {
 /* Reduction des cadres */
 div.cadre_info,
 div.cadre_info_reduit,
+div.cadre_hero,
+div.cadre_hero_reduit,
 div.cadre_caracteristiques,
 div.cadre_caracteristiques_reduit,
 div.cadre_competence,
@@ -814,6 +816,8 @@ div.cadre_inventaire_reduit {
 
 .charsheet .voir_info[value="0"] ~ div.cadre_info,
 .charsheet .voir_info[value="1"] ~ div.cadre_info_reduit,
+.charsheet .voir_hero[value="0"] ~ div.cadre_hero,
+.charsheet .voir_hero[value="1"] ~ div.cadre_hero_reduit,
 .charsheet .voir_carac[value="0"] ~ div.cadre_caracteristiques,
 .charsheet .voir_carac[value="1"] ~ div.cadre_caracteristiques_reduit,
 .charsheet .voir_competence[value="0"] ~ div.cadre_competence,
@@ -1216,6 +1220,20 @@ div.marqueur_aura_n10 {
   /* background-blend-mode: lighten; */
 }
 
+.cadre_hero,
+.cadre_hero_reduit {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-image: var(--esoterik_equipement);
+  background-size: contain;
+  /* background-blend-mode: lighten; */
+}
+
 .cadre_caracteristiques,
 .cadre_caracteristiques_reduit {
   grid-column: 1 / 83;
@@ -1292,6 +1310,7 @@ div.marqueur_aura_n10 {
 }
 
 .zone_info_titre,
+.zone_hero_titre,
 .zone_caracteristiques_titre,
 .zone_competence_titre,
 .zone_armement_titre,
@@ -1319,8 +1338,9 @@ div.marqueur_aura_n10 {
   font-size: 22px;
 }
 
-.zone_caracteristiques_titre,
-.zone_armement_titre {
+.zone_hero_titre,
+.zone_competence_titre,
+.zone_inventaire_titre {
   grid-column: 45 / 79;
   grid-row: 1 / 4;
   background-image: var(--cadre_titre_droite);

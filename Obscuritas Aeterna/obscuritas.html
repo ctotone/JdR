@@ -1,13 +1,15 @@
-<!-- TODO Jauge blessure  -->
-<!-- TODO AURA / ETC  -->
+<!-- TODO Indicateur heroisme / heresie  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
+<input type="hidden" name="attr_heroisme" class="points_heroisme" value="0">
+<input type="hidden" name="attr_heresie" class="points_heresie" value="0">
 <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
 <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
 <input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
+<input type="hidden" name="attr_hero_reduit" class="voir_hero" value="0">
 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
 <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
 <input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
@@ -210,16 +212,110 @@
                 </div>
             </div>
 
+            <!-- HÉROISME HERESIE -->
+            <input type="hidden" name="attr_hero_reduit" class="voir_hero" value="0">
+            <div class="cadre_hero_reduit">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
+                </div>
+            </div>
+            <div class="cadre_hero">
+                <div class="wrapper_zone_personnage">
+                    <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
+                    <!-- Gauche -->
+                    <div class="zone_info_gauche">
+                        <div class="wrapper_zone_info">   
+                            <div class="info_data"><input name="attr_character_name" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">NOM</div>
+                        </div>
+                        <div class="wrapper_zone_info">
+                            <div class="info_data" style="margin-right: 15px;"><input name="attr_profession" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">PROFESSION ET RÔLE</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-right: 25px;">
+                            <div class="info_data"><input name="attr_apparence1" type="text" spellcheck="false" class="input_ligne" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-right: 25px;">
+                            <div class="info_data"><input name="attr_apparence2" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">APPARENCE</div>
+                        </div>
+                        <div class="wrapper_zone_info">
+                            <div class="info_data" style="margin-right: 15px;"><input name="attr_origine1" type="text" spellcheck="false" class="input_ligne" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_origine2" type="text" spellcheck="false" class="input_ligne" /></div>
+                            <div class="info_titre">ORIGINE</div>
+                        </div>
+                    </div>
+                    <!-- Droite -->
+                    <div class="zone_info_droite">
+                        <div class="wrapper_zone_info">
+                            <div class="info_data"><input name="attr_caractere1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 7px;">
+                            <div class="info_data"><input name="attr_caractere2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 15px;">
+                            <div class="info_data"><input name="attr_caractere3" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CARACTÈRE ET PERSONNALITÉ</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 25px;">                    
+                            <div class="info_data"><input name="attr_croyance1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 25px;">
+                            <div class="info_data"><input name="attr_croyance2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CROYANCES ET CONVICTIONS</div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-left: 15px;"">
+                            <div class="info_data"><input name="attr_condition1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_condition2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
+                            <div class="info_titre">CONDITION PHYSIQUE</div>
+                        </div>
+                    </div> 
+                    <!-- Centre -->
+                    <div class="zone_info_avatar">
+                        <div class="wrapper_zone_info">
+                            <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
+                            <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
+                            <div class="info_avatar_aude"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_aude1.webp"></div>
+                            <div class="info_avatar_einarth"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_einarth1.webp"></div>
+                            <div class="info_avatar_felix"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_felix1.webp"></div>
+                            <div class="info_avatar_baudoin"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_baudoin1.webp"></div>
+                            <div class="info_avatar_mathilde"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_mathilde1.webp"></div>
+                            <div class="info_avatar_robert"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/token_robert1.webp"></div>
+                            <div class="zone_bouton_avatar"><button type="action" class="button_avatar" name="act_change_avatar"></button></div>
+                        </div>
+                    </div>
+                    <div class="zone_info_background" style="margin-top: 15px;">
+                        <div class="wrapper_zone_info">
+                            <div class="info_titre" style="text-align: center;grid-row: 1;margin-top: -20px;">HISTOIRE PERSONNELLE</div>
+                            <div class="info_data" style="grid-row: 1;"><input name="attr_background1" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background2" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background3" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                        <div class="wrapper_zone_info" style="margin-top: 0px;">
+                            <div class="info_data"><input name="attr_background4" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- CARACTÉRISTIQUES -->
             <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
             <div class="cadre_caracteristiques_reduit">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_caracteristiques_titre"><button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> CARACTÉRISTIQUES</div>
+                    <div class="zone_caracteristiques_titre" style="padding-left: 40px;">CARACTÉRISTIQUES <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
                 </div>
             </div> 
             <div class="cadre_caracteristiques">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_caracteristiques_titre"><button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> CARACTÉRISTIQUES</div>
+                    <div class="zone_caracteristiques_titre" style="padding-left: 40px;">CARACTÉRISTIQUES <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
                 </div>
                 <div class="wrapper_zone_carac">
                     <div class="bloc_pentacle">
@@ -253,7 +349,8 @@
                             <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi" value="0" readonly /></div>
                         </div>
                         <div class="wrapper_zone_derivees">
-                            <div class="derivees_titre">Santé mentale</div>
+                            <div class="derivees_titre"><button type="action" class="button_carac" name="act_roll-sm" style="font-size: 24px;font-family: 'Jim Nightshade';font-weight: normal;
+                            ">Santé mentale</button></div>
                             <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
                             <div class="derivees_sur">sur</div>
                             <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
@@ -296,12 +393,12 @@
             <input type="hidden" name="attr_competence_reduit" class="voir_competence" value="0">
             <div class="cadre_competence_reduit">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_competence_titre">COMPÉTENCES <button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher"><span class="picto">|</span></button></div>
+                    <div class="zone_competence_titre" style="padding-left: 50px;"><button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> COMPÉTENCES</div>
                 </div>
             </div> 
             <div class="cadre_competence">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_competence_titre">COMPÉTENCES <button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher"><span class="picto">|</span></button></div>
+                    <div class="zone_competence_titre" style="padding-left: 50px;"><button type="action" class="button_show" name="act_hide_competence" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> COMPÉTENCES</div>
                 </div>
                 <div class="wrapper_zone_competence"> 
                     <div class="competence_gauche">
@@ -555,13 +652,13 @@
             <input type="hidden" name="attr_armement_reduit" class="voir_armement" value="0">
             <div class="cadre_armement_reduit">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ARMES ET ARMURES</div>
+                    <div class="zone_armement_titre" style="padding-left: 40px;">ARMES ET ARMURES <button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher"><span class="picto">|</span></button></div>
                 </div>
             </div>
             <!-- DEBUT BLOC APRES TITRE --> 
             <div class="cadre_armement">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_armement_titre"><button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> ARMES ET ARMURES</div>
+                    <div class="zone_armement_titre" style="padding-left: 40px;">ARMES ET ARMURES <button type="action" class="button_show" name="act_hide_armement" title="Afficher / Cacher"><span class="picto">|</span></button></div>
                 </div>
                 <div class="wrapper_zone_armement">
                     <div class="bloc_armes">
@@ -989,12 +1086,12 @@
             <input type="hidden" name="attr_inventaire_reduit" class="voir_inventaire" value="0">
             <div class="cadre_inventaire_reduit">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_inventaire_titre">INVENTAIRE <button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                    <div class="zone_inventaire_titre"><button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> INVENTAIRE</div>
                 </div>
             </div>
             <div class="cadre_inventaire">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_inventaire_titre">INVENTAIRE <button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                    <div class="zone_inventaire_titre"><button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> INVENTAIRE</div>
                 </div>
                 <div class="wrapper_bloc_inventaire">
                     <div class="texte_sac"><textarea class="sac" spellcheck="false" name="attr_inventaire"></textarea></div>
@@ -3457,6 +3554,22 @@
 	finishRoll(roll.rollId,computeObj);
 	})
 
+    on('clicked:roll-sm', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Santé mentale}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{sm}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus} = roll.results;
+		const computeObj = {};
+		computeObj.roll = mod.result + stat.result;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+
     on('clicked:hide_info', async (event) => {
 		getAttrs(["info_reduit"], function(values) {
             let info_reduit = parseInt(values["info_reduit"]) || 0;
@@ -3464,6 +3577,17 @@
             else info_reduit = 0;
         setAttrs({
             "info_reduit": info_reduit			
+            });
+        });
+    });
+
+    on('clicked:hide_hero', async (event) => {
+		getAttrs(["hero_reduit"], function(values) {
+            let hero_reduit = parseInt(values["hero_reduit"]) || 0;
+            if (hero_reduit == 0) hero_reduit = 1;
+            else hero_reduit = 0;
+        setAttrs({
+            "hero_reduit": hero_reduit			
             });
         });
     });
