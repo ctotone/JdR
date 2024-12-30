@@ -218,6 +218,7 @@ img.portrait_baudoin {
     padding-left: 5px;
 }
 
+.charsheet input.input_aura,
 .charsheet input.input_carac,
 .charsheet input.input_carac_lock,
 .charsheet input.input_comp,
@@ -238,6 +239,23 @@ img.portrait_baudoin {
   font-size: 20px;
   padding: 0;
   padding-bottom: 6px;
+}
+
+.charsheet input.input_aura {
+  width: 45px !important;
+  height: 45px;
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--white);
+  text-align: center;
+  font-size: 22px;
+  padding: 0;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  font-family: 'Metamorphous';
+  font-weight: bold;
+  border: none;
+  cursor: default;
 }
 
 .charsheet input.input_carac {
@@ -467,6 +485,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.charsheet button[type=action].button_aura::before,
 .charsheet button[type=action].button_texte::before,
 .charsheet button[type=roll].button_texte::before,
 .charsheet button[type=action].button_texte_noir::before,
@@ -487,6 +506,24 @@ input[type="number"] {
 .charsheet button[type=action].button_show::before,
 .charsheet button[type=action].button_avatar::before {
 	content: '';
+}
+
+.charsheet button[type=action].button_aura {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  width: auto !important;
+  height: 29px;
+  border: none;
+  border-radius: 1px;
+  color: var(--black);
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 .charsheet button[type=action].button_avatar {
@@ -614,6 +651,7 @@ input[type="number"] {
   font-weight: bold;
 }
 
+.charsheet button[type=action].button_aura:hover,
 .charsheet button[type=action].button_carac:hover,
 .charsheet button[type=action].button_comp:hover,
 .charsheet button[type=roll].button_comp:hover {
@@ -822,27 +860,30 @@ div.cadre_inventaire_reduit {
 
 .barre_aura {
   grid-column: 10 / 80;
-  grid-row: 1 / 18;
+  grid-row: 4 / 18;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_jauge_simple.webp);
   background-size: 600px 173px;
   background-repeat: no-repeat;
 }
 
 .marqueur_aura {
-  grid-column: 35 / 80;
-  grid-row: 5 / 14;
+  grid-column: 35 / 44;
+  grid-row: 8 / 17;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_marque.webp);
   background-size: 85px 85px;
   background-repeat: no-repeat;
   margin-top: 3px;
   margin-left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ange_aura {
   grid-column: 70 / 80;
   grid-row: 3 / 18;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_ange.webp);
-  background-size: 97px 120px;
+  background-size: 97px 149px;
   background-repeat: no-repeat;
   margin-top: 3px;
   margin-left: 4px;
@@ -850,13 +891,13 @@ div.cadre_inventaire_reduit {
 }
 
 .centre_aura {
-  grid-column: 34 / 80;
+  grid-column: 32 / 80;
   grid-row: 1 / 14;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_centre.webp);
-  background-size: 102px 102px;
+  background-size: 135px 135px;
   background-repeat: no-repeat;
-  margin-top: -42px;
-  margin-left: 4px;
+  margin-top: -61px;
+  margin-left: 8px;
 }
 
 .demon_aura {
@@ -867,6 +908,32 @@ div.cadre_inventaire_reduit {
   background-repeat: no-repeat;
   margin-top: 3px;
   margin-left: -12px;
+}
+
+.obscuritas {
+  grid-column: 6 / 80;
+  grid-row: 1;
+  font-size: 45px;
+  margin-top: -58px;
+  letter-spacing: -1.5px;
+  font-weight: bold;
+}
+
+.aeterna {
+  grid-column: 49 / 80;
+  grid-row: 1;
+  font-size: 45px;
+  margin-top: -58px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+}
+
+.boutton_aura {
+  grid-column: 32 / 47;
+  grid-row: 16 / 22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Zone informations */
@@ -963,12 +1030,12 @@ div.cadre_inventaire_reduit {
 }
 
 .cadre_aura {
-  grid-column: 1 / 83;
+  grid-column: 2 / 83;
   padding: 10px;
   background: transparent;
   border-radius: 90px;
-  margin-top: -22px;
-  margin-bottom: 20px;
+  margin-top: 70px;
+  margin-bottom: -15px;
   background-size: contain;
   background-blend-mode: lighten;
 }

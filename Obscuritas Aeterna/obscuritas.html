@@ -73,20 +73,23 @@
         <div class="wrapper_page_1">
             <input type="hidden" name="attr_page" class="choix_page" value="0">
             <!-- Banniere et titre -->
-            <div class="cadre_titre">
+            <!-- <div class="cadre_titre">
                 <div class="wrapper_titre">
                     <div class="titre_logo"></div>
                     <div class="titre_titre">OBSCURITAS AETERNA</div> 
                 </div>
-            </div>
+            </div> -->
             <!-- AURA -->
             <div class="cadre_aura">
                 <div class="wrapper_zone_personnage">
                     <div class="barre_aura"></div>
                     <div class="centre_aura"></div>
-                    <div class="marqueur_aura"></div>
+                    <div class="marqueur_aura"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
                     <div class="demon_aura"></div>
                     <div class="ange_aura"></div>
+                    <div class="obscuritas">Obscuritas</div>
+                    <div class="aeterna">Aeterna</div>
+                    <div class="boutton_aura"><button type="action" class="button_aura" name="act_roll-aura">AURA</button></div>
                 </div>  
             </div>
                     
@@ -2813,12 +2816,53 @@
         });
     });
 
+    on("change:aura", function() {
+        getAttrs(["aura"], function(values) {
+            let aura = parseInt(values["aura"]) || 0;
+            let valeur_aura = 0; // Par défaut
+            
+            // Attribution de valeur_aura en fonction de l'aura
+            if (aura >= 13 && aura <= 25) {
+                valeur_aura = 1;
+            } else if (aura >= 26 && aura <= 49) {
+                valeur_aura = 2;
+            } else if (aura >= 50) {
+                valeur_aura = 3;
+            } else if (aura <= -13 && aura >= -25) {
+                valeur_aura = -1;
+            } else if (aura <= -26 && aura >= -49) {
+                valeur_aura = -2;
+            } else if (aura <= -50) {
+                valeur_aura = -3;
+            }
     
+            setAttrs({
+                "valeur_aura": valeur_aura
+            });
+        });
+    });    
 
 </script>
 
 <!-- JET DE DÉS -->
 <script type="text/worker">
+    on('clicked:roll-aura', async (event) => {
+		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Aura}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{aura}[Aura]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const {stat,des,mod,malus,malus_blessure} = roll.results;
+		const computeObj = {};
+        const statValue = Math.abs(stat.result); 
+        computeObj.roll = mod.result + statValue;
+        const difference = computeObj.roll - des.result;
+        const degre = Math.floor(Math.abs(difference) / 10);
+        computeObj.degre = degre; 
+        
+        setAttrs({
+            bonus_reussite: degre
+        });
+
+	finishRoll(roll.rollId,computeObj);
+	})
+    
     on('clicked:roll-athletisme-force', async (event) => {
 		const roll = await startRoll("&{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_force}[Compétence]-@{total_armures_malus_athletisme}[Malus Armure]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
