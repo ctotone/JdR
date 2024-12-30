@@ -1,8 +1,9 @@
 <!-- TODO Jauge blessure  -->
 <!-- TODO AURA / ETC  -->
-<!-- TODO Jet roll degats dans tableau des armes  -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
+<input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
 <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
 <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
 <input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
@@ -82,14 +83,35 @@
             <!-- AURA -->
             <div class="cadre_aura">
                 <div class="wrapper_zone_personnage">
+                    <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
                     <div class="barre_aura"></div>
                     <div class="centre_aura"></div>
-                    <div class="marqueur_aura"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
                     <div class="demon_aura"></div>
                     <div class="ange_aura"></div>
                     <div class="obscuritas">Obscuritas</div>
                     <div class="aeterna">Aeterna</div>
                     <div class="boutton_aura"><button type="action" class="button_aura" name="act_roll-aura">AURA</button></div>
+                    <div class="marqueur_aura_0"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_1"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_2"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_3"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_4"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_5"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_6"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_7"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_8"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_9"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_10"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n1"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n2"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n3"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n4"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n5"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n6"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n7"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n8"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n9"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
+                    <div class="marqueur_aura_n10"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
                 </div>  
             </div>
                     
@@ -2819,10 +2841,13 @@
     on("change:aura", function() {
         getAttrs(["aura"], function(values) {
             let aura = parseInt(values["aura"]) || 0;
-            let valeur_aura = 0; // Par défaut
-            
-            // Attribution de valeur_aura en fonction de l'aura
-            if (aura >= 13 && aura <= 25) {
+            let valeur_aura = 0;
+            let niveau_aura = 0;
+    
+            // Calcul de `valeur_aura` selon les plages définies
+            if (aura >= -12 && aura <= 12) {
+                valeur_aura = 0;
+            } else if (aura >= 13 && aura <= 25) {
                 valeur_aura = 1;
             } else if (aura >= 26 && aura <= 49) {
                 valeur_aura = 2;
@@ -2836,11 +2861,16 @@
                 valeur_aura = -3;
             }
     
+            // Calcul de `niveau_aura` avec limitation entre -10 et 10
+            niveau_aura = Math.floor(aura / 5);
+            niveau_aura = Math.max(-10, Math.min(10, niveau_aura)); // Limite la plage entre -10 et 10
+    
             setAttrs({
-                "valeur_aura": valeur_aura
+                "valeur_aura": valeur_aura,
+                "niveau_aura": niveau_aura
             });
         });
-    });    
+    });
 
 </script>
 

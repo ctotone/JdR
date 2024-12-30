@@ -858,25 +858,175 @@ div.cadre_inventaire_reduit {
 
 /* Zone AURA */
 
-.barre_aura {
-  grid-column: 10 / 80;
-  grid-row: 4 / 18;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_jauge_simple.webp);
-  background-size: 600px 173px;
-  background-repeat: no-repeat;
+/* Affichage dynamique marqueur */
+div.marqueur_aura_0,
+div.marqueur_aura_1,
+div.marqueur_aura_2,
+div.marqueur_aura_3,
+div.marqueur_aura_4,
+div.marqueur_aura_5,
+div.marqueur_aura_6,
+div.marqueur_aura_7,
+div.marqueur_aura_8,
+div.marqueur_aura_9,
+div.marqueur_aura_10,
+div.marqueur_aura_n1,
+div.marqueur_aura_n2,
+div.marqueur_aura_n3,
+div.marqueur_aura_n4,
+div.marqueur_aura_n5,
+div.marqueur_aura_n6,
+div.marqueur_aura_n7,
+div.marqueur_aura_n8,
+div.marqueur_aura_n9,
+div.marqueur_aura_n10 {
+  display: none;
 }
 
-.marqueur_aura {
+.charsheet .niveau_aura[value="0"] ~ div.marqueur_aura_0,
+.charsheet .niveau_aura[value="1"] ~ div.marqueur_aura_1,
+.charsheet .niveau_aura[value="2"] ~ div.marqueur_aura_2,
+.charsheet .niveau_aura[value="3"] ~ div.marqueur_aura_3,
+.charsheet .niveau_aura[value="4"] ~ div.marqueur_aura_4,
+.charsheet .niveau_aura[value="5"] ~ div.marqueur_aura_5,
+.charsheet .niveau_aura[value="6"] ~ div.marqueur_aura_6,
+.charsheet .niveau_aura[value="7"] ~ div.marqueur_aura_7,
+.charsheet .niveau_aura[value="8"] ~ div.marqueur_aura_8,
+.charsheet .niveau_aura[value="9"] ~ div.marqueur_aura_9,
+.charsheet .niveau_aura[value="10"] ~ div.marqueur_aura_10,
+.charsheet .niveau_aura[value="-1"] ~ div.marqueur_aura_n1,
+.charsheet .niveau_aura[value="-2"] ~ div.marqueur_aura_n2,
+.charsheet .niveau_aura[value="-3"] ~ div.marqueur_aura_n3,
+.charsheet .niveau_aura[value="-4"] ~ div.marqueur_aura_n4,
+.charsheet .niveau_aura[value="-5"] ~ div.marqueur_aura_n5,
+.charsheet .niveau_aura[value="-6"] ~ div.marqueur_aura_n6,
+.charsheet .niveau_aura[value="-7"] ~ div.marqueur_aura_n7,
+.charsheet .niveau_aura[value="-8"] ~ div.marqueur_aura_n8,
+.charsheet .niveau_aura[value="-9"] ~ div.marqueur_aura_n9,
+.charsheet .niveau_aura[value="-10"] ~ div.marqueur_aura_n10 {
+    display: flex;
+}
+
+.marqueur_aura_0,
+.marqueur_aura_1,
+.marqueur_aura_2,
+.marqueur_aura_3,
+.marqueur_aura_4,
+.marqueur_aura_5,
+.marqueur_aura_6,
+.marqueur_aura_7,
+.marqueur_aura_8,
+.marqueur_aura_9,
+.marqueur_aura_10,
+.marqueur_aura_n1,
+.marqueur_aura_n2,
+.marqueur_aura_n3,
+.marqueur_aura_n4,
+.marqueur_aura_n5,
+.marqueur_aura_n6,
+.marqueur_aura_n7,
+.marqueur_aura_n8,
+.marqueur_aura_n9,
+.marqueur_aura_n10 {
   grid-column: 35 / 44;
   grid-row: 8 / 17;
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_marque.webp);
   background-size: 85px 85px;
   background-repeat: no-repeat;
-  margin-top: 3px;
+  margin-top: 2px;
   margin-left: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.marqueur_aura_1 {
+  grid-column: 38 / 47;
+}
+
+.marqueur_aura_2 {
+  grid-column: 41 / 50;
+}
+
+.marqueur_aura_3 {
+  grid-column: 43 / 52;
+}
+
+.marqueur_aura_4 {
+  grid-column: 45 / 54;
+}
+
+.marqueur_aura_5 {
+  grid-column: 48 / 57;
+}
+
+.marqueur_aura_6 {
+  grid-column: 51 / 60;
+}
+
+.marqueur_aura_7 {
+  grid-column: 53 / 62;
+}
+
+.marqueur_aura_8 {
+  grid-column: 56 / 65;
+}
+
+.marqueur_aura_9 {
+  grid-column: 58 / 67
+}
+
+.marqueur_aura_10 {
+  grid-column: 61 / 70;
+}
+
+.marqueur_aura_n1 {
+  grid-column: 32 / 41;
+}
+
+.marqueur_aura_n2 {
+  grid-column: 29 / 38;
+}
+
+.marqueur_aura_n3 {
+  grid-column: 27 / 36;
+}
+
+.marqueur_aura_n4 {
+  grid-column: 25 / 34;
+}
+
+.marqueur_aura_n5 {
+  grid-column: 22 / 31;
+}
+
+.marqueur_aura_n6 {
+  grid-column: 19 / 28;
+}
+
+.marqueur_aura_n7 {
+  grid-column: 17 / 26;
+}
+
+.marqueur_aura_n8 {
+  grid-column: 14 / 23;
+}
+
+.marqueur_aura_n9 {
+  grid-column: 12 / 21;
+}
+
+.marqueur_aura_n10 {
+  grid-column: 10 / 19;
+}
+
+
+.barre_aura {
+  grid-column: 10 / 80;
+  grid-row: 4 / 18;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas%20Aeterna/images/aura_jauge_1.webp);
+  background-size: 600px 173px;
+  background-repeat: no-repeat;
 }
 
 .ange_aura {
