@@ -222,87 +222,106 @@
             <div class="cadre_hero">
                 <div class="wrapper_zone_personnage">
                     <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
+                    <!-- Info -->
+                    <div class="zone_hero_info">Ce cadre vous permet de mettre à jour vos scores d'Hérésie et d'Héroisme (L'Aura étant elle, automatiquement mise à jour).<br>Chaque palier d'Aura qui aura était atteint fera apparaitre les bonus qui en découlent.</div>
+                    <div class="zone_hero_here_aura_hero">
+                        <div class="wrapper_zone_hero_here_aura_hero">
+                            <!-- Titre -->
+                            <div class="hero_titre_heresie">HÉRÉSIE</div>
+                            <div class="hero_heresie_data">-<input type="number" class="input_aura" name="attr_heresie" value="0" style="border: 1px solid black;color: var(--black);">+</div>
+                            <div class="hero_titre_aura">AURA</div>
+                            <div class="hero_aura_data_habillage">
+                                <input type="number" class="input_aura" name="attr_aura" value="0" style="border: 1px solid black;color: var(--black);">
+                            </div>
+                            <div class="hero_titre_heroisme">HÉROÏSME</div>
+                            <div class="hero_heroisme_data">-<input type="number" class="input_aura" name="attr_heroisme" value="0" style="border: 1px solid black;color: var(--black);">+</div>
+                        </div>
+                    </div>
                     <!-- Gauche -->
-                    <div class="zone_info_gauche">
-                        <div class="wrapper_zone_info">   
-                            <div class="info_data"><input name="attr_character_name" type="text" spellcheck="false" class="input_ligne" /></div>
-                            <div class="info_titre">NOM</div>
-                        </div>
-                        <div class="wrapper_zone_info">
-                            <div class="info_data" style="margin-right: 15px;"><input name="attr_profession" type="text" spellcheck="false" class="input_ligne" /></div>
-                            <div class="info_titre">PROFESSION ET RÔLE</div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-right: 25px;">
-                            <div class="info_data"><input name="attr_apparence1" type="text" spellcheck="false" class="input_ligne" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-right: 25px;">
-                            <div class="info_data"><input name="attr_apparence2" type="text" spellcheck="false" class="input_ligne" /></div>
-                            <div class="info_titre">APPARENCE</div>
-                        </div>
-                        <div class="wrapper_zone_info">
-                            <div class="info_data" style="margin-right: 15px;"><input name="attr_origine1" type="text" spellcheck="false" class="input_ligne" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_origine2" type="text" spellcheck="false" class="input_ligne" /></div>
-                            <div class="info_titre">ORIGINE</div>
+                    <div class="zone_hero_gauche">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="
+                            margin-right: 25px;
+                        ">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="
+                                    font-size: 13px;
+                                    background: black;
+                                    border: 1px solid black;
+                                    border-radius: 5px 5px 0px 0px;
+                                    color: var(--white);
+                                ">
+                                        Conséquences des Points d’Hérésie :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">1 point</div>
+                                    <div class="hero_tableau_effet">• Malus de 20 sur un jet crucial<br>
+                                        • Le personnage subit les dégâts maximum lors d’une attaque</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4">2 Points</div>
+                                    <div class="hero_tableau_effet_4">• Le joueur doit relancer un jet réussi<br>
+                                        • Ajoute un effet de peur ou une vision macabre dans la scène</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">3 Points</div>
+                                    <div class="hero_tableau_effet">• Perte de 20 points de santé mentale<br>
+                                        • Bloque la magie du personnage pour la durée de la scène</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">La possession des ténèbres</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- Droite -->
-                    <div class="zone_info_droite">
-                        <div class="wrapper_zone_info">
-                            <div class="info_data"><input name="attr_caractere1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 7px;">
-                            <div class="info_data"><input name="attr_caractere2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;margin-left: 15px;">
-                            <div class="info_data"><input name="attr_caractere3" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                            <div class="info_titre">CARACTÈRE ET PERSONNALITÉ</div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-left: 25px;">                    
-                            <div class="info_data"><input name="attr_croyance1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-left: 25px;">
-                            <div class="info_data"><input name="attr_croyance2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                            <div class="info_titre">CROYANCES ET CONVICTIONS</div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-left: 15px;"">
-                            <div class="info_data"><input name="attr_condition1" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_condition2" type="text" spellcheck="false" class="input_ligne_droite" /></div>
-                            <div class="info_titre">CONDITION PHYSIQUE</div>
+                    <div class="zone_hero_droite">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="
+                            margin-left: 25px;
+                        ">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="
+                                    font-size: 13px;
+                                    background: black;
+                                    border: 1px solid black;
+                                    border-radius: 5px 5px 0px 0px;
+                                    color: var(--white);
+                                ">
+                                        Conséquences des Points d’Héroïsme :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">1 point</div>
+                                    <div class="hero_tableau_effet">• Bonus de +20 sur un jet<br>
+                                        • Dégâts maximum sur une attaque</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4">2 Points</div>
+                                    <div class="hero_tableau_effet_4">• Relancer un jet échoué<br>
+                                        • Résister à un effet de peur ou d’influence<br>
+                                        • Lancer gratuitement un sort moyen ou faible</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">3 Points</div>
+                                    <div class="hero_tableau_effet">• Récupérer 20 points de santé mentale<br>
+                                        • Lancer gratuitement un sort puissant</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">Révèle le héros en toi !</div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div> 
+                    <!-- Aura centre -->
+                    <div class="zone_hero_aura">
+                        <div class="wrapper_zone_hero">
+                            
                         </div>
                     </div> 
-                    <!-- Centre -->
-                    <div class="zone_info_avatar">
-                        <div class="wrapper_zone_info">
-                            <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
-                            <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
-                            <div class="info_avatar_aude"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_aude1.webp"></div>
-                            <div class="info_avatar_einarth"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_einarth1.webp"></div>
-                            <div class="info_avatar_felix"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_felix1.webp"></div>
-                            <div class="info_avatar_baudoin"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_baudoin1.webp"></div>
-                            <div class="info_avatar_mathilde"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_mathilde1.webp"></div>
-                            <div class="info_avatar_robert"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_robert1.webp"></div>
-                            <div class="zone_bouton_avatar"><button type="action" class="button_avatar" name="act_change_avatar"></button></div>
-                        </div>
-                    </div>
-                    <div class="zone_info_background" style="margin-top: 15px;">
-                        <div class="wrapper_zone_info">
-                            <div class="info_titre" style="text-align: center;grid-row: 1;margin-top: -20px;">HISTOIRE PERSONNELLE</div>
-                            <div class="info_data" style="grid-row: 1;"><input name="attr_background1" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background2" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background3" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                        <div class="wrapper_zone_info" style="margin-top: 0px;">
-                            <div class="info_data"><input name="attr_background4" type="text" spellcheck="false" class="input_ligne" style="text-align: center;"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
