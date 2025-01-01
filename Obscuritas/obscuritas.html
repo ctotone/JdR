@@ -63,6 +63,7 @@
 
 <div class="menu">
     <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
+    <button type="action" name="act_6" class="button6">Hérésie et Héroïsme</button>
     <button type="action" name="act_1" class="button1">Caractéristiques</button>
     <button type="action" name="act_2" class="button2">Compétences</button>
     <button type="action" name="act_3" class="button3">Équipement</button>
@@ -186,12 +187,12 @@
                         <div class="wrapper_zone_info">
                             <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
                             <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
-                            <div class="info_avatar_aude"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_aude1.webp"></div>
-                            <div class="info_avatar_einarth"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_einarth1.webp"></div>
-                            <div class="info_avatar_felix"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_felix1.webp"></div>
-                            <div class="info_avatar_baudoin"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_baudoin1.webp"></div>
-                            <div class="info_avatar_mathilde"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_mathilde1.webp"></div>
-                            <div class="info_avatar_robert"><img class="portrait" src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_robert1.webp"></div>
+                            <div class="info_avatar_aude"></div>
+                            <div class="info_avatar_einarth"></div>
+                            <div class="info_avatar_felix"></div>
+                            <div class="info_avatar_baudoin"></div>
+                            <div class="info_avatar_mathilde"></div>
+                            <div class="info_avatar_robert"></div>
                             <div class="zone_bouton_avatar"><button type="action" class="button_avatar" name="act_change_avatar"></button></div>
                         </div>
                     </div>
@@ -224,18 +225,25 @@
                 <div class="wrapper_zone_personnage">
                     <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
                     <!-- Info -->
-                    <div class="zone_hero_info">Ce cadre vous permet de mettre à jour vos scores d'Hérésie et d'Héroisme (L'Aura étant elle, automatiquement mise à jour).<br>Chaque palier d'Aura qui aura était atteint fera apparaitre les bonus qui en découlent.</div>
+                    <!-- <div class="zone_hero_info">Ce cadre vous permet de mettre à jour vos scores d'Hérésie et d'Héroisme (L'Aura étant elle, automatiquement mise à jour).<br>Chaque palier d'Aura qui aura était atteint fera apparaitre les bonus qui en découlent.</div> -->
                     <div class="zone_hero_here_aura_hero">
                         <div class="wrapper_zone_hero_here_aura_hero">
                             <!-- Titre -->
                             <div class="hero_titre_heresie">HÉRÉSIE</div>
-                            <div class="hero_heresie_data">-<input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #651d17;">+</div>
+                            <div class="hero_heresie_data">
+                                <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #651d17;"><span class="picto">_</span></button>
+                                <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #651d17;">
+                                <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #651d17;"><span class="picto">&</span></button></div>
                             <div class="hero_titre_aura">AURA</div>
                             <div class="hero_aura_data_habillage">
                                 <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
                             </div>
                             <div class="hero_titre_heroisme">HÉROÏSME</div>
-                            <div class="hero_heroisme_data">-<input type="number" class="input_hero_here" name="attr_heroisme" value="0"style="background: #6875a7;">+</div>
+                            <div class="hero_heroisme_data">
+                                <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">_</span></button>
+                                <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #6875a7;">
+                                <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">&</span></button>
+                            </div>
                         </div>
                     </div>
                     <!-- Gauche -->
@@ -246,13 +254,13 @@
                         ">
                                 <div class="wrapper_zone_hero">
                                     <div class="hero_aura_titre_effet" style="
-                                    font-size: 13px;
+                                    font-size: 11px;
                                     background: black;
                                     border: 1px solid black;
                                     border-radius: 5px 5px 0px 0px;
                                     color: var(--white);
                                 ">
-                                        Conséquences des Points d’Hérésie :
+                                        Utilisation des Points d’Hérésie :
                                     </div>
                                 </div>
                                 <div class="wrapper_zone_hero">
@@ -272,7 +280,7 @@
                                 </div>
                                 <div class="wrapper_zone_hero">
                                     <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
-                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">La possession des ténèbres</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;font-weight: bold;font-size: 13px;">La possession des ténèbres</div>
                                 </div>
                             </div>
                         </div>
@@ -285,13 +293,13 @@
                         ">
                                 <div class="wrapper_zone_hero">
                                     <div class="hero_aura_titre_effet" style="
-                                    font-size: 13px;
+                                    font-size: 11px;
                                     background: black;
                                     border: 1px solid black;
                                     border-radius: 5px 5px 0px 0px;
                                     color: var(--white);
                                 ">
-                                        Conséquences des Points d’Héroïsme :
+                                        Utilisation des Points d’Héroïsme :
                                     </div>
                                 </div>
                                 <div class="wrapper_zone_hero">
@@ -312,7 +320,7 @@
                                 </div>
                                 <div class="wrapper_zone_hero">
                                     <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
-                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">Révèle le héros en toi !</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;font-weight: bold;font-size: 13px;">Révèle le héros en toi !</div>
                                 </div>
                             </div>
                         </div>    
@@ -320,8 +328,228 @@
                     <!-- Aura centre -->
                     <div class="zone_hero_aura">
                         <div class="wrapper_zone_hero">
-                            
-                        </div>
+                            <!-- Affichage dynamique tableau des effets aura -->
+                            <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
+                            <!-- Aura neutre -->
+                             <div class="niveau_aura_0">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout" style="color: #00000036;">13 à 25</div>
+                                            <div class="hero_tableau_effet" style="color: #00000036;">• Aura "bonne"<br>
+                                                • Permet d’utiliser certains artefacts bénis</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_7" style="border-bottom: 1px solid black;color: #00000036;">-13 à -25</div>
+                                            <div class="hero_tableau_effet_7" style="border-bottom: 1px solid black;color: #00000036;">• Aura "néfaste"<br>
+                                                • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                                • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura +1 -->
+                             <div class="niveau_aura_1">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">13 à 25</div>
+                                            <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                                • Permet d’utiliser certains artefacts bénis</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout" style="color: #00000036;">26 à 49</div>
+                                            <div class="hero_tableau_effet" style="color: #00000036;">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black;color: #00000036;">50 ou plus</div>
+                                            <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;color: #00000036;">• Le paradis te connaît et te favorise<br>
+                                                • Certains avantages arrivent spontanément en cas de besoin<br>
+                                                • Chance de résurrection en cas de mort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura +2 -->
+                             <div class="niveau_aura_2">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">13 à 25</div>
+                                            <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                                • Permet d’utiliser certains artefacts bénis</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">26 à 49</div>
+                                            <div class="hero_tableau_effet">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black;color: #00000036;">50 ou plus</div>
+                                            <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;color: #00000036;">• Le paradis te connaît et te favorise<br>
+                                                • Certains avantages arrivent spontanément en cas de besoin<br>
+                                                • Chance de résurrection en cas de mort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura +3-->
+                             <div class="niveau_aura_3">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">13 à 25</div>
+                                            <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                                • Permet d’utiliser certains artefacts bénis</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">26 à 49</div>
+                                            <div class="hero_tableau_effet">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black">50 ou plus</div>
+                                            <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;">• Le paradis te connaît et te favorise<br>
+                                                • Certains avantages arrivent spontanément en cas de besoin<br>
+                                                • Chance de résurrection en cas de mort</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura -1 -->
+                             <div class="niveau_aura_m1">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_7">-13 à -25</div>
+                                            <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                                • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                                • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4" style="color: #00000036;">-26 à -49</div>
+                                            <div class="hero_tableau_effet_4" style="color: #00000036;">• Mort instantanée en arrivant à 0 points de vie<br>
+                                                • L’âme est attendue en enfer<br>
+                                                • Obtient une résistance aux malédictions et sorts<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout" style="border-bottom: 1px solid black;color: #00000036;">-50 ou moins</div>
+                                            <div class="hero_tableau_effet" style="border-bottom: 1px solid black;color: #00000036;">• Les enfers te connaissent et les démons te recherchent<br>
+                                                • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura -2 -->
+                             <div class="niveau_aura_m2">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_7">-13 à -25</div>
+                                            <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                                • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                                • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4">-26 à -49</div>
+                                            <div class="hero_tableau_effet_4">• Mort instantanée en arrivant à 0 points de vie<br>
+                                                • L’âme est attendue en enfer<br>
+                                                • Obtient une résistance aux malédictions et sorts<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout" style="border-bottom: 1px solid black;color: #00000036;">-50 ou moins</div>
+                                            <div class="hero_tableau_effet" style="border-bottom: 1px solid black;color: #00000036;">• Les enfers te connaissent et les démons te recherchent<br>
+                                                • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aura neutre -3-->
+                             <div class="niveau_aura_m3">
+                                <div class="wrapper_zone_hero">
+                                    <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                                Effet de l'aura :
+                                            </div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout">-12 à 12</div>
+                                            <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_7">-13 à -25</div>
+                                            <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                                • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                                • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout_4">-26 à -49</div>
+                                            <div class="hero_tableau_effet_4">• Mort instantanée en arrivant à 0 points de vie<br>
+                                                • L’âme est attendue en enfer<br>
+                                                • Obtient une résistance aux malédictions et sorts<br></div>
+                                        </div>
+                                        <div class="wrapper_zone_hero">
+                                            <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">-50 ou moins</div>
+                                            <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">• Les enfers te connaissent et les démons te recherchent<br>
+                                                • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
                     </div> 
                 </div>
             </div>
@@ -1120,6 +1348,341 @@
                 </div>
             </div>   
         </div> 
+    </div>
+</div>
+
+<div class="page_aura">
+    <div class="cadre_hero" style="display:block;">
+        <div class="wrapper_zone_personnage">
+            <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
+            <!-- Info -->
+            <!-- <div class="zone_hero_info">Ce cadre vous permet de mettre à jour vos scores d'Hérésie et d'Héroisme (L'Aura étant elle, automatiquement mise à jour).<br>Chaque palier d'Aura qui aura était atteint fera apparaitre les bonus qui en découlent.</div> -->
+            <div class="zone_hero_here_aura_hero">
+                <div class="wrapper_zone_hero_here_aura_hero">
+                    <!-- Titre -->
+                    <div class="hero_titre_heresie">HÉRÉSIE</div>
+                    <div class="hero_heresie_data">
+                        <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #651d17;"><span class="picto">_</span></button>
+                        <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #651d17;">
+                        <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #651d17;"><span class="picto">&</span></button></div>
+                    <div class="hero_titre_aura">AURA</div>
+                    <div class="hero_aura_data_habillage">
+                        <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
+                    </div>
+                    <div class="hero_titre_heroisme">HÉROÏSME</div>
+                    <div class="hero_heroisme_data">
+                        <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">_</span></button>
+                        <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #6875a7;">
+                        <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">&</span></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Gauche -->
+            <div class="zone_hero_gauche">
+                <div class="wrapper_zone_hero">
+                    <div class="habillage_tableau" style="
+                    margin-right: 25px;
+                ">
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_aura_titre_effet" style="
+                            font-size: 11px;
+                            background: black;
+                            border: 1px solid black;
+                            border-radius: 5px 5px 0px 0px;
+                            color: var(--white);
+                        ">
+                                Utilisation des Points d’Hérésie :
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout">1 point</div>
+                            <div class="hero_tableau_effet">• Malus de 20 sur un jet crucial<br>
+                                • Le personnage subit les dégâts maximum lors d’une attaque</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout_4">2 Points</div>
+                            <div class="hero_tableau_effet_4">• Le joueur doit relancer un jet réussi<br>
+                                • Ajoute un effet de peur ou une vision macabre dans la scène</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout">3 Points</div>
+                            <div class="hero_tableau_effet">• Perte de 20 points de santé mentale<br>
+                                • Bloque la magie du personnage pour la durée de la scène</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
+                            <div class="hero_tableau_effet" style="border-bottom: 1px solid black;font-weight: bold;font-size: 13px;">La possession des ténèbres</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Droite -->
+            <div class="zone_hero_droite">
+                <div class="wrapper_zone_hero">
+                    <div class="habillage_tableau" style="
+                    margin-left: 25px;
+                ">
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_aura_titre_effet" style="
+                            font-size: 11px;
+                            background: black;
+                            border: 1px solid black;
+                            border-radius: 5px 5px 0px 0px;
+                            color: var(--white);
+                        ">
+                                Utilisation des Points d’Héroïsme :
+                            </div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout">1 point</div>
+                            <div class="hero_tableau_effet">• Bonus de +20 sur un jet<br>
+                                • Dégâts maximum sur une attaque</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout_4">2 Points</div>
+                            <div class="hero_tableau_effet_4">• Relancer un jet échoué<br>
+                                • Résister à un effet de peur ou d’influence<br>
+                                • Lancer gratuitement un sort moyen ou faible</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout">3 Points</div>
+                            <div class="hero_tableau_effet">• Récupérer 20 points de santé mentale<br>
+                                • Lancer gratuitement un sort puissant</div>
+                        </div>
+                        <div class="wrapper_zone_hero">
+                            <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">7 Points</div>
+                            <div class="hero_tableau_effet" style="border-bottom: 1px solid black;font-weight: bold;font-size: 13px;">Révèle le héros en toi !</div>
+                        </div>
+                    </div>
+                </div>    
+            </div> 
+            <!-- Aura centre -->
+            <div class="zone_hero_aura">
+                <div class="wrapper_zone_hero">
+                    <!-- Affichage dynamique tableau des effets aura -->
+                    <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
+                    <!-- Aura neutre -->
+                     <div class="niveau_aura_0">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="color: #00000036;">13 à 25</div>
+                                    <div class="hero_tableau_effet" style="color: #00000036;">• Aura "bonne"<br>
+                                        • Permet d’utiliser certains artefacts bénis</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_7" style="border-bottom: 1px solid black;color: #00000036;">-13 à -25</div>
+                                    <div class="hero_tableau_effet_7" style="border-bottom: 1px solid black;color: #00000036;">• Aura "néfaste"<br>
+                                        • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                        • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura +1 -->
+                     <div class="niveau_aura_1">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">13 à 25</div>
+                                    <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                        • Permet d’utiliser certains artefacts bénis</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="color: #00000036;">26 à 49</div>
+                                    <div class="hero_tableau_effet" style="color: #00000036;">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black;color: #00000036;">50 ou plus</div>
+                                    <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;color: #00000036;">• Le paradis te connaît et te favorise<br>
+                                        • Certains avantages arrivent spontanément en cas de besoin<br>
+                                        • Chance de résurrection en cas de mort</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura +2 -->
+                     <div class="niveau_aura_2">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">13 à 25</div>
+                                    <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                        • Permet d’utiliser certains artefacts bénis</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">26 à 49</div>
+                                    <div class="hero_tableau_effet">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black;color: #00000036;">50 ou plus</div>
+                                    <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;color: #00000036;">• Le paradis te connaît et te favorise<br>
+                                        • Certains avantages arrivent spontanément en cas de besoin<br>
+                                        • Chance de résurrection en cas de mort</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura +3-->
+                     <div class="niveau_aura_3">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">13 à 25</div>
+                                    <div class="hero_tableau_effet">• Aura "bonne"<br>
+                                        • Permet d’utiliser certains artefacts bénis</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">26 à 49</div>
+                                    <div class="hero_tableau_effet">• Le personnage est automatiquement stabilisé en arrivant à 0 points de vie</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4" style="border-bottom: 1px solid black">50 ou plus</div>
+                                    <div class="hero_tableau_effet_4" style="border-bottom: 1px solid black;">• Le paradis te connaît et te favorise<br>
+                                        • Certains avantages arrivent spontanément en cas de besoin<br>
+                                        • Chance de résurrection en cas de mort</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura -1 -->
+                     <div class="niveau_aura_m1">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_7">-13 à -25</div>
+                                    <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                        • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                        • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4" style="color: #00000036;">-26 à -49</div>
+                                    <div class="hero_tableau_effet_4" style="color: #00000036;">• Mort instantanée en arrivant à 0 points de vie<br>
+                                        • L’âme est attendue en enfer<br>
+                                        • Obtient une résistance aux malédictions et sorts<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="border-bottom: 1px solid black;color: #00000036;">-50 ou moins</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;color: #00000036;">• Les enfers te connaissent et les démons te recherchent<br>
+                                        • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura -2 -->
+                     <div class="niveau_aura_m2">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_7">-13 à -25</div>
+                                    <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                        • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                        • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4">-26 à -49</div>
+                                    <div class="hero_tableau_effet_4">• Mort instantanée en arrivant à 0 points de vie<br>
+                                        • L’âme est attendue en enfer<br>
+                                        • Obtient une résistance aux malédictions et sorts<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="border-bottom: 1px solid black;color: #00000036;">-50 ou moins</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;color: #00000036;">• Les enfers te connaissent et les démons te recherchent<br>
+                                        • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Aura neutre -3-->
+                     <div class="niveau_aura_m3">
+                        <div class="wrapper_zone_hero">
+                            <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
+                                        Effet de l'aura :
+                                    </div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout">-12 à 12</div>
+                                    <div class="hero_tableau_effet">• Aucun effet particulier</div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_7">-13 à -25</div>
+                                    <div class="hero_tableau_effet_7">• Aura "néfaste"<br>
+                                        • Impossible d’utiliser certains artefacts bénis (même en mode héroïque)<br>
+                                        • Peut subir des dégâts supplémentaires sur les attaques bénies<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout_4">-26 à -49</div>
+                                    <div class="hero_tableau_effet_4">• Mort instantanée en arrivant à 0 points de vie<br>
+                                        • L’âme est attendue en enfer<br>
+                                        • Obtient une résistance aux malédictions et sorts<br></div>
+                                </div>
+                                <div class="wrapper_zone_hero">
+                                    <div class="hero_tableau_cout" style="border-bottom: 1px solid black;">-50 ou moins</div>
+                                    <div class="hero_tableau_effet" style="border-bottom: 1px solid black;">• Les enfers te connaissent et les démons te recherchent<br>
+                                        • En cas de mort, possibilité de revenir sous une autre forme (au choix du MJ)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div>
     </div>
 </div>
 
@@ -2989,6 +3552,66 @@
             });
         });
     });
+
+    on('clicked:heresie_moins', function() {
+        getAttrs(["heresie"], function(values) {
+            let heresie = parseInt(values["heresie"]) || 0;
+            let heresie_mod = heresie - 1;
+
+            if (heresie_mod < 0) {
+                heresie_mod = 0;
+            }
+
+            setAttrs({
+                "heresie": heresie_mod
+            });
+        });
+    });
+
+    on('clicked:heresie_plus', function() {
+        getAttrs(["heresie", "aura"], function(values) {
+            let heresie = parseInt(values["heresie"]) || 0;
+            let aura = parseInt(values["aura"]) || 0;
+            let aura_mod = aura -1;
+            let heresie_mod = heresie + 1;
+
+            setAttrs({
+                "heresie": heresie_mod,
+                "aura": aura_mod
+            });
+        });
+    });
+
+    on('clicked:heroisme_moins', function() {
+        getAttrs(["heroisme"], function(values) {
+            let heroisme = parseInt(values["heroisme"]) || 0;
+            let heroisme_mod = heroisme - 1;
+
+            if (heroisme_mod < 0) {
+                heroisme_mod = 0;
+            }
+
+            setAttrs({
+                "heroisme": heroisme_mod
+            });
+        });
+    });
+
+    on('clicked:heroisme_plus', function() {
+        getAttrs(["heroisme", "aura"], function(values) {
+            let heroisme = parseInt(values["heroisme"]) || 0;
+            let aura = parseInt(values["aura"]) || 0;
+            let aura_mod = aura +1;
+            let heroisme_mod = heroisme + 1;
+
+            setAttrs({
+                "heroisme": heroisme_mod,
+                "aura": aura_mod
+            });
+        });
+    });
+    
+
 
 </script>
 

@@ -507,6 +507,7 @@ input[type="number"] {
 }
 
 .charsheet button[type=action].button_aura::before,
+.charsheet button[type=action].button_here_hero::before,
 .charsheet button[type=action].button_texte::before,
 .charsheet button[type=roll].button_texte::before,
 .charsheet button[type=action].button_texte_noir::before,
@@ -555,6 +556,14 @@ input[type="number"] {
   background: none;
   border-radius: 120px;
   border: none;
+}
+
+.charsheet button[type=action].button_here_hero {
+  color: var(--white);
+  border: 2px solid black;
+  border-radius: 30px;
+  height: 25px;
+  width: 15px;
 }
 
 .charsheet button[type=action].button_texte,
@@ -679,6 +688,10 @@ input[type="number"] {
   color: var(--hover_bouton);
 }
 
+.charsheet button[type=roll].button_here_hero:hover {
+  color: var(--hover_bouton);
+}
+
 .charsheet button[type=action].button0:hover,
 .charsheet button[type=action].button1:hover,
 .charsheet button[type=action].button2:hover,
@@ -725,6 +738,7 @@ input[type="number"] {
 }
 
 .page_complete,
+.page_aura,
 .page_caracteristiques,
 .page_competences,
 .page_equipement,
@@ -741,6 +755,13 @@ input[type="number"] {
   margin-left: -14px;
   box-shadow: var(--box_shadow_page);
   margin-bottom: 20px;
+}
+
+.page_aura {
+  height: 800px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
 }
 
 .page_caracteristiques {
@@ -785,7 +806,8 @@ div.page_caracteristiques,
 div.page_competences,
 div.page_equipement,
 div.page_note,
-div.page_config {
+div.page_config,
+div.page_aura {
     display: none;
 }
 
@@ -794,7 +816,8 @@ div.page_config {
 .charsheet .choix_page[value="2"] ~ div.page_competences,
 .charsheet .choix_page[value="3"] ~ div.page_equipement,
 .charsheet .choix_page[value="4"] ~ div.page_note,
-.charsheet .choix_page[value="5"] ~ div.page_config {
+.charsheet .choix_page[value="5"] ~ div.page_config,
+.charsheet .choix_page[value="6"] ~ div.page_aura {
     display: block;
 }
 
@@ -816,7 +839,7 @@ div.info_avatar_robert {
 .charsheet .choix_avatar[value="4"] ~ div.info_avatar_baudoin,
 .charsheet .choix_avatar[value="5"] ~ div.info_avatar_mathilde,
 .charsheet .choix_avatar[value="6"] ~ div.info_avatar_robert {
-    display: block;
+    display: flex;
 }
 
 /* Reduction des cadres */
@@ -1179,13 +1202,46 @@ div.marqueur_aura_n10 {
 .info_avatar_robert,
 .zone_bouton_avatar {
   display: flex;
-  align-content: center;
   vertical-align: middle;
   align-items: center;
-  width: auto;
-  height: auto;
-  grid-row: 1/11;
-  grid-column: 1/4;
+  grid-row: 1 / 11;
+  grid-column: 1 / 4;
+  height: 170px;
+  width: 170px;
+  margin-top: 18px;
+  border-radius: 90px;
+}
+
+.info_avatar_aude {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_aude1.webp);
+  background-size: 170px 170px;
+}
+
+
+.info_avatar_einarth {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_einarth1.webp);
+  background-size: 170px 170px;
+}
+
+
+.info_avatar_felix {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_felix1.webp);
+  background-size: 170px 170px;
+}
+
+.info_avatar_baudoin {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_baudoin1.webp);
+  background-size: 170px 170px;
+}
+
+.info_avatar_mathilde {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_mathilde1.webp);
+  background-size: 170px 170px;
+}
+
+.info_avatar_robert {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/token_robert1.webp);
+  background-size: 170px 170px;
 }
 
 
@@ -1371,7 +1427,7 @@ div.marqueur_aura_n10 {
 }
 
 .zone_info_gauche {
-  grid-column: 1 / 32;
+  grid-column: 1 / 31;
   grid-row: 4 / 27;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1409,6 +1465,30 @@ div.marqueur_aura_n10 {
 
 
 /* HEROISME */
+/* Affichage dynamique marqueur */
+div.niveau_aura_0,
+div.niveau_aura_1,
+div.niveau_aura_2,
+div.niveau_aura_3,
+div.niveau_aura_m1,
+div.niveau_aura_m2,
+div.niveau_aura_m3 {
+  display: none;
+  grid-column: 1 / 4;
+  grid-row: 1 / 25;
+}
+
+.charsheet .valeur_aura[value="0"] ~ div.niveau_aura_0,
+.charsheet .valeur_aura[value="1"] ~ div.niveau_aura_1,
+.charsheet .valeur_aura[value="2"] ~ div.niveau_aura_2,
+.charsheet .valeur_aura[value="3"] ~ div.niveau_aura_3,
+.charsheet .valeur_aura[value="-1"] ~ div.niveau_aura_m1,
+.charsheet .valeur_aura[value="-2"] ~ div.niveau_aura_m2,
+.charsheet .valeur_aura[value="-3"] ~ div.niveau_aura_m3 {
+    display: flex;
+}
+
+
 .zone_hero_info {
   grid-column: 2 / 43;
   grid-row: 3 / 12;
@@ -1421,14 +1501,14 @@ div.marqueur_aura_n10 {
 
 .zone_hero_here_aura_hero {
   grid-column: 1 / 80;
-  grid-row: 15 / 37;
+  grid-row: 8 / 31;
   background-image: var(--background_page);
   background-size: cover;
   box-shadow: 0px 0px 12px 6px #000000c4;
   margin-left: 50px;
   margin-right: 50px;
   border-radius: 30px;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/background_aura_zone.webp);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/background_zone_aura_couleur.webp);
   background-size: 697px 460px;
   background-position: -2px -193px;
   border: 2px solid black;
@@ -1514,8 +1594,8 @@ div.marqueur_aura_n10 {
 }
 
 .zone_hero_gauche {
-  grid-column: 1 / 32;
-  grid-row: 30 / 80;
+  grid-column: 1 / 28;
+  grid-row: 26 / 76;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -1523,8 +1603,8 @@ div.marqueur_aura_n10 {
 }
 
 .zone_hero_aura {
-  grid-column: 34 / 47;
-  grid-row: 30 / 80;
+  grid-column: 25/54;
+  grid-row: 26 / 76;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -1532,8 +1612,8 @@ div.marqueur_aura_n10 {
 }
 
 .zone_hero_droite {
-  grid-column: 49 / 80;
-  grid-row: 30 / 80;
+  grid-column: 53 / 80;
+  grid-row: 26 / 76;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -1542,7 +1622,7 @@ div.marqueur_aura_n10 {
 
 .wrapper_zone_hero {
   display: grid;
-  grid-template-columns: 30% 0% 70%;
+  grid-template-columns: 27% 0% 73%;
   grid-auto-rows: 20px;
 }
 
@@ -1576,13 +1656,14 @@ div.marqueur_aura_n10 {
 }
 
 .hero_tableau_cout,
-.hero_tableau_cout_4 {
+.hero_tableau_cout_4,
+.hero_tableau_cout_7 {
   grid-column: 1;
   grid-row: 1/5;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 16px;
   padding: 5px;
   border: 1px solid black;
@@ -1591,23 +1672,20 @@ div.marqueur_aura_n10 {
 
 .hero_tableau_cout_4 {
   grid-row: 1/6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  line-height: 16px;
-  padding: 5px;
-  border: 1px solid black;
-  border-bottom: none;
+}
+
+.hero_tableau_cout_7 {
+  grid-row: 1 / 10;
 }
 
 .hero_tableau_effet,
-.hero_tableau_effet_4 {
+.hero_tableau_effet_4,
+.hero_tableau_effet_7 {
   grid-column: 3;
   grid-row: 1 / 5;
   display: flex;
   justify-content: center;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 16px;
   padding: 5px;
   align-items: center;
@@ -1620,12 +1698,18 @@ div.marqueur_aura_n10 {
   grid-row: 1 / 6;
 }
 
+.hero_tableau_effet_7 {
+  grid-row: 1 / 10;
+}
+
 .habillage_tableau {
   grid-column: 1 / 4;
   grid-row: 6 / 25;
   background-image: var(--background_page);
   background-size: cover;
   box-shadow: 1px 2px 7px 1px #000000c4;
+  border: 1px solid black;
+  border-radius: 10px 10px 0px 0px;
 }
 
 
@@ -1639,7 +1723,7 @@ div.marqueur_aura_n10 {
 .bloc_pentacle {
   grid-column: 1 / 91;
   grid-row: 1 / 9;
-  margin-top: 0px;
+  margin-top: 25px;
   margin-bottom: 30px;
   margin-left: 0px;
   margin-right: 0px;
@@ -1823,10 +1907,10 @@ div.marqueur_aura_n10 {
   grid-column: 82;
   grid-row: 1;
   width: 115px;
-  height: 498px;
-  margin-top: -18px;
+  height: 541px;
+  margin-top: -41px;
   margin-bottom: 0px;
-  margin-left: 0px;
+  margin-left: -3px;
   margin-right: 0px;
   background-image: var(--separateur_vertical_carac);
   background-size: cover;
