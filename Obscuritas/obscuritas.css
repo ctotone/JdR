@@ -153,10 +153,11 @@ img.portrait_baudoin {
   color: var(--text_input_info);
   font-family: "Playfair", serif;
   padding: 10px;
+  padding-left: 51px;
   overflow: hidden;
   background-image: var(--fond_zone_note);
   background-size: auto 13.7px;
-  width: 81%;
+  width: 91%;
   height: 92%;
 }
 
@@ -2887,19 +2888,19 @@ div.illustration_bouclier_aucun {
 
 .wrapper_bloc_inventaire {
   display: grid;
-  grid-template-columns: 7% 6% 73% 17% 0%;
+  grid-template-columns: 17% 0% 73% 6%;
   grid-auto-rows: 10px;
   margin-top: 17px;
   margin-bottom: 20px;
 }
 
 .illustration_sac {
-  grid-column: 4;
+  grid-column: 1;
   grid-row: 1 / 13;
   background-image: var(--dessin_sac);
   background-size: 132px 207px;
   margin-top: -72px;
-  margin-left: -37px;
+  margin-left: -118px;
   background-repeat: no-repeat;
 }
 
@@ -2915,12 +2916,12 @@ div.illustration_bouclier_aucun {
 }
 
 .illustration_bourse {
-  grid-column: 1 / 3;
-  grid-row: 11 / 23;
+  grid-column: 4;
+  grid-row: 12 / 24;
   background-image: var(--dessin_bourse);
   background-size: 122px 119px;
   background-repeat: no-repeat;
-  margin-left: -19px;
+  margin-left: -75px;
   transform: rotate(-21.5deg);
   overflow: visible;
   display: flex;
@@ -2975,8 +2976,26 @@ div.illustration_bouclier_aucun {
   display: grid;
   grid-template-columns: 1% 30% 0% 18% 2% 30% 0% 18% 0%;
   grid-auto-rows: 10px;
-  margin-top: 17px;
-  margin-bottom: 20px;
+  margin-top: -1px;
+}
+
+.wrapper_config_1 {
+  display: grid;
+  grid-template-columns: 1% 30% 0% 18% 0% 30% 0% 18% 0%;
+  grid-auto-rows: 10px;
+  margin-top: -1px;
+}
+
+.config_titre_tableau {
+  grid-column: 2 / 10;
+  grid-row: 1 / 5;
+  padding: 5px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: var(--white);
 }
 
 .config_titre1 {

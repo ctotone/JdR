@@ -1,6 +1,3 @@
-<!-- TODO Indicateur heroisme / heresie  -->
- <!-- TODO Basculer aura en readonly et inverser image de fond zone aurz -->
-
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
@@ -28,6 +25,9 @@
 <input type="hidden" name="attr_total_armures_malus_athletisme" value="0">
 <input type="hidden" name="attr_total_armures_malus_combat_pugilat" value="0">
 <input type="hidden" name="attr_total_armures_malus_combat_distance" value="0">
+<input type="hidden" name="attr_total_armures_malus_discretion" value="0">
+<input type="hidden" name="attr_total_armures_malus_esquive" value="0">
+<input type="hidden" name="attr_total_boucliers_malus_discretion" value="0">
 <input type="hidden" name="attr_total_boucliers_malus_esquive" value="0">
 <input type="hidden" name="attr_bonus_force" value="0">
 <input type="hidden" name="attr_bonus_dexterite" value="0">
@@ -1354,7 +1354,7 @@
 <div class="page_aura">
     <div class="cadre_hero" style="display:block;">
         <div class="wrapper_zone_personnage">
-            <div class="zone_hero_titre" style="padding-left: 10px;"><button type="action" class="button_show" name="act_hide_hero" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button> HÉROÏSME et HÉRÉSIE</div>
+            <div class="zone_hero_titre" style="padding-left: 40px;"> HÉROÏSME et HÉRÉSIE</div>
             <!-- Info -->
             <!-- <div class="zone_hero_info">Ce cadre vous permet de mettre à jour vos scores d'Hérésie et d'Héroisme (L'Aura étant elle, automatiquement mise à jour).<br>Chaque palier d'Aura qui aura était atteint fera apparaitre les bonus qui en découlent.</div> -->
             <div class="zone_hero_here_aura_hero">
@@ -1724,7 +1724,8 @@
                         <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi" value="0" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
-                        <div class="derivees_titre">Santé mentale</div>
+                        <div class="derivees_titre"><button type="action" class="button_carac" name="act_roll-sm" style="font-size: 24px;font-family: 'Jim Nightshade';font-weight: normal;
+                            ">Santé mentale</button></div>
                         <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
                         <div class="derivees_sur">sur</div>
                         <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
@@ -2479,6 +2480,31 @@
         <div class="config_titre2">Points de compétences attribués : </div>
         <div class="config_data2"><input type="number" class="input_config" name="attr_points_comp" readonly /> / 300</div>
     </div>
+
+    <div class="wrapper_config_1" style="margin-top: 35px;">
+        <div class="config_titre_tableau">Suivi des points d'hérésie des joueurs</div>
+    </div>
+
+    <div class="wrapper_config_1">
+        <div class="config_titre1"><input type="text" class="input_ligne" name="attr_joueur_1" placeholder="Nom du personnage..."></div>
+        <div class="config_data1"><input type="number" class="input_config" name="attr_heresie_joueur_1" placeholder="0"></div>
+        <div class="config_titre2"><input type="text" class="input_ligne" name="attr_joueur_2" placeholder="Nom du personnage..."></div>
+        <div class="config_data2"><input type="number" class="input_config" name="attr_heresie_joueur_2" placeholder="0"></div>
+    </div>
+
+    <div class="wrapper_config_1">
+        <div class="config_titre1"><input type="text" class="input_ligne" name="attr_joueur_3" placeholder="Nom du personnage..."></div>
+        <div class="config_data1"><input type="number" class="input_config" name="attr_heresie_joueur_3" placeholder="0"></div>
+        <div class="config_titre2"><input type="text" class="input_ligne" name="attr_joueur_4" placeholder="Nom du personnage..."></div>
+        <div class="config_data2"><input type="number" class="input_config" name="attr_heresie_joueur_4" placeholder="0"></div>
+    </div>
+
+    <div class="wrapper_config_1">
+        <div class="config_titre1"><input type="text" class="input_ligne" name="attr_joueur_5" placeholder="Nom du personnage..."></div>
+        <div class="config_data1"><input type="number" class="input_config" name="attr_heresie_joueur_5" placeholder="0"></div>
+        <div class="config_titre2"><input type="text" class="input_ligne" name="attr_joueur_6" placeholder="Nom du personnage..."></div>
+        <div class="config_data2"><input type="number" class="input_config" name="attr_heresie_joueur_6" placeholder="0"></div>
+    </div>
 </div>
 
 
@@ -2564,7 +2590,7 @@
 		
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
 					{{title}} <span style="font-size: 17px;">({{stat}})</span>
-					<br><span style="font-size: 16px; font-weight: normal;">{{subheader}}</span>
+					<br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
 				</div>
 				<div class="sheet-separateur"></div>
                 {{#rollGreater() des 95}}
@@ -3623,6 +3649,7 @@
 		const computeObj = {};
         const statValue = Math.abs(stat.result); 
         computeObj.roll = mod.result + statValue;
+
         const difference = computeObj.roll - des.result;
         const degre = Math.floor(Math.abs(difference) / 10);
         computeObj.degre = degre; 
@@ -3641,9 +3668,12 @@
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
 
         // Calcul du degré de réussite ou d'échec
-        const difference = computeObj.roll - des.result; // Différence entre la statistique ajustée et le jet de dés
-        const degre = Math.floor(Math.abs(difference) / 10); // Un degré par palier de 10
-        computeObj.degre = degre; 
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result; // Différence entre la statistique ajustée et le jet de dés
+            degre = Math.floor(difference / 10); // Un degré par palier de 10
+        }
+        computeObj.degre = degre;
 
         // Stocker la valeur du degré dans la fiche avec setAttrs
         setAttrs({
@@ -3658,9 +3688,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -3674,9 +3708,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3690,9 +3728,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3706,9 +3748,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3722,9 +3768,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3738,9 +3788,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3754,9 +3808,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3770,9 +3828,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3786,9 +3848,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3802,9 +3868,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3818,9 +3888,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3834,9 +3908,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3850,9 +3928,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3866,9 +3948,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3882,9 +3968,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3898,9 +3988,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3914,9 +4008,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3930,9 +4028,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3946,9 +4048,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3962,9 +4068,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3978,9 +4088,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -3994,9 +4108,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4010,9 +4128,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4026,9 +4148,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4042,9 +4168,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4058,9 +4188,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4074,9 +4208,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4090,9 +4228,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
         
         setAttrs({
             bonus_reussite: degre
@@ -4106,9 +4248,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4122,9 +4268,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4138,9 +4288,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4154,9 +4308,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4170,9 +4328,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4186,9 +4348,13 @@
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
@@ -4202,9 +4368,13 @@
 		const {stat,des,mod,malus} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result;
-        const difference = computeObj.roll - des.result;
-        const degre = Math.floor(Math.abs(difference) / 10);
-        computeObj.degre = degre; 
+
+        let degre = 0;
+        if (des.result <= computeObj.roll) {
+            const difference = computeObj.roll - des.result;
+            degre = Math.floor(difference / 10);
+        }
+        computeObj.degre = degre;
 
         setAttrs({
             bonus_reussite: degre
