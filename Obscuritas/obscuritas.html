@@ -1,6 +1,7 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
+<input type="hidden" name="attr_niveau_sm" class="niveau_sm" value="0">
 <input type="hidden" name="attr_heroisme" class="points_heroisme" value="0">
 <input type="hidden" name="attr_heresie" class="points_heresie" value="0">
 <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
@@ -29,6 +30,11 @@
 <input type="hidden" name="attr_total_armures_malus_esquive" value="0">
 <input type="hidden" name="attr_total_boucliers_malus_discretion" value="0">
 <input type="hidden" name="attr_total_boucliers_malus_esquive" value="0">
+<input type="hidden" name="attr_sm" value="0">
+<input type="hidden" name="attr_alerte_sm_50" value="0">
+<input type="hidden" name="attr_alerte_sm_25" value="0">
+<input type="hidden" name="attr_alerte_sm_75" value="0">
+<input type="hidden" name="attr_popup_sm" class="popup_sm" value="0">
 <input type="hidden" name="attr_bonus_force" value="0">
 <input type="hidden" name="attr_bonus_dexterite" value="0">
 <input type="hidden" name="attr_bonus_reussite" value="0">
@@ -70,6 +76,17 @@
     <button type="action" name="act_4" class="button4">Notes</button>
     <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
 </div>
+
+<div class="sm_75">
+    Votre Santé Mentale vient de repasser au dessus de 75%.<br><br>
+Aviser le MJ de cela puis fermer cette popup...
+<button type="action" class="button_carac" name="act_fermer-popup" style="font-family: 'Pictos';font-weight: normal;color: var(--white);font-size: 32px;line-height: 55px;height: 30px;margin-top: -340px;margin-left: 0px;margin-right: -7px;">*</button></div>
+<div class="sm_50">Votre Santé Mentale se trouve entre 50% et 26%.<br><br>
+Aviser le MJ de cela puis fermer cette popup...
+<button type="action" class="button_carac" name="act_fermer-popup" style="font-family: 'Pictos';font-weight: normal;color: var(--white);font-size: 32px;line-height: 55px;height: 30px;margin-top: -340px;margin-left: 0px;margin-right: -7px;">*</button></div>
+<div class="sm_25">Votre Santé Mentale vient d'atteindre 25%.<br><br>
+Aviser le MJ de cela puis fermer cette popup...
+<button type="action" class="button_carac" name="act_fermer-popup" style="font-family: 'Pictos';font-weight: normal;color: var(--white);font-size: 32px;line-height: 55px;height: 30px;margin-top: -340px;margin-left: 0px;margin-right: -7px;">*</button></div>
 
 
 <div class="page_complete">
@@ -575,12 +592,18 @@
                             <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme" value="15" min="15" max="99"></div>
                             <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte" value="15" min="15" max="99"></div>
-                            <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force">FORCE</button></div>
-                            <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite">DEXTÉRITÉ</button></div>
-                            <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution">CONSTITUTION</button></div>
-                            <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence">INTELLIGENCE</button></div>
-                            <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme">CHARISME</button></div>
-                            <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte">VOLONTÉ</button></div>
+                            <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force" title="Votre puissance physique
+    (frapper, porter, briser)">FORCE</button></div>
+                            <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite" title="Votre agilité et précision 
+    (esquive, tir, rapidité)">DEXTÉRITÉ</button></div>
+                            <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution" title="Votre endurance et résistance physique
+    (survivre, encaisser)">CONSTITUTION</button></div>
+                            <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence" title="Votre savoir et capacité d’analyse
+    (résoudre des énigmes, connaissances)">INTELLIGENCE</button></div>
+                            <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme" title="Votre prestance et talent social
+    (persuader, charmer)">CHARISME</button></div>
+                            <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte" title=" Votre force mentale
+    (résister à la peur, lancer des sorts)">VOLONTÉ</button></div>
                         </div>
                     </div>
                     <div class="caracteristiques_derivees">
@@ -598,7 +621,7 @@
                         </div>
                         <div class="wrapper_zone_derivees">
                             <div class="derivees_titre"><button type="action" class="button_carac" name="act_roll-sm" style="font-size: 24px;font-family: 'Jim Nightshade';font-weight: normal;
-                            ">Santé mentale</button></div>
+                                " title="Jet de Santé mentale">Santé mentale</button></div>
                             <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
                             <div class="derivees_sur">sur</div>
                             <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
@@ -1708,12 +1731,18 @@
                         <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence" value="15" min="15" max="99"></div>
                         <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme" value="15" min="15" max="99"></div>
                         <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte" value="15" min="15" max="99"></div>
-                        <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force">FORCE</button></div>
-                        <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite">DEXTÉRITÉ</button></div>
-                        <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution">CONSTITUTION</button></div>
-                        <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence">INTELLIGENCE</button></div>
-                        <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme">CHARISME</button></div>
-                        <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte">VOLONTÉ</button></div>
+                        <div class="caracteristiques_force_titre"><button type="action" class="button_carac" name="act_roll-force" title="Votre puissance physique
+(frapper, porter, briser)">FORCE</button></div>
+                        <div class="caracteristiques_dexterite_titre"><button type="action" class="button_carac" name="act_roll-dexterite" title="Votre agilité et précision 
+(esquive, tir, rapidité)">DEXTÉRITÉ</button></div>
+                        <div class="caracteristiques_constitution_titre"><button type="action" class="button_carac" name="act_roll-constitution" title="Votre endurance et résistance physique
+(survivre, encaisser)">CONSTITUTION</button></div>
+                        <div class="caracteristiques_intelligence_titre"><button type="action" class="button_carac" name="act_roll-intelligence" title="Votre savoir et capacité d’analyse
+(résoudre des énigmes, connaissances)">INTELLIGENCE</button></div>
+                        <div class="caracteristiques_charisme_titre"><button type="action" class="button_carac" name="act_roll-charisme" title="Votre prestance et talent social
+(persuader, charmer)">CHARISME</button></div>
+                        <div class="caracteristiques_volonte_titre"><button type="action" class="button_carac" name="act_roll-volonte" title=" Votre force mentale
+(résister à la peur, lancer des sorts)">VOLONTÉ</button></div>
                     </div>
                 </div>
                 <div class="caracteristiques_derivees">
@@ -1731,7 +1760,7 @@
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre"><button type="action" class="button_carac" name="act_roll-sm" style="font-size: 24px;font-family: 'Jim Nightshade';font-weight: normal;
-                            ">Santé mentale</button></div>
+                            " title="Jet de Santé mentale">Santé mentale</button></div>
                         <div class="derivees_data"><input type="number" class="input_derivees" name="attr_sm" value="1" min="0" max="99"></div>
                         <div class="derivees_sur">sur</div>
                         <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi" value="0" readonly /></div>
@@ -2935,7 +2964,7 @@
      
     on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
 
-        getAttrs(["stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
+        getAttrs(["stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "sm", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
             let stat_1 = parseInt(values["stat_1"]) || 0;
             let stat_2 = parseInt(values["stat_2"]) || 0;
             let stat_3 = parseInt(values["stat_3"]) || 0;
@@ -2950,6 +2979,7 @@
             let intelligence = parseInt(values["intelligence"]) || 0;
             let charisme = parseInt(values["charisme"]) || 0;
             let volonte = parseInt(values["volonte"]) || 0;
+            let sm = parseInt(values["sm"]) || 0;
             let stat_athletisme = parseInt(values["stat_athletisme"]) || 0;
             let stat_baratin = parseInt(values["stat_baratin"]) || 0;
             let stat_bibliotheque = parseInt(values["stat_bibliotheque"]) || 0;
@@ -3010,14 +3040,6 @@
             let custom_3 = Math.floor(stat_3 + (comp_3/2));
             let custom_4 = Math.floor(stat_4 + (comp_4/2));
 
-            let force_reel = force;
-            let dexterite_reel = dexterite;
-            let constitution_reel = constitution;
-            let intelligence_reel = intelligence;
-            let charisme_reel = charisme;
-            let volonte_reel = volonte;
-
-
 
             setAttrs({
                 "pdv_maxi": pdv_maxi,
@@ -3055,12 +3077,6 @@
                 "custom_2": custom_2,
                 "custom_3": custom_3,
                 "custom_4": custom_4,
-                "force_reel": force_reel,
-                "dexterite_reel": dexterite_reel,
-                "constitution_reel": constitution_reel,
-                "intelligence_reel": intelligence_reel,
-                "charisme_reel": charisme_reel,
-                "volonte_reel": volonte_reel,
                 "points_carac": points_carac,
                 "points_comp": points_comp
             });
@@ -3648,9 +3664,6 @@
             });
         });
     });
-    
-
-
 </script>
 
 <!-- JET DE DÉS -->
@@ -4470,4 +4483,63 @@ on('clicked:change_avatar', async (event) => {
         });
     });
 });
+
+on('clicked:fermer-popup', async (event) => {
+    getAttrs(["popup_sm"], function(values) {
+        let popup_sm = 0;
+        setAttrs({
+            "popup_sm": popup_sm
+        });
+    });
+});
+</script>
+
+
+<!-- GESTION PALIERS SM -->
+<script type="text/worker">
+    on("change:intelligence change:sm", function() {
+        getAttrs(["intelligence", "sm", "alerte_sm_50", "alerte_sm_25", "alerte_sm_75"], function(values) {
+    
+            let intelligence = parseInt(values["intelligence"]) || 0;
+            let sm = parseInt(values["sm"]) || 0;
+            let sm_maxi = 100 - intelligence; // Calcul du niveau maximal de santé mentale
+            let niveau_sm = Math.floor((sm / sm_maxi) * 100);
+    
+            // Récupération des anciennes alertes
+            let old_alerte_sm_75 = parseInt(values["alerte_sm_75"]) || 0;
+            let old_alerte_sm_50 = parseInt(values["alerte_sm_50"]) || 0;
+            let old_alerte_sm_25 = parseInt(values["alerte_sm_25"]) || 0;
+    
+            // Initialisation des nouvelles alertes
+            let new_alerte_sm_75 = 0;
+            let new_alerte_sm_50 = 0;
+            let new_alerte_sm_25 = 0;
+    
+            // Attribut pour la gestion du popup
+            let popup_sm = "";
+    
+            // Vérification des seuils et mise à jour des alertes
+            if (niveau_sm > 75) {
+                new_alerte_sm_75 = 1;
+                if (old_alerte_sm_75 === 0) popup_sm = "75";
+            }
+            if (niveau_sm <= 50 && niveau_sm > 25) {
+                new_alerte_sm_50 = 1;
+                if (old_alerte_sm_50 === 0) popup_sm = "50";
+            }
+            if (niveau_sm <= 25) {
+                new_alerte_sm_25 = 1;
+                if (old_alerte_sm_25 === 0) popup_sm = "25";
+            }
+    
+            // Mise à jour des attributs
+            setAttrs({
+                "niveau_sm": niveau_sm,
+                "alerte_sm_75": new_alerte_sm_75,
+                "alerte_sm_50": new_alerte_sm_50,
+                "alerte_sm_25": new_alerte_sm_25,
+                "popup_sm": popup_sm // Attribut qui déclenche le popup
+            });
+        });
+    });
 </script>

@@ -734,6 +734,46 @@ input[type="number"] {
 	color: var(--text_input);
 }
 
+/* POPUP ALERTE SM */
+div.sm_75,
+div.sm_50,
+div.sm_25 {
+    display: none;
+}
+
+.charsheet .popup_sm[value="75"] ~ div.sm_75,
+.charsheet .popup_sm[value="50"] ~ div.sm_50,
+.charsheet .popup_sm[value="25"] ~ div.sm_25 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm_75,
+.sm_50,
+.sm_25 {
+  position: fixed;
+  width: 69%;
+  height: 50%;
+  margin-left: 90px;
+  margin-top: 110px;
+  border: 8px solid #000000;
+  border-radius: 30px;
+  background: #5b0808;
+  color: white;
+  padding: 20px;
+  z-index: 2;
+  font-size: 25px;
+  line-height: 55px;
+  text-align: center;
+  box-shadow: 0px 0px 30px 13px #330707;
+}
+
+.sm_75 {
+  background: #071b67;
+  box-shadow: 0px 0px 30px 13px #6c78ab;
+}
+
 .menu {
   margin-top: -10px;
 }
@@ -1108,7 +1148,7 @@ div.marqueur_aura_n10 {
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/aura_ange4.webp);
   background-size: 103px 145px;
   background-repeat: no-repeat;
-  margin-top: -5px;
+  margin-top: 0px;
   margin-left: 40px;
 }
 
