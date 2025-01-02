@@ -1917,8 +1917,8 @@ div.niveau_aura_m3 {
 
 .caracteristiques_separateur {
   grid-column: 82;
-  grid-row: 1;
-  width: 115px;
+  grid-row: 1 / 4;
+  width: 121px;
   height: 541px;
   margin-top: -41px;
   margin-bottom: 0px;
@@ -1930,9 +1930,9 @@ div.niveau_aura_m3 {
 
 .caracteristiques_derivees {
   grid-column: 93 / 156;
-  grid-row: 1 / 9;
-  margin-top: 24px;
-  margin-bottom: 71px;
+  grid-row: 1 / 8;
+  margin-top: -7px;
+  margin-bottom: 6px;
   margin-left: 1px;
   margin-right: 0px;
   box-shadow: 2px 1px 6px 2px #0000009c;
@@ -1946,7 +1946,7 @@ div.niveau_aura_m3 {
 .wrapper_zone_derivees {
   display: grid;
   grid-template-columns: 0% 66% 1% 10% 2% 10% 4% 10% 0%;
-  grid-auto-rows: 32px;
+  grid-auto-rows: 30px;
   font-size: 24px;
   font-family: "Jim Nightshade";
 }
@@ -1989,12 +1989,14 @@ div.niveau_aura_m3 {
 }
 
 .derivees_bonus {
-  grid-column: 4/9;
+  grid-column: 4 / 9;
   grid-row: 1;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .derivees_separateur {
