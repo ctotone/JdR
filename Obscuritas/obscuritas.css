@@ -110,6 +110,12 @@ span.D20 {
   font-size: 32px;
 }
 
+span.point {
+  margin-left: 40px;
+  margin-right: 10px;
+  font-family: 'Helvetica Neue';
+}
+
 img.portrait,
 img.portrait_aude,
 img.portrait_einarth,
@@ -522,6 +528,7 @@ input[type="number"] {
 .charsheet button[type=action].button4::before,
 .charsheet button[type=action].button5::before,
 .charsheet button[type=action].button6::before,
+.charsheet button[type=action].button7::before,
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
 .charsheet button[type=action].button_comp::before,
@@ -656,7 +663,8 @@ input[type="number"] {
 .charsheet button[type=action].button3,
 .charsheet button[type=action].button4,
 .charsheet button[type=action].button5,
-.charsheet button[type=action].button6 {
+.charsheet button[type=action].button6,
+.charsheet button[type=action].button7 {
   text-shadow: none;
   background: var(--color_background_button);
   text-align: left;
@@ -700,7 +708,7 @@ input[type="number"] {
 .charsheet button[type=action].button4:hover,
 .charsheet button[type=action].button5:hover,
 .charsheet button[type=action].button6:hover,
-.charsheet button[type=action].button_sens_carte:hover {
+.charsheet button[type=action].button7:hover {
   color: var(--color_text_hover);
 }
 
@@ -711,6 +719,7 @@ input[type="number"] {
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="6"] ~ div .button6 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 
 .charsheet button[type=action].button_show:hover {
   color: var(--white);
@@ -784,7 +793,8 @@ div.sm_25 {
 .page_competences,
 .page_equipement,
 .page_note,
-.page_config { 
+.page_config,
+.page_compendium { 
   width: 820px;
   min-height: 1180px;
   height: auto;
@@ -840,6 +850,13 @@ div.sm_25 {
   background-size: cover;
 }
 
+.page_compendium {
+  height: auto !important;
+  min-height: 500px;
+  background-image: var(--background_page);
+  background-size: cover;
+}
+
 
 /* Affichage des page dynamique */
 div.page_complete,
@@ -848,7 +865,8 @@ div.page_competences,
 div.page_equipement,
 div.page_note,
 div.page_config,
-div.page_aura {
+div.page_aura,
+div.page_compendium {
     display: none;
 }
 
@@ -858,7 +876,8 @@ div.page_aura {
 .charsheet .choix_page[value="3"] ~ div.page_equipement,
 .charsheet .choix_page[value="4"] ~ div.page_note,
 .charsheet .choix_page[value="5"] ~ div.page_config,
-.charsheet .choix_page[value="6"] ~ div.page_aura {
+.charsheet .choix_page[value="6"] ~ div.page_aura,
+.charsheet .choix_page[value="7"] ~ div.page_compendium {
     display: block;
 }
 
@@ -3091,6 +3110,67 @@ div.illustration_bouclier_aucun {
   align-items: center;
   border-left: none;
 }
+
+/* COMPENDIUM */
+.compendium_titre {
+  background: red;
+}
+
+.wrapper_compendium_1col {
+  display: grid;
+  grid-template-columns: 0% 100% 0%;
+  grid-auto-rows: auto; /* Lignes ajustées au contenu */
+  gap: 10px; /* Espacement entre les colonnes et les lignes */
+  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
+  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
+  font-family: 'Playfair';
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.compendium_1col_titre {
+  grid-column: 2;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.compendium_1col_texte {
+  grid-column: 2;
+}
+
+.wrapper_compendium_2col {
+  display: grid;
+  grid-template-columns: 0% 48% 4% 48% 0%;
+  grid-auto-rows: auto; /* Lignes ajustées au contenu */
+  gap: 10px; /* Espacement entre les colonnes et les lignes */
+  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
+  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
+  font-family: 'Playfair';
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.compendium_2col_titre {
+  grid-column: 2/5;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.compendium_2col_texte_gauche {
+  grid-column: 2;
+}
+
+.compendium_2col_texte_droite {
+  grid-column: 4;
+}
+
+.compendium_2col_separateur {
+  grid-column: 3;
+}
+
+
 
 
 

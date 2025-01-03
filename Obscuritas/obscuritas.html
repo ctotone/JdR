@@ -74,6 +74,7 @@
     <button type="action" name="act_2" class="button2">Compétences</button>
     <button type="action" name="act_3" class="button3">Équipement</button>
     <button type="action" name="act_4" class="button4">Notes</button>
+    <button type="action" name="act_7" class="button7">Compendium</button>
     <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
 </div>
 
@@ -2548,6 +2549,61 @@ Aviser le MJ de cela puis fermer cette popup...
     </div>
 </div>
 
+<div class="page_compendium">
+    <div class="compendium_titre">COMPENDIUM</div>
+    <div class="compendium_sm">
+        <div class="wrapper_compendium_1col">
+            <div class="compendium_1col_titre">Perte de Santé Mentale</div>
+            <div class="compendium_1col_texte">
+                Un personnage peut perdre de la santé mentale lors de :<br><br>
+                Événements surnaturels :<br>
+                <span class="point">•</span>Être témoin d’un rituel de magie noire<br>
+                <span class="point">•</span>Voir un monstre pour la première fois.<br>
+                <span class="point">•</span>Être possédé ou attaqué par un esprit.<br>
+                Scènes macabres :<br>
+                <span class="point">•</span>Découvrir un cadavre mutilé.<br>
+                <span class="point">•</span>Assister à une mort violente ou atroce.<br>
+                <span class="point">•</span>Subir de terribles visions ou cauchemars.<br>
+                Actions contre-nature :<br>
+                <span class="point">•</span>Commettre un acte cruel ou immoral (ex. meurtre gratuit).<br>
+                <span class="point">•</span>Utiliser des objets maudits ou des rituels interdits.
+            </div>
+        </div>
+        <div class="wrapper_compendium_1col">
+            <div class="compendium_1col_titre">Échelle de Perte</div>
+            <div class="compendium_1col_texte">
+                Le Maître du Jeu décide de l’impact psychologique de ces situations :<br>
+                <span class="point">•</span>Choc mineur : 1D4 points.<br>
+                <span class="point">•</span>Horreur modérée : 1D6 points.<br>
+                <span class="point">•</span>Horreur extrême : 1D10 ou plus.<br><br>
+                La perte peut être influencée par l'habitude du personnage à être confronté à une telle situation. Dans la
+                plupart des cas, un jet de « Volonté » pur, sans la moindre compétence permet de ne prendre qu'une partie de
+                l'impact sur la santé mentale, il peut même n'y avoir aucune conséquence...
+            </div>
+        </div>
+    
+    </div>
+
+    <!-- 
+    <div class="wrapper_compendium_1col">
+        <div class="compendium_1col_titre">Titre</div>
+        <div class="compendium_1col_texte">compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche
+            <br>compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_</div>
+    </div>
+
+    <div class="wrapper_compendium_2col">
+        <div class="compendium_2col_titre">Titre</div>
+        <div class="compendium_2col_texte_gauche">
+            compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche
+            <br>compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_
+        </div>
+        <div class="compendium_2col_separateur"></div>
+        <div class="compendium_2col_texte_droite">compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche
+            <br>compendium_2col_texte_gauche compendium 2coltexte gauche compendium_2col_texte_gauche compendium 2coltexte gauche compendium_</div>
+    </div> -->
+
+</div>
+
 
 <!-- ------------------------------------------ -->
 <!--              ROLL TEMPLATE                 -->
@@ -2732,7 +2788,7 @@ Aviser le MJ de cela puis fermer cette popup...
 
 <!-- Custom Attributs  / Menu -->
 <script type="text/worker">
-    const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
