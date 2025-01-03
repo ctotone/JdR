@@ -111,7 +111,6 @@ span.D20 {
 }
 
 span.point {
-  margin-left: 40px;
   margin-right: 10px;
   font-family: 'Helvetica Neue';
 }
@@ -3137,6 +3136,7 @@ div.illustration_bouclier_aucun {
 
 .compendium_1col_texte {
   grid-column: 2;
+  padding-left: 20px;
 }
 
 .wrapper_compendium_2col {
@@ -3160,14 +3160,48 @@ div.illustration_bouclier_aucun {
 
 .compendium_2col_texte_gauche {
   grid-column: 2;
+  padding-left: 20px;
 }
 
 .compendium_2col_texte_droite {
   grid-column: 4;
+  padding-left: 20px;
 }
 
 .compendium_2col_separateur {
   grid-column: 3;
+}
+
+.wrapper_compendium_3col {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-auto-rows: auto; /* Lignes ajustées au contenu */
+  gap: 10px; /* Espacement entre les colonnes et les lignes */
+  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
+  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
+  font-family: 'Playfair';
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.compendium_3col_titre {
+  grid-column: 1/3;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.compendium_3col_texte {
+  grid-column: 1/3;
+  padding-left: 20px;
+}
+
+.compendium_3col_illustration_effet {
+  grid-column: 1/3;
+}
+
+.compendium_3col_illustration_restriction {
+  grid-column: 1/3;
 }
 
 
