@@ -11,6 +11,7 @@
   letter-spacing: -0.4px;
   line-height: 18px;
   margin: 0px;
+  min-width: 850px;
   --black: #000002;
   --white: #fcfcfd;
   --font_playfair: "Playfair", serif;
@@ -716,9 +717,9 @@ input[type="number"] {
 .charsheet .choix_page[value="2"] ~ div .button2 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
-.charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: #65709f;}
 .charsheet .choix_page[value="6"] ~ div .button6 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
-.charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: #65709f;}
 
 .charsheet button[type=action].button_show:hover {
   color: var(--white);
@@ -847,6 +848,7 @@ div.sm_25 {
   min-height: unset;
   background-image: var(--background_page);
   background-size: cover;
+  padding-top: 60px;
 }
 
 .page_compendium {
@@ -1462,7 +1464,8 @@ div.marqueur_aura_n10 {
 .zone_competence_titre,
 .zone_armement_titre,
 .zone_inventaire_titre,
-.zone_carnet_titre {
+.zone_carnet_titre,
+.zone_compendium_titre {
   grid-column: 1 / 36;
   grid-row: 1 / 4;
   margin-top: 0px;
@@ -3111,20 +3114,36 @@ div.illustration_bouclier_aucun {
 }
 
 /* COMPENDIUM */
+/* Affichage des page dynamique */
+div.compendium_sm,
+div.compendium_hero,
+div.compendium_combat {
+    display: none;
+}
+
+.charsheet .choix_compendium[value="1"] ~ div.compendium_sm,
+.charsheet .choix_compendium[value="2"] ~ div.compendium_hero,
+.charsheet .choix_compendium[value="3"] ~ div.compendium_combat {
+    display: block;
+}
+
+
 .compendium_titre {
   background: red;
 }
 
 .wrapper_compendium_1col {
-  display: grid;
-  grid-template-columns: 0% 100% 0%;
-  grid-auto-rows: auto; /* Lignes ajustées au contenu */
-  gap: 10px; /* Espacement entre les colonnes et les lignes */
-  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
-  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
+  display: grid
+;
+  grid-template-columns: 0% 62% 0%;
+  grid-auto-rows: auto;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
   font-family: 'Playfair';
   line-height: 22px;
   font-size: 14px;
+  text-align: justify;
 }
 
 .compendium_1col_titre {
@@ -3137,6 +3156,11 @@ div.illustration_bouclier_aucun {
 .compendium_1col_texte {
   grid-column: 2;
   padding-left: 20px;
+}
+
+.compendium_1col_separateur {
+  grid-column: 2;
+  border-bottom: 2px solid black;
 }
 
 .wrapper_compendium_2col {
@@ -3174,14 +3198,15 @@ div.illustration_bouclier_aucun {
 
 .wrapper_compendium_3col {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-auto-rows: auto; /* Lignes ajustées au contenu */
-  gap: 10px; /* Espacement entre les colonnes et les lignes */
-  width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
-  box-sizing: border-box; /* Inclut le padding/border dans la largeur */
+  grid-template-columns: 33% 25% 6% 33%;
+  grid-auto-rows: auto;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
   font-family: 'Playfair';
   line-height: 22px;
   font-size: 14px;
+  text-align: justify;
 }
 
 .compendium_3col_titre {
@@ -3197,11 +3222,23 @@ div.illustration_bouclier_aucun {
 }
 
 .compendium_3col_illustration_effet {
-  grid-column: 1/3;
+  grid-column: 4;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/dessin_heroique_effet.webp);
+  background-size: 268px 312px;
+  width: 263px;
+  height: 308px;
+  margin-top: -66px;
+  overflow: visible;
 }
 
 .compendium_3col_illustration_restriction {
-  grid-column: 1/3;
+  grid-column: 4;
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/dessin_heroique_restriction.webp);
+  background-size: 262px 334px;
+  width: 263px;
+  height: 308px;
+  margin-top: -168px;
+  overflow: visible;
 }
 
 

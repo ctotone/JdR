@@ -74,7 +74,7 @@
     <button type="action" name="act_2" class="button2">Compétences</button>
     <button type="action" name="act_3" class="button3">Équipement</button>
     <button type="action" name="act_4" class="button4">Notes</button>
-    <button type="action" name="act_7" class="button7">Compendium</button>
+    <button type="action" name="act_7" class="button7" style="margin-left: 85px;">Compendium</button>
     <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
 </div>
 
@@ -2550,7 +2550,22 @@ Aviser le MJ de cela puis fermer cette popup...
 </div>
 
 <div class="page_compendium">
-    <div class="compendium_titre">COMPENDIUM</div>
+    <input type="hidden" name="attr_page_compendium" class="choix_compendium" value="0">
+    <div class="wrapper_zone_personnage">
+        <div class="zone_compendium_titre" style="padding-left: 70px;grid-row: 4 / 7;">COMPENDIUM</div>
+    </div>
+    <div class="wrapper_compendium_1col">
+        <div class="compendium_1col_texte">Bienvenue dans ce compendium, une ressource destinée à rassembler les informations essentielles pour vos parties de jeu de rôle. Vous y trouverez les concepts clés de l’univers.<br>
+        Cette page est conçue pour vous aider à mieux naviguer et enrichir vos aventures.</div>
+    </div>
+    <div class="wrapper_compendium_1col" style="margin-top: 20px;">
+        <div class="compendium_1col_texte">
+            <span class="point">◆</span><button type="action" class="button_carac" name="act_compendium_sm">Santé mentale</button><br>
+            <span class="point">◆</span><button type="action" class="button_carac" name="act_compendium_hero">Mode Héroïque</button><br>
+            <span class="point">◆</span><button type="action" class="button_carac" name="act_compendium_combat">Système de Combat</button><br>
+        </div>
+        <div class="compendium_1col_separateur"></div>
+    </div>
     <div class="compendium_sm">
         <div class="wrapper_compendium_1col">
             <div class="compendium_1col_titre">Perte de Santé Mentale</div>
@@ -2591,13 +2606,12 @@ Aviser le MJ de cela puis fermer cette popup...
             </div>
         </div>    
     </div>
-    <div class="compendium_sm">
+    <div class="compendium_hero">
         <div class="wrapper_compendium_3col">
             <div class="compendium_3col_titre">"Révèle le héros en toi" : L’Ultime Sacrifice</div>
             <div class="compendium_3col_texte">En dépensant 7 points d’héroïsme, un personnage entre dans un état héroïque, devenant le centre de l’attention de la scène.</div>
         </div>
-        <div class="wrapper_compendium_1col">
-            <div class="compendium_3col_illustration_effet"></div>
+        <div class="wrapper_compendium_3col">
             <div class="compendium_3col_titre">Effets du Mode Héroïque :</div>
             <div class="compendium_3col_texte">
                 <span class="point">◆</span><span style="font-weight: bold;">Focus narratif :</span>Le personnage devient le point central del’action, ses décisions et actions dictant le cours des événements. Les autres joueurs ne peuvent que le soutenir.<br>
@@ -2606,16 +2620,16 @@ Aviser le MJ de cela puis fermer cette popup...
                 <span class="point">◆</span>Bonus de +20 : À tous ses jets pour la durée de la scène.<br>
                 <span class="point">◆</span>10 points de vie temporaires : Absorbent les dégâts avant que le personnage ne subisse des blessures réelles.<br>
                 <span class="point">◆</span>Coûts magiques annulés : L’utilisation de magie et d’artefacts ne coûte ni points de magie ni points de vie pendant cette période.<br>
-            </div>
+            </div>            
+            <div class="compendium_3col_illustration_effet"></div>
         </div>
         <div class="wrapper_compendium_3col">
-            <div class="compendium_3col_illustration_restriction"></div>
             <div class="compendium_3col_titre">Restrictions du Mode Héroïque :</div>
             <div class="compendium_3col_texte">
                 <span class="point">◆</span>Décompte des coûts annulés : À la fin du mode héroïque, les points de vie et de magie qui auraient dû être dépensés sont déduits.<br>
             </div>
         </div>
-        <div class="wrapper_compendium_3col" style="margin-left: 50px;">
+        <div class="wrapper_compendium_3col" style="margin-left: 50px;padding-right: 208px;">
             <div class="compendium_3col_texte">
                 <span class="point">○</span>Si ces valeurs tombent à 0 ou moins, le personnage est plafonné à 0, automatiquement stabilisé, mais sombre dans l’inconscience.<br>
                 <span class="point">○</span>Durée d’inconscience : Un minimum d’une heure, plus une heure supplémentaire par point négatif (maximum de 24 heures).<br>
@@ -2625,9 +2639,15 @@ Aviser le MJ de cela puis fermer cette popup...
             <div class="compendium_3col_texte">
                 <span class="point">◆</span>Interruption par des dégâts externes : Si le personnage subit des dégâts qui le mettent à 0 points de vie, le mode héroïque s’arrête immédiatement.<br>
                 <span class="point">◆</span>Limites d’apprentissage : Annuler les coûts de magie ne permet pas d’apprendre de nouveaux sorts. Cependant, tous les artefacts peuvent être utilisés (sauf mention contraire dans leurs descriptions).<br>
-            </div>
+            </div>            
+            <div class="compendium_3col_illustration_restriction"></div>
         </div>
     </div>
+    <div class="compendium_combat">
+        <div class="wrapper_compendium_3col">
+            <div class="compendium_3col_titre">Combat</div>
+            <div class="compendium_3col_texte">Coming soon... (faut que Dakey me donne le fichier !!!)</div>
+        </div>
 
     <!-- 
     <div class="wrapper_compendium_1col">
@@ -4585,14 +4605,34 @@ on('clicked:change_avatar', async (event) => {
     });
 });
 
-on('clicked:fermer-popup', async (event) => {
-    getAttrs(["popup_sm"], function(values) {
-        let popup_sm = 0;
+on('clicked:compendium_sm', async (event) => {
+    getAttrs(["page_compendium"], function(values) {
+        let page_compendium = 1;
         setAttrs({
-            "popup_sm": popup_sm
+            "page_compendium": page_compendium
         });
     });
 });
+
+on('clicked:compendium_hero', async (event) => {
+    getAttrs(["page_compendium"], function(values) {
+        let page_compendium = 2;
+        setAttrs({
+            "page_compendium": page_compendium
+        });
+    });
+});
+
+on('clicked:compendium_combat', async (event) => {
+    getAttrs(["page_compendium"], function(values) {
+        let page_compendium = 3;
+        setAttrs({
+            "page_compendium": page_compendium
+        });
+    });
+});
+
+
 </script>
 
 
