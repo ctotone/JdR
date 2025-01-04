@@ -112,7 +112,7 @@ Aviser le MJ de cela puis fermer cette popup...
                     <div class="demon_aura"></div>
                     <div class="ange_aura"></div>
                     <div class="obscuritas">Obscuritas</div>
-                    <div class="aeterna">Aeterna</div>
+                    <div class="aeterna">Æterna</div>
                     <div class="boutton_aura"><button type="action" class="button_aura" name="act_roll-aura">AURA</button></div>
                     <div class="marqueur_aura_0"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
                     <div class="marqueur_aura_1"><input type="number" class="input_aura" name="attr_aura" value="0"></div>
@@ -4601,6 +4601,15 @@ on('clicked:change_avatar', async (event) => {
         avatar %= 7; // Remet à 0 après 6
         setAttrs({
             "avatar": avatar
+        });
+    });
+});
+
+on('clicked:fermer-popup', async (event) => {
+    getAttrs(["popup_sm"], function(values) {
+        let popup_sm = 0;
+        setAttrs({
+            "popup_sm": popup_sm
         });
     });
 });
