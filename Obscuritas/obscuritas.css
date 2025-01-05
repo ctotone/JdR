@@ -743,6 +743,19 @@ input[type="number"] {
 	color: var(--text_input);
 }
 
+/* Affichage nouveau personnage */
+div.nouveau_personnage,
+div.obscuritas_perso,
+div.menu {
+    display: none;
+}
+
+.charsheet .nouveau_personnage[value="1"] ~ div.nouveau_personnage,
+.charsheet .nouveau_personnage[value="0"] ~ div.obscuritas_perso,
+.charsheet .nouveau_personnage[value="0"] ~ div.menu {
+    display: block;
+}
+
 /* POPUP ALERTE SM */
 div.sm_75,
 div.sm_50,
@@ -787,6 +800,7 @@ div.sm_25 {
   margin-top: -10px;
 }
 
+.creation_perso,
 .page_complete,
 .page_aura,
 .page_caracteristiques,
@@ -806,6 +820,13 @@ div.sm_25 {
   margin-left: -14px;
   box-shadow: var(--box_shadow_page);
   margin-bottom: 20px;
+}
+
+.creation_perso {
+  height: 800px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
 }
 
 .page_aura {
