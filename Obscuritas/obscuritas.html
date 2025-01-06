@@ -67,195 +67,163 @@
 <button type="roll" name="roll_weapon_dmg_3_distance" style="display: none;" value="@{DMG_3_distance}"></button>
 <button type="roll" name="roll_weapon_dmg_4_distance" style="display: none;" value="@{DMG_4_distance}"></button>
 
+<button type="action" class="button_carac" name="act_creation_perso_temp">SWITCH</button>
+
+
+
 <div class="nouveau_personnage">
     <div class="creation_perso">
-
-        nouveau personnage
-        <!-- CARAC DE BASE -->
-        <div class="wrapper_zone_carac">
-            <div class="bloc_pentacle">
-                <div class="wrapper_zone_carac">
-                    <div class="caracteristiques_pentacle"></div>
-                    <div class="caracteristiques_force_data"><input type="number" class="input_carac" name="attr_force_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_dexterite_data"><input type="number" class="input_carac" name="attr_dexterite_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte_base" value="15" min="15" max="99"></div>
-                    <div class="caracteristiques_force_titre">FORCE</div>
-                    <div class="caracteristiques_dexterite_titre">DEXTÉRITÉ</div>
-                    <div class="caracteristiques_constitution_titre">CONSTITUTION</div>
-                    <div class="caracteristiques_intelligence_titre">INTELLIGENCE</div>
-                    <div class="caracteristiques_charisme_titre">CHARISME</div>
-                    <div class="caracteristiques_volonte_titre">VOLONTÉ</div>
-                </div>
+        <div class="cadre_creation">
+            <div class="creation_entete">
+                Pour créer votre personnage, distribuez les points de Compétences et d'Attributs.<br>
+                Une fois fait, validez pour accéder à la fiche de personnage.
             </div>
-            <div class="caracteristiques_derivees">
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Points de vie max</div>
-                    <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi_base" value="0" readonly /></div>
+            <!-- CARAC DE BASE -->
+            <div class="wrapper_zone_carac">
+                <div class="bloc_pentacle">
+                    <div class="wrapper_zone_carac">
+                        <div class="caracteristiques_pentacle"></div>
+                        <div class="caracteristiques_force_data"><input type="number" class="input_carac" name="attr_force_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_dexterite_data"><input type="number" class="input_carac" name="attr_dexterite_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_constitution_data"><input type="number" class="input_carac" name="attr_constitution_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_intelligence_data"><input type="number" class="input_carac" name="attr_intelligence_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_charisme_data"><input type="number" class="input_carac" name="attr_charisme_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_volonte_data"><input type="number" class="input_carac" name="attr_volonte_base" value="15" min="15" max="50"></div>
+                        <div class="caracteristiques_force_titre">FORCE</div>
+                        <div class="caracteristiques_dexterite_titre">DEXTÉRITÉ</div>
+                        <div class="caracteristiques_constitution_titre">CONSTITUTION</div>
+                        <div class="caracteristiques_intelligence_titre">INTELLIGENCE</div>
+                        <div class="caracteristiques_charisme_titre">CHARISME</div>
+                        <div class="caracteristiques_volonte_titre">VOLONTÉ</div>
+                    </div>
                 </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Points de magie max</div>
-                    <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi_base" value="0" readonly /></div>
+                <div class="creation_carac_decompte">Points attribués : <input type="number" class="input_config" value="90" name="attr_points_carac_base" style="color: var(--white);" readonly /> / 235</div>
+                <div class="caracteristiques_derivees" style="grid-row: 2 / 7;margin-top: 20px;margin-bottom: 40px;">
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Points de vie max</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi_base" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Points de magie max</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi_base" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Santé mentale max</div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi_base" value="0" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_separateur"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Bonus de Force</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Bonus de Dextérité</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="0" min="0" max="99"></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Encaissement</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement_base" value="0" min="0" max="99"></div>
+                    </div>
                 </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Santé mentale max</div>
-                    <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi_base" value="0" readonly /></div>
-                </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_separateur"></div>
-                </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Bonus de Force</div>
-                    <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="0" min="0" max="99"></div>
-                </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Bonus de Dextérité</div>
-                    <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="0" min="0" max="99"></div>
-                </div>
-                <div class="wrapper_zone_derivees">
-                    <div class="derivees_titre">Encaissement</div>
-                    <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement_base" value="0" min="0" max="99"></div>
-                </div>
+                <div class="caracteristiques_separateur" style="z-index: 2; height: 381px;"></div>
             </div>
-            <div class="caracteristiques_separateur"></div>
-        </div>
 
-
-
-
-
-        <!-- REPRENDRE ICI -->
-        <!-- COMPETENCES DE BASE -->
-        <div class="wrapper_zone_competence"> 
-            <div class="competence_gauche">
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_athletisme" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-athletisme-force">Athletisme (Force)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_athletisme_force" value="0" min="0" max="99" readonly /></div>
+            <!-- COMPETENCES DE BASE -->
+            <div class="wrapper_zone_competence" style="margin-top: -37px;transform: rotate(0.7deg);"> 
+                <div class="creation_comp_decompte">Points attribués : <input type="number" class="input_config" value="90" name="attr_points_comp_base" style="color: var(--white);" readonly /> / 300</div>
+                <div class="competence_gauche" style="grid-row: 2 / 17;">                
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_athletisme_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Athletisme</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp_double" name="attr_stat_baratin_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Baratin</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_bibliotheque_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Bibliothèque</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_chercher_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Chercher</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp_double" name="attr_stat_combat_cac_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Combat CaC</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_pugilat_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Combat Pugilat</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_distance_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Combat Distance</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_discretion_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Discrétion</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_endurance_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Endurance</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Esquive</div>
+                    </div>
                 </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-athletisme-dex">Athletisme (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_athletisme_dexterite" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_baratin" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-baratin-charisme">Baratin (Charisme)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_baratin_charisme" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-baratin-force">Baratin (Force)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_baratin_force" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_bibliotheque" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-bibliotheque">Bibliothèque (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_bibliotheque" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_chercher" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-chercher">Chercher (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_chercher" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_combat_cac" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-cac-dex">Combat CaC (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_cac_dexterite" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-cac-force">Combat CaC (Force)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_cac_force" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_pugilat" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-pugilat">Combat Pugilat (Force)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_pugilat" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_combat_distance" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-distance">Combat Distance (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_combat_distance" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_discretion" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-discretion">Discrétion (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_discretion" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_endurance" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-endurance">Endurance (Constitution)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_endurance" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_esquive" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-esquive">Esquive (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_esquive" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_langue" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-langue">Langue (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue" value="0" min="0" max="99" readonly /></div>
-                </div>
+                <div class="competence_droite" style="grid-row: 2 / 17;">
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_langue_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Langue</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_langue_ancienne_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Langue Ancienne</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_medecine_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Médecine</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp_double" name="attr_stat_metier_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Métier</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Perception</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_psychologie_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Psychologie</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Sciences</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_sciences_occultes_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Sciences occultes</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_survie_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Survie</div>
+                    </div>
+                    <div class="wrapper_tableau_competence">
+                        <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_vigilance_base" value="0" min="0" max="30"></div>
+                        <div class="competence_nom_double">Vigilance</div>
+                    </div>
+                </div> 
+                <div class="competence_crane" style="grid-row: 3 / 6;margin-left: -40px;"></div>
+                <div class="competence_separateur_centre" style="height: 67%;margin-top: 32px;"></div>
+                <div class="competence_separateur_bas" style="grid-row: 13 / 17;"></div>       
             </div>
-            <div class="competence_droite">
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_langue_ancienne" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-ancienne-intel">Langue ancienne (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue_ancienne_intelligence" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-ancienne-volonte">Langue ancienne (Volonté)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_langue_ancienne_volonte" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_medecine" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-medecine">Médecine (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_medecine" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_double"><input type="number" class="input_comp_double" name="attr_stat_metier" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-metier-intell">Métier (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_metier_intelligence" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-metier-volonte">Métier (Volonté)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_metier_volonte" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_perception" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-perception">Perception (Volonté)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_perception" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_psychologie" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-psychologie">Psychologie (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_psychologie" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_science" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences">Sciences (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_science" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_sciences_occultes" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-sciences-occultes">Sciences occultes (Volonté)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_sciences_occultes" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_survie" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-survie">Survie (Intelligence)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_survie" value="0" min="0" max="99" readonly /></div>
-                </div>
-                <div class="wrapper_tableau_competence">
-                    <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_vigilance" value="0" min="0" max="99"></div>
-                    <div class="competence_nom_double"><button type="action" class="button_comp" name="act_roll-vigilance">Vigilance (Dextérité)</button></div>
-                    <div class="competence_final_double"><input type="number" class="input_comp_lock" name="attr_vigilance" value="0" min="0" max="99" readonly /></div>
-                </div>
-            </div> 
-            <div class="competence_crane"></div>
-            <div class="competence_separateur_centre"></div>
-            <div class="competence_separateur_bas"></div>       
+            <div class="creation_valider">
+                <button type="action" class="button_valider_creation" name="act_valider_creation">Valider pour créer votre personnage</button>
+            </div>
         </div>
     </div>
 </div>
@@ -271,7 +239,8 @@
         <button type="action" name="act_2" class="button2">Compétences</button>
         <button type="action" name="act_3" class="button3">Équipement</button>
         <button type="action" name="act_4" class="button4">Notes</button>
-        <button type="action" name="act_7" class="button7" style="margin-left: 85px;">Compendium</button>
+        <button type="action" name="act_boutton_xp" class="button8">XP</button>
+        <button type="action" name="act_7" class="button7" style="margin-left: 50px;">Compendium</button>
         <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
     </div>
 
@@ -2712,6 +2681,27 @@
         </div> 
     </div>
 
+    <div class="page_xp">
+        <div class="cadre_xp">
+            <input type="number" class="input_carac_xp" name="attr_xp_temp" value="0" min="15" max="99"> XP_temp<br><br><br>
+            Force : <input type="number" class="input_carac_xp" name="attr_force" readonly> ==> <button type="action" class="button_carac" name="act_xp_force_minus">-</button> <input type="number" class="input_carac_xp" name="attr_force_temp" readonly> <button type="action" class="button_carac" name="act_xp_force_plus">+</button><br>
+            Dextérité : <input type="number" class="input_carac_xp" name="attr_dexterite" readonly> ==> <button type="action" class="button_carac" name="act_xp_dexterite_minus">-</button> <input type="number" class="input_carac_xp" name="attr_dexterite_temp" readonly> <button type="action" class="button_carac" name="act_xp_dexterite_plus">+</button><br>
+            Constitution : <input type="number" class="input_carac_xp" name="attr_constitution" readonly> ==> <button type="action" class="button_carac" name="act_xp_constitution_minus">-</button> <input type="number" class="input_carac_xp" name="attr_constitution_temp" readonly> <button type="action" class="button_carac" name="act_xp_constitution_plus">+</button><br>
+            Intelligence : <input type="number" class="input_carac_xp" name="attr_intelligence" readonly> ==> <button type="action" class="button_carac" name="act_xp_intelligence_minus">-</button> <input type="number" class="input_carac_xp" name="attr_intelligence_temp" readonly> <button type="action" class="button_carac" name="act_xp_intelligence_plus">+</button><br>
+            Volonté : <input type="number" class="input_carac_xp" name="attr_volonte" readonly> ==> <button type="action" class="button_carac" name="act_xp_volonte_minus">-</button> <input type="number" class="input_carac_xp" name="attr_volonte_temp" readonly> <button type="action" class="button_carac" name="act_xp_volonte_plus">+</button><br>
+            Charisme : <input type="number" class="input_carac_xp" name="attr_charisme" readonly> ==> <button type="action" class="button_carac" name="act_xp_charisme_minus">-</button> <input type="number" class="input_carac_xp" name="attr_charisme_temp" readonly> <button type="action" class="button_carac" name="act_xp_charisme_plus">+</button><br><br>
+            Points de vie : <input type="number" class="input_carac_xp" name="attr_pdv_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdv_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdv_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdv_plus">+</button><br>
+            Points de magie : <input type="number" class="input_carac_xp" name="attr_pdm_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdm_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdm_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdm_plus">+</button><br>
+
+
+
+
+                        
+            
+            
+        </div>
+    </div>
+
     <div class="page_config">
         <div class="wrapper_config">
             <div class="config_titre1">Points de caractéristiques attribués : </div>
@@ -3051,7 +3041,7 @@
 
 <!-- Custom Attributs  / Menu -->
 <script type="text/worker">
-    const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7"];
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -3281,9 +3271,9 @@
     });
 
      
-    on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance ", function() {
+    on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance change:xp", function() {
 
-        getAttrs(["stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "sm", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
+        getAttrs(["bonus_xp_pdv", "bonus_xp_pdm", "stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "sm", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
             let stat_1 = parseInt(values["stat_1"]) || 0;
             let stat_2 = parseInt(values["stat_2"]) || 0;
             let stat_3 = parseInt(values["stat_3"]) || 0;
@@ -3291,7 +3281,10 @@
             let comp_1 = parseInt(values["comp_1"]) || 0;
             let comp_2 = parseInt(values["comp_2"]) || 0;
             let comp_3 = parseInt(values["comp_3"]) || 0;
-            let comp_4 = parseInt(values["comp_4"]) || 0;            
+            let comp_4 = parseInt(values["comp_4"]) || 0;
+            let xp = parseInt(values["xp"]) || 0;
+            let bonus_xp_pdv = parseInt(values["bonus_xp_pdv"]) || 0;
+            let bonus_xp_pdm = parseInt(values["bonus_xp_pdm"]) || 0;            
             let force = parseInt(values["force"]) || 0;
             let dexterite = parseInt(values["dexterite"]) || 0;
             let constitution = parseInt(values["constitution"]) || 0;
@@ -3320,8 +3313,8 @@
             let stat_survie = parseInt(values["stat_survie"]) || 0;
             let stat_vigilance = parseInt(values["stat_vigilance"]) || 0;
         
-            let pdv_maxi = Math.floor(constitution / 5);
-            let pdm_maxi = Math.floor(volonte / 5);
+            let pdv_maxi = Math.floor(constitution / 5) + bonus_xp_pdv;
+            let pdm_maxi = Math.floor(volonte / 5) + bonus_xp_pdm;
             let sm_maxi = 100-intelligence;
             let mouvement = Math.floor(dexterite/10)*2;
             let bonus_force = Math.floor(force/10);            
@@ -3397,7 +3390,60 @@
                 "custom_3": custom_3,
                 "custom_4": custom_4,
                 "points_carac": points_carac,
-                "points_comp": points_comp
+                "points_comp": points_comp,
+                "xp_temp": xp
+            });
+        });
+    });
+
+    on("change:force_base change:dexterite_base change:constitution_base change:intelligence_base change:charisme_base change:volonte_base change:stat_athletisme_base change:stat_baratin_base change:stat_bibliotheque_base change:stat_chercher_base change:stat_combat_cac_base change:stat_combat_pugilat_base change:stat_combat_distance_base change:stat_discretion_base change:stat_endurance_base change:stat_esquive_base change:stat_langue_ancienne_base change:stat_langue_base change:stat_medecine_base change:stat_metier_base change:stat_perception_base change:stat_psychologie_base change:stat_science_base change:stat_sciences_occultes_base change:stat_survie_base change:stat_vigilance_base ", function() {
+
+        getAttrs(["force_base", "dexterite_base", "constitution_base", "intelligence_base", "charisme_base", "volonte_base", "stat_athletisme_base", "stat_baratin_base", "stat_bibliotheque_base", "stat_chercher_base", "stat_combat_cac_base", "stat_combat_pugilat_base", "stat_combat_distance_base", "stat_discretion_base", "stat_endurance_base", "stat_esquive_base", "stat_langue_ancienne_base", "stat_langue_base", "stat_medecine_base", "stat_metier_base", "stat_perception_base", "stat_psychologie_base", "stat_science_base", "stat_sciences_occultes_base", "stat_survie_base", "stat_vigilance_base"], function(values) {
+              
+            let force_base = parseInt(values["force_base"]) || 0;
+            let dexterite_base = parseInt(values["dexterite_base"]) || 0;
+            let constitution_base = parseInt(values["constitution_base"]) || 0;
+            let intelligence_base = parseInt(values["intelligence_base"]) || 0;
+            let charisme_base = parseInt(values["charisme_base"]) || 0;
+            let volonte_base = parseInt(values["volonte_base"]) || 0;
+            let stat_athletisme_base = parseInt(values["stat_athletisme_base"]) || 0;
+            let stat_baratin_base = parseInt(values["stat_baratin_base"]) || 0;
+            let stat_bibliotheque_base = parseInt(values["stat_bibliotheque_base"]) || 0;
+            let stat_chercher_base = parseInt(values["stat_chercher_base"]) || 0;
+            let stat_combat_cac_base = parseInt(values["stat_combat_cac_base"]) || 0;
+            let stat_combat_pugilat_base = parseInt(values["stat_combat_pugilat_base"]) || 0;
+            let stat_combat_distance_base = parseInt(values["stat_combat_distance_base"]) || 0;
+            let stat_discretion_base = parseInt(values["stat_discretion_base"]) || 0;
+            let stat_endurance_base = parseInt(values["stat_endurance_base"]) || 0;
+            let stat_esquive_base = parseInt(values["stat_esquive_base"]) || 0;
+            let stat_langue_ancienne_base = parseInt(values["stat_langue_ancienne_base"]) || 0;
+            let stat_langue_base = parseInt(values["stat_langue_base"]) || 0;
+            let stat_medecine_base = parseInt(values["stat_medecine_base"]) || 0;
+            let stat_metier_base = parseInt(values["stat_metier_base"]) || 0;
+            let stat_perception_base = parseInt(values["stat_perception_base"]) || 0;
+            let stat_psychologie_base = parseInt(values["stat_psychologie_base"]) || 0;
+            let stat_science_base = parseInt(values["stat_science_base"]) || 0;
+            let stat_sciences_occultes_base = parseInt(values["stat_sciences_occultes_base"]) || 0;
+            let stat_survie_base = parseInt(values["stat_survie_base"]) || 0;
+            let stat_vigilance_base = parseInt(values["stat_vigilance_base"]) || 0;
+        
+            let pdv_maxi_base = Math.floor(constitution_base / 5);
+            let pdm_maxi_base = Math.floor(volonte_base / 5);
+            let sm_maxi_base = 100-intelligence_base;
+            let bonus_force_base = Math.floor(force_base/10);            
+            let bonus_dexterite_base = Math.floor(dexterite_base/10);
+            let points_carac_base = force_base + dexterite_base + constitution_base + intelligence_base + charisme_base + volonte_base;
+            let points_comp_base = stat_athletisme_base + stat_baratin_base + stat_bibliotheque_base + stat_chercher_base + stat_combat_cac_base + stat_combat_pugilat_base + stat_combat_distance_base + stat_discretion_base + stat_endurance_base + stat_esquive_base + stat_langue_ancienne_base + stat_langue_base + stat_medecine_base + stat_metier_base + stat_perception_base + stat_psychologie_base + stat_science_base + stat_sciences_occultes_base + stat_survie_base + stat_vigilance_base;
+
+
+            setAttrs({
+                "pdv_maxi_base": pdv_maxi_base,
+                "pdm_maxi_base": pdm_maxi_base,
+                "sm_maxi_base": sm_maxi_base,
+                "bonus_force_base": bonus_force_base,
+                "bonus_dexterite_base": bonus_dexterite_base,
+                "points_carac_base": points_carac_base,
+                "points_comp_base": points_comp_base
             });
         });
     });
@@ -4842,7 +4888,6 @@ on('clicked:compendium_combat', async (event) => {
 
 </script>
 
-
 <!-- GESTION PALIERS SM -->
 <script type="text/worker">
     on("change:intelligence change:sm", function() {
@@ -4888,6 +4933,579 @@ on('clicked:compendium_combat', async (event) => {
                 "alerte_sm_25": new_alerte_sm_25,
                 "popup_sm": popup_sm // Attribut qui déclenche le popup
             });
+        });
+    });
+</script>
+
+<!-- CREATION ET XP -->
+<script type="text/worker">
+    on('clicked:creation_perso_temp', async (event) => {
+        getAttrs(["nouveau_personnage"], function(values) {
+            let nouveau_personnage = parseInt(values["nouveau_personnage"]) || 0;
+            if (nouveau_personnage == 0) nouveau_personnage = 1;
+            else nouveau_personnage = 0;
+            console.log("nouveau_personnage", nouveau_personnage);
+            setAttrs({
+                "nouveau_personnage": nouveau_personnage
+            });
+        });
+    });
+
+    on('clicked:valider_creation', async (event) => {
+        getAttrs(["nouveau_personnage", "force_base", "dexterite_base", "constitution_base", "intelligence_base", "charisme_base", "volonte_base", "stat_athletisme_base", "stat_baratin_base", "stat_bibliotheque_base", "stat_chercher_base", "stat_combat_cac_base", "stat_combat_pugilat_base", "stat_combat_distance_base", "stat_discretion_base", "stat_endurance_base", "stat_esquive_base", "stat_langue_ancienne_base", "stat_langue_base", "stat_medecine_base", "stat_metier_base", "stat_perception_base", "stat_psychologie_base", "stat_science_base", "stat_sciences_occultes_base", "stat_survie_base", "stat_vigilance_base"], function(values) {
+            let nouveau_personnage = 0;
+            let force = parseInt(values["force_base"]) || 0;
+            let dexterite = parseInt(values["dexterite_base"]) || 0;
+            let constitution = parseInt(values["constitution_base"]) || 0;
+            let intelligence = parseInt(values["intelligence_base"]) || 0;
+            let charisme = parseInt(values["charisme_base"]) || 0;
+            let volonte = parseInt(values["volonte_base"]) || 0;
+            let stat_athletisme = parseInt(values["stat_athletisme_base"]) || 0;
+            let stat_baratin = parseInt(values["stat_baratin_base"]) || 0;
+            let stat_bibliotheque = parseInt(values["stat_bibliotheque_base"]) || 0;
+            let stat_chercher = parseInt(values["stat_chercher_base"]) || 0;
+            let stat_combat_cac = parseInt(values["stat_combat_cac_base"]) || 0;
+            let stat_combat_pugilat = parseInt(values["stat_combat_pugilat_base"]) || 0;
+            let stat_combat_distance = parseInt(values["stat_combat_distance_base"]) || 0;
+            let stat_discretion = parseInt(values["stat_discretion_base"]) || 0;
+            let stat_endurance = parseInt(values["stat_endurance_base"]) || 0;
+            let stat_esquive = parseInt(values["stat_esquive_base"]) || 0;
+            let stat_langue_ancienne = parseInt(values["stat_langue_ancienne_base"]) || 0;
+            let stat_langue = parseInt(values["stat_langue_base"]) || 0;
+            let stat_medecine = parseInt(values["stat_medecine_base"]) || 0;
+            let stat_metier = parseInt(values["stat_metier_base"]) || 0;
+            let stat_perception = parseInt(values["stat_perception_base"]) || 0;
+            let stat_psychologie = parseInt(values["stat_psychologie_base"]) || 0;
+            let stat_science = parseInt(values["stat_science_base"]) || 0;
+            let stat_sciences_occultes = parseInt(values["stat_sciences_occultes_base"]) || 0;
+            let stat_survie = parseInt(values["stat_survie_base"]) || 0;
+            let stat_vigilance = parseInt(values["stat_vigilance_base"]) || 0;
+
+            setAttrs({
+                "nouveau_personnage": nouveau_personnage,
+                "force": force,
+                "dexterite": dexterite,
+                "constitution": constitution,
+                "intelligence": intelligence,
+                "charisme": charisme,
+                "volonte": volonte,
+                "stat_athletisme": stat_athletisme,
+                "stat_baratin": stat_baratin,
+                "stat_bibliotheque": stat_bibliotheque,
+                "stat_chercher": stat_chercher,
+                "stat_combat_cac": stat_combat_cac,
+                "stat_combat_pugilat": stat_combat_pugilat,
+                "stat_combat_distance": stat_combat_distance,
+                "stat_discretion": stat_discretion,
+                "stat_endurance": stat_endurance,
+                "stat_esquive": stat_esquive,
+                "stat_langue_ancienne": stat_langue_ancienne,
+                "stat_langue": stat_langue,
+                "stat_medecine": stat_medecine,
+                "stat_metier": stat_metier,
+                "stat_perception": stat_perception,
+                "stat_psychologie": stat_psychologie,
+                "stat_science": stat_science,
+                "stat_sciences_occultes": stat_sciences_occultes,
+                "stat_survie": stat_survie,
+                "stat_vigilance": stat_vigilance
+            });
+        });
+    });
+
+    on('clicked:boutton_xp', async (event) => {
+        getAttrs([ "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "pdv_maxi", "pdm_maxi", "xp"], function(values) {
+            let page = 8;
+            let force_temp = parseInt(values["force"]) || 0;
+            let dexterite_temp = parseInt(values["dexterite"]) || 0;
+            let constitution_temp = parseInt(values["constitution"]) || 0;
+            let intelligence_temp = parseInt(values["intelligence"]) || 0;
+            let charisme_temp = parseInt(values["charisme"]) || 0;
+            let volonte_temp = parseInt(values["volonte"]) || 0;
+            let stat_athletisme_temp = parseInt(values["stat_athletisme"]) || 0;
+            let stat_baratin_temp = parseInt(values["stat_baratin"]) || 0;
+            let stat_bibliotheque_temp = parseInt(values["stat_bibliotheque"]) || 0;
+            let stat_chercher_temp = parseInt(values["stat_chercher"]) || 0;
+            let stat_combat_cac_temp = parseInt(values["stat_combat_cac"]) || 0;
+            let stat_combat_pugilat_temp = parseInt(values["stat_combat_pugilat"]) || 0;
+            let stat_combat_distance_temp = parseInt(values["stat_combat_distance"]) || 0;
+            let stat_discretion_temp = parseInt(values["stat_discretion"]) || 0;
+            let stat_endurance_temp = parseInt(values["stat_endurance"]) || 0;
+            let stat_esquive_temp = parseInt(values["stat_esquive"]) || 0;
+            let stat_langue_ancienne_temp = parseInt(values["stat_langue_ancienne"]) || 0;
+            let stat_langue_temp = parseInt(values["stat_langue"]) || 0;
+            let stat_medecine_temp = parseInt(values["stat_medecine"]) || 0;
+            let stat_metier_temp = parseInt(values["stat_metier"]) || 0;
+            let stat_perception_temp = parseInt(values["stat_perception"]) || 0;
+            let stat_psychologie_temp = parseInt(values["stat_psychologie"]) || 0;
+            let stat_science_temp = parseInt(values["stat_science"]) || 0;
+            let stat_sciences_occultes_temp = parseInt(values["stat_sciences_occultes"]) || 0;
+            let stat_survie_temp = parseInt(values["stat_survie"]) || 0;
+            let stat_vigilance_temp = parseInt(values["stat_vigilance"]) || 0;
+            let pdv_maxi = parseInt(values["pdv_maxi"]) || 0;
+            let pdm_maxi = parseInt(values["pdm_maxi"]) || 0;
+            let xp_temp = parseInt(values["xp"]) || 0;
+            let blocage_xp = 0;
+
+            
+            setAttrs({
+                "page": page,
+                "force_temp": force_temp,
+                "dexterite_temp": dexterite_temp,
+                "constitution_temp": constitution_temp,
+                "intelligence_temp": intelligence_temp,
+                "charisme_temp": charisme_temp,
+                "volonte_temp": volonte_temp,
+                "stat_athletisme_temp": stat_athletisme_temp,
+                "stat_baratin_temp": stat_baratin_temp,
+                "stat_bibliotheque_temp": stat_bibliotheque_temp,
+                "stat_chercher_temp": stat_chercher_temp,
+                "stat_combat_cac_temp": stat_combat_cac_temp,
+                "stat_combat_pugilat_temp": stat_combat_pugilat_temp,
+                "stat_combat_distance_temp": stat_combat_distance_temp,
+                "stat_discretion_temp": stat_discretion_temp,
+                "stat_endurance_temp": stat_endurance_temp,
+                "stat_esquive_temp": stat_esquive_temp,
+                "stat_langue_ancienne_temp": stat_langue_ancienne_temp,
+                "stat_langue_temp": stat_langue_temp,
+                "stat_medecine_temp": stat_medecine_temp,
+                "stat_metier_temp": stat_metier_temp,
+                "stat_perception_temp": stat_perception_temp,
+                "stat_psychologie_temp": stat_psychologie_temp,
+                "stat_science_temp": stat_science_temp,
+                "stat_sciences_occultes_temp": stat_sciences_occultes_temp,
+                "stat_survie_temp": stat_survie_temp,
+                "stat_vigilance_temp": stat_vigilance_temp,
+                "pdv_maxi_temp": pdv_maxi,
+                "pdm_maxi_temp": pdm_maxi,
+                "xp_temp": xp_temp,
+                "blocage_xp": blocage_xp
+            });
+        });
+    });
+
+    on('clicked:xp_force_plus', async (event) => {
+        getAttrs(["force_temp", "xp_temp"], function(values) {
+            let force_temp = parseInt(values["force_temp"]) || 0; // Force temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+            
+            // Calcul du coût en XP
+            let dizaine = Math.floor(force_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+
+            if (force_temp == 9) cout_xp = dizaine +1;
+            else if (force_temp == 19) cout_xp = dizaine +1;
+            else if (force_temp == 29) cout_xp = dizaine +1;
+            else if (force_temp == 39) cout_xp = dizaine +1;
+            else if (force_temp == 49) cout_xp = dizaine +1;
+            else if (force_temp == 59) cout_xp = dizaine +1;
+            else if (force_temp == 69) cout_xp = dizaine +1;
+            else if (force_temp == 79) cout_xp = dizaine +1;
+            else if (force_temp == 89) cout_xp = dizaine +1;
+            else if (force_temp == 99) cout_xp = dizaine +1;
+    
+            // Augmente la force temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            force_temp += 1; // Augmente la force temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+
+            if (xp_temp < 0) blocage_xp = 1; // Alerte XP négative
+            else blocage_xp = 0;
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "force_temp": force_temp,
+                "xp_temp": xp_temp,
+                "blocage_xp": blocage_xp
+            });
+        });
+    });
+        
+    on('clicked:xp_force_minus', async (event) => {
+        getAttrs(["force", "force_temp", "xp_temp"], function(values) {
+            let force = parseInt(values["force"]) || 0; // Valeur réelle de force
+            let force_temp = parseInt(values["force_temp"]) || 0; // Force temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (force_temp > force) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((force_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((force_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue la force temporaire et augmente l'XP
+                force_temp -= 1; // Réduit la force temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "force_temp": force_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_dexterite_plus', async (event) => {
+        getAttrs(["dexterite_temp", "xp_temp"], function(values) {
+            let dexterite_temp = parseInt(values["dexterite_temp"]) || 0; // Dextérité temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP
+            let dizaine = Math.floor(dexterite_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+    
+            // Augmente la dextérité temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            dexterite_temp += 1; // Augmente la dextérité temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "dexterite_temp": dexterite_temp,
+                "xp_temp": xp_temp
+            });
+        });
+    });
+
+    on('clicked:xp_dexterite_minus', async (event) => {
+        getAttrs(["dexterite", "dexterite_temp", "xp_temp"], function(values) {
+            let dexterite = parseInt(values["dexterite"]) || 0; // Valeur réelle de dextérité
+            let dexterite_temp = parseInt(values["dexterite_temp"]) || 0; // Dextérité temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (dexterite_temp > dexterite) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((dexterite_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((dexterite_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue la dextérité temporaire et augmente l'XP
+                dexterite_temp -= 1; // Réduit la dextérité temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "dexterite_temp": dexterite_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_constitution_plus', async (event) => {
+        getAttrs(["constitution_temp", "xp_temp"], function(values) {
+            let constitution_temp = parseInt(values["constitution_temp"]) || 0; // Constitution temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP
+            let dizaine = Math.floor(constitution_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+    
+            // Augmente la constitution temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            constitution_temp += 1; // Augmente la constitution temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "constitution_temp": constitution_temp,
+                "xp_temp": xp_temp
+            });
+        });
+    });
+
+    on('clicked:xp_constitution_minus', async (event) => {
+        getAttrs(["constitution", "constitution_temp", "xp_temp"], function(values) {
+            let constitution = parseInt(values["constitution"]) || 0; // Valeur réelle de constitution
+            let constitution_temp = parseInt(values["constitution_temp"]) || 0; // Constitution temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (constitution_temp > constitution) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((constitution_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((constitution_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue la constitution temporaire et augmente l'XP
+                constitution_temp -= 1; // Réduit la constitution temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "constitution_temp": constitution_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_intelligence_plus', async (event) => {
+        getAttrs(["intelligence_temp", "xp_temp"], function(values) {
+            let intelligence_temp = parseInt(values["intelligence_temp"]) || 0; // Intelligence temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP
+            let dizaine = Math.floor(intelligence_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+    
+            // Augmente l'intelligence temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            intelligence_temp += 1; // Augmente l'intelligence temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "intelligence_temp": intelligence_temp,
+                "xp_temp": xp_temp
+            });
+        });
+    });
+
+    on('clicked:xp_intelligence_minus', async (event) => {
+        getAttrs(["intelligence", "intelligence_temp", "xp_temp"], function(values) {
+            let intelligence = parseInt(values["intelligence"]) || 0; // Valeur réelle d'intelligence
+            let intelligence_temp = parseInt(values["intelligence_temp"]) || 0; // Intelligence temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (intelligence_temp > intelligence) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((intelligence_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((intelligence_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue l'intelligence temporaire et augmente l'XP
+                intelligence_temp -= 1; // Réduit l'intelligence temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "intelligence_temp": intelligence_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });    
+
+    on('clicked:xp_charisme_plus', async (event) => {
+        getAttrs(["charisme_temp", "xp_temp"], function(values) {
+            let charisme_temp = parseInt(values["charisme_temp"]) || 0; // Charisme temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP
+            let dizaine = Math.floor(charisme_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+    
+            // Augmente le charisme temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            charisme_temp += 1; // Augmente le charisme temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "charisme_temp": charisme_temp,
+                "xp_temp": xp_temp
+            });
+        });
+    });
+
+    on('clicked:xp_charisme_minus', async (event) => {
+        getAttrs(["charisme", "charisme_temp", "xp_temp"], function(values) {
+            let charisme = parseInt(values["charisme"]) || 0; // Valeur réelle de charisme
+            let charisme_temp = parseInt(values["charisme_temp"]) || 0; // Charisme temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (charisme_temp > charisme) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((charisme_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((charisme_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue le charisme temporaire et augmente l'XP
+                charisme_temp -= 1; // Réduit le charisme temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "charisme_temp": charisme_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_volonte_plus', async (event) => {
+        getAttrs(["volonte_temp", "xp_temp"], function(values) {
+            let volonte_temp = parseInt(values["volonte_temp"]) || 0; // Volonté temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP
+            let dizaine = Math.floor(volonte_temp / 10); // Récupère la dizaine actuelle
+            let cout_xp = dizaine; // Coût pour passer au point suivant
+    
+            // Augmente la volonté temporaire et réduit l'XP (même si cela rend xp_temp négatif)
+            volonte_temp += 1; // Augmente la volonté temporaire
+            xp_temp -= cout_xp; // Déduit le coût en XP
+    
+            // Met à jour uniquement les valeurs temporaires
+            setAttrs({
+                "volonte_temp": volonte_temp,
+                "xp_temp": xp_temp
+            });
+        });
+    });
+
+    on('clicked:xp_volonte_minus', async (event) => {
+        getAttrs(["volonte", "volonte_temp", "xp_temp"], function(values) {
+            let volonte = parseInt(values["volonte"]) || 0; // Valeur réelle de volonté
+            let volonte_temp = parseInt(values["volonte_temp"]) || 0; // Volonté temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (volonte_temp > volonte) {
+                // Calcul du coût en XP pour le point à retirer
+                let dizaine = Math.floor((volonte_temp - 1) / 10); // Dizaine du point précédent
+                let cout_xp = dizaine; // Coût pour ajouter ce point au départ
+    
+                if ((volonte_temp - 1) % 10 === 9) {
+                    cout_xp += 1; // Ajuste pour le palier supérieur (à la dizaine suivante)
+                }
+    
+                // Diminue la volonté temporaire et augmente l'XP
+                volonte_temp -= 1; // Réduit la volonté temporaire
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "volonte_temp": volonte_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_pdv_plus', async (event) => {
+        getAttrs(["pdv_maxi_temp", "xp_temp"], function(values) {
+            let pdv_maxi_temp = parseInt(values["pdv_maxi_temp"]) || 0; // Points de Vie temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+            
+            // Vérifie si le up est possible
+            if (pdv_maxi_temp < 30) {
+                // Calcul du coût en XP
+                let cout_xp = 0;
+                if (pdv_maxi_temp < 10) cout_xp = 2;
+                else if (pdv_maxi_temp < 20) cout_xp = 3;
+                else if (pdv_maxi_temp < 29) cout_xp = 4;
+                else if (pdv_maxi_temp == 29) cout_xp = 10;
+        
+                // Augmente les PDV max temporaires et réduit l'XP (même si cela rend xp_temp négatif)
+                pdv_maxi_temp += 1; // Augmente les points de vie temporairement
+                xp_temp -= cout_xp; // Déduit le coût en XP
+        
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "pdv_maxi_temp": pdv_maxi_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_pdv_minus', async (event) => {
+        getAttrs(["pdv_maxi", "pdv_maxi_temp", "xp_temp"], function(values) {
+            let pdv_maxi = parseInt(values["pdv_maxi"]) || 0; // Valeur réelle des points de vie
+            let pdv_maxi_temp = parseInt(values["pdv_maxi_temp"]) || 0; // Points de Vie temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (pdv_maxi_temp > pdv_maxi) {
+                // Calcul du coût en XP pour le point à retirer
+                let cout_xp = 0;
+                if (pdv_maxi_temp < 10) cout_xp = 2;
+                else if (pdv_maxi_temp < 20) cout_xp = 3;
+                else if (pdv_maxi_temp < 30) cout_xp = 4;
+                else if (pdv_maxi_temp == 30) cout_xp = 10;
+    
+                // Diminue les PDV max temporaires et augmente l'XP
+                pdv_maxi_temp -= 1; // Réduit les points de vie temporairement
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "pdv_maxi_temp": pdv_maxi_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_pdm_plus', async (event) => {
+        getAttrs(["pdm_maxi_temp", "xp_temp"], function(values) {
+            let pdm_maxi_temp = parseInt(values["pdm_maxi_temp"]) || 0; // Points de Magie temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+            
+            // Vérifie si le up est possible
+            if (pdm_maxi_temp < 30) {
+                // Calcul du coût en XP
+                let cout_xp = 0;
+                if (pdm_maxi_temp < 10) cout_xp = 2;
+                else if (pdm_maxi_temp < 20) cout_xp = 3;
+                else if (pdm_maxi_temp < 29) cout_xp = 4;
+                else if (pdm_maxi_temp == 29) cout_xp = 10;
+        
+                // Augmente les PDM max temporaires et réduit l'XP (même si cela rend xp_temp négatif)
+                pdm_maxi_temp += 1; // Augmente les points de magie temporairement
+                xp_temp -= cout_xp; // Déduit le coût en XP
+        
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "pdm_maxi_temp": pdm_maxi_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_pdm_minus', async (event) => {
+        getAttrs(["pdm_maxi", "pdm_maxi_temp", "xp_temp"], function(values) {
+            let pdm_maxi = parseInt(values["pdm_maxi"]) || 0; // Valeur réelle des points de magie
+            let pdm_maxi_temp = parseInt(values["pdm_maxi_temp"]) || 0; // Points de Magie temporaire pour simulation
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si la diminution est possible
+            if (pdm_maxi_temp > pdm_maxi) {
+                // Calcul du coût en XP pour le point à retirer
+                let cout_xp = 0;
+                if (pdm_maxi_temp < 10) cout_xp = 2;
+                else if (pdm_maxi_temp < 20) cout_xp = 3;
+                else if (pdm_maxi_temp < 30) cout_xp = 4;
+                else if (pdm_maxi_temp == 30) cout_xp = 10;
+    
+                // Diminue les PDM max temporaires et augmente l'XP
+                pdm_maxi_temp -= 1; // Réduit les points de magie temporairement
+                xp_temp += cout_xp; // Récupère l'XP correspondant
+    
+                // Met à jour uniquement les valeurs temporaires
+                setAttrs({
+                    "pdm_maxi_temp": pdm_maxi_temp,
+                    "xp_temp": xp_temp
+                });
+            }
         });
     });
 </script>

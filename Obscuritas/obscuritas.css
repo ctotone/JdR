@@ -228,6 +228,7 @@ img.portrait_baudoin {
 .charsheet input.input_aura,
 .charsheet input.input_hero_here,
 .charsheet input.input_carac,
+.charsheet input.input_carac_xp,
 .charsheet input.input_carac_lock,
 .charsheet input.input_comp,
 .charsheet input.input_comp_lock,
@@ -300,6 +301,23 @@ img.portrait_baudoin {
   margin-top: 0px;
   font-family: 'Metamorphous';
   font-weight: bold;
+}
+
+.charsheet input.input_carac_xp {
+  border: 1px solid black;
+  border-radius: 0px;
+  width: 40px !important;
+  height: auto;
+  background-color: transparent;
+  color: var(--text_input_info);
+  text-align: center;
+  font-size: 15px;
+  padding: 0;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  font-family: 'Metamorphous';
+  font-weight: bold;
+
 }
 
 .charsheet input.input_derivees,
@@ -513,6 +531,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.charsheet button[type=action].button_valider_creation::before,
 .charsheet button[type=action].button_aura::before,
 .charsheet button[type=action].button_here_hero::before,
 .charsheet button[type=action].button_texte::before,
@@ -529,6 +548,7 @@ input[type="number"] {
 .charsheet button[type=action].button5::before,
 .charsheet button[type=action].button6::before,
 .charsheet button[type=action].button7::before,
+.charsheet button[type=action].button8::before,
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
 .charsheet button[type=action].button_comp::before,
@@ -635,6 +655,24 @@ input[type="number"] {
   text-align: center;
 }
 
+.charsheet button[type=action].button_valider_creation {
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background: var(--black);
+  width: auto !important;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 15px;
+  line-height: 25px;
+  font-family: "Metamorphous", serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 25px;
+}
+
 .charsheet button[type=action].button_comp,
 .charsheet button[type=roll].button_comp {
   padding: 0;
@@ -664,7 +702,8 @@ input[type="number"] {
 .charsheet button[type=action].button4,
 .charsheet button[type=action].button5,
 .charsheet button[type=action].button6,
-.charsheet button[type=action].button7 {
+.charsheet button[type=action].button7,
+.charsheet button[type=action].button8 {
   text-shadow: none;
   background: var(--color_background_button);
   text-align: left;
@@ -701,6 +740,10 @@ input[type="number"] {
   color: var(--hover_bouton);
 }
 
+.charsheet button[type=action].button_valider_creation:hover {
+  background: var(--text_input_info);
+}
+
 .charsheet button[type=action].button0:hover,
 .charsheet button[type=action].button1:hover,
 .charsheet button[type=action].button2:hover,
@@ -708,7 +751,8 @@ input[type="number"] {
 .charsheet button[type=action].button4:hover,
 .charsheet button[type=action].button5:hover,
 .charsheet button[type=action].button6:hover,
-.charsheet button[type=action].button7:hover {
+.charsheet button[type=action].button7:hover,
+.charsheet button[type=action].button8:hover {
   color: var(--color_text_hover);
 }
 
@@ -717,8 +761,9 @@ input[type="number"] {
 .charsheet .choix_page[value="2"] ~ div .button2 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
-.charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: #65709f;}
 .charsheet .choix_page[value="6"] ~ div .button6 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="8"] ~ div .button8 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: #65709f;}
 .charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: #65709f;}
 
 .charsheet button[type=action].button_show:hover {
@@ -808,7 +853,8 @@ div.sm_25 {
 .page_equipement,
 .page_note,
 .page_config,
-.page_compendium { 
+.page_compendium,
+.page_xp { 
   width: 820px;
   min-height: 1180px;
   height: auto;
@@ -823,7 +869,7 @@ div.sm_25 {
 }
 
 .creation_perso {
-  height: 800px !important;
+  height: 1295px !important;
   min-height: unset;
   background-image: var(--background_page);
   background-size: cover;
@@ -879,6 +925,13 @@ div.sm_25 {
   background-size: cover;
 }
 
+.page_xp {
+  height: 1265px !important;
+  min-height: unset;
+  background-image: var(--background_page);
+  background-size: cover;
+}
+
 
 /* Affichage des page dynamique */
 div.page_complete,
@@ -888,7 +941,8 @@ div.page_equipement,
 div.page_note,
 div.page_config,
 div.page_aura,
-div.page_compendium {
+div.page_compendium,
+div.page_xp {
     display: none;
 }
 
@@ -899,7 +953,8 @@ div.page_compendium {
 .charsheet .choix_page[value="4"] ~ div.page_note,
 .charsheet .choix_page[value="5"] ~ div.page_config,
 .charsheet .choix_page[value="6"] ~ div.page_aura,
-.charsheet .choix_page[value="7"] ~ div.page_compendium {
+.charsheet .choix_page[value="7"] ~ div.page_compendium,
+.charsheet .choix_page[value="8"] ~ div.page_xp {
     display: block;
 }
 
@@ -984,6 +1039,56 @@ div.cadre_inventaire_reduit {
   display: inline-grid;
   align-content: center;
   text-align: center;
+}
+
+/* Zone Création personnage  */
+.creation_entete {
+  background: var(--black);
+  color: var(--white);
+  width: 55%;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+.creation_carac_decompte {
+  background: black;
+  color: var(--white);
+  width: 282px;
+  height: 35px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  border-radius: 5px;
+  margin-top: 31px;
+  transform: rotate(1deg);
+}
+
+.creation_comp_decompte {
+  background: black;
+  color: var(--white);
+  width: 282px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 388px;
+  border-radius: 5px;
+  transform: rotate(-1deg);
+}
+
+.creation_valider {
+  margin-left: 230px;
+  margin-top: -15px;
+  margin-bottom: 25px;
 }
 
 /* Zone AURA */
@@ -1469,6 +1574,20 @@ div.marqueur_aura_n10 {
   border-radius: 10px;
   margin-top: 15px;
   background-image: var(--esoterik_equipement);
+  background-size: contain;
+  background-blend-mode: lighten;
+}
+
+.cadre_xp,
+.cadre_creation {
+  grid-column: 1 / 83;
+  border: 2px solid #00000087;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 2px #000000c4;
+  background: #ffffff52;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-image: var(--esoterik_carac);
   background-size: contain;
   background-blend-mode: lighten;
 }
