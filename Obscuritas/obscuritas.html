@@ -1,3 +1,5 @@
+<!-- TODO Ajouter le blocage_xp dans les script de plus -->
+
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
@@ -2692,6 +2694,7 @@
             Charisme : <input type="number" class="input_carac_xp" name="attr_charisme" readonly> ==> <button type="action" class="button_carac" name="act_xp_charisme_minus">-</button> <input type="number" class="input_carac_xp" name="attr_charisme_temp" readonly> <button type="action" class="button_carac" name="act_xp_charisme_plus">+</button><br><br>
             Points de vie : <input type="number" class="input_carac_xp" name="attr_pdv_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdv_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdv_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdv_plus">+</button><br>
             Points de magie : <input type="number" class="input_carac_xp" name="attr_pdm_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdm_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdm_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdm_plus">+</button><br>
+            Athlétisme : <input type="number" class="input_carac_xp" name="attr_stat_athletisme" readonly> ==> <button type="action" class="button_carac" name="act_xp_athletisme_minus">-</button> <input type="number" class="input_carac_xp" name="attr_stat_athletisme_temp" readonly> <button type="action" class="button_carac" name="act_xp_athletisme_plus">+</button><br>
 
 
 
@@ -5508,4 +5511,1538 @@ on('clicked:compendium_combat', async (event) => {
             }
         });
     });
+
+    on('clicked:xp_athletisme_plus', async (event) => {
+        getAttrs(["stat_athletisme_temp", "xp_temp"], function(values) {
+            let stat_athletisme_temp = parseInt(values["stat_athletisme_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_athletisme_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_athletisme_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_athletisme_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_athletisme_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_athletisme_temp < 30) {
+                stat_athletisme_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_athletisme_temp": stat_athletisme_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_athletisme_minus', async (event) => {
+        getAttrs(["stat_athletisme_temp", "stat_athletisme", "xp_temp"], function(values) {
+            let stat_athletisme_temp = parseInt(values["stat_athletisme_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_athletisme = parseInt(values["stat_athletisme"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_athletisme_temp > stat_athletisme) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_athletisme_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_athletisme_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_athletisme_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_athletisme_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_athletisme_temp <= 10) {
+                    stat_athletisme_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_athletisme_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_athletisme_temp": stat_athletisme_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_baratin_plus', async (event) => {
+        getAttrs(["stat_baratin_temp", "xp_temp"], function(values) {
+            let stat_baratin_temp = parseInt(values["stat_baratin_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_baratin_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_baratin_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_baratin_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_baratin_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_baratin_temp < 30) {
+                stat_baratin_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_baratin_temp": stat_baratin_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_baratin_minus', async (event) => {
+        getAttrs(["stat_baratin_temp", "stat_baratin", "xp_temp"], function(values) {
+            let stat_baratin_temp = parseInt(values["stat_baratin_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_baratin = parseInt(values["stat_baratin"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_baratin_temp > stat_baratin) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_baratin_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_baratin_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_baratin_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_baratin_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_baratin_temp <= 10) {
+                    stat_baratin_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_baratin_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_baratin_temp": stat_baratin_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_bibliotheque_plus', async (event) => {
+        getAttrs(["stat_bibliotheque_temp", "xp_temp"], function(values) {
+            let stat_bibliotheque_temp = parseInt(values["stat_bibliotheque_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_bibliotheque_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_bibliotheque_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_bibliotheque_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_bibliotheque_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_bibliotheque_temp < 30) {
+                stat_bibliotheque_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_bibliotheque_temp": stat_bibliotheque_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_bibliotheque_minus', async (event) => {
+        getAttrs(["stat_bibliotheque_temp", "stat_bibliotheque", "xp_temp"], function(values) {
+            let stat_bibliotheque_temp = parseInt(values["stat_bibliotheque_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_bibliotheque = parseInt(values["stat_bibliotheque"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_bibliotheque_temp > stat_bibliotheque) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_bibliotheque_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_bibliotheque_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_bibliotheque_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_bibliotheque_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_bibliotheque_temp <= 10) {
+                    stat_bibliotheque_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_bibliotheque_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_bibliotheque_temp": stat_bibliotheque_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+
+    
+
+    on('clicked:xp_chercher_plus', async (event) => {
+        getAttrs(["stat_chercher_temp", "xp_temp"], function(values) {
+            let stat_chercher_temp = parseInt(values["stat_chercher_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_chercher_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_chercher_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_chercher_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_chercher_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_chercher_temp < 30) {
+                stat_chercher_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_chercher_temp": stat_chercher_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_chercher_minus', async (event) => {
+        getAttrs(["stat_chercher_temp", "stat_chercher", "xp_temp"], function(values) {
+            let stat_chercher_temp = parseInt(values["stat_chercher_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_chercher = parseInt(values["stat_chercher"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_chercher_temp > stat_chercher) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_chercher_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_chercher_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_chercher_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_chercher_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_chercher_temp <= 10) {
+                    stat_chercher_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_chercher_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_chercher_temp": stat_chercher_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_cac_plus', async (event) => {
+        getAttrs(["stat_combat_cac_temp", "xp_temp"], function(values) {
+            let stat_combat_cac_temp = parseInt(values["stat_combat_cac_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_combat_cac_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_combat_cac_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_cac_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_cac_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_combat_cac_temp < 30) {
+                stat_combat_cac_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_cac_temp": stat_combat_cac_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_cac_minus', async (event) => {
+        getAttrs(["stat_combat_cac_temp", "stat_combat_cac", "xp_temp"], function(values) {
+            let stat_combat_cac_temp = parseInt(values["stat_combat_cac_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_combat_cac = parseInt(values["stat_combat_cac"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_combat_cac_temp > stat_combat_cac) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_combat_cac_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_combat_cac_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_combat_cac_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_combat_cac_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_combat_cac_temp <= 10) {
+                    stat_combat_cac_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_combat_cac_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_cac_temp": stat_combat_cac_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_pugilat_plus', async (event) => {
+        getAttrs(["stat_combat_pugilat_temp", "xp_temp"], function(values) {
+            let stat_combat_pugilat_temp = parseInt(values["stat_combat_pugilat_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_combat_pugilat_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_combat_pugilat_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_pugilat_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_pugilat_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_combat_pugilat_temp < 30) {
+                stat_combat_pugilat_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_pugilat_temp": stat_combat_pugilat_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_pugilat_minus', async (event) => {
+        getAttrs(["stat_combat_pugilat_temp", "stat_combat_pugilat", "xp_temp"], function(values) {
+            let stat_combat_pugilat_temp = parseInt(values["stat_combat_pugilat_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_combat_pugilat = parseInt(values["stat_combat_pugilat"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_combat_pugilat_temp > stat_combat_pugilat) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_combat_pugilat_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_combat_pugilat_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_combat_pugilat_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_combat_pugilat_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_combat_pugilat_temp <= 10) {
+                    stat_combat_pugilat_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_combat_pugilat_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_pugilat_temp": stat_combat_pugilat_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_distance_plus', async (event) => {
+        getAttrs(["stat_combat_distance_temp", "xp_temp"], function(values) {
+            let stat_combat_distance_temp = parseInt(values["stat_combat_distance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_combat_distance_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_combat_distance_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_distance_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_combat_distance_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_combat_distance_temp < 30) {
+                stat_combat_distance_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_distance_temp": stat_combat_distance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_combat_distance_minus', async (event) => {
+        getAttrs(["stat_combat_distance_temp", "stat_combat_distance", "xp_temp"], function(values) {
+            let stat_combat_distance_temp = parseInt(values["stat_combat_distance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_combat_distance = parseInt(values["stat_combat_distance"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_combat_distance_temp > stat_combat_distance) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_combat_distance_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_combat_distance_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_combat_distance_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_combat_distance_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_combat_distance_temp <= 10) {
+                    stat_combat_distance_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_combat_distance_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_combat_distance_temp": stat_combat_distance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_discretion_plus', async (event) => {
+        getAttrs(["stat_discretion_temp", "xp_temp"], function(values) {
+            let stat_discretion_temp = parseInt(values["stat_discretion_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_discretion_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_discretion_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_discretion_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_discretion_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_discretion_temp < 30) {
+                stat_discretion_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_discretion_temp": stat_discretion_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_discretion_minus', async (event) => {
+        getAttrs(["stat_discretion_temp", "stat_discretion", "xp_temp"], function(values) {
+            let stat_discretion_temp = parseInt(values["stat_discretion_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_discretion = parseInt(values["stat_discretion"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_discretion_temp > stat_discretion) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_discretion_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_discretion_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_discretion_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_discretion_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_discretion_temp <= 10) {
+                    stat_discretion_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_discretion_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_discretion_temp": stat_discretion_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_endurance_plus', async (event) => {
+        getAttrs(["stat_endurance_temp", "xp_temp"], function(values) {
+            let stat_endurance_temp = parseInt(values["stat_endurance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_endurance_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_endurance_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_endurance_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_endurance_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_endurance_temp < 30) {
+                stat_endurance_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_endurance_temp": stat_endurance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_endurance_minus', async (event) => {
+        getAttrs(["stat_endurance_temp", "stat_endurance", "xp_temp"], function(values) {
+            let stat_endurance_temp = parseInt(values["stat_endurance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_endurance = parseInt(values["stat_endurance"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_endurance_temp > stat_endurance) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_endurance_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_endurance_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_endurance_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_endurance_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_endurance_temp <= 10) {
+                    stat_endurance_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_endurance_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_endurance_temp": stat_endurance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_esquive_plus', async (event) => {
+        getAttrs(["stat_esquive_temp", "xp_temp"], function(values) {
+            let stat_esquive_temp = parseInt(values["stat_esquive_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_esquive_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_esquive_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_esquive_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_esquive_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_esquive_temp < 30) {
+                stat_esquive_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_esquive_temp": stat_esquive_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_esquive_minus', async (event) => {
+        getAttrs(["stat_esquive_temp", "stat_esquive", "xp_temp"], function(values) {
+            let stat_esquive_temp = parseInt(values["stat_esquive_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_esquive = parseInt(values["stat_esquive"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_esquive_temp > stat_esquive) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_esquive_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_esquive_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_esquive_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_esquive_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_esquive_temp <= 10) {
+                    stat_esquive_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_esquive_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_esquive_temp": stat_esquive_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_langue_plus', async (event) => {
+        getAttrs(["stat_langue_temp", "xp_temp"], function(values) {
+            let stat_langue_temp = parseInt(values["stat_langue_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_langue_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_langue_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_langue_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_langue_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_langue_temp < 30) {
+                stat_langue_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_langue_temp": stat_langue_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_langue_minus', async (event) => {
+        getAttrs(["stat_langue_temp", "stat_langue", "xp_temp"], function(values) {
+            let stat_langue_temp = parseInt(values["stat_langue_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_langue = parseInt(values["stat_langue"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_langue_temp > stat_langue) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_langue_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_langue_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_langue_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_langue_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_langue_temp <= 10) {
+                    stat_langue_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_langue_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_langue_temp": stat_langue_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_langue_ancienne_plus', async (event) => {
+        getAttrs(["stat_langue_ancienne_temp", "xp_temp"], function(values) {
+            let stat_langue_ancienne_temp = parseInt(values["stat_langue_ancienne_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_langue_ancienne_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_langue_ancienne_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_langue_ancienne_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_langue_ancienne_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_langue_ancienne_temp < 30) {
+                stat_langue_ancienne_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_langue_ancienne_temp": stat_langue_ancienne_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_langue_ancienne_minus', async (event) => {
+        getAttrs(["stat_langue_ancienne_temp", "stat_langue_ancienne", "xp_temp"], function(values) {
+            let stat_langue_ancienne_temp = parseInt(values["stat_langue_ancienne_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_langue_ancienne = parseInt(values["stat_langue_ancienne"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_langue_ancienne_temp > stat_langue_ancienne) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_langue_ancienne_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_langue_ancienne_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_langue_ancienne_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_langue_ancienne_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_langue_ancienne_temp <= 10) {
+                    stat_langue_ancienne_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_langue_ancienne_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_langue_ancienne_temp": stat_langue_ancienne_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_medecine_plus', async (event) => {
+        getAttrs(["stat_medecine_temp", "xp_temp"], function(values) {
+            let stat_medecine_temp = parseInt(values["stat_medecine_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_medecine_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_medecine_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_medecine_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_medecine_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_medecine_temp < 30) {
+                stat_medecine_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_medecine_temp": stat_medecine_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_medecine_minus', async (event) => {
+        getAttrs(["stat_medecine_temp", "stat_medecine", "xp_temp"], function(values) {
+            let stat_medecine_temp = parseInt(values["stat_medecine_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_medecine = parseInt(values["stat_medecine"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_medecine_temp > stat_medecine) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_medecine_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_medecine_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_medecine_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_medecine_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_medecine_temp <= 10) {
+                    stat_medecine_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_medecine_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_medecine_temp": stat_medecine_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_metier_plus', async (event) => {
+        getAttrs(["stat_metier_temp", "xp_temp"], function(values) {
+            let stat_metier_temp = parseInt(values["stat_metier_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_metier_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_metier_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_metier_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_metier_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_metier_temp < 30) {
+                stat_metier_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_metier_temp": stat_metier_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_metier_minus', async (event) => {
+        getAttrs(["stat_metier_temp", "stat_metier", "xp_temp"], function(values) {
+            let stat_metier_temp = parseInt(values["stat_metier_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_metier = parseInt(values["stat_metier"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_metier_temp > stat_metier) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_metier_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_metier_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_metier_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_metier_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_metier_temp <= 10) {
+                    stat_metier_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_metier_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_metier_temp": stat_metier_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_perception_plus', async (event) => {
+        getAttrs(["stat_perception_temp", "xp_temp"], function(values) {
+            let stat_perception_temp = parseInt(values["stat_perception_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_perception_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_perception_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_perception_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_perception_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_perception_temp < 30) {
+                stat_perception_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_perception_temp": stat_perception_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_perception_minus', async (event) => {
+        getAttrs(["stat_perception_temp", "stat_perception", "xp_temp"], function(values) {
+            let stat_perception_temp = parseInt(values["stat_perception_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_perception = parseInt(values["stat_perception"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_perception_temp > stat_perception) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_perception_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_perception_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_perception_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_perception_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_perception_temp <= 10) {
+                    stat_perception_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_perception_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_perception_temp": stat_perception_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_psychologie_plus', async (event) => {
+        getAttrs(["stat_psychologie_temp", "xp_temp"], function(values) {
+            let stat_psychologie_temp = parseInt(values["stat_psychologie_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_psychologie_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_psychologie_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_psychologie_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_psychologie_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_psychologie_temp < 30) {
+                stat_psychologie_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_psychologie_temp": stat_psychologie_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_psychologie_minus', async (event) => {
+        getAttrs(["stat_psychologie_temp", "stat_psychologie", "xp_temp"], function(values) {
+            let stat_psychologie_temp = parseInt(values["stat_psychologie_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_psychologie = parseInt(values["stat_psychologie"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_psychologie_temp > stat_psychologie) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_psychologie_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_psychologie_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_psychologie_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_psychologie_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_psychologie_temp <= 10) {
+                    stat_psychologie_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_psychologie_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_psychologie_temp": stat_psychologie_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_science_plus', async (event) => {
+        getAttrs(["stat_science_temp", "xp_temp"], function(values) {
+            let stat_science_temp = parseInt(values["stat_science_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_science_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_science_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_science_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_science_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_science_temp < 30) {
+                stat_science_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_science_temp": stat_science_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_science_minus', async (event) => {
+        getAttrs(["stat_science_temp", "stat_science", "xp_temp"], function(values) {
+            let stat_science_temp = parseInt(values["stat_science_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_science = parseInt(values["stat_science"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_science_temp > stat_science) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_science_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_science_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_science_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_science_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_science_temp <= 10) {
+                    stat_science_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_science_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_science_temp": stat_science_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_sciences_occultes_plus', async (event) => {
+        getAttrs(["stat_sciences_occultes_temp", "xp_temp"], function(values) {
+            let stat_sciences_occultes_temp = parseInt(values["stat_sciences_occultes_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_sciences_occultes_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_sciences_occultes_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_sciences_occultes_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_sciences_occultes_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_sciences_occultes_temp < 30) {
+                stat_sciences_occultes_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_sciences_occultes_temp": stat_sciences_occultes_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_sciences_occultes_minus', async (event) => {
+        getAttrs(["stat_sciences_occultes_temp", "stat_sciences_occultes", "xp_temp"], function(values) {
+            let stat_sciences_occultes_temp = parseInt(values["stat_sciences_occultes_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_sciences_occultes = parseInt(values["stat_sciences_occultes"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_sciences_occultes_temp > stat_sciences_occultes) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_sciences_occultes_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_sciences_occultes_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_sciences_occultes_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_sciences_occultes_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_sciences_occultes_temp <= 10) {
+                    stat_sciences_occultes_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_sciences_occultes_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_sciences_occultes_temp": stat_sciences_occultes_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_survie_plus', async (event) => {
+        getAttrs(["stat_survie_temp", "xp_temp"], function(values) {
+            let stat_survie_temp = parseInt(values["stat_survie_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_survie_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_survie_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_survie_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_survie_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_survie_temp < 30) {
+                stat_survie_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_survie_temp": stat_survie_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_survie_minus', async (event) => {
+        getAttrs(["stat_survie_temp", "stat_survie", "xp_temp"], function(values) {
+            let stat_survie_temp = parseInt(values["stat_survie_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_survie = parseInt(values["stat_survie"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_survie_temp > stat_survie) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_survie_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_survie_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_survie_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_survie_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_survie_temp <= 10) {
+                    stat_survie_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_survie_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_survie_temp": stat_survie_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_vigilance_plus', async (event) => {
+        getAttrs(["stat_vigilance_temp", "xp_temp"], function(values) {
+            let stat_vigilance_temp = parseInt(values["stat_vigilance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Calcul du coût en XP et augmentation selon la tranche
+            let cout_xp = 0;
+            let augmentation = 0;
+    
+            if (stat_vigilance_temp < 10) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 2; // Augmente de 2 points
+            } else if (stat_vigilance_temp < 20) {
+                cout_xp = 1; // 1 XP dépensé
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_vigilance_temp < 30) {
+                cout_xp = 2; // 2 XP dépensés
+                augmentation = 1; // Augmente de 1 point
+            } else if (stat_vigilance_temp === 29) {
+                cout_xp = 4; // 4 XP dépensés
+                augmentation = 1; // Augmente de 1 point (de 29 à 30)
+            }
+    
+            // Vérifie si on peut augmenter
+            if (stat_vigilance_temp < 30) {
+                stat_vigilance_temp += augmentation; // Augmente la compétence temporaire
+                xp_temp -= cout_xp; // Réduit l'XP temporaire
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_vigilance_temp": stat_vigilance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+    on('clicked:xp_vigilance_minus', async (event) => {
+        getAttrs(["stat_vigilance_temp", "stat_vigilance", "xp_temp"], function(values) {
+            let stat_vigilance_temp = parseInt(values["stat_vigilance_temp"]) || 0; // Valeur temporaire pour la compétence
+            let stat_vigilance = parseInt(values["stat_vigilance"]) || 0; // Valeur réelle de la compétence
+            let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
+    
+            // Vérifie si on peut diminuer (ne pas descendre en dessous de la valeur réelle)
+            if (stat_vigilance_temp > stat_vigilance) {
+                let cout_xp_recupere = 0;
+    
+                // Détermine combien d'XP récupérer selon la tranche
+                if (stat_vigilance_temp > 29) {
+                    cout_xp_recupere = 4; // Récupère 4 XP si on diminue de 30 à 29
+                } else if (stat_vigilance_temp > 19) {
+                    cout_xp_recupere = 2; // Récupère 2 XP si on diminue entre 20 et 29
+                } else if (stat_vigilance_temp > 9) {
+                    cout_xp_recupere = 1; // Récupère 1 XP si on diminue entre 10 et 19
+                } else if (stat_vigilance_temp > 0) {
+                    cout_xp_recupere = 1; // Récupère 1 XP pour chaque 2 points diminués entre 0 et 9
+                }
+    
+                // Diminue la compétence temporaire
+                if (stat_vigilance_temp <= 10) {
+                    stat_vigilance_temp -= 2; // Diminue de 2 points si dans la tranche 0-9
+                } else {
+                    stat_vigilance_temp -= 1; // Diminue de 1 point sinon
+                }
+    
+                xp_temp += cout_xp_recupere; // Récupère les XP correspondants
+    
+                // Met à jour les valeurs temporaires
+                setAttrs({
+                    "stat_vigilance_temp": stat_vigilance_temp,
+                    "xp_temp": xp_temp
+                });
+            }
+        });
+    });
+
+
+
+    
 </script>
