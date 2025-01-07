@@ -989,9 +989,9 @@ div.sm_25 {
 
 .page_compendium {
   height: auto !important;
-  min-height: 500px;
+  min-height: 1180px;
   background-image: var(--background_page);
-  background-size: cover;
+  background-size: contain;
 }
 
 .page_xp {
@@ -3602,13 +3602,15 @@ div.illustration_bouclier_aucun {
 /* Affichage des page dynamique */
 div.compendium_sm,
 div.compendium_hero,
-div.compendium_combat {
+div.compendium_combat,
+div.compendium_combat_tableaux {
     display: none;
 }
 
 .charsheet .choix_compendium[value="1"] ~ div.compendium_sm,
 .charsheet .choix_compendium[value="2"] ~ div.compendium_hero,
-.charsheet .choix_compendium[value="3"] ~ div.compendium_combat {
+.charsheet .choix_compendium[value="3"] ~ div.compendium_combat,
+.charsheet .choix_compendium[value="4"] ~ div.compendium_combat_tableaux {
     display: block;
 }
 
@@ -3724,6 +3726,52 @@ div.compendium_combat {
   height: 308px;
   margin-top: -168px;
   overflow: visible;
+}
+
+.wrapper_compendium_tableau_3col {
+  display: grid;
+  grid-template-columns: 2% 30% 30% 30%;
+  grid-auto-rows: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Playfair';
+  line-height: 17px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.compendium_tableau_type {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  background: #ffffff45;
+}
+
+.compendium_tableau_action {
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background: #ffffff45;
+}
+
+.compendium_tableau_effet {
+  grid-column: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background: #ffffff45;
 }
 
 
