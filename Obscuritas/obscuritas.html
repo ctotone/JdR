@@ -1,5 +1,3 @@
-<!-- TODO Ajouter le blocage_xp dans les script de plus -->
-
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
@@ -2685,23 +2683,635 @@
 
     <div class="page_xp">
         <div class="cadre_xp">
-            <input type="number" class="input_carac_xp" name="attr_xp_temp" value="0" min="15" max="99"> XP_temp<br><br><br>
-            Force : <input type="number" class="input_carac_xp" name="attr_force" readonly> ==> <button type="action" class="button_carac" name="act_xp_force_minus">-</button> <input type="number" class="input_carac_xp" name="attr_force_temp" readonly> <button type="action" class="button_carac" name="act_xp_force_plus">+</button><br>
-            Dextérité : <input type="number" class="input_carac_xp" name="attr_dexterite" readonly> ==> <button type="action" class="button_carac" name="act_xp_dexterite_minus">-</button> <input type="number" class="input_carac_xp" name="attr_dexterite_temp" readonly> <button type="action" class="button_carac" name="act_xp_dexterite_plus">+</button><br>
-            Constitution : <input type="number" class="input_carac_xp" name="attr_constitution" readonly> ==> <button type="action" class="button_carac" name="act_xp_constitution_minus">-</button> <input type="number" class="input_carac_xp" name="attr_constitution_temp" readonly> <button type="action" class="button_carac" name="act_xp_constitution_plus">+</button><br>
-            Intelligence : <input type="number" class="input_carac_xp" name="attr_intelligence" readonly> ==> <button type="action" class="button_carac" name="act_xp_intelligence_minus">-</button> <input type="number" class="input_carac_xp" name="attr_intelligence_temp" readonly> <button type="action" class="button_carac" name="act_xp_intelligence_plus">+</button><br>
-            Volonté : <input type="number" class="input_carac_xp" name="attr_volonte" readonly> ==> <button type="action" class="button_carac" name="act_xp_volonte_minus">-</button> <input type="number" class="input_carac_xp" name="attr_volonte_temp" readonly> <button type="action" class="button_carac" name="act_xp_volonte_plus">+</button><br>
-            Charisme : <input type="number" class="input_carac_xp" name="attr_charisme" readonly> ==> <button type="action" class="button_carac" name="act_xp_charisme_minus">-</button> <input type="number" class="input_carac_xp" name="attr_charisme_temp" readonly> <button type="action" class="button_carac" name="act_xp_charisme_plus">+</button><br><br>
-            Points de vie : <input type="number" class="input_carac_xp" name="attr_pdv_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdv_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdv_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdv_plus">+</button><br>
-            Points de magie : <input type="number" class="input_carac_xp" name="attr_pdm_maxi" readonly> ==> <button type="action" class="button_carac" name="act_xp_pdm_minus">-</button> <input type="number" class="input_carac_xp" name="attr_pdm_maxi_temp" readonly> <button type="action" class="button_carac" name="act_xp_pdm_plus">+</button><br>
-            Athlétisme : <input type="number" class="input_carac_xp" name="attr_stat_athletisme" readonly> ==> <button type="action" class="button_carac" name="act_xp_athletisme_minus">-</button> <input type="number" class="input_carac_xp" name="attr_stat_athletisme_temp" readonly> <button type="action" class="button_carac" name="act_xp_athletisme_plus">+</button><br>
+            <div class="wrapper_page_xp">
+                <div class="xp_bloc_haut">
+                    <div class="wrapper_page_xp">
+                        <div class="entete_xp">
+                            Dans Obscuritas Aeterna, l’expérience (XP) symbolise l’apprentissage, la progression et la maturation que les personnages acquièrent au fil de leurs aventures.<br><br>
+                            Qu’il s’agisse de combats éprouvants, de révélations occultes ou de dilemmes moraux, chaque session façonne un peu plus l’âme et les compétences de votre héros.
+                        </div>
+                        <div class="xp_disponible">
+                            <div class="wrapper_xp_dispo">
+                                <div class="xp_dispo_valeur">
+                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp" readonly>
+                                </div>
+                                <div class="xp_dispo_texte">
+                                    Expérience disponible
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xp_bloc_carac_deriv"></div>
+                <div class="xp_bloc_carac">
+                    <div class="wrapper_page_xp" style="margin-bottom: 20px;">
+                        <div class="xp_titre_bloc">
+                            CARACTÉRISTIQUES
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Force
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_force" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
 
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_force_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_force_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_force_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Dextérité
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_dexterite" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
 
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_dexterite_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_dexterite_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_dexterite_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Constitution
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_constitution" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
 
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_constitution_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_constitution_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_constitution_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Intelligence
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_intelligence" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
 
-                        
-            
-            
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_intelligence_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_intelligence_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_intelligence_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Volonté
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_volonte" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
+
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_volonte_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_volonte_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_volonte_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp">
+                        <div class="xp_tableau_titre">
+                            Charisme
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_charisme" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
+
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_charisme_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_charisme_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_charisme_plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="xp_bloc_separateur"></div>
+                <div class="xp_bloc_derivees">
+                    <div class="wrapper_page_xp" style="margin-bottom: 60px;">
+                        <div class="xp_titre_bloc">
+                            DÉRIVÉES
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp_derivees">
+                        <div class="xp_tableau_titre">
+                            Points de vie
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_pdv_maxi" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
+
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_pdv_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_pdv_maxi_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_pdv_plus">+</button>
+                        </div>
+                    </div>
+                    <div class="wrapper_tableau_xp_derivees">
+                        <div class="xp_tableau_titre">
+                            Points de magie
+                        </div>
+                        <div class="xp_tableau_valeur_base">
+                            <input type="number" class="input_carac_xp" name="attr_pdm_maxi" readonly>
+                        </div>
+                        <div class="xp_tableau_image_up">
+
+                        </div>
+                        <div class="xp_tableau_minus">
+                            <button type="action" class="button_xp" name="act_xp_pdm_minus">-</button>
+                        </div>
+                        <div class="xp_tableau_valeur_up">
+                            <input type="number" class="input_carac_xp" name="attr_pdm_maxi_temp" readonly>
+                        </div>
+                        <div class="xp_tableau_plus">
+                            <button type="action" class="button_xp" name="act_xp_pdm_plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="xp_bloc_competences">
+                    <div class="wrapper_page_xp" style="margin-bottom: 20px;">
+                        <div class="xp_titre_bloc">
+                            COMPÉTENCES
+                        </div>
+                        <div class="xp_block_comp_gauche">
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Athlétisme
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_athletisme" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_athletisme_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_athletisme_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_athletisme_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Baratin
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_baratin" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_baratin_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_baratin_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_baratin_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Bibliothèque
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_bibliotheque" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_bibliotheque_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_bibliotheque_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_bibliotheque_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Chercher
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_chercher" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_chercher_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_chercher_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_chercher_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Combat CaC
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_cac" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_cac_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_cac_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_cac_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Combat Pugilat
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_pugilat" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_pugilat_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_pugilat_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_pugilat_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Combat Distance
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_distance" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_distance_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_combat_distance_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_combat_distance_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Discrétion
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_discretion" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_discretion_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_discretion_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_discretion_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Endurance
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_endurance" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_endurance_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_endurance_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_endurance_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Esquive
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_esquive" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_esquive_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_esquive_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_esquive_plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xp_block_comp_separateur"></div>
+                        <div class="xp_block_comp_droite">
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Langue
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_langue" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_langue_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_langue_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_langue_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Langue ancienne
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_langue_ancienne" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_langue_ancienne_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_langue_ancienne_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_langue_ancienne_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Médecine
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_medecine" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_medecine_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_medecine_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_medecine_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Métier
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_metier" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_metier_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_metier_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_metier_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Perception
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_perception" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_perception_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_perception_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_perception_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Psychologie
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_psychologie" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_psychologie_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_psychologie_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_psychologie_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Sciences
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_science" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_science_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_science_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_science_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Sciences occultes
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_sciences_occultes" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_sciences_occultes_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_sciences_occultes_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_sciences_occultes_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Survie
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_survie" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_survie_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_survie_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_survie_plus">+</button>
+                                </div>
+                            </div>
+                            <div class="wrapper_tableau_comp">
+                                <div class="xp_tableau_titre">
+                                    Vigilance
+                                </div>
+                                <div class="xp_tableau_valeur_base">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_vigilance" readonly>
+                                </div>
+                                <div class="xp_tableau_image_up">
+        
+                                </div>
+                                <div class="xp_tableau_minus">
+                                    <button type="action" class="button_xp" name="act_xp_vigilance_minus">-</button>
+                                </div>
+                                <div class="xp_tableau_valeur_up">
+                                    <input type="number" class="input_carac_xp" name="attr_stat_vigilance_temp" readonly>
+                                </div>
+                                <div class="xp_tableau_plus">
+                                    <button type="action" class="button_xp" name="act_xp_vigilance_plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xp_bloc_bas">
+                    <div class="wrapper_page_xp">
+                        <input type="hidden" class="test_xp" name="attr_blocage_xp" value="0">
+                        <div class="valider_xp" style="grid-column: 25/79;background: transparent;">
+                            <button type="action" class="button_valider_xp" name="act_valider_xp">Valider votre gain d'expérience<br><br>Attention, ce choix sera définitif<br>et vos statistiques seront mises à jour</button>
+                        </div>
+                        <div class="erreur_xp" style="grid-column: 25/79;">
+                            Trop de points dépensés<br>validation impossible
+                        </div>
+                        <div class="xp_disponible" style="grid-column: 3/20;">
+                            <div class="wrapper_xp_dispo">
+                                <div class="xp_dispo_valeur">
+                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp" readonly>
+                                </div>
+                                <div class="xp_dispo_texte">
+                                    Expérience disponible
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -3253,6 +3863,20 @@
         });
     });	
 
+    on("sheet:opened", function() {
+
+        getAttrs(["page"], function(values) {
+
+            let page = parseInt(values["page"]) || 0;
+                        
+            if (page == 8) page = 0;
+            
+            setAttrs({
+                "page": page
+            });
+        });
+    });
+
     on("change:pdv", function() {
 
         getAttrs(["pdv", "pdv_maxi"], function(values) {
@@ -3274,9 +3898,9 @@
     });
 
      
-    on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance change:xp", function() {
+    on("sheet:opened change:stat_1 change:stat_2 change:stat_3 change:stat_4 change:comp_1 change:comp_2 change:comp_3 change:comp_4 change:force change:dexterite change:constitution change:intelligence change:charisme change:volonte change:stat_athletisme change:stat_baratin change:stat_bibliotheque change:stat_chercher change:stat_combat_cac change:stat_combat_pugilat change:stat_combat_distance change:stat_discretion change:stat_endurance change:stat_esquive change:stat_langue_ancienne change:stat_langue change:stat_medecine change:stat_metier change:stat_perception change:stat_psychologie change:stat_science change:stat_sciences_occultes change:stat_survie change:stat_vigilance change:xp change:bonus_xp_pdv change: bonus_xp_pdm", function() {
 
-        getAttrs(["bonus_xp_pdv", "bonus_xp_pdm", "stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "sm", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance"], function(values) {
+        getAttrs(["bonus_xp_pdv", "bonus_xp_pdm", "stat_1", "stat_2", "stat_3", "stat_4", "comp_1", "comp_2", "comp_3", "comp_4", "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "sm", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "xp"], function(values) {
             let stat_1 = parseInt(values["stat_1"]) || 0;
             let stat_2 = parseInt(values["stat_2"]) || 0;
             let stat_3 = parseInt(values["stat_3"]) || 0;
@@ -4954,6 +5578,21 @@ on('clicked:compendium_combat', async (event) => {
         });
     });
 
+    on("change:xp_temp", function() {
+
+        getAttrs(["xp_temp"], function(values) {
+
+            let xp_temp = parseInt(values["xp_temp"]) || 0;
+            let blocage_xp = 0;
+            
+            if (xp_temp < 0) blocage_xp = 1;
+            
+            setAttrs({
+                "blocage_xp": blocage_xp
+            });
+        });
+    });
+
     on('clicked:valider_creation', async (event) => {
         getAttrs(["nouveau_personnage", "force_base", "dexterite_base", "constitution_base", "intelligence_base", "charisme_base", "volonte_base", "stat_athletisme_base", "stat_baratin_base", "stat_bibliotheque_base", "stat_chercher_base", "stat_combat_cac_base", "stat_combat_pugilat_base", "stat_combat_distance_base", "stat_discretion_base", "stat_endurance_base", "stat_esquive_base", "stat_langue_ancienne_base", "stat_langue_base", "stat_medecine_base", "stat_metier_base", "stat_perception_base", "stat_psychologie_base", "stat_science_base", "stat_sciences_occultes_base", "stat_survie_base", "stat_vigilance_base"], function(values) {
             let nouveau_personnage = 0;
@@ -5017,7 +5656,7 @@ on('clicked:compendium_combat', async (event) => {
     });
 
     on('clicked:boutton_xp', async (event) => {
-        getAttrs([ "force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "pdv_maxi", "pdm_maxi", "xp"], function(values) {
+        getAttrs(["force", "dexterite", "constitution", "intelligence", "charisme", "volonte", "stat_athletisme", "stat_baratin", "stat_bibliotheque", "stat_chercher", "stat_combat_cac", "stat_combat_pugilat", "stat_combat_distance", "stat_discretion", "stat_endurance", "stat_esquive", "stat_langue_ancienne", "stat_langue", "stat_medecine", "stat_metier", "stat_perception", "stat_psychologie", "stat_science", "stat_sciences_occultes", "stat_survie", "stat_vigilance", "pdv_maxi", "pdm_maxi", "xp"], function(values) {
             let page = 8;
             let force_temp = parseInt(values["force"]) || 0;
             let dexterite_temp = parseInt(values["dexterite"]) || 0;
@@ -5110,15 +5749,11 @@ on('clicked:compendium_combat', async (event) => {
             // Augmente la force temporaire et réduit l'XP (même si cela rend xp_temp négatif)
             force_temp += 1; // Augmente la force temporaire
             xp_temp -= cout_xp; // Déduit le coût en XP
-
-            if (xp_temp < 0) blocage_xp = 1; // Alerte XP négative
-            else blocage_xp = 0;
     
             // Met à jour uniquement les valeurs temporaires
             setAttrs({
                 "force_temp": force_temp,
-                "xp_temp": xp_temp,
-                "blocage_xp": blocage_xp
+                "xp_temp": xp_temp
             });
         });
     });
@@ -5408,7 +6043,7 @@ on('clicked:compendium_combat', async (event) => {
             let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
             
             // Vérifie si le up est possible
-            if (pdv_maxi_temp < 30) {
+            if (pdv_maxi_temp < 29) {
                 // Calcul du coût en XP
                 let cout_xp = 0;
                 if (pdv_maxi_temp < 10) cout_xp = 2;
@@ -5441,7 +6076,7 @@ on('clicked:compendium_combat', async (event) => {
                 let cout_xp = 0;
                 if (pdv_maxi_temp < 10) cout_xp = 2;
                 else if (pdv_maxi_temp < 20) cout_xp = 3;
-                else if (pdv_maxi_temp < 30) cout_xp = 4;
+                else if (pdv_maxi_temp < 29) cout_xp = 4;
                 else if (pdv_maxi_temp == 30) cout_xp = 10;
     
                 // Diminue les PDV max temporaires et augmente l'XP
@@ -5463,7 +6098,7 @@ on('clicked:compendium_combat', async (event) => {
             let xp_temp = parseInt(values["xp_temp"]) || 0; // XP temporaire disponible
             
             // Vérifie si le up est possible
-            if (pdm_maxi_temp < 30) {
+            if (pdm_maxi_temp < 29) {
                 // Calcul du coût en XP
                 let cout_xp = 0;
                 if (pdm_maxi_temp < 10) cout_xp = 2;
@@ -5496,7 +6131,7 @@ on('clicked:compendium_combat', async (event) => {
                 let cout_xp = 0;
                 if (pdm_maxi_temp < 10) cout_xp = 2;
                 else if (pdm_maxi_temp < 20) cout_xp = 3;
-                else if (pdm_maxi_temp < 30) cout_xp = 4;
+                else if (pdm_maxi_temp < 29) cout_xp = 4;
                 else if (pdm_maxi_temp == 30) cout_xp = 10;
     
                 // Diminue les PDM max temporaires et augmente l'XP
@@ -5527,7 +6162,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_athletisme_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_athletisme_temp < 30) {
+            } else if (stat_athletisme_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_athletisme_temp === 29) {
@@ -5603,7 +6238,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_baratin_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_baratin_temp < 30) {
+            } else if (stat_baratin_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_baratin_temp === 29) {
@@ -5679,7 +6314,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_bibliotheque_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_bibliotheque_temp < 30) {
+            } else if (stat_bibliotheque_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_bibliotheque_temp === 29) {
@@ -5739,17 +6374,7 @@ on('clicked:compendium_combat', async (event) => {
             }
         });
     });
-
-
-
-
-
-
-
-
-
-    
-
+ 
     on('clicked:xp_chercher_plus', async (event) => {
         getAttrs(["stat_chercher_temp", "xp_temp"], function(values) {
             let stat_chercher_temp = parseInt(values["stat_chercher_temp"]) || 0; // Valeur temporaire pour la compétence
@@ -5765,7 +6390,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_chercher_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_chercher_temp < 30) {
+            } else if (stat_chercher_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_chercher_temp === 29) {
@@ -5841,7 +6466,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_combat_cac_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_combat_cac_temp < 30) {
+            } else if (stat_combat_cac_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_combat_cac_temp === 29) {
@@ -5917,7 +6542,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_combat_pugilat_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_combat_pugilat_temp < 30) {
+            } else if (stat_combat_pugilat_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_combat_pugilat_temp === 29) {
@@ -5993,7 +6618,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_combat_distance_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_combat_distance_temp < 30) {
+            } else if (stat_combat_distance_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_combat_distance_temp === 29) {
@@ -6069,7 +6694,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_discretion_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_discretion_temp < 30) {
+            } else if (stat_discretion_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_discretion_temp === 29) {
@@ -6145,7 +6770,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_endurance_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_endurance_temp < 30) {
+            } else if (stat_endurance_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_endurance_temp === 29) {
@@ -6221,7 +6846,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_esquive_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_esquive_temp < 30) {
+            } else if (stat_esquive_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_esquive_temp === 29) {
@@ -6297,7 +6922,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_langue_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_langue_temp < 30) {
+            } else if (stat_langue_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_langue_temp === 29) {
@@ -6373,7 +6998,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_langue_ancienne_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_langue_ancienne_temp < 30) {
+            } else if (stat_langue_ancienne_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_langue_ancienne_temp === 29) {
@@ -6449,7 +7074,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_medecine_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_medecine_temp < 30) {
+            } else if (stat_medecine_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_medecine_temp === 29) {
@@ -6525,7 +7150,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_metier_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_metier_temp < 30) {
+            } else if (stat_metier_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_metier_temp === 29) {
@@ -6601,7 +7226,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_perception_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_perception_temp < 30) {
+            } else if (stat_perception_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_perception_temp === 29) {
@@ -6610,7 +7235,7 @@ on('clicked:compendium_combat', async (event) => {
             }
     
             // Vérifie si on peut augmenter
-            if (stat_perception_temp < 30) {
+            if (stat_perception_temp < 29) {
                 stat_perception_temp += augmentation; // Augmente la compétence temporaire
                 xp_temp -= cout_xp; // Réduit l'XP temporaire
     
@@ -6677,7 +7302,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_psychologie_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_psychologie_temp < 30) {
+            } else if (stat_psychologie_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_psychologie_temp === 29) {
@@ -6753,7 +7378,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_science_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_science_temp < 30) {
+            } else if (stat_science_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_science_temp === 29) {
@@ -6829,7 +7454,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_sciences_occultes_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_sciences_occultes_temp < 30) {
+            } else if (stat_sciences_occultes_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_sciences_occultes_temp === 29) {
@@ -6905,7 +7530,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_survie_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_survie_temp < 30) {
+            } else if (stat_survie_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_survie_temp === 29) {
@@ -6981,7 +7606,7 @@ on('clicked:compendium_combat', async (event) => {
             } else if (stat_vigilance_temp < 20) {
                 cout_xp = 1; // 1 XP dépensé
                 augmentation = 1; // Augmente de 1 point
-            } else if (stat_vigilance_temp < 30) {
+            } else if (stat_vigilance_temp < 29) {
                 cout_xp = 2; // 2 XP dépensés
                 augmentation = 1; // Augmente de 1 point
             } else if (stat_vigilance_temp === 29) {
@@ -7039,6 +7664,84 @@ on('clicked:compendium_combat', async (event) => {
                     "xp_temp": xp_temp
                 });
             }
+        });
+    });
+
+
+    on('clicked:valider_xp', async (event) => {
+        getAttrs(["force_temp", "dexterite_temp", "constitution_temp", "intelligence_temp", "charisme_temp", "volonte_temp", "stat_athletisme_temp", "stat_baratin_temp", "stat_bibliotheque_temp", "stat_chercher_temp", "stat_combat_cac_temp", "stat_combat_pugilat_temp", "stat_combat_distance_temp", "stat_discretion_temp", "stat_endurance_temp", "stat_esquive_temp", "stat_langue_ancienne_temp", "stat_langue_temp", "stat_medecine_temp", "stat_metier_temp", "stat_perception_temp", "stat_psychologie_temp", "stat_science_temp", "stat_sciences_occultes_temp", "stat_survie_temp", "stat_vigilance_temp", "pdv_maxi_temp", "pdm_maxi_temp", "pdv_maxi", "pdm_maxi", "xp_temp"], function(values) {
+
+            let force_temp = parseInt(values["force_temp"]) || 0;
+            let dexterite_temp = parseInt(values["dexterite_temp"]) || 0;
+            let constitution_temp = parseInt(values["constitution_temp"]) || 0;
+            let intelligence_temp = parseInt(values["intelligence_temp"]) || 0;
+            let charisme_temp = parseInt(values["charisme_temp"]) || 0;
+            let volonte_temp = parseInt(values["volonte_temp"]) || 0;
+            
+            let pdv_maxi = parseInt(values["pdv_maxi"]) || 0;
+            let pdm_maxi = parseInt(values["pdm_maxi"]) || 0;
+            let xp_temp = parseInt(values["xp_temp"]) || 0;
+            let pdv_maxi_temp = parseInt(values["pdv_maxi"]) || 0;
+            let pdm_maxi_temp = parseInt(values["pdm_maxi"]) || 0;
+            let bonus_xp_pdv = pdv_maxi_temp - pdv_maxi;
+            let bonus_xp_pdm = pdm_maxi_temp - pdm_maxi;
+            
+            let stat_athletisme_temp = parseInt(values["stat_athletisme_temp"]) || 0;
+            let stat_baratin_temp = parseInt(values["stat_baratin_temp"]) || 0;
+            let stat_bibliotheque_temp = parseInt(values["stat_bibliotheque_temp"]) || 0;
+            let stat_chercher_temp = parseInt(values["stat_chercher_temp"]) || 0;
+            let stat_combat_cac_temp = parseInt(values["stat_combat_cac_temp"]) || 0;
+            let stat_combat_pugilat_temp = parseInt(values["stat_combat_pugilat_temp"]) || 0;
+            let stat_combat_distance_temp = parseInt(values["stat_combat_distance_temp"]) || 0;
+            let stat_discretion_temp = parseInt(values["stat_discretion_temp"]) || 0;
+            let stat_endurance_temp = parseInt(values["stat_endurance_temp"]) || 0;
+            let stat_esquive_temp = parseInt(values["stat_esquive_temp"]) || 0;
+            let stat_langue_ancienne_temp = parseInt(values["stat_langue_ancienne_temp"]) || 0;
+            let stat_langue_temp = parseInt(values["stat_langue_temp"]) || 0;
+            let stat_medecine_temp = parseInt(values["stat_medecine_temp"]) || 0;
+            let stat_metier_temp = parseInt(values["stat_metier_temp"]) || 0;
+            let stat_perception_temp = parseInt(values["stat_perception_temp"]) || 0;
+            let stat_psychologie_temp = parseInt(values["stat_psychologie_temp"]) || 0;
+            let stat_science_temp = parseInt(values["stat_science_temp"]) || 0;
+            let stat_sciences_occultes_temp = parseInt(values["stat_sciences_occultes_temp"]) || 0;
+            let stat_survie_temp = parseInt(values["stat_survie_temp"]) || 0;
+            let stat_vigilance_temp = parseInt(values["stat_vigilance_temp"]) || 0;
+            
+            let page = 0;
+    
+            
+            setAttrs({
+                "bonus_xp_pdv": bonus_xp_pdv,
+                "bonus_xp_pdm": bonus_xp_pdm,
+                "xp": xp_temp,
+                "force": force_temp,
+                "dexterite": dexterite_temp,
+                "constitution": constitution_temp,
+                "intelligence": intelligence_temp,
+                "charisme": charisme_temp,
+                "volonte": volonte_temp,
+                "stat_athletisme": stat_athletisme_temp,
+                "stat_baratin": stat_baratin_temp,
+                "stat_bibliotheque": stat_bibliotheque_temp,
+                "stat_chercher": stat_chercher_temp,
+                "stat_combat_cac": stat_combat_cac_temp,
+                "stat_combat_pugilat": stat_combat_pugilat_temp,
+                "stat_combat_distance": stat_combat_distance_temp,
+                "stat_discretion": stat_discretion_temp,
+                "stat_endurance": stat_endurance_temp,
+                "stat_esquive": stat_esquive_temp,
+                "stat_langue_ancienne": stat_langue_ancienne_temp,
+                "stat_langue": stat_langue_temp,
+                "stat_medecine": stat_medecine_temp,
+                "stat_metier": stat_metier_temp,
+                "stat_perception": stat_perception_temp,
+                "stat_psychologie": stat_psychologie_temp,
+                "stat_science": stat_science_temp,
+                "stat_sciences_occultes": stat_sciences_occultes_temp,
+                "stat_survie": stat_survie_temp,
+                "stat_vigilance": stat_vigilance_temp, 
+                "page": page
+            });
         });
     });
 
