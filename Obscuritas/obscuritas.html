@@ -273,6 +273,8 @@
                     <div class="wrapper_zone_personnage">
                         <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
                         <div class="background_aura"></div>
+                        <div class="background_aura_heresie"></div>
+                        <div class="background_aura_heroisme"></div>
                         <div class="barre_aura"></div>
                         <div class="centre_aura"></div>
                         <div class="demon_aura"></div>
@@ -414,19 +416,21 @@
                             <div class="wrapper_zone_hero_here_aura_hero">
                                 <!-- Titre -->
                                 <div class="hero_titre_heresie">HÉRÉSIE</div>
+                                <div class="hero_heresie_illu"></div>
                                 <div class="hero_heresie_data">
-                                    <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #651d17;"><span class="picto">_</span></button>
-                                    <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #651d17;" readonly>
-                                    <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #651d17;"><span class="picto">&</span></button></div>
+                                    <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">_</span></button>
+                                    <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #4a2a27;" readonly>
+                                    <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">&</span></button></div>
                                 <div class="hero_titre_aura">AURA</div>
                                 <div class="hero_aura_data_habillage">
                                     <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
                                 </div>
                                 <div class="hero_titre_heroisme">HÉROÏSME</div>
+                                <div class="hero_heroisme_illu"></div>
                                 <div class="hero_heroisme_data">
-                                    <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">_</span></button>
-                                    <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #6875a7;" readonly>
-                                    <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">&</span></button>
+                                    <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #424b6f;"><span class="picto">_</span></button>
+                                    <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #424b6f;" readonly>
+                                    <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Ajouter 1 point d'héroïsme" style="background: #424b6f;"><span class="picto">&</span></button>
                                 </div>
                             </div>
                         </div>
@@ -1556,20 +1560,22 @@
                 <div class="zone_hero_here_aura_hero">
                     <div class="wrapper_zone_hero_here_aura_hero">
                         <!-- Titre -->
-                        <div class="hero_titre_heresie">HÉRÉSIE</div>
+                        <div class="hero_titre_heresie">HÉRÉSIE</div>                        
+                        <div class="hero_heresie_illu"></div>
                         <div class="hero_heresie_data">
-                            <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #651d17;"><span class="picto">_</span></button>
-                            <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #651d17;" readonly>
-                            <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #651d17;"><span class="picto">&</span></button></div>
+                            <button type="action" class="button_here_hero" name="act_heresie_moins" title="Retirer 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">_</span></button>
+                            <input type="number" class="input_hero_here" name="attr_heresie" value="0" style="background: #4a2a27;" readonly>
+                            <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">&</span></button></div>
                         <div class="hero_titre_aura">AURA</div>
                         <div class="hero_aura_data_habillage">
                             <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
                         </div>
                         <div class="hero_titre_heroisme">HÉROÏSME</div>
+                        <div class="hero_heroisme_illu"></div>
                         <div class="hero_heroisme_data">
-                            <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">_</span></button>
-                            <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #6875a7;" readonly>
-                            <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Retirer 1 point d'héroïsme" style="background: #6875a7;"><span class="picto">&</span></button>
+                            <button type="action" class="button_here_hero" name="act_heroisme_moins" title="Retirer 1 point d'héroïsme" style="background: #424b6f;"><span class="picto">_</span></button>
+                            <input type="number" class="input_hero_here" name="attr_heroisme" value="0" style="background: #424b6f;" readonly>
+                            <button type="action" class="button_here_hero" name="act_heroisme_plus" title="Ajouter 1 point d'héroïsme" style="background: #424b6f;"><span class="picto">&</span></button>
                         </div>
                     </div>
                 </div>
