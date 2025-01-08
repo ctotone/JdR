@@ -101,26 +101,26 @@
                 <div class="caracteristiques_derivees" style="grid-row: 2 / 7;margin-top: 20px;margin-bottom: 40px;">
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Points de vie max</div>
-                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi_base" value="0" readonly /></div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi_base" value="3" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Points de magie max</div>
-                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi_base" value="0" readonly /></div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdm_maxi_base" value="3" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Santé mentale max</div>
-                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi_base" value="0" readonly /></div>
+                        <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_sm_maxi_base" value="85" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_separateur"></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Bonus de Force</div>
-                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="0" min="0" max="99"></div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="1" min="0" max="99"></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Bonus de Dextérité</div>
-                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="0" min="0" max="99"></div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="1" min="0" max="99"></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Encaissement</div>
@@ -132,7 +132,7 @@
 
             <!-- COMPETENCES DE BASE -->
             <div class="wrapper_zone_competence" style="margin-top: -37px;transform: rotate(0.7deg);"> 
-                <div class="creation_comp_decompte">Points attribués : <input type="number" class="input_config" value="90" name="attr_points_comp_base" style="color: var(--white);" readonly /> / 300</div>
+                <div class="creation_comp_decompte">Points attribués : <input type="number" class="input_config" value="0" name="attr_points_comp_base" style="color: var(--white);" readonly /> / 300</div>
                 <div class="competence_gauche" style="grid-row: 2 / 17;">                
                     <div class="wrapper_tableau_competence">
                         <div class="competence_valeur_simple"><input type="number" class="input_comp" name="attr_stat_athletisme_base" value="0" min="0" max="30"></div>
@@ -521,7 +521,7 @@
                                 <!-- Aura neutre -->
                                 <div class="niveau_aura_0">
                                     <div class="wrapper_zone_hero">
-                                        <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 23;">
                                             <div class="wrapper_zone_hero">
                                                 <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                                     Effet de l'aura :
@@ -641,7 +641,7 @@
                                 <!-- Aura -1 -->
                                 <div class="niveau_aura_m1">
                                     <div class="wrapper_zone_hero">
-                                        <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                             <div class="wrapper_zone_hero">
                                                 <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                                     Effet de l'aura :
@@ -674,7 +674,7 @@
                                 <!-- Aura -2 -->
                                 <div class="niveau_aura_m2">
                                     <div class="wrapper_zone_hero">
-                                        <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                             <div class="wrapper_zone_hero">
                                                 <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                                     Effet de l'aura :
@@ -707,7 +707,7 @@
                                 <!-- Aura neutre -3-->
                                 <div class="niveau_aura_m3">
                                     <div class="wrapper_zone_hero">
-                                        <div class="habillage_tableau" style="margin-left: 25px;">
+                                        <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                             <div class="wrapper_zone_hero">
                                                 <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                                     Effet de l'aura :
@@ -1666,7 +1666,7 @@
                         <!-- Aura neutre -->
                         <div class="niveau_aura_0">
                             <div class="wrapper_zone_hero">
-                                <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 23;">
                                     <div class="wrapper_zone_hero">
                                         <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                             Effet de l'aura :
@@ -1786,7 +1786,7 @@
                         <!-- Aura -1 -->
                         <div class="niveau_aura_m1">
                             <div class="wrapper_zone_hero">
-                                <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                     <div class="wrapper_zone_hero">
                                         <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                             Effet de l'aura :
@@ -1819,7 +1819,7 @@
                         <!-- Aura -2 -->
                         <div class="niveau_aura_m2">
                             <div class="wrapper_zone_hero">
-                                <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                     <div class="wrapper_zone_hero">
                                         <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                             Effet de l'aura :
@@ -1852,7 +1852,7 @@
                         <!-- Aura neutre -3-->
                         <div class="niveau_aura_m3">
                             <div class="wrapper_zone_hero">
-                                <div class="habillage_tableau" style="margin-left: 25px;">
+                                <div class="habillage_tableau" style="margin-left: 25px;grid-row: 6 / 28;">
                                     <div class="wrapper_zone_hero">
                                         <div class="hero_aura_titre_effet" style="font-size: 11px;background: black;border: 1px solid black;border-radius: 5px 5px 0px 0px;color: var(--white);">
                                             Effet de l'aura :
@@ -4620,7 +4620,7 @@
                             designation: "Armure de plaques",
                             type: "Armure de plaques",
                             encaissement: "6",
-                            malus_dexterite: "20",
+                            malus_dexterite: "15",
                             malus_athletisme: "10",
                             malus_combat_cac: "5",
                             malus_combat_pugilat: "10",
