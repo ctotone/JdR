@@ -44,17 +44,17 @@
   --separateur_croix_competence: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/separateur_bas_croix.png);
   --armes_barre_titre: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/barre_titre_armes.webp);
   --armes_image_1: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_armes.webp);
-  --armure_dessin_plaque: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_plaques.webp);
+  --armure_dessin_plaque: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/armure_plaque1.webp);
   --armure_dessin_maille: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_maille.webp);
-  --armure_dessin_cuir: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_cuir.webp);
-  --armure_dessin_tissu: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_tissu.webp);
+  --armure_dessin_cuir: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/armure_cuir1.webp);
+  --armure_dessin_tissu: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/armure_tissu1.webp);
   --armure_dessin_aucune: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_aucune.webp);
   --bouclier_dessin_rond: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_rond.webp);
   --bouclier_dessin_pavois: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_pavois.webp);
   --bouclier_dessin_aucun: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_aucune.webp);
   --fond_zone_note: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/ligne_notes.png);
   --dessin_sac: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_sac.webp);
-  --dessin_bourse: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_bourse.webp);
+  --dessin_bourse: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/illustration_coffre.webp);
   --dessin_carnet:  url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_carnet.webp);
 
 
@@ -945,7 +945,7 @@ div.sm_25 {
 }
 
 .page_aura {
-  height: 850px !important;
+  height: 820px !important;
   min-height: unset;
   background-image: var(--background_page);
   background-size: cover;
@@ -2051,12 +2051,6 @@ div.niveau_aura_m3 {
     display: flex;
 }
 
-
-.charsheet .valeur_aura[value="-1"] ~ div.niveau_aura_m1 {
-
-}
-
-
 .zone_hero_info {
   grid-column: 2 / 43;
   grid-row: 3 / 12;
@@ -2102,13 +2096,13 @@ div.niveau_aura_m3 {
 }
 
 .hero_heresie_data  {
-  grid-column: 1;
+  grid-column: 1/3;
   grid-row: 2 / 4;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 35px;
-  margin-left: 170px;
+  margin-left: -74px;
 }
 
 .hero_heresie_illu  {
@@ -2198,7 +2192,7 @@ div.niveau_aura_m3 {
 
 .zone_hero_aura {
   grid-column: 25/54;
-  grid-row: 26 / 81;
+  grid-row: 26 / 78;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -2269,7 +2263,7 @@ div.niveau_aura_m3 {
 }
 
 .hero_tableau_cout_7 {
-  grid-row: 1 / 8;
+  grid-row: 1 / 7;
 }
 
 .hero_tableau_effet,
@@ -2280,7 +2274,7 @@ div.niveau_aura_m3 {
   display: flex;
   justify-content: center;
   font-size: 10px;
-  line-height: 16px;
+  line-height: 14px;
   padding: 5px;
   align-items: center;
   border: 1px solid black;
@@ -2293,7 +2287,7 @@ div.niveau_aura_m3 {
 }
 
 .hero_tableau_effet_7 {
-  grid-row: 1 / 8;
+  grid-row: 1 / 7;
 }
 
 .habillage_tableau {
@@ -3032,9 +3026,10 @@ div.illustration_armures_aucune {
   grid-column: 2;
   grid-row: 2 / 26;
   background-image: var(--armure_dessin_plaque);
-  background-size: 123px 305px;
-  margin-left: -5px;
-  margin-top: -19px;
+  background-size: 99px 230px;
+  margin-left: 7px;
+  margin-top: 5px;
+  background-repeat: no-repeat;
 }
 
 .illustration_armures_maille {
@@ -3051,9 +3046,10 @@ div.illustration_armures_aucune {
   grid-column: 2;
   grid-row: 1 / 26;
   background-image: var(--armure_dessin_cuir);
-  background-size: 120px 323px;
-  margin-top: -20px;
+  background-size: 115px 191px;
+  margin-top: 36px;
   margin-left: -3px;
+  background-repeat: no-repeat;
 }
 
 
@@ -3061,8 +3057,9 @@ div.illustration_armures_aucune {
   grid-column: 2;
   grid-row: 1 / 26;
   background-image: var(--armure_dessin_tissu);
-  background-size: 120px 310px;
+  background-size: 120px 328px;
   margin-top: -30px;
+  margin-left: -5px;
 }
 
 .illustration_armures_aucune {
@@ -3483,7 +3480,7 @@ div.illustration_bouclier_aucun {
 
 .wrapper_bloc_inventaire {
   display: grid;
-  grid-template-columns: 17% 0% 73% 6%;
+  grid-template-columns: 17% 0% 73% 6% 9%;
   grid-auto-rows: 10px;
   margin-top: 17px;
   margin-bottom: 20px;
@@ -3510,13 +3507,13 @@ div.illustration_bouclier_aucun {
 }
 
 .illustration_bourse {
-  grid-column: 4;
-  grid-row: 12 / 24;
+  grid-column: 4/6;
+  grid-row: 12 / 26;
   background-image: var(--dessin_bourse);
   background-size: 122px 119px;
   background-repeat: no-repeat;
-  margin-left: -75px;
-  transform: rotate(-21.5deg);
+  margin-left: -59px;
+  transform: rotate(-1.5deg);
   overflow: visible;
   display: flex;
   align-items: center;
@@ -3524,6 +3521,101 @@ div.illustration_bouclier_aucun {
   padding-top: 40px;
   padding-left: 10px;
 }
+
+.inventaire_bloc_argent {
+  grid-column: 4/6;
+  grid-row: 19;
+  margin-left: -119px;
+  transform: rotate(-1.5deg);
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 10px;
+}
+
+.inventaire_bloc_argent_titre {
+  grid-column: 4/6;
+  grid-row: 23;
+  margin-left: -79px;
+  transform: rotate(-1.5deg);
+  overflow: visible;
+  padding-top: 40px;
+  padding-left: 10px;
+  margin-right: 38px;  
+  text-align: center;
+} 
+
+.wrapper_bloc_argent {
+  display: grid;
+  grid-template-columns: 0% 33% 1% 33% 1% 33% 0%;
+  grid-auto-rows: 50px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.wrapper_bloc_argent_titre {
+  display: grid;
+  grid-template-columns: 0% 33% 1% 33% 1% 33% 0%;
+  grid-auto-rows: 20px;  
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: -13px;
+}
+
+.inventaire_livre_data {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.inventaire_sous_data {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.inventaire_denier_data {
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.inventaire_livre_titre {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.inventaire_sous_titre {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.inventaire_denier_titre {
+  grid-column: 6;
+  grid-row: 1;
+}
+
+.inventaire_livre_couleur {
+  grid-column: 2;
+  grid-row: 1;
+  background: gold;
+  border-radius: 30px;
+}
+
+.inventaire_sous_couleur {
+  grid-column: 4;
+  grid-row: 1;
+  background: #C0C0C0;
+  border-radius: 30px;
+}
+
+.inventaire_denier_couleur {
+  grid-column: 6;
+  grid-row: 1;
+  background: #614e1a;
+  border-radius: 30px;
+}
+
+
 
 /* NOTES */
 
