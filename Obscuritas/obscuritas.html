@@ -1,3 +1,5 @@
+<!-- TODO Lock sur menu arme avec attribut disabled-->
+<!-- TODO PDV maj -->
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
@@ -235,12 +237,12 @@
     <div class="menu">
         <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
         <button type="action" name="act_6" class="button6">Hérésie et Héroïsme</button>
-        <button type="action" name="act_1" class="button1">Caractéristiques</button>
+        <button type="action" name="act_1" class="button1">Attributs</button>
         <button type="action" name="act_2" class="button2">Compétences</button>
         <button type="action" name="act_3" class="button3">Équipement</button>
         <button type="action" name="act_4" class="button4">Notes</button>
         <button type="action" name="act_boutton_xp" class="button8">XP</button>
-        <button type="action" name="act_7" class="button7" style="margin-left: 50px;">Compendium</button>
+        <button type="action" name="act_7" class="button7" style="margin-left: 96px;">Compendium</button>
         <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
     </div>
 
@@ -282,7 +284,7 @@
                         <div class="ange_aura"></div>
                         <div class="obscuritas">Obscuritas</div>
                         <div class="aeterna">Æterna</div>
-                        <div class="boutton_aura"><button type="action" class="button_aura" name="act_roll-aura">AURA</button></div>
+                        <div class="boutton_aura"><button type="action" class="button_aura" name="act_roll-aura" title="Jet d'Aura">AURA</button></div>
                         <div class="marqueur_aura_0"><input type="number" class="input_aura" name="attr_aura" value="0" readonly></div>
                         <div class="marqueur_aura_1"><input type="number" class="input_aura" name="attr_aura" value="0" readonly></div>
                         <div class="marqueur_aura_2"><input type="number" class="input_aura" name="attr_aura" value="0" readonly></div>
@@ -424,7 +426,7 @@
                                     <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">&</span></button></div>
                                 <div class="hero_titre_aura">AURA</div>
                                 <div class="hero_aura_data_habillage">
-                                    <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
+                                    <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;" readonly>
                                 </div>
                                 <div class="hero_titre_heroisme">HÉROÏSME</div>
                                 <div class="hero_heroisme_illu"></div>
@@ -747,12 +749,12 @@
                 <input type="hidden" name="attr_carac_reduit" class="voir_carac" value="0">
                 <div class="cadre_caracteristiques_reduit">
                     <div class="wrapper_zone_personnage">
-                        <div class="zone_caracteristiques_titre" style="padding-left: 40px;">CARACTÉRISTIQUES <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                        <div class="zone_caracteristiques_titre" style="padding-left: 100px;">ATTRIBUTS <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
                     </div>
                 </div> 
                 <div class="cadre_caracteristiques">
                     <div class="wrapper_zone_personnage">
-                        <div class="zone_caracteristiques_titre" style="padding-left: 40px;">CARACTÉRISTIQUES <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
+                        <div class="zone_caracteristiques_titre" style="padding-left: 100px;">ATTRIBUTS <button type="action" class="button_show" name="act_hide_carac" title="Afficher / Cacher" style="margin-right: 10px;"><span class="picto">|</span></button></div>
                     </div>
                     <div class="wrapper_zone_carac">
                         <div class="bloc_pentacle">
@@ -1586,7 +1588,7 @@
                             <button type="action" class="button_here_hero" name="act_heresie_plus"  title="Ajouter 1 point d'hérésie" style="background: #4a2a27;"><span class="picto">&</span></button></div>
                         <div class="hero_titre_aura">AURA</div>
                         <div class="hero_aura_data_habillage">
-                            <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;">
+                            <input type="number" class="input_hero_here" name="attr_aura" value="0" style="border: none;font-size: 26px;" readonly>
                         </div>
                         <div class="hero_titre_heroisme">HÉROÏSME</div>
                         <div class="hero_heroisme_illu"></div>
@@ -1910,7 +1912,7 @@
         <div class="wrapper_page_1">
             <div class="cadre_caracteristiques" style="display: block;">
                 <div class="wrapper_zone_personnage">
-                    <div class="zone_caracteristiques_titre" style="padding-left: 55px;">CARACTÉRISTIQUES</div>
+                    <div class="zone_caracteristiques_titre" style="padding-left: 105px;">ATTRIBUTS</div>
                 </div>
                 <div class="wrapper_zone_carac">
                     <div class="bloc_pentacle">
@@ -2747,7 +2749,7 @@
                 <div class="xp_bloc_carac">
                     <div class="wrapper_page_xp" style="margin-bottom: 20px;">
                         <div class="xp_titre_bloc">
-                            CARACTÉRISTIQUES
+                            ATTRIBUTS
                         </div>
                     </div>
                     <div class="wrapper_tableau_xp">
@@ -3358,7 +3360,7 @@
 
     <div class="page_config">
         <div class="wrapper_config">
-            <div class="config_titre1">Points de caractéristiques attribués : </div>
+            <div class="config_titre1">Points d'attributs attribués : </div>
             <div class="config_data1"><input type="number" class="input_config" name="attr_points_carac" readonly /> / 235</div>
             <div class="config_titre2">Points de compétences attribués : </div>
             <div class="config_data2"><input type="number" class="input_config" name="attr_points_comp" readonly /> / 300</div>
