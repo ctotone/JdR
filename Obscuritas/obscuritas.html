@@ -1,5 +1,4 @@
 <!-- TODO Lock sur menu arme avec attribut disabled-->
-<!-- TODO PDV maj -->
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
@@ -5936,7 +5935,6 @@ on('clicked:compendium_combat_tableaux', async (event) => {
             let nouveau_personnage = parseInt(values["nouveau_personnage"]) || 0;
             if (nouveau_personnage == 0) nouveau_personnage = 1;
             else nouveau_personnage = 0;
-            console.log("nouveau_personnage", nouveau_personnage);
             setAttrs({
                 "nouveau_personnage": nouveau_personnage
             });
@@ -8034,7 +8032,7 @@ on('clicked:compendium_combat_tableaux', async (event) => {
 
 
     on('clicked:valider_xp', async (event) => {
-        getAttrs(["force_temp", "dexterite_temp", "constitution_temp", "intelligence_temp", "charisme_temp", "volonte_temp", "stat_athletisme_temp", "stat_baratin_temp", "stat_bibliotheque_temp", "stat_chercher_temp", "stat_combat_cac_temp", "stat_combat_pugilat_temp", "stat_combat_distance_temp", "stat_discretion_temp", "stat_endurance_temp", "stat_esquive_temp", "stat_langue_ancienne_temp", "stat_langue_temp", "stat_medecine_temp", "stat_metier_temp", "stat_perception_temp", "stat_psychologie_temp", "stat_science_temp", "stat_sciences_occultes_temp", "stat_survie_temp", "stat_vigilance_temp", "pdv_maxi_temp", "pdm_maxi_temp", "pdv_maxi", "pdm_maxi", "xp_temp"], function(values) {
+        getAttrs(["force_temp", "dexterite_temp", "constitution_temp", "intelligence_temp", "charisme_temp", "volonte_temp", "stat_athletisme_temp", "stat_baratin_temp", "stat_bibliotheque_temp", "stat_chercher_temp", "stat_combat_cac_temp", "stat_combat_pugilat_temp", "stat_combat_distance_temp", "stat_discretion_temp", "stat_endurance_temp", "stat_esquive_temp", "stat_langue_ancienne_temp", "stat_langue_temp", "stat_medecine_temp", "stat_metier_temp", "stat_perception_temp", "stat_psychologie_temp", "stat_science_temp", "stat_sciences_occultes_temp", "stat_survie_temp", "stat_vigilance_temp", "pdv_maxi_temp", "pdm_maxi_temp", "pdv_maxi", "pdm_maxi", "xp_temp", "bonus_xp_pdv", "bonus_xp_pdm", "bonus_xp_pdv_temp", "bonus_xp_pdm_temp"], function(values) {
 
             let force_temp = parseInt(values["force_temp"]) || 0;
             let dexterite_temp = parseInt(values["dexterite_temp"]) || 0;
@@ -8043,13 +8041,18 @@ on('clicked:compendium_combat_tableaux', async (event) => {
             let charisme_temp = parseInt(values["charisme_temp"]) || 0;
             let volonte_temp = parseInt(values["volonte_temp"]) || 0;
             
+            let bonus_xp_pdv = parseInt(values["bonus_xp_pdv"]) || 0;
+            let bonus_xp_pdm = parseInt(values["bonus_xp_pdm"]) || 0;
+            let bonus_xp_pdv_temp = parseInt(values["bonus_xp_pdv_temp"]) || 0;
+            let bonus_xp_pdm_temp = parseInt(values["bonus_xp_pdm_temp"]) || 0;
             let pdv_maxi = parseInt(values["pdv_maxi"]) || 0;
             let pdm_maxi = parseInt(values["pdm_maxi"]) || 0;
             let xp_temp = parseInt(values["xp_temp"]) || 0;
-            let pdv_maxi_temp = parseInt(values["pdv_maxi"]) || 0;
-            let pdm_maxi_temp = parseInt(values["pdm_maxi"]) || 0;
-            let bonus_xp_pdv = pdv_maxi_temp - pdv_maxi;
-            let bonus_xp_pdm = pdm_maxi_temp - pdm_maxi;
+            let pdv_maxi_temp = parseInt(values["pdv_maxi_temp"]) || 0;
+            let pdm_maxi_temp = parseInt(values["pdm_maxi_temp"]) || 0;
+
+            bonus_xp_pdv = pdv_maxi_temp - pdv_maxi + bonus_xp_pdv;
+            bonus_xp_pdm = pdm_maxi_temp - pdm_maxi + bonus_xp_pdm;
             
             let stat_athletisme_temp = parseInt(values["stat_athletisme_temp"]) || 0;
             let stat_baratin_temp = parseInt(values["stat_baratin_temp"]) || 0;
@@ -8073,6 +8076,15 @@ on('clicked:compendium_combat_tableaux', async (event) => {
             let stat_vigilance_temp = parseInt(values["stat_vigilance_temp"]) || 0;
             
             let page = 0;
+            
+            console.log("pdv_maxi", pdv_maxi);
+            console.log("pdm_maxi", pdm_maxi);
+            console.log("pdv_maxi_temp", pdv_maxi_temp);
+            console.log("pdm_maxi_temp", pdm_maxi_temp);
+            console.log("bonus_xp_pdv", bonus_xp_pdv);
+            console.log("bonus_xp_pdm", bonus_xp_pdm);
+            console.log("bonus_xp_pdv_temp", bonus_xp_pdv_temp);
+            console.log("bonus_xp_pdm_temp", bonus_xp_pdm_temp);
     
             
             setAttrs({
