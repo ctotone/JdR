@@ -473,7 +473,10 @@ div.fond_blanc {
   padding-top: 2px;
 }
 
-.charsheet select.choix_armes,
+.charsheet select.choix_armes {
+  width: 75%;
+}
+
 .charsheet select.choix_armures,
 .charsheet select.choix_boucliers {
   width: 100%;
@@ -573,7 +576,8 @@ input[type="number"] {
 .charsheet button[type=action].button_comp::before,
 .charsheet button[type=roll].button_comp::before,
 .charsheet button[type=action].button_show::before,
-.charsheet button[type=action].button_avatar::before {
+.charsheet button[type=action].button_avatar::before,
+.charsheet button[type=action].button_verrou::before {
 	content: '';
 }
 
@@ -652,6 +656,22 @@ input[type="number"] {
   font-size: 18px;
   color: #fdfdfd30;
   margin-left: 14px;
+}
+
+.charsheet button[type=action].button_verrou {
+  height: 15px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 12px;
+  text-align: center;
+  line-height: 12px;
+  width: 15px;
+  color: unset;
 }
 
 .charsheet button[type=action].button_carac {
@@ -837,6 +857,10 @@ input[type="number"] {
 
 .charsheet button[type=action].button_show:hover {
   color: var(--white);
+}
+
+.charsheet button[type=action].button_verrou:hover {
+  color: red;
 }
 
 .charsheet button[type=action].button_annonce,
@@ -2784,8 +2808,8 @@ div.niveau_aura_m3 {
   margin-bottom: 30px;
   margin-left: 5px;
   margin-right: -32px;
-  padding: 15px;
-  padding-left: 30px;
+  padding: 10px;
+  padding-left: 10px;
   transform: rotate(0.8deg);
   box-shadow: -4px 3px 6px 4px #0000009c;
   border-radius: 15px;
@@ -2856,7 +2880,7 @@ div.niveau_aura_m3 {
 .wrapper_zone_armes,
 .wrapper_zone_armes_titre {
   display: grid;
-  grid-template-columns: 14% 1% 20% 3% 7% 3% 6% 3% 35% 1% 6%;
+  grid-template-columns: 19% 1% 20% 1% 7% 1% 6% 2% 35% 1% 6%;
   grid-auto-rows: 25px;
   text-align: center;
   font-size: 12px;
@@ -2879,38 +2903,53 @@ div.niveau_aura_m3 {
   grid-auto-rows: 10px;
 }
 
-.arme1_lock,
-.arme1_unlock,
-.arme2_lock,
-.arme2_unlock,
-.arme3_lock,
-.arme3_unlock,
-.arme4_lock,
-.arme4_unlock {
+.armes_type_unlock_1,
+.armes_type_unlock_2,
+.armes_type_unlock_3,
+.armes_type_unlock_4,
+.armes_type_lock_1,
+.armes_type_lock_2,
+.armes_type_lock_3,
+.armes_type_lock_4,
+.armes_cadenas_unlock_1,
+.armes_cadenas_unlock_2,
+.armes_cadenas_unlock_3,
+.armes_cadenas_unlock_4,
+.armes_cadenas_lock_1,
+.armes_cadenas_lock_2,
+.armes_cadenas_lock_3,
+.armes_cadenas_lock_4 {
   display: none;
 }
 
-.charsheet .arme1_etat[value="0"] ~ div.arme1_unlock,
-.charsheet .arme1_etat[value="1"] ~ div.arme1_lock,
-.charsheet .arme1_etat[value="0"] ~ div.arme1_cadenas_unlock,
-.charsheet .arme1_etat[value="1"] ~ div.arme1_cadenas_lock,
-.charsheet .arme2_etat[value="0"] ~ div.arme2_unlock,
-.charsheet .arme2_etat[value="1"] ~ div.arme2_lock,
-.charsheet .arme2_etat[value="0"] ~ div.arme2_cadenas_unlock,
-.charsheet .arme2_etat[value="1"] ~ div.arme2_cadenas_lock,
-.charsheet .arme3_etat[value="0"] ~ div.arme3_unlock,
-.charsheet .arme3_etat[value="1"] ~ div.arme3_lock,
-.charsheet .arme3_etat[value="0"] ~ div.arme3_cadenas_unlock,
-.charsheet .arme3_etat[value="1"] ~ div.arme3_cadenas_lock,
-.charsheet .arme4_etat[value="0"] ~ div.arme4_unlock,
-.charsheet .arme4_etat[value="1"] ~ div.arme4_lock,
-.charsheet .arme4_etat[value="0"] ~ div.arme4_cadenas_unlock,
-.charsheet .arme4_etat[value="1"] ~ div.arme4_cadenas_lock {
+.charsheet .arme1_etat[value="0"] ~ div.armes_type_unlock_1,
+.charsheet .arme1_etat[value="0"] ~ div.armes_cadenas_unlock_1,
+.charsheet .arme1_etat[value="1"] ~ div.armes_type_lock_1,
+.charsheet .arme1_etat[value="1"] ~ div.armes_cadenas_lock_1,
+.charsheet .arme2_etat[value="0"] ~ div.armes_type_unlock_2,
+.charsheet .arme2_etat[value="0"] ~ div.armes_cadenas_unlock_2,
+.charsheet .arme2_etat[value="1"] ~ div.armes_type_lock_2,
+.charsheet .arme2_etat[value="1"] ~ div.armes_cadenas_lock_2,
+.charsheet .arme3_etat[value="0"] ~ div.armes_type_unlock_3,
+.charsheet .arme3_etat[value="0"] ~ div.armes_cadenas_unlock_3,
+.charsheet .arme3_etat[value="1"] ~ div.armes_type_lock_3,
+.charsheet .arme3_etat[value="1"] ~ div.armes_cadenas_lock_3,
+.charsheet .arme4_etat[value="0"] ~ div.armes_type_unlock_4,
+.charsheet .arme4_etat[value="0"] ~ div.armes_cadenas_unlock_4,
+.charsheet .arme4_etat[value="1"] ~ div.armes_type_lock_4,
+.charsheet .arme4_etat[value="1"] ~ div.armes_cadenas_lock_4 {
   display: block;
 }
 
 
-.armes_type {
+.armes_type_unlock_1,
+.armes_type_unlock_2,
+.armes_type_unlock_3,
+.armes_type_unlock_4,
+.armes_type_lock_1,
+.armes_type_lock_2,
+.armes_type_lock_3,
+.armes_type_lock_4 {
   grid-column: 1;
   grid-row: 1;
   letter-spacing: -0.4px;
@@ -2919,27 +2958,28 @@ div.niveau_aura_m3 {
   border-left: 1px solid var(--border_armes);
 }
 
-.arme1_cadenas_lock,
-.arme1_cadenas_unlock,
-.arme2_cadenas_lock,
-.arme2_cadenas_unlock,
-.arme3_cadenas_lock,
-.arme3_cadenas_unlock,
-.arme4_cadenas_lock,
-.arme4_cadenas_unlock {
+.armes_cadenas_unlock_1,
+.armes_cadenas_unlock_2,
+.armes_cadenas_unlock_3,
+.armes_cadenas_unlock_4,
+.armes_cadenas_lock_1,
+.armes_cadenas_lock_2,
+.armes_cadenas_lock_3,
+.armes_cadenas_lock_4 {
   grid-column: 1;
-  grid-row: 2;
-  font-family: "Pictos";  
-  margin-left: -71px;
-  margin-top: 9px;  
+  grid-row: 1;
+  font-family: "Pictos";
+  margin-left: 7px;
+  margin-top: 7px;
   font-size: 12px;
   color: grey;
+  width: 15px;
 }
 
-.arme1_cadenas_unlock,
-.arme2_cadenas_unlock,
-.arme3_cadenas_unlock,
-.arme4_cadenas_unlock {
+.armes_cadenas_unlock_1,
+.armes_cadenas_unlock_2,
+.armes_cadenas_unlock_3,
+.armes_cadenas_unlock_4 {
   color: var(--black);
 }
 
@@ -4047,8 +4087,9 @@ background: var(--noir_roll);
 margin-top: -1px;
 margin-bottom: -5px;
 color: var(--blanc_roll);
-font-size: 30px;
+font-size: 25px;
 font-family: "Jim Nightshade";
+font-family: "EB Garamond", serif;
 line-height: 23px;
 }
 
@@ -4106,9 +4147,10 @@ line-height: 23px;
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-exceptionnelle,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite-critique,
 .sheet-rolltemplate-thanatos .sheet-template-thanatos-texte-reussite {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 20px;
   font-family: "Playfair", serif;
+  font-family: "EB Garamond", serif;
   padding: 5px;
   padding-top: 15px;
   letter-spacing: -0.7px;
@@ -4132,7 +4174,8 @@ line-height: 23px;
   background: var(--noir_roll);
   margin-top: -5px;
   font-family: "Jim Nightshade";
-  font-size: 17px;
+  font-family: "EB Garamond", serif;
+  font-size: 13px;
   line-height: 10px;
   padding-top: 10px;
 }

@@ -1122,7 +1122,9 @@
                                 <div class="armes_roll_titre">JET DE DÉGÂTS</div>
                             </div>
                             <div class="wrapper_zone_armes">
-                                <div class="armes_type">
+                                
+                                <input type="hidden" class="arme1_etat" name="attr_arme1_etat" value="0">
+                                <div class="armes_type_unlock_1">
                                     <select class="choix_armes" name="attr_armes_nom_1">
                                         <option value="0"></option>
                                         <option value="10" selected="selected">Mains nues</option>
@@ -1137,6 +1139,13 @@
                                         <option value="9">Arbalète</option>
                                     </select>
                                 </div>
+                                <div class="armes_cadenas_unlock_1"><button type="action" class="button_verrou" name="act_lock_arme1" title="Verrouiller l'arme" >)</button></div>
+        
+                                <div class="armes_type_lock_1">
+                                    <select class="choix_armes" name="attr_armes_nom_1" disabled style="cursor: default;">
+                                    </select>
+                                </div>
+                                <div class="armes_cadenas_lock_1"><button type="action" class="button_verrou" name="act_lock_arme1" title="Déverrouiller l'arme" >(</button></div>
                                 <div class="armes_nom">
                                     <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted_gauche">
                                 </div>
@@ -1164,7 +1173,8 @@
                                 <div class="separateur_armes_border"></div>
                             </div>
                             <div class="wrapper_zone_armes">
-                                <div class="armes_type">
+                                <input type="hidden" class="arme2_etat" name="attr_arme2_etat" value="0">
+                                <div class="armes_type_unlock_2">
                                     <select class="choix_armes" name="attr_armes_nom_2">
                                         <option value="0" selected="selected"></option>
                                         <option value="10">Mains nues</option>
@@ -1179,6 +1189,23 @@
                                         <option value="9">Arbalète</option>
                                     </select>
                                 </div>
+                                <div class="armes_cadenas_unlock_2"><button type="action" class="button_verrou" name="act_lock_arme2" title="Verrouiller l'arme" >)</button></div>
+                                <div class="armes_type_lock_2">
+                                    <select class="choix_armes" name="attr_armes_nom_2" disabled style="cursor: default;">
+                                        <option value="0" selected="selected"></option>
+                                        <option value="10">Mains nues</option>
+                                        <option value="1">Dague</option>
+                                        <option value="2">Épée courte</option>
+                                        <option value="3">Épée longue</option>
+                                        <option value="4">Hache</option>
+                                        <option value="5">Lance</option>
+                                        <option value="6">Masse d'arme</option>
+                                        <option value="7">Arc court</option>
+                                        <option value="8">Arc long</option>
+                                        <option value="9">Arbalète</option>
+                                    </select>
+                                </div>
+                                <div class="armes_cadenas_lock_2"><button type="action" class="button_verrou" name="act_lock_arme2" title="Déverrouiller l'arme" >(</button></div>
                                 <div class="armes_nom">
                                     <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted_gauche">
                                 </div>
@@ -1206,7 +1233,8 @@
                                 <div class="separateur_armes_border"></div>
                             </div>
                             <div class="wrapper_zone_armes">
-                                <div class="armes_type">
+                                <input type="hidden" class="arme3_etat" name="attr_arme3_etat" value="0">
+                                <div class="armes_type_unlock_3">
                                     <select class="choix_armes" name="attr_armes_nom_3">
                                         <option value="0" selected="selected"></option>
                                         <option value="10">Mains nues</option>
@@ -1221,6 +1249,23 @@
                                         <option value="9">Arbalète</option>
                                     </select>
                                 </div>
+                                <div class="armes_cadenas_unlock_3"><button type="action" class="button_verrou" name="act_lock_arme3" title="Verrouiller l'arme" >)</button></div>
+                                <div class="armes_type_lock_3">
+                                    <select class="choix_armes" name="attr_armes_nom_3" disabled style="cursor: default;">
+                                        <option value="0" selected="selected"></option>
+                                        <option value="10">Mains nues</option>
+                                        <option value="1">Dague</option>
+                                        <option value="2">Épée courte</option>
+                                        <option value="3">Épée longue</option>
+                                        <option value="4">Hache</option>
+                                        <option value="5">Lance</option>
+                                        <option value="6">Masse d'arme</option>
+                                        <option value="7">Arc court</option>
+                                        <option value="8">Arc long</option>
+                                        <option value="9">Arbalète</option>
+                                    </select>
+                                </div>
+                                <div class="armes_cadenas_lock_3"><button type="action" class="button_verrou" name="act_lock_arme3" title="Déverrouiller l'arme" >(</button></div>
                                 <div class="armes_nom">
                                     <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted_gauche">
                                 </div>
@@ -1249,7 +1294,8 @@
                             </div>
                             <div class="separateur_armes"></div>
                             <div class="wrapper_zone_armes">
-                                <div class="armes_type">
+                                <input type="hidden" class="arme4_etat" name="attr_arme4_etat" value="0">
+                                <div class="armes_type_unlock_4">
                                     <select class="choix_armes" name="attr_armes_nom_4">
                                         <option value="0" selected="selected"></option>
                                         <option value="10">Mains nues</option>
@@ -1264,6 +1310,23 @@
                                         <option value="9">Arbalète</option>
                                     </select>
                                 </div>
+                                <div class="armes_cadenas_unlock_4"><button type="action" class="button_verrou" name="act_lock_arme4" title="Verrouiller l'arme" >)</button></div>
+                                <div class="armes_type_lock_4">
+                                    <select class="choix_armes" name="attr_armes_nom_4" disabled style="cursor: default;">
+                                        <option value="0" selected="selected"></option>
+                                        <option value="10">Mains nues</option>
+                                        <option value="1">Dague</option>
+                                        <option value="2">Épée courte</option>
+                                        <option value="3">Épée longue</option>
+                                        <option value="4">Hache</option>
+                                        <option value="5">Lance</option>
+                                        <option value="6">Masse d'arme</option>
+                                        <option value="7">Arc court</option>
+                                        <option value="8">Arc long</option>
+                                        <option value="9">Arbalète</option>
+                                    </select>
+                                </div>
+                                <div class="armes_cadenas_lock_4"><button type="action" class="button_verrou" name="act_lock_arme4" title="Déverrouiller l'arme" >(</button></div>
                                 <div class="armes_nom">
                                     <input name="attr_armes_designation_4" type="text" spellcheck="false" class="input_dotted_gauche">
                                 </div>
@@ -2271,43 +2334,31 @@
                         <div class="armes_roll_titre">JET DE DÉGÂTS</div>
                     </div>
                     <div class="wrapper_zone_armes">
+                        
                         <input type="hidden" class="arme1_etat" name="attr_arme1_etat" value="0">
-                        <div class="arme1_unlock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_1">
-                                    <option value="0"></option>
-                                    <option value="10" selected="selected">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme1_cadenas_unlock">)</div>
+                        <div class="armes_type_unlock_1">
+                            <select class="choix_armes" name="attr_armes_nom_1">
+                                <option value="0"></option>
+                                <option value="10" selected="selected">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
-                        <div class="arme1_lock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_1"  disabled>
-                                    <option value="0"></option>
-                                    <option value="10" selected="selected">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme1_cadenas_lock">(</div>
+                        <div class="armes_cadenas_unlock_1"><button type="action" class="button_verrou" name="act_lock_arme1" title="Verrouiller l'arme" >)</button></div>
+
+                        <div class="armes_type_lock_1">
+                            <select class="choix_armes" name="attr_armes_nom_1" disabled style="cursor: default;">
+                                
+                            </select>
                         </div>
+                        <div class="armes_cadenas_lock_1"><button type="action" class="button_verrou" name="act_lock_arme1" title="Déverrouiller l'arme" >(</button></div>
                         <div class="armes_nom">
                             <input name="attr_armes_designation_1" type="text" spellcheck="false" class="input_dotted_gauche">
                         </div>
@@ -2336,42 +2387,38 @@
                     </div>
                     <div class="wrapper_zone_armes">
                         <input type="hidden" class="arme2_etat" name="attr_arme2_etat" value="0">
-                        <div class="arme2_unlock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_2">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme2_cadenas_unlock">)</div>
+                        <div class="armes_type_unlock_2">
+                            <select class="choix_armes" name="attr_armes_nom_2">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
-                        <div class="arme2_lock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_2">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme2_cadenas_lock">(</div>
+                        <div class="armes_cadenas_unlock_2"><button type="action" class="button_verrou" name="act_lock_arme2" title="Verrouiller l'arme" >)</button></div>
+                        <div class="armes_type_lock_2">
+                            <select class="choix_armes" name="attr_armes_nom_2" disabled style="cursor: default;">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
+                        <div class="armes_cadenas_lock_2"><button type="action" class="button_verrou" name="act_lock_arme2" title="Déverrouiller l'arme" >(</button></div>
                         <div class="armes_nom">
                             <input name="attr_armes_designation_2" type="text" spellcheck="false" class="input_dotted_gauche">
                         </div>
@@ -2400,42 +2447,38 @@
                     </div>
                     <div class="wrapper_zone_armes">
                         <input type="hidden" class="arme3_etat" name="attr_arme3_etat" value="0">
-                        <div class="arme3_unlock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_3">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme3_cadenas_unlock">)</div>
+                        <div class="armes_type_unlock_3">
+                            <select class="choix_armes" name="attr_armes_nom_3">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
-                        <div class="arme3_lock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_3">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme3_cadenas_lock">(</div>
+                        <div class="armes_cadenas_unlock_3"><button type="action" class="button_verrou" name="act_lock_arme3" title="Verrouiller l'arme" >)</button></div>
+                        <div class="armes_type_lock_3">
+                            <select class="choix_armes" name="attr_armes_nom_3" disabled style="cursor: default;">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
+                        <div class="armes_cadenas_lock_3"><button type="action" class="button_verrou" name="act_lock_arme3" title="Déverrouiller l'arme" >(</button></div>
                         <div class="armes_nom">
                             <input name="attr_armes_designation_3" type="text" spellcheck="false" class="input_dotted_gauche">
                         </div>
@@ -2465,42 +2508,38 @@
                     <div class="separateur_armes"></div>
                     <div class="wrapper_zone_armes">
                         <input type="hidden" class="arme4_etat" name="attr_arme4_etat" value="0">
-                        <div class="arme4_unlock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_4">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme4_cadenas_unlock">)</div>
+                        <div class="armes_type_unlock_4">
+                            <select class="choix_armes" name="attr_armes_nom_4">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
-                        <div class="arme4_lock">
-                            <div class="armes_type">
-                                <select class="choix_armes" name="attr_armes_nom_4">
-                                    <option value="0" selected="selected"></option>
-                                    <option value="10">Mains nues</option>
-                                    <option value="1">Dague</option>
-                                    <option value="2">Épée courte</option>
-                                    <option value="3">Épée longue</option>
-                                    <option value="4">Hache</option>
-                                    <option value="5">Lance</option>
-                                    <option value="6">Masse d'arme</option>
-                                    <option value="7">Arc court</option>
-                                    <option value="8">Arc long</option>
-                                    <option value="9">Arbalète</option>
-                                </select>
-                            </div>
-                            <div class="arme4_cadenas_lock">(</div>
+                        <div class="armes_cadenas_unlock_4"><button type="action" class="button_verrou" name="act_lock_arme4" title="Verrouiller l'arme" >)</button></div>
+                        <div class="armes_type_lock_4">
+                            <select class="choix_armes" name="attr_armes_nom_4" disabled style="cursor: default;">
+                                <option value="0" selected="selected"></option>
+                                <option value="10">Mains nues</option>
+                                <option value="1">Dague</option>
+                                <option value="2">Épée courte</option>
+                                <option value="3">Épée longue</option>
+                                <option value="4">Hache</option>
+                                <option value="5">Lance</option>
+                                <option value="6">Masse d'arme</option>
+                                <option value="7">Arc court</option>
+                                <option value="8">Arc long</option>
+                                <option value="9">Arbalète</option>
+                            </select>
                         </div>
+                        <div class="armes_cadenas_lock_4"><button type="action" class="button_verrou" name="act_lock_arme4" title="Déverrouiller l'arme" >(</button></div>
                         <div class="armes_nom">
                             <input name="attr_armes_designation_4" type="text" spellcheck="false" class="input_dotted_gauche">
                         </div>
@@ -3995,8 +4034,8 @@
 			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
 		
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-					{{title}} <span style="font-size: 17px;">({{stat}})</span>
-					<br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
+					{{title}} <span style="font-size: 15px;">({{stat}})</span>
+					<br><span style="font-size: 17px; font-weight: normal;">{{subheader}}</span>
 				</div>
 				<div class="sheet-separateur"></div>
                 {{#rollGreater() des 95}}
