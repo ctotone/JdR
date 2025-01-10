@@ -2879,6 +2879,37 @@ div.niveau_aura_m3 {
   grid-auto-rows: 10px;
 }
 
+.arme1_lock,
+.arme1_unlock,
+.arme2_lock,
+.arme2_unlock,
+.arme3_lock,
+.arme3_unlock,
+.arme4_lock,
+.arme4_unlock {
+  display: none;
+}
+
+.charsheet .arme1_etat[value="0"] ~ div.arme1_unlock,
+.charsheet .arme1_etat[value="1"] ~ div.arme1_lock,
+.charsheet .arme1_etat[value="0"] ~ div.arme1_cadenas_unlock,
+.charsheet .arme1_etat[value="1"] ~ div.arme1_cadenas_lock,
+.charsheet .arme2_etat[value="0"] ~ div.arme2_unlock,
+.charsheet .arme2_etat[value="1"] ~ div.arme2_lock,
+.charsheet .arme2_etat[value="0"] ~ div.arme2_cadenas_unlock,
+.charsheet .arme2_etat[value="1"] ~ div.arme2_cadenas_lock,
+.charsheet .arme3_etat[value="0"] ~ div.arme3_unlock,
+.charsheet .arme3_etat[value="1"] ~ div.arme3_lock,
+.charsheet .arme3_etat[value="0"] ~ div.arme3_cadenas_unlock,
+.charsheet .arme3_etat[value="1"] ~ div.arme3_cadenas_lock,
+.charsheet .arme4_etat[value="0"] ~ div.arme4_unlock,
+.charsheet .arme4_etat[value="1"] ~ div.arme4_lock,
+.charsheet .arme4_etat[value="0"] ~ div.arme4_cadenas_unlock,
+.charsheet .arme4_etat[value="1"] ~ div.arme4_cadenas_lock {
+  display: block;
+}
+
+
 .armes_type {
   grid-column: 1;
   grid-row: 1;
@@ -2886,6 +2917,30 @@ div.niveau_aura_m3 {
   margin-left: 5px;
   padding-left: 5px;
   border-left: 1px solid var(--border_armes);
+}
+
+.arme1_cadenas_lock,
+.arme1_cadenas_unlock,
+.arme2_cadenas_lock,
+.arme2_cadenas_unlock,
+.arme3_cadenas_lock,
+.arme3_cadenas_unlock,
+.arme4_cadenas_lock,
+.arme4_cadenas_unlock {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: "Pictos";  
+  margin-left: -71px;
+  margin-top: 9px;  
+  font-size: 12px;
+  color: grey;
+}
+
+.arme1_cadenas_unlock,
+.arme2_cadenas_unlock,
+.arme3_cadenas_unlock,
+.arme4_cadenas_unlock {
+  color: var(--black);
 }
 
 .armes_nom {
