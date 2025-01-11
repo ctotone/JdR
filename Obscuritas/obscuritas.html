@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="creation_carac_decompte">Points attribués : <input type="number" class="input_config" value="90" name="attr_points_carac_base" style="color: var(--white);" readonly /> / 235</div>
-                <div class="caracteristiques_derivees" style="grid-row: 2 / 7;margin-top: 20px;margin-bottom: 40px;">
+                <div class="caracteristiques_derivees" style="grid-row: 2 / 8;margin-top: 0px;margin-bottom: 94px;">
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Points de vie max</div>
                         <div class="derivees_max"><input type="number" class="input_derivees_lock" name="attr_pdv_maxi_base" value="3" readonly /></div>
@@ -117,15 +117,19 @@
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Bonus de Force</div>
-                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="1" min="0" max="99"></div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_force_base" value="1" min="0" max="99" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Bonus de Dextérité</div>
-                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="1" min="0" max="99"></div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_dexterite_base" value="1" min="0" max="99" readonly /></div>
                     </div>
                     <div class="wrapper_zone_derivees">
                         <div class="derivees_titre">Encaissement</div>
-                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement_base" value="0" min="0" max="99"></div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement_base" value="0" min="0" max="99" readonly /></div>
+                    </div>
+                    <div class="wrapper_zone_derivees">
+                        <div class="derivees_titre">Mouvement</div>
+                        <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_mouvement" value="0" min="0" max="99" readonly /></div>
                     </div>
                 </div>
                 <div class="caracteristiques_separateur" style="z-index: 2; height: 381px;"></div>
@@ -815,6 +819,10 @@
                                 <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement" value="0" min="0" max="99"></div>
                             </div>
                             <div class="wrapper_zone_derivees">
+                                <div class="derivees_titre">Mouvement</div>
+                                <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_mouvement" value="0" min="0" max="99"></div>
+                            </div>
+                            <div class="wrapper_zone_derivees">
                                 <div class="derivees_separateur"></div>
                             </div>
                             <div class="wrapper_zone_derivees">
@@ -830,7 +838,7 @@
                                 <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_parade_final" value="0" min="0" max="99"></div>
                             </div>
                             <div class="wrapper_zone_derivees">
-                                <div class="derivees_separateur"></div>
+                                <div class="derivees_separateur" style="margin-left: 18px;width: 250px;"></div>
                             </div><div class="wrapper_zone_derivees">
                                 <div class="derivees_titre">Expérience</div>
                                 <div class="derivees_bonus"><input type="number" class="input_derivees" name="attr_xp" value="0" min="0" max="99" style="width: 50% !important;"></div>
@@ -2036,6 +2044,10 @@
                             <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_encaissement" value="0" min="0" max="99"></div>
                         </div>
                         <div class="wrapper_zone_derivees">
+                            <div class="derivees_titre">Mouvement</div>
+                            <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_mouvement" value="0" min="0" max="99"></div>
+                        </div>
+                        <div class="wrapper_zone_derivees">
                             <div class="derivees_separateur"></div>
                         </div>
                         <div class="wrapper_zone_derivees">
@@ -2051,7 +2063,7 @@
                             <div class="derivees_bonus"><input type="number" class="input_derivees_lock" name="attr_bonus_parade_final" value="0" min="0" max="99"></div>
                         </div>
                         <div class="wrapper_zone_derivees">
-                            <div class="derivees_separateur"></div>
+                            <div class="derivees_separateur" style="margin-left: 18px;width: 250px;"></div>
                         </div><div class="wrapper_zone_derivees">
                             <div class="derivees_titre">Expérience</div>
                             <div class="derivees_bonus"><input type="number" class="input_derivees" name="attr_xp" value="0" min="0" max="99" style="width: 50% !important;"></div>
@@ -2862,7 +2874,7 @@
                         <div class="xp_disponible">
                             <div class="wrapper_xp_dispo">
                                 <div class="xp_dispo_valeur">
-                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp" readonly>
+                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp">
                                 </div>
                                 <div class="xp_dispo_texte">
                                     Expérience disponible
@@ -3471,7 +3483,7 @@
                         <div class="xp_disponible" style="grid-column: 3/20;">
                             <div class="wrapper_xp_dispo">
                                 <div class="xp_dispo_valeur">
-                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp" readonly>
+                                    <input type="number" class="input_carac_xp_dispo" name="attr_xp_temp">
                                 </div>
                                 <div class="xp_dispo_texte">
                                     Expérience disponible
@@ -6129,7 +6141,7 @@ on('clicked:compendium_combat_tableaux', async (event) => {
     });
 
     on('clicked:valider_creation', async (event) => {
-        getAttrs(["nouveau_personnage", "force_base", "dexterite_base", "constitution_base", "intelligence_base", "charisme_base", "volonte_base", "stat_athletisme_base", "stat_baratin_base", "stat_bibliotheque_base", "stat_chercher_base", "stat_combat_cac_base", "stat_combat_pugilat_base", "stat_combat_distance_base", "stat_discretion_base", "stat_endurance_base", "stat_esquive_base", "stat_langue_ancienne_base", "stat_langue_base", "stat_medecine_base", "stat_metier_base", "stat_perception_base", "stat_psychologie_base", "stat_science_base", "stat_sciences_occultes_base", "stat_survie_base", "stat_vigilance_base"], function(values) {
+        getAttrs(["nouveau_personnage", "force_base", "dexterite_base", "constitution_base", "intelligence_base", "charisme_base", "volonte_base", "stat_athletisme_base", "stat_baratin_base", "stat_bibliotheque_base", "stat_chercher_base", "stat_combat_cac_base", "stat_combat_pugilat_base", "stat_combat_distance_base", "stat_discretion_base", "stat_endurance_base", "stat_esquive_base", "stat_langue_ancienne_base", "stat_langue_base", "stat_medecine_base", "stat_metier_base", "stat_perception_base", "stat_psychologie_base", "stat_science_base", "stat_sciences_occultes_base", "stat_survie_base", "stat_vigilance_base", "pdv_maxi", "pdm_maxi", "sm_maxi"], function(values) {
             let nouveau_personnage = 0;
             let force = parseInt(values["force_base"]) || 0;
             let dexterite = parseInt(values["dexterite_base"]) || 0;
@@ -6157,6 +6169,12 @@ on('clicked:compendium_combat_tableaux', async (event) => {
             let stat_sciences_occultes = parseInt(values["stat_sciences_occultes_base"]) || 0;
             let stat_survie = parseInt(values["stat_survie_base"]) || 0;
             let stat_vigilance = parseInt(values["stat_vigilance_base"]) || 0;
+            
+            let pdv_maxi = parseInt(values["pdv_maxi"]) || 0;
+            let pdm_maxi = parseInt(values["pdm_maxi"]) || 0;
+            let sm_maxi = parseInt(values["sm_maxi"]) || 0;
+
+
 
             setAttrs({
                 "nouveau_personnage": nouveau_personnage,
@@ -6185,7 +6203,11 @@ on('clicked:compendium_combat_tableaux', async (event) => {
                 "stat_science": stat_science,
                 "stat_sciences_occultes": stat_sciences_occultes,
                 "stat_survie": stat_survie,
-                "stat_vigilance": stat_vigilance
+                "stat_vigilance": stat_vigilance,
+                "pdv": pdv_maxi,
+                "pdm": pdm_maxi,
+                "sm": sm_maxi,
+                "alerte_sm_75": 1
             });
         });
     });
