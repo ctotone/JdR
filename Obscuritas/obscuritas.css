@@ -925,17 +925,15 @@ div.sm_25 {
 .charsheet .popup_sm[value="75"] ~ div.sm_75,
 .charsheet .popup_sm[value="50"] ~ div.sm_50,
 .charsheet .popup_sm[value="25"] ~ div.sm_25 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
 }
 
 .sm_75,
 .sm_50,
 .sm_25 {
   position: fixed;
-  width: 69%;
-  height: 50%;
+  width: 600px;
+  height: 300px;
   margin-left: 90px;
   margin-top: 110px;
   border: 8px solid #000000;
@@ -953,6 +951,40 @@ div.sm_25 {
 .sm_75 {
   background: #071b67;
   box-shadow: 0px 0px 30px 13px #6c78ab;
+}
+
+.wrapper_page_sm {
+  display: grid;
+  grid-template-columns: 50% 5% 35% 5% 5%;
+  grid-auto-rows: 20px;
+
+}
+
+.sm_alerte_texte {
+  grid-column: 1;
+  grid-row: 1 / 16;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.sm_alerte_illustration {
+  grid-column: 3;
+  grid-row: 1/16;
+  background: green;
+}
+
+.sm_alerte_bouton {
+  grid-column: 5;
+  grid-row: 1;
+  font-family: 'Pictos';
+  font-weight: normal;
+  color: var(--white);
+  font-size: 32px;
+  line-height: 55px;
+  margin-top: -25px;
+  margin-left: 14px;
 }
 
 .menu {
