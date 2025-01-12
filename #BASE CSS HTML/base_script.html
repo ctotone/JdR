@@ -377,3 +377,25 @@
 		});
 	});
 </script>
+
+
+<!-- Script pour boutton Compendium avec valeur pour CSS  -->
+<script type="text/worker">
+
+	const pageMapping = {
+		"compendium_sm": 1,
+		"compendium_hero": 2,
+		"compendium_combat": 3,
+		"compendium_combat_tableaux": 4,
+		"compendium_aura_priere": 5,
+		"compendium_aura": 6
+	};
+
+	Object.keys(pageMapping).forEach(button => {
+		on(`clicked:${button}`, async (event) => {
+			setAttrs({
+				"page_compendium": pageMapping[button]
+			});
+		});
+	});
+</script>

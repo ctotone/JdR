@@ -571,6 +571,9 @@ input[type="number"] {
 .charsheet button[type=action].button8::before,
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
+.charsheet button[type=action].button_compendium_sm::before,
+.charsheet button[type=action].button_compendium_combat::before,
+.charsheet button[type=action].button_compendium_aura::before,
 .charsheet button[type=action].button_xp::before,
 .charsheet button[type=action].button_valider_xp::before,
 .charsheet button[type=action].button_comp::before,
@@ -674,7 +677,10 @@ input[type="number"] {
   color: unset;
 }
 
-.charsheet button[type=action].button_carac {
+.charsheet button[type=action].button_carac,
+.charsheet button[type=action].button_compendium_sm,
+.charsheet button[type=action].button_compendium_combat,
+.charsheet button[type=action].button_compendium_aura {
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -692,6 +698,18 @@ input[type="number"] {
   font-family: "Metamorphous", serif;
   font-weight: bold;
   text-align: center;
+}
+
+.charsheet button[type=action].button_compendium_sm {
+  color: #710071;
+}
+
+.charsheet button[type=action].button_compendium_combat {
+  color: #710000;
+}
+
+.charsheet button[type=action].button_compendium_aura {
+  color: #05109b;
 }
 
 .charsheet button[type=action].button_xp {
@@ -810,7 +828,10 @@ input[type="number"] {
 .charsheet button[type=action].button_carac:hover,
 .charsheet button[type=action].button_xp:hover,
 .charsheet button[type=action].button_comp:hover,
-.charsheet button[type=roll].button_comp:hover {
+.charsheet button[type=roll].button_comp:hover,
+.charsheet button[type=action].button_compendium_sm:hover,
+.charsheet button[type=action].button_compendium_combat:hover,
+.charsheet button[type=action].button_compendium_aura:hover {
   color: var(--hover_bouton);
 }
 
@@ -3826,14 +3847,20 @@ div.illustration_bouclier_aucun {
 div.compendium_sm,
 div.compendium_hero,
 div.compendium_combat,
-div.compendium_combat_tableaux {
+div.compendium_combat_tableaux,
+div.compendium_aura_priere,
+div.compendium_aura,
+div.compendium_possession {
     display: none;
 }
 
 .charsheet .choix_compendium[value="1"] ~ div.compendium_sm,
 .charsheet .choix_compendium[value="2"] ~ div.compendium_hero,
 .charsheet .choix_compendium[value="3"] ~ div.compendium_combat,
-.charsheet .choix_compendium[value="4"] ~ div.compendium_combat_tableaux {
+.charsheet .choix_compendium[value="4"] ~ div.compendium_combat_tableaux,
+.charsheet .choix_compendium[value="5"] ~ div.compendium_aura_priere,
+.charsheet .choix_compendium[value="6"] ~ div.compendium_aura,
+.charsheet .choix_compendium[value="7"] ~ div.compendium_possession {
     display: block;
 }
 
@@ -3851,7 +3878,7 @@ div.compendium_combat_tableaux {
   width: 100%;
   box-sizing: border-box;
   font-family: 'Playfair';
-  line-height: 22px;
+  line-height: 20px;
   font-size: 14px;
   text-align: justify;
 }
@@ -3881,7 +3908,7 @@ div.compendium_combat_tableaux {
   width: 100%; /* Adapte la largeur totale à celle du conteneur parent */
   box-sizing: border-box; /* Inclut le padding/border dans la largeur */
   font-family: 'Playfair';
-  line-height: 22px;
+  line-height: 20px;
   font-size: 14px;
 }
 
@@ -3914,7 +3941,7 @@ div.compendium_combat_tableaux {
   width: 100%;
   box-sizing: border-box;
   font-family: 'Playfair';
-  line-height: 22px;
+  line-height: 20px;
   font-size: 14px;
   text-align: justify;
 }
