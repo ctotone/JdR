@@ -574,6 +574,7 @@ input[type="number"] {
 .charsheet button[type=action].button_compendium_sm::before,
 .charsheet button[type=action].button_compendium_combat::before,
 .charsheet button[type=action].button_compendium_aura::before,
+.charsheet button[type=action].button_compendium_equipement::before,
 .charsheet button[type=action].button_xp::before,
 .charsheet button[type=action].button_valider_xp::before,
 .charsheet button[type=action].button_comp::before,
@@ -680,7 +681,8 @@ input[type="number"] {
 .charsheet button[type=action].button_carac,
 .charsheet button[type=action].button_compendium_sm,
 .charsheet button[type=action].button_compendium_combat,
-.charsheet button[type=action].button_compendium_aura {
+.charsheet button[type=action].button_compendium_aura,
+.charsheet button[type=action].button_compendium_equipement {
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -710,6 +712,10 @@ input[type="number"] {
 
 .charsheet button[type=action].button_compendium_aura {
   color: #05109b;
+}
+
+.charsheet button[type=action].button_compendium_equipement {
+  color: #6f3e00;
 }
 
 .charsheet button[type=action].button_xp {
@@ -831,7 +837,8 @@ input[type="number"] {
 .charsheet button[type=roll].button_comp:hover,
 .charsheet button[type=action].button_compendium_sm:hover,
 .charsheet button[type=action].button_compendium_combat:hover,
-.charsheet button[type=action].button_compendium_aura:hover {
+.charsheet button[type=action].button_compendium_aura:hover,
+.charsheet button[type=action].button_compendium_equipement:hover {
   color: var(--hover_bouton);
 }
 
@@ -3912,7 +3919,9 @@ div.compendium_combat,
 div.compendium_combat_tableaux,
 div.compendium_aura_priere,
 div.compendium_aura,
-div.compendium_possession {
+div.compendium_possession,
+div.compendium_equipement,
+div.compendium_armes {
     display: none;
 }
 
@@ -3922,10 +3931,12 @@ div.compendium_possession {
 .charsheet .choix_compendium[value="4"] ~ div.compendium_combat_tableaux,
 .charsheet .choix_compendium[value="5"] ~ div.compendium_aura_priere,
 .charsheet .choix_compendium[value="6"] ~ div.compendium_aura,
-.charsheet .choix_compendium[value="7"] ~ div.compendium_possession {
+.charsheet .choix_compendium[value="7"] ~ div.compendium_possession,
+.charsheet .choix_compendium[value="8"] ~ div.compendium_equipement,
+.charsheet .choix_compendium[value="9"] ~ div.compendium_armes
+ {
     display: block;
 }
-
 
 .compendium_titre {
   background: red;
@@ -4052,6 +4063,30 @@ div.compendium_possession {
   text-align: center;
 }
 
+.wrapper_compendium_tableau_3col_equipement {
+  display: grid;
+  grid-template-columns: 2% 30% 20% 40%;
+  grid-auto-rows: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Playfair';
+  line-height: 13px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.wrapper_compendium_tableau_4col_equipement {
+  display: grid;
+  grid-template-columns: 2% 20% 21% 35% 14%;
+  grid-auto-rows: auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Playfair';
+  line-height: 13px;
+  font-size: 13px;
+  text-align: center;
+}
+
 .compendium_tableau_type {
   grid-column: 2;
   display: flex;
@@ -4076,6 +4111,52 @@ div.compendium_possession {
 
 .compendium_tableau_effet {
   grid-column: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background: #ffffff45;
+}
+
+.compendium_tableau_categorie {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  background: #ffffff45;
+}
+
+.compendium_tableau_nom {
+  grid-column: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background: #ffffff45;
+}
+
+.compendium_tableau_description {
+  grid-column: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  padding: 10px;
+  background: #ffffff45;
+}
+
+.compendium_tableau_prix {
+  grid-column: 5;
   display: flex;
   justify-content: center;
   align-items: center;
