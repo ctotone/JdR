@@ -1543,11 +1543,80 @@ div.erreur_xp {
     display: flex;
 }
 
+/* SLIDER GM */
+span.classic {
+	color: #000000de;
+}
+
+span.cache {
+	color: var(--text_input_info);
+}
+
+.charsheet input.sheet-prouesse-switch {
+	display: none;
+}
 
 
+.charsheet .classic,
+.charsheet .cache
+{
+	display: none;
+}
+
+.pouvoir_data .prouesse_roll {
+	display: inline-block;
+}
+
+.charsheet input.sheet-prouesse-switch {
+	display: none;
+}
+
+input.sheet-prouesse-switch:not(:checked) ~ span.classic,
+input.sheet-prouesse-switch:checked ~  span.cache {
+    display: inline-block;
+}
+
+.slider_prouesse {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #61504500;
+  -webkit-transition: .2s;
+  transition: .2s;
+  width: 30px;
+  height: 15px;
+  padding: 2px;
+  border: 1px solid #000000de;
+  box-shadow: 3px 2px 5px #435861ba;
+  margin-top: -2px;
+  margin-left: 46px;
+}
 
 
+.slider_prouesse:before {
+  display: inline-block;
+  content: "";
+  background-color: #000000de;
+  -webkit-transition: .2s;
+  transition: .2s;
+  width: 15px;
+  height: 15px;
+}
 
+input:checked + .slider_prouesse:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+    background-color: var(--text_input_info);
+}
+
+/* Rounded sliders */
+.slider_prouesse.round_prouesse {
+  border-radius: 34px;
+}
+
+.slider_prouesse.round_prouesse:before {
+  border-radius: 50%;
+}
 
 
 /* Zone AURA */
@@ -2420,6 +2489,32 @@ div.niveau_aura_m3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, 5px);
   grid-auto-rows: 60px;
+}
+
+.switch_dice_slider {
+	grid-column: 70;
+	grid-row: 1;
+}
+
+.switch_dice_slider_data {
+  grid-column: 67 / 74;
+  grid-row: 1;
+  font-size: 11px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.switch_dice_slider_comp {
+  grid-column: 70;
+  grid-row: 3;
+}
+
+.switch_dice_slider_data_comp {
+  grid-column: 66 / 74;
+  grid-row: 3;
+  font-size: 11px;
+  text-align: right;
+  font-weight: bold;
 }
 
 .bloc_pentacle {
