@@ -44,17 +44,17 @@
   --separateur_croix_competence: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/separateur_bas_croix.png);
   --armes_barre_titre: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/barre_titre_armes.webp);
   --armes_image_1: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_armes.webp);
-  --armure_dessin_plaque: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/armure_plaque1.webp);
+  --armure_dessin_plaque: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_plaque1.webp);
   --armure_dessin_maille: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_maille.webp);
-  --armure_dessin_cuir: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/armure_cuir1.webp);
-  --armure_dessin_tissu: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/armure_tissu1.webp);
+  --armure_dessin_cuir: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_cuir1.webp);
+  --armure_dessin_tissu: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_tissu1.webp);
   --armure_dessin_aucune: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/armure_aucune.webp);
   --bouclier_dessin_rond: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_rond.webp);
   --bouclier_dessin_pavois: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_pavois.webp);
   --bouclier_dessin_aucun: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/bouclier_aucune.webp);
   --fond_zone_note: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/ligne_notes.png);
   --dessin_sac: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_sac.webp);
-  --dessin_bourse: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/illustration_coffre.webp);
+  --dessin_bourse: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/illustration_coffre.webp);
   --dessin_carnet:  url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/dessin_carnet.webp);
 
 
@@ -75,17 +75,9 @@
   --color_ombre_button: #575757a8;
 }
 
-/* .sheet-darkmode .charsheet {
-  --color_ligne_menu: #dddddd;
-  --color_border_button: #595959;    
-  --color_background_button: #0c0c0c;
-  --color_background_button_selected: #fcfcfd;    
-  --color_text_button: #fdfdfdbd;    
-  --color_text_hover: #fcfcfd;
-  --color_text_button_selected: #000000ed;
-  --color_button_hover: #292929;
-  --color_ombre_button: #2f2f2fa8;
-} */
+.sheet-darkmode .charsheet {
+  --box_shadow_page: 2px 1px 5px 4px #643a3aba;
+}
 
 .sheetform {
   background-color: #ffffff;
@@ -982,7 +974,7 @@ div.sm_25 {
   height: 200px;
   border: 5px solid black;
   border-radius: 10px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/illu_sm_75.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/illu_sm_75.webp);
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 47px;
@@ -994,7 +986,7 @@ div.sm_25 {
   height: 200px;
   border: 5px solid black;
   border-radius: 10px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/illu_sm_50.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/illu_sm_50.webp);
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 47px;
@@ -1006,7 +998,7 @@ div.sm_25 {
   height: 200px;
   border: 5px solid black;
   border-radius: 10px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/illu_sm_25.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/illu_sm_25.webp);
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 47px;
@@ -1792,14 +1784,14 @@ div.marqueur_aura_n10 {
   border-radius: 0px 0px 90px 90px;
   border: 2px solid var(--black);
   box-shadow: 1px 3px 9px 4px #000000c9;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/aura_fond2.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/aura_fond2.webp);
   background-size: 456px 200px;
 }
 
 .background_aura_heresie {  
   grid-column: 22 / 34;
   grid-row: 13 / 33;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/heresie_illustration.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/heresie_illustration.webp);
   background-size: 107px 200px;
   background-repeat: no-repeat;
 }
@@ -1807,7 +1799,7 @@ div.marqueur_aura_n10 {
 .background_aura_heroisme {  
   grid-column: 46 / 62;
   grid-row: 13 / 33;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/heroisme_illustration.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/heroisme_illustration.webp);
   background-size: 107px 200px;
   background-repeat: no-repeat;
 }
@@ -2251,7 +2243,7 @@ div.niveau_aura_m3 {
   margin-left: 50px;
   margin-right: 50px;
   border-radius: 30px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/aura_fond2.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/aura_fond2.webp);
   background-size: 690px 226px;
   border: 2px solid black;
   color: var(--white);
@@ -2295,7 +2287,7 @@ div.niveau_aura_m3 {
   justify-content: center;
   align-items: center;
   margin-top: -3px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/heresie_illustration.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/heresie_illustration.webp);
   background-size: 107px 230px;
   background-repeat: no-repeat;
   margin-left: 5px;
@@ -2358,7 +2350,7 @@ div.niveau_aura_m3 {
   justify-content: center;
   align-items: center;
   margin-top: -3px;
-  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/heroisme_illustration.webp);
+  background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/heroisme_illustration.webp);
   background-size: 107px 230px;
   background-repeat: no-repeat;
   margin-left: 110px;
