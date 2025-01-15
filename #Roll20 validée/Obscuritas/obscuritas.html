@@ -6153,7 +6153,7 @@
 	})
 
     on('clicked:roll-distance', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1_distance)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2_distance)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3_distance)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4_distance)}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_combat_distance}[Armure - Malus Distance]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1_distance)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2_distance)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3_distance)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4_distance)}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
