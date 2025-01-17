@@ -1,5 +1,6 @@
 <input type="hidden" name="attr_gm" value="">
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
+<input type="hidden" name="attr_ctoken" value="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/token_dice.png">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
 <input type="hidden" name="attr_niveau_aura" class="niveau_aura" value="0">
 <input type="hidden" name="attr_niveau_sm" class="niveau_sm" value="0">
@@ -4824,10 +4825,13 @@
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
 			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
 		
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-					{{title}} <span style="font-size: 20px;">({{stat}})</span>
-					<br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
-				</div>
+                <div class="sheet-titre">
+                    <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: 65px 65px;background-repeat: no-repeat;background-position: 100% 65%;"></div>
+                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-titre-roll">
+                        {{title}} <span style="font-size: 17px;">({{stat}})</span>
+                        <br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
+                    </div>
+                </div>
 				<div class="sheet-separateur"></div>
                 {{#rollGreater() des 95}}
                     <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-critique">{{des}}</div>
@@ -4933,6 +4937,20 @@
             setAttrs({
                 page: button
             });
+        });
+    });
+
+    on("sheet:opened change:character_name change:character_avatar change:character_token", function() {
+        getAttrs(["character_name","character_avatar","character_token"], function(v) {
+            let name = v.character_name;
+            let namelen = name.length;
+            let nameclass;
+            namelen >= 19 ?
+                (nameclass = "smallHeader") :
+                (nameclass = "normalHeader");
+            setAttrs({ namelength: nameclass,
+                       "avatar": v.character_avatar,
+                       "ctoken": v.character_token });
         });
     });
 
@@ -5953,7 +5971,7 @@
 <!-- JET DE DÉS -->
 <script type="text/worker">
     on('clicked:roll-aura', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Aura}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{aura}[Aura]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{token=@{ctoken}}} {{title=Aura}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{aura}[Aura]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
         const statValue = Math.abs(stat.result); 
@@ -5971,7 +5989,7 @@
 	})
     
     on('clicked:roll-athletisme-force', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_force}[Compétence]-@{total_armures_malus_athletisme}[Malus Armure]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{token=@{ctoken}}} {{title=Athlétisme}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_force}[Compétence]-@{total_armures_malus_athletisme}[Malus Armure]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -5993,7 +6011,7 @@
 	})
 
     on('clicked:roll-athletisme-dex', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Athlétisme}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_dexterite}[Compétence]-@{total_armures_malus_athletisme}[Armure - Malus Athlétisme]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{token=@{ctoken}}} {{title=Athlétisme}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{athletisme_dexterite}[Compétence]-@{total_armures_malus_athletisme}[Armure - Malus Athlétisme]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6013,7 +6031,7 @@
 	})
 
     on('clicked:roll-baratin-charisme', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Charisme}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Baratin}} {{subheader=Charisme}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6033,7 +6051,7 @@
 	})
 
     on('clicked:roll-baratin-force', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Baratin}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Baratin}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{baratin_force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6053,7 +6071,7 @@
 	})
 
     on('clicked:roll-bibliotheque', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Bibliothèque}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{bibliotheque}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Bibliothèque}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{bibliotheque}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6073,7 +6091,7 @@
 	})
 
     on('clicked:roll-chercher', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Chercher}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{chercher}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Chercher}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{chercher}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6093,7 +6111,7 @@
 	})
 
     on('clicked:roll-cac-dex', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Corps à corps}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_dexterite}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{show_degat=oui}} {{title=Corps à corps}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_dexterite}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6113,7 +6131,7 @@
 	})
 
     on('clicked:roll-cac-force', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Corps à corps}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_force}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{show_degat=oui}} {{title=Corps à corps}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_cac_force}[Compétence]-@{total_armures_malus_combat_cac}[Armure - Malus CaC]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6133,7 +6151,7 @@
 	})
 
     on('clicked:roll-pugilat', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Pugilat}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_pugilat}[Compétence]-@{total_armures_malus_combat_pugilat}[Armure - Malus Pugilat]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{show_degat=oui}} {{title=Pugilat}} {{subheader=Force}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_pugilat}[Compétence]-@{total_armures_malus_combat_pugilat}[Armure - Malus Pugilat]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4)}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6153,7 +6171,7 @@
 	})
 
     on('clicked:roll-distance', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{show_degat=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_combat_distance}[Armure - Malus Distance]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1_distance)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2_distance)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3_distance)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4_distance)}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{show_degat=oui}} {{title=Distance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{combat_distance}[Compétence]-@{total_armures_malus_combat_distance}[Armure - Malus Distance]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}} {{arme1=[@{armes_designation_1}](~weapon_dmg_1_distance)}}  {{arme2=[@{armes_designation_2}](~weapon_dmg_2_distance)}}  {{arme3=[@{armes_designation_3}](~weapon_dmg_3_distance)}} {{arme4=[@{armes_designation_4}](~weapon_dmg_4_distance)}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6173,7 +6191,7 @@
 	})
 
     on('clicked:roll-discretion', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Discrétion}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{discretion}[Compétence]-@{total_armures_malus_discretion}[Armure - Malus Discrétion]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Discrétion}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{discretion}[Compétence]-@{total_armures_malus_discretion}[Armure - Malus Discrétion]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6193,7 +6211,7 @@
 	})
 
     on('clicked:roll-endurance', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Endurance}} {{subheader=Constitution}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{endurance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}}{{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Endurance}} {{subheader=Constitution}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{endurance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}}{{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6213,7 +6231,7 @@
 	})
 
     on('clicked:roll-esquive', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Esquive}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{esquive}[Compétence]-@{total_armures_malus_esquive}[Armure - Malus Esquive]-@{total_boucliers_malus_esquive}[Bouclier - Malus Esquive]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Esquive}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{esquive}[Compétence]-@{total_armures_malus_esquive}[Armure - Malus Esquive]-@{total_boucliers_malus_esquive}[Bouclier - Malus Esquive]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_discretion}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6233,7 +6251,7 @@
 	})
 
     on('clicked:roll-ancienne-intel', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Langue ancienne}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6253,7 +6271,7 @@
 	})
 
     on('clicked:roll-ancienne-volonte', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue ancienne}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Langue ancienne}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue_ancienne_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6273,7 +6291,7 @@
 	})
 
     on('clicked:roll-langue', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Langue}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Langue}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{langue}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6293,7 +6311,7 @@
 	})
 
     on('clicked:roll-medecine', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Médecine}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{medecine}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Médecine}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{medecine}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6313,7 +6331,7 @@
 	})
 
     on('clicked:roll-metier-intell', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Métier}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Métier}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6333,7 +6351,7 @@
 	})
 
     on('clicked:roll-metier-volonte', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Métier}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Métier}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{metier_volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6353,7 +6371,7 @@
 	})
 
     on('clicked:roll-perception', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Perception}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{perception}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Perception}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{perception}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6373,7 +6391,7 @@
 	})
 
     on('clicked:roll-psychologie', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Psychologie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{psychologie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Psychologie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{psychologie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6393,7 +6411,7 @@
 	})
 
     on('clicked:roll-sciences', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Sciences}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{science}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Sciences}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{science}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6413,7 +6431,7 @@
 	})
 
     on('clicked:roll-sciences-occultes', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Sciences occultes}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{sciences_occultes}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Sciences occultes}} {{subheader=Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{sciences_occultes}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6433,7 +6451,7 @@
 	})
 
     on('clicked:roll-survie', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Survie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{survie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Survie}} {{subheader=Intelligence}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{survie}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6453,7 +6471,7 @@
 	})
 
     on('clicked:roll-vigilance', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Vigilance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{vigilance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Vigilance}} {{subheader=Dextérité}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{vigilance}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6473,7 +6491,7 @@
 	})
 
     on('clicked:roll-custom1', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_1_name}}} {{subheader=@{comp_1_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_1}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=@{stat_1_name}}} {{subheader=@{comp_1_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_1}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6493,7 +6511,7 @@
 	})
 
     on('clicked:roll-custom2', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_2_name}}} {{subheader=@{comp_2_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_2}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=@{stat_2_name}}} {{subheader=@{comp_2_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_2}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6513,7 +6531,7 @@
 	})
 
     on('clicked:roll-custom3', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_3_name}}} {{subheader=@{comp_3_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_3}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=@{stat_3_name}}} {{subheader=@{comp_3_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_3}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6533,7 +6551,7 @@
 	})
 
     on('clicked:roll-custom4', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=@{stat_4_name}}} {{subheader=@{comp_4_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_4}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=@{stat_4_name}}} {{subheader=@{comp_4_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{custom_4}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6553,7 +6571,7 @@
 	})
 
     on('clicked:roll-force', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Force}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Force}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{force}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6573,7 +6591,7 @@
 	})    
 
     on('clicked:roll-dexterite', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Dextérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{dexterite}[Compétence]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Dextérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{dexterite}[Compétence]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6593,7 +6611,7 @@
 	})
 
     on('clicked:roll-constitution', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Constitution}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{constitution}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Constitution}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{constitution}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6613,7 +6631,7 @@
 	})
 
     on('clicked:roll-intelligence', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Intelligence}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Intelligence}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{intelligence}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6633,7 +6651,7 @@
 	})
 
     on('clicked:roll-charisme', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Charisme}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Charisme}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{charisme}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6653,7 +6671,7 @@
 	})
 
     on('clicked:roll-volonte', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Volonté}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Volonté}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
@@ -6673,7 +6691,7 @@
 	})
 
     on('clicked:roll-sm', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}} {{pnj=oui}} {{title=Santé mentale}} {{subheader=Jet de Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Santé mentale}} {{subheader=Jet de Volonté}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{volonte}[Compétence]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result;
