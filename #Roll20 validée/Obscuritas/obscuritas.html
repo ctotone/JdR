@@ -4751,28 +4751,7 @@
 
 <rolltemplate class="sheet-rolltemplate-thanatos">
 	<div class="sheet-toper"></div>
-    {{#sens}}
-        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-					{{title}}
-				</div>
-				<div class="sheet-separateur"></div>
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader" style="padding-top: 0px;margin-top: 0px;">
-					{{#rollTotal() des 1}}
-					<span style="font-size: 30px;">Carte à <br>L'ENDROIT</span>
-					{{/rollTotal() des 1}}
-					{{#^rollTotal() des 1}}
-					<span style="font-size: 30px;">Carte à <br>L'ENVERS</span>
-					{{/^rollTotal() des 1}}
-				</div>
-				<div class="sheet-separateur"></div>
-				<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
-				</div>
-			</div>
-        </div>
-    {{/sens}}
-	{{#initiative}}
+   {{#initiative}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
 			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
 				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
@@ -4789,38 +4768,6 @@
 			</div>
         </div>
     {{/initiative}}
-	{{#annonce_armes}}
-        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-					{{title}}
-				</div>
-				<div class="sheet-separateur"></div>
-				<div class="sheet-content">
-				{{#allprops() title subheader annonce_armes}}
-				  <div class="sheet-key">{{key}}</div>
-				  <div class="sheet-value">{{value}}</div>
-				{{/allprops() title subheader annonce_armes}}
-				</div>
-			</div>
-        </div>
-    {{/annonce_armes}}
-	{{#annonce_artillerie}}
-        <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
-				<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-header">
-					{{title}}
-				</div>
-				<div class="sheet-separateur"></div>
-				<div class="sheet-content">
-				{{#allprops() title subheader annonce_artillerie}}
-				  <div class="sheet-key">{{key}}</div>
-				  <div class="sheet-value">{{value}}</div>
-				{{/allprops() title subheader annonce_artillerie}}
-				</div>
-			</div>
-        </div>
-    {{/annonce_artillerie}}
     {{#jet}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
 			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
