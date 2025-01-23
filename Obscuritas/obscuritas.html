@@ -4810,7 +4810,10 @@
                     {{#rollGreater() des 5}}
                         {{#rollGreater() des computed::roll}}
                             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
-                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec </div>
+                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec 
+                                {{#^rollTotal() computed::degre 0}}
+                                <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
+                                {{/^rollTotal() computed::degre 0}}</div>
                         {{/rollGreater() des computed::roll}}
                         {{#^rollGreater() des computed::roll}}
                             <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
