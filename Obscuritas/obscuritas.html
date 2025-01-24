@@ -4769,9 +4769,9 @@
         </div>
     {{/initiative}}
     {{#jet}}
+        {{#rollGreater() des 95}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
-			<div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
-		
+            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
                 <div class="sheet-titre">
                     <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: 75px 75px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
                     <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-titre-roll">
@@ -4779,15 +4779,93 @@
                         <br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
                     </div>
                 </div>
-				<div class="sheet-separateur"></div>
-                {{#rollGreater() des 95}}
-                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-critique">{{des}}</div>
-                    <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-critique">Échec Critique</div>
-                {{/rollGreater() des 95}}
-                {{#^rollGreater() des 95}}
-                    {{#^rollGreater() des 5}}
-                        <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
-                        <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-critique">Réussite critique
+                <div class="sheet-separateur"></div>
+                <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec-critique">{{des}}</div>
+                <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec-critique">Échec Critique
+                    {{#^rollTotal() computed::degre 0}}
+                    <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
+                    {{/^rollTotal() computed::degre 0}}</div>
+                <div class="sheet-separateur"></div>
+                <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+                    Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
+                </div>
+            </div>
+        </div>
+        {{/rollGreater() des 95}}
+        {{#^rollGreater() des 95}}
+            {{#^rollGreater() des 5}}
+            <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+                <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+                    <div class="sheet-titre">
+                        <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: 75px 75px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+                        <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-titre-roll">
+                            {{title}} <span style="font-size: 17px;">({{stat}})</span>
+                            <br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
+                        </div>
+                    </div>
+                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite-critique">{{des}}</div>
+                    <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite-critique">Réussite critique
+                    {{#^rollTotal() computed::degre 0}}
+                    <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
+                    {{/^rollTotal() computed::degre 0}}
+                    {{#show_degat}}
+                        <br>
+                        <hr>
+                        <span style="color: #000000; font-size: 20px;">JET DE DÉGÂTS</span>
+                        <br>
+                        {{arme1}}
+                        <br>
+                        {{arme2}}
+                        <br>
+                        {{arme3}}
+                        <br>
+                        {{arme4}}
+                        <br>
+                    {{/show_degat}}
+                    </div>
+                    <div class="sheet-separateur"></div>
+                    <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+                        Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
+                    </div>
+                </div>
+            </div>
+            {{/^rollGreater() des 5}}
+            {{#rollGreater() des 5}}
+                {{#rollGreater() des computed::roll}}
+                <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+                        <div class="sheet-titre">
+                            <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: 75px 75px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-titre-roll">
+                                {{title}} <span style="font-size: 17px;">({{stat}})</span>
+                                <br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
+                            </div>
+                        </div>
+                        <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
+                        <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec 
+                            {{#^rollTotal() computed::degre 0}}
+                            <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
+                            {{/^rollTotal() computed::degre 0}}
+                        </div>
+                        <div class="sheet-separateur"></div>
+                        <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+                            Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
+                        </div>
+                    </div>
+                </div>
+                {{/rollGreater() des computed::roll}}
+                {{#^rollGreater() des computed::roll}}
+                <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
+                    <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-color">
+                        <div class="sheet-titre">
+                            <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: 75px 75px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-titre-roll">
+                                {{title}} <span style="font-size: 17px;">({{stat}})</span>
+                                <br><span style="font-size: 20px; font-weight: normal;">{{subheader}}</span>
+                            </div>
+                        </div>
+                        <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
+                        <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite
                             {{#^rollTotal() computed::degre 0}}
                             <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
                             {{/^rollTotal() computed::degre 0}}
@@ -4806,46 +4884,15 @@
                                 <br>
                             {{/show_degat}}
                         </div>
-                    {{/^rollGreater() des 5}}
-                    {{#rollGreater() des 5}}
-                        {{#rollGreater() des computed::roll}}
-                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-echec">{{des}}</div>
-                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-echec">Échec 
-                                {{#^rollTotal() computed::degre 0}}
-                                <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
-                                {{/^rollTotal() computed::degre 0}}</div>
-                        {{/rollGreater() des computed::roll}}
-                        {{#^rollGreater() des computed::roll}}
-                            <div class="sheet-rolltemplate-thanatos-center sheet-rolltemplate-thanatos-subheader-reussite">{{des}}</div>
-                            <div class="sheet-rolltemplate-thanatos sheet-template-thanatos-texte-reussite">Reussite
-                                {{#^rollTotal() computed::degre 0}}
-                                <br><span style="font-size:20px !important;">avec {{computed::degre}} degrés</span>
-                                {{/^rollTotal() computed::degre 0}}
-                                {{#show_degat}}
-                                    <br>
-                                    <hr>
-                                    <span style="color: #000000; font-size: 20px;">JET DE DÉGÂTS</span>
-                                    <br>
-                                    {{arme1}}
-                                    <br>
-                                    {{arme2}}
-                                    <br>
-                                    {{arme3}}
-                                    <br>
-                                    {{arme4}}
-                                    <br>
-                                {{/show_degat}}
-                            </div>
-                        {{/^rollGreater() des computed::roll}}
-                    {{/rollGreater() des 5}}
-                {{/^rollGreater() des 95}}
-				
-				<div class="sheet-separateur"></div>
-				<div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
-					Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
-				</div>
-			</div>
-        </div>
+                        <div class="sheet-separateur"></div>
+                        <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel">
+                            Modificateur ({{mod}}) | Blessure ({{malus_blessure}})
+                        </div>    
+                    </div>
+                </div>
+                {{/^rollGreater() des computed::roll}}
+            {{/rollGreater() des 5}}
+        {{/^rollGreater() des 95}}
     {{/jet}}
     {{#degat}}
         <div class="sheet-rolltemplate-thanatos-background sheet-rolltemplate-thanatos-center">
@@ -4864,7 +4911,6 @@
                     {{/^rollTotal() result 1}}
                     <br><br><span style="font-size: 17px;font-style: italic;color: #000000 !important;">{{effet}}</span>
                 </div>
-                    
                 <div class="sheet-separateur"></div>
                 <div class="sheet-rolltemplate-thanatos-center sheet-template-thanatos-rappel"></div>
             </div>
