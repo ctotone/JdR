@@ -108,74 +108,67 @@
 <!---------------------->	
 <!-- Conflict Dice -->
 <rolltemplate class="sheet-rolltemplate-tencandles">
-  <div class="sheet-container sheet-color-{{color}}">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-    </div>
-    <div class="sheet-content">
-      
-        {{#rollWasCrit() roll}}
-        <div class="reussite" data-i18n="success">Success</div>
-        <div class="reussite-result">{{roll}}</div>
-            {{#^rollTotal() computed::low 0}}
-            {{#rollTotal() computed::low 1}}
-            <div class="echec" data-i18n="lost_dice">Lost Dice</div>
-            <div class="echec-result-lost">{{computed::low}}</div>
-            {{/rollTotal() computed::low 1}}
-            {{#^rollTotal() computed::low 1}}
-            <div class="echec" data-i18n="lost_dices">Lost Dices</div>
-            <div class="echec-result-lost">{{computed::low}}</div>
-            {{/^rollTotal() computed::low 1}}
-            {{/^rollTotal() computed::low 0}}
-        {{/rollWasCrit() roll}}
-        {{#^rollWasCrit() roll}}
-        <div class="echec" data-i18n="failure">Failure</div>
-        <div class="echec-result">{{roll}}</div>
-            {{#^rollTotal() computed::low 0}}
-                {{#rollTotal() computed::low 1}}
-                <div class="echec" data-i18n="lost_dice">Lost Dice</div>
-                <div class="echec-result-lost">{{computed::low}}</div>
-                {{/rollTotal() computed::low 1}}
-                {{#^rollTotal() computed::low 1}}
-                <div class="echec" data-i18n="lost_dices">Lost Dices</div>
-                <div class="echec-result-lost">{{computed::low}}</div>
-                {{/^rollTotal() computed::low 1}}
-            {{/^rollTotal() computed::low 0}}
-        {{/^rollWasCrit() roll}}
-        {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}  
-    </div>
+	<div class="sheet-ecart-top"></div>
+	<div class="sheet-container sheet-color-{{color}}">
+		<div class="sheet-header">
+		{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+		{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+		</div>
+		<div class="sheet-content">
+			{{#rollWasCrit() roll}}
+				{{#^rollTotal() computed::low 0}}
+					<div class="reussite" data-i18n="success">Success</div>
+					<div class="reussite-result">{{roll}}</div>
+					<div class="echec" data-i18n="lost_dice" style="border-radius: 0px 0px 0px 10px;">Lost Dice</div>
+					<div class="echec-result-lost" style="border-radius: 0px 0px 10px 0px;">{{computed::low}}</div>
+				{{/^rollTotal() computed::low 0}}
+
+				{{#rollTotal() computed::low 0}}
+					<div class="reussite" data-i18n="success">Success</div>
+					<div class="reussite-result">{{roll}}</div>
+				{{/rollTotal() computed::low 0}}
+			{{/rollWasCrit() roll}}
+			{{#^rollWasCrit() roll}}
+				{{#^rollTotal() computed::low 0}}
+					<div class="echec" data-i18n="failure">Failure</div>
+					<div class="echec-result">{{roll}}</div>
+					<div class="echec" data-i18n="lost_dice" style="border-radius: 0px 0px 0px 10px;">Lost Dice</div>
+					<div class="echec-result-lost" style="border-radius: 0px 0px 10px 0px;">{{computed::low}}</div>
+				{{/^rollTotal() computed::low 0}}
+				{{#rollTotal() computed::low 0}}
+					<div class="echec" data-i18n="failure">Failure</div>
+					<div class="echec-result">{{roll}}</div>
+				{{/rollTotal() computed::low 0}}  
+			{{/^rollWasCrit() roll}}
+			{{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}  
+		</div>
   </div>
-   <!--  <div class="sheet-results">
-        <h4>Result = {{roll}}</h4>
-        <h4>Number 6s = {{computed::high}}</h4>
-        <h4>Number 1s = {{computed::low}}</h4>
-    </div> -->
 </rolltemplate>
 
 <!-- Hope Dice -->
 <rolltemplate class="sheet-rolltemplate-tencandles-hope">
-  <div class="sheet-container sheet-color-{{color}}">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-    </div>
-    <div class="sheet-content">
-      {{#allprops() title subtitle desc}}
-      {{#rollGreater() hope 0}}
-	  <div class="sheet-key" data-i18n="success">Success</div>
-      <div class="sheet-value">{{value}}</div>
-	  {{/rollGreater() hope 0}}
-	  {{/allprops() title subtitle desc}}
-	  {{#allprops() title subtitle desc}}
-	  {{#^rollGreater() hope 0}}
-	  <div class="sheet-key-failure" data-i18n="failure">Failure</div>
-      <div class="sheet-value">{{value}}</div>
-	  {{/^rollGreater() hope 0}}
-	  {{/allprops() title subtitle desc}}
-	  {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
+	<div class="sheet-ecart-top"></div>
+		<div class="sheet-container sheet-color-{{color}}">
+			<div class="sheet-header">
+			{{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+			{{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+			</div>
+			<div class="sheet-content">
+			{{#allprops() title subtitle desc}}
+			{{#rollGreater() hope 0}}
+			<div class="sheet-key" data-i18n="success">Success</div>
+			<div class="sheet-value">{{value}}</div>
+			{{/rollGreater() hope 0}}
+			{{/allprops() title subtitle desc}}
+			{{#allprops() title subtitle desc}}
+			{{#^rollGreater() hope 0}}
+			<div class="sheet-key-failure" data-i18n="failure">Failure</div>
+			<div class="sheet-value">{{value}}</div>
+			{{/^rollGreater() hope 0}}
+			{{/allprops() title subtitle desc}}
+			{{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+			</div>
+		</div>
 </rolltemplate>
 
 <script type="text/worker">
