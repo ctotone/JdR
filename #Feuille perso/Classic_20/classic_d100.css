@@ -1,5 +1,9 @@
 /* INTO THE DARK */
-/* @import url('https://fonts.googleapis.com/css2?family=Homenaje&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Electrolize&family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+/* font-family: "Metamorphous", serif; */
+/* font-family: "Jim Nightshade", serif; */
+/* font-family: "Electrolize", serif; */
 
 .sheet-darkmode .sheetform {
   background-color: #1f1f1f;
@@ -911,29 +915,157 @@ textarea {
   --reussite_3: #009700;
   --reussite_2: #0082ff;
   --reussite_1: #fffe00;
+  /* Base noir */
+  --echec_2: #ff0000;
+  --echec_3: #ff006f;
+  --echec_1: #dc00c9;
+  --reussite_3: #009700;
+  --reussite_2: #0082ff;
+  --reussite_1: #fffe00;
+  --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
+  --background-size: unset;
+  --font_roll: 'Contrail One';
+  --color_titre: #ffffffde;
+  --color_texte_degats: #dfdfdf;
+  --hr_color:  #ddd;
+  --lien_color: #dfdfdf;
+  --font_size_titre: 18px;
+  --font_size_texte: 18px;
+  --font_size_lien: 14px;
+  --font_size_roll: 40px;
+  --mt_titre: -1px;
+  --ml_portrait: 6.5px;
+  --mb_titre: -5px;  
+  --pr_titre: 0px;
+  --border_portrait: 2px solid rgb(129, 4, 4);
+  --portrait_radius: 45px;
+
+    /* Medieval */
+    --echec_2: #ff0000;
+    --echec_3: #ff006f;
+    --echec_1: #dc00c9;
+    --reussite_3: #009700;
+    --reussite_2: #0082ff;
+    --reussite_1: #05a3f0;
+    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_obscuritas.png);
+    --background-size: 100% 100%;
+    --font_roll: "Jim Nightshade", serif;
+    --color_titre: #020202de;  
+    --color_texte_degats: #020202de;
+    --hr_color:  #020202de;
+    --lien_color: #030025de;
+    --font_size_titre: 20px;
+    --font_size_texte: 26px;
+    --font_size_lien: 16px;
+    --font_size_roll: 75px;
+    --mt_titre: 5px;
+    --ml_portrait: 12.5px;
+    --mb_titre: -5px;
+    --pr_titre: 0px;
+    --border_portrait: 2px solid orange;
+    --portrait_radius: 45px;
+
+    /* Corsaire */
+
+    /* Guerre */
+
+    /* Futuriste */
+    /* --echec_2: #ff0000;
+    --echec_3: #ff00a7;
+    --echec_1: #dc00c9;
+    --reussite_3: #4ffd00;
+    --reussite_2: #4aa6ff;
+    --reussite_1: #2cf5ff;
+    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_cyberpunk.png);
+    --background-size: 100% 100%;
+    --font_roll: "Electrolize", serif;
+    --color_titre: #c176ff;  
+    --color_texte_degats: #c176ff;
+    --hr_color:  #ada5ff;
+    --lien_color: #ada5ff;
+    --font_size_titre: 14px;
+    --font_size_texte: 14px;
+    --font_size_lien: 12px;
+    --font_size_roll: 50px;
+    --mt_titre: 2px;
+    --mb_titre: -2px;
+    --pr_titre: 5px;
+    --ml_portrait: 12.5px;
+    --border_portrait: none;
+    --portrait_radius: 0px; */
+
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-background {
-  background: url(https://raw.githubusercontent.com/ctotone/JdR/ddd2da31698f6c31e797e674e934a9ea8621b426/.Images/background_roll.jpg) top left;
+  background: var(--background_roll);
   background-repeat: no-repeat;
+  background-size: var(--background-size);
   border-spacing: 0;
   /* max-height: 200px; */
   min-height: 130px;
   max-width: 250px;
   margin: 0px;
   padding-bottom: 5px;
-  padding-top: 20px;
+  padding-top: 10px;
   border-radius: 10px;
+}
+
+.sheet-rolltemplate-itd .sheet-titre {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  background: var(--noir_roll);
+  height: 75px;
+  padding-right: var(--pr_titre);;
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-header {
   color: #ffffffde;
-  font-size: 20px;
-  font-family: 'Contrail One';
+  font-size: var(--font_size_titre);
+  font-family: var(--font_roll);
   letter-spacing: 0px;
   word-wrap: break-word;
   /* margin-top: 25px; */
   line-height: 24px;
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-titre-roll,
+.sheet-rolltemplate-itd .sheet-portrait_roll,
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-header {
+  word-wrap: break-word;
+  letter-spacing: -0.7px;
+  /* padding-top: 17px; */
+  /* padding-bottom: 12px; */
+  font-weight: bold;
+  width: auto;
+  margin-left: 0px;
+  line-height: 23px;  
+  margin-top: var(--mt_titre);
+  margin-bottom: var(--mb_titre);
+  background: var(--noir_roll);
+  color: var(--color_titre);
+  font-family: var(--font_roll);
+  color: var(--color_titre);
+  font-size: var(--font_size_titre);
+}
+
+.sheet-rolltemplate-itd .sheet-portrait_roll {  
+  margin-left: var(--ml_portrait);  
+  border: var(--border_portrait);
+  border-radius: var(--portrait_radius);
+  /* background-color: red; */
+}
+
+.sheet-rolltemplate-itd .sheet-rolltemplate-itd-titre-roll {
+  display: inline-block;
+  align-self: center;
+}
+
+.sheet-rolltemplate-itd span.sheet-texte_degats {
+  color: var(--color_texte_degats);
+}
+
+.sheet-rolltemplate-itd hr {
+  border-top-color: var(--hr_color);
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader,
@@ -945,8 +1077,8 @@ textarea {
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-subheader-reussite {
   background-color: transparent;
   color: #ffffffde;
-  font-size: 40px;
-  font-family: 'Contrail One';
+  font-size: var(--font_size_roll);
+  font-family: var(--font_roll);
   letter-spacing: 0px;
   padding: 15px;
   margin-top: 25px;
@@ -978,7 +1110,7 @@ textarea {
 
 .sheet-rolltemplate-itd .sheet-template-itd-result {
   font-size: 36px;
-  font-family: 'Contrail One';
+  font-family: var(--font_roll);
   padding: 15px;
 }
 
@@ -991,9 +1123,9 @@ textarea {
 .sheet-rolltemplate-itd .sheet-template-itd-texte-reussite
 
  {
-  font-size: 18px;
+  font-size: var(--font_size_texte);
   line-height: 20px;
-  font-family: 'Contrail One';
+  font-family: var(--font_roll);
   padding: 15px;
 }
 
@@ -1064,10 +1196,10 @@ textarea {
 .sheet-rolltemplate-itd a[href^='!'],
 .sheet-rolltemplate-itd a[href^='~'],
 .sheet-rolltemplate-itd a[href^='`']{
-  color: #dfdfdf;
+  color: var(--lien_color);
   border: none;
   background: none;
-  font-size: 14px;
+  font-size:  var(--font_size_lien);
   line-height: 6px;
   text-align: left;
 }
