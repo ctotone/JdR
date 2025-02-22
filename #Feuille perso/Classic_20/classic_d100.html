@@ -582,6 +582,7 @@
             <button type="action" name="act_majeur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
             <button type="action" name="act_majeur-combattant" class="button_archetype">Combattant (Combat)</button>
         </div>
+        <button type="roll" class="button_roll" name="roll_roll-arme3" value="/w evilbram &{template:itd} {{place=oui}}"><span class="picto">R</span></button>
 
     </div>
 
@@ -736,6 +737,21 @@
 
 <!-- ROLL TEMPLATE INTO THE DARK-->
 <rolltemplate class="sheet-rolltemplate-itd">
+    {{#place}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">   
+                <div class="sheet-titre">
+                    
+                </div>
+            </div>
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color:#c5a600;">
+                
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte">
+               
+            </div>
+        </div>
+    {{/place}}
     {{#initiative}}
         <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
             <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">   
