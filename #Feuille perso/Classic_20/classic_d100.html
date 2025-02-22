@@ -5,6 +5,7 @@
         <div class="go_systeme">
             <button type="action" name="act_1" class="button_go" title="Informations système de jeu...">?</button>
         </div>
+    <input type="hidden" name="attr_gm" value="">
     <input type="hidden" name="attr_total_point_talent" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">
     <input type="hidden" class="voir_talent" name="attr_show_talent" value="0">
@@ -536,9 +537,52 @@
             </div>
         </div>
     </div>
+    <!-- ADMIN -->
+    <div class="admin">
+        <div class="go_feuille">
+            <button type="action" name="act_0" class="button_go" title="Retour à la feuille...">U</button>
+        </div>
+        <div class="admin_warning">
+            Ceci est une page administration, ne cliquez pas sur les archétype sans quoi votre fiche de personnage sera réinitialisée et les points totalement changé. <br><br>
+            Retour à votre feuille de personnage via l'icone en haut à droite de cette page
+        </div>
+        <div class="admin_mineur">
+            <span style="text-decoration: underline;">PNJ Mineur</span><br><br>
+            <button type="action" name="act_mineur-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_mineur-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_mineur-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_mineur-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_mineur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_mineur-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+        <div class="admin_normal">
+            <span style="text-decoration: underline;">PNJ Normal<br><br></span>
+            <button type="action" name="act_normal-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_normal-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_normal-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_normal-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_normal-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_normal-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+        <div class="admin_majeur">
+            <span style="text-decoration: underline;">PNJ Majeur<br><br></span>
+            <button type="action" name="act_majeur-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_majeur-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_majeur-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_majeur-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_majeur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_majeur-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+
+    </div>
+
+    <!-- Système de jeu -->
     <div class="systeme">
         <div class="go_feuille">
             <button type="action" name="act_0" class="button_go" title="Retour à la feuille...">U</button>
+        </div>
+        <div class="go_admin">
+            <button type="action" name="act_2" class="button_admin" title="Archétype...">x</button>
         </div>
         <div class="summary-d100">
             <h2>Résumé du Système D100</h2>
@@ -1695,7 +1739,6 @@
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
 	finishRoll(roll.rollId,computeObj);
 	})
-
 </script>
 
 <!-- MAJ equipement -->
@@ -1920,4 +1963,151 @@
 			setAttrs(updates);
 		});
 	});
+</script>
+
+<!-- Archetype -->
+<script type="text/worker">
+    const professions = {
+        "mineur-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 5, "force_brute": 0, "robustesse": 5, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 10, "logique": 0,
+            "aura": 0, "communication_expressive": 10, "persuasion": 0, "profession": "Civil 1 mineur"
+        },
+        "mineur-civil_2": {
+            "CARRURE": 30, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 15, "force_brute": 15, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 5, "decision": 0,
+            "determination": 0, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 mineur"
+        },
+        "mineur-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 0, "logique": 10,
+            "aura": 10, "communication_expressive": 20, "persuasion": 20, "profession": "Commerçant mineur"
+        },
+        "mineur-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 20, "logique": 20,
+            "aura": 0, "communication_expressive": 10, "persuasion": 0, "profession": "erudit mineur"
+        },
+        "mineur-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 15, "communication_expressive": 20, "persuasion": 20, "profession": "Manipulateur mineur"
+        },
+        "mineur-combattant": {
+            "CARRURE": 30, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 15, "force_brute": 15, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant mineur"
+        },
+
+        
+        "normal-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 10, "force_brute": 0, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 20, "logique": 0,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Civil 1 normal"
+        },
+        "normal-civil_2": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 20, "force_brute": 20, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 5, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 normal"
+        },
+        "normal-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 10,
+            "aura": 15, "communication_expressive": 30, "persuasion": 30, "profession": "Commerçant normal"
+        },
+        "normal-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 15, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 30, "logique": 30,
+            "aura": 0, "communication_expressive": 15, "persuasion": 0, "profession": "Erudit normal"
+        },
+        "normal-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 20, "communication_expressive": 30, "persuasion": 25, "profession": "Manipulateur normal"
+        },
+        "normal-combattant": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 20, "force_brute": 20, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 5, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant normal"
+        },
+
+        
+        "majeur-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 10, "force_brute": 0, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 15, "sixieme_sens": 0, "vigilance": 15, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 20, "logique": 0,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Civil 1 majeur"
+        },
+        "majeur-civil_2": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 50,
+            "endurance": 20, "force_brute": 20, "robustesse": 20, "agilite_corporelle": 15, "precision": 0,
+            "reflexe": 15, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 majeur"
+        },
+        "majeur-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 20, "creativite": 0, "erudition": 0, "logique": 15,
+            "aura": 20, "communication_expressive": 20, "persuasion": 20, "profession": "Commerçant majeur"
+        },
+        "majeur-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 20, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 30, "logique": 30,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Erudit majeur"
+        },
+        "majeur-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 20, "communication_expressive": 20, "persuasion": 30, "profession": "Manipulateur majeur"
+        },
+        "majeur-combattant": {
+            "CARRURE": 50, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 40,
+            "endurance": 20, "force_brute": 20, "robustesse": 20, "agilite_corporelle": 15, "precision": 0,
+            "reflexe": 15, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant majeur"
+        }
+    };
+    
+    for (let professionKey in professions) {
+        if (professions.hasOwnProperty(professionKey)) {
+            on(`clicked:${professionKey}`, function() {
+                let attributes = professions[professionKey];
+                attributes["page"] = 0; // Valeur commune pour toutes les professions
+                setAttrs(attributes);
+            });
+        }
+    }
+
 </script>
