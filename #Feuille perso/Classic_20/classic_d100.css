@@ -60,20 +60,29 @@
 }
 
 div.go_systeme,
-div.go_feuille {
+div.go_feuille,
+div.go_admin {
   position: absolute;
 	margin-left: 808px;
-  margin-top: -2px;
+  margin-top: -1px;
+}
+
+div.go_admin {
+  position: absolute;
+	margin-left: 808px;
+  margin-top: 500px;
 }
 
 /* Affichage des page dynamique */
 div.feuille,
-div.systeme {
+div.systeme,
+div.admin {
   display: none;
 }
 
 .charsheet .choix_page[value="0"] ~ div.feuille,
-.charsheet .choix_page[value="1"] ~ div.systeme {
+.charsheet .choix_page[value="1"] ~ div.systeme,
+.charsheet .choix_page[value="2"] ~ div.admin {
   display: block;
 }
 
@@ -95,8 +104,10 @@ input[type="number"] {
 .charsheet button[type=action].button_initiative::before,
 .charsheet button[type=roll].button_initiative::before,
 .charsheet button[type=action].button_go::before,
+.charsheet button[type=action].button_admin::before,
 .charsheet button[type=action].button_show::before,
-.charsheet button[type=roll].button_roll::before {
+.charsheet button[type=roll].button_roll::before,
+.charsheet button[type=action].button_archetype::before {
 	content: '';
 }
 
@@ -137,7 +148,22 @@ input[type="number"] {
   margin-top: -7px;
 }
 
-.charsheet button[type=action].button_go {
+.charsheet button[type=action].button_archetype {
+  width: auto;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.charsheet button[type=action].button_go,
+.charsheet button[type=action].button_admin {
   height: 25px;
   border: none;
   padding: 0;
@@ -153,6 +179,10 @@ input[type="number"] {
   color: #00000042;
   width: 25px;
   font-size: 25px;
+}
+
+.charsheet button[type=action].button_admin {
+  color: #00000000;
 }
 
 .charsheet button[type=action].button_show {
@@ -196,6 +226,11 @@ input[type="number"] {
     margin-left: -2px;
 }
 
+.charsheet button[type=action].button_archetype:hover{
+  margin-left: -2px;
+  color: rgba(124, 0, 0, 0.897);
+}
+
 .charsheet button[type=action].button_initiative:hover,
 .charsheet button[type=roll].button_initiative:hover {
     margin-left: -2px;
@@ -206,6 +241,10 @@ input[type="number"] {
 .charsheet button[type=action].button_show:hover,
 .charsheet button[type=roll].button_roll:hover {
   color: var(--text_black);
+}
+
+.charsheet button[type=action].button_admin:hover {
+  color: rgba(0, 0, 0, 0);
 }
 
 .initiative-haut {
@@ -905,6 +944,28 @@ textarea {
   margin-bottom: 5px;
 }
 
+/* CSS Partie ARCHETYPE */
+.admin_warning {
+  color: rgba(255, 0, 0, 0.829);
+  padding: 150px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.admin_mineur,
+.admin_normal,
+.admin_majeur {
+  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid grey;
+  background: grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-center {
   text-align: center;
@@ -1048,7 +1109,7 @@ textarea {
     --portrait_radius: 0px; */
 
     /* Espionnage */
-    --echec_2: #c60101;
+    /* --echec_2: #c60101;
     --echec_3: #c80359;
     --echec_1: #b700a7;
     --reussite_3: #009700;
@@ -1071,10 +1132,10 @@ textarea {
     --pr_titre: 0px;
     --pr_titre_roll: 15px;
     --border_portrait: none;
-    --portrait_radius: 45px;
+    --portrait_radius: 45px; */
 
     /* Demonologist */
-    --echec_2: #c60101;
+    /* --echec_2: #c60101;
     --echec_3: #c80359;
     --echec_1: #b700a7;
     --reussite_3: #009700;
@@ -1097,7 +1158,7 @@ textarea {
     --pr_titre: 0px;
     --pr_titre_roll: 15px;
     --border_portrait: none;
-    --portrait_radius: 45px;
+    --portrait_radius: 45px; */
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-background {
