@@ -60,20 +60,48 @@
 }
 
 div.go_systeme,
-div.go_feuille {
+div.go_feuille,
+div.go_admin {
   position: absolute;
 	margin-left: 808px;
-  margin-top: -2px;
+  margin-top: -1px;
+}
+
+div.jet_normal,
+div.jet_cache {
+  position: absolute;
+  margin-top: -28px;
+  margin-left: 44px;
+}
+
+div.jet_cache {
+  color: var(--color_attribut_corps);
+}
+
+div.go_systeme {
+  margin-top: -30px;
+}
+
+div.go_admin {
+  position: absolute;
+	margin-left: 808px;
+  margin-top: 500px;
 }
 
 /* Affichage des page dynamique */
 div.feuille,
-div.systeme {
+div.systeme,
+div.admin,
+div.jet_normal,
+div.jet_cache {
   display: none;
 }
 
 .charsheet .choix_page[value="0"] ~ div.feuille,
-.charsheet .choix_page[value="1"] ~ div.systeme {
+.charsheet .choix_page[value="1"] ~ div.systeme,
+.charsheet .choix_page[value="2"] ~ div.admin,
+.charsheet .type_jet[value="0"] ~ div.jet_normal,
+.charsheet .type_jet[value="1"] ~ div.jet_cache {
   display: block;
 }
 
@@ -95,8 +123,10 @@ input[type="number"] {
 .charsheet button[type=action].button_initiative::before,
 .charsheet button[type=roll].button_initiative::before,
 .charsheet button[type=action].button_go::before,
+.charsheet button[type=action].button_admin::before,
 .charsheet button[type=action].button_show::before,
-.charsheet button[type=roll].button_roll::before {
+.charsheet button[type=roll].button_roll::before,
+.charsheet button[type=action].button_archetype::before {
 	content: '';
 }
 
@@ -137,7 +167,22 @@ input[type="number"] {
   margin-top: -7px;
 }
 
-.charsheet button[type=action].button_go {
+.charsheet button[type=action].button_archetype {
+  width: auto;
+  height: 25px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.charsheet button[type=action].button_go,
+.charsheet button[type=action].button_admin {
   height: 25px;
   border: none;
   padding: 0;
@@ -153,6 +198,10 @@ input[type="number"] {
   color: #00000042;
   width: 25px;
   font-size: 25px;
+}
+
+.charsheet button[type=action].button_admin {
+  color: #00000000;
 }
 
 .charsheet button[type=action].button_show {
@@ -196,6 +245,11 @@ input[type="number"] {
     margin-left: -2px;
 }
 
+.charsheet button[type=action].button_archetype:hover{
+  margin-left: -2px;
+  color: rgba(124, 0, 0, 0.897);
+}
+
 .charsheet button[type=action].button_initiative:hover,
 .charsheet button[type=roll].button_initiative:hover {
     margin-left: -2px;
@@ -206,6 +260,10 @@ input[type="number"] {
 .charsheet button[type=action].button_show:hover,
 .charsheet button[type=roll].button_roll:hover {
   color: var(--text_black);
+}
+
+.charsheet button[type=action].button_admin:hover {
+  color: rgba(0, 0, 0, 0);
 }
 
 .initiative-haut {
@@ -905,6 +963,103 @@ textarea {
   margin-bottom: 5px;
 }
 
+/* CSS Partie ARCHETYPE */
+.admin_warning {
+  color: rgba(255, 0, 0, 0.829);
+  padding: 150px;
+  padding-top: 25px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.admin_mineur,
+.admin_normal,
+.admin_majeur {
+  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid grey;
+  background: grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+/* SLIDER GM */
+span.classic {
+	color: #000000de;
+}
+
+span.cache {
+	color: var(--text_input_info);
+}
+
+.charsheet input.sheet-prouesse-switch {
+	display: none;
+}
+
+
+.charsheet .classic,
+.charsheet .cache
+{
+	display: none;
+}
+
+.pouvoir_data .prouesse_roll {
+	display: inline-block;
+}
+
+.charsheet input.sheet-prouesse-switch {
+	display: none;
+}
+
+input.sheet-prouesse-switch:not(:checked) ~ span.classic,
+input.sheet-prouesse-switch:checked ~  span.cache {
+    display: inline-block;
+}
+
+.slider_prouesse {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #61504500;
+  -webkit-transition: .2s;
+  transition: .2s;
+  width: 30px;
+  height: 15px;
+  padding: 2px;
+  border: 1px solid #000000de;
+  box-shadow: 3px 2px 5px #435861ba;
+  margin-top: -2px;
+  margin-left: 0px;
+}
+
+
+.slider_prouesse:before {
+  display: inline-block;
+  content: "";
+  background-color: #000000de;
+  -webkit-transition: .2s;
+  transition: .2s;
+  width: 15px;
+  height: 15px;
+}
+
+input:checked + .slider_prouesse:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+    background-color: var(--color_attribut_corps);
+}
+
+/* Rounded sliders */
+.slider_prouesse.round_prouesse {
+  border-radius: 34px;
+}
+
+.slider_prouesse.round_prouesse:before {
+  border-radius: 50%;
+}
+
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-center {
   text-align: center;
@@ -929,7 +1084,7 @@ textarea {
   --color_texte_degats: #dfdfdf;
   --hr_color:  #ddd;
   --lien_color: #dfdfdf;
-  --font_size_titre: 18px;
+  --font_size_titre: 17px;
   --font_size_texte: 18px;
   --font_size_lien: 14px;
   --font_size_roll: 40px;
@@ -937,17 +1092,18 @@ textarea {
   --ml_portrait: 6.5px;
   --mb_titre: -5px;  
   --pr_titre: 0px;
+  --pr_titre_roll: 0px;
   --border_portrait: 2px solid rgb(129, 4, 4);
   --portrait_radius: 45px;
 
     /* Medieval */
-    --echec_2: #ff0000;
+    /* --echec_2: #ff0000;
     --echec_3: #ff006f;
     --echec_1: #dc00c9;
     --reussite_3: #009700;
     --reussite_2: #0082ff;
     --reussite_1: #05a3f0;
-    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_obscuritas.png);
+    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_obscur.png);
     --background-size: 100% 100%;
     --font_roll: "Jim Nightshade", serif;
     --color_titre: #020202de;  
@@ -962,10 +1118,61 @@ textarea {
     --ml_portrait: 12.5px;
     --mb_titre: -5px;
     --pr_titre: 0px;
+    --pr_titre_roll: 0px;
     --border_portrait: 2px solid orange;
-    --portrait_radius: 45px;
+    --portrait_radius: 45px; */
+
+    /* Western */
+    /* --echec_2: #ff0000;
+    --echec_3: #ff006f;
+    --echec_1: #dc00c9;
+    --reussite_3: #009700;
+    --reussite_2: #0082ff;
+    --reussite_1: #05a3f0;
+    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_western2.png);
+    --background-size: 100% 100%;
+    --font_roll: 'rye';
+    --color_titre: #020202de;
+    --color_texte_degats: #020202de;
+    --hr_color: #020202de;
+    --lien_color: #030025de;
+    --font_size_titre: 14px;
+    --font_size_texte: 17px;
+    --font_size_lien: 12px;
+    --font_size_roll: 56px;
+    --mt_titre: 8px;
+    --ml_portrait: 15.5px;
+    --mb_titre: -5px;
+    --pr_titre: 0px;
+    --pr_titre_roll: 6px;
+    --border_portrait: 2px solid rgb(136, 54, 0);
+    --portrait_radius: 45px; */
 
     /* Corsaire */
+    /* --echec_2: #b00101;
+    --echec_3: #a40248;
+    --echec_1: #99008c;
+    --reussite_3: #006400;
+    --reussite_2: #004d97;
+    --reussite_1: #00667d;
+    --background_roll: url('https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_pirate1.png');
+    --background-size: 100% 100%;
+    --font_roll: "kaushan script";
+    --color_titre: #020202de;
+    --color_texte_degats: #020202de;
+    --hr_color: #020202de;
+    --lien_color: #030025de;
+    --font_size_titre: 18px;
+    --font_size_texte: 22px;
+    --font_size_lien: 16px;
+    --font_size_roll: 65px;
+    --mt_titre: 5px;
+    --ml_portrait: 12.5px;
+    --mb_titre: -5px;
+    --pr_titre: 0px;
+    --pr_titre_roll: 15px;
+    --border_portrait: none;
+    --portrait_radius: 45px; */
 
     /* Guerre */
 
@@ -976,24 +1183,76 @@ textarea {
     --reussite_3: #4ffd00;
     --reussite_2: #4aa6ff;
     --reussite_1: #2cf5ff;
-    --background_roll: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_cyberpunk.png);
+    --background_roll: url('https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_2077.png');
     --background-size: 100% 100%;
     --font_roll: "Electrolize", serif;
-    --color_titre: #c176ff;  
-    --color_texte_degats: #c176ff;
-    --hr_color:  #ada5ff;
-    --lien_color: #ada5ff;
-    --font_size_titre: 14px;
+    --color_titre: #00f3ffd9;
+    --color_texte_degats: #00f3ffd9;
+    --hr_color: #ada5ff;
+    --lien_color: #62def2;
+    --font_size_titre: 17px;
     --font_size_texte: 14px;
     --font_size_lien: 12px;
     --font_size_roll: 50px;
     --mt_titre: 2px;
     --mb_titre: -2px;
     --pr_titre: 5px;
+    --pr_titre_roll: 15px;
     --ml_portrait: 12.5px;
     --border_portrait: none;
     --portrait_radius: 0px; */
 
+    /* Espionnage */
+    /* --echec_2: #c60101;
+    --echec_3: #c80359;
+    --echec_1: #b700a7;
+    --reussite_3: #009700;
+    --reussite_2: #0063c1;
+    --reussite_1: #02a696;
+    --background_roll: url('https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_spy.png');
+    --background-size: 100% 100%;
+    --font_roll: "della respira";
+    --color_titre: #020202de;
+    --color_texte_degats: #020202de;
+    --hr_color: #020202de;
+    --lien_color: #030025de;
+    --font_size_titre: 16px;
+    --font_size_texte: 18px;
+    --font_size_lien: 14px;
+    --font_size_roll: 59px;
+    --mt_titre: 5px;
+    --ml_portrait: 12.5px;
+    --mb_titre: -5px;
+    --pr_titre: 0px;
+    --pr_titre_roll: 15px;
+    --border_portrait: none;
+    --portrait_radius: 45px; */
+
+    /* Demonologist */
+    /* --echec_2: #c60101;
+    --echec_3: #c80359;
+    --echec_1: #b700a7;
+    --reussite_3: #009700;
+    --reussite_2: #0063c1;
+    --reussite_1: #02a696;
+    --background_roll: url("https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/background_roll_demon.png");
+    --background-size: 100% 100%;
+    --font_roll: "shadows into light";
+    --color_titre: #939393de;
+    --color_texte_degats: #939393de;
+    --hr_color: #939393de;
+    --lien_color: #939393de;
+    --font_size_titre: 22px;
+    --font_size_texte: 20px;
+    --font_size_lien: 17px;
+    --font_size_roll: 63px;
+    --mt_titre: 5px;
+    --ml_portrait: 12.5px;
+    --mb_titre: -5px;
+    --pr_titre: 0px;
+    --pr_titre_roll: 15px;
+    --border_portrait: none;
+    --portrait_radius: 45px; */
 }
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-background {
@@ -1057,7 +1316,8 @@ textarea {
 
 .sheet-rolltemplate-itd .sheet-rolltemplate-itd-titre-roll {
   display: inline-block;
-  align-self: center;
+  align-self: center;  
+  padding-right: var(--pr_titre_roll);
 }
 
 .sheet-rolltemplate-itd span.sheet-texte_degats {

@@ -2,9 +2,19 @@
     <input type="hidden" name="attr_page" class="choix_page" value="0">
  
     <div class="feuille">
+        <div class="switch_dice_slider_comp">
+            <label class="switch_prouesse">
+                <input type="checkbox" name="attr_jet_gm" class="sheet-prouesse-switch" value="1">
+                <span class="slider_prouesse round_prouesse"></span>
+            </label>
+        </div>
+        <input type="hidden" name="attr_jet_gm" class="type_jet" value="0">
+        <div class="jet_normal">Jet classique</div>
+        <div class="jet_cache">Jet caché</div>
         <div class="go_systeme">
             <button type="action" name="act_1" class="button_go" title="Informations système de jeu...">?</button>
         </div>
+    <input type="hidden" name="attr_gm" value="">
     <input type="hidden" name="attr_total_point_talent" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">
     <input type="hidden" class="voir_talent" name="attr_show_talent" value="0">
@@ -16,27 +26,27 @@
     <input type="hidden" name="attr_nom_arme_1" value="Pugilat, Boxe, Lutte">
     <input type="hidden" name="attr_degat_arme_1" value="1">    
     <input type="hidden" name="attr_degat_maxi_arme_1" value="1">    
-    <input type="hidden" name="attr_DMG_1" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
-    <input type="hidden" name="attr_DMG_maxi_1" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <input type="hidden" name="attr_DMG_1" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_1" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
     <input type="hidden" name="attr_nom_arme_2" value=" ">
     <input type="hidden" name="attr_degat_arme_2" value="1">    
     <input type="hidden" name="attr_degat_maxi_arme_2" value="1">    
-    <input type="hidden" name="attr_DMG_2" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
-    <input type="hidden" name="attr_DMG_maxi_2" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <input type="hidden" name="attr_DMG_2" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_2" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
     <input type="hidden" name="attr_nom_arme_3" value=" ">
     <input type="hidden" name="attr_degat_arme_3" value="1">    
     <input type="hidden" name="attr_degat_maxi_arme_3" value="1">    
-    <input type="hidden" name="attr_DMG_3" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
-    <input type="hidden" name="attr_DMG_maxi_3" value="&{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
+    <input type="hidden" name="attr_DMG_3" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">    
+    <input type="hidden" name="attr_DMG_maxi_3" value="@{gm} &{template:itd} {{degat=oui}} {{token=@{ctoken}}} {{title=Pugilat, Boxe, Lutte}} {{result=[[1]]}}">
     <button type="roll" name="roll_weapon_dmg_1" style="display: none;" value="@{DMG_1}"></button> 
     <button type="roll" name="roll_weapon_dmg_2" style="display: none;" value="@{DMG_2}"></button>
     <button type="roll" name="roll_weapon_dmg_3" style="display: none;" value="@{DMG_3}"></button>
     <button type="roll" name="roll_weapon_dmg_maxi_1" style="display: none;" value="@{DMG_maxi_1}"></button> 
     <button type="roll" name="roll_weapon_dmg_maxi_2" style="display: none;" value="@{DMG_maxi_2}"></button>
     <button type="roll" name="roll_weapon_dmg_maxi_3" style="display: none;" value="@{DMG_maxi_3}"></button>
-    <button type="roll" name="roll_critique_cac" style="display: none;" value="&{template:itd} {{token=@{ctoken}}} {{critique_cac=oui}} {{result=[[1D20]]}}"></button>
-    <button type="roll" name="roll_critique_distance" style="display: none;" value="&{template:itd} {{token=@{ctoken}}} {{critique_distance=oui}} {{result=[[1D20]]}}"></button>
-    <button type="roll" name="roll_critique_verbal" style="display: none;" value="&{template:itd} {{token=@{ctoken}}} {{critique_verbal=oui}} {{result=[[1D10]]}}"></button>
+    <button type="roll" name="roll_critique_cac" style="display: none;" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{critique_cac=oui}} {{result=[[1D20]]}}"></button>
+    <button type="roll" name="roll_critique_distance" style="display: none;" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{critique_distance=oui}} {{result=[[1D20]]}}"></button>
+    <button type="roll" name="roll_critique_verbal" style="display: none;" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{critique_verbal=oui}} {{result=[[1D10]]}}"></button>
 
         <div class="itd-inner itd-logo-and-info">
             <div class="itd-logo-table-col1">
@@ -75,42 +85,42 @@
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CARRURE" min="0" max="99" />
                 <div class="itd-basic-talent-corps">
                     <button type="roll" class="button_competence" name="roll_CARRURE" title="info" data-i18n-title="attr-CARRURE_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-CARRURE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CARRURE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-CARRURE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CARRURE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_AGILITE" min="0" max="99" />
                 <div class="itd-basic-attribute-corps">
                     <button type="roll" class="button_competence" name="roll_AGILITE" title="info" data-i18n-title="attr-AGILITE_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-AGILITE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{AGILITE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-AGILITE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{AGILITE}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_PERCEPTION" min="0" max="99" />
                 <div class="itd-basic-attribute-ame">
                     <button type="roll" class="button_competence" name="roll_PERCEPTION" title="info" data-i18n-title="attr-PERCEPTION_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-PERCEPTION}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{PERCEPTION}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-PERCEPTION}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{PERCEPTION}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_MENTAL" min="0" max="99" />
                 <div class="itd-basic-attribute-ame">
                     <button type="roll" class="button_competence" name="roll_MENTAL" title="info" data-i18n-title="attr-MENTAL_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-MENTAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{MENTAL}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-MENTAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{MENTAL}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_INTELLECT" min="0" max="99" />
                 <div class="itd-basic-attribute-esprit">
                     <button type="roll" class="button_competence" name="roll_INTELLECT" title="info" data-i18n-title="attr-INTELLECT_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-INTELLECT}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{INTELLECT}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-INTELLECT}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{INTELLECT}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></button>
                 </div>
             </div>
             <div class="itd-table-6col">
                 <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_CHARISME" min="0" max="99" />
                 <div class="itd-basic-attribute-esprit">
                     <button type="roll" class="button_competence" name="roll_CHARISME" title="info" data-i18n-title="attr-CHARISME_info"
-                    value="&{template:itd} {{jet=oui}} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
                 </div>
             </div>
         </div>
@@ -164,7 +174,7 @@
                         </label>
                     </div>
                     <div class="itd-table-3col"><button type="roll" class="button_initiative" name="roll_INITIATIVE" title="info" data-i18n-title="initiative_info"
-                        value="&{template:itd} {{initiative=oui}} {{title=^{initiative}}} {{token=@{ctoken}}} {{subheader=@{character_name}}} {{initiative=oui}} {{seuil=@{stat_initiative}}} {{result=[[1d10 [Jet] + @{stat_initiative} [Bonus Initiative] &{tracker}]]}}"><span data-i18n="initiative">Initiative</span></div>
+                        value="@{gm} &{template:itd} {{initiative=oui}} {{title=^{initiative}}} {{token=@{ctoken}}} {{subheader=@{character_name}}} {{initiative=oui}} {{seuil=@{stat_initiative}}} {{result=[[1d10 [Jet] + @{stat_initiative} [Bonus Initiative] &{tracker}]]}}"><span data-i18n="initiative">Initiative</span></div>
                     <div class="itd-table-3col"><span data-i18n="stress">STRESS</span> &nbsp;
                         <label class="itd-radio-container">
                             <input type="radio" name="attr_stress" value="0" checked="checked">
@@ -205,78 +215,78 @@
                 <div class="wrapper_talent" style="margin-top: 30px;">
                     <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_endurance" title="info" data-i18n-title="attr-endurance_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_force_brute" title="info" data-i18n-title="attr-force_brute_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_robustesse" title="info" data-i18n-title="attr-robustesse_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
                 </div>
                 <!-- AGILLITÉ -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_agilite_corporelle" title="info" data-i18n-title="attr-agilite_corporelle_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_precision" title="info" data-i18n-title="attr-precision_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-precision">Précision</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-precision">Précision</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_reflexe" title="info" data-i18n-title="attr-reflexe_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
                 </div> 
                 <!-- PERCEPTION -->
                 <div class="wrapper_talent" style="margin-top: 25px;">
                     <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_vigilance" title="info" data-i18n-title="attr-vigilance_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
                 </div>
                 <!-- MENTAL -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_decision" title="info" data-i18n-title="attr-decision_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-decision">Décision</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-decision">Décision</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_determination" title="info" data-i18n-title="attr-determination_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-determination">Détermination</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-determination">Détermination</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
                 </div>
                 <!-- INTELLECT -->
                 <div class="wrapper_talent" style="margin-top: 25px;">
                         <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_creativite" title="info" data-i18n-title="attr-creativite_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_erudition" title="info" data-i18n-title="attr-erudition_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_logique" title="info" data-i18n-title="attr-logique_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-logique">Logique</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-logique">Logique</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
                 </div>
                 <!-- CHARISME -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
                     <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_aura" title="info" data-i18n-title="attr-aura_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-aura">Aura</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-aura">Aura</span></button></div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
                     <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button></div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_persuasion" title="info" data-i18n-title="attr-persuasion_info"
-                        value="&{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
+                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
                 </div>
             </div>
@@ -346,7 +356,7 @@
                     </div>
                     <div class="nom_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_nom_arme_1" value="Pugilat, Boxe, Lutte"></div>
                     <div class="degat_arme" style="grid-row: 2;"><input type="text" class="armes" name="attr_degat_arme_1" value="1"></div>
-                    <div class="roll_arme" style="grid-row: 2;"><button type="roll" class="button_roll" name="roll_roll-arme1" value="&{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_1}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_1}]]}}"><span class="picto">R</span></button></div>
+                    <div class="roll_arme" style="grid-row: 2;"><button type="roll" class="button_roll" name="roll_roll-arme1" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_1}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_1}]]}}"><span class="picto">R</span></button></div>
 
                     <div class="type_arme" style="grid-row: 3;">
                         <select class="choix_armes" name="attr_arme_2">
@@ -377,7 +387,7 @@
                     </div>
                     <div class="nom_arme" style="grid-row: 3;"><input type="text" class="armes" name="attr_nom_arme_2"></div>
                     <div class="degat_arme" style="grid-row: 3;"><input type="text" class="armes" name="attr_degat_arme_2"></div>
-                    <div class="roll_arme" style="grid-row: 3;"><button type="roll" class="button_roll" name="roll_roll-arme2" value="&{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_2}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_2}]]}}"><span class="picto">R</span></button></div>
+                    <div class="roll_arme" style="grid-row: 3;"><button type="roll" class="button_roll" name="roll_roll-arme2" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_2}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_2}]]}}"><span class="picto">R</span></button></div>
 
                     <div class="type_arme" style="grid-row: 4;">  
                         <select class="choix_armes" name="attr_arme_3">
@@ -408,7 +418,7 @@
                     </div>
                     <div class="nom_arme" style="grid-row: 4;"><input type="text" class="armes" name="attr_nom_arme_3"></div>
                     <div class="degat_arme" style="grid-row: 4;"><input type="text" class="armes" name="attr_degat_arme_3"></div>
-                    <div class="roll_arme" style="grid-row: 4;"><button type="roll" class="button_roll" name="roll_roll-arme3" value="&{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_3}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_3}]]}}"><span class="picto">R</span></button></div>
+                    <div class="roll_arme" style="grid-row: 4;"><button type="roll" class="button_roll" name="roll_roll-arme3" value="@{gm} &{template:itd} {{token=@{ctoken}}} {{degat=oui}} {{title=@{nom_arme_3}}} {{subheader=@{character_name}}} {{result=[[@{degat_arme_3}]]}}"><span class="picto">R</span></button></div>
                 </div>	
             </div>
         </div>  
@@ -536,9 +546,52 @@
             </div>
         </div>
     </div>
+    <!-- ADMIN -->
+    <div class="admin">
+        <div class="go_feuille">
+            <button type="action" name="act_0" class="button_go" title="Retour à la feuille...">U</button>
+        </div>
+        <div class="admin_warning">
+            Ceci est une page administration, ne cliquez pas sur les archétype sans quoi votre fiche de personnage sera réinitialisée et les points totalement changé. <br><br>
+            Retour à votre feuille de personnage via l'icone en haut à droite de cette page
+        </div>
+        <div class="admin_mineur">
+            <span style="text-decoration: underline;">PNJ Mineur</span><br><br>
+            <button type="action" name="act_mineur-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_mineur-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_mineur-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_mineur-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_mineur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_mineur-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+        <div class="admin_normal">
+            <span style="text-decoration: underline;">PNJ Normal<br><br></span>
+            <button type="action" name="act_normal-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_normal-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_normal-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_normal-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_normal-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_normal-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+        <div class="admin_majeur">
+            <span style="text-decoration: underline;">PNJ Majeur<br><br></span>
+            <button type="action" name="act_majeur-civil_1" class="button_archetype">Civil (faible capacité physique)</button><br>
+            <button type="action" name="act_majeur-civil_2" class="button_archetype">Civil (bonne capacité physique)</button><br>
+            <button type="action" name="act_majeur-commercant" class="button_archetype">Commerçant (Charisme)</button><br>
+            <button type="action" name="act_majeur-erudit" class="button_archetype">Érudit (Intelligence)</button><br>
+            <button type="action" name="act_majeur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
+            <button type="action" name="act_majeur-combattant" class="button_archetype">Combattant (Combat)</button>
+        </div>
+
+    </div>
+
+    <!-- Système de jeu -->
     <div class="systeme">
         <div class="go_feuille">
             <button type="action" name="act_0" class="button_go" title="Retour à la feuille...">U</button>
+        </div>
+        <div class="go_admin">
+            <button type="action" name="act_2" class="button_admin" title="Archétype...">x</button>
         </div>
         <div class="summary-d100">
             <h2>Résumé du Système D100</h2>
@@ -1594,6 +1647,37 @@
         });
     });
 
+    on("sheet:opened", function() {
+
+        getAttrs(["page"], function(values) {
+
+            let page = parseInt(values["page"]) || 0;
+            let jet_gm = 0;
+            let gm = " ";
+            
+            setAttrs({
+                "page": page,
+                "jet_gm": jet_gm,
+                "gm": gm
+            });
+        });
+    });
+
+    on("change:jet_gm", function() {
+
+        getAttrs(["jet_gm"], function(values) {
+
+            let jet_gm = parseInt(values["jet_gm"]) || 0;
+            
+            if (jet_gm == 1) gm = "/w gm";
+            else gm = " ";
+            
+            setAttrs({
+                "gm": gm
+            });
+        });
+    });
+
     on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion change:CARRURE change:AGILITE change:PERCEPTION change:MENTAL change:INTELLECT change:CHARISME", function() {
         getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion", "CARRURE", "AGILITE", "PERCEPTION", "MENTAL", "INTELLECT", "CHARISME"], function(values) {
             let CARRURE = parseInt(values["CARRURE"]) || 0;
@@ -1695,7 +1779,6 @@
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
 	finishRoll(roll.rollId,computeObj);
 	})
-
 </script>
 
 <!-- MAJ equipement -->
@@ -1920,4 +2003,151 @@
 			setAttrs(updates);
 		});
 	});
+</script>
+
+<!-- Archetype -->
+<script type="text/worker">
+    const professions = {
+        "mineur-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 5, "force_brute": 0, "robustesse": 5, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 10, "logique": 0,
+            "aura": 0, "communication_expressive": 10, "persuasion": 0, "profession": "Civil 1 mineur"
+        },
+        "mineur-civil_2": {
+            "CARRURE": 30, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 15, "force_brute": 15, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 5, "decision": 0,
+            "determination": 0, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 mineur"
+        },
+        "mineur-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 0, "logique": 10,
+            "aura": 10, "communication_expressive": 20, "persuasion": 20, "profession": "Commerçant mineur"
+        },
+        "mineur-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 20, "logique": 20,
+            "aura": 0, "communication_expressive": 10, "persuasion": 0, "profession": "erudit mineur"
+        },
+        "mineur-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 30, "CHARISME": 30,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 15, "communication_expressive": 20, "persuasion": 20, "profession": "Manipulateur mineur"
+        },
+        "mineur-combattant": {
+            "CARRURE": 30, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 30, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 15, "force_brute": 15, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant mineur"
+        },
+
+        
+        "normal-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 10, "force_brute": 0, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 20, "logique": 0,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Civil 1 normal"
+        },
+        "normal-civil_2": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 20, "force_brute": 20, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 5, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 normal"
+        },
+        "normal-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 10,
+            "aura": 15, "communication_expressive": 30, "persuasion": 30, "profession": "Commerçant normal"
+        },
+        "normal-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 15, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 30, "logique": 30,
+            "aura": 0, "communication_expressive": 15, "persuasion": 0, "profession": "Erudit normal"
+        },
+        "normal-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 20, "communication_expressive": 30, "persuasion": 25, "profession": "Manipulateur normal"
+        },
+        "normal-combattant": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 30,
+            "endurance": 20, "force_brute": 20, "robustesse": 15, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 10, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 5, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant normal"
+        },
+
+        
+        "majeur-civil_1": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 10, "force_brute": 0, "robustesse": 10, "agilite_corporelle": 10, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 15, "sixieme_sens": 0, "vigilance": 15, "decision": 0,
+            "determination": 0, "equilibre_mental": 10, "creativite": 0, "erudition": 20, "logique": 0,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Civil 1 majeur"
+        },
+        "majeur-civil_2": {
+            "CARRURE": 40, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 50,
+            "endurance": 20, "force_brute": 20, "robustesse": 20, "agilite_corporelle": 15, "precision": 0,
+            "reflexe": 15, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Civil 2 majeur"
+        },
+        "majeur-commercant": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 0, "decision": 0,
+            "determination": 0, "equilibre_mental": 20, "creativite": 0, "erudition": 0, "logique": 15,
+            "aura": 20, "communication_expressive": 20, "persuasion": 20, "profession": "Commerçant majeur"
+        },
+        "majeur-erudit": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 20, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 30, "logique": 30,
+            "aura": 0, "communication_expressive": 20, "persuasion": 0, "profession": "Erudit majeur"
+        },
+        "majeur-manipulateur": {
+            "CARRURE": 20, "AGILITE": 30, "PERCEPTION": 40, "MENTAL": 40, "INTELLECT": 40, "CHARISME": 50,
+            "endurance": 0, "force_brute": 0, "robustesse": 0, "agilite_corporelle": 0, "precision": 0,
+            "reflexe": 0, "acuite_sensorielle": 10, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 0, "equilibre_mental": 15, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 20, "communication_expressive": 20, "persuasion": 30, "profession": "Manipulateur majeur"
+        },
+        "majeur-combattant": {
+            "CARRURE": 50, "AGILITE": 40, "PERCEPTION": 30, "MENTAL": 40, "INTELLECT": 20, "CHARISME": 40,
+            "endurance": 20, "force_brute": 20, "robustesse": 20, "agilite_corporelle": 15, "precision": 0,
+            "reflexe": 15, "acuite_sensorielle": 0, "sixieme_sens": 0, "vigilance": 10, "decision": 0,
+            "determination": 10, "equilibre_mental": 0, "creativite": 0, "erudition": 0, "logique": 0,
+            "aura": 0, "communication_expressive": 0, "persuasion": 0, "profession": "Combattant majeur"
+        }
+    };
+    
+    for (let professionKey in professions) {
+        if (professions.hasOwnProperty(professionKey)) {
+            on(`clicked:${professionKey}`, function() {
+                let attributes = professions[professionKey];
+                attributes["page"] = 0; // Valeur commune pour toutes les professions
+                setAttrs(attributes);
+            });
+        }
+    }
+
 </script>
