@@ -1,6 +1,7 @@
 <!-- TODO Alerte recalcul ? -->
 
 <input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_popup" class="popup_on" value="0">
 <input type="hidden" name="attr_visage" class="choix_visage" value="0">
 <input type="hidden" name="attr_blessure" value="0">
 <input type="hidden" name="attr_blessure_pnj" value="0">
@@ -25,6 +26,38 @@
 </div>
 
 
+<div class="popup_marque">
+	<input type="hidden" name="attr_marque" class="popup_type" value="0">
+	<div class="popup_maladie">
+		<div class="wrapper_page_popup">
+			<div class="popup_titre">
+				Maladie
+			</div>
+            <div class="popup_texte">
+                Sujet aux fièvres et aux infections, le personnage avait une santé fragile. Sa survie jusqu’ici fut miraculeuse.
+			</div>
+			<div class="popup_mod">
+				Appliquez manuellement les modificateurs suivants à votre caractéristiques :<br>
+				Vigueur -1 Fluide + 1
+            </div>
+            <div class="popup_illustration"></div>
+            <div class="popup_bouton">
+                <button type="action" class="button_texte" name="act_fermer-popup" title="Fermer la fenêtre" style="font-family: 'Pictos';font-weight: normal;color: var(--black);font-size: 32px;">*</button>
+            </div>
+        </div>
+	</div>
+	<div class="popup_excentricite"></div>
+	<div class="popup_associable"></div>
+	<div class="popup_mort"></div>
+	<div class="popup_nerveux"></div>
+	<div class="popup_melancolique"></div>
+	<div class="popup_sauvage"></div>
+	<div class="popup_reclus"></div>
+	<div class="popup_enrage"></div>
+	<div class="popup_naissance"></div>
+</div>
+
+
 
 <div class="personnage">
 	<div class="wrapper_page_personnage">
@@ -43,16 +76,16 @@
 			<div class="page1_zone_personnage_line">Marque :
 				<select class="choix_rang" name="attr_marque">
 					<option value="0" selected="selected"></option>
-					<option value="Maladie">Maladie</option>
-					<option value="Excentricité">Excentricité</option>
-					<option value="Associable">Associable</option>
-					<option value="Mort">Mort</option>
-					<option value="Nerveux">Nerveux</option>
-					<option value="Mélancolique">Mélancolique</option>
-					<option value="Sauvage">Sauvage</option>
-					<option value="Reclus">Reclus</option>
-					<option value="Enragé">Enragé</option>
-					<option value="Marque de naissance">Marque de naissance</option>
+					<option value="1">Maladie</option>
+					<option value="2">Excentricité</option>
+					<option value="3">Associable</option>
+					<option value="4">Mort</option>
+					<option value="5">Nerveux</option>
+					<option value="6">Mélancolique</option>
+					<option value="7">Sauvage</option>
+					<option value="8">Reclus</option>
+					<option value="9">Enragé</option>
+					<option value="10">Marque de naissance</option>
 				</select>
 			</div>
 			<div class="page1_zone_personnage_line" style="margin-top: 10px;">Visage :
@@ -1105,16 +1138,16 @@ sera prise en compte.">
 			<div class="page1_zone_personnage_line">Marque :
 				<select class="choix_rang" name="attr_marque">
 					<option value="0" selected="selected"></option>
-					<option value="Maladie">Maladie</option>
-					<option value="Excentricité">Excentricité</option>
-					<option value="Associable">Associable</option>
-					<option value="Mort">Mort</option>
-					<option value="Nerveux">Nerveux</option>
-					<option value="Mélancolique">Mélancolique</option>
-					<option value="Sauvage">Sauvage</option>
-					<option value="Reclus">Reclus</option>
-					<option value="Enragé">Enragé</option>
-					<option value="Marque de naissance">Marque de naissance</option>
+					<option value="1">Maladie</option>
+					<option value="2">Excentricité</option>
+					<option value="3">Associable</option>
+					<option value="4">Mort</option>
+					<option value="5">Nerveux</option>
+					<option value="6">Mélancolique</option>
+					<option value="7">Sauvage</option>
+					<option value="8">Reclus</option>
+					<option value="9">Enragé</option>
+					<option value="10">Marque de naissance</option>
 				</select>
 			</div>
 			<div class="page1_zone_personnage_line">
@@ -1604,6 +1637,26 @@ des Compétences et des Attributs."><span class="picto" style="margin-right: 5px
             });
         });
     });
+
+	on("change:marque", function() {
+        getAttrs(["marque"], function(values) {
+            let marque = parseInt(values["marque"]) || 0;
+			let popup = 1;
+
+        setAttrs({
+			"popup": popup
+            });
+        });
+    });
+
+	on('clicked:fermer-popup', async (event) => {
+		getAttrs(["popup"], function(values) {
+			let popup = 0;
+			setAttrs({
+				"popup": popup
+			});
+		});
+	});
 </script>
 
 <!-- Roll Action -->

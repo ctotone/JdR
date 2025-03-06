@@ -499,6 +499,24 @@ div.pnj {
     margin-top: 15px;
 }
 
+div.popup_marque {     
+    position: fixed;
+    width: 500px;
+    height: 210px;
+    margin-left: 160px;
+    margin-top: 170px;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    background: #ebe7e7;
+    color: rgba(0, 0, 0, 0.863);
+    padding: 20px;
+    z-index: 2;
+    font-size: 25px;
+    line-height: 55px;
+    text-align: center;
+    box-shadow: 0px 0px 18px 6px #060808;
+}
+
 /* Gestion des affichage */
 
 div.personnage,
@@ -565,6 +583,99 @@ div.fatalite {
 
 .charsheet .choix_visage[value="4"] ~ *{
     --carte_visage : url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Thanatos/images/visage_skrag.png);
+}
+
+/* Gestion des popup */
+
+div.popup_marque,
+div.popup_maladie,
+div.popup_excentricite,
+div.popup_associable,
+div.popup_mort,
+div.popup_nerveux,
+div.popup_melancolique,
+div.popup_sauvage,
+div.popup_reclus,
+div.popup_enrage,
+div.popup_naissance {
+    display: none;
+}
+
+.charsheet .popup_on[value="1"] ~ div.popup_marque,
+.charsheet .popup_type[value="1"] ~ div.popup_maladie,
+.charsheet .popup_type[value="2"] ~ div.popup_excentricite,
+.charsheet .popup_type[value="3"] ~ div.popup_associable,
+.charsheet .popup_type[value="4"] ~ div.popup_mort,
+.charsheet .popup_type[value="5"] ~ div.popup_nerveux,
+.charsheet .popup_type[value="6"] ~ div.popup_melancolique,
+.charsheet .popup_type[value="7"] ~ div.popup_sauvage,
+.charsheet .popup_type[value="8"] ~ div.popup_reclus,
+.charsheet .popup_type[value="9"] ~ div.popup_enrage,
+.charsheet .popup_type[value="10"] ~ div.popup_naissance {
+    display: block;
+}
+
+.wrapper_page_popup {
+    display: grid;
+    grid-template-columns: 50% 5% 35% 5% 5%;
+    grid-auto-rows: 20px;
+}
+
+.popup_titre {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 25px;
+    line-height: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup_texte {
+    grid-column: 1;
+    grid-row: 2 / 8;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup_mod {
+    grid-column: 1;
+    grid-row: 8 / 11;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .popup_illustration {
+    grid-column: 3;
+    grid-row: 1 / 12;
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-image: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/illu_sm_75.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* margin-top: 47px; */
+}
+
+.popup_bouton {
+    grid-column: 5;
+    grid-row: 1;
+    font-family: 'Pictos';
+    font-weight: normal;
+    color: var(--white);
+    font-size: 32px;
+    line-height: 55px;
+    margin-top: -15px;
+    margin-left: 14px;
 }
 
 
