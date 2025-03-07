@@ -50,7 +50,7 @@
 
         <div class="itd-inner itd-logo-and-info">
             <div class="itd-logo-table-col1">
-                <!-- <img class="itd-logo" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Into%20The%20Dark/images/into_the_dark_logo.png" /> -->
+                <!-- Version texte -->
                 <!-- <div class="itd-logo-table-col-titre">
                     INTERFACE INC.
                 </div> -->
@@ -206,7 +206,11 @@
         </div>
 
         <div class="itd-marker">
-            <span class="itd-marker-text"><span data-i18n="specializations-and-talens">TALENT</span><button type="action" class="button_show" name="act_hide_talent" title="Afficher / Cacher" ><span class="picto">|</span></button></span>
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"><span class="itd-marker-text"><span data-i18n="specializations-and-talens">TALENT</span><button type="action" class="button_show" name="act_hide_talent" title="Afficher / Cacher" ><span class="picto">|</span></button></span></div>
+                <div class="barre_droite"></div>
+            </div>
         </div> 
         <!-- TALENTS -->
         <div class="show_talent">
@@ -293,8 +297,12 @@
         </div>
 
         <div class="itd-marker" style="margin-top: 30px;">
-            <span class="itd-marker-text"><span data-i18n="stat_combat">COMBAT</span><button type="action" class="button_show" name="act_hide_combat" title="Afficher / Cacher" ><span class="picto">|</span></button></span>
-        </div>
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"><span class="itd-marker-text"><span data-i18n="stat_combat">COMBAT</span><button type="action" class="button_show" name="act_hide_combat" title="Afficher / Cacher" ><span class="picto">|</span></button></span></div>
+                <div class="barre_droite"></div>
+            </div>
+        </div> 
 
         <!-- STATISTIQUES DE COMBAT -->
         <div class="show_combat">
@@ -425,8 +433,13 @@
 
 		<!-- Spécialisation -->
         <div class="itd-marker" style="margin-top: 30px;">
-            <span class="itd-marker-text"><span data-i18n="specialisation" data-i18n-title="specialisation_info" style="cursor: help;">SPÉCIALISATION</span><button type="action" class="button_show" name="act_hide_specialisation" title="Afficher / Cacher" ><span class="picto">|</span></button>
-        </div>
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"><span class="itd-marker-text"><span data-i18n="specialisation" data-i18n-title="specialisation_info" style="cursor: help;">SPÉCIALISATION</span><button type="action" class="button_show" name="act_hide_specialisation" title="Afficher / Cacher" ><span class="picto">|</span></button></div>
+                <div class="barre_droite"></div>
+            </div>
+        </div> 
+
         <div class="show_specialisation">
             <div class="itd-inner-text">
                 <textarea rows="4" width="100%" spellcheck="false" name="attr_specialisation"></textarea>
@@ -435,8 +448,13 @@
 
         <!-- INVENTAIRE -->
         <div class="itd-marker" style="margin-top: 30px;">
-            <span class="itd-marker-text"><span data-i18n="inventaire">INVENTAIRE</span><button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" ><span class="picto">|</span></button>
-        </div>
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"> <span class="itd-marker-text"><span data-i18n="inventaire">INVENTAIRE</span><button type="action" class="button_show" name="act_hide_inventaire" title="Afficher / Cacher" ><span class="picto">|</span></button></div>
+                <div class="barre_droite"></div>
+            </div>
+        </div> 
+
         <div class="show_inventaire">
             <div class="itd-inner-text">
                 <textarea rows="4" width="100%" spellcheck="false" name="attr_inventaire"></textarea>
@@ -445,8 +463,13 @@
 
         <!-- NOTES -->
         <div class="itd-marker" style="margin-top: 30px;">
-            <span class="itd-marker-text"><span data-i18n="notes">NOTES</span><button type="action" class="button_show" name="act_hide_note" title="Afficher / Cacher" ><span class="picto">|</span></button>
-        </div>
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"><span class="itd-marker-text"><span data-i18n="notes">NOTES</span><button type="action" class="button_show" name="act_hide_note" title="Afficher / Cacher" ><span class="picto">|</span></button></div>
+                <div class="barre_droite"></div>
+            </div>
+        </div> 
+        
         <div class="show_note">
             <div class="itd-inner-text">
                 <textarea rows="6" cols="50" spellcheck="false" name="attr_notes"></textarea>
