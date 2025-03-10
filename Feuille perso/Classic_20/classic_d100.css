@@ -14,12 +14,18 @@
 }
 
 /* VARIABLES */
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  background-color: transparent;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
 
 .sheetform .skin[value="0"] ~ .feuille {
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
   background-size: cover;
   --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
-  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_interface.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_classique.png);
+  --fond_checkbox: #eee;
   margin: -10px;
   padding: 10px;
 
@@ -29,6 +35,9 @@
   background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
   background-size: cover;
   --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_western.png);
+  --color_attribut_ame: #7a6800; 
+  --fond_checkbox: #f7eaca;
   margin: -10px;
   padding: 10px;
 }
@@ -402,7 +411,7 @@ span.picto {
   height: 180px;
   display: grid;
   align-items: center;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/logo_interface.png);
+  background-image: var(--background_logo);
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 60px;
@@ -855,7 +864,7 @@ textarea {
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: white;
+  background-color: var(--fond_checkbox);
   border-radius: 0px;
   border-style: solid;
   border-width: 1px;
@@ -924,7 +933,7 @@ textarea {
   left: 3px;
   width: 20px;
   height: 20px;
-  background-color: #eee;
+  background-color: var(--fond_checkbox);
 }
 
 .charsheet .itd-radio-container:hover input~.itd-radio-checkmark {
