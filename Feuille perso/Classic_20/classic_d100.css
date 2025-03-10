@@ -13,6 +13,26 @@
   background-color: transparent;
 }
 
+/* VARIABLES */
+
+.sheetform .skin[value="0"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_interface.png);
+  margin: -10px;
+  padding: 10px;
+
+}
+
+.sheetform .skin[value="1"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
+  margin: -10px;
+  padding: 10px;
+}
+
 .charsheet {
   font-family: 'Contrail One', sans-serif;
   --color_attribut_corps: #e42525f0;
@@ -27,7 +47,6 @@
   background-color: white;
   border: 1px solid var(--black);
   box-shadow: 2px 2px 5px 1px #000000ba;
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
   background-size: cover;
 }
 
@@ -795,7 +814,7 @@ textarea {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
+  background-image: var(--background-textarea);
   resize: none;
   box-shadow: 3px 3px 5px 1px #000000a6;
   font-family: 'Contrail One', sans-serif;
