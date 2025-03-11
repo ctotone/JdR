@@ -47,6 +47,7 @@ input[disabled], select[disabled], textarea[disabled], input[readonly], select[r
   --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_test_espion1.png);
   --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_spy.png);
   --fond_checkbox: #f3f3f3;
+  --rotate_logo: rotate(-4deg);
   margin: -10px;
   padding: 10px;
 }
@@ -427,6 +428,7 @@ span.picto {
   margin-right: 38px;
   margin-bottom: 30px;
   margin-top: 20px;
+  transform: var(--rotate_logo);
 }
 
 .itd-logo-table-col {
