@@ -13,52 +13,12 @@
   background-color: transparent;
 }
 
-/* VARIABLES SKIN ICI pour feuille et ligne 1150 Rolltemplate */
-input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
-  background-color: transparent;
-  border-color: #ddd;
-  cursor: not-allowed;
-}
-
-.sheetform .skin[value="0"] ~ .feuille {
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
-  background-size: cover;
-  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
-  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/logo_interface.png);
-  --fond_checkbox: #eee;
-  margin: -10px;
-  padding: 10px;
-}
-
-.sheetform .skin[value="1"] ~ .feuille {
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
-  background-size: cover;
-  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
-  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_western.png);
-  --color_attribut_ame: #7a6800; 
-  --fond_checkbox: #f7eaca;
-  margin: -10px;
-  padding: 10px;
-}
-
-.sheetform .skin[value="2"] ~ .feuille {
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_espionnage.png);
-  background-size: cover;
-  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_test_espion1.png);
-  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_spy.png);
-  --fond_checkbox: #f3f3f3;
-  --rotate_logo: rotate(-4deg);
-  margin: -10px;
-  padding: 10px;
-}
-
 .charsheet {
   font-family: 'Contrail One', sans-serif;
   --color_attribut_corps: #e42525f0;
   --color_attribut_ame: #c5a600; 
   --color_attribut_esprit: #4682B4; 
   --color_base: #000000;
-  --border_talent: #00000085;
   --text_black: #333;
   color: var(--text_black);
   width: 825px;
@@ -67,6 +27,154 @@ input[disabled], select[disabled], textarea[disabled], input[readonly], select[r
   border: 1px solid var(--black);
   box-shadow: 2px 2px 5px 1px #000000ba;
   background-size: cover;
+}
+
+/* VARIABLES SKIN ICI pour feuille et ligne 1150 Rolltemplate */
+input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
+  background-color: transparent;
+  border-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Classique */
+.sheetform .skin[value="0"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_feuille.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/logo_interface.png);
+  --fond_checkbox: #eee;
+  --couleur_background_large: black;
+  --couleur_background_slider: rgb(255, 255, 255);
+  --border_talent: #00000085;
+  --decalage_systeme: 805px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Western */
+.sheetform .skin[value="1"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_parchemin.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_western.png);
+  --color_attribut_ame: #7a6800; 
+  --fond_checkbox: #f7eaca;
+  --couleur_background_large: #461a01;
+  --couleur_background_slider: #511d007d;
+  --border_talent: #00000085;
+  --decalage_systeme: 805px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Espionnage */
+.sheetform .skin[value="2"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_espionnage.png);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_espionnage.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_spy.png);
+  --fond_checkbox: #f3f3f3;
+  --rotate_logo: rotate(-4deg);
+  --textarea-position: -10px -320px;
+  --couleur_background_large: #170000;
+  --couleur_background_slider: #ffffff4a;
+  --border_talent: #00000085;
+  --decalage_slider: 10px;
+  --decalage_systeme: 795px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Cyberpunk */
+.sheetform .skin[value="3"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_cyberpunk.webp);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_cyberpunk.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_cyberpunk.png);
+  --fond_checkbox: #f3f3f3;
+  --rotate_logo: rotate(-4deg);
+  --textarea-position: -2px -320px;
+  --couleur_background_large: #5b005e;
+  --couleur_background_slider: #5b005e;
+  --border_talent: #5b005e;
+  --decalage_slider: 205px;
+  --decalage_systeme: 553px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Pirate */
+.sheetform .skin[value="4"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_corsaire.png);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_corsaire.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_pirate.png);
+  --fond_checkbox: #f3f3f3;
+  --rotate_logo: rotate(2deg);
+  --textarea-position: -2px -320px;
+  --couleur_background_large: #600202;
+  --couleur_background_slider: #fff0;
+  --border_talent: #600202;
+  --decalage_slider: 0px;
+  --decalage_systeme: 797px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Demonologist */
+.sheetform .skin[value="5"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_demonologist.png);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_demonologist.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_esprit_test.png);  
+  --color_attribut_ame: #7a6800; 
+  --fond_checkbox: #f3f3f3;
+  --rotate_logo: rotate(3deg);
+  --textarea-position: -77px -320px;
+  --couleur_background_large: #262424;
+  --couleur_background_slider: #fff0;
+  --border_talent: #262424;
+  --decalage_slider: 40px;
+  --decalage_systeme: 759px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Obscuritas */
+.sheetform .skin[value="6"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_obscuritas.png);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_obscuritas.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_obscuritas.png);
+  --fond_checkbox: #dedede;
+  --rotate_logo: rotate(0deg);
+  --textarea-position: -77px -320px;
+  --couleur_background_large: #46373c;
+  --couleur_background_slider: #d0d0d096;
+  --border_talent: #46373c;
+  --decalage_slider: 0px;
+  --decalage_systeme: 807px;
+  margin: -10px;
+  padding: 10px;
+}
+
+/* Futur */
+.sheetform .skin[value="7"] ~ .feuille {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_futur.png);
+  background-size: cover;
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_futur.png);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_futur.png);  
+  --color_attribut_ame: #826f04; 
+  --fond_checkbox: #b7edf7;
+  --rotate_logo: rotate(0deg);
+  --textarea-position: -77px -320px;
+  --couleur_background_large: #034048;
+  --couleur_background_slider: #fff0;
+  --border_talent: #034048;
+  --decalage_slider: 0px;
+  --decalage_systeme: 806px;
+  margin: -10px;
+  padding: 10px;
 }
 
 .charsheet select.choix_armes {
@@ -118,6 +226,7 @@ div.jet_cache {
 
 div.go_systeme {
   margin-top: -30px;
+  margin-left: var(--decalage_systeme);
 }
 
 div.go_admin {
@@ -716,7 +825,8 @@ span.picto {
   justify-content: center;
 }
 
-.type_arme {
+.type_arme,
+.type_arme_titre {
   grid-column: 3;
   grid-row: 1;
   text-align: right;
@@ -725,14 +835,24 @@ span.picto {
   border: 1px solid var(--border_talent);
 }
 
-.nom_arme {
+.type_arme_titre {
+  background: var(--couleur_background_large);
+}
+
+.nom_arme,
+.nom_arme_titre {
   grid-column: 5;
   grid-row: 1;
   margin-top: 2px;
   border: 1px solid var(--border_talent);
 }
 
-.degat_arme {
+.nom_arme_titre {
+  background: var(--couleur_background_large);
+}
+
+.degat_arme,
+.degat_arme_titre {
   grid-column: 9;
   grid-row: 1;
   text-align: right;
@@ -741,11 +861,20 @@ span.picto {
   border: 1px solid var(--border_talent);
 }
 
-.roll_arme {
+.degat_arme_titre {
+  background: var(--couleur_background_large);
+}
+
+.roll_arme,
+.roll_arme_titre {
   grid-column: 11;
   grid-row: 1;
   border: 1px solid var(--border_talent);
   margin-top: 2px;
+}
+
+.roll_arme_titre {
+  background: var(--couleur_background_large);
 }
 
 .initiative {
@@ -762,7 +891,7 @@ span.picto {
   height: 50px;
   color: white;
   font-size: 18px;
-  background-color: black;
+  background-color: var(--couleur_background_large);
   display: table;
   vertical-align: middle;
   margin-top: 20px;
@@ -803,7 +932,7 @@ span.picto {
   padding-right: 0px;
   font-size: 18px;
   margin-top: 2px;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--couleur_background_large);
 }
 
 .barre_droite {
@@ -813,7 +942,7 @@ span.picto {
   padding-right: 0px;
   font-size: 18px;
   margin-top: 2px;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid var(--couleur_background_large);
 }
 
 .texte_centrale {
@@ -835,6 +964,7 @@ textarea {
   border: 2px solid #ccc;
   border-radius: 4px;
   background-image: var(--background-textarea);
+  background-position: var(--textarea-position);
   resize: none;
   box-shadow: 3px 3px 5px 1px #000000a6;
   font-family: 'Contrail One', sans-serif;
@@ -1087,6 +1217,10 @@ span.cache {
 	color: var(--text_input_info);
 }
 
+.switch_w {
+  margin-left: var(--decalage_slider);
+}
+
 .charsheet input.sheet-prouesse-switch {
 	display: none;
 }
@@ -1111,16 +1245,16 @@ input.sheet-prouesse-switch:checked ~  span.cache {
     display: inline-block;
 }
 
-.slider_prouesse {
+.slider_prouesse {  
   display: inline-block;
   cursor: pointer;
-  background-color: #61504500;
+  background-color: var(--couleur_background_slider);
   -webkit-transition: .2s;
   transition: .2s;
   width: 30px;
   height: 15px;
   padding: 2px;
-  border: 1px solid #000000de;
+  border: 1px solid #000;
   box-shadow: 3px 2px 5px #435861ba;
   margin-top: -2px;
   margin-left: 0px;
