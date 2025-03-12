@@ -31,8 +31,8 @@
 
 /* VARIABLES SKIN ICI pour feuille et ligne 1150 Rolltemplate */
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] {
-  background-color: transparent;
-  border-color: #ddd;
+  background-color: transparent;  
+  border-color: var(--couleur_background_large);
   cursor: not-allowed;
 }
 
@@ -57,6 +57,7 @@ input[disabled], select[disabled], textarea[disabled], input[readonly], select[r
   background-size: cover;
   --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_1.webp);
   --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_1.webp);
+  --rotate_logo: rotate(2deg);
   --color_attribut_ame: #7a6800; 
   --fond_checkbox: #f7eaca;
   --couleur_background_large: #461a01;
@@ -105,10 +106,10 @@ input[disabled], select[disabled], textarea[disabled], input[readonly], select[r
 
 /* Pirate */
 .sheetform .skin[value="4"] ~ .feuille {
-  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_4.wepb);
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_4.webp);
   background-size: cover;
-  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_4.wepb);
-  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_4.wepb);
+  --background-textarea: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/background_4.webp);
+  --background_logo: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Feuille%20perso/Classic_20/images/logo_4.webp);
   --fond_checkbox: #f3f3f3;
   --rotate_logo: rotate(2deg);
   --textarea-position: -2px -320px;
@@ -679,7 +680,7 @@ span.picto {
   font-size: 40px;
   text-align: center;
   font-family: 'Contrail One', sans-serif;
-  border-color: black;
+  border-color: var(--couleur_background_large);
   background-color: transparent;
   border-radius: 0px;
   border-style: solid;
@@ -1340,7 +1341,7 @@ input:checked + .slider_prouesse:before {
   --font_size_titre: 14px;
   --font_size_texte: 17px;
   --font_size_lien: 12px;
-  --font_size_roll: 56px;
+  --font_size_roll: 45px;
   --mt_titre: 8px;
   --ml_portrait: 15.5px;
   --mb_titre: -5px;
