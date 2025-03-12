@@ -3,15 +3,17 @@
     <input type="hidden" name="attr_page" class="choix_page" value="0">
     <input type="hidden" name="attr_skin" class="skin" value="0">
     <div class="feuille">
-        <div class="switch_dice_slider_comp">
-            <label class="switch_prouesse">
-                <input type="checkbox" name="attr_jet_gm" class="sheet-prouesse-switch" value="1">
-                <span class="slider_prouesse round_prouesse"></span>
-            </label>
+        <div class="switch_w">
+            <div class="switch_dice_slider_comp">
+                <label class="switch_prouesse">
+                    <input type="checkbox" name="attr_jet_gm" class="sheet-prouesse-switch" value="1">
+                    <span class="slider_prouesse round_prouesse"></span>
+                </label>
+            </div>
+            <input type="hidden" name="attr_jet_gm" class="type_jet" value="0">
+            <div class="jet_normal">Jet classique</div>
+            <div class="jet_cache">Jet caché</div>
         </div>
-        <input type="hidden" name="attr_jet_gm" class="type_jet" value="0">
-        <div class="jet_normal">Jet classique</div>
-        <div class="jet_cache">Jet caché</div>
         <div class="go_systeme">
             <button type="action" name="act_1" class="button_go" title="Informations système de jeu...">?</button>
         </div>
@@ -332,10 +334,10 @@
             <div class="itd-inner">
                 <div class="wrapper_armes" style="margin-top: 30px;">
                     <div class="titre_armes">ARMES</span></div>
-                    <div class="type_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">TYPE</div>
-                    <div class="nom_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">NOM</div>
-                    <div class="degat_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">DÉGÂTS</div>
-                    <div class="roll_arme" style="background: #000000e8; color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">JET</div>
+                    <div class="type_arme_titre" style="color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">TYPE</div>
+                    <div class="nom_arme_titre" style="color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">NOM</div>
+                    <div class="degat_arme_titre" style="color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">DÉGÂTS</div>
+                    <div class="roll_arme_titre" style="color: #ffffffe8; display: flex; align-items: center; justify-content: center; padding-top: 3px;">JET</div>
                     <div class="type_arme" style="grid-row: 2;">
                         <select class="choix_armes" name="attr_arme_1">
                             <option value="0"></option>
