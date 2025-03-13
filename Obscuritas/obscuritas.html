@@ -6515,7 +6515,7 @@
 	})
 
     on('clicked:roll-dexterite', async (event) => {
-		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Dextérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{dexterite}[Compétence]-@{total_armures_malus_demi_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
+		const roll = await startRoll("@{gm} &{template:thanatos} {{jet=oui}}  {{pnj=oui}}  {{token=@{ctoken}}}{{title=Dextérité}} {{subheader=@{character_name}}} {{roll=[[0[resultat]]]}} {{malus_blessure=[[@{malus_blessure}]]}} {{stat=[[@{dexterite}[Compétence]-@{total_armures_malus_dexterite}[Armure - Malus Dextérité]]]}} {{des=[[1d100[Jet]]]}} {{mod=[[@{rollmodifier}[Modificateur]]]}} {{malus_armure=@{total_armures_malus_athletisme}}} {{degre=[[0[resultat]]]}}"); 
 		const {stat,des,mod,malus,malus_blessure} = roll.results;
 		const computeObj = {};
 		computeObj.roll = mod.result + stat.result - malus_blessure.result;
