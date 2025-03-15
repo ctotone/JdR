@@ -577,6 +577,8 @@
         <div class="go_feuille">
             <button type="action" name="act_0" class="button_go" title="Retour à la feuille...">U</button>
         </div>
+        
+        Total points de talents :  <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_total_point_talent" min="0" max="99" />
         <div class="admin_warning">
             Ceci est une page administration, ne cliquez pas sur les archétype sans quoi votre fiche de personnage sera réinitialisée et les points totalement changé. <br><br>
             Retour à votre feuille de personnage via l'icone en haut à droite de cette page
@@ -608,7 +610,7 @@
             <button type="action" name="act_majeur-manipulateur" class="button_archetype">Manipulateur (Persuasion)</button><br>
             <button type="action" name="act_majeur-combattant" class="button_archetype">Combattant (Combat)</button>
         </div>
-        <button type="roll" class="button_roll" name="roll_roll-arme3" value="/w evilbram &{template:itd} {{place=oui}}"><span class="picto">R</span></button>
+        <button type="roll" class="button_roll" name="roll_roll-arme3" value="/w evilbram &{template:itd} {{place=oui}}"><span class="picto">R</span></button><br>
 
     </div>
 
@@ -2192,4 +2194,8 @@
         }
     }
 
+</script>
+
+<!-- Vérif stats -->
+<script type="text/worker">
 </script>
