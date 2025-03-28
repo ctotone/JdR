@@ -79,7 +79,7 @@
 				<div class="stat_bonus_titre">Bonus</div>
 			</div>
             <div class="wrapper_stats_bonus">
-                <div class="stat_perception_bonus">Initiative</div>
+                <div class="stat_perception_bonus"><button class="roll_text" type="roll" name="roll_Lancer" value="&{template:ito} {{title=Initiative (@{perception_bonus})}} {{jet=[[@{perception_bonus} + 1D20 &{tracker}]]}} {{initiative=oui}}" title="Jet d'Initiative'">Initiative</button></div>
                 <div class="stat_dexterite_bonus">Mouvement</div>
                 <div class="stat_force_bonus">Dégâts Physiques</div>
                 <div class="stat_volonte_bonus">Dégâts Magiques</div>
@@ -512,6 +512,11 @@
 		<div class="sheet-result-degats">{{result}}</div>
 	</div>
 	{{/degats}}
+    {{#initiative}}
+	<div class="sheet-content">
+		<div class="sheet-result-degats" style="color: #00bd00 !important;">{{jet}}</div>
+	</div>
+	{{/initiative}}
 </rolltemplate>
 
 

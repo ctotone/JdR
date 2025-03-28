@@ -371,6 +371,7 @@ span.petit_rouge {
 
 /* Boutton ROLL */
 .charsheet button[type=roll].roll_dice::before,
+.charsheet button[type=roll].roll_text::before,
 .charsheet button[type=roll].roll_dice_armes::before {
   content: '';
 }
@@ -390,6 +391,20 @@ span.petit_rouge {
     box-shadow: none;
 }
 
+
+.charsheet button[type=roll].roll_text {
+	padding: 0;
+	margin: 0;
+	box-shadow: none;
+	text-shadow: none;
+	background: none;
+	border: none;
+	white-space: nowrap;
+	color: var(--noir);
+	font-size: var(--size_talent);
+	font-weight: bold;
+}
+
 .charsheet button[type=roll].roll_dice_armes {
     width: 13px;
     height: 13px;
@@ -406,6 +421,7 @@ span.petit_rouge {
 
 /* Boutton ROLL */
 .charsheet button[type=roll].roll_dice::before,
+.charsheet button[type=roll].roll_text::before,
 .charsheet button[type=roll].roll_d4::before,
 .charsheet button[type=roll].roll_d6::before,
 .charsheet button[type=roll].roll_d8::before,
@@ -464,6 +480,7 @@ span.petit_rouge {
 }
 
 .charsheet button[type=roll].roll_dice:hover,
+.charsheet button[type=roll].roll_text:hover,
 .charsheet button[type=roll].roll_d4:hover,
 .charsheet button[type=roll].roll_d6:hover,
 .charsheet button[type=roll].roll_d8:hover,
