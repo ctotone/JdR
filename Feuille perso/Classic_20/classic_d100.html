@@ -1800,7 +1800,7 @@
     });
 	
 	on('clicked:roll-cac', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}"); 
+		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
@@ -1808,7 +1808,7 @@
 	})
 	
 	on('clicked:roll-distance', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
+		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
@@ -1816,7 +1816,7 @@
 	})
 	
 	on('clicked:roll-verbal', async (event) => {
-		const roll = await startRoll("&{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
+		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
 		const {seuil,result} = roll.results;
 		const computeObj = {};
 		computeObj.roll = Math.floor((seuil.result - result.result)/10);
