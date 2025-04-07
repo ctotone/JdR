@@ -19,7 +19,8 @@
         </div>
     <input type="hidden" name="attr_gm" value="">
     <input type="hidden" name="attr_total_point_talent" value="0">
-    <input type="hidden" name="attr_total_point_competence" value="0">
+    <input type="hidden" name="attr_total_point_competence" value="0">    
+    <input type="hidden" class="voir_dice" name="attr_show_dice" value="0">
     <input type="hidden" class="voir_talent" name="attr_show_talent" value="0">
     <input type="hidden" class="voir_combat" name="attr_show_combat" value="0">
     <input type="hidden" class="voir_specialisation" name="attr_show_specialisation" value="0">
@@ -217,7 +218,7 @@
         </div> 
         <!-- TALENTS -->
         <div class="show_talent">
-            <div class="itd-inner">
+            <div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
                 <!-- CARRURE -->
                 <div class="wrapper_talent" style="margin-top: 30px;">
                     <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
@@ -295,6 +296,68 @@
                     <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_persuasion" title="info" data-i18n-title="attr-persuasion_info"
                         value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Dés -->
+        <div class="itd-marker" style="margin-top: 30px;">
+            <div class="wrapper-itd-marker">
+                <div class="barre_gauche"></div>
+                <div class="texte_centrale"><span class="itd-marker-text">DÉS</span><button type="action" class="button_show" name="act_hide_dice" title="Afficher / Cacher" ><span class="picto">|</span></button></span></div>
+                <div class="barre_droite"></div>
+            </div>
+        </div> 
+        <!-- Section dés -->
+        <div class="show_dice"  style="margin-top: 40px;margin-bottom: 15px;">
+            <div class="itd-inner">
+                <div class="wrapper_roll_dice" style="margin-top: 40px;">
+                    <div class="roll_d4">
+                        <button class="roll_d4" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D4}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d4[Jet]]]}}" title="Lancer un D4 "></button>
+                    </div>
+                    <div class="roll_d6">
+                        <button class="roll_d6" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D6}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d6[Jet]]]}}" title="Lancer un D6"></button>
+                    </div>
+                    <div class="roll_d8">
+                        <button class="roll_d8" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D8}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d8[Jet]]]}}" title="Lancer un D8"></button>
+                    </div>
+                    <div class="roll_d10">
+                        <button class="roll_d10" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D10}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d10[Jet]]]}}"  title="Lancer un D10"></button>
+                    </div>
+                    <div class="roll_d12">
+                        <button class="roll_d12" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D12}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d12[Jet]]]}}" title="Lancer un D12"></button>
+                    </div>
+                    <div class="roll_d20">
+                        <button class="roll_d20" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D20}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d20[Jet]]]}}"  title="Lancer un D20"></button>
+                    </div>
+                    <div class="roll_d100">
+                        <button class="roll_chance" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D100}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d100[Jet]]]}}" title="Lancer un D100"></button>
+                    </div>
+                </div>
+                <div class="wrapper_roll">
+                    <div class="roll_d4">
+                        <span class="lettre">D4</span>
+                    </div>
+                    <div class="roll_d6">
+                        <span class="lettre">D6</span>
+                    </div>
+                    <div class="roll_d8">
+                        <span class="lettre">D8</span>
+                    </div>
+                    <div class="roll_d10">
+                        <span class="lettre">D10</span>
+                    </div>
+                    <div class="roll_d12">
+                        <span class="lettre">D12</span>
+                    </div>
+                    <div class="roll_d20">
+                        <span class="lettre">D20</span>
+                    </div>
+                    <div class="roll_d100">
+                        <span class="lettre">D100</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -795,6 +858,20 @@
             </div>
         </div>
     {{/initiative}}
+    {{#roll_dice}}
+        <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">   
+                <div class="sheet-titre">
+                    <div class="sheet-portrait_roll" style="background-image: url({{token}});background-size: contain;background-repeat: no-repeat;"></div>
+                    <div class="sheet-rolltemplate-itd-center  sheet-rolltemplate-itd-titre-roll" style="font-size: 20px;color:#9d0097;">{{title}}</div>
+                </div>
+            </div>
+            <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader" style="color:#9d0097;">
+                {{result}}
+            </div>
+            <div class="sheet-rolltemplate-itd sheet-template-itd-texte"><br></div>
+        </div>
+    {{/roll_dice}}
     {{#degat}}
         <div class="sheet-rolltemplate-itd-background sheet-rolltemplate-itd-center">
             <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-header">   
@@ -1632,6 +1709,17 @@
             setAttrs({ namelength: nameclass,
                        "avatar": v.character_avatar,
                        "ctoken": v.character_token });
+        });
+    });
+
+    on('clicked:hide_dice', async (event) => {
+		getAttrs(["show_dice"], function(values) {
+            let show_dice = parseInt(values["show_dice"]) || 0;
+            if (show_dice == 0) show_dice = 1;
+            else show_dice = 0;
+        setAttrs({
+            "show_dice": show_dice			
+            });
         });
     });
 
