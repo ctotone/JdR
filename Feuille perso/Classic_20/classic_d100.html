@@ -18,6 +18,7 @@
             <button type="action" name="act_1" class="button_go" title="Informations système de jeu...">?</button>
         </div>
     <input type="hidden" name="attr_gm" value="">
+    <input type="hidden" name="attr_destin" value="0">
     <input type="hidden" name="attr_total_point_talent" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">    
     <input type="hidden" class="voir_dice" name="attr_show_dice" value="0">
@@ -222,79 +223,97 @@
                 <!-- CARRURE -->
                 <div class="wrapper_talent" style="margin-top: 30px;">
                     <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_endurance" title="info" data-i18n-title="attr-endurance_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-endurance" title="info" data-i18n-title="attr-endurance_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_force_brute" title="info" data-i18n-title="attr-force_brute_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-force-brute" title="info" data-i18n-title="attr-force_brute_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_robustesse" title="info" data-i18n-title="attr-robustesse_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button></div>
+                    <div class="titre_talent_3">
+                        <button type="action" class="button_talent" name="act_roll-robustesse" title="info" data-i18n-title="attr-robustesse_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
                 </div>
                 <!-- AGILLITÉ -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_agilite_corporelle" title="info" data-i18n-title="attr-agilite_corporelle_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-agi-corpo" title="info" data-i18n-title="attr-agilite_corporelle_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_precision" title="info" data-i18n-title="attr-precision_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-precision">Précision</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-precision" title="info" data-i18n-title="attr-precision_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-precision">Précision</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_reflexe" title="info" data-i18n-title="attr-reflexe_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button></div>
+                    <div class="titre_talent_3">                        
+                        <button type="action" class="button_talent" name="act_roll-reflexe" title="info" data-i18n-title="attr-reflexe_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
                 </div> 
                 <!-- PERCEPTION -->
                 <div class="wrapper_talent" style="margin-top: 25px;">
                     <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_vigilance" title="info" data-i18n-title="attr-vigilance_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button></div>
+                    <div class="titre_talent_3">
+                        <button type="action" class="button_talent" name="act_roll-vigilance" title="info" data-i18n-title="attr-vigilance_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
                 </div>
                 <!-- MENTAL -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_decision" title="info" data-i18n-title="attr-decision_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-decision">Décision</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-decision" title="info" data-i18n-title="attr-decision_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-decision">Décision</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_determination" title="info" data-i18n-title="attr-determination_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-determination">Détermination</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-determination" title="info" data-i18n-title="attr-determination_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-determination">Détermination</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button></div>
+                    <div class="titre_talent_3">
+                        <button type="action" class="button_talent" name="act_roll-equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
                 </div>
                 <!-- INTELLECT -->
                 <div class="wrapper_talent" style="margin-top: 25px;">
                         <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_creativite" title="info" data-i18n-title="attr-creativite_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-creativite" title="info" data-i18n-title="attr-creativite_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_erudition" title="info" data-i18n-title="attr-erudition_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-erudition" title="info" data-i18n-title="attr-erudition_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_logique" title="info" data-i18n-title="attr-logique_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-logique">Logique</span></button></div>
+                    <div class="titre_talent_3">
+                        <button type="action" class="button_talent" name="act_roll-logique" title="info" data-i18n-title="attr-logique_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-logique">Logique</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
                 </div>
                 <!-- CHARISME -->
                 <div class="wrapper_talent" style="margin-top: 15px;">
                     <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
-                    <div class="titre_talent_1"><button type="roll" class="button_talent" name="roll_aura" title="info" data-i18n-title="attr-aura_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-aura">Aura</span></button></div>
+                    <div class="titre_talent_1">
+                        <button type="action" class="button_talent" name="act_roll-aura" title="info" data-i18n-title="attr-aura_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-aura">Aura</span></button>
+                    </div>
                     <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
-                    <div class="titre_talent_2"><button type="roll" class="button_talent" name="roll_communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button></div>
+                    <div class="titre_talent_2">
+                        <button type="action" class="button_talent" name="act_roll-communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button>
+                    </div>
                     <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
-                    <div class="titre_talent_3"><button type="roll" class="button_talent" name="roll_persuasion" title="info" data-i18n-title="attr-persuasion_info"
-                        value="@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button></div>
+                    <div class="titre_talent_3">
+                        <button type="action" class="button_talent" name="act_roll-persuasion" title="info" data-i18n-title="attr-persuasion_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button>
+                    </div>
                     <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
                 </div>
             </div>
@@ -1176,181 +1195,181 @@
                     <div class="sheet-rolltemplate-itd-center  sheet-rolltemplate-itd-titre-roll">{{title}} ({{seuil}})</div>
                 </div>
             </div>
-                {{#rollGreater() result 95}}
-                    {{#rollTotal() result 100}}
+                {{#rollGreater() computed::result 95}}
+                    {{#rollTotal() computed::result 100}}
                     <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-tragique">
-                {{result}}
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-tragique">
                     Echec critique<br>tragique
-                    {{/rollTotal() result 100}}
-                    {{#rollTotal() result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                    {{/rollTotal() computed::result 100}}
+                    {{#rollTotal() computed::result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                     Echec critique
-                    {{/rollTotal() result 99}}
-                    {{#^rollTotal() result 99}}
-                        {{#^rollTotal() result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
-                {{result}}
+                    {{/rollTotal() computed::result 99}}
+                    {{#^rollTotal() computed::result 99}}
+                        {{#^rollTotal() computed::result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
                             Echec automatique
-                        {{/^rollTotal() result 100}}
-                    {{/^rollTotal() result 99}}
-                {{/rollGreater() result 95}}
-                {{#^rollGreater() result 95}}
-                    {{#rollGreater() result seuil}}
-                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/^rollTotal() computed::result 100}}
+                    {{/^rollTotal() computed::result 99}}
+                {{/rollGreater() computed::result 95}}
+                {{#^rollGreater() computed::result 95}}
+                    {{#rollGreater() computed::result seuil}}
+                        {{#rollTotal() computed::result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 11}}
-                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 11}}
+                        {{#rollTotal() computed::result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 22}}
-                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 22}}
+                        {{#rollTotal() computed::result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 33}}
-                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 33}}
+                        {{#rollTotal() computed::result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 44}}
-                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 44}}
+                        {{#rollTotal() computed::result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 55}}
-                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 55}}
+                        {{#rollTotal() computed::result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 66}}
-                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 66}}
+                        {{#rollTotal() computed::result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 77}}
-                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 77}}
+                        {{#rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
-                        {{/rollTotal() result 88}}
+                        {{/rollTotal() computed::result 88}}
 
-                        {{#^rollTotal() result 11}}
-                            {{#^rollTotal() result 22}}
-                                {{#^rollTotal() result 33}}
-                                    {{#^rollTotal() result 44}}
-                                        {{#^rollTotal() result 55}}
-                                            {{#^rollTotal() result 66}}
-                                                {{#^rollTotal() result 77}}
-                                                    {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
-                {{result}}
+                        {{#^rollTotal() computed::result 11}}
+                            {{#^rollTotal() computed::result 22}}
+                                {{#^rollTotal() computed::result 33}}
+                                    {{#^rollTotal() computed::result 44}}
+                                        {{#^rollTotal() computed::result 55}}
+                                            {{#^rollTotal() computed::result 66}}
+                                                {{#^rollTotal() computed::result 77}}
+                                                    {{#^rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
                                                     Echec
-                                                    {{/^rollTotal() result 88}} 
-                                                {{/^rollTotal() result 77}}                                    
-                                            {{/^rollTotal() result 66}}
-                                        {{/^rollTotal() result 55}}
-                                    {{/^rollTotal() result 44}}
-                                {{/^rollTotal() result 33}}
-                            {{/^rollTotal() result 22}}
-                        {{/^rollTotal() result 11}}
-                    {{/rollGreater() result seuil}}
+                                                    {{/^rollTotal() computed::result 88}} 
+                                                {{/^rollTotal() computed::result 77}}                                    
+                                            {{/^rollTotal() computed::result 66}}
+                                        {{/^rollTotal() computed::result 55}}
+                                    {{/^rollTotal() computed::result 44}}
+                                {{/^rollTotal() computed::result 33}}
+                            {{/^rollTotal() computed::result 22}}
+                        {{/^rollTotal() computed::result 11}}
+                    {{/rollGreater() computed::result seuil}}
 
-                    {{#^rollGreater() result seuil}}
-                        {{#rollTotal() result 1}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-exceptionnelle">
-                {{result}}
+                    {{#^rollGreater() computed::result seuil}}
+                        {{#rollTotal() computed::result 1}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-exceptionnelle">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-exceptionnelle">
                         Réussite critique exceptionnelle
-                        {{/rollTotal() result 1}}
-                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 1}}
+                        {{#rollTotal() computed::result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 11}}
-                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 11}}
+                        {{#rollTotal() computed::result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 22}}
-                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 22}}
+                        {{#rollTotal() computed::result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 33}}
-                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 33}}
+                        {{#rollTotal() computed::result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 44}}
-                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 44}}
+                        {{#rollTotal() computed::result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 55}}
-                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 55}}
+                        {{#rollTotal() computed::result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 66}}
-                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 66}}
+                        {{#rollTotal() computed::result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 77}}
-                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 77}}
+                        {{#rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 88}}
-                        {{#^rollTotal() result 1}}
-                            {{#^rollTotal() result 11}}
-                                {{#^rollTotal() result 22}}
-                                    {{#^rollTotal() result 33}}
-                                        {{#^rollTotal() result 44}}
-                                            {{#^rollTotal() result 55}}
-                                                {{#^rollTotal() result 66}}
-                                                    {{#^rollTotal() result 77}}
-                                                        {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite">
-                {{result}}
+                        {{/rollTotal() computed::result 88}}
+                        {{#^rollTotal() computed::result 1}}
+                            {{#^rollTotal() computed::result 11}}
+                                {{#^rollTotal() computed::result 22}}
+                                    {{#^rollTotal() computed::result 33}}
+                                        {{#^rollTotal() computed::result 44}}
+                                            {{#^rollTotal() computed::result 55}}
+                                                {{#^rollTotal() computed::result 66}}
+                                                    {{#^rollTotal() computed::result 77}}
+                                                        {{#^rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite">
                                                         Reussite
-                                                        {{/^rollTotal() result 88}} 
-                                                    {{/^rollTotal() result 77}}                                    
-                                                {{/^rollTotal() result 66}}
-                                            {{/^rollTotal() result 55}}
-                                        {{/^rollTotal() result 44}}
-                                    {{/^rollTotal() result 33}}
-                                {{/^rollTotal() result 22}}
-                            {{/^rollTotal() result 11}}
-                        {{/^rollTotal() result 1}}
-                    {{/^rollGreater() result seuil}}
-                {{/^rollGreater() result 95}}
+                                                        {{/^rollTotal() computed::result 88}} 
+                                                    {{/^rollTotal() computed::result 77}}                                    
+                                                {{/^rollTotal() computed::result 66}}
+                                            {{/^rollTotal() computed::result 55}}
+                                        {{/^rollTotal() computed::result 44}}
+                                    {{/^rollTotal() computed::result 33}}
+                                {{/^rollTotal() computed::result 22}}
+                            {{/^rollTotal() computed::result 11}}
+                        {{/^rollTotal() computed::result 1}}
+                    {{/^rollGreater() computed::result seuil}}
+                {{/^rollGreater() computed::result 95}}
             </div>
         </div>
     {{/jet}}
@@ -1362,135 +1381,135 @@
                     <div class="sheet-rolltemplate-itd-center  sheet-rolltemplate-itd-titre-roll">{{title}} ({{seuil}})</div>
                 </div>
             </div>
-                {{#rollGreater() result 95}}
-                    {{#rollTotal() result 100}}
+                {{#rollGreater() computed::result 95}}
+                    {{#rollTotal() computed::result 100}}
                     <div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-tragique">
-                {{result}}
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-tragique">
                     Echec critique<br>tragique
                     <br>
                     <hr>
                     {{consequence}}
-                    {{/rollTotal() result 100}}
-                    {{#rollTotal() result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                    {{/rollTotal() computed::result 100}}
+                    {{#rollTotal() computed::result 99}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                     Echec critique<br>avec une marge de {{computed::roll}}
                     <br>
                     <hr>
                     {{consequence}}
-                    {{/rollTotal() result 99}}
-                    {{#^rollTotal() result 99}}
-                        {{#^rollTotal() result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
-                {{result}}
+                    {{/rollTotal() computed::result 99}}
+                    {{#^rollTotal() computed::result 99}}
+                        {{#^rollTotal() computed::result 100}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
                             Echec automatique<br>avec une marge de {{computed::roll}}
-                        {{/^rollTotal() result 100}}
-                    {{/^rollTotal() result 99}}
-                {{/rollGreater() result 95}}
-                {{#^rollGreater() result 95}}
-                    {{#rollGreater() result seuil}}
-                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/^rollTotal() computed::result 100}}
+                    {{/^rollTotal() computed::result 99}}
+                {{/rollGreater() computed::result 95}}
+                {{#^rollGreater() computed::result 95}}
+                    {{#rollGreater() computed::result seuil}}
+                        {{#rollTotal() computed::result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 11}}
-                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 11}}
+                        {{#rollTotal() computed::result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 22}}
-                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 22}}
+                        {{#rollTotal() computed::result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 33}}
-                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 33}}
+                        {{#rollTotal() computed::result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 44}}
-                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 44}}
+                        {{#rollTotal() computed::result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 55}}
-                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 55}}
+                        {{#rollTotal() computed::result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 66}}
-                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 66}}
+                        {{#rollTotal() computed::result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique<br>avec une marge de {{computed::roll}}
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 77}}
-                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 77}}
+                        {{#rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec-critique">
                         Echec critique
                         <br>
                         <hr>
                         {{consequence}}
-                        {{/rollTotal() result 88}}
+                        {{/rollTotal() computed::result 88}}
 
-                        {{#^rollTotal() result 11}}
-                            {{#^rollTotal() result 22}}
-                                {{#^rollTotal() result 33}}
-                                    {{#^rollTotal() result 44}}
-                                        {{#^rollTotal() result 55}}
-                                            {{#^rollTotal() result 66}}
-                                                {{#^rollTotal() result 77}}
-                                                    {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
-                {{result}}
+                        {{#^rollTotal() computed::result 11}}
+                            {{#^rollTotal() computed::result 22}}
+                                {{#^rollTotal() computed::result 33}}
+                                    {{#^rollTotal() computed::result 44}}
+                                        {{#^rollTotal() computed::result 55}}
+                                            {{#^rollTotal() computed::result 66}}
+                                                {{#^rollTotal() computed::result 77}}
+                                                    {{#^rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-echec">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-echec">
                                                     Echec<br>avec une marge de {{computed::roll}}
-                                                    {{/^rollTotal() result 88}} 
-                                                {{/^rollTotal() result 77}}                                    
-                                            {{/^rollTotal() result 66}}
-                                        {{/^rollTotal() result 55}}
-                                    {{/^rollTotal() result 44}}
-                                {{/^rollTotal() result 33}}
-                            {{/^rollTotal() result 22}}
-                        {{/^rollTotal() result 11}}
-                    {{/rollGreater() result seuil}}
+                                                    {{/^rollTotal() computed::result 88}} 
+                                                {{/^rollTotal() computed::result 77}}                                    
+                                            {{/^rollTotal() computed::result 66}}
+                                        {{/^rollTotal() computed::result 55}}
+                                    {{/^rollTotal() computed::result 44}}
+                                {{/^rollTotal() computed::result 33}}
+                            {{/^rollTotal() computed::result 22}}
+                        {{/^rollTotal() computed::result 11}}
+                    {{/rollGreater() computed::result seuil}}
 
-                    {{#^rollGreater() result seuil}}
-                        {{#rollTotal() result 1}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-exceptionnelle">
-                {{result}}
+                    {{#^rollGreater() computed::result seuil}}
+                        {{#rollTotal() computed::result 1}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-exceptionnelle">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-exceptionnelle">
                         Réussite critique exceptionnelle<br>avec une marge de +{{computed::roll}}
@@ -1507,9 +1526,9 @@
                             {{arme_maxi_3}}
                             <br>
                             {{/show_degat}}
-                        {{/rollTotal() result 1}}
-                        {{#rollTotal() result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 1}}
+                        {{#rollTotal() computed::result 11}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1526,9 +1545,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 11}}
-                        {{#rollTotal() result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 11}}
+                        {{#rollTotal() computed::result 22}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1545,9 +1564,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 22}}
-                        {{#rollTotal() result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 22}}
+                        {{#rollTotal() computed::result 33}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1564,9 +1583,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 33}}
-                        {{#rollTotal() result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 33}}
+                        {{#rollTotal() computed::result 44}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1583,9 +1602,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 44}}
-                        {{#rollTotal() result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 44}}
+                        {{#rollTotal() computed::result 55}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1602,9 +1621,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 55}}
-                        {{#rollTotal() result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 55}}
+                        {{#rollTotal() computed::result 66}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1621,9 +1640,9 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 66}}
-                        {{#rollTotal() result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 66}}
+                        {{#rollTotal() computed::result 77}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique<br>avec une marge de +{{computed::roll}}
@@ -1640,23 +1659,23 @@
                             {{arme_maxi_3}}
                             <br>
                         {{/show_degat}}
-                        {{/rollTotal() result 77}}
-                        {{#rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
-                {{result}}
+                        {{/rollTotal() computed::result 77}}
+                        {{#rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite-critique">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite-critique">
                         Réussite critique
-                        {{/rollTotal() result 88}}
-                        {{#^rollTotal() result 1}}
-                            {{#^rollTotal() result 11}}
-                                {{#^rollTotal() result 22}}
-                                    {{#^rollTotal() result 33}}
-                                        {{#^rollTotal() result 44}}
-                                            {{#^rollTotal() result 55}}
-                                                {{#^rollTotal() result 66}}
-                                                    {{#^rollTotal() result 77}}
-                                                        {{#^rollTotal() result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite">
-                {{result}}
+                        {{/rollTotal() computed::result 88}}
+                        {{#^rollTotal() computed::result 1}}
+                            {{#^rollTotal() computed::result 11}}
+                                {{#^rollTotal() computed::result 22}}
+                                    {{#^rollTotal() computed::result 33}}
+                                        {{#^rollTotal() computed::result 44}}
+                                            {{#^rollTotal() computed::result 55}}
+                                                {{#^rollTotal() computed::result 66}}
+                                                    {{#^rollTotal() computed::result 77}}
+                                                        {{#^rollTotal() computed::result 88}}<div class="sheet-rolltemplate-itd-center sheet-rolltemplate-itd-subheader-reussite">
+                {{computed::result}}
             </div>
             <div class="sheet-rolltemplate-itd sheet-template-itd-texte-reussite">
                                                         Reussite<br>avec une marge de +{{computed::roll}}
@@ -1673,17 +1692,17 @@
                                                             {{arme3}}
                                                             <br>
                                                         {{/show_degat}}
-                                                        {{/^rollTotal() result 88}} 
-                                                    {{/^rollTotal() result 77}}                                    
-                                                {{/^rollTotal() result 66}}
-                                            {{/^rollTotal() result 55}}
-                                        {{/^rollTotal() result 44}}
-                                    {{/^rollTotal() result 33}}
-                                {{/^rollTotal() result 22}}
-                            {{/^rollTotal() result 11}}
-                        {{/^rollTotal() result 1}}
-                    {{/^rollGreater() result seuil}}
-                {{/^rollGreater() result 95}}
+                                                        {{/^rollTotal() computed::result 88}} 
+                                                    {{/^rollTotal() computed::result 77}}                                    
+                                                {{/^rollTotal() computed::result 66}}
+                                            {{/^rollTotal() computed::result 55}}
+                                        {{/^rollTotal() computed::result 44}}
+                                    {{/^rollTotal() computed::result 33}}
+                                {{/^rollTotal() computed::result 22}}
+                            {{/^rollTotal() computed::result 11}}
+                        {{/^rollTotal() computed::result 1}}
+                    {{/^rollGreater() computed::result seuil}}
+                {{/^rollGreater() computed::result 95}}
             </div>
     {{/combat}}
 </rolltemplate>
@@ -1861,9 +1880,9 @@
         getAttrs(["blessure", "stress"], function(values) {
             let blessure = parseInt(values["blessure"]) || 0;
             let stress = parseInt(values["stress"]) || 0;
-            let malus_blessure = blessure*5;
-            let malus_stress = stress*5;
-            let total_malus = (blessure + stress)*5;
+            let malus_blessure = blessure*2;
+            let malus_stress = stress*2;
+            let total_malus = (blessure + stress)*2;
 
             setAttrs({
                 "malus_blessure": malus_blessure,
@@ -1886,30 +1905,877 @@
             });
         });
     });
-	
+
+    on('clicked:roll-endurance', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                // Succès naturel, pas de modification
+                destin = 0;
+            } else {
+                // Échec naturel → tentative de correction
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    // Succès grâce au destin → afficher la valeur de compétence comme jet
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    // Échec malgré la tentative → destin continue à s'accumuler
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-force-brute', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-robustesse', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-agi-corpo', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-precision', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-reflexe', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-acuite_sensorielle', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-sixieme_sens', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-vigilance', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-decision', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-determination', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-equilibre_mental', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-creativite', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-erudition', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-logique', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-aura', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-communication_expressive', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-persuasion', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+    
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                destin = 0;
+            } else {
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (margeCorrigee >= 0) {
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+    	
 	on('clicked:roll-cac', async (event) => {
-		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}"); 
-		const {seuil,result} = roll.results;
-		const computeObj = {};
-		computeObj.roll = Math.floor((seuil.result - result.result)/10);
-	finishRoll(roll.rollId,computeObj);
-	})
+        const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}");
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Jet d’échec → tentative avec destin
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                marge = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (marge >= 0) {
+                    // Réussite grâce au destin : afficher le seuil comme résultat final
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
 	
 	on('clicked:roll-distance', async (event) => {
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
-		const {seuil,result} = roll.results;
-		const computeObj = {};
-		computeObj.roll = Math.floor((seuil.result - result.result)/10);
-	finishRoll(roll.rollId,computeObj);
-	})
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Jet d’échec → tentative avec destin
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                marge = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (marge >= 0) {
+                    // Réussite grâce au destin : afficher le seuil comme résultat final
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
 	
 	on('clicked:roll-verbal', async (event) => {
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
-		const {seuil,result} = roll.results;
-		const computeObj = {};
-		computeObj.roll = Math.floor((seuil.result - result.result)/10);
-	finishRoll(roll.rollId,computeObj);
-	})
+    
+        const { seuil, result } = roll.results;
+        let destin = 0;
+    
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+    
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+    
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Jet d’échec → tentative avec destin
+                if (result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                }
+    
+                marge = Math.floor((seuil.result - jetCorrige) / 10);
+    
+                if (marge >= 0) {
+                    // Réussite grâce au destin : afficher le seuil comme résultat final
+                    jetCorrige = seuil.result;
+                    destin = 0;
+                } else {
+                    destin += 10;
+                }
+            }
+    
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+    
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
 </script>
 
 <!-- MAJ equipement -->
