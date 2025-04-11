@@ -1872,7 +1872,7 @@
     
     on("sheet:opened", function(eventInfo){
         setAttrs({
-            rollmodifier: "?{" + getTranslationByKey("Modificateur") + "|+0|+10|+20|+30|+40|+50|-10|-20|-30|-40|-50}",
+            rollmodifier: "?{Modificateur|+0|+10|+20|+30|+40|+50|-10|-20|-30|-40|-50}",
         });
     });
 
@@ -1907,7 +1907,7 @@
     });
 
     on('clicked:roll-endurance', async (event) => {
-		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");
     
         const { seuil, result } = roll.results;
         let destin = 0;
@@ -1921,22 +1921,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
-                // Succès naturel, pas de modification
+                // Succès naturel
                 destin = 0;
             } else {
-                // Échec naturel → tentative de correction
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    // Succès grâce au destin → afficher la valeur de compétence comme jet
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
-                    // Échec malgré la tentative → destin continue à s'accumuler
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -1966,18 +1968,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2007,18 +2015,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2048,18 +2062,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2089,18 +2109,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2130,18 +2156,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2171,18 +2203,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2212,18 +2250,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2253,18 +2297,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2294,18 +2344,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2335,18 +2391,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2376,18 +2438,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2417,18 +2485,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2458,18 +2532,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2499,18 +2579,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2540,18 +2626,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2581,18 +2673,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2622,18 +2720,24 @@
             let margeCorrigee = margeNaturelle;
     
             if (margeNaturelle >= 0) {
+                // Succès naturel
                 destin = 0;
             } else {
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+    
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
                     jetCorrige = Math.max(10, result.result - destin);
-                }
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
     
-                margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (margeCorrigee >= 0) {
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
                     destin += 10;
                 }
             }
@@ -2653,39 +2757,43 @@
     
         const { seuil, result } = roll.results;
         let destin = 0;
-    
+
         getAttrs(["destin"], function(values) {
             destin = parseInt(values["destin"]) || 0;
-    
+
             const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
             let jetCorrige = result.result;
             let marge = margeNaturelle;
-    
+
             if (margeNaturelle >= 0) {
                 // Succès naturel : on garde le jet tel quel
                 destin = 0;
             } else {
-                // Jet d’échec → tentative avec destin
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
                     jetCorrige = Math.max(10, result.result - destin);
-                }
-    
-                marge = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (marge >= 0) {
-                    // Réussite grâce au destin : afficher le seuil comme résultat final
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas
                     destin += 10;
                 }
             }
-    
+
             const computeObj = {
                 result: jetCorrige,
                 roll: marge
             };
-    
+
             setAttrs({ "destin": destin });
             finishRoll(roll.rollId, computeObj);
         });
@@ -2696,39 +2804,43 @@
     
         const { seuil, result } = roll.results;
         let destin = 0;
-    
+
         getAttrs(["destin"], function(values) {
             destin = parseInt(values["destin"]) || 0;
-    
+
             const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
             let jetCorrige = result.result;
             let marge = margeNaturelle;
-    
+
             if (margeNaturelle >= 0) {
                 // Succès naturel : on garde le jet tel quel
                 destin = 0;
             } else {
-                // Jet d’échec → tentative avec destin
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
                     jetCorrige = Math.max(10, result.result - destin);
-                }
-    
-                marge = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (marge >= 0) {
-                    // Réussite grâce au destin : afficher le seuil comme résultat final
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas
                     destin += 10;
                 }
             }
-    
+
             const computeObj = {
                 result: jetCorrige,
                 roll: marge
             };
-    
+
             setAttrs({ "destin": destin });
             finishRoll(roll.rollId, computeObj);
         });
@@ -2739,39 +2851,43 @@
     
         const { seuil, result } = roll.results;
         let destin = 0;
-    
+
         getAttrs(["destin"], function(values) {
             destin = parseInt(values["destin"]) || 0;
-    
+
             const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
             let jetCorrige = result.result;
             let marge = margeNaturelle;
-    
+
             if (margeNaturelle >= 0) {
                 // Succès naturel : on garde le jet tel quel
                 destin = 0;
             } else {
-                // Jet d’échec → tentative avec destin
-                if (result.result >= 10) {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
                     jetCorrige = Math.max(10, result.result - destin);
-                }
-    
-                marge = Math.floor((seuil.result - jetCorrige) / 10);
-    
-                if (marge >= 0) {
-                    // Réussite grâce au destin : afficher le seuil comme résultat final
-                    jetCorrige = seuil.result;
-                    destin = 0;
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
                 } else {
+                    // Le destin ne s’active pas
                     destin += 10;
                 }
             }
-    
+
             const computeObj = {
                 result: jetCorrige,
                 roll: marge
             };
-    
+
             setAttrs({ "destin": destin });
             finishRoll(roll.rollId, computeObj);
         });
