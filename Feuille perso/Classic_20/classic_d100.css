@@ -241,7 +241,9 @@ div.feuille,
 div.systeme,
 div.admin,
 div.jet_normal,
-div.jet_cache {
+div.jet_cache,
+div.dice_roll20,
+div.dice_physique {
   display: none;
 }
 
@@ -249,7 +251,10 @@ div.jet_cache {
 .charsheet .choix_page[value="1"] ~ div.systeme,
 .charsheet .choix_page[value="2"] ~ div.admin,
 .charsheet .type_jet[value="0"] ~ div.jet_normal,
-.charsheet .type_jet[value="1"] ~ div.jet_cache {
+.charsheet .type_jet[value="1"] ~ div.jet_cache,
+.charsheet .type_roll[value="0"] ~ div.dice_roll20,
+.charsheet .type_roll[value="1"] ~ div.dice_physique
+ {
   display: block;
 }
 
@@ -588,7 +593,7 @@ span.picto {
   font-size: 20px;
   width: 100%;
   height: 100%;
-  margin-top: 15%;
+  margin-top: 8%;
 }
 
 .itd-input-basic-info {
@@ -597,7 +602,8 @@ span.picto {
   vertical-align: middle;
 }
 
-.input-basic-info {
+.input-basic-info,
+.input-basic-info-symbiose {
   font-family: 'Contrail One', sans-serif;
   font-size: 20px;
   width: 100%;
@@ -609,6 +615,10 @@ span.picto {
   resize: none;
   display: inline-block;
   vertical-align: middle;
+}
+
+.input-basic-info-symbiose {
+  width: 100%;
 }
 
 .itd-label-basic-info {

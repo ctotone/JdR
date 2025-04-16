@@ -19,6 +19,7 @@
         </div>
     <input type="hidden" name="attr_gm" value="">
     <input type="hidden" name="attr_destin" value="0">
+    <input type="hidden" name="attr_type_roll" value="0">
     <input type="hidden" name="attr_total_point_talent" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">    
     <input type="hidden" class="voir_dice" name="attr_show_dice" value="0">
@@ -63,22 +64,28 @@
             <div class="itd-logo-table-col">
                 <div class="itd-basic-info">
                     <div class="itd-label-basic-info-col itd-label-basic-info">
-                        <span data-i18n="name">Nom</span>:
+                        <span data-i18n="name">Nom</span>
                     </div>
                     <div class="input-basic-info-col itd-input-basic-info">
                         <input name="attr_character_name" type="text" spellcheck="false" class="input-basic-info" />
                     </div>
                     <div class="itd-label-basic-info-col itd-label-basic-info">
-                        <span data-i18n="origin">Age</span>:
+                        <span data-i18n="origin">Age</span>
                     </div>
                     <div class="input-basic-info-col itd-input-basic-info">
                         <input name="attr_age" type="text" spellcheck="false" class="input-basic-info" />
                     </div>
                     <div class="itd-label-basic-info-col itd-label-basic-info">
-                        <span data-i18n="training">Profession</span>:
+                        <span data-i18n="training">Profession</span>
                     </div>
                     <div class="input-basic-info-col itd-input-basic-info">
                         <input name="attr_profession" type="text" spellcheck="false" class="input-basic-info" />
+                    </div>
+                    <div class="itd-label-basic-info-col itd-label-basic-info" style="margin-top: 17px;">
+                        <span data-i18n="symbiose" style="color: #5e005f;">Symbiose</span>
+                    </div>
+                    <div class="input-basic-info-col itd-input-basic-info" style="margin-top: 10px;">
+                        <input name="attr_symbiose" type="text" spellcheck="false" class="input-basic-info-symbiose" />
                     </div>
                 </div>
             </div>
@@ -128,6 +135,13 @@
                     value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></button>
                 </div>
             </div>
+            <!-- <div class="itd-table-6col">
+                <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_symbiose" min="0" max="99" />
+                <div class="itd-basic-attribute-esprit">
+                    <button type="roll" class="button_competence" name="roll_CHARISME" title="info" data-i18n-title="attr-CHARISME_info"
+                    value="@{gm} &{template:itd} {{jet=oui}} {{title=^{attr-CHARISME}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{seuil=[[@{CHARISME}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"><span class="bleu" data-i18n="symbiose">SYMBIOSE</span></button>
+                </div>
+            </div> -->
         </div>
 
         <!-- Blessure / Stress -->
@@ -220,101 +234,202 @@
         <!-- TALENTS -->
         <div class="show_talent">
             <div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
-                <!-- CARRURE -->
-                <div class="wrapper_talent" style="margin-top: 30px;">
-                    <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-endurance" title="info" data-i18n-title="attr-endurance_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button>
+            <input type="hidden" name="attr_type_roll" class="type_roll" value="0">
+                <div class="dice_roll20">
+                    <!-- CARRURE -->
+                    <div class="wrapper_talent" style="margin-top: 30px;">
+                        <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-endurance" title="info" data-i18n-title="attr-endurance_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-force-brute" title="info" data-i18n-title="attr-force_brute_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-robustesse" title="info" data-i18n-title="attr-robustesse_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-force-brute" title="info" data-i18n-title="attr-force_brute_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button>
+                    <!-- AGILLITÉ -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-agi-corpo" title="info" data-i18n-title="attr-agilite_corporelle_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-precision" title="info" data-i18n-title="attr-precision_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-precision">Précision</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
+                        <div class="titre_talent_3">                        
+                            <button type="action" class="button_talent" name="act_roll-reflexe" title="info" data-i18n-title="attr-reflexe_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
+                    </div> 
+                    <!-- PERCEPTION -->
+                    <div class="wrapper_talent" style="margin-top: 25px;">
+                        <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-vigilance" title="info" data-i18n-title="attr-vigilance_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
-                    <div class="titre_talent_3">
-                        <button type="action" class="button_talent" name="act_roll-robustesse" title="info" data-i18n-title="attr-robustesse_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button>
+                    <!-- MENTAL -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-decision" title="info" data-i18n-title="attr-decision_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-decision">Décision</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-determination" title="info" data-i18n-title="attr-determination_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-determination">Détermination</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
+                    <!-- INTELLECT -->
+                    <div class="wrapper_talent" style="margin-top: 25px;">
+                            <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-creativite" title="info" data-i18n-title="attr-creativite_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-erudition" title="info" data-i18n-title="attr-erudition_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-logique" title="info" data-i18n-title="attr-logique_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-logique">Logique</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
+                    </div>
+                    <!-- CHARISME -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-aura" title="info" data-i18n-title="attr-aura_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-aura">Aura</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-persuasion" title="info" data-i18n-title="attr-persuasion_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
+                    </div>
                 </div>
-                <!-- AGILLITÉ -->
-                <div class="wrapper_talent" style="margin-top: 15px;">
-                    <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-agi-corpo" title="info" data-i18n-title="attr-agilite_corporelle_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button>
+                <div class="dice_physique">
+                    <!-- CARRURE -->
+                    <div class="wrapper_talent" style="margin-top: 30px;">
+                        <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-CARRURE">CARRURE</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-endurance_phy" title="info" data-i18n-title="attr-endurance_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-endurance">Endurance</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_endurance" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-force-brute_phy" title="info" data-i18n-title="attr-force_brute_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-force_brute">Force brute</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_force_brute" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-robustesse_phy" title="info" data-i18n-title="attr-robustesse_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-robustesse">Robustesse</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_robustesse" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-precision" title="info" data-i18n-title="attr-precision_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-precision">Précision</span></button>
+                    <!-- AGILLITÉ -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="rouge" data-i18n="attr-AGILITE">AGILITÉ</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-agi-corpo_phy" title="info" data-i18n-title="attr-agilite_corporelle_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-agilite_corporelle">Agilite corporelle</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_agilite_corporelle" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-precision_phy" title="info" data-i18n-title="attr-precision_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-precision">Précision</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
+                        <div class="titre_talent_3">                        
+                            <button type="action" class="button_talent" name="act_roll-reflexe_phy" title="info" data-i18n-title="attr-reflexe_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
+                    </div> 
+                    <!-- PERCEPTION -->
+                    <div class="wrapper_talent" style="margin-top: 25px;">
+                        <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-acuite_sensorielle_phy" title="info" data-i18n-title="attr-acuite_sensorielle_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-sixieme_sens_phy" title="info" data-i18n-title="attr-sixieme_sens_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-vigilance_phy" title="info" data-i18n-title="attr-vigilance_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_precision" min="0" max="30"></div>
-                    <div class="titre_talent_3">                        
-                        <button type="action" class="button_talent" name="act_roll-reflexe" title="info" data-i18n-title="attr-reflexe_info" style="width: auto;margin-top: 0px;"><span class="rouge" data-i18n="attr-reflexe">Réflexes</span></button>
+                    <!-- MENTAL -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-decision_phy" title="info" data-i18n-title="attr-decision_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-decision">Décision</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-determination_phy" title="info" data-i18n-title="attr-determination_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-determination">Détermination</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-equilibre_mental_phy" title="info" data-i18n-title="attr-equilibre_mental_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_reflexe" min="0" max="30"></div>
-                </div> 
-                <!-- PERCEPTION -->
-                <div class="wrapper_talent" style="margin-top: 25px;">
-                    <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-PERCEPTION">PERCEPTION</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-acuite_sensorielle" title="info" data-i18n-title="attr-acuite_sensorielle_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-acuite_sensorielle">Acuité sensorielle</span></button>
+                    <!-- INTELLECT -->
+                    <div class="wrapper_talent" style="margin-top: 25px;">
+                            <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-creativite_phy" title="info" data-i18n-title="attr-creativite_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-erudition_phy" title="info" data-i18n-title="attr-erudition_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-logique_phy" title="info" data-i18n-title="attr-logique_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-logique">Logique</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_acuite_sensorielle" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-sixieme_sens" title="info" data-i18n-title="attr-sixieme_sens_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-sixieme_sens">Sixième sens</span></button>
+                    <!-- CHARISME -->
+                    <div class="wrapper_talent" style="margin-top: 15px;">
+                        <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
+                        <div class="titre_talent_1">
+                            <button type="action" class="button_talent" name="act_roll-aura_phy" title="info" data-i18n-title="attr-aura_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-aura">Aura</span></button>
+                        </div>
+                        <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
+                        <div class="titre_talent_2">
+                            <button type="action" class="button_talent" name="act_roll-communication_expressive_phy" title="info" data-i18n-title="attr-communication_expressive_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button>
+                        </div>
+                        <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
+                        <div class="titre_talent_3">
+                            <button type="action" class="button_talent" name="act_roll-persuasion_phy" title="info" data-i18n-title="attr-persuasion_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button>
+                        </div>
+                        <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
                     </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_sixieme_sens" min="0" max="30"></div>
-                    <div class="titre_talent_3">
-                        <button type="action" class="button_talent" name="act_roll-vigilance" title="info" data-i18n-title="attr-vigilance_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-vigilance">Vigilance</span></button>
-                    </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_vigilance" min="0" max="30"></div>
-                </div>
-                <!-- MENTAL -->
-                <div class="wrapper_talent" style="margin-top: 15px;">
-                    <div class="titre_competence_liee"><span class="jaune" data-i18n="attr-MENTAL">MENTAL</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-decision" title="info" data-i18n-title="attr-decision_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-decision">Décision</span></button>
-                    </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_decision" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-determination" title="info" data-i18n-title="attr-determination_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-determination">Détermination</span></button>
-                    </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_determination" min="0" max="30"></div>
-                    <div class="titre_talent_3">
-                        <button type="action" class="button_talent" name="act_roll-equilibre_mental" title="info" data-i18n-title="attr-equilibre_mental_info" style="width: auto;margin-top: 0px;"><span class="jaune" data-i18n="attr-equilibre_mental">Équilibre Mental</span></button>
-                    </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_equilibre_mental" min="0" max="30"></div>
-                </div>
-                <!-- INTELLECT -->
-                <div class="wrapper_talent" style="margin-top: 25px;">
-                        <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-INTELLECT">INTELLECT</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-creativite" title="info" data-i18n-title="attr-creativite_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-creativite">Créativité</span></button>
-                    </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_creativite" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-erudition" title="info" data-i18n-title="attr-erudition_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-erudition">Érudition</span></button>
-                    </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_erudition" min="0" max="30"></div>
-                    <div class="titre_talent_3">
-                        <button type="action" class="button_talent" name="act_roll-logique" title="info" data-i18n-title="attr-logique_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-logique">Logique</span></button>
-                    </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_logique" min="0" max="30"></div>
-                </div>
-                <!-- CHARISME -->
-                <div class="wrapper_talent" style="margin-top: 15px;">
-                    <div class="titre_competence_liee"><span class="bleu" data-i18n="attr-CHARISME">CHARISME</span></div>
-                    <div class="titre_talent_1">
-                        <button type="action" class="button_talent" name="act_roll-aura" title="info" data-i18n-title="attr-aura_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-aura">Aura</span></button>
-                    </div>
-                    <div class="valeur_talent_1"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_aura" min="0" max="30"></div>
-                    <div class="titre_talent_2">
-                        <button type="action" class="button_talent" name="act_roll-communication_expressive" title="info" data-i18n-title="attr-communication_expressive_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-communication_expressive">Communication expressive</span></button>
-                    </div>
-                    <div class="valeur_talent_2"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_communication_expressive" min="0" max="30"></div>
-                    <div class="titre_talent_3">
-                        <button type="action" class="button_talent" name="act_roll-persuasion" title="info" data-i18n-title="attr-persuasion_info" style="width: auto;margin-top: 0px;"><span class="bleu" data-i18n="attr-persuasion">Persuasion</span></button>
-                    </div>
-                    <div class="valeur_talent_3"><input type="number" value="0" spellcheck="false" class="itd-input-basic-talent" name="attr_persuasion" min="0" max="30"></div>
                 </div>
             </div>
         </div>
@@ -331,51 +446,104 @@
         </div> 
         <!-- Section dés -->
         <div class="show_dice"  style="margin-top: 40px;margin-bottom: 15px;">
-            <div class="itd-inner">
-                <div class="wrapper_roll_dice" style="margin-top: 40px;">
-                    <div class="roll_d4">
-                        <button class="roll_d4" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D4}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d4[Jet]]]}}" title="Lancer un D4 "></button>
+            <input type="hidden" name="attr_type_roll" class="type_roll" value="0">
+            <div class="dice_roll20">
+                <div class="itd-inner">
+                    <div class="wrapper_roll_dice" style="margin-top: 40px;">
+                        <div class="roll_d4">
+                            <button class="roll_d4" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D4}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d4[Jet]]]}}" title="Lancer un D4 "></button>
+                        </div>
+                        <div class="roll_d6">
+                            <button class="roll_d6" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D6}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d6[Jet]]]}}" title="Lancer un D6"></button>
+                        </div>
+                        <div class="roll_d8">
+                            <button class="roll_d8" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D8}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d8[Jet]]]}}" title="Lancer un D8"></button>
+                        </div>
+                        <div class="roll_d10">
+                            <button class="roll_d10" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D10}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d10[Jet]]]}}"  title="Lancer un D10"></button>
+                        </div>
+                        <div class="roll_d12">
+                            <button class="roll_d12" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D12}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d12[Jet]]]}}" title="Lancer un D12"></button>
+                        </div>
+                        <div class="roll_d20">
+                            <button class="roll_d20" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D20}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d20[Jet]]]}}"  title="Lancer un D20"></button>
+                        </div>
+                        <div class="roll_d100">
+                            <button class="roll_chance" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D100}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d100[Jet]]]}}" title="Lancer un D100"></button>
+                        </div>
                     </div>
-                    <div class="roll_d6">
-                        <button class="roll_d6" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D6}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d6[Jet]]]}}" title="Lancer un D6"></button>
-                    </div>
-                    <div class="roll_d8">
-                        <button class="roll_d8" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D8}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d8[Jet]]]}}" title="Lancer un D8"></button>
-                    </div>
-                    <div class="roll_d10">
-                        <button class="roll_d10" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D10}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d10[Jet]]]}}"  title="Lancer un D10"></button>
-                    </div>
-                    <div class="roll_d12">
-                        <button class="roll_d12" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D12}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d12[Jet]]]}}" title="Lancer un D12"></button>
-                    </div>
-                    <div class="roll_d20">
-                        <button class="roll_d20" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D20}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d20[Jet]]]}}"  title="Lancer un D20"></button>
-                    </div>
-                    <div class="roll_d100">
-                        <button class="roll_chance" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D100}} {{subheader=@{character_name}}} {{nom=@{character_name}}}{{result=[[1d100[Jet]]]}}" title="Lancer un D100"></button>
+                    <div class="wrapper_roll">
+                        <div class="roll_d4">
+                            <span class="lettre">D4</span>
+                        </div>
+                        <div class="roll_d6">
+                            <span class="lettre">D6</span>
+                        </div>
+                        <div class="roll_d8">
+                            <span class="lettre">D8</span>
+                        </div>
+                        <div class="roll_d10">
+                            <span class="lettre">D10</span>
+                        </div>
+                        <div class="roll_d12">
+                            <span class="lettre">D12</span>
+                        </div>
+                        <div class="roll_d20">
+                            <span class="lettre">D20</span>
+                        </div>
+                        <div class="roll_d100">
+                            <span class="lettre">D100</span>
+                        </div>
                     </div>
                 </div>
-                <div class="wrapper_roll">
-                    <div class="roll_d4">
-                        <span class="lettre">D4</span>
+            </div>
+            <div class="dice_physique">
+                <div class="itd-inner">
+                    <div class="wrapper_roll_dice" style="margin-top: 40px;">
+                        <div class="roll_d4">
+                            <button class="roll_d4" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D4}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}" title="Lancer un D4 "></button>
+                        </div>
+                        <div class="roll_d6">
+                            <button class="roll_d6" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D6}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}" title="Lancer un D6"></button>
+                        </div>
+                        <div class="roll_d8">
+                            <button class="roll_d8" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D8}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}" title="Lancer un D8"></button>
+                        </div>
+                        <div class="roll_d10">
+                            <button class="roll_d10" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D10}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"  title="Lancer un D10"></button>
+                        </div>
+                        <div class="roll_d12">
+                            <button class="roll_d12" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D12}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}" title="Lancer un D12"></button>
+                        </div>
+                        <div class="roll_d20">
+                            <button class="roll_d20" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D20}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"  title="Lancer un D20"></button>
+                        </div>
+                        <div class="roll_d100">
+                            <button class="roll_chance" type="roll" name="roll_Lancer" value="@{gm} &{template:itd} {{roll_dice=oui}} {{token=@{ctoken}}} {{title=D100}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}" title="Lancer un D100"></button>
+                        </div>
                     </div>
-                    <div class="roll_d6">
-                        <span class="lettre">D6</span>
-                    </div>
-                    <div class="roll_d8">
-                        <span class="lettre">D8</span>
-                    </div>
-                    <div class="roll_d10">
-                        <span class="lettre">D10</span>
-                    </div>
-                    <div class="roll_d12">
-                        <span class="lettre">D12</span>
-                    </div>
-                    <div class="roll_d20">
-                        <span class="lettre">D20</span>
-                    </div>
-                    <div class="roll_d100">
-                        <span class="lettre">D100</span>
+                    <div class="wrapper_roll">
+                        <div class="roll_d4">
+                            <span class="lettre">D4</span>
+                        </div>
+                        <div class="roll_d6">
+                            <span class="lettre">D6</span>
+                        </div>
+                        <div class="roll_d8">
+                            <span class="lettre">D8</span>
+                        </div>
+                        <div class="roll_d10">
+                            <span class="lettre">D10</span>
+                        </div>
+                        <div class="roll_d12">
+                            <span class="lettre">D12</span>
+                        </div>
+                        <div class="roll_d20">
+                            <span class="lettre">D20</span>
+                        </div>
+                        <div class="roll_d100">
+                            <span class="lettre">D100</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -392,22 +560,45 @@
         <!-- STATISTIQUES DE COMBAT -->
         <div class="show_combat">
             <div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
-                <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
-                    <div class="itd-basic-talent-corps">
-                        <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                <input type="hidden" name="attr_type_roll" class="type_roll" value="0">
+                <div class="dice_roll20">
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
+                        <div class="itd-basic-talent-corps">
+                            <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-ame">
+                            <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        </div>
                     </div>
                 </div>
-                <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
-                    <div class="itd-basic-attribute-ame">
-                        <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                <div class="dice_physique">
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
+                        <div class="itd-basic-talent-corps">
+                            <button type="action" class="button_competence" name="act_roll-cac_phy" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                        </div>
                     </div>
-                </div>
-                <div class="itd-table-3col">
-                    <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
-                    <div class="itd-basic-attribute-esprit">
-                        <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-ame">
+                            <button type="action" class="button_competence" name="act_roll-distance_phy" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-3col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-verbal_phy" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        </div>
                     </div>
                 </div>
             </div>	
@@ -702,7 +893,13 @@
         <div class="go_admin">
             <button type="action" name="act_2" class="button_admin" title="Archétype...">x</button>
         </div>
-        Total points de talents :  <input type="number" value="0" spellcheck="false" name="attr_total_point_talent"/>
+        Total points de talents :  <input type="number" value="0" spellcheck="false" name="attr_total_point_talent"/><br>
+        Type de lancer : 
+        <select name="attr_type_roll">
+            <option value="0" selected="selected">Roll20</option>
+            <option value="1">Dés physiques</option>
+          </select>
+        <br><br>
         <div class="summary-d100">
             <h2>Résumé du Système D100</h2>
             <br><br>
@@ -1828,6 +2025,13 @@
         });
     });
 
+    on("change:type_roll", function() {
+        
+            setAttrs({
+                "page": 0
+            });
+    });
+
     on("sheet:opened change:endurance change:force_brute change:robustesse change:agilite_corporelle change:precision change:reflexe change:acuite_sensorielle change:sixieme_sens change:vigilance change:decision change:determination change:equilibre_mental change:creativite change:erudition change:logique change:aura change:communication_expressive change:persuasion change:CARRURE change:AGILITE change:PERCEPTION change:MENTAL change:INTELLECT change:CHARISME", function() {
         getAttrs(["endurance", "force_brute", "robustesse", "agilite_corporelle", "precision", "reflexe", "acuite_sensorielle", "sixieme_sens", "vigilance", "decision", "determination", "equilibre_mental", "creativite", "erudition", "logique", "aura", "communication_expressive", "persuasion", "CARRURE", "AGILITE", "PERCEPTION", "MENTAL", "INTELLECT", "CHARISME"], function(values) {
             let CARRURE = parseInt(values["CARRURE"]) || 0;
@@ -1873,6 +2077,7 @@
     on("sheet:opened", function(eventInfo){
         setAttrs({
             rollmodifier: "?{Modificateur|+0|+10|+20|+30|+40|+50|-10|-20|-30|-40|-50}",
+            rollphysique: "?{Résultat|0}",
         });
     });
 
@@ -2849,6 +3054,997 @@
 	on('clicked:roll-verbal', async (event) => {
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
     
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
+                    jetCorrige = Math.max(10, result.result - destin);
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+</script>
+
+<!-- Jet Physique -->
+<script type="text/worker">
+
+    on('clicked:roll-endurance_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-force-brute_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-robustesse_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-agi-corpo_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100]]}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-precision_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-reflexe_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-acuite_sensorielle_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-sixieme_sens_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-vigilance_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-decision_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-determination_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-equilibre_mental_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-creativite_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-erudition_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-logique_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-aura_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-communication_expressive_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-persuasion_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+
+            let jetCorrige = result.result;
+            let margeCorrigee = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    jetCorrige = Math.max(10, result.result - destin);
+                    margeCorrigee = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (margeCorrigee >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: margeCorrigee
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+        
+    on('clicked:roll-cac_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}");
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
+                    jetCorrige = Math.max(10, result.result - destin);
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-distance_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
+                    jetCorrige = Math.max(10, result.result - destin);
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-verbal_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
+
         const { seuil, result } = roll.results;
         let destin = 0;
 
