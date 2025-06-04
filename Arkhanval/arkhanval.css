@@ -1,0 +1,315 @@
+/* Import de font */
+@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Metamorphous&family=Quintessential&display=swap');
+.jim-nightshade-regular {
+    font-family: "Jim Nightshade", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.metamorphous-regular {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quintessential-regular {
+font-family: "Quintessential", serif;
+font-weight: 400;
+font-style: normal;
+}
+
+/* Apparence générale de la page */
+.charsheet {
+    --black: #000002;
+    --white: #fcfcfd;
+	--font_playfair: "Playfair", serif;
+    --borderdev: 1px solid red;
+    --couleur_dotted: #00000078;
+    --text_input: #000000bd;
+    --color_border_equipement: #000000d9;
+    --color_border_parcours_personnes: #000000d9;
+    --color_ligne_menu: #00000078;
+    --color_border_button: #595959;    
+    --color_background_button: #fcfcfd;
+    --color_background_button_selected: #b9ad9a;    
+    --color_text_button: #000002c4;
+    --color_text_button_selected: #000002c4;
+    --color_button_hover: #d7d2d2;
+    --color_text_hover: #000000;
+    --color_ombre_button: #575757a8;
+    font-family: "Quintessential", serif;
+    color: var(--black);
+    font-size: 19px;
+    line-height: 25px;
+    margin: 0px;
+}
+
+.sheet-darkmode .charsheet {
+    --black_text: #000002;
+    --white_text: #fcfcfd;
+}
+
+.sheetform {
+    background-color: #ffffff;
+    width: 800px;
+}
+
+.sheet-darkmode .sheetform {
+    background-color: #1f1f1f;
+}
+
+::placeholder {
+  color: rgba(128, 128, 128, 0.548);
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+/* Mise en page */
+span.apparence {  
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+span.picto {  
+	font-family: "pictos";
+	font-size: 16px;
+}
+
+/* Les input */
+.charsheet input {  
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--black);
+    font-size: 18px;
+    line-height: 25px;
+    background: transparent;
+}
+
+/* Suppression des fleches pour input number */
+.charsheet input[type=number]::-webkit-inner-spin-button,
+.charsheet input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: auto;
+}
+
+.charsheet textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+}
+
+/* Checkbox custom */
+input[type="checkbox"] {    
+    -webkit-appearance: none;
+	-moz-appearance: none;
+    appearance: none;
+    background-color: var(--white_text);
+    margin: 0;
+    font: inherit;
+    color: var(--white);
+    width: 18px;
+    height: 18px !important;
+    border: 2px solid var(--white_text);
+    border-radius: 1px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--white_text);
+    border: 2px solid var(--white_text);
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    width: 18px !important;
+    height: 18px;
+    padding: 0px !important;
+    margin: 0 !important;
+}
+
+label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+  }
+
+input[type="checkbox"]:checked + label::before {
+    content: "✔";
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: -19px;
+  }
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+/* Gestion des affichage */
+
+div.page_1,
+div.page_2,
+div.page_3 {
+    display: none;
+}
+
+.charsheet .choix_page[value="0"] ~ div.page_1,
+.charsheet .choix_page[value="1"] ~ div.page_2,
+.charsheet .choix_page[value="2"] ~ div.page_3 {
+    display: block;
+}
+
+.charsheet .choix_page[value="0"] ~ div .button0 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="1"] ~ div .button1 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="2"] ~ div .button2 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+
+
+
+/* Cadre des pages */
+
+div.page_1 {    
+    width: 830px;
+    height: 1112px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page1.png);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* Structure générale de la page_1 */
+
+.wrapper_page_personnage {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.page1_zone_nom {  
+    grid-column: 5 / 80;
+    grid-row: 6 / 15;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_artisan {  
+    grid-column: 9 / 31;
+    grid-row: 16 / 35;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_artiste {   
+    grid-column: 9 / 31;
+    grid-row: 36 / 55;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_combattant {  
+    grid-column: 9 / 31;
+    grid-row: 56 / 75;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_erudit {  
+    grid-column: 9 / 31;
+    grid-row: 77 / 95;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_explorateur {  
+    grid-column: 54 / 76;
+    grid-row: 16 / 35;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_magicien {  
+    grid-column: 54 / 76;
+    grid-row: 36 / 55;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_roublard {  
+    grid-column: 54 / 76;
+    grid-row: 56 / 75;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_stratege {  
+    grid-column: 54 / 76;
+    grid-row: 77 / 95;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_ark {  
+    grid-column: 33 / 52;
+    grid-row: 16 / 66;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_blessure {  
+    grid-column: 33 / 52;
+    grid-row: 69 / 90;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_specialite_1 {   
+    grid-column: 6 / 42;
+    grid-row: 99 / 109;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.page1_zone_specialite_2 {  
+    grid-column: 43 / 79;
+    grid-row: 99 / 109;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
