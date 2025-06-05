@@ -202,19 +202,25 @@ input[type="checkbox"]:focus {
 
 div.page_1,
 div.page_2,
-div.page_3 {
+div.page_3,
+div.page_4,
+div.page_5 {
     display: none;
 }
 
 .charsheet .choix_page[value="0"] ~ div.page_1,
 .charsheet .choix_page[value="1"] ~ div.page_2,
-.charsheet .choix_page[value="2"] ~ div.page_3 {
+.charsheet .choix_page[value="2"] ~ div.page_3,
+.charsheet .choix_page[value="3"] ~ div.page_4,
+.charsheet .choix_page[value="4"] ~ div.page_5 {
     display: block;
 }
 
 .charsheet .choix_page[value="0"] ~ div .button0 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="1"] ~ div .button1 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="2"] ~ div .button2 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 
 
 /* Modelage input et autres */
@@ -314,6 +320,14 @@ div.page_4 {
     width: 830px;
     height: 1112px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page3.png);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.page_5 {
+    width: 830px;
+    height: 1112px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page5.png);
     background-size: cover;
 	background-repeat: no-repeat;
 }
