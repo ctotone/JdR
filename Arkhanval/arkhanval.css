@@ -1,22 +1,11 @@
 /* Import de font */
-@import url('https://fonts.googleapis.com/css2?family=Jim+Nightshade&family=Metamorphous&family=Quintessential&display=swap');
-.jim-nightshade-regular {
-    font-family: "Jim Nightshade", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jim+Nightshade&family=Metamorphous&family=Quintessential&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
 
-.metamorphous-regular {
-    font-family: "Metamorphous", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.quintessential-regular {
+/* font-family: "Jim Nightshade", cursive;
+font-family: "Metamorphous", serif;
 font-family: "Quintessential", serif;
-font-weight: 400;
-font-style: normal;
-}
+font-family: "Gowun Dodum", sans-serif;
+font-family: "Radio Canada", sans-serif; */
 
 /* Apparence générale de la page */
 .charsheet {
@@ -38,7 +27,8 @@ font-style: normal;
     --color_button_hover: #d7d2d2;
     --color_text_hover: #000000;
     --color_ombre_button: #575757a8;
-    font-family: "Quintessential", serif;
+    font-family: "Radio Canada", sans-serif;
+    letter-spacing: -0.8px;
     color: var(--black);
     font-size: 19px;
     line-height: 25px;
@@ -166,12 +156,16 @@ input[type="checkbox"]:focus {
 }
 
 .charsheet button[type=action].button_texte::before,
-.charsheet button[type=roll].button_texte::before {
+.charsheet button[type=roll].button_texte::before,
+.charsheet button[type=action].button_picto::before,
+.charsheet button[type=roll].button_picto::before {
 	content: '';
 }
 
 .charsheet button[type=action].button_texte,
-.charsheet button[type=roll].button_texte {
+.charsheet button[type=roll].button_texte,
+.charsheet button[type=action].button_picto,
+.charsheet button[type=roll].button_picto {
     padding: 0;
     margin: 0;
     box-shadow: none;
@@ -182,12 +176,24 @@ input[type="checkbox"]:focus {
     border: none;
     border-radius: 1px;
     color: var(--black);
-    font-size: 15px;
+    font-size: 11px;
     line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: -0.8px;  
+    margin-top: 3px;
+}
+
+.charsheet button[type=action].button_picto,
+.charsheet button[type=roll].button_picto {
+    font-family: dicefontd20;
+    font-size: 20px;
+    margin-top: 0px;
 }
 
 .charsheet button[type=action].button_texte:hover,
-.charsheet button[type=roll].button_texte:hover {
+.charsheet button[type=roll].button_texte:hover,
+.charsheet button[type=action].button_picto:hover,
+.charsheet button[type=roll].button_picto:hover {
     color: var(--text_hover);
 }
 
@@ -213,7 +219,8 @@ div.page_3 {
 
 /* Modelage input et autres */
 
-.charsheet input.input_classique_1 {
+.charsheet input.input_classique_1,
+.charsheet input.input_custom {
     width: 100% !important;
     border: none;
     border-radius: 1px;
@@ -238,6 +245,17 @@ div.page_3 {
     font-size: 16px;
 }
 
+.charsheet input.input_custom {  
+    width: 97% !important;
+    margin-right: 2px;
+    height: 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: -0.8px;
+    text-align: right;
+    padding-bottom: 3px;
+}
+
 .charsheet input.input_carac,
 .charsheet input.input_carac_valeur,
 .charsheet input.input_carac_xp {
@@ -248,28 +266,21 @@ div.page_3 {
     background-color: transparent;
     color: var(--black);
     text-align: center;
-    font-size: 21px;
+    font-size: 14px;
     padding: 0;
     padding-bottom: 1px;
-    font-family: "Jim Nightshade", cursive;
 }
 
 .charsheet input.input_carac {
-    padding-bottom: 1px;
-}
-
-.charsheet input.input_carac_valeur {
     padding-bottom: 0px;
-    margin-top: -6px;
-    margin-bottom: 1px;
 }
 
+.charsheet input.input_carac_valeur,
 .charsheet input.input_carac_xp {
-    padding-bottom: 0px;
-    margin-top: -6px;
+    padding-bottom: 2px;
+    margin-top: 0px;
     margin-bottom: 1px;
 }
-
 
 
 
@@ -428,13 +439,48 @@ div.page_1 {
 .wrapper_zone_bloc_8 {
     display: grid;
     grid-template-columns: repeat(100, 10px);;
-    grid-auto-rows: 10.2px;
+    grid-auto-rows: 10.6px;
     font-size: 15px;
 }
 
-.wrapper_zone_bloc_1 {
+.wrapper_zone_bloc_1,
+.wrapper_zone_bloc_5 {
     margin-left: 4px;
-    margin-top: -2px;
+    margin-top: -7px;
+}
+
+.wrapper_zone_bloc_2,
+.wrapper_zone_bloc_6 {
+    margin-left: 4px;
+    margin-top: -4px;
+}
+
+.wrapper_zone_bloc_3,
+.wrapper_zone_bloc_7 {
+    margin-left: 4px;
+    margin-top: 0px;
+}
+
+.wrapper_zone_bloc_4,
+.wrapper_zone_bloc_8 {
+    margin-left: 4px;
+    margin-top: -7px;
+}
+
+.wrapper_zone_bloc_5 {
+    margin-left: -2px;
+}
+
+.wrapper_zone_bloc_6 {
+    margin-left: -2px;
+}
+
+.wrapper_zone_bloc_7 {
+    margin-left: -2px;
+}
+
+.wrapper_zone_bloc_8 {
+    margin-left: -2px;
 }
 
 /* Structure bloc nom */
@@ -536,8 +582,27 @@ div.page_1 {
     text-align: right;
 }
 
+.zone_bloc_roll_6 {   
+    grid-column: 2 / 4;
+    grid-row: 14 / 16;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+    text-align: right;
+}
+
+.zone_bloc_roll_7 {   
+    grid-column: 2 / 4;
+    grid-row: 16 / 18;
+    margin-top: 0px;
+    margin-left: 0px;
+    /* background-color: #44ff0073; */
+    text-align: right;
+}
+
 .zone_bloc_texte_6 {   
-    grid-column: 2 / 16;
+    grid-column: 4 / 16;
     grid-row: 14 / 16;
     margin-top: 0px;
     margin-left: 0px;
@@ -547,7 +612,7 @@ div.page_1 {
 }
 
 .zone_bloc_texte_7 {   
-    grid-column: 2 / 16;
+    grid-column: 4 / 16;
     grid-row: 16 / 18;
     margin-top: 0px;
     margin-left: 0px;
