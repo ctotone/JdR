@@ -1,11 +1,12 @@
 /* Import de font */
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jim+Nightshade&family=Metamorphous&family=Quintessential&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Gowun+Dodum&family=Jim+Nightshade&family=Metamorphous&family=Quintessential&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
 
 /* font-family: "Jim Nightshade", cursive;
 font-family: "Metamorphous", serif;
 font-family: "Quintessential", serif;
 font-family: "Gowun Dodum", sans-serif;
-font-family: "Radio Canada", sans-serif; */
+font-family: "Radio Canada", sans-serif; 
+font-family: "Faculty Glyphic", sans-serif;*/
 
 /* Apparence générale de la page */
 .charsheet {
@@ -46,11 +47,11 @@ font-family: "Radio Canada", sans-serif; */
 }
 
 .sheet-darkmode .sheetform {
-    background-color: #1f1f1f;
+    background-color: #1b1b1b;
 }
 
 ::placeholder {
-  color: rgba(128, 128, 128, 0.548);
+  color: rgb(43, 43, 43);
   font-size: 13px;
   margin-top: 0px;
 }
@@ -103,21 +104,20 @@ input[type="number"] {
 /* Checkbox custom */
 input[type="checkbox"] {    
     -webkit-appearance: none;
-	-moz-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background-color: var(--white_text);
     margin: 0;
     font: inherit;
     color: var(--white);
-    width: 18px;
-    height: 18px !important;
-    border: 2px solid var(--white_text);
-    border-radius: 1px;
+    width: 13px;
+    height: 13px !important;
+    border: 2px solid #a13d32;
+    border-radius: 15px;
 }
 
 input[type="checkbox"]:checked {
-    background-color: var(--white_text);
-    border: 2px solid var(--white_text);
+    background-color: #a13d32;
 }
 
 label {
@@ -150,6 +150,79 @@ input[type="checkbox"]:focus {
   outline: none;
 }
 
+/* CUSTOM CHECKBOX */
+.charsheet .itd-checkbox-container {
+    display: inline;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 15px;
+}
+
+.charsheet .itd-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+  .charsheet .itd-checkbox-checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 8px;
+    width: 8px;
+    background-color: transparent;
+    border-radius: 0px;
+    transform: rotate(45deg);
+    border: 1px solid #2b2b2b;
+}
+  
+  .charsheet .itd-checkbox-container:hover input~.itd-checkbox-checkmark {
+    background-color: #cccccc75;
+}
+  
+  .charsheet .itd-checkbox-container input:checked~.itd-checkbox-checkmark {
+    background-color: #2b2b2b;
+}
+  
+  .charsheet .itd-checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* Show the checkmark when checked */
+  .charsheet .itd-checkbox-container input:checked~.itd-checkbox-checkmark:after {
+    display: block;
+}
+  
+  /* Custom checkmark */
+  .charsheet .itd-checkbox-container .itd-checkbox-checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: none;
+}
+
+  .charsheet .itd-checkbox-checkmark:checked + label::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: -19px;
+}
+
 .charsheet input[type="number"] {
     appearance: unset !important;
     -moz-appearance: textfield !important; 
@@ -158,14 +231,18 @@ input[type="checkbox"]:focus {
 .charsheet button[type=action].button_texte::before,
 .charsheet button[type=roll].button_texte::before,
 .charsheet button[type=action].button_picto::before,
-.charsheet button[type=roll].button_picto::before {
+.charsheet button[type=roll].button_picto::before,
+.charsheet button[type=action].button_reset_ark::before,
+.charsheet button[type=roll].button_reset_ark::before {
 	content: '';
 }
 
 .charsheet button[type=action].button_texte,
 .charsheet button[type=roll].button_texte,
 .charsheet button[type=action].button_picto,
-.charsheet button[type=roll].button_picto {
+.charsheet button[type=roll].button_picto,
+.charsheet button[type=action].button_reset_ark,
+.charsheet button[type=roll].button_reset_ark {
     padding: 0;
     margin: 0;
     box-shadow: none;
@@ -190,11 +267,32 @@ input[type="checkbox"]:focus {
     margin-top: 0px;
 }
 
+.charsheet button[type=action].button_reset_ark,
+.charsheet button[type=roll].button_reset_ark {
+    height: 53px;
+    width: 53px;
+    border-radius: 35px;
+    color: transparent;  
+    text-align: center;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+    transition-delay: 0s;
+}
+
 .charsheet button[type=action].button_texte:hover,
 .charsheet button[type=roll].button_texte:hover,
 .charsheet button[type=action].button_picto:hover,
 .charsheet button[type=roll].button_picto:hover {
     color: var(--text_hover);
+}
+
+.charsheet button[type=action].button_reset_ark:hover,
+.charsheet button[type=roll].button_reset_ark:hover {
+    background-color: #a13d32;
+    /* transition-delay:1s; */
+    color: white;
+    opacity:1;
 }
 
 
@@ -226,7 +324,10 @@ div.page_5 {
 /* Modelage input et autres */
 
 .charsheet input.input_classique_1,
-.charsheet input.input_custom {
+.charsheet input.input_custom,
+.charsheet input.input_sortilege_nom,
+.charsheet input.input_sortilege_encart,
+.charsheet input.input_sortilege_encart_gros {
     width: 100% !important;
     border: none;
     border-radius: 1px;
@@ -236,6 +337,7 @@ div.page_5 {
     padding-left: 0px;
     letter-spacing: 0px;
     color: var(--text_input);
+    font-family: "Faculty Glyphic", sans-serif;
 }
 
 
@@ -260,11 +362,44 @@ div.page_5 {
     letter-spacing: -0.8px;
     text-align: right;
     padding-bottom: 3px;
+    font-family: "Radio Canada", sans-serif;
+}
+
+.charsheet input.input_sortilege_nom {  
+    width: 100% !important;
+    margin-right: 0px;
+    height: 27px;
+    font-size: 13px;
+    text-transform: uppercase;
+    /* letter-spacing: -0.8px; */
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.charsheet input.input_sortilege_encart,
+.charsheet input.input_sortilege_encart_gros {   
+    width: 100% !important;
+    margin-right: 0px;
+    height: 43px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: -0.8px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.charsheet input.input_sortilege_encart_gros {   
+    font-size: 13px;
 }
 
 .charsheet input.input_carac,
 .charsheet input.input_carac_valeur,
-.charsheet input.input_carac_xp {
+.charsheet input.input_carac_xp,
+.charsheet input.input_ark_valeur,
+.charsheet input.input_malus_fd {
     width: 20px !important;
     height: 20px;
     border: none;
@@ -288,10 +423,48 @@ div.page_5 {
     margin-bottom: 1px;
 }
 
+.charsheet input.input_ark_valeur {
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 42px !important;
+    height: 34px !important;
+    font-size: 20px;
+    padding-top: 2px;
+}
+
+.charsheet input.input_malus_fd {
+    padding-bottom: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 28px !important;
+    height: 23px !important;
+    font-size: 18px;
+    padding-top: 0px;
+}
+
 .charsheet textarea.specialite {
     width: 96%;
     height: 90%;
     letter-spacing: -0.8px;
+    /* background-color: #00800029; */
+    font-family: "Faculty Glyphic", sans-serif;
+}
+
+.charsheet textarea.equipement {
+    width: 100%;
+    height: 100%;
+    letter-spacing: -0.8px;
+    padding: 10px;
+    font-family: "Faculty Glyphic", sans-serif;
+    /* background-color: #00800029; */
+}
+
+.charsheet textarea.sortilege_description {
+    width: 99%;
+    height: 87%;
+    letter-spacing: -0.8px;
+    font-family: "Faculty Glyphic", sans-serif;
     /* background-color: #00800029; */
 }
 
@@ -301,7 +474,9 @@ div.page_5 {
     width: 75%;
     height: 81.5%;
     letter-spacing: -0.8px;
+    font-family: "Faculty Glyphic", sans-serif;
     background-color: #ffffff80;
+    padding: 20px;
 }
 
 
@@ -328,7 +503,7 @@ div.page_3,
 div.page_4 {
     width: 830px;
     height: 1112px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page3.png);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_sortilege.png);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -466,7 +641,482 @@ div.page_5 {
     /* background-color: #44ff0073; */
 }
 
+/* Structure zone ARK */
+
+.wrapper_bloc_type_ark {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.wrapper_bloc_ark {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.wrapper_cercle_ark {
+    display: grid;
+    grid-template-columns: repeat(830, 1px);;
+    grid-auto-rows: 1px;
+}
+
+.arksonge {  
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.arkentropie {  
+    grid-column: 1;
+    grid-row: 17;
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.arkoeur {  
+    grid-column: 1;
+    grid-row: 33;
+    margin-top: 7px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.circulaire_ark {  
+    grid-column: 1 / 20;
+    grid-row: 1 / 10;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.valeur_ark {  
+    grid-column: 8 / 13;
+    grid-row: 10 / 14;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 3px;
+    /* background-color: #44ff0073; */
+}
+
+.ark_reset {
+    grid-column: 71 / 121;
+    grid-row: 37 / 89;
+    margin-top: -3px;
+    margin-left: -3px;
+    margin-right: 0px;
+}
+
+.ark_check_1 {
+    grid-column: 53;
+    grid-row: 72;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_2 {
+    grid-column: 47;
+    grid-row: 54;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_3 {
+    grid-column: 50;
+    grid-row: 36;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_4 {
+    grid-column: 63;
+    grid-row: 19;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_5 {
+    grid-column: 80;
+    grid-row: 11;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_6 {
+    grid-column: 98;
+    grid-row: 11;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_7 {
+    grid-column: 114;
+    grid-row: 19;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_8 {
+    grid-column: 126;
+    grid-row: 36;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_9 {
+    grid-column: 129;
+    grid-row: 54;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.ark_check_10 {
+    grid-column: 123;
+    grid-row: 72;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+/* Structure zone blessures */
+
+.wrapper_type_blessure {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.wrapper_bloc_blessure {
+    display: grid;
+    grid-template-columns: repeat(830, 1px);;
+    grid-auto-rows: 10px;
+}
+
+.legere {  
+    grid-column: 1;
+    grid-row: 6;
+    margin-top: 6px;
+    margin-left: 46px;
+    margin-right: 0px;
+}
+
+.grave {  
+    grid-column: 1;
+    grid-row: 11;
+    margin-top: 4px;
+    margin-left: 64px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.critique {  
+    grid-column: 1;
+    grid-row: 16;
+    margin-top: 3px;
+    margin-left: 72px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.bloc_malus_fd {  
+    grid-column: 9 / 12;
+    grid-row: 18 / 21;
+    margin-top: 6px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_1 {  
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_2 {  
+    grid-column: 18;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_3 {  
+    grid-column: 35;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_4 {  
+    grid-column: 52;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_5 {  
+    grid-column: 69;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.blessure_check_6 {  
+    grid-column: 86;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 1px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
 /* Structure générale de la page_2 */
+
+.wrapper_page_equipement {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.equipement_armes { 
+    grid-column: 7 / 78;
+    grid-row: 14 / 24;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 3px;
+    /* background-color: #44ff0073; */
+}
+
+.equipement_ark { 
+    grid-column: 7 / 48;
+    grid-row: 28 / 50;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.equipement_apparence { 
+    grid-column: 51 / 78;
+    grid-row: 28 / 42;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.equipement_richesse {  
+    grid-column: 51 / 78;
+    grid-row: 45 / 51;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 4px;
+    /* background-color: #44ff0073; */
+}
+
+.equipement_sac { 
+    grid-column: 7 / 48;
+    grid-row: 54 / 75;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.equipement_bibliotheque { 
+    grid-column: 51 / 78;
+    grid-row: 54 / 75;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    /* background-color: #44ff0073; */
+}
+
+/* Structure générale Sortilège */
+
+.wrapper_page_sortilege {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.wrapper_sortilege {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.sortilege_1 {  
+    grid-column: 7 / 78;
+    grid-row: 12 / 30;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_2 {
+    grid-column: 7 / 78;
+    grid-row: 31 / 49;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_3 { 
+    grid-column: 7 / 78;
+    grid-row: 50 / 68;
+    margin-top: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_4 {  
+    grid-column: 7 / 78;
+    grid-row: 69 / 87;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_5 {    
+    grid-column: 7 / 78;
+    grid-row: 89 / 106;
+    margin-top: -2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_nom {  
+    grid-column: 19 / 71;
+    grid-row: 1 / 4;
+    margin-top: 0px;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-bottom: 7px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_competence { 
+    grid-column: 2 / 19;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_pm { 
+    grid-column: 19 / 30;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 4px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_fd { 
+    grid-column: 29 / 40;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 6px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_portee { 
+    grid-column: 40 / 51;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 6px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_zone { 
+    grid-column: 50 / 61;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_duree { 
+    grid-column: 61 / 71;
+    grid-row: 5 / 10;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    /* background-color: #44ff0073; */
+}
+
+.sortilege_description {
+    grid-column: 7 / 71;
+    grid-row: 9 / 19;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    /* background-color: #ff000078; */
+}
+
+.sortilege_annonce { 
+    grid-column: 2 / 5;
+    grid-row: 9 / 13;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 7px;
+    /* background-color: #ff000078; */
+}
+
+
 /* Structure générale de la page_3 */
 /* Structure générale des zones */
 
