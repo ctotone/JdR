@@ -1,0 +1,836 @@
+<input type="hidden" name="attr_page" class="choix_page" value="0">
+<input type="hidden" name="attr_gm" value="">
+
+<div class="menu">
+    <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
+    <button type="action" name="act_1" class="button1">Équipement</button>
+    <button type="action" name="act_2" class="button2">Sortilèges 1</button>
+    <button type="action" name="act_3" class="button3">Sortilèges 2</button>
+    <button type="action" name="act_4" class="button4">Carnet de route</button>
+</div>
+<div class="personnage">
+    <input type="hidden" name="attr_page" class="choix_page" value="0">
+    <div class="page_1">
+        <div class="wrapper_page_personnage">
+            <div class="page1_zone_nom">
+                <div class="wrapper_zone">
+                    <div class="zone_nom_nom"><input type="text" class="input_classique_1" name="attr_character_name"></div>
+                    <div class="zone_nom_archetype"><input type="text" class="input_classique_1" name="attr_archetype"></div>
+                    <div class="zone_nom_peuple"><input type="text" class="input_classique_1" name="attr_peuple"></div>
+                    <div class="zone_nom_origine"><input type="text" class="input_classique_1" name="attr_origine"></div>
+                </div>
+            </div>
+            <div class="page1_zone_artisan">
+                <div class="wrapper_zone_bloc_1">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_artisan" value="0"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-artisan_bricolage">Bricolage</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-artisan_cuisine">Cuisine</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-artisan_bois">Travail du bois</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-artisan_cuir">Travail du cuir</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-artisan_metal">Travail du métal</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-artisan_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_artisan_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-artisan_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_artisan_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_artisan_bricolage_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_artisan_cuisine_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_artisan_bois_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_artisan_cuir_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_artisan_metal_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_artisan_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_artisan_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_artisan_bricolage_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_artisan_cuisine_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_artisan_bois_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_artisan_cuir_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_artisan_metal_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_artisan_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_artisan_custom7_xp" value="0"></div>
+                </div> 
+            </div>
+            <div class="page1_zone_artiste">
+                <div class="wrapper_zone_bloc_2">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_artiste" value="0"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-artiste_chant">Chant</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-artiste_comedie">Comédie</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-artiste_danse">Danse</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-artiste_dessin">Dessin & Peinture</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-artiste_musique">Musique</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-artiste_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_artiste_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-artiste_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_artiste_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_artiste_chant_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_artiste_comedie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_artiste_danse_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_artiste_dessin_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_artiste_musique_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_artiste_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_artiste_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_artiste_chant_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_artiste_comedie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_artiste_danse_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_artiste_dessin_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_artiste_musique_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_artiste_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_artiste_custom7_xp" value="0"></div>
+                </div>  
+            </div>
+            <div class="page1_zone_combattant">
+                <div class="wrapper_zone_bloc_3">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_combattant" value="0" style="padding-bottom: 1px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-combattant_1main">Armes à 1 main</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-combattant_jet">Armes de jet</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-combattant_tir">Armes de tir</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-combattant_combat">Art du combat</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-combattant_mainnues">Main nues</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-combattant_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_combattant_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-combattant_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_combattant_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_combattant_1main_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_combattant_jet_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_combattant_tir_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_combattant_combat_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_combattant_mainnues_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_combattant_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_combattant_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_combattant_1main_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_combattant_jet_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_combattant_tir_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_combattant_combat_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_combattant_mainnues_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_combattant_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_combattant_custom7_xp" value="0"></div>
+                </div>  
+            </div>
+            <div class="page1_zone_erudit">
+                <div class="wrapper_zone_bloc_4">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_erudit" value="0" style="padding-bottom: 1px;margin-left: -2px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-erudit_botanique">Botanique</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-erudit_legende" style="font-size: 11px;">Histoires & légendes</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-erudit_lecture" style="font-size: 11px;">Lecture & Écritures</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-erudit_medecine">Médecine</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-erudit_zoologie">Zoologie</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-erudit_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_erudit_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-erudit_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_erudit_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_erudit_botanique_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_erudit_legende_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_erudit_lecture_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_erudit_medecine_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_erudit_zoologie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_erudit_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_erudit_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_erudit_botanique_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_erudit_legende_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_erudit_lecture_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_erudit_medecine_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_erudit_zoologie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_erudit_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_erudit_custom7_xp" value="0"></div>
+                </div>  
+            </div>
+            <div class="page1_zone_explorateur">
+                <div class="wrapper_zone_bloc_5">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_explorateur" value="0" style="margin-left: -2px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-explorateur_athletique" style="font-size: 10px;">Comp. Athlétiques</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-explorateur_detection" style="font-size: 10px;">Détection & Vigilance</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-explorateur_dressage" style="font-size: 10px;">Dressage & Équitation</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-explorateur_natation">Natation</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-explorateur_survie">Survie</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-explorateur_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_explorateur_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-explorateur_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_explorateur_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_explorateur_athletique_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_explorateur_detection_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_explorateur_dressage_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_explorateur_natation_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_explorateur_survie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_explorateur_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_explorateur_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_explorateur_athletique_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_explorateur_detection_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_explorateur_dressage_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_explorateur_natation_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_explorateur_survie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_explorateur_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_explorateur_custom7_xp" value="0"></div>
+                </div>   
+            </div>
+            <div class="page1_zone_magicien">
+                <div class="wrapper_zone_bloc_6">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_magicien" value="0" style="padding-bottom: 1px;margin-left: -2px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-magicien_concentration">Concentration</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-magicien_metantropie">Métantropie</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-magicien_empathie">Empathie & Intuition</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-magicien_ethereve">Ethérêve</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-magicien_sigentropie">Sigentropie</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-magicien_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_magicien_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-magicien_custom7">K</button></div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_magicien_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_magicien_concentration_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_magicien_metantropie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_magicien_empathie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_magicien_ethereve_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_magicien_sigentropie_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_magicien_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_magicien_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_magicien_concentration_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_magicien_metantropie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_magicien_empathie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_magicien_ethereve_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_magicien_sigentropie_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_magicien_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_magicien_custom7_xp" value="0"></div>
+                </div> 
+            </div>
+            <div class="page1_zone_roublard">
+                <div class="wrapper_zone_bloc_7">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_roublard" value="0" style="padding-bottom: 1px;margin-left: -2px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-roublard_baratin">Baratin</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-roublard_commerce">Commerce</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-roublard_crochetage">Crochetage</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-roublard_discretion">Discrétion</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-roublard_jeu">Jeu</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-roublard_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_roublard_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-roublard_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_roublard_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_roublard_baratin_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_roublard_commerce_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_roublard_crochetage_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_roublard_discretion_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_roublard_jeu_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_roublard_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_roublard_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_roublard_baratin_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_roublard_commerce_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_roublard_crochetage_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_roublard_discretion_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_roublard_jeu_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_roublard_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_roublard_custom7_xp" value="0"></div>
+                </div> 
+            </div>
+            <div class="page1_zone_stratege">
+                <div class="wrapper_zone_bloc_8">
+                    <div class="zone_bloc_xp"><input type="number" class="input_carac" name="attr_xp_stratege" value="0" style="padding-bottom: 1px;margin-left: -2px;"></div>
+                    <div class="zone_bloc_texte_1"><button type="action" class="button_texte" name="act_roll-stratege_convaincre" style="font-size: 10px;">Convaincre & Argum.</button></div>
+                    <div class="zone_bloc_texte_2"><button type="action" class="button_texte" name="act_roll-stratege_discours">Discours & Éloquence</button></div>
+                    <div class="zone_bloc_texte_3"><button type="action" class="button_texte" name="act_roll-stratege_gestion" style="font-size: 10px;">Gestion & Organisation</button></div>
+                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-stratege_intimidation">Intimidation</button></div>
+                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-stratege_tactique">Tactique & Stratégie</button></div>
+                    <div class="zone_bloc_roll_6"><button type="action" class="button_picto" name="act_roll-stratege_custom6">K</button></div>
+                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_stratege_custom6"></div>
+                    <div class="zone_bloc_roll_7"><button type="action" class="button_picto" name="act_roll-stratege_custom7">K</div>
+                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_stratege_custom7"></div>
+                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_stratege_convaincre_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_stratege_discours_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_stratege_gestion_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_stratege_intimidation_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_stratege_tactique_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_stratege_custom6_valeur" value="0"></div>
+                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_stratege_custom7_valeur" value="0"></div>
+                    <div class="zone_bloc_xp_1"><input type="number" class="input_carac_xp" name="attr_stratege_convaincre_xp" value="0"></div>
+                    <div class="zone_bloc_xp_2"><input type="number" class="input_carac_xp" name="attr_stratege_discours_xp" value="0"></div>
+                    <div class="zone_bloc_xp_3"><input type="number" class="input_carac_xp" name="attr_stratege_gestion_xp" value="0"></div>
+                    <div class="zone_bloc_xp_4"><input type="number" class="input_carac_xp" name="attr_stratege_intimidation_xp" value="0"></div>
+                    <div class="zone_bloc_xp_5"><input type="number" class="input_carac_xp" name="attr_stratege_tactique_xp" value="0"></div>
+                    <div class="zone_bloc_xp_6"><input type="number" class="input_carac_xp" name="attr_stratege_custom6_xp" value="0"></div>
+                    <div class="zone_bloc_xp_7"><input type="number" class="input_carac_xp" name="attr_stratege_custom7_xp" value="0"></div>
+                </div> 
+            </div>
+            <div class="page1_zone_ark">
+                <div class="wrapper_bloc_type_ark">
+                    <div class="arksonge">
+                        <div class="wrapper_bloc_ark"> 
+                            <div class="circulaire_ark">
+                                <div class="wrapper_cercle_ark">
+                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arksonge" title="Reset Arksonge">Reset</button></div>
+                                    <div class="ark_check_1"><input type="checkbox" name="attr_arksonge_1" value="1"></div>
+                                    <div class="ark_check_2"><input type="checkbox" name="attr_arksonge_2" value="1"></div>
+                                    <div class="ark_check_3"><input type="checkbox" name="attr_arksonge_3" value="1"></div>
+                                    <div class="ark_check_4"><input type="checkbox" name="attr_arksonge_4" value="1"></div>
+                                    <div class="ark_check_5"><input type="checkbox" name="attr_arksonge_5" value="1"></div>
+                                    <div class="ark_check_6"><input type="checkbox" name="attr_arksonge_6" value="1"></div>
+                                    <div class="ark_check_7"><input type="checkbox" name="attr_arksonge_7" value="1"></div>
+                                    <div class="ark_check_8"><input type="checkbox" name="attr_arksonge_8" value="1"></div>
+                                    <div class="ark_check_9"><input type="checkbox" name="attr_arksonge_9" value="1"></div>
+                                    <div class="ark_check_10"><input type="checkbox" name="attr_arksonge_10" value="1"></div>
+                                </div>
+                            </div> 
+                            <div class="valeur_ark">
+                                <input type="number" class="input_ark_valeur" name="attr_arksonge_valeur" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arkentropie">
+                        <div class="wrapper_bloc_ark"> 
+                            <div class="circulaire_ark">
+                                <div class="wrapper_cercle_ark">
+                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkentropie" title="Reset Arkentropie">Reset</button></div>
+                                    <div class="ark_check_1"><input type="checkbox" name="attr_arkentropie_1" value="1"></div>
+                                    <div class="ark_check_2"><input type="checkbox" name="attr_arkentropie_2" value="1"></div>
+                                    <div class="ark_check_3"><input type="checkbox" name="attr_arkentropie_3" value="1"></div>
+                                    <div class="ark_check_4"><input type="checkbox" name="attr_arkentropie_4" value="1"></div>
+                                    <div class="ark_check_5"><input type="checkbox" name="attr_arkentropie_5" value="1"></div>
+                                    <div class="ark_check_6"><input type="checkbox" name="attr_arkentropie_6" value="1"></div>
+                                    <div class="ark_check_7"><input type="checkbox" name="attr_arkentropie_7" value="1"></div>
+                                    <div class="ark_check_8"><input type="checkbox" name="attr_arkentropie_8" value="1"></div>
+                                    <div class="ark_check_9"><input type="checkbox" name="attr_arkentropie_9" value="1"></div>
+                                    <div class="ark_check_10"><input type="checkbox" name="attr_arkentropie_10" value="1"></div>
+                                </div>
+                            </div> 
+                            <div class="valeur_ark">
+                                <input type="number" class="input_ark_valeur" name="attr_arkentropie_valeur" value="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="arkoeur">
+                        <div class="wrapper_bloc_ark"> 
+                            <div class="circulaire_ark">
+                                <div class="wrapper_cercle_ark">
+                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkoeur" title="Reset Arkoeur">Reset</button></div>
+                                    <div class="ark_check_1"><input type="checkbox" name="attr_arkoeur_1" value="1"></div>
+                                    <div class="ark_check_2"><input type="checkbox" name="attr_arkoeur_2" value="1"></div>
+                                    <div class="ark_check_3"><input type="checkbox" name="attr_arkoeur_3" value="1"></div>
+                                    <div class="ark_check_4"><input type="checkbox" name="attr_arkoeur_4" value="1"></div>
+                                    <div class="ark_check_5"><input type="checkbox" name="attr_arkoeur_5" value="1"></div>
+                                    <div class="ark_check_6"><input type="checkbox" name="attr_arkoeur_6" value="1"></div>
+                                    <div class="ark_check_7"><input type="checkbox" name="attr_arkoeur_7" value="1"></div>
+                                    <div class="ark_check_8"><input type="checkbox" name="attr_arkoeur_8" value="1"></div>
+                                    <div class="ark_check_9"><input type="checkbox" name="attr_arkoeur_9" value="1"></div>
+                                    <div class="ark_check_10"><input type="checkbox" name="attr_arkoeur_10" value="1"></div>
+                                </div>
+                            </div> 
+                            <div class="valeur_ark">
+                                <input type="number" class="input_ark_valeur" name="attr_arkoeur_valeur" value="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page1_zone_blessure">
+                <div class="wrapper_type_blessure">
+                    <div class="legere">
+                        <div class="wrapper_bloc_blessure">
+                            <div class="blessure_check_1">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_1" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_2">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_2" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_3">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_3" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_4">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_4" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_5">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_5" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_6">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_legere_6" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grave">
+                        <div class="wrapper_bloc_blessure">
+                            <div class="blessure_check_1">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_grave_1" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_2">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_grave_2" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_3">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_grave_3" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_4">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_grave_4" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="critique">
+                        <div class="wrapper_bloc_blessure">
+                            <div class="blessure_check_1">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_critique_1" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_2">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_critique_2" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="blessure_check_3">
+                                <label class="itd-checkbox-container">
+                                    <input type="checkbox" name="attr_critique_3" value="1">
+                                    <span class="itd-checkbox-checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bloc_malus_fd">
+                        <input type="number" class="input_malus_fd" name="attr_malus_fd" value="0">
+                    </div>
+                </div>
+            </div>
+            <div class="page1_zone_specialite_1">
+                <textarea class="specialite" name="attr_specialite_1"></textarea>
+            </div>
+            <div class="page1_zone_specialite_2">
+                <textarea class="specialite" name="attr_specialite_2"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- EQUIPEMENT -->
+    <div class="page_2">
+        <div class="wrapper_page_equipement">
+            <div class="equipement_armes"><textarea class="equipement" name="attr_equipement_arme"></textarea></div>
+            <div class="equipement_ark"><textarea class="equipement" name="attr_equipement_ark"></textarea></div>
+            <div class="equipement_apparence"><textarea class="equipement" name="attr_equipement_apparence"></textarea></div>
+            <div class="equipement_richesse"><textarea class="equipement" name="attr_equipement_richesse"></textarea></div>
+            <div class="equipement_sac"><textarea class="equipement" name="attr_equipement_sac"></textarea></div>
+            <div class="equipement_bibliotheque"><textarea class="equipement" name="attr_equipement_bibliotheque"></textarea></div>
+        </div>
+    </div>
+    <!-- SORTILEGE 1 -->
+    <div class="page_3">
+        <div class="wrapper_page_sortilege">
+            <div class="sortilege_1">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_1"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_1"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_1"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_1"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_1"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_1"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_1"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_1" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_2">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_2"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_2"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_2"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_2"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_2"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_2"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_2"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_2" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_3">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_3"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_3"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_3"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_3"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_3"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_3"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_3"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_3" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_4">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_4"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_4"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_4"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_4"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_4"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_4"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_4"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_4" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_5">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_5"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_5"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_5"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_5"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_5"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_5"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_5"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_5" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SORTILEGE 2 -->
+    <div class="page_4">
+        <div class="wrapper_page_sortilege">
+            <div class="sortilege_1">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_6"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_6"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_6"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_6"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_6"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_6"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_6"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_6" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_2">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_7"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_7"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_7"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_7"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_7"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_7"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_7"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_7" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_3">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_8"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_8"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_8"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_8"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_8"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_8"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_8"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_8" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_4">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_9"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_9"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_9"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_9"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_9"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_9"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_9"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_9" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+            <div class="sortilege_5">
+                <div class="wrapper_sortilege">
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_10"></div>
+                    <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_10"></div>
+                    <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_10"></div>
+                    <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_10"></div>
+                    <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_10"></div>
+                    <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_10"></div>
+                    <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_10"></div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_10" placeholder="Description..."></textarea></div>                    
+                    <div class="sortilege_annonce">X</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARNET DE ROUTE -->
+    <div class="page_5">
+        <textarea class="carnet_route" name="attr_carnet_route" placeholder="Votre carnet de route..."></textarea>
+    </div>
+</div>
+
+
+<!-- ROLLTEMPLATE -->
+
+<rolltemplate class="sheet-rolltemplate-custom">
+  <div class="sheet-container sheet-color-{{color}}">
+    <div class="sheet-header">
+      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
+      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
+    </div>
+    <div class="sheet-content">
+      {{#allprops() title subtitle desc color}}
+      <div class="sheet-key">{{key}}</div>
+      <div class="sheet-value">{{value}}</div>
+      {{/allprops() title subtitle desc color}}
+      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
+    </div>
+  </div>
+</rolltemplate>
+
+
+
+<!-- SCRIPT -->
+<!-- Menu / Reset -->
+<script type="text/worker"> 
+
+	const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                page: button
+            });
+        });
+    });
+
+    const resetGroups = {
+        reset_arksonge: "arksonge_",
+        reset_arkentropie: "arkentropie_",
+        reset_arkoeur: "arkoeur_"
+    };
+    
+    Object.entries(resetGroups).forEach(([buttonName, prefix]) => {
+        on(`clicked:${buttonName}`, () => {
+            const attrs = {};
+            for (let i = 1; i <= 10; i++) {
+                attrs[`${prefix}${i}`] = 0;
+            }
+            setAttrs(attrs);
+        });
+    });
+
+    on("sheet:opened change:character_name change:character_avatar change:character_token", function() {
+        getAttrs(["character_name","character_avatar","character_token"], function(v) {
+            let name = v.character_name;
+            let namelen = name.length;
+            let nameclass;
+            namelen >= 19 ?
+                (nameclass = "smallHeader") :
+                (nameclass = "normalHeader");
+            setAttrs({ namelength: nameclass,
+                       "avatar": v.character_avatar,
+                       "ctoken": v.character_token });
+        });
+    });
+
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            rollfd: "?{Facteur de difficulté|6|1|2|3|4|5|7|8|9|10}",
+        });
+    });	
+</script>
+
+<!-- Lancers de dés -->
+<script type="text/worker"> 
+
+const competences = {
+  "artisan_bricolage": "Bricolage",
+  "artisan_cuisine": "Cuisine",
+  "artisan_bois": "Travail du bois",
+  "artisan_cuir": "Travail du cuir",
+  "artisan-artisan_metal": "Travail du métal",
+  "artisan_custom6": "Artisan",
+  "artisan_custom7": "Artisan",
+  "artiste_chant": "Chant",
+  "artiste_comedie": "Comédie",
+  "artiste_danse": "Danse",
+  "artiste_dessin": "Dessin & Peinture",
+  "artiste_musique": "Musique",
+  "artiste_custom6": "Artiste",
+  "artiste_custom7": "Artiste",
+  "combattant_1main": "Armes à 1 main",
+  "combattant_jet": "Armes de jet",
+  "combattant_tir": "TravailArmes de tir",
+  "combattant_combat": "Art du combat",
+  "combattant_mainnues": "Main nues",
+  "combattant_custom6": "Combattant",
+  "combattant_custom7": "Combattant",
+  "erudit_botanique": "Botanique",
+  "erudit_legende": "Histoire & Légendes",
+  "erudit_lecture": "Lecture & Écriture",
+  "erudit_medecine": "Médecine",
+  "erudit_zoologie": "Zoologie",
+  "erudit_custom6": "Érudit",
+  "erudit_custom7": "Érudit",
+  "explorateur_athletique": "Compétences athlétiques",
+  "explorateur_detection": "Détéction & Vigilance",
+  "explorateur_dressage": "Dressage & Équitation",
+  "explorateur_natation": "Natation",
+  "explorateur_survie": "Survie",
+  "explorateur_custom6": "Explorateur",
+  "explorateur_custom7": "Explorateur",
+  "magicien_concentration": "Concentration",
+  "magicien_metantropie": "Métantropie",
+  "magicien_empathie": "Empathie & Intuition",
+  "magicien_ethereve": "Ethérêve",
+  "magicien_sigentropie": "Sigentropie",
+  "magicien_custom6": "Magicien",
+  "magicien_custom7": "Magicien",
+  "roublard_baratin": "Baratin",
+  "roublard_commerce": "Commerce",
+  "roublard_crochetage": "Crochetage",
+  "roublard_discretion": "Discrétion",
+  "roublard_jeu": "Jeu",
+  "roublard_custom6": "Roublard",
+  "roublard_custom7": "Roublard",
+  "stratege_convaincre": "Convaincre & Argumenter",
+  "stratege_discours": "Discours & Éloquence",
+  "stratege_gestion": "Gestion & Administration",
+  "stratege_intimidation": "Intimidation",
+  "stratege_tactique": "Tactique & Stratégie",
+  "stratege_custom6": "Stratège",
+  "stratege_custom7": "Stratège"
+};
+
+Object.keys(competences).forEach(nom_comp => {
+  on(`clicked:roll-${nom_comp}`, async (event) => {
+    const attribut_val = `${nom_comp}_valeur`;
+    const titre_competence = competences[nom_comp];
+
+    const roll = await startRoll(`@{gm} &{template:custom} {{token=@{ctoken}}} {{title=Jet de compétence : ${titre_competence}}} {{subheader=@{character_name}}} {{roll_d8=[[1D8]]}} {{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}} {{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}} {{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll_extra_11=[[1D10]]}} {{roll_extra_12=[[1D10]]}} {{roll_extra_13=[[1D10]]}} {{roll_extra_14=[[1D10]]}} {{roll_extra_15=[[1D10]]}} {{roll_extra_16=[[1D10]]}} {{roll_extra_17=[[1D10]]}} {{roll_extra_18=[[1D10]]}} {{roll_extra_19=[[1D10]]}} {{roll_extra_20=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{competence=[[@{${attribut_val}}]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}}`);
+
+    const NC = roll.results.competence.result;
+    let FD = roll.results.FD.result + roll.results.malus_fd.result;
+    const computeObj = {};
+    let QR_temp = 0;
+    let echecs_critiques = 0;
+    let reussites_critiques = 0;
+    let index_extra = 0;
+
+    const des_explosifs = [];
+    for (let i = 1; i <= 20; i++) {
+        des_explosifs.push(roll.results[`roll_extra_${i}`].result);
+    }
+
+    const isCritique = (val) => {
+        if (NC >= 8) return val === 9 || val === 10;
+        return val === 10;
+    };
+
+    const traiterExplosion = (val_initial) => {
+        let total_qr = 0;
+        let total_crit = 0;
+        let val = val_initial;
+        const detail = [val];
+
+        while (isCritique(val)) {
+            if (val >= FD) total_qr += 1;
+            total_crit += 1;
+            if (index_extra < des_explosifs.length) {
+                val = des_explosifs[index_extra];
+                detail.push(val);
+                index_extra++;
+            } else {
+                break;
+            }
+        }
+
+        if (!isCritique(val) && val >= FD && detail.length === 1) {
+            total_qr += 1;
+        } else if (!isCritique(val) && detail.length > 1 && val >= FD) {
+            total_qr += 1;
+        }
+
+        return {
+            qr: total_qr,
+            crit: total_crit,
+            detail: detail.join(" + ")
+        };
+    };
+
+    if (NC === 0) {
+        const d8 = roll.results.roll_d8.result;
+        computeObj["roll_d8"] = d8;
+        if (d8 >= FD) QR_temp += 1;
+        if (d8 === 1) echecs_critiques += 1;
+        for (let i = 1; i <= 5; i++) {
+            computeObj[`roll_${i}`] = "-";
+            computeObj[`roll${i}_critique`] = 0;
+            computeObj[`roll${i}_detail`] = "-";
+        }
+    } else {
+        computeObj["roll_d8"] = "-";
+        const nb_dés = Math.min(NC, 5);
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= nb_dés) {
+                const val = roll.results[`roll_${i}`].result;
+                computeObj[`roll_${i}`] = val;
+
+                if (val === 1 && NC < 7) {
+                    echecs_critiques += 1;
+                }
+
+                const est_critique = isCritique(val);
+                computeObj[`roll${i}_critique`] = est_critique ? 1 : 0;
+
+                const res = traiterExplosion(val);
+                QR_temp += res.qr;
+                reussites_critiques += res.crit;
+                computeObj[`roll${i}_detail`] = res.detail;
+            } else {
+                computeObj[`roll_${i}`] = "-";
+                computeObj[`roll${i}_critique`] = 0;
+                computeObj[`roll${i}_detail`] = "-";
+            }
+        }
+    }
+
+    QR_temp -= echecs_critiques;
+    computeObj["QR"] = QR_temp;
+    computeObj["ECritique"] = echecs_critiques;
+    computeObj["Rcritique"] = reussites_critiques;
+    computeObj["gain_xp"] = reussites_critiques > 0 ? 1 : 0;
+
+
+
+    console.log(`Niveau de Compétence (NC) : ${NC}`);
+    console.log(`FD ajusté : ${FD}`);
+    console.log(`Nombre de dés lancés : ${NC === 0 ? 1 : Math.min(NC, 5)}`);
+    console.log(`Échecs critiques : ${echecs_critiques}`);
+    console.log(`Réussites critiques (total) : ${reussites_critiques}`);
+    console.log(`QR finale : ${QR_temp}`);
+    console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
+    for (let i = 1; i <= Math.min(NC, 5); i++) {
+        console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
+    }
+    console.log(`===================================`);
+
+    
+
+    finishRoll(roll.rollId, computeObj);
+  });
+});
+</script>
