@@ -1,0 +1,419 @@
+Preambule, partons du principe que je vais ajouter plus tard les valeur suivante au script 
+{{rolld8_succes=[[0[resultat]]]}}
+{{roll1_succes=[[0[resultat]]]}}
+{{roll2_succes=[[0[resultat]]]}}
+{{roll3_succes=[[0[resultat]]]}}
+{{roll4_succes=[[0[resultat]]]}}
+{{roll5_succes=[[0[resultat]]]}}
+
+Ces valeurs vont me servir à tester la reussite ou echec du dés comparé au FD
+
+------
+Filtrage initial par NC pour afficher le bon nombre de resultat de Dés
+(6 conditions seulement car on a max 5 dés et 1D8 en cas de NC 0)
+
+
+
+
+
+
+
+
+
+
+{{NC = 0}}
+	On va vérifier si le jet est echec critique pour choisir la couleur
+	{{roll_d8 = 1}}
+		affichage dé rouge
+	{{/roll_d8 = 1}}
+	{{^roll_d8 = 1}} // ^signifie la négation sur la condition
+		On va vérifier si le jet est une reussite via {{rolld8_succes=[[0[resultat]]]}}
+		{{rolld8_succes = 1}}
+			affichage dés vert
+		{{/rolld8_succes = 1}}
+		{{^rolld8_succes = 1}}
+			affichage dés orangé
+		{{/^rolld8_succes = 1}}
+	{{/^roll_d8 = 1}}
+{{/NC = 0}}
+
+{{NC = 1}}
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll1_echec_critique=[[0[resultat]]]}}
+	{{roll1_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll1_echec_critique = 1}}
+	{{^roll1_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll1_critique=[[0[resultat]]]}}
+		{{roll1_critique = 1}}
+			affichage dés jaune avec la valeur {{roll1_detail=[[0[resultat]]]}}
+		{{/roll1_critique = 1}}
+		{{^roll1_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll1_succes=[[0[resultat]]]}}
+			{{roll1_succes = 1}}
+				affichage dés vert
+			{{/roll1_succes = 1}}
+			{{^roll1_succes = 1}}
+				affichage dés orangé
+			{{/^roll1_succes = 1}}
+		{{/^roll1_critique = 1}}
+	{{/^roll1_echec_critique = 1}}
+{{/NC = 1}}
+	
+{{NC = 2}}
+	D1
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll1_echec_critique=[[0[resultat]]]}}
+	{{roll1_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll1_echec_critique = 1}}
+	{{^roll1_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll1_critique=[[0[resultat]]]}}
+		{{roll1_critique = 1}}
+			affichage dés jaune avec la valeur {{roll1_detail=[[0[resultat]]]}}
+		{{/roll1_critique = 1}}
+		{{^roll1_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll1_succes=[[0[resultat]]]}}
+			{{roll1_succes = 1}}
+				affichage dés vert
+			{{/roll1_succes = 1}}
+			{{^roll1_succes = 1}}
+				affichage dés orangé
+			{{/^roll1_succes = 1}}
+		{{/^roll1_critique = 1}}
+	{{/^roll1_echec_critique = 1}}
+
+
+	D2
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll2_echec_critique=[[0[resultat]]]}}
+	{{roll2_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll2_echec_critique = 1}}
+	{{^roll2_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll2_critique=[[0[resultat]]]}}
+		{{roll2_critique = 1}}
+			affichage dés jaune avec la valeur {{roll2_detail=[[0[resultat]]]}}
+		{{/roll2_critique = 1}}
+		{{^roll2_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll2_succes=[[0[resultat]]]}}
+			{{roll2_succes = 1}}
+				affichage dés vert
+			{{/roll2_succes = 1}}
+			{{^roll2_succes = 1}}
+				affichage dés orangé
+			{{/^roll2_succes = 1}}
+		{{/^roll2_critique = 1}}
+	{{/^roll2_echec_critique = 1}}
+{{/NC = 2}}
+
+{{NC = 3}}
+
+	D1
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll1_echec_critique=[[0[resultat]]]}}
+	{{roll1_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll1_echec_critique = 1}}
+	{{^roll1_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll1_critique=[[0[resultat]]]}}
+		{{roll1_critique = 1}}
+			affichage dés jaune avec la valeur {{roll1_detail=[[0[resultat]]]}}
+		{{/roll1_critique = 1}}
+		{{^roll1_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll1_succes=[[0[resultat]]]}}
+			{{roll1_succes = 1}}
+				affichage dés vert
+			{{/roll1_succes = 1}}
+			{{^roll1_succes = 1}}
+				affichage dés orangé
+			{{/^roll1_succes = 1}}
+		{{/^roll1_critique = 1}}
+	{{/^roll1_echec_critique = 1}}
+
+
+	D2
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll2_echec_critique=[[0[resultat]]]}}
+	{{roll2_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll2_echec_critique = 1}}
+	{{^roll2_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll2_critique=[[0[resultat]]]}}
+		{{roll2_critique = 1}}
+			affichage dés jaune avec la valeur {{roll2_detail=[[0[resultat]]]}}
+		{{/roll2_critique = 1}}
+		{{^roll2_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll2_succes=[[0[resultat]]]}}
+			{{roll2_succes = 1}}
+				affichage dés vert
+			{{/roll2_succes = 1}}
+			{{^roll2_succes = 1}}
+				affichage dés orangé
+			{{/^roll2_succes = 1}}
+		{{/^roll2_critique = 1}}
+	{{/^roll2_echec_critique = 1}}
+
+	D3
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll3_echec_critique=[[0[resultat]]]}}
+	{{roll3_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll3_echec_critique = 1}}
+	{{^roll3_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll3_critique=[[0[resultat]]]}}
+		{{roll3_critique = 1}}
+			affichage dés jaune avec la valeur {{roll3_detail=[[0[resultat]]]}}
+		{{/roll3_critique = 1}}
+		{{^roll3_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll3_succes=[[0[resultat]]]}}
+			{{roll3_succes = 1}}
+				affichage dés vert
+			{{/roll3_succes = 1}}
+			{{^roll3_succes = 1}}
+				affichage dés orangé
+			{{/^roll3_succes = 1}}
+		{{/^roll3_critique = 1}}
+	{{/^roll3_echec_critique = 1}}
+{{/NC = 3}}
+
+{{NC = 4}}
+
+	D1
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll1_echec_critique=[[0[resultat]]]}}
+	{{roll1_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll1_echec_critique = 1}}
+	{{^roll1_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll1_critique=[[0[resultat]]]}}
+		{{roll1_critique = 1}}
+			affichage dés jaune avec la valeur {{roll1_detail=[[0[resultat]]]}}
+		{{/roll1_critique = 1}}
+		{{^roll1_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll1_succes=[[0[resultat]]]}}
+			{{roll1_succes = 1}}
+				affichage dés vert
+			{{/roll1_succes = 1}}
+			{{^roll1_succes = 1}}
+				affichage dés orangé
+			{{/^roll1_succes = 1}}
+		{{/^roll1_critique = 1}}
+	{{/^roll1_echec_critique = 1}}
+
+
+	D2
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll2_echec_critique=[[0[resultat]]]}}
+	{{roll2_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll2_echec_critique = 1}}
+	{{^roll2_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll2_critique=[[0[resultat]]]}}
+		{{roll2_critique = 1}}
+			affichage dés jaune avec la valeur {{roll2_detail=[[0[resultat]]]}}
+		{{/roll2_critique = 1}}
+		{{^roll2_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll2_succes=[[0[resultat]]]}}
+			{{roll2_succes = 1}}
+				affichage dés vert
+			{{/roll2_succes = 1}}
+			{{^roll2_succes = 1}}
+				affichage dés orangé
+			{{/^roll2_succes = 1}}
+		{{/^roll2_critique = 1}}
+	{{/^roll2_echec_critique = 1}}
+
+	D3
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll3_echec_critique=[[0[resultat]]]}}
+	{{roll3_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll3_echec_critique = 1}}
+	{{^roll3_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll3_critique=[[0[resultat]]]}}
+		{{roll3_critique = 1}}
+			affichage dés jaune avec la valeur {{roll3_detail=[[0[resultat]]]}}
+		{{/roll3_critique = 1}}
+		{{^roll3_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll3_succes=[[0[resultat]]]}}
+			{{roll3_succes = 1}}
+				affichage dés vert
+			{{/roll3_succes = 1}}
+			{{^roll3_succes = 1}}
+				affichage dés orangé
+			{{/^roll3_succes = 1}}
+		{{/^roll3_critique = 1}}
+	{{/^roll3_echec_critique = 1}}
+
+	D3
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll3_echec_critique=[[0[resultat]]]}}
+	{{roll3_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll3_echec_critique = 1}}
+	{{^roll3_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll3_critique=[[0[resultat]]]}}
+		{{roll3_critique = 1}}
+			affichage dés jaune avec la valeur {{roll3_detail=[[0[resultat]]]}}
+		{{/roll3_critique = 1}}
+		{{^roll3_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll3_succes=[[0[resultat]]]}}
+			{{roll3_succes = 1}}
+				affichage dés vert
+			{{/roll3_succes = 1}}
+			{{^roll3_succes = 1}}
+				affichage dés orangé
+			{{/^roll3_succes = 1}}
+		{{/^roll3_critique = 1}}
+	{{/^roll3_echec_critique = 1}}
+
+	D4
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll4_echec_critique=[[0[resultat]]]}}
+	{{roll4_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll4_echec_critique = 1}}
+	{{^roll4_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll4_critique=[[0[resultat]]]}}
+		{{roll4_critique = 1}}
+			affichage dés jaune avec la valeur {{roll4_detail=[[0[resultat]]]}}
+		{{/roll4_critique = 1}}
+		{{^roll4_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll4_succes=[[0[resultat]]]}}
+			{{roll4_succes = 1}}
+				affichage dés vert
+			{{/roll4_succes = 1}}
+			{{^roll4_succes = 1}}
+				affichage dés orangé
+			{{/^roll4_succes = 1}}
+		{{/^roll4_critique = 1}}
+	{{/^roll4_echec_critique = 1}}
+{{/NC = 4}}
+
+{{NC > 4}}
+	// Ici on bascule sur un NC de 4+ donc on va arrive sur les regles pareticuliere en terme de 1 qui est pas critique (NC 6+), et sur un dés explosif à 9 ou 10 (NC 8+). J'ai besoin de vérifier si ce que je recupere du script permet de traiter ces regles specifiques qui change des bloc NC précédent. Normalement j'ai construit le script pour que justement ça fonctionne mais j'ai tout de meme besoin que tu verifie
+	D1
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll1_echec_critique=[[0[resultat]]]}}
+	{{roll1_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll1_echec_critique = 1}}
+	{{^roll1_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll1_critique=[[0[resultat]]]}}
+		{{roll1_critique = 1}}
+			affichage dés jaune avec la valeur {{roll1_detail=[[0[resultat]]]}}
+		{{/roll1_critique = 1}}
+		{{^roll1_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll1_succes=[[0[resultat]]]}}
+			{{roll1_succes = 1}}
+				affichage dés vert
+			{{/roll1_succes = 1}}
+			{{^roll1_succes = 1}}
+				affichage dés orangé
+			{{/^roll1_succes = 1}}
+		{{/^roll1_critique = 1}}
+	{{/^roll1_echec_critique = 1}}
+
+
+	D2
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll2_echec_critique=[[0[resultat]]]}}
+	{{roll2_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll2_echec_critique = 1}}
+	{{^roll2_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll2_critique=[[0[resultat]]]}}
+		{{roll2_critique = 1}}
+			affichage dés jaune avec la valeur {{roll2_detail=[[0[resultat]]]}}
+		{{/roll2_critique = 1}}
+		{{^roll2_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll2_succes=[[0[resultat]]]}}
+			{{roll2_succes = 1}}
+				affichage dés vert
+			{{/roll2_succes = 1}}
+			{{^roll2_succes = 1}}
+				affichage dés orangé
+			{{/^roll2_succes = 1}}
+		{{/^roll2_critique = 1}}
+	{{/^roll2_echec_critique = 1}}
+
+	D3
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll3_echec_critique=[[0[resultat]]]}}
+	{{roll3_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll3_echec_critique = 1}}
+	{{^roll3_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll3_critique=[[0[resultat]]]}}
+		{{roll3_critique = 1}}
+			affichage dés jaune avec la valeur {{roll3_detail=[[0[resultat]]]}}
+		{{/roll3_critique = 1}}
+		{{^roll3_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll3_succes=[[0[resultat]]]}}
+			{{roll3_succes = 1}}
+				affichage dés vert
+			{{/roll3_succes = 1}}
+			{{^roll3_succes = 1}}
+				affichage dés orangé
+			{{/^roll3_succes = 1}}
+		{{/^roll3_critique = 1}}
+	{{/^roll3_echec_critique = 1}}
+
+	D3
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll3_echec_critique=[[0[resultat]]]}}
+	{{roll3_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll3_echec_critique = 1}}
+	{{^roll3_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll3_critique=[[0[resultat]]]}}
+		{{roll3_critique = 1}}
+			affichage dés jaune avec la valeur {{roll3_detail=[[0[resultat]]]}}
+		{{/roll3_critique = 1}}
+		{{^roll3_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll3_succes=[[0[resultat]]]}}
+			{{roll3_succes = 1}}
+				affichage dés vert
+			{{/roll3_succes = 1}}
+			{{^roll3_succes = 1}}
+				affichage dés orangé
+			{{/^roll3_succes = 1}}
+		{{/^roll3_critique = 1}}
+	{{/^roll3_echec_critique = 1}}
+
+	D4
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll4_echec_critique=[[0[resultat]]]}}
+	{{roll4_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll4_echec_critique = 1}}
+	{{^roll4_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll4_critique=[[0[resultat]]]}}
+		{{roll4_critique = 1}}
+			affichage dés jaune avec la valeur {{roll4_detail=[[0[resultat]]]}}
+		{{/roll4_critique = 1}}
+		{{^roll4_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll4_succes=[[0[resultat]]]}}
+			{{roll4_succes = 1}}
+				affichage dés vert
+			{{/roll4_succes = 1}}
+			{{^roll4_succes = 1}}
+				affichage dés orangé
+			{{/^roll4_succes = 1}}
+		{{/^roll4_critique = 1}}
+	{{/^roll4_echec_critique = 1}}
+
+	D5
+	On va vérifier si le jet est echec critique pour choisir la couleur via la valeur {{roll5_echec_critique=[[0[resultat]]]}}
+	{{roll5_echec_critique = 1}}
+		affichage dé rouge
+	{{/roll5_echec_critique = 1}}
+	{{^roll5_echec_critique = 1}}
+		On va vérifier si le jet est une reussite critique via {{roll5_critique=[[0[resultat]]]}}
+		{{roll5_critique = 1}}
+			affichage dés jaune avec la valeur {{roll5_detail=[[0[resultat]]]}}
+		{{/roll5_critique = 1}}
+		{{^roll5_critique = 1}}
+			On va vérifier si le jet est une reussite via {{roll5_succes=[[0[resultat]]]}}
+			{{roll5_succes = 1}}
+				affichage dés vert
+			{{/roll5_succes = 1}}
+			{{^roll5_succes = 1}}
+				affichage dés orangé
+			{{/^roll5_succes = 1}}
+		{{/^roll5_critique = 1}}
+	{{/^roll5_echec_critique = 1}}
+{{/NC > 4}}
+
+---
+Ici on va simplement indiqué sans condition le QR final via {{QR=[[0[resultat]]]}}
+---
+En tout dernier on va afficher le bloc XP si jamais le gain_xp est declenché via {{gain_xp=[[0[resultat]]]}}
+{{gain_xp = 1}}
+    Lien pour lancer dés XP
+{{/gain_xp = 1}}
