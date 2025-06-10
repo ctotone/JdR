@@ -151,6 +151,9 @@ input[type="checkbox"]:focus {
 }
 
 /* CUSTOM CHECKBOX */
+.charsheet .blessure_box {
+    display: none;
+}
 .charsheet .itd-checkbox-container {
     display: inline;
     position: relative;
@@ -832,16 +835,46 @@ div.page_5 {
     grid-auto-rows: 10px;
 }
 
-.wrapper_bloc_blessure {
+.wrapper_bloc_blessure,
+.wrapper_bloc_blessure_1,
+.wrapper_bloc_blessure_2,
+.wrapper_bloc_blessure_3,
+.wrapper_bloc_blessure_4,
+.wrapper_bloc_blessure_5,
+.wrapper_bloc_blessure_6 {
     display: grid;
     grid-template-columns: repeat(830, 1px);;
     grid-auto-rows: 10px;
 }
 
+.wrapper_bloc_blessure_1 {
+   margin-left: 43px;
+}
+
+.wrapper_bloc_blessure_2 {
+   margin-left: 35px;
+}
+
+.wrapper_bloc_blessure_3 {
+   margin-left: 26px;
+}
+
+.wrapper_bloc_blessure_4 {
+   margin-left: 18px;
+}
+
+.wrapper_bloc_blessure_5 {
+   margin-left: 9px;
+}
+
+.wrapper_bloc_blessure_6 {
+   margin-left: 0px;
+}
+
 .legere { 
     grid-column: 1;
     grid-row: 5;
-    margin-top: 3px;
+    margin-top: 15px;
     margin-left: 46px;
     margin-right: 0px;
 }
@@ -849,8 +882,8 @@ div.page_5 {
 .grave { 
     grid-column: 1;
     grid-row: 10;
-    margin-top: 1px;
-    margin-left: 64px;
+    margin-top: 14px;
+    margin-left: 46px;
     margin-right: 0px;
     /* background-color: #44ff0073; */
 }
@@ -858,8 +891,8 @@ div.page_5 {
 .critique {
     grid-column: 1;
     grid-row: 15;
-    margin-top: 0px;
-    margin-left: 72px;
+    margin-top: 13px;
+    margin-left: 46px;
     margin-right: 0px;
     /* background-color: #44ff0073; */
 }
