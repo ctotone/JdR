@@ -320,6 +320,34 @@ div.page_5 {
 .charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 
+div.arkcoeur_1,
+div.arkcoeur_2,
+div.arkcoeur_3,
+div.arkcoeur_4,
+div.arkcoeur_5,
+div.arkcoeur_6,
+div.arkcoeur_7,
+div.arkcoeur_8,
+div.arkcoeur_9,
+div.arkcoeur_10 {
+    display: none;
+}
+
+.charsheet .arkoeur_valeur_class[value="0"] ~ div.arkcoeur_1,
+.charsheet .arkoeur_valeur_class[value="1"] ~ div.arkcoeur_1,
+.charsheet .arkoeur_valeur_class[value="2"] ~ div.arkcoeur_2,
+.charsheet .arkoeur_valeur_class[value="3"] ~ div.arkcoeur_3,
+.charsheet .arkoeur_valeur_class[value="4"] ~ div.arkcoeur_4,
+.charsheet .arkoeur_valeur_class[value="5"] ~ div.arkcoeur_5,
+.charsheet .arkoeur_valeur_class[value="6"] ~ div.arkcoeur_6,
+.charsheet .arkoeur_valeur_class[value="7"] ~ div.arkcoeur_7,
+.charsheet .arkoeur_valeur_class[value="8"] ~ div.arkcoeur_8,
+.charsheet .arkoeur_valeur_class[value="9"] ~ div.arkcoeur_9,
+.charsheet .arkoeur_valeur_class[value="10"] ~ div.arkcoeur_10
+ {
+    display: block;
+}
+
 
 /* Modelage input et autres */
 
