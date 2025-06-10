@@ -874,7 +874,7 @@ div.page_5 {
 .legere { 
     grid-column: 1;
     grid-row: 5;
-    margin-top: 15px;
+    margin-top: 2px;
     margin-left: 46px;
     margin-right: 0px;
 }
@@ -882,7 +882,7 @@ div.page_5 {
 .grave { 
     grid-column: 1;
     grid-row: 10;
-    margin-top: 14px;
+    margin-top: 1px;
     margin-left: 46px;
     margin-right: 0px;
     /* background-color: #44ff0073; */
@@ -891,7 +891,7 @@ div.page_5 {
 .critique {
     grid-column: 1;
     grid-row: 15;
-    margin-top: 13px;
+    margin-top: 0px;
     margin-left: 46px;
     margin-right: 0px;
     /* background-color: #44ff0073; */
@@ -1504,92 +1504,356 @@ div.page_5 {
     /* background-color: #44ff0073; */
 }
 
-
 /* ROLL TEMPLATE */
-/* DEBUT TEST */
-
-/* Smaller margins - remove these if you want the huge default left margin */
-.sheet-rolltemplate-custom {
-  margin-left: -37px;
+.sheet-rolltemplate-ark {
+  text-align: center;
+  --echec_2: #bc0000e0;
+  --echec_3: #bc0000e0;
+  --echec_1: #b016a0;
+  --reussite_3: #036c03;
+  --reussite_2: #035bae;
+  --reussite_1: #9e9c02d9;
+  --blanc_roll: #fcfcfdf0;
+  --blanc_roll_dark: #fcfcfdf0;
+  --noir_roll: #000004;
+  --box_shadow: 2px 2px 10px 1px #000000f2;	
+  --box_shadow_dark: 0px 1px 4px 3px #ffffff69;
+  --background_color: #fcfcfdf0;
+  --background_color_dark: #fcfcfdf0;
+  --roll_middle: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_middle.png);
+  --roll_background: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_background.png);
+  --roll_top: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_top.png);
+  --roll_bottom: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_bottom.png);
+  --roll_separation:url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_separation.png);
+  width: 260px;
+  height: auto;
 }
-.withoutavatars .sheet-rolltemplate-custom {
-  margin-left: -7px;
-}
-
-.sheet-rolltemplate-custom .sheet-container {
-  border: 1px solid;
-  /* by default, the border is the same color as the header. You can change this here, e.g. to black */
-  border-color: var(--header-bg-color);
-}
-
-/* Header formatting - title and subtitle */
-.sheet-rolltemplate-custom .sheet-header {
-  background-color: var(--header-bg-color);
-  /* change text-align to center to center the header text */
-  text-align: left;
-  color: var(--header-text-color);
-  padding: 5px;
-}
-.sheet-rolltemplate-custom .sheet-title {
-  font-size:1.1em;
-}
-.sheet-rolltemplate-custom .sheet-subtitle {
-  font-size:.9em;
-}
-
-/* example colors */
-.sheet-rolltemplate-custom .sheet-container {
-  /* this is the default color */
-  --header-bg-color: rgba(112,32,130,1);
-  --header-text-color: #FFF;
-  color: black;
-}
-.sheet-rolltemplate-custom .sheet-container.sheet-color-red {
-  --header-bg-color: #F00;
-}
-.sheet-rolltemplate-custom .sheet-container.sheet-color-green {
-  --header-bg-color: #0F0;
-  --header-text-color: #000;
+ 
+.sheet-rolltemplate-ark .sheet-rolltemplate-darkmode {
+  --echec_2: #a80303e0;
+  --echec_3: #a80303e0;
+  --echec_1: #9303bb;
+  --reussite_3: #036c03;
+  --reussite_2: #004280;
+  --reussite_1: #8a8809;
+  --blanc_roll: #fcfcfde5;
+  --noir_roll: #000004;	
+--box_shadow: 0px 1px 4px 3px #ffffff69;
+--background_color: #fcfcfde5;
 }
 
-/* Allprops part */
-.sheet-rolltemplate-custom .sheet-content {
+.sheet-rolltemplate-ark .sheet-toper {
+  background: var(--roll_top);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 4px;
+  width: 263px;
+  margin-left: -4px;
+}
+
+.sheet-rolltemplate-ark .sheet-bottom {
+  background-image: var(--roll_bottom);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 4px;
+  width: 265px;
+  margin-left: -2px;
+}
+
+.sheet-rolltemplate-ark .sheet-separateur {
+  background-image: var(--roll_separation);
+  background-size: 260px;
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 255px;
+  margin-left: 3px;
+}
+
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-center {
+  text-align: center;
+  width: auto;
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-color {
+  background-image: var(--roll_middle);
+  background-size: 260px 500px;
+  box-shadow: var(--box_shadow);
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-background {
+  background: var(--background_color);
+  background-size: 260px 500px;
+  background-size: cover;
+  background-image: var(--roll_background)
+}
+
+.sheet-rolltemplate-ark .sheet-titre {
   display: grid;
-  background: #FFF;
-  /* Header formatting - modify the column layout below */
-  grid-template-columns: auto auto;
-  /* Line height to match default roll template */
-  line-height:1.4em;
+  grid-template-columns: 32% 68%;
+  background: var(--noir_roll);
+  height: 75px;
 }
-.sheet-rolltemplate-custom .sheet-content > div {
+
+.sheet-rolltemplate-ark sheet-span.r_rouge {
+  color: red;
+}
+
+.sheet-rolltemplate-ark sheet-span.r_orange {
+  color: orange;
+}
+
+
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-titre-roll,
+.sheet-rolltemplate-ark .sheet-portrait_roll,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-header {
+  word-wrap: break-word;
+  letter-spacing: -0.7px;
+  padding-top: 17px;
+  padding-bottom: 12px;
+  font-weight: bold;
+  width: auto;
+  margin-left: 0px;
+  background: var(--noir_roll);
+  margin-top: -1px;
+  margin-bottom: -5px;
+  color: var(--blanc_roll);
+  font-size: 16px;
+  /* font-family: "EB Garamond", serif; */
+  font-family: "Faculty Glyphic", sans-serif;
+  line-height: 23px;
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-tragique,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-critique,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-exceptionnelle,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-critique,
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite {
+  background-color: transparent;
+  color: #000000b3;
+  font-size: 18px;
+  letter-spacing: 0px;
+  padding: 15px;
+  margin-top: 0px;
+  font-family: "Faculty Glyphic", sans-serif;
+  /* font-family: "Jim Nightshade"; */
+  width: auto;
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-tragique {
+  color: var(--echec_1);
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-critique{
+  color: var(--echec_1);
+  font-family: "Shadows into light";
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec{
+  color: var(--echec_3);
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-exceptionnelle {
+  color: var(--reussite_1);
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-critique {
+  color: var(--reussite_2);
+  font-family: "Kaushan script";
+}
+
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite {
+  color: var(--reussite_3);
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-result {
+  font-size: 36px;
+  font-family: "Faculty Glyphic", sans-serif;
+  padding: 15px;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-critique,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-critique,
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite {
+  font-size: 20px;
+  line-height: 20px;
+  font-family: "Faculty Glyphic", sans-serif;
+  /* font-family: "EB Garamond", serif; */
+  padding: 5px;
+  padding-top: 15px;
+  letter-spacing: -0.7px;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-rappel,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-tragique,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-critique,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-exceptionnelle,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-critique,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite { 
+  padding: 5px;
+  padding-bottom: 6px;
+  letter-spacing: -0.2px;
+  color: var(--blanc_roll);
+  width: auto;
+  margin-left: 0px;
+  background: var(--noir_roll);
+  margin-top: -5px;
+  font-family: "Faculty Glyphic", sans-serif;
+  /* font-family: "EB Garamond", serif; */
+  font-size: 18px;
+  line-height: 10px;
+  padding-top: 10px;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-tragique {
+  color: var(--echec_1);
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-critique,   
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-critique{
+  color: var(--echec_1);
+  font-family: "Faculty Glyphic", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-echec,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec {
+  color: var(--echec_3);
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-exceptionnelle,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-exceptionnelle {
+  color: var(--reussite_1);
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-critique,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-critique {
+  color: var(--reussite_2);
+  font-family: "Faculty Glyphic", sans-serif;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite,
+.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite {
+  color: var(--reussite_3);
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-succeeds {
+  color: #148c00;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-misses {
+  color: #a90000;
+}
+
+.sheet-rolltemplate-ark .inlinerollresult {
+  background-color: transparent !important;
+  border: none !important;
+  color: unset !important;
+}
+
+.sheet-rolltemplate-ark-header .inlinerollresult {
+  background-color: transparent !important;
+  border: none !important;
+  color: unset !important;
+}
+ 
+.sheet-rolltemplate-ark .inlinerollresult.fullcrit {
+  background-color: transparent !important;
+  border: none !important;
+  color: unset !important;
+}
+ 
+.sheet-rolltemplate-ark .inlinerollresult.fullfail {
+  background-color: transparent !important;
+  border: none !important;
+  color: unset !important;
+}
+ 
+.sheet-rolltemplate-ark .inlinerollresult.importantroll {
+  background-color: transparent !important;
+  border: none !important;
+  color: unset !important;
+}
+
+.sheet-rolltemplate-ark .sheet-content {  
+display: grid;
+grid-template-columns: 50% 50%;
+line-height: 13px;
+  color: #000000b3;
+  margin-left: 2px;
+}
+
+.sheet-rolltemplate-ark .sheet-content > div{
   padding: 5px;
 }
 
 /* Left column */
-.sheet-rolltemplate-custom .sheet-content .sheet-key {
-  font-weight: bold;
-  padding-right: 10px;
-  text-align: right;
+.sheet-rolltemplate-ark .sheet-content .sheet-key {  
+font-weight: bold;
+padding-right: 2px;
+text-align: right;
+font-size: 13px;
 }
 
-/* Empty rule, use this if you want to change the right column 
-.sheet-rolltemplate-custom .sheet-value {
+/* Right column */
+.sheet-rolltemplate-ark .sheet-content .sheet-value {
+padding-right: 5px;
+text-align: left;
+font-size: 13px;
 }
-*/
 
 /* Make even-numbered rows grey */
-.sheet-rolltemplate-custom .sheet-content :nth-child(4n+3),
-.sheet-rolltemplate-custom .sheet-content :nth-child(4n) {
-  background:#EEE;
+.sheet-rolltemplate-ark .sheet-content :nth-child(4n+3),
+.sheet-rolltemplate-ark .sheet-content :nth-child(4n) {
+background: #51515136;
+color: unset !important;
 }
 
-/* Description field */
-.sheet-rolltemplate-custom .sheet-desc {
-  grid-column: span 2;
-  padding: 5px;
-  text-align: center;
+/* Boutons liens */
+/* Roll Buttons */
+.sheet-rolltemplate-ark a[href^='!'],
+.sheet-rolltemplate-ark a[href^='~'],
+.sheet-rolltemplate-ark a[href^='`']{
+  color: #000000e8;
+  border: none;
+  background: none;
+  font-size: 14px;
+  line-height: 6px;
+  text-align: left;
 }
-
-/* FIN TEST */
+.sheet-rolltemplate-ark a[href^='!']:hover,
+.sheet-rolltemplate-ark a[href^='~']:hover,
+.sheet-rolltemplate-ark a[href^='`']:hover{
+  top: -1px;
+  color: #ff0000cb;
+}
+/* hyperlinks */
+.sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']){
+    font-weight: bold;
+    color:#3f8aa6;
+}
+.sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']):hover {
+  font-weight: bold;
+  color:#70c0dd;
+}
+.sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']):visited{
+  color:purple;
+}
+.sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']):visited:hover{
+  color:rgb(187, 45, 187);
+}
 
 

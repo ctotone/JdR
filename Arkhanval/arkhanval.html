@@ -1311,22 +1311,324 @@
 </div>
 
 
-<!-- ROLLTEMPLATE -->
 
-<rolltemplate class="sheet-rolltemplate-custom">
-  <div class="sheet-container sheet-color-{{color}}">
-    <div class="sheet-header">
-      {{#title}}<div class="sheet-title">{{title}}</div>{{/title}}
-      {{#subtitle}}<div class="sheet-subtitle">{{subtitle}}</div>{{/subtitle}}
-    </div>
-    <div class="sheet-content">
-      {{#allprops() title subtitle desc color}}
-      <div class="sheet-key">{{key}}</div>
-      <div class="sheet-value">{{value}}</div>
-      {{/allprops() title subtitle desc color}}
-      {{#desc}}<div class="sheet-desc">{{desc}}</div>{{/desc}}
-    </div>
-  </div>
+<!-- ------------------------------------------ -->
+<!--              ROLL TEMPLATE                 -->
+<!-- ------------------------------------------ -->
+
+<rolltemplate class="sheet-rolltemplate-ark">
+	<div class="sheet-toper"></div>
+        <div class="sheet-titre">
+            <div class="sheet-portrait_roll" style="background-image: url({{avatar}});background-size: 75px 75px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+            <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-titre-roll">
+                {{title}} <span style="font-size: 13px;">({{competence}})</span>
+                <br><span style="font-size: 13px; font-weight: normal;">Difficulté {{FD}}</span>
+            </div>
+        </div>
+        <div class="sheet-rolltemplate-ark-background sheet-rolltemplate-ark-center">
+			<div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-color">
+                <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-subheader">
+                    {{#rollTotal() competence 0}}
+                        {{#rollTotal() roll_d8 1}}
+                            <span style="background: red;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;;">{{roll_d8}}</span>
+                        {{/rollTotal() roll_d8 1}}
+                        {{#^rollTotal() roll_d8 1}}
+                            {{#rollTotal() computed::rolld8_succes 1}}
+                                <span style="background: orange;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;;">{{roll_d8}}</span>
+                            {{/rollTotal() computed::rolld8_succes 1}}
+                            {{#^rollTotal() computed::rolld8_succes 1}}
+                                <span style="background: green;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;">{{roll_d8}}</span>
+                            {{/^rollTotal() computed::rolld8_succes 1}}
+                        {{/^rollTotal() roll_d8 1}}
+                    {{/rollTotal() competence 0}}
+
+                    {{#rollTotal() competence 1}}
+                        {{#rollTotal() computed::roll1_echec_critique 1}}
+                            {{roll_1}} rouge
+                        {{/rollTotal() computed::roll1_echec_critique 1}}
+                        {{#^rollTotal() computed::roll1_echec_critique 1}}
+                            {{#rollTotal() computed::roll1_critique 1}}
+                                {{computed::roll1_detail}} jaune
+                            {{/rollTotal() computed::roll1_critique 1}}
+                            {{#^rollTotal() computed::roll1_critique 1}}
+                                {{#rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}} vert
+                                {{/rollTotal() computed::roll1_succes 1}}
+                                {{#^rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}} orange
+                                {{/^rollTotal() computed::roll1_succes 1}}
+                            {{/^rollTotal() computed::roll1_critique 1}}
+                        {{/^rollTotal() computed::roll1_echec_critique 1}}
+                    {{/rollTotal() competence 1}}
+
+                    {{#rollTotal() competence 2}}
+                        {{#rollTotal() computed::roll1_echec_critique 1}}
+                            {{roll_1}}
+                        {{/rollTotal() computed::roll1_echec_critique 1}}
+                        {{#^rollTotal() computed::roll1_echec_critique 1}}
+                            {{#rollTotal() computed::roll1_critique 1}}
+                                {{computed::roll1_detail}}
+                            {{/rollTotal() computed::roll1_critique 1}}
+                            {{#^rollTotal() computed::roll1_critique 1}}
+                                {{#rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/rollTotal() computed::roll1_succes 1}}
+                                {{#^rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/^rollTotal() computed::roll1_succes 1}}
+                            {{/^rollTotal() computed::roll1_critique 1}}
+                        {{/^rollTotal() computed::roll1_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll2_echec_critique 1}}
+                            {{roll_2}}
+                        {{/rollTotal() computed::roll2_echec_critique 1}}
+                        {{#^rollTotal() computed::roll2_echec_critique 1}}
+                            {{#rollTotal() computed::roll2_critique 1}}
+                                {{computed::roll2_detail}}
+                            {{/rollTotal() computed::roll2_critique 1}}
+                            {{#^rollTotal() computed::roll2_critique 1}}
+                                {{#rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/rollTotal() computed::roll2_succes 1}}
+                                {{#^rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/^rollTotal() computed::roll2_succes 1}}
+                            {{/^rollTotal() computed::roll2_critique 1}}
+                        {{/^rollTotal() computed::roll2_echec_critique 1}}
+                    {{/rollTotal() competence 2}}
+              
+                    {{#rollTotal() competence 3}}
+                        {{#rollTotal() computed::roll1_echec_critique 1}}
+                            {{roll_1}}
+                        {{/rollTotal() computed::roll1_echec_critique 1}}
+                        {{#^rollTotal() computed::roll1_echec_critique 1}}
+                            {{#rollTotal() computed::roll1_critique 1}}
+                                {{computed::roll1_detail}}
+                            {{/rollTotal() computed::roll1_critique 1}}
+                            {{#^rollTotal() computed::roll1_critique 1}}
+                                {{#rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/rollTotal() computed::roll1_succes 1}}
+                                {{#^rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/^rollTotal() computed::roll1_succes 1}}
+                            {{/^rollTotal() computed::roll1_critique 1}}
+                        {{/^rollTotal() computed::roll1_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll2_echec_critique 1}}
+                            {{roll_2}}
+                        {{/rollTotal() computed::roll2_echec_critique 1}}
+                        {{#^rollTotal() computed::roll2_echec_critique 1}}
+                            {{#rollTotal() computed::roll2_critique 1}}
+                                {{computed::roll2_detail}}
+                            {{/rollTotal() computed::roll2_critique 1}}
+                            {{#^rollTotal() computed::roll2_critique 1}}
+                                {{#rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/rollTotal() computed::roll2_succes 1}}
+                                {{#^rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/^rollTotal() computed::roll2_succes 1}}
+                            {{/^rollTotal() computed::roll2_critique 1}}
+                        {{/^rollTotal() computed::roll2_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll3_echec_critique 1}}
+                            {{roll_3}}
+                        {{/rollTotal() computed::roll3_echec_critique 1}}
+                        {{#^rollTotal() computed::roll3_echec_critique 1}}
+                            {{#rollTotal() computed::roll3_critique 1}}
+                                {{computed::roll3_detail}}
+                            {{/rollTotal() computed::roll3_critique 1}}
+                            {{#^rollTotal() computed::roll3_critique 1}}
+                                {{#rollTotal() computed::roll3_succes 1}}
+                                    {{roll_3}}
+                                {{/rollTotal() computed::roll3_succes 1}}
+                                {{#^rollTotal() computed::roll3_succes 1}}
+                                    {{roll_3}}
+                                {{/^rollTotal() computed::roll3_succes 1}}
+                            {{/^rollTotal() computed::roll3_critique 1}}
+                        {{/^rollTotal() computed::roll3_echec_critique 1}}
+                    {{/rollTotal() competence 3}}
+              
+                    {{#rollTotal() competence 4}}
+                        {{#rollTotal() computed::roll1_echec_critique 1}}
+                            {{roll_1}}
+                        {{/rollTotal() computed::roll1_echec_critique 1}}
+                        {{#^rollTotal() computed::roll1_echec_critique 1}}
+                            {{#rollTotal() computed::roll1_critique 1}}
+                                {{computed::roll1_detail}}
+                            {{/rollTotal() computed::roll1_critique 1}}
+                            {{#^rollTotal() computed::roll1_critique 1}}
+                                {{#rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/rollTotal() computed::roll1_succes 1}}
+                                {{#^rollTotal() computed::roll1_succes 1}}
+                                    {{roll_1}}
+                                {{/^rollTotal() computed::roll1_succes 1}}
+                            {{/^rollTotal() computed::roll1_critique 1}}
+                        {{/^rollTotal() computed::roll1_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll2_echec_critique 1}}
+                            {{roll_2}}
+                        {{/rollTotal() computed::roll2_echec_critique 1}}
+                        {{#^rollTotal() computed::roll2_echec_critique 1}}
+                            {{#rollTotal() computed::roll2_critique 1}}
+                                {{computed::roll2_detail}}
+                            {{/rollTotal() computed::roll2_critique 1}}
+                            {{#^rollTotal() computed::roll2_critique 1}}
+                                {{#rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/rollTotal() computed::roll2_succes 1}}
+                                {{#^rollTotal() computed::roll2_succes 1}}
+                                    {{roll_2}}
+                                {{/^rollTotal() computed::roll2_succes 1}}
+                            {{/^rollTotal() computed::roll2_critique 1}}
+                        {{/^rollTotal() computed::roll2_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll3_echec_critique 1}}
+                            {{roll_3}}
+                        {{/rollTotal() computed::roll3_echec_critique 1}}
+                        {{#^rollTotal() computed::roll3_echec_critique 1}}
+                            {{#rollTotal() computed::roll3_critique 1}}
+                                {{computed::roll3_detail}}
+                            {{/rollTotal() computed::roll3_critique 1}}
+                            {{#^rollTotal() computed::roll3_critique 1}}
+                                {{#rollTotal() computed::roll3_succes 1}}
+                                    {{roll_3}}
+                                {{/rollTotal() computed::roll3_succes 1}}
+                                {{#^rollTotal() computed::roll3_succes 1}}
+                                    {{roll_3}}
+                                {{/^rollTotal() computed::roll3_succes 1}}
+                            {{/^rollTotal() computed::roll3_critique 1}}
+                        {{/^rollTotal() computed::roll3_echec_critique 1}}
+                        |
+                        {{#rollTotal() computed::roll4_echec_critique 1}}
+                            {{roll_4}}
+                        {{/rollTotal() computed::roll4_echec_critique 1}}
+                        {{#^rollTotal() computed::roll4_echec_critique 1}}
+                            {{#rollTotal() computed::roll4_critique 1}}
+                                {{computed::roll4_detail}}
+                            {{/rollTotal() computed::roll4_critique 1}}
+                            {{#^rollTotal() computed::roll4_critique 1}}
+                                {{#rollTotal() computed::roll4_succes 1}}
+                                    {{roll_4}}
+                                {{/rollTotal() computed::roll4_succes 1}}
+                                {{#^rollTotal() computed::roll4_succes 1}}
+                                    {{roll_4}}
+                                {{/^rollTotal() computed::roll4_succes 1}}
+                            {{/^rollTotal() computed::roll4_critique 1}}
+                        {{/^rollTotal() computed::roll4_echec_critique 1}}
+                    {{/rollTotal() competence 4}}
+
+                    {{#^rollTotal() competence 0}}    
+                        {{#^rollTotal() competence 1}}
+                            {{#^rollTotal() competence 2}}
+                                {{#^rollTotal() competence 3}}
+                                    {{#^rollTotal() competence 4}}
+                                        {{#rollTotal() computed::roll1_echec_critique 1}}
+                                            {{roll_1}}
+                                        {{/rollTotal() computed::roll1_echec_critique 1}}
+                                        {{#^rollTotal() computed::roll1_echec_critique 1}}
+                                            {{#rollTotal() computed::roll1_critique 1}}
+                                                {{computed::roll1_detail}}
+                                            {{/rollTotal() computed::roll1_critique 1}}
+                                            {{#^rollTotal() computed::roll1_critique 1}}
+                                                {{#rollTotal() computed::roll1_succes 1}}
+                                                    {{roll_1}}
+                                                {{/rollTotal() computed::roll1_succes 1}}
+                                                {{#^rollTotal() computed::roll1_succes 1}}
+                                                    {{roll_1}}
+                                                {{/^rollTotal() computed::roll1_succes 1}}
+                                            {{/^rollTotal() computed::roll1_critique 1}}
+                                        {{/^rollTotal() computed::roll1_echec_critique 1}}
+                                        |
+                                        {{#rollTotal() computed::roll2_echec_critique 1}}
+                                            {{roll_2}}
+                                        {{/rollTotal() computed::roll2_echec_critique 1}}
+                                        {{#^rollTotal() computed::roll2_echec_critique 1}}
+                                            {{#rollTotal() computed::roll2_critique 1}}
+                                                {{computed::roll2_detail}}
+                                            {{/rollTotal() computed::roll2_critique 1}}
+                                            {{#^rollTotal() computed::roll2_critique 1}}
+                                                {{#rollTotal() computed::roll2_succes 1}}
+                                                    {{roll_2}}
+                                                {{/rollTotal() computed::roll2_succes 1}}
+                                                {{#^rollTotal() computed::roll2_succes 1}}
+                                                    {{roll_2}}
+                                                {{/^rollTotal() computed::roll2_succes 1}}
+                                            {{/^rollTotal() computed::roll2_critique 1}}
+                                        {{/^rollTotal() computed::roll2_echec_critique 1}}
+                                        |
+                                        {{#rollTotal() computed::roll3_echec_critique 1}}
+                                            {{roll_3}}
+                                        {{/rollTotal() computed::roll3_echec_critique 1}}
+                                        {{#^rollTotal() computed::roll3_echec_critique 1}}
+                                            {{#rollTotal() computed::roll3_critique 1}}
+                                                {{computed::roll3_detail}}
+                                            {{/rollTotal() computed::roll3_critique 1}}
+                                            {{#^rollTotal() computed::roll3_critique 1}}
+                                                {{#rollTotal() computed::roll3_succes 1}}
+                                                    {{roll_3}}
+                                                {{/rollTotal() computed::roll3_succes 1}}
+                                                {{#^rollTotal() computed::roll3_succes 1}}
+                                                    {{roll_3}}
+                                                {{/^rollTotal() computed::roll3_succes 1}}
+                                            {{/^rollTotal() computed::roll3_critique 1}}
+                                        {{/^rollTotal() computed::roll3_echec_critique 1}}
+                                        |
+                                        {{#rollTotal() computed::roll4_echec_critique 1}}
+                                            {{roll_4}}
+                                        {{/rollTotal() computed::roll4_echec_critique 1}}
+                                        {{#^rollTotal() computed::roll4_echec_critique 1}}
+                                            {{#rollTotal() computed::roll4_critique 1}}
+                                                {{computed::roll4_detail}}
+                                            {{/rollTotal() computed::roll4_critique 1}}
+                                            {{#^rollTotal() computed::roll4_critique 1}}
+                                                {{#rollTotal() computed::roll4_succes 1}}
+                                                    {{roll_4}}
+                                                {{/rollTotal() computed::roll4_succes 1}}
+                                                {{#^rollTotal() computed::roll4_succes 1}}
+                                                    {{roll_4}}
+                                                {{/^rollTotal() computed::roll4_succes 1}}
+                                            {{/^rollTotal() computed::roll4_critique 1}}
+                                        {{/^rollTotal() computed::roll4_echec_critique 1}}
+                                        |
+                                        {{#rollTotal() computed::roll5_echec_critique 1}}
+                                            {{roll_5}}
+                                        {{/rollTotal() computed::roll5_echec_critique 1}}
+                                        {{#^rollTotal() computed::roll5_echec_critique 1}}
+                                            {{#rollTotal() computed::roll5_critique 1}}
+                                                {{computed::roll5_detail}}
+                                            {{/rollTotal() computed::roll5_critique 1}}
+                                            {{#^rollTotal() computed::roll5_critique 1}}
+                                                {{#rollTotal() computed::roll5_succes 1}}
+                                                    {{roll_5}}
+                                                {{/rollTotal() computed::roll5_succes 1}}
+                                                {{#^rollTotal() computed::roll5_succes 1}}
+                                                    {{roll_5}}
+                                                {{/^rollTotal() computed::roll5_succes 1}}
+                                            {{/^rollTotal() computed::roll5_critique 1}}
+                                        {{/^rollTotal() computed::roll5_echec_critique 1}}
+                                    {{/^rollTotal() competence 4}}
+                                {{/^rollTotal() competence 3}}
+                            {{/^rollTotal() competence 2}}
+                        {{/^rollTotal() competence 1}}
+                    {{/^rollTotal() competence 0}}
+
+                    <br><br>
+                    <!-- {{roll_1}} - {{roll_2}} - {{roll_3}} - {{roll_4}} - {{roll_5}} -->
+                    {{#rollTotal() computed::gain_xp 1}}
+                        Gain XP : ({{XP}})
+                    {{/rollTotal() computed::gain_xp 1}}
+                    <br><br><span style="font-size: 17px;font-style: italic;color: #000000 !important;">{{effet}}</span>
+                </div>
+                <div class="sheet-separateur"></div>
+                <div class="sheet-rolltemplate-ark-center sheet-template-ark-rappel">
+                    Qualité de réussite {{computed::QR}}
+                </div>
+            </div>
+        </div>
+	<div class="sheet-bottom"></div>
 </rolltemplate>
 
 
@@ -1382,21 +1684,24 @@
     });	
 </script>
 
-<!-- Lancers de dés D10 -->
+
+
+<!-- Lancers de dés -->
 <script type="text/worker"> 
 
+// Lancer de dés de compétences
 const competences = {
   "artisan_bricolage": "Bricolage",
   "artisan_cuisine": "Cuisine",
   "artisan_bois": "Travail du bois",
   "artisan_cuir": "Travail du cuir",
-  "artisan-artisan_metal": "Travail du métal",
+  "artisan_metal": "Travail du métal",
   "artisan_custom6": "Artisan",
   "artisan_custom7": "Artisan",
   "artiste_chant": "Chant",
   "artiste_comedie": "Comédie",
   "artiste_danse": "Danse",
-  "artiste_dessin": "Dessin & Peinture",
+  "artiste_dessin": "Dessin",
   "artiste_musique": "Musique",
   "artiste_custom6": "Artiste",
   "artiste_custom7": "Artiste",
@@ -1408,22 +1713,22 @@ const competences = {
   "combattant_custom6": "Combattant",
   "combattant_custom7": "Combattant",
   "erudit_botanique": "Botanique",
-  "erudit_legende": "Histoire & Légendes",
+  "erudit_legende": "Histoire",
   "erudit_lecture": "Lecture & Écriture",
   "erudit_medecine": "Médecine",
   "erudit_zoologie": "Zoologie",
   "erudit_custom6": "Érudit",
   "erudit_custom7": "Érudit",
-  "explorateur_athletique": "Compétences athlétiques",
-  "explorateur_detection": "Détection & Vigilance",
-  "explorateur_dressage": "Dressage & Équitation",
+  "explorateur_athletique": "Comp. Athlétiques",
+  "explorateur_detection": "Détection",
+  "explorateur_dressage": "Dressage",
   "explorateur_natation": "Natation",
   "explorateur_survie": "Survie",
   "explorateur_custom6": "Explorateur",
   "explorateur_custom7": "Explorateur",
   "magicien_concentration": "Concentration",
   "magicien_metantropie": "Métantropie",
-  "magicien_empathie": "Empathie & Intuition",
+  "magicien_empathie": "Empathie",
   "magicien_ethereve": "Ethérêve",
   "magicien_sigentropie": "Sigentropie",
   "magicien_custom6": "Magicien",
@@ -1435,11 +1740,11 @@ const competences = {
   "roublard_jeu": "Jeu",
   "roublard_custom6": "Roublard",
   "roublard_custom7": "Roublard",
-  "stratege_convaincre": "Convaincre & Argumenter",
-  "stratege_discours": "Discours & Éloquence",
-  "stratege_gestion": "Gestion & Administration",
+  "stratege_convaincre": "Convaincre",
+  "stratege_discours": "Discours",
+  "stratege_gestion": "Gestion",
   "stratege_intimidation": "Intimidation",
-  "stratege_tactique": "Tactique & Stratégie",
+  "stratege_tactique": "Tactique",
   "stratege_custom6": "Stratège",
   "stratege_custom7": "Stratège"
 };
@@ -1449,7 +1754,7 @@ Object.keys(competences).forEach(nom_comp => {
     const attribut_val = `${nom_comp}_valeur`;
     const titre_competence = competences[nom_comp];
 
-    const roll = await startRoll(`@{gm} &{template:custom} {{token=@{ctoken}}} {{title=Jet de compétence : ${titre_competence}}} {{subheader=@{character_name}}} {{roll_d8=[[1D8]]}} {{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}} {{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}} {{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll_extra_11=[[1D10]]}} {{roll_extra_12=[[1D10]]}} {{roll_extra_13=[[1D10]]}} {{roll_extra_14=[[1D10]]}} {{roll_extra_15=[[1D10]]}} {{roll_extra_16=[[1D10]]}} {{roll_extra_17=[[1D10]]}} {{roll_extra_18=[[1D10]]}} {{roll_extra_19=[[1D10]]}} {{roll_extra_20=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{competence=[[@{${attribut_val}}]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{rolld8_succes=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}}`);
+    const roll = await startRoll(`@{gm} &{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=${titre_competence}}} {{subheader=@{character_name}}} {{roll_d8=[[1D8]]}} {{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}} {{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}} {{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll_extra_11=[[1D10]]}} {{roll_extra_12=[[1D10]]}} {{roll_extra_13=[[1D10]]}} {{roll_extra_14=[[1D10]]}} {{roll_extra_15=[[1D10]]}} {{roll_extra_16=[[1D10]]}} {{roll_extra_17=[[1D10]]}} {{roll_extra_18=[[1D10]]}} {{roll_extra_19=[[1D10]]}} {{roll_extra_20=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{competence=[[@{${attribut_val}}]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{rolld8_succes=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}}`);
 
     const NC = roll.results.competence.result;
     const FD_initial = roll.results.FD.result;
@@ -1580,15 +1885,14 @@ Object.keys(competences).forEach(nom_comp => {
   });
 });
 
-</script>
 
-<!-- Lancers de dés D12 -->
-<script type="text/worker"> 
+
+// Lancer de dés 12 de spécialisation
 
 on("clicked:roll-specialisation", async (event) => {
-  const roll = await startRoll(`&{template:custom} {{title=Jet de Spécialisation}} {{ncvaleur=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}}{{malus_fd=[[@{malus_fd}]]}}{{roll_1=[[1D12]]}} {{roll_2=[[1D12]]}}{{roll_3=[[1D12]]}} {{roll_4=[[1D12]]}}{{roll_5=[[1D12]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}}{{roll_extra_5=[[1D10]]}}{{roll_extra_6=[[1D10]]}}{{roll_extra_7=[[1D10]]}}{{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}}`);
+  const roll = await startRoll(`&{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=Spécialité}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}}{{malus_fd=[[@{malus_fd}]]}}{{roll_1=[[1D12]]}} {{roll_2=[[1D12]]}}{{roll_3=[[1D12]]}} {{roll_4=[[1D12]]}}{{roll_5=[[1D12]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}}{{roll_extra_5=[[1D10]]}}{{roll_extra_6=[[1D10]]}}{{roll_extra_7=[[1D10]]}}{{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}}`);
 
-  const NC = roll.results.ncvaleur.result;
+  const NC = roll.results.competence.result;
   const FD_initial = roll.results.FD.result;
   const FD = FD_initial + roll.results.malus_fd.result;
   const computeObj = {};
@@ -1636,16 +1940,20 @@ on("clicked:roll-specialisation", async (event) => {
   for (let i = 1; i <= 5; i++) {
     if (i <= nb_d12) {
       const val = roll.results[`roll_${i}`].result;
-
       const res = traiterExplosion(val);
+      const is_success = val >= FD ? 1 : 0;
+      const is_crit = isExplosif(val) ? 1 : 0;
+      const is_ec_crit = (val === 1 && NC <= 5) ? 1 : 0;
+
       QR_temp += res.qr;
       reussites_critiques += res.crit;
+      if (is_ec_crit) echecs_critiques += 1;
+
       computeObj[`roll_${i}`] = val;
       computeObj[`roll${i}_detail`] = res.detail;
-      computeObj[`roll${i}_succes`] = val >= FD ? 1 : 0;
-      computeObj[`roll${i}_critique`] = isExplosif(val) ? 1 : 0;
-      computeObj[`roll${i}_echec_critique`] = (val === 1 && NC <= 5) ? 1 : 0;
-      if (val === 1 && NC <= 5) echecs_critiques += 1;
+      computeObj[`roll${i}_succes`] = is_success;
+      computeObj[`roll${i}_critique`] = is_crit;
+      computeObj[`roll${i}_echec_critique`] = is_ec_crit;
     } else {
       computeObj[`roll_${i}`] = "-";
       computeObj[`roll${i}_detail`] = "-";
@@ -1656,36 +1964,46 @@ on("clicked:roll-specialisation", async (event) => {
   }
 
   QR_temp -= echecs_critiques;
+
   computeObj["QR"] = QR_temp;
   computeObj["ECritique"] = echecs_critiques;
   computeObj["Rcritique"] = reussites_critiques;
-  computeObj["gain_xp"] = (reussites_critiques > 0) ? 1 : 0;
 
-  // LOGS POUR TEST
-  console.log("Clés de roll.results :", Object.keys(roll.results));
-  console.log(`Niveau de Compétence (NC) : ${NC}`);
-  console.log(`FD initial : ${FD_initial}`);
-  console.log(`FD ajusté : ${FD}`);
-  console.log(`Nombre de dés lancés : ${Math.min(NC, 5)}`);
-  console.log(`Échecs critiques : ${echecs_critiques}`);
-  console.log(`Réussites critiques (total) : ${reussites_critiques}`);
-  console.log(`QR finale : ${QR_temp}`);
-  console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
-  for (let i = 1; i <= Math.min(NC, 5); i++) {
-    console.log(`D${i} : ${computeObj[`roll_${i}`]}, Succès ? : ${computeObj[`roll${i}_succes`]}`);
-    console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
-    console.log(`D${i} critique ? : ${computeObj[`roll${i}_critique`]}`);
-    console.log(`D${i} échec critique ? : ${computeObj[`roll${i}_echec_critique`]}`);
-  }
-  console.log("===================================");
+  // ➕ XP uniquement si FD initial ≥ 7 ET une réussite critique
+  computeObj["gain_xp"] = (reussites_critiques > 0 && FD_initial >= 7) ? 1 : 0;
+
+    // LOGS POUR TEST
+    console.log(`Niveau de Compétence (NC) : ${NC}`);
+    console.log(`FD initial : ${FD_initial}`);
+    console.log(`FD ajusté : ${FD}`);
+    console.log(`Nombre de dés lancés : ${NC === 0 ? 1 : Math.min(NC, 5)}`);
+    console.log(`Échecs critiques : ${echecs_critiques}`);
+    console.log(`Réussites critiques (total) : ${reussites_critiques}`);
+    console.log(`QR finale : ${QR_temp}`);
+    console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
+    if (NC === 0) {
+      console.log(`D8 : ${computeObj["roll_d8"]}, Succès ? : ${computeObj["rolld8_succes"]}`);
+    } else {
+      for (let i = 1; i <= Math.min(NC, 5); i++) {
+        console.log(`D${i} : ${computeObj[`roll_${i}`]}, Succès ? : ${computeObj[`roll${i}_succes`]}`);
+        console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
+        console.log(`D${i} critique ? : ${computeObj[`roll${i}_critique`]}`);
+        console.log(`D${i} échec critique ? : ${computeObj[`roll${i}_echec_critique`]}`);
+      }
+    }
+    console.log(`===================================`);
 
   finishRoll(roll.rollId, computeObj);
 });
 
-on("clicked:roll-d10", async (event) => {
-  const roll = await startRoll(`&{template:custom} {{title=Jet de Spécialisation}} {{ncvaleur=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}}{{malus_fd=[[@{malus_fd}]]}}{{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}}{{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}}{{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}}{{roll_extra_5=[[1D10]]}}{{roll_extra_6=[[1D10]]}}{{roll_extra_7=[[1D10]]}}{{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}}`);
 
-  const NC = roll.results.ncvaleur.result;
+
+// Lancer de dés 10 simple
+
+on("clicked:roll-d10", async (event) => {
+  const roll = await startRoll(`&{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=D10}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{roll_1=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll1_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}}`);
+
+  const NC = roll.results.competence.result;
   const FD_initial = roll.results.FD.result;
   const FD = FD_initial + roll.results.malus_fd.result;
   const computeObj = {};
@@ -1694,6 +2012,7 @@ on("clicked:roll-d10", async (event) => {
   let echecs_critiques = 0;
   let reussites_critiques = 0;
   let index_extra = 0;
+  let gain_xp = 0;
 
   const des_explosifs = [];
   for (let i = 1; i <= 10; i++) {
@@ -1701,79 +2020,56 @@ on("clicked:roll-d10", async (event) => {
   }
 
   const seuil_explosion = NC >= 8 ? 9 : 10;
-
   const isExplosif = (val) => val >= seuil_explosion;
 
-  const traiterExplosion = (val_initial) => {
-    let total_qr = 0;
-    let total_crit = 0;
-    let val = val_initial;
-    const detail = [val];
+  const val = roll.results[`roll_1`].result;
+  const detail = [val];
 
-    while (isExplosif(val)) {
-      if (val >= FD) total_qr += 1;
-      total_crit += 1;
-      if (index_extra < des_explosifs.length) {
-        val = des_explosifs[index_extra];
-        detail.push(val);
-        index_extra++;
-      } else break;
-    }
+  let val_temp = val;
+  let qr = 0;
+  let crit = 0;
 
-    if (!isExplosif(val) && val >= FD) total_qr += 1;
-
-    return {
-      qr: total_qr,
-      crit: total_crit,
-      detail: detail.join(" + ")
-    };
-  };
-
-  const nb_d12 = Math.min(NC, 5);
-  for (let i = 1; i <= 5; i++) {
-    if (i <= nb_d12) {
-      const val = roll.results[`roll_${i}`].result;
-
-      const res = traiterExplosion(val);
-      QR_temp += res.qr;
-      reussites_critiques += res.crit;
-      computeObj[`roll_${i}`] = val;
-      computeObj[`roll${i}_detail`] = res.detail;
-      computeObj[`roll${i}_succes`] = val >= FD ? 1 : 0;
-      computeObj[`roll${i}_critique`] = isExplosif(val) ? 1 : 0;
-      computeObj[`roll${i}_echec_critique`] = (val === 1 && NC <= 5) ? 1 : 0;
-      if (val === 1 && NC <= 5) echecs_critiques += 1;
-    } else {
-      computeObj[`roll_${i}`] = "-";
-      computeObj[`roll${i}_detail`] = "-";
-      computeObj[`roll${i}_succes`] = 0;
-      computeObj[`roll${i}_critique`] = 0;
-      computeObj[`roll${i}_echec_critique`] = 0;
-    }
+  while (isExplosif(val_temp)) {
+    if (val_temp >= FD) qr += 1;
+    crit += 1;
+    if (index_extra < des_explosifs.length) {
+      val_temp = des_explosifs[index_extra];
+      detail.push(val_temp);
+      index_extra++;
+    } else break;
   }
 
+  if (!isExplosif(val_temp) && val_temp >= FD) qr += 1;
+
+  QR_temp += qr;
+  reussites_critiques += crit;
+
+  const is_succes = val >= FD ? 1 : 0;
+  const is_critique = isExplosif(val) ? 1 : 0;
+  const is_echec_critique = (val === 1 && NC <= 5) ? 1 : 0;
+  if (is_echec_critique) echecs_critiques += 1;
+  if (reussites_critiques > 0 && FD_initial >= 7) gain_xp = 1;
+
   QR_temp -= echecs_critiques;
+
+  computeObj["roll_1"] = val;
+  computeObj["roll1_detail"] = detail.join(" + ");
+  computeObj["roll1_succes"] = is_succes;
+  computeObj["roll1_critique"] = is_critique;
+  computeObj["roll1_echec_critique"] = is_echec_critique;
+
   computeObj["QR"] = QR_temp;
   computeObj["ECritique"] = echecs_critiques;
   computeObj["Rcritique"] = reussites_critiques;
-  computeObj["gain_xp"] = (reussites_critiques > 0) ? 1 : 0;
+  computeObj["gain_xp"] = gain_xp;
 
   // LOGS POUR TEST
-  console.log("Clés de roll.results :", Object.keys(roll.results));
-  console.log(`Niveau de Compétence (NC) : ${NC}`);
-  console.log(`FD initial : ${FD_initial}`);
-  console.log(`FD ajusté : ${FD}`);
-  console.log(`Nombre de dés lancés : ${Math.min(NC, 5)}`);
-  console.log(`Échecs critiques : ${echecs_critiques}`);
-  console.log(`Réussites critiques (total) : ${reussites_critiques}`);
-  console.log(`QR finale : ${QR_temp}`);
-  console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
-  for (let i = 1; i <= Math.min(NC, 5); i++) {
-    console.log(`D${i} : ${computeObj[`roll_${i}`]}, Succès ? : ${computeObj[`roll${i}_succes`]}`);
-    console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
-    console.log(`D${i} critique ? : ${computeObj[`roll${i}_critique`]}`);
-    console.log(`D${i} échec critique ? : ${computeObj[`roll${i}_echec_critique`]}`);
-  }
+  console.log("=== Jet Spécialisation Simple ===");
+  console.log(`NC : ${NC}, FD : ${FD} (initial: ${FD_initial})`);
+  console.log(`D1 = ${val}`);
+  console.log(`Succès : ${is_succes}, Critique : ${is_critique}, ECritique : ${is_echec_critique}`);
+  console.log(`Détail : ${computeObj["roll1_detail"]}`);
+  console.log(`QR : ${QR_temp}, Réussites Critiques : ${reussites_critiques}, Gain XP : ${gain_xp}`);
   console.log("===================================");
 
   finishRoll(roll.rollId, computeObj);
