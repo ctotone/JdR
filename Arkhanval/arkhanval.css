@@ -1507,6 +1507,8 @@ div.page_5 {
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-ark {
   text-align: center;
+  --color_titre: #a44e45;
+  --color_xp: #03bbce;
   --echec_2: #bc0000e0;
   --echec_3: #bc0000e0;
   --echec_1: #b016a0;
@@ -1627,6 +1629,7 @@ div.page_5 {
   /* font-family: "EB Garamond", serif; */
   font-family: "Faculty Glyphic", sans-serif;
   line-height: 23px;
+  /* color: var(--color_titre); */
 }
 
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader,
@@ -1645,7 +1648,7 @@ div.page_5 {
     margin-top: 0px;
     font-family: "Faculty Glyphic", sans-serif;
     width: auto;
-    line-height: 30px;
+    line-height: 50px;
 }
 
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-tragique {
@@ -1719,6 +1722,12 @@ div.page_5 {
   font-size: 18px;
   line-height: 10px;
   padding-top: 10px;
+}
+
+.sheet-rolltemplate-ark .sheet-template-ark-rappel {
+    height: 25px;  
+    line-height: 20px;
+    color: var(--color_xp);
 }
 
 .sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
@@ -1860,5 +1869,193 @@ color: unset !important;
 .sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']):visited:hover{
   color:rgb(187, 45, 187);
 }
+
+.sheet-rolltemplate-ito {
+    margin-left: -10px;
+  }
+  .withoutavatars .sheet-rolltemplate-ito {
+    margin-left: -10px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-container {
+      border: none;
+      border-radius: 130px;
+      width: 260px;
+      height: 260px;
+      background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_xp.png);
+      background-size: cover;
+      color: #000000b3;
+      font-size: 16px;
+      /* font-family: "EB Garamond", serif; */
+      font-family: "Faculty Glyphic", sans-serif;
+      line-height: 23px;
+      --rouge: red;
+      --vert: #00bd00;
+      --noir: black;
+  }
+  
+  /* Header formatting - title and subtitle */
+  .sheet-rolltemplate-ito .sheet-header {
+      color: #000000b3;
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 6px;  
+      border-bottom: 2px solid #000000b3;
+      margin-left: 63px;
+      width: 136px;
+  }
+  .sheet-rolltemplate-ito .sheet-title {
+      font-size: 20px;
+      font-weight: bold;	
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-subtitle {
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
+  }
+  
+  /* Allprops part */
+  .sheet-rolltemplate-ito .sheet-content {
+      width: 184px;
+      margin-left: 38px;
+      display: grid;
+      grid-template-columns: auto auto;
+      line-height: 1.4em;
+      margin-top: 10px;
+  }
+  .sheet-rolltemplate-ito .sheet-content > div {
+    padding: 5px;
+  }
+  
+  /* Left column */
+  .sheet-rolltemplate-ito .sheet-content .sheet-key {
+    font-weight: bold;
+    padding-right: 10px;
+    text-align: right;
+  }
+  
+  /* Empty rule, use this if you want to change the right column 
+  .sheet-rolltemplate-ito .sheet-value {
+  }
+  */
+  
+  /* Make even-numbered rows grey */
+  .sheet-rolltemplate-ito .sheet-content :nth-child(4n+3),
+  .sheet-rolltemplate-ito .sheet-content :nth-child(4n) {
+    background:#EEE;
+  }
+  
+  /* Description field */
+  .sheet-rolltemplate-ito .sheet-desc,
+  .sheet-rolltemplate-ito .sheet-result,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-ark,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-a {
+    grid-column: span 2;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-result_1,
+  .sheet-rolltemplate-ito .sheet-result_2,
+  .sheet-rolltemplate-ito .sheet-result_3,
+  .sheet-rolltemplate-ito .sheet-result_4,
+  .sheet-rolltemplate-ito .sheet-result_5,
+  .sheet-rolltemplate-ito .sheet-result_6,
+  .sheet-rolltemplate-ito .sheet-result_7,
+  .sheet-rolltemplate-ito .sheet-result_8,
+  .sheet-rolltemplate-ito .sheet-result_9,
+  .sheet-rolltemplate-ito .sheet-result_10,
+  .sheet-rolltemplate-ito .sheet-result_11,
+  .sheet-rolltemplate-ito .sheet-result_12 {
+      /* margin-top: 10px; */
+      font-size: 60px;
+      font-weight: bold;
+      width: 70px;
+      height: 70px;
+      background-repeat: no-repeat;
+      margin-left: 60px;
+      background-size: 70px 70px;
+  }
+
+  .sheet-rolltemplate-ito .sheet-result_1 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_01.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_2 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_02.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_3 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_03.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_4 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_04.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_5 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_05.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_6 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_06.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_7 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_07.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_8 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_08.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_9 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_09.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_10 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_10.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_11 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_11.png);
+}
+
+.sheet-rolltemplate-ito .sheet-result_12 {
+  background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_12.png);
+  width: 100px;
+  height: 100px;
+  margin-left: 45px;
+  background-size: 100px 100px;
+}
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-ark,
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-a
+   {
+      /* margin-top: 30px; */
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: -1.5px;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite {
+      color: #000000b3;
+  }
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-ark {
+      color: #a13d32;
+  }
+
+  
+  .sheet-rolltemplate-ito .sheet-feedback-reussite-a {
+    color: #707aa1;
+}
+
 
 
