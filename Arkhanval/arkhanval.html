@@ -1330,32 +1330,32 @@
                 <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-subheader">
                     {{#rollTotal() competence 0}}
                         {{#rollTotal() roll_d8 1}}
-                            <span style="background: red;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;;">{{roll_d8}}</span>
+                            <span style="color: white; background: #b016a0;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
                         {{/rollTotal() roll_d8 1}}
                         {{#^rollTotal() roll_d8 1}}
                             {{#rollTotal() computed::rolld8_succes 1}}
-                                <span style="background: orange;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;;">{{roll_d8}}</span>
+                                <span style="color: white;background: #036c03;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
                             {{/rollTotal() computed::rolld8_succes 1}}
                             {{#^rollTotal() computed::rolld8_succes 1}}
-                                <span style="background: green;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;">{{roll_d8}}</span>
+                                <span style="color: white; background: #bc0000;border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
                             {{/^rollTotal() computed::rolld8_succes 1}}
                         {{/^rollTotal() roll_d8 1}}
                     {{/rollTotal() competence 0}}
 
                     {{#rollTotal() competence 1}}
                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                            {{roll_1}} rouge
+                            <span style="color: white; background: #b016a0; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
                         {{/rollTotal() computed::roll1_echec_critique 1}}
                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                             {{#rollTotal() computed::roll1_critique 1}}
-                                {{computed::roll1_detail}} jaune
+                                 <span style="color: white; background: #8a8809; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
                             {{/rollTotal() computed::roll1_critique 1}}
                             {{#^rollTotal() computed::roll1_critique 1}}
                                 {{#rollTotal() computed::roll1_succes 1}}
-                                    {{roll_1}} vert
+                                    <span style="color: white; background: #036c03; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
                                 {{/rollTotal() computed::roll1_succes 1}}
                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                    {{roll_1}} orange
+                                    <span style="color: white; background: #bc0000; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 5px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
                                 {{/^rollTotal() computed::roll1_succes 1}}
                             {{/^rollTotal() computed::roll1_critique 1}}
                         {{/^rollTotal() computed::roll1_echec_critique 1}}
