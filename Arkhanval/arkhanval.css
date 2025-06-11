@@ -1531,8 +1531,11 @@ div.page_5 {
   --roll_top: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_top.png);
   --roll_bottom: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_bottom.png);
   --roll_separation:url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_separation.png);
-  width: 260px;
-  height: auto;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/back_roll.png);
+    background-size: 300px auto;
+    width: 300px;
+    height: auto;
+    margin-left: -35px;
 }
  
 .sheet-rolltemplate-ark .sheet-rolltemplate-darkmode {
@@ -1582,23 +1585,27 @@ div.page_5 {
 }
 
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-color {
-  background-image: var(--roll_middle);
-  background-size: 260px 500px;
-  box-shadow: var(--box_shadow);
+    background-image: var(--roll_middle);
+    background-size: 260px 500px;
+    box-shadow: var(--box_shadow);
 }
 
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-background {
-  background: var(--background_color);
-  background-size: 260px 500px;
-  background-size: cover;
-  background-image: var(--roll_background)
+    background: #e6d1bf;
+    background-size: cover;
+    background-image: var(--roll_background);
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .sheet-rolltemplate-ark .sheet-titre {
-  display: grid;
-  grid-template-columns: 32% 68%;
-  background: var(--noir_roll);
-  height: 75px;
+    display: grid;
+    grid-template-columns: 26% 67%;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/toper_roll.png);
+    background-size: 263px 80px;
+    background-repeat: no-repeat;
+    height: 80px;
+    margin-left: 10px;
 }
 
 .sheet-rolltemplate-ark sheet-span.r_rouge {
@@ -1621,7 +1628,7 @@ div.page_5 {
   font-weight: bold;
   width: auto;
   margin-left: 0px;
-  background: var(--noir_roll);
+  /* background: var(--noir_roll); */
   margin-top: -1px;
   margin-bottom: -5px;
   color: var(--blanc_roll);
@@ -1641,10 +1648,10 @@ div.page_5 {
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite {
     background-color: transparent;
     color: #000000b3;
-    font-size: 20px;
+    font-size: 13px;
     letter-spacing: 0px;
     padding: 15px;
-    padding-top: 30px;
+    padding-top: 15px;
     margin-top: 0px;
     font-family: "Faculty Glyphic", sans-serif;
     width: auto;
@@ -1725,9 +1732,12 @@ div.page_5 {
 }
 
 .sheet-rolltemplate-ark .sheet-template-ark-rappel {
-    height: 25px;  
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/toper_roll.png);
+    background-size: cover;
+    width: 251px;
+    height: 25px;
     line-height: 20px;
-    color: var(--color_xp);
+    /* color: var(--color_xp); */
 }
 
 .sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
