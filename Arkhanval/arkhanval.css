@@ -1851,18 +1851,17 @@ color: unset !important;
 .sheet-rolltemplate-ark a[href^='!'],
 .sheet-rolltemplate-ark a[href^='~'],
 .sheet-rolltemplate-ark a[href^='`']{
-  color: #000000e8;
   border: none;
   background: none;
-  font-size: 14px;
   line-height: 6px;
   text-align: left;
 }
 .sheet-rolltemplate-ark a[href^='!']:hover,
 .sheet-rolltemplate-ark a[href^='~']:hover,
 .sheet-rolltemplate-ark a[href^='`']:hover{
-  top: -1px;
-  color: #ff0000cb;
+  margin: -1px;
+  font-weight: bold;
+  color: #e3e003;
 }
 /* hyperlinks */
 .sheet-rolltemplate-ark a:not([href^='~']):not([href^='!']):not([href^='`']){
