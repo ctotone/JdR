@@ -383,6 +383,41 @@ div.arkcoeur_10 {
     display: block;
 }
 
+div.page1_popup_espece,
+div.peuple_1,
+div.peuple_2,
+div.peuple_3,
+div.peuple_4,
+div.peuple_5,
+div.peuple_6,
+div.peuple_7,
+div.peuple_8,
+div.peuple_9,
+div.peuple_10,
+div.peuple_11,
+div.peuple_12,
+div.peuple_13 {
+    display: none;
+}
+
+.charsheet .popup_open[value="1"] ~ div.page1_popup_espece,
+.charsheet .choix_peuple[value="1"] ~ div.peuple_1,
+.charsheet .choix_peuple[value="2"] ~ div.peuple_2,
+.charsheet .choix_peuple[value="3"] ~ div.peuple_3,
+.charsheet .choix_peuple[value="4"] ~ div.peuple_4,
+.charsheet .choix_peuple[value="5"] ~ div.peuple_5,
+.charsheet .choix_peuple[value="6"] ~ div.peuple_6,
+.charsheet .choix_peuple[value="7"] ~ div.peuple_7,
+.charsheet .choix_peuple[value="8"] ~ div.peuple_8,
+.charsheet .choix_peuple[value="9"] ~ div.peuple_9,
+.charsheet .choix_peuple[value="10"] ~ div.peuple_10,
+.charsheet .choix_peuple[value="11"] ~ div.peuple_11,
+.charsheet .choix_peuple[value="12"] ~ div.peuple_12,
+.charsheet .choix_peuple[value="13"] ~ div.peuple_13
+ {
+    display: block;
+}
+
 
 /* Modelage input et autres */
 
@@ -549,7 +584,7 @@ div.arkcoeur_10 {
 div.page_1 {    
     width: 830px;
     height: 1112px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page1.png);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page.png);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -671,7 +706,7 @@ div.page_5 {
 .page1_zone_ark {  
     grid-column: 33 / 52;
     grid-row: 16 / 66;
-    margin-top: 0px;
+    margin-top: -9px;
     margin-left: 0px;
     margin-right: 0px;
     /* background-color: #44ff0073; */
@@ -702,6 +737,130 @@ div.page_5 {
     margin-left: 5px;
     margin-right: 5px;
     /* background-color: #44ff0073; */
+}
+
+.page1_popup_espece { 
+    grid-column: 11 / 75;
+    grid-row: 16 / 48;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 14px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_popup.png);
+    background-size: cover;
+    box-shadow: 0px 0px 7px 4px #793028de;
+    z-index: 1;
+}
+
+/* Structure zone Popup */
+
+.popup_titre {
+    grid-column: 21 / 59;
+    grid-row: 1;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+    font-size: 28px;
+    text-decoration: underline;
+}
+
+.popup_A1,
+.popup_A2,
+.popup_A3,
+.popup_A4,
+.popup_A5,
+.popup_A6,
+.popup_A7,
+.popup_A8,
+.popup_A9,
+.popup_A10,
+.popup_A11,
+.popup_A12,
+.popup_A13 {
+    grid-column: 1 / 20;
+    grid-row: 5 / 30;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_01-min.png);
+    background-size: contain;
+}
+
+.popup_A2 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_02-min.png);
+}
+
+.popup_A3 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_03-min.png);
+    margin-left: -38px;
+    width: 265px;
+    margin-top: 15px;
+}
+
+.popup_A4 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_04-min.png);
+}
+
+.popup_A5 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_05-min.png);
+}
+
+.popup_A6 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_06-min.png);
+}
+
+.popup_A7 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_07-min.png);
+}
+
+.popup_A8 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_08-min.png);
+}
+
+.popup_A9 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_09-min.png);
+}
+
+.popup_A10 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_10-min.png);
+}
+
+.popup_A11 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_11-min.png);
+}
+
+.popup_A12 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_12-min.png);
+}
+
+.popup_A13 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_13-min.png);
+}
+
+.popup_texte { 
+    grid-column: 22 / 62;
+    grid-row: 5 / 30;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.popup_close {
+    grid-column: 61;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
 }
 
 /* Structure zone ARK */
@@ -957,12 +1116,19 @@ div.page_5 {
 }
 
 .bloc_malus_fd {  
-    grid-column: 9 / 12;
+    grid-column: 14 / 17;
     grid-row: 18 / 21;
     margin-top: 6px;
-    margin-left: 1px;
+    margin-left: -2px;
     margin-right: 0px;
-    /* background-color: #44ff0073; */
+}
+
+.bloc_armure {  
+    grid-column: 4 / 7;
+    grid-row: 18 / 21;
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: -3px;
 }
 
 .blessure_check_1 {  
