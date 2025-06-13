@@ -1531,7 +1531,7 @@ div.page_5 {
   --roll_top: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_top.png);
   --roll_bottom: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_bottom.png);
   --roll_separation:url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Obscuritas/images/rolltemplate_separation.png);
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/back_roll.png);
+    /* background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/back_roll.png); */
     background-size: 300px auto;
     width: 300px;
     height: auto;
@@ -1569,16 +1569,6 @@ div.page_5 {
   margin-left: -2px;
 }
 
-.sheet-rolltemplate-ark .sheet-separateur {
-  background-image: var(--roll_separation);
-  background-size: 260px;
-  background-repeat: no-repeat;
-  height: 10px;
-  width: 255px;
-  margin-left: 3px;
-}
-
-
 .sheet-rolltemplate-ark .sheet-rolltemplate-ark-center {
   text-align: center;
   width: auto;
@@ -1595,7 +1585,7 @@ div.page_5 {
     background-size: cover;
     background-image: var(--roll_background);
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 22px;
 }
 
 .sheet-rolltemplate-ark .sheet-titre {
@@ -1636,13 +1626,7 @@ div.page_5 {
     line-height: 23px;
 }
 
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-tragique,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-critique,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-exceptionnelle,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-critique,
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite {
+.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader {
     background-color: transparent;
     color: #000000b3;
     font-size: 13px;
@@ -1655,70 +1639,19 @@ div.page_5 {
     line-height: 50px;
 }
 
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-tragique {
-  color: var(--echec_1);
-}
-
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec-critique{
-  color: var(--echec_1);
-  font-family: "Shadows into light";
-  font-weight: bold;
-}
-
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-echec{
-  color: var(--echec_3);
-}
-
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-exceptionnelle {
-  color: var(--reussite_1);
-}
-
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite-critique {
-  color: var(--reussite_2);
-  font-family: "Kaushan script";
-}
-
-.sheet-rolltemplate-ark .sheet-rolltemplate-ark-subheader-reussite {
-  color: var(--reussite_3);
-}
-
 .sheet-rolltemplate-ark .sheet-template-ark-result {
   font-size: 36px;
   font-family: "Faculty Glyphic", sans-serif;
   padding: 15px;
 }
 
-.sheet-rolltemplate-ark .sheet-template-ark-texte,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-critique,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-exceptionnelle,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-critique,
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite {
-  font-size: 20px;
-  line-height: 20px;
-  font-family: "Faculty Glyphic", sans-serif;
-  /* font-family: "EB Garamond", serif; */
-  padding: 5px;
-  padding-top: 15px;
-  letter-spacing: -0.7px;
-  margin-bottom: 10px;
-  width: auto;
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-rappel,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-tragique,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-critique,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-exceptionnelle,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-critique,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite { 
+.sheet-rolltemplate-ark .sheet-template-ark-rappel { 
   padding: 5px;
   padding-bottom: 6px;
   letter-spacing: -0.2px;
   color: var(--blanc_roll);
   width: auto;
-  margin-left: 0px;
+  margin-left: -2px;
   background: var(--noir_roll);
   margin-top: -5px;
   font-family: "Faculty Glyphic", sans-serif;
@@ -1731,52 +1664,9 @@ div.page_5 {
 .sheet-rolltemplate-ark .sheet-template-ark-rappel {
     background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/fond_titre_roll.png);
     background-size: cover;
-    width: 251px;
+    width: 252px;
     height: 25px;
     line-height: 20px;
-    /* color: var(--color_xp); */
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-tragique,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-tragique {
-  color: var(--echec_1);
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec-critique,   
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec-critique{
-  color: var(--echec_1);
-  font-family: "Faculty Glyphic", sans-serif;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-echec,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-echec {
-  color: var(--echec_3);
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-exceptionnelle,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-exceptionnelle {
-  color: var(--reussite_1);
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite-critique,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite-critique {
-  color: var(--reussite_2);
-  font-family: "Faculty Glyphic", sans-serif;
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-texte-reussite,
-.sheet-rolltemplate-ark .sheet-template-ark-rappel-reussite {
-  color: var(--reussite_3);
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-succeeds {
-  color: #148c00;
-}
-
-.sheet-rolltemplate-ark .sheet-template-ark-misses {
-  color: #a90000;
 }
 
 .sheet-rolltemplate-ark .inlinerollresult {
