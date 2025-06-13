@@ -6,14 +6,14 @@
 
 
 <div class="menu">
-    <button type="action" name="act_0" class="button0" style="margin-left: 2px;box-shadow: 0px 1px 6px 0px var(--color_ombre_button);">Personnage</button>
+    <button type="action" name="act_0" class="button0" >Personnage</button>
     <button type="action" name="act_1" class="button1">Équipement</button>
     <button type="action" name="act_2" class="button2">Sortilèges 1</button>
     <button type="action" name="act_3" class="button3">Sortilèges 2</button>
     <button type="action" name="act_4" class="button4">Carnet de route</button>
-    
+
     <button type="action" name="act_roll-specialisation" class="button5">Jet de Spécialisation (D12)</button>
-    <button type="action" name="act_roll-d10" class="button5">D10</button>
+    <button type="action" name="act_roll-d10" class="button6">D10</button>
 </div>
 <div class="personnage">
     <input type="hidden" name="attr_page" class="choix_page" value="0">
@@ -273,6 +273,9 @@
                             <div class="valeur_ark">
                                 <input type="number" class="input_ark_valeur" name="attr_arksonge_valeur" value="1">
                             </div>
+                            <div class="jet_arksonge">
+                                <button type="action" class="button_texte" name="act_roll-arksonge" style="width: 112px;height: 25px;"></button>
+                            </div>
                         </div>
                     </div>
 
@@ -296,6 +299,9 @@
                             <div class="valeur_ark">
                                 <input type="number" class="input_ark_valeur" name="attr_arkentropie_valeur" value="1">
                             </div>
+                            <div class="jet_arkentropie">
+                                <button type="action" class="button_texte" name="act_roll-arkentropie" style="width: 128px;height: 25px;"></button>
+                            </div>
                         </div>
                     </div>
 
@@ -318,6 +324,9 @@
                             </div> 
                             <div class="valeur_ark">
                                 <input type="number" class="input_ark_valeur" name="attr_arkoeur_valeur" value="1">
+                            </div>
+                            <div class="jet_arkoeur">
+                                <button type="action" class="button_texte" name="act_roll-arkoeur" style="width: 94px;height: 25px;"></button>
                             </div>
                         </div>
                     </div>
@@ -1177,8 +1186,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_1"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_1"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_1"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_1" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_1" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_1}}} {{competence=@{sortilege_competence_1}}} {{pm=@{sortilege_pm_1}}} {{fd=@{sortilege_fd_1}}} {{portee=@{sortilege_portee_1}}} {{zone=@{sortilege_zone_1}}} {{duree=@{sortilege_duree_1}}} {{desc=@{sortilege_description_1}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_2">
@@ -1190,8 +1199,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_2"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_2"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_2"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_2" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_2" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_2}}} {{competence=@{sortilege_competence_2}}} {{pm=@{sortilege_pm_2}}} {{fd=@{sortilege_fd_2}}} {{portee=@{sortilege_portee_2}}} {{zone=@{sortilege_zone_2}}} {{duree=@{sortilege_duree_2}}} {{desc=@{sortilege_description_2}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_3">
@@ -1204,7 +1213,7 @@
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_3"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_3"></div>
                     <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_3" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_3}}} {{competence=@{sortilege_competence_3}}} {{pm=@{sortilege_pm_3}}} {{fd=@{sortilege_fd_3}}} {{portee=@{sortilege_portee_3}}} {{zone=@{sortilege_zone_3}}} {{duree=@{sortilege_duree_3}}} {{desc=@{sortilege_description_3}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_4">
@@ -1216,8 +1225,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_4"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_4"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_4"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_4" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_4" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_4}}} {{competence=@{sortilege_competence_4}}} {{pm=@{sortilege_pm_4}}} {{fd=@{sortilege_fd_4}}} {{portee=@{sortilege_portee_4}}} {{zone=@{sortilege_zone_4}}} {{duree=@{sortilege_duree_4}}} {{desc=@{sortilege_description_4}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_5">
@@ -1229,8 +1238,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_5"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_5"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_5"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_5" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_5" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_5}}} {{competence=@{sortilege_competence_5}}} {{pm=@{sortilege_pm_5}}} {{fd=@{sortilege_fd_5}}} {{portee=@{sortilege_portee_5}}} {{zone=@{sortilege_zone_5}}} {{duree=@{sortilege_duree_5}}} {{desc=@{sortilege_description_5}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
         </div>
@@ -1241,7 +1250,7 @@
         <div class="wrapper_page_sortilege">
             <div class="sortilege_1">
                 <div class="wrapper_sortilege">
-                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_6"></div>
+                    <div class="sortilege_nom"><input type="text" class="input_sortilege_nom" name="attr_sortilege_nom_5"></div>
                     <div class="sortilege_competence"><input type="text" class="input_sortilege_encart" name="attr_sortilege_competence_6"></div>
                     <div class="sortilege_pm"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_pm_6"></div>
                     <div class="sortilege_fd"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_fd_6"></div>
@@ -1249,7 +1258,7 @@
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_6"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_6"></div>
                     <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_6" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_6}}} {{competence=@{sortilege_competence_6}}} {{pm=@{sortilege_pm_6}}} {{fd=@{sortilege_fd_6}}} {{portee=@{sortilege_portee_6}}} {{zone=@{sortilege_zone_6}}} {{duree=@{sortilege_duree_6}}} {{desc=@{sortilege_description_6}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_2">
@@ -1261,8 +1270,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_7"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_7"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_7"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_7" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_7" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_7}}} {{competence=@{sortilege_competence_7}}} {{pm=@{sortilege_pm_7}}} {{fd=@{sortilege_fd_7}}} {{portee=@{sortilege_portee_7}}} {{zone=@{sortilege_zone_7}}} {{duree=@{sortilege_duree_7}}} {{desc=@{sortilege_description_7}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_3">
@@ -1274,8 +1283,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_8"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_8"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_8"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_8" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_8" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_8}}} {{competence=@{sortilege_competence_8}}} {{pm=@{sortilege_pm_8}}} {{fd=@{sortilege_fd_8}}} {{portee=@{sortilege_portee_8}}} {{zone=@{sortilege_zone_8}}} {{duree=@{sortilege_duree_8}}} {{desc=@{sortilege_description_8}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_4">
@@ -1287,8 +1296,8 @@
                     <div class="sortilege_portee"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_portee_9"></div>
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_9"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_9"></div>
-                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_9" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_9" placeholder="Description..."></textarea></div>                   
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_9}}} {{competence=@{sortilege_competence_9}}} {{pm=@{sortilege_pm_9}}} {{fd=@{sortilege_fd_9}}} {{portee=@{sortilege_portee_9}}} {{zone=@{sortilege_zone_9}}} {{duree=@{sortilege_duree_9}}} {{desc=@{sortilege_description_9}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
             <div class="sortilege_5">
@@ -1301,7 +1310,7 @@
                     <div class="sortilege_zone"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_zone_10"></div>
                     <div class="sortilege_duree"><input type="text" class="input_sortilege_encart_gros" name="attr_sortilege_duree_10"></div>
                     <div class="sortilege_description"><textarea class="sortilege_description" name="attr_sortilege_description_10" placeholder="Description..."></textarea></div>                    
-                    <div class="sortilege_annonce">X</div>
+                    <div class="sortilege_annonce"><button type="roll" class="button_annonce" value="&{template:ark} {{sortilege=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=@{sortilege_nom_10}}} {{competence=@{sortilege_competence_10}}} {{pm=@{sortilege_pm_10}}} {{fd=@{sortilege_fd_10}}} {{portee=@{sortilege_portee_10}}} {{zone=@{sortilege_zone_10}}} {{duree=@{sortilege_duree_10}}} {{desc=@{sortilege_description_10}}}" name="roll_sortilege" title="Partager les détails du sortilège...">R</button></div>
                 </div>
             </div>
         </div>
@@ -1321,8 +1330,9 @@
 
 <rolltemplate class="sheet-rolltemplate-ark">
 	<!-- <div class="sheet-toper"></div> -->
+     {{#jet}}
         <div class="sheet-titre">
-            <div class="sheet-portrait_roll" style="background-image: url({{avatar}});background-size: 55px 55px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+            <div class="sheet-portrait_roll" style="background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_12.png);background-size: 55px 55px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
             <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-titre-roll">
                 {{title}} <span style="font-size: 13px;">({{competence}})</span>
                 <br><span style="font-size: 13px; font-weight: normal;">Difficulté {{FD}}</span>
@@ -1333,32 +1343,32 @@
                 <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-subheader">
                     {{#rollTotal() competence 0}}
                         {{#rollTotal() roll_d8 1}}
-                            <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
+                            <span class="sheet-rouge_critique">{{roll_d8}}</span>
                         {{/rollTotal() roll_d8 1}}
                         {{#^rollTotal() roll_d8 1}}
                             {{#rollTotal() computed::rolld8_succes 1}}
-                                <span style="color: white;background: #036a3a;border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
+                                <span class="sheet-vert">{{roll_d8}}</span>
                             {{/rollTotal() computed::rolld8_succes 1}}
                             {{#^rollTotal() computed::rolld8_succes 1}}
-                                <span style="color: white; background: #919191;border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_d8}}</span>
+                                <span  class="sheet-gris">{{roll_d8}}</span>
                             {{/^rollTotal() computed::rolld8_succes 1}}
                         {{/^rollTotal() roll_d8 1}}
                     {{/rollTotal() competence 0}}
 
                     {{#rollTotal() competence 1}}
                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                            <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                            <span class="sheet-rouge_critique">{{roll_1}}</span>
                         {{/rollTotal() computed::roll1_echec_critique 1}}
                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                             {{#rollTotal() computed::roll1_critique 1}}
-                                 <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
+                                 <span class="sheet-jaune">{{computed::roll1_detail}}</span>
                             {{/rollTotal() computed::roll1_critique 1}}
                             {{#^rollTotal() computed::roll1_critique 1}}
                                 {{#rollTotal() computed::roll1_succes 1}}
-                                    <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                    <span class="sheet-vert">{{roll_1}}</span>
                                 {{/rollTotal() computed::roll1_succes 1}}
                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                    <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                    <span class="sheet-gris">{{roll_1}}</span>
                                 {{/^rollTotal() computed::roll1_succes 1}}
                             {{/^rollTotal() computed::roll1_critique 1}}
                         {{/^rollTotal() computed::roll1_echec_critique 1}}
@@ -1366,35 +1376,35 @@
 
                     {{#rollTotal() competence 2}}
                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                        <span class="sheet-rouge_critique">{{roll_1}}</span>
                         {{/rollTotal() computed::roll1_echec_critique 1}}
                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                             {{#rollTotal() computed::roll1_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll1_detail}}</span>
                             {{/rollTotal() computed::roll1_critique 1}}
                             {{#^rollTotal() computed::roll1_critique 1}}
                                 {{#rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-vert">{{roll_1}}</span>
                                 {{/rollTotal() computed::roll1_succes 1}}
                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-gris">{{roll_1}}</span>
                                 {{/^rollTotal() computed::roll1_succes 1}}
                             {{/^rollTotal() computed::roll1_critique 1}}
                         {{/^rollTotal() computed::roll1_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll2_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                        <span class="sheet-rouge_critique">{{roll_2}}</span>
                         {{/rollTotal() computed::roll2_echec_critique 1}}
                         {{#^rollTotal() computed::roll2_echec_critique 1}}
                             {{#rollTotal() computed::roll2_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll2_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll2_detail}}</span>
                             {{/rollTotal() computed::roll2_critique 1}}
                             {{#^rollTotal() computed::roll2_critique 1}}
                                 {{#rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-vert">{{roll_2}}</span>
                                 {{/rollTotal() computed::roll2_succes 1}}
                                 {{#^rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-gris">{{roll_2}}</span>
                                 {{/^rollTotal() computed::roll2_succes 1}}
                             {{/^rollTotal() computed::roll2_critique 1}}
                         {{/^rollTotal() computed::roll2_echec_critique 1}}
@@ -1402,52 +1412,52 @@
               
                     {{#rollTotal() competence 3}}
                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                        <span class="sheet-rouge_critique">{{roll_1}}</span>
                         {{/rollTotal() computed::roll1_echec_critique 1}}
                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                             {{#rollTotal() computed::roll1_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll1_detail}}</span>
                             {{/rollTotal() computed::roll1_critique 1}}
                             {{#^rollTotal() computed::roll1_critique 1}}
                                 {{#rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-vert">{{roll_1}}</span>
                                 {{/rollTotal() computed::roll1_succes 1}}
                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-gris">{{roll_1}}</span>
                                 {{/^rollTotal() computed::roll1_succes 1}}
                             {{/^rollTotal() computed::roll1_critique 1}}
                         {{/^rollTotal() computed::roll1_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll2_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                        <span class="sheet-rouge_critique">{{roll_2}}</span>
                         {{/rollTotal() computed::roll2_echec_critique 1}}
                         {{#^rollTotal() computed::roll2_echec_critique 1}}
                             {{#rollTotal() computed::roll2_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll2_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll2_detail}}</span>
                             {{/rollTotal() computed::roll2_critique 1}}
                             {{#^rollTotal() computed::roll2_critique 1}}
                                 {{#rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-vert">{{roll_2}}</span>
                                 {{/rollTotal() computed::roll2_succes 1}}
                                 {{#^rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-gris">{{roll_2}}</span>
                                 {{/^rollTotal() computed::roll2_succes 1}}
                             {{/^rollTotal() computed::roll2_critique 1}}
                         {{/^rollTotal() computed::roll2_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll3_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                        <span class="sheet-rouge_critique">{{roll_3}}</span>
                         {{/rollTotal() computed::roll3_echec_critique 1}}
                         {{#^rollTotal() computed::roll3_echec_critique 1}}
                             {{#rollTotal() computed::roll3_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll3_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll3_detail}}</span>
                             {{/rollTotal() computed::roll3_critique 1}}
                             {{#^rollTotal() computed::roll3_critique 1}}
                                 {{#rollTotal() computed::roll3_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                <span class="sheet-vert">{{roll_3}}</span>
                                 {{/rollTotal() computed::roll3_succes 1}}
                                 {{#^rollTotal() computed::roll3_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                <span class="sheet-gris">{{roll_3}}</span>
                                 {{/^rollTotal() computed::roll3_succes 1}}
                             {{/^rollTotal() computed::roll3_critique 1}}
                         {{/^rollTotal() computed::roll3_echec_critique 1}}
@@ -1455,69 +1465,69 @@
               
                     {{#rollTotal() competence 4}}
                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                        <span class="sheet-rouge_critique">{{roll_1}}</span>
                         {{/rollTotal() computed::roll1_echec_critique 1}}
                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                             {{#rollTotal() computed::roll1_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll1_detail}}</span>
                             {{/rollTotal() computed::roll1_critique 1}}
                             {{#^rollTotal() computed::roll1_critique 1}}
                                 {{#rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-vert">{{roll_1}}</span>
                                 {{/rollTotal() computed::roll1_succes 1}}
                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                <span class="sheet-gris">{{roll_1}}</span>
                                 {{/^rollTotal() computed::roll1_succes 1}}
                             {{/^rollTotal() computed::roll1_critique 1}}
                         {{/^rollTotal() computed::roll1_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll2_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                        <span class="sheet-rouge_critique">{{roll_2}}</span>
                         {{/rollTotal() computed::roll2_echec_critique 1}}
                         {{#^rollTotal() computed::roll2_echec_critique 1}}
                             {{#rollTotal() computed::roll2_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll2_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll2_detail}}</span>
                             {{/rollTotal() computed::roll2_critique 1}}
                             {{#^rollTotal() computed::roll2_critique 1}}
                                 {{#rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-vert">{{roll_2}}</span>
                                 {{/rollTotal() computed::roll2_succes 1}}
                                 {{#^rollTotal() computed::roll2_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                <span class="sheet-gris">{{roll_2}}</span>
                                 {{/^rollTotal() computed::roll2_succes 1}}
                             {{/^rollTotal() computed::roll2_critique 1}}
                         {{/^rollTotal() computed::roll2_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll3_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                        <span class="sheet-rouge_critique">{{roll_3}}</span>
                         {{/rollTotal() computed::roll3_echec_critique 1}}
                         {{#^rollTotal() computed::roll3_echec_critique 1}}
                             {{#rollTotal() computed::roll3_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll3_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll3_detail}}</span>
                             {{/rollTotal() computed::roll3_critique 1}}
                             {{#^rollTotal() computed::roll3_critique 1}}
                                 {{#rollTotal() computed::roll3_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                <span class="sheet-vert">{{roll_3}}</span>
                                 {{/rollTotal() computed::roll3_succes 1}}
                                 {{#^rollTotal() computed::roll3_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                <span class="sheet-gris">{{roll_3}}</span>
                                 {{/^rollTotal() computed::roll3_succes 1}}
                             {{/^rollTotal() computed::roll3_critique 1}}
                         {{/^rollTotal() computed::roll3_echec_critique 1}}
                         
                         {{#rollTotal() computed::roll4_echec_critique 1}}
-                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                        <span class="sheet-rouge_critique">{{roll_4}}</span>
                         {{/rollTotal() computed::roll4_echec_critique 1}}
                         {{#^rollTotal() computed::roll4_echec_critique 1}}
                             {{#rollTotal() computed::roll4_critique 1}}
-                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll4_detail}}</span>
+                            <span class="sheet-jaune">{{computed::roll4_detail}}</span>
                             {{/rollTotal() computed::roll4_critique 1}}
                             {{#^rollTotal() computed::roll4_critique 1}}
                                 {{#rollTotal() computed::roll4_succes 1}}
-                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                                <span class="sheet-vert">{{roll_4}}</span>
                                 {{/rollTotal() computed::roll4_succes 1}}
                                 {{#^rollTotal() computed::roll4_succes 1}}
-                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                                <span class="sheet-gris">{{roll_4}}</span>
                                 {{/^rollTotal() computed::roll4_succes 1}}
                             {{/^rollTotal() computed::roll4_critique 1}}
                         {{/^rollTotal() computed::roll4_echec_critique 1}}
@@ -1529,86 +1539,86 @@
                                 {{#^rollTotal() competence 3}}
                                     {{#^rollTotal() competence 4}}
                                         {{#rollTotal() computed::roll1_echec_critique 1}}
-                                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                        <span class="sheet-rouge_critique">{{roll_1}}</span>
                                         {{/rollTotal() computed::roll1_echec_critique 1}}
                                         {{#^rollTotal() computed::roll1_echec_critique 1}}
                                             {{#rollTotal() computed::roll1_critique 1}}
-                                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll1_detail}}</span>
+                                            <span class="sheet-jaune">{{computed::roll1_detail}}</span>
                                             {{/rollTotal() computed::roll1_critique 1}}
                                             {{#^rollTotal() computed::roll1_critique 1}}
                                                 {{#rollTotal() computed::roll1_succes 1}}
-                                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                                <span class="sheet-vert">{{roll_1}}</span>
                                                 {{/rollTotal() computed::roll1_succes 1}}
                                                 {{#^rollTotal() computed::roll1_succes 1}}
-                                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_1}}</span>
+                                                <span class="sheet-gris">{{roll_1}}</span>
                                                 {{/^rollTotal() computed::roll1_succes 1}}
                                             {{/^rollTotal() computed::roll1_critique 1}}
                                         {{/^rollTotal() computed::roll1_echec_critique 1}}
                                         
                                         {{#rollTotal() computed::roll2_echec_critique 1}}
-                                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                        <span class="sheet-rouge_critique">{{roll_2}}</span>
                                         {{/rollTotal() computed::roll2_echec_critique 1}}
                                         {{#^rollTotal() computed::roll2_echec_critique 1}}
                                             {{#rollTotal() computed::roll2_critique 1}}
-                                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll2_detail}}</span>
+                                            <span class="sheet-jaune">{{computed::roll2_detail}}</span>
                                             {{/rollTotal() computed::roll2_critique 1}}
                                             {{#^rollTotal() computed::roll2_critique 1}}
                                                 {{#rollTotal() computed::roll2_succes 1}}
-                                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                                <span class="sheet-vert">{{roll_2}}</span>
                                                 {{/rollTotal() computed::roll2_succes 1}}
                                                 {{#^rollTotal() computed::roll2_succes 1}}
-                                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_2}}</span>
+                                                <span class="sheet-gris">{{roll_2}}</span>
                                                 {{/^rollTotal() computed::roll2_succes 1}}
                                             {{/^rollTotal() computed::roll2_critique 1}}
                                         {{/^rollTotal() computed::roll2_echec_critique 1}}
                                         
                                         {{#rollTotal() computed::roll3_echec_critique 1}}
-                                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                        <span class="sheet-rouge_critique">{{roll_3}}</span>
                                         {{/rollTotal() computed::roll3_echec_critique 1}}
                                         {{#^rollTotal() computed::roll3_echec_critique 1}}
                                             {{#rollTotal() computed::roll3_critique 1}}
-                                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll3_detail}}</span>
+                                            <span class="sheet-jaune">{{computed::roll3_detail}}</span>
                                             {{/rollTotal() computed::roll3_critique 1}}
                                             {{#^rollTotal() computed::roll3_critique 1}}
                                                 {{#rollTotal() computed::roll3_succes 1}}
-                                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                                <span class="sheet-vert">{{roll_3}}</span>
                                                 {{/rollTotal() computed::roll3_succes 1}}
                                                 {{#^rollTotal() computed::roll3_succes 1}}
-                                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_3}}</span>
+                                                <span class="sheet-gris">{{roll_3}}</span>
                                                 {{/^rollTotal() computed::roll3_succes 1}}
                                             {{/^rollTotal() computed::roll3_critique 1}}
                                         {{/^rollTotal() computed::roll3_echec_critique 1}}
                                         
                                         {{#rollTotal() computed::roll4_echec_critique 1}}
-                                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                                        <span class="sheet-rouge_critique">{{roll_4}}</span>
                                         {{/rollTotal() computed::roll4_echec_critique 1}}
                                         {{#^rollTotal() computed::roll4_echec_critique 1}}
                                             {{#rollTotal() computed::roll4_critique 1}}
-                                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll4_detail}}</span>
+                                            <span class="sheet-jaune">{{computed::roll4_detail}}</span>
                                             {{/rollTotal() computed::roll4_critique 1}}
                                             {{#^rollTotal() computed::roll4_critique 1}}
                                                 {{#rollTotal() computed::roll4_succes 1}}
-                                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                                                <span class="sheet-vert">{{roll_4}}</span>
                                                 {{/rollTotal() computed::roll4_succes 1}}
                                                 {{#^rollTotal() computed::roll4_succes 1}}
-                                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_4}}</span>
+                                                <span class="sheet-gris">{{roll_4}}</span>
                                                 {{/^rollTotal() computed::roll4_succes 1}}
                                             {{/^rollTotal() computed::roll4_critique 1}}
                                         {{/^rollTotal() computed::roll4_echec_critique 1}}
                                         
                                         {{#rollTotal() computed::roll5_echec_critique 1}}
-                                        <span style="color: white; background: #bb0505;border-radius: 22px;padding-left: 10px;padding-right: 11px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_5}}</span>
+                                        <span class="sheet-rouge_critique">{{roll_5}}</span>
                                         {{/rollTotal() computed::roll5_echec_critique 1}}
                                         {{#^rollTotal() computed::roll5_echec_critique 1}}
                                             {{#rollTotal() computed::roll5_critique 1}}
-                                            <span style="color: #646363; background: #e3e003; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{computed::roll5_detail}}</span>
+                                            <span class="sheet-jaune">{{computed::roll5_detail}}</span>
                                             {{/rollTotal() computed::roll5_critique 1}}
                                             {{#^rollTotal() computed::roll5_critique 1}}
                                                 {{#rollTotal() computed::roll5_succes 1}}
-                                                <span style="color: white; background: #036a3a; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_5}}</span>
+                                                <span class="sheet-vert">{{roll_5}}</span>
                                                 {{/rollTotal() computed::roll5_succes 1}}
                                                 {{#^rollTotal() computed::roll5_succes 1}}
-                                                <span style="color: white; background: #919191; letter-spacing: -1.5px; border-radius: 22px;padding-left: 5px;padding-right: 7px;padding-top: 3px;padding-bottom: 3px;border: 2px solid #353434;box-shadow: 0px 0px 6px 4px #636363;">{{roll_5}}</span>
+                                                <span class="sheet-gris">{{roll_5}}</span>
                                                 {{/^rollTotal() computed::roll5_succes 1}}
                                             {{/^rollTotal() computed::roll5_critique 1}}
                                         {{/^rollTotal() computed::roll5_echec_critique 1}}
@@ -1626,6 +1636,31 @@
                     {{/rollTotal() computed::gain_xp 1}}
             </div>
         </div>
+    {{/jet}}
+    {{#sortilege}}
+        <div class="sheet-titre">
+            <div class="sheet-portrait_roll" style="background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_12.png);background-size: 55px 55px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+            <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-titre-roll">
+                Sortilège
+                <br><span style="font-size: 13px; font-weight: normal;">{{title}}</span>
+            </div>
+        </div>
+        <div class="sheet-rolltemplate-ark-background sheet-rolltemplate-ark-center">
+            <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-color">
+                <div class="sheet-rolltemplate-ark-center sheet-rolltemplate-ark-subheader" style="line-height: 20px;text-align: left;">
+                    <span style="text-align: center;font-size: 12px;font-style: italic;">{{desc}}</span>
+                    <br><br>
+                    <span style="text-decoration: underline;">Compétence requise :</span> {{competence}}
+                    <br><span style="text-decoration: underline;">Points de magie :</span> {{pm}}
+                    <br><span style="text-decoration: underline;">Facteur de difficulté :</span> {{fd}}
+                    <br><span style="text-decoration: underline;">Portée :</span> {{portee}}
+                    <br><span style="text-decoration: underline;">Zone d'effet :</span> {{zone}}
+                    <br><span style="text-decoration: underline;">Durée :</span> {{duree}}
+                </div>
+            </div>
+        </div>
+    
+    {{/sortilege}}
 	<!-- <div class="sheet-bottom"></div> -->
 </rolltemplate>
 
@@ -1855,7 +1890,10 @@ const competences = {
   "stratege_intimidation": "Intimidation",
   "stratege_tactique": "Tactique",
   "stratege_custom6": "Stratège",
-  "stratege_custom7": "Stratège"
+  "stratege_custom7": "Stratège",
+  "arksonge": "Arksonge",
+  "arkentropie": "Arkentropie",
+  "arkoeur": "Arkoeur"
 };
 
 Object.keys(competences).forEach(nom_comp => {
@@ -1863,7 +1901,7 @@ Object.keys(competences).forEach(nom_comp => {
     const attribut_val = `${nom_comp}_valeur`;
     const titre_competence = competences[nom_comp];
 
-    const roll = await startRoll(`@{gm} &{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=${titre_competence}}} {{subheader=@{character_name}}} {{roll_d8=[[1D8]]}} {{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}} {{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}} {{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll_extra_11=[[1D10]]}} {{roll_extra_12=[[1D10]]}} {{roll_extra_13=[[1D10]]}} {{roll_extra_14=[[1D10]]}} {{roll_extra_15=[[1D10]]}} {{roll_extra_16=[[1D10]]}} {{roll_extra_17=[[1D10]]}} {{roll_extra_18=[[1D10]]}} {{roll_extra_19=[[1D10]]}} {{roll_extra_20=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{competence=[[@{${attribut_val}}]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{rolld8_succes=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}} {{lien_xp=[Expérience Acquise](~xp)}}`);
+    const roll = await startRoll(`@{gm} &{template:ark} {{jet=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=${titre_competence}}} {{subheader=@{character_name}}} {{roll_d8=[[1D8]]}} {{roll_1=[[1D10]]}} {{roll_2=[[1D10]]}} {{roll_3=[[1D10]]}} {{roll_4=[[1D10]]}} {{roll_5=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll_extra_11=[[1D10]]}} {{roll_extra_12=[[1D10]]}} {{roll_extra_13=[[1D10]]}} {{roll_extra_14=[[1D10]]}} {{roll_extra_15=[[1D10]]}} {{roll_extra_16=[[1D10]]}} {{roll_extra_17=[[1D10]]}} {{roll_extra_18=[[1D10]]}} {{roll_extra_19=[[1D10]]}} {{roll_extra_20=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{competence=[[@{${attribut_val}}]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{rolld8_succes=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}} {{lien_xp=[Expérience Acquise](~xp)}}`);
 
     const NC = roll.results.competence.result;
     const FD_initial = roll.results.FD.result;
@@ -1999,7 +2037,7 @@ Object.keys(competences).forEach(nom_comp => {
 // Lancer de dés 12 de spécialisation
 
 on("clicked:roll-specialisation", async (event) => {
-  const roll = await startRoll(`&{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=Spécialité}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}}{{malus_fd=[[@{malus_fd}]]}}{{roll_1=[[1D12]]}} {{roll_2=[[1D12]]}}{{roll_3=[[1D12]]}} {{roll_4=[[1D12]]}}{{roll_5=[[1D12]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}}{{roll_extra_5=[[1D10]]}}{{roll_extra_6=[[1D10]]}}{{roll_extra_7=[[1D10]]}}{{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}}  {{lien_xp=[Expérience Acquise](~xp)}}`);
+  const roll = await startRoll(`&{template:ark} {{jet=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=Spécialité}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}}{{malus_fd=[[@{malus_fd}]]}}{{roll_1=[[1D12]]}} {{roll_2=[[1D12]]}}{{roll_3=[[1D12]]}} {{roll_4=[[1D12]]}}{{roll_5=[[1D12]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}}{{roll_extra_5=[[1D10]]}}{{roll_extra_6=[[1D10]]}}{{roll_extra_7=[[1D10]]}}{{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}} {{roll1_critique=[[0[resultat]]]}} {{roll2_critique=[[0[resultat]]]}} {{roll3_critique=[[0[resultat]]]}} {{roll4_critique=[[0[resultat]]]}} {{roll5_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll2_echec_critique=[[0[resultat]]]}} {{roll3_echec_critique=[[0[resultat]]]}} {{roll4_echec_critique=[[0[resultat]]]}} {{roll5_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll2_detail=[[0[resultat]]]}} {{roll3_detail=[[0[resultat]]]}} {{roll4_detail=[[0[resultat]]]}} {{roll5_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{roll2_succes=[[0[resultat]]]}} {{roll3_succes=[[0[resultat]]]}} {{roll4_succes=[[0[resultat]]]}} {{roll5_succes=[[0[resultat]]]}}  {{lien_xp=[Expérience Acquise](~xp)}}`);
 
   const NC = roll.results.competence.result;
   const FD_initial = roll.results.FD.result;
@@ -2010,6 +2048,7 @@ on("clicked:roll-specialisation", async (event) => {
   let echecs_critiques = 0;
   let reussites_critiques = 0;
   let index_extra = 0;
+  let xp_possible = false;
 
   const des_explosifs = [];
   for (let i = 1; i <= 10; i++) {
@@ -2017,7 +2056,6 @@ on("clicked:roll-specialisation", async (event) => {
   }
 
   const seuil_explosion = NC >= 8 ? 9 : 10;
-
   const isExplosif = (val) => val >= seuil_explosion;
 
   const traiterExplosion = (val_initial) => {
@@ -2025,6 +2063,7 @@ on("clicked:roll-specialisation", async (event) => {
     let total_crit = 0;
     let val = val_initial;
     const detail = [val];
+    let xp_detected = val >= 10;
 
     while (isExplosif(val)) {
       if (val >= FD) total_qr += 1;
@@ -2032,6 +2071,7 @@ on("clicked:roll-specialisation", async (event) => {
       if (index_extra < des_explosifs.length) {
         val = des_explosifs[index_extra];
         detail.push(val);
+        if (val >= 10) xp_detected = true;
         index_extra++;
       } else break;
     }
@@ -2041,7 +2081,8 @@ on("clicked:roll-specialisation", async (event) => {
     return {
       qr: total_qr,
       crit: total_crit,
-      detail: detail.join(" + ")
+      detail: detail.join(" + "),
+      xp: xp_detected
     };
   };
 
@@ -2056,6 +2097,7 @@ on("clicked:roll-specialisation", async (event) => {
 
       QR_temp += res.qr;
       reussites_critiques += res.crit;
+      if (res.xp) xp_possible = true;
       if (is_ec_crit) echecs_critiques += 1;
 
       computeObj[`roll_${i}`] = val;
@@ -2077,30 +2119,28 @@ on("clicked:roll-specialisation", async (event) => {
   computeObj["QR"] = QR_temp;
   computeObj["ECritique"] = echecs_critiques;
   computeObj["Rcritique"] = reussites_critiques;
+  computeObj["gain_xp"] = (xp_possible && FD_initial >= 7) ? 1 : 0;
 
-  // ➕ XP uniquement si FD initial ≥ 7 ET une réussite critique
-  computeObj["gain_xp"] = (reussites_critiques > 0 && FD_initial >= 7) ? 1 : 0;
-
-    // LOGS POUR TEST
-    console.log(`Niveau de Compétence (NC) : ${NC}`);
-    console.log(`FD initial : ${FD_initial}`);
-    console.log(`FD ajusté : ${FD}`);
-    console.log(`Nombre de dés lancés : ${NC === 0 ? 1 : Math.min(NC, 5)}`);
-    console.log(`Échecs critiques : ${echecs_critiques}`);
-    console.log(`Réussites critiques (total) : ${reussites_critiques}`);
-    console.log(`QR finale : ${QR_temp}`);
-    console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
-    if (NC === 0) {
-      console.log(`D8 : ${computeObj["roll_d8"]}, Succès ? : ${computeObj["rolld8_succes"]}`);
-    } else {
-      for (let i = 1; i <= Math.min(NC, 5); i++) {
-        console.log(`D${i} : ${computeObj[`roll_${i}`]}, Succès ? : ${computeObj[`roll${i}_succes`]}`);
-        console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
-        console.log(`D${i} critique ? : ${computeObj[`roll${i}_critique`]}`);
-        console.log(`D${i} échec critique ? : ${computeObj[`roll${i}_echec_critique`]}`);
-      }
+  // LOGS POUR TEST
+  console.log(`Niveau de Compétence (NC) : ${NC}`);
+  console.log(`FD initial : ${FD_initial}`);
+  console.log(`FD ajusté : ${FD}`);
+  console.log(`Nombre de dés lancés : ${NC === 0 ? 1 : Math.min(NC, 5)}`);
+  console.log(`Échecs critiques : ${echecs_critiques}`);
+  console.log(`Réussites critiques (total) : ${reussites_critiques}`);
+  console.log(`QR finale : ${QR_temp}`);
+  console.log(`Gain XP ? : ${computeObj["gain_xp"]}`);
+  if (NC === 0) {
+    console.log(`D8 : ${computeObj["roll_d8"]}, Succès ? : ${computeObj["rolld8_succes"]}`);
+  } else {
+    for (let i = 1; i <= Math.min(NC, 5); i++) {
+      console.log(`D${i} : ${computeObj[`roll_${i}`]}, Succès ? : ${computeObj[`roll${i}_succes`]}`);
+      console.log(`D${i} détail : ${computeObj[`roll${i}_detail`]}`);
+      console.log(`D${i} critique ? : ${computeObj[`roll${i}_critique`]}`);
+      console.log(`D${i} échec critique ? : ${computeObj[`roll${i}_echec_critique`]}`);
     }
-    console.log(`===================================`);
+  }
+  console.log(`===================================`);
 
   finishRoll(roll.rollId, computeObj);
 });
@@ -2110,7 +2150,7 @@ on("clicked:roll-specialisation", async (event) => {
 // Lancer de dés 10 simple
 
 on("clicked:roll-d10", async (event) => {
-  const roll = await startRoll(`&{template:ark} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=D10}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{roll_1=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll1_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}}  {{lien_xp=[Expérience Acquise](~xp)}}`);
+  const roll = await startRoll(`&{template:ark} {{jet=oui}} {{token=@{ctoken}}} {{avatar=@{avatar}}} {{title=D10}} {{competence=[[?{Niveau de compétence|1|2|3|4|5|7|8|9|10}]]}} {{FD=[[@{rollfd}]]}} {{malus_fd=[[@{malus_fd}]]}} {{roll_1=[[1D10]]}} {{roll_extra_1=[[1D10]]}} {{roll_extra_2=[[1D10]]}} {{roll_extra_3=[[1D10]]}} {{roll_extra_4=[[1D10]]}} {{roll_extra_5=[[1D10]]}} {{roll_extra_6=[[1D10]]}} {{roll_extra_7=[[1D10]]}} {{roll_extra_8=[[1D10]]}} {{roll_extra_9=[[1D10]]}} {{roll_extra_10=[[1D10]]}} {{roll1_critique=[[0[resultat]]]}} {{roll1_echec_critique=[[0[resultat]]]}} {{roll1_detail=[[0[resultat]]]}} {{roll1_succes=[[0[resultat]]]}} {{QR=[[0[resultat]]]}} {{ECritique=[[0[resultat]]]}} {{Rcritique=[[0[resultat]]]}} {{gain_xp=[[0[resultat]]]}} {{XP=[[1d12]]}}  {{lien_xp=[Expérience Acquise](~xp)}}`);
 
   const NC = roll.results.competence.result;
   const FD_initial = roll.results.FD.result;
@@ -2122,42 +2162,41 @@ on("clicked:roll-d10", async (event) => {
   let reussites_critiques = 0;
   let index_extra = 0;
   let gain_xp = 0;
+  let xp_possible = false;
+
+  const seuil_explosion = NC >= 8 ? 9 : 10;
+  const isExplosif = (val) => val >= seuil_explosion;
 
   const des_explosifs = [];
   for (let i = 1; i <= 10; i++) {
     des_explosifs.push(roll.results[`roll_extra_${i}`].result);
   }
 
-  const seuil_explosion = NC >= 8 ? 9 : 10;
-  const isExplosif = (val) => val >= seuil_explosion;
-
-  const val = roll.results[`roll_1`].result;
-  const detail = [val];
-
+  const val = roll.results["roll_1"].result;
+  let detail = [val];
   let val_temp = val;
-  let qr = 0;
-  let crit = 0;
+
+  if (val === 10) xp_possible = true;
+  if (val >= FD) QR_temp += 1;
+  if (isExplosif(val)) reussites_critiques += 1;
 
   while (isExplosif(val_temp)) {
-    if (val_temp >= FD) qr += 1;
-    crit += 1;
     if (index_extra < des_explosifs.length) {
       val_temp = des_explosifs[index_extra];
       detail.push(val_temp);
       index_extra++;
+      if (val_temp === 10) xp_possible = true;
+      if (val_temp >= FD) QR_temp += 1;
+      if (isExplosif(val_temp)) reussites_critiques += 1;
     } else break;
   }
-
-  if (!isExplosif(val_temp) && val_temp >= FD) qr += 1;
-
-  QR_temp += qr;
-  reussites_critiques += crit;
 
   const is_succes = val >= FD ? 1 : 0;
   const is_critique = isExplosif(val) ? 1 : 0;
   const is_echec_critique = (val === 1 && NC <= 5) ? 1 : 0;
+
   if (is_echec_critique) echecs_critiques += 1;
-  if (reussites_critiques > 0 && FD_initial >= 7) gain_xp = 1;
+  if (xp_possible && FD_initial >= 7) gain_xp = 1;
 
   QR_temp -= echecs_critiques;
 
@@ -2166,13 +2205,12 @@ on("clicked:roll-d10", async (event) => {
   computeObj["roll1_succes"] = is_succes;
   computeObj["roll1_critique"] = is_critique;
   computeObj["roll1_echec_critique"] = is_echec_critique;
-
   computeObj["QR"] = QR_temp;
   computeObj["ECritique"] = echecs_critiques;
   computeObj["Rcritique"] = reussites_critiques;
   computeObj["gain_xp"] = gain_xp;
 
-  // LOGS POUR TEST
+  // Logs pour débogage
   console.log("=== Jet Spécialisation Simple ===");
   console.log(`NC : ${NC}, FD : ${FD} (initial: ${FD_initial})`);
   console.log(`D1 = ${val}`);
