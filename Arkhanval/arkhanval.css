@@ -1,11 +1,8 @@
 /* Import de font */
-@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Gowun+Dodum&family=Jim+Nightshade&family=Metamorphous&family=Quintessential&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Radio+Canada+Big:ital,wght@1,700&family=Radio+Canada:ital,wght@0,300..700;1,300..700&display=swap');
 
-/* font-family: "Jim Nightshade", cursive;
-font-family: "Metamorphous", serif;
-font-family: "Quintessential", serif;
-font-family: "Gowun Dodum", sans-serif;
-font-family: "Radio Canada", sans-serif; 
+/*font-family: "Radio Canada", sans-serif;
+font-family: "Radio Canada Big", sans-serif; 
 font-family: "Faculty Glyphic", sans-serif;*/
 
 /* Apparence générale de la page */
@@ -341,18 +338,23 @@ div.page_5 {
 .charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 
+div .button0 {    
+    background-color: #f5eadb;
+}
 
 div .button1,
 div .button2,
 div .button3,
 div .button4 {
-    margin-left: -5px;
+    margin-left: -5px;    
+    background-color: #f5eadb;
 }
 
 div .button5,
 div .button6 {
     float: right;
     margin-top: 2px;
+    background-color: #f5eadb;
 }
 
 div.arkcoeur_1,
@@ -808,6 +810,7 @@ div.page_5 {
     /* background-color: #44ff0073; */
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_01-min.png);
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .popup_A2 {
@@ -848,23 +851,36 @@ div.page_5 {
 }
 
 .popup_A9 {
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_09-min.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_09-min.png); 
+    margin-left: 9px;
+    width: 172px;
+    margin-top: -60px;
 }
 
 .popup_A10 {
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_10-min.png);
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_10-min.png);    
+    margin-top: -50px;
 }
 
 .popup_A11 {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_11-min.png);
+    margin-top: -56px;
+    width: 247px;
+    margin-left: -31px;
 }
 
 .popup_A12 {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_12-min.png);
+    margin-top: -53px;
+    width: 257px;
+    margin-left: -25px;
 }
 
 .popup_A13 {
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/peuple_13-min.png);
+    margin-top: -40px;
+    width: 267px;
+    margin-left: -20px;
 }
 
 .popup_texte { 
@@ -1144,7 +1160,7 @@ div.page_5 {
     grid-column: 14 / 17;
     grid-row: 18 / 21;
     margin-top: 6px;
-    margin-left: -2px;
+    margin-left: 0px;
     margin-right: 0px;
 }
 
@@ -1152,7 +1168,7 @@ div.page_5 {
     grid-column: 4 / 7;
     grid-row: 18 / 21;
     margin-top: 6px;
-    margin-left: 0px;
+    margin-left: -3px;
     margin-right: -3px;
 }
 
