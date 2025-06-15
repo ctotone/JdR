@@ -9,8 +9,8 @@
 <div class="menu">
     <button type="action" name="act_0" class="button0" >Personnage</button>
     <button type="action" name="act_1" class="button1">Équipement</button>
-    <button type="action" name="act_2" class="button2">Sortilèges 1</button>
-    <button type="action" name="act_3" class="button3">Sortilèges 2</button>
+    <button type="action" name="act_2" class="button2">Sortilèges</button>
+    <!-- <button type="action" name="act_3" class="button3">Sortilèges 2</button> -->
     <button type="action" name="act_4" class="button4">Carnet de route</button>
 
     <button type="action" name="act_7" class="button7" style="font-family: 'Pictos';" title="Extra">y</button>
@@ -1880,7 +1880,10 @@
                 <!-- <div class="sheet-separateur"></div> -->
                  
                     {{#rollTotal() computed::gain_xp 1}}
-                    <div class="sheet-rolltemplate-ark-center sheet-template-ark-rappel">{{lien_xp}}</div>
+                    <div class="sheet-rolltemplate-ark-center sheet-template-ark-rappel">
+                        <img src="https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/dice.png" style="margin-top: 2px;height: 40px;"> 
+                        {{lien_xp}}
+                    </div>
                     {{/rollTotal() computed::gain_xp 1}}
             </div>
         </div>
