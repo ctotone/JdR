@@ -13,6 +13,7 @@
     <button type="action" name="act_3" class="button3">Sortilèges 2</button>
     <button type="action" name="act_4" class="button4">Carnet de route</button>
 
+    <button type="action" name="act_7" class="button7" style="font-family: 'Pictos';" title="Extra">y</button>
     <button type="action" name="act_roll-specialisation" class="button5">Jet de Spécialisation (D12)</button>
     <button type="action" name="act_roll-d10" class="button6">D10</button>
 </div>
@@ -159,7 +160,6 @@
                             <br>• Les paléciens ont 1 point à placer en arksonge pour ceux de la surface et 1 point en arkentropie pour les individus aquatiques
                             <br>• Armure naturelle : –
                             <br>• Aisance aquatique : la compétence Natation bénéficie d’un FD de – 2 pour les surfaciens. Ceux qui vivent sous la mer bénéficient d’un bonus de 1d12, quel que soit leur rang, et d’un FD de – 2
-                            <br>• Endurant : les orcaliens lancent 2 dés supplémentaires pour résister à la douleur, qu’elle soit liée à des blessures, aux maladies, à un poison ou à l’environnement.
                         </div>
                         <div class="popup_close"><button type="action" class="button_texte" name="act_popup" style="font-size: 22px;margin-top: -5px;/*! color: #0000009c; */">X</button></div>
                     </div>
@@ -468,7 +468,7 @@
                         <div class="wrapper_bloc_ark"> 
                             <div class="circulaire_ark">
                                 <div class="wrapper_cercle_ark">
-                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arksonge" title="Reset Arksonge">Reset</button></div>
+                                    <!-- <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arksonge" title="Reset Arksonge">Reset</button></div> -->
                                     <div class="ark_check_1"><input type="checkbox" name="attr_arksonge_1" value="1"></div>
                                     <div class="ark_check_2"><input type="checkbox" name="attr_arksonge_2" value="1"></div>
                                     <div class="ark_check_3"><input type="checkbox" name="attr_arksonge_3" value="1"></div>
@@ -494,7 +494,7 @@
                         <div class="wrapper_bloc_ark"> 
                             <div class="circulaire_ark">
                                 <div class="wrapper_cercle_ark">
-                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkentropie" title="Reset Arkentropie">Reset</button></div>
+                                    <!-- <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkentropie" title="Reset Arkentropie">Reset</button></div> -->
                                     <div class="ark_check_1"><input type="checkbox" name="attr_arkentropie_1" value="1"></div>
                                     <div class="ark_check_2"><input type="checkbox" name="attr_arkentropie_2" value="1"></div>
                                     <div class="ark_check_3"><input type="checkbox" name="attr_arkentropie_3" value="1"></div>
@@ -520,7 +520,7 @@
                         <div class="wrapper_bloc_ark"> 
                             <div class="circulaire_ark">
                                 <div class="wrapper_cercle_ark">
-                                    <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkoeur" title="Reset Arkoeur">Reset</button></div>
+                                    <!-- <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkoeur" title="Reset Arkoeur">Reset</button></div> -->
                                     <div class="ark_check_1"><input type="checkbox" name="attr_arkoeur_1" value="1"></div>
                                     <div class="ark_check_2"><input type="checkbox" name="attr_arkoeur_2" value="1"></div>
                                     <div class="ark_check_3"><input type="checkbox" name="attr_arkoeur_3" value="1"></div>
@@ -1561,6 +1561,13 @@
     <div class="page_5">
         <textarea class="carnet_route" name="attr_carnet_route" placeholder="Votre carnet de route..."></textarea>
     </div>
+
+    <!-- DIVERS -->
+    <div class="page_7">
+        <div class="info" style="margin-left: 120px;padding-top: 162px;">
+            <div class="point_competences">Nombre de points de compétences attribuées : <input type="text" name="attr_point" style=" padding-left: 10px;" readonly></div>
+        </div>
+    </div>
 </div>
 
 
@@ -2022,7 +2029,7 @@
 <!-- Menu / Reset -->
 <script type="text/worker"> 
 
-	const buttonlist = ["0", "1", "2", "3", "4", "5", "6"];
+	const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -2090,6 +2097,34 @@
             });
         });
     });
+
+    on('change:artisan_bricolage_valeur change:artisan_cuisine_valeur change:artisan_bois_valeur change:artisan_cuir_valeur change:artisan_metal_valeur change:artisan_custom6_valeur change:artisan_custom7_valeur change:artiste_chant_valeur change:artiste_comedie_valeur change:artiste_danse_valeur change:artiste_dessin_valeur change:artiste_musique_valeur change:artiste_custom6_valeur change:artiste_custom7_valeur change:combattant_1main_valeur change:combattant_jet_valeur change:combattant_tir_valeur change:combattant_combat_valeur change:combattant_mainnues_valeur change:combattant_custom6_valeur change:combattant_custom7_valeur change:erudit_botanique_valeur change:erudit_legende_valeur change:erudit_lecture_valeur change:erudit_medecine_valeur change:erudit_zoologie_valeur change:erudit_custom6_valeur change:erudit_custom7_valeur change:explorateur_athletique_valeur change:explorateur_detection_valeur change:explorateur_dressage_valeur change:explorateur_natation_valeur change:explorateur_survie_valeur change:explorateur_custom6_valeur change:explorateur_custom7_valeur change:magicien_concentration_valeur change:magicien_metantropie_valeur change:magicien_empathie_valeur change:magicien_ethereve_valeur change:magicien_sigentropie_valeur change:magicien_custom6_valeur change:magicien_custom7_valeur change:roublard_baratin_valeur change:roublard_commerce_valeur change:roublard_crochetage_valeur change:roublard_discretion_valeur change:roublard_jeu_valeur change:roublard_custom6_valeur change:roublard_custom7_valeur change:stratege_convaincre_valeur change:stratege_discours_valeur change:stratege_gestion_valeur change:stratege_intimidation_valeur change:stratege_tactique_valeur change:stratege_custom6_valeur change:stratege_custom7_valeur', function(event) {
+
+  const competences = [
+    "artisan_bricolage_valeur", "artisan_cuisine_valeur", "artisan_bois_valeur", "artisan_cuir_valeur", "artisan_metal_valeur",
+    "artisan_custom6_valeur", "artisan_custom7_valeur",
+    "artiste_chant_valeur", "artiste_comedie_valeur", "artiste_danse_valeur", "artiste_dessin_valeur", "artiste_musique_valeur",
+    "artiste_custom6_valeur", "artiste_custom7_valeur",
+    "combattant_1main_valeur", "combattant_jet_valeur", "combattant_tir_valeur", "combattant_combat_valeur", "combattant_mainnues_valeur",
+    "combattant_custom6_valeur", "combattant_custom7_valeur",
+    "erudit_botanique_valeur", "erudit_legende_valeur", "erudit_lecture_valeur", "erudit_medecine_valeur", "erudit_zoologie_valeur",
+    "erudit_custom6_valeur", "erudit_custom7_valeur",
+    "explorateur_athletique_valeur", "explorateur_detection_valeur", "explorateur_dressage_valeur", "explorateur_natation_valeur",
+    "explorateur_survie_valeur", "explorateur_custom6_valeur", "explorateur_custom7_valeur",
+    "magicien_concentration_valeur", "magicien_metantropie_valeur", "magicien_empathie_valeur", "magicien_ethereve_valeur",
+    "magicien_sigentropie_valeur", "magicien_custom6_valeur", "magicien_custom7_valeur",
+    "roublard_baratin_valeur", "roublard_commerce_valeur", "roublard_crochetage_valeur", "roublard_discretion_valeur", "roublard_jeu_valeur",
+    "roublard_custom6_valeur", "roublard_custom7_valeur",
+    "stratege_convaincre_valeur", "stratege_discours_valeur", "stratege_gestion_valeur", "stratege_intimidation_valeur",
+    "stratege_tactique_valeur", "stratege_custom6_valeur", "stratege_custom7_valeur"
+  ];
+
+  getAttrs(competences, function(values) {
+    const point = competences.reduce((sum, attr) => sum + (parseInt(values[attr]) || 0), 0);
+    setAttrs({ "point": point });
+  });
+
+});
 </script>
 
 

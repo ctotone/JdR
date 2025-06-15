@@ -294,6 +294,21 @@ input[type="checkbox"]:focus {
     background-size: cover;
 }
 
+.charsheet button[type=action].button_blessure,
+.charsheet button[type=roll].button_reset_blessure {
+    height: 53px;
+    width: 53px;
+    border-radius: 35px;
+    color: transparent;  
+    text-align: center;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+    transition-delay: 0s;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/result_1.png);
+    background-size: cover;
+}
+
 .charsheet button[type=action].button_texte:hover,
 .charsheet button[type=roll].button_texte:hover,
 .charsheet button[type=action].button_picto:hover,
@@ -313,6 +328,16 @@ input[type="checkbox"]:focus {
     background-size: cover;
 }
 
+.charsheet button[type=action].button_reset_blessure:hover,
+.charsheet button[type=roll].button_reset_blessure:hover {
+    background-color: #a13d32;
+    /* transition-delay:1s; */
+    color: white;
+    opacity:1;  
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/result_1.png);
+    background-size: cover;
+}
+
 
 /* Gestion des affichage */
 
@@ -320,7 +345,8 @@ div.page_1,
 div.page_2,
 div.page_3,
 div.page_4,
-div.page_5 {
+div.page_5,
+div.page_7 {
     display: none;
 }
 
@@ -328,7 +354,8 @@ div.page_5 {
 .charsheet .choix_page[value="1"] ~ div.page_2,
 .charsheet .choix_page[value="2"] ~ div.page_3,
 .charsheet .choix_page[value="3"] ~ div.page_4,
-.charsheet .choix_page[value="4"] ~ div.page_5 {
+.charsheet .choix_page[value="4"] ~ div.page_5,
+.charsheet .choix_page[value="7"] ~ div.page_7 {
     display: block;
 }
 
@@ -337,6 +364,7 @@ div.page_5 {
 .charsheet .choix_page[value="2"] ~ div .button2 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="3"] ~ div .button3 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 
 div .button0 {    
     background-color: #f5eadb;
@@ -351,7 +379,8 @@ div .button4 {
 }
 
 div .button5,
-div .button6 {
+div .button6,
+div .button7 {
     float: right;
     margin-top: 2px;
     background-color: #f5eadb;
@@ -630,6 +659,14 @@ div.page_4 {
 div.page_5 {
     width: 830px;
     height: 1112px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_carnet.webp);
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div.page_7 {
+    width: 830px;
+    height: 800px;
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_carnet.webp);
     background-size: cover;
 	background-repeat: no-repeat;
@@ -1130,6 +1167,15 @@ div.page_5 {
    margin-left: 0px;
 }
 
+.reset_blessure { 
+    grid-column: 1;
+    grid-row: 5;
+    margin-top: 2px;
+    margin-left: 46px;
+    margin-right: 0px;
+    background: red;
+}
+
 .legere { 
     grid-column: 1;
     grid-row: 5;
@@ -1168,7 +1214,7 @@ div.page_5 {
     grid-column: 4 / 7;
     grid-row: 18 / 21;
     margin-top: 6px;
-    margin-left: -3px;
+    margin-left: 3px;
     margin-right: -3px;
 }
 
