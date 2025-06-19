@@ -611,7 +611,8 @@ div.peuple_13 {
     padding: 20px;
 }
 
-.charsheet select.input_peuple { 
+.charsheet select.input_peuple,
+.charsheet select.input_archetype { 
     border: none;
     border-radius: 1px;
     outline: none;
@@ -631,13 +632,18 @@ div.peuple_13 {
     color: var(--text_input);
 }
 
+.charsheet select.input_archetype { 
+    width: 168px;
+    background: transparent;
+}
+
 
 /* Cadre des pages */
 
 div.page_1 {    
     width: 830px;
     height: 1112px;
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_page.webp);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_full.webp);
     background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -1625,13 +1631,24 @@ div.page_7 {
     margin-right: 0px;
 }
 
-.zone_nom_archetype {  
-    grid-column: 40 / 75;
+.zone_nom_archetype_1 {  
+    grid-column: 40 / 57;
     grid-row: 2 / 5;
-    margin-top: 0px;
+    margin-top: -2px;
     margin-bottom: 10px;
     margin-left: 0px;
     margin-right: 0px;
+    /* background: green; */
+}
+
+.zone_nom_archetype_2 {  
+    grid-column: 58 / 75;
+    grid-row: 2 / 5;
+    margin-top: -2px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background: green; */
 }
 
 .zone_nom_peuple {  
