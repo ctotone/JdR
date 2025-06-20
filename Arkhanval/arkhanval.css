@@ -344,6 +344,16 @@ input[type="checkbox"]:focus {
 
 /* Gestion des affichage */
 
+div.personnage,
+div.creation {
+    display: none;
+}
+
+.charsheet .creation_active[value="1"] ~ div.creation,
+.charsheet .creation_active[value="0"] ~ div.personnage {
+    display: block;
+}
+
 div.page_1,
 div.page_2,
 div.page_3,
@@ -684,6 +694,15 @@ div.page_7 {
 	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_carnet.webp);
     background-size: cover;
 	background-repeat: no-repeat;
+}
+
+div.creation {
+    width: 830px;
+    height: 1112px;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_carnet.webp);
+    background-size: cover;
+	background-repeat: no-repeat;
+    font-size: 13px;
 }
 
 /* Structure générale de la page_1 */
@@ -2148,6 +2167,195 @@ div.page_7 {
     margin-right: 0px;
     /* background-color: #44ff0073; */
 }
+
+/* Structure générale de la creation */
+
+div.page_creation {
+    padding-top: 110px;
+    padding-left: 105px;
+}
+
+
+div.creation_back,
+div.creation_2,
+div.creation_3,
+div.creation_4,
+div.creation_5,
+div.creation_6,
+div.creation_7,
+div.creation_8,
+div.creation_9 {
+    display: none;
+}
+
+.charsheet .etape_creation1[value="0"] ~ div.creation_1 {
+    display: none;
+}
+
+.charsheet .etape_creationback[value="1"] ~ div.creation_back,
+.charsheet .etape_creation2[value="1"] ~ div.creation_2,
+.charsheet .etape_creation3[value="1"] ~ div.creation_3,
+.charsheet .etape_creation4[value="1"] ~ div.creation_4,
+.charsheet .etape_creation5[value="1"] ~ div.creation_5,
+.charsheet .etape_creation6[value="1"] ~ div.creation_6,
+.charsheet .etape_creation7[value="1"] ~ div.creation_7,
+.charsheet .etape_creation8[value="1"] ~ div.creation_8,
+.charsheet .etape_creation9[value="1"] ~ div.creation_9 {
+    display: block;
+}
+
+.wrapper_page_creation_global {  
+    display: grid;
+    grid-template-columns: repeat(83, 10px);
+    grid-auto-rows: 10px;
+    margin-left: 105px;
+    padding-top: 115px;
+}
+
+.creation_1,
+.creation_back,
+.creation_2,
+.creation_3,
+.creation_4,
+.creation_5,
+.creation_6,
+.creation_7,
+.creation_8,
+.creation_9 {
+    width: 630px;
+}
+
+.creation_1 {
+    background: orange;
+    height: 400px;
+}
+
+.creation_back {  
+    height: 50px;
+    margin-bottom: 20px;
+    background: green;
+}
+
+.creation_2 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+    background: blue;
+}
+
+.creation_3 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+    background: yellow;
+}
+
+.creation_4 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+    background: grey;
+}
+
+.creation_5 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+    background: purple;
+}
+
+.creation_6 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+.creation_7 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+.creation_8 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+.creation_9 {
+    grid-column: 1 / 64;
+    grid-row: 1;
+    margin-top: 0px;
+}
+
+.wrapper_page_creation {
+    display: grid;
+    grid-template-columns: repeat(83, 10px);;
+    grid-auto-rows: 10px;
+}
+
+.creation_1_texte {  
+    grid-column: 11 / 54;
+    grid-row: 1;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 17px;  
+    text-align: center;
+    /* background-color: #44ff0073; */
+}
+
+.creation_1_creation {  
+    grid-column: 5 / 30;
+    grid-row: 10 / 35;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #44ff0073;
+}
+
+.creation_1_page_personnage {  
+    grid-column: 35 / 60;
+    grid-row: 10 / 35;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: red;
+}
+
+.creation_2_texte {
+    grid-column: 11 / 54;
+    grid-row: 1 / 6;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.creation_2_peuple { 
+    grid-column: 1 / 64;
+    grid-row: 7 / 15;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 17px;
+    text-align: center;
+    /* background-color: #44ff0073; */
+}
+
+.creation_2_suivant { 
+    grid-column: 48 / 64;
+    grid-row: 16 / 19;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 17px;
+    text-align: center;
+    /* background-color: #44ff0073; */
+}
+
+
 
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-ark {
