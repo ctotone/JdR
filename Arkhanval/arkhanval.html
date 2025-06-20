@@ -9,7 +9,7 @@
 <div class="personnage">
     <input type="hidden" name="attr_page" class="choix_page" value="0">
     <input type="hidden" name="attr_popup" class="popup_open" value="0">
-    <input type="hidden" name="attr_creation" class="creation_active" value="1">
+    <input type="hidden" name="attr_creation" class="creation_active" value="0">
     <div class="menu">
         <button type="action" name="act_0" class="button0" >Personnage</button>
         <button type="action" name="act_1" class="button1">Équipement</button>
@@ -2765,7 +2765,7 @@ on('clicked:arkentropie', async (event) => {
         { min: 7, max: 8, subheader: "Anatomie réinventée", texte: "Vous subissez l’apparition d’un appendice supplémentaire (une queue, des ailes ou une quelconque excroissance)" },
         { min: 9, max: 10, subheader: "Distorsion", texte: "L’un de vos sens se trouve atrophié tandis qu’un autre est démultiplié: le FD augmente de 2 pour utiliser l’un et diminue de 2 pour utiliser l’autre" },
         { min: 11, max: 12, subheader: "Nouvelle peau", texte: "Vous subissez un changement de nature de peau: elle se couvre d’écailles, de squames, d’huile, d’écorce, de silice, de plumes, de fourrure… Avec une peau d’écailles, vous avez désormais une armure naturelle de 3, avec la silice elle sera de 4 et avec l’écorce de 2 Il est probable que vous perdiez vos poils qui sont alors remplacés par un fin duvet ou tout autre chose…" },
-        { min: 13, max: 14, subheader: "Illumination", texte: "Votre compréhension du monde s’affine grandement Vous gagnez une spé cialité de magicien ou d’érudit" },
+        { min: 13, max: 14, subheader: "Illumination", texte: "Votre compréhension du monde s’affine grandement Vous gagnez une spécialité de magicien ou d’érudit" },
         { min: 15, max: 16, subheader: "Empathie animale", texte: "Vous êtes des leurs, les animaux vous font naturellement confiance" },
         { min: 17, max: 18, subheader: "Transfiguration", texte: "Votre sang change de couleur et vos veines sont maintenant noires et bien visibles. Il est possible que votre sang soit un véritable poison pour tous ceux qui entrent en contact avec lui" },
         { min: 19, max: 20, subheader: "Retour aux origine", texte: "Vous vous rapprochez de plus en plus de votre nature ancestrale. Dans l’environnement d’où vous êtes originaire, vos facultés sont décuplées. Le FD diminue de 1 pour les jets liés à la survie, la perception et le combat. Si vous retombez sur ce tirage, le FD est diminué de 2 à la place, mais vous êtes de moins en moins à l’aise dans les environnements opposés (FD + 1)" },
