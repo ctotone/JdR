@@ -1868,7 +1868,6 @@
             <!-- Choix Peuple -->
             <div class="creation_2">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header"></div>
                     <div class="creation_2_texte">Commençons par définir le Peuple auquel appartient votre personnage</div>
                     <div class="creation_2_peuple">
                         <select class="input_peuple" name="attr_peuple">
@@ -1895,41 +1894,77 @@
             <!-- Choix Nom et Origine -->
             <div class="creation_3">
                 <div class="wrapper_page_creation">
+                    <div class="creation_header"></div>
                     <div class="creation_3_texte">Ensuite, nommons le et définissons son origine</div>
                     <div class="creation_3_nom">Nom du personnage : </div>
-                    <div class="creation_3_origine">Origine du personnage : </div>
+                    <div class="creation_3_nom_data"><input type="text" class="input_classique_1" name="attr_character_name"></div>
+                    <div class="creation_3_origine">Origine du personnage :</div>
+                    <div class="creation_3_origine_data"><input type="text" class="input_classique_1" name="attr_origine"></div>
                     <div class="creation_3_suivant"><button type="action" name="act_step_4">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Choix Archetypes -->
             <div class="creation_4">
                 <div class="wrapper_page_creation">
+                    <div class="creation_header"></div>
                     <div class="creation_4_texte">Il est temps de déterminer ses Archétypes principaux...</div>
-                    <div class="creation_4_archetype1"></div>
-                    <div class="creation_4_archetype2"></div>
+                    <div class="creation_4_archetype1">Archétype 1</div>
+                    <div class="creation_4_archetype1_data">
+                        <select class="input_archetype" name="attr_archetype_1">
+                                <option value="0" selected="selected"></option>
+                                <option value="1">Artisan</option>
+                                <option value="2">Artiste</option>
+                                <option value="3">Combattant</option>
+                                <option value="4">Érudit</option>
+                                <option value="5">Explorateur</option>
+                                <option value="6">Magicien</option>
+                                <option value="7">Roublard</option>
+                                <option value="8">Stratège</option>
+                            </select>
+                    </div>
+                    <div class="creation_4_archetype1_info"></div>
+                    <div class="creation_4_archetype2">Archétype 2</div>
+                    <div class="creation_4_archetype2_data">
+                        <select class="input_archetype" name="attr_archetype_2">
+                                <option value="0" selected="selected"></option>
+                                <option value="1">Artisan</option>
+                                <option value="2">Artiste</option>
+                                <option value="3">Combattant</option>
+                                <option value="4">Érudit</option>
+                                <option value="5">Explorateur</option>
+                                <option value="6">Magicien</option>
+                                <option value="7">Roublard</option>
+                                <option value="8">Stratège</option>
+                            </select>
+                    </div>
+                    <div class="creation_4_archetype2_info"></div>
                     <div class="creation_4_suivant"><button type="action" name="act_step_5">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points Archetypes -->
             <div class="creation_5">
                 <div class="wrapper_page_creation">
-                    <div class="creation_5_texte">... puis de choisir 3 spécialités dans ses deux archétypes</div>
-                    <div class="creation_5_archetype1"></div>
-                    <div class="creation_5_archetype2"></div>                
+                    <div class="creation_header"></div>
+                    <div class="creation_5_texte">... puis de choisir 3 spécialités à répartir dans ses deux archétypes (faire polus clair)</div>
+                    <div class="creation_5_archetype1">insertion dynamique des spécialisation</div>
+                    <div class="creation_5_archetype2">insertion dynamique des spécialisation</div>                
                     <div class="creation_5_suivant"><button type="action" name="act_step_6">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points Compétences -->
             <div class="creation_6">
                 <div class="wrapper_page_creation">
+                    <div class="creation_header"></div>
                     <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences. L'outil de création de personnage se chargera de vous indiquer le nombre de points dépenser en tenant compte des coûts de chaque niveau.</div>                         
-                    <div class="creation_6_decompte"></div>                                 
+                    <div class="creation_6_decompte"></div> 
+                    <div class="creation_6_liste"></div>                                 
                     <div class="creation_6_suivant"><button type="action" name="act_step_7">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points ARK -->
             <div class="creation_7">
                 <div class="wrapper_page_creation"> 
+                    <div class="creation_header"></div>
                     <div class="creation_7_texte">Cochez 2 cercles d'ark dans les arks de votre choix, puis ajuster les autres valeurs en fonctions des modifications liées à votre origine, peuple, archétype, etc...</div> 
                     <div class="creation_7_arksonge"></div>  
                     <div class="creation_7_arkentropie"></div>  
@@ -1940,6 +1975,7 @@
             <!-- VALIDATION -->
             <div class="creation_8">
                 <div class="wrapper_page_creation">
+                    <div class="creation_header"></div>
                     <div class="creation_8_texte">Votre personnage est maintenant relativement bien défini, vérifiez les informations validées précédemment puis paufinez le tout directement depuis la fiche de personnage.</div>              
                     <div class="creation_8_final"><button type="action" name="act_go_feuille">Valider votre personnage</button></div>
                 </div>
