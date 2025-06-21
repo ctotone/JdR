@@ -1964,18 +1964,66 @@
             <!-- Points ARK -->
             <div class="creation_7">
                 <div class="wrapper_page_creation"> 
-                    <div class="creation_header"></div>
+                    <div class="creation_header" style="grid-column: 10 / 52;"></div>
                     <div class="creation_7_texte">Cochez 2 cercles d'ark dans les arks de votre choix, puis ajuster les autres valeurs en fonctions des modifications liées à votre origine, peuple, archétype, etc...</div> 
-                    <div class="creation_7_arksonge"></div>  
-                    <div class="creation_7_arkentropie"></div>  
-                    <div class="creation_7_arkoeur"></div>             
+                    <div class="creation_7_arksonge">
+                        <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
+                            <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_arksonge" title="Faire un jet sur la table">0</button></div>
+                            <div class="ark_check_1"><input type="checkbox" name="attr_arksonge_1" value="1"></div>
+                            <div class="ark_check_2"><input type="checkbox" name="attr_arksonge_2" value="1"></div>
+                            <div class="ark_check_3"><input type="checkbox" name="attr_arksonge_3" value="1"></div>
+                            <div class="ark_check_4"><input type="checkbox" name="attr_arksonge_4" value="1"></div>
+                            <div class="ark_check_5"><input type="checkbox" name="attr_arksonge_5" value="1"></div>
+                            <div class="ark_check_6"><input type="checkbox" name="attr_arksonge_6" value="1"></div>
+                            <div class="ark_check_7"><input type="checkbox" name="attr_arksonge_7" value="1"></div>
+                            <div class="ark_check_8"><input type="checkbox" name="attr_arksonge_8" value="1"></div>
+                            <div class="ark_check_9"><input type="checkbox" name="attr_arksonge_9" value="1"></div>
+                            <div class="ark_check_10"><input type="checkbox" name="attr_arksonge_10" value="1"></div>
+                        </div>
+                    </div>  
+                    <div class="creation_7_arkentropie">
+                        <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
+                            <!-- <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_arkentropie" title="Faire un jet sur la table">0</button></div> -->
+                            <div class="ark_check_1"><input type="checkbox" name="attr_arkentropie_1" value="1"></div>
+                            <div class="ark_check_2"><input type="checkbox" name="attr_arkentropie_2" value="1"></div>
+                            <div class="ark_check_3"><input type="checkbox" name="attr_arkentropie_3" value="1"></div>
+                            <div class="ark_check_4"><input type="checkbox" name="attr_arkentropie_4" value="1"></div>
+                            <div class="ark_check_5"><input type="checkbox" name="attr_arkentropie_5" value="1"></div>
+                            <div class="ark_check_6"><input type="checkbox" name="attr_arkentropie_6" value="1"></div>
+                            <div class="ark_check_7"><input type="checkbox" name="attr_arkentropie_7" value="1"></div>
+                            <div class="ark_check_8"><input type="checkbox" name="attr_arkentropie_8" value="1"></div>
+                            <div class="ark_check_9"><input type="checkbox" name="attr_arkentropie_9" value="1"></div>
+                            <div class="ark_check_10"><input type="checkbox" name="attr_arkentropie_10" value="1"></div>
+                        </div>
+                    </div>  
+                    <div class="creation_7_arkoeur">
+                        <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
+                            <!-- <div class="ark_reset"><button type="action" class="button_reset_ark" name="act_reset_arkoeur" title="Reset Arkoeur">Reset</button></div> -->
+                            <div class="ark_check_1"><input type="checkbox" name="attr_arkoeur_1" value="1"></div>
+                            <div class="ark_check_2"><input type="checkbox" name="attr_arkoeur_2" value="1"></div>
+                            <div class="ark_check_3"><input type="checkbox" name="attr_arkoeur_3" value="1"></div>
+                            <div class="ark_check_4"><input type="checkbox" name="attr_arkoeur_4" value="1"></div>
+                            <div class="ark_check_5"><input type="checkbox" name="attr_arkoeur_5" value="1"></div>
+                            <div class="ark_check_6"><input type="checkbox" name="attr_arkoeur_6" value="1"></div>
+                            <div class="ark_check_7"><input type="checkbox" name="attr_arkoeur_7" value="1"></div>
+                            <div class="ark_check_8"><input type="checkbox" name="attr_arkoeur_8" value="1"></div>
+                            <div class="ark_check_9"><input type="checkbox" name="attr_arkoeur_9" value="1"></div>
+                            <div class="ark_check_10"><input type="checkbox" name="attr_arkoeur_10" value="1"></div>
+                        </div>
+                    </div>
+                    <div class="creation_7_arksonge_data"><input type="number" class="input_ark_valeur" name="attr_arksonge_valeur" value="0"></div>  
+                    <div class="creation_7_arkentropie_data"><input type="number" class="input_ark_valeur" name="attr_arkentropie_valeur" value="0"></div>  
+                    <div class="creation_7_arkoeur_data"><input type="number" class="input_ark_valeur" name="attr_arkoeur_valeur" value="0"></div>
+                    <div class="creation_7_arksonge_titre">Arksonge</div>  
+                    <div class="creation_7_arkentropie_titre">Arkentropie</div>  
+                    <div class="creation_7_arkoeur_titre">Arkoeur</div>                    
                     <div class="creation_7_suivant"><button type="action" name="act_step_8">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- VALIDATION -->
             <div class="creation_8">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header"></div>
+                    <div class="creation_header" style=" margin-right: 80px; "></div>
                     <div class="creation_8_texte">Votre personnage est maintenant relativement bien défini, vérifiez les informations validées précédemment puis paufinez le tout directement depuis la fiche de personnage.</div>              
                     <div class="creation_8_final"><button type="action" name="act_go_feuille">Valider votre personnage</button></div>
                 </div>
