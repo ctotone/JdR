@@ -1867,7 +1867,8 @@
             </div>
             <!-- Choix Peuple -->
             <div class="creation_2">
-                <div class="wrapper_page_creation">
+                <div class="wrapper_page_creation">                    
+                    <div class="creation_2_encart"></div>
                     <div class="creation_2_texte">Commençons par définir le Peuple auquel appartient votre personnage</div>
                     <div class="creation_2_peuple">
                         <select class="input_peuple" name="attr_peuple">
@@ -1907,7 +1908,8 @@
             <!-- Choix Archetypes -->
             <div class="creation_4">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header"></div>
+                    <div class="creation_header"></div>                    
+                    <div class="creation_4_encart"></div>
                     <div class="creation_4_texte">Il est temps de déterminer ses Archétypes principaux...</div>
                     <div class="creation_4_archetype1">Archétype 1</div>
                     <div class="creation_4_archetype1_data">
@@ -1945,17 +1947,193 @@
             <!-- Points Archetypes -->
             <div class="creation_5">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header"></div>
+                    <div class="creation_header"></div>                    
+                    <div class="creation_5_encart"></div>
                     <div class="creation_5_texte">... puis de choisir 3 spécialités à répartir dans ses deux archétypes (faire polus clair)</div>
-                    <div class="creation_5_archetype1">insertion dynamique des spécialisation</div>
-                    <div class="creation_5_archetype2">insertion dynamique des spécialisation</div>                
+                    <div class="creation_5_archetype1">
+                        <div class="wrapper_specialite" style="grid-template-columns: repeat(24, 10px);">
+                        <div class="specialite_1_check">
+                            <input type="checkbox" name="attr_spe1_1" value="1">
+                        </div>
+                        <div class="specialite_2_check">
+                            <input type="checkbox" name="attr_spe2_1" value="1">
+                        </div>
+                        <div class="specialite_3_check">
+                            <input type="checkbox" name="attr_spe3_1" value="1">
+                        </div>
+                        <div class="specialite_4_check">
+                            <input type="checkbox" name="attr_spe4_1" value="1">
+                        </div>
+                        <div class="specialite_5_check">
+                            <input type="checkbox" name="attr_spe5_1" value="1">                        
+                        </div>
+                        <div class="specialite_6_check">
+                            <input type="checkbox" name="attr_spe6_1" value="1">
+                        </div>
+                        <div class="specialite_7_check">
+                            <input type="checkbox" name="attr_spe7_1" value="1">
+                        </div>
+                        <div class="specialite_8_check">
+                            <input type="checkbox" name="attr_spe8_1" value="1">
+                        </div>
+                        <div class="specialite_9_check">
+                            <input type="checkbox" name="attr_spe9_1" value="1">
+                        </div>
+                        <div class="specialite_10_check">
+                            <input type="checkbox" name="attr_spe10_1" value="1">
+                        </div>
+                        <div class="specialite_11_check">
+                            <input type="checkbox" name="attr_spe11_1" value="1">
+                        </div>
+                        <div class="specialite_12_check">
+                            <input type="checkbox" name="attr_spe12_1" value="1">                        
+                        </div>
+                        <div class="specialite_13_check">
+                            <input type="checkbox" name="attr_spe13_1" value="1">
+                        </div>
+                        <div class="specialite_14_check">
+                            <input type="checkbox" name="attr_spe14_1" value="1">
+                        </div>
+                        <div class="specialite_1">
+                            <input type="text" class="input_specialite" name="attr_spe1_1_name">
+                        </div>
+                        <div class="specialite_2">
+                            <input type="text" class="input_specialite" name="attr_spe2_1_name">
+                        </div>
+                        <div class="specialite_3">
+                            <input type="text" class="input_specialite" name="attr_spe3_1_name">
+                        </div>
+                        <div class="specialite_4">
+                            <input type="text" class="input_specialite" name="attr_spe4_1_name">
+                        </div>
+                        <div class="specialite_5">
+                            <input type="text" class="input_specialite" name="attr_spe5_1_name">
+                        </div>
+                        <div class="specialite_6">
+                            <input type="text" class="input_specialite" name="attr_spe6_1_name">
+                        </div>
+                        <div class="specialite_7">
+                            <input type="text" class="input_specialite" name="attr_spe7_1_name">
+                        </div>
+                        <div class="specialite_8">
+                            <input type="text" class="input_specialite" name="attr_spe8_1_name">
+                        </div>
+                        <div class="specialite_9">
+                            <input type="text" class="input_specialite" name="attr_spe9_1_name">
+                        </div>
+                        <div class="specialite_10">
+                            <input type="text" class="input_specialite" name="attr_spe10_1_name">
+                        </div>
+                        <div class="specialite_11">
+                            <input type="text" class="input_specialite" name="attr_spe11_1_name">
+                        </div>
+                        <div class="specialite_12">
+                            <input type="text" class="input_specialite" name="attr_spe12_1_name">
+                        </div>
+                        <div class="specialite_13">
+                            <input type="text" class="input_specialite" name="attr_spe13_1_name">
+                        </div>
+                        <div class="specialite_14">
+                            <input type="text" class="input_specialite" name="attr_spe14_1_name">
+                        </div>
+                    </div>
+                    </div>
+                    <div class="creation_5_archetype2">
+                        <div class="wrapper_specialite" style="grid-template-columns: repeat(24, 10px);">
+                        <div class="specialite_1_check">
+                            <input type="checkbox" name="attr_spe1_2" value="1">
+                        </div>
+                        <div class="specialite_2_check">
+                            <input type="checkbox" name="attr_spe2_2" value="1">
+                        </div>
+                        <div class="specialite_3_check">
+                            <input type="checkbox" name="attr_spe3_2" value="1">
+                        </div>
+                        <div class="specialite_4_check">
+                            <input type="checkbox" name="attr_spe4_2" value="1">
+                        </div>
+                        <div class="specialite_5_check">
+                            <input type="checkbox" name="attr_spe5_2" value="1">                        
+                        </div>
+                        <div class="specialite_6_check">
+                            <input type="checkbox" name="attr_spe6_2" value="1">
+                        </div>
+                        <div class="specialite_7_check">
+                            <input type="checkbox" name="attr_spe7_2" value="1">
+                        </div>
+                        <div class="specialite_8_check">
+                            <input type="checkbox" name="attr_spe8_2" value="1">
+                        </div>
+                        <div class="specialite_9_check">
+                            <input type="checkbox" name="attr_spe9_2" value="1">
+                        </div>
+                        <div class="specialite_10_check">
+                            <input type="checkbox" name="attr_spe10_2" value="1">
+                        </div>
+                        <div class="specialite_11_check">
+                            <input type="checkbox" name="attr_spe11_2" value="1">
+                        </div>
+                        <div class="specialite_12_check">
+                            <input type="checkbox" name="attr_spe12_2" value="1">                        
+                        </div>
+                        <div class="specialite_13_check">
+                            <input type="checkbox" name="attr_spe13_2" value="1">
+                        </div>
+                        <div class="specialite_14_check">
+                            <input type="checkbox" name="attr_spe14_2" value="1">
+                        </div>
+                        <div class="specialite_1">
+                            <input type="text" class="input_specialite" name="attr_spe1_2_name">
+                        </div>
+                        <div class="specialite_2">
+                            <input type="text" class="input_specialite" name="attr_spe2_2_name">
+                        </div>
+                        <div class="specialite_3">
+                            <input type="text" class="input_specialite" name="attr_spe3_2_name">
+                        </div>
+                        <div class="specialite_4">
+                            <input type="text" class="input_specialite" name="attr_spe4_2_name">
+                        </div>
+                        <div class="specialite_5">
+                            <input type="text" class="input_specialite" name="attr_spe5_2_name">
+                        </div>
+                        <div class="specialite_6">
+                            <input type="text" class="input_specialite" name="attr_spe6_2_name">
+                        </div>
+                        <div class="specialite_7">
+                            <input type="text" class="input_specialite" name="attr_spe7_2_name">
+                        </div>
+                        <div class="specialite_8">
+                            <input type="text" class="input_specialite" name="attr_spe8_2_name">
+                        </div>
+                        <div class="specialite_9">
+                            <input type="text" class="input_specialite" name="attr_spe9_2_name">
+                        </div>
+                        <div class="specialite_10">
+                            <input type="text" class="input_specialite" name="attr_spe10_2_name">
+                        </div>
+                        <div class="specialite_11">
+                            <input type="text" class="input_specialite" name="attr_spe11_2_name">
+                        </div>
+                        <div class="specialite_12">
+                            <input type="text" class="input_specialite" name="attr_spe12_2_name">
+                        </div>
+                        <div class="specialite_13">
+                            <input type="text" class="input_specialite" name="attr_spe13_2_name">
+                        </div>
+                        <div class="specialite_14">
+                            <input type="text" class="input_specialite" name="attr_spe14_2_name">
+                        </div>
+                    </div>
+                    </div>                
                     <div class="creation_5_suivant"><button type="action" name="act_step_6">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points Compétences -->
             <div class="creation_6">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header"></div>
+                    <div class="creation_header"></div>                    
+                    <div class="creation_6_encart"></div>
                     <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences. L'outil de création de personnage se chargera de vous indiquer le nombre de points dépenser en tenant compte des coûts de chaque niveau.</div>                         
                     <div class="creation_6_decompte"></div> 
                     <div class="creation_6_liste"></div>                                 
@@ -1965,7 +2143,8 @@
             <!-- Points ARK -->
             <div class="creation_7">
                 <div class="wrapper_page_creation"> 
-                    <div class="creation_header" style="grid-column: 10 / 44;"></div>
+                    <div class="creation_header" style="grid-column: 10 / 44;"></div>                   
+                    <div class="creation_7_encart"></div>
                     <div class="creation_7_texte">Cochez 2 cercles d'ark dans les arks de votre choix, puis ajuster les autres valeurs en fonctions des modifications liées à votre origine, peuple, archétype, etc...</div> 
                     <div class="creation_7_arksonge">
                         <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
@@ -2024,10 +2203,13 @@
             <!-- VALIDATION -->
             <div class="creation_8">
                 <div class="wrapper_page_creation">
-                    <div class="creation_header" style=" margin-right: 80px; "></div>
+                    <div class="creation_header" style=" margin-right: 80px; "></div>                 
+                    <div class="creation_8_encart"></div>
                     <div class="creation_8_texte">Votre personnage est maintenant relativement bien défini, vérifiez les informations validées précédemment puis paufinez le tout directement depuis la fiche de personnage.</div>              
                     <div class="creation_8_final"><button type="action" name="act_go_feuille">Valider votre personnage</button></div>
                 </div>
+            </div><!-- FOOTER -->
+            <div class="creation_footer"></div>
             </div>
         <!-- </div> -->
     </div>
@@ -2736,31 +2918,46 @@
     });
 
     on('change:artisan_bricolage_valeur change:artisan_cuisine_valeur change:artisan_bois_valeur change:artisan_cuir_valeur change:artisan_metal_valeur change:artisan_custom6_valeur change:artisan_custom7_valeur change:artiste_chant_valeur change:artiste_comedie_valeur change:artiste_danse_valeur change:artiste_dessin_valeur change:artiste_musique_valeur change:artiste_custom6_valeur change:artiste_custom7_valeur change:combattant_1main_valeur change:combattant_jet_valeur change:combattant_tir_valeur change:combattant_combat_valeur change:combattant_mainnues_valeur change:combattant_custom6_valeur change:combattant_custom7_valeur change:erudit_botanique_valeur change:erudit_legende_valeur change:erudit_lecture_valeur change:erudit_medecine_valeur change:erudit_zoologie_valeur change:erudit_custom6_valeur change:erudit_custom7_valeur change:explorateur_athletique_valeur change:explorateur_detection_valeur change:explorateur_dressage_valeur change:explorateur_natation_valeur change:explorateur_survie_valeur change:explorateur_custom6_valeur change:explorateur_custom7_valeur change:magicien_concentration_valeur change:magicien_metantropie_valeur change:magicien_empathie_valeur change:magicien_ethereve_valeur change:magicien_sigentropie_valeur change:magicien_custom6_valeur change:magicien_custom7_valeur change:roublard_baratin_valeur change:roublard_commerce_valeur change:roublard_crochetage_valeur change:roublard_discretion_valeur change:roublard_jeu_valeur change:roublard_custom6_valeur change:roublard_custom7_valeur change:stratege_convaincre_valeur change:stratege_discours_valeur change:stratege_gestion_valeur change:stratege_intimidation_valeur change:stratege_tactique_valeur change:stratege_custom6_valeur change:stratege_custom7_valeur', function(event) {
+    
+    const competences = [
+      "artisan_bricolage_valeur", "artisan_cuisine_valeur", "artisan_bois_valeur", "artisan_cuir_valeur", "artisan_metal_valeur",
+      "artisan_custom6_valeur", "artisan_custom7_valeur",
+      "artiste_chant_valeur", "artiste_comedie_valeur", "artiste_danse_valeur", "artiste_dessin_valeur", "artiste_musique_valeur",
+      "artiste_custom6_valeur", "artiste_custom7_valeur",
+      "combattant_1main_valeur", "combattant_jet_valeur", "combattant_tir_valeur", "combattant_combat_valeur", "combattant_mainnues_valeur",
+      "combattant_custom6_valeur", "combattant_custom7_valeur",
+      "erudit_botanique_valeur", "erudit_legende_valeur", "erudit_lecture_valeur", "erudit_medecine_valeur", "erudit_zoologie_valeur",
+      "erudit_custom6_valeur", "erudit_custom7_valeur",
+      "explorateur_athletique_valeur", "explorateur_detection_valeur", "explorateur_dressage_valeur", "explorateur_natation_valeur",
+      "explorateur_survie_valeur", "explorateur_custom6_valeur", "explorateur_custom7_valeur",
+      "magicien_concentration_valeur", "magicien_metantropie_valeur", "magicien_empathie_valeur", "magicien_ethereve_valeur",
+      "magicien_sigentropie_valeur", "magicien_custom6_valeur", "magicien_custom7_valeur",
+      "roublard_baratin_valeur", "roublard_commerce_valeur", "roublard_crochetage_valeur", "roublard_discretion_valeur", "roublard_jeu_valeur",
+      "roublard_custom6_valeur", "roublard_custom7_valeur",
+      "stratege_convaincre_valeur", "stratege_discours_valeur", "stratege_gestion_valeur", "stratege_intimidation_valeur",
+      "stratege_tactique_valeur", "stratege_custom6_valeur", "stratege_custom7_valeur"
+    ];
 
-  const competences = [
-    "artisan_bricolage_valeur", "artisan_cuisine_valeur", "artisan_bois_valeur", "artisan_cuir_valeur", "artisan_metal_valeur",
-    "artisan_custom6_valeur", "artisan_custom7_valeur",
-    "artiste_chant_valeur", "artiste_comedie_valeur", "artiste_danse_valeur", "artiste_dessin_valeur", "artiste_musique_valeur",
-    "artiste_custom6_valeur", "artiste_custom7_valeur",
-    "combattant_1main_valeur", "combattant_jet_valeur", "combattant_tir_valeur", "combattant_combat_valeur", "combattant_mainnues_valeur",
-    "combattant_custom6_valeur", "combattant_custom7_valeur",
-    "erudit_botanique_valeur", "erudit_legende_valeur", "erudit_lecture_valeur", "erudit_medecine_valeur", "erudit_zoologie_valeur",
-    "erudit_custom6_valeur", "erudit_custom7_valeur",
-    "explorateur_athletique_valeur", "explorateur_detection_valeur", "explorateur_dressage_valeur", "explorateur_natation_valeur",
-    "explorateur_survie_valeur", "explorateur_custom6_valeur", "explorateur_custom7_valeur",
-    "magicien_concentration_valeur", "magicien_metantropie_valeur", "magicien_empathie_valeur", "magicien_ethereve_valeur",
-    "magicien_sigentropie_valeur", "magicien_custom6_valeur", "magicien_custom7_valeur",
-    "roublard_baratin_valeur", "roublard_commerce_valeur", "roublard_crochetage_valeur", "roublard_discretion_valeur", "roublard_jeu_valeur",
-    "roublard_custom6_valeur", "roublard_custom7_valeur",
-    "stratege_convaincre_valeur", "stratege_discours_valeur", "stratege_gestion_valeur", "stratege_intimidation_valeur",
-    "stratege_tactique_valeur", "stratege_custom6_valeur", "stratege_custom7_valeur"
-  ];
+    const costMap = {
+      1: 1,
+      2: 3,
+      3: 5,
+      4: 7,
+      5: 10
+    };
 
-  getAttrs(competences, function(values) {
-    const point = competences.reduce((sum, attr) => sum + (parseInt(values[attr]) || 0), 0);
-    setAttrs({ "point": point });
-  });
+    getAttrs(competences, function(values) {
+      let totalPoints = 0;
 
+      competences.forEach(attr => {
+        const level = parseInt(values[attr]) || 0;
+        if (level > 0) {
+          totalPoints += costMap[level] || 0;
+        }
+      });
+
+      setAttrs({ "point": totalPoints });
+    });
 });
 
 on('clicked:go_2', async (event) => {
