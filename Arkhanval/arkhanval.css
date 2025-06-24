@@ -238,7 +238,9 @@ input[type="checkbox"]:focus {
 .charsheet button[type=roll].button_reset_ark::before,
 .charsheet button[type=action].button_annonce::before,
 .charsheet button[type=roll].button_annonce::before,
-.charsheet button[type=action].button_creation::before {
+.charsheet button[type=action].button_creation::before,
+.charsheet button[type=action].button_creation1::before,
+.charsheet button[type=action].button_creation2::before {
 	content: '';
 }
 
@@ -328,6 +330,25 @@ input[type="checkbox"]:focus {
     box-shadow: 3px 3px 5px 1px black;
 }
 
+
+.charsheet button[type=action].button_creation1 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/button_feuille.png);
+    background-size: 251px 242px;
+    width: 240px;
+    height: 240px;
+    border: none;
+    box-shadow: 3px 3px 5px 1px black;
+}
+
+.charsheet button[type=action].button_creation2 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/button_creer.png);
+    background-size: 251px 242px;
+    width: 240px;
+    height: 240px;
+    border: none;
+    box-shadow: 3px 3px 5px 1px black;
+}
+
 .charsheet button[type=action].button_texte:hover,
 .charsheet button[type=roll].button_texte:hover,
 .charsheet button[type=action].button_picto:hover,
@@ -355,6 +376,11 @@ input[type="checkbox"]:focus {
     opacity:1;  
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/result_1.png);
     background-size: cover;
+}
+
+.charsheet button[type=action].button_creation1:hover,
+.charsheet button[type=action].button_creation2:hover {
+    box-shadow: 3px 3px 5px 1px red;
 }
 
 
@@ -2323,6 +2349,12 @@ div.creation_9 {
     gap: 10px; 
 }
 
+.creation_back_retour {
+    margin-left: 591px;
+    margin-top: -104px;
+
+}
+
 .creation_header { 
     grid-column: 11 / 54;
     grid-row: 2;
@@ -2382,20 +2414,24 @@ div.creation_9 {
 
 .creation_1_creation_texte {  
     grid-column: 5 / 30;
-    grid-row: 37;
+    grid-row: 35;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /* background-color: #44ff0073; */
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
 }
 
 .creation_1_page_personnage_texte {  
     grid-column: 35 / 60;
-    grid-row: 37;
+    grid-row: 35;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    /* background-color: red; */
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 50px;
 }
 
 .creation_2_encart {
