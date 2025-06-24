@@ -2134,9 +2134,157 @@
                 <div class="wrapper_page_creation">
                     <div class="creation_header"></div>                    
                     <div class="creation_6_encart"></div>
-                    <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences. L'outil de création de personnage se chargera de vous indiquer le nombre de points dépenser en tenant compte des coûts de chaque niveau.</div>                         
-                    <div class="creation_6_decompte"></div> 
-                    <div class="creation_6_liste"></div>                                 
+                    <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences. 
+                        <br>L'outil de création de personnage se chargera de vous indiquer le nombre de points dépenser en tenant compte des coûts de chaque niveau.</div>                         
+                    <div class="creation_6_decompte">Nombre de points de compétences dépensés : <input type="text" name="attr_point" style="text-align: center;" readonly></div> 
+                    <div class="creation_6_liste">
+                        <div class="wrapper_zone_competence">
+                            <div class="creation_artisan">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Bricolage</div>
+                                    <div class="zone_bloc_texte_2">Cuisine</div>
+                                    <div class="zone_bloc_texte_3">Travail du bois</div>
+                                    <div class="zone_bloc_texte_4">Travail du cuir</div>
+                                    <div class="zone_bloc_texte_5">Travail du métal</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_artisan_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_artisan_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_artisan_bricolage_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_artisan_cuisine_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_artisan_bois_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_artisan_cuir_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_artisan_metal_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_artisan_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_artisan_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_artiste">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Chant</div>
+                                    <div class="zone_bloc_texte_2">Comédie</div>
+                                    <div class="zone_bloc_texte_3">Danse</div>
+                                    <div class="zone_bloc_texte_4">Dessin & Peinture</div>
+                                    <div class="zone_bloc_texte_5">Musique</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_artiste_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_artiste_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_artiste_chant_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_artiste_comedie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_artiste_danse_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_artiste_dessin_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_artiste_musique_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_artiste_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_artiste_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_combattant">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Armes à 1 main</div>
+                                    <div class="zone_bloc_texte_2">Armes de jet</div>
+                                    <div class="zone_bloc_texte_3">Armes de tir</div>
+                                    <div class="zone_bloc_texte_4">Art du combat</div>
+                                    <div class="zone_bloc_texte_5">Main nues</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_combattant_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_combattant_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_combattant_1main_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_combattant_jet_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_combattant_tir_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_combattant_combat_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_combattant_mainnues_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_combattant_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_combattant_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_erudit">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Botanique</div>
+                                    <div class="zone_bloc_texte_2" style="font-size: 10px;">Histoires & légendes</div>
+                                    <div class="zone_bloc_texte_3" style="font-size: 10px;">Lecture & Écritures</div>
+                                    <div class="zone_bloc_texte_4">Médecine</div>
+                                    <div class="zone_bloc_texte_5">Zoologie</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_erudit_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_erudit_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_erudit_botanique_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_erudit_legende_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_erudit_lecture_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_erudit_medecine_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_erudit_zoologie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_erudit_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_erudit_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_explorateur">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1" style="font-size: 10px;">Comp. Athlétiques</div>
+                                    <div class="zone_bloc_texte_2" style="font-size: 10px;">Détection & Vigilance</div>
+                                    <div class="zone_bloc_texte_3" style="font-size: 9px;">Dressage & Équitation</div>
+                                    <div class="zone_bloc_texte_4">Natation</div>
+                                    <div class="zone_bloc_texte_5">Survie</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_explorateur_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_explorateur_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_explorateur_athletique_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_explorateur_detection_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_explorateur_dressage_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_explorateur_natation_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_explorateur_survie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_explorateur_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_explorateur_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_magicien">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Concentration</div>
+                                    <div class="zone_bloc_texte_2">Métantropie</div>
+                                    <div class="zone_bloc_texte_3" style="font-size: 10px;">Empathie & Intuition</div>
+                                    <div class="zone_bloc_texte_4">Ethérêve</div>
+                                    <div class="zone_bloc_texte_5">Sigentropie</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_magicien_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_magicien_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_magicien_concentration_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_magicien_metantropie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_magicien_empathie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_magicien_ethereve_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_magicien_sigentropie_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_magicien_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_magicien_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_roublard">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1">Baratin</div>
+                                    <div class="zone_bloc_texte_2">Commerce</div>
+                                    <div class="zone_bloc_texte_3">Crochetage</div>
+                                    <div class="zone_bloc_texte_4">Discrétion</div>
+                                    <div class="zone_bloc_texte_5">Jeu</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_roublard_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_roublard_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_roublard_baratin_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_roublard_commerce_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_roublard_crochetage_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_roublard_discretion_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_roublard_jeu_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_roublard_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_roublard_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                            <div class="creation_stratege">
+                                <div class="wrapper_zone_bloc_creation">
+                                    <div class="zone_bloc_texte_1" style="font-size: 10px;">Convaincre & Argum.</div>
+                                    <div class="zone_bloc_texte_2" style="font-size: 10px;">Discours & Éloquence</div>
+                                    <div class="zone_bloc_texte_3" style="font-size: 9px;">Gestion & Organisation</div>
+                                    <div class="zone_bloc_texte_4"><button type="action" class="button_texte" name="act_roll-stratege_intimidation">Intimidation</div>
+                                    <div class="zone_bloc_texte_5"><button type="action" class="button_texte" name="act_roll-stratege_tactique">Tactique & Stratégie</div>
+                                    <div class="zone_bloc_texte_6"><input type="text" class="input_custom" name="attr_stratege_custom6"></div>
+                                    <div class="zone_bloc_texte_7"><input type="text" class="input_custom" name="attr_stratege_custom7"></div>
+                                    <div class="zone_bloc_valeur_1"><input type="number" class="input_carac_valeur" name="attr_stratege_convaincre_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_2"><input type="number" class="input_carac_valeur" name="attr_stratege_discours_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_3"><input type="number" class="input_carac_valeur" name="attr_stratege_gestion_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_4"><input type="number" class="input_carac_valeur" name="attr_stratege_intimidation_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_5"><input type="number" class="input_carac_valeur" name="attr_stratege_tactique_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_6"><input type="number" class="input_carac_valeur" name="attr_stratege_custom6_valeur" value="0"></div>
+                                    <div class="zone_bloc_valeur_7"><input type="number" class="input_carac_valeur" name="attr_stratege_custom7_valeur" value="0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                                 
                     <div class="creation_6_suivant"><button type="action" name="act_step_7">Étape suivante...</button></div>
                 </div>
             </div>
