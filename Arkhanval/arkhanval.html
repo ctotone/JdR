@@ -1855,14 +1855,16 @@
             <div class="creation_1">
                 <div class="wrapper_page_creation">
                     <div class="creation_1_texte">Bienvenue sur Arkhanval, nous vous proposons un outils de création de personnage vous permettant de vous guider pas à pas.</div>
-                    <div class="creation_1_creation"><button type="action" name="act_step_2">creation</button></div>
+                    <div class="creation_1_creation"><button type="action" name="act_step_2"></button></div>
                     <div class="creation_1_page_personnage"><button type="action" name="act_go_feuille">feuille</button></div>
+                    <div class="creation_1_creation_texte">Créer votre personnage</div>
+                    <div class="creation_1_page_personnage_texte">Accéder directement à la feuille</div>
                 </div>
             </div>
             <!-- Retour feuille - TOUJOURS AFFICHÉ -->
             <div class="creation_back">
                 <div class="wrapper_page_creation">
-                    <div class="creation_back_retour"><button type="action" name="act_go_feuille">Retour feuille</button></div>
+                    <div class="creation_back_retour"><button type="action" name="act_go_feuille" class="button_creation">Retour feuille</button></div>
                 </div>
             </div>
             <!-- Choix Peuple -->
@@ -1871,7 +1873,7 @@
                     <div class="creation_2_encart"></div>
                     <div class="creation_2_texte">Commençons par définir le Peuple auquel appartient votre personnage</div>
                     <div class="creation_2_peuple">
-                        <select class="input_peuple" name="attr_peuple">
+                        <select class="input_peuple" name="attr_peuple" style="background: #ffffff78;border-radius: 10px;">
                             <option value="0" selected="selected"></option>
                             <option value="1">Arkheigryphes</option>
                             <option value="2">Celminoens</option>
@@ -1888,7 +1890,7 @@
                             <option value="13">Wircamens</option>
                         </select>
                     </div>
-                    <div class="creation_2_suivant"><button type="action" name="act_step_3">Étape suivante...</button></div>
+                    <div class="creation_2_suivant"><button type="action" name="act_step_3" class="button_creation">Étape suivante...</button></div>
                     <div class="creation_footer"></div>
                 </div>
             </div>
@@ -1902,7 +1904,7 @@
                     <div class="creation_3_nom_data"><input type="text" class="input_classique_creation" name="attr_character_name"></div>
                     <div class="creation_3_origine">Origine du personnage :</div>
                     <div class="creation_3_origine_data"><input type="text" class="input_classique_creation" name="attr_origine"></div>
-                    <div class="creation_3_suivant"><button type="action" name="act_step_4">Étape suivante...</button></div>
+                    <div class="creation_3_suivant"><button type="action" name="act_step_4" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Choix Archetypes -->
@@ -1913,7 +1915,7 @@
                     <div class="creation_4_texte">Il est temps de déterminer ses Archétypes principaux...</div>
                     <div class="creation_4_archetype1">Archétype 1</div>
                     <div class="creation_4_archetype1_data">
-                        <select class="input_archetype" name="attr_archetype_1">
+                        <select class="input_archetype" name="attr_archetype_1" style="background: #ffffff78;border-radius: 10px;width: 100%;">
                                 <option value="0" selected="selected"></option>
                                 <option value="1">Artisan</option>
                                 <option value="2">Artiste</option>
@@ -1928,7 +1930,7 @@
                     <div class="creation_4_archetype1_info"></div>
                     <div class="creation_4_archetype2">Archétype 2</div>
                     <div class="creation_4_archetype2_data">
-                        <select class="input_archetype" name="attr_archetype_2">
+                        <select class="input_archetype" name="attr_archetype_2" style="background: #ffffff78;border-radius: 10px;width: 100%;">
                                 <option value="0" selected="selected"></option>
                                 <option value="1">Artisan</option>
                                 <option value="2">Artiste</option>
@@ -1941,7 +1943,7 @@
                             </select>
                     </div>
                     <div class="creation_4_archetype2_info"></div>
-                    <div class="creation_4_suivant"><button type="action" name="act_step_5">Étape suivante...</button></div>
+                    <div class="creation_4_suivant"><button type="action" name="act_step_5" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points Archetypes -->
@@ -1949,7 +1951,7 @@
                 <div class="wrapper_page_creation">
                     <div class="creation_header"></div>                    
                     <div class="creation_5_encart"></div>
-                    <div class="creation_5_texte">... puis de choisir 3 spécialités à répartir dans ses deux archétypes (faire polus clair)</div>
+                    <div class="creation_5_texte">... puis de choisir 3 spécialités dans la liste ci-dessous.</div>
                     <div class="creation_5_archetype1">
                         <div class="wrapper_specialite" style="grid-template-columns: repeat(24, 10px);">
                         <div class="specialite_1_check">
@@ -2126,7 +2128,7 @@
                         </div>
                     </div>
                     </div>                
-                    <div class="creation_5_suivant"><button type="action" name="act_step_6">Étape suivante...</button></div>
+                    <div class="creation_5_suivant"><button type="action" name="act_step_6" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points Compétences -->
@@ -2134,8 +2136,7 @@
                 <div class="wrapper_page_creation">
                     <div class="creation_header"></div>                    
                     <div class="creation_6_encart"></div>
-                    <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences. 
-                        <br>L'outil de création de personnage se chargera de vous indiquer le nombre de points dépenser en tenant compte des coûts de chaque niveau.</div>                         
+                    <div class="creation_6_texte">Vous avez maintenant 40 points à dépenser dans vos compétences.</div>                         
                     <div class="creation_6_decompte">Nombre de points de compétences dépensés : <input type="text" name="attr_point" style="text-align: center;" readonly></div> 
                     <div class="creation_6_liste">
                         <div class="wrapper_zone_competence">
@@ -2285,7 +2286,7 @@
                             </div>
                         </div>
                     </div>                                 
-                    <div class="creation_6_suivant"><button type="action" name="act_step_7">Étape suivante...</button></div>
+                    <div class="creation_6_suivant"><button type="action" name="act_step_7" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- Points ARK -->
@@ -2296,7 +2297,7 @@
                     <div class="creation_7_texte">Cochez 2 cercles d'ark dans les arks de votre choix, puis ajuster les autres valeurs en fonctions des modifications liées à votre origine, peuple, archétype, etc...</div> 
                     <div class="creation_7_arksonge">
                         <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
-                            <div class="ark_reset">O</div>
+                            <div class="ark_reset_1"></div>
                             <div class="ark_check_1"><input type="checkbox" name="attr_arksonge_1" value="1"></div>
                             <div class="ark_check_2"><input type="checkbox" name="attr_arksonge_2" value="1"></div>
                             <div class="ark_check_3"><input type="checkbox" name="attr_arksonge_3" value="1"></div>
@@ -2311,7 +2312,7 @@
                     </div>  
                     <div class="creation_7_arkentropie">
                         <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
-                            <div class="ark_reset">0</div>
+                            <div class="ark_reset_2"></div>
                             <div class="ark_check_1"><input type="checkbox" name="attr_arkentropie_1" value="1"></div>
                             <div class="ark_check_2"><input type="checkbox" name="attr_arkentropie_2" value="1"></div>
                             <div class="ark_check_3"><input type="checkbox" name="attr_arkentropie_3" value="1"></div>
@@ -2326,7 +2327,7 @@
                     </div>  
                     <div class="creation_7_arkoeur">
                         <div class="wrapper_cercle_ark" style=" grid-template-columns: repeat(150, 1px);">
-                            <div class="ark_reset">0</div>
+                            <div class="ark_reset_3"></div>
                             <div class="ark_check_1"><input type="checkbox" name="attr_arkoeur_1" value="1"></div>
                             <div class="ark_check_2"><input type="checkbox" name="attr_arkoeur_2" value="1"></div>
                             <div class="ark_check_3"><input type="checkbox" name="attr_arkoeur_3" value="1"></div>
@@ -2345,7 +2346,7 @@
                     <div class="creation_7_arksonge_titre"></div>  
                     <div class="creation_7_arkentropie_titre"></div>  
                     <div class="creation_7_arkoeur_titre"></div>                    
-                    <div class="creation_7_suivant"><button type="action" name="act_step_8">Étape suivante...</button></div>
+                    <div class="creation_7_suivant"><button type="action" name="act_step_8" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>
             <!-- VALIDATION -->
@@ -2354,7 +2355,7 @@
                     <div class="creation_header" style=" margin-right: 80px; "></div>                 
                     <div class="creation_8_encart"></div>
                     <div class="creation_8_texte">Votre personnage est maintenant relativement bien défini, vérifiez les informations validées précédemment puis paufinez le tout directement depuis la fiche de personnage.</div>              
-                    <div class="creation_8_final"><button type="action" name="act_go_feuille">Valider votre personnage</button></div>
+                    <div class="creation_8_final"><button type="action" name="act_go_feuille" class="button_creation" style="height: 71px;width: 350px;font-size: 22px;line-height: 22px;">Lancez vous dans l'aventure !</button></div>
                 </div>
             </div><!-- FOOTER -->
             <div class="creation_footer"></div>

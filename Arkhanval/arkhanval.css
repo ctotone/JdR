@@ -228,6 +228,8 @@ input[type="checkbox"]:focus {
     -moz-appearance: textfield !important; 
 }
 
+.charsheet button[type=action].button_creation_suivant
+
 .charsheet button[type=action].button_texte::before,
 .charsheet button[type=roll].button_texte::before,
 .charsheet button[type=action].button_picto::before,
@@ -235,7 +237,8 @@ input[type="checkbox"]:focus {
 .charsheet button[type=action].button_reset_ark::before,
 .charsheet button[type=roll].button_reset_ark::before,
 .charsheet button[type=action].button_annonce::before,
-.charsheet button[type=roll].button_annonce::before {
+.charsheet button[type=roll].button_annonce::before,
+.charsheet button[type=action].button_creation::before {
 	content: '';
 }
 
@@ -310,6 +313,19 @@ input[type="checkbox"]:focus {
     transition-delay: 0s;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/result_1.png);
     background-size: cover;
+}
+
+
+.charsheet button[type=action].button_creation {
+    border: none;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/fond_titre_roll.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 26px;
+    width: 110px;
+    text-align: center;
+    box-shadow: 3px 3px 5px 1px black;
 }
 
 .charsheet button[type=action].button_texte:hover,
@@ -2323,12 +2339,25 @@ div.creation_9 {
     background-repeat: no-repeat;
 }
 
+.creation_1_texte,
+.creation_2_texte,
+.creation_3_texte,
+.creation_4_texte,
+.creation_5_texte,
+.creation_6_texte,
+.creation_7_texte,
+.creation_8_texte,
+.creation_9_texte {
+    font-size: 19px;
+}
+
+
 .creation_1_texte {  
     grid-column: 11 / 54;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
@@ -2345,6 +2374,24 @@ div.creation_9 {
 .creation_1_page_personnage {  
     grid-column: 35 / 60;
     grid-row: 10 / 35;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: red; */
+}
+
+.creation_1_creation_texte {  
+    grid-column: 5 / 30;
+    grid-row: 37;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    /* background-color: #44ff0073; */
+}
+
+.creation_1_page_personnage_texte {  
+    grid-column: 35 / 60;
+    grid-row: 37;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2372,13 +2419,12 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;
     text-align: center;
 }
 
 .creation_2_peuple { 
     grid-column: 1 / 64;
-    grid-row: 4 / 12;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2403,14 +2449,13 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
 
 .creation_3_encart {
     grid-column: 3 / 62;
-    grid-row: 2 / 11;
+    grid-row: 2 / 12;
     margin-top: 32px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2424,27 +2469,30 @@ div.creation_9 {
 
 .creation_3_nom {  
     grid-column: 5 / 30;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
-    font-size: 16px;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: underline;
 }
 
 .creation_3_origine {  
     grid-column: 35 / 60;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
+    text-decoration: underline;
 }
 
 .creation_3_nom_data {  
     grid-column: 5 / 30;
-    grid-row: 6;
+    grid-row: 7;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2454,7 +2502,7 @@ div.creation_9 {
 
 .creation_3_origine_data {  
     grid-column: 35 / 60;
-    grid-row: 6;
+    grid-row: 7;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2464,7 +2512,7 @@ div.creation_9 {
 
 .creation_3_suivant {
     grid-column: 40 / 68;
-    grid-row: 9;
+    grid-row: 10;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2492,25 +2540,30 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
 
 .creation_4_archetype1 {  
     grid-column: 5 / 30;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: underline;
 }
 
 .creation_4_archetype2 {  
     grid-column: 35 / 60;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: underline;
 }
 
 .creation_4_archetype1_data {  
@@ -2576,7 +2629,6 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
@@ -2628,18 +2680,18 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
 
 .creation_6_decompte {  
     grid-column: 11 / 54;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;  
     text-align: center;
+    font-size: 15px;
     /* background-color: #44ff0073; */
 }
 
@@ -2687,14 +2739,13 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
 
 .creation_7_arksonge {  
     grid-column: 7 / 20;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2702,7 +2753,7 @@ div.creation_9 {
 
 .creation_7_arkentropie {  
     grid-column: 20 / 35;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: -3px;
     margin-right: 0px;
@@ -2710,7 +2761,7 @@ div.creation_9 {
 
 .creation_7_arkoeur {  
     grid-column: 31 / 48;
-    grid-row: 5;
+    grid-row: 6;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2813,14 +2864,13 @@ div.creation_9 {
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    font-size: 17px;  
     text-align: center;
     /* background-color: #44ff0073; */
 }
 
 .creation_8_final { 
     grid-column: 11 / 46;
-    grid-row: 5;
+    grid-row: 8;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2911,9 +2961,29 @@ div.creation_9 {
     margin-right: 0px;
 }
 
+.ark_reset_1,
+.ark_reset_2,
+.ark_reset_3 {
+    grid-column: 71 / 121;
+    grid-row: 37 / 89;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+}
 
+.ark_reset_1 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_09.png);
+}
 
+.ark_reset_2 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_10.png);
+}
 
+.ark_reset_3 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/symbole_11.png);
+}
 
 /* ROLL TEMPLATE */
 .sheet-rolltemplate-ark {
