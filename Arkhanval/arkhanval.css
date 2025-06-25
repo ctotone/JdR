@@ -387,11 +387,13 @@ input[type="checkbox"]:focus {
 /* Gestion des affichage */
 
 div.personnage,
-div.creation {
+div.creation,
+div.creation_header_general {
     display: none;
 }
 
 .charsheet .creation_active[value="1"] ~ div.creation,
+.charsheet .creation_active[value="1"] ~ div.creation_header_general,
 .charsheet .creation_active[value="0"] ~ div.personnage {
     display: block;
 }
