@@ -2,6 +2,8 @@
 <input type="hidden" name="attr_page" class="choix_page" value="0">
 <input type="hidden" name="attr_popup" class="popup_open" value="0">
 <input type="hidden" name="attr_arkoeur_valeur" class="arkoeur_valeur_class" value="1">
+<input type="hidden" name="attr_archetype_1" class="choix_archetype_1" value="0">
+<input type="hidden" name="attr_archetype_2" class="choix_archetype_2" value="0">
 <input type="hidden" name="attr_gm" value="">
 <input type="hidden" name="attr_jet_xp" value="&{template:ito} {{xp=oui}} {{title=XP}} {{dXP=[[D12]]}}">
 <button type="roll" name="roll_xp" style="display: none;" value="@{jet_xp}"></button> 
@@ -1839,7 +1841,7 @@
 
 <!-- SECTION CREATION DE PERSONNAGE -->
  
-<div class="creation_header_general"></div>
+<div class="creation_header_general"><div class="creation_back_retour"><button type="action" name="act_go_feuille" class="button_creation">Retour feuille</button></div></div>
 <div class="creation">
     <div class="page_creation">
         <!-- <div class="wrapper_page_creation_global"> -->
@@ -1861,12 +1863,6 @@
                     <div class="creation_1_page_personnage"><button type="action" name="act_go_feuille" class="button_creation2">feuille</button></div>
                     <div class="creation_1_creation_texte">Créer votre personnage</div>
                     <div class="creation_1_page_personnage_texte">Accéder directement à la feuille</div>
-                </div>
-            </div>
-            <!-- Retour feuille - TOUJOURS AFFICHÉ -->
-            <div class="creation_back">
-                <div class="wrapper_page_creation">
-                    <div class="creation_back_retour"><button type="action" name="act_go_feuille" class="button_creation">Retour feuille</button></div>
                 </div>
             </div>
             <!-- Choix Peuple -->
@@ -2077,6 +2073,8 @@
             <!-- Choix Archetypes -->
             <div class="creation_4">
                 <div class="wrapper_page_creation">
+                    <input type="hidden" name="attr_archetype_1" class="choix_archetype_1" value="0">
+                    <input type="hidden" name="attr_archetype_2" class="choix_archetype_2" value="0">
                     <div class="creation_header"></div>                    
                     <div class="creation_4_encart"></div>
                     <div class="creation_4_texte">Il est temps de déterminer ses Archétypes principaux...</div>
@@ -2094,7 +2092,14 @@
                                 <option value="8">Stratège</option>
                             </select>
                     </div>
-                    <div class="creation_4_archetype1_info"></div>
+                    <div class="creation_4_archetype1_info_1"></div>
+                    <div class="creation_4_archetype1_info_2"></div>
+                    <div class="creation_4_archetype1_info_3"></div>
+                    <div class="creation_4_archetype1_info_4"></div>
+                    <div class="creation_4_archetype1_info_5"></div>
+                    <div class="creation_4_archetype1_info_6"></div>
+                    <div class="creation_4_archetype1_info_7"></div>
+                    <div class="creation_4_archetype1_info_8"></div>
                     <div class="creation_4_archetype2">Archétype 2</div>
                     <div class="creation_4_archetype2_data">
                         <select class="input_archetype" name="attr_archetype_2" style="background: #ffffff78;border-radius: 10px;width: 100%;">
@@ -2109,7 +2114,14 @@
                                 <option value="8">Stratège</option>
                             </select>
                     </div>
-                    <div class="creation_4_archetype2_info"></div>
+                    <div class="creation_4_archetype2_info_1"></div>
+                    <div class="creation_4_archetype2_info_2"></div>
+                    <div class="creation_4_archetype2_info_3"></div>
+                    <div class="creation_4_archetype2_info_4"></div>
+                    <div class="creation_4_archetype2_info_5"></div>
+                    <div class="creation_4_archetype2_info_6"></div>
+                    <div class="creation_4_archetype2_info_7"></div>
+                    <div class="creation_4_archetype2_info_8"></div>
                     <div class="creation_4_suivant"><button type="action" name="act_step_5" class="button_creation">Étape suivante...</button></div>
                 </div>
             </div>

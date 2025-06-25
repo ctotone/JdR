@@ -504,6 +504,44 @@ div.peuple_13 {
     display: block;
 }
 
+div.creation_4_archetype1_info_1,
+div.creation_4_archetype1_info_2,
+div.creation_4_archetype1_info_3,
+div.creation_4_archetype1_info_4,
+div.creation_4_archetype1_info_5,
+div.creation_4_archetype1_info_6,
+div.creation_4_archetype1_info_7,
+div.creation_4_archetype1_info_8,
+div.creation_4_archetype2_info_1,
+div.creation_4_archetype2_info_2,
+div.creation_4_archetype2_info_3,
+div.creation_4_archetype2_info_4,
+div.creation_4_archetype2_info_5,
+div.creation_4_archetype2_info_6,
+div.creation_4_archetype2_info_7,
+div.creation_4_archetype2_info_8 {
+    display: none;
+}
+
+.charsheet .choix_archetype_1[value="1"] ~ div.creation_4_archetype1_info_1,
+.charsheet .choix_archetype_1[value="2"] ~ div.creation_4_archetype1_info_2,
+.charsheet .choix_archetype_1[value="3"] ~ div.creation_4_archetype1_info_3,
+.charsheet .choix_archetype_1[value="4"] ~ div.creation_4_archetype1_info_4,
+.charsheet .choix_archetype_1[value="5"] ~ div.creation_4_archetype1_info_5,
+.charsheet .choix_archetype_1[value="6"] ~ div.creation_4_archetype1_info_6,
+.charsheet .choix_archetype_1[value="7"] ~ div.creation_4_archetype1_info_7,
+.charsheet .choix_archetype_1[value="8"] ~ div.creation_4_archetype1_info_8,
+.charsheet .choix_archetype_2[value="1"] ~ div.creation_4_archetype2_info_1,
+.charsheet .choix_archetype_2[value="2"] ~ div.creation_4_archetype2_info_2,
+.charsheet .choix_archetype_2[value="3"] ~ div.creation_4_archetype2_info_3,
+.charsheet .choix_archetype_2[value="4"] ~ div.creation_4_archetype2_info_4,
+.charsheet .choix_archetype_2[value="5"] ~ div.creation_4_archetype2_info_5,
+.charsheet .choix_archetype_2[value="6"] ~ div.creation_4_archetype2_info_6,
+.charsheet .choix_archetype_2[value="7"] ~ div.creation_4_archetype2_info_7,
+.charsheet .choix_archetype_2[value="8"] ~ div.creation_4_archetype2_info_8 {
+    display: block;
+}
+
 
 /* Modelage input et autres */
 
@@ -740,8 +778,8 @@ div.page_7 {
 
 div.creation_header_general {
     width: 830px;
-    height: 139px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_creation_titre.webp);
+    height: 117px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_header_creation.webp);
     background-size: contain;
     font-size: 13px;
 }
@@ -749,8 +787,8 @@ div.creation_header_general {
 div.creation {
     width: 830px;
     /* height: 1112px; */
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_creation_fond.webp);
-    background-size: cover;
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_fond_creation.webp);
+    background-size: 830px auto;
     font-size: 13px;
 }
 
@@ -2362,8 +2400,9 @@ div.creation_9 {
 }
 
 .creation_back_retour {
-    margin-left: 585px;
-    margin-top: -131px;
+    margin-left: 647px;
+    margin-top: 0px;
+    padding-top: 55px;
 }
 
 .creation_header { 
@@ -2640,20 +2679,96 @@ div.creation_9 {
     margin-right: 0px;
 }
 
-.creation_4_archetype1_info {  
+
+div.creation_4_archetype1_info_1,
+div.creation_4_archetype1_info_2,
+div.creation_4_archetype1_info_3,
+div.creation_4_archetype1_info_4,
+div.creation_4_archetype1_info_5,
+div.creation_4_archetype1_info_6,
+div.creation_4_archetype1_info_7,
+div.creation_4_archetype1_info_8 {  
     grid-column: 5 / 30;
     grid-row: 9;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    background-size : cover;
+    background-repeat: no-repeat;
 }
 
-.creation_4_archetype2_info {  
+div.creation_4_archetype2_info_1,
+div.creation_4_archetype2_info_2,
+div.creation_4_archetype2_info_3,
+div.creation_4_archetype2_info_4,
+div.creation_4_archetype2_info_5,
+div.creation_4_archetype2_info_6,
+div.creation_4_archetype2_info_7,
+div.creation_4_archetype2_info_8 {
     grid-column: 35 / 60;
     grid-row: 9;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    background-size : cover;
+    background-repeat: no-repeat;  
+    height: 250px;
+}
+
+div.creation_4_archetype1_info_1,
+div.creation_4_archetype2_info_1 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_artisan.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_2,
+div.creation_4_archetype2_info_2 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_artiste.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_3,
+div.creation_4_archetype2_info_3 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_combattant.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_4,
+div.creation_4_archetype2_info_4 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_erudit.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_5,
+div.creation_4_archetype2_info_5 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_explorateur.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_6,
+div.creation_4_archetype2_info_6 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_magicien.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_7,
+div.creation_4_archetype2_info_7 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_roublard.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
+}
+
+div.creation_4_archetype1_info_8,
+div.creation_4_archetype2_info_8 {
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/comp_stratege.webp);
+    background-size : cover;
+    background-repeat: no-repeat;
 }
 
 .creation_4_suivant { 
