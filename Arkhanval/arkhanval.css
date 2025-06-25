@@ -741,7 +741,7 @@ div.page_7 {
 div.creation {
     width: 830px;
     /* height: 1112px; */
-	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_creation.webp);
+	background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/Arkhanval/images/background_creation_corps.webp);
     background-size: cover;
 	background-repeat: no-repeat;
     font-size: 13px;
@@ -2262,10 +2262,21 @@ div.creation_9 {
 
 .wrapper_page_creation_global {  
     display: grid;
-    grid-template-columns: repeat(83, 10px);
+    grid-template-columns: repeat(63, 9px);
     grid-auto-rows: 10px;
-    margin-left: 105px;
-    padding-top: 115px;
+    margin-left: 30px;
+}
+
+.wrapper_creation_info {
+    
+    display: grid;
+    grid-template-columns: repeat(63, 9px);
+    grid-auto-rows: 10px;
+}
+
+.creation_header_general {
+    width: 150px;
+    background green;
 }
 
 .creation_1,
@@ -2436,7 +2447,7 @@ div.creation_9 {
 
 .creation_2_encart {
     grid-column: 3 / 62;
-    grid-row: 1 / 12;
+    grid-row: 1 / 14;
     margin-top: 32px;
     margin-left: 0px;
     margin-right: 0px;
@@ -2469,9 +2480,20 @@ div.creation_9 {
     /* background-color: #44ff0073; */
 }
 
+.creation_2_peuple_info { 
+    grid-column: 1 / 64;
+    grid-row: 8;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 17px;
+    text-align: center;
+    /* background-color: #44ff0073; */
+}
+
 .creation_2_suivant { 
     grid-column: 40 / 68;
-    grid-row: 10;
+    grid-row: 12;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
