@@ -552,7 +552,7 @@ span.hugo {
   }
 
 .sheet-rolltemplate-aptitude a[href^="~"] {
-    color: var(--echec-majeur);
+    color: var(--lien);
     background-color: transparent;
     font-size: 14px;
     border: none;
@@ -600,8 +600,9 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-container,
 .sheet-rolltemplate-relance .sheet-container,
 .sheet-rolltemplate-aptitude .sheet-container {
-  --echec-classique: #ff2f2fc7;
-  --echec-majeur: #ff2f2fc7;
+  --echec-classique: #7b0000c7;
+  --echec-majeur: #7b0000c7;
+  --lien: #7b0000c7; 
   --reussite-classique: #03b91fb3;
   --reussite-majeur: #03b91fb3;
 }
@@ -636,6 +637,7 @@ span.hugo {
     font-size: 26px;
     margin-bottom: 15px;
     text-transform: uppercase;
+    color: white;
 }
 
 .sheet-rolltemplate-tombeau .sheet-resultat-des,
@@ -728,6 +730,7 @@ span.hugo {
     font-size: 24px;
     font-weight: bold;
     color: var(--echec-majeur);
+    -webkit-text-stroke: 1px #cbcbcbcc;
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec2,
