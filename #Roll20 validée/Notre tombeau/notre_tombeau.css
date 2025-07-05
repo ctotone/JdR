@@ -545,6 +545,7 @@ span.hugo {
     margin-left: -15px;
     color: #ffffffb3;
     font-family: Oswald;
+    --blanc: #ffffffc2;
   }
 
 .sheet-rolltemplate-relance {
@@ -579,9 +580,9 @@ span.hugo {
 .sheet-rolltemplate-relance .sheet-container,
 .sheet-rolltemplate-aptitude .sheet-container {
     width: 260px;
-    height: 150px;
-    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/%23Roll20%20valid%C3%A9e/Notre%20tombeau/images/roll_back.jpg);
-    background-size: 280px 170px;
+    height: 170px;
+    background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/roll_back.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 10px;
     border: 2px solid #393939;
@@ -600,11 +601,11 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-container,
 .sheet-rolltemplate-relance .sheet-container,
 .sheet-rolltemplate-aptitude .sheet-container {
-  --echec-classique: #7b0000c7;
-  --echec-majeur: #7b0000c7;
-  --lien: #7b0000c7; 
+  --echec-classique: #eb3636c7;
+  --echec-majeur: #f200ffc7;
+  --lien: #f200ffc7; 
   --reussite-classique: #03b91fb3;
-  --reussite-majeur: #03b91fb3;
+  --reussite-majeur: #faff2fb3;
 }
 
 .sheet-rolltemplate-tombeau .sheet-content,
@@ -613,7 +614,7 @@ span.hugo {
     display: grid;
     grid-template-columns: 125px 45px 45px 45px;
     line-height: 25px;
-    height: 150px;
+    height: 170px;
     font-size: 16px;
 }
 
@@ -635,16 +636,32 @@ span.hugo {
     align-items: center;
     justify-content: center;
     font-size: 26px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     text-transform: uppercase;
-    color: white;
+    color: var(--blanc);
+}
+
+.sheet-rolltemplate-tombeau .sheet-survivant-dif-titre,
+.sheet-rolltemplate-relance .sheet-survivant-dif-titre,
+.sheet-rolltemplate-aptitude .sheet-survivant-dif-titre {
+    grid-column: 1 / 5;
+    grid-row: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--blanc);
 }
 
 .sheet-rolltemplate-tombeau .sheet-resultat-des,
 .sheet-rolltemplate-relance .sheet-resultat-des,
 .sheet-rolltemplate-aptitude .sheet-resultat-des {
     grid-column: 1/5;
-    grid-row: 2;
+    grid-row: 3;
     text-align: center;
     display: flex;
     align-items: center;
@@ -669,19 +686,20 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc,
 .sheet-rolltemplate-aptitude .sheet-desc {
     grid-column: 1 / 5;
-    grid-row: 3 / 5;
+    grid-row: 4/6;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 17px;
     margin-top: -65px;
+    color: var(--blanc);
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite1,
 .sheet-rolltemplate-aptitude .sheet-desc-reussite1 {
     grid-column: 1 / 5;
-    grid-row: 3;
+    grid-row: 4;
     text-align: center;
     display: flex;
     align-items: center;
@@ -695,7 +713,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain,
 .sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain {
     grid-column: 1 / 5;
-    grid-row: 4;
+    grid-row: 5;
     text-align: center;
     display: flex;
     align-items: center;
@@ -709,7 +727,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-reussite2,
 .sheet-rolltemplate-aptitude .sheet-desc-reussite2 {
     grid-column: 1 / 5;
-    grid-row: 3 / 5;
+    grid-row: 4/6;
     text-align: center;
     display: flex;
     align-items: center;
@@ -722,7 +740,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-echec1,
 .sheet-rolltemplate-aptitude .sheet-desc-echec1 {
     grid-column: 1 / 5;
-    grid-row: 3;
+    grid-row: 4;
     text-align: center;
     display: flex;
     align-items: center;
@@ -730,13 +748,12 @@ span.hugo {
     font-size: 24px;
     font-weight: bold;
     color: var(--echec-majeur);
-    -webkit-text-stroke: 1px #cbcbcbcc;
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec2,
 .sheet-rolltemplate-aptitude .sheet-desc-echec2 {
     grid-column: 1 / 5;
-    grid-row: 3 / 5;
+    grid-row: 4/6;
     text-align: center;
     display: flex;
     align-items: center;
@@ -750,7 +767,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte,
 .sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte {
     grid-column: 1 / 5;
-    grid-row: 4;
+    grid-row: 5;
     text-align: center;
     display: flex;
     align-items: center;
