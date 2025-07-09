@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur de Galerie Souterraine - Narration immersive</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #111;
+      color: #eee;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+    }
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 25px;
+    }
+    .result {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Générateur de Galerie Souterraine</h1>
+    <button onclick="genererGalerie()">Générer un passage</button>
+    <div class="result" id="resultat"></div>
+  </div>
+
+  <script>
+    const directions = [
+      "vous bifurquez vers un tunnel plus étroit",
+      "vous tournez dans une galerie qui descend lentement",
+      "vous empruntez un couloir sinueux à l’écho étrange",
+      "vous grimpez un escalier à moitié effondré",
+      "vous débouchez sur un large espace encombré",
+      "vous avancez dans un boyau de plus en plus bas de plafond",
+      "vous contournez un effondrement récent",
+      "vous atteignez une intersection marquée d’un symbole rouge",
+      "vous cheminez entre deux murs suintants",
+      "vous suivez une ancienne conduite cimentée",
+      "vous franchissez une ouverture à moitié bouchée",
+      "vous longez une paroi couverte d’algues sèches",
+      "vous rampez sous une grille déformée",
+      "vous marchez sur un sol pavé inégal",
+      "vous passez devant une niche creusée dans la roche",
+      "vous traversez une salle circulaire sans plafond visible",
+      "vous pénétrez dans un conduit creusé à même la glaise",
+      "vous marchez le long d’un collecteur asséché",
+      "vous explorez une galerie sculptée de motifs anciens",
+      "vous avancez dans un couloir entièrement voûté"
+    ];
+
+    const environnement = [
+      "le plafond est hérissé de concrétions minérales",
+      "les murs sont recouverts d’inscriptions anciennes",
+      "le sol est jonché de débris rouillés",
+      "des racines pendent du plafond comme des tentacules",
+      "le conduit semble artificiellement élargi",
+      "les briques se désagrègent sous vos pas",
+      "une rigole latérale transporte un filet d’eau",
+      "des traces récentes laissent deviner un passage fréquenté",
+      "le couloir est obstrué par des toiles d’araignée épaisses",
+      "une fissure laisse passer un souffle d’air glacial",
+      "la voûte présente des marques de brûlure",
+      "un vieux câble électrique pend du plafond",
+      "des objets oubliés sont entassés dans un coin",
+      "un ancien panneau de signalisation indique une direction illisible",
+      "la pierre semble usée par le passage",
+      "des coulées calcaires ont figé les formes du mur",
+      "de fines stalactites gouttent à intervalles réguliers",
+      "le sol est tapissé de mousse pâle",
+      "un vieux filet d’eau s’écoule lentement entre deux pierres",
+      "des galets usés forment un chemin irrégulier"
+    ];
+
+    const vue = [
+      "vos ombres dansent au rythme de votre lampe",
+      "une silhouette figée peinte sur un mur surgit dans le halo de lumière",
+      "une vieille porte métallique apparaît au détour du mur",
+      "la lumière révèle un graffiti presque effacé",
+      "des symboles gravés attirent furtivement votre attention",
+      "des reflets bougent à la surface d’une flaque",
+      "le décor semble figé dans une éternité minérale",
+      "un reflet métallique attire l’œil dans un recoin",
+      "des formes géométriques sont sculptées dans la paroi",
+      "la poussière flotte lentement dans l’air",
+      "le décor devient plus oppressant à chaque pas",
+      "un puits vertical s’ouvre soudain sous vos pieds",
+      "des marches apparaissent sur un côté",
+      "le tunnel se rétrécit brutalement",
+      "un recoin paraît récemment aménagé",
+      "des spores flottent paresseusement dans la lumière",
+      "des gouttelettes brillent sur la roche comme des diamants",
+      "des traces de griffures animales marquent les murs",
+      "une lumière phosphorescente émane d’un champignon",
+      "le fond de la galerie semble se perdre dans le brouillard"
+    ];
+
+    const odeur = [
+      "l’odeur âcre du soufre s’impose",
+      "une senteur de rouille humide vous prend à la gorge",
+      "l’air est saturé d’un relent de moisissure",
+      "un parfum métallique flotte dans l’atmosphère",
+      "une senteur de torchis détrempé vous enveloppe",
+      "l’air vibre d’une humidité putride",
+      "une fragrance de terre souillée persiste",
+      "un relent de vieux cuir mouillé traîne dans l’air",
+      "l’odeur de décomposition est presque imperceptible",
+      "vous respirez une effluve d’égout antique",
+      "une vague odeur de cendres froides subsiste",
+      "un parfum rance sature le passage",
+      "un filet d’air transporte une senteur de viande avariée",
+      "l’air a un goût de pierre fendue",
+      "une odeur de moisissure ancienne stagne sous la voûte",
+      "un parfum végétal humide semble émaner des murs",
+      "une senteur saline évoque une mer enfouie",
+      "un effluve de mousse humide flotte dans l’air",
+      "l’air sent le vieux bois trempé",
+      "une odeur animale discrète reste en suspens"
+    ];
+
+    const ouie = [
+      "un bourdonnement lointain trouble le silence",
+      "des gouttes tombent à intervalles réguliers",
+      "le murmure du vent glisse à travers une fissure",
+      "un cliquetis métallique résonne au loin",
+      "le grésillement d’un néon défaillant vous accompagne",
+      "un écho incertain rebondit contre les parois",
+      "le frottement de votre sac paraît assourdissant",
+      "le silence est seulement troublé par vos propres pas",
+      "un gargouillement d’eau sale se fait entendre",
+      "vous entendez un chuintement inexplicable",
+      "le grincement d’une structure lointaine rompt l’ambiance",
+      "un clapotement intermittent provient d’un puits latéral",
+      "des craquements secs ponctuent votre progression",
+      "un bruit étouffé évoque quelque chose qui glisse",
+      "un soupir invisible semble traverser les murs",
+      "des clochettes minuscules tintent dans le vent",
+      "le bourdonnement d’insectes s’amplifie brièvement",
+      "des froissements discrets évoquent une présence animale",
+      "le ruissellement de l’eau se mêle à des échos",
+      "un souffle d’air provoque un sifflement continu"
+    ];
+
+    const toucher = [
+      "la roche est froide et légèrement visqueuse",
+      "le métal rouillé accroche vos doigts",
+      "le sol vibre subtilement sous vos pas",
+      "le mur semble respirer faiblement",
+      "la poussière colle à votre peau",
+      "une humidité stagnante imprègne chaque surface",
+      "le plafond laisse couler quelques gouttes glacées",
+      "une paroi semble creuse sous vos doigts",
+      "le sol crisse sous vos chaussures",
+      "un frisson traverse votre main sans raison apparente",
+      "la pierre suinte au toucher",
+      "des fissures parcourent les parois comme des veines",
+      "une vibration infime parcourt le mur",
+      "le sol paraît remuer sous une fine couche de sable",
+      "le contact du sol provoque une étrange sensation d’enfoncement",
+      "une texture granuleuse accroche vos paumes",
+      "le mur se désagrège par endroits sous vos doigts",
+      "le plafond est tiède comme s’il retenait une chaleur ancienne",
+      "la mousse absorbe les vibrations de vos pas",
+      "le sol sablonneux glisse légèrement à chaque foulée"
+    ];
+
+    const gout = [
+      "vous avez la bouche pâteuse sans comprendre pourquoi",
+      "un goût métallique remplit votre gorge",
+      "votre salive a une saveur âcre et désagréable",
+      "vous ressentez une sensation de sécheresse soudaine",
+      "une amertume étrange vous envahit la langue",
+      "le goût de pierre humide vous reste sur le palais",
+      "une saveur ferrugineuse semble provenir de l’air",
+      "votre gorge se serre sous un goût poussiéreux",
+      "une trace amère remonte depuis votre estomac",
+      "un goût de moisi persiste sur votre langue",
+      "vous ressentez comme une pointe de sang séché",
+      "un arrière-goût de cendre vous prend par surprise",
+      "une saveur terreuse remplit votre bouche",
+      "une sensation métallique vous fait saliver",
+      "un goût d’huile rance vous monte au nez",
+      "un goût d’algue sèche vous surprend",
+      "vous avez la sensation d’avoir mordu dans une vieille pierre",
+      "le goût d’un vieux champignon vous reste en bouche",
+      "une amertume saline vous assèche la langue",
+      "votre gorge picote comme après une gorgée de soufre"
+    ];
+
+    const transitions = {
+      directions: [...Array(10)].fill().map((_, i) => [
+        "Alors que vous avancez dans le silence oppressant,",
+        "Votre progression vous mène inexorablement à travers ces couloirs,",
+        "En poursuivant votre route,",
+        "À mesure que vous vous enfoncez davantage,",
+        "Vos pas vous guident dans cette obscurité inconnue,"
+      ][i % 5]),
+      environnement: [...Array(10)].fill().map((_, i) => [
+        "Vous remarquez que l’environnement immédiat est particulier.",
+        "L’atmosphère change subtilement autour de vous.",
+        "Le lieu semble porter les marques du temps.",
+        "L’état des lieux laisse penser à un long abandon.",
+        "Le décor qui vous entoure est frappant."
+      ][i % 5]),
+      vue: [...Array(10)].fill().map((_, i) => [
+        "À la lueur de votre lampe,",
+        "Dans le faible éclairage,",
+        "Vos yeux s’habituent peu à peu à l’obscurité,",
+        "Autour de vous,",
+        "En scrutant les alentours,"
+      ][i % 5]),
+      odeur: [...Array(10)].fill().map((_, i) => [
+        "L’odeur ambiante vous prend soudain à la gorge.",
+        "Un parfum inattendu vous heurte les narines.",
+        "Vous êtes saisi par une émanation particulière.",
+        "L’air est saturé d’une senteur étrange.",
+        "Votre nez capte une effluve marquante."
+      ][i % 5]),
+      ouie: [...Array(10)].fill().map((_, i) => [
+        "Un son singulier vous parvient à l’oreille.",
+        "Vous percevez un bruit difficile à localiser.",
+        "Un écho discret se répercute contre les murs.",
+        "Le silence est trahi par un son inattendu.",
+        "Une ambiance sonore se fait sentir dans le lointain."
+      ][i % 5]),
+      toucher: [...Array(10)].fill().map((_, i) => [
+        "En frôlant une paroi,",
+        "Votre main effleure quelque chose d’inhabituel.",
+        "Vous sentez sous vos doigts une texture particulière.",
+        "Votre contact avec les lieux vous renseigne davantage.",
+        "En glissant votre paume sur les murs,"
+      ][i % 5]),
+      gout: [...Array(10)].fill().map((_, i) => [
+        "Une étrange saveur s’impose à votre bouche.",
+        "Un arrière-goût persistant vous surprend.",
+        "Votre palais est troublé par une sensation étrange.",
+        "Un goût involontaire envahit votre bouche.",
+        "Vous percevez en inspirant une saveur inattendue."
+      ][i % 5])
+    };
+
+    const choix = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    function genererGalerie() {
+      const base = [
+        choix(transitions.directions) + " " + choix(directions),
+        choix(transitions.environnement) + " " + choix(environnement)
+      ];
+
+      const sensPossibles = [
+        ["vue", transitions.vue, vue],
+        ["odeur", transitions.odeur, odeur],
+        ["ouie", transitions.ouie, ouie],
+        ["toucher", transitions.toucher, toucher],
+        ["gout", transitions.gout, gout]
+      ];
+
+      const sensChoisis = sensPossibles.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+      const sensations = sensChoisis.map(([_, trans, data]) => choix(trans) + " " + choix(data));
+
+      const tous = [...base, ...sensations].sort(() => Math.random() - 0.5);
+
+      document.getElementById("resultat").innerText = tous.join(" ");
+    }
+  </script>
+</body>
+</html>
