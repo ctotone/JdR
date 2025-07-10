@@ -4055,12 +4055,6 @@ div.boutton_aura_physique
 
 .charsheet .choix_jet[value="1"] ~ div.hero_titre_aura,
 .charsheet .choix_jet[value="1"] ~ div.boutton_aura,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_force_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_dexterite_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_constitution_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_intelligence_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_charisme_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_volonte_titre,
 .charsheet .choix_jet[value="1"] ~ div.derivees_titre_roll,
 .charsheet .choix_jet[value="1"] ~ div.competence_nom_double,
 .charsheet .choix_jet[value="1"] ~ div.competence_valeur_simple_custom
@@ -4068,19 +4062,34 @@ div.boutton_aura_physique
     display: flex;
 }
 
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_force_titre,
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_dexterite_titre,
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_constitution_titre,
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_intelligence_titre,
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_charisme_titre,
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_volonte_titre
+ {
+    display: block;
+}
+
 .charsheet .choix_jet[value="2"] ~ div.hero_titre_aura_physique,
 .charsheet .choix_jet[value="2"] ~ div.boutton_aura_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_force_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_dexterite_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_constitution_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_intelligence_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_charisme_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_volonte_titre_physique,
 .charsheet .choix_jet[value="2"] ~ div.derivees_titre_roll_physique,
 .charsheet .choix_jet[value="2"] ~ div.competence_nom_double_physique,
 .charsheet .choix_jet[value="2"] ~ div.competence_valeur_simple_custom_physique
  {
     display: flex;
+}
+
+
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_force_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_dexterite_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_constitution_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_intelligence_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_charisme_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_volonte_titre_physique
+ {
+    display: block;
 }
 
 
