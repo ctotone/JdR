@@ -2298,7 +2298,7 @@ div.niveau_aura_m3 {
 .hero_titre_aura_physique {
   grid-column: 2;
   grid-row: 1;
-  display: flex !important;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 12px;
@@ -4055,7 +4055,6 @@ div.boutton_aura_physique
 
 .charsheet .choix_jet[value="1"] ~ div.hero_titre_aura,
 .charsheet .choix_jet[value="1"] ~ div.boutton_aura,
-.charsheet .choix_jet[value="1"] ~ div.derivees_titre_roll,
 .charsheet .choix_jet[value="1"] ~ div.competence_nom_double,
 .charsheet .choix_jet[value="1"] ~ div.competence_valeur_simple_custom
  {
@@ -4067,14 +4066,14 @@ div.boutton_aura_physique
 .charsheet .choix_jet[value="1"] ~ div.caracteristiques_constitution_titre,
 .charsheet .choix_jet[value="1"] ~ div.caracteristiques_intelligence_titre,
 .charsheet .choix_jet[value="1"] ~ div.caracteristiques_charisme_titre,
-.charsheet .choix_jet[value="1"] ~ div.caracteristiques_volonte_titre
+.charsheet .choix_jet[value="1"] ~ div.caracteristiques_volonte_titre,
+.charsheet .choix_jet[value="1"] ~ div.derivees_titre_roll
  {
     display: block;
 }
 
 .charsheet .choix_jet[value="2"] ~ div.hero_titre_aura_physique,
 .charsheet .choix_jet[value="2"] ~ div.boutton_aura_physique,
-.charsheet .choix_jet[value="2"] ~ div.derivees_titre_roll_physique,
 .charsheet .choix_jet[value="2"] ~ div.competence_nom_double_physique,
 .charsheet .choix_jet[value="2"] ~ div.competence_valeur_simple_custom_physique
  {
@@ -4087,7 +4086,8 @@ div.boutton_aura_physique
 .charsheet .choix_jet[value="2"] ~ div.caracteristiques_constitution_titre_physique,
 .charsheet .choix_jet[value="2"] ~ div.caracteristiques_intelligence_titre_physique,
 .charsheet .choix_jet[value="2"] ~ div.caracteristiques_charisme_titre_physique,
-.charsheet .choix_jet[value="2"] ~ div.caracteristiques_volonte_titre_physique
+.charsheet .choix_jet[value="2"] ~ div.caracteristiques_volonte_titre_physique,
+.charsheet .choix_jet[value="2"] ~ div.derivees_titre_roll_physique
  {
     display: block;
 }
