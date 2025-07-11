@@ -47,6 +47,7 @@ body.sheet-darkmode .charsheet {
 }
 
 input[type="number"] {
+    appearance: textfield;
     -moz-appearance: textfield;
 }
 
@@ -584,7 +585,7 @@ span.hugo {
 .sheet-rolltemplate-relance .sheet-container,
 .sheet-rolltemplate-aptitude .sheet-container {
     width: 260px;
-    height: 170px;
+    height: 245px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/roll_back.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -665,12 +666,49 @@ span.hugo {
 .sheet-rolltemplate-relance .sheet-resultat-des,
 .sheet-rolltemplate-aptitude .sheet-resultat-des {
     grid-column: 1/5;
+    grid-row: 3/5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-resultat-des6,
+.sheet-rolltemplate-relance .sheet-resultat-des6,
+.sheet-rolltemplate-aptitude .sheet-resultat-des6 {
+    grid-column: 1/5;
     grid-row: 3;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 35px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-resultat-des12,
+.sheet-rolltemplate-relance .sheet-resultat-des12,
+.sheet-rolltemplate-aptitude .sheet-resultat-des12 {
+    grid-column: 1/5;
+    grid-row: 4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.sheet-rolltemplate-tombeau .sheet-resultat-des-relance,
+.sheet-rolltemplate-relance .sheet-resultat-des-relance,
+.sheet-rolltemplate-aptitude .sheet-resultat-des-relance {
+    grid-column: 1/5;
+    grid-row: 5;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    color: var(--blanc);
 }
 
 .sheet-rolltemplate-tombeau .sheet-separateur,
@@ -690,7 +728,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc,
 .sheet-rolltemplate-aptitude .sheet-desc {
     grid-column: 1 / 5;
-    grid-row: 4/6;
+    grid-row: 6/8;
     text-align: center;
     display: flex;
     align-items: center;
@@ -703,7 +741,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-reussite1,
 .sheet-rolltemplate-aptitude .sheet-desc-reussite1 {
     grid-column: 1 / 5;
-    grid-row: 4;
+    grid-row: 6;
     text-align: center;
     display: flex;
     align-items: center;
@@ -717,7 +755,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain,
 .sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain {
     grid-column: 1 / 5;
-    grid-row: 5;
+    grid-row: 7;
     text-align: center;
     display: flex;
     align-items: center;
@@ -731,7 +769,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-reussite2,
 .sheet-rolltemplate-aptitude .sheet-desc-reussite2 {
     grid-column: 1 / 5;
-    grid-row: 4/6;
+    grid-row: 6/8;
     text-align: center;
     display: flex;
     align-items: center;
@@ -744,7 +782,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-echec1,
 .sheet-rolltemplate-aptitude .sheet-desc-echec1 {
     grid-column: 1 / 5;
-    grid-row: 4;
+    grid-row: 6;
     text-align: center;
     display: flex;
     align-items: center;
@@ -757,7 +795,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-echec2,
 .sheet-rolltemplate-aptitude .sheet-desc-echec2 {
     grid-column: 1 / 5;
-    grid-row: 4/6;
+    grid-row: 6/8;
     text-align: center;
     display: flex;
     align-items: center;
@@ -771,7 +809,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte,
 .sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte {
     grid-column: 1 / 5;
-    grid-row: 5;
+    grid-row: 7;
     text-align: center;
     display: flex;
     align-items: center;
