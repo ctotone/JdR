@@ -1266,8 +1266,33 @@ console.log(computed_relance);
 <!-- Rolltemplate des aptitudes -->
 <rolltemplate class="sheet-rolltemplate-aptitude">
     <div class="ecart"></div>
-        <div class="sheet-container">
-            <div class="sheet-content">
+        <!-- On va verifier le nombre de dés et les relance -->
+        {{#rollGreater() computed::nombre_de 6}}
+        {{#rollTotal() computed::relance 0}}
+        <!-- Si comp sup 6 et pas relance = 1 -->
+         <div class="sheet-container-2">
+            <div class="sheet-content-2">
+        {{/rollTotal() computed::relance 0}}
+        {{#rollTotal() computed::relance 1}}
+        <!-- Si comp sup 6 et relance = 2 -->
+         <div class="sheet-container-3">
+            <div class="sheet-content-3">
+        {{/rollTotal() computed::relance 1}}
+        {{/rollGreater() computed::nombre_de 6}}
+        {{#^rollGreater() computed::nombre_de 6}}
+        {{#rollTotal() computed::relance 0}}
+        <!-- Si comp infi 7 et pas relance = 3 -->
+         <div class="sheet-container-1">
+            <div class="sheet-content-1">
+        {{/rollTotal() computed::relance 0}}
+        {{#rollTotal() computed::relance 1}}
+        <!-- Si comp inf 7 et relance = 4 -->
+         <div class="sheet-container-2">
+            <div class="sheet-content-2">
+        {{/rollTotal() computed::relance 1}}
+        {{/^rollGreater() computed::nombre_de 6}}
+        
+            
                 <!-- Titre -->
                 {{#rollTotal() computed::titre 1}}   
                 <div class="sheet-survivant-titre">COURIR</div>
@@ -1319,6 +1344,7 @@ console.log(computed_relance);
                 <div class="sheet-survivant-dif-titre">Trés difficile (4+)</div>
                 {{/rollTotal() difficulte_reel 4}}
                 
+                
                 <div class="sheet-resultat-des6">
                     {{#rollGreater() computed::nombre_de 0}}
                         {{#rollGreater() computed::d1 3}}
@@ -1369,6 +1395,8 @@ console.log(computed_relance);
                         {{/^rollGreater() computed::d6 3}}
                     {{/rollGreater() computed::nombre_de 5}}
                 </div>
+                <!-- On va verifier le nombre de dés et les relance -->
+                {{#rollGreater() computed::nombre_de 6}}
                 <div class="sheet-resultat-des12">
                     {{#rollGreater() computed::nombre_de 6}}
                         <br /><br />{{#rollGreater() computed::d7 3}}
@@ -1419,7 +1447,17 @@ console.log(computed_relance);
                         {{/^rollGreater() computed::d12 3}}
                     {{/rollGreater() computed::nombre_de 11}}
                 </div>
-                <div class="sheet-resultat-des-relance">
+                {{/rollGreater() computed::nombre_de 6}}
+                 <!-- On va verifier le nombre de dés et les relance -->
+                {{#rollTotal() computed::relance 1}}  
+                {{#rollGreater() computed::nombre_de 6}}
+                <!-- Si comp sup 6 -->
+                <div class="sheet-resultat-des-relance-2">
+                {{/rollGreater() computed::nombre_de 6}}
+                <!-- Si comp inf 7 -->
+                {{#^rollGreater() computed::nombre_de 6}}
+                <div class="sheet-resultat-des-relance-1">
+                    {{/^rollGreater() computed::nombre_de 6}}
                     {{#rollTotal() computed::relance 1}}Relances : {{/rollTotal() computed::relance 1}}
                     <!-- Dés bonus bis -->
                     {{#rollGreater() computed::d1 5}}
@@ -1714,9 +1752,16 @@ console.log(computed_relance);
                     {{/rollGreater() computed::d12ter 5}}
 
                 </div>
+                {{/rollTotal() computed::relance 1}}  
+                <!-- On va verifier le nombre de dés et les relance -->
+                {{#rollGreater() computed::nombre_de 6}}
+                {{#rollTotal() computed::relance 0}}
+                <!-- Si comp inferieur 7 et pas relance = 1 -->
+
+
                     {{#rollTotal() difficulte 0}}
                         {{#^rollLess() computed::reussite difficulte_reel}}
-                            <div class="sheet-desc-reussite1">RÉUSSITE
+                            <div class="sheet-desc-reussite1-1">RÉUSSITE
                                 {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
                         {{/^rollLess() computed::reussite difficulte_reel}}
                         {{#rollLess() computed::reussite difficulte_reel}}
@@ -1727,27 +1772,148 @@ console.log(computed_relance);
                     {{#^rollTotal() difficulte 0}}
                         {{#^rollLess() computed::reussite difficulte_reel}}
                             {{#rollGreater() computed::reussite difficulte_reel}}
-                                <div class="sheet-desc-reussite1">RÉUSSITE MAJEURE
+                                <div class="sheet-desc-reussite1-1">RÉUSSITE MAJEURE
                                     {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                                <div class="sheet-desc-adrenaline_gain">Vous gagnez 1 point d'Adrénaline</div>
+                                <div class="sheet-desc-adrenaline_gain-1">Vous gagnez 1 point d'Adrénaline</div>
                             {{/rollGreater() computed::reussite difficulte_reel}}
                             {{#^rollGreater() computed::reussite difficulte_reel}}
-                                <div class="sheet-desc-reussite2">RÉUSSITE
+                                <div class="sheet-desc-reussite2-1">RÉUSSITE
                                     {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
                             {{/^rollGreater() computed::reussite difficulte_reel}}
                         {{/^rollLess() computed::reussite difficulte_reel}}
                         {{#rollLess() computed::reussite difficulte_reel}}
                             {{#rollGreater() computed::reussite 0}}  
-                            <div class="sheet-desc-echec2">ÉCHEC
+                            <div class="sheet-desc-echec2-1">ÉCHEC
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
                             {{/rollGreater() computed::reussite 0}}
                             {{#^rollGreater() computed::reussite 0}}  
-                            <div class="sheet-desc-echec1">ÉCHEC MAJEUR
+                            <div class="sheet-desc-echec1-1">ÉCHEC MAJEUR
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                            <div class="sheet-desc-adrenaline_perte">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            <div class="sheet-desc-adrenaline_perte-1">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
                             {{/^rollGreater() computed::reussite 0}}    
                         {{/rollLess() computed::reussite difficulte_reel}}
                     {{/^rollTotal() difficulte 0}}
+                {{/rollTotal() computed::relance 0}}
+                {{#rollTotal() computed::relance 1}}
+                <!-- Si comp inferieur 7 et relance = 2 -->
+                <!-- Si comp inferieur 7 et pas relance = 1 -->
+
+                    {{#rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-reussite1-2">RÉUSSITE
+                                {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-echec1-2">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/rollTotal() difficulte 0}}
+                    {{#^rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite1-2">RÉUSSITE MAJEURE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                                <div class="sheet-desc-adrenaline_gain-2">Vous gagnez 1 point d'Adrénaline</div>
+                            {{/rollGreater() computed::reussite difficulte_reel}}
+                            {{#^rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite2-2">RÉUSSITE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/^rollGreater() computed::reussite difficulte_reel}}
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec2-2">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/rollGreater() computed::reussite 0}}
+                            {{#^rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec1-2">ÉCHEC MAJEUR
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            {{/^rollGreater() computed::reussite 0}}    
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/^rollTotal() difficulte 0}}
+                {{/rollTotal() computed::relance 1}}
+                {{/rollGreater() computed::nombre_de 6}}
+                {{#^rollGreater() computed::nombre_de 6}}
+                {{#rollTotal() computed::relance 0}}
+                <!-- Si comp superieur 6 et pas relance = 3 -->
+
+
+                    {{#rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-reussite1-2">RÉUSSITE
+                                {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-echec1-2">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/rollTotal() difficulte 0}}
+                    {{#^rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite1-2">RÉUSSITE MAJEURE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                                <div class="sheet-desc-adrenaline_gain-2">Vous gagnez 1 point d'Adrénaline</div>
+                            {{/rollGreater() computed::reussite difficulte_reel}}
+                            {{#^rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite2-2">RÉUSSITE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/^rollGreater() computed::reussite difficulte_reel}}
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec2-2">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/rollGreater() computed::reussite 0}}
+                            {{#^rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec1-2">ÉCHEC MAJEUR
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            {{/^rollGreater() computed::reussite 0}}    
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/^rollTotal() difficulte 0}}
+                {{/rollTotal() computed::relance 0}}
+                {{#rollTotal() computed::relance 1}}
+                <!-- Si comp superieur 6 et relance = 4 -->
+
+
+                    {{#rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-reussite1-3">RÉUSSITE
+                                {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            <div class="sheet-desc-echec1-3">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/rollTotal() difficulte 0}}
+                    {{#^rollTotal() difficulte 0}}
+                        {{#^rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite1-3">RÉUSSITE MAJEURE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                                <div class="sheet-desc-adrenaline_gain-3">Vous gagnez 1 point d'Adrénaline</div>
+                            {{/rollGreater() computed::reussite difficulte_reel}}
+                            {{#^rollGreater() computed::reussite difficulte_reel}}
+                                <div class="sheet-desc-reussite2-3">RÉUSSITE
+                                    {{#^rollTotal() computed::marge 0}} (+{{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/^rollGreater() computed::reussite difficulte_reel}}
+                        {{/^rollLess() computed::reussite difficulte_reel}}
+                        {{#rollLess() computed::reussite difficulte_reel}}
+                            {{#rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec2-3">ÉCHEC
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            {{/rollGreater() computed::reussite 0}}
+                            {{#^rollGreater() computed::reussite 0}}  
+                            <div class="sheet-desc-echec1-3">ÉCHEC MAJEUR
+                                {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
+                            <div class="sheet-desc-adrenaline_perte-3">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            {{/^rollGreater() computed::reussite 0}}    
+                        {{/rollLess() computed::reussite difficulte_reel}}
+                    {{/^rollTotal() difficulte 0}}
+                {{/rollTotal() computed::relance 1}}
+                {{/^rollGreater() computed::nombre_de 6}}
             </div>
         </div>
 </rolltemplate>

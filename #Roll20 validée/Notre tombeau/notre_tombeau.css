@@ -582,10 +582,13 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-container,
+.sheet-rolltemplate-aptitude .sheet-container-1,
+.sheet-rolltemplate-aptitude .sheet-container-2,
+.sheet-rolltemplate-aptitude .sheet-container-3,
 .sheet-rolltemplate-relance .sheet-container,
 .sheet-rolltemplate-aptitude .sheet-container {
     width: 260px;
-    height: 245px;
+    height: 170px;
     background-image: url(https://raw.githubusercontent.com/ctotone/JdR/refs/heads/main/.Images/roll_back.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -597,6 +600,18 @@ span.hugo {
     box-shadow: 3px -3px 10px 3px #606060e3;
 }
 
+.sheet-rolltemplate-aptitude .sheet-container-1 {
+    height: 165px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-container-2 {
+    height: 215px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-container-3 {
+    height: 240px;
+}
+
 .sheet-rolltemplate-relance .sheet-container {
     width: 200px;
     height: 110px;
@@ -605,7 +620,10 @@ span.hugo {
 
 .sheet-rolltemplate-tombeau .sheet-container,
 .sheet-rolltemplate-relance .sheet-container,
-.sheet-rolltemplate-aptitude .sheet-container {
+.sheet-rolltemplate-aptitude .sheet-container,
+.sheet-rolltemplate-aptitude .sheet-container-1,
+.sheet-rolltemplate-aptitude .sheet-container-2,
+.sheet-rolltemplate-aptitude .sheet-container-3 {
   --echec-classique: #eb3636c7;
   --echec-majeur: #f200ffc7;
   --lien: #f200ffc7; 
@@ -615,12 +633,31 @@ span.hugo {
 
 .sheet-rolltemplate-tombeau .sheet-content,
 .sheet-rolltemplate-relance .sheet-content,
-.sheet-rolltemplate-aptitude .sheet-content {
+.sheet-rolltemplate-aptitude .sheet-content,
+.sheet-rolltemplate-aptitude .sheet-content-1,
+.sheet-rolltemplate-aptitude .sheet-content-2,
+.sheet-rolltemplate-aptitude .sheet-content-3 {
     display: grid;
     grid-template-columns: 125px 45px 45px 45px;
     line-height: 25px;
     height: 170px;
     font-size: 16px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-content {
+    height: 190px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-content-1 {
+    height: 150px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-content-2 {
+    height: 190px;
+}
+
+.sheet-rolltemplate-aptitude .sheet-content-3 {
+    height: 190px;
 }
 
 .sheet-rolltemplate-relance .sheet-content {
@@ -666,7 +703,7 @@ span.hugo {
 .sheet-rolltemplate-relance .sheet-resultat-des,
 .sheet-rolltemplate-aptitude .sheet-resultat-des {
     grid-column: 1/5;
-    grid-row: 3/5;
+    grid-row: 3;
     text-align: center;
     display: flex;
     align-items: center;
@@ -699,16 +736,27 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-resultat-des-relance,
+.sheet-rolltemplate-aptitude .sheet-resultat-des-relance-1,
+.sheet-rolltemplate-aptitude .sheet-resultat-des-relance-2,
 .sheet-rolltemplate-relance .sheet-resultat-des-relance,
 .sheet-rolltemplate-aptitude .sheet-resultat-des-relance {
     grid-column: 1/5;
-    grid-row: 5;
+    grid-row: 4;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 35px;
     color: var(--blanc);
+}
+
+
+.sheet-rolltemplate-aptitude .sheet-resultat-des-relance-1 {
+    grid-row: 5;
+}
+
+.sheet-rolltemplate-aptitude .sheet-resultat-des-relance-2 {
+    grid-row: 6;
 }
 
 .sheet-rolltemplate-tombeau .sheet-separateur,
@@ -739,7 +787,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite1,
-.sheet-rolltemplate-aptitude .sheet-desc-reussite1 {
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-1,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-2,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-3 {
     grid-column: 1 / 5;
     grid-row: 6;
     text-align: center;
@@ -753,7 +804,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_gain,
-.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain {
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-1,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-2,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-3 {
     grid-column: 1 / 5;
     grid-row: 7;
     text-align: center;
@@ -767,7 +821,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-reussite2,
-.sheet-rolltemplate-aptitude .sheet-desc-reussite2 {
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-1,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-2,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-3 {
     grid-column: 1 / 5;
     grid-row: 6/8;
     text-align: center;
@@ -780,7 +837,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec1,
-.sheet-rolltemplate-aptitude .sheet-desc-echec1 {
+.sheet-rolltemplate-aptitude .sheet-desc-echec1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-3 {
     grid-column: 1 / 5;
     grid-row: 6;
     text-align: center;
@@ -793,7 +853,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-echec2,
-.sheet-rolltemplate-aptitude .sheet-desc-echec2 {
+.sheet-rolltemplate-aptitude .sheet-desc-echec2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-3 {
     grid-column: 1 / 5;
     grid-row: 6/8;
     text-align: center;
@@ -807,7 +870,10 @@ span.hugo {
 }
 
 .sheet-rolltemplate-tombeau .sheet-desc-adrenaline_perte,
-.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte {
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-1,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-2,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-3 {
     grid-column: 1 / 5;
     grid-row: 7;
     text-align: center;
@@ -819,6 +885,49 @@ span.hugo {
     color: #ffffffb3;
     color: var(--echec-majeur);
     line-height: 20px;
+}
+
+
+
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-1,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-1,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-1 {
+    grid-row: 6;
+}
+
+
+
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-2,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-2,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-2 {
+    grid-row: 8;
+}
+
+.sheet-rolltemplate-aptitude .sheet-desc-reussite1-3,
+.sheet-rolltemplate-aptitude .sheet-desc-reussite2-3,
+.sheet-rolltemplate-aptitude .sheet-desc-echec1-3,
+.sheet-rolltemplate-aptitude .sheet-desc-echec2-3 {
+    grid-row: 8;
+}
+
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-1,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-1
+ {
+    grid-row: 7;
+}
+
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-2,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-2
+ {
+    grid-row: 9;
+}
+
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_gain-3,
+.sheet-rolltemplate-aptitude .sheet-desc-adrenaline_perte-3
+ {
+    grid-row: 9;
 }
 
 .sheet-rolltemplate-tombeau .inlinerollresult,
