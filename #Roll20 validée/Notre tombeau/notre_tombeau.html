@@ -3,6 +3,7 @@
 <!-- ----------------- -->
 <input type="hidden" name="attr_total_aptitudes" value="12">
 <input type="hidden" name="attr_delta_aptitudes" value="30">
+<input type="hidden" name="attr_dif_last" value="">
 <div style="display:none">
     <button type="action" name="act_echec_majeur">
 </div>
@@ -224,7 +225,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
     const roll_aptitude_Values = ["1","2","3","4","5","6","7","8","9","10","11","12"];
     roll_aptitude_Values.forEach(function(value) {
     on(`clicked:roll_aptitude_${value}`, (info) => {
-        startRoll("&{template:aptitude} {{aptitude=oui}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{d1ter=[[d6 (Relance du D1bis)]]}} {{d2ter=[[d6 (Relance du D2bis)]]}} {{d3ter=[[d6 (Relance du D3bis)]]}} {{d4ter=[[d6 (Relance du D4bis)]]}}  {{d5ter=[[d6 (Relance du D5bis)]]}} {{d6ter=[[d6 (Relance du D6bis)]]}} {{d1quat=[[d6 (Relance du D1ter)]]}} {{d2quat=[[d6 (Relance du D2ter)]]}} {{d3quat=[[d6 (Relance du D3ter)]]}} {{d4quat=[[d6 (Relance du D4ter)]]}} {{d5quat=[[d6 (Relance du D5ter)]]}} {{d6quat=[[d6 (Relance du D6ter)]]}} {{d7=[[d6]]}} {{d8=[[d6]]}} {{d9=[[d6]]}} {{d10=[[d6]]}} {{d11=[[d6]]}} {{d12=[[d6]]}} {{d7bis=[[d6 (Relance du D7)]]}} {{d8bis=[[d6 (Relance du D8)]]}} {{d9bis=[[d6 (Relance du D9)]]}} {{d10bis=[[d6 (Relance du D10)]]}} {{d11bis=[[d6 (Relance du D11)]]}} {{d12bis=[[d6 (Relance du D12)]]}} {{d7ter=[[d6 (Relance du D7bis)]]}} {{d8ter=[[d6 (Relance du D8bis)]]}} {{d9ter=[[d6 (Relance du D9bis)]]}} {{d10ter=[[d6 (Relance du D10bis)]]}}  {{d11ter=[[d6 (Relance du D11bis)]]}} {{d12ter=[[d6 (Relance du D12bis)]]}} {{d7quat=[[d6 (Relance du D7ter)]]}} {{d8quat=[[d6 (Relance du D8ter)]]}} {{d9quat=[[d6 (Relance du D9ter)]]}} {{d10quat=[[d6 (Relance du D10ter)]]}} {{d11quat=[[d6 (Relance du D11ter)]]}} {{d12quat=[[d6 (Relance du D12ter)]]}} {{courir=[[@{courir}]]}} {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2|1|3|4} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2|1|3|4}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}} {{marge=[[0[resultat]]]}}", (results) => {
+        startRoll("&{template:aptitude} {{aptitude=oui}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{d1ter=[[d6 (Relance du D1bis)]]}} {{d2ter=[[d6 (Relance du D2bis)]]}} {{d3ter=[[d6 (Relance du D3bis)]]}} {{d4ter=[[d6 (Relance du D4bis)]]}}  {{d5ter=[[d6 (Relance du D5bis)]]}} {{d6ter=[[d6 (Relance du D6bis)]]}} {{d1quat=[[d6 (Relance du D1ter)]]}} {{d2quat=[[d6 (Relance du D2ter)]]}} {{d3quat=[[d6 (Relance du D3ter)]]}} {{d4quat=[[d6 (Relance du D4ter)]]}} {{d5quat=[[d6 (Relance du D5ter)]]}} {{d6quat=[[d6 (Relance du D6ter)]]}} {{d7=[[d6]]}} {{d8=[[d6]]}} {{d9=[[d6]]}} {{d10=[[d6]]}} {{d11=[[d6]]}} {{d12=[[d6]]}} {{d7bis=[[d6 (Relance du D7)]]}} {{d8bis=[[d6 (Relance du D8)]]}} {{d9bis=[[d6 (Relance du D9)]]}} {{d10bis=[[d6 (Relance du D10)]]}} {{d11bis=[[d6 (Relance du D11)]]}} {{d12bis=[[d6 (Relance du D12)]]}} {{d7ter=[[d6 (Relance du D7bis)]]}} {{d8ter=[[d6 (Relance du D8bis)]]}} {{d9ter=[[d6 (Relance du D9bis)]]}} {{d10ter=[[d6 (Relance du D10bis)]]}}  {{d11ter=[[d6 (Relance du D11bis)]]}} {{d12ter=[[d6 (Relance du D12bis)]]}} {{d7quat=[[d6 (Relance du D7ter)]]}} {{d8quat=[[d6 (Relance du D8ter)]]}} {{d9quat=[[d6 (Relance du D9ter)]]}} {{d10quat=[[d6 (Relance du D10ter)]]}} {{d11quat=[[d6 (Relance du D11ter)]]}} {{d12quat=[[d6 (Relance du D12ter)]]}} {{courir=[[@{courir}]]}} {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2|1|3|4} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2|1|3|4}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}} {{marge=[[0[resultat]]]}} {{charID=@{character_id}}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -388,6 +389,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
             
             let computed_relance = 0;
             let relance = 0;
+            let dif_last = 0;
 
                 if (value == 1) nombre_de = courir;
                 if (value == 2) nombre_de = encaisser;
@@ -496,6 +498,11 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
             difficulte_reel = parseInt(results.results.difficulte_reel.result);
             let marge_reussite = reussite_totale - difficulte_reel;
 
+            
+            setAttrs({
+                dif_last: difficulte_reel
+            });
+
                 finishRoll(
                     results.rollId,
                     {
@@ -555,6 +562,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                     }
              );
         });
+        
     });
 });
 </script>
@@ -562,7 +570,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
 <!-- Script Roll se calmer suite à échec majeur -->
 <script type="text/worker">
     on('clicked:echec_majeur', (info) => {
-        startRoll("&{template:tombeau} {{echec=oui}} {{title=SE CALMER}}{{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{se_calmer}]]}} {{difficulte=[[?{Difficulté de l'action|2|1|3|4} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2|1|3|4}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
+        startRoll("&{template:tombeau} {{echec=oui}} {{title=SE CALMER...}}{{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{nombre_de=[[@{se_calmer}]]}} {{difficulte=[[@{dif_last} -1]]}} {{difficulte_reel=[[@{dif_last}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
@@ -1789,7 +1797,7 @@ console.log(computed_relance);
                             {{#^rollGreater() computed::reussite 0}}  
                             <div class="sheet-desc-echec1-1">ÉCHEC MAJEUR
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                            <div class="sheet-desc-adrenaline_perte-1">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            <div class="sheet-desc-adrenaline_perte-1">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~{{charID}}selected|echec_majeur)</div>
                             {{/^rollGreater() computed::reussite 0}}    
                         {{/rollLess() computed::reussite difficulte_reel}}
                     {{/^rollTotal() difficulte 0}}
@@ -1828,7 +1836,7 @@ console.log(computed_relance);
                             {{#^rollGreater() computed::reussite 0}}  
                             <div class="sheet-desc-echec1-2">ÉCHEC MAJEUR
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~{{charID}}|echec_majeur)</div>
                             {{/^rollGreater() computed::reussite 0}}    
                         {{/rollLess() computed::reussite difficulte_reel}}
                     {{/^rollTotal() difficulte 0}}
@@ -1869,7 +1877,7 @@ console.log(computed_relance);
                             {{#^rollGreater() computed::reussite 0}}  
                             <div class="sheet-desc-echec1-2">ÉCHEC MAJEUR
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            <div class="sheet-desc-adrenaline_perte-2">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~{{charID}}|echec_majeur)</div>
                             {{/^rollGreater() computed::reussite 0}}    
                         {{/rollLess() computed::reussite difficulte_reel}}
                     {{/^rollTotal() difficulte 0}}
@@ -1908,7 +1916,7 @@ console.log(computed_relance);
                             {{#^rollGreater() computed::reussite 0}}  
                             <div class="sheet-desc-echec1-3">ÉCHEC MAJEUR
                                 {{#^rollTotal() computed::marge 0}} ({{computed::marge}}){{/^rollTotal() computed::marge 0}}</div>
-                            <div class="sheet-desc-adrenaline_perte-3">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~selected|echec_majeur)</div>
+                            <div class="sheet-desc-adrenaline_perte-3">[Vous perdez 1 point d'Adrénaline mais vous pouvez tentez-de vous calmer...](~{{charID}}|echec_majeur)</div>
                             {{/^rollGreater() computed::reussite 0}}    
                         {{/rollLess() computed::reussite difficulte_reel}}
                     {{/^rollTotal() difficulte 0}}
@@ -2096,7 +2104,7 @@ console.log(computed_relance);
                 {{#echec}}
                     {{#^rollLess() computed::reussite difficulte_reel}}
                         <div class="sheet-desc-reussite1">RÉUSSITE</div>
-                        <div class="sheet-desc-adrenaline_gain">Vous ne perdez aucun point d'Adrénaline</div>
+                        <div class="sheet-desc-adrenaline_gain">Vous ne perdez finalement aucun point d'Adrénaline</div>
                     {{/^rollLess() computed::reussite difficulte_reel}}
                     {{#rollLess() computed::reussite difficulte_reel}}
                         <div class="sheet-desc-echec1">ÉCHEC</div>
