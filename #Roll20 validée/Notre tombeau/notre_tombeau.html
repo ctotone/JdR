@@ -4,6 +4,8 @@
 <input type="hidden" name="attr_total_aptitudes" value="12">
 <input type="hidden" name="attr_delta_aptitudes" value="30">
 <input type="hidden" name="attr_dif_last" value="">
+<input type="hidden" name="attr_hp_max" value="6">
+<input type="hidden" name="attr_adrenaline_max" value="6">
 <div style="display:none">
     <button type="action" name="act_echec_majeur">
 </div>
@@ -128,7 +130,7 @@ jet de dés raté (1 maximum par tour)">RELANCE <span style="font-size: 13px;mar
             VIE
         </div>
         <div class="feuille_adrenaline">
-            <input type="number" class="vie_adrenaline" name="attr_adrenaline" min="1" max="6" value="1">
+            <input type="number" class="vie_adrenaline" name="attr_adrenaline" min="0" max="6" value="1">
         </div>
         <div class="feuille_adrenaline_titre">
             ADRÉNALINE
@@ -1209,7 +1211,7 @@ console.log(computed_relance);
     });
 </script>
 
-<!-- Affichage somme aptitudes -->
+<!-- Affichage somme aptitudes et attribution hp max et adrenaline max  -->
 <script type="text/worker">
 	on('clicked:somme_aptitudes', function() {
         getAttrs(["affichage_aptitude"], function(values) {
@@ -1223,6 +1225,13 @@ console.log(computed_relance);
 			});
 		});
     });
+
+    on("sheet:opened", function(eventInfo){
+        setAttrs({
+            hp_max: "6",
+            adrenaline_max: "6"
+        });
+    });	
 </script>
 
 <!-- --------------------------- -->
