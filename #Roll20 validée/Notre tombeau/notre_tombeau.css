@@ -638,7 +638,7 @@ span.hugo {
 .sheet-rolltemplate-aptitude .sheet-content-2,
 .sheet-rolltemplate-aptitude .sheet-content-3 {
     display: grid;
-    grid-template-columns: 125px 45px 45px 45px;
+    grid-template-columns: 65px 71px 61px 61px;
     line-height: 25px;
     height: 170px;
     font-size: 16px;
@@ -661,7 +661,7 @@ span.hugo {
 }
 
 .sheet-rolltemplate-relance .sheet-content {
-    grid-template-columns: 65px 45px 45px 45px;
+    grid-template-columns: 50px 50px 50px 50px;
 }
 
 .sheet-rolltemplate-relance .sheet-content {
@@ -671,7 +671,7 @@ span.hugo {
 .sheet-rolltemplate-tombeau .sheet-survivant-titre,
 .sheet-rolltemplate-relance .sheet-survivant-titre,
 .sheet-rolltemplate-aptitude .sheet-survivant-titre {
-    grid-column: 1 / 5;
+    grid-column: 2 / 5;
     grid-row: 1;
     text-align: center;
     display: flex;
@@ -683,10 +683,23 @@ span.hugo {
     color: var(--blanc);
 }
 
+.sheet-rolltemplate-relance .sheet-survivant-titre  {
+    grid-column: 1 / 5;
+}
+
+.sheet-rolltemplate-tombeau .sheet-survivant-portrait,
+.sheet-rolltemplate-relance .sheet-survivant-portrait,
+.sheet-rolltemplate-aptitude .sheet-survivant-portrait {
+    grid-column: 1;
+    grid-row: 1/3;
+    /* background: red;   */
+    margin-bottom: 10px;
+}
+
 .sheet-rolltemplate-tombeau .sheet-survivant-dif-titre,
 .sheet-rolltemplate-relance .sheet-survivant-dif-titre,
 .sheet-rolltemplate-aptitude .sheet-survivant-dif-titre {
-    grid-column: 1 / 5;
+    grid-column: 2 / 5;
     grid-row: 2;
     text-align: center;
     display: flex;
