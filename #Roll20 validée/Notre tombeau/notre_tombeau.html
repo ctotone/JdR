@@ -296,7 +296,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
         
             
                 <!-- Titre -->
-                <div class="sheet-survivant-portrait" style="background-image: url({{token}});background-size: 60px 60px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+                <div class="sheet-survivant-portrait" style="background-image: url({{token}});background-size: 55px 55px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
                 {{#rollTotal() computed::titre 1}}   
                 <div class="sheet-survivant-titre">COURIR</div>
                 {{/rollTotal() computed::titre 1}}
@@ -346,6 +346,9 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                 {{#rollTotal() difficulte_reel 4}}
                 <div class="sheet-survivant-dif-titre">Trés difficile (4+)</div>
                 {{/rollTotal() difficulte_reel 4}}
+                {{#rollTotal() difficulte_reel 5}}
+                <div class="sheet-survivant-dif-titre">Quasi impossible (5+)</div>
+                {{/rollTotal() difficulte_reel 5}}
                 
                 
                 <div class="sheet-resultat-des6">
@@ -926,11 +929,13 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
     <div class="ecart"></div>
         <div class="sheet-container">
             <div class="sheet-content">
-                <div class="sheet-survivant-portrait" style="background-image: url({{token}});background-size: 45px 45px;background-repeat: no-repeat;background-position: 100% 49%;"></div>
+
+                
                     {{#armes}}
-                <div class="sheet-survivant-titre">{{title}}</div>   
+                <div class="sheet-survivant-titre_arme" style="grid-column: 1 / 5;">{{title}}</div>   
                     {{/armes}}
                     {{#sauvagerie}}
+                <div class="sheet-survivant-portrait" style="background-image: url({{token}});background-size: 48px 46px;background-repeat: no-repeat;background-position: 100% 49%;"></div>    
                 <div class="sheet-survivant-titre" style="font-size: 20px;">{{title}}</div>   
                     {{/sauvagerie}}
                     {{#rollTotal() difficulte 0}}
@@ -945,6 +950,9 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
                     {{#rollTotal() difficulte 3}}
                 <div class="sheet-survivant-titre" title="Action très difficile (4)">{{title}}</div>
                     {{/rollTotal() difficulte 3}}
+                     {{#rollTotal() difficulte 4}}
+                <div class="sheet-survivant-titre" title="Action quasi impossible (5)">{{title}}</div>
+                    {{/rollTotal() difficulte 4}}
                 
                 <div class="sheet-resultat-des">
                     {{#rollGreater() nombre_de 0}}
@@ -1161,7 +1169,7 @@ la fenètre de discussion" style="font-size:14px;margin-left: -5px;color: var(--
     const roll_aptitude_Values = ["1","2","3","4","5","6","7","8","9","10","11","12"];
     roll_aptitude_Values.forEach(function(value) {
     on(`clicked:roll_aptitude_${value}`, (info) => {
-        startRoll("&{template:aptitude} {{aptitude=oui}} {{token=@{ctoken}}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{d1ter=[[d6 (Relance du D1bis)]]}} {{d2ter=[[d6 (Relance du D2bis)]]}} {{d3ter=[[d6 (Relance du D3bis)]]}} {{d4ter=[[d6 (Relance du D4bis)]]}}  {{d5ter=[[d6 (Relance du D5bis)]]}} {{d6ter=[[d6 (Relance du D6bis)]]}} {{d1quat=[[d6 (Relance du D1ter)]]}} {{d2quat=[[d6 (Relance du D2ter)]]}} {{d3quat=[[d6 (Relance du D3ter)]]}} {{d4quat=[[d6 (Relance du D4ter)]]}} {{d5quat=[[d6 (Relance du D5ter)]]}} {{d6quat=[[d6 (Relance du D6ter)]]}} {{d7=[[d6]]}} {{d8=[[d6]]}} {{d9=[[d6]]}} {{d10=[[d6]]}} {{d11=[[d6]]}} {{d12=[[d6]]}} {{d7bis=[[d6 (Relance du D7)]]}} {{d8bis=[[d6 (Relance du D8)]]}} {{d9bis=[[d6 (Relance du D9)]]}} {{d10bis=[[d6 (Relance du D10)]]}} {{d11bis=[[d6 (Relance du D11)]]}} {{d12bis=[[d6 (Relance du D12)]]}} {{d7ter=[[d6 (Relance du D7bis)]]}} {{d8ter=[[d6 (Relance du D8bis)]]}} {{d9ter=[[d6 (Relance du D9bis)]]}} {{d10ter=[[d6 (Relance du D10bis)]]}}  {{d11ter=[[d6 (Relance du D11bis)]]}} {{d12ter=[[d6 (Relance du D12bis)]]}} {{d7quat=[[d6 (Relance du D7ter)]]}} {{d8quat=[[d6 (Relance du D8ter)]]}} {{d9quat=[[d6 (Relance du D9ter)]]}} {{d10quat=[[d6 (Relance du D10ter)]]}} {{d11quat=[[d6 (Relance du D11ter)]]}} {{d12quat=[[d6 (Relance du D12ter)]]}} {{courir=[[@{courir}]]}} {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2|1|3|4} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2|1|3|4}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}} {{marge=[[0[resultat]]]}} {{charID=@{character_id}}}", (results) => {
+        startRoll("&{template:aptitude} {{aptitude=oui}} {{token=@{ctoken}}} {{d1=[[d6]]}} {{d2=[[d6]]}} {{d3=[[d6]]}} {{d4=[[d6]]}} {{d5=[[d6]]}} {{d6=[[d6]]}} {{d1bis=[[d6 (Relance du D1)]]}} {{d2bis=[[d6 (Relance du D2)]]}} {{d3bis=[[d6 (Relance du D3)]]}} {{d4bis=[[d6 (Relance du D4)]]}} {{d5bis=[[d6 (Relance du D5)]]}} {{d6bis=[[d6 (Relance du D6)]]}} {{d1ter=[[d6 (Relance du D1bis)]]}} {{d2ter=[[d6 (Relance du D2bis)]]}} {{d3ter=[[d6 (Relance du D3bis)]]}} {{d4ter=[[d6 (Relance du D4bis)]]}}  {{d5ter=[[d6 (Relance du D5bis)]]}} {{d6ter=[[d6 (Relance du D6bis)]]}} {{d1quat=[[d6 (Relance du D1ter)]]}} {{d2quat=[[d6 (Relance du D2ter)]]}} {{d3quat=[[d6 (Relance du D3ter)]]}} {{d4quat=[[d6 (Relance du D4ter)]]}} {{d5quat=[[d6 (Relance du D5ter)]]}} {{d6quat=[[d6 (Relance du D6ter)]]}} {{d7=[[d6]]}} {{d8=[[d6]]}} {{d9=[[d6]]}} {{d10=[[d6]]}} {{d11=[[d6]]}} {{d12=[[d6]]}} {{d7bis=[[d6 (Relance du D7)]]}} {{d8bis=[[d6 (Relance du D8)]]}} {{d9bis=[[d6 (Relance du D9)]]}} {{d10bis=[[d6 (Relance du D10)]]}} {{d11bis=[[d6 (Relance du D11)]]}} {{d12bis=[[d6 (Relance du D12)]]}} {{d7ter=[[d6 (Relance du D7bis)]]}} {{d8ter=[[d6 (Relance du D8bis)]]}} {{d9ter=[[d6 (Relance du D9bis)]]}} {{d10ter=[[d6 (Relance du D10bis)]]}}  {{d11ter=[[d6 (Relance du D11bis)]]}} {{d12ter=[[d6 (Relance du D12bis)]]}} {{d7quat=[[d6 (Relance du D7ter)]]}} {{d8quat=[[d6 (Relance du D8ter)]]}} {{d9quat=[[d6 (Relance du D9ter)]]}} {{d10quat=[[d6 (Relance du D10ter)]]}} {{d11quat=[[d6 (Relance du D11ter)]]}} {{d12quat=[[d6 (Relance du D12ter)]]}} {{courir=[[@{courir}]]}} {{encaisser=[[@{encaisser}]]}} {{escalader=[[@{escalader}]]}} {{forcer=[[@{forcer}]]}} {{reagir=[[@{reagir}]]}} {{remarquer=[[@{remarquer}]]}} {{imposer=[[@{imposer}]]}} {{sauter=[[@{sauter}]]}} {{savoir_faire=[[@{savoir_faire}]]}} {{se_battre=[[@{se_battre}]]}} {{se_calmer=[[@{se_calmer}]]}} {{viser=[[@{viser}]]}} {{difficulte=[[?{Difficulté de l'action|2|1|3|4|5} -1]]}} {{difficulte_reel=[[?{Difficulté de l'action|2|1|3|4|5}]]}} {{reussite=[[0[resultat]]]}} {{relance=[[0[resultat]]]}} {{nombre_de=[[0[resultat]]]}} {{titre=[[0[resultat]]]}} {{marge=[[0[resultat]]]}} {{charID=@{character_id}}}", (results) => {
                  
             let d1 = parseInt(results.results.d1.dice);
             let d2 = parseInt(results.results.d2.dice);
