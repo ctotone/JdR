@@ -5,3 +5,8 @@ Inspired by the official Character Sheet Template for "Notre Tombeau" tabletop g
 (Evilbram) Mar.2024
 
 A complet character sheet for the role-playing game "Notre Tombeau".
+
+## Version 1.1
+(Evilbram) Jul.2025
+
+Update Roll Script
