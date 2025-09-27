@@ -907,6 +907,8 @@
         <div class="admin_warning">
             Ceci est une page administration, ne cliquez pas sur les archétype sans quoi votre fiche de personnage sera réinitialisée et les points totalement changé. <br><br>
             Retour à votre feuille de personnage via l'icone en haut à droite de cette page
+            <br><br>
+            <button type="action" class="button_competence" name="act_reset_destin" style="width: auto;margin-top: 5px;"><span class="rouge">Reset Destin...</span></button>
         </div>
         <div class="admin_mineur">
             <span style="text-decoration: underline;">PNJ Mineur</span><br><br>
@@ -2044,6 +2046,15 @@
             else show_note = 0;
         setAttrs({
             "show_note": show_note		
+            });
+        });
+    });
+
+    on('clicked:reset_destin', async (event) => {
+		getAttrs(["destin"], function(values) {
+            let destin = 0;
+        setAttrs({
+            "destin": destin
             });
         });
     });
