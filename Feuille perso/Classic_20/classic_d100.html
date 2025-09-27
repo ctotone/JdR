@@ -561,7 +561,8 @@
         <div class="show_combat">
             <div class="itd-inner" style="margin-top: 40px;margin-bottom: 15px;">
                 <input type="hidden" name="attr_type_roll" class="type_roll" value="0">
-                <div class="dice_roll20">
+                <!-- Classique -->
+                <!-- <div class="dice_roll20">
                     <div class="itd-table-3col">
                         <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
                         <div class="itd-basic-talent-corps">
@@ -598,6 +599,59 @@
                         <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
                         <div class="itd-basic-attribute-esprit">
                             <button type="action" class="button_competence" name="act_roll-verbal_phy" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Cyber -->
+                <div class="dice_roll20">
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
+                        <div class="itd-basic-talent-corps">
+                            <button type="action" class="button_competence" name="act_roll-cac" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-ame">
+                            <button type="action" class="button_competence" name="act_roll-distance" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-verbal" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_matrice" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-matrice" title="info" data-i18n-title="attr-MATRICE_info" style="width: auto;margin-top: 5px;"><span class="violet" data-i18n="attr-MATRICE">MATRICE</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dice_physique">
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_cac" min="0" max="99" readonly>
+                        <div class="itd-basic-talent-corps">
+                            <button type="action" class="button_competence" name="act_roll-cac_phy" title="info" data-i18n-title="attr-CAC_info" style="width: auto;margin-top: 5px;"><span class="rouge" data-i18n="attr-CAC">CORPS À CORPS</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_distance" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-ame">
+                            <button type="action" class="button_competence" name="act_roll-distance_phy" title="info" data-i18n-title="attr-DISTANCE_info" style="width: auto;margin-top: 5px;"><span class="jaune" data-i18n="attr-DISTANCE">DISTANCE</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_verbal" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-verbal_phy" title="info" data-i18n-title="attr-VERBAL_info" style="width: auto;margin-top: 5px;"><span class="bleu" data-i18n="attr-VERBAL">VERBAL</span></button>
+                        </div>
+                    </div>
+                    <div class="itd-table-4col">
+                        <input type="number" value="0" spellcheck="false" class="itd-input-basic-attribute" name="attr_score_matrice" min="0" max="99" readonly>
+                        <div class="itd-basic-attribute-esprit">
+                            <button type="action" class="button_competence" name="act_roll-matrice_phy" title="info" data-i18n-title="attr-MATRICE_info" style="width: auto;margin-top: 5px;"><span class="violet" data-i18n="attr-MATRICE">MATRICE</span></button>
                         </div>
                     </div>
                 </div>
@@ -2063,13 +2117,15 @@
             let score_cac = Math.min(Math.floor(((CARRURE + AGILITE)/2) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe)/6)),99);
 			let score_distance = Math.min(Math.floor(((PERCEPTION + MENTAL)/2) + ((acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/6)),99);
             let score_verbal = Math.min(Math.floor(((INTELLECT + CHARISME)/2) + ((persuasion + creativite + erudition + logique + aura + communication_expressive)/6)),99);
+            let score_matrice = Math.min(Math.floor(((INTELLECT + MENTAL)/2) + ((decision + determination + equilibre_mental + creativite + erudition + logique)/6)),99);
 			
 
         setAttrs({
             "total_point_talent": total_point_talent,
 			"score_cac": score_cac,
 			"score_distance": score_distance,
-			"score_verbal": score_verbal
+			"score_verbal": score_verbal,
+            "score_matrice": score_matrice
             });
         });
     });
@@ -3097,6 +3153,53 @@
             finishRoll(roll.rollId, computeObj);
         });
     });
+
+    on('clicked:roll-matrice', async (event) => {
+		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-MATRICE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_matrice}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}");
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
+                    jetCorrige = Math.max(10, result.result - destin);
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
 </script>
 
 <!-- Jet Physique -->
@@ -4044,6 +4147,53 @@
 
     on('clicked:roll-verbal_phy', async (event) => {
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
+
+        const { seuil, result } = roll.results;
+        let destin = 0;
+
+        getAttrs(["destin"], function(values) {
+            destin = parseInt(values["destin"]) || 0;
+
+            const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
+            let jetCorrige = result.result;
+            let marge = margeNaturelle;
+
+            if (margeNaturelle >= 0) {
+                // Succès naturel : on garde le jet tel quel
+                destin = 0;
+            } else {
+                // Échec naturel → tentative avec destin (probabiliste)
+                const chanceUtilisationDestin = 0.9; // 90% de chances que le destin s’active
+                
+                if (Math.random() < chanceUtilisationDestin && result.result >= 10) {
+                    // Le destin s’active
+                    jetCorrige = Math.max(10, result.result - destin);
+                    marge = Math.floor((seuil.result - jetCorrige) / 10);
+
+                    if (marge >= 0) {
+                        jetCorrige = seuil.result;
+                        destin = 0;
+                    } else {
+                        destin += 10;
+                    }
+                } else {
+                    // Le destin ne s’active pas
+                    destin += 10;
+                }
+            }
+
+            const computeObj = {
+                result: jetCorrige,
+                roll: marge
+            };
+
+            setAttrs({ "destin": destin });
+            finishRoll(roll.rollId, computeObj);
+        });
+    });
+
+    on('clicked:roll-matrice_phy', async (event) => {
+        const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-MATRICE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_matrice}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
 
         const { seuil, result } = roll.results;
         let destin = 0;

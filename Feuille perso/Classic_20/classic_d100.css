@@ -18,6 +18,7 @@
   --color_attribut_corps: #e42525f0;
   --color_attribut_ame: #c5a600; 
   --color_attribut_esprit: #4682B4; 
+  --color_attribut_matrice: #80018b;
   --color_base: #000000;
   --text_black: #333;
   color: var(--text_black);
@@ -481,6 +482,10 @@ span.jaune {
 	color: var(--color_attribut_ame);
 }
 
+span.violet {
+	color: var(--color_attribut_matrice);
+}
+
 span.bleu {
 	color: var(--color_attribut_esprit);
 }
@@ -498,6 +503,10 @@ span.jaune-souligne {
 span.bleu-souligne {
 	color: var(--color_attribut_esprit);
   text-decoration: underline;
+}
+
+span.violet-souligne {
+	color: var(--color_attribut_matrice);
 }
 
 span.info-xp {
@@ -563,6 +572,12 @@ span.picto {
 .itd-table-3col {
   float: left;
   width: 33.3%;
+  text-align: center;
+}
+
+.itd-table-4col {
+  float: left;
+  width: 25%;
   text-align: center;
 }
 
