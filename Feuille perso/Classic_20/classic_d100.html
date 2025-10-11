@@ -3358,7 +3358,7 @@
     });
 
     on('clicked:roll-agi-corpo_phy', async (event) => {
-        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100]]}}"); 
+        const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
         let destin = 0;
