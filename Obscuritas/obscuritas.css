@@ -561,6 +561,7 @@ input[type="number"] {
 .charsheet button[type=action].button6::before,
 .charsheet button[type=action].button7::before,
 .charsheet button[type=action].button8::before,
+.charsheet button[type=action].button9::before,
 .charsheet button[type=action].button_sens_carte::before,
 .charsheet button[type=action].button_carac::before,
 .charsheet button[type=action].button_compendium_sm::before,
@@ -796,7 +797,8 @@ input[type="number"] {
 .charsheet button[type=action].button5,
 .charsheet button[type=action].button6,
 .charsheet button[type=action].button7,
-.charsheet button[type=action].button8 {
+.charsheet button[type=action].button8,
+.charsheet button[type=action].button9 {
   text-shadow: none;
   background: var(--color_background_button);
   text-align: left;
@@ -861,7 +863,8 @@ input[type="number"] {
 .charsheet button[type=action].button5:hover,
 .charsheet button[type=action].button6:hover,
 .charsheet button[type=action].button7:hover,
-.charsheet button[type=action].button8:hover {
+.charsheet button[type=action].button8:hover,
+.charsheet button[type=action].button9:hover {
   color: var(--color_text_hover);
 }
 
@@ -872,6 +875,7 @@ input[type="number"] {
 .charsheet .choix_page[value="4"] ~ div .button4 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="6"] ~ div .button6 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="8"] ~ div .button8 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
+.charsheet .choix_page[value="9"] ~ div .button9 {color: var(--color_text_button_selected); background: var(--color_background_button_selected);}
 .charsheet .choix_page[value="5"] ~ div .button5 {color: var(--color_text_button_selected); background: #65709f;}
 .charsheet .choix_page[value="7"] ~ div .button7 {color: var(--color_text_button_selected); background: #65709f;}
 
@@ -1026,6 +1030,7 @@ div.sm_25 {
 .page_caracteristiques,
 .page_competences,
 .page_equipement,
+.page_magie,
 .page_note,
 .page_config,
 .page_compendium,
@@ -1078,7 +1083,8 @@ div.sm_25 {
   background-size: cover;
 }
 
-.page_note {
+.page_note,
+.page_magie {
   height: 1000px !important;
   min-height: unset;
   background-image: var(--background_page);
@@ -1113,6 +1119,7 @@ div.page_complete,
 div.page_caracteristiques,
 div.page_competences,
 div.page_equipement,
+div.page_magie,
 div.page_note,
 div.page_config,
 div.page_aura,
@@ -1129,7 +1136,8 @@ div.page_xp {
 .charsheet .choix_page[value="5"] ~ div.page_config,
 .charsheet .choix_page[value="6"] ~ div.page_aura,
 .charsheet .choix_page[value="7"] ~ div.page_compendium,
-.charsheet .choix_page[value="8"] ~ div.page_xp {
+.charsheet .choix_page[value="8"] ~ div.page_xp,
+.charsheet .choix_page[value="9"] ~ div.page_magie {
     display: block;
 }
 

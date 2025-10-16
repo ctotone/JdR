@@ -244,10 +244,11 @@
         <button type="action" name="act_6" class="button6">Hérésie et Héroïsme</button>
         <button type="action" name="act_1" class="button1">Attributs</button>
         <button type="action" name="act_2" class="button2">Compétences</button>
+        <button type="action" name="act_9" class="button9">Magie</button>
         <button type="action" name="act_3" class="button3">Équipement</button>
         <button type="action" name="act_4" class="button4">Notes</button>
         <button type="action" name="act_boutton_xp" class="button8">XP</button>
-        <button type="action" name="act_7" class="button7" style="margin-left: 96px;">Compendium</button>
+        <button type="action" name="act_7" class="button7" style="margin-left: 40px;">Compendium</button>
         <button type="action" name="act_5" class="button5"><span class="picto" style="padding-left: 5px;">y</span></button>
     </div>
 
@@ -3005,6 +3006,19 @@
         </div> 
     </div>
 
+    <div class="page_magie">
+        <div class="cadre_carnet" style="display: block;">
+            <div class="wrapper_zone_personnage">
+                <div class="zone_carnet_titre" style="padding-left: 60px;">Magie</div>
+            </div>
+            <div class="wrapper_bloc_note">
+                <div class="texte_note_gauche"><textarea class="carnet" name="attr_magie_1"></textarea></div>
+                <div class="texte_note_droite"><textarea class="carnet" name="attr_magie_2"></textarea></div>
+                <div class="illustration_carnet"></div>
+            </div>
+        </div> 
+    </div>
+
     <div class="page_note">
         <div class="cadre_carnet" style="display: block;">
             <div class="wrapper_zone_personnage">
@@ -5117,7 +5131,7 @@
 
 <!-- Custom Attributs  / Menu -->
 <script type="text/worker">
-    const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
+    const buttonlist = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
