@@ -2179,6 +2179,7 @@
     });
 
     on('clicked:roll-endurance', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");
     
         const { seuil, result } = roll.results;
@@ -2207,11 +2208,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2226,6 +2227,7 @@
     });
 
     on('clicked:roll-force-brute', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
     
         const { seuil, result } = roll.results;
@@ -2254,11 +2256,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2273,6 +2275,7 @@
     });
 
     on('clicked:roll-robustesse', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
     
         const { seuil, result } = roll.results;
@@ -2301,11 +2304,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2320,6 +2323,7 @@
     });
 
     on('clicked:roll-agi-corpo', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100]]}}"); 
     
         const { seuil, result } = roll.results;
@@ -2348,11 +2352,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2367,6 +2371,7 @@
     });
 
     on('clicked:roll-precision', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2395,11 +2400,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2414,6 +2419,7 @@
     });
 
     on('clicked:roll-reflexe', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2442,11 +2448,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2461,6 +2467,7 @@
     });
 
     on('clicked:roll-acuite_sensorielle', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2489,11 +2496,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2508,6 +2515,7 @@
     });
 
     on('clicked:roll-sixieme_sens', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2536,11 +2544,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2555,6 +2563,7 @@
     });
 
     on('clicked:roll-vigilance', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2583,11 +2592,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2602,6 +2611,7 @@
     });
 
     on('clicked:roll-decision', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2630,11 +2640,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2649,6 +2659,7 @@
     });
 
     on('clicked:roll-determination', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
     
         const { seuil, result } = roll.results;
@@ -2677,11 +2688,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2696,6 +2707,7 @@
     });
 
     on('clicked:roll-equilibre_mental', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2724,11 +2736,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2743,6 +2755,7 @@
     });
 
     on('clicked:roll-creativite', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2771,11 +2784,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2790,6 +2803,7 @@
     });
 
     on('clicked:roll-erudition', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2818,11 +2832,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2837,6 +2851,7 @@
     });
 
     on('clicked:roll-logique', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}"); 
     
         const { seuil, result } = roll.results;
@@ -2865,11 +2880,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2884,6 +2899,7 @@
     });
 
     on('clicked:roll-aura', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2912,11 +2928,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2931,6 +2947,7 @@
     });
 
     on('clicked:roll-communication_expressive', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -2959,11 +2976,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -2978,6 +2995,7 @@
     });
 
     on('clicked:roll-persuasion', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}}");  
     
         const { seuil, result } = roll.results;
@@ -3006,11 +3024,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
     
@@ -3025,6 +3043,7 @@
     });
     	
 	on('clicked:roll-cac', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}");
     
         const { seuil, result } = roll.results;
@@ -3053,11 +3072,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3072,6 +3091,7 @@
     });
 	
 	on('clicked:roll-distance', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
     
         const { seuil, result } = roll.results;
@@ -3100,11 +3120,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3119,6 +3139,7 @@
     });
 	
 	on('clicked:roll-verbal', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
     
         const { seuil, result } = roll.results;
@@ -3147,11 +3168,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3166,6 +3187,7 @@
     });
 
     on('clicked:roll-matrice', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
 		const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-MATRICE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_matrice}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[1d100[Jet]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}");
 
         const { seuil, result } = roll.results;
@@ -3194,11 +3216,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3217,6 +3239,7 @@
 <script type="text/worker">
 
     on('clicked:roll-endurance_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-endurance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{endurance}}} {{malus_etat=@{total_malus}}} {{destin=@{destin}}} {{seuil=[[@{CARRURE}[Compétence]+@{endurance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");
 
         const { seuil, result } = roll.results;
@@ -3245,11 +3268,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3264,6 +3287,7 @@
     });
 
     on('clicked:roll-force-brute_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-force_brute}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{force_brute}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{force_brute}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
@@ -3292,11 +3316,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3311,6 +3335,7 @@
     });
 
     on('clicked:roll-robustesse_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-robustesse}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CARRURE}}} {{talent=@{robustesse}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CARRURE}[Compétence]+@{robustesse}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
@@ -3339,11 +3364,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3358,6 +3383,7 @@
     });
 
     on('clicked:roll-agi-corpo_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-agilite_corporelle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{agilite_corporelle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{agilite_corporelle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
@@ -3386,11 +3412,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3405,6 +3431,7 @@
     });
 
     on('clicked:roll-precision_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-precision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{precision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{precision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3433,11 +3460,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3452,6 +3479,7 @@
     });
 
     on('clicked:roll-reflexe_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-reflexe}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{AGILITE}}} {{talent=@{reflexe}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{AGILITE}[Compétence]+@{reflexe}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3480,11 +3508,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3499,6 +3527,7 @@
     });
 
     on('clicked:roll-acuite_sensorielle_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-acuite_sensorielle}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{acuite_sensorielle}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{acuite_sensorielle}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3527,11 +3556,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3546,6 +3575,7 @@
     });
 
     on('clicked:roll-sixieme_sens_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-sixieme_sens}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{sixieme_sens}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{sixieme_sens}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3574,11 +3604,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3593,6 +3623,7 @@
     });
 
     on('clicked:roll-vigilance_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-vigilance}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{PERCEPTION}}} {{talent=@{vigilance}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{PERCEPTION}[Compétence]+@{vigilance}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3621,11 +3652,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3640,6 +3671,7 @@
     });
 
     on('clicked:roll-decision_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-decision}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{decision}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{decision}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3668,11 +3700,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3687,6 +3719,7 @@
     });
 
     on('clicked:roll-determination_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-determination}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{determination}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{determination}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
@@ -3715,11 +3748,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3734,6 +3767,7 @@
     });
 
     on('clicked:roll-equilibre_mental_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-equilibre_mental}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{MENTAL}}} {{talent=@{equilibre_mental}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{MENTAL}[Compétence]+@{equilibre_mental}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3762,11 +3796,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3781,6 +3815,7 @@
     });
 
     on('clicked:roll-creativite_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-creativite}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{creativite}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{creativite}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3809,11 +3844,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3828,6 +3863,7 @@
     });
 
     on('clicked:roll-erudition_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-erudition}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{erudition}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{erudition}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3856,11 +3892,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3875,6 +3911,7 @@
     });
 
     on('clicked:roll-logique_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-logique}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{INTELLECT}}} {{talent=@{logique}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{INTELLECT}[Compétence]+@{logique}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}"); 
 
         const { seuil, result } = roll.results;
@@ -3903,11 +3940,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3922,6 +3959,7 @@
     });
 
     on('clicked:roll-aura_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-aura}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{aura}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{aura}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -3950,11 +3988,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -3969,6 +4007,7 @@
     });
 
     on('clicked:roll-communication_expressive_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-communication_expressive}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{communication_expressive}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{communication_expressive}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}}  {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");
 
         const { seuil, result } = roll.results;
@@ -3997,11 +4036,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4016,6 +4055,7 @@
     });
 
     on('clicked:roll-persuasion_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{jet=oui}} {{token=@{ctoken}}} {{title=^{attr-persuasion}}} {{subheader=@{character_name}}} {{nom=@{character_name}}} {{competence=@{CHARISME}}} {{talent=@{persuasion}}} {{malus_etat=@{total_malus}}} {{seuil=[[@{CHARISME}[Compétence]+@{persuasion}[Talent] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}}");  
 
         const { seuil, result } = roll.results;
@@ -4044,11 +4084,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas : le jet reste tel quel et le destin augmente
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4063,6 +4103,7 @@
     });
         
     on('clicked:roll-cac_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-CAC}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_cac}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_cac)}}");
 
         const { seuil, result } = roll.results;
@@ -4091,11 +4132,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4110,6 +4151,7 @@
     });
 
     on('clicked:roll-distance_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{show_degat=oui}} {{title=^{attr-DISTANCE}}} {{token=@{ctoken}}} {{subheader=@{character_name}}}  {{roll=[[0[resultat]]]}} {{seuil=[[@{score_distance}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_distance)}}"); 
 
         const { seuil, result } = roll.results;
@@ -4138,11 +4180,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4157,6 +4199,7 @@
     });
 
     on('clicked:roll-verbal_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-VERBAL}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_verbal}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
 
         const { seuil, result } = roll.results;
@@ -4185,11 +4228,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4204,6 +4247,7 @@
     });
 
     on('clicked:roll-matrice_phy', async (event) => {
+        const bonus = 5; // Valeur du bonus cumulatif modifiable ici
         const roll = await startRoll("@{gm} &{template:itd} {{combat=oui}} {{title=^{attr-MATRICE}}} {{subheader=@{character_name}}} {{token=@{ctoken}}} {{roll=[[0[resultat]]]}} {{seuil=[[@{score_matrice}[Compétence] @{rollmodifier}[Modificateur]-@{total_malus}[Blessures et Stress]]]}} {{result=[[@{rollphysique}[Résultat dés physiques]]]}} {{arme1=[@{nom_arme_1}](~weapon_dmg_1)}}  {{arme2=[@{nom_arme_2}](~weapon_dmg_2)}}  {{arme3=[@{nom_arme_3}](~weapon_dmg_3)}} {{arme_maxi_1=[@{nom_arme_1}](~weapon_dmg_maxi_1)}}  {{arme_maxi_2=[@{nom_arme_2}](~weapon_dmg_maxi_2)}}  {{arme_maxi_3=[@{nom_arme_3}](~weapon_dmg_maxi_3)}} {{consequence=[Conséquence...](~critique_verbal)}}"); 
 
         const { seuil, result } = roll.results;
@@ -4232,11 +4276,11 @@
                         jetCorrige = seuil.result;
                         destin = 0;
                     } else {
-                        destin += 10;
+                        destin += bonus; // Utilise ici la valeur paramétrable
                     }
                 } else {
                     // Le destin ne s’active pas
-                    destin += 10;
+                    destin += bonus; // Utilise ici la valeur paramétrable
                 }
             }
 
@@ -4473,6 +4517,45 @@
 			setAttrs(updates);
 		});
 	});
+
+    on("change:degat_arme_1 change:degat_arme_2 change:degat_arme_3", function (eventInfo) {
+    const attr = eventInfo.sourceAttribute;
+    const num = attr.match(/\d+/)[0];
+
+    getAttrs([attr], function (values) {
+        const expression = values[attr] || "";
+
+        // Calcul valeur max
+        let max = 0;
+        try {
+            const parts = expression.toLowerCase().match(/(\d*)d(\d+)([+-]\d+)?/);
+            if (parts) {
+                const nbDés = parseInt(parts[1] || "1", 10);
+                const typeDé = parseInt(parts[2], 10);
+                const bonus = parseInt(parts[3] || "0", 10);
+                max = (nbDés * typeDé) + bonus;
+            } else {
+                // Pas de dés, juste un chiffre ? (ex: "1")
+                max = parseInt(expression, 10) || 0;
+            }
+        } catch (e) {
+            max = 0; // sécurité
+        }
+
+        const titleMap = {
+            "1": "@{nom_arme_1}",
+            "2": "@{nom_arme_2}",
+            "3": "@{nom_arme_3}"
+        };
+
+        const updates = {};
+        updates[`degat_maxi_arme_${num}`] = max.toString();
+        updates[`DMG_${num}`] = `&{template:itd} {{degat=oui}} {{title=${titleMap[num]}}} {{result=[[${expression}]]}}`;
+        updates[`DMG_maxi_${num}`] = `&{template:itd} {{degat=oui}} {{title=${titleMap[num]}}} {{result=[[${max}]]}}`;
+
+        setAttrs(updates);
+    });
+});
 </script>
 
 <!-- Archetype -->
