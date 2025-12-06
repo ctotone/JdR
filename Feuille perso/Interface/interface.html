@@ -19,6 +19,8 @@
         </div>
     <input type="hidden" name="attr_gm" value="">
     <input type="hidden" name="attr_destin" value="0">
+    <input type="hidden" name="attr_gain_destin" value="10">
+    <input type="hidden" name="attr_coef_malus" value="3">
     <input type="hidden" name="attr_type_roll" value="0">
     <input type="hidden" name="attr_total_point_talent" value="0">
     <input type="hidden" name="attr_total_point_competence" value="0">    
@@ -1963,12 +1965,11 @@
 <script type="text/worker">
 
 /* === CONSTANTES === */
+//Les gains de destin et le coefmalus sont géré via le sheet.json
+//Puis recupérer via le getAttrs
 
-    const bonus = 5;           // Valeur ajoutée au destin en cas d’échec
-    const coefMalus = 3;        // Coefficient de malus (ex : 3 pts par blessure/stress)
 
 
-    
 // ===================================================
 // Menu de navigation
 // ===================================================
@@ -2130,9 +2131,10 @@
 // Calcul des malus de blessure et stress
 // ===================================================
     on("sheet:opened change:blessure change:stress", function () {
-        getAttrs(["blessure", "stress"], function (values) {
+        getAttrs(["blessure", "stress", "coef_malus"], function (values) {
             const blessure = parseInt(values["blessure"]) || 0;
             const stress = parseInt(values["stress"]) || 0;
+            const coefMalus = parseInt(values["coef_malus"]) || 3;
 
             const malus_blessure = blessure * coefMalus;
             const malus_stress = stress * coefMalus;
@@ -2206,9 +2208,10 @@
 
         const { seuil, result } = roll.results;
 
-        getAttrs(["destin"], function(values) {
+        getAttrs(["gain_destin", "destin"], function(values) {
             let destin = parseInt(values["destin"]) || 0;
-
+            const bonus = parseInt(values["gain_destin"]) || 5;
+            
             const margeNaturelle = Math.floor((seuil.result - result.result) / 10);
 
             let jetCorrige = result.result;
