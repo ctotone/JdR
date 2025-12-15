@@ -7,7 +7,7 @@
 <input type="hidden" name="attr_niveau_sm" class="niveau_sm" value="0">
 <input type="hidden" name="attr_heroisme" class="points_heroisme" value="0">
 <input type="hidden" name="attr_heresie" class="points_heresie" value="0">
-<input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
+<input type="hidden" name="attr_nb_avatar" class="choix_avatar" value="0">
 <input type="hidden" name="attr_armure_affichee" class="choix_armure" value="0">
 <input type="hidden" name="attr_bouclier_affichee" class="choix_bouclier" value="0">
 <input type="hidden" name="attr_info_reduit" class="voir_info" value="0">
@@ -415,8 +415,8 @@
                         <!-- Centre -->
                         <div class="zone_info_avatar">
                             <div class="wrapper_zone_info">
-                                <input type="hidden" name="attr_avatar" class="choix_avatar" value="0">
-                                <div class="info_avatar"><img class="portrait" name="attr_character_token"></div>
+                                <input type="hidden" name="attr_nb_avatar" class="choix_avatar" value="0">
+                                <div class="info_avatar"><img class="portrait" name="attr_character_avatar"></div>
                                 <div class="info_avatar_aude"></div>
                                 <div class="info_avatar_einarth"></div>
                                 <div class="info_avatar_felix"></div>
@@ -5152,7 +5152,7 @@
             setAttrs({  rollphysique: "?{Résultat dés physiques|0}",
                         namelength: nameclass,
                        "avatar": v.character_avatar,
-                       "ctoken": v.character_token });
+                       "ctoken": v.character_avatar });
         });
     });
 
@@ -7499,11 +7499,11 @@
     });
 
 on('clicked:change_avatar', async (event) => {
-    getAttrs(["avatar"], function(values) {
-        let avatar = (parseInt(values["avatar"]) || 0) + 1;
-        avatar %= 7; // Remet à 0 après 6
+    getAttrs(["nb_avatar"], function(values) {
+        let nb_avatar = (parseInt(values["nb_avatar"]) || 0) + 1;
+        nb_avatar %= 7; // Remet à 0 après 6
         setAttrs({
-            "avatar": avatar
+            "nb_avatar": nb_avatar
         });
     });
 });
