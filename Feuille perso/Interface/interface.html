@@ -2106,9 +2106,9 @@
             let persuasion = parseInt(values["persuasion"]) || 0;
             let total_point_talent = endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental + creativite + erudition + logique + aura + communication_expressive + persuasion;
 			
-            let score_cac = Math.min(Math.floor(((CARRURE + AGILITE)/2) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe)/6)),99);
-			let score_distance = Math.min(Math.floor(((PERCEPTION + MENTAL)/2) + ((acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/6)),99);
-            let score_verbal = Math.min(Math.floor(((INTELLECT + CHARISME)/2) + ((persuasion + creativite + erudition + logique + aura + communication_expressive)/6)),99);
+            let score_cac = Math.min(Math.floor(((CARRURE + AGILITE + PERCEPTION)/3) + ((endurance + force_brute + robustesse + agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance)/9)),99);
+			let score_distance = Math.min(Math.floor(((AGILITE + PERCEPTION + MENTAL)/3) + ((agilite_corporelle + precision + reflexe + acuite_sensorielle + sixieme_sens + vigilance + decision + determination + equilibre_mental)/9)),99);
+            let score_verbal = Math.min(Math.floor(((INTELLECT + CHARISME + MENTAL)/3) + ((persuasion + creativite + erudition + logique + aura + communication_expressive + decision + determination + equilibre_mental)/9)),99);
             let score_matrice = Math.min(Math.floor(((INTELLECT + MENTAL)/2) + ((decision + determination + equilibre_mental + creativite + erudition + logique)/6)),99);
 			
 
