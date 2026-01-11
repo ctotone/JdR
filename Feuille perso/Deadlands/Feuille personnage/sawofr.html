@@ -1857,6 +1857,38 @@ Au dela de la 3eme valeur = Hors de portée">Portée</div>
 <!-- ROLL TEMPLATES -->
 <rolltemplate class="sheet-rolltemplate-sawo">
     <div class="tmpl">
+        {{#note}}
+            <div class="titre">{{name}}{{#competence}} ({{competence}}){{/competence}}</div>
+            <div class="ligne">
+                
+                {{note}}
+            </div>
+            {{#rollTotal() etat 1}}
+                <div class="ligne">
+                    <span class="desc"><b><span data-i18n="etat">État :</span></b>
+                    {{#rollTotal() blessures 0}}
+                        {{#rollTotal() fatigue 0}}
+                            {{#rollTotal() secoue 0}}
+                                <span class="etat" data-i18n="normal">Normal</span>
+                            {{/rollTotal() secoue 0}}
+                        {{/rollTotal() fatigue 0}}
+                    {{/rollTotal() blessures 0}}
+                    {{#rollTotal() secoue 1}}
+                        <span class="etat attention" data-i18n="secoue">Secoué</span>
+                    {{/rollTotal() secoue 1}}
+                    {{#rollGreater() blessures 0}}
+                        {{#rollLess() blessures 4}}<span class="etat"><span data-i18n="blesse">Blessé</span> ({{blessures}})</span>{{/rollLess() blessures 4}}
+                        {{#rollTotal() blessures 4}}<span class="etat echec"><span data-i18n="etat-critique">État critique</span></span>{{/rollTotal() blessures 4}}
+                    {{/rollGreater() blessures 0}}
+                    {{#rollGreater() fatigue 0}}
+                            {{#rollTotal() fatigue 1}}<span class="etat" data-i18n="fatigued">Fatigué</span>{{/rollTotal() fatigue 1}}
+                            {{#rollTotal() fatigue 2}}<span class="etat attention" data-i18n="epuised">Épuisé</span>{{/rollTotal() fatigue 2}}
+                            {{#rollTotal() fatigue 3}}<span class="etat echec" data-i18n="fatigue-critique">Fatigue Critique</span>{{/rollTotal() fatigue 3}}
+                    {{/rollGreater() fatigue 0}}
+                    {{#rollGreater() encombrement 0}}<span class="etat"><span data-i18n="encombred">Encombré</span> ({{encombrement}})</span>{{/rollGreater() encombrement 0}}
+                </div>
+            {{/rollTotal() etat 1}}
+        {{/note}}
         {{#perso}}
             <div class="titre">{{name}}{{#competence}} ({{competence}}){{/competence}}</div>
             <div class="ligne">
