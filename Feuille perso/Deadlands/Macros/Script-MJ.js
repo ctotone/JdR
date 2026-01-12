@@ -13,11 +13,4 @@ Tirer une carte,!deal-init --deal2chat
 |
 Fin Combat,!deal-init --clearTurnOrder
 |
------ Calendrier -----,
-|
-Menu,!cal
-|
-Config,!settings
-|
-Afficher calendrier,!playercal
 }

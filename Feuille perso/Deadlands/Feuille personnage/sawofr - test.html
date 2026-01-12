@@ -1969,7 +1969,7 @@ Au dela de la 3eme valeur = Hors de portée">Portée</div>
                     </div>
                 {{/attaque}}
             {{/rollTotal() relances 0}}
-            {{#rollGreater() relances 0}}
+            {{#rollTotal() relances 1}}
                 <div class="ligne">
                     <div class="jet">
                         {{#attaque}}<span class="etat" data-i18n="attaque">Attaque</span>{{/attaque}}
@@ -1996,7 +1996,35 @@ Au dela de la 3eme valeur = Hors de portée">Portée</div>
                         </div>
                     </div>
                 {{/attaque}}
-            {{/rollGreater() relances 0}}
+            {{/rollTotal() relances 1}}
+            {{#rollGreater() relances 1}}
+                <div class="ligne">
+                    <div class="jet">
+                        {{#attaque}}<span class="etat" data-i18n="attaque">Attaque</span>{{/attaque}}
+                        <span class="succes" data-i18n="succes">Succès</span>
+                        <span data-i18n="et">et</span>
+                        {{relances}}
+                        <span data-i18n="relance-s">relance(s)</span>
+                    </div>
+                </div>
+                {{#attaque}}
+                    <div class="ligne">
+                        <div class="jet">
+                            {{#rollLess() degatsrelplus 0}}
+                                <span class="etat" data-i18n="degats-plus-1d6">Dégâts +1d6</span>
+                                <span class="echec" data-i18n="aucun">Aucun</span>
+                                ({{degatsrelplus}})
+                            {{/rollLess() degatsrelplus 0}}
+                            {{#rollGreater() degatsrelplus -1}}
+                                <span class="etat" data-i18n="degats-plus-1d6">Dégâts +1d6</span>
+                                <span data-i18n="et">et</span>
+                                {{degatsrelplus}}
+                                <span data-i18n="relance-s">relance(s)</span>
+                            {{/rollGreater() degatsrelplus -1}}
+                        </div>
+                    </div>
+                {{/attaque}}
+            {{/rollGreater() relances 1}}
         {{/relances}}
         {{#jet}}
             <div class="ligne"><div class="jet"><span class="etat" data-i18n="jet">Jet</span>{{jet}}</div></div>
