@@ -521,7 +521,7 @@ textarea.sheet-textdesc{
 	padding-left: 5px;
 }
 input[type="checkbox"]:checked ~ textarea.sheet-textdesc{
-    height: 140px;
+    height: 140px !important;
 }
     /************************************** SELECT ***************************/
 select{
@@ -588,6 +588,7 @@ button[type="roll"]:hover{
     font-weight: bold;
 }
 button[type="roll"].sheet-btRolrel,
+button[type="action"].sheet-btRolrel,
 button[type="roll"].sheet-btRoljet,
 button[type="roll"].sheet-btRolbrut{
     width: 142px;
@@ -609,27 +610,32 @@ button[type="roll"].sheet-btRolbrut:before{
     text-transform: lowercase;
 }
 button[type="roll"].sheet-btRolrel:hover:before,
+button[type="action"].sheet-btRolrel:hover:before,
 button[type="roll"].sheet-btRoljet:hover:before,
 button[type="roll"].sheet-btRolbrut:hover:before{
     font-weight: bold;
     color: #CD071E;
 }
 input[type=radio].sheet-chkSheetDead:checked ~ div.sheet-main button[type="roll"].sheet-btRolrel:hover:before,
+input[type=radio].sheet-chkSheetDead:checked ~ div.sheet-main button[type="action"].sheet-btRolrel:hover:before,
 input[type=radio].sheet-chkSheetDead:checked ~ div.sheet-main button[type="roll"].sheet-btRoljet:hover:before,
 input[type=radio].sheet-chkSheetDead:checked ~ div.sheet-main button[type="roll"].sheet-btRolbrut:hover:before{
     color: #8B6434;
 }
 input[type=radio].sheet-chkSheetLankh:checked ~ div.sheet-main button[type="roll"].sheet-btRolrel:hover:before,
+input[type=radio].sheet-chkSheetLankh:checked ~ div.sheet-main button[type="action"].sheet-btRolrel:hover:before,
 input[type=radio].sheet-chkSheetLankh:checked ~ div.sheet-main button[type="roll"].sheet-btRoljet:hover:before,
 input[type=radio].sheet-chkSheetLankh:checked ~ div.sheet-main button[type="roll"].sheet-btRolbrut:hover:before{
     color: #735C32;
 }
 input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="roll"].sheet-btRolrel:hover:before,
+input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="action"].sheet-btRolrel:hover:before,
 input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="roll"].sheet-btRoljet:hover:before,
 input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="roll"].sheet-btRolbrut:hover:before{
     color: #969070;
 }
 button[type="roll"].sheet-btRolrel:hover,
+button[type="action"].sheet-btRolrel:hover,
 button[type="roll"].sheet-btRoljet:hover,
 button[type="roll"].sheet-btRolbrut:hover{
     border-width: 1px;
@@ -651,7 +657,8 @@ input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="roll"]
 input[type=radio].sheet-chkSheetBnB:checked ~ div.sheet-main button[type="roll"].sheet-btRolbrut:hover{
     border-color:#969070;
 }
-input[type=checkbox].sheet-chkRolrel:checked ~ div.sheet-main button[type=roll].sheet-btRolrel{
+input[type=checkbox].sheet-chkRolrel:checked ~ div.sheet-main button[type=roll].sheet-btRolrel,
+input[type=checkbox].sheet-chkRolrel:checked ~ div.sheet-main button[type=action].sheet-btRolrel{
     display: inline-block;
 }
 input[type=checkbox].sheet-chkRoljet:checked ~ div.sheet-main button[type=roll].sheet-btRoljet{

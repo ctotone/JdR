@@ -3,7 +3,7 @@
     <!-- TABS -->
     <input type="radio" name="attr_chkvie" value="0" class="onglmain" data-i18n-title="feuille" title="Feuille" checked /><span data-i18n="feuille">Feuille</span>
     <input type="radio" name="attr_chkvie" value="1" class="onglconfig" title="Configuration" /><span data-i18n="configuration">Configuration</span>
-    <span style="display:inline-block;width:150px;text-align: center;color: #888888;font-size: 0.9em;">Spécial Harpie vorace !! </span>
+    <span style="display:inline-block;width:150px;text-align: center;color: #888888;font-size: 0.9em;">Evilbram édition </span>
     <!-- Styling -->
     <input type="radio" name="attr_sheetDead" value="0" class="chkSheetSaWo"  />  <!-- Savage Worlds -->
     <input type="radio" name="attr_sheetDead" value="1" class="chkSheetDead" checked /> <!-- Deadlands -->
@@ -1026,6 +1026,30 @@ ou que l’on rencontre une créature effroyable.">Tripes</button>
                     </div>
                 </div> <!-- FIN COMPETENCES -->
             </div> <!-- FIN TRAITS -->
+            <div class="colblock">
+                <div class="redtitle1 disp"><div class="nopnj"><span data-i18n="atouts">ATOUTS</span> &amp; <span data-i18n="handicaps">HANDICAPS</span></div><div class="pnj" data-i18n="aptitudes">APTITUDES</div></div>
+                <input type="checkbox" name="attr_dispAtouts" class="dispchk" data-i18n-title="show-hide-content" title="Afficher/masquer le contenu" checked /><span class="dispchk">E</span>
+                <div class="dispchk">
+                    <div> <!-- ATOUTS -->
+                        <div class="redtitle2"><div class="nopnj" data-i18n="atouts">ATOUTS</div><div class="pnj"><span data-i18n="aptitudes">APTITUDES</span> (+)</div></div>
+                        <fieldset class="repeating_atouts"> <!-- ATOUTS -->
+                            <div class="input">
+                                <input type="checkbox" name="attr_atoutdisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
+                                <textarea name="attr_atout" class="textdesc" style="width: 244px;; height: 40px;" data-i18n-placeholder="atout" placeholder="Atout" data-i18n-title="atout" title="Atout"></textarea>
+                            </div>
+                        </fieldset>
+                    </div> <!-- FIN ATOUTS -->
+                    <div> <!-- HANDICAPS -->
+                        <div class="redtitle2"><div class="nopnj" data-i18n="handicaps">HANDICAPS</div><div class="pnj"><span data-i18n="aptitudes">APTITUDES</span> (-)</div></div>
+                        <fieldset class="repeating_handicaps"> <!-- ATOUTS -->
+                            <div class="input">
+                                <input type="checkbox" name="attr_handicapdisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
+                                <textarea name="attr_handicap" class="textdesc" style="width: 244px; height: 40px;" data-i18n-placeholder="handicap" placeholder="Handicap" data-i18n-title="handicap" title="Handicap"></textarea>
+                            </div>
+                        </fieldset>
+                    </div> <!-- FIN HANDICAPS -->
+                </div>
+            </div>
         </div> <!-- ** END COL1 ** -->
         <div class="mycol"> <!-- ** COL2 ** -->
             <div class="logo">
@@ -1185,12 +1209,12 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     <div class="blacktext1" data-i18n="signes">Signes particuliers: </div>
                     <div class="input">
                         <input type="checkbox" name="attr_signedisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
-                        <textarea name="attr_signe" class="textdesc" style="width: 246px;" data-i18n-placeholder="signes" placeholder="Signes particuliers" data-i18n-title="signes" title="Signes particuliers"></textarea>
+                        <textarea name="attr_signe" class="textdesc" style="width: 246px;height: 40px;" data-i18n-placeholder="signes" placeholder="Signes particuliers" data-i18n-title="signes" title="Signes particuliers"></textarea>
                     </div>
 					<div class="blacktext1" data-i18n="pire_cauchemard">Ton pire cauchemard: </div>
 					 <div class="input">
                         <input type="checkbox" name="attr_signedisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
-                        <textarea name="attr_cauchemard" class="textdesc" style="width: 246px;" data-i18n-placeholder="pire_cauchemard" placeholder="Ton pire cauchemard" data-i18n-title="pire_cauchemard" title="Ton pire cauchemard"></textarea>
+                        <textarea name="attr_cauchemard" class="textdesc" style="width: 246px; height: 60px;" data-i18n-placeholder="pire_cauchemard" placeholder="Ton pire cauchemard" data-i18n-title="pire_cauchemard" title="Ton pire cauchemard"></textarea>
                     </div>
                 </div>
             </div>
@@ -1204,30 +1228,7 @@ te dira à quoi ça sert bien assez tôt.">TREMPE</div>
                     </div>
                 </div>
             </div>
-            <div class="colblock">
-                <div class="redtitle1 disp"><div class="nopnj"><span data-i18n="atouts">ATOUTS</span> &amp; <span data-i18n="handicaps">HANDICAPS</span></div><div class="pnj" data-i18n="aptitudes">APTITUDES</div></div>
-                <input type="checkbox" name="attr_dispAtouts" class="dispchk" data-i18n-title="show-hide-content" title="Afficher/masquer le contenu" checked /><span class="dispchk">E</span>
-                <div class="dispchk">
-                    <div> <!-- ATOUTS -->
-                        <div class="redtitle2"><div class="nopnj" data-i18n="atouts">ATOUTS</div><div class="pnj"><span data-i18n="aptitudes">APTITUDES</span> (+)</div></div>
-                        <fieldset class="repeating_atouts"> <!-- ATOUTS -->
-                            <div class="input">
-                                <input type="checkbox" name="attr_atoutdisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
-                                <textarea name="attr_atout" class="textdesc" style="width: 244px;" data-i18n-placeholder="atout" placeholder="Atout" data-i18n-title="atout" title="Atout"></textarea>
-                            </div>
-                        </fieldset>
-                    </div> <!-- FIN ATOUTS -->
-                    <div> <!-- HANDICAPS -->
-                        <div class="redtitle2"><div class="nopnj" data-i18n="handicaps">HANDICAPS</div><div class="pnj"><span data-i18n="aptitudes">APTITUDES</span> (-)</div></div>
-                        <fieldset class="repeating_handicaps"> <!-- ATOUTS -->
-                            <div class="input">
-                                <input type="checkbox" name="attr_handicapdisplay" class="loupe" data-i18n-title="enlarge-desc" title="Agrandir/Réduire la description" /><span>s</span>
-                                <textarea name="attr_handicap" class="textdesc" style="width: 244px;" data-i18n-placeholder="handicap" placeholder="Handicap" data-i18n-title="handicap" title="Handicap"></textarea>
-                            </div>
-                        </fieldset>
-                    </div> <!-- FIN HANDICAPS -->
-                </div>
-            </div>
+            
             <div class="colblock nopnj">
                 <div class="redtitle1 disp" data-i18n="progression">PROGRESSION</div>
                 <div class="blacktext2">XP</div>
@@ -1857,6 +1858,38 @@ Au dela de la 3eme valeur = Hors de portée">Portée</div>
 <!-- ROLL TEMPLATES -->
 <rolltemplate class="sheet-rolltemplate-sawo">
     <div class="tmpl">
+        {{#note}}
+            <div class="titre">{{name}}{{#competence}} ({{competence}}){{/competence}}</div>
+            <div class="ligne">
+                
+                {{note}}
+            </div>
+            {{#rollTotal() etat 1}}
+                <div class="ligne">
+                    <span class="desc"><b><span data-i18n="etat">État :</span></b>
+                    {{#rollTotal() blessures 0}}
+                        {{#rollTotal() fatigue 0}}
+                            {{#rollTotal() secoue 0}}
+                                <span class="etat" data-i18n="normal">Normal</span>
+                            {{/rollTotal() secoue 0}}
+                        {{/rollTotal() fatigue 0}}
+                    {{/rollTotal() blessures 0}}
+                    {{#rollTotal() secoue 1}}
+                        <span class="etat attention" data-i18n="secoue">Secoué</span>
+                    {{/rollTotal() secoue 1}}
+                    {{#rollGreater() blessures 0}}
+                        {{#rollLess() blessures 4}}<span class="etat"><span data-i18n="blesse">Blessé</span> ({{blessures}})</span>{{/rollLess() blessures 4}}
+                        {{#rollTotal() blessures 4}}<span class="etat echec"><span data-i18n="etat-critique">État critique</span></span>{{/rollTotal() blessures 4}}
+                    {{/rollGreater() blessures 0}}
+                    {{#rollGreater() fatigue 0}}
+                            {{#rollTotal() fatigue 1}}<span class="etat" data-i18n="fatigued">Fatigué</span>{{/rollTotal() fatigue 1}}
+                            {{#rollTotal() fatigue 2}}<span class="etat attention" data-i18n="epuised">Épuisé</span>{{/rollTotal() fatigue 2}}
+                            {{#rollTotal() fatigue 3}}<span class="etat echec" data-i18n="fatigue-critique">Fatigue Critique</span>{{/rollTotal() fatigue 3}}
+                    {{/rollGreater() fatigue 0}}
+                    {{#rollGreater() encombrement 0}}<span class="etat"><span data-i18n="encombred">Encombré</span> ({{encombrement}})</span>{{/rollGreater() encombrement 0}}
+                </div>
+            {{/rollTotal() etat 1}}
+        {{/note}}
         {{#perso}}
             <div class="titre">{{name}}{{#competence}} ({{competence}}){{/competence}}</div>
             <div class="ligne">
