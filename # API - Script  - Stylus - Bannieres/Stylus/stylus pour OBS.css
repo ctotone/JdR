@@ -1,14 +1,4 @@
-/* ==UserStyle==
-@name           app.roll20.net/editor
-@namespace      github.com/openstyles/stylus
-@version        1.0.0
-@description    A new userstyle
-@author         Me
-==/UserStyle== */
-
-@-moz-document url-prefix("https://app.roll20.net/editor/") {
-
-}#macrobar {
+#macrobar {
   height: 2.3em !important;
   width: 92% !important;
   background-color: rgba(0, 0, 0, 0.44) !important;
@@ -172,4 +162,21 @@ box-sizing: border-box;
 	top: 0px;
 	width: 20px;
 	padding: 0px 10px;
+}
+
+#initiativewindow .characterlist .token .initiative {
+    font-size: 1em !important;
+    background-color: #000000;
+    font-weight: bold;
+    border-radius: .5em;
+    border-color: #ffffffad;
+    border-style: solid;
+    border-width: 1px;
+    color: #ffffffd9;
+}
+
+.textchatcontainer .message.system {
+    background-color: var(--dark-card-purple);
+    color: var(--grayscale-dark-d30);
+    display: none;
 }
