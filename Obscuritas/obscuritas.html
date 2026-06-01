@@ -1,5 +1,6 @@
 <input type="hidden" name="attr_gm" value="">
 <input type="hidden" name="attr_type_jet" class="choix_jet" value="1">
+<input type="hidden" name="attr_forcer_roll20" value="0">
 <input type="hidden" name="attr_nouveau_personnage" class="nouveau_personnage" value="1">
 <input type="hidden" name="attr_ctoken" value="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/refs/heads/master/Obscuritas/images/token_dice.webp">
 <input type="hidden" name="attr_valeur_aura" class="valeur_aura" value="0">
@@ -6530,17 +6531,24 @@
     const eventName = isPhysical ? `clicked:${buttonName}-physique` : `clicked:${buttonName}`;
 
     on(eventName, async () => {
-      await executeRoll({
-        title: cfg.title,
-        subheader: cfg.subheader,
-        statFormula: cfg.statFormula,
-        extraTemplate: cfg.extraTemplate || '',
-        absStat: cfg.absStat || false,
-        useInjuryMalus: cfg.useInjuryMalus !== false,
-        isPhysical
-      });
+        getAttrs(["forcer_roll20"], async (values) => {
+            const forcerRoll20 = parseInt(values["forcer_roll20"]) || 0;
+
+            // Si forcer_roll20 = 1, même un bouton physique lance un vrai 1d100 Roll20.
+            const isPhysicalFinal = isPhysical && forcerRoll20 !== 1;
+
+            await executeRoll({
+                title: cfg.title,
+                subheader: cfg.subheader,
+                statFormula: cfg.statFormula,
+                extraTemplate: cfg.extraTemplate || '',
+                absStat: cfg.absStat || false,
+                useInjuryMalus: cfg.useInjuryMalus !== false,
+                isPhysical: isPhysicalFinal
+            });
+        });
     });
-  }
+}
 
   Object.entries(ROLL_CONFIG).forEach(([buttonName, cfg]) => {
     registerRoll(buttonName, cfg, false);
