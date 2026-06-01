@@ -3733,40 +3733,37 @@
             Les valeurs de contrôle XP ont été initialisées pour ce personnage.
         </div>
 
-        <div class="bloc_controle_xp">
-            <div class="titre_controle_xp">Contrôle XP</div>
-
-            <div class="ligne_controle_xp">
-                <span>XP dépensée en attributs :</span>
-                <input type="number" name="attr_xp_depense_attributs" class="input_control_xp" value="0" readonly>
-            </div>
-
-            <div class="ligne_controle_xp">
-                <span>XP dépensée en compétences :</span>
-                <input type="number" name="attr_xp_depense_competences" class="input_control_xp" value="0" readonly>
-            </div>
-
-            <div class="ligne_controle_xp">
-                <span>XP dépensée en PV / PM :</span>
-                <input type="number" name="attr_xp_depense_derivees" class="input_control_xp" value="0" readonly>
-            </div>
-
-            <div class="ligne_controle_xp">
-                <span>XP dépensée totale :</span>
-                <input type="number" name="attr_xp_depense_total" class="input_control_xp" value="0" readonly>
-            </div>
-
-            <button type="action" class="button_init_xp_creation" name="act_recalculer_xp_controle">
-                Recalculer le contrôle XP
-            </button>
-
-            <input type="hidden" name="attr_xp_controle_erreur" class="xp_controle_erreur" value="0">
-            <input type="hidden" name="attr_message_controle_xp" value="">
-
-            <div class="message_controle_xp">
-                <span name="attr_message_controle_xp"></span>
-            </div>
+        
+        <div class="wrapper_config_1" style="margin-top: 35px;">
+            <div class="config_titre_tableau">Contrôle XP</div>
         </div>
+
+        <div class="wrapper_config_1">
+            <div class="config_titre1" style="font-size: 12px;">XP dépensée en attributs :</div>
+            <div class="config_data1"><input type="number" name="attr_xp_depense_attributs" class="input_control_xp" value="0" readonly></div>
+            <div class="config_titre2" style="font-size: 12px;">XP dépensée en compétences </div>
+            <div class="config_data2"><input type="number" class="input_config" name="attr_xp_depense_competences" class="input_control_xp" value="0" readonly></div>
+        </div>
+
+        <div class="wrapper_config_1">
+            <div class="config_titre1" style="font-size: 12px;">XP dépensée en PV / PM :</div>
+            <div class="config_data1"><input type="number" class="input_config" name="attr_xp_depense_derivees" class="input_control_xp" value="0" readonly></div>
+            <div class="config_titre2" style="font-size: 12px;">XP dépensée totale :</div>
+            <div class="config_data2"><input type="number" class="input_config" name="attr_xp_depense_total" class="input_control_xp" value="0" readonly></div>
+        </div>
+
+       
+        <button type="action" class="button_init_xp_creation" name="act_recalculer_xp_controle">
+            Recalculer le contrôle XP
+        </button>
+
+        <input type="hidden" name="attr_xp_controle_erreur" class="xp_controle_erreur" value="0">
+        <input type="hidden" name="attr_message_controle_xp" value="">
+
+        <div class="message_controle_xp">
+            <span name="attr_message_controle_xp"></span>
+        </div>
+        
     </div>
 
     <div class="page_compendium">
